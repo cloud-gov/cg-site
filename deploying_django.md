@@ -70,7 +70,7 @@ dj-database-url==0.3.0 #grabs environment variables and dumps them into a Django
 waitress==0.8.9 #a pure python WSGI server that is a replacement for gunicorn
 ```
 
-### The `project.wsgi`
+### The `wsgi.py` file
 When you create a Django project, a default `wsgi.py` file should be created for you. It usually looks like this:
 ```
 """
@@ -118,7 +118,7 @@ The Procfile contains commands that Cloud Foundry will run to keep your site up.
 ```
 web: waitress-serve --port=$VCAP_APP_PORT APPNAME.wsgi:application
 ```
-`APPNAME.wsgi` should be replaced with whatever the name of your project wsgi file is. 
+`APPNAME.wsgi` should be replaced with whatever the name of your project wsgi module is. 
 
 ### The `manifest.yml`
 The [manifest file](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) tells `cf push` what to do with your app. Here's an example:
