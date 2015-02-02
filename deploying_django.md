@@ -1,49 +1,9 @@
 # Deploying a Django project into Cloud Foundry
 
-Interacting with Cloud Foundry is easiest through the command line interface. You can install the CF CLI using:
-
-```
-brew tap pivotal/tap
-brew install cloudfoundry-cli
-```
-
-You will need a cloud foundry account before continuing. Please create an issue in the [DevOps issue tracker](https://github.com/18F/DevOps/issues) and assign it to @dlapiduz or @ozzyjohnson.
-
-To login, run 
-```
-cf api --skip-ssl-validation https://api.labs.18f.us
-cf login
-```
-
-Once you're in, you'll probably want to change your password with
-```
-cf passwd
-```
-
-##Orgs
-Cloud Foundry groups its users by organizations, or orgs for short. When your account is created, it will be given permissions to an org.
-
-You can run 
-```
-cf org ORGNAME
-```
-To see details about your org, including which spaces it includes.
-
-##Spaces
-Every application is scoped to a space. Applications in the same space share a location for app development, deployment, and maintenance. To create a space:
-```
-cf create-space SPACENAME
-```
-
-You will be deploying the app from a directory on your local machine. To target a space for deployment, run 
-```
-cf target -s SPACENAME
-```
-
-Now all of you `cf` commands will target that space by default.
+Start with the general "[Read Me](README.md)".
 
 ## Creating the App
-There's no explicit command to create an app, but a 
+There's no explicit command to create an app, but a
 ```
 cf push APPNAME
 ```
@@ -56,7 +16,7 @@ First thing, you'll probably want to copy your .gitignore file:
 Cloud Foundry uses a file format identical to .gitignore to decide which files to ignore when deploying. You'll definitely want to put `*.pyc` and `local_settings.py` in there.
 
 ### The Python runtime
-Next, you want to tell Cloud Foundry which Python runtime to use. To do this, create a `runtime.txt` file, and put the full version of Python you want to deploy with in it. For instance, 
+Next, you want to tell Cloud Foundry which Python runtime to use. To do this, create a `runtime.txt` file, and put the full version of Python you want to deploy with in it. For instance,
 ```
 python-3.4.1
 ```
@@ -111,14 +71,14 @@ application = get_wsgi_application()
 application = DjangoWhiteNoise(application)
 ```
 
-The order here is important. The `DJANGO_SETTINGS_MODULE` environment variable must be set before importing DjangoWhiteNoise. 
+The order here is important. The `DJANGO_SETTINGS_MODULE` environment variable must be set before importing DjangoWhiteNoise.
 
 ### The Procfile
 The Procfile contains commands that Cloud Foundry will run to keep your site up. For just the Django site, create a file called `Procfile` and in it put
 ```
 web: waitress-serve --port=$VCAP_APP_PORT APPNAME.wsgi:application
 ```
-`APPNAME.wsgi` should be replaced with whatever the name of your project wsgi module is. 
+`APPNAME.wsgi` should be replaced with whatever the name of your project wsgi module is.
 
 ### The `manifest.yml`
 The [manifest file](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) tells `cf push` what to do with your app. Here's an example:
@@ -133,10 +93,10 @@ applications:
   timeout: 180
 ```
 
-As you can see, it specifies the number of instances, the memory allocated to the application, and the application itself. 
+As you can see, it specifies the number of instances, the memory allocated to the application, and the application itself.
 
 ### Create the App
-To create and deploy your app, run 
+To create and deploy your app, run
 ```
 cf push APPNAME --no-start
 ```
