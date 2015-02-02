@@ -11,7 +11,8 @@ You will need a cloud foundry account before continuing. Please create an issue 
 
 To login, run 
 ```
-cf login  -a api.labs.18f.us
+cf api --skip-ssl-validation https://api.labs.18f.us
+cf login
 ```
 
 Once you're in, you'll probably want to change your password with
