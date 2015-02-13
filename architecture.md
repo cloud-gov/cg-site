@@ -1,9 +1,8 @@
 ## Architecture
 
-Here is a link to the general architecture: http://docs.cloudfoundry.org/concepts/architecture/.
+General architecture: http://docs.cloudfoundry.org/concepts/architecture/.
 
 ![CF Architecture](http://docs.cloudfoundry.org/concepts/images/cf_architecture_block.png)
-
 
 ## Our current install includes:
 
@@ -23,6 +22,7 @@ Here is a link to the general architecture: http://docs.cloudfoundry.org/concept
 - [Etcd (Go)](https://github.com/coreos/etcd)
 
 ## Buildpacks:
+
 - [Python](https://github.com/cloudfoundry/python-buildpack)
 - [Ruby](https://github.com/cloudfoundry/ruby-buildpack)
 - [Go](https://github.com/cloudfoundry/go-buildpack)
@@ -31,5 +31,6 @@ Here is a link to the general architecture: http://docs.cloudfoundry.org/concept
 - [PHP](https://github.com/cloudfoundry/php-buildpack)
 
 ## Tools:
+
 - [CF CLI (Go)](https://github.com/cloudfoundry/cli)
 - [Bosh - Deploys CF (Ruby)](https://github.com/cloudfoundry/bosh)
