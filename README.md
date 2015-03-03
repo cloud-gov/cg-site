@@ -16,11 +16,19 @@ brew install cloudfoundry-cli
 On **Linux**, download and uncompress the binary, and move it somewhere in your `$PATH`:
 
 ```bash
-wget https://cli.run.pivotal.io/stable?release=linux64-binary&source=github -O cf.tgz
+wget 'https://cli.run.pivotal.io/stable?release=linux64-binary&source=github' -O cf.tgz
 tar -zxvf cf.tgz
 sudo mv cf /usr/local/bin
 ```
 
+Confirm the installation:
+
+```bash
+cf --version
+```
+
+As of this writing the current cf CLI version is `6.10.0-b78bf10`.
+	
 ## Setting up your account
 
 You will need a Cloud Foundry account before continuing. Please create an issue in the [DevOps issue tracker](https://github.com/18F/DevOps/issues) and assign it to [@dlapiduz](https://github.com/dlapiduz) or [@ozzyjohnson](https://github.com/ozzyjohnson).
@@ -28,29 +36,53 @@ You will need a Cloud Foundry account before continuing. Please create an issue 
 To login, run:
 
 ```bash
-cf api --skip-ssl-validation https://api.labs.18f.us
+cf api --skip-ssl-validation https://cf.labs.18f.us
 cf login
 ```
 
 Once you're in, you'll probably want to change your password with:
 
-```
+```bash
 cf passwd
 ```
 
 ## Orgs
 
-Cloud Foundry groups its users by organizations, or orgs for short. When your account is created, it will be given permissions to an org.
+Cloud Foundry groups its users by organizations, or orgs for short. Orgs group together users for management and present a shared perimiter for services, domains and quotas. When your account is created, it will be given permissions to an org and a personal space.
 
-To see details about your org, including which "spaces" it includes:
+#### Management:
+
+To list available orgs:
+
+```bash
+cf orgs
+```
+
+Only orgs where you've been assigned an org-role or those which contain a space where you've been assinged a space-role will appear.
+
+To see details about a specific org, including quotas, routing domains and which spaces it includes:
 
 ```bash
 cf org ORGNAME
 ```
 
+In order to work with spaces you'll need to first target an org:
+
+```bash
+cf target -o ORGNAME
+```
+
+You can also target an org and space within at once:
+
+```bash
+cf target -o ORGNAME -s SPACENAME
+```
+
 ## Spaces
 
 Every application is scoped to a "space". Applications in the same space share a location for app development, deployment, and maintenance.
+
+#### Management:
 
 To create a space:
 
@@ -58,9 +90,17 @@ To create a space:
 cf create-space SPACENAME
 ```
 
+**Note:**  To create a space within a given org you must have the `OrgManager` role. You can check to see which users and managers for your org with:
+
+```bash
+cf org-users ORGNAME
+```
+
+#### Deployment:
+
 You will be deploying the app from a directory on your local machine. To target a space for deployment:
 
-```
+```bash
 cf target -s SPACENAME
 ```
 
