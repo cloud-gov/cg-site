@@ -36,7 +36,7 @@ You will need a Cloud Foundry account before continuing. Please create an issue 
 To login, run:
 
 ```bash
-cf api --skip-ssl-validation https://cf.labs.18f.us
+cf api --skip-ssl-validation https://api.cf.18f.us
 cf login
 ```
 
