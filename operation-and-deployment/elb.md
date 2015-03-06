@@ -14,7 +14,7 @@ The name you set as part of the ELB certificate upload command will be used late
 
 Use [this CloudFormation JSON template](https://github.com/18F/cloud-foundry-manifests/blob/master/provisioning/elb.json) to create the ELB, filling in parameters as needed.
 
-**__document parameters TBD__
+**__document parameters TBD__**
 
 ### Creating the ELB by hand
 
