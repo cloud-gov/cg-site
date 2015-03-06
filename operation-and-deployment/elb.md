@@ -14,7 +14,12 @@ The name you set as part of the ELB certificate upload command will be used late
 
 Use [this CloudFormation JSON template](https://github.com/18F/cloud-foundry-manifests/blob/master/provisioning/elb.json) to create the ELB, filling in parameters as needed.
 
-**__document parameters TBD__**
+* **CertName**: Pick the name of the HTTPS certificate you've uploaded.
+* **ClientTag**: The value that corresponds to your project's assigned billing tag. **This is mandatory.**
+* **ELBSecGroups**: Select the security groups. **__TBD__**
+* **ELBSubnets**: Select the subnets. **__TBD__**
+* **HostedZoneName**: Type in the name of the hosted zone, e.g. `open.foia.gov`.
+* **ZoneName**: Type in the name of the subdomain in front of the hosted zone domain, if one applies.
 
 ### Creating the ELB by hand
 
