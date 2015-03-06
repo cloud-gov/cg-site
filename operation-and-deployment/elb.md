@@ -10,7 +10,15 @@ Create a valid HTTPS certificate using [18F's certificate issuance process](http
 
 The name you set as part of the ELB certificate upload command will be used later.
 
-### Creating the ELB
+### Creating the ELB with CloudFormation
+
+Use [this CloudFormation JSON template](https://github.com/18F/cloud-foundry-manifests/blob/master/provisioning/elb.json) to create the ELB, filling in parameters as needed.
+
+**__document parameters TBD__
+
+### Creating the ELB by hand
+
+The CloudFormation JSON above is built to represent the following workflow:
 
 * Create a new ELB in `us-east-1` (N. Virginia).
 
@@ -28,6 +36,6 @@ The name you set as part of the ELB certificate upload command will be used late
 
 * Select security groups. **__TBD__**
 
-* Choose which instance to point the Load Balancer to. **__TBD__** (`router_z1/0`? `router_z2/0`?)
+* Choose which instance to point the Load Balancer to. **__TBD__**
 
 * At the tag screen, **you must tag the ELB** with a tag named `client`, with the value that **corresponds to your project's assigned billing tag**.
