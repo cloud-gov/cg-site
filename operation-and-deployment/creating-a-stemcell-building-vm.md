@@ -27,7 +27,7 @@ You'll need a recent version of the AWS CLI for some of these commands. The curr
 
 Create the bosh user.
 
-	aws --profile=cf-testing iam create-user --user-name bosh
+	aws iam create-user --user-name bosh
 	
 Apply a policy that will allow bosh to perform actions in the AWS environment.
 
@@ -39,7 +39,7 @@ Create the bosh keypair.
 
 Create the bosh access key and secret key.
 
-	aws --profile=cf-testing iam create-access-key --user-name bosh
+	aws iam create-access-key --user-name bosh
 	
 Export the required environment variables using key file and credentials create above.
 
