@@ -1,4 +1,4 @@
-## Getting Started With Cloud Foundry
+# Getting Started With Cloud Foundry
 
 Cloud Foundry is an open source Platform-as-a-Service (PaaS) system for managing the deployment of apps, services, and background tasks. 18F is evaluating it for use in our development and production systems.
 
@@ -6,14 +6,16 @@ Cloud Foundry is an open source Platform-as-a-Service (PaaS) system for managing
 
 Interacting with Cloud Foundry is easiest through the `cf` command line interface.
 
-On **OS X**, install with:
+### OSX
 
-```
+```bash
 brew tap pivotal/tap
 brew install cloudfoundry-cli
 ```
 
-On **Linux**, download and uncompress the binary, and move it somewhere in your `$PATH`:
+### Linux
+
+Download and uncompress the binary, and move it somewhere in your `$PATH`:
 
 ```bash
 wget 'https://cli.run.pivotal.io/stable?release=linux64-binary&source=github' -O cf.tgz
@@ -21,26 +23,26 @@ tar -zxvf cf.tgz
 sudo mv cf /usr/local/bin
 ```
 
-Confirm the installation:
+### Confirm the installation
 
 ```bash
 cf --version
 ```
 
 As of this writing the current cf CLI version is `6.10.0-b78bf10`.
-	
+
 ## Setting up your account
 
-You will need a Cloud Foundry account before continuing. Please create an issue in the [DevOps issue tracker](https://github.com/18F/DevOps/issues) and assign it to [@dlapiduz](https://github.com/dlapiduz) or [@ozzyjohnson](https://github.com/ozzyjohnson).
+You will need a Cloud Foundry account before continuing. Please [create an issue in the DevOps issue tracker](https://github.com/18F/DevOps/issues/new) and assign it to [@dlapiduz](https://github.com/dlapiduz) or [@ozzyjohnson](https://github.com/ozzyjohnson).
 
-To login, run:
+### Log in
 
 ```bash
 cf api --skip-ssl-validation https://api.cf.18f.us
 cf login
 ```
 
-Once you're in, you'll probably want to change your password with:
+Once you log in for the first time, you'll probably want to change your password with:
 
 ```bash
 cf passwd
@@ -48,41 +50,37 @@ cf passwd
 
 ## Orgs
 
-Cloud Foundry groups its users by organizations, or orgs for short. Orgs group together users for management and present a shared perimiter for services, domains and quotas. When your account is created, it will be given permissions to an org and a personal space.
+Cloud Foundry groups its users by organizations, or "orgs" for short. Orgs group together users for management and present a shared perimeter for services, domains and quotas. When your account is created, it will be given permissions to an org and a personal space.
 
-#### Management:
-
-To list available orgs:
+### List available orgs
 
 ```bash
 cf orgs
 ```
 
-Only orgs where you've been assigned an org-role or those which contain a space where you've been assinged a space-role will appear.
+Only orgs where you've been assigned an org-role or those which contain a space where you've been assingned a space-role will appear.
 
-To see details about a specific org, including quotas, routing domains and which spaces it includes:
+### See details about a specific org
+
+...including quotas, routing domains and which spaces it includes:
 
 ```bash
 cf org ORGNAME
 ```
 
-In order to work with spaces you'll need to first target an org:
+### Target an org
+
+In order to work with spaces, you'll need to do this first:
 
 ```bash
 cf target -o ORGNAME
-```
-
-You can also target an org and space within at once:
-
-```bash
-cf target -o ORGNAME -s SPACENAME
 ```
 
 ## Spaces
 
 Every application is scoped to a "space". Applications in the same space share a location for app development, deployment, and maintenance.
 
-#### Management:
+### Management
 
 To create a space:
 
@@ -96,9 +94,11 @@ cf create-space SPACENAME
 cf org-users ORGNAME
 ```
 
-#### Deployment:
+### Deployment
 
-You will be deploying the app from a directory on your local machine. To target a space for deployment:
+You will be deploying the app from a directory on your local machine.
+
+#### Target a space
 
 ```bash
 cf target -s SPACENAME
@@ -106,7 +106,13 @@ cf target -s SPACENAME
 
 From now on, all of your `cf` commands will target that space by default.
 
-### Public domain
+#### Target an org and space at once
+
+```bash
+cf target -o ORGNAME -s SPACENAME
+```
+
+## Public domain
 
 This project is in the worldwide [public domain](LICENSE.md). As stated in [CONTRIBUTING](CONTRIBUTING.md):
 
