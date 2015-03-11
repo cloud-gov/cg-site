@@ -16,8 +16,8 @@ Use [this CloudFormation JSON template](https://github.com/18F/cloud-foundry-man
 
 * **CertName**: Pick the name of the HTTPS certificate you've uploaded.
 * **ClientTag**: The value that corresponds to your project's assigned billing tag. **This is mandatory.**
-* **ELBSecGroups**: Select the security groups. **__TBD__**
-* **ELBSubnets**: Select the subnets. **__TBD__**
+* **ELBSecGroups**: Select the security groups. (See [`create-elb.sh`](https://github.com/18F/DevOps/blob/master/cf/create-elb.sh) for current information.)
+* **ELBSubnets**: Select the subnets. (See [`create-elb`](https://github.com/18F/DevOps/blob/master/cf/create-elb.sh) for current information.)
 * **HostedZoneName**: Type in the name of the hosted zone, e.g. `open.foia.gov`.
 * **ZoneName**: Type in the name of the subdomain in front of the hosted zone domain, if one applies.
 
@@ -37,10 +37,10 @@ The CloudFormation JSON above is built to represent the following workflow:
 
 * Pick whatever health check makes sense (usually `/`).
 
-* Select subnets. **__TBD__**
+* Select subnets. (See [`create-elb`](https://github.com/18F/DevOps/blob/master/cf/create-elb.sh) for current information.)
 
-* Select security groups. **__TBD__**
+* Select security groups. (See [`create-elb`](https://github.com/18F/DevOps/blob/master/cf/create-elb.sh) for current information.)
 
-* Choose which instance to point the Load Balancer to. **__TBD__**
+* Choose which instance to point the Load Balancer to. (See [`create-elb`](https://github.com/18F/DevOps/blob/master/cf/create-elb.sh) for current information.)
 
 * At the tag screen, **you must tag the ELB** with a tag named `client`, with the value that **corresponds to your project's assigned billing tag**.
