@@ -8,4 +8,4 @@ cf set-space-role user@domain.com ORG SPACE SpaceManager
 cf set-space-role user@domain.com ORG SPACE SpaceDeveloper
 ```
 
-For more information on space and org roles: http://docs.cloudfoundry.org/concepts/roles.html
+For more information on space and org roles: http://docs.cloudfoundry.org/concepts/roles.html#roles

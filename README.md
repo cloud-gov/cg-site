@@ -48,7 +48,7 @@ Once you log in for the first time, you'll probably want to change your password
 cf passwd
 ```
 
-## Orgs
+## [Orgs](http://docs.cloudfoundry.org/concepts/roles.html#orgs)
 
 Cloud Foundry groups its users by organizations, or "orgs" for short. Orgs group together users for management and present a shared perimeter for services, domains and quotas. When your account is created, it will be given permissions to an org and a personal space.
 
@@ -80,7 +80,7 @@ In order to work with spaces, you'll need to do this first:
 cf target -o ORGNAME
 ```
 
-## Spaces
+## [Spaces](http://docs.cloudfoundry.org/concepts/roles.html#spaces)
 
 Every application is scoped to a "space". Applications in the same space share a location for app development, deployment, and maintenance.
 
