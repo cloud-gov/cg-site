@@ -2,39 +2,35 @@
 
 See the official CF guide: [Getting Started Deploying Ruby on Rails Apps](http://docs.cloudfoundry.org/buildpacks/ruby/gsg-ror.html). Here are the minimal steps for a basic Rails app:
 
-```bash
-brew install cloudfoundry-cli
-cf login -a api.cf.18f.us
-# note you may need to add `--skip-ssl-validation`
+1. Follow the setup instructions in the [README](../README.md)
+    * You can skip anything labeled "Management"
+1. [Ignore files](http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html#exclude) ignored by Git
 
-# TODO set up org+space
+    ```bash
+    cp .gitignore .cfignore
+    ```
 
-# ignore files ignored by git
-# http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html#exclude
-cp .gitignore .cfignore
+1. Create the application on Cloud Foundry
 
-# replace with whatever you want to call your application
-APP_NAME=c2-dev
+    ```bash
+    cf push <APP_NAME>
+    ```
 
-cf push $APP_NAME
+1. [Set up the database](database.md)
+1. Set additional [environment variables](http://docs.run.pivotal.io/devguide/deploy-apps/environment-variable.html)
 
-# set the environment variables
-cf set-env $APP_NAME SECRET_TOKEN `rake secret`
-# etc.
+    ```bash
+    cf set-env <APP_NAME> SECRET_TOKEN `rake secret`
+    # etc.
+    ```
 
-# set up the database
-cf create-service postgresql default "${APP_NAME}_db"
-# this will overwrite your database.yml
-# http://docs.cloudfoundry.org/buildpacks/ruby/ruby-service-bindings.html#rails-applications-have-autoconfigured-database-yml
-cf bind-service $APP_NAME "${APP_NAME}_db"
-cf restage $APP_NAME
+1. [Migrate the database](http://docs.cloudfoundry.org/devguide/services/migrate-db.html#occasional-migration)
 
-# migrate the database
-# note: this currently requires stopping the application
-# http://docs.cloudfoundry.org/devguide/services/migrate-db.html#occasional-migration
-cf push $APP_NAME -c 'rake db:migrate' -i 1
-# re-start the server process
-cf push $APP_NAME -c 'null' -i 1
+    ```bash
+    # note: this currently requires stopping the application
+    cf push $APP_NAME -c 'rake db:migrate' -i 1
+    # re-start the server process
+    cf push $APP_NAME -c 'null' -i 1
+    ```
 
-open "http://${APP_NAME}.cf.18f.us/"
-```
+Your app should now be live at http://APP_NAME.cf.18f.us/!
