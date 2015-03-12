@@ -127,9 +127,7 @@ Normally, you would be able to view the site at [APPNAME.labs.18f.us](APPNAME.la
 
 ## Setting Up the Database
 
-Working in Django and Cloud Foundry is easiest if you're using a hosted database like Amazon's RDS. If you aren't already using RDS, I recommend it because the default configuration is much more sane than the default Postgres/MySQL install on Ubuntu.
-
-If you are using RDS, you'll need to change your `settings.py ` and set one environment variable to get the database up and connect. In your `settings.py` make sure you import the package we added to the `requirements.txt` file above:
+**First, read [the database guide](databases.md).** If you are using RDS, you'll need to change your `settings.py ` and set one environment variable to get the database up and connect. In your `settings.py` make sure you import the package we added to the `requirements.txt` file above:
 
 ```python
 import dj_database_url
@@ -140,21 +138,6 @@ Then, you'll need to add a `DATABASES` setting like normal. I recommend adding t
 ```python
 DATABASES = {}
 DATABASES['default'] =  dj_database_url.config()
-```
-
-Now, if you set the `DATABASE_URL` environment variable, it will populate the database settings for you. You can set environment variables like so:
-
-```bash
-cf set-env APPNAME DATABASE_URL postgresql://DBUSERNAME:DBPASSWORD@DBHOST:5432/DBNAME
-```
-
-You can read more about how to construct the database URL for different backends in the [dj_database_url docs](https://github.com/kennethreitz/dj-database-url#url-schema).
-
-If you're not using RDS, you can create a database service and bind it to your app. For instance, to create a `postgresql` service and bind it to your app:
-
-```bash
-cf create-service postgresql default DBNAME
-cf bind-service APPNAME DBNAME
 ```
 
 ### Running the app

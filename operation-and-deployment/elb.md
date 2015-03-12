@@ -27,7 +27,7 @@ The CloudFormation JSON above is built to represent the following workflow:
 
 * Create a new ELB in `us-east-1` (N. Virginia).
 
-* Pick a name, and select the "Cloud Foundry live" VPC. Select HTTPS for the Load Balancer protocol, and HTTP for the Instance protocol.
+* Pick a name, and select the `CloudFoundry-live` VPC. Select HTTPS for the Load Balancer protocol, and HTTP for the Instance protocol.
 
 ![creating the elb](../images/elb-init.png)
 

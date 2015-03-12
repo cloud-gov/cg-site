@@ -58,7 +58,7 @@ Cloud Foundry groups its users by organizations, or "orgs" for short. Orgs group
 cf orgs
 ```
 
-Only orgs where you've been assigned an org-role or those which contain a space where you've been assingned a space-role will appear.
+Only orgs where you've been assigned an org-role or those which contain a space where you've been assigned a space-role will appear.
 
 ### See details about a specific org
 
