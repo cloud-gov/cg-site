@@ -4,8 +4,10 @@ While databases can be spun up within Cloud Foundry via [services](http://docs.c
 
 ## RDS
 
-1. Create the database instance on AWS.
-1. Connect the database to the `CloudFoundry-live` VPC.
+1. [Create the database instance](https://console.aws.amazon.com/rds/home?region=us-east-1#launch-dbinstance:ct=dashboard:) on AWS in the `us-east-1` region. On the "Configure Advanced Settings" step:
+    1. Set the [VPC](http://aws.amazon.com/vpc/) to be `CloudFoundry-live`.
+    1. Set the [VPC Security Group](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html) to be `*BoshSecurityGroup*`.
+    1. Create a `client` tag so that it's billed properly.
 1. Set the `DATABASE_URL` environment variable:
 
     ```bash

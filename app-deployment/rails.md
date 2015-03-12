@@ -28,9 +28,9 @@ See the official CF guide: [Getting Started Deploying Ruby on Rails Apps](http:/
 
     ```bash
     # note: this currently requires stopping the application
-    cf push $APP_NAME -c 'rake db:migrate' -i 1
+    cf push <APP_NAME> -c 'rake db:migrate' -i 1
     # re-start the server process
-    cf push $APP_NAME -c 'null' -i 1
+    cf push <APP_NAME> -c 'null' -i 1
     ```
 
 Your app should now be live at http://APP_NAME.cf.18f.us/!
