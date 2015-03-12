@@ -216,7 +216,7 @@ If the Vagrant machine is halted or restarted for any reason there are  several 
 	
 2.) Repair the VMs.
 
-	bosh cck
+	bosh cck cf-warden
 	
 Choose option 2 "Recreate VM using last known apply spec" for each VM then confirm the choices. A new director task will be created to recreate each VM in turn. This will take several minutes to complete.
 	
