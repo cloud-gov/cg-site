@@ -16,7 +16,7 @@ The [dj_database_url](https://github.com/kennethreitz/dj-database-url#url-schema
 
 ## Service
 
-To start a database service instance within Cloud Foundry (where `DB_NAME` is something like `APP_NAME_db`):
+To start a database service instance within Cloud Foundry (where `DB_NAME` is something like `APP_NAME-ENV-db`):
 
 ```bash
 cf create-service postgresql default <DB_NAME>

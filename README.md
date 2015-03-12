@@ -52,6 +52,10 @@ cf passwd
 
 Cloud Foundry groups its users by organizations, or "orgs" for short. Orgs group together users for management and present a shared perimeter for services, domains and quotas. When your account is created, it will be given permissions to an org and a personal space.
 
+### Naming convention
+
+Within 18F, the `ORGNAME` will correspond to a project/client, e.g. `cap` for GSA's [Common Acquisition Platform](https://18f.gsa.gov/dashboard/project/C2/), or `devops` for internal apps like [Hubot](https://github.com/18F/18f-bot).
+
 ### List available orgs
 
 ```bash
@@ -79,6 +83,10 @@ cf target -o ORGNAME
 ## Spaces
 
 Every application is scoped to a "space". Applications in the same space share a location for app development, deployment, and maintenance.
+
+### Naming convention
+
+Within 18F, the `SPACENAME` will correspond to a an application+environment, e.g. `c2-dev`, or `foia-hub-prod`.
 
 ### Management
 
