@@ -1,0 +1,22 @@
+box: wercker/default
+services:
+  - wercker/postgresql
+steps:
+  - dlapiduz/cloud-foundry-deploy
+  - arjen/hugo-build
+build:
+  steps:
+    - arjen/hugo-build:
+        version: 0.13
+deploy:
+  steps:
+    - dlapiduz/cloud-foundry-deploy:
+        api: $CF_API
+        username: $CF_USER
+        password: $CF_PASS
+        organization: $CF_ORG
+        space: $CF_SPACE
+        appname: docs-a
+        alt_appname: docs-b
+        route: docs.cf.18f.us
+        skip_ssl: true
