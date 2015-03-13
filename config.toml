@@ -1,0 +1,34 @@
+baseurl = "https://docs.cf.18f.us/"
+MetaDataFormat = "yaml"
+title = "docs.cf.18f.us"
+
+[params]
+  description = "Documentation for 18f Cloud Foundry"
+  author = "18f"
+
+
+[[menu.main]]
+    name = "Getting Started"
+    identifier = "getting-started"
+    pre = "<i class='fa fa-road'></i>"
+    weight = -120
+[[menu.main]]
+    name = "Deploying Apps"
+    identifier = "apps"
+    pre = "<i class='fa fa-file-text'></i>"
+    weight = -110
+[[menu.main]]
+    name = "Operations"
+    identifier = "ops"
+    pre = "<i class='fa fa-wrench'></i>"
+    weight = -90
+[[menu.main]]
+    name = "Standards"
+    identifier = "standards"
+    pre = "<i class='fa fa-desktop'></i>"
+    weight = -85
+[[menu.main]]
+    name = "Updates"
+    identifier = "updates"
+    pre = "<i class='fa fa-columns'></i>"
+    weight = -80
