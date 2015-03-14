@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+    {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+    {{ .Hugo.Generator }}
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    <title>{{ .Title }}</title>
+
+    <link href="/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style-responsive.css" rel="stylesheet" />
+    <link href="/css/monokai_sublime.css" rel="stylesheet" />
+
+  </head>
+
+  <body>
+  <!-- container section start -->
+  <section id="container" class="">
+
+      <!--header start-->
+      <header class="header black-bg">
+            <div class="toggle-nav">
+                <i class="fa fa-bars"></i>
+                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"></div>
+            </div>
+
+            <!--logo start-->
+            <a href="/" title="Home">
+              <h2 class="main">{{ .Site.Title }}</h2>
+            </a>
+            <!--logo end-->
+            <div class="top-nav notification-row">
+            </div>
+
+            <div class="nav title-row" id="top_menu">
+                <h1 class="nav top-menu">{{ .Title }}</h1>
+            </div>
+      </header>
+      <!--header end-->
+
+{{ partial "menu.html" . }}
+
+      <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+
+              <div class="row">
+                  <div class="col-md-1">
+                      {{ if .IsPage }}
+                      {{ with .GetParam "prev" }}
+                      <a class="navigation prev" href="{{.}}">
+                      <i class="fa fa-angle-left"></i>
+                      </a>
+                      {{ end }}
+                      {{ end }}
+                  </div>
+                <div class="col-md-10">
+                    <section class="panel">
+                      <div class="panel-body">

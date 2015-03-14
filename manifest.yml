@@ -1,0 +1,8 @@
+---
+applications:
+- name: docs-a
+- name: docs-b
+memory: 64M
+buildpack: https://github.com/dlapiduz/staticfile-buildpack.git#force-https
+env:
+  FORCE_HTTPS: true
