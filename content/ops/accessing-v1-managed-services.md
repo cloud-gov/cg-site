@@ -1,4 +1,10 @@
-### Accessing v1 Managed Services
+---
+menu:
+  main:
+    parent: ops
+title: Accessing v1 Managed Services
+weight: 10
+---
 
 #### Background:
 

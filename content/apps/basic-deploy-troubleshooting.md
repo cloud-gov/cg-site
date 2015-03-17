@@ -1,4 +1,10 @@
-### Basic Deploy Troubleshooting
+---
+menu:
+  main:
+    parent: apps
+title: Basic Deploy Troubleshooting
+weight: 10
+---
 
 The most direct way to view events related to your application through the deploy process is `cf logs APPNAME`. Used alone, `cf logs` will tail the combined stream of logs from each Cloud Foundry service involved in your application deploy. Running with the recent flag as in `cf logs APPNAME --recent` will stream the entire loggregator buffer for your app.
 
