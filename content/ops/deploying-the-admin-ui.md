@@ -21,9 +21,9 @@ The Cloud Foundry Admin UI provides a high level overview of metrics pulled from
 
 #### Procedure
 
-1. [Deployment](#deployment)
-1. [Configuration](#configuration)
-1. [Operation](#operation)
+1. [Deployment]({{< relref "#deployment" >}})
+1. [Configuration]({{< relref "#configuration" >}})
+1. [Operation]({{< relref "#operation" >}})
 
 #### Deployment
 

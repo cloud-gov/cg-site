@@ -89,7 +89,7 @@ Add the vagrant box needed to launch replacing `bosh-stemcell-937f30` with the c
 
 	vagrant box add --name bosh-stemcell-937f30 https://bosh-jenkins-artifacts.s3.amazonaws.com/bosh-vagrant-boxes/bosh-stemcell-937f30-aws.box
 
-Otherwise, the [vagrant up](#build-the-stemcell-builder-vm) step below may fail with the error.
+Otherwise, the [vagrant up]({{< relref "#build-the-stemcell-builder-vm" >}}) step below may fail with the error.
 
 	AWS Provider:
 	* vagrant_aws.config.ami_required
