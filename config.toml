@@ -22,3 +22,13 @@ title = "docs.cf.18f.us"
     identifier = "ops"
     pre = "<i class='fa fa-wrench'></i>"
     weight = -90
+[[menu.main]]
+    name = "Standards"
+    identifier = "standards"
+    pre = "<i class='fa fa-desktop'></i>"
+    weight = -85
+[[menu.main]]
+    name = "Updates"
+    identifier = "updates"
+    pre = "<i class='fa fa-columns'></i>"
+    weight = -80

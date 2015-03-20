@@ -19,13 +19,6 @@
                     <li{{if $currentNode.IsMenuCurrent "main" . }} class="active"{{end}}><a href="{{.Url}}">{{ .Name }}</a> </li>
                     {{ end }}
                 </ul>
-              {{else}}
-                <li>
-                <a class="" href="{{.Url}}">
-                    {{ .Pre }}
-                    <!--<i class="icon_house_alt"></i>-->
-                    <span>{{ .Name }}</span>
-                </a>
               {{end}}
               </li>
           {{end}}
