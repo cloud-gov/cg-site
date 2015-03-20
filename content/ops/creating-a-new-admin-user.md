@@ -21,15 +21,15 @@ The [User Account and Authentication server](https://github.com/cloudfoundry/uaa
 
 #### Procedure:
 
-1. [Installing the UAA CLI](#installing-the-uaa-cli)
-1. [Specifying the UAA Target](#specifying-the-uaa-target)
-1. [Obtaining A Token](#obtaining-a-token)
-1. [Confirming Authorization](#confirming-authorization)
-1. [Missing Permissions](#missing-permissions)
-1. [Creating A New User](#creating-a-new-user)
-1. [Adding User Permissions](#adding-permissions)
-1. [Confirming Creation](#confirming-creation)
-1. [Additional Resources](#additional-resources)
+1. [Installing the UAA CLI]({{< relref "#installing-the-uaa-cli" >}})
+1. [Specifying the UAA Target]({{< relref "#specifying-the-uaa-target" >}})
+1. [Obtaining A Token]({{< relref "#obtaining-a-token" >}})
+1. [Confirming Authorization]({{< relref "#confirming-authorization" >}})
+1. [Missing Permissions]({{< relref "#missing-permissions" >}})
+1. [Creating A New User]({{< relref "#creating-a-new-user" >}})
+1. [Adding User Permissions]({{< relref "#adding-user-permissions" >}})
+1. [Confirming Creation]({{< relref "#confirming-creation" >}})
+1. [Additional Resources]({{< relref "#additional-resources" >}})
 
 ##### Installing the UAA CLI:
 
@@ -50,7 +50,7 @@ At the `Client secret:` prompt enter the secret specified in `uaa:admin:client_s
 Note: The client secret can specified on the command line with the `-s` switch, but it’s a good habit to avoid the possibility of leaving secrets in your shell history.
 
 	Client secret:  ********************************
-	
+
 	Successfully fetched token via client credentials grant.
 	Target: https://uaa.cf.18f.us
 	Context: admin, from client admin
@@ -61,7 +61,7 @@ Use `uaac context` to confirm your current authorization and permissions.
 
 	[1]*[https://uaa.cf.18f.us]
 	  skip_ssl_validation: true
-	
+
 	  [0]*[admin]
 	    client_id: admin
 	    access token: ****
@@ -95,7 +95,7 @@ Now that we have a authorization token bearing the scim.write permission in hand
 
 You’ll be prompted to provide an initial password.  Currently, we’re using first.last@gsa.gov as the convention for new usernames with the same for email.
 
-**Note:** The client secret can specified on the command line with the `-p` switch, but it’s a good habit to avoid the possibility of leaving secrets in your shell history. 
+**Note:** The client secret can specified on the command line with the `-p` switch, but it’s a good habit to avoid the possibility of leaving secrets in your shell history.
 
 
 ##### Adding User Permissions:
@@ -115,7 +115,7 @@ We can view information about the newly created user by filtering the output of 
 
 **Output:**
 
-	resources: 
+	resources:
 	  -
 	    id: ***
 	    meta
@@ -123,21 +123,21 @@ We can view information about the newly created user by filtering the output of 
 	      created: 2015-02-25T02:10:06.566Z
 	      lastmodified: 2015-02-25T02:10:06.566Z
 	    name
-	    emails: 
+	    emails:
 	    -
 	      value: first.last@gsa.gov
-	    groups: 
+	    groups:
 	    -
 	      value: ***
 	      display: cloud_controller.read
 	      type: DIRECT
-	      
+
 		...lots of groups...
-		
+
 	      value: ***
 	      display: oauth.approvals
 	      type: DIRECT
-	    approvals: 
+	    approvals:
 	    active: true
 	    verified: false
 	    origin: uaa
