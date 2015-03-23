@@ -17,6 +17,7 @@ Say you have an existing deployment on Cloud Foundry, and you want to make a new
 
 1. Use [manifest inheritance](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#multi-manifests) to do any necessary configuration.
 1. Run `cf push <NEW_APP_NAME> -f <PATH_TO_MANIFEST>`.
+1. Make sure to run any necessary database setup commands, etc.
 
 ## If you don't have a manifest
 
@@ -36,3 +37,5 @@ Say you have an existing deployment on Cloud Foundry, and you want to make a new
     ```bash
     cf push <NEW_APP_NAME> -f <NEW_APP_NAME>_manifest.yml
     ```
+
+1. Make sure to run any necessary database setup commands, etc. for the new application.
