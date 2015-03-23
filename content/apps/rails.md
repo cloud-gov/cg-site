@@ -30,13 +30,6 @@ See the official CF guide: [Getting Started Deploying Ruby on Rails Apps](http:/
     # etc.
     ```
 
-1. [Migrate the database](http://docs.cloudfoundry.org/devguide/services/migrate-db.html#occasional-migration).
-
-    ```bash
-    # note: this currently requires stopping the application
-    cf push <APP_NAME> -c 'rake db:migrate' -i 1
-    # re-start the server process
-    cf push <APP_NAME> -c 'null' -i 1
-    ```
+1. [SSH into the application](/getting-started/cf-ssh/), then run `rake db:setup`.
 
 Your app should now be live at `APP_NAME.cf.18f.us`!
