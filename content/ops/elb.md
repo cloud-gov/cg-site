@@ -35,7 +35,7 @@ The CloudFormation JSON above is built to represent the following workflow:
 
 * Pick a name, and select the `CloudFoundry-live` VPC. Select HTTPS for the Load Balancer protocol, and HTTP for the Instance protocol.
 
-![creating the elb](/img/elb-init.png)
+![creating the elb](/static/img/elb-init.png)
 
 * Select the HTTPS certificate that corresponds to the domain name being used for the ELB. Find it by the name you selected when you uploaded the certificate and key.
 
