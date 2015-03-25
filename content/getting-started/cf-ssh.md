@@ -21,7 +21,7 @@ Our `cf-ssh` is customized to our Cloud Foundry installation so please **do not 
 
 ### Usage
 
-1. Create a [manifest file](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html), if you don't have one already.
+1. If you don't have an [application manifest](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) yet, generate one from an existing app with `cf create-app-manifest <APP_NAME>`.
 1. In your project folder, run `cf-ssh <APP_NAME> -f <PATH_TO_MANIFEST>`.
     * If you want to receive more feedback about what `cf-ssh` is doing please run it with the `--verbose` flag.
 
