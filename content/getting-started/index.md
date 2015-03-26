@@ -94,7 +94,7 @@ Every application is scoped to a "space". Applications in the same space share a
 
 ### Naming convention
 
-Within 18F, the `SPACENAME` will correspond to an environment, e.g. `dev` or `prod`. If the org is more general (e.g. `devops`), the space may correspond to the name of the project (e.g. `hubot`).
+For simple organizations where there's only going to be a single application per environment, just use a single space called `general`. If the org is more general (e.g. `devops`), the space may correspond to the name of the project (e.g. `hubot`).
 
 ### Management
 
