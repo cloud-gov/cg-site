@@ -33,3 +33,11 @@ See the official CF guide: [Getting Started Deploying Ruby on Rails Apps](http:/
 1. [SSH into the application](/getting-started/cf-ssh/), then run `rake db:setup`.
 
 Your app should now be live at `APP_NAME.cf.18f.us`!
+
+## Migrations
+
+1. Deploy the new code.
+1. [SSH into the application](/getting-started/cf-ssh/).
+1. From the SSH terminal, run `rake db:setup`.
+1. `exit` from SSH.
+1. Run `cf restart <APP_NAME>` to have Rails pick up new column metadata.
