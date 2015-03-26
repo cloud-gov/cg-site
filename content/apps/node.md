@@ -10,23 +10,29 @@ Deploying a basic node.js application to Cloud Foundry is relatively uncomplicat
 
 **Summary:**
 
-- Include a package.json file to specify dependencies and a start command. The presence of this file is essential to have the application [detected as node.js](https://github.com/cloudfoundry/nodejs-buildpack/blob/master/bin/detect) and the start script specified within will be [used to launch your app](https://github.com/cloudfoundry/nodejs-buildpack/blob/94949f6d7c2ee6c84ee04edcc9c94a5454047b75/bin/compile#L134-147).
-- Avoid using the `command:` manifest key to start your application as this functionality [may be removed](https://github.com/cloudfoundry/nodejs-buildpack/pull/11#issuecomment-67666273) and the aforementioned npm start script is preferred.
+- Include a package.json file to specify dependencies and a `start` command. The presence of this file is essential to have the application [detected as node.js](https://github.com/cloudfoundry/nodejs-buildpack/blob/master/bin/detect) and the start script specified within will be [used to launch your app](https://github.com/cloudfoundry/nodejs-buildpack/blob/94949f6d7c2ee6c84ee04edcc9c94a5454047b75/bin/compile#L134-147).
 
-    ```json
+    ```javascript
     {
-    ...
+      // ...
       "scripts": {
         "start": "node app.js"
-      },
-      "dependencies": {
-        "cfenv": "*",
-      ...
       }
     }
     ```
 
+- Avoid using the `command:` manifest key to start your application, as this functionality [may be removed](https://github.com/cloudfoundry/nodejs-buildpack/pull/11#issuecomment-67666273). The aforementioned npm start script is preferred.
 - Use the [cfenv](https://www.npmjs.com/package/cfenv) module to assist with parsing the `VCAP_APPLICATION` and `VCAP_SERVICES` environment variables.
+
+    ```javascript
+    {
+      // ...
+      "dependencies": {
+        "cfenv": "*",
+        // ...
+      }
+    }
+    ```
 
     ```javascript
     var cfenv = require("cfenv");
@@ -34,7 +40,7 @@ Deploying a basic node.js application to Cloud Foundry is relatively uncomplicat
     uri = appEnv.getServiceURL("beckley-es");
     ```
 
-- Ensure the app listens on the Cloud Foundry assigned port
+- Ensure the app listens on the Cloud Foundry assigned port.
 
     ```javascript
     config.app.port = appEnv.port;
@@ -42,13 +48,12 @@ Deploying a basic node.js application to Cloud Foundry is relatively uncomplicat
 
 - Include dependencies for any service bindings.
 
-    ```json
+    ```javascript
     {
-    ...
+      // ...
       "dependencies": {
-        ...
         "es": "*",
-      ...
+        // ...
       }
     }
     ```
