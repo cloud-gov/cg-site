@@ -18,7 +18,7 @@ cf set-space-role ORGNAME_deployer ORG SPACE SpaceDeveloper
 
 ***
 
-Depending on your CI system the setup is going to be a bit different.
+Depending on your CI system the setup is going to be a bit different. **For all cases you will need a `manifest.yml` file.**
 
 ### Travis
 
