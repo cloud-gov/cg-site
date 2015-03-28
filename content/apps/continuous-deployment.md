@@ -22,6 +22,8 @@ Depending on your CI system the setup is going to be a bit different.
 
 ### Travis
 
+**THIS SOLUTION DOESN'T CURRENTLY WORK SINCE TRAVIS DOES NOT SUPPORT `--skip-ssl-validation` for CF**
+
 Per [http://docs.travis-ci.com/user/deployment/cloudfoundry/](http://docs.travis-ci.com/user/deployment/cloudfoundry/) you need to add this section to your `.travis.yml` file:
 
 ```
@@ -36,8 +38,6 @@ deploy:
 ```
 
 Replace `DEPLOYER_USER`, `ORG`, and `SPACE` accordingly and run `travis encrypt --add deploy.password --skip-version-check` to enter your password.
-
-**THIS SOLUTION DOESN'T CURRENTLY WORK SINCE TRAVIS DOES NOT SUPPORT `--skip-ssl-validation` for CF**
 
 ***
 
