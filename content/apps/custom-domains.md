@@ -18,5 +18,8 @@ weight: 10
     1. For `Alias`, select `Yes`.
     1. For `Alias Target`, type the name of your ELB and select it from the list.
         * For `*.18.us` domains, use `dualstack.cf-app-router-*`.
-1. Set up on the Cloud Foundry side.
-    * TODO
+1. Create and assign the domain in Cloud Foundry.
+    * [Root / second-level domain (SLD)](http://docs.cloudfoundry.org/devguide/deploy-apps/domains-routes.html#root-app)
+    * [Subdomain](http://docs.cloudfoundry.org/devguide/deploy-apps/domains-routes.html#subdomain-app)
+
+See also: [official Cloud Foundry documentation](http://docs.cloudfoundry.org/devguide/deploy-apps/domains-routes.html).
