@@ -65,6 +65,8 @@ deployment:
 
 Replace `DEPLOYER_USER`, `ORG`, and `SPACE` accordingly and export the `CF_PASS` environment variable in the Circle interface to add your password.
 
+**Note**: if your `manifest.yml` describes more than one app you might want to specify which app to push in the `cf push` line.
+
 ***
 
 ### Wercker
