@@ -21,7 +21,7 @@ weight: 10
 1. Create and assign the domain in Cloud Foundry.
 
     ```bash
-    cf create-domain <DOMAIN>
+    cf create-domain <ORG> <DOMAIN>
     cf map-route <APP> <DOMAIN>
     ```
 
