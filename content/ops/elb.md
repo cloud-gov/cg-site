@@ -8,7 +8,7 @@ weight: 10
 
 Currently, we are fronting Cloud Foundry apps with an Elastic Load Balancer (ELB) in the Cloud Foundry VPC. The ELB terminates HTTPS, and forwards HTTP traffic within the VPC.
 
-ELBs need to be created directly in the console or through the AWS API, not using `cf` commands.
+ELBs need to be created directly through the AWS console or API, not using `cf` commands.
 
 ### Creating and uploading the HTTPS certificate
 
