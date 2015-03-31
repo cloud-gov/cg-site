@@ -9,7 +9,7 @@ weight: 10
 Setting up continuous deployment allows you to automatically upload your
 changes to your desired enivronment.
 
-The first thing you need to do is setup a "deployer" user in your organization and give it permission to deploy to the desired space:
+The first thing you need to do is ask an admin to setup a "deployer" user in your organization and give it permission to deploy to the desired space:
 
 ```
 cf create-user ORGNAME_deployer RANDOM-PASSWORD
