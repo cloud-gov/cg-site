@@ -10,12 +10,7 @@ See the official CF guide: [Getting Started Deploying Ruby on Rails Apps](http:/
 
 1. Follow the setup instructions in [Getting Started](/getting-started/).
     * You can skip anything labeled "Management".
-1. [Ignore files](http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html#exclude) ignored by Git.
-
-    ```bash
-    cp .gitignore .cfignore
-    ```
-
+1. [Exclude files ignored by Git]({{< relref "apps/deployment.md#excluding-files" >}}).
 1. Create the application on Cloud Foundry.
 
     ```bash

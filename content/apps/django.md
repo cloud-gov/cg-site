@@ -14,17 +14,12 @@ There's no explicit command to create an app, but:
 cf push APPNAME
 ```
 
-will create or reploy the app APPNAME. But before you deploy, let's set up a few things.
+will create or deploy the app APPNAME. But before you deploy, let's set up a few things.
 
-### The `.cfignore`
+### Ignoring files
 
-First thing, you'll probably want to copy your `.gitignore` file:
-
-```bash
-cp .gitignore .cfignore
-```
-
-Cloud Foundry uses a file format identical to .gitignore to decide which files to ignore when deploying. You'll definitely want to put `*.pyc` and `local_settings.py` in there.
+1. Add `*.pyc` and `local_settings.py` to your `.gitignore`.
+1. [Exclude your `.gitignore`d files from Cloud Foundry.]({{< relref "apps/deployment.md#excluding-files" >}})
 
 ### The Python runtime
 
