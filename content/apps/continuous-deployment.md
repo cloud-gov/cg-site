@@ -7,7 +7,7 @@ weight: 10
 ---
 
 Setting up continuous deployment allows you to automatically upload your
-changes to your desired enivronment.
+changes to your desired environment.
 
 The first thing you need to do is ask an admin to setup a "deployer" user in your organization and give it permission to deploy to the desired space:
 
@@ -37,7 +37,7 @@ deploy:
   space: SPACE
 ```
 
-Replace `DEPLOYER_USER`, `ORG`, and `SPACE` accordingly and run `travis encrypt --add deploy.password --skip-version-check` to enter your password.
+Replace `DEPLOYER_USER`, `ORG`, and `SPACE` accordingly and run `travis encrypt --add deploy.password --skip-version-check` to enter the deployer's password.
 
 ***
 
@@ -63,7 +63,7 @@ deployment:
       - cf push
 ```
 
-Replace `DEPLOYER_USER`, `ORG`, and `SPACE` accordingly and export the `CF_PASS` environment variable in the Circle interface to add your password.
+Replace `DEPLOYER_USER`, `ORG`, and `SPACE` accordingly and export the `CF_PASS` environment variable in the Circle interface to add the deployer's password.
 
 **Note**: if your `manifest.yml` describes more than one app you might want to specify which app to push in the `cf push` line.
 
