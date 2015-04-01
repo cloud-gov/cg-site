@@ -92,13 +92,9 @@ cf target -o ORGNAME
 
 Every application is scoped to a "space". Applications in the same space share a location for app development, deployment, and maintenance.
 
-### Naming convention
-
-Within 18F, the `SPACENAME` will correspond to an environment, e.g. `dev` or `prod`. If the org is more general (e.g. `devops`), the space may correspond to the name of the project (e.g. `hubot`).
-
 ### Management
 
-To create a space:
+For most organizations, having a single space called `general` will work. To create a space:
 
 ```bash
 cf create-space SPACENAME
