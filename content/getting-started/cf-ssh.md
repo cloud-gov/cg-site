@@ -22,7 +22,7 @@ Our `cf-ssh` is customized to our Cloud Foundry installation so please **do not 
 ### Usage
 
 1. If you don't have an [application manifest](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) yet, generate one from an existing app with `cf create-app-manifest <APP_NAME>`.
-1. In your project folder, run `cf-ssh <APP_NAME> -f <PATH_TO_MANIFEST>`.
+1. In your project folder, run `cf-ssh <APP_NAME> -f <PATH_TO_MANIFEST>` (`-f` option only needed if the file isn't named `manifest.yml`).
     * If you want to receive more feedback about what `cf-ssh` is doing please run it with the `--verbose` flag.
-
-The process takes between 2 to 10 minutes to start the session since it is compiling your application in the background.
+1. The process takes between 2 to 10 minutes to start the session since it is compiling your application in the background. When it completes, you will see a command prompt.
+1. When done, run `exit`.
