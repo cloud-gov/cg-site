@@ -8,7 +8,7 @@ build:
   steps:
     - arjen/hugo-build:
         version: 0.13
-        flags: --destination="out"
+        flags: --destination=out
 deploy:
   steps:
     - dlapiduz/cloud-foundry-deploy:
