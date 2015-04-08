@@ -17,7 +17,7 @@ weight: 10
     1. Click "Create Record Set".
     1. For `Alias`, select `Yes`.
     1. For `Alias Target`, type the name of your ELB and select it from the list.
-        * For `*.18.us` domains, use `dualstack.cf-app-router-*`.
+        * For `*.18f.us` domains, use `dualstack.cf-app-router-*`.
 1. Create and assign the domain in Cloud Foundry.
 
     ```bash
