@@ -19,6 +19,5 @@ deploy:
         space: $CF_SPACE
         appname: docs-a
         alt_appname: docs-b
-        domain: cf.18f.us
+        domain: 18f.gov
         hostname: docs
-        skip_ssl: true

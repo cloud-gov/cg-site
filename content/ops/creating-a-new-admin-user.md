@@ -39,7 +39,7 @@ The [User Account and Authentication server](https://github.com/cloudfoundry/uaa
 
 For now, we’ll need to skip ssl validation as shown. In a production environment the `--skip-ssl-validation` switch should not be required.
 
-	uaac --skip-ssl-validation target uaa.cf.18f.us
+	uaac --skip-ssl-validation target uaa.18f.gov
 
 ##### Obtaining A Token:
 
@@ -52,14 +52,14 @@ Note: The client secret can specified on the command line with the `-s` switch, 
 	Client secret:  ********************************
 
 	Successfully fetched token via client credentials grant.
-	Target: https://uaa.cf.18f.us
+	Target: https://uaa.18f.gov
 	Context: admin, from client admin
 
 ##### Confirming Authorization:
 
 Use `uaac context` to confirm your current authorization and permissions.
 
-	[1]*[https://uaa.cf.18f.us]
+	[1]*[https://uaa.18f.gov]
 	  skip_ssl_validation: true
 
 	  [0]*[admin]

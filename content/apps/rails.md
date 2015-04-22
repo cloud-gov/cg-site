@@ -27,4 +27,4 @@ See the official CF guide: [Getting Started Deploying Ruby on Rails Apps](http:/
 
 1. [SSH into the application](/getting-started/cf-ssh/), then run `rake db:setup`.
 
-Your app should now be live at `APP_NAME.cf.18f.us`!
+Your app should now be live at `APP_NAME.18f.gov`!
