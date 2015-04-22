@@ -1,6 +1,6 @@
-baseurl = "https://docs.cf.18f.us/"
+baseurl = "https://docs.18f.gov/"
 MetaDataFormat = "yaml"
-title = "docs.cf.18f.us"
+title = "docs.18f.gov"
 
 [params]
   description = "Documentation for 18f Cloud Foundry"
