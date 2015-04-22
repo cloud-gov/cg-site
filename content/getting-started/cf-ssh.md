@@ -6,6 +6,10 @@ title: Running one off tasks
 weight: 100
 ---
 
+***NOTE: `cf-ssh` is currently [broken](https://trello.com/c/5QkbdHl1/69-fix-cf-ssh). See [the old-school way](http://docs.cloudfoundry.org/devguide/services/migrate-db.html#occasional-migration) of running one-off commands for now.***
+
+---
+
 There are a couple ways to run one off tasks in Cloud Foundry. The easiest one is running CF SSH.
 
 ## CF SSH
