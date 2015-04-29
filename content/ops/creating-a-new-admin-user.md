@@ -37,9 +37,7 @@ The [User Account and Authentication server](https://github.com/cloudfoundry/uaa
 
 ##### Specifying the UAA Target:
 
-For now, we’ll need to skip ssl validation as shown. In a production environment the `--skip-ssl-validation` switch should not be required.
-
-	uaac --skip-ssl-validation target uaa.18f.gov
+	uaac target uaa.18f.gov
 
 ##### Obtaining A Token:
 
