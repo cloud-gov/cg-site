@@ -24,7 +24,7 @@ Depending on your CI system the setup is going to be a bit different. **For all 
 
 Per [http://docs.travis-ci.com/user/deployment/cloudfoundry/](http://docs.travis-ci.com/user/deployment/cloudfoundry/) you need to add this section to your `.travis.yml` file:
 
-```
+```yaml
 deploy:
   edge: true
   provider: cloudfoundry
@@ -33,6 +33,12 @@ deploy:
   api: https://api.18f.gov
   organization: ORG
   space: SPACE
+```
+
+You will also need to require `sudo` rights for your Travis build (now off by default) in your `.travis.yml`:
+
+```yaml
+sudo: required
 ```
 
 Replace `DEPLOYER_USER`, `ORG`, and `SPACE` accordingly and run `travis encrypt --add deploy.password --skip-version-check` to enter the deployer's password.
