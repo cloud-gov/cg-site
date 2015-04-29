@@ -52,7 +52,7 @@ dependencies:
 
 test:
   post:
-    - cf login -a https://api.18f.gov -u DEPLOYER_USER -p $CF_PASS -o ORG -s SPACE --skip-ssl-validation
+    - cf login -a https://api.18f.gov -u DEPLOYER_USER -p $CF_PASS -o ORG -s SPACE
 
 deployment:
   production:

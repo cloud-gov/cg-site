@@ -46,7 +46,7 @@ You will need a Cloud Foundry account before continuing. Please [create an issue
 ### Log in
 
 ```bash
-cf api --skip-ssl-validation https://api.18f.gov
+cf api https://api.18f.gov
 cf login
 ```
 
