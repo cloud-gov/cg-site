@@ -46,7 +46,7 @@ App dependency specification.
 
 - Dependencies are resolved during staging. For information beyond what's presented in `cf logs` Use the the verbose logging option for your buildpack if availble.
 
-	For example, `cf set env APPANME VERBOSE true` enables verbose logging for the default node.js buildpack.
+	For example, `cf set-env APPNAME VERBOSE true` enables verbose logging for the default node.js buildpack.
 
 App size and build complexity.
 
