@@ -4,7 +4,10 @@ type: index
 
 # 18F Cloud Foundry Documentation
 
-Welcome! Find the section you need on the left. Reach out in [#g-devops](https://18f.slack.com/messages/g-devops/) or [open an issue](https://github.com/18F/cloud-foundry-notes/issues/new) if you need anything.
+Welcome! Cloud Foundry is an open source Platform-as-a-Service (PaaS) system for managing the deployment of apps, services, and background tasks. 18F is starting to use it for many of our development and production systems.
+
+
+Find the section you need on the left. Reach out in [#g-devops](https://18f.slack.com/messages/g-devops/) or [open an issue](https://github.com/18F/cloud-foundry-notes/issues/new) if you need anything.
 
 ## Public domain
 

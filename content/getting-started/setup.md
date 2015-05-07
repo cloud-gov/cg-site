@@ -6,8 +6,6 @@ title: Setup
 weight: -100
 ---
 
-Cloud Foundry is an open source Platform-as-a-Service (PaaS) system for managing the deployment of apps, services, and background tasks. 18F is evaluating it for use in our development and production systems.
-
 ## Installing the CLI
 
 Interacting with Cloud Foundry is easiest through the `cf` command line interface.
