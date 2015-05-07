@@ -6,6 +6,8 @@ title: Concepts
 weight: 100
 ---
 
+Official glossary: http://docs.cloudfoundry.org/concepts/glossary.html
+
 ## Organizations
 
 Cloud Foundry groups its users by [organizations](http://docs.cloudfoundry.org/concepts/roles.html#orgs), or "orgs" for short. Orgs group together users for management and present a shared perimeter for services, domains and quotas. When your account is created, it will be given permissions to an org and a personal space.
@@ -35,7 +37,7 @@ cf org ORGNAME
 In order to work with spaces, you'll need to do this first:
 
 ```bash
-cf target -o ORGNAME`
+cf target -o ORGNAME
 ```
 
 ## Spaces
