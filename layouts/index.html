@@ -1,5 +1,9 @@
 {{ partial "header.html" . }}
 
-Welcome to the 18F Cloud Foundry documentation page, find the section you need on the left.
+{{ range .Data.Pages }}
+    {{if eq .Type "index" }}
+        {{.Content}}
+    {{end}}
+{{ end }}
 
 {{ partial "footer.html" . }}
