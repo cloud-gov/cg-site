@@ -3,7 +3,7 @@ menu:
   main:
     parent: apps
 title: General Deployment Tips
-weight: 10
+weight: -10
 ---
 
 ## How deployment works
