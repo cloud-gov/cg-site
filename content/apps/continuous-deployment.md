@@ -86,6 +86,12 @@ buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
 
 See [18F/notalone](https://github.com/18F/notalone) and [18F/18f.gsa.gov](https://github.com/18F/18f.gsa.gov)] for working examples.
 
+**Additional Resources:**
+
+- [Jekyll - Continuous Integration](http://jekyllrb.com/docs/continuous-integration/)
+- [Travis - Cloud Foundry Deployment](http://docs.travis-ci.com/user/deployment/cloudfoundry/)
+- [Travis - The Lifecycle of a Tavis CI Build](http://docs.travis-ci.com/user/build-lifecycle/)
+
 ***
 
 ### CircleCI
