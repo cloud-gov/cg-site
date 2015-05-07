@@ -43,6 +43,55 @@ sudo: required
 
 Replace `DEPLOYER_USER`, `ORG`, and `SPACE` accordingly and run `travis encrypt --add deploy.password --skip-version-check` to enter the deployer's password.
 
+#### Jekyll Site
+
+Deploying a Jekyll site requires a few changes to your `.travis.yml` and `manifest.yml` as well as the addition of a `Staticfile` and `Gemfile`.
+
+Add or update your Gemfile to include the jekyll gem.
+
+**Gemfile**
+
+```
+source "https://rubygems.org"
+
+gem "jekyll"
+```
+
+Add the following lines to the top of your `.travis.yml` to pull Ruby and build the site. 
+
+**.travis.yml:**
+
+```yaml
+language: ruby
+rvm:
+- 2.1
+script: jekyll build ./_site
+```
+
+Add a Staticfile pointing to the root of the built site as specified above. The static buildpack will interpret with file.
+
+**Staticfile**
+
+```
+root: _site
+```
+
+Update manifest.yml to use the static buildpack.
+
+**manifest.yml**
+
+```
+buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git 
+```
+
+See [18F/notalone](https://github.com/18F/notalone) and [18F/18f.gsa.gov](https://github.com/18F/18f.gsa.gov) for working examples.
+
+**Additional Resources:**
+
+- [Jekyll - Continuous Integration](http://jekyllrb.com/docs/continuous-integration/)
+- [Travis - Cloud Foundry Deployment](http://docs.travis-ci.com/user/deployment/cloudfoundry/)
+- [Travis - The Lifecycle of a Travis CI Build](http://docs.travis-ci.com/user/build-lifecycle/)
+
 ***
 
 ### CircleCI
