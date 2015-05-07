@@ -51,3 +51,14 @@ Once you log in for the first time, you'll probably want to change your password
 ```bash
 cf passwd
 ```
+
+## Playing around
+
+If you want to practice deploying, run the following before continuing:
+
+
+```bash
+cf target -o sandbox -s <USERNAME>
+```
+
+Your `USERNAME` is probably the part of your email before the `@`, e.g. `FIRSTNAME.LASTNAME`. When you're done, please `cf delete <APPNAME>`.
