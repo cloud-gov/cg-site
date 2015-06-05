@@ -35,8 +35,6 @@ The CloudFormation JSON above is built to represent the following workflow:
 
 * Pick a name, and select the `CloudFoundry-live` VPC. Select HTTPS for the Load Balancer protocol, and HTTP for the Instance protocol.
 
-![creating the elb](/static/img/elb-init.png)
-
 * Select the HTTPS certificate that corresponds to the domain name being used for the ELB. Find it by the name you selected when you uploaded the certificate and key.
 
 * On the "Select a Cipher" screen, select `Custom Security Policy`, and set the ciphers in accordance with [18F's standard ELB ciphersuite](https://github.com/18F/tls-standards/blob/master/configuration/elb.md#ssl-ciphers).
