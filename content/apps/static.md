@@ -32,7 +32,7 @@ Create a `manifest.yml` that uses the [`staticfile-buildpack`](https://github.co
 applications:
 - name: my-static-site
   memory: 64M
-  buildpack: https://github.com/cloudfoundry-incubator/staticfile-buildpack.git
+  buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
   env:
     FORCE_HTTPS: true
 ```
