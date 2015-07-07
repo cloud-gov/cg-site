@@ -30,3 +30,14 @@ See the official CF guide: [Getting Started Deploying Ruby on Rails Apps](http:/
 1. [SSH into the application](/getting-started/cf-ssh/), then run `rake db:setup`.
 
 Your app should now be live at `APP_NAME.18f.gov`!
+
+## Troubleshooting Asset Precompilation
+
+By default, the Rails buildpack performs asset precompilation during the staging phase. This is fine for
+most Rails apps, but it won't work for those which need to connect to services (such as the database)
+during asset compilation. (For an example, see [MyUSA issue #636](https://github.com/18F/myusa/issues/636))
+
+There are multiple potential solutions for this. For more advice, see
+[the Cloud Foundry document on the subject](https://docs.cloudfoundry.org/buildpacks/ruby/ruby-tips.html#precompile).
+
+
