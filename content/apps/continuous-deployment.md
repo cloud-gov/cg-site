@@ -43,6 +43,8 @@ sudo: required
 
 Replace `DEPLOYER_USER`, `ORG`, and `SPACE` accordingly and run `travis encrypt --add deploy.password --skip-version-check` to enter the deployer's password.
 
+If you want to have continuous deployment on only a specific app or group of apps, the easiest solution is to isolate them in their own space.
+
 #### Jekyll Site
 
 Deploying a Jekyll site requires a few changes to your `.travis.yml` and `manifest.yml` as well as the addition of a `Staticfile` and `Gemfile`.
