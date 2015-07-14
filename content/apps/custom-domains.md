@@ -9,7 +9,7 @@ weight: 10
 ### Creating the [Load Balancer (ELB)](http://aws.amazon.com/elasticloadbalancing/)
 There needs to be one ELB pointing to Cloud Foundry per TLS certificate.
 
-* If domains under the cert already point to apps on Cloud Foundry (e.g. `18f.us`), you're all set.
+* If domains under the cert already point to apps on Cloud Foundry (e.g. `18f.us` or `18f.gov`), you're all set.
 * If not, follow the [ELB instructions]({{< relref "ops/elb.md" >}}).
 
 ### Creating the [Hosted Zone](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/AboutHZWorkingWith.html).
