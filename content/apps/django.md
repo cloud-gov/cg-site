@@ -122,7 +122,7 @@ To create and deploy your app:
 cf push APPNAME --no-start
 ```
 
-Normally, you would be able to view the site at `APPNAME.labs.18f.us`, but we gave the command the `--no-start` flag. Before we start the app we need to set up the database.
+Normally, you would be able to view the site at `APPNAME.18f.gov`, but we gave the command the `--no-start` flag. Before we start the app we need to set up the database.
 
 ## Setting Up the Database
 
@@ -147,4 +147,4 @@ Now try running the push command without the `--no-start` flag:
 cf push APPNAME
 ```
 
-It should now be running at `APPNAME.labs.18f.us`!
+It should now be running at `APPNAME.18f.gov`!
