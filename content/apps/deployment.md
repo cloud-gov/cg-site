@@ -41,4 +41,4 @@ Cloud Foundry isn't version-control-aware, so `cf push` will deploy the working 
 ln -s .gitignore .cfignore
 ```
 
-and commit the `.cfignore` to your repository.
+and commit the `.cfignore` to your repository. Note that more advanced git-ignore syntax, such as the `**` recursive subdirectory wildcard, may not be supported by `.cfignore`.
