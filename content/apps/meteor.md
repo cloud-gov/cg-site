@@ -58,10 +58,10 @@ You should customize the application name.
 
 ## Deploy
 
-Push using the [`cf-meteor-buildpack`](https://github.com/cloudfoundry-community/cf-meteor-buildpack).
+Simply run
 
 ```bash
-cf push hello-meteor -b https://github.com/csterwa/cf-meteor-buildpack.git
+cf push
 ```
 
 # With a database
