@@ -49,7 +49,7 @@ applications:
   memory: 128M
   instances: 1
   domain: 18f.gov
-  buildpack: https://github.com:18F/cf-meteor-buildpack.git
+  buildpack: https://github.com/18F/cf-meteor-buildpack.git
   env:
     FORCE_HTTPS: true
 ```
