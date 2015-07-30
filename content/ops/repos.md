@@ -20,4 +20,8 @@ Here are the repos with the tools and configuration for the platform:
 - 18F CF custom bosh release: https://github.com/18F/18f-cf-release
 - Hubot helpers: https://github.com/18F/hubot-cf
 - New Relic Bosh Release: https://github.com/cloudfoundry-community/newrelic-boshrelease
-- RDS Service Broker: https://github.com/dlapiduz/rds-broker
+- RDS Service Broker: https://github.com/cloudfoundry-community/rds-broker
+- Hardening Bosh Release: https://github.com/18f/harden-boshrelease
+- Secure Proxy Bosh Release: https://github.com/18f/secureproxy-boshrelease
+- Hello Worlds: https://github.com/18f/cf-hello-worlds
+- Cron App: https://github.com/18f/cf-cron
