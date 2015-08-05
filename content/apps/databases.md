@@ -6,7 +6,7 @@ title: Databases
 weight: 10
 ---
 
-The current recommendation is to use our RDS service broker to spin up and manage a database for you. If you need more control, however, you can use AWS-manages resources directly.
+The current recommendation is to use our RDS service broker to spin up and manage a database for you. If you need more control, however, you can use AWS-managed resources directly.
 
 ## Service Broker
 
