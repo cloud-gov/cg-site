@@ -6,7 +6,19 @@ title: Databases
 weight: 10
 ---
 
-While databases can be spun up within Cloud Foundry via [services](http://docs.cloudfoundry.org/devguide/services/), the preference is to use AWS-managed resources when possible. These make things like automatic backups easy to set up, and have a more sane default configuration than the default Postgres/MySQL install on Ubuntu.
+The current recommendation is to use our RDS service broker to spin up and manage a database for you. If you need more control, however, you can use AWS-managed resources directly.
+
+## Service Broker
+
+```bash
+cf create-service rds <PLAN> <DB_NAME>
+cf bind-service <APP_NAME> <DB_NAME>
+cf restage <APP_NAME>
+```
+
+Where `PLAN` is one of `shared-psql`, `micro-psql`, or `medium-psql`. The shared instance is preferred as an existing, shared database will be used. The other two options will take longer to spin up, but may be required by your application.
+
+This will create a new `DATABASE_URL` environment variable for your app. Note that for a Rails app, `bind-service` will [overwrite your `database.yml`](http://docs.cloudfoundry.org/buildpacks/ruby/ruby-service-bindings.html#rails-applications-have-autoconfigured-database-yml).
 
 ## RDS
 
@@ -29,15 +41,3 @@ While databases can be spun up within Cloud Foundry via [services](http://docs.c
     ```
 
 The [dj_database_url](https://github.com/kennethreitz/dj-database-url#url-schema) Python package README describes the possible formats of this URL.
-
-## Service
-
-To start a database service instance within Cloud Foundry (where `DB_NAME` is something like `APP_NAME-ENV-db`):
-
-```bash
-cf create-service postgresql default <DB_NAME>
-cf bind-service <APP_NAME> <DB_NAME>
-cf restage <APP_NAME>
-```
-
-Note that for a Rails app, this will [overwrite your `database.yml`](http://docs.cloudfoundry.org/buildpacks/ruby/ruby-service-bindings.html#rails-applications-have-autoconfigured-database-yml).
