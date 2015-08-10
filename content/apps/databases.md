@@ -20,7 +20,7 @@ cf bind-service <APP_NAME> <DB_NAME>
 cf restage <APP_NAME>
 ```
 
-If you want to use PostgreSQL, use the `rds` service rather than `postgresql*`. This gives you things like database snapshots automatically. The `shared-psql` plan(s) uses an existing instance, which is preferred for staging environments. For a production application, use `micro-psql` or `medium-psql`. To use the `rds` service with `myapp` in your staging environment, for example, you would do something like:
+If you want to use PostgreSQL, use the `rds` service rather than `postgresql*`. This gives you things like database snapshots automatically. The `shared-psql` plan(s) uses an existing instance, which is preferred for staging environments or simple open data apps. For a production application with sensitive data, use `micro-psql` or `medium-psql`. To use the `rds` service with `myapp` in your staging environment, for example, you would do something like:
 
 ```bash
 cf create-service rds shared-psql myapp-staging-db
