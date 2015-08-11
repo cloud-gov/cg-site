@@ -9,6 +9,12 @@ weight: 10
 Setting up continuous deployment allows you to automatically upload your
 changes to your desired environment.
 
+## Zero-downtime deployment
+
+Use the [`cf-blue-green`](https://github.com/18F/cf-blue-green) tool – see instructions in that repository.
+
+## Continuous integration services
+
 The first thing you need to do is ask an admin to setup a "deployer" user in your organization and give it permission to deploy to the desired space:
 
 ```
@@ -45,9 +51,7 @@ Replace `DEPLOYER_USER`, `ORG`, and `SPACE` accordingly and run `travis encrypt 
 
 #### Jekyll Site
 
-Deploying a Jekyll site requires a few changes to your `.travis.yml` and `manifest.yml` as well as the addition of a `Staticfile` and `Gemfile`.
-
-Add or update your Gemfile to include the jekyll gem.
+Deploying a Jekyll site requires a few changes to your `.travis.yml` and `manifest.yml` as well as the addition of a `Staticfile` and `Gemfile`. Add or update your Gemfile to include the jekyll gem.
 
 **Gemfile**
 
@@ -57,7 +61,7 @@ source "https://rubygems.org"
 gem "jekyll"
 ```
 
-Add the following lines to the top of your `.travis.yml` to pull Ruby and build the site. 
+Add the following lines to the top of your `.travis.yml` to pull Ruby and build the site.
 
 **.travis.yml:**
 
@@ -81,7 +85,7 @@ Update manifest.yml to use the static buildpack.
 **manifest.yml**
 
 ```
-buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git 
+buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
 ```
 
 See [18F/notalone](https://github.com/18F/notalone) and [18F/18f.gsa.gov](https://github.com/18F/18f.gsa.gov) for working examples.
