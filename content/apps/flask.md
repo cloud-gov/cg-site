@@ -26,7 +26,7 @@ will create or deploy the app APPNAME. But before you deploy, let's set up a few
 
 You _could_ use the built-in Werkzeug server to send out your Flask app, [but it's not recommended](http://flask.pocoo.org/docs/0.10/deploying/). As with Django, we recommend installing and using `waitress` for a WSGI server. Install it with `pip install waitress`.
 
-Switching your Flask app to serve with Waitress instead of the built-in server is fairly simple. The first thing you'll want to do is set an environment variable to pick up on the Cloud Foundry port for your app. This is set by Cloud Foundry for you so you don't have to worry about it, but you _do_ need to let Flask know about it. You can do that with this code:
+Switching your Flask app to serve with Waitress instead of the built-in server is fairly simple. The first thing you'll want to do is the app's port to the `VCAP_APP_PORT` environment variable. This is set by Cloud Foundry for you so you don't have to worry about it, but you _do_ need to let Flask know about it. And while you're developing locally you might want to set a local `VCAP_APP_PORT`. You can do that with this code:
 
 ```python
 port = port = int(os.getenv("VCAP_APP_PORT"))
@@ -35,26 +35,33 @@ port = port = int(os.getenv("VCAP_APP_PORT"))
 Here's how a basic Flask app might look:
 
 ```python
-app.run(host='0.0.0.0', port=port)
+from flask import Flask
+# do stuff
+if __name__ == "__main__":
+  app.run(host='0.0.0.0', port=port)
 ```
 
 We recommend modifying it like this:
 
 ```python
+from flask import Flask
 from waitress import serve
-// do stuff
-serve(app, port=port)
+# do stuff
+if __name__ == "__main__":
+  serve(app, port=port)
 ```
 
 If you still want to use the built-in server in development you could add an environment variable and do something like this:
 
 ```python
+from flask import Flask
 from waitress import serve
-// do stuff
-if os.environ['PRODUCTION'] == "0":
-  app.run(host='0.0.0.0', port=port)
-else:
-  serve(app, port=port)
+# do stuff
+if __name__ == "__main__":
+  if os.environ['PRODUCTION'] == "0":
+    app.run(host='0.0.0.0', port=port)
+  else:
+    serve(app, port=port)
 ```
 
 To add that environment variable, run:
@@ -67,7 +74,7 @@ In that example, `APPNAME` is the name your your app and `VALUE` is whatever you
 
 ### The Procfile
 
-The Procfile contains commands that Cloud Foundry will run to keep your site up. For just the Django site, create a file called `Procfile` and in it put
+The Procfile contains commands that Cloud Foundry will run to keep your site up. Create a file called `Procfile` and in it put
 
 ```
 web: python index.py
