@@ -34,13 +34,13 @@ port = port = int(os.getenv("VCAP_APP_PORT"))
 
 Here's how a basic Flask app might look:
 
-```
+```python
 app.run(host='0.0.0.0', port=port)
 ```
 
 We recommend modifying it like this:
 
-```
+```python
 from waitress import serve
 // do stuff
 serve(app, port=port)
