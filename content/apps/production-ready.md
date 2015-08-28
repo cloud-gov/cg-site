@@ -1,0 +1,39 @@
+---
+date: 2015-08-28T10:32:59-04:00
+menu:
+  main:
+    parent: apps
+title: Production Ready Checklist
+weight: 10
+---
+
+## Zero-Downtime deploy
+
+Your application should be able to be deployed without generating any downtime.
+Check out the [cf-blue-green](https://github.com/18F/cf-blue-green) script as a
+sample script.
+
+## More than one instance
+
+It is critical that your production application has more than one instance so if
+there any issue with one of the runners your app is on your app continues to work.
+
+## NewRelic (or similar)
+
+You want to be able to receive alerts about application errors and throughput issues.
+
+## Uptime monitor
+
+NewRelic provides uptime monitoring with "Insights". It is easy to set up and
+receive alerts for downtime.
+
+## Caching
+
+The best way to prevent performance issues is by having caching enabled on your
+application.
+Cloud.gov has a memcached service but you can also rely on S3 or file storage for caches.
+
+## Asset Serving
+
+It is best not to serve static files from Cloud.gov directly. You can store your
+files in S3 or point CloudFront to an assets folder so you serve your assets with a CDN.
