@@ -37,3 +37,8 @@ Cloud.gov has a memcached service but you can also rely on S3 or file storage fo
 
 It is best not to serve static files from Cloud.gov directly. You can store your
 files in S3 or point CloudFront to an assets folder so you serve your assets with a CDN.
+
+## Domain Delegation
+
+You will need a domain for your application. DNS delegation for the domain is the
+easiest path for getting the domain up and running.
