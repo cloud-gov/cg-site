@@ -30,10 +30,10 @@ sudo mv cf /usr/local/bin
 ### Confirm the installation
 
 ```bash
-cf --version
+cf -v
 ```
 
-As of this writing the current cf CLI version is `6.10.0-b78bf10`.
+As of this writing the current cf CLI version is `6.12.3-c0c9a03`.
 
 ## Setting up your account
 
