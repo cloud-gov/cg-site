@@ -37,6 +37,8 @@ applications:
     FORCE_HTTPS: true
 ```
 
+If the static content is included in a different folder, you can add a `path` declaration. E.g., `path: dist` or `path: assets`.
+
 Deploy:
 
 ```
