@@ -47,3 +47,7 @@ A couple of important points on the `.cfignore`:
 
 1. if you have a more advanced app setup and have apps with a `path` other than the project root (where you run `cf push` from), you will need an additional `.cfignore` file located in each app `path`;
 2. also note that more advanced `.gitignore` syntax, such as the `**` recursive subdirectory wildcard, are _not_ supported by `.cfignore`.
+
+## Deployment notifications
+
+If you would like to be notified about deployments in your Slack channel, follow [these instructions](https://github.com/18F/hubot-cf-notifications#adding-applications), and add the [configuration](https://github.com/18F/hubot-cf-notifications#configuration) to [Charlie](https://github.com/18F/18f-bot/blob/master/cf_config.json).
