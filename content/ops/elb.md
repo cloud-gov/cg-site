@@ -12,7 +12,7 @@ ELBs need to be created directly through the AWS console or API, not using `cf` 
 
 ### Creating and uploading the HTTPS certificate
 
-Create a valid HTTPS certificate using [18F's certificate issuance process](https://github.com/18F/tls-standards/tree/master/certificates), and follow the instructions there to [upload the key and certificate to the AWS ELB](https://github.com/18F/tls-standards/tree/master/certificates#in-an-elb).
+Go get a HTTPS certificate using [18F's standard  process](https://github.com/18F/https), and follow the instructions there to [upload the key and certificate to the AWS ELB](https://github.com/18F/https#in-an-elb).
 
 The name you set as part of the ELB certificate upload command will be used later.
 
@@ -26,7 +26,7 @@ Use [this CloudFormation JSON template](https://github.com/18F/cloud-foundry-man
 * **ELBSubnets**: Select the subnets. (See [`create-elb`](https://github.com/18F/DevOps/blob/master/cf/create-elb.sh) for current information.)
 * **HostedZoneName**: Type in the name of the hosted zone, e.g. `open.foia.gov`.
 * **ZoneName**: Type in the name of the subdomain in front of the hosted zone domain, if one applies.
-
+t
 ### Creating the ELB by hand
 
 The CloudFormation JSON above is built to represent the following workflow:
@@ -36,8 +36,6 @@ The CloudFormation JSON above is built to represent the following workflow:
 * Pick a name, and select the `CloudFoundry-live` VPC. Select HTTPS for the Load Balancer protocol, and HTTP for the Instance protocol.
 
 * Select the HTTPS certificate that corresponds to the domain name being used for the ELB. Find it by the name you selected when you uploaded the certificate and key.
-
-* On the "Select a Cipher" screen, select `Custom Security Policy`, and set the ciphers in accordance with [18F's standard ELB ciphersuite](https://github.com/18F/tls-standards/blob/master/configuration/elb.md#ssl-ciphers).
 
 * Pick whatever health check makes sense (usually `/`).
 
