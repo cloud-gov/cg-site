@@ -53,3 +53,14 @@ This isn't recommended, but if you need, you can create databases in RDS by hand
     ```
 
 The [dj_database_url](https://github.com/kennethreitz/dj-database-url#url-schema) Python package README describes the possible formats of this URL.
+
+## Access a postgres database using cf-ssh
+
+To access a service database, use the [cf-ssh](https://docs.18f.gov/getting-started/cf-ssh/) CLI to start an instance that is bound to the service and download the `psql` binary to that instance:
+
+    cf-ssh APP_NAME
+    curl https://s3.amazonaws.com/18f-cf-cli/psql-9.4.4-ubuntu-14.04.tar.gz | tar xvz
+    ./psql/bin/psql $DATABASE_URL
+
+You should now have an open `psql` terminal connected to the service database.
+
