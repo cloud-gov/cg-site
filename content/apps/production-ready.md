@@ -18,6 +18,11 @@ sample script.
 It is critical that your production application has more than one instance so if
 there any issue with one of the runners your app is on your app continues to work.
 
+### How:
+
+- Use a setting of `intances: 2` or more in your application `manifest.yml` to ensure your application is resilient when deployed.
+- Use `cf scale` to scale your running application instance count up and down.
+
 ## NewRelic (or similar)
 
 You want to be able to receive alerts about application errors and throughput issues.
