@@ -9,7 +9,7 @@ weight: 10
 ### Creating the [Load Balancer (ELB)](http://aws.amazon.com/elasticloadbalancing/)
 There needs to be one ELB pointing to Cloud Foundry per TLS certificate.
 
-** WARNING: Please create a ticket in (https://github.com/18f/devops)[https://github.com/18f/devops] with the name of every new ELB so it is added to BOSH. **
+** WARNING: Please [create a ticket](https://github.com/18f/devops/issues/new) in the DevOps repo with the name of every new ELB so it is added to BOSH. **
 
 * If domains under the cert already point to apps on Cloud Foundry (e.g. `18f.us` or `18f.gov`), you're all set.
 * If not, follow the [ELB instructions]({{< relref "ops/elb.md" >}}).
