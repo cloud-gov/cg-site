@@ -69,3 +69,22 @@ The Cloud Foundry CLI keeps a global state of whatever [organization]({{< relref
 ```bash
 cf target -o ORGNAME -s SPACENAME
 ```
+
+## Buildpacks
+
+All apps need to use a 'buildpack' specific to their language, which sets up dependencies for particular language stacks. There are standard buildpacks for most lanugages, and they will usually be auto-detected by CF. Using the standard buildpacks is strongly encouraged. In the rare case where the buildpack does not get detected correctly, or to use a custom buildpack, it can be specified in the manifest (as below) or with the `-b` flag. Use either the buildpack name:
+
+    buildpack: python_buildpack
+    
+or a URL to reference it.
+
+    buildpack: https://github.com/cloudfoundry/ruby-buildpack.git
+    
+
+### Buildpack Release Schedule
+
+18F's selection of buildpacks may occasionally lag behind CF's by a month or more (except for security patches), in which case you may sometimes need to specify the URL in order to get a more up-to-date version. The buildpack release schedule looks like the following:
+
+- The CF buildpack team develops on a branch and cuts buildpack releases.
+- The CF release team cuts a release for CF with new buildpacks every ~2 weeks.
+- 18F grabs those releases and deploys them as soon as we can (sometimes it takes a while).
