@@ -19,5 +19,5 @@ deploy:
         space: $CF_SPACE
         appname: docs-a
         alt_appname: docs-b
-        domain: 18f.gov
+        domain: cloud.gov
         hostname: docs
