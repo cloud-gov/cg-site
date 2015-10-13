@@ -54,6 +54,9 @@ Once you log in for the first time, you'll probably want to change your password
 cf passwd
 ```
 
+If for some reason you cannot reset your password with `cf passwd` you can also use the
+[web-based reset feature](https://login.cloud.gov/forgot_password).
+
 ## Playing around
 
 If you want to practice deploying, run the following before continuing:
