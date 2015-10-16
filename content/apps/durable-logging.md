@@ -81,13 +81,33 @@ Add the ELK binding to your application manifest as shown below to ensure ELK is
 
 #### Create a Kibana proxy
 
+
 Access to Kibana requires the creation of a service proxy. Use [make-proxy](https://github.com/18F/cf-service-proxy/blob/master/make-proxy.sh) to do this. 
 
-	./make-proxy.sh -p \
-	  -s MY_ELK \
-	  -n MY_ELK-kibana \
-	  -d DOMAIN \
-	  -g "./nginx-auth"
+Clone the [cf-service-proxy](git@github.com:18F/cf-service-proxy.git) repo.
+
+```bash
+git clone git@github.com:18F/cf-service-proxy.git
+cd cf-service-proxy
+```
+
+Create Staticfile.auth to provide a username and password for use with the Kibana proxy.
+
+```bash
+openssl rand -base64 32 | tee htpasswd -ic nginx-auth/Staticfile.auth USERNAME
+```
+
+The generated password will echo to the console, make note of it.
+
+```bash
+./make-proxy.sh -p \
+  -s MY_ELK \
+  -n MY_ELK-kibana \
+  -d DOMAIN \
+  -g "./nginx-auth"
+```
+
+Note: `DOMAIN` should only include the domain portion of your Kibana proxy route without the hostname. You can list available domains with `cf domains`.
 	
 **output**
 
