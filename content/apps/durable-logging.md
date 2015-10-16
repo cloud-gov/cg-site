@@ -83,7 +83,7 @@ Add the ELK binding to your application manifest as shown below to ensure ELK is
 
 Access to Kibana requires the creation of a service proxy. Use [make-proxy](https://github.com/18F/cf-service-proxy/blob/master/make-proxy.sh) to do this. 
 
-	./make-proxy.sh \
+	./make-proxy.sh -p \
 	  -s MY_ELK \
 	  -n MY_ELK-kibana \
 	  -d DOMAIN \
