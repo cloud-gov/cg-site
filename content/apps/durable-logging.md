@@ -33,26 +33,34 @@ Getting the most out of the ELK service requires several steps.
 
 Ensure that the service is offered in your orangization.
 
-	cf marketplace
+```bash
+cf marketplace
+```
 
 **output**
 
-	Getting services from marketplace in org ORG / space SPACE as USER...
-	OK
-	
-	service        plans        description   
-	ELK            standard     Elasticsearch, Logstash and Kibana
-	
+```bash
+Getting services from marketplace in org ORG / space SPACE as USER...
+OK
+
+service        plans        description
+ELK            free         Elasticsearch, Logstash and Kibana
+```
+
 Create an ELK instance.
 
-	cf cs elk standard MY_ELK
+```bash
+cf cs elk free MY_ELK
+```
 
 ##### Bind the service
-	
+
 Bind the ELK instance to your applications.
 
-	cs bs APPNAME MY_ELK
-	
+```bash
+cf bs APPNAME MY_ELK
+```
+
 Application logs will begin draining to the ELK instance shortly, you do not need to restage the newly bound applications. 
 
 ##### Make it permanent
@@ -61,10 +69,12 @@ Add the ELK binding to your application manifest as shown below to ensure ELK is
 
 **manifest.yml**
 
-	---
-	  ...
-	  services:
-	  	- MY_ELK
+```yml
+---
+  ...
+  services:
+    - MY_ELK
+```
 
 
 ### Kibana Access
