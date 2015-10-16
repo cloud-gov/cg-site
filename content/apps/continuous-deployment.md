@@ -36,7 +36,7 @@ deploy:
   provider: cloudfoundry
   username: DEPLOYER_USER
   password:
-  api: https://api.18f.gov
+  api: https://api.cloud.gov
   organization: ORG
   space: SPACE
 ```
@@ -111,7 +111,7 @@ dependencies:
 
 test:
   post:
-    - cf login -a https://api.18f.gov -u DEPLOYER_USER -p $CF_PASS -o ORG -s SPACE
+    - cf login -a https://api.cloud.gov -u DEPLOYER_USER -p $CF_PASS -o ORG -s SPACE
 
 deployment:
   production:
@@ -155,7 +155,7 @@ And setup the following environment variables in a "deploy target":
 
 | Name    | Value              |
 |---------|--------------------|
-| CF_API  | `api.18f.gov`      |
+| CF_API  | `api.cloud.gov`      |
 | CF_USER | deployer username  |
 | CF_PASS | deployer password  |
 | CF_ORG  | target organization|

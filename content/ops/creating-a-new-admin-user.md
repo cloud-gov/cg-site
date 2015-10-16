@@ -37,7 +37,7 @@ The [User Account and Authentication server](https://github.com/cloudfoundry/uaa
 
 ##### Specifying the UAA Target:
 
-	uaac target uaa.18f.gov
+	uaac target uaa.cloud.gov
 
 ##### Obtaining A Token:
 
@@ -50,14 +50,14 @@ Note: The client secret can specified on the command line with the `-s` switch, 
 	Client secret:  ********************************
 
 	Successfully fetched token via client credentials grant.
-	Target: https://uaa.18f.gov
+	Target: https://uaa.cloud.gov
 	Context: admin, from client admin
 
 ##### Confirming Authorization:
 
 Use `uaac context` to confirm your current authorization and permissions.
 
-	[1]*[https://uaa.18f.gov]
+	[1]*[https://uaa.cloud.gov]
 	  skip_ssl_validation: true
 
 	  [0]*[admin]
