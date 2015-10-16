@@ -44,7 +44,7 @@ First, please [create an issue in the DevOps issue tracker](https://github.com/1
 ### Log in
 
 ```bash
-cf api https://api.18f.gov
+cf api https://api.cloud.gov
 cf login
 ```
 
