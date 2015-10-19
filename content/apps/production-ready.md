@@ -20,7 +20,7 @@ there any issue with one of the runners your app is on your app continues to wor
 
 ### How:
 
-- Use a setting of `intances: 2` or more in your application `manifest.yml` to ensure your application is resilient when deployed.
+- Use a setting of `instances: 2` or more in your application `manifest.yml` to ensure your application is resilient when deployed.
 - Use `cf scale` to scale your running application instance count up and down.
 
 ## Prefer User Provided Services
