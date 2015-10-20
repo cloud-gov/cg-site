@@ -44,8 +44,7 @@ First, please [create an issue in the DevOps issue tracker](https://github.com/1
 ### Log in
 
 ```bash
-cf api https://api.cloud.gov
-cf login
+cf login -a api.cloud.gov
 ```
 
 Once you log in for the first time, you'll probably want to change your password with:
