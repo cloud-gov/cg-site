@@ -33,7 +33,7 @@ sudo mv cf /usr/local/bin
 cf -v
 ```
 
-As of this writing the current cf CLI version is `6.12.3-c0c9a03`.
+As of this writing the current cf CLI version is `6.13.0-e68ce0f`.
 
 ## Setting up your account
 
