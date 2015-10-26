@@ -227,6 +227,7 @@ If the Vagrant machine is halted or restarted for any reason there are  several 
 Choose option 2 "Recreate VM" for each VM (M of N) then confirm the choices. A new director task will be created to recreate each VM in turn. This will take several minutes to complete. Use >bosh vms to have a look at the resulting environment.
 
   	bosh vms 		# verify that service is up
+  	~/<host_working_folder>/bosh-lite/bin/add-route
 
 
 
