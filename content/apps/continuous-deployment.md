@@ -11,7 +11,7 @@ changes to your desired environment.
 
 ## Zero-downtime deployment
 
-Use the [`cf-blue-green`](https://github.com/18F/cf-blue-green) tool – see instructions in that repository.
+Use the [autopilot](https://github.com/concourse/autopilot) Cloud Foundry CLI plugin or the [`cf-blue-green`](https://github.com/18F/cf-blue-green) tool; see instructions in the respective repositories.
 
 ## Continuous integration services
 
