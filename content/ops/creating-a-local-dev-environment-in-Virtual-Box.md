@@ -37,11 +37,7 @@ While not strictly necessary, but this guide assumes a recent version it. Instal
 
 We need to install Docker. It will be used to build the cflinuxfs2.tar.gz. Install or update with the following:
 
-	brew install docker
-
-Additional info on Docker OSX installation can be found here: 
-
-	https://docs.docker.com/installation/mac/
+	https://docs.docker.com/mac/step_one/
 
 ##### Git
 
@@ -186,7 +182,8 @@ Now you will have to have Docker installed and running on your Mac for the next 
 	make
 	
 Secure copy the cflinuxfs2 container to the CF VM.
-	vagrant scp ~/<host_working_folder>/stacks/cflinuxfs2.tar.gz default:/home/vagrant/workspace/cf-release/blobs/rootfs
+
+	vagrant scp ~/host_working_folder/stacks/cflinuxfs2.tar.gz default:/home/vagrant/workspace/cf-release/blobs/rootfs
 
 #### Initial Cloud Foundry Configuration:
 
