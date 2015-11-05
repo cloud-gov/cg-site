@@ -29,7 +29,7 @@ Note: If that fails goto http://www.vagrantup.com/downloads and install from web
 
 ##### Virtual Box
 
-While not strictly necessary, but this guide assumes a recent version it. Install or update it from:
+While not strictly necessary, but this guide assumes a recent version is installed. Install or update it from:
 
 	https://www.virtualbox.org/wiki/Downloads
 
@@ -39,9 +39,7 @@ We need to install Docker. It will be used to build the cflinuxfs2.tar.gz. Insta
 
 	brew install docker
 
-Additional info on Docker OSX installation can be found here: 
-
-	https://docs.docker.com/installation/mac/
+Additional info on Docker OSX installation can be found here https://docs.docker.com/installation/mac/
 
 ##### Git
 
@@ -69,6 +67,8 @@ Grab the bosh-lite repo.
 Add the bosh-lite vagrant box.
 
 	vagrant box add cloudfoundry/bosh-lite
+
+Choose option 2 for Virtualbox.
 
 ##### Launch Vagrant
 
@@ -106,7 +106,7 @@ Clone the bosh bosh-lite and cf-release repository.
 
 	git clone https://github.com/cloudfoundry/bosh-lite.git
  	git clone https://github.com/cloudfoundry/cf-release.git
- 	sudo mkdir -p ~/workspace/cf-release/blobs/rootfs	#needed for later step to copy a docker container flinuxfs2.tar.gz.
+ 	sudo mkdir -p ~/workspace/cf-release/blobs/rootfs	#needed for later step with docker
 	cd bosh-lite
 
 ##### Configure Cloud Foundry:
@@ -166,7 +166,6 @@ When complete, use bosh vms to have a look at the resulting environment.
 
 	VMs total: 12
 
-	
 
 We're done provisioning, now we'll disconnect and access the environment via the Cloud Foundry CLI.
 
@@ -174,18 +173,19 @@ We're done provisioning, now we'll disconnect and access the environment via the
 	~/<host_working_folder>/bosh-lite/bin/add-route
 
 
-#### Cretae and copy a blob into the vagrant image
+#### Create and copy a blob into the vagrant image
 
 	vagrant plugin install vagrant-scp
 	cd ~/<host_working_folder>/
 
-Now you will have to have Docker installed and running on your Mac for the next procedure to work. You will have to launch in to a docker terminal to create the cflinuxfs2 container. 
+Now Docker must be installed and running on your Mac for the next procedure to work. Launch into a docker terminal to create the cflinuxfs2 container. 
 
 	git clone https://github.com/cloudfoundry/stacks.git
 	cd stacks
 	make
 	
 Secure copy the cflinuxfs2 container to the CF VM.
+
 	vagrant scp ~/<host_working_folder>/stacks/cflinuxfs2.tar.gz default:/home/vagrant/workspace/cf-release/blobs/rootfs
 
 #### Initial Cloud Foundry Configuration:
