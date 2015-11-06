@@ -35,11 +35,9 @@ While not strictly necessary, but this guide assumes a recent version is install
 
 ##### Docker
 
-We need to install Docker. It will be used to build the cflinuxfs2.tar.gz. Install or update with the following:
+We need to install Docker. It will be used to build the cflinuxfs2.tar.gz. Install from here:
 
-	brew install docker
-
-Additional info on Docker OSX installation can be found here https://docs.docker.com/installation/mac/
+	https://docs.docker.com/mac/step_one/
 
 ##### Git
 
@@ -106,7 +104,7 @@ Clone the bosh bosh-lite and cf-release repository.
 
 	git clone https://github.com/cloudfoundry/bosh-lite.git
  	git clone https://github.com/cloudfoundry/cf-release.git
- 	sudo mkdir -p ~/workspace/cf-release/blobs/rootfs	#needed for later step with docker
+ 	mkdir -p ~/workspace/cf-release/blobs/rootfs	#needed for later step with docker
 	cd bosh-lite
 
 ##### Configure Cloud Foundry:
@@ -135,7 +133,7 @@ This script automates the process of:
 3. Generating a deployment manifest from the included templates.
 4. Deploying the generated manifest to a set of warden containers inside the instance.
 
-This process takes about 20 minutes.
+This process takes about 15-20 minutes.
 
 When complete, use bosh vms to have a look at the resulting environment.
 
@@ -176,7 +174,7 @@ We're done provisioning, now we'll disconnect and access the environment via the
 #### Create and copy a blob into the vagrant image
 
 	vagrant plugin install vagrant-scp
-	cd ~/<host_working_folder>/
+	cd ~/host_working_folder/
 
 Now Docker must be installed and running on your Mac for the next procedure to work. Launch into a docker terminal to create the cflinuxfs2 container. 
 
@@ -186,6 +184,7 @@ Now Docker must be installed and running on your Mac for the next procedure to w
 	
 Secure copy the cflinuxfs2 container to the CF VM.
 
+	cd ../bosh-lite
 	vagrant scp ~/<host_working_folder>/stacks/cflinuxfs2.tar.gz default:/home/vagrant/workspace/cf-release/blobs/rootfs
 
 #### Initial Cloud Foundry Configuration:
