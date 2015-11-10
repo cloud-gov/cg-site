@@ -21,7 +21,7 @@ BOSH Lite is designed to provide a local development environment for BOSH and by
 
 The bosh-lite repo provides a Vagrantfile and VM for quickly standing up a bosh lite director on VBox.
 
-	brew install vagrant
+	brew cask install vagrant
  	vagrant plugin install vagrant-berkshelf
  	vagrant plugin install vagrant-omnibus
 
@@ -31,13 +31,17 @@ Note: If that fails goto http://www.vagrantup.com/downloads and install from web
 
 While not strictly necessary, but this guide assumes a recent version is installed. Install or update it from:
 
-	https://www.virtualbox.org/wiki/Downloads
+	brew cask install virtualbox
+	
+Additional info can be found here: https://www.virtualbox.org/wiki/Downloads
 
 ##### Docker
 
 We need to install Docker. It will be used to build the cflinuxfs2.tar.gz. Install from here:
 
-	https://docs.docker.com/mac/step_one/
+	brew cask install dockertoolbox
+	
+Additional info can be found here: https://docs.docker.com/mac/step_one/
 
 ##### Git
 
@@ -61,6 +65,8 @@ Grab the bosh-lite repo.
 
 	git clone https://github.com/cloudfoundry/bosh-lite.git
 	cd bosh-lite
+	gem install nokogiri -- --with-xml2-include=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/include/libxml2
+	gem install bosh_cli
 
 Add the bosh-lite vagrant box.
 
@@ -168,7 +174,7 @@ When complete, use bosh vms to have a look at the resulting environment.
 We're done provisioning, now we'll disconnect and access the environment via the Cloud Foundry CLI.
 
 	ubuntu@agent-id-bosh-0:exit 			#exit Vagrant SSH
-	~/<host_working_folder>/bosh-lite/bin/add-route
+	~/host_working_folder/bosh-lite/bin/add-route
 
 
 #### Create and copy a blob into the vagrant image
@@ -185,7 +191,7 @@ Now Docker must be installed and running on your Mac for the next procedure to w
 Secure copy the cflinuxfs2 container to the CF VM.
 
 	cd ../bosh-lite
-	vagrant scp ~/<host_working_folder>/stacks/cflinuxfs2.tar.gz default:/home/vagrant/workspace/cf-release/blobs/rootfs
+	vagrant scp ~/host_working_folder/stacks/cflinuxfs2.tar.gz default:/home/vagrant/workspace/cf-release/blobs/rootfs
 
 #### Initial Cloud Foundry Configuration:
 
