@@ -94,7 +94,9 @@ cd cf-service-proxy
 Create Staticfile.auth to provide a username and password for use with the Kibana proxy.
 
 ```bash
-openssl rand -base64 32 | tee htpasswd -ic nginx-auth/Staticfile.auth USERNAME
+openssl rand -base64 32 | \
+tee /dev/tty | \
+htpasswd -ic nginx-auth/Staticfile.auth USERNAME
 ```
 
 The generated password will echo to the console, make note of it.
