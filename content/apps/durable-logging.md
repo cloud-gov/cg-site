@@ -91,7 +91,8 @@ git clone git@github.com:18F/cf-service-proxy.git
 cd cf-service-proxy
 ```
 
-Create Staticfile.auth to provide a username and password for use with the Kibana proxy.
+Create Staticfile.auth to provide a username and password for use with the Kibana proxy. You pick the username
+(noted here as `USERNAME`) and this command will echo a generated password to the console. Make note of it.
 
 ```bash
 openssl rand -base64 32 | \
@@ -99,7 +100,7 @@ tee /dev/tty | \
 htpasswd -ic nginx-auth/Staticfile.auth USERNAME
 ```
 
-The generated password will echo to the console, make note of it.
+Now you can create the proxy using the `nginx-auth/Staticfile.auth` file you just created:
 
 ```bash
 ./make-proxy.sh -p \
@@ -141,7 +142,10 @@ Note: `DOMAIN` should only include the domain portion of your Kibana proxy route
 	https://user:pass@proxy.domain
 	Done.
 
-Now your ELK service instance is accessible through an nginx service proxy using basic authentication. Be sure to record the generated password.
+Now your ELK service instance is accessible through an nginx service proxy using basic authentication.
+
+**IMPORTANT** The credentials output by the `make-proxy.sh` command are *not* the credentials you want to
+use for logging in. You should use the password you noted in the htpasswd step earlier.
 
 #### Access Kibana for the first time.
 
