@@ -12,6 +12,19 @@ The ELK service provides Elasticsearch, Logstash and Kibana in a single service 
 
 Getting the most out of the ELK service requires several steps.
 
+#### Quick Start
+
+If you already understand each of the steps involved, you can try:
+
+```bash
+git clone git@github.com:18F/cf-service-proxy.git
+cd cf-service-proxy
+./make-elk-service.sh -d 18f.gov -u MY_KIBANA_USERNAME -a MY_APPNAME
+```
+
+where *MY_KIBANA_USERNAME* is a username you select for your Kibana proxy service
+and *MY_APPNAME* is the name of the application for which you would like ELK service.
+
 #### Basics
 
 - [Create the service](#create-the-service)
