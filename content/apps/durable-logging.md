@@ -97,7 +97,7 @@ Add the ELK binding to your application manifest as shown below to ensure ELK is
 
 Access to Kibana requires the creation of a service proxy. Use [make-proxy](https://github.com/18F/cf-service-proxy/blob/master/make-proxy.sh) to do this. 
 
-Clone the [cf-service-proxy](git@github.com:18F/cf-service-proxy.git) repo.
+Clone the [cf-service-proxy](https://github.com/18F/cf-service-proxy/) repo.
 
 ```bash
 git clone git@github.com:18F/cf-service-proxy.git
