@@ -22,8 +22,8 @@ cd cf-service-proxy
 ./make-elk-service.sh -d 18f.gov -u MY_KIBANA_USERNAME -a MY_APPNAME
 ```
 
-where *MY_KIBANA_USERNAME* is a username you select for your Kibana proxy service
-and *MY_APPNAME* is the name of the application for which you would like ELK service.
+where `MY_KIBANA_USERNAME` is a username you pick for your Kibana proxy service
+and `MY_APPNAME` is the name of the application for which you would like ELK service.
 
 #### Basics
 
@@ -186,7 +186,7 @@ Enter a search filter and press Enter to being reviewing your logs.
 
 ![Enter a search filter.](/img/search-450.png)
 
-### Kibana Access
+### Advanced Access
 
 #### Create an Elasticsearch / Marvel Proxy
 
