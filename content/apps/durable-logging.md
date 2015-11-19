@@ -25,8 +25,8 @@ cd cf-service-proxy
 where `MY_KIBANA_USERNAME` is a username you pick for your Kibana proxy service
 and `MY_APPNAME` is the name of the application for which you would like ELK service.
 
-If the `make-elk-service.sh` command finishes successfully, you are all done, unless you want
-[Advanced Access](#create-an-elasticsearch-marvel-proxy).
+If the `make-elk-service.sh` command finishes successfully, you should [make it permanent](#make-it-permanent).
+See also the section on [Advanced Access](#create-an-elasticsearch-marvel-proxy).
 
 #### Basics
 
@@ -45,7 +45,7 @@ If the `make-elk-service.sh` command finishes successfully, you are all done, un
 
 ### Basics
 
-##### Create the service
+#### Create the service
 
 Ensure that the service is offered in your orangization.
 
@@ -69,7 +69,7 @@ Create an ELK instance.
 cf cs elk free MY_ELK
 ```
 
-##### Bind the service
+#### Bind the service
 
 Bind the ELK instance to your applications.
 
@@ -79,7 +79,7 @@ cf bs APPNAME MY_ELK
 
 Application logs will begin draining to the ELK instance shortly, you do not need to restage the newly bound applications. 
 
-##### Make it permanent
+#### Make it permanent
 
 Add the ELK binding to your application manifest as shown below to ensure ELK is re-bound whenever your app is recreated.
 
