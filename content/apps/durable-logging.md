@@ -12,6 +12,22 @@ The ELK service provides Elasticsearch, Logstash and Kibana in a single service 
 
 Getting the most out of the ELK service requires several steps.
 
+#### Quick Start
+
+If you already understand each of the steps involved, you can try:
+
+```bash
+git clone git@github.com:18F/cf-service-proxy.git
+cd cf-service-proxy
+./make-elk-service.sh -d 18f.gov -u MY_KIBANA_USERNAME -a MY_APPNAME
+```
+
+where `MY_KIBANA_USERNAME` is a username you pick for your Kibana proxy service
+and `MY_APPNAME` is the name of the application for which you would like ELK service.
+
+If the `make-elk-service.sh` command finishes successfully, you should [make it permanent](#make-it-permanent).
+See also the section on [Advanced Access](#create-an-elasticsearch-marvel-proxy).
+
 #### Basics
 
 - [Create the service](#create-the-service)
@@ -29,7 +45,7 @@ Getting the most out of the ELK service requires several steps.
 
 ### Basics
 
-##### Create the service
+#### Create the service
 
 Ensure that the service is offered in your orangization.
 
@@ -53,7 +69,7 @@ Create an ELK instance.
 cf cs elk free MY_ELK
 ```
 
-##### Bind the service
+#### Bind the service
 
 Bind the ELK instance to your applications.
 
@@ -63,7 +79,7 @@ cf bs APPNAME MY_ELK
 
 Application logs will begin draining to the ELK instance shortly, you do not need to restage the newly bound applications. 
 
-##### Make it permanent
+#### Make it permanent
 
 Add the ELK binding to your application manifest as shown below to ensure ELK is re-bound whenever your app is recreated.
 
@@ -84,20 +100,23 @@ Add the ELK binding to your application manifest as shown below to ensure ELK is
 
 Access to Kibana requires the creation of a service proxy. Use [make-proxy](https://github.com/18F/cf-service-proxy/blob/master/make-proxy.sh) to do this. 
 
-Clone the [cf-service-proxy](git@github.com:18F/cf-service-proxy.git) repo.
+Clone the [cf-service-proxy](https://github.com/18F/cf-service-proxy/) repo.
 
 ```bash
 git clone git@github.com:18F/cf-service-proxy.git
 cd cf-service-proxy
 ```
 
-Create Staticfile.auth to provide a username and password for use with the Kibana proxy.
+Create Staticfile.auth to provide a username and password for use with the Kibana proxy. You pick the username
+(noted here as `USERNAME`) and this command will echo a generated password to the console. Make note of it.
 
 ```bash
-openssl rand -base64 32 | tee /dev/tty | htpasswd -ic nginx-auth/Staticfile.auth USERNAME
+openssl rand -base64 32 | \
+tee /dev/tty | \
+htpasswd -ic nginx-auth/Staticfile.auth USERNAME
 ```
 
-The generated password will echo to the console, make note of it.
+Now you can create the proxy using the `nginx-auth/Staticfile.auth` file you just created:
 
 ```bash
 ./make-proxy.sh -p \
@@ -139,7 +158,10 @@ Note: `DOMAIN` should only include the domain portion of your Kibana proxy route
 	https://user:pass@proxy.domain
 	Done.
 
-Now your ELK service instance is accessible through an nginx service proxy using basic authentication. Be sure to record the generated password.
+Now your ELK service instance is accessible through an nginx service proxy using basic authentication.
+
+**IMPORTANT** The credentials output by the `make-proxy.sh` command are *not* the credentials you want to
+use for logging in. You should use the password you noted in the htpasswd step earlier.
 
 #### Access Kibana for the first time.
 
@@ -167,7 +189,7 @@ Enter a search filter and press Enter to being reviewing your logs.
 
 ![Enter a search filter.](/img/search-450.png)
 
-### Kibana Access
+### Advanced Access
 
 #### Create an Elasticsearch / Marvel Proxy
 
