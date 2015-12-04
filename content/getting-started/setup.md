@@ -39,7 +39,7 @@ As of this writing the current cf CLI version is `6.13.0-e68ce0f`.
 
 You will need a Cloud Foundry account before continuing. These steps are 18F-specific, but will be similar for other Cloud Foundry deployments.
 
-First, please [create an issue in the DevOps issue tracker](https://github.com/18F/DevOps/issues/new) and assign it to [@dlapiduz](https://github.com/dlapiduz) or [@ozzyjohnson](https://github.com/ozzyjohnson).
+If you don't already have an account, please [create an issue in the DevOps issue tracker](https://github.com/18F/DevOps/issues/new) and assign it to [@dlapiduz](https://github.com/dlapiduz) or [@ozzyjohnson](https://github.com/ozzyjohnson).
 
 ### Log in
 
