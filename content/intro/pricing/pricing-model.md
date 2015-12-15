@@ -2,7 +2,7 @@
 menu:
   main:
     parent: pricing
-title: How is the cloud.gov pricing model structured?
+title: What is the pricing model?
 weight: 10
 ---
 
@@ -25,7 +25,7 @@ This model may change significantly in future, depending on what the take-up of 
 
 ## Base platform
 
-The “base platform” component covers access to the platform and [support]({{< relref "terminology/definition-support.md" >}}) for it to stay up and available in its current form, as well as expanded over time. The base platform component is paid 12 months at a time, and scales along with the number of systems being hosted.
+The “base platform” component covers access to the platform and [support]({{< relref "intro/terminology/pricing-terminology.md" >}}) for it to stay up and available in its current form, as well as expanded over time. The base platform component is paid 12 months at a time, and scales along with the number of systems being hosted.
 
 The base platform component would typically be paid with “non-severable” funds, for example: funds that an agency attaches to a particular fiscal year.
 

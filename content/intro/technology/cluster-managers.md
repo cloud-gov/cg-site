@@ -2,7 +2,7 @@
 menu:
   main:
     parent: technology
-title: What about Kubernetes or Mesos?
+title: Kubernetes, Mesos, etc.
 weight: 50
 ---
 

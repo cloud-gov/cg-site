@@ -2,7 +2,7 @@
 menu:
   main:
     parent: technology
-title: What IaaS does cloud.gov work with?
+title: cloud.gov and IaaS options
 weight: 20
 ---
 
@@ -10,7 +10,7 @@ weight: 20
 
 Currently our services are provided by Amazon Web Services (AWS) regions located within the continental United States (US-East and US-West).
 
-Cloud.gov is not yet available on the AWS GovCloud. If you need a PaaS with the formal [ITAR compliance](https://en.wikipedia.org/wiki/International_Traffic_in_Arms_Regulations) AWS GovCloud would provide, please let us know so we can evaluate our roadmap.
+cloud.gov is not yet available on the AWS GovCloud. If you need a PaaS with the formal [ITAR compliance](https://en.wikipedia.org/wiki/International_Traffic_in_Arms_Regulations) AWS GovCloud would provide, please let us know so we can evaluate our roadmap.
 
 ## Other IaaS vendors we can support
 

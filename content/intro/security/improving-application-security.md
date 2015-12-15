@@ -2,7 +2,7 @@
 menu:
   main:
     parent: security
-title: How does cloud.gov improve the security of applications running on it?
+title: Security for all applications
 weight: 10
 ---
 

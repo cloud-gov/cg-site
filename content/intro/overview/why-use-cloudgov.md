@@ -2,8 +2,8 @@
 menu:
   main:
     parent: overview
-title: Why should an agency use cloud.gov?
-weight: 30
+title: Why agencies should use it
+weight: 31
 ---
 
 ## 1. Usability

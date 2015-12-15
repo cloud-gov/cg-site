@@ -2,7 +2,7 @@
 menu:
   main:
     parent: security
-title: How does cloud.gov help applications conform to federal regulatory frameworks like FISMA?
+title: Helping apps conform to regs
 weight: 20
 ---
 

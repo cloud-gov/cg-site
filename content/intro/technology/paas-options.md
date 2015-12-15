@@ -2,7 +2,7 @@
 menu:
   main:
     parent: technology
-title: How does cloud.gov fit into the broader PaaS ecosystem?
+title: Other PaaS choices
 weight: 30
 ---
 

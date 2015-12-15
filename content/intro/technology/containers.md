@@ -2,7 +2,7 @@
 menu:
   main:
     parent: technology
-title: What about containers and cloud.gov? Where do Docker, Rocket, or the Open Container Initiative fit in?
+title: cloud.gov and containers
 weight: 40
 ---
 

@@ -2,7 +2,7 @@
 menu:
   main:
     parent: technology
-title: Is the cloud.gov PaaS appropriate for deploying things that don’t look like websites?
+title: What’s it appropriate for?
 weight: 10
 ---
 

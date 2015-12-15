@@ -2,7 +2,7 @@
 menu:
   main:
     parent: pricing
-title: What other services am I paying for along with cloud.gov?
+title: Other included services
 weight: 30
 ---
 

@@ -2,7 +2,7 @@
 menu:
   main:
     parent: pricing
-title: How does the payment process work?
+title: How do agencies pay?
 weight: 20
 ---
 

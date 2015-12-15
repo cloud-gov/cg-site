@@ -2,7 +2,7 @@
 menu:
   main:
     parent: overview
-title: Who can use cloud.gov?
+title: Who can use it?
 weight: 20
 ---
 
