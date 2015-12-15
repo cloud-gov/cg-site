@@ -42,7 +42,7 @@ title = "docs.cloud.gov"
     weight = -80
 
 [[menu.main]]
-    name = "Intro"
+    name = "Introduction"
     identifier = "intro"
     weight = 1
 [[menu.main]]
@@ -54,19 +54,19 @@ title = "docs.cloud.gov"
     name = "Pricing"
     parent = "intro"
     identifier = "pricing"
-    weight = -120
+    weight = -115
 [[menu.main]]
     name = "Security"
     parent = "intro"
     identifier = "security"
-    weight = -120
+    weight = -110
 [[menu.main]]
     name = "Technology"
     parent = "intro"
     identifier = "technology"
-    weight = -120
+    weight = -105
 [[menu.main]]
     name = "Terminology"
     parent = "intro"
     identifier = "terminology"
-    weight = -120
+    weight = -100
