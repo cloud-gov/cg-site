@@ -7,25 +7,51 @@
           {{ range .Site.Menus.main }}
               {{ if .HasChildren }}
 
-            <li class="sub-menu{{if $currentNode.HasMenuCurrent "main" . }} active{{end}}">
-            <a href="javascript:;" class="">
-                {{ .Pre }}
-                <!--<i class="icon_desktop"></i>-->
-                <span>{{ .Name }}</span>
-                <span class="menu-arrow fa {{if $currentNode.HasMenuCurrent "main" . }}fa-angle-down{{else}}fa-angle-right{{end}}"></span>
-            </a>
-                <ul class="sub{{if $currentNode.HasMenuCurrent "main" . }} open{{end}}">
-                    {{ range .Children }}
-                    <li{{if $currentNode.IsMenuCurrent "main" . }} class="active"{{end}}><a href="{{.URL}}">{{ .Name }}</a> </li>
-                    {{ end }}
-                </ul>
-              {{end}}
+              <li class="sub-menu{{if $currentNode.HasMenuCurrent "main" . }} active{{end}}">
+                  {{ if .HasChildren }}
+                  <a href="javascript:;" class="">
+                      {{ .Pre }}
+		      <span>{{ .Name }}</span>
+                      <span class="menu-arrow fa {{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}fa-angle-down{{else}}fa-angle-right{{end}}"></span>
+                  </a>
+                  <ul class="sub nested-menu {{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} open {{end}}" style="{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} display: block; {{else}}display: none; {{end}}">
+                      {{ range .Children }}
+		      <li class="sub-menu {{if $currentNode.IsMenuCurrent "main" . }} active {{end}}" >
+                          <a href="javascript:;" class="">
+                              {{ .Pre }}
+                              <span>{{ .Name }}</span>
+                              <span class="menu-arrow fa {{if $currentNode.HasMenuCurrent "main" . }}fa-angle-down{{else}}fa-angle-right{{end}}"></span>
+                          </a>
+                          {{ if .HasChildren }}
+			  <ul class="sub {{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} open {{end}}" style="{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}display: block; {{else}}display: none; {{end}}">
+                              {{ range .Children }}
+		              <li{{if $currentNode.IsMenuCurrent "main" . }} class="active"{{end}}><a href="{{.URL}}">{{ .Name }}</a> </li>
+                              {{ end }}
+                          </ul>
+                          {{ end }}
+                      </li>
+                      {{ end }}
+                  </ul>
+                  {{ else }}
+                  <a href="{{.URL}}">{{ .Name }}</a>
+                      {{ .Pre }}
+                      <span>{{ .Name }}</span>
+                  </a>
+                  {{ end }}
               </li>
+              {{else}}
+              <li>
+                  <a class="" href="{{.URL}}">
+                    {{ .Pre }}
+                    <span>{{ .Name }}</span>
+                  </a>
+              </li>
+              {{end}}
           {{end}}
-            <li> <a href="https://github.com/18f/cloud-foundry-notes/issues" target="blank"><i class='fa fa-life-ring'></i> <span>Issues & Help</span></a> </li>
-            {{ if .IsPage }}
-            {{ $File := .File }}  {{with $File.Path }}<li><a href="https://github.com/18f/cloud-foundry-notes/edit/master/content/{{ $File.Dir }}{{ $File.LogicalName }}" target="blank"><i class='fa fa-edit'></i> Refine this Page</a> </li>{{end}}
-            {{ end }}
+              <li> <a href="https://github.com/18f/cloud-foundry-notes/issues" target="blank"><i class='fa fa-life-ring'></i> <span>Issues & Help</span></a> </li>
+              {{ if .IsPage }}
+              {{ $File := .File }}  {{with $File.Path }}<li><a href="https://github.com/18f/cloud-foundry-notes/edit/master/content/{{ $File.Dir }}{{ $File.LogicalName }}" target="blank"><i class='fa fa-edit'></i> Refine this Page</a> </li>{{end}}
+              {{ end }}
         </ul>
         <!-- sidebar menu end-->
     </div>
