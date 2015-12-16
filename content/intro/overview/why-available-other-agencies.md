@@ -12,7 +12,7 @@ Just as it has for us at 18F, we think cloud.gov will help other federal agencie
 
 All federal agencies have a mandate to deploy their services in the cloud. We believe any agency tackling this problem will face the same regulatory and compliance impediments we faced, as well as bottlenecks around cloud operations expertise.
 
-Some agencies will tackle these problems with little cloud operations capability or experience. They may not know the Platform as a Service options that now exist and that provide more functionality they need than an Infrastructure as a Service provides. Even when agencies do understand what they should do, many won’t be able to do it, whether because of resource shortages, confusion about choosing a PaaS solution, bureaucracy, or another reason.
+Some agencies will tackle these problems with little cloud operations capability or experience. They may not know of the platform-as-a-service (PaaS) options that now exist and that provide more appropriate functionality than an infrastructure-as-a-service (IaaS) provides. Even when agencies do understand what they should do, many won’t be able to do it, whether because of resource shortages, confusion about choosing a PaaS solution, bureaucracy, or other reasons.
 
 Many separate agencies and IT organizations are independently trying to solve these problems, resulting in redundant efforts. A centralized PaaS model, one that is already compliant with federal rules, would reduce the work and cost of wider cloud adoption.
 
