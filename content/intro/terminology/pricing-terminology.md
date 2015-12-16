@@ -16,12 +16,12 @@ A system maps to an [“org” in Cloud Foundry](http://docs.cloudfoundry.org/co
 
 ## Support
 
-“Support” is support for any inability to use the platform as intended, on a best-effort basis. We have no existing service-level agreement. We plan to always publish metrics that give agencies the ability to make an informed choice about whether to use cloud.gov or an alternative PaaS solution.
+“Support” is support for any inability to use the platform as intended, on a best-effort basis. We have no existing service-level agreement. We plan to always publish metrics that give agencies the ability to make an informed choice about whether to use cloud.gov or an alternative PaaS solution based on our track record.
 
 ## Consulting
 
-“Consulting” is advice, development, documentation, etc. that is custom or specific the context of your application, system, or organization. If the outcome of the activity will not be reusable for our entire community of users, it’s consulting. Base platform feeds do not include consulting, and we do not offer consulting outside of projects directly undertaken by 18F for delivery or consulting on behalf of a partner agency.
+“Consulting” is advice, development, documentation, etc. that is custom or specific the context of your application, system, or organization. If the outcome of the activity will not be reusable for our entire community of users, it’s consulting. Base platform fees for cloud.gov do not include consulting, and 18F does not offer cloud-focused consulting outside of projects directly undertaken by 18F for delivery or consulting on behalf of a partner agency.
 
 ## Managed service
 
-A “managed service” is a commodity service (databases, caches, etc.) that cloud.gov provisions and runs on behalf of tenant applications. These services reduce the ops responsibility for the application team. Managed services can be spun up and down on demand. In some cases alternative “plans” can be selected for resilience, performance, or cost trade-offs.
+A “managed service” is a commodity service (database, cache, message queue, storage, etc.) that cloud.gov provisions and runs on behalf of tenant applications. These services reduce the ops responsibility for the application team. Managed services can be spun up and down on demand. In some cases alternative “plans” can be selected that reflect resilience, performance, and cost trade-offs.
