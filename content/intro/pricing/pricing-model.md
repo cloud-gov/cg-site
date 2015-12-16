@@ -43,7 +43,7 @@ Each “managed service” (see our definition) incurs some resource usage and p
 
 In many cases, the pricing for managed services is not yet available. This is because we are measuring their initial usage to determine what we will need to charge.
 
-We do not yet have a good picture of how much we should charge to cover the cost of these services. We are doing more analysis of the costs we’re observing (both the cost of the IaaS layer and the cost of our support). We aim to offer explicit prices for all these by the end of the 2015 calendar year.
+We do not yet have a good picture of how much we should charge to cover the cost of these services. We are doing more analysis of the costs we’re observing (both the cost of the IaaS layer and the cost of our support). We aim to offer explicit prices for all these by the end of the March 2016.
 
 ## À la carte items
 
