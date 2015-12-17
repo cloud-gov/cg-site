@@ -9,7 +9,7 @@ title = "docs.cloud.gov"
 [[menu.main]]
     name = "Docs"
     identifier = "docs"
-    weight = 1
+    weight = -10
 [[menu.main]]
     name = "Getting Started"
     parent = "docs"
@@ -44,7 +44,7 @@ title = "docs.cloud.gov"
 [[menu.main]]
     name = "Introduction"
     identifier = "intro"
-    weight = 1
+    weight = -20
 [[menu.main]]
     name = "Overview"
     parent = "intro"
