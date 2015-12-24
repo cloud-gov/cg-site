@@ -1,7 +1,7 @@
 ---
 menu:
   main:
-    parent: apps
+    parent: advanced
 title: Durable Logging with the ELK Service
 weight: 10
 ---
@@ -77,7 +77,7 @@ Bind the ELK instance to your applications.
 cf bs APPNAME MY_ELK
 ```
 
-Application logs will begin draining to the ELK instance shortly, you do not need to restage the newly bound applications. 
+Application logs will begin draining to the ELK instance shortly, you do not need to restage the newly bound applications.
 
 #### Make it permanent
 
@@ -98,7 +98,7 @@ Add the ELK binding to your application manifest as shown below to ensure ELK is
 #### Create a Kibana proxy
 
 
-Access to Kibana requires the creation of a service proxy. Use [make-proxy](https://github.com/18F/cf-service-proxy/blob/master/make-proxy.sh) to do this. 
+Access to Kibana requires the creation of a service proxy. Use [make-proxy](https://github.com/18F/cf-service-proxy/blob/master/make-proxy.sh) to do this.
 
 Clone the [cf-service-proxy](https://github.com/18F/cf-service-proxy/) repo.
 
@@ -127,7 +127,7 @@ Now you can create the proxy using the `nginx-auth/Staticfile.auth` file you jus
 ```
 
 Note: `DOMAIN` should only include the domain portion of your Kibana proxy route without the hostname. You can list available domains with `cf domains`.
-	
+
 **output**
 
 	Looking for jq.
@@ -138,11 +138,11 @@ Note: `DOMAIN` should only include the domain portion of your Kibana proxy route
 	    - Found bindings.
 	Checking status for MY_ELK-proxy.
 	Creating MY_ELK-proxy...
-	
+
 	Getting service credentials for MY_ELK.
 	  Port: 12345
 	  IP: 10.10.10.1
-	
+
 	Getting app environment for MY_ELK-proxy.
 	! Proxy vars don't match.
 	+ Injecting service credentials into MY_ELK-proxy.
@@ -152,9 +152,9 @@ Note: `DOMAIN` should only include the domain portion of your Kibana proxy route
 	- Finishing start of MY_ELK-proxy.
 	  - Getting credentials for MY_ELK-proxy.
 	Checking status for MY_ELK-proxy.
-	
+
 	Access the the proxied service here:
-	
+
 	https://user:pass@proxy.domain
 	Done.
 
@@ -173,7 +173,7 @@ Kibana requires a few moments to load.
 
 Proceed with the default index name and pattern. This can always be changed later via the 'Settings' link at the top of each Kibana view.
 
-For more information on these settings see [Getting Kibana Up and Running](https://www.elastic.co/guide/en/kibana/current/setup.html) in the official docs. 
+For more information on these settings see [Getting Kibana Up and Running](https://www.elastic.co/guide/en/kibana/current/setup.html) in the official docs.
 
 ![Selecting an index pattern is the first step in accessing a new Kibana instance.](/img/configure_index_pattern-450.png)
 
@@ -209,7 +209,7 @@ Creating the Elasticsearch / Marvel proxy follows much the same process as the K
   -z "9200/tcp" \
   -p
 ```
-	
+
 **output**
 
 	Looking for jq.
@@ -223,11 +223,11 @@ Creating the Elasticsearch / Marvel proxy follows much the same process as the K
 	Cleaning up: /tmp/placeholder-7D45FC20-2A19-48C8-BCC6-3DECA5530DFB
 	Checking status for MY_ELK-proxy.
 	Creating MY_ELK-proxy...
-	
+
 	Getting service credentials for MY_ELK.
 	  Port: 12345
 	  IP: 10.10.10.1
-	
+
 	Getting app environment for MY_ELK-proxy.
 	! Proxy vars don't match.
 	+ Injecting service credentials into MY_ELK-proxy.
@@ -237,8 +237,8 @@ Creating the Elasticsearch / Marvel proxy follows much the same process as the K
 	- Finishing start of MY_ELK-proxy.
 	  - Getting credentials for MY_ELK-proxy.
 	Checking status for MY_ELK-proxy.
-	
+
 	Access the the proxied service here:
-	
+
 	https://user:password@proxy.domain
 	Done.

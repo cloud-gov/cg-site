@@ -2,7 +2,7 @@
 date: 2015-07-10T14:32:59-04:00
 menu:
   main:
-    parent: apps
+    parent: advanced
 title: Deploying Multi-language Projects
 weight: 10
 ---
@@ -33,5 +33,3 @@ https://github.com/cloudfoundry/nodejs-buildpack
 
 ## Debugging
 Multi-buildpacks deploys can be difficult to debug because [heroku-buildpack-multi](https://github.com/ddollar/heroku-buildpack-multi.git) hides the error logs. For more verbose output use [ozzyjohnson/heroku-buildpack-multi](https://github.com/ozzyjohnson/heroku-buildpack-multi).
-
-

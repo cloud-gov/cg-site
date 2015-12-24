@@ -1,7 +1,7 @@
 ---
 menu:
   main:
-    parent: ops
+    parent: advanced
 title: Plugins
 weight: 10
 ---

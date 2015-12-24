@@ -1,7 +1,7 @@
 ---
 menu:
   main:
-    parent: apps
+    parent: advanced
 title: Custom Domains
 weight: 10
 ---

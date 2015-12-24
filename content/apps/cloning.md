@@ -1,7 +1,7 @@
 ---
 menu:
   main:
-    parent: apps
+    parent: advanced
 title: Cloning Applications
 weight: 10
 ---
