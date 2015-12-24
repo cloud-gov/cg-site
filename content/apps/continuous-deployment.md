@@ -49,6 +49,37 @@ sudo: required
 
 Replace `DEPLOYER_USER`, `ORG`, and `SPACE` accordingly and run `travis encrypt --add deploy.password --skip-version-check` to enter the deployer's password.
 
+#### Using Conditional Deployments
+
+A common pattern for team workflows is to use separate development and master branches, along with using a staging or QA deployment with the development branch, and a production deployment with the master branch. This can be achieved in Travis with [`on:`](https://docs.travis-ci.com/user/deployment#Conditional-Releases-with-on%3A) to specify a branch, and using unique manifests for each deployment.
+
+```yaml
+deploy:
+  - edge: true
+    provider: cloudfoundry
+    username: DEPLOYER_USER
+    password:
+    api: https://api.cloud.gov
+    organization: ORG
+    space: SPACE
+    manifest: manifest-staging.yml
+    on:
+      branch: develop
+  - edge: true
+    provider: cloudfoundry
+    username: DEPLOYER_USER
+    password:
+    api: https://api.cloud.gov
+    organization: ORG
+    space: SPACE
+    manifest: manifest.yml
+    on:
+      branch: master
+```
+
+Each manifest should at the very least define an unique name, but can also define an unique host as well. Also, it may be necessary to define unique services for each application to use. See [Cloning Applications]({{< relref "cloning.md" >}}) for more information.
+
+
 #### Jekyll Site
 
 Deploying a Jekyll site requires a few changes to your `.travis.yml` and `manifest.yml` as well as the addition of a `Staticfile` and `Gemfile`. Add or update your Gemfile to include the jekyll gem.
