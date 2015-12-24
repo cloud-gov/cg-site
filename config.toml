@@ -53,14 +53,12 @@ title = "docs.cloud.gov"
     pre = "<i class='fa fa-file-text'></i>"
     weight = -110
 [[menu.main]]
-    name = "Operations"
-    parent = "usage"
-    identifier = "ops"
-    pre = "<i class='fa fa-wrench'></i>"
-    weight = -90
-[[menu.main]]
     name = "Standards"
     parent = "usage"
     identifier = "standards"
     pre = "<i class='fa fa-desktop'></i>"
     weight = -85
+
+[[menu.main]]
+    name = "Contributing"
+    identifier = "ops"
