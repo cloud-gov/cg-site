@@ -52,12 +52,6 @@ title = "docs.cloud.gov"
     identifier = "apps"
     pre = "<i class='fa fa-file-text'></i>"
     weight = -110
-[[menu.main]]
-    name = "Standards"
-    parent = "usage"
-    identifier = "standards"
-    pre = "<i class='fa fa-desktop'></i>"
-    weight = -85
 
 [[menu.main]]
     name = "Contributing"
