@@ -1,7 +1,7 @@
 ---
 menu:
   main:
-    parent: ops
+    parent: users
 title: AWS Onboarding
 weight: 10
 ---

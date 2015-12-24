@@ -6,7 +6,7 @@ title: Plugins
 weight: 10
 ---
 
-CloudFoundry includes a framework for plugins. Since CloudFoundry is written for performance in Go, these plugins do not function exactly the same as plugins do in other dynamically-compiled frameworks like Capistrano or Fab. Still, they provide a basic framework for extending the base functionality of the CloudFoundry CLI
+CloudFoundry includes a framework for plugins. Since CloudFoundry is written for performance in Go, these plugins do not function exactly the same as plugins do in other dynamically-compiled frameworks like Capistrano or Fab. Still, they provide a basic framework for extending the base functionality of the CloudFoundry CLI.
 
 ### Using Plugins
 
@@ -32,9 +32,8 @@ Then you can compile your own plugin and install it. Plugins are able to call an
 
 ### What Plugins Can't Do
 
-Plugins are only invoked when they are explicitly called within the CLI. In this sense, they resemble [Slack's outgoing webhooks](https://api.slack.com/outgoing-webhooks). There currently isn’t any support for plugins to register themselves to be called at specific points in the deployment cycle, as there is in other deployment mechanisms. The CloudFoundry team has [prioritized such features at the bottom of their list](https://github.com/cloudfoundry/cli/issues/123), and [this situation remains unchanged a year later](https://github.com/cloudfoundry/cli/issues/404). 
+Plugins are only invoked when they are explicitly called within the CLI. In this sense, they resemble [Slack's outgoing webhooks](https://api.slack.com/outgoing-webhooks). There currently isn’t any support for plugins to register themselves to be called at specific points in the deployment cycle, as there is in other deployment mechanisms. The CloudFoundry team has [prioritized such features at the bottom of their list](https://github.com/cloudfoundry/cli/issues/123), and [this situation remains unchanged a year later](https://github.com/cloudfoundry/cli/issues/404).
 
 For cases where we want to wrap an event like `cf push` with optional before and after actions, the CF team recommends that we should define our own separately named plugin. For example, we might want to have cf push using .gitignore if there is no .cfignore file. To do this with plugins, we’d have to define out our `18fpush` plugin that copies the .gitignore to .cfignore if not there, calls the regular push action and then undoes the copy. Every person deploying code would have to remember to call `cf 18fpush` instead of `cf push` for this to be effective.
 
 Alternatively, we can just edit the CLI code itself so that it’ll contain the new behavior for all pushes. But this means we are adding some code for our specific needs that aren’t necessarily useful for the cloudfoundry CLI code. And it requires us to make sure our fork tracks changes to the main CLI repository. Neither of these cases are ideal, but they are the only options we have.
-

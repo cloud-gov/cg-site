@@ -1,8 +1,9 @@
 ---
 menu:
   main:
-    parent: ops
-title: Creating a dev environment
+    parent: deployment
+title: Creating a dev environment on AWS
+linktitle: AWS
 weight: 10
 ---
 
@@ -185,7 +186,7 @@ When complete, use bosh vms to have a look at the resulting environment.
 
 	ubuntu@agent-id-bosh-0:~/workspace/bosh-lite$ bosh vms
 
-	Deployment `cf-warden'
+	Deployment 'cf-warden'
 
 	Director task 4
 

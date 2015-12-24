@@ -1,7 +1,7 @@
 ---
 menu:
   main:
-    parent: ops
+    parent: operations
 title: ELB termination
 weight: 10
 ---
@@ -27,6 +27,7 @@ Use [this CloudFormation JSON template](https://github.com/18F/cloud-foundry-man
 * **HostedZoneName**: Type in the name of the hosted zone, e.g. `open.foia.gov`.
 * **ZoneName**: Type in the name of the subdomain in front of the hosted zone domain, if one applies.
 t
+
 ### Creating the ELB by hand
 
 The CloudFormation JSON above is built to represent the following workflow:

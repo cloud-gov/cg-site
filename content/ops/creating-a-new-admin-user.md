@@ -1,7 +1,7 @@
 ---
 menu:
   main:
-    parent: ops
+    parent: users
 title: Creating an admin user
 weight: 10
 ---

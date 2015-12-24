@@ -1,7 +1,7 @@
 ---
 menu:
   main:
-    parent: ops
+    parent: users
 title: Changing a password
 weight: 10
 ---

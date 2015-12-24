@@ -56,3 +56,15 @@ title = "docs.cloud.gov"
 [[menu.main]]
     name = "Contributing"
     identifier = "ops"
+[[menu.main]]
+    name = "Deployment"
+    identifier = "deployment"
+    parent = "ops"
+[[menu.main]]
+    name = "Users"
+    identifier = "users"
+    parent = "ops"
+[[menu.main]]
+    name = "Operations"
+    identifier = "operations"
+    parent = "ops"
