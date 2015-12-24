@@ -212,7 +212,7 @@ ul.sidebar-menu li ul.sub li:last-child{
 
 ul.sidebar-menu li ul.sub li a {
     font-size: 12px;
-    padding: 0 0 0 32px;
+    padding: 0 0 0 20px;
     line-height: 35px;
     height: 35px;
     -webkit-transition: all 0.3s ease;
@@ -222,6 +222,9 @@ ul.sidebar-menu li ul.sub li a {
     transition: all 0.3s ease;
     color: #737B83;
     font-size: 14px;
+}
+ul.sidebar-menu li ul.sub li li a {
+    padding-left: 35px;
 }
 
 ul.sidebar-menu li ul.sub li a:hover,
