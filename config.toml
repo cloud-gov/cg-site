@@ -7,35 +7,6 @@ title = "docs.cloud.gov"
   author = "18f"
 
 [[menu.main]]
-    name = "Usage"
-    identifier = "usage"
-    weight = -10
-[[menu.main]]
-    name = "Getting Started"
-    parent = "usage"
-    identifier = "getting-started"
-    pre = "<i class='fa fa-road'></i>"
-    weight = -120
-[[menu.main]]
-    name = "Deploying Apps"
-    parent = "usage"
-    identifier = "apps"
-    pre = "<i class='fa fa-file-text'></i>"
-    weight = -110
-[[menu.main]]
-    name = "Operations"
-    parent = "usage"
-    identifier = "ops"
-    pre = "<i class='fa fa-wrench'></i>"
-    weight = -90
-[[menu.main]]
-    name = "Standards"
-    parent = "usage"
-    identifier = "standards"
-    pre = "<i class='fa fa-desktop'></i>"
-    weight = -85
-
-[[menu.main]]
     name = "Introduction"
     identifier = "intro"
     weight = -20
@@ -64,3 +35,32 @@ title = "docs.cloud.gov"
     parent = "intro"
     identifier = "terminology"
     weight = -100
+
+[[menu.main]]
+    name = "Usage"
+    identifier = "usage"
+    weight = -10
+[[menu.main]]
+    name = "Getting Started"
+    parent = "usage"
+    identifier = "getting-started"
+    pre = "<i class='fa fa-road'></i>"
+    weight = -120
+[[menu.main]]
+    name = "Deploying Apps"
+    parent = "usage"
+    identifier = "apps"
+    pre = "<i class='fa fa-file-text'></i>"
+    weight = -110
+[[menu.main]]
+    name = "Operations"
+    parent = "usage"
+    identifier = "ops"
+    pre = "<i class='fa fa-wrench'></i>"
+    weight = -90
+[[menu.main]]
+    name = "Standards"
+    parent = "usage"
+    identifier = "standards"
+    pre = "<i class='fa fa-desktop'></i>"
+    weight = -85
