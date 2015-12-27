@@ -34,12 +34,6 @@ title = "docs.cloud.gov"
     identifier = "standards"
     pre = "<i class='fa fa-desktop'></i>"
     weight = -85
-[[menu.main]]
-    name = "Updates"
-    parent = "docs"
-    identifier = "updates"
-    pre = "<i class='fa fa-columns'></i>"
-    weight = -80
 
 [[menu.main]]
     name = "Introduction"
