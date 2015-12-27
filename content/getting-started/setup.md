@@ -33,19 +33,18 @@ sudo mv cf /usr/local/bin
 cf -v
 ```
 
-As of this writing the current cf CLI version is `6.12.3-c0c9a03`.
+As of this writing the current cf CLI version is `6.13.0-e68ce0f`.
 
 ## Setting up your account
 
 You will need a Cloud Foundry account before continuing. These steps are 18F-specific, but will be similar for other Cloud Foundry deployments.
 
-First, please [create an issue in the DevOps issue tracker](https://github.com/18F/DevOps/issues/new) and assign it to [@dlapiduz](https://github.com/dlapiduz) or [@ozzyjohnson](https://github.com/ozzyjohnson).
+If you don't already have an account, please [create an issue in the DevOps issue tracker](https://github.com/18F/DevOps/issues/new) and assign it to [@dlapiduz](https://github.com/dlapiduz) or [@ozzyjohnson](https://github.com/ozzyjohnson).
 
 ### Log in
 
 ```bash
-cf api https://api.18f.gov
-cf login
+cf login -a api.cloud.gov
 ```
 
 Once you log in for the first time, you'll probably want to change your password with:
@@ -53,6 +52,9 @@ Once you log in for the first time, you'll probably want to change your password
 ```bash
 cf passwd
 ```
+
+If for some reason you cannot reset your password with `cf passwd` you can also use the
+[web-based reset feature](https://login.cloud.gov/forgot_password).
 
 ## Playing around
 

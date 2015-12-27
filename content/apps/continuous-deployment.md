@@ -11,7 +11,7 @@ changes to your desired environment.
 
 ## Zero-downtime deployment
 
-Use the [`cf-blue-green`](https://github.com/18F/cf-blue-green) tool – see instructions in that repository.
+Use the [autopilot](https://github.com/concourse/autopilot) Cloud Foundry CLI plugin or the [`cf-blue-green`](https://github.com/18F/cf-blue-green) tool; see instructions in the respective repositories.
 
 ## Continuous integration services
 
@@ -36,7 +36,7 @@ deploy:
   provider: cloudfoundry
   username: DEPLOYER_USER
   password:
-  api: https://api.18f.gov
+  api: https://api.cloud.gov
   organization: ORG
   space: SPACE
 ```
@@ -48,6 +48,37 @@ sudo: required
 ```
 
 Replace `DEPLOYER_USER`, `ORG`, and `SPACE` accordingly and run `travis encrypt --add deploy.password --skip-version-check` to enter the deployer's password.
+
+#### Using Conditional Deployments
+
+A common pattern for team workflows is to use separate development and master branches, along with using a staging or QA deployment with the development branch, and a production deployment with the master branch. This can be achieved in Travis with [`on:`](https://docs.travis-ci.com/user/deployment#Conditional-Releases-with-on%3A) to specify a branch, and using unique manifests for each deployment.
+
+```yaml
+deploy:
+  - edge: true
+    provider: cloudfoundry
+    username: DEPLOYER_USER
+    password:
+    api: https://api.cloud.gov
+    organization: ORG
+    space: SPACE
+    manifest: manifest-staging.yml
+    on:
+      branch: develop
+  - edge: true
+    provider: cloudfoundry
+    username: DEPLOYER_USER
+    password:
+    api: https://api.cloud.gov
+    organization: ORG
+    space: SPACE
+    manifest: manifest.yml
+    on:
+      branch: master
+```
+
+Each manifest should at the very least define an unique name, but can also define an unique host as well. Also, it may be necessary to define unique services for each application to use. See [Cloning Applications]({{< relref "cloning.md" >}}) for more information.
+
 
 #### Jekyll Site
 
@@ -111,7 +142,7 @@ dependencies:
 
 test:
   post:
-    - cf login -a https://api.18f.gov -u DEPLOYER_USER -p $CF_PASS -o ORG -s SPACE
+    - cf login -a https://api.cloud.gov -u DEPLOYER_USER -p $CF_PASS -o ORG -s SPACE
 
 deployment:
   production:
@@ -155,7 +186,7 @@ And setup the following environment variables in a "deploy target":
 
 | Name    | Value              |
 |---------|--------------------|
-| CF_API  | `api.18f.gov`      |
+| CF_API  | `api.cloud.gov`      |
 | CF_USER | deployer username  |
 | CF_PASS | deployer password  |
 | CF_ORG  | target organization|

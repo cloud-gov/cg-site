@@ -7,14 +7,12 @@ function initializeJS() {
     jQuery('.popovers').popover();
 
     //sidebar dropdown menu
+    var parentMenu = $('.sub .open').parents('ul .nested-menu');
+    parentMenu.slideDown(200);
+    var parentMenuArrow = parentMenu.siblings("a").find('.menu-arrow');
+    parentMenuArrow.addClass('fa-angle-down');
+    parentMenuArrow.removeClass('fa-angle-right');
     jQuery('#sidebar .sub-menu > a').click(function () {
-        // Close previous open submenu
-        var last = jQuery('.sub.open', jQuery('#sidebar'));
-        jQuery(last).slideUp(200);
-        jQuery(last).removeClass("open");
-        jQuery('.menu-arrow', jQuery(last).parent()).addClass('fa-angle-right');
-        jQuery('.menu-arrow', jQuery(last).parent()).removeClass('fa-angle-down');
-
         // Toggle current submenu
         var sub = jQuery(this).next();
         if (sub.is(":visible")) {

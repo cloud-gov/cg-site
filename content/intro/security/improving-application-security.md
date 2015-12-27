@@ -1,0 +1,11 @@
+---
+menu:
+  main:
+    parent: security
+title: Security for all applications
+weight: 10
+---
+
+Probably the biggest security improvement afforded by cloud.gov is it enforces an immutable infrastructure. Instead of logging into a live system to make a change, we deploy an entirely new system with security updates applied. That ensures any foothold which might have been exploited by hackers gets wiped away too.
+
+The same is true for applications deployed on cloud.gov. When vulnerabilities in a software stack are identified, we can re-deploy applications that use it on a clean and updated baseline. This happens independent of the application team’s availability, as often as needed, and without downtime.
