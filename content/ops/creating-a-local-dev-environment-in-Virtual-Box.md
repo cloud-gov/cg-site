@@ -94,7 +94,7 @@ There are a few utilities that we'll need to configure the Cloud Foundry environ
 
 Add the spiff utility.
 
-	wget https://github.com/cloudfoundry-incubator/spiff/releases/download/v1.0.3/spiff_linux_amd64.zip
+	wget https://github.com/cloudfoundry-incubator/spiff/releases/download/v1.0.7/spiff_linux_amd64.zip
 	sudo unzip spiff_linux_amd64.zip -d /usr/local/bin
 
 Create a workspace directory.
