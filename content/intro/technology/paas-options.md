@@ -2,7 +2,7 @@
 menu:
   main:
     parent: technology
-title: Other PaaS choices
+title: Other PaaS Choices
 weight: 30
 ---
 

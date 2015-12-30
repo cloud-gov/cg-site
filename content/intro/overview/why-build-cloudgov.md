@@ -2,7 +2,7 @@
 menu:
   main:
     parent: overview
-title: Why 18F built it
+title: Why 18F Built It
 weight: 20
 ---
 

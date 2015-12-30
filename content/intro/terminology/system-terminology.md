@@ -2,7 +2,7 @@
 menu:
   main:
     parent: terminology
-title: cloud.gov PaaS terms
+title: cloud.gov PaaS Terms
 weight: 10
 ---
 

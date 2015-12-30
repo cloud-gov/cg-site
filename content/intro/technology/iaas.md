@@ -2,7 +2,7 @@
 menu:
   main:
     parent: technology
-title: cloud.gov and IaaS options
+title: cloud.gov and IaaS Options
 weight: 20
 ---
 

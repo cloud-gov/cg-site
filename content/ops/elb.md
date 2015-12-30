@@ -2,7 +2,7 @@
 menu:
   main:
     parent: operations
-title: ELB termination
+title: ELB Termination
 weight: 10
 ---
 

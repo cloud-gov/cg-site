@@ -2,7 +2,7 @@
 menu:
   main:
     parent: pricing
-title: Other included services
+title: Other Included Services
 weight: 30
 ---
 

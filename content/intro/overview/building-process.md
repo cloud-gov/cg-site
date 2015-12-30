@@ -2,7 +2,7 @@
 menu:
   main:
     parent: overview
-title: The process of building it
+title: The Process of Building It
 weight: 21
 ---
 

@@ -2,7 +2,7 @@
 menu:
   main:
     parent: deployment
-title: Deploying the admin UI
+title: Deploying the Admin UI
 weight: 10
 ---
 

@@ -2,7 +2,7 @@
 menu:
   main:
     parent: overview
-title: Why agencies should use it
+title: Why Agencies Should Use It
 weight: 31
 ---
 

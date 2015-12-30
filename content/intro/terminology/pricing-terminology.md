@@ -2,7 +2,7 @@
 menu:
   main:
     parent: terminology
-title: Terms we use in pricing
+title: Terms We Use in Pricing
 weight: 20
 ---
 

@@ -2,7 +2,7 @@
 menu:
   main:
     parent: security
-title: Security for all applications
+title: Security for All Applications
 weight: 10
 ---
 

@@ -2,7 +2,7 @@
 menu:
   main:
     parent: operations
-title: Accessing v1 Managed Services
+title: Accessing V1 Managed Services
 weight: 10
 ---
 
