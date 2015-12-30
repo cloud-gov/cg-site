@@ -10,6 +10,14 @@ weight: 10
 
 The preferred way to invite new users is to [invite them](https://login.cloud.gov/invitations/new). If you need to create a user manually, follow the instructions for [the `provision-user-space` CLI plugin](https://github.com/18F/cf-provision-user-space-plugin).
 
+## Changing passwords
+
+First, try to **have the user [reset their password themselves]({{< relref "getting-started/accounts.md#resetting-your-password" >}})**. If they are unable to do so, you can [change their password for them](http://docs.cloudfoundry.org/adminguide/uaa-user-management.html#changing-passwords), using
+
+```bash
+uaac target uaa.cloud.gov
+```
+
 ## Additional access
 
 ### Organizations and spaces
@@ -25,11 +33,3 @@ uaac target uaa.cloud.gov
 ```
 
 See our [admin password policy](https://docs.google.com/a/gsa.gov/document/d/10Do0hghoO-x3imKo9SKZZop_EoXckel0Qg241CHhiUY/edit?usp=sharing).
-
-## Changing passwords
-
-First, try to **have the user [reset their password themselves]({{< relref "getting-started/accounts.md#resetting-your-password" >}})**. If they are unable to do so, you can [change their password for them](http://docs.cloudfoundry.org/adminguide/uaa-user-management.html#changing-passwords), using
-
-```bash
-uaac target uaa.cloud.gov
-```
