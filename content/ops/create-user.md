@@ -8,7 +8,7 @@ weight: 10
 
 ## Creating users
 
-Follow the instructions for [the `provision-user-space` CLI plugin](https://github.com/18F/cf-provision-user-space-plugin).
+The preferred way to invite new users is to [invite them](https://login.cloud.gov/invitations/new). If you need to create a user manually, follow the instructions for [the `provision-user-space` CLI plugin](https://github.com/18F/cf-provision-user-space-plugin).
 
 ### Additional access
 
