@@ -26,4 +26,4 @@ Here are the repos with the tools and configuration for the platform:
 - Hello Worlds: https://github.com/18f/cf-hello-worlds
 - Cron App: https://github.com/18f/cf-cron
 
-We try and keep the page up-to-date, but you can find more repositories [on GitHub](https://github.com/search?o=desc&q=user%3A18F+%28cf+OR+cg+OR+%22cloud+foundry%22+OR+cloud.gov%29&ref=searchresults&s=updated&type=Repositories&utf8=%E2%9C%93).
+We try and keep the page up-to-date, but you can find more repositories [on GitHub](https://github.com/search?o=desc&q=user%3A18F+%28cf+OR+cg+OR+%22cloud+foundry%22+OR+cloud.gov%29+NOT+cfn&ref=searchresults&s=updated&type=Repositories&utf8=%E2%9C%93).
