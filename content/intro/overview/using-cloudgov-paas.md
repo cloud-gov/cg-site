@@ -2,7 +2,7 @@
 menu:
   main:
     parent: overview
-title: How to use it
+title: How to Use It
 weight: 40
 ---
 
