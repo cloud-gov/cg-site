@@ -196,6 +196,8 @@ Secure copy the cflinuxfs2 container to the CF VM.
 
 Connect using the Cloud Foundry CLI.
 
+	# This step needs to be performed in your Bosh-Lite Vagrant instance
+	vagrant ssh
 	cf api --skip-ssl-validation https://api.bosh-lite.com
 	cf auth admin admin
 
