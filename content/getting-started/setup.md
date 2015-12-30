@@ -6,36 +6,12 @@ title: Setup
 weight: -100
 ---
 
-## Installing the CLI
+## Install the CLI
 
-Interacting with Cloud Foundry is easiest through the `cf` command line interface.
+1. Follow [these instructions](https://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html).
+1. Confirm the installation by running `cf -v`.
 
-### OSX
-
-```bash
-brew tap pivotal/tap
-brew install cloudfoundry-cli
-```
-
-### Linux
-
-Download and uncompress the binary, and move it somewhere in your `$PATH`:
-
-```bash
-wget 'https://cli.run.pivotal.io/stable?release=linux64-binary&source=github' -O cf.tgz
-tar -zxvf cf.tgz
-sudo mv cf /usr/local/bin
-```
-
-### Confirm the installation
-
-```bash
-cf -v
-```
-
-As of this writing the current cf CLI version is `6.13.0-e68ce0f`.
-
-### Log in
+## Log in
 
 [Once you have an account]({{< relref "accounts.md" >}}), run
 
@@ -52,7 +28,7 @@ cf passwd
 If for some reason you cannot reset your password with `cf passwd` you can also use the
 [web-based reset feature](https://login.cloud.gov/forgot_password).
 
-## Playing around
+## Play around
 
 If you want to practice deploying, run the following before continuing:
 
