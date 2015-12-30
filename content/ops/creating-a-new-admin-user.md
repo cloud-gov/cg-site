@@ -2,7 +2,7 @@
 menu:
   main:
     parent: users
-title: Creating an admin user
+title: Creating an Admin User
 weight: 10
 ---
 
