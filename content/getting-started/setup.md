@@ -6,57 +6,25 @@ title: Setup
 weight: -100
 ---
 
-## Installing the CLI
+## Setting up the command line
 
-Interacting with Cloud Foundry is easiest through the `cf` command line interface.
+As a user, nearly all of your interactions with Cloud Foundry will be through the command line. To get it set up:
 
-### OSX
+1. [Get an account]({{< relref "accounts.md" >}}).
+1. [Install the CLI](https://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html).
+1. Confirm the installation by running
 
-```bash
-brew tap 'cloudfoundry/tap'
-brew install 'cf-cli'
-```
+    ```bash
+    cf -v
+    ```
 
-### Linux
+1. Log in by running
 
-Download and uncompress the binary, and move it somewhere in your `$PATH`:
+    ```bash
+    cf login -a api.cloud.gov
+    ```
 
-```bash
-wget 'https://cli.run.pivotal.io/stable?release=linux64-binary&source=github' -O cf.tgz
-tar -zxvf cf.tgz
-sudo mv cf /usr/local/bin
-```
-
-### Confirm the installation
-
-```bash
-cf -v
-```
-
-As of this writing the current cf CLI version is `6.13.0-e68ce0f`.
-
-## Setting up your account
-
-You will need a Cloud Foundry account before continuing. These steps are 18F-specific, but will be similar for other Cloud Foundry deployments.
-
-If you don't already have an account, please [create an issue in the DevOps issue tracker](https://github.com/18F/DevOps/issues/new) and assign it to [@dlapiduz](https://github.com/dlapiduz) or [@ozzyjohnson](https://github.com/ozzyjohnson).
-
-### Log in
-
-```bash
-cf login -a api.cloud.gov
-```
-
-Once you log in for the first time, you'll probably want to change your password with:
-
-```bash
-cf passwd
-```
-
-If for some reason you cannot reset your password with `cf passwd` you can also use the
-[web-based reset feature](https://login.cloud.gov/forgot_password).
-
-## Playing around
+## Play around
 
 If you want to practice deploying, run the following before continuing:
 
