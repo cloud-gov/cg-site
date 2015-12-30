@@ -2,7 +2,7 @@
 menu:
   main:
     parent: operations
-title: Making announcements
+title: Making Announcements
 weight: 10
 ---
 
