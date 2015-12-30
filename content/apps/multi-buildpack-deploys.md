@@ -3,7 +3,7 @@ date: 2015-07-10T14:32:59-04:00
 menu:
   main:
     parent: advanced
-title: Multi-language Projects
+title: Multi-Language Projects
 weight: 10
 ---
 
