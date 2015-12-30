@@ -2,7 +2,7 @@
 menu:
   main:
     parent: pricing
-title: What is the pricing model?
+title: What Is the Pricing Model?
 weight: 10
 ---
 
