@@ -2,7 +2,7 @@
 menu:
   main:
     parent: apps
-title: Basic Deploy Troubleshooting
+title: Deployment Troubleshooting
 linktitle: Troubleshooting
 weight: 100
 ---
