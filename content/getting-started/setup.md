@@ -6,27 +6,23 @@ title: Setup
 weight: -100
 ---
 
-## Install the CLI
+## Setting up the command line
 
-1. Follow [these instructions](https://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html).
-1. Confirm the installation by running `cf -v`.
+As a user, nearly all of your interactions with Cloud Foundry will be through the command line. To get it set up:
 
-## Log in
+1. [Get an account]({{< relref "accounts.md" >}}).
+1. [Install the CLI](https://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html).
+1. Confirm the installation by running
 
-[Once you have an account]({{< relref "accounts.md" >}}), run
+    ```bash
+    cf -v
+    ```
 
-```bash
-cf login -a api.cloud.gov
-```
+1. Log in by running
 
-If you were given a password, you'll probably want to change it with:
-
-```bash
-cf passwd
-```
-
-If for some reason you cannot reset your password with `cf passwd` you can also use the
-[web-based reset feature](https://login.cloud.gov/forgot_password).
+    ```bash
+    cf login -a api.cloud.gov
+    ```
 
 ## Play around
 

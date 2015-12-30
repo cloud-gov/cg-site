@@ -16,4 +16,4 @@ You will need a Cloud Foundry account before continuing. To get an account:
 
 ## Resetting your password
 
-Do you have a Cloud Foundry account, but don't know the password? Go to https://login.cloud.gov/forgot_password to reset it.
+Do you have a Cloud Foundry account, but don't know the password? Go to https://login.cloud.gov/forgot_password to reset it. You can also change your password from the command line with `cf passwd`.
