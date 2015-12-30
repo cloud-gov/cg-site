@@ -2,7 +2,7 @@
 menu:
   main:
     parent: technology
-title: Kubernetes, Mesos, etc.
+title: Kubernetes, Mesos, Etc.
 weight: 50
 ---
 
