@@ -6,77 +6,45 @@ title: Your first deploy
 weight: 0
 ---
 
-18F-specific Cloud Foundry documentation lives at [docs.18f.gov](https://docs.18f.gov). The general docs are at [docs.cloudfoundry.org](http://docs.cloudfoundry.org).
+To get used to Cloud Foundry, we recommend that you practice by deploying a simple application before moving into deploying something for production. This was originally written as an outline for live training, so will be expanded over time.
 
-TODO move to the docs site /cc [https://github.com/18F/cloud-foundry-notes/issues/65](https://github.com/18F/cloud-foundry-notes/issues/65)
+The first thing to know is that cloud.gov is a stock instance of Cloud Foundry, so [the general Cloud Foundry documentation](http://docs.cloudfoundry.org), Stack Overflow questions, etc. should mostly be applicable.
 
-@mhz took some awesome notes from one of the sessions here: [https://docs.google.com/document/d/10Ql-HrxVOm7KHld48HiZMSdONuy2TTUnB-bYVna8wz4/edit](https://docs.google.com/document/d/10Ql-HrxVOm7KHld48HiZMSdONuy2TTUnB-bYVna8wz4/edit)
+## Deploying
 
-# Prework
+1. Go through the [setup]({{< relref "setup.md" >}}).
+1. Follow instructions at [github.com/18F/cf-hello-worlds](https://github.com/18F/cf-hello-worlds#readme).
+1. Tweak the app (without committing) and re-`push`.
 
-Follow [https://docs.18f.gov/getting-started/setup/](https://docs.18f.gov/getting-started/setup/) a day or two in advance.
+## Explanation of the magic
 
-# Deploying
-
-1. Follow instructions at [https://github.com/18F/cf-hello-worlds](https://github.com/18F/cf-hello-worlds#readme).
-
-2. Tweak the app (without committing) and re-`push`.
-
-# Explanation of the magic
-
-* The [terminology](https://docs.18f.gov/getting-started/concepts/)
-
+* [Concepts]({{< relref "concepts.md" >}})
 * Routing and what that means in terms of DNS/requests
-
     * ELBs
-
-    * [Custom domains](https://docs.18f.gov/apps/custom-domains/)
-
+    * [Custom domains]({{< relref "apps/custom-domains.md" >}})
 * Packaging up the app (based on what’s in that directory, so commit your code!)
 
-# Caveats
+## Caveats
 
 * Don’t write to local storage (it’s ephemeral)
-
 * Assets must be precompiled
-
 * Instances will be restarted if exceed memory usage
-
 * Proper logging might require extra libraries for your app
+* [`.gitignore`/`.cfignore`]({{< relref "apps/deployment.md#exclude-files" >}})
 
-* [`.gitignore`/`.cfignore`](https://docs.18f.gov/apps/deployment/#exclude-files:98159bafc57a07057ca8a36ea636fe50)
+## Other stuff you might need to do
 
-# Other stuff you might need to do
-
-* [Continuous deployment](https://docs.18f.gov/apps/continuous-deployment/)
-
+* [Continuous deployment]({{< relref "apps/continuous-deployment.md" >}})
 * Connecting to a service? (or just a RDS example for now)
-
-    * [Databases](https://docs.18f.gov/apps/databases/)
-
+    * [Databases]({{< relref "apps/databases.md" >}})
 * Deploying with zero downtime by flipping between 2 apps?
-
     * [Blue-green deployments](http://docs.pivotal.io/pivotalcf/devguide/deploy-apps/blue-green.html)
-
 * Rollback?
-
     * Just `checkout` the old version and `cf-push`
-
-* [one-off commands](https://docs.18f.gov/getting-started/cf-ssh/)
-
+* [one-off commands]({{< relref "getting-started/cf-ssh.md" >}})
 * Delete application
 
-* * *
-
-
-# Aidan TODO
-
-* Create users+spaces for everyone
-
-* Turn on Keycastr
-
-* Turn on Quicktime recording
-
-# Related links
+## Useful links
 
 * [EPA training notes](https://docs.google.com/document/d/1HOWUV_cqwyfOXJ_2ssb_FU7pdHjhQGmvi1OKxxN0aCc/edit)
+* [@mhz's notes from one of the sessions](https://docs.google.com/document/d/10Ql-HrxVOm7KHld48HiZMSdONuy2TTUnB-bYVna8wz4/edit)
