@@ -2,7 +2,7 @@
 menu:
   main:
     parent: users
-title: Creating a user
+title: Creating a User
 weight: 10
 ---
 
