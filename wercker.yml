@@ -1,9 +1,4 @@
 box: wercker/default
-services:
-  - wercker/postgresql
-steps:
-  - dlapiduz/cloud-foundry-deploy
-  - arjen/hugo-build
 build:
   steps:
     - arjen/hugo-build:
