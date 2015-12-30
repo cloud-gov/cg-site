@@ -2,7 +2,7 @@
 menu:
   main:
     parent: overview
-title: Who can use it?
+title: Who Can Use It?
 weight: 20
 ---
 
