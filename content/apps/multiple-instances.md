@@ -2,7 +2,7 @@
 date: 2015-05-27T13:32:00-04:00
 menu:
   main:
-    parent: ops
+    parent: advanced
 title: Running Multiple Instances
 weight: 10
 ---

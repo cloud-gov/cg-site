@@ -1,7 +1,7 @@
 ---
 menu:
   main:
-    parent: ops
+    parent: deployment
 title: Deploying the admin UI
 weight: 10
 ---
@@ -61,7 +61,7 @@ As of this writing, instructions for deploying the Admin UI bosh release default
 
 1. Initiate the deployment.
 
-		bosh deploy 
+		bosh deploy
 
 1. Run the registration errand.
 
@@ -72,11 +72,11 @@ As of this writing, instructions for deploying the Admin UI bosh release default
 Admin UI users and administrators must be part of the groups `admin_ui.users` or `admin_ui.admins` respectively.  Add new members with the uaac cli:
 
 	uaac member add admin_ui.user USERNAME
-	
+
 Or...
 
 	uaac member add admin_ui.admins USERNAME
-	
+
 
 #### Operation
 

@@ -1,7 +1,7 @@
 ---
 menu:
   main:
-    parent: ops
+    parent: operations
 title: Port Descriptions
 weight: 10
 ---

@@ -1,7 +1,7 @@
 ---
 menu:
   main:
-    parent: ops
+    parent: deployment
 title: Deploying the Docker Broker
 weight: 10
 ---
@@ -39,7 +39,7 @@ This guide covers the high level steps required to configure, deploy and enable 
 1. Provision an elastic IP for use by the broker.
 
 		aws ec2 allocate-address --domain vpc
-	
+
 	Note the provided `PublicIp` for use as the `elastic_ip` variable below.
 
 1. Choose an appropriate template from the `./examples` directory replacing the variables which describe your environment and secrets. For the purpose of this guide we're working with `docker-broker-aws.yml` where we'll need to provide the following variables.
@@ -48,19 +48,19 @@ This guide covers the high level steps required to configure, deploy and enable 
 		director_uuid
 		elastic_ip
 		root_domain
-		
+
 		properties.nats.user
 		properties.nats.password
 		properties.nats.machines
-		
+
 		properties.cf.admin_username
 		properties.cf.admin_password
-		
+
 		properties.broker.username
 		properties.broker.password
-		
+
 	Save the complete manifest to a new file. For example, `docker-broker-aws-deploy.yml`.
-	
+
 	**Note:** The manifest describes each Docker image to be downloaded and made available as a service in the `properties.broker.services` section. Service configuration is covered in greater detail in [Configuration]({{< relref "#configuration" >}}).
 
 1. Generate a deployment from the manifest.
@@ -69,13 +69,13 @@ This guide covers the high level steps required to configure, deploy and enable 
 
 1. Initiate the deployment.
 
-		bosh deploy 
+		bosh deploy
 
 #### Configuration
 
 Docker images are configured in the `properties.broker.services` key which contains a list of images, each with its own respective metadata, credential configuration and plans.
 
-For more information about each field in a service description see: 
+For more information about each field in a service description see:
 
 * [Services Metadata Fields](http://docs.cloudfoundry.org/services/catalog-metadata.html#services-metadata-fields)
 * [Plan Metadata Fields](http://docs.cloudfoundry.org/services/catalog-metadata.html#plan-metadata-fields)
@@ -105,26 +105,26 @@ A few critical things to note when adding a service.
 1. Enable the broker.
 
 		cf create-service-broker BROKER_NAME BROKER_USER BROKER_PASS https://BROKER_HOST
-		
+
 	Where each variable correlates to a section of the manifest used to create the deployment.
-	
+
 	- `BROKER_NAME` = properties.broker.name
 	- `BROKER_USER` = properties.broker.username
 	- `BROKER_PASS` = properties.broker.password
 	- `BROKER_HOST` = properties.broker.host
-	
+
 1. Enable services.
 
 	To enable all plans of a service for all orgs.
 
 		cf enable-service-access SERVICE
-		
+
 	To enable a specific service plan or enable plans in a specific org use the `-p` and/or `-o` option.
-		
+
 		cf enable-service-access SERVICE -p PLAN -o ORG
 
 1. Create service instances.
 
 		cf create-service SERVICE PLAN SERVICE_INSTANCE_NAME
-	
+
 1. Bind those services to your apps using `cf bind-service` or the `services` key in your application `manifest.yml`.

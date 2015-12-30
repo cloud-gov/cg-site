@@ -2,7 +2,7 @@
 date: 2015-08-28T10:32:59-04:00
 menu:
   main:
-    parent: apps
+    parent: advanced
 title: Production Ready Checklist
 weight: 10
 ---

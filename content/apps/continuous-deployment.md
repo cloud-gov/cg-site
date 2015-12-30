@@ -1,7 +1,7 @@
 ---
 menu:
   main:
-    parent: apps
+    parent: advanced
 title: Continuous Deployment
 weight: 10
 ---

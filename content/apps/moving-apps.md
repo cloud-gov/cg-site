@@ -1,7 +1,7 @@
 ---
 menu:
   main:
-    parent: apps
+    parent: advanced
 title: Moving apps between spaces
 weight: 10
 ---

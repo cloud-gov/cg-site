@@ -1,7 +1,7 @@
 ---
 menu:
   main:
-    parent: ops
+    parent: deployment
 title: Updating Cloud Foundry
 weight: 10
 ---
