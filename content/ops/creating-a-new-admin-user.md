@@ -33,7 +33,7 @@ The [User Account and Authentication server](https://github.com/cloudfoundry/uaa
 
 ##### Installing the UAA CLI:
 
-	gem install cf-uaac
+See [the README](https://github.com/cloudfoundry/cf-uaac#install-it).
 
 ##### Specifying the UAA Target:
 
