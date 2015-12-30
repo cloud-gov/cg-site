@@ -124,9 +124,8 @@ With VirtualBox the domain will be tied to the localhost and will always be:
 
 Add some dependency packages for the provisioning tool
 
-	sudo apt-get install ruby
+	sudo apt-get install ruby curl
 	sudo gem install bundle
-	sudo apt-get install curl
 
 Run the automated provisioning script.
 
