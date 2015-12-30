@@ -13,7 +13,7 @@ Interacting with Cloud Foundry is easiest through the `cf` command line interfac
 ### OSX
 
 ```bash
-brew tap 'cloudfoundry/homebrew-tap'
+brew tap 'cloudfoundry/tap'
 brew install 'cf-cli'
 ```
 
