@@ -3,6 +3,7 @@ menu:
   main:
     parent: apps
 title: General Deployment Tips
+linktitle: General Tips
 weight: -10
 ---
 
