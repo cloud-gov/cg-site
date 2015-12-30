@@ -2,7 +2,7 @@
 menu:
   main:
     parent: overview
-title: What is cloud.gov?
+title: What Is cloud.gov?
 weight: 10
 ---
 
