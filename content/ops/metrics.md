@@ -1,7 +1,7 @@
 ---
 menu:
   main:
-    parent: ops
+    parent: operations
 title: Metrics
 weight: 10
 ---
@@ -45,4 +45,3 @@ In order to export a dashboard:
   * Make a ticket in the `DevOps` repository with the title `[JumpBox Access Req]` to be given access.
 1. Go into the metrics folder `cd ~/workspace/deployments/monitoring-services/cf-metrics-18f`
 1. Run `for f in grafana/dashboards/*.json; do curl --user <insert username>:<insert password> 'http://<internal AWS IP For Docker Host>:3000/api/dashboards/db' -X POST -H 'Content-Type: application/json;charset=UTF-8' --data-binary @$f; done`
-

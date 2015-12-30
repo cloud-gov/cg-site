@@ -1,8 +1,9 @@
 ---
 menu:
   main:
-    parent: ops
-title: Creating a dev environment
+    parent: deployment
+title: Creating a dev environment on AWS
+linktitle: AWS
 weight: 10
 ---
 
@@ -135,7 +136,7 @@ There are a few utilities that we'll need to configure the Cloud Foundry environ
 
 Add the spiff utility.
 
-	wget https://github.com/cloudfoundry-incubator/spiff/releases/download/v1.0.3/spiff_linux_amd64.zip
+	wget https://github.com/cloudfoundry-incubator/spiff/releases/download/v1.0.7/spiff_linux_amd64.zip
 	unzip spiff_linux_amd64.zip -d /usr/local/bin
 
 Create a workspace directory.
@@ -185,7 +186,7 @@ When complete, use bosh vms to have a look at the resulting environment.
 
 	ubuntu@agent-id-bosh-0:~/workspace/bosh-lite$ bosh vms
 
-	Deployment `cf-warden'
+	Deployment 'cf-warden'
 
 	Director task 4
 

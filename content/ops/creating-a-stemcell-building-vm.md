@@ -1,7 +1,7 @@
 ---
 menu:
   main:
-    parent: ops
+    parent: deployment
 title: Creating a Stemcell Building VM
 weight: 10
 ---
@@ -11,18 +11,18 @@ How to create a vagrant machine on AWS for building new bosh stemcells.
 #### Prerequisites
 
 Vagrant with the vagrant-aws, vagrant-berkshelf and vagrant-omnibus plugins.
- 
+
 	brew install vagrant
 	vagrant plugin install vagrant-berkshelf
 	vagrant plugin install vagrant-omnibus
 	vagrant plugin install vagrant-aws
-		
+
 The AWS CLI (Amazon Web Services Command Line Interface) is not strictly necessary, but this guide assumes a recent version it. Install or update it with:
- 
+
 	sudo pip install awscli -U
 
 Git.
- 
+
  	brew install git
 
 #### Procedure
@@ -34,7 +34,7 @@ You'll need a recent version of the AWS CLI for some of these commands. The curr
 Create the bosh user.
 
 	aws iam create-user --user-name bosh
-	
+
 Apply a policy that will allow bosh to perform actions in the AWS environment.
 
 	aws iam attach-user-policy --user-name bosh --policy-arn 'arn:aws:iam::aws:policy/AmazonEC2FullAccess'
@@ -46,7 +46,7 @@ Create the bosh keypair.
 Create the bosh access key and secret key.
 
 	aws iam create-access-key --user-name bosh
-	
+
 Export the required environment variables using key file and credentials create above.
 
 This is the path to the private portion of the bosh keypair (bosh.pem).
@@ -57,7 +57,7 @@ This is AWS access key to be used by bosh.
 
 
 	export BOSH_AWS_ACCESS_KEY_ID=ABCDEFGHIJKLMNOPQRST
-	
+
 This is AWS secret key to be used by bosh.
 
 	export BOSH_AWS_SECRET_ACCESS_KEY=abcdefghijklmnopqrstuvwxyz0123456789abcd
@@ -69,7 +69,7 @@ Again the AWS CLI is nice to have here.
 Create the security group.
 
 	aws ec2 create-security-group --group-name bosh-stemcell --description 'SSH access to the bosh stemcell creation VM.'
-	
+
 Add your own public IP at minimum.
 
 	aws ec2 authorize-security-group-ingress --group-name bosh-stemcells --protocol tcp --port 22 --cidr $(curl icanhazip.com)/32

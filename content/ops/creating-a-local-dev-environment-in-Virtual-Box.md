@@ -1,9 +1,9 @@
 ---
 menu:
   main:
-    parent: ops
-title: Creating a local dev environment with Virtual Box
-weight: 10
+    parent: deployment
+title: Creating a Local Dev Environment with VirtualBox
+linktitle: Local
 ---
 
 BOSH Lite is designed to provide a local development environment for BOSH and by extension Cloud Foundry. BOSH Lite will be used run locally via Virtualbox. This guide is primarily concerned with bringing up a single-instance environment VB.
@@ -32,7 +32,7 @@ Note: If that fails goto http://www.vagrantup.com/downloads and install from web
 While not strictly necessary, but this guide assumes a recent version is installed. Install or update it from:
 
 	brew cask install virtualbox
-	
+
 Additional info can be found here: https://www.virtualbox.org/wiki/Downloads
 
 ##### Docker
@@ -40,7 +40,7 @@ Additional info can be found here: https://www.virtualbox.org/wiki/Downloads
 We need to install Docker. It will be used to build the cflinuxfs2.tar.gz. Install from here:
 
 	brew cask install dockertoolbox
-	
+
 Additional info can be found here: https://docs.docker.com/mac/step_one/
 
 ##### Git
@@ -94,7 +94,7 @@ There are a few utilities that we'll need to configure the Cloud Foundry environ
 
 Add the spiff utility.
 
-	wget https://github.com/cloudfoundry-incubator/spiff/releases/download/v1.0.3/spiff_linux_amd64.zip
+	wget https://github.com/cloudfoundry-incubator/spiff/releases/download/v1.0.7/spiff_linux_amd64.zip
 	sudo unzip spiff_linux_amd64.zip -d /usr/local/bin
 
 Create a workspace directory.
@@ -124,9 +124,8 @@ With VirtualBox the domain will be tied to the localhost and will always be:
 
 Add some dependency packages for the provisioning tool
 
-	sudo apt-get install ruby
+	sudo apt-get install ruby curl
 	sudo gem install bundle
-	sudo apt-get install curl
 
 Run the automated provisioning script.
 
@@ -145,7 +144,7 @@ When complete, use bosh vms to have a look at the resulting environment.
 
 	ubuntu@agent-id-bosh-0:~/workspace/bosh-lite$ bosh vms
 
-	Deployment `cf-warden'
+	Deployment 'cf-warden'
 
 	Director task #
 
@@ -182,12 +181,12 @@ We're done provisioning, now we'll disconnect and access the environment via the
 	vagrant plugin install vagrant-scp
 	cd ~/host_working_folder/
 
-Now Docker must be installed and running on your Mac for the next procedure to work. Launch into a docker terminal to create the cflinuxfs2 container. 
+Now Docker must be installed and running on your Mac for the next procedure to work. Launch into a docker terminal to create the cflinuxfs2 container.
 
 	git clone https://github.com/cloudfoundry/stacks.git
 	cd stacks
 	make
-	
+
 Secure copy the cflinuxfs2 container to the CF VM.
 
 	cd ../bosh-lite

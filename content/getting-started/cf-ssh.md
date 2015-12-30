@@ -1,7 +1,7 @@
 ---
 menu:
   main:
-    parent: getting-started
+    parent: advanced
 title: Running one off tasks
 weight: 100
 ---
@@ -18,7 +18,7 @@ Our `cf-ssh` is customized to our Cloud Foundry installation so please **do not 
 
 ### Install `cf-ssh`
 
-1. Download `cf-ssh` for your environment https://github.com/18F/cloud-foundry-scripts/releases/
+1. [Download `cf-ssh` for your environment](https://github.com/18F/cloud-foundry-scripts/releases/)
 1. Run
 
     ```bash

@@ -1,7 +1,7 @@
 ---
 menu:
   main:
-    parent: ops
+    parent: users
 title: Policies
 weight: 10
 ---
