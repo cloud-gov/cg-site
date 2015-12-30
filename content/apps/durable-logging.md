@@ -2,7 +2,7 @@
 menu:
   main:
     parent: advanced
-title: Durable Logging with the ELK Service
+title: Durable Logging
 weight: 10
 ---
 
