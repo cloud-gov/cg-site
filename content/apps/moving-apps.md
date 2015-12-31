@@ -17,7 +17,7 @@ If you have an app that exists in one org/space but you need to move it to anoth
     cf target -o <OLD_ORG> -s <OLD_SPACE>
     ```
 
-1. If you are changing orgs, remove the [domain](http://docs.cloudfoundry.org/devguide/deploy-apps/domains-routes.html#delete-domains)/[route](http://docs.cloudfoundry.org/devguide/deploy-apps/domains-routes.html#delete-route).
+1. If you are changing orgs, remove the [domain](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html#delete-private-domain)/[route](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html#delete-route).
 
     ```bash
     cf delete-domain <DOMAIN>

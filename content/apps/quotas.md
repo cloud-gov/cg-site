@@ -53,7 +53,7 @@ In this situation you have three options:
 
 1. Delete existing resources with `cf delete`, `delete-service`, `delete-route` or similar.
 2. Reconfigure existing [Application Quotas]({{< relref "#application-quotas" >}}) and redeploy.
-3. Request a quota change by an administrator via a [DevOps issue](https://github.com/18F/DevOps/issues).
+3. Request a quota change by an administrator via a [DevOps issue](https://github.com/18F/DevOps/issues/new).
 
 #### Application Quotas:
 
