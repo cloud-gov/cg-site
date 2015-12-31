@@ -1,5 +1,5 @@
 ---
-title: Issues & Help
+title: Help
 ---
 
 There are several avenues to get help with cloud.gov:
