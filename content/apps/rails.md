@@ -14,7 +14,7 @@ See the official CF guide: [Getting Started Deploying Ruby on Rails Apps](http:/
     cf target -o sandbox
     ```
 
-1. [Exclude files ignored by Git]({{< relref "apps/deployment.md#excluding-files" >}}).
+1. [Exclude files ignored by Git]({{< relref "apps/deployment.md#exclude-files" >}}).
 1. [Add the `rails_12factor` gem](https://github.com/heroku/rails_12factor#install) for better logging.
 1. Create the application on Cloud Foundry.
 
@@ -22,7 +22,7 @@ See the official CF guide: [Getting Started Deploying Ruby on Rails Apps](http:/
     cf push <APP_NAME>
     ```
 
-1. [Set up the database](/apps/databases/).
+1. [Set up the database]({{< relref "apps/databases.md" >}}).
 1. Set additional [environment variables](http://docs.run.pivotal.io/devguide/deploy-apps/environment-variable.html).
 
     ```bash
@@ -30,7 +30,7 @@ See the official CF guide: [Getting Started Deploying Ruby on Rails Apps](http:/
     # etc.
     ```
 
-1. [SSH into the application](/getting-started/cf-ssh/), then run `rake db:setup`.
+1. [SSH into the application]({{< relref "getting-started/cf-ssh.md" >}}), then run `rake db:setup`.
 
 Your app should now be live at `APP_NAME.18f.gov`!
 
@@ -42,5 +42,3 @@ during asset compilation. (For an example, see [MyUSA issue #636](https://github
 
 There are multiple potential solutions for this. For more advice, see
 [the Cloud Foundry document on the subject](https://docs.cloudfoundry.org/buildpacks/ruby/ruby-tips.html#precompile).
-
-

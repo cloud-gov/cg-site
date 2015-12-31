@@ -52,7 +52,7 @@ If a new application `push` would exceed your organization's quota the request w
 In this situation you have three options:
 
 1. Delete existing resources with `cf delete`, `delete-service`, `delete-route` or similar.
-2. Reconfigure existing [Application Quotas](#application-quotas) and redeploy.
+2. Reconfigure existing [Application Quotas]({{< relref "#application-quotas" >}}) and redeploy.
 3. Request a quota change by an administrator via a [DevOps issue](https://github.com/18F/DevOps/issues).
 
 #### Application Quotas:
@@ -81,18 +81,18 @@ For example, with a 1 unit (3.75GB) quota:
 
 - `memory: 1875`
 	- Guaranteed at least 50% vCPU time.
-	- Offered up to 100% vCPU time. 
+	- Offered up to 100% vCPU time.
 	- Limited to 1.875GB of RAM.
 - `memory: 375`
-	- Guaranteed at least 10% vCPU time. 
-	- Offered up to 100% vCPU time. 
+	- Guaranteed at least 10% vCPU time.
+	- Offered up to 100% vCPU time.
 	- Limited to 375MB of RAM.
 
 **Guaranteed:**
 
 Your application will receive at least this much vCPU time even if there are other applications competing for time.
 
-**Offered:** 
+**Offered:**
 
 Your application can use all available CPU time. If there are other applications competing for time, each application's guaranteed share determines how much time it will receive.
 
@@ -108,9 +108,9 @@ The application cannot access more than the specified amount of memory.
 		requested state: started
 		instances: 1/1
 		usage: 128M x 1 instances
-		urls: 
+		urls:
 		last uploaded: Wed Jul 22 20:09:56 UTC 2015
-		
+
 		     state     since                    cpu    memory          disk          
 		#0   running   2015-07-30 05:58:11 PM   0.0%   94.6M of 128M   80.4M of 128M      
 
@@ -118,6 +118,4 @@ The application cannot access more than the specified amount of memory.
 - Any application which exceeds its memory quota will be automatically restarted. Use `cf events APPNAME` to look for 'out of memory' crashes.
 
 		... description   
-		... index: 0, reason: CRASHED, exit_description: out of memory, exit_status: 255 
-
-
+		... index: 0, reason: CRASHED, exit_description: out of memory, exit_status: 255

@@ -25,29 +25,29 @@ cd cf-service-proxy
 where `MY_KIBANA_USERNAME` is a username you pick for your Kibana proxy service
 and `MY_APPNAME` is the name of the application for which you would like ELK service.
 
-If the `make-elk-service.sh` command finishes successfully, you should [make it permanent](#make-it-permanent).
-See also the section on [Advanced Access](#create-an-elasticsearch-marvel-proxy).
+If the `make-elk-service.sh` command finishes successfully, you should [make it permanent]({{< relref "#make-it-permanent" >}}).
+See also the section on [Advanced Access]({{< relref "#create-an-elasticsearch-marvel-proxy" >}}).
 
 #### Basics
 
-- [Create the service](#create-the-service)
-- [Bind the service](#bind-the-service)
-- [Make it permanent](#make-it-permanent)
+- [Create the service]({{< relref "#create-the-service" >}})
+- [Bind the service]({{< relref "#bind-the-service" >}})
+- [Make it permanent]({{< relref "#make-it-permanent" >}})
 
 #### Kibana Access
 
-- [Create a Kibana proxy](#create-a-kibana-proxy)
-- [Access Kibana for the first time](#access-kibana-for-the-first-time)
+- [Create a Kibana proxy]({{< relref "#create-a-kibana-proxy" >}})
+- [Access Kibana for the first time]({{< relref "#access-kibana-for-the-first-time" >}})
 
 #### Advanced Access
 
-- [Create an Elasticsearch / Marvel proxy](#create-an-elasticsearch-marvel-proxy)
+- [Create an Elasticsearch / Marvel proxy]({{< relref "#create-an-elasticsearch-marvel-proxy" >}})
 
 ### Basics
 
 #### Create the service
 
-Ensure that the service is offered in your orangization.
+Ensure that the service is offered in your organization.
 
 ```bash
 cf marketplace
