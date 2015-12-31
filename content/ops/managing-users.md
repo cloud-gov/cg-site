@@ -2,7 +2,7 @@
 menu:
   main:
     parent: users
-title: Managing users
+title: Managing Users
 weight: 10
 ---
 

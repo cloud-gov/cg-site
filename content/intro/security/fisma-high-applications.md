@@ -2,7 +2,7 @@
 menu:
   main:
     parent: security
-title: FISMA-High PaaS alternatives
+title: FISMA-High PaaS Alternatives
 weight: 30
 ---
 

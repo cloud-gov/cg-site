@@ -2,7 +2,7 @@
 menu:
   main:
     parent: advanced
-title: Running one off tasks
+title: Running One Off Tasks
 weight: 100
 ---
 

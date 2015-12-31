@@ -2,7 +2,7 @@
 menu:
   main:
     parent: security
-title: Helping apps conform to regs
+title: Helping Apps Conform to Regs
 weight: 20
 ---
 

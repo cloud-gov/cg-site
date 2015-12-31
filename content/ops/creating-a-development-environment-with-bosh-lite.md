@@ -2,7 +2,7 @@
 menu:
   main:
     parent: deployment
-title: Creating a dev environment on AWS
+title: Creating a Dev Environment on AWS
 linktitle: AWS
 weight: 10
 ---

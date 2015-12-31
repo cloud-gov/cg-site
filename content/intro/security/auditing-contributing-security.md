@@ -2,7 +2,7 @@
 menu:
   main:
     parent: security
-title: Auditing or contributing
+title: Auditing or Contributing
 weight: 40
 ---
 

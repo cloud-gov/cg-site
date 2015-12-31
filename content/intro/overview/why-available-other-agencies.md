@@ -2,7 +2,7 @@
 menu:
   main:
     parent: overview
-title: Why it's available
+title: Why It's Available
 weight: 30
 ---
 

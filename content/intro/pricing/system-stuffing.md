@@ -2,7 +2,7 @@
 menu:
   main:
     parent: pricing
-title: Grouping unrelated apps
+title: Grouping Unrelated Apps
 weight: 40
 ---
 

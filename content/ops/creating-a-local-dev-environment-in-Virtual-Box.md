@@ -2,7 +2,7 @@
 menu:
   main:
     parent: deployment
-title: Creating a Local Dev Environment with VirtualBox
+title: Creating a Local Dev Environment With VirtualBox
 linktitle: Local
 ---
 
@@ -196,6 +196,8 @@ Secure copy the cflinuxfs2 container to the CF VM.
 
 Connect using the Cloud Foundry CLI.
 
+	# Run this from inside your Vagrant Bosh Lite instance
+	vagrant ssh
 	cf api --skip-ssl-validation https://api.bosh-lite.com
 	cf auth admin admin
 

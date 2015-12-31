@@ -2,7 +2,7 @@
 menu:
   main:
     parent: technology
-title: What’s it appropriate for?
+title: What’s It Appropriate For?
 weight: 10
 ---
 
