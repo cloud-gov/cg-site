@@ -12,7 +12,7 @@ weight: 10
 
 The current cloud.gov pricing model has four components:
 
-- Base platform
+- Access package
 - Resource usage
 - Managed services
 - À la carte items
@@ -23,11 +23,11 @@ The current model is provisional. In the agile tradition, we are validating whet
 
 This model may change significantly in future, depending on what the take-up of cloud.gov across agencies looks like, and whether this capability ends up being considered critical for the government as a whole.
 
-## Base platform
+## Access package
 
-The “base platform” component covers access to the platform and [support]({{< relref "intro/terminology/pricing-terminology.md" >}}) for it to stay up and available in its current form, as well as expanded over time. The base platform component is paid 12 months at a time, and scales along with the number of systems being hosted.
+The "access package" component covers access to the platform and [support]({{< relref "intro/terminology/pricing-terminology.md" >}}) for it to stay up and available in its current form, as well as expanded over time. The access package component is paid 12 months at a time, and scales along with the number of systems being hosted.
 
-The base platform component would typically be paid with “non-severable” funds, for example: funds that an agency attaches to a particular fiscal year.
+The access package component would typically be paid with “non-severable” funds, for example: funds that an agency attaches to a particular fiscal year.
 
 ## Resource usage
 
