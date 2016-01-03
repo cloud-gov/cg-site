@@ -19,7 +19,7 @@ will create or deploy the app APPNAME. But before you deploy, let's set up a few
 ### Ignoring files
 
 1. Add `*.pyc` and `local_settings.py` to your `.gitignore`.
-1. [Exclude your `.gitignore`d files from Cloud Foundry.]({{< relref "apps/deployment.md#excluding-files" >}})
+1. [Exclude your `.gitignore`d files from Cloud Foundry.]({{< relref "apps/deployment.md#exclude-files" >}})
 
 ### The Python runtime
 
