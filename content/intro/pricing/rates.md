@@ -66,20 +66,21 @@ Usage fees are charged per quarter, tallied monthly, and severable.
 
 Managed services are those which cloud.gov will spin up instantly and run on your behalf. You pay for the resources they consume and our efforts to provide them as a service.
 
-The price of each service is different and they are billed by the service instance. You can see the price of each service instances offered by running `cf marketplace`. (We'll include this information directly here soon.)
+The pricing for each service is different and they are billed by the service instance. You can see the rate for each type of service instance offered by running `cf marketplace`. (We'll include this information directly here in future.) 
+
+**Note:** *We are still determining the rates for some services. We will ensure users of those services are aware of the rates when they are set, and they will not be charged before then.*
 
 Services instances are billed per quarter, tallied monthly and serverable.
 
 ---
 
-Note: This pricing includes any services created through cloud.gov. 18F Infrastructure might offer/bill additional IaaS services separately depending on your project needs.
+This pricing includes any services created through cloud.gov. 18F Infrastructure might offer/bill additional IaaS services separately depending on your project needs.
 
 <!-- 
 TODO
 ---
 
 - Create buildpack page with list and compliance trade-offs
-- TCO statement (red/not-included stuff)
 - Link to terminology page
 - Add examples
- -->
+-->

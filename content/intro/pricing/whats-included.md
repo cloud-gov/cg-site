@@ -20,3 +20,8 @@ All cloud.gov access packages include the following:
 - Regular security updates for supported [buildpacks](#)
 - Self-service management of spaces and users within an organization
 - Platform maintenance and managed service expansion overhead
+
+<!--
+TODO
+- TCO statement (red/not-included stuff)
+-->
