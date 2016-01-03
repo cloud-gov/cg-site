@@ -6,24 +6,30 @@ title: Rates
 weight: 10
 ---
 
-## cloud.gov is charged with 3 different components:
+## cloud.gov fees are broken into three components:
+
+- Access package
+- Usage
+- Managed services
 
 ### 1. cloud.gov Access Package
 
-The access package is the main fee charged by cloud.gov and it includes the following: 
+All access packages include the following: 
 
 - API access, CLI access, Web UI access
 - Documentation/tutorial material (including continuing development)
-- Web-based support during business hours (platform performing as expected and available 24/7, problems addressed as-possible).
+- Web-based support during business hours (platform available 24/7, problems addressed as-possible).
 - Allocation of underlying IaaS (AWS) instances 
-- OS Security updates and Regular hardening of OS image
+- OS security updates and regular hardening of OS image
 - Regular updates to platform security
 - Network security
 - ATO-ready documentation of system components (compliance-masonry form)
-- Routine scanning for infrastructure-level vulnerabilities/misconfiguration
-- Routine security updates for supported [buildpacks](#)
+- Regular scanning for infrastructure-level vulnerabilities/misconfiguration
+- Regular security updates for supported [buildpacks](#)
 - Self-service management of spaces and users within an organization
 - Platform maintenance and managed service expansion overhead
+
+Packages are selected based on the kinds of applications to be hosted.
 
 <table>
   <tr>
@@ -34,16 +40,16 @@ The access package is the main fee charged by cloud.gov and it includes the foll
   </tr>
   <tr>
     <td>
-      For .gov and .mil accounts to kick the tires. Capped usage, all managed services available, no paperwork required.
+      For any .gov or .mil account to try out cloud.gov, no paperwork required. All managed services are available but usage is capped to control our costs.
     </td>
     <td>
-      All the gov-facing services you want on apps.cloud.gov, low separation between teams. Usually one per agency/department. Sandbox caps are removed.
+      Sandbox usage caps can be raised. Suitable for many teams to deploy apps, though limited to apps.cloud.gov. Low ability to delegate access control to teams. Usually purchased per agency/department. 
     </td>
     <td>
-      <em>3</em> public-facing systems, including all the environments needed to support each and DNS support.
+      Up to <em>3</em> public-facing FISMA Low systems, including all the spaces needed and DNS support.
     </td>
     <td>
-      <em>1</em> public-facing system, including all the environments needed to support each and DNS support with the additional support required for FISMA Moderate payloads.
+      <em>1</em> public-facing system, including all the spaces needed and DNS support. Additional support for FISMA Moderate payload requirements.
     </td>
   </tr>
   <tr>
@@ -54,11 +60,11 @@ The access package is the main fee charged by cloud.gov and it includes the foll
   </tr>
 </table>
 
-* Access Package fees are charged yearly and non severable.
+* Access Package fees are charged yearly and non-severable.
 
 ---
 
-### 2. cloud.gov Usage Rates
+### 2. cloud.gov Usage
 
 Resources such as memory, storage and CPU are allocated as needed to run your applications. You will be charged for the resources your applications consume, as a factor of the memory used.
 
