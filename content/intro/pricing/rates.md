@@ -12,6 +12,8 @@ cloud.gov fees are broken into three components:
 - Usage
 - Managed services
 
+[Find out more about this pricing model.]({{< relref "intro/pricing/pricing-model.md" >}})
+
 ### 1. cloud.gov Access Package
 
 Packages are selected based on the kinds of applications to be hosted.
@@ -45,7 +47,9 @@ Packages are selected based on the kinds of applications to be hosted.
   </tr>
 </table>
 
-Access Package fees are charged yearly and non-severable. [What's included?]({{< relref "intro/pricing/whats-included.md" >}})
+Access package fees are charged yearly and non-severable. 
+
+[Find out more about what's included in the access package.]({{< relref "intro/pricing/whats-included.md" >}})
 
 ---
 
@@ -55,10 +59,14 @@ Resources such as memory, storage and CPU are allocated as needed to run your ap
 
 - Sandbox: Resource usage is capped [at what? 1GB per-user?] to control our unrecovered costs.
 - All other packages: $0.0033 per MB reserved per hour (~$99/GB/month)
- 
-We require a specific quota to be set in advance. This helps you control the maximum amount that your team will spend, and helps us avoid over-provisioning resources that won't be used. The quota can be raised on demand. [Find out more about quotas.]({{< relref "intro/pricing/org-quotas.md" >}})
 
 Usage fees are charged per quarter, tallied monthly, and severable.
+
+We require a specific quota to be set in advance. This helps you control the maximum amount that your team will spend, and helps us avoid over-provisioning resources that won't be used. The quota can be raised on demand. 
+
+[Find out more about resource usage and quotas.]({{< relref "intro/pricing/org-quotas.md" >}})
+
+
 
 ---
 
