@@ -6,7 +6,7 @@ title: Quotas
 weight: -10
 ---
 
-Cloud Foundry capacity is billed by quota. Quotas provide a not to exceed reservation of memory, compute, application routes and service instances. Quotas are associated with and billed to a project IAA number or equivalent billing tag. Quota capacity is a hard limit, unused capacity does not ‘roll over’ month to month.
+Cloud Foundry capacity is billed by quota. Quotas provide a not-to-exceed reservation of memory, compute, application routes and service instances. Quotas are associated with and billed to a project IAA number or equivalent billing tag. Quota capacity is a hard limit; unused capacity does not ‘roll over’ month to month.
 
 ##### Quota Billing:
 
