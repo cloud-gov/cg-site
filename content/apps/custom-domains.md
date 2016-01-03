@@ -17,7 +17,7 @@ There needs to be one ELB pointing to Cloud Foundry per TLS certificate.
 ### Creating the [Hosted Zone](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/AboutHZWorkingWith.html).
 
 * If it already exists in [Route 53](https://console.aws.amazon.com/route53/home?region=us-east-1#hosted-zones:), you're good.
-* If not, follow [these instructions](https://github.com/18F/tls-standards/tree/master/certificates#set-up-the-domain).
+* If not, follow [these instructions](https://github.com/18F/https#set-up-the-domain).
 
 ### Creating the [Record Set](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/rrsets-working-with.html).
 1. Click on the Domain Name of the Hosted Zone.
@@ -104,4 +104,4 @@ Rather than create the `parent.tld` domain within CF we can create the full `app
 
 ---
 
-See also: [Official Cloud Foundry Documentation](http://docs.cloudfoundry.org/devguide/deploy-apps/domains-routes.html).
+See also: [Official Cloud Foundry Documentation](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html).

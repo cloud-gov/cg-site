@@ -16,7 +16,7 @@ As an agile project, cloud.gov is always under development. As we observe its us
 
 Building cloud.gov was a collaboration among our engineering, product, operations, and security teams. We built in phases:
 
-1. **Research:** We deployed multiple open source solutions and decided that the best one that would fit our needs was Cloud Foundry. That project was selected mainly because of its [scalability, extensibility, and security](({{< relref "intro/overview/why-use-cloudgov.md" >}})).
+1. **Research:** We deployed multiple open source solutions and decided that the best one that would fit our needs was Cloud Foundry. That project was selected mainly because of its [scalability, extensibility, and security]({{< relref "why-use-cloudgov.md" >}}).
 1. **Customization:** We started working on configuring and customizing the open source project to fit the government’s needs. Among other hardening scripts, we also incorporated HTTPS as a default for all our applications.
-1. **Self-service:** We created tools that allow customers to [self-serve their accounts](({{< relref "intro/overview/using-cloudgov-paas.md" >}}), like account invitations, shared documentation, and code samples.
+1. **Self-service:** We created tools that allow customers to [self-serve their accounts]({{< relref "using-cloudgov-paas.md" >}}), like account invitations, shared documentation, and code samples.
 1. **Growth:** We are currently expanding the platform’s capabilities and finding the growing pains that come with more diverse systems and teams using the platform.

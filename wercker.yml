@@ -1,14 +1,15 @@
 box: wercker/default
-services:
-  - wercker/postgresql
-steps:
-  - dlapiduz/cloud-foundry-deploy
-  - arjen/hugo-build
 build:
   steps:
     - arjen/hugo-build:
         version: 0.14
         flags: --destination=out
+    # use html-proofer, since `hugo` doesn't fail on internal links being broken
+    # https://github.com/spf13/hugo/issues/740
+    - kyleboyle/html-proofer-test:
+        version: "2.6.1"
+        basedir: out
+        arguments: --disable-external
 deploy:
   steps:
     - dlapiduz/cloud-foundry-deploy:
