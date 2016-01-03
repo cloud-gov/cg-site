@@ -74,7 +74,7 @@ Services instances are billed per quarter, tallied monthly and serverable.
 
 ---
 
-This pricing includes any services created through cloud.gov. 18F Infrastructure might offer/bill additional IaaS services separately depending on your project needs.
+This pricing includes only services created through cloud.gov. Additional IaaS services offered by 18F Infrastructure are priced and billed separately.
 
 <!-- 
 TODO
