@@ -2,14 +2,14 @@
 menu:
   main:
     parent: apps
-title: Application Quotas
+title: Application Limits
 weight: -10
 ---
 
 
-As a Cloud Foundry user you’re free to divide your [organization's quota]({{< relref "intro/pricing/org-quotas.md" >}}) capacity amongst your applications as you see fit by way of application quotas. Application limits are specified in your application manifest or as `cf push` command line options.
+As a Cloud Foundry user you’re free to divide your [organization's quota]({{< relref "intro/pricing/org-quotas.md" >}}) capacity amongst your applications as you see fit by way of application limits. Application limits are specified in your application manifest or as `cf push` command line options.
 
-## Application Quota Options:
+## Application Limit Options:
 
 `memory: / -m`
 
@@ -23,7 +23,7 @@ The maximum amount of disk space available to your app.
 
 Sets the number of application instances to launch. Each additional instance receives the same memory and disk reservation. An application with a manifest specifying `memory: 256M` and `instances: 4` would reserve 1GB (256M x 4) total.
 
-## Application Quota Options : Memory Share equals Compute Share
+## Application Limit Options : Memory Share equals Compute Share
 
 As noted above, your application's compute limit is derived from a its memory limit. Each application receives a compute share equal to its relative share of memory.
 
@@ -51,7 +51,7 @@ Your application can use all available CPU time. If there are other applications
 The application cannot access more than the specified amount of memory.
 
 
-## Application Quota Options : Sizing
+## Application Limit Options : Sizing
 
 - The environment default of 512MB `memory:` is sufficient for most applications. Static sites and utility applications such as schedulers or loaders may require less. Use `cf app APPNAME` to check your application's current memory and compute utilization.
 
@@ -65,7 +65,7 @@ The application cannot access more than the specified amount of memory.
 		#0   running   2015-07-30 05:58:11 PM   0.0%   94.6M of 128M   80.4M of 128M      
 
 
-- Any application which exceeds its memory quota will be automatically restarted. Use `cf events APPNAME` to look for 'out of memory' crashes.
+- Any application which exceeds its memory limit will be automatically restarted. Use `cf events APPNAME` to look for 'out of memory' crashes.
 
 		... description   
 		... index: 0, reason: CRASHED, exit_description: out of memory, exit_status: 255
