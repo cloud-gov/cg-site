@@ -14,7 +14,7 @@ A "System" roughly corresponds to a product or project team, including all the i
 
 A system maps to an [“org” in Cloud Foundry](http://docs.cloudfoundry.org/concepts/roles.html#orgs).
 
-## <a name="support"></a> Support
+## Support {#support}
 
 “Support” is support for any inability to use the platform as intended, on a best-effort basis. We have no existing service-level agreement. We plan to always publish metrics that give agencies the ability to make an informed choice about whether to use cloud.gov or an alternative PaaS solution based on our track record.
 
@@ -24,7 +24,7 @@ A system maps to an [“org” in Cloud Foundry](http://docs.cloudfoundry.org/co
 
 ## Access package
 
-The "access package" component covers access to the cloud.gov Platform-as-a-Service and [support](#support) for it to stay up and available in its current form, as well as expanded over time. The access package component is paid 12 months at a time, and scales along with the number of systems being hosted.
+The "access package" component covers access to the cloud.gov Platform-as-a-Service and [support]({{< relref "#support" >}}) for it to stay up and available in its current form, as well as expanded over time. The access package component is paid 12 months at a time, and scales along with the number of systems being hosted.
 
 The access package component would typically be paid with “non-severable” funds, for example: funds that an agency attaches to a particular fiscal year.
 
@@ -44,7 +44,7 @@ Each managed service incurs some resource usage and platform support overhead. T
 
 In many cases, the pricing for managed services is not yet available. This is because we are measuring their initial usage to determine what we will need to charge. We are doing more analysis of the costs we’re observing (both the cost of the IaaS layer and the cost of our support), and aim to set explicit prices for all managed services by the end of March 2016.
 
-## <a name="alacarte"></a> À la carte items
+## À la carte items {#alacarte}
 
 We use Cloud Foundry’s “marketplace” capability to enable self-service provisioning of managed services that cloud.gov itself provides. We are exploring ways to offer services commonly provisioned outside of cloud.gov via cloud.gov, including New Relic and other app-relevant IaaS components. We may be able to offer these services in a self-service manner using Cloud Foundry’s service keys in the future.
 
