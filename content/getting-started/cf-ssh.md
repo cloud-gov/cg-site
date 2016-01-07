@@ -24,7 +24,7 @@ Our `cf-ssh` is customized to our Cloud Foundry installation so please **do not 
     ```bash
     cd ~/Downloads
     chmod a+x cf-ssh
-    mv cf-ssh /usr/local/bin
+    if [ -w /usr/local/bin ]; then mv cf-ssh /usr/local/bin; else sudo mv cf-ssh /usr/local/bin; fi
     ```
 
 ### Usage
