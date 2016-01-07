@@ -12,7 +12,7 @@ cloud.gov fees are broken into three components:
 - Usage
 - Managed services
 
-[Find out more about this pricing model.]({{< relref "intro/pricing/pricing-model.md" >}})
+Find out [more about this pricing model]({{< relref "intro/pricing/pricing-model.md" >}}) and [how we define these terms]({{< relref "intro/terminology/pricing-terminology.md" >}})
 
 ### 1. cloud.gov Access Package
 
@@ -55,7 +55,7 @@ Access package fees are charged yearly and non-severable.
 
 ### 2. cloud.gov Usage
 
-Resources such as memory, storage and CPU are allocated as needed to run your applications. You will be charged for the resources as a factor of the memory your applications consume. 
+You will be charged for resources as a factor of the memory your applications consume. 
 
 - Sandbox: Resource usage is capped [at what? 1GB per-user?] to control our unrecovered costs.
 - All other packages: $0.0033 per MB reserved per hour (~$99/GB/month)
@@ -65,8 +65,6 @@ Usage fees are charged per quarter, tallied monthly, and severable.
 We require a specific quota to be set in advance. This helps you control the maximum amount that your team will spend, and helps us avoid over-provisioning resources that won't be used. The quota can be raised on demand. 
 
 [Find out more about resource usage and quotas.]({{< relref "intro/pricing/quotas.md" >}})
-
-
 
 ---
 
@@ -82,7 +80,7 @@ Services instances are billed per quarter, tallied monthly and serverable.
 
 ---
 
-This pricing includes only services created through cloud.gov. Additional IaaS services offered by 18F Infrastructure are priced and billed separately.
+This pricing includes only services created through cloud.gov. Additional ["á la carte" services]({{< relref "intro/terminology/pricing-terminology.md#alacarte" >}}) offered by 18F Infrastructure are priced and billed separately.
 
 <!-- 
 TODO
