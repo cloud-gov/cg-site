@@ -64,7 +64,7 @@ Usage fees are charged per quarter, tallied monthly, and severable.
 
 We require a specific quota to be set in advance. This helps you control the maximum amount that your team will spend, and helps us avoid over-provisioning resources that won't be used. The quota can be raised on demand. 
 
-[Find out more about resource usage and quotas.]({{< relref "intro/pricing/org-quotas.md" >}})
+[Find out more about resource usage and quotas.]({{< relref "intro/pricing/quotas.md" >}})
 
 
 

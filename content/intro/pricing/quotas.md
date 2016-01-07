@@ -50,7 +50,7 @@ If a new application `push` would exceed your organization's quota the request w
 In this situation you have three options:
 
 1. Delete existing resources with `cf delete`, `delete-service`, `delete-route` or similar.
-2. Reconfigure individual existing [Application Quotas]({{< relref "apps/quotas.md" >}}) and redeploy.
+2. Reconfigure individual existing [Application Quotas]({{< relref "apps/limits.md" >}}) and redeploy.
 3. Request a quota change by an administrator via a [DevOps issue](https://github.com/18F/DevOps/issues).
 
 
