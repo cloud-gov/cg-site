@@ -10,6 +10,7 @@ build:
         version: "2.6.1"
         basedir: out
         arguments: --disable-external
+    - sharms/wercker-step-titleize-check@1.0.3
 deploy:
   steps:
     - dlapiduz/cloud-foundry-deploy:
