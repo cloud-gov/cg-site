@@ -2,7 +2,7 @@
 menu:
   main:
     parent: advanced
-title: Managing teammates
+title: Managing Teammates
 weight: 10
 ---
 
