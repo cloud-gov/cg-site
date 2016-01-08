@@ -10,7 +10,7 @@ Cloud Foundry capacity is billed by quota. Quotas provide a not-to-exceed reserv
 
 ##### Quota Billing:
 
-Quotas are billed by the amound of memory reserved and tallied daily. A monthly bill might include 9 days at 1 GB of RAM, 11 days at 2 GB of RAM and 10 days at 4 GB of RAM.
+Quotas are billed by the amount of memory reserved and tallied daily. A monthly bill might include 9 days at 1 GB of RAM, 11 days at 2 GB of RAM and 10 days at 4 GB of RAM.
 
 ###### Quota Limits:
 
