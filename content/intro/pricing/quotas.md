@@ -10,48 +10,26 @@ Cloud Foundry capacity is billed by quota. Quotas provide a not-to-exceed reserv
 
 ##### Quota Billing:
 
-Quotas are billed by the unit and tallied daily. A monthly bill might include 9 days at 1 unit, 11 days at 2 units and 10 days at 4 units.
-
-##### Quota Units:
-
-Each unit provides.
-
-- 10 application routes.
-- 3.75GB of RAM.
-- 1 vCPU of compute.
-- 6 service instances.
-
-###### Routes:
-
-Hostname and domain pairs where an application that exposes a listening port can be reached.
-
-###### RAM:
-
-The amount of RAM available to your applications.
-
-###### vCPU:
-
-Derived from RAM. The share of CPU time available to your applications.
-
-###### Service Instances:
-
-The number of service instances available to your organization. In the near future, service instances will be billed separately based on the service plan chosen and daily usage.
+Quotas are billed by the amound of memory reserved and tallied daily. A monthly bill might include 9 days at 1 GB of RAM, 11 days at 2 GB of RAM and 10 days at 4 GB of RAM.
 
 ###### Quota Limits:
+
+Quotas limit the following resources:
+- Application routes.
+- Application memory.
+- Service instances.
+- Access to paid plans.
 
 If a new application `push` would exceed your organization's quota the request will fail with status code `400` and a message describing the limit that would be exceeded.
 
 **Example:**
 
-	Creating app APPLICATION in org ORG / space SPACE as USER...
-	FAILED
-	Server error, status code: 400, error code: 100007, message: You have exceeded the instance memory limit for your organization's quota.
+  Creating app APPLICATION in org ORG / space SPACE as USER...
+  FAILED
+  Server error, status code: 400, error code: 100007, message: You have exceeded the instance memory limit for your organization's quota.
 
 In this situation you have three options:
 
 1. Delete existing resources with `cf delete`, `delete-service`, `delete-route` or similar.
 2. Reconfigure individual existing [Application Quotas]({{< relref "apps/limits.md" >}}) and redeploy.
 3. Request a quota change by an administrator via a [DevOps issue](https://github.com/18F/DevOps/issues).
-
-
-
