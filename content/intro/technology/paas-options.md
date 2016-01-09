@@ -18,7 +18,7 @@ Commercial vendors can provide managed services and support/consulting options t
 
 ### Cloud Foundry vendors
 
-There are several commercial Cloud Foundry vendors (Pivotal Cloud Foundry, CenturyLink AppFog, and IBM BlueMix to name just a few). The common use of the Cloud Foundry API provides easy mobility from cloud.gov to commercial vendors’ services for government-developed applications as warranted, or vice-versa.
+Cloud Foundry maintains a [list of certified commercial vendors](https://www.cloudfoundry.org/learn/certified-providers/). The common use of the Cloud Foundry API provides easy mobility from cloud.gov to commercial vendors’ services for government-developed applications as warranted, or vice-versa.
 
 ### Non-Cloud Foundry vendors
 
