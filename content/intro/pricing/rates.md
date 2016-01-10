@@ -9,34 +9,34 @@ weight: 10
 cloud.gov fees are broken into three components:
 
 - Access package
-- Usage
+- Resource usage
 - Managed services
 
 Find out [more about this pricing model]({{< relref "intro/pricing/pricing-model.md" >}}) and [how we define these terms]({{< relref "intro/terminology/pricing-terminology.md" >}})
 
-### 1. cloud.gov Access Package
+### Access Package
 
 Packages are selected based on the kinds of applications to be hosted.
 
 <table>
   <tr>
     <th>Sandbox</th>
-    <th>Skunkworks</th>
+    <th>Prototyping</th>
     <th>FISMA Low</th>
-    <th>FISMA Mod</th>
+    <th>FISMA Moderate</th>
   </tr>
   <tr>
     <td>
       For any .gov or .mil account to try out cloud.gov, no paperwork required. All managed services are available.
     </td>
     <td>
-      Sandbox usage caps can be raised. Suitable for many teams to deploy apps, though limited to apps.cloud.gov. Low ability to delegate access control to teams. Usually purchased per agency/department. 
+      Sandbox usage caps can be raised. Suitable for many teams to deploy apps, though limited to the apps.cloud.gov domain. Low ability to delegate access control to teams. No production data allowed. Usually purchased per agency/department. 
     </td>
     <td>
       Up to <em>3</em> public-facing FISMA Low systems, including all the spaces needed and DNS support.
     </td>
     <td>
-      <em>1</em> public-facing system, including all the spaces needed and DNS support. Additional support for FISMA Moderate payload requirements.
+      <em>1</em> public-facing system, including all the spaces needed and DNS support. Additional support for FISMA Moderate data requirements.
     </td>
   </tr>
   <tr>
@@ -47,28 +47,28 @@ Packages are selected based on the kinds of applications to be hosted.
   </tr>
 </table>
 
-Access package fees are charged yearly and non-severable. 
+Access package fees are charged yearly and are non-severable. 
 
-[Find out more about what's included in the access package.]({{< relref "intro/pricing/whats-included.md" >}})
+[Find more about what's included in the access package.]({{< relref "intro/pricing/whats-included.md" >}})
 
 ---
 
-### 2. cloud.gov Usage
+### Resource usage
 
 You will be charged for resources as a factor of the memory your applications consume. 
 
-- Sandbox: Resource usage is capped [at what? 1GB per-user?] to control our unrecovered costs.
+- Sandbox: Resource usage is capped to 1 GB.
 - All other packages: $0.0033 per MB reserved per hour (~$99/GB/month)
 
-Usage fees are charged per quarter, tallied monthly, and severable.
+Resource usage fees are charged per quarter, tallied monthly, and severable.
 
 We require a specific quota to be set in advance. This helps you control the maximum amount that your team will spend, and helps us avoid over-provisioning resources that won't be used. The quota can be raised on demand. 
 
-[Find out more about resource usage and quotas.]({{< relref "intro/pricing/quotas.md" >}})
+[Find more about resource usage and quotas.]({{< relref "intro/pricing/quotas.md" >}})
 
 ---
 
-### 3. cloud.gov Managed Services
+### Managed services
 
 Managed services are those which cloud.gov will spin up instantly and run on your behalf. You pay for the resources they consume and our efforts to provide them as a service.
 
@@ -76,11 +76,11 @@ The pricing for each service is different and they are billed by the service ins
 
 **Note:** *We are still determining the rates for some services. We will ensure users of those services are aware of the rates when they are set, and they will not be charged before then.*
 
-Services instances are billed per quarter, tallied monthly and serverable.
+Managed services are billed per quarter, tallied monthly, and serverable.
 
 ---
 
-This pricing includes only services created through cloud.gov. Additional ["á la carte" services]({{< relref "intro/terminology/pricing-terminology.md#alacarte" >}}) offered by 18F Infrastructure are priced and billed separately.
+This pricing includes _only_ services created through cloud.gov. If you are using additional public or private services offered by 18F Infrastructure, they are priced and billed separately - speak with your 18F Finance point of contact for more information.
 
 <!-- 
 TODO
