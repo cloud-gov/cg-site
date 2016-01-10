@@ -44,9 +44,3 @@ Each managed service incurs some resource usage and platform support overhead. T
 
 In many cases, the pricing for managed services is not yet available. This is because we are measuring their initial usage to determine what we will need to charge. We are doing more analysis of the costs we’re observing (both the cost of the IaaS layer and the cost of our support), and aim to set explicit prices for all managed services by the end of March 2016.
 
-## À la carte items {#alacarte}
-
-We use Cloud Foundry’s “marketplace” capability to enable self-service provisioning of managed services that cloud.gov itself provides. We are exploring ways to offer services commonly provisioned outside of cloud.gov via cloud.gov, including New Relic and other app-relevant IaaS components. We may be able to offer these services in a self-service manner using Cloud Foundry’s service keys in the future.
-
-18F has in the past helped agencies acquire access to these resources in a manual fashion; see our information on paying for other services. 
-
