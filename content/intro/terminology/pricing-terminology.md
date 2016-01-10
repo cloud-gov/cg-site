@@ -16,7 +16,7 @@ A system maps to an [“org” in Cloud Foundry](http://docs.cloudfoundry.org/co
 
 ## Support {#support}
 
-“Support” is support for any inability to use the platform as intended, on a best-effort basis. We have no existing service-level agreement. We plan to always publish metrics that give agencies the ability to make an informed choice about whether to use cloud.gov or an alternative PaaS solution based on our track record.
+“Support” is support to use the platform as intended, on a best-effort basis. We have no existing service-level agreement. We plan to always publish metrics that give agencies the ability to make an informed choice about whether to use cloud.gov or an alternative PaaS solution based on our actual track record.
 
 ## Consulting
 
@@ -24,9 +24,9 @@ A system maps to an [“org” in Cloud Foundry](http://docs.cloudfoundry.org/co
 
 ## Access package
 
-The "access package" component covers access to the cloud.gov Platform-as-a-Service and [support]({{< relref "#support" >}}) for it to stay up and available in its current form, as well as expanded over time. The access package component is paid 12 months at a time, and scales along with the number of systems being hosted.
+The "access package" component covers access to the cloud.gov Platform as a Service (PaaS) and [support]({{< relref "#support" >}}) for it to stay up and available in its current form, as well as expanded over time. The access package component is paid 12 months at a time, and scales along with the number of systems being hosted and the impact level of the systems being launched on the platform, as defined by [Federal Information Processing Standard (FIPS) 199](http://csrc.nist.gov/publications/fips/fips199/FIPS-PUB-199-final.pdf).
 
-The access package component would typically be paid with “non-severable” funds, for example: funds that an agency attaches to a particular fiscal year.
+The access package component is "non-severable" and therefore non-refundable. As a result, a payment in one fiscal year does not expire regardless of the status of the underlying appropriation.
 
 ## Resource usage
 
