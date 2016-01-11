@@ -104,7 +104,7 @@ Use `cf env APPLICATION` to to display the application environment variables inc
 
 In this case, `url` alone could be sufficient for establishing a connection from the running application.
 
-ccess the Service Configuration:
+Access the Service Configuration:
 
 Configuration and credentials for the bound service can be accessed in several ways.
 
