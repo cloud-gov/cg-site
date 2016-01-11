@@ -1,0 +1,22 @@
+{
+  "name": "cg-docs",
+  "version": "1.0.0",
+  "description": "Documentation site for cloud.gov Cloud Foundry https://docs.cloud.gov",
+  "main": "index.js",
+  "scripts": {
+    "build": "node-sass static_src/main.scss static/css/main.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/18F/cg-docs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/18F/cg-docs/issues"
+  },
+  "homepage": "https://github.com/18F/cg-docs#readme",
+  "devDependencies": {
+    "node-sass": "^3.4.2",
+    "postcss-import": "^7.1.3"
+  }
+}
