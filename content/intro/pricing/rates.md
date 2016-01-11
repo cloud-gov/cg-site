@@ -20,22 +20,22 @@ Packages are selected based on the kinds of applications to be hosted.
 
 <table>
   <tr>
-    <th>Sandbox</th>
-    <th>Prototyping</th>
-    <th>FISMA Low</th>
-    <th>FISMA Moderate</th>
+    <th width="25%">Sandbox</th>
+    <th width="25%">Prototyping</th>
+    <th width="25%">FISMA Low</th>
+    <th width="25%">FISMA Moderate</th>
   </tr>
   <tr>
-    <td>
+    <td valign="top">
       For any .gov or .mil account to try out cloud.gov, no paperwork required. All managed services are available.
     </td>
-    <td>
+    <td valign="top">
       Sandbox usage caps can be raised. Suitable for many teams to deploy apps, though limited to the apps.cloud.gov domain. Low ability to delegate access control to teams. No production data allowed. Usually purchased per agency/department. 
     </td>
-    <td>
+    <td valign="top">
       Up to <em>3</em> public-facing FISMA Low systems, including all the spaces needed and DNS support.
     </td>
-    <td>
+    <td valign="top">
       <em>1</em> public-facing system, including all the spaces needed and DNS support. Additional support for FISMA Moderate data requirements.
     </td>
   </tr>
