@@ -2,16 +2,16 @@
 menu:
   main:
     parent: pricing
-title: What's included
+title: What's Included
 weight: 10
 ---
 
-All cloud.gov access packages include the following: 
+All cloud.gov access packages include the following:
 
 - API access, CLI access, Web UI access
 - Documentation/tutorial material (including continuing development)
 - Web-based support during business hours (platform available 24/7, problems addressed as-possible).
-- Allocation of underlying IaaS (AWS) instances 
+- Allocation of underlying IaaS (AWS) instances
 - OS security updates and regular hardening of OS image
 - Regular updates to platform security
 - Network security
