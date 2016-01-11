@@ -8,45 +8,25 @@ weight: 10
 
 ## Pricing model
 
-18F provides its services to other agencies on a cost-recovery model. This holds not only for cloud.gov, but also for consulting, delivery, and other work. The initial funding for cloud.gov came from a grant from the Acquisition Services Fund. We also recover some of the costs by charging for labor on digital products we deliver for agency partners.
+18F provides its services to other agencies on a _full_ cost-recovery model. This holds not only for cloud.gov, but also for our consulting, delivery, and other work.
+
+---
 
 The current cloud.gov pricing model has four components:
 
-- Base platform
+- Access package
 - Resource usage
 - Managed services
-- À la carte items
 
-More information on what these include is below. We expect to publish a dedicated page with current rates soon.
+Find out more about each component via our [pricing terminology page]({{< relref "intro/terminology/pricing-terminology.md" >}}) or see the [dedicated page with our rates]({{< relref "intro/pricing/rates.md" >}}). 
 
-The current model is provisional. In the agile tradition, we are validating whether this model fits the needs of federal agencies, which often face issues around budget or appropriation categories for the money they spend on a particular purchase. The current model is also a test to validate that providing cloud.gov to other agencies will be cost-recoverable for 18F and GSA. The pricing model must cover the costs of developing, providing, and supporting it for other agencies, rather than just our internal use.
+---
+Our mission is to catapult government agencies past mere cloud 'adoption', to the point where they routinely deliver services to the public as fast as they can be developed, all while applying the best practices in security and compliance with minimal effort. 
 
-This model may change significantly in future, depending on what the take-up of cloud.gov across agencies looks like, and whether this capability ends up being considered critical for the government as a whole.
+Comparing cloud.gov's pricing model to those private Platform as a Service (PaaS) providers is extremely difficult, as it is not an apples to apples comparison. If you attempt to do a price comparison, be sure to include the up-front and opportunity costs of your procurement, operations, security, and compliance teams in obtaining a solution from scratch. It may be difficult to obtain these costs, especially if they are hidden within various working captial funds in your agency. Consider the labor and time to be saved by having a proven, ready-to-ATO infrastructure in your teams' hands from Day One, via a relatively simple Inter-agency Agreement (IAA). Cloud.gov's resource usage is already priced competitive with the private market, and is the superior option in reducing compliance friction to access the cloud. 
 
-## Base platform
+It is critical to obtain all this data in order to perform a true cost of ownership comparison. 18F stands ready to help you build an accurate cost model.
 
-The “base platform” component covers access to the platform and [support]({{< relref "intro/terminology/pricing-terminology.md" >}}) for it to stay up and available in its current form, as well as expanded over time. The base platform component is paid 12 months at a time, and scales along with the number of systems being hosted.
+We are validating whether our pricing model fits the needs of federal agencies, and will continue to experiment with the model. Our promise to our partners is that prices will not be changed on them mid-fiscal year, and the price of any particular part of the platform will *not go up*. 
 
-The base platform component would typically be paid with “non-severable” funds, for example: funds that an agency attaches to a particular fiscal year.
-
-## Resource usage
-
-To support tenant applications and managed service instances, cloud.gov allocates resources (like compute nodes and memory) from an underlying IaaS. What we charge for this component covers the costs for the resources that cloud.gov allocates to hosted systems and teams. It also includes a small margin that covers our labor in managing those resources.
-
-Resource usage fees on-demand are understood to be “severable” as they can be controlled in a self-service manner by provisioning more or fewer apps, and therefore must be treated accordingly.
-
-Agencies can purchase reserved capacity via 18F as well, which is understood to be “non-severable”.
-
-## Managed services
-
-Each “managed service” (see our definition) incurs some resource usage and platform support overhead. The managed service fees ensure we can cover our costs to provide them to you. The fee varies among services and plans.
-
-In many cases, the pricing for managed services is not yet available. This is because we are measuring their initial usage to determine what we will need to charge.
-
-We do not yet have a good picture of how much we should charge to cover the cost of these services. We are doing more analysis of the costs we’re observing (both the cost of the IaaS layer and the cost of our support). We aim to offer explicit prices for all these by the end of March 2016.
-
-## À la carte items
-
-We use Cloud Foundry’s “marketplace” capability to enable self-service provisioning of managed services that cloud.gov itself provides. We are exploring ways to offer services commonly provisioned outside of cloud.gov via cloud.gov, including New Relic and other app-relevant IaaS components. We may be able to offer these services in a self-service manner using Cloud Foundry’s service keys in the future.
-
-18F has in the past helped agencies acquire access to these resources in a manual fashion; see our information on paying for other services. 
+It is important to note that the model _itself_ may change between fiscal years. We will honor the pricing model for access _during_ the period of performance and will not change the model for any particular partner until their period of performance is over.
