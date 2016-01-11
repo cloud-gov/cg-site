@@ -12,14 +12,7 @@ Cloud Foundry Managed Services provide applications with on-demand access to ser
 
 #### Prerequisites:
 
-1.) Cloud Foundry [CLI](https://github.com/cloudfoundry/cli).
-
-	brew tap pivotal/tap
-	brew install cloudfoundry-cli
-
-2.) The utility [jq](http://stedolan.github.io/jq/) JSON parsing utility is not strictly necessary, but comes into play in of one of the examples below.
-
-	brew install jq
+Verify your [setup is complete]({{< relref "getting-started/setup.md" >}}).
 
 #### Procedure:
 
