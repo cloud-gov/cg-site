@@ -1,18 +1,14 @@
 ---
 menu:
   main:
-    parent: operations
-title: Accessing V1 Managed Services
+    parent: apps
+title: Managed Services
 weight: 10
 ---
 
 #### Background:
 
 Cloud Foundry Managed Services provide applications with on-demand access to services outside of the stateless application environment. Typical managed services include databases, queues and key-value stores.
-
-The v1 services in [cf-services-contrib-release](https://github.com/cloudfoundry-community/cf-services-contrib-release) are a straightforward way to get started quickly with a suite of useful service bindings. Services included are elasticsearch, memcached, mongodb, postgresql, rabbitmq, redis, vblob and swift.
-
-**Note:** These v1 services are currently deprecated and set to be removed in a future Cloud Foundry release. Consider using the v2 [containers service broker](https://github.com/cf-platform-eng/cf-containers-broker) with an appropriate Docker image going forward.
 
 #### Prerequisites:
 
@@ -25,54 +21,42 @@ The v1 services in [cf-services-contrib-release](https://github.com/cloudfoundry
 
 	brew install jq
 
-3.) An fully deployed and authorized v1 Cloud Foundry service such as the contrib services mentioned above.
-
 #### Procedure:
 
 In order to create a service instance and binding for use with an application we first need to identify the available services and their respective plans.
 
-##### List v1 Services:
+##### List services:
 
-	cf service-auth-tokens
+	% cf marketplace
 
 **Output:**
 
-	Getting service auth tokens as USERNAME...
+	Getting services from marketplace in org ORG / space SPACE as USERNAME
 	OK
 
-	label           provider   
-	postgresql      core   
-	elasticsearch   core   
+	service                     plans                                    description   
+	elasticsearch-swarm-1.7.1   3x, 6x, 1x                               Elasticsearch 1.7.1   
+	rds                         shared-psql, micro-psql*, medium-psql*   RDS Database Broker   
+	redis28-swarm               standard                                 Redis 2.8 service for application development and testing   
+	s3                          basic*                                   Amazon S3 is storage for the Internet.   
 
-##### List v1 Service Plans:
+	* These service plans have an associated cost. Creating a service instance will incur this cost.
 
-Unfortunately, the `cf` cli lacks a command to query for v1 service plans directly, but we can get that information from the Cloud Foundry API with the help of `cf curl`.
-
-Identify the `service_plan_url` for the service `entity` (service label) you're interested in.
-
-	cf curl /v2/services
-
-Access the entity `service_plan_url` with `cf curl` to see available plans.
-
-	cf curl SERVICE_PLAN_URL
-
-We can do this as a one-liner with some help from jq.
-
-	cf curl `cf curl /v2/services | jq -r '(.resources[] | select(.entity.label == SERVICE_LABEL) | .entity.service_plans_url)'`
+	TIP:  Use 'cf marketplace -s SERVICE' to view descriptions of individual plans of a given service.
 
 ##### Create a Service Instance:
 
 Target the org and space which will hold the app to which the service instance will be bound.
 
-	cf target -o ORG -s SPACE
+	% cf target -o ORG -s SPACE
 
-Create a new service instance by specifying a service label, plan and a name of your choice for the service instance. Note that service instance names must be unique and they can be renamed.
+Create a new service instance by specifying a service, plan and a name of your choice for the service instance. Note that service instance names must be unique and they can be renamed.
 
-	cf create-service SERVICE_LABEL SERVICE_PLAN INSTANCE_NAME
+	% cf create-service SERVICE_NAME PLAN_NAME INSTANCE_NAME
 
 For example, the create an instance of the elasticsearch service using the free plan with name 'es'.
 
-	cf create-service elasticsearch free es
+	% cf create-service elasticsearch-swarm-1.7.1 1x myapp-elasticsearch
 
 ##### Bind the Service Instance:
 
@@ -85,16 +69,13 @@ A service instance must be bound to the application which will access it. This c
 	- name: app
 	  command: node app.js
 	  services:
-	   - es
+	   - myapp-elasticsearch
 
 A service binding will be created with the next `cf push`.
 
-
 Alternatively, a service instance can also bound to an existing application via the `cf` cli.
 
-	cf bind-service APPLICATION SERVICE_INSTANCE
-
-##### Understand the Service Configuration:
+	% cf bind-service APPLICATION INSTANCE_NAME
 
 Use `cf env APPLICATION` to to display the application environment variables including `VCAP_SERVICES` which holds information for each bound service.
 
@@ -102,7 +83,7 @@ Use `cf env APPLICATION` to to display the application environment variables inc
 
 	...
 	 "VCAP_SERVICES": {
-	  "elasticsearch-0.20": [
+	  "elasticsearch-swarm-1.7.1": [
 	   {
 	    "credentials": {
 	     "host": "10.10.3.129",
@@ -113,9 +94,9 @@ Use `cf env APPLICATION` to to display the application environment variables inc
 	     "url": "http://UUID-C:UUID-B@10.10.3.129:45001",
 	     "username": "UUID-C"
 	    },
-	    "label": "elasticsearch-0.20",
-	    "name": "es",
-	    "plan": "free",
+	    "label": "elasticsearch-swarm-1.7.1",
+	    "name": "myapp-elasticsearch",
+	    "plan": "1x",
 	    "tags": [
 	     "object store"
 	    ]
@@ -123,7 +104,7 @@ Use `cf env APPLICATION` to to display the application environment variables inc
 
 In this case, `url` alone could be sufficient for establishing a connection from the running application.
 
-##### Access the Service Configuration:
+ccess the Service Configuration:
 
 Configuration and credentials for the bound service can be accessed in several ways.
 
@@ -159,3 +140,24 @@ To access the elasticsearch service described above with a node app.
 		host: url,
 	});
 	...
+
+###### Ruby on Rails Access Example:
+
+**config/initializers/elasticsearch.rb**
+
+	# we use "production" env for all things at cloud.gov
+	if Rails.env.production?
+      vcap = ENV["VCAP_SERVICES"]
+      vcap_config = JSON.parse(vcap)
+      vcap_config.keys.each do |vcap_key|
+        if vcap_key.match(/elasticsearch/)
+          es_config = vcap_config[vcap_key]
+          es_client_args[:url] = es_config[0]["credentials"]["uri"]
+        end
+      end
+    elsif Rails.env.test?
+      es_client_args[:url] = "http://localhost:#{(ENV['TEST_CLUSTER_PORT'] || 9250)}"
+    else
+      es_client_args[:url] = ENV["ES_URL"] || "http://localhost:9200"
+    end
+
