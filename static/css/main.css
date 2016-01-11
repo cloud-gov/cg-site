@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url(../node_modules/uswds/assets/css/google-fonts.css);
 html {
   box-sizing: border-box; }
 

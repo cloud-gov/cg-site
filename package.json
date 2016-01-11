@@ -4,7 +4,10 @@
   "description": "Documentation site for cloud.gov Cloud Foundry https://docs.cloud.gov",
   "main": "index.js",
   "scripts": {
-    "build": "node-sass static_src/main.scss static/css/main.css",
+    "build": "node-sass static_src/main.scss static/css/main.css && npm run copy",
+    "copy": "npm run copy-img && npm run copy-font",
+    "copy-img": "cp -r node_modules/cg-style/img/* static/img/",
+    "copy-font": "cp node_modules/cg-style/font/* static/fonts/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
