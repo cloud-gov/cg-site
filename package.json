@@ -8,7 +8,8 @@
     "copy": "npm run copy-img && npm run copy-font",
     "copy-img": "cp -r node_modules/cg-style/img/* static/img/",
     "copy-font": "cp node_modules/cg-style/font/* static/fonts/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "onchange './node_modules/cg-style/css/*' './static_src/**/*.scss' -v -- npm run build"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   "homepage": "https://github.com/18F/cg-docs#readme",
   "devDependencies": {
     "node-sass": "^3.4.2",
+    "onchange": "git+https://git@github.com/msecret/onchange.git",
     "postcss-import": "^7.1.3"
   }
 }
