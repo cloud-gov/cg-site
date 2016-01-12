@@ -1,35 +1,26 @@
-                      <hr style="margin: 2em auto 0.25em;">
-                    </div>
-                    </section>
-
-                    <footer>
-                      <div>
-                        Built with <i class="fa fa-heart"></i> by the cloud.gov team
-                      </div>
-                      <div>
-                        <a href="/ops/repos/">
-                          <img src="/img/cc-zero.png" alt="CC0 1.0 Universal" class="cc0-logo" />
-                        </a>
-                      </div>
-                    </footer>
-
-                </div>
-                <div class="col-md-1">
-                    {{ if .IsPage }}
-                    {{ with .GetParam "next" }}
-                    <a class="navigation next" href="{{.}}">
-                        <i class="fa fa-angle-right"> </i>
-                    </a>
-                    {{ end }}
-                    {{ end }}
-                </div>
-              </div>
-              <!-- page start-->
-          </section>
-      </section>
-     <!--main content end-->
-  </section>
-  <!-- container section end -->
+            <hr style="margin: 2em auto 0.25em;">
+          <footer>
+            <div>
+              Built with <i class="fa fa-heart"></i> by the cloud.gov team
+            </div>
+            <div>
+              <a href="/ops/repos/">
+                <img src="/img/cc-zero.png" alt="CC0 1.0 Universal" class="cc0-logo" />
+              </a>
+            </div>
+          </footer>
+          <div class="col-md-1">
+            {{ if .IsPage }}
+            {{ with .GetParam "next" }}
+            <a class="navigation next" href="{{.}}">
+                <i class="fa fa-angle-right"> </i>
+            </a>
+            {{ end }}
+          {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- javascripts -->
     <script src="/js/jquery-2.1.1.min.js"></script>
     <script src="/js/jquery.scrollTo.min.js"></script>
