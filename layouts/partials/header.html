@@ -15,46 +15,28 @@
   </head>
 
   <body>
-  <!-- container section start -->
-  <section id="container" class="">
+    <!--header start-->
+    <header class="">
+      <div class="toggle-nav">
+        <i class="fa fa-bars"></i>
+        <div class="icon-reorder tooltips" 
+          data-original-title="Toggle Navigation" data-placement="bottom">
+        </div>
+      </div>
 
-      <!--header start-->
-      <header class="header black-bg">
-            <div class="toggle-nav">
-                <i class="fa fa-bars"></i>
-                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"></div>
-            </div>
+      <!--logo start-->
+      <a href="/" title="Home">
+        <h2 class="main">{{ .Site.Title }}</h2>
+      </a>
+      <!--logo end-->
 
-            <!--logo start-->
-            <a href="/" title="Home">
-              <h2 class="main">{{ .Site.Title }}</h2>
-            </a>
-            <!--logo end-->
-            <div class="top-nav notification-row">
-            </div>
+      <div id="top_menu">
+        <h1>{{ .Title }}</h1>
+      </div>
+    </header>
+    <!--header end-->
 
-            <div class="nav title-row" id="top_menu">
-                <h1 class="nav top-menu">{{ .Title }}</h1>
-            </div>
-      </header>
-      <!--header end-->
+    {{ partial "menu.html" . }}
 
-{{ partial "menu.html" . }}
-
-      <!--main content start-->
-      <section id="main-content">
-          <section class="wrapper">
-
-              <div class="row">
-                  <div class="col-md-1">
-                      {{ if .IsPage }}
-                      {{ with .GetParam "prev" }}
-                      <a class="navigation prev" href="{{.}}">
-                      <i class="fa fa-angle-left"></i>
-                      </a>
-                      {{ end }}
-                      {{ end }}
-                  </div>
-                <div class="col-md-10">
-                    <section class="panel">
-                      <div class="panel-body">
+    <div class="sidenav-main_content" id="main-content">
+      <div class="usa-content content">
