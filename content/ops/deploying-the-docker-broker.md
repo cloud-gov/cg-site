@@ -294,3 +294,9 @@ By default, the spread [placement strategy](https://docs.docker.com/swarm/schedu
 ### We understand how new services offered via the broker should control access
 
 Access control must be baked into the docker image used to provide the service. For example, [docker-elasticsearch](https://github.com/18F/docker-elasticsearch) includes the [http-basic](https://github.com/18F/docker-elasticsearch/blob/4b4530e622f172ea911b50f386fdd52e995c779c/Dockerfile#L62-L68) plugin for elasticsearch. The plugin is configured when the service instance is created as part of the [start.sh](https://github.com/18F/docker-elasticsearch/blob/4b4530e622f172ea911b50f386fdd52e995c779c/scripts/start.sh#L11-L12) script. The auto-generated vars used by the script are described in the [cf-containers-broker docs](https://github.com/cloudfoundry-community/cf-containers-broker/blob/master/CREDENTIALS.md).
+
+
+### Logging into Docker Container
+- SSH into the docker vm. `bosh ssh docker <index>`
+- Once in the docker vm, find the container you want by listing all the containers via `/var/vcap/packages/docker/bin/docker -H=tcp://127.0.0.1:4243 ps`
+- Connect to the container by taking the id hash of the container and running `/var/vcap/packages/docker/bin/docker -H=tcp://127.0.0.1:4243 exec -it <hash id> /bin/bash`
