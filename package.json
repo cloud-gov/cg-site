@@ -9,7 +9,7 @@
     "copy-img": "cp -r node_modules/cg-style/img/* static/img/",
     "copy-font": "cp node_modules/cg-style/font/* static/fonts/",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "onchange './node_modules/cg-style/css/*' './node_modules/cg-style/img/*' './static_src/**/*.scss' -v -- npm run build"
+    "watch": "onchange './node_modules/cg-style/css/*.scss' './node_modules/cg-style/img/*' './static_src/**/*.scss' -v -- npm run build"
   },
   "repository": {
     "type": "git",
