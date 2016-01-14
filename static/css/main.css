@@ -2260,6 +2260,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   list-style: none; }
   .nav li {
     display: list-item;
@@ -2275,7 +2276,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-link {
   color: #5b616b;
-  font-size: 1.4em;
+  font-size: 1.1em;
   padding-bottom: .2em;
   padding-top: .2em;
   text-transform: uppercase; }
@@ -2284,7 +2285,10 @@ h1, h2, h3, h4, h5, h6 {
   @media screen and (min-width: 600px) {
     .nav-link {
       font-size: inherit;
-      padding: 0; } }
+      padding-bottom: 0;
+      padding-left: .2em;
+      padding-right: .2em;
+      padding-top: 0; } }
 
 .sidenav-parent {
   display: flex;
