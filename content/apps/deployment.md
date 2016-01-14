@@ -34,6 +34,9 @@ The app should now be live at `APPNAME.18f.gov`.
 
 In general, applications will be easiest to deploy to Cloud Foundry if they follow the [Twelve Factor App](http://12factor.net/) guidelines.
 
+## Setting Environment Variables
+See Cloud Foundry's [documentation on environment variables](http://docs.run.pivotal.io/devguide/deploy-apps/environment-variable.html).
+
 ## Exclude files
 
 Cloud Foundry isn't version-control-aware, so `cf push` will deploy the working state of whatever files you have in that directory. In most cases, you will want to [exclude files](http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html#exclude) ignored by Git. From within your project directory, run
