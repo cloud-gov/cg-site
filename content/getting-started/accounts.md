@@ -11,7 +11,7 @@ weight: -100
 You will need a Cloud Foundry account before continuing. To get an account:
 
 * **If you are a member of 18F:** post in #cloud-gov-support.
-* **If your organization/project is registered with cloud.gov:** ask one of your teammates to [send you an invite](https://login.cloud.gov/invitations/new).
+* **If your organization/project is registered with cloud.gov:** ask one of your teammates to follow [these instructions]({{< relref "managing-teammates.md" >}}).
 * **Otherwise:** see [who can use cloud.gov]({{< relref "intro/overview/who-can-use-cloudgov.md" >}}).
 
 ## Resetting your password
