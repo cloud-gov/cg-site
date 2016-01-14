@@ -1,0 +1,9 @@
+---
+menu:
+  main:
+    parent: ops
+title: Managing Environment Variables
+weight: 10
+---
+
+See Cloud Foundry's [documentation on environment variables](http://docs.run.pivotal.io/devguide/deploy-apps/environment-variable.html).
