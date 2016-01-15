@@ -3,7 +3,6 @@ menu:
   main:
     parent: operations
 title: Port Descriptions
-weight: 10
 ---
 
 Here are some ports in Bosh security group and the descriptions:

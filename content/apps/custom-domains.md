@@ -3,7 +3,6 @@ menu:
   main:
     parent: advanced
 title: Custom Domains
-weight: 10
 ---
 
 ### Creating the [Load Balancer (ELB)](http://aws.amazon.com/elasticloadbalancing/)

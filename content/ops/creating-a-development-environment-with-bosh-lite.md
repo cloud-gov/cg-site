@@ -4,7 +4,6 @@ menu:
     parent: deployment
 title: Creating a Dev Environment on AWS
 linktitle: AWS
-weight: 10
 ---
 
 BOSH Lite is designed to provide a local development environment for BOSH and by extension Cloud Foundry. Though BOSH Lite can be run locally via Virtualbox, this guide is primarily concerned with bringing up a single-instance environment on Amazon EC2.

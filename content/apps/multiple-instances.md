@@ -4,7 +4,6 @@ menu:
   main:
     parent: advanced
 title: Running Multiple Instances
-weight: 10
 ---
 
 ## Starting Multiple Instances

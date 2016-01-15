@@ -3,7 +3,6 @@ menu:
   main:
     parent: apps
 title: Managed Services
-weight: 10
 ---
 
 #### Background:

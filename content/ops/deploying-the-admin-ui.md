@@ -3,7 +3,6 @@ menu:
   main:
     parent: deployment
 title: Deploying the Admin UI
-weight: 10
 ---
 
 This guide covers the high level stops required to configure, deploy and add users to the Admin UI as part of an existing Cloud Foundry environment.

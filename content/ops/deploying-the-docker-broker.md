@@ -3,7 +3,6 @@ menu:
   main:
     parent: deployment
 title: Deploying the Docker Broker
-weight: 10
 ---
 
 This guide covers the high level steps required to configure, deploy and enable docker-boshrelease and included cf-containers-broker.

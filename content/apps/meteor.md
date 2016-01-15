@@ -3,7 +3,6 @@ menu:
   main:
     parent: apps
 title: Deploying Meteor
-weight: 10
 ---
 
 # About Meteor

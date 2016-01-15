@@ -3,7 +3,6 @@ menu:
   main:
     parent: apps
 title: Application Limits
-weight: -10
 ---
 
 

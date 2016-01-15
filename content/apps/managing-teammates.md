@@ -3,7 +3,6 @@ menu:
   main:
     parent: advanced
 title: Managing Teammates
-weight: 10
 ---
 
 To add a new teammate to your organization:

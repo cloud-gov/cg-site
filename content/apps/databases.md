@@ -3,7 +3,6 @@ menu:
   main:
     parent: apps
 title: Databases
-weight: 10
 ---
 
 There are multiple options for how to set up databases for use with applications in Cloud Foundry.

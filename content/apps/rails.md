@@ -3,7 +3,6 @@ menu:
   main:
     parent: apps
 title: Deploying Rails
-weight: 10
 ---
 
 See the official CF guide: [Getting Started Deploying Ruby on Rails Apps](http://docs.cloudfoundry.org/buildpacks/ruby/gsg-ror.html). Here are the minimal steps for a basic Rails app:

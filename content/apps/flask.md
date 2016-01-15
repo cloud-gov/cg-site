@@ -3,7 +3,6 @@ menu:
   main:
     parent: apps
 title: Deploying Flask
-weight: 10
 ---
 Deploying a Flask app is similar to deploying a Django app but is a bit simpler.
 
