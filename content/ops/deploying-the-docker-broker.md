@@ -297,6 +297,6 @@ Access control must be baked into the docker image used to provide the service. 
 
 
 ### Logging into Docker Container
-- SSH into the docker vm. `bosh ssh docker <index>`
-- Once in the docker vm, find the container you want by listing all the containers via `/var/vcap/packages/docker/bin/docker -H=tcp://127.0.0.1:4243 ps`
-- Connect to the container by taking the id hash of the container and running `/var/vcap/packages/docker/bin/docker -H=tcp://127.0.0.1:4243 exec -it <hash id> /bin/bash`
+1. SSH into the docker vm. `bosh ssh docker <index>`
+1. Once in the docker vm, find the container you want by listing all the containers via `/var/vcap/packages/docker/bin/docker -H=tcp://127.0.0.1:4243 ps`
+1. Connect to the container by taking the id hash of the container and running `/var/vcap/packages/docker/bin/docker -H=tcp://127.0.0.1:4243 exec -it <hash id> /bin/bash`
