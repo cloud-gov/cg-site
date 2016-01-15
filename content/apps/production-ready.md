@@ -4,7 +4,6 @@ menu:
   main:
     parent: advanced
 title: Production Ready Checklist
-weight: 10
 ---
 
 ## Zero-Downtime deploy

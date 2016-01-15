@@ -3,7 +3,6 @@ menu:
   main:
     parent: operations
 title: ELB Termination
-weight: 10
 ---
 
 Currently, we are fronting Cloud Foundry apps with an Elastic Load Balancer (ELB) in the Cloud Foundry VPC. The ELB terminates HTTPS, and forwards HTTP traffic within the VPC.

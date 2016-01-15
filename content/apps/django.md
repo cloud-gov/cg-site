@@ -3,7 +3,6 @@ menu:
   main:
     parent: apps
 title: Deploying Django
-weight: 10
 ---
 
 ## Creating the App

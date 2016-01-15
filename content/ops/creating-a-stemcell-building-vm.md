@@ -3,7 +3,6 @@ menu:
   main:
     parent: deployment
 title: Creating a Stemcell Building VM
-weight: 10
 ---
 
 How to create a vagrant machine on AWS for building new bosh stemcells.

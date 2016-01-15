@@ -3,7 +3,6 @@ menu:
   main:
     parent: apps
 title: Logs
-weight: 80
 ---
 
 The most direct way to view events related to your application through the deploy process is

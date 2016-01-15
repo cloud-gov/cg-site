@@ -3,7 +3,6 @@ menu:
   main:
     parent: advanced
 title: Continuous Deployment
-weight: 10
 ---
 
 Setting up continuous deployment allows you to automatically upload your

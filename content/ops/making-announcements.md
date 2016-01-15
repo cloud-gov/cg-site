@@ -3,7 +3,6 @@ menu:
   main:
     parent: operations
 title: Making Announcements
-weight: 10
 ---
 
 ### Contents

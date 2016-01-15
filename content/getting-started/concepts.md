@@ -3,7 +3,6 @@ menu:
   main:
     parent: getting-started
 title: Concepts
-weight: 100
 ---
 
 Official glossary: http://docs.cloudfoundry.org/concepts/glossary.html

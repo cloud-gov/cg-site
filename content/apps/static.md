@@ -3,7 +3,6 @@ menu:
   main:
     parent: apps
 title: Deploying Static Sites
-weight: 10
 ---
 
 Create `index.html`:

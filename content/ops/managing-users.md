@@ -3,7 +3,6 @@ menu:
   main:
     parent: users
 title: Managing Users
-weight: 10
 ---
 
 ## Creating users

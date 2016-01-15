@@ -3,7 +3,6 @@ menu:
   main:
     parent: deployment
 title: Updating Cloud Foundry
-weight: 10
 ---
 
 Note: Grab something to eat and drink, this might take a while and an update shouldn't be left unattended.

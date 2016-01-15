@@ -3,7 +3,6 @@ menu:
   main:
     parent: ops
 title: Github Repos
-weight: 10
 ---
 
 Here are the repos with the tools and configuration for the platform:

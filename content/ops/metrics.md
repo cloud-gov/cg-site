@@ -3,7 +3,6 @@ menu:
   main:
     parent: operations
 title: Metrics
-weight: 10
 ---
 
 # Saving and Exporting Dashboards

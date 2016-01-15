@@ -3,7 +3,6 @@ menu:
   main:
     parent: advanced
 title: Durable Logging
-weight: 10
 ---
 
 The ELK service provides Elasticsearch, Logstash and Kibana in a single service offering. By binding an instance of the service to your applications logs will be drained to a Logstash syslog receiver and stored in Elasticsearch with Kibana as the interface for search and visualization.

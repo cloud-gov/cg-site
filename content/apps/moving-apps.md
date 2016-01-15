@@ -3,7 +3,6 @@ menu:
   main:
     parent: advanced
 title: Moving Apps Between Spaces
-weight: 10
 ---
 
 If you have an app that exists in one org/space but you need to move it to another:

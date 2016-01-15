@@ -3,7 +3,7 @@ menu:
   main:
     parent: getting-started
 title: Setup
-weight: -100
+weight: -50
 ---
 
 ## Setting up the command line

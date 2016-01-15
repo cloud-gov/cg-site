@@ -3,7 +3,6 @@ menu:
   main:
     parent: advanced
 title: Plugins
-weight: 10
 ---
 
 CloudFoundry includes a framework for plugins. Since CloudFoundry is written for performance in Go, these plugins do not function exactly the same as plugins do in other dynamically-compiled frameworks like Capistrano or Fab. Still, they provide a basic framework for extending the base functionality of the CloudFoundry CLI.

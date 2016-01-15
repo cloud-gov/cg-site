@@ -4,7 +4,6 @@ menu:
   main:
     parent: advanced
 title: Multi-Language Projects
-weight: 10
 ---
 
 CloudFoundry is capable of deploying, multi-language projects by using a special [buildpack](https://github.com/ddollar/heroku-buildpack-multi). In short, this buildpack applies any buildpacks listed in `.buildpacks` file.
