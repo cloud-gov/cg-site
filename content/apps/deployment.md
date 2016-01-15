@@ -35,7 +35,7 @@ The app should now be live at `APPNAME.18f.gov`.
 In general, applications will be easiest to deploy to Cloud Foundry if they follow the [Twelve Factor App](http://12factor.net/) guidelines.
 
 ## Setting Environment Variables
-See Cloud Foundry's [documentation on environment variables](http://docs.run.pivotal.io/devguide/deploy-apps/environment-variable.html).
+See Cloud Foundry's [documentation on environment variables](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html).
 
 ## Exclude files
 
