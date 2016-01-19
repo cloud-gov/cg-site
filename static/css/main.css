@@ -2210,11 +2210,17 @@ main:before {
   background-image: url("../img/cg-bg-a.png");
   background-repeat: no-repeat;
   content: '';
-  height: 18.61445em;
+  height: 19.3rem;
   right: 100%;
   position: absolute;
   top: 15vh;
-  width: 9.25em; }
+  width: 9.85rem; }
+
+html {
+  font-size: 16px; }
+
+body {
+  font-size: 16px; }
 
 @font-face {
   font-family: 'Source Sans Pro';
@@ -2251,19 +2257,56 @@ main:before {
   src: url("../fonts/merriweather-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/merriweather-italic-webfont.woff2") format("woff2"), url("../fonts/merriweather-italic-webfont.woff") format("woff"), url("../fonts/merriweather-italic-webfont.ttf") format("truetype"); }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
   margin: 0; }
+  h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
+    margin-top: 0.5rem; }
+
+h1 {
+  font-size: 2rem; }
+  @media screen and (min-width: 600px) {
+    h1 {
+      font-size: 2.75rem; } }
+  h1 + p {
+    margin-top: 2rem; }
+
+h2 {
+  font-size: 1.85rem; }
+  @media screen and (min-width: 600px) {
+    h2 {
+      font-size: 2.125rem; } }
+
+h3 {
+  font-size: 1.5rem; }
+
+h4 {
+  font-size: 1.1875rem; }
+
+h5 {
+  font-size: 1rem; }
+
+body {
+  font-weight: 300;
+  line-height: 1.7333333; }
+
+p + h2,
+p + h3,
+p + h4,
+p + h5 {
+  margin-top: 2rem; }
 
 .header {
   background: #ffffff;
-  min-height: 6.875em; }
+  min-height: 6.875rem; }
 
 .header-wrap {
   margin: 0 auto;
   max-width: 1040px;
-  padding-bottom: 1em;
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-top: 1.875em; }
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1.875rem; }
   .header-wrap:after {
     content: ".";
     display: block;
@@ -2273,7 +2316,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .header-title {
   float: left;
-  margin-bottom: .6em; }
+  margin-bottom: .6rem; }
 
 .header-side {
   float: left;
@@ -2284,8 +2327,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .content {
   background: #ffffff;
-  padding-left: 2em;
-  padding-right: 2em; }
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 2.3125rem;
+  padding-bottom: 2rem; }
 
 .nav {
   display: block;
@@ -2296,7 +2341,7 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   flex-wrap: wrap;
   list-style: none;
-  margin-top: .6em; }
+  margin-top: .6rem; }
   .nav li {
     display: list-item;
     margin: 0; }
@@ -2311,10 +2356,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-link {
   color: #595959;
-  font-size: 1.1em;
+  font-size: 1.1rem;
   font-weight: 600;
-  padding-bottom: .2em;
-  padding-top: .2em;
+  padding-bottom: .2rem;
+  padding-top: .2rem;
   text-transform: uppercase; }
   .nav-link a {
     color: #595959; }
@@ -2322,8 +2367,8 @@ h1, h2, h3, h4, h5, h6 {
     .nav-link {
       font-size: inherit;
       padding-bottom: 0;
-      padding-left: .2em;
-      padding-right: .2em;
+      padding-left: .2rem;
+      padding-right: .2rem;
       padding-top: 0; } }
 
 .sidenav-parent {
@@ -2353,3 +2398,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .sidenav-sub_list {
   display: none; }
+
+.title_bar {
+  margin: 0 auto;
+  padding: .40rem .5rem .40rem 0;
+  width: 1040px; }
+  .title_bar > * {
+    display: inline-block;
+    margin-left: 1em; }
+    .title_bar > *:first-child {
+      margin-left: 0; }
+
+.title_bar-title {
+  color: #ffffff;
+  font-size: 1rem; }
