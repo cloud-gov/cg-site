@@ -12,9 +12,7 @@ function initializeJS() {
     var parentMenuArrow = parentMenu.siblings("a").find('.menu-arrow');
     parentMenuArrow.addClass('fa-angle-down');
     parentMenuArrow.removeClass('fa-angle-right');
-    console.log('set');
     jQuery('#sidebar .sub-menu > a').click(function () {
-       console.log("he");
         // Toggle current submenu
         var sub = jQuery(this).next();
         if (sub.is(":visible")) {
