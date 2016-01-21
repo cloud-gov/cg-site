@@ -8,7 +8,7 @@
         <a href="javascript:;" class="">
           {{ .Pre }}
           <span>{{ .Name }}</span>
-          <span class="menu-arrow fa {{if $currentNode.HasMenuCurrent "main" . }}fa-angle-down{{else}}fa-angle-right{{end}}"></span>
+          <span class="menu-arrow sidenav-arrow fa {{if $currentNode.HasMenuCurrent "main" . }}fa-angle-down{{else}}fa-angle-right{{end}}"></span>
         </a>
         <ul class="usa-sidenav-sub_list sidenav-list sidenav-level-two nested-menu {{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} open {{end}}" style="{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} display: block; {{else}}display: none; {{end}}">
           {{ range .Children }}
@@ -17,7 +17,7 @@
               {{ .Pre }}
               <span>{{ .Name }}</span>
               {{ if .HasChildren }}
-                <span class="menu-arrow fa {{if $currentNode.HasMenuCurrent "main" . }}fa-angle-down{{else}}fa-angle-right{{end}}"></span>
+                <span class="menu-arrow sidenav-arrow fa {{if $currentNode.HasMenuCurrent "main" . }}fa-angle-down{{else}}fa-angle-right{{end}}"></span>
               {{ end }}
             </a>
               {{ if .HasChildren }}
