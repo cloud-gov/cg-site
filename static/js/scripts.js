@@ -7,7 +7,7 @@ function initializeJS() {
     jQuery('.popovers').popover();
 
     //sidebar dropdown menu
-    var parentMenu = $('.sidenav-sub_list .open').parents('ul .nested-menu');
+    var parentMenu = $('.sidenav-level-two .open').parents('ul .nested-menu');
     parentMenu.slideDown(200);
     var parentMenuArrow = parentMenu.siblings("a").find('.menu-arrow');
     parentMenuArrow.addClass('fa-angle-down');
