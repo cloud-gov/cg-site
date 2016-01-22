@@ -1,3 +1,35 @@
+function hideSidenav() {
+  /*
+  jQuery('#main-content').css({
+      'margin-left': '0px'
+  });
+  jQuery('#sidebar').css({
+      'margin-left': '-180px'
+  });
+  jQuery('#sidebar > ul').hide();
+  jQuery("#container").addClass("sidebar-closed");
+  jQuery('.toggle-nav').removeClass('toggle-nav-active');
+  */
+  jQuery('#container').addClass('sidebar-close');
+  jQuery('#sidebar > ul').hide();
+}
+
+function showSidenav() {
+  /*
+  jQuery('#main-content').css({
+      'margin-left': '180px'
+  });
+  jQuery('#sidebar > ul').show();
+  jQuery('#sidebar').css({
+      'margin-left': '0'
+  });
+  jQuery("#container").removeClass("sidebar-closed");
+  jQuery('.toggle-nav').addClass('toggle-nav-active');
+  */
+  jQuery('#container').removeClass('sidebar-close');
+  jQuery('#sidebar > ul').show();
+}
+
 function initializeJS() {
 
     //tool tips
@@ -7,7 +39,7 @@ function initializeJS() {
     jQuery('.popovers').popover();
 
     //sidebar dropdown menu
-    var parentMenu = $('.sub .open').parents('ul .nested-menu');
+    var parentMenu = $('.sidenav-level-two .open').parents('ul .nested-menu');
     parentMenu.slideDown(200);
     var parentMenuArrow = parentMenu.siblings("a").find('.menu-arrow');
     parentMenuArrow.addClass('fa-angle-down');
@@ -57,23 +89,9 @@ function initializeJS() {
 
     jQuery('.toggle-nav').click(function () {
         if (jQuery('#sidebar > ul').is(":visible") === true) {
-            jQuery('#main-content').css({
-                'margin-left': '0px'
-            });
-            jQuery('#sidebar').css({
-                'margin-left': '-180px'
-            });
-            jQuery('#sidebar > ul').hide();
-            jQuery("#container").addClass("sidebar-closed");
+            hideSidenav();
         } else {
-            jQuery('#main-content').css({
-                'margin-left': '180px'
-            });
-            jQuery('#sidebar > ul').show();
-            jQuery('#sidebar').css({
-                'margin-left': '0'
-            });
-            jQuery("#container").removeClass("sidebar-closed");
+            showSidenav();
         }
     });
 
@@ -278,4 +296,3 @@ jQuery(document).ready(function(){
     initializeJS();
     $('[rel=show-github]').showGithub();
 });
-

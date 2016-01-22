@@ -1,28 +1,29 @@
 <!--sidebar start-->
 <aside id="sidebar" class="sidenav">
-  <ul class="usa-sidenav-list">
+  <ul class="usa-sidenav-list sidenav-list sidenav-level-one">
     {{ $currentNode := . }}
     {{ range .Site.Menus.main }}
-      <li>
+      <li class ="sub-menu">
         {{ if .HasChildren }}
         <a href="javascript:;" class="">
           {{ .Pre }}
           <span>{{ .Name }}</span>
+          <span class="menu-arrow sidenav-arrow fa {{if $currentNode.HasMenuCurrent "main" . }}fa-angle-down{{else}}fa-angle-right{{end}}"></span>
         </a>
-        <ul class="usa-sidenav-sub_list nested-menu {{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} open {{end}}" style="{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} display: block; {{else}}display: none; {{end}}">
+        <ul class="usa-sidenav-sub_list sidenav-list sidenav-level-two nested-menu {{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} open {{end}}" style="{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} display: block; {{else}}display: none; {{end}}">
           {{ range .Children }}
-          <li class="sub-menu {{if $currentNode.IsMenuCurrent "main" . }} active {{end}}" >
+          <li class="sub-menu {{if $currentNode.IsMenuCurrent "main" . }} sidenav-active {{end}}" >
             <a {{ if .HasChildren }}href="javascript:;"{{ else }}href="{{.URL}}"{{end}} class="">
               {{ .Pre }}
               <span>{{ .Name }}</span>
               {{ if .HasChildren }}
-                <span class="menu-arrow fa {{if $currentNode.HasMenuCurrent "main" . }}fa-angle-down{{else}}fa-angle-right{{end}}"></span>
+                <span class="menu-arrow sidenav-arrow fa {{if $currentNode.HasMenuCurrent "main" . }}fa-angle-down{{else}}fa-angle-right{{end}}"></span>
               {{ end }}
             </a>
               {{ if .HasChildren }}
-              <ul class="sub {{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} open {{end}}" style="{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}display: block; {{else}}display: none; {{end}}">
+              <ul class="sidenav-list sidenav-level-three {{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} open {{end}}" style="{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}display: block; {{else}}display: none; {{end}}">
                 {{ range .Children }}
-                <li{{if $currentNode.IsMenuCurrent "main" . }} class="active"{{end}}><a href="{{.URL}}">{{ .Name }}</a> </li>
+                <li{{if $currentNode.IsMenuCurrent "main" . }} class="sidenav-active"{{end}}><a href="{{.URL}}">{{ .Name }}</a> </li>
                 {{ end }}
               </ul>
               {{ end }}

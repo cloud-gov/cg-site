@@ -15,26 +15,56 @@
   </head>
 
   <body>
-    <!--header start-->
-    <header class="">
+    <!-- start header -->
+    <header class="header">
+      <div class="header-wrap">
+
+        <!-- start logo -->
+        <h2 class="header-title">
+          <a href="/" class="logo" title="Home">
+            <img src="img/logo.svg" alt="Cloud.gov" />
+          </a>
+        </h2>
+        <!--end logo -->
+
+        <!-- start top navigation -->
+        <nav class="header-side">
+          <ul class="nav">
+            <li class="nav-link">
+              <a href="https://cloud.gov/#about">About</a> 
+            </li>
+            <li class="nav-link usa-current">
+              <a href="/">Documentation</a> 
+            </li>
+            <li class="nav-link">
+              <a href="https://cloud.gov/updates/">Updates</a> 
+            </li>
+            <li class="nav-link">
+              <a href="https://cloudgov.statuspage.io/">Status</a> 
+            </li>
+            <li class="nav-link">
+              <a href="https://console.cloud.gov/">Deck</a> 
+            </li>
+            <li class="nav-link">
+              <a href="https://cloud.gov/#contact">Contact</a> 
+            </li>
+          </ul>
+        </nav>
+        <!-- end top navigation -->
+      </div>
+
+    </header>
+    <!-- end header -->
+
+    <div class="title_bar">
       <div class="toggle-nav">
         <i class="fa fa-bars"></i>
         <div class="icon-reorder tooltips" 
           data-original-title="Toggle Navigation" data-placement="bottom">
         </div>
       </div>
-
-      <!--logo start-->
-      <a href="/" title="Home">
-        <h2 class="main">{{ .Site.Title }}</h2>
-      </a>
-      <!--logo end-->
-
-      <div id="top_menu">
-        <h1>{{ .Title }}</h1>
-      </div>
-    </header>
-    <!--header end-->
+      <h1 class="title_bar-title">{{ .Title }}</h1>
+    </div>
 
     <main class="sidenav-parent">
       {{ partial "menu.html" . }}
