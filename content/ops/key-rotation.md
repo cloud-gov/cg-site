@@ -2,7 +2,7 @@
 menu:
   main:
     parent: operations
-title: Key Rotation and availability
+title: Key Rotation and Availability
 weight: 10
 ---
 
