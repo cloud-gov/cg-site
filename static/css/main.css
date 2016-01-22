@@ -2373,6 +2373,7 @@ p + h5 {
 
 .nav_toggle {
   background: #2C3E50;
+  cursor: pointer;
   padding-bottom: .35rem;
   padding-top: .35rem;
   text-align: center;
@@ -2390,12 +2391,15 @@ p + h5 {
 
 .sidenav {
   align-self: auto;
+  display: none;
   flex-grow: 0;
   padding: 0;
   width: 300px; }
   @media screen and (min-width: 900px) {
     .sidenav {
       display: block; } }
+  .sidenav.active {
+    display: block; }
 
 .sidenav-main {
   align-self: auto;
@@ -2405,7 +2409,11 @@ p + h5 {
   width: 100%; }
   @media screen and (min-width: 900px) {
     .sidenav-main {
-      width: calc(100% - 300px); } }
+      width: calc(100% - 300px); }
+      .sidenav-main.active {
+        width: calc(100% - 300px); } }
+  .sidenav-main.active {
+    width: 70%; }
 
 .sidenav-list {
   width: 100%; }
