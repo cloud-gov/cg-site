@@ -2371,6 +2371,17 @@ p + h5 {
       padding-right: .2rem;
       padding-top: 0; } }
 
+.nav_toggle {
+  background: #2C3E50;
+  padding-bottom: .35rem;
+  padding-top: .35rem;
+  text-align: center;
+  width: 2.6rem; }
+
+.nav_toggle-icon {
+  color: white;
+  font-size: 1.375rem; }
+
 .sidenav-parent {
   display: flex;
   flex-direction: row;
@@ -2428,7 +2439,7 @@ p + h5 {
 
 .title_bar {
   margin: 0 auto;
-  padding: .40rem .5rem .40rem 0;
+  padding: 0 .5rem 0 0;
   width: 1040px; }
   .title_bar > * {
     display: inline-block;
