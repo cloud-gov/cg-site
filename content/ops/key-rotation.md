@@ -6,27 +6,27 @@ title: Key Rotation and Availability
 weight: 10
 ---
 
-In order to comply with [SC 12 (1)](https://web.nvd.nist.gov/view/800-53/Rev4/control?controlName=SC-12) the organization needs to maintain availability of information in the event of the loss of cryptographic keys by users.
+To meet NIST security control [SC-12 (1)](https://web.nvd.nist.gov/view/800-53/Rev4/control?controlName=SC-12) we maintain the availability of all information on the platform in the event a crypotographic access key is lost or compromised.
 
-To do that cloud.gov has established a process to rotate and backup keys that ensures that keys are available to those who have access to the encryption passphrase. In the case of loss of both the keys and the encryption passphrase, the keys can be rotated while maintaining availability of information.
+Authorized federal staff rotate, encrypt, and backup keys monthly. Priviliged users can access the keys only with two-factor authentication and a decryption passphrase. In the rare case that both the keys and the decryption passphrase for the backup are lost or compromised, new keys can be rotated in by authorized federal staff, while maintaining availability of information.
 
-### How to rotate keys
+### Generate and upload keys
 
-There is a script to generate keys and upload them to AWS EC2: https://github.com/18F/cg-pipelines/blob/master/tasks/generate_key.sh
+Use [this script](https://github.com/18F/cg-pipelines/blob/master/tasks/generate_key.sh) to generate keys and upload them as access keys to AWS EC2 and an encrypted backup to AWS S3: 
 
-To run it you just need to provide a `BUCKET` and a `PASSPHRASE`:
+You just need to provide a `BUCKET` destination for the backup and a decryption `PASSPHRASE`. In your terminal:
 
 ```
 BUCKET=my-bucket PASSPHRASE=somethingorother ./generate_key.sh
 ```
 
-Once the key is uploaded to AWS the [cf-secrets.yml](https://github.com/18F/cg-manifests/blob/master/cf/cf-secrets-example.yml) file needs to be updated to use the new key and a new production deploy needs to be started.
+Once the key is uploaded to AWS the [cf-secrets.yml](https://github.com/18F/cg-manifests/blob/master/cf/cf-secrets-example.yml) file you use for deployment needs to be updated. Modify `key_name` to use the new key, then start a new production deployment.
 
-### Access Backed up keys
+### Access key backup
 
-In the case that keys need to be accessed, they have to be downloaded in their encrypted form from the `BUCKET` used in the step above and decrypted.
+In the case that keys need to be accessed, downloaded and decrypt them from the `BUCKET` used in the first step.
 
-To decrypt the use this script https://github.com/18F/cg-pipelines/blob/master/tasks/decrypt.sh:
+Use [this script](https://github.com/18F/cg-pipelines/blob/master/tasks/decrypt.sh) for decryption. In your terminal:
 
 ```
 INPUT_FILE=bosh-123.enc.pem OUTPUT_FILE=bosh-123.pem PASSPHRASE=somethingorother ./decrypt.sh
