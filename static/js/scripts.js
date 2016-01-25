@@ -1,3 +1,13 @@
+function hideSidenav() {
+  jQuery('#container').addClass('sidebar-close');
+  jQuery('#sidebar > ul').hide();
+}
+
+function showSidenav() {
+  jQuery('#container').removeClass('sidebar-close');
+  jQuery('#sidebar > ul').show();
+}
+
 function initializeJS() {
 
     //tool tips
@@ -7,7 +17,7 @@ function initializeJS() {
     jQuery('.popovers').popover();
 
     //sidebar dropdown menu
-    var parentMenu = $('.sub .open').parents('ul .nested-menu');
+    var parentMenu = $('.sidenav-level-two .open').parents('ul .nested-menu');
     parentMenu.slideDown(200);
     var parentMenuArrow = parentMenu.siblings("a").find('.menu-arrow');
     parentMenuArrow.addClass('fa-angle-down');
@@ -39,41 +49,13 @@ function initializeJS() {
 
     // sidebar menu toggle
     jQuery(function() {
-        function responsiveView() {
-            var wSize = jQuery(window).width();
-            if (wSize <= 768) {
-                jQuery('#container').addClass('sidebar-close');
-                jQuery('#sidebar > ul').hide();
-            }
-
-            if (wSize > 768) {
-                jQuery('#container').removeClass('sidebar-close');
-                jQuery('#sidebar > ul').show();
-            }
-        }
-        jQuery(window).on('load', responsiveView);
-        jQuery(window).on('resize', responsiveView);
     });
 
     jQuery('.toggle-nav').click(function () {
         if (jQuery('#sidebar > ul').is(":visible") === true) {
-            jQuery('#main-content').css({
-                'margin-left': '0px'
-            });
-            jQuery('#sidebar').css({
-                'margin-left': '-180px'
-            });
-            jQuery('#sidebar > ul').hide();
-            jQuery("#container").addClass("sidebar-closed");
+            hideSidenav();
         } else {
-            jQuery('#main-content').css({
-                'margin-left': '180px'
-            });
-            jQuery('#sidebar > ul').show();
-            jQuery('#sidebar').css({
-                'margin-left': '0'
-            });
-            jQuery("#container").removeClass("sidebar-closed");
+            showSidenav();
         }
     });
 
@@ -87,6 +69,10 @@ function initializeJS() {
             }, 2000)
         })
     }
+    jQuery('.nav_toggle').on('click', function() {
+      $("#sidebar").toggleClass('active');
+      $('#main-content').toggleClass('active');
+    });
 
 }
 
@@ -278,4 +264,3 @@ jQuery(document).ready(function(){
     initializeJS();
     $('[rel=show-github]').showGithub();
 });
-

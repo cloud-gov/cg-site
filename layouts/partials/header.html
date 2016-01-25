@@ -9,55 +9,66 @@
 
     <title>{{ .Title }}</title>
 
-    <link href="/css/bootstrap-theme.css" rel="stylesheet">
     <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="/css/style.css" rel="stylesheet">
-    <link href="/css/style-responsive.css" rel="stylesheet" />
-    <link href="/css/monokai_sublime.css" rel="stylesheet" />
+    <link href="/css/main.css" rel="stylesheet">
 
   </head>
 
   <body>
-  <!-- container section start -->
-  <section id="container" class="">
+    <!-- start header -->
+    <header class="header">
+      <div class="header-wrap">
 
-      <!--header start-->
-      <header class="header black-bg">
-            <div class="toggle-nav">
-                <i class="fa fa-bars"></i>
-                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"></div>
-            </div>
+        <!-- start logo -->
+        <h2 class="header-title">
+          <a href="/" class="logo" title="Home">
+            <img src="/img/logo.svg" alt="Cloud.gov" />
+          </a>
+        </h2>
+        <!--end logo -->
 
-            <!--logo start-->
-            <a href="/" title="Home">
-              <h2 class="main">{{ .Site.Title }}</h2>
-            </a>
-            <!--logo end-->
-            <div class="top-nav notification-row">
-            </div>
+        <!-- start top navigation -->
+        <nav class="header-side">
+          <ul class="nav">
+            <li class="nav-link">
+              <a href="https://cloud.gov/#about">About</a> 
+            </li>
+            <li class="nav-link usa-current">
+              <a href="/">Documentation</a> 
+            </li>
+            <li class="nav-link">
+              <a href="https://cloud.gov/updates/">Updates</a> 
+            </li>
+            <li class="nav-link">
+              <a href="https://cloudgov.statuspage.io/">Status</a> 
+            </li>
+            <li class="nav-link">
+              <a href="https://console.cloud.gov/">Deck</a> 
+            </li>
+            <li class="nav-link">
+              <a href="https://cloud.gov/#contact">Contact</a> 
+            </li>
+          </ul>
+        </nav>
+        <!-- end top navigation -->
+      </div>
 
-            <div class="nav title-row" id="top_menu">
-                <h1 class="nav top-menu">{{ .Title }}</h1>
-            </div>
-      </header>
-      <!--header end-->
+    </header>
+    <!-- end header -->
 
-{{ partial "menu.html" . }}
+    <div class="title_bar">
+      <div class="nav_toggle">
+        <i class="fa fa-bars nav_toggle-icon"></i>
+        <div class="icon-reorder tooltips" 
+          data-original-title="Toggle Navigation" data-placement="bottom">
+        </div>
+      </div>
+      <h1 class="title_bar-title">{{ .Title }}</h1>
+    </div>
 
-      <!--main content start-->
-      <section id="main-content">
-          <section class="wrapper">
+    <main class="sidenav-parent">
+      {{ partial "menu.html" . }}
 
-              <div class="row">
-                  <div class="col-md-1">
-                      {{ if .IsPage }}
-                      {{ with .GetParam "prev" }}
-                      <a class="navigation prev" href="{{.}}">
-                      <i class="fa fa-angle-left"></i>
-                      </a>
-                      {{ end }}
-                      {{ end }}
-                  </div>
-                <div class="col-md-10">
-                    <section class="panel">
-                      <div class="panel-body">
+
+      <div class="sidenav-main" id="main-content">
+        <div class="usa-content content">
