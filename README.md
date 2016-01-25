@@ -17,8 +17,9 @@ This site uses a shared cloud.gov style, [cg-style](https://github.com/18F/cg-st
 1. Download or clone the *cg-style* repository, `git clone git@github.com:18F/cg-style.git`
 2. Run the watching build task in the *cg-style* repository: `npm run watch`
 3. Run `npm install` in the *cg-docs* repository.
-4. Run the watching build task in *cg-docs* repository: `npm run watch`
-5. Edit code in the *cg-style* directory and they will propagate down to *cg-docs*
+4. Run `npm link` in *cg-docs*.
+5. Run the watching build task in *cg-docs* repository: `npm run watch`
+6. Edit code in the *cg-style* directory and they will propagate down to *cg-docs*
 
 ## Acknowledgement
 
