@@ -45,3 +45,5 @@ If you would like to change the time period of data that you are viewing, or to 
 We have also provided several dashboards that present different visualizations of your log data. You can select these by clicking on the 'Load Saved Dashboard' icon near the search bar.
 
 ![Select dashboards](/img/select-dashboard-450.png)
+
+These visualizations are provided via Kibana; you may want to [find out more about it](https://www.elastic.co/guide/en/kibana/current/index.html).
