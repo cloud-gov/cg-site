@@ -8,7 +8,7 @@ weight: 10
 
 To meet NIST security control [SC-12 (1)](https://web.nvd.nist.gov/view/800-53/Rev4/control?controlName=SC-12) we maintain the availability of all information on the platform in the event a crypotographic access key is lost or compromised.
 
-Authorized federal staff rotate, encrypt, and backup keys monthly. Priviliged users can access the keys only with two-factor authentication and a decryption passphrase. In the rare case that both the keys and the decryption passphrase for the backup are lost or compromised, new keys can be rotated in by authorized federal staff, while maintaining availability of information.
+Authorized federal staff rotate, encrypt, and backup keys monthly. Privileged users can access the keys only with two-factor authentication and a decryption passphrase. In the rare case that both the keys and the decryption passphrase for the backup are lost or compromised, new keys can be rotated in by authorized federal staff, while maintaining availability of information.
 
 ### Generate and upload keys
 
