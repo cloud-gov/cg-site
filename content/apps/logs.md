@@ -32,7 +32,7 @@ cf logs APPNAME --recent
 
 # Historic logs
 
-To view and search your historic log data, there is https://logs.cloud.gov. Logs are currently retained for 180 days, and you will only see data for applications deployed within the [orgs](http://docs.cloudfoundry.org/concepts/roles.html#orgs) and [spaces](http://docs.cloudfoundry.org/concepts/roles.html#spaces) where you have access.
+To view and search your historic log data, visit https://logs.cloud.gov. Logs are currently retained for 180 days, and you will only see data for applications deployed within the [orgs](http://docs.cloudfoundry.org/concepts/roles.html#orgs) and [spaces](http://docs.cloudfoundry.org/concepts/roles.html#spaces) where you have access.
 
 After logging in, you will be placed into the 'App Overview' dashboard.
 
