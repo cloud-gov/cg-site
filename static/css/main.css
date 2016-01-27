@@ -2234,7 +2234,7 @@ label {
 
 input[type="email"] {
   font-size: 1rem;
-  padding: .7rem 0.7em; }
+  padding: 0.7rem 0.7rem; }
 
 form button[type="submit"],
 form input[type="submit"] {
@@ -2274,13 +2274,81 @@ form input[type="submit"] {
   src: url("../fonts/merriweather-italic-webfont.eot");
   src: url("../fonts/merriweather-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/merriweather-italic-webfont.woff2") format("woff2"), url("../fonts/merriweather-italic-webfont.woff") format("woff"), url("../fonts/merriweather-italic-webfont.ttf") format("truetype"); }
 
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+  table tbody {
+    display: flex; }
+    @media screen and (min-width: 600px) {
+      table tbody {
+        display: table; } }
+    table tbody tr {
+      display: flex;
+      flex-direction: column;
+      flex-flow: column wrap;
+      flex-wrap: wrap; }
+      table tbody tr:last-child td {
+        border-left-width: 0; }
+        @media screen and (min-width: 600px) {
+          table tbody tr:last-child td {
+            border-left-width: 1px; } }
+      @media screen and (min-width: 600px) {
+        table tbody tr {
+          display: table-row; } }
+    table tbody th {
+      border-right-width: 0;
+      border-bottom-width: 0;
+      border-bottom: 0;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      height: 21rem;
+      justify-content: center;
+      margin: 0;
+      width: 0; }
+      table tbody th:last-child {
+        border-bottom-width: 1px;
+        border-style: solid; }
+      table tbody th span {
+        margin-top: 3rem;
+        transform: rotate(-90deg);
+        display: block;
+        line-height: 1; }
+        @media screen and (min-width: 600px) {
+          table tbody th span {
+            display: inline;
+            line-height: initial;
+            margin-top: 0;
+            transform: initial; } }
+      @media screen and (min-width: 600px) {
+        table tbody th {
+          border-width: 1px;
+          display: table-cell;
+          height: inherit;
+          width: 25%; } }
+    table tbody td {
+      border-bottom-width: 0;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      height: 21rem;
+      justify-content: center; }
+      table tbody td:last-child {
+        border-bottom-width: 1px;
+        border-style: solid; }
+      @media screen and (min-width: 600px) {
+        table tbody td {
+          border-width: 1px;
+          display: table-cell;
+          height: inherit; } }
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif;
   font-weight: 300;
   margin: 0; }
   h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
     margin-top: 0.5rem; }
-  h1 + .push, h2 + .push, h3 + .push, h4 + .push, h5 + .push, h6 + .push {
+  h1 + .text_block, h2 + .text_block, h3 + .text_block, h4 + .text_block, h5 + .text_block, h6 + .text_block {
     margin-top: 1.5rem; }
 
 h1 {
@@ -2380,14 +2448,21 @@ blockquote {
   clear: both;
   visibility: hidden; }
 
-@media screen and (min-width: 600px) {
-  .four_up-part {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 23.23176%; }
-    .four_up-part:last-child {
-      margin-right: 0; } }
+.four_up-part {
+  margin-top: 3.75rem; }
+  @media screen and (min-width: 600px) {
+    .four_up-part {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 23.23176%;
+      margin-top: 0; }
+      .four_up-part:last-child {
+        margin-right: 0; } }
+  .four_up-part .hex_icon {
+    margin: 0 auto 2rem auto; }
+  .four_up-part .icon-container {
+    margin-bottom: 1rem; }
 
 .section-content + .four_up {
   margin-top: 3rem; }
@@ -2420,6 +2495,34 @@ blockquote {
   @media screen and (min-width: 600px) {
     .header-side {
       float: right; } }
+
+.hex_icon {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 5.625rem;
+  width: 4.9rem; }
+
+.hex_icon-i {
+  display: block;
+  margin: 0 auto;
+  width: 40%; }
+
+.hex_icon-primary {
+  background-image: url("../img/icon-hex-primary.svg"); }
+
+.hex_icon-alt {
+  background-image: url("../img/icon-hex-alt.svg"); }
+
+.icon-container {
+  height: 3.125rem;
+  width: 3.9rem; }
+
+.icon {
+  max-height: 3.1rem; }
+
+.icon-alt .cls-1 {
+  stroke: #F3736E; }
 
 .content {
   background: #ffffff;
@@ -2548,12 +2651,13 @@ blockquote {
     color: #277CB2; }
 
 .section {
+  overflow: hidden;
   padding-bottom: 4.5rem;
   padding-top: 4.5rem; }
 
 .section-middle {
-  padding-bottom: 2.5rem;
-  padding-top: 2.5rem; }
+  padding-bottom: 4.5rem;
+  padding-top: 4.5rem; }
 
 .section-content {
   margin-top: 0; }
@@ -2578,8 +2682,39 @@ blockquote {
   .section-dark a {
     color: #3498DB; }
 
+.section-bg-parent {
+  position: relative; }
+
+.section-bg {
+  background-color: transparent; }
+  .section-bg:before {
+    background-image: url("../img/cg-bg-b.png");
+    background-repeat: no-repeat;
+    content: '';
+    height: 44.3rem;
+    left: -23rem;
+    position: absolute;
+    top: -160px;
+    width: 39.85rem;
+    z-index: -1; }
+    @media screen and (min-width: 600px) {
+      .section-bg:before {
+        left: -12rem; } }
+
+.section-bg-far-r {
+  background-image: url("../img/cg-bg-c.png");
+  background-repeat: no-repeat;
+  background-position-x: 108%;
+  background-position-y: 5vh; }
+
 .section-light {
   background: #ffffff; }
+
+.section-icon {
+  left: 50%;
+  margin-left: -2.4375rem;
+  margin-top: 1.7rem;
+  position: absolute; }
 
 .title_bar {
   margin: 0 auto;
@@ -2602,14 +2737,21 @@ blockquote {
   clear: both;
   visibility: hidden; }
 
-@media screen and (min-width: 600px) {
-  .three_up-part {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 31.76157%; }
-    .three_up-part:last-child {
-      margin-right: 0; } }
+.three_up-part {
+  margin-top: 4rem; }
+  @media screen and (min-width: 600px) {
+    .three_up-part {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 31.76157%;
+      margin-top: 0; }
+      .three_up-part:last-child {
+        margin-right: 0; } }
+  .three_up-part .hex_icon {
+    margin: 0 auto 2rem auto; }
+  .three_up-part .icon-container {
+    margin-bottom: 1rem; }
 
 .section-content + .three_up {
   margin-top: 3rem; }
