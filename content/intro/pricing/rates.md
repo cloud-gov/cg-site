@@ -18,12 +18,12 @@ Find out [more about this pricing model]({{< relref "intro/pricing/pricing-model
 
 Packages are selected based on the kinds of applications to be hosted.
 
-<table>
+<table class="responsive_table">
   <tr>
-    <th width="25%">Sandbox</th>
-    <th width="25%">Prototyping</th>
-    <th width="25%">FISMA Low</th>
-    <th width="25%">FISMA Moderate</th>
+    <th width="25%"><span>Sandbox</span></th>
+    <th width="25%"><span>Prototyping</span></th>
+    <th width="25%"><span>FISMA Low</span></th>
+    <th width="25%"><span>FISMA Moderate</span></th>
   </tr>
   <tr>
     <td valign="top">
@@ -33,17 +33,17 @@ Packages are selected based on the kinds of applications to be hosted.
       Sandbox usage caps can be raised. Suitable for many teams to deploy apps, though limited to the apps.cloud.gov domain. Low ability to delegate access control to teams. No production data allowed. Usually purchased per agency/department. 
     </td>
     <td valign="top">
-      Up to <em>3</em> public-facing FISMA Low systems, including all the spaces needed and DNS support.
+      Up to 3 public-facing FISMA Low systems, including all the spaces needed and DNS support.
     </td>
     <td valign="top">
-      <em>1</em> public-facing system, including all the spaces needed and DNS support. Additional support for FISMA Moderate data requirements.
+      1 public-facing system, including all the spaces needed and DNS support. Additional support for FISMA Moderate data requirements.
     </td>
   </tr>
   <tr>
-    <th>Free</th>
-    <th>$15K / year</th>
-    <th>$60K / year</th>
-    <th>$90K / year</th>
+    <td>Free</th>
+    <td>$15K / year</th>
+    <td>$60K / year</th>
+    <td>$90K / year</th>
   </tr>
 </table>
 
