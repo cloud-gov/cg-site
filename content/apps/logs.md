@@ -5,7 +5,10 @@ menu:
 title: Logs
 ---
 
-# Current logs
+For logs to be captured by Cloud Foundry, your application should be writing them to `STDOUT`/`STDERR`, rather than a log file – see the framework-specific guidance in the menu.
+
+## Current logs
+
 The most direct way to view events related to your application through the deploy process is
 
 ```bash
@@ -30,7 +33,7 @@ cf logs APPNAME --recent
 * [Information about the log format](https://docs.cloudfoundry.org/devguide/deploy-apps/streaming-logs.html)
 * [Viewing your application's logs](https://docs.cloudfoundry.org/devguide/deploy-apps/streaming-logs.html#view)
 
-# Historic logs
+## Historic logs
 
 To view and search your historic log data, visit https://logs.cloud.gov. Logs are currently retained for 180 days, and you will only see data for applications deployed within the [orgs](http://docs.cloudfoundry.org/concepts/roles.html#orgs) and [spaces](http://docs.cloudfoundry.org/concepts/roles.html#spaces) where you have access.
 
