@@ -30,11 +30,18 @@ The command to create a new app and to push a new version of an existing one are
 
 The app should now be live at `APPNAME.18f.gov`.
 
+## Caveats
+
+* Don't write to local storage (it's ephemeral) – use S3 [service]({{< relref "apps/managed-services.md" >}}) instead
+* Instances will be restarted if they exceed [memory limits]({{< relref "apps/limits.md" >}})
+* Proper [logging]({{< relref "apps/logs.md" >}}) might require special libraries/configuration for your app
+
 ## Twelve-Factor Apps
 
 In general, applications will be easiest to deploy to Cloud Foundry if they follow the [Twelve Factor App](http://12factor.net/) guidelines.
 
 ## Setting Environment Variables
+
 See Cloud Foundry's [documentation on environment variables](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html).
 
 ## Exclude files
@@ -55,3 +62,12 @@ A couple of important points on the `.cfignore`:
 ## Deployment notifications
 
 If you would like to be notified about deployments in your Slack channel, follow [these instructions](https://github.com/18F/hubot-cf-notifications#adding-applications), and add the [configuration](https://github.com/18F/hubot-cf-notifications#configuration) to [Charlie](https://github.com/18F/18f-bot/blob/master/cf_config.json).
+
+## Other stuff you might need to do
+
+* Connecting to a [service]({{< relref "apps/managed-services.md" >}})
+    * [Databases]({{< relref "apps/databases.md" >}})
+* Rollback
+    * Just `checkout` the old version and `cf-push`
+* [Running one-off commands]({{< relref "getting-started/cf-ssh.md" >}})
+* Deleting an application (`cf delete`)

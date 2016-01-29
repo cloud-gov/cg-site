@@ -18,23 +18,4 @@ The first thing to know is that cloud.gov is a stock instance of Cloud Foundry, 
 
 Note that the changes will be reflected in Cloud Foundry even without being committed to Git. Cloud Foundry is not Git-aware – it simply deploys whatever is contained in the directory that you `push` from. That being said, you _can_ set up [continuous deployment]({{< relref "apps/continuous-deployment.md" >}}) from a Git repository.
 
-Once you're ready to deploy your own application, head over to the [general deployment tips]({{< relref "apps/deployment.md" >}}).
-
-## Explanation of the magic
-
-Take a look at the [Concepts]({{< relref "concepts.md" >}}) page.
-
-## Caveats
-
-* Don't write to local storage (it's ephemeral) – use S3 [service]({{< relref "apps/managed-services.md" >}}) instead
-* Instances will be restarted if they exceed [memory limits]({{< relref "apps/limits.md" >}})
-* Proper [logging]({{< relref "apps/logs.md" >}}) might require special libraries/configuration for your app
-
-## Other stuff you might need to do
-
-* Connecting to a [service]({{< relref "apps/managed-services.md" >}})
-    * [Databases]({{< relref "apps/databases.md" >}})
-* Rollback
-    * Just `checkout` the old version and `cf-push`
-* [One-off commands]({{< relref "getting-started/cf-ssh.md" >}})
-* Deleting an application
+Next, take a look at the [Concepts]({{< relref "concepts.md" >}}) page. Once you're ready to deploy your own application, head over to the [general deployment tips]({{< relref "apps/deployment.md" >}}).
