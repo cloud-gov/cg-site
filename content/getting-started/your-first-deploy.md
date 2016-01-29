@@ -3,7 +3,7 @@ menu:
   main:
     parent: getting-started
 title: Your First Deploy
-weight: 0
+weight: -30
 ---
 
 To get used to Cloud Foundry, we recommend that you practice by deploying a simple application before moving into deploying something for production. This was originally written as an outline for live training, so will be expanded over time.
