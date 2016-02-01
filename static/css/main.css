@@ -721,7 +721,7 @@ button,
   [type="reset"].usa-button-primary-alt,
   [type="image"].usa-button-primary-alt {
     background-color: #3498DB;
-    color: #212121; }
+    color: #595959; }
     .usa-button.usa-button-primary-alt:hover, .usa-button.usa-button-primary-alt.usa-button-hover,
     .usa-button-primary.usa-button-primary-alt:hover,
     .usa-button-primary.usa-button-primary-alt.usa-button-hover,
@@ -850,7 +850,7 @@ button,
     [type="reset"].usa-button-gray.usa-button-active,
     [type="image"].usa-button-gray:active,
     [type="image"].usa-button-gray.usa-button-active {
-      background-color: #212121; }
+      background-color: #595959; }
   .usa-button.usa-button-outline,
   .usa-button-primary.usa-button-outline,
   .usa-button:visited.usa-button-outline,
@@ -1058,7 +1058,7 @@ select {
   border: 1px solid #595959;
   border-radius: 0;
   box-sizing: border-box;
-  color: #212121;
+  color: #595959;
   display: block;
   font-size: 1.6rem;
   margin: 0.2em 0;
@@ -1580,7 +1580,7 @@ p a,
 
 .usa-accordion > ul,
 .usa-accordion-bordered > ul {
-  color: #212121;
+  color: #595959;
   margin: 0;
   padding: 0;
   width: 100%; }
@@ -1607,7 +1607,7 @@ p a,
   background-position: right 3rem center;
   background-repeat: no-repeat;
   background-size: 13px;
-  color: #212121;
+  color: #595959;
   cursor: pointer;
   display: inline-block;
   font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif;
@@ -1620,7 +1620,7 @@ p a,
   .usa-accordion button:hover,
   .usa-accordion-bordered button:hover {
     background-color: #d6d7d9;
-    color: #212121; }
+    color: #595959; }
   .usa-accordion button h1, .usa-accordion button h2, .usa-accordion button h3, .usa-accordion button h4, .usa-accordion button h5, .usa-accordion button h6,
   .usa-accordion-bordered button h1,
   .usa-accordion-bordered button h2,
@@ -1729,7 +1729,7 @@ p a,
   display: block; }
 
 .usa-footer .usa-footer-primary-link {
-  color: #212121;
+  color: #595959;
   display: block;
   font-weight: 700;
   margin-top: 0;
@@ -1802,7 +1802,7 @@ p a,
 ul.usa-footer-primary-content,
 li.usa-footer-primary-content,
 li.usa-footer-primary-content {
-  border-top: 1px solid #212121; }
+  border-top: 1px solid #595959; }
   @media screen and (min-width: 600px) {
     ul.usa-footer-primary-content,
     li.usa-footer-primary-content,
@@ -1811,7 +1811,7 @@ li.usa-footer-primary-content {
   ul.usa-footer-primary-content:last-child,
   li.usa-footer-primary-content:last-child,
   li.usa-footer-primary-content:last-child {
-    border-bottom: 1px solid #212121; }
+    border-bottom: 1px solid #595959; }
     @media screen and (min-width: 600px) {
       ul.usa-footer-primary-content:last-child,
       li.usa-footer-primary-content:last-child,
@@ -1840,7 +1840,7 @@ li.usa-footer-primary-content {
   padding-bottom: 3rem;
   padding-top: 3rem; }
   .usa-footer-secondary_section a {
-    color: #212121; }
+    color: #595959; }
 
 @media screen and (min-width: 600px) {
   .usa-footer-big-secondary-section {
@@ -1861,7 +1861,7 @@ li.usa-footer-primary-content {
     .usa-footer-big ul {
       padding-bottom: 0; } }
   .usa-footer-big ul:last-child {
-    border-bottom: 1px solid #212121; }
+    border-bottom: 1px solid #595959; }
     @media screen and (min-width: 600px) {
       .usa-footer-big ul:last-child {
         border-bottom: none; } }
@@ -2142,7 +2142,7 @@ fieldset {
       border-top: none; }
   .usa-sidenav-list a {
     border: none;
-    color: #212121;
+    color: #595959;
     display: block;
     font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif;
     line-height: 1;
@@ -2184,7 +2184,7 @@ fieldset {
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   background: transparent;
-  color: #212121;
+  color: #595959;
   left: 0;
   padding: 1rem 1.5rem;
   position: absolute;
@@ -2342,6 +2342,11 @@ table {
           display: table-cell;
           height: inherit; } }
 
+body {
+  color: #595959;
+  font-weight: 300;
+  line-height: 1.7333333; }
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif;
   font-weight: 300;
@@ -2352,10 +2357,12 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 1.5rem; }
 
 h1 {
-  font-size: 2rem; }
+  font-size: 2rem;
+  line-height: 1.19; }
   @media screen and (min-width: 600px) {
     h1 {
-      font-size: 2.75rem; } }
+      font-size: 2.75rem;
+      line-height: 1.18; } }
   h1 + p {
     margin-top: 2rem; }
   h1 + h4 {
@@ -2378,15 +2385,18 @@ h4 {
 h5 {
   font-size: 1rem; }
 
-body {
-  font-weight: 300;
-  line-height: 1.7333333; }
-
-p + h2,
-p + h3,
-p + h4,
-p + h5 {
-  margin-top: 2rem; }
+p {
+  font-family: "Merriweather", "Georgia", "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.75; }
+  p + h2,
+  p + h3,
+  p + h4,
+  p + h5 {
+    margin-top: 2rem; }
+  @media screen and (min-width: 600px) {
+    p {
+      font-size: 0.9375rem; } }
 
 blockquote {
   margin-left: 0;
@@ -2410,7 +2420,7 @@ blockquote {
 
 .billboard-display_text {
   font-size: 2.6rem;
-  line-height: 3rem; }
+  line-height: 2.8rem; }
   @media screen and (min-width: 600px) {
     .billboard-display_text {
       font-size: 4.5rem;
@@ -2704,8 +2714,11 @@ blockquote {
 .section-bg-far-r {
   background-image: url("../img/cg-bg-c.png");
   background-repeat: no-repeat;
-  background-position-x: 108%;
+  background-position-x: 278%;
   background-position-y: 5vh; }
+  @media screen and (min-width: 600px) {
+    .section-bg-far-r {
+      background-position-x: 108%; } }
 
 .section-light {
   background: #ffffff; }
