@@ -74,6 +74,10 @@ function initializeJS() {
       $('#main-content').toggleClass('active');
     });
 
+    // AnchorJS
+    anchors.options.visible = 'touch';
+    anchors.add('.content h2,.content h3,.content h4,.content h5');
+
 }
 
 (function(){
