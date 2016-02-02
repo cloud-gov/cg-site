@@ -46,7 +46,7 @@ Create a new service instance by specifying a service, plan and a name of your c
 
 	% cf create-service SERVICE_NAME PLAN_NAME INSTANCE_NAME
 
-For example, the create an instance of the elasticsearch service using the free plan with name 'es'.
+For example, the create an instance of the elasticsearch service using the free plan with name *myapp-elasticsearch*.
 
 	% cf create-service elasticsearch-swarm-1.7.1 1x myapp-elasticsearch
 
