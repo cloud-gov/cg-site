@@ -22,9 +22,9 @@ is encouraged and qualifies as a review.
 
 The team prefers forking.
 
-The master branch on the canonical repository is what gets deployed to production.
+The `master` branch on the canonical repository is what gets deployed to production.
 If there is a staging environment available for a given repository, the PR should be
-created against the staging branch. Otherwise, the PR should be created against the master
+created against the `staging` branch. Otherwise, the PR should be created against the `master`
 branch on the canonical repository.
 
 The rationale for preferring forking is that all contributors work the same way,
