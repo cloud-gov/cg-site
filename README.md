@@ -8,7 +8,7 @@ Hugo uses markdown to build the pages. Just add your page to the section you wan
 
 ### Running the site locally
 
-This project uses [Hugo](https://gohugo.io) to build the site. Once Hugo is installed, run `hugo server` and browse to [http://localhost:1313](http://localhost:1313).
+This project uses [Hugo](https://gohugo.io) to build the site. Once Hugo is installed, run `hugo server --renderToDisk` and browse to [http://localhost:1313](http://localhost:1313).
 
 ### Style development
 

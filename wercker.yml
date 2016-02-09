@@ -1,14 +1,16 @@
 box: wercker/default
 build:
   steps:
+    - maxon/npm-run@0.1.2:
+      script: build
     - arjen/hugo-build:
         version: 0.14
-        flags: --destination=out
+        flags: --destination=public
     # use html-proofer, since `hugo` doesn't fail on internal links being broken
     # https://github.com/spf13/hugo/issues/740
     - kyleboyle/html-proofer-test:
         version: "2.6.1"
-        basedir: out
+        basedir: public
         arguments: --disable-external
     - sharms/wercker-step-titleize-check@1.0.3
 deploy:
