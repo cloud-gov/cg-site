@@ -91,7 +91,7 @@ The order here is important. The `DJANGO_SETTINGS_MODULE` environment variable m
 The Procfile contains commands that Cloud Foundry will run to keep your site up. For just the Django site, create a file called `Procfile` and in it put
 
 ```
-web: waitress-serve --port=$VCAP_APP_PORT APPNAME.wsgi:application
+web: waitress-serve --port=$PORT APPNAME.wsgi:application
 ```
 
 `APPNAME.wsgi` should be replaced with whatever the name of your project wsgi module is.
