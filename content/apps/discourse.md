@@ -5,7 +5,7 @@ menu:
 title: Deploying Discourse
 ---
 
-Discourse is a widely used Forum/Mailing List in one, and is great for nearly an knowledge management needs particularly for distributed or inter-agency communities.
+Discourse is a widely used Forum/Mailing List in one, and is great for [Knowledge Management](https://en.wikipedia.org/wiki/Knowledge_management) needs particularly for large distributed or interagency communities.
 
 [Learn More](http://www.discourse.org/)
 
@@ -80,3 +80,6 @@ services:
   - community-db
   - discourse-env
 ```
+
+## Push to cloudfoundry
+`cf push`
