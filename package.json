@@ -4,12 +4,13 @@
   "description": "Documentation site for cloud.gov Cloud Foundry https://docs.cloud.gov",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build-css && npm run copy",
+    "build": "npm run make-dirs && npm run build-css && npm run copy",
     "build-css": "cp ./node_modules/cloudgov-style/css/*.css ./public/css",
     "build-js": "browserify ./static_src/js/main.js -o ./public/js/main.js",
     "copy": "npm run copy-img && npm run copy-font",
     "copy-img": "cp -r node_modules/cloudgov-style/img/* ./public/img/",
     "copy-font": "cp node_modules/cloudgov-style/font/* ./public/fonts/",
+    "make-dirs": "mkdir -p ./public/css && mkdir -p ./public/img && mkdir -p ./public/fonts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "onchange './node_modules/cloudgov-style/css/*.scss' './node_modules/cloudgov-style/img/*' './static_src/**/*.scss' -v -- npm run build"
   },
