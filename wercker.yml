@@ -2,7 +2,7 @@ box: wercker/default
 build:
   steps:
     - maxon/npm-run@0.1.2:
-      script: build
+        script: build
     - arjen/hugo-build:
         version: 0.14
         flags: --destination=public
