@@ -5,7 +5,7 @@ window.$ = $;
 require('cloudgov-style');
 
 var anchors = require('anchor-js');
-require('jquery.scrollTo');
+require('jquery.scrollto');
 
 function hideSidenav() {
   $('#container').addClass('sidebar-close');
