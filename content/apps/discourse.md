@@ -80,6 +80,14 @@ services:
   - community-db
   - discourse-env
 ```
+## Create Services in CF Marketplace
+Use the redis and postgres services available within cloud.gov cf marketplace to create two new service instances. Replace the names of the newly minted services into the manifest files
+
+## Create User Provided Service for VCAP credentials
+```
+cf cups discource-env -p '{"username":"admin","password":"pa55woRD"}'
+```
 
 ## Push to cloudfoundry
-`cf push`
+`cf push manifest-prod-app.yml`
+`cf push manifest-prod-worker.yml`
