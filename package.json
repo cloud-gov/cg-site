@@ -4,9 +4,10 @@
   "description": "Documentation site for cloud.gov Cloud Foundry https://docs.cloud.gov",
   "main": "index.js",
   "scripts": {
-    "build": "npm run make-dirs && npm run build-css && npm run copy",
+    "build": "npm run make-dirs && npm run build-css && npm run build-js && npm run copy",
     "build-css": "cp ./node_modules/cloudgov-style/css/*.css ./public/css",
     "build-js": "browserify ./static_src/js/main.js -o ./public/js/main.js",
+    "clean": "rm -rf ./public",
     "copy": "npm run copy-img && npm run copy-font",
     "copy-img": "cp -r node_modules/cloudgov-style/img/* ./public/img/",
     "copy-font": "cp node_modules/cloudgov-style/font/* ./public/fonts/",
@@ -31,7 +32,7 @@
   },
   "dependencies": {
     "anchor-js": "git+ssh://git@github.com/msecret/anchorjs.git",
-    "cloudgov-style": "^0.3.0",
+    "cloudgov-style": "^0.3.2",
     "highlight": "^0.2.4",
     "jquery.scrollto": "^2.1.2"
   }
