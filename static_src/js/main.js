@@ -2,6 +2,7 @@
 var $ = require( 'jquery' );
 window.jQuery = $;
 window.$ = $;
+require('cloudgov-style');
 
 var anchors = require('anchor-js');
 require('jquery.scrollTo');

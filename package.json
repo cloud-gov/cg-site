@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "build": "hugo && npm run build-css && npm run copy",
-    "build-css": "cp ./node_modules/cg-style/css/cg_style.css ./public/css/cg_style.css",
+    "build-css": "cp ./node_modules/cloudgov-style/css/*.css ./public/css",
     "build-js": "browserify ./static_src/js/main.js -o ./public/js/main.js",
     "copy": "npm run copy-img && npm run copy-font",
-    "copy-img": "cp -r node_modules/cg-style/img/* ./public/img/",
-    "copy-font": "cp node_modules/cg-style/font/* ./public/fonts/",
+    "copy-img": "cp -r node_modules/cloudgov-style/img/* ./public/img/",
+    "copy-font": "cp node_modules/cloudgov-style/font/* ./public/fonts/",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "onchange './node_modules/cg-style/css/*.scss' './node_modules/cg-style/img/*' './static_src/**/*.scss' -v -- npm run build"
+    "watch": "onchange './node_modules/cloudgov-style/css/*.scss' './node_modules/cloudgov-style/img/*' './static_src/**/*.scss' -v -- npm run build"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "anchor-js": "git+ssh://git@github.com/msecret/anchorjs.git",
+    "cloudgov-style": "^0.3.0",
     "highlight": "^0.2.4",
     "jquery.scrollto": "^2.1.2"
   }
