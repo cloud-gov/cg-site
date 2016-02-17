@@ -4,6 +4,7 @@ build:
     - arjen/hugo-build:
         version: 0.14
         flags: --destination=public
+    - wercker/npm-install@1.1.4
     - maxon/npm-run@0.1.2:
         script: build
     # use html-proofer, since `hugo` doesn't fail on internal links being broken
