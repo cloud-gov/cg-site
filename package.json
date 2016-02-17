@@ -4,7 +4,7 @@
   "description": "Documentation site for cloud.gov Cloud Foundry https://docs.cloud.gov",
   "main": "index.js",
   "scripts": {
-    "build": "hugo && npm run build-css && npm run copy",
+    "build": "npm run build-css && npm run copy",
     "build-css": "cp ./node_modules/cloudgov-style/css/*.css ./public/css",
     "build-js": "browserify ./static_src/js/main.js -o ./public/js/main.js",
     "copy": "npm run copy-img && npm run copy-font",
