@@ -1,9 +1,17 @@
-box: wercker/nodejs
+box: seigyo/nvm
 build:
   steps:
     - arjen/hugo-build:
         version: 0.14
         flags: --destination=public
+    - script:
+        name: Use NVM to install version
+        code: |
+          nvm install v4.2.3
+    - script:
+        name: Use NVM to set version
+        code: |
+          nvm use 4.2.3
     - wercker/npm-install@1.1.4
     - maxon/npm-run@0.1.2:
         script: build
