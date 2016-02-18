@@ -31,7 +31,7 @@
     "postcss-import": "^7.1.3"
   },
   "dependencies": {
-    "anchor-js": "git+ssh://git@github.com/msecret/anchorjs.git",
+    "anchor-js": "git+https://github.com/msecret/anchorjs.git",
     "cloudgov-style": "^0.3.2",
     "highlight": "^0.2.4",
     "jquery": "^2.2.0",
