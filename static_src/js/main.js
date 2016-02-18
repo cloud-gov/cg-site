@@ -1,4 +1,3 @@
-
 var $ = require( 'jquery' );
 window.jQuery = $;
 window.$ = $;
@@ -18,9 +17,7 @@ function showSidenav() {
 }
 
 function initializeJS() {
-  //hljs.initHighlightingOnLoad();
-
-    //sidebar dropdown menu
+  // Sidebar dropdown menu
   var parentMenu = $('.sidenav-level-two .open').parents('ul .nested-menu');
   parentMenu.slideDown(200);
   var parentMenuArrow = parentMenu.siblings("a").find('.menu-arrow');
