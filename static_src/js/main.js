@@ -1,83 +1,80 @@
+var $ = require( 'jquery' );
+window.jQuery = $;
+window.$ = $;
+require('cloudgov-style');
+
+var anchors = require('anchor-js');
+require('jquery.scrollto');
+
 function hideSidenav() {
-  jQuery('#container').addClass('sidebar-close');
-  jQuery('#sidebar > ul').hide();
+  $('#container').addClass('sidebar-close');
+  $('#sidebar > ul').hide();
 }
 
 function showSidenav() {
-  jQuery('#container').removeClass('sidebar-close');
-  jQuery('#sidebar > ul').show();
+  $('#container').removeClass('sidebar-close');
+  $('#sidebar > ul').show();
 }
 
 function initializeJS() {
+  // Sidebar dropdown menu
+  var parentMenu = $('.sidenav-level-two .open').parents('ul .nested-menu');
+  parentMenu.slideDown(200);
+  var parentMenuArrow = parentMenu.siblings("a").find('.menu-arrow');
+  parentMenuArrow.addClass('fa-angle-down');
+  parentMenuArrow.removeClass('fa-angle-right');
+  jQuery('#sidebar .sub-menu > a').click(function () {
+      // Toggle current submenu
+      var sub = jQuery(this).next();
+      if (sub.is(":visible")) {
+          jQuery('.menu-arrow', this).addClass('fa-angle-right');
+          jQuery('.menu-arrow', this).removeClass('fa-angle-down');
+          sub.slideUp(200);
+          jQuery(sub).removeClass("open")
+      } else {
+          jQuery('.menu-arrow', this).addClass('fa-angle-down');
+    jQuery('.menu-arrow', this).removeClass('fa-angle-right');
+          sub.slideDown(200);
+          jQuery(sub).addClass("open")
+      }
 
-    //tool tips
-    jQuery('.tooltips').tooltip();
-
-    //popovers
-    jQuery('.popovers').popover();
-
-    //sidebar dropdown menu
-    var parentMenu = $('.sidenav-level-two .open').parents('ul .nested-menu');
-    parentMenu.slideDown(200);
-    var parentMenuArrow = parentMenu.siblings("a").find('.menu-arrow');
-    parentMenuArrow.addClass('fa-angle-down');
-    parentMenuArrow.removeClass('fa-angle-right');
-    jQuery('#sidebar .sub-menu > a').click(function () {
-        // Toggle current submenu
-        var sub = jQuery(this).next();
-        if (sub.is(":visible")) {
-            jQuery('.menu-arrow', this).addClass('fa-angle-right');
-            jQuery('.menu-arrow', this).removeClass('fa-angle-down');
-            sub.slideUp(200);
-            jQuery(sub).removeClass("open")
-        } else {
-            jQuery('.menu-arrow', this).addClass('fa-angle-down');
-			jQuery('.menu-arrow', this).removeClass('fa-angle-right');
-            sub.slideDown(200);
-            jQuery(sub).addClass("open")
-        }
-
-        // Center menu on screen
-        var o = (jQuery(this).offset());
-        diff = 200 - o.top;
-        if(diff>0)
-            jQuery("#sidebar").scrollTo("-="+Math.abs(diff),500);
-        else
-            jQuery("#sidebar").scrollTo("+="+Math.abs(diff),500);
-    });
+      // Center menu on screen
+      var o = (jQuery(this).offset());
+      diff = 200 - o.top;
+      if(diff>0)
+          jQuery("#sidebar").scrollTo("-="+Math.abs(diff),500);
+      else
+          jQuery("#sidebar").scrollTo("+="+Math.abs(diff),500);
+  });
 
 
-    // sidebar menu toggle
-    jQuery(function() {
-    });
+  jQuery('.toggle-nav').click(function () {
+      if (jQuery('#sidebar > ul').is(":visible") === true) {
+          hideSidenav();
+      } else {
+          showSidenav();
+      }
+  });
 
-    jQuery('.toggle-nav').click(function () {
-        if (jQuery('#sidebar > ul').is(":visible") === true) {
-            hideSidenav();
-        } else {
-            showSidenav();
-        }
-    });
+  //bar chart
+  if (jQuery(".custom-custom-bar-chart")) {
+      jQuery(".bar").each(function () {
+          var i = jQuery(this).find(".value").html();
+          jQuery(this).find(".value").html("");
+          jQuery(this).find(".value").animate({
+              height: i
+          }, 2000)
+      })
+  }
 
-    //bar chart
-    if (jQuery(".custom-custom-bar-chart")) {
-        jQuery(".bar").each(function () {
-            var i = jQuery(this).find(".value").html();
-            jQuery(this).find(".value").html("");
-            jQuery(this).find(".value").animate({
-                height: i
-            }, 2000)
-        })
-    }
-    jQuery('.nav_toggle').on('click', function() {
-      $("#sidebar").toggleClass('active');
-      $('#main-content').toggleClass('active');
-    });
+  jQuery('.nav_toggle').on('click', function() {
+    $("#sidebar").toggleClass('active');
+    $('#main-content').toggleClass('active');
+  });
 
-    // AnchorJS
-    anchors.options.visible = 'touch';
-    anchors.add('.content h2,.content h3,.content h4,.content h5');
-
+  // AnchorJS
+  anchors.options.visible = 'touch';
+  anchors.add('.content h2,.content h3,.content h4,.content h5');
 }
 
 (function(){

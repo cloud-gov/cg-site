@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -10,7 +9,8 @@
     <title>{{ .Title }}</title>
 
     <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/cloudgov-style.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
 
   </head>
 
@@ -22,7 +22,9 @@
         <!-- start logo -->
         <h2 class="header-title">
           <a href="https://cloud.gov" class="logo" title="Home">
-            <img src="/img/logo.svg" alt="Cloud.gov" />
+            <svg class="logo">
+              <use xlink:href="/img/cloudgov-sprite.svg#logo"/>
+            </svg>
           </a>
         </h2>
         <!--end logo -->
