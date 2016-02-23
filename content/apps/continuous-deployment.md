@@ -27,26 +27,7 @@ Depending on your CI system the setup is going to be a bit different. **For all 
 
 ### Travis
 
-Per [http://docs.travis-ci.com/user/deployment/cloudfoundry/](http://docs.travis-ci.com/user/deployment/cloudfoundry/) you need to add this section to your `.travis.yml` file:
-
-```yaml
-deploy:
-  edge: true
-  provider: cloudfoundry
-  username: DEPLOYER_USER
-  password:
-  api: https://api.cloud.gov
-  organization: ORG
-  space: SPACE
-```
-
-You will also need to require `sudo` rights for your Travis build (now off by default) in your `.travis.yml`:
-
-```yaml
-sudo: required
-```
-
-Replace `DEPLOYER_USER`, `ORG`, and `SPACE` accordingly and run `travis encrypt --add deploy.password --skip-version-check` to enter the deployer's password.
+See [the Travis documentation](http://docs.travis-ci.com/user/deployment/cloudfoundry/), using `api: https://api.cloud.gov` and encrypting the password.
 
 #### Using Conditional Deployments
 
@@ -54,29 +35,17 @@ A common pattern for team workflows is to use separate development and master br
 
 ```yaml
 deploy:
-  - edge: true
-    provider: cloudfoundry
-    username: DEPLOYER_USER
-    password:
-    api: https://api.cloud.gov
-    organization: ORG
-    space: SPACE
-    manifest: manifest-staging.yml
+  - manifest: manifest-staging.yml
+    # ...
     on:
       branch: develop
-  - edge: true
-    provider: cloudfoundry
-    username: DEPLOYER_USER
-    password:
-    api: https://api.cloud.gov
-    organization: ORG
-    space: SPACE
-    manifest: manifest.yml
+  - manifest: manifest.yml
+    # ...
     on:
       branch: master
 ```
 
-Each manifest should at the very least define an unique name, but can also define an unique host as well. Also, it may be necessary to define unique services for each application to use. See [Cloning Applications]({{< relref "cloning.md" >}}) for more information.
+Each manifest should at the very least define an unique `name`, but can also define an unique `host`. Also, it may be necessary to define unique services for each application to use. See [Cloning Applications]({{< relref "cloning.md" >}}) for more information.
 
 
 #### Jekyll Site
