@@ -14,11 +14,12 @@ Quotas are billed by the amount of memory reserved and tallied daily. A monthly 
 
 ###### Quota Limits:
 
-Quotas limit the following resources:
-- Application routes.
-- Application memory.
-- Service instances.
-- Access to paid plans.
+Quotas limit the following resources:  
+  
+- Application routes.  
+- Application memory.  
+- Service instances.  
+- Access to paid plans.  
 
 If a new application `push` would exceed your organization's quota the request will fail with status code `400` and a message describing the limit that would be exceeded.
 
