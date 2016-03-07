@@ -57,7 +57,7 @@ Access package fees are charged yearly and are non-severable.
 
 You will be charged for resources as a factor of the memory your applications consume. 
 
-- Sandbox: Resource usage is capped to 1 GB.
+- Sandbox: Resource usage is capped to 1 GB/month.
 - All other packages: $0.0033 per MB reserved per day (~$99/GB/month)
 
 Resource usage fees are charged per quarter, tallied monthly, and severable.
