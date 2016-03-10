@@ -55,16 +55,16 @@ Access package fees are charged yearly and are non-severable.
 
 ### Resource usage
 
-You will be charged for resources as a factor of the memory your applications consume. 
+You will be charged for resource usage as a factor of the memory, in MB of RAM, your applications consume. 
 
-- Sandbox: Resource usage is capped to 1 GB/month.
-- All other packages: $0.0033 per MB reserved per day (~$99/GB/month)
+- Sandbox: Resource usage is capped to 1 GB of RAM per month.
+- All other packages: $0.0033 per MB reserved per day (usually this results in $99/GB/month)
 
 Resource usage fees are charged per quarter, tallied monthly, and severable.
 
-We require a specific quota to be set in advance. This helps you control the maximum amount that your team will spend, and helps us avoid over-provisioning resources that won't be used. The quota can be raised on demand. 
+We require your resource usage quota to **be set in advance**. This helps you control the maximum amount that your team will spend, and helps us avoid over-provisioning resources that won't be used.
 
-[Find more about resource usage and quotas.]({{< relref "intro/pricing/quotas.md" >}})
+[Find more about setting quotas and resource usage.]({{< relref "intro/pricing/quotas.md" >}})
 
 ---
 
