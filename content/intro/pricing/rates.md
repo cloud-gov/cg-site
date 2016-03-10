@@ -62,9 +62,9 @@ You will be charged for resource usage as a factor of the memory, in MB of RAM, 
 
 Resource usage fees are charged per quarter, tallied monthly, and severable.
 
-We require your resource usage quota to **be set in advance**. This helps you control the maximum amount that your team will spend, and helps us avoid over-provisioning resources that won't be used. You can raise this quota on demand. 
+We require your resource usage quota to **be set in advance**. This helps you control the maximum amount that your team will spend, and helps us avoid over-provisioning resources that won't be used.
 
-[Find more about resource usage and quotas.]({{< relref "intro/pricing/quotas.md" >}})
+[Find more about setting quotas and resource usage.]({{< relref "intro/pricing/quotas.md" >}})
 
 ---
 
