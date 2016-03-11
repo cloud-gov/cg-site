@@ -18,7 +18,7 @@ will create or deploy the app APPNAME. But before you deploy, let's set up a few
 
 ### Ignoring files
 
-1. Add `*.pyc` and any other files you want Cloud Foundry to your `.gitignore`.
+1. Add `*.pyc` and any other files you want Cloud Foundry to ignore to your `.gitignore`.
 1. [Exclude your `.gitignore`d files from Cloud Foundry.]({{< relref "apps/deployment.md#exclude-files" >}})
 
 ### WSGI Configuration
