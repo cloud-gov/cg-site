@@ -41,9 +41,9 @@ Packages are selected based on the kinds of applications to be hosted.
   </tr>
   <tr>
     <td>Free</th>
-    <td>$15K / year</th>
-    <td>$60K / year</th>
-    <td>$90K / year</th>
+    <td>$15K / year plus usage charges</th>
+    <td>$60K / year plus usage charges</th>
+    <td>$90K / year plus usage charges</th>
   </tr>
 </table>
 
