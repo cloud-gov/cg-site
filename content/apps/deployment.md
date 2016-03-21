@@ -63,7 +63,7 @@ A couple of important points on the `.cfignore`:
 
 If you would like to be notified about deployments in your Slack channel, follow [these instructions](https://github.com/18F/hubot-cf-notifications#adding-applications), and add the [configuration](https://github.com/18F/hubot-cf-notifications#configuration) to [Charlie](https://github.com/18F/18f-bot/blob/master/cf_config.json).
 
-## Other stuff you might need to do
+## Cloud.Gov related guides:
 
 * Connecting to a [service]({{< relref "apps/managed-services.md" >}})
     * [Databases]({{< relref "apps/databases.md" >}})
