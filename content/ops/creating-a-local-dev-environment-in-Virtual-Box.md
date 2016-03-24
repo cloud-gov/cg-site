@@ -13,6 +13,11 @@ To create a local environment you need to follow the instructions from the Cloud
 
 If you need the spiff utility, install it by running:
 
+	# For Mac OS X
+	wget https://github.com/cloudfoundry-incubator/spiff/releases/download/v1.0.7/spiff_darwin_amd64.zip
+	sudo unzip spiff_darwin_amd64.zip -d /usr/local/bin
+
+	# For Linux
 	wget https://github.com/cloudfoundry-incubator/spiff/releases/download/v1.0.7/spiff_linux_amd64.zip
 	sudo unzip spiff_linux_amd64.zip -d /usr/local/bin
 
