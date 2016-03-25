@@ -13,7 +13,7 @@ There are three ways to start multiple app instances in Cloud Foundry:
 2.  In the `manifest.yml`
 3.  Using the `cf scale` command
 
-Note that scaling to multiple instances in cloud.gov should be scheduled in more than one AWS availability zone.
+When you scale your app by running multiple instances, cloud.gov attempts to schedule those instances across availability zones to maximize your app's resiliency.
 
 #### Push Command Method
 When pushing an app use the `-i` flag to declare the number of instances. The example below demonstrates pushing an app with 2 instances.
