@@ -26,4 +26,4 @@ cloud.gov is built on AWS, a FedRAMP-compliant IaaS. The actual machine image we
 
 We are further hardening the machine image based on things we identified in taking cloud.gov through the ATO process at GSA. Currently cloud.gov is in the Lightweight Authority to Operate (LATO) stage at GSA, and we will be progressing from there to full ATO.
 
-While cloud.gov is not yet FedRAMP-compliant, all our activity is aimed at getting it there. We are now engaged in the evaluation process with FedRAMP and you can [track our progress live]({{< relref "fedramp-tracker.md" >}}).
+While cloud.gov is not yet FedRAMP-compliant, all our activity is aimed at getting it there. We are now engaged in the evaluation process with FedRAMP and you can [track our progress live]({{< relref "intro/security/fedramp-tracker.md" >}}).
