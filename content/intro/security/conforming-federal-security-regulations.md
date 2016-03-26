@@ -22,6 +22,8 @@ We’re not going to stop there though - we will have trusted non-governmental t
 
 ## Building up cloud.gov’s conformity with federal regulations
 
-While cloud.gov is not yet FedRAMP-approved, all our activity is aimed at getting it there. AWS is a FedRAMP-approved IaaS on which cloud.gov is built. The actual machine image we deploy onto AWS is based on the one from [the FISMA-Ready project](https://github.com/fisma-ready), which 18F participates in. That project generates STIG-like hardened configurations of open source software.
+cloud.gov is built on AWS, a FedRAMP-compliant IaaS. The actual machine image we deploy onto AWS is based on the one from [the FISMA-Ready project](https://github.com/fisma-ready), which 18F participates in. That project generates STIG-like hardened configurations of open source software.
 
-We are further hardening the machine image based on things we identified in taking cloud.gov through the ATO process at GSA. Currently cloud.gov is in the Lightweight Authority to Operate (LATO) stage, and will be progressing from there to full ATO.
+We are further hardening the machine image based on things we identified in taking cloud.gov through the ATO process at GSA. Currently cloud.gov is in the Lightweight Authority to Operate (LATO) stage at GSA, and we will be progressing from there to full ATO.
+
+While cloud.gov is not yet FedRAMP-compliant, all our activity is aimed at getting it there. We are now engaged in the evaluation process with FedRAMP and you can [track our progress live]({{< relref "fedramp-tracker.md" >}}).
