@@ -93,5 +93,5 @@ to a file using the `>` character and then a file path on your local machine.
 Here's an example:
 
 ```sh
-cf files my-app-ssh app/path/to/database_dump.sql > ./database_dump.sql
+cf files my-app-ssh app/path/to/database_dump.sql | tail -n +4 > ./database_dump.sql
 ```
