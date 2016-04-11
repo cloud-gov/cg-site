@@ -33,16 +33,16 @@ Packages are selected based on the kinds of applications to be hosted.
       Sandbox usage caps can be raised. Suitable for many teams to deploy apps, though limited to the apps.cloud.gov domain. Low ability to delegate access control to teams. No production data allowed. Usually purchased per agency/department. 
     </td>
     <td valign="top">
-      Up to 3 public-facing FISMA Low systems, including all the spaces needed and DNS support.
+      One public-facing FISMA Low system, including all the spaces needed and DNS support.
     </td>
     <td valign="top">
-      1 public-facing system, including all the spaces needed and DNS support. Additional support for FISMA Moderate data requirements.
+      One public-facing FISMA Moderate system, including all the spaces needed and DNS support. Additional support for FISMA Moderate data requirements.
     </td>
   </tr>
   <tr>
     <td>Free</th>
     <td>$15K / year plus usage charges</th>
-    <td>$60K / year plus usage charges</th>
+    <td>$20K / year plus usage charges</th>
     <td>$90K / year plus usage charges</th>
   </tr>
 </table>
