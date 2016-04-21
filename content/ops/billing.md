@@ -17,12 +17,17 @@ Abacus provides usage metering and aggregation for Cloud Foundry (CF) services. 
 
 - First, we need to create UAA clients.
   - Follow the instructions [here](https://github.com/18F/cf-abacus/blob/cg-v0.0.5-rc.1/lib/cf/bridge/README.md#uaa-clients) in order create your UAA clients. The first client's credentials will become env vars `CF_CLIENT_ID` and `CF_CLIENT_SECRET`. The second client's credentials will become env vars `CLIENT_ID` and `CLIENT_SECRET`.
-- Second, we need to get the address to a deployed MongoDB. That env var will be `DB` and will follow the format of `http://username:password@ip-address:port`.
+- Second, we need to get the address to a deployed CouchDB. That env var will be `DB` and will follow the format of `http://username:password@ip-address:port`.
 - Finally we need to set the env var `JWTKEY` to UAA's public key which can be found by looking at your BOSH Release manifest under the properties.uaa.jwt.verification_key value.
 
 ### Deploying Abacus
 
 - Start with the cg-v0.0.5-rc.1 branch from github.com/18F/cf-abacus
+- You will need to set `CLIENT_ID`, `CLIENT_SECRET`, `DB`, `JWTKEY` in all the manifest.yml files for the project.
+- You will need to set `CF_CLIENT_ID`, `CF_CLIENT_SECRET` in the `lib/cf/bridge/manifest.yml` file.
+- `AUTH_SERVER` is `https://login.cloud.gov`
+- `UAA` is `https://uaa.cloud.gov`
+- `JWTALGO` is `RS256`
 - This fork differs from upstream in only a few ways, basically in the manifest.yml files for all the apps. The cloud.gov versions differ in just two ways:
 - RAM size has been increased for some apps.
 - Env vars have been omitted for most apps. Specifically, where you specify a secret, or a database URI, I've commented those lines out, so that redeploying from such a yml file doesn't blow away the specific values we have for each app.
@@ -32,12 +37,11 @@ Abacus provides usage metering and aggregation for Cloud Foundry (CF) services. 
 
 - If you want to deploy just one app, it's a little trickier:
   - For abacus-cf-bridge, `cd into lib/cf/bridge; npm install && npm run babel && npm run lint && npm test; npm run cfpack; npm run cfpush`
-  - For the other apps, cd into the app's directory (they're all under lib/???/appname) and then:
+  - For the other apps, cd into the app's directory (they're all under lib/???/appname), verify the values in the manifest.yml and then:
 ```
 ../../../node_modules/abacus-cfpack/cfpack
 ../../../node_modules/abacus-cfpush/cfpush
   ```
-- Be very careful not to blow away the environment for any app, without some specific settings in there, it will not work. Specifically `CF_CLIENT_ID`, `CF_CLIENT_SECRET`, `CLIENT_ID`, `CLIENT_SECRET`, `DB`, `DBCLIENT`, `JWTALGO`, `JWTKEY`, `UAA`.
 
 ## Preparing to access Abacus
 With secured APIs enabled, all curls, etc, have to be done via the following method using [UAAC](https://github.com/cloudfoundry/cf-uaac):
