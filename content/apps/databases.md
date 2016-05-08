@@ -55,7 +55,7 @@ The [dj_database_url](https://github.com/kennethreitz/dj-database-url#url-schema
 
 ## Access a postgres database using cf-ssh
 
-To access a service database, use the [cf-ssh]({{< relref "getting-started/cf-ssh.md" >}}) CLI to start an instance that is bound to the service and download the `psql` binary to that instance:
+To access a service database, use the [cf-ssh]({{< relref "getting-started/one-off-tasks.md" >}}) CLI to start an instance that is bound to the service and download the `psql` binary to that instance:
 
     cf-ssh APP_NAME
     curl https://s3.amazonaws.com/18f-cf-cli/psql-9.4.4-ubuntu-14.04.tar.gz | tar xvz

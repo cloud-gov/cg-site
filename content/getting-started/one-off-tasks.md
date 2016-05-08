@@ -3,6 +3,8 @@ menu:
   main:
     parent: advanced
 title: Running One Off Tasks
+aliases:
+- /getting-started/cf-ssh/
 ---
 
 There are a couple ways to run one off tasks in Cloud Foundry. The easiest one is running CF SSH.
@@ -17,7 +19,7 @@ Our `cf-ssh` is customized to our Cloud Foundry installation so please **do not 
 
 ### Install `cf-ssh`
 
-1. [Download `cf-ssh` for your environment](https://github.com/18F/cloud-foundry-scripts/releases/)
+1. [Download `cf-ssh` for your environment](https://github.com/18F/cloud-foundry-scripts/releases/).
 1. Run
 
     ```bash

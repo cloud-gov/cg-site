@@ -29,7 +29,7 @@ See the official CF guide: [Getting Started Deploying Ruby on Rails Apps](http:/
     # etc.
     ```
 
-1. [SSH into the application]({{< relref "getting-started/cf-ssh.md" >}}), then run `rake db:setup`.
+1. [SSH into the application]({{< relref "getting-started/one-off-tasks.md" >}}), then run `rake db:setup`.
 
 Your app should now be live at `APP_NAME.18f.gov`!
 
