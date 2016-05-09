@@ -8,7 +8,9 @@ title: Multi-Language Projects
 
 CloudFoundry is capable of deploying, multi-language projects by using a special [buildpack](https://github.com/ddollar/heroku-buildpack-multi). In short, this buildpack applies any buildpacks listed in `.buildpacks` file.
 
-## Preparing and app for a multi-buildpack deploy
+Note: If you're investigating multi-buildpack deploys to build static assets on cloud.gov, you can avoid this issue by [building assets on CI]({{< relref "assets.md#build-ci" >}}#).
+
+## Preparing an app for a multi-buildpack deploy
 
 ### 1. Update the application manifest
 The application manifest should link to [this buildpack](https://github.com/ddollar/heroku-buildpack-multi.git) as in the example below.
