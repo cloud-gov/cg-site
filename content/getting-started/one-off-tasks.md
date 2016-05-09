@@ -2,7 +2,7 @@
 menu:
   main:
     parent: advanced
-title: Running One Off Tasks
+title: Running One-Off Tasks
 aliases:
 - /getting-started/cf-ssh/
 ---
@@ -38,17 +38,24 @@ The idea here is that we are going to deploy a new application, but running the 
         * `domains`
         * `host`
         * `hosts`
+        * `instances`
         * `random-route`
     * Add [`no-route: true`](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#no-route).
-    * Set [`command`](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#start-commands) to be whatever you want to execute.
-1. Deploy the one-off app:
+    * Set the [`command`](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#start-commands) attribute to be the following:
+
+        ```yaml
+        command: (<your command> && echo SUCCESS || echo FAIL) && sleep infinity
+        ```
+
+1. Deploy the one-off app, and view the output:
 
     ```bash
     cf push -f task_manifest.yml
+    cf logs --recent task-runner
     ```
 
 1. If needed, use [`cf files`](http://cli.cloudfoundry.org/en-US/cf/files.html) to collect any artifacts.
-1. Run `cf delete task-runner` (or whatever you named the one-off app) to clean it up.
+1. Run `cf delete task-runner` to clean it up.
 
 ## CF SSH
 
