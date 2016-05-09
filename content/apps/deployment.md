@@ -69,5 +69,5 @@ If you would like to be notified about deployments in your Slack channel, follow
     * [Databases]({{< relref "apps/databases.md" >}})
 * Rollback
     * Just `checkout` the old version and `cf-push`
-* [Running one-off commands]({{< relref "getting-started/cf-ssh.md" >}})
+* [Running one-off commands]({{< relref "getting-started/one-off-tasks.md" >}})
 * Deleting an application (`cf delete`)
