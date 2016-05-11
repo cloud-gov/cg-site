@@ -16,6 +16,22 @@ The pipeline starts with the [`deploy-cf-staging` job](https://ci.cloud.gov/pipe
 
 If the deployment job is successful, it then runs a job for basic set of 'smoke tests' to check a minimal set of functionality of CloudFoundry. When the 'smoke tests' job passes, the pipeline will run a job for a suite of acceptance tests to fully exercise the system.
 
+#### Using staging
+
+Using the [`targets`](https://github.com/guidowb/cf-targets-plugin) plugin is recommended.
+
+1. Visit [login.green.18f.gov](https://login.green.18f.gov).
+1. Click "Sign in with GSA.gov".
+1. Run
+
+    ```bash
+    cf login --sso -a https://api.green.18f.gov
+    ```
+
+1. Follow the instructions.
+
+You may need to ask in #cloud-gov-atlas to be given access to orgs.
+
 ### Production
 Upon successfully going through the staging portion of the pipeline, you are now ready to tackle production.
 
