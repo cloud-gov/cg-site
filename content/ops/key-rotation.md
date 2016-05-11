@@ -16,7 +16,7 @@ Use [this script](https://github.com/18F/cg-pipelines/blob/master/tasks/generate
 
 You just need to provide a `BUCKET` destination for the backup and a decryption `PASSPHRASE`. In your terminal:
 
-```
+```bash
 BUCKET=my-bucket PASSPHRASE=somethingorother ./generate_key.sh
 ```
 
@@ -28,5 +28,6 @@ In the case that keys need to be accessed, downloaded and decrypt them from the 
 
 Use [this script](https://github.com/18F/cg-pipelines/blob/master/tasks/decrypt.sh) for decryption. In your terminal:
 
-```
+```bash
 INPUT_FILE=bosh-123.enc.pem OUTPUT_FILE=bosh-123.pem PASSPHRASE=somethingorother ./decrypt.sh
+```
