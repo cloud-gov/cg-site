@@ -22,4 +22,4 @@ Talk to us in [#cloud-gov-support](https://18f.slack.com/messages/cloud-gov-supp
 
 ## I'm interested in working on cloud.gov.
 
-Check out [18F's jobs site](https://pages.18f.gov/joining-18f/), and come talk to us in [our #devops-public Slack channel](https://chat.18f.gov/).
+Check out [18F's jobs site](https://pages.18f.gov/joining-18f/), and come talk to us in [our #devops-public Slack channel](https://chat.18f.gov/?channel=devops-public).
