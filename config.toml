@@ -6,6 +6,8 @@ publishdir = "public"
 [params]
   description = "Cloud.gov documentation"
   author = "18f"
+[blackfriday]
+  plainIDAnchors = true
 
 [[menu.main]]
     name = "Introduction"
