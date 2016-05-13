@@ -28,6 +28,10 @@ For example, `cf set-env APPNAME VERBOSE true` enables verbose logging for the d
 
 Cloud Foundry will attempt to detect the buildpack to use with your app by examining the application files in search Use the `buildpack:` key in your manifest to specify a native buildpack by name or a custom buildpack by providing a URL. Override the buildpack setting and detection with the `-b` commandline switch which takes the same arguments.
 
+### Python dependency errors
+
+If you're seeing errors installing any Python dependencies, check if you've got a `vendor/` directory in your app's root. The Python buildpack won't use PyPI if you have a `vendor/` directory, so you'll need to rename that directory to something else.
+
 ## [DEA] Droplet Execution Phase
 
 ### App manifest contents
