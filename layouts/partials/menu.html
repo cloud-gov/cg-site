@@ -49,7 +49,7 @@
               <a href="/help/"><i class='fa fa-life-ring'></i> <span>Help</span></a>
             </li>
             {{ if .IsPage }}
-            {{ $File := .File }}  {{with $File.Path }}<li><a href="https://github.com/18f/cloud-foundry-notes/edit/master/content/{{ $File.Dir }}{{ $File.LogicalName }}" target="blank"><i class='fa fa-edit'></i> Refine this Page</a> </li>{{end}}
+            {{ $File := .File }}  {{with $File.Path }}<li><a href="https://github.com/18f/cg-docs/edit/master/content/{{ $File.Dir }}{{ $File.LogicalName }}" target="blank"><i class='fa fa-edit'></i> Refine this Page</a> </li>{{end}}
             {{ end }}
   </ul>
 </aside>
