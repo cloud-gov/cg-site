@@ -58,6 +58,7 @@ rvm:
 script: jekyll build ./_site
 deploy:
   skip_cleanup: true
+  # ...
 ```
 
 #### Additional resources

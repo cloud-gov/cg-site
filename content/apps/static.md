@@ -46,22 +46,19 @@ Deploy:
 $ cf push
 ```
 
+### Builds
+
+If you are using a static site generator (e.g. it uses [Jekyll]({{< relref "#jekyll" >}}) or [Hugo](http://gohugo.io/)) or and/or it requires dependencies to be installed at deploy-time, it's _especially_ recommended that you set up [continuous deployment]({{< relref "continuous-deployment.md" >}}). This way, the build happens in your Continuous Integration (CI) system rather than during the deploy itself within Cloud Foundry. This helps to make your deployments more reliable, have a smaller footprint, and reduce downtime.
+
 ### Jekyll
 
-Deploying a Jekyll site requires a few things:
+Deploying a [Jekyll](http://jekyllrb.com/) site requires a few things:
 
-* Add or update your `Gemfile` to include the jekyll gem.
+* Add or update your `Gemfile` to include the `jekyll` gem.
 
     ```ruby
     source 'https://rubygems.org'
     gem 'jekyll'
-    ```
-
-* Add the following lines to the top of your `.travis.yml` to pull Ruby and build the site.
-
-    ```yaml
-    language: ruby
-    script: jekyll build ./_site
     ```
 
 * Add a `Staticfile` pointing to the root of the built site as specified above. The [static buildpack](https://github.com/cloudfoundry/staticfile-buildpack) will interpret with file.
