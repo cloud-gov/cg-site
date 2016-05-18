@@ -69,7 +69,7 @@ Alternatively, a service instance can also bound to an existing application via 
 
 	% cf bind-service APPLICATION INSTANCE_NAME
 
-Use `cf env APPLICATION` to to display the application environment variables including `VCAP_SERVICES` which holds information for each bound service.
+Use `cf env APPLICATION` to display the application environment variables including `VCAP_SERVICES` which holds information for each bound service.
 
 **Output:**
 
