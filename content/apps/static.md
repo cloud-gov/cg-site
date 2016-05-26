@@ -88,4 +88,4 @@ http {
 Deploy your application to `NEW_DOMAIN_NAME` and then `cf push` a simple static site with that `nginx.conf`
 configuration to the old domain name. You can see a [full working example](https://github.com/18F/c2-redirect).
 
-You can read more about [nginx customization](https://github.com/cloudfoundry/staticfile-buildpack#advanced-nginx-configuration).
+You can read more about nginx customization at the [Staticfile Buildpack documentation](http://docs.cloudfoundry.org/buildpacks/staticfile/).
