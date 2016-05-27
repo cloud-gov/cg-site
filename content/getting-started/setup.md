@@ -30,7 +30,7 @@ If you want to practice deploying, run the following before continuing:
 
 
 ```bash
-cf target -o sandbox -s <USERNAME>
+cf target -o sandbox -s <SPACE>
 ```
 
-Your `USERNAME` is probably the part of your email before the `@`, e.g. `FIRSTNAME.LASTNAME`. When you're done, please `cf delete <APPNAME>`. See the walkthrough for [your first deploy]({{< relref "your-first-deploy.md" >}}).
+Your `SPACE` is probably the part of your email before the `@`, e.g. `FIRSTNAME.LASTNAME`. When you're done, please `cf delete <APPNAME>`. See the walkthrough for [your first deploy]({{< relref "your-first-deploy.md" >}}).
