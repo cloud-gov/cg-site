@@ -11,7 +11,11 @@ The preferred way to invite new users is to [invite them](https://login.cloud.go
 
 ## Changing passwords
 
-First, try to **have the user [reset their password themselves]({{< relref "getting-started/accounts.md#resetting-your-password" >}})**. If they are unable to do so, you can [change their password for them](http://docs.cloudfoundry.org/adminguide/uaa-user-management.html#changing-passwords), using
+First ask the user **[to try resetting their own password]({{< relref "getting-started/accounts.md#resetting-your-password" >}})**.
+
+If a user logs in using their agency's account system, the only way to reset that password is for them to use their agency's normal password reset process.
+
+If they log in with a cloud.gov account that has its own password (including `ORGNAME_deployer` accounts), you can [change their password for them](http://docs.cloudfoundry.org/adminguide/uaa-user-management.html#changing-passwords), using
 
 ```bash
 uaac target uaa.cloud.gov
