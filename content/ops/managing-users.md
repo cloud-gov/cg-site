@@ -15,7 +15,7 @@ First ask the user **[to try resetting their own password]({{< relref "getting-s
 
 If a user logs in using their agency's account system, the only way to reset that password is for them to use their agency's normal password reset process.
 
-If they log in with a Cloud Foundry account that has its own password (including `ORGNAME_deployer` accounts), you can [change their password for them](http://docs.cloudfoundry.org/adminguide/uaa-user-management.html#changing-passwords), using
+If they log in with a cloud.gov account that has its own password (including `ORGNAME_deployer` accounts), you can [change their password for them](http://docs.cloudfoundry.org/adminguide/uaa-user-management.html#changing-passwords), using
 
 ```bash
 uaac target uaa.cloud.gov

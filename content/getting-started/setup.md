@@ -24,9 +24,9 @@ As a user, nearly all of your interactions with Cloud Foundry will be through th
     cf login -a api.cloud.gov --sso
     ```
     
-    Then follow the passcode link to get your one time code and enter it to log in.
+    Then follow the link to get your one-time authentication code and enter it to log in.
 
-    **Or if you log in with a Cloud Foundry account that has its own password** (including `ORGNAME_deployer` accounts), log in by running
+    **Or if you log in with a cloud.gov account that has its own password** (including `ORGNAME_deployer` accounts), log in by running
 
     ```bash
     cf login -a api.cloud.gov
