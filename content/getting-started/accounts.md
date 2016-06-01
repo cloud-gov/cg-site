@@ -18,4 +18,4 @@ You will need a Cloud Foundry account before continuing. To get an account:
 
 If you log into Cloud Foundry using your agency's account system, you can reset your password using your agency's normal process.
 
-If you log in with a Cloud Foundry account that has its own password (including `ORGNAME_deployer` accounts), you can reset your password by going to https://login.cloud.gov/forgot_password. You can also change your password from the command line with `cf passwd`.
+If you log in with a Cloud Foundry account that has its own password (including `ORGNAME_deployer` accounts), you can reset your password by going to https://login.cloud.gov/forgot_password.
