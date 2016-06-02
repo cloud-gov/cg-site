@@ -65,7 +65,7 @@ Our `cf-ssh` is customized to our Cloud Foundry installation, so please **do not
 
 ### Installation
 
-1. [Download `cf-ssh` for your environment](https://github.com/18F/cloud-foundry-scripts/releases/).
+1. [Download `cf-ssh` for your environment](https://github.com/18F/cf-ssh/releases/).
 1. Run
 
     ```bash
