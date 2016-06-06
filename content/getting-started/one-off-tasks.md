@@ -61,11 +61,11 @@ The idea here is that we are going to deploy a new application, but running the 
 
 Another way to run one-off commands is via `cf-ssh`. `cf-ssh` is a shared ssh session with an application container that you can connect to. This allows you to debug the environment and your application without disturbing a running container.
 
-Our `cf-ssh` is customized to our Cloud Foundry installation, so please **do not use the community version or [`cf ssh`](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html)**. Also note that only one person can use `cf-ssh` for any particular app at any particular time.
+Our `cf-ssh` is customized to our Cloud Foundry installation, so please **do not use the community version of [`cf ssh`](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html)**. Also note that only one person can use `cf-ssh` for any particular app at any particular time.
 
 ### Installation
 
-1. [Download `cf-ssh` for your environment](https://github.com/18F/cf-ssh/releases/) ([source](https://github.com/18F/cf-ssh/tree/18f)).
+1. [Download cloud.gov's `cf-ssh` for your environment](https://github.com/18F/cf-ssh/releases/) ([source](https://github.com/18F/cf-ssh/tree/18f)).
 1. Run
 
     ```bash
