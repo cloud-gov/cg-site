@@ -113,7 +113,9 @@ Once the incident is no longer active -- i.e. the breach has been contained, the
 
 The final step in handling a security incident is figuring out what we learned. The IC (or one of the ICs, if there were multiple, or a designated other party) should lead a retrospective and develop an incident report. 
 
-The report should contain a timelines of the incident, details about how the incident progressed, and information about the vulnerabilities that led to the incident. A cause analysis is an important part of this report; the team should use tools like [Five Whys](#) or [Infinite Hows](#) to try to dig into causes, how future incidents could be prevented, how responses could be better in the future, etc.
+Conducting retrospectives is out of the scope of this document, but as a crash course, here's an [introduction to blameless postmortems](https://codeascraft.com/2012/05/22/blameless-postmortems/).
+
+The report should contain a timelines of the incident, details about how the incident progressed, and information about the vulnerabilities that led to the incident. A cause analysis is an important part of this report; the team should use tools like [Infinite Hows](http://www.kitchensoap.com/2014/11/14/the-infinite-hows-or-the-dangers-of-the-five-whys/) or [Five Whys](https://en.wikipedia.org/wiki/5_Whys) to try to dig into causes, how future incidents could be prevented, how responses could be better in the future, etc.
 
 The report should also contain some basic response metrics:
 
