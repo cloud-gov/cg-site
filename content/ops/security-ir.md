@@ -2,15 +2,39 @@
 
 This document outlines cloud.gov's process for responding to security incidents. It outlines roles and responsibilities during and after incidents, and lays out the steps we'll take to resolve them.
 
+## Overview
+
+At a high level, incident response follows this process:
+
+1. [Initiate](#initiate):
+    - Someone - the *reporter* - reports an incident to the cloud.gov team in `#cloud-gov`. The first responder on the cloud.gov team becomes the initial *Incident Commander* (IC).
+    - The IC creates an issue in the [security-incidents](https://github.com/18f/security-incidents) github repo to track the event and notifies GSA IT.
+2. [Assess](#assess):
+    - The IC forms a team (*responders*) to determine if the event is actually a confirmed incident, and if so [assesses the severity](#incident-severities).
+    - The IC sends out an initial situation report (sitrep), or a false-alarm notification.
+3. [Remediate](#remediate):
+    - The responders work to contain and remediate the issue; timelines vary based on the assessed severity.
+    - The IC coordinates, communicates, and tracks the investigation and remediation.
+4. [Retrospective](#retrospective):
+    - The responding team holds a retrospective to analyize the incident, capture follow-ups and lessons-learned, and writes a formal report.
+
+During this process, the team communicates in the following places:
+
+- Situation updates, investigation notes, and other relevent information gets captured in the Github issue created to track this event.
+- Real-time communication happens in Slack, in the `#incident-response` channel.
+- If needed, the team can use a Google Hangout and/or Google Docs to share information that's not appropriate for Slack or Github (PII, etc.).
+
+For full details, read on.
+
 ## Response process
 
 ### Initiate
 
 An incident begins when someone (the *reporter*) becomes aware of a potential incident. We define "incident" broadly, following [NIST SP 800-61](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf), as "a violation or imminent threat of violation of computer security policies, acceptable use policies, or standard security practices" (6). This is a deliberately broad definition, designed to encompass any scenario that might threaten the security of cloud.gov.
 
-The reporter should contact [FIXME: initial contact?] to become the response process. They should escalate [FIXME: how?] until they receive acknowledgment of their report.
+The reporter should contact the cloud.gov team in `#cloud-gov` to begin the response process. They should escalate by [FIXME: HOW?] until they receive acknowledgment of their report.
 
-The first responder at this point becomes *Incident Commander* (IC), and carries out the next steps in the response. The IC's responsibility is coordination, not necessarily investigation. The IC's primary role is to guide the process.
+The first responder at this point becomes *Incident Commander* (IC), and carries out the next steps in the response. The IC's responsibility is coordination, not necessarily investigation. The IC's primary role is to guide the process. The first responder may remain IC throughout the process, or they may hand off IC duties later in the process.
 
 The first step for the IC is to create an issue in the [security-incidents](https://github.com/18f/security-incidents) github repo. Copy the following template to create the issue:
 
@@ -34,10 +58,10 @@ Note that at this point the issue's status is "investigating" - we haven't confi
 
 At this phase, communications should follow these guidelines: 
 
+- The IC should inform GSA IT of the investigation by emailing `gsa-ir@gsa.gov`. This needs to happen within 1 hour.
 - Updates should be posted to the Github issue.
 - Real-time chat should happen in `#incident-response`
-- The IC may start a Google Hangout so that responders can share sensitive information not suitable for sharing in Github or Slack.
-- No mandatory reporting yet, though the IC may give relevant stakeholders an early notice if they deem in necessary.
+- The IC may start a Google Hangout and/or create Google Docs so that responders can share sensitive information not suitable for sharing in Github or Slack.
 
 ### Assess
 
@@ -58,16 +82,28 @@ Once this is done, the IC should update the ticket, noting:
 - Severity: High/Med/Low
 - Any new/changed responders
 
+At this point, the IC should post an initial situation report ("sitrep") confirming the incident, summarizing what's going on, identifying the IC, and linking to the issue. Here's an example sitrep:
+
+```
+Subject: [sitrep] The chickens have escaped
+
+https://github.com/18F/security-incidents/issues/12345
+
+Severity: high
+IC: Farmer Jane
+Responders: Spot the Dog, Farmer Dave
+
+We've confirmed reports of escaped chickens. Looks like a fox may have tunneled into the run. Dave is working to fix the fence, Spot is tracking the fox.
+```
+
+This sitrep should be:
+- posted in `#incident-response`
+- emailed to `gsa-ir@gsa.gov` and `devops@gsa.gov`
+- sent (email or Slack) to external stakeholders, if applicable and relevent
+
 #### Comms at the Assess phase
 
 Updates and real-time chat should continue as above (updates on the issue, chat in Slack or Google Hangouts). 
-
-Additionally, once the incident is confirmed, the IC has some reporting obligations at this point:
-
-- The IC should post an initial situation report ("sitrep") to `#incident-response`, noting what's going on, who's IC, and linking back to the ticket for info. The IC should continue to post updated sitreps on a regular cadence (the section on severities, below, suggests should cadences for each level).
-- FIXME: email sitrep? To whom?
-- FIXME: notify GSA-IT?
-- FIXME: notify US-CERT?
 
 ### Remediate
 
