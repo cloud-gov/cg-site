@@ -135,9 +135,9 @@ At this point, we're trying to fix the issue! Remediation will be very situation
 
     - For High-severity incidents, the team should take action immediately, even if this causes disruption. A notification about the disruption should be sent out as soon as possible, but the team needs no permission to take action at this level.
 
-    - For Medium-severity incidents, the team should notify [FIXME: who? inf lead? cgov lead?] of the planned action, and help [this person] assess the relative risk of disruption vs security. The team should reach a collaborative decision on action, with a bias towards disruption. If [FIXME: person] can't be reached within 1 hour, the team may take action without them.
+    - For Medium-severity incidents, the team should notify the cloud.gov leads (Diego & Bret) of the planned action, and help them assess the relative risk of disruption vs security. The team should reach a collaborative decision on action, with a bias towards disruption. If they can't be reached within 1 hour, the team may take action without them.
 
-    - For Low-severity issues, the team should notify [FIXME] as above, and not take action until a mutually-agreed-on course of action has been determined.
+    - For Low-severity issues, the team should notify as above, and not take action until a mutually-agreed-on course of action has been determined.
 
 - Remediation can sometimes take a long time. If the issue progresses for more than 3 hours without being resolved, the IC should plan for a long remediation. This means:
 
