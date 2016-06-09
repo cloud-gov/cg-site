@@ -1,3 +1,10 @@
+---
+menu:
+  main:
+    parent: operations
+title: Security IR Guide
+---
+
 # cloud.gov Incident Response process
 
 This document outlines cloud.gov's process for responding to security incidents. It outlines roles and responsibilities during and after incidents, and lays out the steps we'll take to resolve them.
@@ -6,17 +13,24 @@ This document outlines cloud.gov's process for responding to security incidents.
 
 At a high level, incident response follows this process:
 
-1. [Initiate](#initiate):
-    - Someone - the *reporter* - reports an incident to the cloud.gov team in `#cloud-gov`. The first responder on the cloud.gov team becomes the initial *Incident Commander* (IC).
-    - The IC creates an issue in the [security-incidents](https://github.com/18f/security-incidents) github repo to track the event and notifies GSA IT.
-2. [Assess](#assess):
-    - The IC forms a team (*responders*) to determine if the event is actually a confirmed incident, and if so [assesses the severity](#incident-severities).
-    - The IC sends out an initial situation report (sitrep), or a false-alarm notification.
-3. [Remediate](#remediate):
-    - The responders work to contain and remediate the issue; timelines vary based on the assessed severity.
-    - The IC coordinates, communicates, and tracks the investigation and remediation.
-4. [Retrospective](#retrospective):
-    - The responding team holds a retrospective to analyize the incident, capture follow-ups and lessons-learned, and writes a formal report.
+[Initiate](#initiate):
+
+- Someone - the *reporter* - reports an incident to the cloud.gov team in `#cloud-gov`. The first responder on the cloud.gov team becomes the initial *Incident Commander* (IC).
+- The IC creates an issue in the [security-incidents](https://github.com/18f/security-incidents) github repo to track the event and notifies GSA IT.
+
+[Assess](#assess):
+
+- The IC forms a team (*responders*) to determine if the event is actually a confirmed incident, and if so [assesses the severity](#incident-severities).
+- The IC sends out an initial situation report (sitrep), or a false-alarm notification.
+
+[Remediate](#remediate):
+
+- The responders work to contain and remediate the issue; timelines vary based on the assessed severity.
+- The IC coordinates, communicates, and tracks the investigation and remediation.
+
+[Retrospective](#retrospective):
+
+- The responding team holds a retrospective to analyize the incident, capture follow-ups and lessons-learned, and writes a formal report.
 
 During this process, the team communicates in the following places:
 
@@ -70,7 +84,7 @@ The next step is to assess the issue. We need to answer two questions:
 - Is this an incident (i.e., did the thing we suspect happen actually happen?)
 - If so, how severe is it? (This will determine how our response proceeds.)
 
-To answer these questions, the IC should form a response team. [FIXME: how to contact people here?]. The response team should work to confirm the issue and assess its impact. 
+To answer these questions, the IC should form a response team by DM'ing people in Slack. The response team should work to confirm the issue and assess its impact. 
 
 If the issue turns out to be a false alarm, the IC should update the ticket, setting the status to "false alarm", and closing the issue. 
 
