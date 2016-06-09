@@ -32,7 +32,7 @@ For full details, read on.
 
 An incident begins when someone (the *reporter*) becomes aware of a potential incident. We define "incident" broadly, following [NIST SP 800-61](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf), as "a violation or imminent threat of violation of computer security policies, acceptable use policies, or standard security practices" (6). This is a deliberately broad definition, designed to encompass any scenario that might threaten the security of cloud.gov.
 
-The reporter should contact the cloud.gov team in `#cloud-gov` to begin the response process. They should escalate by [FIXME: HOW?] until they receive acknowledgment of their report.
+The reporter should contact the cloud.gov team in `#cloud-gov` to begin the response process. They should escalate by contating Diego and/or Bret directly until they receive acknowledgment of their report.
 
 The first responder at this point becomes *Incident Commander* (IC), and carries out the next steps in the response. The IC's responsibility is coordination, not necessarily investigation. The IC's primary role is to guide the process. The first responder may remain IC throughout the process, or they may hand off IC duties later in the process.
 
@@ -161,8 +161,6 @@ The report should also contain some basic response metrics:
 - Threat actions (which specific actions -- e.g. phishing, password attacks, etc) -- were taken by the actor)?
 
 This report should be posted as a final comment on the Github issue, which can then be closed.
-
-[FIXME: VERIS?]
 
 ## Incident Severities
 
