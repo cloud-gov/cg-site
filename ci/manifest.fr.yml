@@ -1,0 +1,5 @@
+---
+inherit: ../manifest.yml
+domain: fr.cloud.gov
+host: docs
+path: ../public

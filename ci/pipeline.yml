@@ -1,0 +1,85 @@
+---
+jobs:
+- name: deploy-production
+  plan:
+  - get: cg-docs-source
+    trigger: true
+  - task: build
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source:
+          repository: jojomi/hugo
+          tag: '0.16'
+      inputs:
+      - name: cg-docs-source
+      outputs:
+      - name: cg-docs-compiled
+      run:
+        dir: cg-docs-source
+        path: sh
+        args:
+        - -exc
+        - |
+          # install dependencies
+          # git required for NPM, the rest required for node-sass->node-gyp
+          apk add --no-cache --update g++ git make nodejs python
+
+          npm install
+          npm run build
+
+          # build the site
+          hugo
+
+          # copy files to output directory, so that they can be read by subsequent step
+          cp -R . ../cg-docs-compiled
+  - put: cloud-gov-production
+    params:
+      manifest: cg-docs-compiled/ci/manifest.fr.yml
+      path: cg-docs-compiled
+      current_app_name: docs-a
+    on_failure:
+      put: slack
+      params:
+        text: |
+          :x: FAILED to deploy cg-docs to Production
+          <$ATC_EXTERNAL_URL/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME|View build details>
+        channel: {{slack-channel}}
+        username: {{slack-username}}
+        icon_url: {{slack-icon-url}}
+    on_success:
+      put: slack
+      params:
+        text: |
+          :white_check_mark: Successfully deployed cg-docs to Production
+          <$ATC_EXTERNAL_URL/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME|View build details>
+        channel: {{slack-channel}}
+        username: {{slack-username}}
+        icon_url: {{slack-icon-url}}
+
+resources:
+- name: cg-docs-source
+  type: git
+  source:
+    uri: {{cg-docs-git-url}}
+    branch: {{cg-docs-branch}}
+- name: cloud-gov-production
+  type: cf
+  source:
+    api: {{cf-api-url-production}}
+    username: {{cf-deploy-username-production}}
+    password: {{cf-deploy-password-production}}
+    organization: {{cf-organization}}
+    space: {{cf-space}}
+    skip_cert_check: false
+- name: slack
+  type: slack-notification
+  source:
+    url: {{slack-webhook-url}}
+
+resource_types:
+- name: slack-notification
+  type: docker-image
+  source:
+    repository: cfcommunity/slack-notification-resource
