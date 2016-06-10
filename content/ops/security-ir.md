@@ -46,7 +46,7 @@ For full details, read on.
 
 An incident begins when someone (the *reporter*) becomes aware of a potential incident. We define "incident" broadly, following [NIST SP 800-61](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf), as "a violation or imminent threat of violation of computer security policies, acceptable use policies, or standard security practices" (6). This is a deliberately broad definition, designed to encompass any scenario that might threaten the security of cloud.gov.
 
-The reporter should contact the cloud.gov team in `#cloud-gov` to begin the response process. They should escalate by contating Diego and/or Bret directly until they receive acknowledgment of their report.
+The reporter should contact the cloud.gov team in `#cloud-gov` to begin the response process. They should escalate by contating the cloud.gov leads directly until they receive acknowledgment of their report. The final escalation point is to page the infrastructure lead, whose contact info is in the channel details of `#incident-response`.
 
 The first responder at this point becomes *Incident Commander* (IC), and carries out the next steps in the response. The IC's responsibility is coordination, not necessarily investigation. The IC's primary role is to guide the process. The first responder may remain IC throughout the process, or they may hand off IC duties later in the process.
 
@@ -72,7 +72,7 @@ Note that at this point the issue's status is "investigating" - we haven't confi
 
 At this phase, communications should follow these guidelines: 
 
-- The IC should inform GSA IT of the investigation by emailing `gsa-ir@gsa.gov`. This needs to happen within 1 hour.
+- The IC should inform GSA IT and our devops teams of the investigation by emailing `gsa-ir@gsa.gov` and `devops@gsa.gov`. **This needs to happen within 1 hour.**
 - Updates should be posted to the Github issue.
 - Real-time chat should happen in `#incident-response`
 - The IC may start a Google Hangout and/or create Google Docs so that responders can share sensitive information not suitable for sharing in Github or Slack.
