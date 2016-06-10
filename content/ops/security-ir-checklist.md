@@ -17,7 +17,7 @@ You've just responded to a possible security incident. Congratulations, you're n
 - move incident discssion to `#incident-response`
 - if needed, create a Google Doc to track sensitive information that can't be shared in Slack/Github
 - if needed, start a Google Hangout for responders
-- notify `gsa-ir@gsa.gov` of the investigation
+- notify `gsa-ir@gsa.gov` and `devops@gsa.gov` of the investigation. **This needs to happen within one hour.**
 
 ## Assess
 
