@@ -38,7 +38,7 @@ jobs:
     params:
       manifest: cg-docs-compiled/ci/manifest.fr.yml
       path: cg-docs-compiled
-      current_app_name: docs-a
+      current_app_name: docs
     on_failure:
       put: slack
       params:

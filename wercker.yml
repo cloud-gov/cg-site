@@ -22,15 +22,3 @@ build:
         basedir: public
         arguments: --disable-external
     - sharms/wercker-step-titleize-check@1.0.3
-deploy:
-  steps:
-    - dlapiduz/cloud-foundry-deploy:
-        api: $CF_API
-        username: $CF_USER
-        password: $CF_PASS
-        organization: $CF_ORG
-        space: $CF_SPACE
-        appname: docs-a
-        alt_appname: docs-b
-        domain: cloud.gov
-        hostname: docs
