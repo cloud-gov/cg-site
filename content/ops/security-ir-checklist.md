@@ -11,10 +11,10 @@ title: Security IR Checklist
 
 ## Initiate
 
-You've just responded to a possible security incident. Congratulations, you're now the IC! Follow these steps:
+You've just responded to a possible security incident. Congratulations, you're now the Incident Commander (IC)! Follow these steps:
 
 - create an issue in the [security-incidents](https://github.com/18f/security-incidents) github repo ([use this template]({{< relref "security-ir.md#initiate" >}}))
-- move incident discssion to `#incident-response`
+- move incident discussion to `#incident-response`
 - if needed, create a Google Doc to track sensitive information that can't be shared in Slack/Github
 - if needed, start a Google Hangout for responders
 - notify `gsa-ir@gsa.gov` and `devops@gsa.gov` of the investigation. **This needs to happen within one hour.**
