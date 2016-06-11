@@ -46,11 +46,11 @@ For full details, read on.
 
 An incident begins when someone (the *reporter*) becomes aware of a potential incident. We define "incident" broadly, following [NIST SP 800-61](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf), as "a violation or imminent threat of violation of computer security policies, acceptable use policies, or standard security practices" (6). This is a deliberately broad definition, designed to encompass any scenario that might threaten the security of cloud.gov.
 
-The reporter should contact the cloud.gov team in `#cloud-gov` to begin the response process. They should escalate by contating the cloud.gov leads directly until they receive acknowledgment of their report. The final escalation point is to page the infrastructure lead, whose contact info is in the channel details of `#incident-response`.
+The reporter should contact the cloud.gov team in `#cloud-gov` to begin the response process. They should escalate by contacting the cloud.gov leads directly until they receive acknowledgment of their report. The final escalation point is to page the infrastructure lead, whose contact info is in the channel details of `#incident-response`.
 
 The first responder at this point becomes *Incident Commander* (IC), and carries out the next steps in the response. The IC's responsibility is coordination, not necessarily investigation. The IC's primary role is to guide the process. The first responder may remain IC throughout the process, or they may hand off IC duties later in the process.
 
-The first step for the IC is to create an issue in the [security-incidents](https://github.com/18f/security-incidents) github repo. Copy the following template to create the issue:
+The first step for the IC is to create an issue in the [`security-incidents`](https://github.com/18f/security-incidents) github repo. Copy the following template to create the issue:
 
 ```
 Short description of what's going on
@@ -125,9 +125,9 @@ At this point, we're trying to fix the issue! Remediation will be very situation
 
 - The IC's responsibility is coordination, communication, and information-collection. The remediation team will be focused on resolving the issue, so it's up to the IC to make sure that we properly track what happened, how we're fixing it, who's doing what, etc. Ideally, the notes kept by the IC should be sufficient for an outside investigator to independently follow the work of the response team and validate the team's work.
 
-- The team will develop a list of "leads" -- actionable information about breaches, stolen data, etc. The IC should track these leads, maintain information about which are being investigated (and by whom), and what information that investigation leads. These can be tracked as checklists in the Github issue.
+- The team will develop a list of **leads** -- actionable information about breaches, stolen data, etc. The IC should track these leads, maintain information about which are being investigated (and by whom), and what information that investigation leads. These can be tracked as checklists in the Github issue.
 
-- Similarly, the team will develop a list of remediation steps. The IC is likewise responsible for tracking those, making sure they're assigned and followed-up, and verifying them as they're completed. These may be tracked in the central Github issue as well.
+- Similarly, the team will develop a list of **remediation steps**. The IC is likewise responsible for tracking those, making sure they're assigned and followed-up, and verifying them as they're completed. These may be tracked in the central Github issue as well. The IC should distinguish between immediate concerns which should be completed before the incident is considered resolved and long-term improvements/hardening which can be deferred to the Retrospective.
 
 - The response team should aim to adopt a *containment* strategy: if machines are compromised, they should avoid destroying or shutting them down if possible (this can hamper forensics). For AWS instances, you can leave the instance running and instead reconfigure the Security Group for the instance to drop all ingress and egress traffic until forensics can be performed.
 
