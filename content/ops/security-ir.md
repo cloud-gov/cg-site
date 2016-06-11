@@ -96,7 +96,7 @@ Once this is done, the IC should update the ticket, noting:
 - Severity: High/Med/Low
 - Any new/changed responders
 
-At this point, the IC should post an initial situation report ("sitrep") confirming the incident, summarizing what's going on, identifying the IC, and linking to the issue. Here's an example sitrep:
+At this point, the IC should write an initial situation report ("sitrep") confirming the incident, summarizing what's going on, identifying the IC, and linking to the issue. Here's an example sitrep:
 
 ```
 Subject: [sitrep] The chickens have escaped
