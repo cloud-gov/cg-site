@@ -2,7 +2,7 @@
 menu:
   main:
     parent: operations
-title: Key Rotation and Availability
+title: Secrets Management
 weight: 10
 ---
 
