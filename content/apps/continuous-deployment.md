@@ -35,61 +35,33 @@ A common pattern for team workflows is to use separate development and master br
 
 ```yaml
 deploy:
-  - manifest: manifest-staging.yml
-    # ...
-    on:
-      branch: develop
-  - manifest: manifest.yml
-    # ...
-    on:
-      branch: master
+- manifest: manifest-staging.yml
+  # ...
+  on:
+    branch: develop
+- manifest: manifest.yml
+  # ...
+  on:
+    branch: master
 ```
 
 Each manifest should at the very least define an unique `name`, but can also define an unique `host`. Also, it may be necessary to define unique services for each application to use. See [Cloning Applications]({{< relref "cloning.md" >}}) for more information.
 
+#### Jekyll
 
-#### Jekyll Site
-
-Deploying a Jekyll site requires a few changes to your `.travis.yml` and `manifest.yml` as well as the addition of a `Staticfile` and `Gemfile`. Add or update your Gemfile to include the jekyll gem.
-
-**Gemfile**
-
-```
-source "https://rubygems.org"
-
-gem "jekyll"
-```
-
-Add the following lines to the top of your `.travis.yml` to pull Ruby and build the site.
-
-**.travis.yml:**
+To deploy a Jekyll site, add the following to your `.travis.yml`:
 
 ```yaml
 language: ruby
 rvm:
 - 2.1
 script: jekyll build ./_site
+deploy:
+  skip_cleanup: true
+  # ...
 ```
 
-Add a Staticfile pointing to the root of the built site as specified above. The static buildpack will interpret with file.
-
-**Staticfile**
-
-```
-root: _site
-```
-
-Update manifest.yml to use the static buildpack.
-
-**manifest.yml**
-
-```
-buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
-```
-
-See [18F/notalone](https://github.com/18F/notalone) and [18F/18f.gsa.gov](https://github.com/18F/18f.gsa.gov) for working examples.
-
-**Additional Resources:**
+#### Additional resources
 
 - [Jekyll - Continuous Integration](http://jekyllrb.com/docs/continuous-integration/)
 - [Travis - Cloud Foundry Deployment](http://docs.travis-ci.com/user/deployment/cloudfoundry/)

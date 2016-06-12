@@ -5,6 +5,8 @@ menu:
 title: Deploying Static Sites
 ---
 
+### Basics
+
 Create `index.html`:
 
 ```
@@ -44,25 +46,34 @@ Deploy:
 $ cf push
 ```
 
-### Continuous deployment with Travis-CI
+### Builds
 
-Add your repo to Travis-CI.
+If you are using a static site generator (e.g. it uses [Jekyll]({{< relref "#jekyll" >}}) or [Hugo](http://gohugo.io/)) or and/or it requires dependencies to be installed at deploy-time, it's _especially_ recommended that you set up [continuous deployment]({{< relref "continuous-deployment.md" >}}). This way, the build happens in your Continuous Integration (CI) system rather than during the deploy itself within Cloud Foundry. This helps to make your deployments more reliable, have a smaller footprint, and reduce downtime.
 
-Create a `.travis.yml` file with `edge` set to `true`:
+### Jekyll
 
-```yml
-edge: true
-```
+Deploying a [Jekyll](http://jekyllrb.com/) site requires a few things:
 
-Run the Cloud Foundry set-up script:
+* Add or update your `Gemfile` to include the `jekyll` gem.
 
-```
-$ travis setup cloudfoundry
-```
+    ```ruby
+    source 'https://rubygems.org'
+    gem 'jekyll'
+    ```
 
-Follow the prompts. When you're done, the script will have appended all the necessary markup to the `.travis.yml` file.
+* Add a `Staticfile` pointing to the root of the built site as specified above. The [static buildpack](https://github.com/cloudfoundry/staticfile-buildpack) will interpret with file.
 
-Once you merge a Pull Request, Travis will run and deploy the site.
+    ```yaml
+    root: _site
+    ```
+
+* Update `manifest.yml` to use the [static buildpack](https://github.com/cloudfoundry/staticfile-buildpack).
+
+    ```yaml
+    buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
+    ```
+
+See [18F/notalone](https://github.com/18F/notalone) and [18F/18f.gsa.gov](https://github.com/18F/18f.gsa.gov) for working examples.
 
 ### Redirect all traffic
 
