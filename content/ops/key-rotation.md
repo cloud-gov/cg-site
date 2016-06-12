@@ -12,9 +12,7 @@ Authorized federal staff rotate, encrypt, and backup keys monthly. Privileged us
 
 ### Generate and upload keys
 
-Use [this script](https://github.com/18F/cg-pipelines/blob/master/tasks/generate_key.sh) to generate keys and upload them as access keys to AWS EC2 and an encrypted backup to AWS S3: 
-
-You just need to provide a `BUCKET` destination for the backup and a decryption `PASSPHRASE`. In your terminal:
+Use [this script](https://github.com/18F/cg-pipeline-tasks/blob/master/generate_key.sh) to generate keys and upload them as access keys to AWS EC2 and an encrypted backup to AWS S3. You just need to provide a `BUCKET` destination for the backup and a decryption `PASSPHRASE`. In your terminal:
 
 ```bash
 BUCKET=my-bucket PASSPHRASE=somethingorother ./generate_key.sh
