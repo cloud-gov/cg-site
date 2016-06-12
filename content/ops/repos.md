@@ -28,7 +28,7 @@ We try to keep this page up-to-date, but you may find more repositories [on GitH
 
 ## Public domain
 
-This project is in the worldwide [public domain](https://github.com/18F/cloud-foundry-notes/blob/master/LICENSE.md). As stated in [CONTRIBUTING](https://github.com/18F/cloud-foundry-notes/blob/master/CONTRIBUTING.md):
+This project is in the worldwide [public domain](https://github.com/18F/cg-docs/blob/master/LICENSE.md). As stated in [CONTRIBUTING](https://github.com/18F/cg-docs/blob/master/CONTRIBUTING.md):
 
 > This project is in the public domain within the United States, and copyright and related rights in the work worldwide are waived through the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/).
 >
