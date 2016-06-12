@@ -15,6 +15,7 @@ See the official CF guide: [Getting Started Deploying Ruby on Rails Apps](http:/
 
 1. [Exclude files ignored by Git]({{< relref "apps/deployment.md#exclude-files" >}}).
 1. [Add the `rails_12factor` gem](https://github.com/heroku/rails_12factor#install) for better logging.
+1. Add the [`good_migrations`](https://github.com/testdouble/good-migrations) gem for safer migrations.
 1. Create the application on Cloud Foundry.
 
     ```bash
