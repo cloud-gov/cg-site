@@ -13,41 +13,41 @@ title: Security IR Checklist
 
 You've just responded to a possible security incident. Congratulations, you're now the Incident Commander (IC)! Follow these steps:
 
-- create an issue in the [security-incidents](https://github.com/18f/security-incidents) github repo ([use this template]({{< relref "security-ir.md#initiate" >}}))
-- move incident discussion to `#incident-response`
-- if needed, create a Google Doc to track sensitive information that can't be shared in Slack/Github
-- if needed, start a Google Hangout for responders
-- notify `gsa-ir@gsa.gov` and `devops@gsa.gov` of the investigation. **This needs to happen within one hour.**
+- Create an issue in the [security-incidents](https://github.com/18f/security-incidents) github repo ([use this template]({{< relref "security-ir.md#initiate" >}}))
+- Move incident discussion to `#incident-response`
+- If needed, create a Google Doc to track sensitive information that can't be shared in Slack/Github
+- If needed, start a Google Hangout for responders
+- Notify `gsa-ir@gsa.gov` and `devops@gsa.gov` of the investigation. **This needs to happen within one hour.**
 
 ## Assess
 
-- confirm the incident - is it a real incident?
-    - if it's not a real incident, go to [false alarm](#false-alarm)
-- assess the severity, using [the rubric in the IR guide]({{< relref "security-ir.md#incident-severities" >}})
-- update the github issue:
-    - status -> "confirmed"
-    - severity -> high/medium/low
-    - list of responders
-- send an initial sitrep ([example]({{< relref "security-ir.md#assess" >}})) to: 
-    - post in `#incident-response`
-    - email to `gsa-ir@gsa.gov` and `devops@gsa.gov`
-    - email/Slack other stakeholders, if applicable
+- Confirm the incident - Is it a real incident?
+    - If it's not a real incident, go to [false alarm](#false-alarm)
+- Assess the severity, using [the rubric in the IR guide]({{< relref "security-ir.md#incident-severities" >}})
+- Update the github issue:
+    - Status -> "confirmed"
+    - Severity -> high/medium/low
+    - List of responders
+- Send an initial sitrep ([example]({{< relref "security-ir.md#assess" >}})) to: 
+    - Post in `#incident-response`
+    - Email to `gsa-ir@gsa.gov` and `devops@gsa.gov`
+    - Email/Slack other stakeholders, if applicable
 
 ## Remediate
 
-- keep the ticket/docs updated as people work, tracking:
-    - leads, and who's following them
-    - remediation items, and who's working on them
-- send out sitreps on a regular cadence (high: hourly; medium: 2x daily; low: daily)
-- go into work shifts if the incident lasts longer then 3 hours
+- Keep the ticket/docs updated as people work, tracking:
+    - Leads, and who's following them
+    - Remediation items, and who's working on them
+- Send out sitreps on a regular cadence (high: hourly; medium: 2x daily; low: daily)
+- Go into work shifts if the incident lasts longer then 3 hours
 - [hand off IC](#handing-off-ic) if the incident lasts longer than 3 hours
 
 Once the incident is resolved:
 
-- update the ticket, set status -> "resolved"
-- send a final sitrep to stakeholders
-- schedule a retrospective
-- thank everyone involved for their service!
+- Update the ticket, set status -> "resolved"
+- Send a final sitrep to stakeholders
+- Schedule a retrospective
+- Thank everyone involved for their service!
 
 ## Special situations
 
@@ -57,10 +57,10 @@ Some extra checklists for special situations that don't always occur during inci
 
 Follow this checklist if an event turns out not to be a security incident:
 
-- update the Github issue, setting status to `false alarm`
-- close the Github issue
-- notify `gsa-ir@gsa.gov` of the false alarm
-- if any sitreps have been sent out, send a final sitrep to all previous recipients, noting the false alarm.
+- Update the Github issue, setting status to `false alarm`
+- Close the Github issue
+- Notify `gsa-ir@gsa.gov` of the false alarm
+- If any sitreps have been sent out, send a final sitrep to all previous recipients, noting the false alarm.
 
 ### Handing off IC
 
