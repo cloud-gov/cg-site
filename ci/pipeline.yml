@@ -48,7 +48,7 @@ jobs:
           cp -R . ../cg-docs-compiled
   - put: cloud-gov-production
     params:
-      manifest: cg-docs-compiled/ci/manifest.fr.yml
+      manifest: {{cg-docs-manifest}}
       path: cg-docs-compiled
       current_app_name: docs
     on_failure:
