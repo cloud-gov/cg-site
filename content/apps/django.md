@@ -147,3 +147,7 @@ cf push APPNAME
 ```
 
 It should now be running at `APPNAME.18f.gov`!
+
+### Running management commands
+
+You may want to run `manage.py` commands on your app to perform maintenance tasks and such. For more information on doing this, see the guide on [Running One-Off Tasks](/getting-started/one-off-tasks/).
