@@ -1,8 +1,8 @@
 ---
 applications:
-- name: docs-a
-- name: docs-b
+- name: docs
 memory: 64M
-buildpack: staticfile_buildpack 
+buildpack: staticfile_buildpack
 domain: cloud.gov
-root: .
+host: docs
+path: public
