@@ -9,18 +9,21 @@ This document describes how the 18F cloud.gov team approaches configuration mana
 
 ## Change Workflow
 
-1. All configuration changes must flow through a git repository, centrally managed through GitHub.
+1. All configuration changes must flow through a git repository, centrally managed through GitHub, unless they contain sensitive information. In these cases, sensitive information should be stored in an S3 bucket with a proper security policy, encryption, and versioned, so that changes can be easily rolled back.
 1. A change is initiatied and discussed as a [GitHub issue in 18F/cg-atlas repository](https://GitHub.com/18F/cg-atlas/issues).
-2. A Pull Request (PR) is created that addresses the change and references the created issue.
+1. A Pull Request (PR) is created that addresses the change and references the created issue.
     If there is a staging environment available for a given repository, the PR should be
     created against the `staging` branch. Otherwise, the PR should be created against the `master` branch on the canonical repository.
-3. The PR is reviewed by someone other than the committer. Pairing via screen-sharing
+1. The PR is reviewed by someone other than the committer. Pairing via screen-sharing
 is encouraged and qualifies as a review. Review should include architectural design, DRY principles, security and code quality.
-4. The reviewer merges the PR.
-5. A continuous integration server handles automated tests and deployment of the merged changes
-    * All changes are deployed to a testing environment, such as staging
-    * Any and all automated tests are run
-    * If all tests pass, changes can be promoted for deployment to production in the pipeline.
+1. The reviewer merges the PR.
+1. A continuous integration (CI) server handles automated tests and continuous deployment (CD) of the merged changes
+    - All changes are deployed to a testing environment, such as staging
+    - Any and all automated tests are run
+    - If all tests pass, changes can be promoted for deployment to production in the pipeline.
+
+1. The CI/CD tool uses GitHub repositories and S3 stored sensitive content as the canonical source of truth for what the platform should look like, and will reset the state of all systems to match in the case of any manual changes.
+
 ![Pipeline Example](/img/pipeline-example.png)
 
 A more detailed example of this process can be seen in [Updating Cloud Foundry]({{< relref "updating-cf.md" >}})
