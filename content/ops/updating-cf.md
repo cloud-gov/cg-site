@@ -11,8 +11,8 @@ Updates to Cloud Foundry should be handled by the [`deploy-cf`](https://ci.cloud
 The pipeline starts with the [`deploy-cf-staging` job](https://ci.cloud.gov/pipelines/deploy-cf/jobs/deploy-cf-staging), that is triggered **automatically** when one of the following is updated:
 
 - The upstream [CloudFoundry release](https://github.com/cloudfoundry/cf-release/releases)
-- The `staging` branch of [cg-manifests](https://github.com/LinuxBozo/cg-manifests/tree/staging/cf) repository.
-- A [secrets.yml](https://github.com/18F/cg-manifests/blob/master/cf/cf-secrets-example.yml) stored in S3
+- The `staging` branch of [cg-deploy-cf]() repository.
+- A [secrets.yml](https://github.com/18F/cg-deploy-cf/blob/master/cf-secrets-example.yml) stored in S3
 
 If the deployment job is successful, it then runs a job for basic set of 'smoke tests' to check a minimal set of functionality of CloudFoundry. When the 'smoke tests' job passes, the pipeline will run a job for a suite of acceptance tests to fully exercise the system.
 
@@ -57,14 +57,14 @@ Wildcard Routes [BeforeEach] Adding a wildcard route to a domain completes succe
 fly get-pipeline --pipeline deploy-cf
 ```
 
-- Use [this script](https://github.com/18F/cg-pipelines/blob/master/tasks/decrypt.sh) for decryption. In your terminal:
+- Use [this script](https://github.com/18F/cg-pipeline-tasks/blob/master/decrypt.sh) for decryption. In your terminal:
 
 ```
 INPUT_FILE=secrets.yml OUTPUT_FILE=unencrypted-secrets.yml PASSPHRASE=pipelinepassphrase ./decrypt.sh
 ```
 
 - Make changes to the `unencrypted-secrets.yml`
-- Use [this script](https://github.com/18F/cg-pipelines/blob/master/tasks/encrypt.sh) for encryption. In your terminal:
+- Use [this script](https://github.com/18F/cg-pipeline-tasks/blob/master/encrypt.sh) for encryption. In your terminal:
 
 ```
 INPUT_FILE=unencrypted-secrets.yml OUTPUT_FILE=secrets.yml PASSPHRASE=pipelinepassphrase ./encrypt.sh
