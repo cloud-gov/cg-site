@@ -4,8 +4,24 @@ menu:
     parent: operations
 title: Configuration Management
 ---
-# Configuration Management Process
+# Configuration Management Plan
 This document describes how the 18F cloud.gov team approaches configuration management of the core platform.
+
+## What goes into configuration management?
+In short, everything needed to run and operate the platform that is not a _secret_.
+
+Here are some examples:
+- Infrastructure/Network configuration (Terraform)
+- VM setup and quantity (Bosh)
+- Software configuration (Bosh)
+- CI Pipelines (Concourse)
+
+## Where should all this configuration go?
+All configuration must be stored in GitHub using the following "Change Workflow" unless it is a _secret_.
+
+## How do we test these changes?
+If possible, first test the changes locally. After that they need to be uploaded to a staging environment where either manual or automated testing needs to be run.
+Security tests need to be executed in the staging environment where changes are applied.
 
 ## Change Workflow
 
@@ -58,3 +74,6 @@ context to request a review is preferred.
 ### When reviewing a PR, should the change be tested locally?
 
 Whenever possible, the proposed changes should be tested locally. Because of the nature of many of the cloud.gov repositories and deployment environments, local testing is not always possible or practical. Visual code review, however, is always required.
+
+## What if a configuration changed and it is not in Configuration Management?
+If possible Configuration Management tools need to be set up to always roll back to a known state. Other than that, these tools need to be able to "recreate" all settings from the known configurations.
