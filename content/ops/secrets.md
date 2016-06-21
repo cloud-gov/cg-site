@@ -10,25 +10,14 @@ To meet NIST security control [SC-12 (1)](https://web.nvd.nist.gov/view/800-53/R
 
 Authorized federal staff rotate, encrypt, and backup keys monthly. Privileged users can access the keys only with two-factor authentication and a decryption passphrase. In the rare case that both the keys and the decryption passphrase for the backup are lost or compromised, new keys can be rotated in by authorized federal staff, while maintaining availability of information.
 
-### Grabbing AWS credentials
+### AWS credentials
 
-Note that access here is gated by membership in [the cloud-gov-ci team](https://github.com/orgs/18F/teams/cloud-gov-ci) in GitHub.
+If you need to view/update secrets:
 
-1. Go to https://ci.fr.cloud.gov/pipelines/terraform-provision (substitute relevant Concourse instance).
-1. Click the `bootstrap-tooling` job.
-1. Expand the `create-update-tooling` step.
-1. Grab `ci_access_key_id` and `ci_secret_access_key`.
+1. Ask in [#cloud-gov-atlas](https://18f.slack.com/messages/cloud-gov-atlas/) for an account to read/write from the S3 buckets.
+1. Set up a [named profile](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-multiple-profiles) for [the AWS CLI](https://aws.amazon.com/cli/).
 
-#### Using with the AWS CLI
-
-If you have your own AWS credentials, set up a [named profile](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-multiple-profiles) for [the AWS CLI](https://aws.amazon.com/cli/). If you don't, set the AWS environment variables locally. Note [the space at the beginning of the latter commands so they are excluded from history](http://unix.stackexchange.com/questions/32460/excluding-some-of-the-commands-from-being-getting-stored-in-bash-history#comment505752_32461).
-
-```bash
-export HISTCONTROL="ignorespace"
-export AWS_DEFAULT_REGION=us-gov-west-1
- export AWS_ACCESS_KEY_ID=...
- export AWS_SECRET_ACCESS_KEY=...
-```
+The examples below use `--profile govcloud`, but replace with the name of your profile.
 
 ### Generate and upload keys
 
@@ -57,7 +46,7 @@ Substitute `cf.yml` in the following steps for the relevant file.
 
     ```bash
     mkdir -p tmp
-    aws s3 cp s3://cloud-gov-varz/cf.yml tmp/cf.yml.enc
+    aws s3 cp s3://cloud-gov-varz/cf.yml tmp/cf.yml.enc --profile govcloud
     ```
 
 1. Get the encryption passphrase.
@@ -94,7 +83,7 @@ Substitute `cf.yml` in the following steps for the relevant file.
 1. Copy the new file up to S3.
 
     ```bash
-    aws s3 cp tmp/cf.yml.enc-new s3://cloud-gov-varz/cf.yml
+    aws s3 cp tmp/cf.yml.enc-new s3://cloud-gov-varz/cf.yml --profile govcloud
     ```
 
 1. Clean up the secrets.
