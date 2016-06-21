@@ -76,7 +76,7 @@ The pricing for each service is different and they are billed by the service ins
 
 **Note:** *We are still determining the rates for some services. We will ensure users of those services are aware of the rates when they are set, and they will not be charged before then.*
 
-Managed services are billed per quarter, tallied monthly, and serverable.
+Managed services are billed per quarter, tallied monthly, and severable.
 
 ---
 
