@@ -13,11 +13,12 @@ title: Security IR Checklist
 
 You've just responded to a possible security incident. Congratulations, you're now the Incident Commander (IC)! Follow these steps:
 
-- Create an issue ([using this template]({{< relref "security-ir.md#initiate" >}})) in the [security-incidents](https://github.com/18f/security-incidents) GitHub repository.
-- Move incident discussion to [`#incident-response`](https://18f.slack.com/messages/incident-response/).
-- If needed, create a Google Doc to track sensitive information that can't be shared in Slack/GitHub.
-- If needed, start a Google Hangout for responders.
-- Notify `gsa-ir@gsa.gov` and `devops@gsa.gov` of the investigation. **This needs to happen within one hour.**
+1. Notify `gsa-ir@gsa.gov`, `itservicedesk@gsa.gov`, and `devops@gsa.gov` with a succient description of the incident, via a single email to all three addresses. If GSA Gmail itself is down or compromised, call 1-866-450-5250. **This step needs to happen within one hour of detecting a potential incident.**
+1. Move incident discussion to [`#incident-response`](https://18f.slack.com/messages/incident-response/).
+1. Create an issue ([using this template]({{< relref "security-ir.md#initiate" >}})) in the [security-incidents](https://github.com/18f/security-incidents) GitHub repository with a more fulsome description.
+1. If needed, create a GSA Google Doc to track sensitive information that can't be shared in Slack/GitHub.
+1. If needed, start a GSA Google Hangout for responders.
+
 
 ## Assess
 
