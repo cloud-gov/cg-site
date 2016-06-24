@@ -33,6 +33,15 @@ documentation](https://github.com/concourse/fly#installing-from-the-concourse-ui
 1. Click the plus button to start your own build of your selected job. Remember
    the build number as you'll be referencing it in the `builds` command.
 
+If you haven't already, set a target to your concourse using the following command
+
+```sh
+$ fly --target YOUR_CONCOURSE_TARGET_NAME> login --concourse-url <CONCOURSE_URL> (e.g. https://ci.example.com)
+```
+You should now see that target when you issue the following command.
+```sh
+$ fly targets
+```
 Using the `fly` CLI, check the builds in your targeted Concourse. Builds are
 displayed in reverse chronological order, so more recent builds will be
 visible towards the top.
@@ -58,6 +67,12 @@ $ fly -t <YOUR_CONCOURSE_TARGET_NAME> intercept -j jumpbox/<JOB_NAME>
 
 X: build #<NUMBER>, step: jumpbox, type: task
 ```
+
+If you get the message "no containers matched your search parameters!" when
+running the intercept command, it could mean that the build you created when
+you clicked the plus button in the previous steps has expired.  Return to that
+step to create another build and try the intercept command again as quickly
+as possible.
 
 You now have a shell with all the Bosh tools, like the Bosh CLI. You can
 reference the [Bosh CLI documentation](https://bosh.io/docs) or continue to
