@@ -10,10 +10,18 @@ title: Troubleshooting Bosh
 If you're going to be accessing Bosh, you will need to intercept a jumpbox via
 Concourse.
 
-### Pre-flight checklist:
+### Pre-flight checklist
 
-1. Need to have access to Concourse for cloud.gov (e.g., https://ci.cloud.gov)
-1. Need to have `fly` installed locally
+This section explains how to use Concourse with the `fly` CLI tool. For more
+information, [please refer to the official concourse/fly
+documentation](https://github.com/concourse/fly#installing-from-the-concourse-ui-for-project-development).
+
+![Concourse fly Downloads](/img/concourse-fly-download-icons.png "Download icons for Concourse fly binary")
+
+1. Need to have access to Concourse for cloud.gov (e.g., https://ci.fr.cloud.gov)
+1. Need to have `fly` installed locally, the icons for supported platforms are
+   located on the bottom right of the Concourse page after logging in. See the
+   image above.
 1. Login to Concourse through the web, click on the link next to `cli:` to download `fly` for your platform
 1. Save to a location in your path and make it executable
 
@@ -22,13 +30,15 @@ Concourse.
 1. Go to [Concourse web](https://ci.fr.cloud.gov/login) and login if necessary
 1. Select the [jumpbox pipeline](https://ci.fr.cloud.gov/pipelines/jumpbox)
 1. Select the job that corresponds to whichever BOSH you want to work with, e.g. `container-bosh-staging`
-1. Click the plus button to start your own build of your selected job
-1. `fly -t <YOUR_CONCOURSE_TARGET> builds`
-1. `fly -t <YOUR_CONCOURSE_TARGET> intercept -j jumpbox/<JOB_NAME>`
-1. select the final build jumpbox step, of type 'task' for your unique build number, e.g.,
+1. Click the plus button to start your own build of your selected job. Remember
+   the build number as you'll be referencing it in the `builds` command.
+
+Using the `fly` CLI, check the builds in your targeted Concourse. Builds are
+displayed in reverse chronological order, so more recent builds will be
+visible towards the top.
 
 ```sh
-$ fly -t <YOUR_CONCOURSE_TARGET> builds
+$ fly -t <YOUR_CONCOURSE_TARGET_NAME> builds
 targeting https://ci.fr.cloud.gov
 
 id   pipeline/job                                                    build  status     start                     end                       duration
@@ -38,6 +48,9 @@ X    jumpbox/<JOB_NAME>                                              Y      succ
 
 ```
 
+Using the `fly` CLI, select the final build jumpbox step, of type 'task', for
+your unique build number.
+
 ```sh
 $ fly -t <YOUR_CONCOURSE_TARGET_NAME> intercept -j jumpbox/<JOB_NAME>
 
@@ -46,9 +59,9 @@ $ fly -t <YOUR_CONCOURSE_TARGET_NAME> intercept -j jumpbox/<JOB_NAME>
 X: build #<NUMBER>, step: jumpbox, type: task
 ```
 
-You now have a shell with all the Bosh tools, like the Bosh CLI
-
-- [Bosh CLI documentation](https://bosh.io/docs)
+You now have a shell with all the Bosh tools, like the Bosh CLI. You can
+reference the [Bosh CLI documentation](https://bosh.io/docs) or continue to
+the Troubleshooting Bosh Managed VMS section below.
 
 ## Troubleshooting Bosh Managed VMS
 
