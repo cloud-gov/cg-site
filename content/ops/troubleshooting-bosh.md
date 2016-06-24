@@ -36,7 +36,7 @@ documentation](https://github.com/concourse/fly#installing-from-the-concourse-ui
 If you haven't already, set a target to your concourse using the following command
 
 ```sh
-$ fly --target YOUR_CONCOURSE_TARGET_NAME> login --concourse-url <CONCOURSE_URL> (e.g. https://ci.example.com)
+$ fly --target <YOUR_CONCOURSE_TARGET_NAME> login --concourse-url <CONCOURSE_URL> (e.g. https://ci.example.com)
 ```
 You should now see that target when you issue the following command.
 ```sh
