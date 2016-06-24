@@ -7,7 +7,9 @@ title: Security IR Guide
 
 # Security Incident Response Guide
 
-This document outlines cloud.gov's process for responding to security incidents. It outlines roles and responsibilities during and after incidents, and it lays out the steps we'll take to resolve them. *If you're responding to an incident, [here's our IR checklist]({{< relref "security-ir-checklist.md" >}}) as a short, actionable companion to this guide.*
+This document outlines cloud.gov's internal process for responding to security incidents. It outlines roles and responsibilities during and after incidents, and it lays out the steps we'll take to resolve them. *If you're responding to an incident, [here's our IR checklist]({{< relref "security-ir-checklist.md" >}}) as a short, actionable companion to this guide.*
+
+(If you're outside 18F: if you notice something that may be a security problem, please email <a href="mailto:cloud-gov-support@gsa.gov">cloud-gov-support@gsa.gov</a>. Thanks!)
 
 ## Overview
 
@@ -15,8 +17,8 @@ At a high level, incident response follows this process:
 
 [Initiate](#initiate):
 
-- A person outside the cloud.gov team (the *reporter*) reports a cloud.gov-related incident (using the [18F incident response process](https://github.com/18F/security-incidents#process) and reporting it to the cloud.gov team in [`#cloud-gov`](https://18f.slack.com/messages/cloud-gov/)). **Or:** A cloud.gov team member notices a potential incident and begins responding to it (starting with the [18F incident response process](https://github.com/18F/security-incidents#process) and notifying others in [`#cloud-gov`](https://18f.slack.com/messages/cloud-gov/)).
-- The first responder on the cloud.gov team becomes the initial *Incident Commander* (IC).
+- An 18F staff member inside or outside the cloud.gov team (the *reporter*) notices and reports a cloud.gov-related incident, using the [18F incident response process](https://github.com/18F/security-incidents#process) and notifying the cloud.gov team in [`#cloud-gov`](https://18f.slack.com/messages/cloud-gov/).
+- The first responder on the cloud.gov team (which could be the reporter if the reporter is on the team) becomes the initial *Incident Commander* (IC).
 - The IC follows the [18F incident response process](https://github.com/18F/security-incidents#process) (or supports the reporter if the reporter already started it), including notifying GSA IT, notifying [`#incident-response`](https://18f.slack.com/messages/incident-response/), and creating an issue in the [security-incidents](https://github.com/18f/security-incidents) GitHub repository to track the event.
 
 [Assess](#assess):
