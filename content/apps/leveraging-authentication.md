@@ -134,11 +134,7 @@ app.get('/auth/callback', (req, res) => {
     res.send(`Hello, ${userEmail}! You have successfully authenticated.`);
   });
 });
-
-
 ```
-
-
 
 ## Resources
 
