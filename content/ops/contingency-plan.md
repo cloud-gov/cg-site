@@ -72,14 +72,15 @@ Roles we probably need to define for this plan (based on [https://github.com/18F
 People who need to get notified when there's a serious problem:
 
 If this is not a security incident and just unplanned downtime:
-  * cloud.gov team
-  * Infrastructure and @commsquad
-  * Key 18F staff (comms lead, director of infrastructure, etc.)
-  * cloud.gov users (through statuspage)
-  * Designated FedRAMP personnel (when applicable)
+
+* cloud.gov team
+* Infrastructure and @commsquad
+* Key 18F staff (comms lead, director of infrastructure, etc.)
+* cloud.gov users (through statuspage)
+* Designated FedRAMP personnel (when applicable)
 
 If this is a security incident first follow the IR guide, then notify all of the above plus:
-  * GSA secops team
+* GSA secops team
 
 ---
 
@@ -94,11 +95,9 @@ If something goes wrong, we have these continuously maintained resources to supp
 * Each team member core to cloud.gov operations maintains a list of the phone numbers of the other core team members, stored offline in a protected way (such as in the contacts app in their GSA phone or in a file on their GSA laptop).
 * Thorough documentation
 * The basic steps for rebuilding cloud.gov are written in our [cg-provision repository](https://github.com/18f/cg-provision).
-* Testing schedule + metrics
-* S3 backup practices
-* Testing/restore of RDS backups
-* Alternate processing (inherit from AWS mostly, refer to availability zones)
-* Telecommunications practices Appendix C-2 and C-3 (inherit a lot from AWS)
+* We back take snapshots of all RDS instances and store them for at least 30 days.
+* For AWS availability we use hot multi-AZ replication. By doing that we inherit AWS controls for alternate processing.
+* Telecommunications practices Appendix C-2 and C-3 (inherit a lot from AWS).
 
 ---
 
