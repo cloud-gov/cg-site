@@ -63,21 +63,17 @@ Roles we probably need to define for this plan (based on [https://github.com/18F
 * Senior Director
 * Director of Compliance
 
+People who need to get notified when there's a serious problem:
 
-Necessary roles in a functional sense:
-
-* People who need to get notified when there’s a serious problem:
-  * cloud.gov team leads
+If this is not a security incident and just unplanned downtime:
+  * cloud.gov team
   * Infrastructure and @commsquad
-  * GSA people (Security incidents are covered in the security IR guide, which we should link here - but what if there’s an incident that isn’t a security incident? Who do we need to talk to?)
-  * Team members who have access to the credentials for the third-party systems we use and to cloud.gov.
-  * Team members who have the backups of the contact info for outside-cloud.gov-team people who we may need to coordinate with, and who are tasked with talking to them if necessary.
-  * Our account managers (if any) at AWS, GitHub, etc.
   * Key 18F staff (comms lead, director of infrastructure, etc.)
-  * Key GSA staff (along with the people listed in the IR guide, who else?)
-  * Key contact people at customer agencies/teams
-  * Team members working on communications -- answering questions from customers, updating status page.
-  * People with access to the statuspage.io service.
+  * cloud.gov users (through statuspage)
+
+If this is a security incident first follow the IR guide, then notify all of the above plus:
+  * GSA secops team
+
 
 
 ## Risk management practices that support restoring key functions
