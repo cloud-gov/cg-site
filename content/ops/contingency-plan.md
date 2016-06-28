@@ -11,6 +11,14 @@ In the case of disruption, compromise, or failure of any component of cloud.gov,
 
 This Contingency Plan coordinates closely with our [Security Incident Response Guide](https://docs.cloud.gov/ops/security-ir), since that's an important part of contingency planning.
 
+---
+
+## Recovery objectives and metrics
+
+More than 3 hours of cloud.gov being totally offline would be unacceptable; our objective is to recover from any significant problem (disruption, compromise, or failure) within that span of time.
+
+---
+
 ## Example situations where you need this plan
 
 This plan is for situations where we're having trouble delivering our essential mission and business functions because of a service provider disruption, compromise, or failure. As a general guideline, we consider "disruption" to mean more than 30 minutes of unexpected downtime or significantly reduced service. Scenarios where that can happen include:
@@ -25,6 +33,7 @@ This plan is for situations where we're having trouble delivering our essential 
   * A high-severity security incident related to system availability (such as a malicious DDOS) requires mitigation.
 * Two or more of these things happen at the same time.
 
+---
 
 ## Outline of essential functions and their requirements
 
@@ -47,10 +56,7 @@ These are essential functions of our cloud.gov information systems, listed in or
   *  cloud.gov supports customers doing self-service modifications and updates to their systems, such as the web user interface and command line login.
   *  All of our systems are online and functional (full cloud.gov website, etc.).
 
-## Recovery objectives and metrics
-
-More than 3 hours of cloud.gov being totally offline would be unacceptable; our objective is to recover from any significant problem (disruption, compromise, or failure) within that span of time.
-
+---
 
 ## Contingency roles, responsibilities, and contact information
 
@@ -70,14 +76,14 @@ If this is not a security incident and just unplanned downtime:
   * Infrastructure and @commsquad
   * Key 18F staff (comms lead, director of infrastructure, etc.)
   * cloud.gov users (through statuspage)
+  * Designated FedRAMP personnel (when applicable)
 
 If this is a security incident first follow the IR guide, then notify all of the above plus:
   * GSA secops team
 
-
+---
 
 ## Risk management practices that support restoring key functions
-
 
 If something goes wrong, we have these continuously maintained resources to support our work:
 
@@ -93,6 +99,14 @@ If something goes wrong, we have these continuously maintained resources to supp
 * Testing/restore of RDS backups
 * Alternate processing (inherit from AWS mostly, refer to availability zones)
 * Telecommunications practices Appendix C-2 and C-3 (inherit a lot from AWS)
+
+---
+
+## Updating this contingency plan
+
+At least once a year the cloud.gov team will review this contingency plan and update it as needed.
+
+---
 
 ## How this document works
 
