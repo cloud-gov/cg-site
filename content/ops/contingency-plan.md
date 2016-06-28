@@ -18,15 +18,11 @@ This plan is for situations where we're having trouble delivering our essential 
 * Unexpected downtime of services we use, causing disruption in our services:
   * A component critical to delivering our services (such as AWS GovCloud) is unavailable or expected to be unavailable for more than 30 minutes.
   * A component we use to store code/documentation or communicate among the team (such as GitHub or Slack) is unavailable or expected to be unavailable for more than 3- minutes while we’re dealing with a time-sensitive issue/incident or more than 6 hours while doing ordinary work.
-
 * Data loss that causes disruption:
   * By mistake we delete or corrupt data that is essential to our service, causing us to need to restore an essential system or configuration from backup, and this causes disruption in our service delivery.
-
 * High-severity security incidents:
-
   * A high-severity security incident related to system confidentiality/integrity (such as a root-level compromise) requires us to rebuild components of cloud.gov based on trusted sources.
   * A high-severity security incident related to system availability (such as a malicious DDOS) requires mitigation.
-
 * Two or more of these things happen at the same time.
 
 
@@ -35,23 +31,18 @@ This plan is for situations where we're having trouble delivering our essential 
 These are essential functions of our cloud.gov information systems, listed in order of which would need to be restored first in case of critical problems with more than one function:
 
 * The cloud.gov team is able to communicate with each other. Key components and plans to restore this function if disrupted:
-
 * We primarily use 18F Slack to communicate among our geographically distributed team. If Slack is unavailable or expected to be unavailable for more than 30 minutes while we're working on a time-sensitive problem (or 6 hours while doing ordinary work), team leads will reach out to team members via GSA email to coordinate use of GSA Google Apps (Gmail, Hangouts, and Drive) as a temporary replacement.
 * If neither Slack nor GSA Google Apps are available, team leads will coordinate using the GSA phone numbers of team members.
-
 * The cloud.gov team is able to diagnose and mitigate issues. Key components and plans to restore this function if disrupted:
-
 * We need access to the critical platforms and services that cloud.gov relies on: AWS. If we lose access, team members who have access to the credentials and contacts for these systems should work to restore access.
 * We need to be able to log into our cloud.gov systems, get information from them, and modify them. If we lose access, team members who have access to the credentials for these systems should work to restore access.
 * We need access to our logging and notification systems. If we lose access, team members who have access to the credentials for these systems should work to restore access.
 * We need access to our code and documentation, which means access to the information in our 18F GitHub organization. If we lose access to GitHub, each cloud.gov team member has local copies of some cloud.gov git repositories created as part of their ordinary day-to-day work, which can serve as a temporary resource. The 18F Director of Infrastructure makes systematic backups of 18F GitHub repositories at a daily frequency.
 
 * Our systems are secure (we maintain confidentiality and integrity). Plan to restore this function if disrupted:
-
   * If this is threatened, we follow our [Security Incident Response Guide](hhttps://docs.cloud.gov/ops/security-ir).
 
 * The team can communicate with customers about the status of cloud.gov. Key components and plans to restore this function if disrupted:
-
   * If we have more than a small amount of service disruption, team leads will post to our <span class="c10 c6">[externally-hosted status page](https://cloudgov.statuspage.io), post to the 18F Slack #cloud-gov-support channel, and email key contacts at customer teams. If the status page and/or Slack are unavailable, we’ll use GSA email&nbsp;as a backup method to communicate with our key customers. If that’s not possible, we can fall back to phone numbers.
   * If the disruption is significantly affecting the delivery of our services to customers, team leads will coordinate with the 18F commsquad on how we should communicate this externally, including potentially using @18F Twitter and later following up with an 18F blog post.
 
@@ -87,17 +78,13 @@ Necessary roles in a functional sense:
   * cloud.gov team leads
   * Infrastructure and @commsquad
   * GSA people (Security incidents are covered in the security IR guide, which we should link here - but what if there’s an incident that isn’t a security incident? Who do we need to talk to?)
-
   * Team members who have access to the credentials for the third-party systems we use and to cloud.gov.
   * Team members who have the backups of the contact info for outside-cloud.gov-team people who we may need to coordinate with, and who are tasked with talking to them if necessary.
-
   * Our account managers (if any) at AWS, GitHub, etc.
   * Key 18F staff (comms lead, director of infrastructure, etc.)
   * Key GSA staff (along with the people listed in the IR guide, who else?)
   * Key contact people at customer agencies/teams
-
   * Team members working on communications -- answering questions from customers, updating status page.
-
   * People with access to the statuspage.io service.
 
 
@@ -128,20 +115,16 @@ This plan is going to be most effective if all core cloud.gov team members know 
 
 
 * Initial review and approval:
-
   * cloud.gov team leads propose this draft to the team,&nbsp;inviting all team members to review and comment on it. The team leads approve an initial version to be published on docs.cloud.gov as our working document. Team leads coordinate with 18F Director of Infrastructure to make sure our plan complies with all necessary requirements.
 
 * Distribution:
-
   * We publish this plan on [https://docs.cloud.gov/](https://docs.cloud.gov) (which is sourced from [https://github.com/18F/cg-docs](https://github.com/18F/cg-docs)) in our Operations section, alongside our Security Incident Response Guide and other key team policies. Our [Onboarding Checklist](https://github.com/18F/cg-product/blob/master/OnboardingChecklist.md)&nbsp;includes an item for all new team members to read this plan as well as other key team policies when they join.
 
 * How we review and update this plan and communicate those updates (to address changes to our team or systems, along with any problems we find while testing or using this plan):
-
   * Team leads will check this plan after the team makes any major system architecture changes, to see if any part of the plan needs to be updated.
   * Team leads will also check this plan every six months for any necessary updates.
   * When any team member wants to propose an update to this plan, they can propose a change by making a pull request and asking the team (by posting in the #cloud-gov Slack channel) to review it and comment on it. A team lead can merge it if they agree with the change (for minor changes), or they can schedule a test exercise to test it before merging if it’s a major change.
   * After a team lead merges a change to this plan, they should post a message in #cloud-gov highlighting @cloud-gov-team to announce the update and ask everyone to read it.
 
 * How we protect this plan from unauthorized modification:
-
   * This plan is stored in a public GitHub repository ([https://github.com/18F/cg-docs](https://github.com/18F/cg-docs)) with authorization to modify it limited to 18F staff by GitHub access controls. cloud.gov team policy is that 18F staff may not directly make changes to this document; they must propose a change by making a pull request and ask another team member to review and merge the pull request.
