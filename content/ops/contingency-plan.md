@@ -120,3 +120,9 @@ This plan is going to be most effective if all core cloud.gov team members know 
   * All changes to the plan should be communicated to the rest of the team.
 * How we protect this plan from unauthorized modification:
   * This plan is stored in a public GitHub repository ([https://github.com/18F/cg-docs](https://github.com/18F/cg-docs)) with authorization to modify it limited to 18F staff by GitHub access controls. cloud.gov team policy is that 18F staff may not directly make changes to this document; they must propose a change by making a pull request and ask another team member to review and merge the pull request.
+
+---
+
+## FedRAMP Contingency Plan
+
+The Contingency Plan created using the FedRAMP template can be found here: https://drive.google.com/open?id=0B1tXdxX5wEL0S3Q5RVNoOW9rMTg.
