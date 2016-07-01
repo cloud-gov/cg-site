@@ -60,10 +60,12 @@ These are essential functions of our cloud.gov information systems, listed in or
 
 ## Contingency roles, responsibilities, and contact information
 
-Reference: [team roster sheet](https://docs.google.com/spreadsheets/d/1mW3tphZ98ExmMxLHPogSpTq8DzYr5Oh8_SHnOTvjRWM/edit) with names and ordinary team roles. Also, here is the [full 18F team info](https://docs.google.com/spreadsheets/d/1QqqS_-V44MHyVqRIyHj6Eojg1Oz5EC3fS3j1e3mDrkg/edit#gid=3).
+Reference:
 
+* [cloud.gov team roster sheet](https://docs.google.com/spreadsheets/d/1mW3tphZ98ExmMxLHPogSpTq8DzYr5Oh8_SHnOTvjRWM/edit) with names and ordinary team roles
+* [18F contact info sheet](https://docs.google.com/spreadsheets/d/1QqqS_-V44MHyVqRIyHj6Eojg1Oz5EC3fS3j1e3mDrkg/edit#gid=3)
 
-Roles we probably need to define for this plan (based on [https://github.com/18F/compliance-docs/blob/master/CP-Policy.md#4-roles-and-responsibilities](https://github.com/18F/compliance-docs/blob/master/CP-Policy.md)):
+Roles we probably need to define for this plan (per the [18F Contingency Planning Policy](https://github.com/18F/compliance-docs/blob/master/CP-Policy.md#4-roles-and-responsibilities)):
 
 * Development Operations
 * Disaster Recovery Team
@@ -71,6 +73,8 @@ Roles we probably need to define for this plan (based on [https://github.com/18F
 * Director of Compliance
 
 People who need to get notified when there's a serious problem:
+
+* TODO
 
 If this is not a security incident and just unplanned downtime:
 
@@ -89,7 +93,7 @@ If this is a security incident first follow the IR guide, then notify all of the
 
 If something goes wrong, we have these continuously maintained resources to support our work:
 
-* GitHub backup
+* GitHub backup in [Backhub](https://backhub.co/)
 * We have access to all of our data in GitHub even if GitHub is offline/unavailable/compromised.
 * Team contact info backup
 * We maintain a [team roster](https://docs.google.com/spreadsheets/d/1mW3tphZ98ExmMxLHPogSpTq8DzYr5Oh8_SHnOTvjRWM/edit).
