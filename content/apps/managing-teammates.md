@@ -21,11 +21,13 @@ After a teammate gets a cloud.gov account, an Org Manager or Space Manager will 
 
 If you're an Org Manager or Space Manager, here's how to give roles to your teammates to give them permissions for your orgs and spaces. For details about how cloud.gov org and space roles and permissions work, see [Cloud Foundry roles and permissions](http://docs.cloudfoundry.org/concepts/roles.html#roles).
 
-First check whether you're running version >= [6.14.0](https://github.com/cloudfoundry/cli/releases/tag/v6.14.0) of the CLI. (If not, you'll need to [upgrade](https://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html).)
+First check whether you're running version >= [6.14.0](https://github.com/cloudfoundry/cli/releases/tag/v6.14.0) of the CLI:
 
-    ```bash
-    cf -v
-    ```
+```bash
+cf -v
+```
+
+(If not, you'll need to [upgrade](https://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html).)
 
 Then decide which roles to give them, such as:
 
