@@ -24,6 +24,9 @@ A byproduct of cloud.gov’s creation is [compliance-masonry](https://github.com
 - What is needed for "Government-as-a-Platform" services, including PaaS-related container and clustering technologies, and whether to incorporate these into our toolbox.
 
 ### What is your responsibility
+
+![Your Responsibility](/img/your-responsibility.png)
+
 cloud.gov is a FedRAMP compliant Platform as a Service (Paas).  What this means is that agencies can deploy their application on a FedRAMP compliant platform and just be responsible app code.  The way it works is cloud.gov’s compliance is encapsulated within a boundary.  All components within that boundary are cloud.gov’s responsibility in terms of maintaining and operating the platform.  The specific items that cloud.gov is responsible for are the following:
 
 * Platform Infrastructure
