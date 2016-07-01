@@ -13,7 +13,8 @@
     "copy-font": "cp node_modules/cloudgov-style/font/* ./public/fonts/",
     "make-dirs": "mkdir -p ./public/css && mkdir -p ./public/js && mkdir -p ./public/img && mkdir -p ./public/fonts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "onchange './node_modules/cloudgov-style/css/*.scss' './node_modules/cloudgov-style/img/*' './static_src/**/*.scss' -v -- npm run build"
+    "watch": "onchange './node_modules/cloudgov-style/css/*.scss' './node_modules/cloudgov-style/img/*' './static_src/**/*.scss' -v -- npm run build",
+    "start": "npm run build && hugo server --renderToDisk"
   },
   "repository": {
     "type": "git",
