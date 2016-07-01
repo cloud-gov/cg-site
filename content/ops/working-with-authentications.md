@@ -2,7 +2,7 @@
 menu:
   main:
     parent: operations
-title: Working with cloud.gov Authentication
+title: Working With cloud.gov Authentication
 ---
 
 cloud.gov uses Cloud Foundry's [User Account and Authentication (UAA) server]
