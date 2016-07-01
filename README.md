@@ -9,9 +9,8 @@ Hugo uses markdown to build the pages. Just add your page to the section you wan
 ### Running the site locally
 
 1. This project uses [Hugo](https://gohugo.io) to build the site. Once Hugo is installed, run `hugo` to build the site.
-2. Run `npm install` to download all the dependencies.
-3. Run `npm run build` to build all the assets.
-4. Run `hugo server --renderToDisk` and browse to [http://localhost:1313](http://localhost:1313).
+1. Run `npm install` to download all the dependencies.
+1. Run `npm run start` and browse to [http://localhost:1313](http://localhost:1313).
 
 ### Style development
 
