@@ -13,9 +13,9 @@ If you're part of an agency team using cloud.gov, you can invite other people at
 
 1. Confirm with them that they have received and accepted the invite.
 
-## Give permissions to a teammate
+## Give roles to a teammate
 
-If you're an Org Manager or Space Manager, here's how to give permissions to your teammates. For details about how cloud.gov org and space permissions work, see [Cloud Foundry roles and permissions](http://docs.cloudfoundry.org/concepts/roles.html#roles).
+If you're an Org Manager or Space Manager, here's how to give roles to your teammates to give them permissions. For details about how cloud.gov org and space roles and permissions work, see [Cloud Foundry roles and permissions](http://docs.cloudfoundry.org/concepts/roles.html#roles).
 
 First check whether you're running version >= [6.14.0](https://github.com/cloudfoundry/cli/releases/tag/v6.14.0) of the CLI. (If not, you'll need to [upgrade](https://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html).)
 
@@ -23,7 +23,7 @@ First check whether you're running version >= [6.14.0](https://github.com/cloudf
     cf -v
     ```
 
-Then decide which permissions to give them, such as:
+Then decide which roles to give them, such as:
 
 * To give them read-only permissions to the organization, run
 
@@ -42,4 +42,4 @@ Then decide which permissions to give them, such as:
     cf set-space-role <email> <org> <space> SpaceDeveloper
     ```
     
-For a complete list of cloud.gov permissions that Org and Space Managers can give and remove, see [the Cloud Foundry guide to Org and Space Roles](https://docs.cloudfoundry.org/adminguide/cli-user-management.html#orgs-spaces).
+For a complete list of cloud.gov roles and permissions that Org and Space Managers can give and remove, see [the Cloud Foundry guide to Org and Space Roles](https://docs.cloudfoundry.org/adminguide/cli-user-management.html#orgs-spaces).
