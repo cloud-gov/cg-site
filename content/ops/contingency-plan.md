@@ -39,20 +39,20 @@ This plan is for situations where we're having trouble delivering our essential 
 
 These are essential functions of our cloud.gov information systems, listed in order of which would need to be restored first in case of critical problems with more than one function:
 
-* The cloud.gov team is able to communicate with each other. Key components and plans to restore this function if disrupted:
+1. **The cloud.gov team is able to communicate with each other. Key components and plans to restore this function if disrupted:**
   * We primarily use 18F Slack to communicate among our geographically distributed team. If Slack is unavailable or expected to be unavailable for more than 30 minutes while we're working on a time-sensitive problem (or 6 hours while doing ordinary work), team leads will reach out to team members via GSA email to coordinate use of GSA Google Apps (Gmail, Hangouts, and Drive) as a temporary replacement.
   * If neither Slack nor GSA Google Apps are available, team leads will coordinate using the GSA phone numbers of team members.
-* The cloud.gov team is able to diagnose and mitigate issues. Key components and plans to restore this function if disrupted:
+1. **The cloud.gov team is able to diagnose and mitigate issues. Key components and plans to restore this function if disrupted:**
   * We need access to the critical platforms and services that cloud.gov relies on: AWS. If we lose access, team members who have access to the credentials and contacts for these systems should work to restore access.
   * We need to be able to log into our cloud.gov systems, get information from them, and modify them. If we lose access, team members who have access to the credentials for these systems should work to restore access.
   * We need access to our logging and notification systems. If we lose access, team members who have access to the credentials for these systems should work to restore access.
   * We need access to our code and documentation, which means access to the information in our 18F GitHub organization. If we lose access to GitHub, each cloud.gov team member has local copies of some cloud.gov git repositories created as part of their ordinary day-to-day work, which can serve as a temporary resource. The 18F Director of Infrastructure makes systematic backups of 18F GitHub repositories at a daily frequency.
-* Our systems are secure (we maintain confidentiality and integrity). Plan to restore this function if disrupted:
-  * If this is threatened, we follow our [Security Incident Response Guide](hhttps://docs.cloud.gov/ops/security-ir).
-* The team can communicate with customers about the status of cloud.gov. Key components and plans to restore this function if disrupted:
+1. **Our systems are secure (we maintain confidentiality and integrity). Plan to restore this function if disrupted**:
+  * If this is threatened, we follow our [Security Incident Response Guide](https://docs.cloud.gov/ops/security-ir).
+1. **The team can communicate with customers about the status of cloud.gov. Key components and plans to restore this function if disrupted:**
   * If we have more than a small amount of service disruption, team leads will post to our <span class="c10 c6">[externally-hosted status page](https://cloudgov.statuspage.io), post to the 18F Slack #cloud-gov-support channel, and email key contacts at customer teams. If the status page and/or Slack are unavailable, we’ll use GSA email&nbsp;as a backup method to communicate with our key customers. If that’s not possible, we can fall back to phone numbers.
   * If the disruption is significantly affecting the delivery of our services to customers, team leads will coordinate with the 18F commsquad on how we should communicate this externally, including potentially using @18F Twitter and later following up with an 18F blog post.
-* Our core services and customer services are online and functional (we maintain availability). The team should be able to fix this (and the following items on this list) if all of the above are functioning.
+1. **Our core services and customer services are online and functional (we maintain availability). The team should be able to fix this (and the following items on this list) if all of the above are functioning.**
   *  cloud.gov supports customers doing self-service modifications and updates to their systems, such as the web user interface and command line login.
   *  All of our systems are online and functional (full cloud.gov website, etc.).
 
@@ -60,7 +60,8 @@ These are essential functions of our cloud.gov information systems, listed in or
 
 ## Contingency roles, responsibilities, and contact information
 
-Reference: [team roster sheet](https://docs.google.com/spreadsheets/d/1mW3tphZ98ExmMxLHPogSpTq8DzYr5Oh8_SHnOTvjRWM/edit) with names and ordinary team roles.
+Reference: [team roster sheet](https://docs.google.com/spreadsheets/d/1mW3tphZ98ExmMxLHPogSpTq8DzYr5Oh8_SHnOTvjRWM/edit) with names and ordinary team roles. Also, here is the [full 18F team info](https://docs.google.com/spreadsheets/d/1QqqS_-V44MHyVqRIyHj6Eojg1Oz5EC3fS3j1e3mDrkg/edit#gid=3).
+
 
 Roles we probably need to define for this plan (based on [https://github.com/18F/compliance-docs/blob/master/CP-Policy.md#4-roles-and-responsibilities](https://github.com/18F/compliance-docs/blob/master/CP-Policy.md)):
 
@@ -96,8 +97,7 @@ If something goes wrong, we have these continuously maintained resources to supp
 * Thorough documentation
 * The basic steps for rebuilding cloud.gov are written in our [cg-provision repository](https://github.com/18f/cg-provision).
 * We back take snapshots of all RDS instances and store them for at least 30 days.
-* For AWS availability we use hot multi-AZ replication. By doing that we inherit AWS controls for alternate processing.
-* Telecommunications practices Appendix C-2 and C-3 (inherit a lot from AWS).
+* For AWS availability we use hot multi [Availability Zone](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html) replication. By doing that we inherit AWS controls for alternate processing.
 
 ---
 
