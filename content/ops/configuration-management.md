@@ -77,3 +77,10 @@ Whenever possible, the proposed changes should be tested locally. Because of the
 
 ## What if a configuration changed and it is not in Configuration Management?
 If possible Configuration Management tools need to be set up to always roll back to a known state. Other than that, these tools need to be able to "recreate" all settings from the known configurations.
+
+
+### Continuous Monitoring
+
+FedRAMP requires Cloud Service Providers (CSP) to continuously monitor and report vulnerabilities on the system.
+
+cloud.gov adopts the [FedRAMP Continuous Monitoring Strategy Guide](https://www.fedramp.gov/files/2015/03/FedRAMP-Continuous-Monitoring-Strategy-Guide-v2.0-3.docx) as its Continuous Monitoring process.
