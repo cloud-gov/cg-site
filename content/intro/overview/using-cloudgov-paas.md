@@ -14,7 +14,7 @@ We delivered a presentation about [our early experience developing and using clo
 
 ## Using the cloud.gov PaaS as self-service
 
-- To use cloud.gov without 18F’s other delivery services, an agency would need an account for their organization. (As stated elsewhere, we are currently [limiting access while we address scaling points]({{< relref "intro/overview/who-can-use-cloudgov.md" >}}).) 18F would work with the agency to set up their cloud.gov presence. After that, the rest of the work is self-service. It wouldn‘t require any more interaction with 18F.
+- To use cloud.gov without 18F’s other delivery services, an agency would need an account for their organization. (As stated elsewhere, we are currently [limiting access while we address scaling points]({{< relref "intro/overview/who-can-use-cloudgov.md" >}}).) 18F would work with the agency to set up their cloud.gov presence. After that, the rest of the work is self-service. It wouldn't require any more interaction with 18F.
 
 - The agency would then use cloud.gov to set up a number of online “spaces” required for developing a federal website. The agency team could choose from a list of additional, optional applications that we offer including technical back-end and search capabilities. Once the requested services are available (which happens automatically upon request), the agency can use them from their code.
 
