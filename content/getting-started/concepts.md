@@ -71,7 +71,7 @@ cf target -o ORGNAME -s SPACENAME
 
 ## Buildpacks
 
-All apps need to use a 'buildpack' specific to their language, which sets up dependencies for particular language stacks. There are standard buildpacks for most languages, and they will usually be auto-detected by CF. Using the standard buildpacks is strongly encouraged. In the rare case where the buildpack does not get detected correctly, or to use a custom buildpack, it can be specified in the manifest (as below) or with the `-b` flag. Use either the buildpack name:
+All apps need to use a "buildpack" specific to their language, which sets up dependencies for particular language stacks. There are [standard buildpacks for most languages](https://docs.cloudfoundry.org/buildpacks/), and they will usually be auto-detected by Cloud Foundry. Using the standard buildpacks is strongly encouraged. In the rare case where the buildpack does not get detected correctly, or to use a custom buildpack, it can be specified in the manifest (as below) or with the `-b` flag. Use either the buildpack name:
 
     buildpack: python_buildpack
 
@@ -79,6 +79,7 @@ or a URL to reference it.
 
     buildpack: https://github.com/cloudfoundry/ruby-buildpack.git
 
+If you might need multiple buildpacks for an app, see [Multi-Language Projects]({{< relref "apps/multi-buildpack-deploys.md" >}}).
 
 ### Buildpack Release Schedule
 
