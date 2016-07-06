@@ -10,7 +10,7 @@ As a Platform as a Service, cloud.gov is responsible for maintenance and securit
 
 Here's a chart to illustrate this in three example use cases:
 
-[[Google Drawing chart]](https://docs.google.com/drawings/d/1UBiOteSPXpA72KE52Kh-j7aYr73zTkzJ_oMuw5F293I/edit)
+<img src="/img/boundaries.svg" alt="Diagram of responsibilities, described in text below" width="450" />
 
 App #1 uses a [Cloud Foundry standard buildpack]({{< relref "getting-started/concepts.md#buildpacks" >}}). (A buildpack provides support for a programming language.) The customer is only responsible for the app code and its dependencies.
 
