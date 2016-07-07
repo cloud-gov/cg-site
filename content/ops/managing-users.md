@@ -5,6 +5,12 @@ menu:
 title: Managing Users
 ---
 
+## Note for GovCloud environment
+
+Only single sign-on user accounts are allowed. Service accounts, such as deployer credentials, are permissible with the condition that they are scoped to a particular space with limited access.
+
+No local accounts to UAA shall be created for user access.
+
 ## Creating users
 
 The preferred way to invite new users is to [invite them](https://login.cloud.gov/invitations/new). If you need to create a user manually, follow the instructions for [the `provision-user-space` CLI plugin](https://github.com/18F/cf-provision-user-space-plugin).
