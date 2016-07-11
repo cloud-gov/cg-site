@@ -25,6 +25,42 @@ cf set-space-role ORGNAME_deployer ORG SPACE SpaceDeveloper
 
 Depending on your CI system the setup is going to be a bit different. **For all cases you will need a `manifest.yml` file.**
 
+## Using long lived tokens
+
+If you don't want to update you CI configuration each time your password is expired, you can use long lived tokens to avoid this. The steps to use them are the following:
+
+1. Install [uaac](https://docs.cloudfoundry.org/adminguide/uaa-user-management.html) command line tool
+  ```
+  sudo apt-get install ruby2.1-dev -y
+  sudo gem install cf-uaac
+  ```
+  *The version of ruby-dev gem may be different, if you use different version of ruby*
+1. Target your UAA server
+  ```
+  uaac target <uaa-server-url>
+  ``` 
+1. Login to UAA and obtain your access and refresh tokens 
+  ```
+  uaac token owner get cd_client <user> -p <user-password>
+  ```
+1. Previous command don't show the tokens, in order to see them you can execute 
+  ```
+  uaac context
+  ```
+  From here you can copy the value of the refresh token
+1. Add the following script to your CI configuration. 
+  ```
+  #!/bin/bash -e
+
+  wget https://github.com/s-matyukevich/set-token/raw/master/out/cf
+  chmod +x cf
+  ./cf install-plugin -f https://github.com/s-matyukevich/set-token/raw/master/out/set-token
+
+  ./cf api REPLACE_WITH_CF_API_URL 
+  ./cf set-token -c cd_client -r REPLACE_WITH_REFRESH_TOKEN_VALUE
+  ./cf push -f REPLACE_WITH_DEPLOYMENT_MANIFEST_PATH 
+  ```
+
 ### Travis
 
 See [the Travis documentation](http://docs.travis-ci.com/user/deployment/cloudfoundry/), using `api: https://api.cloud.gov` and encrypting the password.
