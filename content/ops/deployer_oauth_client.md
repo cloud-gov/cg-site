@@ -11,22 +11,28 @@ In order to provide posibility for users to create long lived tokens for their d
 
 *It is also posible to configure the client to issue long lived access tokens, instead of refresh tokens. This is not the best option, because you lose posibility to change user rights or delete user - as long as access token is not expired user can use it to login to Cloud Foundry, even if user by itself is already deleted.*
 
-1. Install [uaac](https://docs.cloudfoundry.org/adminguide/uaa-user-management.html) command line tool
+* Install [uaac](https://docs.cloudfoundry.org/adminguide/uaa-user-management.html) command line tool
+
   ```
   sudo apt-get install ruby2.1-dev -y
   sudo gem install cf-uaac
   ```
   *The version of ruby-dev gem may be different, if you use different version of ruby*
-1. Target your UAA server
+
+* Target your UAA server
+
   ```
   uaac target <uaa-server-url>
   ``` 
-1. Obtain admin token
+* Obtain admin token
+
   ```
   uaac token client get admin -s <admin-client-secret>
   ```
   *The value for <admin-client-secret> can be found in Cloud Foundry deployment manifest at `uaa.clients.admin.secret` path* 
-1. Create new OAuth client with large value for `refresh_token_validity` parameter
+
+* Create new OAuth client with large value for `refresh_token_validity` parameter
+
   ```
   uaac client add cd_client --name cd_client  --scope cloud_controller.read,cloud_controller.write,openid,password.write,cloud_controller.admin,scim.read,scim.write,doppler.firehose,uaa.user,routing.router_groups.read --authorized_grant_types password,refresh_token --refresh_token_validity <value-in-seconds>
   ```

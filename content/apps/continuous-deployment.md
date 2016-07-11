@@ -29,26 +29,33 @@ Depending on your CI system the setup is going to be a bit different. **For all 
 
 If you don't want to update you CI configuration each time your password is expired, you can use long lived tokens to avoid this. The steps to use them are the following:
 
-1. Install [uaac](https://docs.cloudfoundry.org/adminguide/uaa-user-management.html) command line tool
+* Install [uaac](https://docs.cloudfoundry.org/adminguide/uaa-user-management.html) command line tool
+
   ```
   sudo apt-get install ruby2.1-dev -y
   sudo gem install cf-uaac
   ```
   *The version of ruby-dev gem may be different, if you use different version of ruby*
-1. Target your UAA server
+
+* Target your UAA server
+
   ```
   uaac target <uaa-server-url>
   ``` 
-1. Login to UAA and obtain your access and refresh tokens 
+* Login to UAA and obtain your access and refresh tokens 
+
   ```
   uaac token owner get cd_client <user> -p <user-password>
   ```
-1. Previous command don't show the tokens, in order to see them you can execute 
+* Previous command don't show the tokens, in order to see them you can execute 
+
   ```
   uaac context
   ```
   From here you can copy the value of the refresh token
-1. Add the following script to your CI configuration. 
+
+* Add the following script to your CI configuration. 
+
   ```
   #!/bin/bash -e
 
