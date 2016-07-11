@@ -2,8 +2,10 @@
 menu:
   main:
     parent: operations
-title: Deployer OAuth client
+title: Deployer OAuth Client
 ---
+
+## Creating OAuth Client for deployer accounts
 
 In order to provide posibility for users to create long lived tokens for their deployer accounts, you should create additional OAuth client. This client should be configured to issue refresh tokens with large expiration date. As long as refresh token is not expired, cf cli can use it to obtain access token and login to Cloud Foundry, even if user's password is already expired. You can create OAuth client with proper configuration using the following steps:
 
