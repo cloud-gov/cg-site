@@ -5,6 +5,8 @@ menu:
 title: Deploying Django
 ---
 
+***See also: the [official Python buildpack documentation](http://docs.cloudfoundry.org/buildpacks/python/).***
+
 ## Creating the App
 
 There's no explicit command to create an app, but:
@@ -22,11 +24,7 @@ will create or deploy the app APPNAME. But before you deploy, let's set up a few
 
 ### The Python runtime
 
-Next, you want to tell Cloud Foundry which Python runtime to use. To do this, create a `runtime.txt` file, and put the full version of Python you want to deploy with in it. For instance,
-
-```
-python-3.4.1
-```
+Next, you want to [tell Cloud Foundry which Python runtime to use](http://docs.cloudfoundry.org/buildpacks/python/#runtime).
 
 ### `requirements.txt`
 
@@ -39,6 +37,8 @@ whitenoise==1.0.6  #manages static assets
 dj-database-url==0.3.0 #grabs environment variables and dumps them into a Django settings file
 waitress==0.8.9 #a pure python WSGI server that is a replacement for gunicorn
 ```
+
+Note that [you will need to vendor the dependencies](http://docs.cloudfoundry.org/buildpacks/python/#vendoring) before deploying.
 
 ### The `wsgi.py` file
 
@@ -88,7 +88,7 @@ The order here is important. The `DJANGO_SETTINGS_MODULE` environment variable m
 
 ### The Procfile
 
-The Procfile contains commands that Cloud Foundry will run to keep your site up. For just the Django site, create a file called `Procfile` and in it put
+[The Procfile](http://docs.cloudfoundry.org/buildpacks/python/#start-command) contains commands that Cloud Foundry will run to keep your site up. For just the Django site, create a file called `Procfile` and in it put
 
 ```
 web: waitress-serve --port=$PORT APPNAME.wsgi:application
