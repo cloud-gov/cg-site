@@ -10,7 +10,7 @@ weight: -100
 
 You will need a cloud.gov account before continuing. To get an account:
 
-* **If you are a member of GSA or the EPA:** No account creation needed! You will be using single-sign-on (SSO). Ensure that you can log in at [login.cloud.gov](https://login.cloud.gov/).
+* **If you are a member of GSA or the EPA:** No account creation needed! You will be using single-sign-on (SSO). Ensure that you can log in at [login.cloud.gov](https://login.cloud.gov/) by clicking on your agency name.
 * **If your organization/project is registered with cloud.gov:** ask one of your teammates to follow [these instructions]({{< relref "managing-teammates.md" >}}).
 * **Otherwise:** see [who can use cloud.gov]({{< relref "intro/overview/who-can-use-cloudgov.md" >}}).
 
