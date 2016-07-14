@@ -63,35 +63,49 @@ To access a service database, use the [cf-ssh]({{< relref "getting-started/one-o
 
 You should now have an open `psql` terminal connected to the service database.
 
-### Accessing files created on the server using cf files
+## Export
 
-When accessing a database using `cf-ssh`, you may produce a database dump file
-and will very likely need to pull it down from the server. You can easily print
-out any file on your server to your terminal via the `cf files` command. You
-have to make sure you haven't disconnected from your ssh session that you
-created with `cf-ssh`.
+### Create backup
+
+First, spin up a host to connect to the database:
 
 ```sh
-cf files <APP_NAME> [PATH] [-i INSTANCE]
+$ cf-ssh <app name>
 ```
 
-The `<APP_NAME>` can be found by running `cf apps` in your terminal. You should
-see an app named with a `-ssh` suffix. This is the `<APP_NAME>` you want to use
-to download files created within that instance.
-
-The `[PATH]` on the server begins with `app/` and is mapped to your project's
-working directory. To get the full path to a file you're looking for on the
-server, just run the `cf files` command without a path. This is similar to
-running `ls -log` on your local file system.
+When it finishes, you'll be in a tmux connection and you can create the export file:
 
 ```sh
-cf files <APP_NAME>
+$ pg_dump $DATABASE_URL > /tmp/backup.sql
 ```
 
-To save a file to your local machine, you can redirect the output from `stout`
-to a file using the `>` character and then a file path on your local machine.
-Here's an example:
+Leave the ssh connection open.
+
+
+### Download
+
+On your local host:
 
 ```sh
-cf files my-app-ssh app/path/to/database_dump.sql | tail -n +4 > ./database_dump.sql
+$ cf files <app name> /tmp/backup.sql > backup.sql
+```
+
+> See [...] for complete documentation of `cf files`.
+
+Now you may close the ssh connection to cloud.gov, back in tmux:
+
+```sh
+$ exit
+```
+
+
+### Restore to local database
+
+Load the dump into your local database using the [pg_restore](https://www.postgresql.org/docs/current/static/app-pgrestore.html) tool. If objects exist in a
+local copy of the database already, you might run into inconsistencies when doing a
+`pg_restore`. Pg_restore does not drop all of the objects in the database when loading the
+dump.
+
+```sh
+$  pg_restore --verbose --clean --no-acl --no-owner -h localhost -U myuser -d mydb backup.sql
 ```
