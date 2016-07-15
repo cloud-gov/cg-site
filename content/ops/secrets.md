@@ -41,7 +41,7 @@ Substitute `cf.yml` in the following steps for the relevant file.
     git clone https://github.com/18F/cg-pipeline-tasks.git
     ```
 
-1. If you don't already have the AWS CLI set up with credentials, see [the steps above](#grabbing-aws-credentials).
+1. If you don't already have the AWS CLI set up with credentials, see [the steps above](#aws-credentials).
 1. Download the credentials file.
 
     ```bash
