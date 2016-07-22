@@ -24,6 +24,6 @@ All the software components of the cloud.gov Platform as a Service are [open sou
 
 ### cloud.gov provides a compliance toolkit
 
-cloud.gov provide tools for customers to create the documentation and continuing assurance necessary for federal services to comply with FISMA regulations and agency-specific “Authority to Operate” (ATO) requirements.
+cloud.gov provides tools for customers to create the security documentation and continuing assurance necessary for federal services to comply with FISMA regulations and agency-specific “Authority to Operate” (ATO) requirements.
 
-We call these tools [Compliance Masonry](https://github.com/opencontrol/compliance-masonry). It is an open source project that we created for cloud.gov’s ATO, and other agencies can also use it for unrelated projects that have similar needs.
+We call these tools the Compliance Toolkit, including [Compliance Masonry](https://github.com/opencontrol/compliance-masonry). We created them to support cloud.gov's ATO and the ATOs of customer applications, and they're all open source. Other teams, including agencies and industry teams, can also use these tools for unrelated projects that have similar needs.
