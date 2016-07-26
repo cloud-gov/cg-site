@@ -2,7 +2,7 @@
 menu:
   main:
     parent: operations
-title: Third Parties in use
+title: Third Parties in Use
 ---
 
 Here is a list of services we use to run cloud.gov:
