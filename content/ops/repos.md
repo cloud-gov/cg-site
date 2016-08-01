@@ -12,7 +12,7 @@ Here are the repos with the tools and configuration for the platform:
 - CF bosh manifests: https://github.com/18F/cg-manifests
 - Collection of scripts: https://github.com/18F/cg-scripts
 - Quotas DB: https://github.com/18F/cg-quotas-db
-- CF Console: https://github.com/18F/cg-deck
+- Dashboard: https://github.com/18F/cg-dashboard
 - Hello Worlds: https://github.com/18F/cf-hello-worlds
 - Provision User CLI plugin: https://github.com/18F/cf-provision-user-space-plugin
 - Cron app: https://github.com/18F/cg-cron
