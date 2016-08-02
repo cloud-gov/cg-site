@@ -55,7 +55,7 @@ In order to be effective in this role, 3PAOs are responsible for ensuring that t
 
 ## Continuous Monitoring process
 
-In order to maintain operational visibility, cloud.gov continuous monitoring program provides reports to the AOs at least yearly. These deliverables include:
+In order to maintain operational visibility, cloud.gov continuous monitoring program provides reports to the AOs at least monthly. These deliverables include:
 
 - Condition of previous assessment
 - Weakness identified since the last assessment
@@ -74,3 +74,13 @@ cloud.gov notifies the AO with a minimum of 30 days before implementing any plan
 #### Incident Response
 
 All cloud.gov incident response must be handled according to the cloud.gov [IR guide](https://docs.cloud.gov/ops/security-ir/).
+
+## Important Attachments to the Continuous Monitoring guide
+
+- [IR guide](https://docs.cloud.gov/ops/security-ir/)
+- Vulnerability Scanning Sample
+- Plans of Action & Milestones
+- [Information Security Policies](https://github.com/18F/compliance-docs/)
+- [Configuration Management Plan](https://docs.cloud.gov/ops/configuration-management/)
+- [Contingency Plan](https://docs.cloud.gov/ops/contingency-plan/)
+- [System Security Plan](https://compliance.cloud.gov/)
