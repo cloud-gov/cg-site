@@ -28,7 +28,7 @@ During incident response, both CSPs and leveraging agencies are responsible for 
 #### FedRAMP PMO
 The FedRAMP Program Management Office (PMO) acts as the liaison for the Joint Authorization Board for ensuring that CSPs with a JAB P-ATO strictly adhere to their established Continuous Monitoring Plan.  The JAB and FedRAMP PMO only perform Continuous Monitoring activities for those CSPs that have a JAB P-ATO.
 
-#### Department of homeland security (DHS)
+#### Department of Homeland Security (DHS)
 The FedRAMP Policy Memo released by OMB defines the DHS FedRAMP responsibilities to include:
 
 - Assisting government-wide and agency-specific efforts to provide adequate, risk-based and cost-effective cybersecurity
@@ -55,7 +55,7 @@ In order to be effective in this role, 3PAOs are responsible for ensuring that t
 
 ## Continuous Monitoring process
 
-In order to maintain operational visibility, cloud.gov continuous monitoring program provides reports to the AOs at least monthly. These deliverables include:
+In order to maintain operational visibility, the cloud.gov continuous monitoring program provides reports to the AOs at least monthly. These deliverables include:
 
 - Condition of previous assessment
 - Weakness identified since the last assessment
@@ -67,15 +67,15 @@ In order to maintain operational visibility, cloud.gov continuous monitoring pro
 
 #### Change control
 
-cloud.gov is a dynamic system and it is in a constant state of change. Configuration management and change control processes help maintain a secure baseline configuration of the cloud.gov architecture.  Routine day-to-day changes are managed through the cloud.gov change management process described in their Configuration Management Plan.
+cloud.gov is a dynamic system, and it is in a constant state of change. Configuration management and change control processes help maintain the secure baseline configuration of the cloud.gov architecture.  Routine day-to-day changes are managed through the cloud.gov change management process described in the [Configuration Management Plan]({{< relref "ops/configuration-management.md" >}}).
 
 cloud.gov notifies the AO with a minimum of 30 days before implementing any planned major significant changes. The notification includes a Security Impact Analysis Form.
 
 #### Incident Response
 
-All cloud.gov incident response must be handled according to the cloud.gov [IR guide](https://docs.cloud.gov/ops/security-ir/).
+All cloud.gov incident response must be handled according to the cloud.gov [Incident Response Guide]({{< relref "ops/security-ir.md" >}}).
 
-## Important Attachments to the Continuous Monitoring guide
+## Attachments to the Continuous Monitoring guide
 
 - [IR guide](https://docs.cloud.gov/ops/security-ir/)
 - Vulnerability Scanning Sample

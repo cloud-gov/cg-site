@@ -13,8 +13,8 @@ In short, everything needed to run and operate the platform that is not a _secre
 Here are some examples:
 
 - Infrastructure/Network configuration (Terraform)
-- VM setup and quantity (Bosh)
-- Software configuration (Bosh)
+- VM setup and quantity (BOSH)
+- Software configuration (BOSH)
 - CI Pipelines (Concourse)
 
 ## Where should all this configuration go?
@@ -82,6 +82,4 @@ If possible Configuration Management tools need to be set up to always roll back
 
 ### Continuous Monitoring
 
-FedRAMP requires Cloud Service Providers (CSP) to continuously monitor and report vulnerabilities on the system.
-
-cloud.gov adopts the [FedRAMP Continuous Monitoring Strategy Guide](https://www.fedramp.gov/files/2015/03/FedRAMP-Continuous-Monitoring-Strategy-Guide-v2.0-3.docx) as its Continuous Monitoring process.
+FedRAMP requires Cloud Service Providers (CSP) to continuously monitor and report vulnerabilities in the system. cloud.gov has a [Continuous Monitoring Plan]({{< relref "continuous-monitoring.md" >}}).
