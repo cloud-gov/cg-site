@@ -11,6 +11,7 @@ This document describes how the 18F cloud.gov team approaches configuration mana
 In short, everything needed to run and operate the platform that is not a _secret_.
 
 Here are some examples:
+
 - Infrastructure/Network configuration (Terraform)
 - VM setup and quantity (Bosh)
 - Software configuration (Bosh)
@@ -77,3 +78,10 @@ Whenever possible, the proposed changes should be tested locally. Because of the
 
 ## What if a configuration changed and it is not in Configuration Management?
 If possible Configuration Management tools need to be set up to always roll back to a known state. Other than that, these tools need to be able to "recreate" all settings from the known configurations.
+
+
+### Continuous Monitoring
+
+FedRAMP requires Cloud Service Providers (CSP) to continuously monitor and report vulnerabilities on the system.
+
+cloud.gov adopts the [FedRAMP Continuous Monitoring Strategy Guide](https://www.fedramp.gov/files/2015/03/FedRAMP-Continuous-Monitoring-Strategy-Guide-v2.0-3.docx) as its Continuous Monitoring process.

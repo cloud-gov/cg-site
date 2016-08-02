@@ -2,22 +2,16 @@
 type: index
 ---
 
-# Cloud.gov Documentation
+# cloud.gov Documentation
 
-Cloud Foundry is an open source Platform-as-a-Service (PaaS) system for managing the deployment of apps, services, and background tasks. 18F uses a customized government-tuned deployment of Cloud Foundry to host many of our development and production systems. 18F offers access to this service for other government agencies via a closed pilot under cloud.gov, which we expect to expand in future.
+### Introduction to cloud.gov
 
-## Sections
+cloud.gov gives teams working for federal government a secure, fully compliant foundation, integrated with private sector infrastructure providers, on which to build and release products and updates quickly. [Learn more about cloud.gov.]({{< relref "intro/overview/what-is-cloudgov.md" >}})
 
-(In the sidebar on the left.)
+### Usage: developing and deploying apps
 
-### Introduction
-
-Learn more about cloud.gov.
-
-### Usage
-
-Learn how to deploy applications to cloud.gov.
+cloud.gov is a Platform as a Service with a compliance toolkit. [Get started with building and deploying applications.]({{< relref "getting-started/accounts.md" >}})
 
 ### Contributing
 
-Intended for cloud.gov operations staff, but made public for others to learn how we run the platform.
+cloud.gov is an open source project, based on the Cloud Foundry project with additional components built by 18F and other community members. Our contributing documentation is for cloud.gov operations staff, and we invite others to [learn how we run the platform and contribute to it]({{< relref "ops/repos.md" >}}).
