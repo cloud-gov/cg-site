@@ -7,7 +7,9 @@ title: Security IR Guide
 
 # Security Incident Response Guide
 
-This document outlines cloud.gov's process for responding to security incidents. It outlines roles and responsibilities during and after incidents, and it lays out the steps we'll take to resolve them. *If you're responding to an incident, [here's our IR checklist]({{< relref "security-ir-checklist.md" >}}) as a short, actionable companion to this guide.*
+This document outlines cloud.gov's internal process for responding to security incidents. It outlines roles and responsibilities during and after incidents, and it lays out the steps we'll take to resolve them. *If you're responding to an incident, [here's our IR checklist]({{< relref "security-ir-checklist.md" >}}) as a short, actionable companion to this guide.*
+
+(If you're outside 18F: if you notice something that may be a security problem, please email <a href="mailto:cloud-gov-support@gsa.gov">cloud-gov-support@gsa.gov</a>. Thanks!)
 
 ## Overview
 
@@ -15,8 +17,9 @@ At a high level, incident response follows this process:
 
 [Initiate](#initiate):
 
-- Someone (the *reporter*) reports an incident to the cloud.gov team in [`#cloud-gov`](https://18f.slack.com/messages/cloud-gov/). The first responder on the cloud.gov team becomes the initial *Incident Commander* (IC).
-- The IC creates an issue in the [security-incidents](https://github.com/18f/security-incidents) GitHub repository to track the event and notifies GSA IT.
+- An 18F staff member inside or outside the cloud.gov team (the *reporter*) notices and reports a cloud.gov-related incident, using the [18F incident response process](https://github.com/18F/security-incidents#process) and notifying the cloud.gov team in [`#cloud-gov`](https://18f.slack.com/messages/cloud-gov/).
+- The first responder on the cloud.gov team (which could be the reporter if the reporter is on the team) becomes the initial *Incident Commander* (IC).
+- The IC follows the [18F incident response process](https://github.com/18F/security-incidents#process) (or supports the reporter if the reporter already started it), including notifying GSA IT, notifying [`#incident-response`](https://18f.slack.com/messages/incident-response/), and creating an issue in the [security-incidents](https://github.com/18f/security-incidents) GitHub repository to track the event.
 
 [Assess](#assess):
 
@@ -44,14 +47,26 @@ For full details, read on.
 
 ### Initiate
 
-An incident begins when someone (the *reporter*) becomes aware of a potential incident. We define "incident" broadly, following [NIST SP 800-61](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf), as "a violation or imminent threat of violation of computer security policies, acceptable use policies, or standard security practices" (6). This is a deliberately broad definition, designed to encompass any scenario that might threaten the security of cloud.gov.
+An incident begins when someone becomes aware of a potential incident. We define "incident" broadly, following [NIST SP 800-61](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf), as "a violation or imminent threat of violation of computer security policies, acceptable use policies, or standard security practices" (6). This is a deliberately broad definition, designed to encompass any scenario that might threaten the security of cloud.gov.
 
-The reporter should contact the cloud.gov team in [`#cloud-gov`](https://18f.slack.com/messages/cloud-gov/) to begin the response process. They should escalate by contacting the cloud.gov leads directly until they receive acknowledgment of their report. The final escalation point is to page the infrastructure lead, whose contact info is in the channel details of [`#incident-response`](https://18f.slack.com/messages/incident-response/).
+When a person outside the cloud.gov team (the *reporter*) notices a cloud.gov-related incident, they should begin reporting it by using the [18F incident response process](https://github.com/18F/security-incidents#process), and then post about it in [`#cloud-gov`](https://18f.slack.com/messages/cloud-gov/). If they don't get acknowledgment from the cloud.gov team right away, they should escalate by contacting the cloud.gov leads directly until they receive acknowledgment of their report.
 
-The first responder at this point becomes *Incident Commander* (IC) and carries out the next steps in the response. The IC's responsibility is coordination, not necessarily investigation. The IC's primary role is to guide the process. The first responder may remain IC throughout the process, or they may hand off IC duties later in the process.
+When a cloud.gov team member is the first person to notice an incident, they should also begin reporting it by using the [18F incident response process](https://github.com/18F/security-incidents#process) and posting about it in [`#cloud-gov`](https://18f.slack.com/messages/cloud-gov/) (including notifying the cloud.gov leads).
 
-The first step for the IC is to create an issue in the [`security-incidents`](https://github.com/18f/security-incidents) GitHub repository. Copy the following template to create the issue:
+In either case, the first participant on the cloud.gov team becomes the initial *Incident Commander* (IC) and carries out the next steps in the response. The IC's responsibility is coordination, not necessarily investigation. The IC's primary role is to guide the process. The first responder may remain IC throughout the process, or they may hand off IC duties later in the process.
 
+The IC makes sure that the [18F incident response process](https://github.com/18F/security-incidents#process) is followed, including supporting the reporter if the reporter already started it, or starting it if nobody has started it yet.
+
+#### Comms at the Initiate phase
+
+Note that at this point the issue's status is "investigating" — we haven't confirmed that it's really an issue yet. So, we should actually refer to this as just an "event" at this point; it doesn't become an "incident" until we've confirmed it. 
+
+At this phase, communications should follow these steps (and any additional steps listed at [18F incident response process](https://github.com/18F/security-incidents#process)):
+
+- The IC should inform GSA IT, the GSA IT Service Desk, and our DevOps teams of the investigation by emailing `gsa-ir@gsa.gov`, `itservicedesk@gsa.gov`, and `devops@gsa.gov` with a description of the incident, via a single email to all three addresses. If GSA Gmail itself is down or compromised, call the GSA IT Service Desk at 1-866-450-5250. **This step needs to happen within one hour of detecting a potential incident.**
+- Real-time chat should happen in [`#incident-response`](https://18f.slack.com/messages/incident-response/).
+- Create an issue in the [`security-incidents`](https://github.com/18f/security-incidents) GitHub repository. Copy the following template to create the issue:
+ 
 ```
 Short description of what's going on
 
@@ -66,16 +81,8 @@ Any extra details about the issue can go here.
 
 The IC is responsible for keeping this issue up-to-date as investigation and remediation progresses. Everyone involved in the issue (*responders*) should leave notes as comments on the issue.
 
-#### Comms at the Initiate phase
-
-Note that at this point the issue's status is "investigating" — we haven't confirmed that it's really an issue yet. So, we should actually refer to this as just an "event" at this point; it doesn't become an "incident" until we've confirmed it. 
-
-At this phase, communications should follow these guidelines: 
-
-- The IC should inform GSA IT and our devops teams of the investigation by emailing `gsa-ir@gsa.gov` and `devops@gsa.gov`. **This needs to happen within 1 hour.**
-- Updates should be posted to the GitHub issue.
-- Real-time chat should happen in [`#incident-response`](https://18f.slack.com/messages/incident-response/).
 - The IC may start a Google Hangout and/or create Google Docs so that responders can share sensitive information not suitable for sharing in GitHub or Slack.
+
 
 ### Assess
 
@@ -190,7 +197,7 @@ High-sev incidents successfully compromise the confidentiality/integrity of Pers
 - Confirmed breach of PII
 - Successful root-level compromise of production systems
 - Financial malware (ie. CryptoLocker) targeting 18F staff
-- Denial of Service attacks resulting on severe outages
+- Denial of Service attacks resulting in severe outages
 
 Guidelines for addressing High-sev issues:
 
