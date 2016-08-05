@@ -70,7 +70,7 @@ You should now have an open `psql` terminal connected to the service database.
 First, spin up a host to connect to the database:
 
 ```sh
-$ cf-ssh <app name>
+$ cf-ssh {app name}
 ```
 
 When it finishes, you'll be in a tmux connection and you must install the Postgresql tools:
