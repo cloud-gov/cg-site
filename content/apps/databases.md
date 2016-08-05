@@ -73,10 +73,17 @@ First, spin up a host to connect to the database:
 $ cf-ssh <app name>
 ```
 
-When it finishes, you'll be in a tmux connection and you can create the export file:
+When it finishes, you'll be in a tmux connection and you must install the Postgresql tools:
 
 ```sh
-$ pg_dump $DATABASE_URL > /tmp/backup.sql
+$ curl https://s3.amazonaws.com/18f-cf-cli/psql-9.4.4-ubuntu-14.04.tar.gz > psql.tgz
+$ tar xzvf psql.tgz
+```
+
+Now you can create the export file:
+
+```sh
+$ psql/bin/pg_dump --format=custom $DATABASE_URL > backup.pg
 ```
 
 Leave the ssh connection open.
@@ -87,10 +94,10 @@ Leave the ssh connection open.
 On your local host:
 
 ```sh
-$ cf files <app name> /tmp/backup.sql > backup.sql
+$ cf files {app name} backup.pg | tail -n +4 > backup.pg
 ```
 
-> See [...] for complete documentation of `cf files`.
+> [Documentation for `cf files`](http://cli.cloudfoundry.org/en-US/cf/files.html)
 
 Now you may close the ssh connection to cloud.gov, back in tmux:
 
@@ -103,9 +110,9 @@ $ exit
 
 Load the dump into your local database using the [pg_restore](https://www.postgresql.org/docs/current/static/app-pgrestore.html) tool. If objects exist in a
 local copy of the database already, you might run into inconsistencies when doing a
-`pg_restore`. Pg_restore does not drop all of the objects in the database when loading the
+`pg_restore`. This Pg_restore invocation does not drop all of the objects in the database when loading the
 dump.
 
 ```sh
-$  pg_restore --verbose --clean --no-acl --no-owner -h localhost -U myuser -d mydb backup.sql
+$  pg_restore --clean --no-owner --no-acl --dbname={database name} backup.pg
 ```
