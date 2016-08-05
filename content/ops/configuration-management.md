@@ -11,6 +11,7 @@ This document describes how the 18F cloud.gov team approaches configuration mana
 In short, everything needed to run and operate the platform that is not a _secret_.
 
 Here are some examples:
+
 - Infrastructure/Network configuration (Terraform)
 - VM setup and quantity (Bosh)
 - Software configuration (Bosh)
