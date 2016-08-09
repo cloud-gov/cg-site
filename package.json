@@ -10,8 +10,8 @@
     "clean": "rm -rf ./public",
     "copy": "npm run copy-img && npm run copy-font",
     "copy-img": "cp -r node_modules/cloudgov-style/img/* ./public/img/",
-    "copy-font": "cp node_modules/cloudgov-style/fonts/* ./public/font/",
-    "make-dirs": "mkdir -p ./public/css && mkdir -p ./public/js && mkdir -p ./public/img && mkdir -p ./public/font",
+    "copy-font": "cp node_modules/cloudgov-style/fonts/* ./public/fonts/",
+    "make-dirs": "mkdir -p ./public/css && mkdir -p ./public/js && mkdir -p ./public/img && mkdir -p ./public/fonts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "onchange './node_modules/cloudgov-style/css/*.scss' './node_modules/cloudgov-style/img/*' './static_src/**/*.scss' -v -- npm run build",
     "start": "npm run build && hugo server --renderToDisk"
@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "anchor-js": "git+https://github.com/msecret/anchorjs.git",
-    "cloudgov-style": "^0.x",
+    "cloudgov-style": "^1.x",
     "highlight": "^0.2.4",
     "jquery": "^2.2.0",
     "jquery.scrollto": "^2.1.2"
