@@ -20,8 +20,8 @@ Packages are selected based on the kinds of applications to be hosted.
 
 | Package | What's included? | Base annual fee | Usage charges? |
 | --- | --- | --- | --- |
-| **Sandbox** | Any user with a `.gov` or `.mil` email address can try out cloud.gov, no paperwork required. All managed services are available. | Free | No |
-| **Prototyping** | Sandbox usage caps can be raised. Suitable for many teams to deploy apps, though limited to the apps.cloud.gov domain. Low ability to delegate access control to teams. No production data allowed. Usually purchased per agency/department. | $15K | Yes |
+| **Sandbox** | Any user with a `.gov` or `.mil` email address can try out cloud.gov, no paperwork required. All managed services are available. Resource usage is capped, though it can be raised. | Free | No |
+| **Prototyping** | Suitable for many teams to deploy apps, though limited to the `*.apps.cloud.gov` domain. Access control can be delegated to teams. No production data allowed. Usually purchased per agency/department. | $15K | Yes |
 | **FISMA Low** | One public-facing FISMA Low system, including all the spaces needed and DNS support. | $20K | Yes |
 | **FISMA Moderate** | One public-facing FISMA Moderate system, including all the spaces needed and DNS support. Additional support for FISMA Moderate data requirements. | $90K | Yes |
 
