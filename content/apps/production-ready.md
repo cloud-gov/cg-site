@@ -62,7 +62,7 @@ Your application should be able to be deployed without generating any downtime.
 To reduce the risk associated with manual deployments, consider automating the process so it is repeatable.
 
 #### How
-* See the [continuous deployment]({{< relref "continous-deployment.md" >}}) page.
+* See the [continuous deployment]({{< relref "continuous-deployment.md" >}}) page.
 
 ### Caching
 The best way to prevent performance issues is by having caching enabled on your
