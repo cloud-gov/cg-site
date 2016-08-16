@@ -8,9 +8,8 @@ title: Continuous Deployment
 Setting up continuous deployment allows you to automatically upload your
 changes to your desired environment.
 
-## Zero-downtime deployment
+Make sure that you've previously looked at the [Production Ready Guide]({{< relref "production-ready.md" >}}) and followed best practices.
 
-Use the [autopilot](https://github.com/concourse/autopilot) Cloud Foundry CLI plugin or the [`cf-blue-green`](https://github.com/18F/cf-blue-green) tool; see instructions in the respective repositories.
 
 ## Continuous integration services
 
