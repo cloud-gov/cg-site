@@ -8,9 +8,10 @@ title: Production Ready Guide
 
 # Your guide to having production ready apps on cloud.gov
 
-Read this guide early and often, especially when you’re starting to consider a future project. It explains simple things you can do for reliable and responsive applications deployed on cloud.gov.
+Read this guide early and often, especially when you’re starting to consider a future project. It explains things you can do for reliable and responsive applications deployed on cloud.gov.
 
-## Basic best practices
+## Core best practices
+To build consistent, healthy, production-ready applications on cloud.gov incorporate the following practices into your development workflow from the beginning.
 
 ### Configuration as code
 To ensure consistency and reproducibility, you should capture your application configuration in version control.
@@ -20,7 +21,7 @@ To ensure consistency and reproducibility, you should capture your application c
 
 ### More than one instance
 It is critical that your production application has more than one instance so if
-there any issue with one of the platform runners where your app is assigned, your app continues to function correctly.
+there any issue with one of the platform runners where your app instances are assigned, your app continues to function correctly.
 
 #### How
 * See the [multiple instances]({{< relref "multiple-instances.md" >}}) page.
@@ -50,10 +51,11 @@ You want to be able to receive alerts about application errors, downtime, and th
 * NewRelic provides uptime monitoring with "Insights". It is easy to set up and
 receive alerts on a variety of metrics.
 
-## Other considerations
+## Additional practices
+The following practices are very helpful to incorporate into most cloud.gov apps. Check these out and evaluate which ones you need, depending on the needs of your team and users.
 
 ### Zero-Downtime deploy
-Your application should be able to be deployed without generating any downtime.
+Your application should be able to be deployed without generating any downtime. Be aware there are known issues if your application automatically does database migrations when deploying.
 
 #### How
 * Use the [autopilot](https://github.com/concourse/autopilot) Cloud Foundry CLI plugin or the [`cf-blue-green`](https://github.com/18F/cf-blue-green) tool; see instructions in the respective repositories.
@@ -65,8 +67,7 @@ To reduce the risk associated with manual deployments, consider automating the p
 * See the [continuous deployment]({{< relref "continuous-deployment.md" >}}) page.
 
 ### Caching
-The best way to prevent performance issues is by having caching enabled on your
-application.
+The best way to prevent performance issues is by having caching enabled on your application.
 
 #### How
 * Cloud.gov has a memcached service but you can also rely on S3 or file storage for caches.
