@@ -54,7 +54,7 @@ Here is an example:
 credentials, your app will receive a `GET` request to the callback URL
 associated with the registered app. The `GET` request will include query parameters:
 
-* `code=<A UNIQUE ACCESS CODE`
+* `code=<A UNIQUE ACCESS CODE>`
 * (optional) `state=<VALUE FROM STATE PARAM IN AUTHORIZE LINK>`
 
 Here is where things get fun. A snippet of example NodeJS code is shown
@@ -64,7 +64,7 @@ Here is where things get fun. A snippet of example NodeJS code is shown
   request to the token endpoint (`https://uaa.cloud.gov/oauth/token`)
   with the following form-encoded parameters:
 
-  - `code=<CODE FROM QUERY PARAM IN CALLBACK REQUESt>`
+  - `code=<CODE FROM QUERY PARAM IN CALLBACK REQUEST>`
   - `grant_type='authorization_code'`
   - `response_type='token'`
   - `client_id=<YOUR APP'S REGISTERED NAME>`
