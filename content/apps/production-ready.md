@@ -11,7 +11,7 @@ title: Production Ready Guide
 Read this guide early and often, especially when you’re starting to consider a future project. It explains things you can do for reliable and responsive applications deployed on cloud.gov.
 
 ## Core best practices
-To build consistent, healthy, production-ready applications on cloud.gov incorporate the following practices into your development workflow from the beginning.
+To build consistent, healthy, production-ready applications on cloud.gov, incorporate the following practices into your development workflow from the beginning.
 
 ### Configuration as code
 To ensure consistency and reproducibility, you should capture your application configuration in version control.
@@ -26,11 +26,11 @@ there any issue with one of the platform runners where your app instances are as
 #### How
 * See the [multiple instances]({{< relref "multiple-instances.md" >}}) page.
 
-### Prefer User Provided Services
-Prefer user provided services over environment variables for a secure centralized way to store application credentials and variables. Environment variables are ephemeral to the specific deployment of each application.
+### Prefer User Provided Services and env: in manifests
+Environment variables defined with `cf set-env` are ephemeral to the specific deployment of each application. Prefer user provided services to store sensitive information like credentials or API keys, or your manifest for non-sensitive variables.
 
 #### How
-* Create [user provided services](https://docs.cloudfoundry.org/devguide/services/user-provided.html) with `cf cups` and bind them with `cf bs`. Once you have updated your application to read your stored credentials from the service, update your `manifest.yml` to make it part of your configuration.
+* Create [user provided services](https://docs.cloudfoundry.org/devguide/services/user-provided.html) with `cf cups` and bind them with `cf bs`. Once you have updated your application to read your stored credentials from the service, [update your `manifest.yml`](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#services-block) to make it part of your configuration. For non-sensitive information, use [an env: block](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block) in your `manifest.yml`
 
 ### Prefer dedicated over shared services
 Shared services do not have the same constraints as a dedicated service and can be affected by other customers that are performing CPU or memory intensive tasks against that service.
@@ -39,7 +39,7 @@ Shared services do not have the same constraints as a dedicated service and can 
 * Use the `cf marketplace` to consider your options and sizes for each service and choose appropriately for the resources your application will need.
 
 ### Space per environment
-When running an application for development or testing, it is best to have a separate space from your production instance in which to run the application.
+When running an application for development or testing, it is best to have a separate space from your production instance in which to run the application. Ideally, each space will look identical to each other, with the exception of routes or number of instances.
 
 #### How
 * As an Org Manager for your organization, use the `cf create-space` command to create new spaces for each environment
@@ -48,8 +48,7 @@ When running an application for development or testing, it is best to have a sep
 You want to be able to receive alerts about application errors, downtime, and throughput issues.
 
 #### How
-* NewRelic provides uptime monitoring with "Insights". It is easy to set up and
-receive alerts on a variety of metrics.
+* NewRelic provides extensive application performance and availability monitoring with "Insights". It is easy to set up and receive alerts on a variety of metrics.
 
 ## Additional practices
 The following practices are very helpful to incorporate into most cloud.gov apps. Check these out and evaluate which ones you need, depending on the needs of your team and users.
@@ -58,7 +57,7 @@ The following practices are very helpful to incorporate into most cloud.gov apps
 Your application should be able to be deployed without generating any downtime. Be aware there are known issues if your application automatically does database migrations when deploying.
 
 #### How
-* Use the [autopilot](https://github.com/concourse/autopilot) Cloud Foundry CLI plugin or the [`cf-blue-green`](https://github.com/18F/cf-blue-green) tool; see instructions in the respective repositories.
+* Use the [autopilot](https://github.com/concourse/autopilot) Cloud Foundry CLI plugin.
 
 ### Automated deployments
 To reduce the risk associated with manual deployments, consider automating the process so it is repeatable.
@@ -70,7 +69,7 @@ To reduce the risk associated with manual deployments, consider automating the p
 The best way to prevent performance issues is by having caching enabled on your application.
 
 #### How
-* Cloud.gov has a memcached service but you can also rely on S3 or file storage for caches.
+* Cloud.gov has a memcached service but you can also rely on [S3 file storage]({{< relref "s3.md" >}}) for caches.
 
 ### Asset Serving
 It is best not to serve static files from Cloud.gov directly.
