@@ -24,40 +24,16 @@ types:
 
 - A
 - AAAA
-- TXT
 - CNAME
 - MX
+- TXT
 
 For more information about about the available records, [please read the Amazon
 Route 53 documentation site][docs-aws#route53].
 
 [docs-aws#route53]: https://aws.amazon.com/route53/faqs/#which_dns_records_are_supported "AWS Route53 Records Supported Types"
 
-### CNAME (canonical name record) example
-
-```terraform
-resource "aws_route53_record" "cloud_gov_<DOMAIN_NAME_ALIAS_UNDERSCORED>_cname" {
-  zone_id = "${aws_route53_zone.cloud_gov_zone.zone_id}"
-  name = "<DOMAIN_NAME_ALIAS>."
-  type = "CNAME"
-  ttl = 60
-  records = ["<CANONICAL_DOMAIN_NAME>."]
-}
-```
-
-### TXT (text record) example
-
-```terraform
-resource "aws_route53_record" "cloud_gov_<DOMAIN_NAME_UNDERSCORED>_txt" {
-  zone_id = "${aws_route53_zone.cloud_gov_zone.zone_id}"
-  name = "<DOMAIN_NAME>."
-  type = "TXT"
-  ttl = 300
-  record = ["<key=VALUE>"]
-}
-```
-
-### A (alias record) example
+### A/AAAA (alias record) example
 
 > Alias records work like a CNAME record in that you can map one DNS name
 > (example.com) to another `target` DNS name (elb1234.elb.amazonaws.com). They
@@ -75,6 +51,42 @@ resource "aws_route53_record" "cloud_gov_<DOMAIN_NAME_UNDERSCORED>_a" {
     zone_id = "<ZONE_ID>"
     evaluate_target_health = false
   }
+}
+```
+
+### CNAME (canonical name record) example
+
+```terraform
+resource "aws_route53_record" "cloud_gov_<DOMAIN_NAME_ALIAS_UNDERSCORED>_cname" {
+  zone_id = "${aws_route53_zone.cloud_gov_zone.zone_id}"
+  name = "<DOMAIN_NAME_ALIAS>."
+  type = "CNAME"
+  ttl = 60
+  records = ["<CANONICAL_DOMAIN_NAME>."]
+}
+```
+
+### MX (mail exchanger record) example
+
+```terraform
+resource "aws_route53_record" "cloud_gov_<DOMAIN_NAME_UNDERSCORED>_mx" {
+  zone_id = "${aws_route53_zone.cloud_gov_zone.zone_id}"
+  name = "<DOMAIN_NAME>."
+  type = "MX"
+  ttl = 300
+  records = ["<PRIORITY> <MAIL_HOST_1>", "<PRIORITY> <MAIL_HOST_2>"]
+}
+```
+
+### TXT (text record) example
+
+```terraform
+resource "aws_route53_record" "cloud_gov_<DOMAIN_NAME_UNDERSCORED>_txt" {
+  zone_id = "${aws_route53_zone.cloud_gov_zone.zone_id}"
+  name = "<DOMAIN_NAME>."
+  type = "TXT"
+  ttl = 300
+  record = ["<key=VALUE>"]
 }
 ```
 
