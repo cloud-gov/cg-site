@@ -103,4 +103,4 @@ To update a DNS record, submit a pull request to the `18F/dns` repository with
 your changes. Either branches or forks are okay.
 
 Pull requests will be reviewed and merged by a member of the infrastructure team
-or members from cloud.gov team.
+or members of the cloud.gov team.
