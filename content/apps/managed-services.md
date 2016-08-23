@@ -60,6 +60,19 @@ For example, the create an instance of the elasticsearch service using the free 
 % cf create-service elasticsearch-swarm-1.7.1 1x myapp-elasticsearch
 ```
 
+##### Paid services
+
+If you get an error like the following:
+
+```
+% cf create-service <service> <plan> <service_instance>
+Creating service instance <service_instance> in org <org> / space <space> as <user>...
+FAILED
+Server error, status code: 400, error code: 60007, message: The service instance cannot be created because paid service plans are not allowed.
+```
+
+please [ask an administrator](/help/) to [enable them](/ops/quotas/).
+
 #### Bind the service instance
 
 A service instance must be bound to the application which will access it. This can be done in a single step by adding a binding to the application's `manifest.yml`.
