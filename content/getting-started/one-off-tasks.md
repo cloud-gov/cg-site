@@ -57,7 +57,7 @@ The idea here is that we are going to deploy a new application, but running the 
 1. If needed, use [`cf files`][] to collect any artifacts.
 1. Run `cf delete task-runner` to clean it up.
 
-## CF-SSH or CF SSH
+## CF SSH
 
 *These instructions are different depending on the "environment" your application lives in. If you're not sure, pick East/West. (GovCloud is our new environment.)*
 
