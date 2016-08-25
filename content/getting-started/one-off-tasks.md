@@ -7,7 +7,7 @@ aliases:
 - /getting-started/cf-ssh/
 ---
 
-There are a couple of ways to run one off tasks in Cloud Foundry. The most reliable way to do one-off tasks is by deploying a short-lived app.
+There are a couple of ways to run one-off tasks in cloud.gov's version of Cloud Foundry. The most reliable way to do one-off tasks is by deploying a short-lived app.
 
 ## Disclaimers
 
@@ -57,13 +57,17 @@ The idea here is that we are going to deploy a new application, but running the 
 1. If needed, use [`cf files`][] to collect any artifacts.
 1. Run `cf delete task-runner` to clean it up.
 
-## CF SSH
+## CF-SSH or CF SSH
+
+*These instructions are different depending on the "environment" your application lives in. If you're not sure, pick East/West. (GovCloud is our new environment.)*
+
+### *East/West environment:* CF-SSH
 
 Another way to run one-off commands is via `cf-ssh`. `cf-ssh` is a shared ssh session with an application container that you can connect to. This allows you to debug the environment and your application without disturbing a running container.
 
 Our `cf-ssh` is customized to our Cloud Foundry installation, so please **do not use the community version of [`cf ssh`](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html)**. Also note that only one person can use `cf-ssh` for any particular app at any particular time.
 
-### Installation
+#### Installation
 
 1. [Download cloud.gov's `cf-ssh` for your environment](https://github.com/18F/cf-ssh/releases/) ([source](https://github.com/18F/cf-ssh/tree/18f)).
 1. Run
@@ -74,7 +78,7 @@ Our `cf-ssh` is customized to our Cloud Foundry installation, so please **do not
     if [ -w /usr/local/bin ]; then mv cf-ssh /usr/local/bin; else sudo mv cf-ssh /usr/local/bin; fi
     ```
 
-### Usage
+#### Usage
 
 1. In your project folder, run
 
@@ -89,3 +93,10 @@ Our `cf-ssh` is customized to our Cloud Foundry installation, so please **do not
 1. When done, run `exit`.
 
 [`cf files`]: http://cli.cloudfoundry.org/en-US/cf/files.html
+
+
+### *GovCloud environment:* CF SSH
+
+Another way to run one-off commands is via `cf ssh`, which lets you securely login to an application instance where you can perform debugging, environment inspection, and other tasks.
+
+[`cf ssh`]: https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html

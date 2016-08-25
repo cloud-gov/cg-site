@@ -5,7 +5,7 @@ menu:
 title: Databases
 ---
 
-There are multiple options for how to set up databases for use with applications in Cloud Foundry.
+There are multiple options for how to set up databases for use with applications in cloud.gov's version of Cloud Foundry.
 
 ## Services
 
@@ -53,7 +53,11 @@ This isn't recommended, but if you need, you can create databases in RDS by hand
 
 The [dj_database_url](https://github.com/kennethreitz/dj-database-url#url-schema) Python package README describes the possible formats of this URL.
 
-## Access a postgres database using cf-ssh
+## Access a postgres database 
+
+*These instructions are different depending on the "environment" your application lives in. If you're not sure, pick East/West. (GovCloud is our new environment.)*
+
+### *East/West environment:* Using cf-ssh
 
 To access a service database, use the [cf-ssh]({{< relref "getting-started/one-off-tasks.md#cf-ssh" >}}) CLI to start an instance that is bound to the service and download the `psql` binary to that instance:
 
@@ -63,9 +67,24 @@ To access a service database, use the [cf-ssh]({{< relref "getting-started/one-o
 
 You should now have an open `psql` terminal connected to the service database.
 
+### *GovCloud environment:* Using cf ssh
+
+To access a service database, use the [cf ssh]({{< relref "getting-started/one-off-tasks.md#cf-ssh" >}}) CLI command to login to an instance that is bound to the service and download the `psql` binary to that instance:
+
+    cf ssh APP_NAME
+    curl https://s3.amazonaws.com/18f-cf-cli/psql-9.4.4-ubuntu-14.04.tar.gz | tar xvz
+    ./psql/bin/psql $DATABASE_URL
+
+You should now have an open `psql` terminal connected to the service database.
+
+
 ## Export
 
 ### Create backup
+
+*These instructions are different depending on the "environment" your application lives in. If you're not sure, pick East/West. (GovCloud is our new environment.)*
+
+#### *East/West environment:* Using cf-ssh
 
 First, spin up a host to connect to the database:
 
@@ -88,8 +107,33 @@ $ psql/bin/pg_dump --format=custom $DATABASE_URL > backup.pg
 
 Leave the ssh connection open.
 
+#### *GovCloud environment:* Using cf ssh
+
+First, connect to an instance:
+
+```sh
+$ cf ssh {app name}
+```
+
+Next, install the Postgresql tools:
+
+```sh
+$ curl https://s3.amazonaws.com/18f-cf-cli/psql-9.4.4-ubuntu-14.04.tar.gz > psql.tgz
+$ tar xzvf psql.tgz
+```
+
+Now you can create the export file:
+
+```sh
+$ psql/bin/pg_dump --format=custom $DATABASE_URL > backup.pg
+```
+
 
 ### Download
+
+*These instructions are different depending on the "environment" your application lives in. If you're not sure, pick East/West. (GovCloud is our new environment.)*
+
+#### *East/West environment*
 
 On your local host:
 
@@ -103,6 +147,36 @@ Now you may close the ssh connection to cloud.gov, back in tmux:
 
 ```sh
 $ exit
+```
+
+#### *GovCloud environment*
+
+> [Documentation for using scp and sftp](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#other-ssh-access)
+
+On your local host:
+
+Get your app's GUID:
+
+```sh
+$ cf app {app name} --guid
+```
+
+Obtain a one-time authorization code:
+
+```sh
+$ cf ssh-code
+```
+
+Run `sftp` or `scp` to transfer files to/from an application instance.  You must specify port 2222 and supply the app GUID and instance number.  Use the one-time authorization from above as the password.  The username format is `cf:GUID/INSTANCE`.
+
+For example, to connect to instance 0 of the application with GUID 0745e60b-c7f3-49a7-a6c2-878516a34796:
+
+```sh
+$ sftp -P 2222 cf:0745e60b-c7f3-49a7-a6c2-878516a34796/0@ssh.fr.cloud.gov
+cf:0745e60b-c7f3-49a7-a6c2-878516a34796/0@ssh.fr.cloud.gov's password: ******
+Connected to ssh.fr.cloud.gov.
+sftp> get backup.pg
+sftp> quit
 ```
 
 
