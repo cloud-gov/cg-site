@@ -40,12 +40,10 @@ If you want to practice deploying, run the following `cf target` commend before 
 cf target -o <ORG> -s <SPACE>
 ```
 
-Your `ORG` is a Cloud Foundry _organization_ named "sandbox-<agencypart>",
-where <agencypart> is whatever comes right before `.gov` or `.mil` in your
-e-mail address. For example, `sandbox-gsa` or `sandbox-epa`.  
-Your `SPACE` is probably the part of your email before the `@`, e.g.
-`firstname.lastname`. Cloud Foundry _spaces_ let applications run
-independently within an organization.  For example:
+Your `ORG` is a Cloud Foundry _organization_ named "sandbox-&lt;agencypart&gt;", where &lt;agencypart&gt; is whatever comes right before `.gov` or `.mil` in your
+e-mail address. For example, `sandbox-gsa` or `sandbox-epa`. Your `SPACE` is probably the part of your email before the `@`, e.g. `firstname.lastname`. Cloud Foundry _spaces_ let applications run independently within an organization.  
+
+For example:
 
 ```bash
 cf target -o sandbox-gsa -s harry.truman
