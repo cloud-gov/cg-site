@@ -23,7 +23,7 @@ As a user, nearly all of your interactions with Cloud Foundry will be through th
     ```bash
     cf login -a api.cloud.gov --sso
     ```
-    
+
     Then follow the link to get your one-time authentication code and enter it to log in.
 
     **Or if you log in with a cloud.gov account that has its own password** (including `ORGNAME_deployer` accounts), log in by running
@@ -32,13 +32,17 @@ As a user, nearly all of your interactions with Cloud Foundry will be through th
     cf login -a api.cloud.gov
     ```
 
-## Play around
+## Play around in a "sandbox"
 
-If you want to practice deploying, run the following before continuing:
-
+If you want to practice deploying, run the following `cf target` commend before continuing:
 
 ```bash
-cf target -o sandbox -s <SPACE>
+cf target -o <ORG> -s <SPACE>
 ```
 
-Your `SPACE` is probably the part of your email before the `@`, e.g. `FIRSTNAME.LASTNAME`. When you're done, please `cf delete <APPNAME>`. See the walkthrough for [your first deploy]({{< relref "your-first-deploy.md" >}}).
+Your `ORG` is a Cloud Foundry _organization_ named "sandbox-<agencypart>", where <agencypart> is whatever comes right before `.gov` or `.mil` in your e-mail address. For example, `sandbox-gsa` or `sandbox-epa`
+
+
+Your `SPACE` is probably the part of your email before the `@`, e.g. `firstname.lastname`. Cloud Foundry _spaces_ let applications run independently within an organization.
+
+**Be tidy**: When you're done, please `cf delete <APPNAME>`. See the walkthrough for [your first deploy]({{< relref "your-first-deploy.md" >}}).
