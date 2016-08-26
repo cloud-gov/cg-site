@@ -2,7 +2,7 @@
 menu:
   main:
     parent: operations
-title: Custom domains for users
+title: Custom Domains for Users
 ---
 
 # How to set up custom domains for users
