@@ -104,6 +104,6 @@ cloud.gov offers a managed service that allows you to forward a domain you contr
     Message: Provisioning in progress; CNAME domain "my.domain.gov" to "d3kajwa62y9xrp.cloudfront.net."
     ```
 
-1. Create/update your DNS configuration (including your IPv6 AAAA configuration if you need it).
+1. Create/update your DNS configuration.
 1. Wait up to 30 minutes for the CloudFront distribution to be provisioned and the DNS changes to propagate.
 1. Visit `my.domain.gov`, and see that you have a valid certificate (i.e. that visiting your site in a modern browser doesn't give you a certificate warning).
