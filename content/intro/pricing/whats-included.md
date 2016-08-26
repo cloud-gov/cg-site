@@ -28,6 +28,7 @@ All cloud.gov access packages include the following:
   + binary_buildpack
 - Self-service management of spaces and users within an organization
 - Platform maintenance and managed service expansion overhead
+- Support for customer-provided DNS for applications (including support for customer-provided IPv6)
 
 <!--
 TODO
