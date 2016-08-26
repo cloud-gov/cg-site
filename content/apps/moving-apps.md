@@ -30,7 +30,7 @@ If you have an app that exists in one org/space but you need to move it to anoth
     cf target -o <NEW_ORG> -s <NEW_SPACE>
     ```
 
-1. If you changed orgs and are using a Domain, [re-create it]({{< relref "apps/custom-domains.md#creating-the-cloud-foundry-domain-association" >}}).
+1. If you changed orgs and are using a Domain, [re-create it]({{< relref "apps/custom-domains.md" >}}).
 
     ```bash
     cf create-domain <DOMAIN>
