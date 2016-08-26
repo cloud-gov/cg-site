@@ -34,7 +34,7 @@ As a user, nearly all of your interactions with Cloud Foundry will be through th
 
 ## Play around in a "sandbox"
 
-If you want to practice deploying, run the following `cf target` commend before continuing:
+If you want to practice deploying, run the following `cf target` command before continuing:
 
 ```bash
 cf target -o <ORG> -s <SPACE>
