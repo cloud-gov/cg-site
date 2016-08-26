@@ -14,9 +14,9 @@ This is the operations side of the [user instructions for setting up custom doma
 ### Creating the [Load Balancer (ELB)](http://aws.amazon.com/elasticloadbalancing/)
 There needs to be one ELB pointing to Cloud Foundry per TLS certificate.
 
-** WARNING: Please [create a ticket](https://github.com/18f/infrastructure/issues/new) in the Infrastructure repo with the name of every new ELB so it is added to BOSH. **
+**WARNING: Please [create a ticket](https://github.com/18f/infrastructure/issues/new) in the Infrastructure repo with the name of every new ELB so it is added to BOSH.**
 
-* If domains under the cert already point to apps on Cloud Foundry (e.g. `18f.us` or `18f.gov`), you're all set.
+* If domains under the cert already point to apps on Cloud Foundry (e.g. `18f.gov`), you're all set.
 * If not, follow the [ELB instructions]({{< relref "ops/elb.md" >}}).
 
 ### Creating the [Hosted Zone](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/AboutHZWorkingWith.html).
@@ -29,11 +29,10 @@ There needs to be one ELB pointing to Cloud Foundry per TLS certificate.
 1. Click "Create Record Set".
 1. For `Alias`, select `Yes`.
 1. For `Alias Target`, type the name of your ELB and select it from the list.
-    * For `*.18f.us` domains, use `dualstack.cf-app-router-*`.
     
 ### Creating the Cloud Foundry Domain Association
 
-Before you can create Cloud Foundry applications under your new domain you must associate the domain to an organization. There are two options for registration, private and shared.
+Before you can create Cloud Foundry applications under the new domain, you must associate the domain to an organization. There are two options for registration, private and shared.
 
 #### Private / Shared Domain Association
 
