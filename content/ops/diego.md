@@ -6,7 +6,7 @@ Diego is the new application runtime system for Cloud Foundry.  While initially 
 
 See the [Diego Architecture](https://docs.cloudfoundry.org/concepts/diego/diego-architecture.html) document for a short overview.  More detail can be found in the [Diego BOSH Release](https://github.com/cloudfoundry/diego-release) and [Diego Design Notes](https://github.com/cloudfoundry/diego-design-notes) repositories.
 
-In addition, understanding the [differences between DEA and Diego](https://docs.cloudfoundry.org/concepts/diego/dea-vs-diego.html) may be helpful.
+For those familiar with the legacy runtime, understanding the [differences between it and Diego](https://docs.cloudfoundry.org/concepts/diego/dea-vs-diego.html) may be helpful.
 
 ### Best Practices
 
