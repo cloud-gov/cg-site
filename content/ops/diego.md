@@ -2,6 +2,8 @@
 
 ## Diego Overview
 
+Diego is the new application runtime system for Cloud Foundry.  While initially a rewrite of the legacy runtime (DEA) in golang, it has evolved into a container management solution, separate from but in practice integrated with from Cloud Foundry.  Note the name "Diego" was originally "DEAgo", a portmanteau of the legacy runtime, DEA, and the new implementation language, go (golang).
+
 See the [Diego Architecture](https://docs.cloudfoundry.org/concepts/diego/diego-architecture.html) document for a short overview.  More detail can be found in the [Diego BOSH Release](https://github.com/cloudfoundry/diego-release) and [Diego Design Notes](https://github.com/cloudfoundry/diego-design-notes) repositories.
 
 In addition, understanding the [differences between DEA and Diego](https://docs.cloudfoundry.org/concepts/diego/dea-vs-diego.html) may be helpful.
