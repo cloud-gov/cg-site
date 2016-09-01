@@ -13,6 +13,8 @@ The [Manual Method](#manual-method) is available to all users. We've also develo
 
 The Manual Method supports user access to your application over IPv6 if your DNS supports IPv6.
 
+For all custom domains, we recommend incorporating [HTTPS-Only Standard guidance](https://https.cio.gov/), including [HSTS](https://https.cio.gov/hsts/) and [preloading](https://https.cio.gov/guide/#options-for-hsts-compliance).
+
 If you need to set up an app on a domain managed by GSA TTS, you may also be interested in [18F/dns](https://github.com/18F/dns).
 
 ## Manual Method
