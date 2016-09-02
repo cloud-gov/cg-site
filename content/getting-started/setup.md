@@ -48,6 +48,6 @@ For example:
 ```bash
 cf target -o sandbox-gsa -s harry.truman
 ```
-** If you log in immediately after your account or organization was created,** you may not see any orgs or spaces to which you have access. Your sandbox space may take up to **5 minutes** to provision.
+**If you log in immediately after your account or organization was created,** you may not see any orgs or spaces to which you have access. Your sandbox space may take up to **5 minutes** to provision.
 
 **Be tidy**: When you're done, please `cf delete <APPNAME>`. See the walkthrough for [your first deploy]({{< relref "your-first-deploy.md" >}}).
