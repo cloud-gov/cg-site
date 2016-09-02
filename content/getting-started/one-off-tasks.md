@@ -54,18 +54,18 @@ The idea here is that we are going to deploy a new application, but running the 
     cf logs --recent task-runner
     ```
 
-1. If needed, use [`cf files`](http://cli.cloudfoundry.org/en-US/cf/files.html) to collect any artifacts.
+1. If needed, use [`cf files`][] to collect any artifacts.
 1. Run `cf delete task-runner` to clean it up.
 
 ## CF SSH
 
 Another way to run one-off commands is via `cf-ssh`. `cf-ssh` is a shared ssh session with an application container that you can connect to. This allows you to debug the environment and your application without disturbing a running container.
 
-Our `cf-ssh` is customized to our Cloud Foundry installation, so please **do not use the community version or [`cf ssh`](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html)**. Also note that only one person can use `cf-ssh` for any particular app at any particular time.
+Our `cf-ssh` is customized to our Cloud Foundry installation, so please **do not use the community version of [`cf ssh`](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html)**. Also note that only one person can use `cf-ssh` for any particular app at any particular time.
 
 ### Installation
 
-1. [Download `cf-ssh` for your environment](https://github.com/18F/cloud-foundry-scripts/releases/).
+1. [Download cloud.gov's `cf-ssh` for your environment](https://github.com/18F/cf-ssh/releases/) ([source](https://github.com/18F/cf-ssh/tree/18f)).
 1. Run
 
     ```bash
@@ -83,4 +83,9 @@ Our `cf-ssh` is customized to our Cloud Foundry installation, so please **do not
     ```
 
 1. The process takes between 2 to 10 minutes to start the session since it is compiling your application in the background. When it completes, you will see a command prompt.
+
+1. If you need to collect any files on the remote machine, you can use [`cf files`][] from a separate terminal window (do *not* close your SSH session, as the machine will be destroyed upon exit). For example, if your project's name in your `manifest.yml` is `foo`, then `cf files foo-ssh app/` should list all the files in your SSH session's default working directory.
+
 1. When done, run `exit`.
+
+[`cf files`]: http://cli.cloudfoundry.org/en-US/cf/files.html

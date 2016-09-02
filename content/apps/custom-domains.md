@@ -5,82 +5,38 @@ menu:
 title: Custom Domains
 ---
 
-### Creating the [Load Balancer (ELB)](http://aws.amazon.com/elasticloadbalancing/)
-There needs to be one ELB pointing to Cloud Foundry per TLS certificate.
+# Custom Domains
 
-** WARNING: Please [create a ticket](https://github.com/18f/devops/issues/new) in the DevOps repo with the name of every new ELB so it is added to BOSH. **
+Here's how to put your app on your project's custom domain name. For context, [Cloud Foundry's Routes and Domains documentation](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html) explains the overall model and terminology that cloud.gov uses.
 
-* If domains under the cert already point to apps on Cloud Foundry (e.g. `18f.us` or `18f.gov`), you're all set.
-* If not, follow the [ELB instructions]({{< relref "ops/elb.md" >}}).
+The [Manual Method](#manual-method) is available to all users. We've also developed a [Managed Service Method](#managed-service-method), but this is not automatically available to most users yet because it's in cloud.gov's GovCloud environment (if you need this, [let us know](/help/)).
 
-### Creating the [Hosted Zone](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/AboutHZWorkingWith.html).
+The Manual Method supports user access to your application over IPv6 if your DNS supports IPv6.
 
-* If it already exists in [Route 53](https://console.aws.amazon.com/route53/home?region=us-east-1#hosted-zones:), you're good.
-* If not, follow [these instructions](https://github.com/18F/https#set-up-the-domain).
+For all custom domains, we recommend incorporating [HTTPS-Only Standard guidance](https://https.cio.gov/), including [HSTS](https://https.cio.gov/hsts/) and [preloading](https://https.cio.gov/guide/#options-for-hsts-compliance).
 
-### Creating the [Record Set](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/rrsets-working-with.html).
-1. Click on the Domain Name of the Hosted Zone.
-1. Click "Create Record Set".
-1. For `Alias`, select `Yes`.
-1. For `Alias Target`, type the name of your ELB and select it from the list.
-    * For `*.18f.us` domains, use `dualstack.cf-app-router-*`.
+If you need to set up an app on a domain managed by GSA TTS, you may also be interested in [18F/dns](https://github.com/18F/dns).
 
-### Creating the Cloud Foundry Domain Association
+## Manual Method
 
-Before you can create Cloud Foundry applications under your new domain you must associate the domain to an organization. There are two options for registration, private and shared.
+Send a request to cloud.gov support (cloud-gov-support@gsa.gov for any customer, or [#cloud-gov-support](https://18f.slack.com/messages/cloud-gov-support) for 18F staff) to tell us you want to set up a custom domain. Include your domain and org name.
 
-#### Private / Shared Domain Association
+We'll configure your org to make your domain available for use with that org, and we'll tell you the entry to put in your DNS. Next you'll set up your application route, as explained in the next section.
 
-**Private:**
+### Application Routes
 
-Private registration enables a single organization to create routes for or under the specified domain. Organizations and private domains are a 1 to 1 relationship. A single domain cannot be privately registered to multiple organizations.
-
-**Shared:**
-
-Shared registrations enable **all** organizations to create routes under the shared domain.
-
-#### Listing Domain Associations
-
-To list all registrations for the currently targeted organization.
-
-	$ cf domains
-
-	Getting domains in org ORGANIZATION as USER...
-	name           status
-	cf.domain.tld  shared
-	domain.tld     shared
-	domain.com     owned
-
-Private registrations appear with the status `owned` while shared registrations show just that, `shared`.
-
-#### Private Domain Registration
-
-To create a private registration.
-
-	cf create-domain ORG DOMAIN
-
-[API](http://apidocs.cloudfoundry.org/206/private_domains/create_a_private_domain_owned_by_the_given_organization.html)
-
-#### Shared Domain Registration
-
-To create a shared registration.
-
-	cf create-shared-domain ORG DOMAIN
-
-[API](http://apidocs.cloudfoundry.org/206/shared_domains/create_a_shared_domain.html)
-
-#### Application Routes
+Use `cf domains` to list the domains that are available to you, to confirm that we configured your org correctly.
 
 Use your application manifest.yml to identify the domain where the application route should be created.
 
-For example...
+For example, if you want to make your app available as a subdomain of your domain:
 
 	---
 	...
 	- name: myapp
 	  domain: domain.tld
 
-Will create the route `myapp.domain.tld` for your application. Alternatively, you can specify a specific hostname for your app separate from the application name within CF.
+That will create the route `myapp.domain.tld` for your application. Alternatively, you can specify a specific hostname for your app separate from the application name within CF. For example:
 
 	---
 	...
@@ -88,19 +44,68 @@ Will create the route `myapp.domain.tld` for your application. Alternatively, yo
 	  host: frontend
 	  domain: domain.tld
 
-Will create the route `frontend.domain.tld` for your application.
+That will create the route `frontend.domain.tld` for your application.
 
-##### Hostless Routes
+If you want to make your app available simply as a domain (without a subdomain), for example as `domain.tld`, put `.` under `host`.
 
-One common scenario is the need to redirect a delegated subdomain to a CF app. In this case, you've been delegated `app.parent.tld` for your CF-hosted app from the owners of `parent.tld`.
+#### Hostless Routes
 
-Rather than create the `parent.tld` domain within CF we can create the full `app.parent.tld` domain and map it to an application.
+Here's how to route a delegated domain (or subdomain) to a CF app, for example if you've been delegated `domain.tld` or `app.parent.tld`.
 
-	cf create-domain ORGANIZATION app.parent.tld
+First send us a support request to ask us to make the domain available in your org.
+
+Then, you can create the route and map it to your application, for example:
+
+	cf map-route myapp domain.tld
+
+Or:
+
 	cf map-route myapp app.parent.tld
 
 [API](http://apidocs.cloudfoundry.org/206/routes/associate_app_with_the_route.html)
 
----
+## Managed Service Method
 
-See also: [Official Cloud Foundry Documentation](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html).
+*Note: this is only available in cloud.gov's GovCloud environment.*
+
+*This method only provides IPv4 support. If you need IPv6 support, you'll need to use the Manual Method above.*
+
+cloud.gov offers a managed service that allows you to forward a domain you control to a cloud.gov application using [AWS CloudFront](https://aws.amazon.com/cloudfront/). Traffic is encrypted using an SSL certificate generated by [Let's Encrypt](https://letsencrypt.org/).
+
+1. Target the space your application is running in.
+
+    ```bash
+    $ cf target -o <org> -s <space>
+    ```
+
+1. Create a service instance. Replace *my-app.apps.cloud.gov* with the  domain that has been automatically assigned to your app by cloud.gov.
+
+    ```
+    $ cf create-service cdn-route cdn-route my-cdn-route \
+        -c '{"domain": "my.domain.gov", "origin": "my-app.apps.cloud.gov"}'
+
+    Create in progress. Use 'cf services' or 'cf service my-cdn-route' to check operation status.
+    ```
+
+    If you have more than one domain you can pass a comma-delimited list to the `domain` parameter, just keep in mind that the broker will wait until all domains are CNAME'd:
+
+    ```
+    $ cf create-service cdn-route cdn-route my-cdn-route \
+        -c '{"domain": "my.domain.gov,www.my.domain.gov", "origin": "my-app.apps.cloud.gov"}'
+
+    Create in progress. Use 'cf services' or 'cf service my-cdn-route' to check operation status.
+    ```
+
+1. Get the DNS instructions.
+
+    ```
+    $ cf service my-cdn-route
+
+    Last Operation
+    Status: create in progress
+    Message: Provisioning in progress; CNAME domain "my.domain.gov" to "d3kajwa62y9xrp.cloudfront.net."
+    ```
+
+1. Create/update your DNS configuration.
+1. Wait up to 30 minutes for the CloudFront distribution to be provisioned and the DNS changes to propagate.
+1. Visit `my.domain.gov`, and see that you have a valid certificate (i.e. that visiting your site in a modern browser doesn't give you a certificate warning).

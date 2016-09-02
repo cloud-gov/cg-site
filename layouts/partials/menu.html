@@ -8,7 +8,7 @@
         <a href="javascript:;" class="">
           {{ .Pre }}
           <span>{{ .Name }}</span>
-          <span class="menu-arrow sidenav-arrow fa {{if $currentNode.HasMenuCurrent "main" . }}fa-angle-down{{else}}fa-angle-right{{end}}"></span>
+          <span class="sidenav-arrow {{if $currentNode.HasMenuCurrent "main" . }}sidenav-arrow-down{{else}}sidenav-arrow-right{{end}}"></span>
         </a>
         <ul class="usa-sidenav-sub_list sidenav-list sidenav-level-two nested-menu {{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} open {{end}}" style="{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} display: block; {{else}}display: none; {{end}}">
           {{ range .Children }}
@@ -17,7 +17,7 @@
               {{ .Pre }}
               <span>{{ .Name }}</span>
               {{ if .HasChildren }}
-                <span class="menu-arrow sidenav-arrow fa {{if $currentNode.HasMenuCurrent "main" . }}fa-angle-down{{else}}fa-angle-right{{end}}"></span>
+                <span class="sidenav-arrow {{if $currentNode.HasMenuCurrent "main" . }}sidenav-arrow-down{{else}}sidenav-arrow-right{{end}}"></span>
               {{ end }}
             </a>
               {{ if .HasChildren }}
@@ -49,7 +49,7 @@
               <a href="/help/"><i class='fa fa-life-ring'></i> <span>Help</span></a>
             </li>
             {{ if .IsPage }}
-            {{ $File := .File }}  {{with $File.Path }}<li><a href="https://github.com/18f/cloud-foundry-notes/edit/master/content/{{ $File.Dir }}{{ $File.LogicalName }}" target="blank"><i class='fa fa-edit'></i> Refine this Page</a> </li>{{end}}
+            {{ $File := .File }}  {{with $File.Path }}<li><a href="https://github.com/18f/cg-docs/edit/master/content/{{ $File.Dir }}{{ $File.LogicalName }}" target="blank"><i class='fa fa-edit'></i> Refine this Page</a> </li>{{end}}
             {{ end }}
   </ul>
 </aside>

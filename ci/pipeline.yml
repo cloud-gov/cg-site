@@ -1,0 +1,97 @@
+---
+jobs:
+- name: deploy-production
+  plan:
+  - get: cg-docs-source
+    trigger: true
+  - task: build
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source:
+          repository: mhart/alpine-node
+          tag: '4'
+      inputs:
+      - name: cg-docs-source
+      outputs:
+      - name: cg-docs-compiled
+      run:
+        dir: cg-docs-source
+        path: sh
+        args:
+        - -exc
+        - |
+          # install dependencies, for the following (respectively): NPM, node-sass, Hugo
+          # https://github.com/18F/cg-docs/issues/279
+          apk add --no-cache --update \
+            git \
+            g++ make python \
+            ca-certificates wget
+
+          # install Hugo
+          # https://github.com/jojomi/docker-hugo/blob/f4f0b5f777950d3621340c514ad668df46136fd9/Dockerfile
+          HUGO_VERSION=0.16
+          cd /tmp/
+          wget https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-64bit.tgz
+          tar xzf hugo_${HUGO_VERSION}_linux-64bit.tgz
+          mv hugo /usr/bin/hugo
+          cd -
+
+          npm install
+          npm run build
+
+          # build the site
+          hugo
+
+          # copy files to output directory, so that they can be read by subsequent step
+          cp -R . ../cg-docs-compiled
+  - put: cloud-gov-production
+    params:
+      manifest: cg-docs-compiled/manifest.yml
+      path: cg-docs-compiled
+      current_app_name: docs
+    on_failure:
+      put: slack
+      params:
+        text: |
+          :x: FAILED to deploy cg-docs to Production
+          <$ATC_EXTERNAL_URL/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME|View build details>
+        channel: {{slack-channel}}
+        username: {{slack-username}}
+        icon_url: {{slack-icon-url}}
+    on_success:
+      put: slack
+      params:
+        text: |
+          :white_check_mark: Successfully deployed cg-docs to Production
+          <$ATC_EXTERNAL_URL/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME|View build details>
+        channel: {{slack-channel}}
+        username: {{slack-username}}
+        icon_url: {{slack-icon-url}}
+
+resources:
+- name: cg-docs-source
+  type: git
+  source:
+    uri: {{cg-docs-git-url}}
+    branch: {{cg-docs-branch}}
+- name: cloud-gov-production
+  type: cf
+  source:
+    api: {{cf-api-url-production}}
+    username: {{cf-deploy-username-production}}
+    password: {{cf-deploy-password-production}}
+    organization: {{cf-organization}}
+    space: {{cf-space}}
+    skip_cert_check: false
+- name: slack
+  type: slack-notification
+  source:
+    url: {{slack-webhook-url}}
+
+resource_types:
+- name: slack-notification
+  type: docker-image
+  source:
+    repository: cfcommunity/slack-notification-resource
