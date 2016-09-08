@@ -29,31 +29,7 @@ cf restage myapp
 
 `cf bind-service` will provide a `DATABASE_URL` environment variable for your app, which is then picked up by the `restage`. Note that for a Rails app, `bind-service` will [overwrite your `database.yml`](http://docs.cloudfoundry.org/buildpacks/ruby/ruby-service-bindings.html#rails-applications-have-autoconfigured-database-yml). The full documentation for managing service instances is [here](https://docs.cloudfoundry.org/devguide/services/managing-services.html).
 
-## RDS
-
-This isn't recommended, but if you need, you can create databases in RDS by hand.
-
-1. [Create the database instance](https://console.aws.amazon.com/rds/home?region=us-east-1#launch-dbinstance:ct=dashboard:) on AWS in the `us-east-1` region. On the "Configure Advanced Settings" step:
-    1. Set the [VPC](http://aws.amazon.com/vpc/) to be `CloudFoundry-live`.
-    1. Set the [VPC Security Group](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html) to be `CloudFoundry-live-BoshSecurityGroup-*`.
-    1. The settings should now look like this:
-
-        ![RDS settings](/img/rds-settings.png)
-
-1. Create a `client` tag so that it's billed properly.
-1. Get the DB instance hostname once it's created.
-
-    ![RDS instance](/img/rds-instance.png)
-
-1. Set the `DATABASE_URL` environment variable, using the `USERNAME`, `PASSWORD`, and `DBNAME` you set when creating the RDS instance, and the `HOST` from the previous step.
-
-    ```bash
-    cf set-env <APP_NAME> DATABASE_URL postgresql://<USERNAME>:<PASSWORD>@<HOST>:5432/<DBNAME>
-    ```
-
-The [dj_database_url](https://github.com/kennethreitz/dj-database-url#url-schema) Python package README describes the possible formats of this URL.
-
-## Access a postgres database 
+## Access a postgres database
 
 *These instructions are different depending on the "environment" your application lives in. If you're not sure, pick East/West. (GovCloud is our new environment.)*
 
