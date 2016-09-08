@@ -97,6 +97,4 @@ Our `cf-ssh` is customized to our Cloud Foundry installation, so please **do not
 
 ### *GovCloud environment:* CF SSH
 
-Another way to run one-off commands is via `cf ssh`, which lets you securely login to an application instance where you can perform debugging, environment inspection, and other tasks.
-
-[`cf ssh`]: https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html
+Another way to run one-off commands is via [`cf ssh`](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#ssh-command), which lets you securely login to an application instance where you can perform debugging, environment inspection, and other tasks.
