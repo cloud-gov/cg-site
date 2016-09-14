@@ -25,7 +25,7 @@ Packages are selected based on the kinds of applications to be hosted. [Find mor
 | **FISMA Low** | One public-facing FISMA Low system, including all the spaces needed and DNS support. | $20K | No\** |
 | **FISMA Moderate** | One public-facing FISMA Moderate system, including all the spaces needed and DNS support. Additional support for FISMA Moderate data requirements. | $90K | No\** |
 
-\*Access package fees are charged yearly and are non-severable.
+\*Access agreements are severable, and the access package fees are invoiced monthly.
 
 \*\*See the [managed services](#managed-services) section for details.
 
@@ -33,12 +33,12 @@ Packages are selected based on the kinds of applications to be hosted. [Find mor
 
 ### Resource usage
 
-You will be charged for resource usage as a factor of the memory, in MB of RAM, your applications consume.
+You will be charged for the **quota** you set for your resource usage. This is only based on the memory, in MB of RAM, your reserve for your applications.
 
 - Sandbox: Resource usage is capped to 1 GB of RAM per month.
 - All other packages: $0.0033 per MB reserved per day (usually this results in $99/GB/month)
 
-Resource usage fees are charged per quarter, tallied monthly, and severable.
+Quotas are monitored daily and are invoiced monthly. Unused quotas are not refunded, and they do not 'roll over' month to month.
 
 We require your resource usage quota to **be set in advance**. This helps you control the maximum amount that your team will spend, and helps us avoid over-provisioning resources that won't be used.
 
@@ -48,9 +48,9 @@ We require your resource usage quota to **be set in advance**. This helps you co
 
 ### Managed services
 
-[Managed services]({{< relref "apps/managed-services.md" >}}) are those which cloud.gov will spin up instantly and run on your behalf (databases, storage, caching, etc.). You can see the services and plans offered for each by [running `cf marketplace`]({{< relref "apps/managed-services.md#list-services" >}}). *We'll include more details on this page in the future.*
+[Managed services]({{< relref "apps/managed-services.md" >}}) are those which cloud.gov will spin up quickly and run on your behalf (databases, storage, caching, etc.). You can see the services and plans offered for each by [running `cf marketplace`]({{< relref "apps/managed-services.md#list-services" >}}). *We'll include more details on this page in the future.*
 
-While we aren't currently charging for these, we plan to charge for them in the future, to account for the resources they consume and our efforts to provide them as a service. The pricing for each service will be different and will be billed by the service instance, billed per quarter, tallied monthly, and severable. We will ensure users of those services are aware of the rates when they are set, and they will not be charged before then.
+While we aren't currently charging for these, we plan to charge for them in the future, to account for the resources they consume and our efforts to provide them as a service. The pricing for each service will be different. 18F provided services will be billed by the service instance, invoiced per month, and will be severable. We will ensure users of those services are aware of the rates when they are set, and they will not be charged before then.
 
 This pricing will _only_ be for services created through cloud.gov. If you are using additional public or private services offered by 18F Infrastructure, they are priced and billed separately - speak with your 18F Finance point of contact for more information. External databases, SMTP servers, etc. that are _not_ managed by 18F/cloud.gov can also be used, with no additional fee.
 
