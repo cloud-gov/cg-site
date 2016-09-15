@@ -2,7 +2,7 @@
 menu:
   main:
     parent: apps
-title: What is new in Govcloud?
+title: What Is New In Govcloud?
 ---
 
 The new environment is a bit different and full of shiny new things here is some and how use them:
