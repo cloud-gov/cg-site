@@ -1,7 +1,5 @@
 # 18F cloud.gov documentation
 
-[![wercker status](https://app.wercker.com/status/b53005d7e69162205a5c9b63f3d65029/s/master "wercker status")](https://app.wercker.com/project/bykey/b53005d7e69162205a5c9b63f3d65029)
-
 This repository contains the site code for [cloud.gov documentation](https://docs.cloud.gov/).
 
 cloud.gov is a Platform as a Service based on the Cloud Foundry project, which provides its own [Cloud Foundry documentation](http://docs.cloudfoundry.org/).

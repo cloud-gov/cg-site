@@ -135,6 +135,4 @@ And setup the following environment variables in a "deploy target":
 
 You can also add the `alt_appname` attribute to do [Blue-Green deploys](http://docs.pivotal.io/pivotalcf/devguide/deploy-apps/blue-green.html).
 
-Example project: https://github.com/18F/cg-docs/blob/master/wercker.yml.
-
 ***
