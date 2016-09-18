@@ -28,10 +28,10 @@ will create or deploy the app APPNAME. But before you deploy, let's set up a few
 
 You _could_ use the built-in Werkzeug server to send out your Flask app, [but it's not recommended](http://flask.pocoo.org/docs/0.10/deploying/). As with Django, we recommend installing and using `waitress` for a WSGI server. Install it with `pip install waitress`.
 
-Switching your Flask app to serve with Waitress instead of the built-in server is fairly simple. The first thing you'll want to do is the app's port to the `VCAP_APP_PORT` environment variable. This is set by Cloud Foundry for you so you don't have to worry about it, but you _do_ need to let Flask know about it. And while you're developing locally you might want to set a local `VCAP_APP_PORT`. You can do that with this code:
+Switching your Flask app to serve with Waitress instead of the built-in server is fairly simple. The first thing you'll want to do is set the app's port to the `PORT` environment variable. This is set by Cloud Foundry for you so you don't have to worry about it, but you _do_ need to let Flask know about it. And while you're developing locally you might want to set a local `PORT`. You can do that with this code:
 
 ```python
-port = port = int(os.getenv("VCAP_APP_PORT"))
+port = int(os.getenv("PORT"))
 ```
 
 Here's how a basic Flask app might look:
