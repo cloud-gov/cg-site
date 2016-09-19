@@ -12,10 +12,11 @@ In short, everything needed to run and operate the platform that is not a _secre
 
 Here are some examples:
 
+- CI Pipelines (Concourse)
 - Infrastructure/Network configuration (Terraform)
 - VM setup and quantity (Bosh)
 - Software configuration (Bosh)
-- CI Pipelines (Concourse)
+
 
 ## Where should all this configuration go?
 All configuration must be stored in GitHub using the following "Change Workflow" unless it is a _secret_.
