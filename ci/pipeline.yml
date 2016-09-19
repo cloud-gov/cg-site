@@ -1,51 +1,38 @@
 ---
 jobs:
+- name: pull-status-check
+  plan:
+  - get: pull-request
+    version: every
+    trigger: true
+  - put: pull-request
+    params:
+      path: pull-request
+      status: pending
+  - task: build
+    input_mapping:
+      cg-docs-source: pull-request
+    file: pull-request/ci/build.yml
+    on_success:
+      put: pull-request
+      params:
+        path: pull-request
+        status: success
+    on_failure:
+      put: pull-request
+      params:
+        path: pull-request
+        status: failure
+
 - name: deploy-production
   plan:
   - get: cg-docs-source
     trigger: true
   - task: build
-    config:
-      platform: linux
-      image_resource:
-        type: docker-image
-        source:
-          repository: mhart/alpine-node
-          tag: '4'
-      inputs:
-      - name: cg-docs-source
-      outputs:
-      - name: cg-docs-compiled
-      run:
-        dir: cg-docs-source
-        path: sh
-        args:
-        - -exc
-        - |
-          # install dependencies, for the following (respectively): NPM, node-sass, Hugo
-          # https://github.com/18F/cg-docs/issues/279
-          apk add --no-cache --update \
-            git \
-            g++ make python \
-            ca-certificates wget
+    file: cg-docs-source/ci/build.sh
+    params:
+      COPY_OUTPUT: 1
 
-          # install Hugo
-          # https://github.com/jojomi/docker-hugo/blob/f4f0b5f777950d3621340c514ad668df46136fd9/Dockerfile
-          HUGO_VERSION=0.16
-          cd /tmp/
-          wget https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-64bit.tgz
-          tar xzf hugo_${HUGO_VERSION}_linux-64bit.tgz
-          mv hugo /usr/bin/hugo
-          cd -
-
-          npm install
-          npm run build
-
-          # build the site
-          hugo
-
-          # copy files to output directory, so that they can be read by subsequent step
-          cp -R . ../cg-docs-compiled
   - put: cloud-gov-production
     params:
       manifest: cg-docs-compiled/manifest.yml
@@ -76,6 +63,14 @@ resources:
   source:
     uri: {{cg-docs-git-url}}
     branch: {{cg-docs-branch}}
+
+- name: pull-request
+  type: pull-request
+  source:
+    repo: {{cg-docs-git-repo}}
+    access_token: {{status-access-token}}
+    every: true
+
 - name: cloud-gov-production
   type: cf
   source:
@@ -85,12 +80,18 @@ resources:
     organization: {{cf-organization}}
     space: {{cf-space}}
     skip_cert_check: false
+
 - name: slack
   type: slack-notification
   source:
     url: {{slack-webhook-url}}
 
 resource_types:
+- name: pull-request
+  type: docker-image
+  source:
+    repository: jtarchie/pr
+
 - name: slack-notification
   type: docker-image
   source:
