@@ -8,7 +8,7 @@ title: Configuration Management
 This document describes how the 18F cloud.gov team approaches configuration management of the core platform.
 
 ## What goes into configuration management?
-In short, everything needed to run and operate the platform that is not a _secret_.
+In short, everything needed to run and operate the platform that is not a _secret_. 
 
 Here are some examples:
 
