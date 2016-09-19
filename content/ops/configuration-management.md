@@ -8,14 +8,15 @@ title: Configuration Management
 This document describes how the 18F cloud.gov team approaches configuration management of the core platform.
 
 ## What goes into configuration management?
-In short, everything needed to run and operate the platform that is not a _secret_.
+In short, everything needed to run and operate the platform that is not a _secret_. 
 
 Here are some examples:
 
+- CI Pipelines (Concourse)
 - Infrastructure/Network configuration (Terraform)
 - VM setup and quantity (Bosh)
 - Software configuration (Bosh)
-- CI Pipelines (Concourse)
+
 
 ## Where should all this configuration go?
 All configuration must be stored in GitHub using the following "Change Workflow" unless it is a _secret_.
