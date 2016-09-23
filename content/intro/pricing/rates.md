@@ -18,16 +18,16 @@ Find out [more about this pricing model]({{< relref "intro/pricing/pricing-model
 
 Packages are selected based on the kinds of applications to be hosted. [Find more about what's included in all access packages.]({{< relref "intro/pricing/whats-included.md" >}})
 
-| Package | What's included? | Base annual fee\* | Usage charges? |
-| --- | --- | --- | --- |
-| **Sandbox** | Any user with a `.gov` or `.mil` email address can try out cloud.gov, no paperwork required. All managed services are available. Resource usage is capped, though it can be raised. | Free | No |
-| **Prototyping** | Suitable for many teams to deploy apps, though limited to the `*.apps.cloud.gov` domain. Access control can be delegated to teams. No production data allowed. Usually purchased per agency/department. | $15K | No\** |
-| **FISMA Low** | One public-facing FISMA Low system, including all the spaces needed and DNS support. | $20K | No\** |
-| **FISMA Moderate** | One public-facing FISMA Moderate system, including all the spaces needed and DNS support. Additional support for FISMA Moderate data requirements. | $90K | No\** |
+| Package | What's included? | Base annual fee\* | Monthly resource usage | Managed services available |
+| --- | --- | --- | --- | --- |
+| **Sandbox** | Any user with a `.gov` or `.mil` email address can try out cloud.gov, no paperwork required. **Resource usage is capped at 1GB.** | Free | Free | Only free services |
+| **Prototyping** | Suitable for many teams to deploy apps, though limited to the `*.apps.cloud.gov` domain. Access control can be delegated to teams. No production data allowed. Usually purchased per agency/department. | $15K |  ~$99/GB | All\** |
+| **FISMA Low** | One public-facing FISMA Low system, including all the spaces needed and DNS support. | $20K | ~$99/GB | All\** |
+| **FISMA Moderate** | One public-facing FISMA Moderate system, including all the spaces needed and DNS support. Additional support for FISMA Moderate data requirements. | $90K | ~$99/GB | All\** |
 
 \*Access agreements are severable, and the access package fees are invoiced monthly.
 
-\*\*See the [managed services](#managed-services) section for details.
+\*\* We aren't yet charging for paid services. See the [managed services](#managed-services) section for details.
 
 ---
 
