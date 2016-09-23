@@ -27,7 +27,7 @@ Packages are selected based on the kinds of applications to be hosted. [Find mor
 
 \*Access agreements are severable, and the access package fees are invoiced monthly.
 
-\*\* We aren't yet charging for paid services. See the [managed services](#managed-services) section for details.
+\*\*We aren't yet charging for paid services. See the [managed services](#managed-services) section for details.
 
 ---
 
