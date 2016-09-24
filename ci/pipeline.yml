@@ -29,10 +29,9 @@ jobs:
   - get: cg-docs-source
     trigger: true
   - task: build
-    file: cg-docs-source/ci/build.sh
+    file: cg-docs-source/ci/build.yml
     params:
       COPY_OUTPUT: 1
-
   - put: cloud-gov-production
     params:
       manifest: cg-docs-compiled/manifest.yml
