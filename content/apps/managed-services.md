@@ -129,6 +129,8 @@ Use `cf env APPLICATION` to display the application environment variables includ
 
 In this case, `url` alone could be sufficient for establishing a connection from the running application.
 
+The contents of the `VCAP_SERVICES` envronment variable contain the credentials to access your service. Treat the contents of this and all other environment variables as sensitive.
+
 #### Access the service configuration
 
 Configuration and credentials for the bound service can be accessed in several ways.
