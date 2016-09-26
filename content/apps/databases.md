@@ -29,7 +29,7 @@ cf restage myapp
 
 `cf bind-service` will provide a `DATABASE_URL` environment variable for your app, which is then picked up by the `restage`. Note that for a Rails app, `bind-service` will [overwrite your `database.yml`](http://docs.cloudfoundry.org/buildpacks/ruby/ruby-service-bindings.html#rails-applications-have-autoconfigured-database-yml). The full documentation for managing service instances is [here](https://docs.cloudfoundry.org/devguide/services/managing-services.html).
 
-The contents of the `DATABASE_URL` envronment variable contain the credentials to access your database. Treat the contents of this and all other environment variables as sensitive.
+The contents of the `DATABASE_URL` environment variable contain the credentials to access your database. Treat the contents of this and all other environment variables as sensitive.
 
 ## Access a postgres database
 
