@@ -90,7 +90,7 @@ If something goes wrong, we have these continuously maintained resources to supp
 
 ## External Dependencies
 
-cloud.gov depends on serveral external services.  In the event one or more of these services has a long-term disruption the team will mitigate impact by following this plan.
+cloud.gov depends on several external services.  In the event one or more of these services has a long-term disruption the team will mitigate impact by following this plan.
 
 ### GitHub
 cloud.gov will continue to operate in it's current state without access to GitHub, only updates to the platform are impacted. 
@@ -103,12 +103,12 @@ Cloud Operations will postpone any non-critical updates to the platform until th
   * Perform the change on the local copy of the repository
   * Manually deploy the change by provisioning a Concourse jumpbox container, copying in the repository,  and executing any required steps by hand.
 
-When the distruption is resolved, Cloud Operations with push any changes made to the appropriate repositories in GitHub to restore them to the current known good state.  Cloud Operations will monitor Concourse to ensure it redploys any changes pushed to GitHub and then verify the system is in the expected state after all automated deployments complete.
+When the disruption is resolved, Cloud Operations with push any changes made to the appropriate repositories in GitHub to restore them to the current known good state.  Cloud Operations will monitor Concourse to ensure it redeploys any changes pushed to GitHub and then verify the system is in the expected state after all automated deployments complete.
 
 #### Disruption lasting more than 7 days
 * Cloud Operations will and configure [GitLab Community Edition](https://about.gitlab.com/) to newly provisioned instances
 * Migrate GitHub repositories from backups to GitLab
-* Update all Concourse jobs to retreieve resources from the newly provisioned Gitlab instance.
+* Update all Concourse jobs to retrieve resources from the newly provisioned Gitlab instance.
 
 After these steps are complete, updates will be deployed per policy using GitLab in place of GitHub.
 
@@ -127,7 +127,6 @@ When the disruption in service is resolved, Cloud Operations will disable passwo
 In case of a significant disruption, after receiving approval from our AO, Cloud Operations can deploy a new instance of the entire system to a different region using the instructions stored in the [cg-provision repository](https://github.com/18f/cg-provision).
 
 If all AWS regions are disrupted, Cloud Operations would deploy the system to another BOSH supported IaaS provider (such as Microsoft Azure).
-
 
 ## Updating this contingency plan
 
