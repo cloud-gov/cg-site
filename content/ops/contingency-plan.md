@@ -103,7 +103,7 @@ Cloud Operations will postpone any non-critical updates to the platform until th
   * Perform the change on the local copy of the repository
   * Manually deploy the change by provisioning a Concourse jumpbox container, copying in the repository,  and executing any required steps by hand.
 
-When the distruption is resolved, Cloud Operations with push any changes made to the appropriate repositories in GitHub to restore it to the current known good state.
+When the distruption is resolved, Cloud Operations with push any changes made to the appropriate repositories in GitHub to restore them to the current known good state.  Cloud Operations will monitor Concourse to ensure it redploys any changes pushed to GitHub and then verify the system is in the expected state after all automated deployments complete.
 
 #### Disruption lasting more than 7 days
 * Cloud Operations will and configure [GitLab Community Edition](https://about.gitlab.com/) to newly provisioned instances
@@ -116,7 +116,7 @@ After these steps are complete, updates will be deployed per policy using GitLab
 Cloud Operations will configure all alerts to be delivered via email to [cloud-gov-support@gsa.gov](mailto:cloud-gov-support@gsa.gov) if there is a disruption in Pager Duty service.
 
 ### New Relic
-There is no direct mpact to the platform if a disruption occurs.  When debugging any issues where New Relic would provide insight, the team will use manual investigation to access the same information directly from the affected system(s).
+There is no direct impact to the platform if a disruption occurs.  When debugging any issues where New Relic would provide insight, the team will use manual investigation to access the same information directly from the affected system(s).
 
 ### GSA SecureAuth
 Cloud Operations will update the `opslogin` UAA instance to allow temporary access via password authentication for any accounts that require access during a disruption in service.
