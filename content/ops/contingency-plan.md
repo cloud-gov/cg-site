@@ -88,6 +88,47 @@ If something goes wrong, we have these continuously maintained resources to supp
 * We take snapshots of all RDS instances and store them for at least 30 days.
 * For AWS availability we use hot multi [Availability Zone](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html) replication. By doing that we inherit AWS controls for alternate processing.
 
+## External Dependencies
+
+cloud.gov depends on serveral external services.  In the event one or more of these services has a long-term disruption the team will mitigate impact by following this plan.
+
+### GitHub
+cloud.gov will continue to operate in it's current state without access to GitHub, only updates to the platform are impacted. 
+
+#### Disruption lasting less than 7 days
+Cloud Operations will postpone any non-critical updates to the platform until the disruption is resolved.  If a critical update must be deployed, Cloud Operations will:
+
+* Locate a copy of current version of the required repository by comparing last commit times of all checked out versions on Cloud Operations local systems and any copies held by cloud.gov systems (Concourse, BOSH director, etc)
+* Pair with another member of Cloud Operations to:
+  * Perform the change on the local copy of the repository
+  * Manually deploy the change by provisioning a Concourse jumpbox container, copying in the repository,  and executing any required steps by hand.
+
+When the distruption is resolved, Cloud Operations with push any changes made to the appropriate repositories in GitHub to restore it to the current known good state.
+
+#### Disruption lasting more than 7 days
+* Cloud Operations will and configure [GitLab Community Edition](https://about.gitlab.com/) to newly provisioned instances
+* Migrate GitHub repositories from backups to GitLab
+* Update all Concourse jobs to retreieve resources from the newly provisioned Gitlab instance.
+
+After these steps are complete, updates will be deployed per policy using GitLab in place of GitHub.
+
+### Pager Duty
+Cloud Operations will configure all alerts to be delivered via email to [cloud-gov-support@gsa.gov](mailto:cloud-gov-support@gsa.gov) if there is a disruption in Pager Duty service.
+
+### New Relic
+There is no direct mpact to the platform if a disruption occurs.  When debugging any issues where New Relic would provide insite, the team will use manual investigation to access the same information directly from the affected system(s).
+
+### GSA SecureAuth
+Cloud Operations will update the `opslogin` UAA instance to allow temporary access via password authentication for any accounts that require access during a disruption in service.
+
+When the disruption in service is resolved, Cloud Operations will disable password authentication for all accounts.
+
+### AWS
+In case of a significant disruption, after receiving approval from our AO, Cloud Operations can deploy a new instance of the entire system to a different region using the instructions stored in the [cg-provision repository](https://github.com/18f/cg-provision).
+
+If all AWS regions are disrupted, Cloud Operations would deploy the system to another BOSH supported IaaS provider (such as Microsoft Azure).
+
+
 ## Updating this contingency plan
 
 At least once a year the cloud.gov team will review this contingency plan and update it as needed.
