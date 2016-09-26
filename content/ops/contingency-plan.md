@@ -116,7 +116,7 @@ After these steps are complete, updates will be deployed per policy using GitLab
 Cloud Operations will configure all alerts to be delivered via email to [cloud-gov-support@gsa.gov](mailto:cloud-gov-support@gsa.gov) if there is a disruption in Pager Duty service.
 
 ### New Relic
-There is no direct mpact to the platform if a disruption occurs.  When debugging any issues where New Relic would provide insite, the team will use manual investigation to access the same information directly from the affected system(s).
+There is no direct mpact to the platform if a disruption occurs.  When debugging any issues where New Relic would provide insight, the team will use manual investigation to access the same information directly from the affected system(s).
 
 ### GSA SecureAuth
 Cloud Operations will update the `opslogin` UAA instance to allow temporary access via password authentication for any accounts that require access during a disruption in service.
