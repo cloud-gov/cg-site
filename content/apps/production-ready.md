@@ -26,11 +26,14 @@ there any issue with one of the platform runners where your app instances are as
 #### How
 * See the [multiple instances]({{< relref "multiple-instances.md" >}}) page.
 
-### Prefer User Provided Services and env: in manifests
+### “Protect access to sensitive credentials
 Environment variables defined with `cf set-env` are ephemeral to the specific deployment of each application. Prefer user provided services to store sensitive information like credentials or API keys, or your manifest for non-sensitive variables.
 
 #### How
 * Create [user provided services](https://docs.cloudfoundry.org/devguide/services/user-provided.html) with `cf cups` and bind them with `cf bs`. Once you have updated your application to read your stored credentials from the service, [update your `manifest.yml`](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#services-block) to make it part of your configuration. For non-sensitive information, use [an env: block](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block) in your `manifest.yml`
+* Protect access to platform provided variables such as `VCAP_SERVICES` for [managed services]({{< relref "managed-services.md" >}}) and `DATABASE_URL` for [databases]({{< relref "databases.md" >}})
+  * Minimize users with the `SpaceDeveloper` role as they can access all environment variables using `cf env`
+  * Educate users who require the `SpaceDeveloper` role to protect access to environment variables
 
 ### Prefer dedicated over shared services
 Shared services do not have the same constraints as a dedicated service and can be affected by other customers that are performing CPU or memory intensive tasks against that service.
