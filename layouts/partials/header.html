@@ -42,39 +42,47 @@
 
         <!-- start top navigation -->
         <nav role="navigation" class="header-side">
-          <ul class="nav">
-            <li class="nav-link">
-              <a href="https://cloud.gov/#about">About</a>
-            </li>
-            <li class="nav-link usa-current">
-              <a href="/">Documentation</a>
-            </li> 
-            <li class="nav-link">
-              <a href="https://cloud.gov/updates/">Updates</a>
-            </li>
-            <li class="nav-link">
-              <a href="https://cloudgov.statuspage.io/">Status</a>
-            </li>
-            <li class="nav-link">
-              <a href="https://cloud.gov/#contact">Contact</a>
-            </li>
-            <li class="nav-link">
-              <a href="https://dashboard.cloud.gov/">Dashboard</a>
-            </li>
-          </ul>
-          <form class="search-bar" accept-charset="UTF-8" action="http://search.usa.gov/search" id="search_form" method="get">
-            <div role="search">
-              <label class="usa-sr-only" for="search-field">Search bar</label>
-              <input id="affiliate" name="affiliate" type="hidden" value="cloud.gov" />
-              <input name="utf8" type="hidden" value="&#x2713;" />
-              <input id="search-field" autocomplete="off" type="search" name="query">
-              <button type="submit">
-                <span class="usa-sr-only">Search</span>
-              </button>
+          <div class="usa-nav-inner">
+            <div class="usa-nav-secondary">
+              <form class="usa-search js-search-form" accept-charset="UTF-8" action="http://search.usa.gov/search" id="search_form" method="get">
+                <div role="search">
+                  <label class="usa-sr-only" for="search-field-small">Search small</label>
+                  <input id="affiliate" name="affiliate" type="hidden" value="cloud.gov" />
+                  <input name="utf8" type="hidden" value="&#x2713;" />
+                  <input id="search-field" autocomplete="off" type="search" name="query" placeholder="Search documentation">
+                  <button type="submit">
+                    <span class="usa-sr-only">Search</span> 
+                  </button>
+                </div>
+              </form>
+              <ul class="nav">
+                <li class="nav-link">
+                  <a href="https://cloud.gov/#about">About</a>
+                </li>
+                <li class="nav-link usa-current">
+                  <a href="/">Documentation</a>
+                </li> 
+                <li class="nav-link">
+                  <a href="https://cloud.gov/updates/">Updates</a>
+                </li>
+                <li class="nav-link">
+                  <a href="https://cloudgov.statuspage.io/">Status</a>
+                </li>
+                <li class="nav-link">
+                  <a href="https://cloud.gov/#contact">Contact</a>
+                </li>
+                <li class="nav-link">
+                  <a href="https://dashboard.cloud.gov/">Dashboard</a>
+                </li>
+                <li class="js-search-button-container">
+                  <a class="js-search-button">
+                    <span>Search</span>
+                  </a>
+                </li>
+              </ul>
             </div>
-          </form>
-        </nav>
-        <!-- end top navigation -->
+          </div>
+        </nav> 
       </div>
 
     </header>
