@@ -14,11 +14,11 @@ Here's a chart to illustrate this in three example use cases:
 
 App #1 uses a [Cloud Foundry standard buildpack]({{< relref "getting-started/concepts.md#buildpacks" >}}). (A buildpack provides support for a programming language.) The customer is only responsible for the app code and its dependencies.
 
-App #2 uses an unsupported/custom buildpack, so the customer's responsibility expands from the app code to managing the unsupported buildpack and its dependencies. If you choose to use a custom build pack you are responsible for:
+App #2 uses an unsupported/custom buildpack, so the customer's responsibility expands from the app code to managing the unsupported buildpack and its dependencies. If you choose to use a custom buildpack, you are responsible for:
 
-* Ensuring your application framework/runtime and all dependencies are supported versions with no known vulnerabilities
+* Ensuring your application framework/runtime and all dependencies are supported versions with no known vulnerabilities.
 * Continually updating your runtime and dependencies as new vulnerabilities are discovered and fixed.
-* Maintaining a best practice baseline configuration for your applicaiton framework/runtime that meets all applicable security standards.
+* Maintaining a best practice baseline configuration for your application framework/runtime that meets all applicable security standards.
 
 App #3 is a hypothetical Docker setup, where the customer is responsible for their Docker container and custom image. To learn about this potential option, see [cloud.gov and Containers]({{< relref "intro/technology/containers.md" >}}).
 
