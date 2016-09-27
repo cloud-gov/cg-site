@@ -14,7 +14,9 @@ Here's a chart to illustrate this in three example use cases:
 
 App #1 uses a [Cloud Foundry standard buildpack]({{< relref "getting-started/concepts.md#buildpacks" >}}). (A buildpack provides support for a programming language.) The customer is only responsible for the app code and its dependencies.
 
-App #2 uses an unsupported/custom buildpack, so the customer's responsibility expands from the app code to managing the unsupported buildpack and its dependencies.
+App #2 uses an unsupported/custom buildpack, so the customer's responsibility expands from the app code to managing the unsupported buildpack and its dependencies. 
+
+### Enumerate responsibilities of custom buildpack users here
 
 App #3 is a hypothetical Docker setup, where the customer is responsible for their Docker container and custom image. To learn about this potential option, see [cloud.gov and Containers]({{< relref "intro/technology/containers.md" >}}).
 

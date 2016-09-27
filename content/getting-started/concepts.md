@@ -79,6 +79,9 @@ or a URL to reference it.
 
     buildpack: https://github.com/cloudfoundry/ruby-buildpack.git
 
+If your application requires a custom buildpack ensure you've understand [your responsibilities]({{< relref "intro/technology/responsibilities.md">}}) which include keeping your buildpack up-to-date and patching known vulnerabilities.
+
+
 If you might need multiple buildpacks for an app, see [Multi-Language Projects]({{< relref "apps/multi-buildpack-deploys.md" >}}).
 
 ### Buildpack Release Schedule
