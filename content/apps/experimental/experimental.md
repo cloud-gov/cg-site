@@ -7,7 +7,7 @@ weight: -1
 slug: features
 ---
 
-cloud.gov was designed to provide our users with the easies path to compliance and the best possible platform for most government applications. By doing so we [provide a set of building blocks](/intro/pricing/whats-included/) that have been vetted and are supported rigorously by the cloud.gov team.
+cloud.gov was designed to provide our users with the easiest path to compliance and the best possible platform for most government applications. By doing so we [provide a set of building blocks](/intro/pricing/whats-included/) that have been vetted and are supported rigorously by the cloud.gov team.
 
 That said there are some features that are requested by some of our users that might not be as developed, documented or vetted as the rest of the platform. We call them "experimental features".
 
