@@ -7,7 +7,7 @@ title: Custom Buildpacks
 
 ### [THIS IS AN EXPERIMENTAL FEATURE](/apps/experimental/)
 
-Cloud Foundry (the underlying open source project behing cloud.gov) uses the concept of [buildpacks](https://docs.cloudfoundry.org/buildpacks/) to allow your applications to be deployed.
+Cloud Foundry (the underlying open source project behind cloud.gov) uses the concept of [buildpacks](https://docs.cloudfoundry.org/buildpacks/) to allow your applications to be deployed.
 
 cloud.gov [officially supports](/intro/pricing/whats-included/) a set of buildpacks but it also allows you to provide your own.
 
