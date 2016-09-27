@@ -93,27 +93,30 @@ If something goes wrong, we have these continuously maintained resources to supp
 cloud.gov depends on several external services.  In the event one or more of these services has a long-term disruption the team will mitigate impact by following this plan.
 
 ### GitHub
-cloud.gov will continue to operate in it's current state without access to GitHub, only updates to the platform are impacted. 
+cloud.gov will continue to operate in it's current state without access to GitHub. Only updates to the platform would be impacted. 
 
 #### Disruption lasting less than 7 days
-Cloud Operations will postpone any non-critical updates to the platform until the disruption is resolved.  If a critical update must be deployed, Cloud Operations will:
+Cloud Operations will postpone any non-critical updates to the platform until the disruption is resolved.  If a critical update **must** be deployed, Cloud Operations will:
 
 * Locate a copy of current version of the required repository by comparing last commit times of all checked out versions on Cloud Operations local systems and any copies held by cloud.gov systems (Concourse, BOSH director, etc)
 * Pair with another member of Cloud Operations to:
   * Perform the change on the local copy of the repository
-  * Manually deploy the change by provisioning a Concourse jumpbox container, copying in the repository,  and executing any required steps by hand.
+  * Manually deploy the change by provisioning a Concourse jumpbox container, copying in the repository, and executing any required steps by hand.
 
-When the disruption is resolved, Cloud Operations with push any changes made to the appropriate repositories in GitHub to restore them to the current known good state.  Cloud Operations will monitor Concourse to ensure it redeploys any changes pushed to GitHub and then verify the system is in the expected state after all automated deployments complete.
+When the disruption is resolved, Cloud Operations will push any changes made to the appropriate repositories in GitHub to restore them to the current known good state. Cloud Operations will monitor Concourse to ensure it redeploys any changes pushed to GitHub and then verify the system is in the expected state after all automated deployments complete.
 
 #### Disruption lasting more than 7 days
-* Cloud Operations will and configure [GitLab Community Edition](https://about.gitlab.com/) to newly provisioned instances
-* Migrate GitHub repositories from backups to GitLab
-* Update all Concourse jobs to retrieve resources from the newly provisioned Gitlab instance.
 
-After these steps are complete, updates will be deployed per policy using GitLab in place of GitHub.
+Cloud Operations will:
 
-### Pager Duty
-Cloud Operations will configure all alerts to be delivered via email to [cloud-gov-support@gsa.gov](mailto:cloud-gov-support@gsa.gov) if there is a disruption in Pager Duty service.
+* Deploy and configure [GitLab Community Edition](https://about.gitlab.com/) to newly provisioned instances
+* Migrate repositories from local backups to GitLab
+* Update all Concourse jobs to retrieve resources from the newly provisioned Gitlab instance
+
+After these steps are complete, updates will be deployed per usual policy using GitLab in place of GitHub.
+
+### PagerDuty
+Cloud Operations will configure all alerts to be delivered via email to [cloud-gov-support@gsa.gov](mailto:cloud-gov-support@gsa.gov) if there is a disruption in PagerDuty service.
 
 ### New Relic
 There is no direct impact to the platform if a disruption occurs.  When debugging any issues where New Relic would provide insight, the team will use manual investigation to access the same information directly from the affected system(s).
@@ -124,9 +127,9 @@ Cloud Operations will update the `opslogin` UAA instance to allow temporary acce
 When the disruption in service is resolved, Cloud Operations will disable password authentication for all accounts.
 
 ### AWS
-In case of a significant disruption, after receiving approval from our AO, Cloud Operations can deploy a new instance of the entire system to a different region using the instructions stored in the [cg-provision repository](https://github.com/18f/cg-provision).
+In case of a **significant** disruption, after receiving approval from our Authorizing Official, Cloud Operations will deploy a new instance of the entire system to a different region using the instructions stored in the [cg-provision repository](https://github.com/18f/cg-provision).
 
-If all AWS regions are disrupted, Cloud Operations would deploy the system to another BOSH supported IaaS provider (such as Microsoft Azure).
+If all AWS regions are disrupted, Cloud Operations will deploy the system to another BOSH-supported IaaS provider (such as Microsoft Azure).
 
 ## Updating this contingency plan
 
