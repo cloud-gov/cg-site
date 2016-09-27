@@ -12,7 +12,7 @@ Some services in the cloud.gov platform are experimental but can provide value t
 
 To enable any of these services email cloud-gov-support@gsa.gov. Use them at your own risk.
 
-#### Docker Swarm - Elasitcsearch and Redis
+#### Elasticsearch and Redis
 
 Elasticsearch and Redis are available in the `cf marketplace` and they can be instantiated for your application. You can see the plans and their information in the marketplace. To create an instance you can type:
 
