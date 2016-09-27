@@ -15,6 +15,8 @@ The Manual Method supports user access to your application over IPv6 if your DNS
 
 For all custom domains, we recommend incorporating [HTTPS-Only Standard guidance](https://https.cio.gov/), including [HSTS](https://https.cio.gov/hsts/) and [preloading](https://https.cio.gov/guide/#options-for-hsts-compliance).
 
+Implementation of DNSSEC if required is your responsibility.  If your application requires DNSSEC ensure the custom domain you've chosen is DNSSEC enabled before following the instructions in this document.
+
 If you need to set up an app on a domain managed by GSA TTS, you may also be interested in [18F/dns](https://github.com/18F/dns).
 
 ## Manual Method
