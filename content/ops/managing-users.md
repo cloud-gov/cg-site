@@ -61,7 +61,7 @@ First, target and get a token for the main CloudFoundry UAA, and remove the user
 cd /path/to/cg-scripts
 uaac target <CF_UAA_FQDN>
 uaac token client get admin -s <CF_UAA_ADMINCLIENT_PASSPHRASE>
-./make-cf-admin.sh -r <CF_UAA_FQDN> <EMAIL_ADDRESS>
+./make-cf-admin.sh -r <EMAIL_ADDRESS>
 ```
 
 Secondly, target and get a token for the Ops UAA, and then remove the user as a Concourse admin using their GSA email address.
