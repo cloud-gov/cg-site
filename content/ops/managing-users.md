@@ -33,6 +33,42 @@ uaac target uaa.cloud.gov
 
 You can grant the user access to additional organizations and spaces by giving them additional [roles](http://docs.cloudfoundry.org/concepts/roles.html#roles). See [the instructions](https://docs.cloudfoundry.org/adminguide/cli-user-management.html#orgs-spaces) for changing them.
 
-### Creating Admins
+## Managing Admins
+Make sure you have a copy of the [cg-scripts repository](https://github.com/18F/cg-scripts) so you have access to several utility scripts.
 
-[Run the script.](https://github.com/18F/cg-scripts/#make-admins)
+### Creating Admins
+First, target and get a token for the main CloudFoundry UAA, and make the user a CloudFoundry admin using their GSA email address.
+
+```bash
+cd /path/to/cg-scripts
+uaac target <CF_UAA_FQDN>
+uaac token client get admin -s <CF_UAA_ADMINCLIENT_PASSPHRASE>
+./make-cf-admin.sh <EMAIL_ADDRESS>
+```
+
+Secondly, target and get a token for the Ops UAA, and then make the user a Concourse admin using their GSA email address.
+
+```bash
+uaac target <OPS_UAA_FQDN>
+uaac token client get admin -s <OPS_UAA_ADMINCLIENT_PASSPHRASE>
+./make-ops-admin.sh <EMAIL_ADDRESS>
+```
+
+### Removing Admins
+First, target and get a token for the main CloudFoundry UAA, and remove the user as a CloudFoundry admin using their GSA email address.
+
+```bash
+cd /path/to/cg-scripts
+uaac target <CF_UAA_FQDN>
+uaac token client get admin -s <CF_UAA_ADMINCLIENT_PASSPHRASE>
+./make-cf-admin.sh -r <CF_UAA_FQDN> <EMAIL_ADDRESS>
+```
+
+Secondly, target and get a token for the Ops UAA, and then remove the user as a Concourse admin using their GSA email address.
+
+```bash
+cd /path/to/cg-scripts
+uaac target <OPS_UAA_FQDN>
+uaac token client get admin -s <OPS_UAA_ADMINCLIENT_PASSPHRASE>
+./make-ops-admin.sh -r <EMAIL_ADDRESS>
+```
