@@ -4,7 +4,7 @@ title = "docs.cloud.gov"
 publishdir = "public"
 
 [params]
-  description = "Cloud.gov documentation"
+  description = "cloud.gov documentation"
   author = "18f"
 [blackfriday]
   plainIDAnchors = true
@@ -61,6 +61,12 @@ publishdir = "public"
     identifier = "advanced"
     pre = "<i class='fa fa-rocket'></i>"
     weight = -100
+[[menu.main]]
+    name = "Experimental Features"
+    parent = "usage"
+    identifier = "experimental"
+    pre = "<i class='fa fa-flask'></i>"
+    weight = -90
 
 [[menu.main]]
     name = "Contributing"
