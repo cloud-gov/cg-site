@@ -8,13 +8,11 @@ weight: 20
 
 ## The IaaS underlying cloud.gov
 
-Currently our services are provided by Amazon Web Services (AWS) regions located within the continental United States (US-East and US-West).
-
-cloud.gov is not yet available on the AWS GovCloud. If you need a PaaS with the formal [ITAR compliance](https://en.wikipedia.org/wiki/International_Traffic_in_Arms_Regulations) AWS GovCloud would provide, please let us know so we can evaluate our roadmap.
+Currently cloud.gov runs on top of Infrastructure as a Service provided by Amazon Web Services (AWS) regions located within the continental United States (US-East and US-West). We are transitioning cloud.gov to the [AWS GovCloud region](https://aws.amazon.com/govcloud-us/), which offers support for formal compliance needs such as [ITAR compliance](https://en.wikipedia.org/wiki/International_Traffic_in_Arms_Regulations). In most cases, new tenants will be placed in the AWS GovCloud environment.
 
 ## Other IaaS vendors we can support
 
-A platform-as-a-service (PaaS) abstracts many of the functions associated with infrastructure-as-a-service (IaaS). We based cloud.gov on Cloud Foundry, which provides a high-level abstraction which enables mobility across IaaS providers. For that reason, it would be possible to provide cloud.gov services using Google Compute Engine, Microsoft Azure, or any public, commercial, or private OpenStack instance in the future.
+cloud.gov is a Platform as a Service (PaaS), which offers an additional level of services and functions beyond the basics offered by an Infrastructure as a Service (IaaS) provider. We built cloud.gov based on the [Cloud Foundry open source project](https://www.cloudfoundry.org/), which was designed to be compatible with multiple IaaS providers. For that reason, it would be possible to provide cloud.gov services using Google Compute Engine, Microsoft Azure, or any public, commercial, or private OpenStack instance in the future.
 
 ## As an IaaS vendor, how do I offer my solution to cloud.gov users?
 
