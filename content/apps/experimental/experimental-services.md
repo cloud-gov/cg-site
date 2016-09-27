@@ -6,7 +6,7 @@ title: Experimental Services
 slug: services
 ---
 
-### [This is an experimental feature.](/apps/experimental/)
+[**This is an experimental feature.**]({{< relref "apps/experimental/experimental.md" >}})
 
 Some services in the cloud.gov platform are experimental but can provide value to your applications.
 
@@ -25,12 +25,14 @@ or
 
 #### Authorization proxy
 
-In the [GovCloud environment](/apps/govcloud), you can enable a service to automatically require cloud.gov authentication to access your application. The authorization proxy is a (route service)[https://docs.cloudfoundry.org/services/route-services.html].
+In the [GovCloud environment]({{< relref "apps/govcloud.md" >}}), you can enable a service to automatically require cloud.gov authentication to access your application. The authorization proxy is a [route service](https://docs.cloudfoundry.org/services/route-services.html).
 
 To use it, first create an instance:
-`cf create-service uaa-auth uaa-auth authy`.
+
+`cf create-service uaa-auth uaa-auth authy`
 
 Then bind it to a route:
+
 `cf bind-route-service apps.cloud.gov authy --hostname hello`
 
 After that, your apps will require cloud.gov authentication before proceeding.
