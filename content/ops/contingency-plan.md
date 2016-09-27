@@ -90,33 +90,33 @@ If something goes wrong, we have these continuously maintained resources to supp
 
 ## External Dependencies
 
-cloud.gov depends on several external services.  In the event one or more of these services has a long-term disruption the team will mitigate impact by following this plan.
+cloud.gov depends on several external services.  In the event one or more of these services has a long-term disruption, the team will mitigate impact by following this plan.
 
 ### GitHub
-cloud.gov will continue to operate in it's current state without access to GitHub. Only updates to the platform would be impacted. 
+If GitHub becomes unavailable, the live cloud.gov will continue to operate in its current state. The disruption would only impact the team's ability to update cloud.gov.
 
 #### Disruption lasting less than 7 days
 Cloud Operations will postpone any non-critical updates to the platform until the disruption is resolved.  If a critical update **must** be deployed, Cloud Operations will:
 
-* Locate a copy of current version of the required repository by comparing last commit times of all checked out versions on Cloud Operations local systems and any copies held by cloud.gov systems (Concourse, BOSH director, etc)
+* Locate a copy of the current version of the required repository by comparing last commit times of all checked out versions on Cloud Operations local systems and any copies held by cloud.gov systems (Concourse, BOSH director, etc.)
 * Pair with another member of Cloud Operations to:
   * Perform the change on the local copy of the repository
-  * Manually deploy the change by provisioning a Concourse jumpbox container, copying in the repository, and executing any required steps by hand.
+  * Manually deploy the change by provisioning a Concourse jumpbox container, copying in the repository, and executing any required steps by hand
 
-When the disruption is resolved, Cloud Operations will push any changes made to the appropriate repositories in GitHub to restore them to the current known good state. Cloud Operations will monitor Concourse to ensure it redeploys any changes pushed to GitHub and then verify the system is in the expected state after all automated deployments complete.
+When the disruption is resolved, Cloud Operations will push any changes to the appropriate repositories in GitHub to restore them to the current known-good state. Cloud Operations will monitor Concourse to ensure it redeploys any changes pushed to GitHub. Then, Cloud Operations will verify the system is in the expected state after all automated deployments complete.
 
 #### Disruption lasting more than 7 days
 
 Cloud Operations will:
 
-* Deploy and configure [GitLab Community Edition](https://about.gitlab.com/) to newly provisioned instances
+* Deploy and configure [GitLab Community Edition](https://about.gitlab.com/) to newly-provisioned instances
 * Migrate repositories from local backups to GitLab
-* Update all Concourse jobs to retrieve resources from the newly provisioned Gitlab instance
+* Update all Concourse jobs to retrieve resources from the newly-provisioned Gitlab instance
 
 After these steps are complete, updates will be deployed per usual policy using GitLab in place of GitHub.
 
 ### PagerDuty
-Cloud Operations will configure all alerts to be delivered via email to [cloud-gov-support@gsa.gov](mailto:cloud-gov-support@gsa.gov) if there is a disruption in PagerDuty service.
+If there is a disruption in PagerDuty service, Cloud Operations will configure all alerts to be delivered via email to [cloud-gov-support@gsa.gov](mailto:cloud-gov-support@gsa.gov).
 
 ### New Relic
 There is no direct impact to the platform if a disruption occurs.  When debugging any issues where New Relic would provide insight, the team will use manual investigation to access the same information directly from the affected system(s).
