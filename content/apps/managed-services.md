@@ -7,7 +7,7 @@ title: Managed Services
 
 ### Background
 
-Cloud Foundry Managed Services provide applications with on-demand access to services outside of the stateless application environment. Typical managed services include databases, queues and key-value stores.
+Cloud Foundry Managed Services provide applications with on-demand access to services outside of the stateless application environment. Typical managed services include databases, queues, and key-value stores.
 
 ### Prerequisites
 
@@ -15,7 +15,7 @@ Verify your [setup is complete]({{< relref "getting-started/setup.md" >}}).
 
 ### Procedure
 
-In order to create a service instance and binding for use with an application we first need to identify the available services and their respective plans.
+In order to create a service instance and binding for use with an application, we first need to identify the available services and their respective plans.
 
 #### List services
 
@@ -48,13 +48,13 @@ Target the org and space which will hold the app to which the service instance w
 % cf target -o ORG -s SPACE
 ```
 
-Create a new service instance by specifying a service, plan and a name of your choice for the service instance. Note that service instance names must be unique and they can be renamed.
+Create a new service instance by specifying a service, plan, and a name of your choice for the service instance. Note that service instance names must be unique and can be renamed.
 
 ```
 % cf create-service SERVICE_NAME PLAN_NAME INSTANCE_NAME
 ```
 
-For example, the create an instance of the elasticsearch service using the free plan with name *myapp-elasticsearch*.
+For example, to create an instance of the elasticsearch service using the free plan with name *myapp-elasticsearch*:
 
 ```
 % cf create-service elasticsearch-swarm-1.7.1 1x myapp-elasticsearch
@@ -71,7 +71,7 @@ FAILED
 Server error, status code: 400, error code: 60007, message: The service instance cannot be created because paid service plans are not allowed.
 ```
 
-please [ask an administrator](/help/) to [enable them](/ops/quotas/).
+Please [ask an administrator](/help/) to [enable paid services](/ops/quotas/).
 
 #### Bind the service instance
 
@@ -96,7 +96,7 @@ Alternatively, a service instance can also bound to an existing application via 
 % cf bind-service APPLICATION INSTANCE_NAME
 ```
 
-Use `cf env APPLICATION` to display the application environment variables including `VCAP_SERVICES` which holds information for each bound service.
+Use `cf env APPLICATION` to display the application environment variables, including `VCAP_SERVICES` which holds information for each bound service.
 
 **Output:**
 
@@ -129,19 +129,19 @@ Use `cf env APPLICATION` to display the application environment variables includ
 
 In this case, `url` alone could be sufficient for establishing a connection from the running application.
 
-The contents of the `VCAP_SERVICES` envronment variable contain the credentials to access your service. Treat the contents of this and all other environment variables as sensitive.
+The contents of the `VCAP_SERVICES` environment variable contain the credentials to access your service. Treat the contents of this and all other environment variables as sensitive.
 
 #### Access the service configuration
 
-Configuration and credentials for the bound service can be accessed in several ways.
+Configuration and credentials for the bound service can be accessed in several ways:
 
 * Manually parsing the JSON contained in the `VCAP_SERVICES` environment variable. For specifics of the `VCAP_SERVICES` format see the Cloud Foundry [environment variables documentation](http://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html#VCAP-SERVICES).
 * Through a language-specific module such as [cfenv](https://www.npmjs.org/package/cfenv) for node.js.
-* Through buildpack-populated environment variables as in the [ruby buildpack](http://docs.cloudfoundry.org/buildpacks/ruby/ruby-service-bindings.html#vcap-services-defines-database-url).
+* Through buildpack-populated environment variables as in the [Ruby buildpack](http://docs.cloudfoundry.org/buildpacks/ruby/ruby-service-bindings.html#vcap-services-defines-database-url).
 
 ##### Node.js example
 
-To access the elasticsearch service described above with a node app.
+To access the elasticsearch service described above with a node app:
 
 **package.json**
 
