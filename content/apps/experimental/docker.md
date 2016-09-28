@@ -19,7 +19,12 @@ To push a Docker image, use the `-o` flag when pushing your app, for example:
 
 If you want to build your own Docker image, or if you want to read more, check out the [Docker documentation](http://docs.cloudfoundry.org/adminguide/docker.html) in the Cloud Foundry project.
 
-Once you push a Docker image as your application, cloud.gov cannot update the baseline for your application. You are responsible for keeping it up to date. Please see [this description of responsibilities]({{< relref "intro/technology/responsibilities.md">}}).
+Once you push a Docker image as your application, cloud.gov cannot update the baseline for your application. You are responsible for keeping it up to date. Please see [this description of responsibilities]({{< relref "intro/technology/responsibilities.md">}}). Here are some considerations to keep in mind when deciding to use Docker images instead of buildpacks in your application's deployment:
+
+|   | Supported Buildpack | Docker Container  | 
+|---|---|---|
+| Pros | It "just works"<br />Automatic and constant security updates<br \>All you need to do is write code | Can build container images and run containers on local workstation<br \>Fine-grained control over compilation and root filesystem |
+| Cons | Difficult to recreate the execution environment locally<br \>Testing compilation and the result of staging is harder | Added responsibility for all security updates and bug fixes<br \>More compliance responsibility => more work  |
 
 
 #### Docker as tasks
