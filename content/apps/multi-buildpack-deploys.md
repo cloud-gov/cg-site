@@ -1,14 +1,25 @@
 ---
-date: 2015-07-10T14:32:59-04:00
 menu:
   main:
-    parent: advanced
+    parent: experimental
 title: Multi-Language Projects
 ---
 
-CloudFoundry is capable of deploying multi-language projects by using a special [buildpack](https://bitbucket.org/cf-utilities/cf-buildpack-multi). In short, this buildpack applies any buildpacks listed in the `.buildpacks` file.
+# Supported methods
 
-Instead of using buildpack-multi, consider splitting your application into smaller components. If you are using buildpack-multi to run multiple long-running processes, you should run them as separate cloud.gov applications instead. If you're investigating multi-buildpack deploys to build static assets on cloud.gov, you can avoid this issue by [building assets on CI]({{< relref "assets.md#build-assets-on-ci" >}}).
+If you're setting up a multi-language project that might need `cf-buildpack-multi`, here are alternative supported ways to do that:
+
+* Split your project into smaller applications, so that you can use a supported buildpack for each application.
+* To run multiple long-running processes, run them as separate applications.
+* To build static assets on cloud.gov, [build assets on CI]({{< relref "assets.md#build-assets-on-ci" >}}).
+
+# buildpack-multi
+
+[**This uses an experimental feature.**]({{< relref "apps/experimental/experimental.md" >}})
+
+CloudFoundry is capable of deploying multi-language projects by using a special buildpack, [`cf-buildpack-multi`](https://bitbucket.org/cf-utilities/cf-buildpack-multi). This buildpack applies any buildpacks listed in the `.buildpacks` file. `cf-buildpack-multi` is a [custom buildpack]({{< relref "apps/experimental/custom-buildpacks.md" >}}). 
+
+
 
 ## Preparing an app for a multi-buildpack deploy
 
@@ -33,4 +44,4 @@ https://github.com/cloudfoundry/nodejs-buildpack
 ```
 
 ## Debugging
-Multi-buildpacks deploys can be difficult to debug because [cf-buildpack-multi](https://bitbucket.org/cf-utilities/cf-buildpack-multi) hides the error logs. For more verbose output use [ozzyjohnson/heroku-buildpack-multi](https://github.com/ozzyjohnson/heroku-buildpack-multi).
+Multi-buildpacks deploys can be difficult to debug because [`cf-buildpack-multi`](https://bitbucket.org/cf-utilities/cf-buildpack-multi) hides the error logs.
