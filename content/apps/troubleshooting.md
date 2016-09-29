@@ -22,7 +22,7 @@ For example, `cf set-env APPNAME VERBOSE true` enables verbose logging for the d
 - Pushed application files must total less than 1GB. Use `.cfignore` to specify files which should be excluded from the push.
 - The combined size of application files and the specified buildpack must total less than 1.5GB.
 - The entire compiled droplet must total less than 4GB.
-- Staging must complete with 15 minutes and application must start within 5 minutes by default.
+- Staging must complete within 15 minutes and application must start within 5 minutes by default.
 
 ### Buildpacks used
 
@@ -54,6 +54,6 @@ Application start commands are cached during staging. Specifying a start command
 
 ### Application start up time
 
-By default, applications must start with 60 seconds. This timeout can be extended to a maximum of 180 second via the `-t` command line switch or `timeout:` manifest key.
+By default, applications must start within 60 seconds. This timeout can be extended to a maximum of 180 second via the `-t` command line switch or `timeout:` manifest key.
 
 Avoid placing long-running or multi-step tasks in the application start command. Consider using worker apps as part of a multi-application manifest instead.
