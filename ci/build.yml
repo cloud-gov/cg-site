@@ -2,8 +2,7 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: mhart/alpine-node
-    tag: '4'
+    repository: node
 inputs:
 - name: cg-docs-source
 outputs:
