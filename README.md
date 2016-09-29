@@ -14,6 +14,10 @@ Hugo uses Markdown to build the pages. Add your page to the section you want ins
 1. Run `npm install` to download all the dependencies.
 1. Run `npm run start` and browse to [http://localhost:1313](http://localhost:1313).
 
+### Making redirects
+
+If you delete or rename a page, you can make a redirect to avoid breaking links from other sites: [make an alias](https://gohugo.io/extras/aliases/) (use the "YAML frontmatter" style).
+
 ### Style development
 
 This site uses a shared cloud.gov style, [cg-style](https://github.com/18F/cg-style). This means any styling code has to be developed in *cg-style*.
