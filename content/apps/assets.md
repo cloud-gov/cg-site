@@ -5,7 +5,7 @@ menu:
 title: Building Static Assets
 ---
 
-Applications with non-trivial static assets (javascript and css files) often include a build step to bundle and minify files.
+Applications with non-trivial static assets (Javascript and CSS files) often include a build step to bundle and minify files.
 
 ### Build assets on CI
 
@@ -31,7 +31,7 @@ This approach avoids the need to use multiple or custom buildpacks.
 
 Examples in the wild:
 
-* [eRegulations: Notice & comment](https://github.com/eregs/notice-and-comment)
+* [eRegulations: Notice & Comment](https://github.com/eregs/notice-and-comment)
 
 ### Build assets on cloud.gov
 
@@ -41,5 +41,3 @@ If the application and build process are implemented in the same language, asset
 # manifest.yml
 command: npm run build && node app.js
 ```
-
-If the application and build process use different languages, assets can be built on cloud.gov using [buildpack-multi]({{< relref "multi-buildpack-deploys.md" >}}).
