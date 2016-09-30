@@ -3,7 +3,6 @@ menu:
   main:
     parent: operations
 title: Secret Key Management
-weight: 10
 ---
 
 ### Sharing secret keys
