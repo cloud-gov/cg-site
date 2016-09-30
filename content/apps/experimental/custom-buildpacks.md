@@ -26,7 +26,7 @@ Once you push your code using a custom buildpack, cloud.gov cannot update it for
 
 ### buildpack-multi
 
-If you may need multiple buildpacks for a project, we recommend [splitting your project into multiple applications]({{< relref "getting-started/concepts.md">}}#buildpacks) and using one buildpack for each application.
+If you may need multiple buildpacks for a project, we recommend [splitting your project into multiple applications]({{< relref "getting-started/concepts.md">}}#buildpacks) and using one buildpack for each application, or [building assets on CI]({{< relref "assets.md#build-assets-on-ci" >}}).
 
 If you can't do that, Cloud Foundry is capable of deploying multi-language projects with a custom buildpack, [`cf-buildpack-multi`](https://bitbucket.org/cf-utilities/cf-buildpack-multi). This buildpack applies any buildpacks listed in the `.buildpacks` file. Multi-buildpack deploys can be difficult to debug because `cf-buildpack-multi` hides the error logs.
 
