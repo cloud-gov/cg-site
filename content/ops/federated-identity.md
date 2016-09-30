@@ -10,7 +10,7 @@ Federated Identity in cloud.gov is supported via [SAML 2.0](https://en.wikipedia
 
 ### Adding a new Identity Provider
 
-Provide the IdP with our SP our [SP metadata](https://login.fr.cloud.gov/saml/metadata).  This is a machine-readable document describing our SAML endpoints and configuration.
+Provide the IdP with our [SP metadata](https://login.fr.cloud.gov/saml/metadata).  This is a machine-readable document describing our SAML endpoints and configuration.
 
 In return, the IdP needs to provide their metadata (either as an XML file or a URL), a list of domains the IdP is responsible for authenticating, and a logo that will be displayed on our login page.
 
