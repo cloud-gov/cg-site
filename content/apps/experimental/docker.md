@@ -21,6 +21,8 @@ If you want to build your own Docker image, or if you want to read more, check o
 
 Once you push a Docker image as your application, cloud.gov cannot update the baseline for your application. You are responsible for keeping it up to date. Please see [this description of responsibilities]({{< relref "intro/technology/responsibilities.md">}}).
 
+[CONTENT WILL GO HERE]
+
 
 #### Docker as tasks
 
