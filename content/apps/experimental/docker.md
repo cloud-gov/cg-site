@@ -28,6 +28,7 @@ Here are some considerations to keep in mind when deciding to use Docker images 
 | Pros | It "just works"<br />Automatic and constant security updates<br \>All you need to do is write code | Can build container images and run containers on local workstation<br \>Fine-grained control over compilation and root filesystem |
 | Cons | Difficult to recreate the execution environment locally<br \>Testing compilation and the result of staging is harder | Added responsibility for all security updates and bug fixes<br \>More compliance responsibility => more work  |
 
+<!-- Based on the table in this slide: https://twitter.com/benbravo73/status/781125385777999872 -->
 
 #### Docker as tasks
 
