@@ -27,7 +27,7 @@ While we try to minimize interaction with AWS directly (explained in next sectio
 
 * **Full administrative accounts:** This is be provided to the people known in our compliance documentation as the "Cloud Operations team".
 * **Read-only accounts:** This is provided to GSA Security staff, who need access for incident response.
-* **Indirect access through jumpboxes:** While the remainder of the Atlas team isn't given an AWS IAM account directly, they are able to SSH in to access the various BOSH machines by creating jumpboxes. See the [Troubleshooting BOSH](../troubleshooting-bosh/) page for more information.
+* **Indirect access through jumpboxes:** While the remainder of the Atlas team isn't given an AWS IAM account directly, they are able to SSH in to access the various BOSH machines by creating ephemeral jumpboxes. See the [Troubleshooting BOSH](../troubleshooting-bosh/) page for more information.
 
 #### Changing AWS configuration
 
