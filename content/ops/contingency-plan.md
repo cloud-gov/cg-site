@@ -35,14 +35,11 @@ Similar to our [Security Incident Response Guide](https://docs.cloud.gov/ops/sec
 They first notify and coordinate with the people who are authorized to decide that cloud.gov is in a contingency plan situation:
 
 * From cloud.gov:
-    * Program Manager
+    * Program Managers
     * System Owner
     * Authorizing Official
-* From 18F:
-    * Director of Infrastructure
-    * Deputy Director of Infrastructure
-    * Director
-    * Deputy Director
+* TTS Infrastructure staff
+* 18F Products and Platforms Director
 
 The Incident Commander notifies and coordinates with the following people as well:
 
