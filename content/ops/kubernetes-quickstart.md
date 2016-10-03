@@ -10,22 +10,22 @@ Kubernetes
 export PATH=$PATH:/var/vcap/packages/kubernetes/bin
 
 # Get a list of pods
-/var/vcap/packages/kubernetes/bin/kubectl get pods
+kubectl get pods
 
 # Get a list of deployments
-/var/vcap/packages/kubernetes/bin/kubectl get deployments
+kubectl get deployments
 
 # Get a list of replica sets
-/var/vcap/packages/kubernetes/bin/kubectl get rs
+kubectl get rs
 
 # Get a list of services / ports and ips
-/var/vcap/packages/kubernetes/bin/kubectl get svc
+kubectl get svc
 
 # Review pod logs
-/var/vcap/packages/kubernetes/bin/kubectl logs x0e41a06287f54-master-1362982585-aamfj
+kubectl logs x0e41a06287f54-master-1362982585-aamfj
 
 # Show pod status
-/var/vcap/packages/kubernetes/bin/kubectl describe pod x0e41a06287f54-master-1362982585-aamfj
+kubectl describe pod x0e41a06287f54-master-1362982585-aamfj
 
 # Stop entire Kubernetes deployment
 bosh stop kubernetes
