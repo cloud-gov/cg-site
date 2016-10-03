@@ -30,7 +30,7 @@ Team contact information is available in GSA Google Drive:
 
 ### Activation and notification
 
-Similar to our [Security Incident Response Guide](https://docs.cloud.gov/ops/security-ir), the first cloud.gov team member who notices or reports a potential contingency-plan-level problem becomes the initial **Incident Commander** (communications coordinator).
+Similar to our [Security Incident Response Guide](https://docs.cloud.gov/ops/security-ir), the first cloud.gov team member who notices or reports a potential contingency-plan-level problem becomes the **Incident Commander** (communications coordinator) until recovery efforts are complete or the Incident Commander role is explicitly reassigned.
 
 They first notify and coordinate with the people who are authorized to decide that cloud.gov is in a contingency plan situation:
 
@@ -38,8 +38,8 @@ They first notify and coordinate with the people who are authorized to decide th
     * Program Managers
     * System Owner
     * Authorizing Official
-* TTS Infrastructure staff
 * 18F Products and Platforms Director
+* TTS Infrastructure Staff
 
 The Incident Commander notifies and coordinates with the following people as well:
 
@@ -48,7 +48,7 @@ The Incident Commander notifies and coordinates with the following people as wel
 * Designated FedRAMP personnel (when applicable)
 * cloud.gov users ([through StatusPage](https://docs.cloud.gov/ops/making-announcements/)) (when applicable)
 
-The Cloud Operations team assesses the situation. The Incident Commander keeps a log of the situation in a GSA Google Drive document.
+The Cloud Operations team assesses the situation and works to recover the system. The Incident Commander keeps a log of the situation in a GSA Google Drive document.
 
 ### Recovery
 
