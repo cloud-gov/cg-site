@@ -32,7 +32,17 @@ Team contact information is available in GSA Google Drive:
 
 Similar to our [Security Incident Response Guide](https://docs.cloud.gov/ops/security-ir), the first cloud.gov team member who notices or reports a potential contingency-plan-level problem becomes the initial **Incident Commander** (communications coordinator).
 
-They first notify and coordinate with the people who are authorized to decide that cloud.gov is in a contingency plan situation: the cloud.gov Program Manager, System Owner, and Authorizing Official; the 18F Director of Infrastructure and Deputy Director of Infrastructure; the 18F Director and Deputy Director.
+They first notify and coordinate with the people who are authorized to decide that cloud.gov is in a contingency plan situation:
+
+* From cloud.gov:
+    * Program Manager
+    * System Owner
+    * Authorizing Official
+* From 18F:
+    * Director of Infrastructure
+    * Deputy Director of Infrastructure
+    * Director
+    * Deputy Director
 
 The Incident Commander notifies and coordinates with the following people as well:
 
