@@ -5,23 +5,7 @@ menu:
 title: AWS Onboarding
 ---
 
-The procedures for working with Amazon Web Services (AWS) differ between the two environments, and thus members of Atlas are given different levels of access.
-
-### US-East
-
-If you are going to be a Cloud Foundry operator you need to be onboarded to AWS.
-
-Things you will need:
-
-- Access to EC2, RDS and CloudFormation
-- Your key added to the jumpbox
-- The IP of the jumpbox (look at the CloudFormation stack for it)
-
-### GovCloud
-
-<!-- needed for compliance -->
-
-#### Levels of access
+### Levels of access
 
 While we try to minimize interaction with AWS directly (explained in next section), there are three different levels of AWS IAM access, provided to different roles:
 
@@ -29,7 +13,7 @@ While we try to minimize interaction with AWS directly (explained in next sectio
 * **Read-only accounts:** This is provided to GSA Security staff, who need access for incident response.
 * **Indirect access through jumpboxes:** While the remainder of the Atlas team isn't given an AWS IAM account directly, they are able to SSH in to access the various BOSH machines by creating ephemeral jumpboxes. See the [Troubleshooting BOSH](../troubleshooting-bosh/) page for more information.
 
-#### Changing AWS configuration
+### Changing AWS configuration
 
 As mentioned previously, the cloud.gov team tries to minimize the amount of direct access and manipulation made to AWS directly, instead favoring automation and configuration-as-code through [BOSH](http://bosh.io/) and [Terraform](https://www.terraform.io/). Terraform is used to do the bootstrapping of the AWS environment—this information can be found in the [cg-provision](https://github.com/18F/cg-provision) repository. This includes:
 
