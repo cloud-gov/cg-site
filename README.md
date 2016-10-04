@@ -18,6 +18,12 @@ Hugo uses Markdown to build the pages. Add your page to the section you want ins
 
 If you delete or rename a page, you can make a redirect to avoid breaking links from other sites: [make an alias](https://gohugo.io/extras/aliases/) (use the "YAML frontmatter" style).
 
+### Search
+
+Our search feature is powered by [DigitalGov Search](http://search.digitalgov.gov/), which has a [Help Manual](http://search.digitalgov.gov/manual/index.html) with documentation about configuring it. [DigitalGov Search for Power Users](http://search.digitalgov.gov/blog/power-users-recap.html) is also useful.
+
+We use [its default Bing indexing](http://search.digitalgov.gov/manual/content-overview.html), so our search may show outdated results if Bing hasn't recently reindexed our docs site.
+
 ### Style development
 
 This site uses a shared cloud.gov style, [cg-style](https://github.com/18F/cg-style). This means any styling code has to be developed in *cg-style*.
