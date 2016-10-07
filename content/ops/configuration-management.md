@@ -21,7 +21,7 @@ Here are some examples that should be in configuration management:
 
 
 ## Where should all this configuration go?
-All configuration must be stored in GitHub and modified using the following "Change Workflow" unless it is a _secret_. GitHub repositories must be configured to [have a protected master branch and require at least one review prior to merges](https://help.github.com/articles/about-protected-branches/).
+All configuration must be stored in GitHub and modified using the following "Change Workflow" unless it is a _secret_. GitHub repositories must be configured to [have a protected master branch and require at least one review prior to merges](https://help.github.com/articles/about-protected-branches/). If a GitHub repository includes code developed by the cloud.gov team, it must be configured to run [Code Climate static analysis on each pull request](https://docs.codeclimate.com/docs/github#pull-requests).
 
 ## How do we test these changes?
 If possible, first test the changes locally. After that, upload them to a staging environment where either manual or automated testing needs to be run.
