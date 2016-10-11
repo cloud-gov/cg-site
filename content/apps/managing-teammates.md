@@ -7,6 +7,8 @@ title: Managing Teammates
 
 ## Invite a teammate
 
+_For teams in the main cloud.gov environment (East/West):_
+
 If you're part of a team using cloud.gov, you can invite teammates to get cloud.gov accounts. You can invite anyone you need to work with, including federal employees and federal contractors.
 
 1. [Send them an invite](https://login.cloud.gov/invitations/new) (this may prompt you to log into your cloud.gov account first).
@@ -15,11 +17,17 @@ If you're part of a team using cloud.gov, you can invite teammates to get cloud.
 
 Now they have a cloud.gov account. If you invited them with an agency email address and they're part of an agency that has automatic sandbox spaces, they'll automatically get a sandbox space in their agency's cloud.gov org.
 
+_For teams in the GovCloud environment:_
+
+To add a teammate who has a GSA account and hasn't used cloud.gov, ask them to log into cloud.gov with their GSA credentials (using the [web interface](https://login.fr.cloud.gov/) or at the command line with `cf login -a api.fr.cloud.gov --sso`). cloud.gov creates a cloud.gov account for them when they log in.
+
+This environment doesn't support non-GSA accounts yet, but we're working on supporting this soon. Please [ask us for help]({{< relref "help.md" >}}) if have questions about this.
+
 ## Give roles to a teammate
 
 After a teammate gets a cloud.gov account, an Org Manager or Space Manager will need to give them roles in your orgs and spaces so they can collaborate with you.
 
-If you're an Org Manager or Space Manager, here's how to give roles to your teammates to give them permissions for your orgs and spaces. For details about how cloud.gov org and space roles and permissions work, see [Cloud Foundry roles and permissions](http://docs.cloudfoundry.org/concepts/roles.html#roles).
+If you're an Org Manager or Space Manager, here's how to give roles to your teammates to give them permissions for your orgs and spaces. For details about how cloud.gov org and space roles and permissions work, see [Cloud Foundry roles and permissions](https://docs.cloudfoundry.org/concepts/roles.html#roles).
 
 First check whether you're running version >= [6.14.0](https://github.com/cloudfoundry/cli/releases/tag/v6.14.0) of the CLI:
 
