@@ -2,11 +2,28 @@
 menu:
   main:
     parent: apps
-title: What's New in GovCloud?
+title: GovCloud Guide
 ---
 
-The [new environment](https://aws.amazon.com/govcloud-us/) is a bit different and full of shiny new things. Here are some examples:
+cloud.gov currently has two "environments" where orgs can live: the main environment that most orgs are using (located in AWS East/West) and a new GovCloud environment (located in [AWS GovCloud](https://aws.amazon.com/govcloud-us/)).
 
-- The new API endpoint (for now) is `api.fr.cloud.gov`. To use it: `cf login -a api.fr.cloud.gov --sso`. Your GSA/EPA credentials should still work there. No other credentials will work at this time.
-- `cf-ssh` is gone, long live `cf ssh`. With the current cli you have in your environment you should be able to run `cf ssh` in the new environment. `cf-ssh` is not supported in the GovCloud environment.
-- If you are going to be working in both AWS East/West and GovCloud environments, [this CloudFoundry plugin](https://github.com/guidowb/cf-targets-plugin) might be helpful.
+When your org starts using cloud.gov's GovCloud environment, here are changes to look out for.
+
+### Breaking changes
+
+- GSA accounts still work in GovCloud. No other login credentials work at this time.
+- The API endpoint (for now) is `api.fr.cloud.gov`. When you [log in on the command line]({{< relref "getting-started/setup.md" >}}), use this new command: `cf login -a api.fr.cloud.gov --sso`
+
+### New features
+
+- To run [one-off tasks]({{< relref "getting-started/one-off-tasks.md" >}}), [`cf-ssh`]({{< relref "getting-started/one-off-tasks.md#cf-ssh" >}}) is not available in GovCloud. Instead, you can use [`cf ssh`]({{< relref "getting-started/one-off-tasks.md#govcloud-environment-cf-ssh" >}}) (note the space instead of the `-`), which is more flexible than `cf-ssh`.
+- To set up custom domains, you can use the [managed service method]({{< relref "apps/custom-domains.md#managed-service-method" >}}).
+
+#### Experimental new features
+
+- You can [require cloud.gov authentication to access your application]({{< relref "apps/experimental/experimental-services.md#authorization-proxy" >}}).
+- You can [push Docker images]({{< relref "apps/experimental/docker.md" >}}).
+
+### Tips
+
+- If you need to work in both the East/West and GovCloud environments, [this Cloud Foundry plugin](https://github.com/guidowb/cf-targets-plugin) may be helpful.

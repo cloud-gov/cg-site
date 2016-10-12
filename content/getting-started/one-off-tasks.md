@@ -63,7 +63,7 @@ The idea here is that we are going to deploy a new application, but running the 
 
 ### *East/West environment:* CF-SSH
 
-Another way to run one-off commands is via `cf-ssh`. `cf-ssh` is a shared ssh session with an application container that you can connect to. This allows you to debug the environment and your application without disturbing a running container.
+Another way to run one-off commands is via `cf-ssh`. `cf-ssh` is a shared SSH session with an application container that you can connect to. This allows you to debug the environment and your application without disturbing a running container.
 
 Our `cf-ssh` is customized to our Cloud Foundry installation, so please **do not use the community version of [`cf ssh`](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html)**. Also note that only one person can use `cf-ssh` for any particular app at any particular time.
 
@@ -97,4 +97,6 @@ Our `cf-ssh` is customized to our Cloud Foundry installation, so please **do not
 
 ### *GovCloud environment:* CF SSH
 
-Another way to run one-off commands is via [`cf ssh`](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#ssh-command), which lets you securely login to an application instance where you can perform debugging, environment inspection, and other tasks.
+You can run one-off commands via [`cf ssh`](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#ssh-command), which lets you securely login to an application instance where you can perform debugging, environment inspection, and other tasks.
+
+You don't need to install anything; you can just start using it. See the [Cloud Foundry `cf ssh` documentation](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#ssh-command) for more about `cf ssh`.
