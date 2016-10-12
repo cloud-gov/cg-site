@@ -2,17 +2,17 @@
 menu:
   main:
     parent: apps
-title: GovCloud Transition Guide
+title: GovCloud Guide
 ---
 
 cloud.gov currently has two "environments" where orgs can live: the main environment that most orgs are using (located in AWS East/West) and a new GovCloud environment (located in [AWS GovCloud](https://aws.amazon.com/govcloud-us/)).
 
-When your org transitions to cloud.gov's GovCloud environment, here are changes to look out for.
+When your org starts using cloud.gov's GovCloud environment, here are changes to look out for.
 
 ### Breaking changes
 
 - GSA accounts still work in GovCloud. No other login credentials work at this time.
-- The new API endpoint (for now) is `api.fr.cloud.gov`. When you [log in on the command line]({{< relref "getting-started/setup.md" >}}), use this new command: `cf login -a api.fr.cloud.gov --sso`
+- The API endpoint (for now) is `api.fr.cloud.gov`. When you [log in on the command line]({{< relref "getting-started/setup.md" >}}), use this new command: `cf login -a api.fr.cloud.gov --sso`
 
 ### New features
 
