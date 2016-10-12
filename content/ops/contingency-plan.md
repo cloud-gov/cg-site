@@ -70,7 +70,7 @@ If GitHub becomes unavailable, the live cloud.gov will continue to operate in it
 #### Disruption lasting less than 7 days
 Cloud Operations will postpone any non-critical updates to the platform until the disruption is resolved.  If a critical update **must** be deployed, Cloud Operations will:
 
-* Locate a copy of the current version of the required repository by comparing last commit times of all checked out versions on Cloud Operations local systems and any copies held by cloud.gov systems (Concourse, BOSH director, etc.) Cloud Operations can also coordinate with the 18F Infrastructure team to retrieve 18F's org-wide GitHub backups, which are stored in [Backhub](https://backhub.co/).
+* Locate a copy of the current version of the required [git](https://git-scm.com/) repository by comparing last commit times of all checked out versions on Cloud Operations local systems and any copies held by cloud.gov systems (Concourse, BOSH director, etc.) Cloud Operations can also coordinate with the 18F Infrastructure team to retrieve 18F's org-wide GitHub backups, which are stored in [Backhub](https://backhub.co/).
 * Pair with another member of Cloud Operations to:
   * Perform the change on the local copy of the repository
   * Manually deploy the change by provisioning a Concourse jumpbox container, copying in the repository, and executing any required steps by hand
@@ -94,7 +94,7 @@ If there is a disruption in PagerDuty service, Cloud Operations will configure a
 There is no direct impact to the platform if a disruption occurs.  When debugging any issues where New Relic would provide insight, the team will use manual investigation to access the same information directly from the affected system(s).
 
 ### GSA SecureAuth
-Cloud Operations will update the `opslogin` UAA instance to allow temporary access via password authentication for any accounts that require access during a disruption in service.
+Cloud Operations will update the Operations or `opslogin` UAA instance to allow temporary access via password authentication for any accounts that require access during a disruption in service.
 
 When the disruption in service is resolved, Cloud Operations will disable password authentication for all accounts.
 
