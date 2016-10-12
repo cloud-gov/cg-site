@@ -94,7 +94,7 @@ If there is a disruption in PagerDuty service, Cloud Operations will configure a
 There is no direct impact to the platform if a disruption occurs.  When debugging any issues where New Relic would provide insight, the team will use manual investigation to access the same information directly from the affected system(s).
 
 ### GSA SecureAuth
-Cloud Operations will update the Operations or `opslogin` UAA instance to allow temporary access via password authentication for any accounts that require access during a disruption in service.
+Cloud Operations will update the Operations (opslogin) UAA instance to allow temporary access via password authentication for any accounts that require access during a disruption in service.
 
 When the disruption in service is resolved, Cloud Operations will disable password authentication for all accounts.
 
