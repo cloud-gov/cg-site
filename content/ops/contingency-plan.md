@@ -56,7 +56,7 @@ During the recovery phase, the team resolves the problem. See the list of [exter
 
 ### Reconstitution
 
-The Cloud Operations team tests and validates the system as operational.
+The Cloud Operations uses the procedures from the [Configuration Management](https://github.com/18F/compliance-docs/blob/master/CM-Policy.md) policy to reconstitute cloud.gov, and then test and validate the system as operational.
 
 The Incident Commander declares that recovery efforts are complete and notifies all relevant people. The last step is to [schedule a postmortem](https://github.com/18F/cg-postmortems) to discuss the event.
 
