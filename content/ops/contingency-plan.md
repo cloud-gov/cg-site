@@ -56,7 +56,7 @@ During the recovery phase, the team resolves the problem. See the list of [exter
 
 ### Reconstitution
 
-The Cloud Operations team tests and validates the system as operational.
+The Cloud Operations uses the procedures from the [Configuration Management](https://github.com/18F/compliance-docs/blob/master/CM-Policy.md) policy to reconstitute cloud.gov, and then test and validate the system as operational.
 
 The Incident Commander declares that recovery efforts are complete and notifies all relevant people. The last step is to [schedule a postmortem](https://github.com/18F/cg-postmortems) to discuss the event.
 
@@ -94,7 +94,7 @@ If there is a disruption in PagerDuty service, Cloud Operations will configure a
 There is no direct impact to the platform if a disruption occurs.  When debugging any issues where New Relic would provide insight, the team will use manual investigation to access the same information directly from the affected system(s).
 
 ### GSA SecureAuth
-Cloud Operations will update the `opslogin` UAA instance to allow temporary access via password authentication for any accounts that require access during a disruption in service.
+Cloud Operations will update the Operations (opslogin) UAA instance to allow temporary access via password authentication for any accounts that require access during a disruption in service.
 
 When the disruption in service is resolved, Cloud Operations will disable password authentication for all accounts.
 
