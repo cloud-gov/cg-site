@@ -151,3 +151,16 @@ It should now be running at `APPNAME.18f.gov`!
 ### Running management commands
 
 You may want to run `manage.py` commands on your app to perform maintenance tasks and such. For more information on doing this, see the guide on [Running One-Off Tasks](/getting-started/one-off-tasks/).
+
+
+### Gotchas
+
+If you're running the `python manage.py` commands from the server, and you're in the gov-cloud space you'll have to do:
+
+```
+cd ~/app
+source .profile.d/python.sh
+.heroku/python/bin/python
+```
+
+Otherwise python won't be aware of any of your libraries.  An easy way to check this is to `cf ssh [APPNAME]` and run `python -c "import django"`.
