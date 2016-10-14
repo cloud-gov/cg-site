@@ -72,3 +72,12 @@ uaac target <OPS_UAA_FQDN>
 uaac token client get admin -s <OPS_UAA_ADMINCLIENT_PASSPHRASE>
 ./make-ops-admin.sh -r <EMAIL_ADDRESS>
 ```
+
+### Creating spaces
+In addition to being able to create admins and delete them, you can also create spaces, assuming you're an `OrgManager`.
+
+```bash
+cf create-spaces SPACE [-o ORG] [-q SPACE-QUOTA]
+```
+
+The `ORG` is the organization that you're logged in under. Basically a `SPACE-QUOTA` is an upper-limit for what can fit in an org, and how much the org’s owners can be charged. Space quotas optionally subdivide that allotment for individual spaces. So you can say, for example, “never allow the `dev` space to use/cost more than XXGB/$YY”.
