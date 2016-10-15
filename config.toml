@@ -1,6 +1,6 @@
 baseurl = "https://docs.cloud.gov/"
 MetaDataFormat = "yaml"
-title = "docs.cloud.gov"
+title = "Documentation"
 publishdir = "public"
 
 [params]
