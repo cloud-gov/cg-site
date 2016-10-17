@@ -11,7 +11,7 @@ _For teams in the main cloud.gov environment (East/West):_
 
 If you're part of a team using cloud.gov, you can invite teammates to get cloud.gov accounts. You can invite anyone you need to work with, including federal employees and federal contractors.
 
-1. [Send them an invite](https://login.cloud.gov/invitations/new) (this may prompt you to log into your cloud.gov account first).
+1. [Send them an invite](https://invite.cloud.gov) (this may prompt you to log into your cloud.gov account first).
 
 1. Confirm with them that they have received and accepted the invite.
 
