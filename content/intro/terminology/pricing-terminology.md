@@ -42,5 +42,5 @@ Agencies can purchase reserved capacity via 18F as well, which is understood to 
 
 Each managed service incurs some resource usage and platform support overhead. The managed service fees ensure we can cover our costs to provide them to you. The fee varies among services. In some cases managed services include alternative “plans” can be selected that reflect resilience, performance, and cost trade-offs.
 
-In many cases, the pricing for managed services is not yet available. This is because we are measuring their initial usage to determine what we will need to charge. We are doing more analysis of the costs we’re observing (both the cost of the IaaS layer and the cost of our support), and aim to set explicit prices for all managed services by the end of March 2016.
+In many cases, the pricing for managed services is not yet available. This is because we are measuring their initial usage to determine what we will need to charge. We are doing more analysis of the costs we’re observing (both the cost of the IaaS layer and the cost of our support), and aim to set explicit prices for all managed services soon.
 
