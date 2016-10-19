@@ -2,9 +2,10 @@
 menu:
   main:
     parent: experimental
-title: Deploying Docker Images
+title: Deploying Docker images
 ---
 
+# Deploying Docker images
 [**This is an experimental feature.**]({{< relref "apps/experimental/experimental.md" >}})
 
 #### Docker as apps
@@ -13,7 +14,7 @@ In the new [cloud.gov environment (GovCloud)]({{< relref "apps/govcloud.md" >}})
 
 The only way to push Docker applications right now is through a public Docker registry. We will enable a private registry in the future.
 
-To push a Docker image, use the `-o` flag when pushing your app, for example: 
+To push a Docker image, use the `-o` flag when pushing your app, for example:
 
 `cf push lattice-app -o cloudfoundry/lattice-app`
 
@@ -23,7 +24,7 @@ Once you push a Docker image as your application, cloud.gov cannot update the ba
 
 Here are some considerations to keep in mind when deciding to use Docker images instead of buildpacks in your application's deployment:
 
-|   | Supported Buildpack | Docker Container  | 
+|   | Supported Buildpack | Docker Container  |
 |---|---|---|
 | Pros | It "just works"<br />Automatic and constant security updates<br \>All you need to do is write code | Can build container images and run containers on local workstation<br \>Fine-grained control over compilation and root filesystem |
 | Cons | Difficult to recreate the execution environment locally<br \>Testing compilation and the result of staging is harder | Added responsibility for all security updates and bug fixes<br \>More compliance responsibility => more work  |

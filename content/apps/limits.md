@@ -2,10 +2,10 @@
 menu:
   main:
     parent: advanced
-title: Application Limits
+title: Application limits
 ---
 
-
+# Application limits
 As a Cloud Foundry user you’re free to divide your [organization's quota]({{< relref "intro/pricing/quotas.md" >}}) capacity amongst your applications as you see fit by way of application limits. Application limits are specified in your application manifest or as `cf push` command line options.
 
 ## Application Limit Options:

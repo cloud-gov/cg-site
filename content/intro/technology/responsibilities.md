@@ -2,10 +2,11 @@
 menu:
   main:
     parent: technology
-title: What the cloud.gov PaaS Offers
+title: What the cloud.gov PaaS offers
 weight: 5
 ---
 
+# What the cloud.gov PaaS offers
 As a Platform as a Service, cloud.gov is responsible for maintenance and security of the cloud.gov platform. Customers are responsible for maintenance and security of their custom code running on the platform.
 
 Here's a chart to illustrate this in three example use cases:

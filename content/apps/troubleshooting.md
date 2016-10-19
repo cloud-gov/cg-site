@@ -2,11 +2,12 @@
 menu:
   main:
     parent: apps
-title: Deployment Troubleshooting
+title: Deployment troubleshooting
 linktitle: Troubleshooting
 weight: 100
 ---
 
+# Toubleshooting
 Here are some common problems and recommended practices for solving them. Make sure to [look at the logs]({{< relref "logs.md" >}}) to help troubleshoot.
 
 ## [STG] Staging Phase

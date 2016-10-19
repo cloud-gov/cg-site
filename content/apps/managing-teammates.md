@@ -2,9 +2,10 @@
 menu:
   main:
     parent: advanced
-title: Managing Teammates
+title: Managing teammates
 ---
 
+# Managing teammates
 ## Invite a teammate
 
 _For teams in the main cloud.gov environment (East/West):_
@@ -55,5 +56,5 @@ Then decide which roles to give them, such as:
     ```bash
     cf set-space-role <email> <org> <space> SpaceDeveloper
     ```
-    
+
 For a complete list of cloud.gov roles and permissions that Org and Space Managers can give and remove, see [the Cloud Foundry guide to Org and Space Roles](https://docs.cloudfoundry.org/adminguide/cli-user-management.html#orgs-spaces).

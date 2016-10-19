@@ -2,9 +2,11 @@
 menu:
   main:
     parent: overview
-title: Why Agencies Should Use It
+title: Why agencies should use it
 weight: 31
 ---
+
+# Why agencies should use it
 
 ## 1. Usability
 

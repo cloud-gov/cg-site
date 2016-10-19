@@ -2,7 +2,7 @@
 menu:
   main:
     parent: advanced
-title: Custom Domains
+title: Custom domains
 ---
 
 # Custom Domains

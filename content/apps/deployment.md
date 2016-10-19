@@ -2,11 +2,12 @@
 menu:
   main:
     parent: apps
-title: General Deployment Tips
-linktitle: General Tips
+title: General deployment tips
+linktitle: General tips
 weight: -100
 ---
 
+# General deployment tips
 ## How deployment works
 
 The command to create a new app and to push a new version of an existing one are the same: `cf push`. The basic steps:

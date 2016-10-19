@@ -2,9 +2,11 @@
 menu:
   main:
     parent: overview
-title: How to Use It
+title: How to use it
 weight: 40
 ---
+
+# How to use it
 
 ## Using the cloud.gov PaaS with 18F
 

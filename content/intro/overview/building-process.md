@@ -2,9 +2,11 @@
 menu:
   main:
     parent: overview
-title: The Process of Building It
+title: The process of building it
 weight: 21
 ---
+
+# The process of building it
 
 ## How long it took to build
 

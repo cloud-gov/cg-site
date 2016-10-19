@@ -2,9 +2,11 @@
 menu:
   main:
     parent: overview
-title: Why 18F Built It
+title: Why 18F built it
 weight: 20
 ---
+
+# Why 18F built it
 
 The law and federal agency requirements describe a long list of good practices for government digital services. But there is no accompanying tooling support for implementers, so delivering and deploying an app requires a lot of work. An agency needs operations expertise to follow all the regulations, manage the ATO process, and design a robust service infrastructure.
 

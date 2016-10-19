@@ -6,6 +6,8 @@ title: Setup
 weight: -50
 ---
 
+# Setup
+
 If you haven't set up your cloud.gov account, [get your account first]({{< relref "accounts.md" >}}).
 
 You can interact with cloud.gov through the **command line interface** (for full management and deployment of apps) and the [**Dashboard**](https://dashboard.cloud.gov/) (a web interface with a visual overview of apps and several click-the-buttons options for common tasks). You can use just the command line or use both. We recommend setting up the command line as part of getting started.
@@ -28,7 +30,7 @@ To set up the cloud.gov command line interface (CLI):
     ```
 
     Then follow the link to get your one-time authentication code and enter it to log in.
-    
+
     *(If you know your org is [in GovCloud]({{< relref "apps/govcloud.md" >}}), use `api.fr.cloud.gov`.)*
 
     **Or if you log in with a cloud.gov account that has its own password** (including `ORGNAME_deployer` accounts), log in by running

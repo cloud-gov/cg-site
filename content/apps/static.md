@@ -2,9 +2,10 @@
 menu:
   main:
     parent: apps
-title: Deploying Static Sites
+title: Deploying static sites
 ---
 
+# Deploying static sites
 ### Basics
 
 Create `index.html`:

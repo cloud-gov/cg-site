@@ -2,9 +2,11 @@
 menu:
   main:
     parent: overview
-title: Who Can Use It?
+title: Who can use it?
 weight: 20
 ---
+
+# Who can use it?
 
 ## Early users
 The first cloud.gov users were 18F’s own product teams. All new 18F projects launch on cloud.gov. Because teams no longer have to build the platform for their work on a project-by-project basis, the product teams stay smaller. This means we can take on more projects, increasing our impact. Our teams regularly describe the platform as a “thing going well” in reviewing their own work.

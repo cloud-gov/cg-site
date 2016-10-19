@@ -2,10 +2,11 @@
 menu:
   main:
     parent: getting-started
-title: Your First Deploy
+title: Your first deploy
 weight: -30
 ---
 
+# Your first deploy
 cloud.gov is an instance of Cloud Foundry, so [the Cloud Foundry documentation](http://docs.cloudfoundry.org), Stack Overflow questions, etc. should mostly be applicable.
 
 To get used to Cloud Foundry, we recommend that you practice by deploying a simple application before moving into deploying something for production.
@@ -19,6 +20,6 @@ To get used to Cloud Foundry, we recommend that you practice by deploying a simp
 
 The changes will be reflected in Cloud Foundry even without being committed to Git. Cloud Foundry is not Git-aware – it simply deploys whatever is contained in the directory that you `push` from. That being said, you _can_ set up [continuous deployment]({{< relref "apps/continuous-deployment.md" >}}) from a Git repository.
 
-You can delete an app using `cf delete <APPNAME>`. 
+You can delete an app using `cf delete <APPNAME>`.
 
 Next, take a look at the [Concepts]({{< relref "concepts.md" >}}) page. Once you're ready to deploy your own application, head over to the [general deployment tips]({{< relref "apps/deployment.md" >}}).

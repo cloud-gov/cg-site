@@ -2,9 +2,10 @@
 menu:
   main:
     parent: advanced
-title: Moving Apps Between Spaces
+title: Moving apps between spaces
 ---
 
+# Moving apps between spaces
 If you have an app that exists in one org/space but you need to move it to another:
 
 1. Deploy the new application instance using the appropriate steps on the [cloning]({{< relref "apps/cloning.md" >}}) page.

@@ -2,10 +2,11 @@
 menu:
   main:
     parent: security
-title: FISMA-High PaaS Alternatives
+title: FISMA-High PaaS alternatives
 weight: 30
 ---
 
+# FISMA-High PaaS alternatives
 ## Is cloud.gov appropriate?
 
 At this time, cloud.gov is not appropriate for the highest-risk systems defined by FISMA — FISMA-High systems. We will develop that capability in the future if our research warrants it, but there are other cloud infrastructure needs we are working to support first.
