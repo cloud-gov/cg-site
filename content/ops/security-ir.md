@@ -7,7 +7,9 @@ title: Security IR Guide
 
 # Security incident response guide
 
-This document outlines cloud.gov's internal process for responding to security incidents. It outlines roles and responsibilities during and after incidents, and it lays out the steps we'll take to resolve them. *If you're responding to an incident, [here's our IR checklist]({{< relref "security-ir-checklist.md" >}}) as a short, actionable companion to this guide.*
+This document outlines cloud.gov's internal process for responding to security incidents. It outlines roles and responsibilities during and after incidents, and it lays out the steps we'll take to resolve them.
+
+*If you're responding to an incident, [here's our IR checklist]({{< relref "security-ir-checklist.md" >}}) as a short, actionable companion to this guide.*
 
 (If you're outside 18F: if you notice something that may be a security problem, please email <a href="mailto:cloud-gov-support@gsa.gov">cloud-gov-support@gsa.gov</a>. Thanks!)
 
