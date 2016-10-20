@@ -1,30 +1,25 @@
-            <hr style="margin: 2em auto 0.25em;">
-          <footer>
-            Built with <i class="fa fa-heart"></i> by the cloud.gov team. <a href="https://github.com/18F/cg-docs/issues">Tell us about an issue.</a> This site is in <a href="https://github.com/18F/cg-docs/blob/master/LICENSE.md#readme">the public domain</a>.
-          </footer>
-          <div class="col-md-1">
-            {{ if .IsPage }}
-            {{ with .GetParam "next" }}
-            <a class="navigation next" href="{{.}}">
-                <i class="fa fa-angle-right"> </i>
-            </a>
-            {{ end }}
-          {{ end }}
-          </div>
-        </div>
-      </main>
+  <footer class="usa-footer usa-footer-slim usa-sans" role="contentinfo">
+    <div class="usa-footer-primary-section">
+      <div class="usa-grid-full">
+        <nav class="usa-footer-nav usa-width-two-thirds">
+          <ul class="usa-unstyled-list">
+            <li class="usa-width-one-fourth usa-footer-primary-content">
+              <a class="usa-footer-primary-link" href="https://cloud.gov/docs/help/">cloud.gov help</a>
+            </li>
+            <li class="usa-width-one-fourth usa-footer-primary-content">
+              <a class="usa-footer-primary-link" href="https://github.com/18F/cg-site">Edit this page</a>
+            </li>
+            <li class="usa-width-one-fourth usa-footer-primary-content">
+              <a class="usa-footer-primary-link" href="https://18f.gsa.gov/">Made by 18F</a>
+            </li>
+            <li class="usa-width-one-fourth usa-footer-primary-content">
+              <a class="usa-footer-primary-link" href="https://18f.gsa.gov/tags/cloud-gov/">Blog posts</a>
+            </li>
+          </ul>
+       </nav>
+       <div class="usa-width-one-third usa-footer-primary-content">
+         <a class="usa-footer-primary-link" href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
+       </div>          
+     </div>
     </div>
-    <!-- javascripts -->
-    <!--custom script for all page-->
-    <script src="/js/main.js"></script>
-    <script type="text/javascript">
-      //<![CDATA[
-        var usasearch_config = { siteHandle:"cloud.gov" };
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src = "//search.usa.gov/javascripts/remote.loader.js";
-        document.getElementsByTagName("head")[0].appendChild(script);
-      //]]>
-    </script>
-  </body>
-</html>
+  </footer>
