@@ -5,6 +5,7 @@ menu:
 title: Troubleshooting Bosh
 ---
 
+# Troubleshooting Bosh
 ## Accessing jumpboxes
 
 If you're going to be accessing Bosh, you will need to intercept a jumpbox via
@@ -163,5 +164,3 @@ $ cd /var/vcap/sys/log
 $ tail <SOME-LOG>.log
 # ... analyze process logs
 ```
-
-

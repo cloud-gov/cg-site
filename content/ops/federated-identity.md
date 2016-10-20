@@ -6,6 +6,7 @@ title: Federated Identity
 weight: 10
 ---
 
+# Federated Identity
 Federated Identity in cloud.gov is supported via [SAML 2.0](https://en.wikipedia.org/wiki/SAML_2.0).  UAA acts as a SAML service provider (SP) to authenticate with trusted identity providers (IdP).
 
 Approval from the Program Manager is required before adding a new trusted identity provider.
@@ -29,4 +30,4 @@ Using the information provided by the IdP, add a new entry under `login.provider
       emailDomain:
         - example.com
 
-After Concourse deploys the updated secrets, the new IdP will be displayed and available for use on the [login page](https://login.fr.cloud.gov) 
+After Concourse deploys the updated secrets, the new IdP will be displayed and available for use on the [login page](https://login.fr.cloud.gov)

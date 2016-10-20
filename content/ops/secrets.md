@@ -2,9 +2,10 @@
 menu:
   main:
     parent: operations
-title: Secret Key Management
+title: Secret key management
 ---
 
+# Secret key management
 ### Sharing secret keys
 
 For sharing the following types of [sensitive information](https://github.com/18F/open-source-policy/blob/master/practice.md#protecting-sensitive-information) related to cloud.gov, cloud.gov team members must use [Fugacious](https://fugacious.18f.gov/) links, shared over GSA applications (such as GSA Gmail or TTS Slack) only with the intended recipient(s).

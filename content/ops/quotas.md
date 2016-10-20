@@ -2,9 +2,10 @@
 menu:
   main:
     parent: operations
-title: Managing Quotas
+title: Managing quotas
 ---
 
+# Managing quotas
 Quota modification is most commonly necessary for increasing their resource allocation or enabling paid services. To modify the quota:
 
 1. List the details about the organization.

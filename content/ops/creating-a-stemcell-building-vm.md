@@ -2,9 +2,10 @@
 menu:
   main:
     parent: deployment
-title: Creating a Stemcell Building VM
+title: Creating a stemcell building VM
 ---
 
+# Creating a stemcell building VM
 How to create a vagrant machine on AWS for building new bosh stemcells.
 
 #### Prerequisites

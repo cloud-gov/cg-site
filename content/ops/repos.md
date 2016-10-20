@@ -2,9 +2,10 @@
 menu:
   main:
     parent: ops
-title: Github Repos
+title: Github repos
 ---
 
+# Github repos
 Here are the repos with the tools and configuration for the platform:
 
 - Landing page: https://github.com/18F/cg-landing

@@ -2,10 +2,10 @@
 menu:
   main:
     parent: operations
-title: Security IR Checklist
+title: Security IR checklist
 ---
 
-# Security Incident Response Checklist
+# Security incident response checklist
 
 *This is a short, actionable checklist for the Incident Commander (IC) to follow during incident response. It's a companion to the [IR guide]({{< relref "security-ir.md" >}}), where you can find the full details of each step.*
 
@@ -29,7 +29,7 @@ You're the first cloud.gov team member to notice a non-team-member's report of a
     - Status → "confirmed"
     - Severity → high/medium/low
     - List of responders
-- Send an initial situation report (“sitrep”) ([example sitrep]({{< relref "security-ir.md#assess" >}})) to: 
+- Send an initial situation report (“sitrep”) ([example sitrep]({{< relref "security-ir.md#assess" >}})) to:
     - Post in [`#incident-response`](https://18f.slack.com/messages/incident-response/)
     - Email to `gsa-ir@gsa.gov` and `devops@gsa.gov`
     - Email/Slack other stakeholders, if applicable
