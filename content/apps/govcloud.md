@@ -11,7 +11,7 @@ When your org starts using cloud.gov's GovCloud environment, here are changes to
 
 ### Breaking changes
 
-- GSA and EPA accounts still work in GovCloud. No other login credentials work at this time.
+- GSA and EPA accounts already work in GovCloud. No other login credentials work at this time.
 - The API endpoint (for now) is `api.fr.cloud.gov`. When you [log in on the command line]({{< relref "getting-started/setup.md" >}}), use this new command: `cf login -a https://api.fr.cloud.gov --sso`
 - To access the Dashboard, visit [`https://dashboard.fr.cloud.gov/`](https://dashboard.fr.cloud.gov/).
 
