@@ -11,16 +11,23 @@ changes to your desired environment.
 Make sure that you've previously looked at the [Production Ready Guide]({{< relref "production-ready.md" >}}) and followed best practices.
 
 
-## Continuous integration services
+## Deployer users
 
 The first thing you need to do is ask an admin to setup a "deployer" user in your organization and give it permission to deploy to the desired space:
 
-```
-cf create-user ORGNAME_deployer RANDOM-PASSWORD
+<!-- password generator c/o https://gist.github.com/earthgecko/3089509#gistcomment-1699972 -->
+
+```bash
+PASS=$(cat /dev/urandom | env LC_CTYPE=C tr -dc 'a-zA-Z0-9%^&*()_+?><~\`;' | fold -w 30 | head -n 1)
+echo $PASS | pbcopy
+cf create-user ORGNAME_deployer $PASS
 cf set-space-role ORGNAME_deployer ORG SPACE SpaceDeveloper
+open https://fugacious.18f.gov/
 ```
 
-***
+Then, paste the password into [Fugacious](https://fugacious.18f.gov/) and send the requester the link.
+
+## Continuous integration services
 
 Depending on your CI system the setup is going to be a bit different. **For all cases you will need a `manifest.yml` file.**
 
