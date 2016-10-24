@@ -1,17 +1,17 @@
 {
   "name": "cg-docs",
   "version": "1.0.0",
-  "description": "Documentation site for cloud.gov Cloud Foundry https://docs.cloud.gov",
+  "description": "The informational website for the cloud.gov PaaS service",
   "main": "index.js",
   "scripts": {
     "build": "npm run make-dirs && npm run build-css && npm run build-js && npm run copy",
-    "build-css": "cp ./node_modules/cloudgov-style/css/*.css ./public/css",
-    "build-js": "browserify ./static_src/js/main.js -o ./public/js/main.js",
+    "build-css": "cp ./node_modules/cloudgov-style/css/*.css ./public/assets/css",
+    "build-js": "browserify ./static_src/js/main.js -o ./public/assets/js/main.js",
     "clean": "rm -rf ./public",
     "copy": "npm run copy-img && npm run copy-font",
-    "copy-img": "cp -r node_modules/cloudgov-style/img/* ./public/img/",
-    "copy-font": "cp node_modules/cloudgov-style/fonts/* ./public/fonts/",
-    "make-dirs": "mkdir -p ./public/css && mkdir -p ./public/js && mkdir -p ./public/img && mkdir -p ./public/fonts",
+    "copy-img": "cp -r node_modules/cloudgov-style/img/* ./public/assets/img/",
+    "copy-font": "cp node_modules/cloudgov-style/fonts/* ./public/assets/fonts/",
+    "make-dirs": "mkdir -p ./public/assets/css && mkdir -p ./public/assets/js && mkdir -p ./public/assets/img && mkdir -p ./public/assets/fonts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "onchange './node_modules/cloudgov-style/css/*.scss' './node_modules/cloudgov-style/img/*' './static_src/**/*.scss' -v -- npm run build",
     "start": "npm run build && hugo server --renderToDisk"

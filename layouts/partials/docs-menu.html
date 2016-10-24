@@ -1,0 +1,56 @@
+<!--sidebar start-->
+<aside id="sidebar" class="sidenav">
+  <ul class="usa-sidenav-list sidenav-list sidenav-level-one">
+    {{ $currentNode := . }}
+    {{ range .Site.Menus.docs }}
+      <li class ="sub-menu">
+        {{ if .HasChildren }}
+        <a href="javascript:;" class="">
+          {{ .Pre }}
+          <span>{{ .Name }}</span>
+          <span class="sidenav-arrow {{if $currentNode.HasMenuCurrent "docs" . }}sidenav-arrow-down{{else}}sidenav-arrow-right{{end}}"></span>
+        </a>
+        <ul class="usa-sidenav-sub_list sidenav-list sidenav-level-two nested-menu {{if or ($currentNode.IsMenuCurrent "docs" .) ($currentNode.HasMenuCurrent "docs" .) }} open {{end}}" style="{{if or ($currentNode.IsMenuCurrent "docs" .) ($currentNode.HasMenuCurrent "docs" .) }} display: block; {{else}}display: none; {{end}}">
+          {{ range .Children }}
+          <li class="sub-menu {{if $currentNode.IsMenuCurrent "docs" . }} sidenav-active {{end}}" >
+            <a {{ if .HasChildren }}href="javascript:;"{{ else }}href="{{.URL}}"{{end}} class="">
+              {{ .Pre }}
+              <span>{{ .Name }}</span>
+              {{ if .HasChildren }}
+                <span class="sidenav-arrow {{if $currentNode.HasMenuCurrent "docs" . }}sidenav-arrow-down{{else}}sidenav-arrow-right{{end}}"></span>
+              {{ end }}
+            </a>
+              {{ if .HasChildren }}
+              <ul class="sidenav-list sidenav-level-three {{if or ($currentNode.IsMenuCurrent "docs" .) ($currentNode.HasMenuCurrent "docs" .) }} open {{end}}" style="{{if or ($currentNode.IsMenuCurrent "docs" .) ($currentNode.HasMenuCurrent "docs" .) }}display: block; {{else}}display: none; {{end}}">
+                {{ range .Children }}
+                <li{{if $currentNode.IsMenuCurrent "docs" . }} class="sidenav-active"{{end}}><a href="{{.URL}}">{{ .Name }}</a> </li>
+                {{ end }}
+              </ul>
+              {{ end }}
+            </li>
+            {{ end }}
+          </ul>
+          {{ else }}
+            <a href="{{.URL}}">{{ .Name }}</a>
+              {{ .Pre }}
+              <span>{{ .Name }}</span>
+            </a>
+          {{ end }}
+          </li>
+            {{else}}
+            <li>
+              <a class="" href="{{.URL}}">
+                {{ .Pre }}
+                <span>{{ .Name }}</span>
+              </a>
+            </li>
+            {{end}}
+            <li>
+              <a href="/docs/help/"><i class='fa fa-life-ring'></i> <span>Help</span></a>
+            </li>
+            {{ if .IsPage }}
+            {{ $File := .File }}  {{with $File.Path }}<li><a href="https://github.com/18f/cg-site/edit/master/content/{{ $File.Dir }}{{ $File.LogicalName }}" target="blank"><i class='fa fa-edit'></i> Refine this Page</a> </li>{{end}}
+            {{ end }}
+  </ul>
+</aside>
+<!--sidebar end-->
