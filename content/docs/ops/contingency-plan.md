@@ -70,10 +70,11 @@ If GitHub becomes unavailable, the live cloud.gov will continue to operate in it
 #### Disruption lasting less than 7 days
 Cloud Operations will postpone any non-critical updates to the platform until the disruption is resolved.  If a critical update **must** be deployed, Cloud Operations will:
 
-* Locate a copy of the current version of the required repository by comparing last commit times of all checked out versions on Cloud Operations local systems and any copies held by cloud.gov systems (Concourse, BOSH director, etc.) Cloud Operations can also coordinate with the 18F Infrastructure team to retrieve 18F's org-wide GitHub backups, which are stored in [Backhub](https://backhub.co/).
+* Locate a copy of the current version of the required [git](https://git-scm.com/) repository by comparing last commit times of all checked out versions on Cloud Operations local systems and any copies held by cloud.gov systems (Concourse, BOSH director, etc.) 
 * Pair with another member of Cloud Operations to:
-  * Perform the change on the local copy of the repository
-  * Manually deploy the change by provisioning a Concourse jumpbox container, copying in the repository, and executing any required steps by hand
+  * Perform the change on the local copy of the repository (if the update requires a change to git-managed source code), or use local copies of the repository instead of remote GitHub repository references (if the update depends on remote repositories but implies no change to those repositories)
+  * Manually deploy the change by provisioning a Concourse jumpbox container, copying in the repository/repositories, and executing any required steps by hand based on the Concourse pipeline
+    * For example, in the case of a stemcell update, a Cloud Operations member would obtain the latest stemcell object, extract and build the light stemcell using the latest available checkouts of the associated GitHub repositories, then manually upload the build artifact to the S3 bucket specified in the pipeline.
 
 When the disruption is resolved, Cloud Operations will push any changes to the appropriate repositories in GitHub to restore them to the current known-good state. Cloud Operations will monitor Concourse to ensure it redeploys any changes pushed to GitHub. Then, Cloud Operations will verify the system is in the expected state after all automated deployments complete.
 
