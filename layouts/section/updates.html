@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+
+  {{ partial "head.html" . }}
+
+  <body>
+
+    {{ partial "header.html" . }}
+
+<section class="content">
+  <div class="usa-grid">
+    <h2>Updates</h2>
+
+    {{ range .Data.Pages }}
+    {{ .Render "li" }}
+    {{ end }}
+  </div>
+  </section>
+
+    {{ partial "footer.html" . }}
+    {{ partial "javascript.html" . }}
+
+  </body>
+</html>
+
+
