@@ -1,5 +1,5 @@
    <div class="usa-width-one-whole usa-end-row">
-      {{ .Date.Format "Jan 2, 2006" }}<a href="{{ .Permalink }}"><h3>{{ .Title }}</h3></a>
+      {{ .Date.Format "Jan 2, 2006" }}<a href="{{ .RelPermalink }}"><h3>{{ .Title }}</h3></a>
       <p>{{ .Summary }}</p>
-      <p><a href="{{ .Permalink }}">More...</a></p>
+      <p><a href="{{ .RelPermalink }}">More...</a></p>
     </div>
