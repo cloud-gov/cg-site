@@ -53,8 +53,10 @@ Any systems running in the AWS East/West version of cloud.gov.
     * [PostgreSQL](https://github.com/18F/cg-product/issues/230)
     * [Redis](https://github.com/18F/cg-product/issues/234)
     * [S3](https://github.com/18F/cg-product/issues/235)
+1. Test the new deployment(s) thoroughly.
 1. [Set up your custom domain]({{< relref "docs/apps/custom-domains.md#managed-service-method" >}}), if applicable.
 1. [Set up continuous deployment.]({{< relref "docs/apps/continuous-deployment.md" >}}) (Not required, but strongly recommended.)
+1. Once you are confident that the move is complete, [ask support]({{< relref "docs/help.md" >}}) to delete your old organization.
 
 #### Unresolved details
 
