@@ -43,7 +43,7 @@ Any systems running in the AWS East/West version of cloud.gov.
 
 1. Ensure that a organization is created for your system in GovCloud. [TODO explain how to do this]
 1. Install the [CF Targets plugin](https://github.com/guidowb/cf-targets-plugin).
-1. Create a `prod` space, and `dev` and/or `staging` spaces, if desired.
+1. [Set up the spaces.]({{< relref "docs/apps/production-ready.md#space-per-environment" >}})
 1. [Give permissions to the appropriate people.]({{< relref "docs/apps/managing-teammates.md" >}})
 1. Deploy the application to the GovCloud environment.
     * This is a good time to ensure that you are following [deployment best practices]({{< relref "docs/apps/production-ready.md" >}}).
