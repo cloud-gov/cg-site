@@ -7,9 +7,7 @@ title: Contingency Plan
 
 This Contingency Plan provides guidance for our team in the case of trouble delivering our essential mission and business functions because of disruption, compromise, or failure of any component of cloud.gov. As a general guideline, we consider "disruption" to mean more than 30 minutes of unexpected downtime or significantly reduced service.
 
-Scenarios where that could happen include unexpected downtime of key external services, data loss, or high-severity security incidents.
-
-This plan coordinates with our [Security Incident Response Guide](https://docs.cloud.gov/ops/security-ir).
+Scenarios where that could happen include unexpected downtime of key external services, data loss, or [high-severity security incidents]({{< relref "security-ir.md#1-high-severity" >}}). In the case of a security incident, the team uses the [Security Incident Response Guide]({{< relref "security-ir.md" >}}) as well.
 
 ## Recovery objective
 
@@ -30,9 +28,11 @@ Team contact information is available in GSA Google Drive:
 
 ### Activation and notification
 
-Similar to our [Security Incident Response Guide](https://docs.cloud.gov/ops/security-ir), the first cloud.gov team member who notices or reports a potential contingency-plan-level problem becomes the **Incident Commander** (communications coordinator) until recovery efforts are complete or the Incident Commander role is explicitly reassigned.
+The first cloud.gov team member who notices or reports a potential contingency-plan-level problem becomes the **Incident Commander** (communications coordinator) until recovery efforts are complete or the Incident Commander role is explicitly reassigned.
 
-They first notify and coordinate with the people who are authorized to decide that cloud.gov is in a contingency plan situation:
+If the problem is identified as part of a [security incident response situation]({{< relref "security-ir.md" >}}) (or becomes a security incident response situation), the same Incident Commander (IC) should handle the overall situation, since these response processes must be coordinated.
+
+The IC first notifies and coordinates with the people who are authorized to decide that cloud.gov is in a contingency plan situation:
 
 * From cloud.gov:
     * Program Managers
@@ -41,24 +41,28 @@ They first notify and coordinate with the people who are authorized to decide th
 * 18F Products and Platforms Director
 * TTS Infrastructure Staff
 
-The Incident Commander notifies and coordinates with the following people as well:
+The IC notifies and coordinates with the following people as well:
 
 * Cloud Operations
-* GSA IT, including ISSO
+* GSA Information Security, including ISSO
 * Designated FedRAMP personnel (when applicable)
-* cloud.gov users ([through StatusPage](https://docs.cloud.gov/ops/making-announcements/)) (when applicable)
+* cloud.gov users ([through StatusPage]({{< relref "making-announcements.md" >}}) (when applicable)
 
-The Cloud Operations team assesses the situation and works to recover the system. The Incident Commander keeps a log of the situation in a GSA Google Drive document.
+The IC keeps a log of the situation in a GSA Google Drive document; if this is also a security incident, the IC also follows the [security incident communications process]({{< relref "security-ir.md#initiate" >}}) (which includes updating a GitHub issue, updating the 18F #incident-response channel, and sending sitreps by email to GSA Information Security). The IC should delegate assistant ICs for aspects of the situation as necessary.
 
 ### Recovery
 
-During the recovery phase, the team resolves the problem. See the list of [external dependencies](#external-dependencies) for procedures for recovery from problems with external services.
+The Cloud Operations team assesses the situation and works to recover the system. See the list of [external dependencies](#external-dependencies) for procedures for recovery from problems with external services.
+
+If this is also a security incident, the IC also follows the security incident [assessment]({{< relref "security-ir.md#initiate" >}}) and [remediation]({{< relref "security-ir.md#remediation" >}}) processes.
+
+If the IC assesses that the overall response process is likely to last longer than 3 hours, the IC should organize shifts so that each responder works on response for no longer than 3 hours at a time, including handing off their own responsibility to a new IC after 3 hours.
 
 ### Reconstitution
 
 The Cloud Operations team tests and validates the system as operational.
 
-The Incident Commander declares that recovery efforts are complete and notifies all relevant people. The last step is to [schedule a postmortem](https://github.com/18F/cg-postmortems) to discuss the event.
+The Incident Commander declares that recovery efforts are complete and notifies all relevant people. The last step is to [schedule a postmortem](https://github.com/18F/cg-postmortems) to discuss the event. This is the same as the [security incident retrospective process]({{< relref "security-ir.md#initiate" >}}).
 
 ## External dependencies
 
