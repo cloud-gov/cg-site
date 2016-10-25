@@ -37,7 +37,7 @@ As part of [cloud.gov achieving FedRAMP authorization](https://18f.gsa.gov/2016/
 
 #### Who this affects
 
-Any systems running in the AWS East/West version of cloud.gov.
+Any systems running in the AWS East/West version of cloud.gov. To find all of the apps you have access to, visit https://dashboard.cloud.gov. All apps that aren't moved by [TODO] will be deleted, so make sure that you or someone on your team [coordinates]({{< relref "docs/help.md" >}}) with the cloud.gov team to ensure your migration is completed as smoothly as possible.
 
 #### Process
 
