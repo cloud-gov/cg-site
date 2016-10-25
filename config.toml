@@ -1,85 +1,79 @@
-baseurl = "https://docs.cloud.gov/"
-MetaDataFormat = "yaml"
-title = "docs.cloud.gov"
+baseurl = "https://cloud.gov"
+languageCode = "en-us"
+title = "cloud.gov"
+pluralizelisttitles = "false"
 publishdir = "public"
 
 [params]
+  email = "cloud-gov-inquiries@gsa.gov"
   description = "cloud.gov documentation"
   author = "18f"
+
+  [params.analytics]
+    [params.analytics.google]
+      code = "UA-48605964-34"
+    [params.analytics.dap]
+      agency = "GSA"
+      subagency = "18F"
+
 [blackfriday]
   plainIDAnchors = true
 
-[[menu.main]]
-    name = "Introduction"
-    identifier = "intro"
-    weight = -20
-[[menu.main]]
+
+[[menu.overview]]
     name = "Overview"
-    parent = "intro"
     identifier = "overview"
     weight = -120
-[[menu.main]]
+[[menu.overview]]
     name = "Pricing"
-    parent = "intro"
     identifier = "pricing"
     weight = -115
-[[menu.main]]
+[[menu.overview]]
     name = "Security"
-    parent = "intro"
     identifier = "security"
     weight = -110
-[[menu.main]]
+[[menu.overview]]
     name = "Technology"
-    parent = "intro"
     identifier = "technology"
     weight = -105
-[[menu.main]]
+[[menu.overview]]
     name = "Terminology"
-    parent = "intro"
     identifier = "terminology"
     weight = -100
 
-[[menu.main]]
-    name = "Usage"
-    identifier = "usage"
-    weight = -10
-[[menu.main]]
+[[menu.docs]]
     name = "Getting Started"
-    parent = "usage"
     identifier = "getting-started"
     pre = "<i class='fa fa-road'></i>"
     weight = -120
-[[menu.main]]
+[[menu.docs]]
     name = "Deploying Apps"
-    parent = "usage"
     identifier = "apps"
     pre = "<i class='fa fa-file-text'></i>"
     weight = -110
-[[menu.main]]
+[[menu.docs]]
     name = "Advanced"
-    parent = "usage"
     identifier = "advanced"
     pre = "<i class='fa fa-rocket'></i>"
     weight = -100
-[[menu.main]]
+[[menu.docs]]
     name = "Experimental Features"
-    parent = "usage"
     identifier = "experimental"
     pre = "<i class='fa fa-flask'></i>"
     weight = -90
 
-[[menu.main]]
+[[menu.docs]]
     name = "Contributing"
     identifier = "ops"
-[[menu.main]]
+[[menu.docs]]
     name = "Deployment"
     identifier = "deployment"
     parent = "ops"
-[[menu.main]]
+[[menu.docs]]
     name = "Users"
     identifier = "users"
     parent = "ops"
-[[menu.main]]
+[[menu.docs]]
     name = "Operations"
     identifier = "operations"
     parent = "ops"

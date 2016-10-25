@@ -32,11 +32,16 @@ jobs:
     file: cg-docs-source/ci/build.yml
     params:
       COPY_OUTPUT: 1
+  - put: old-docs-redirect
+    params:
+      manifest: cg-docs-compiled/redirects/docs.cloud.gov/manifest.yml
+      path: cg-docs-compiled/redirects/docs.cloud.gov/
+      current_app_name: docs
   - put: cloud-gov-production
     params:
       manifest: cg-docs-compiled/manifest.yml
       path: cg-docs-compiled
-      current_app_name: docs
+      current_app_name: landing
     on_failure:
       put: slack
       params:
@@ -78,6 +83,16 @@ resources:
     password: {{cf-deploy-password-production}}
     organization: {{cf-organization}}
     space: {{cf-space}}
+    skip_cert_check: false
+
+- name: old-docs-redirect
+  type: cf
+  source:
+    api: {{cf-api-url-production}}
+    username: {{cf-deploy-username-production}}
+    password: {{cf-deploy-password-production}}
+    organization: {{cf-organization}}
+    space: {{cf-space-olddocs}}
     skip_cert_check: false
 
 - name: slack
