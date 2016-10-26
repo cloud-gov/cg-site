@@ -21,6 +21,14 @@ Deploying a basic node.js application to Cloud Foundry is relatively uncomplicat
     ```
 
 - Avoid using the `command:` manifest key to start your application, as this functionality [may be removed](https://github.com/cloudfoundry/nodejs-buildpack/pull/11#issuecomment-67666273). The aforementioned npm start script is preferred.
+
+- Vendor your dependencies.  Cloud Foundry [documentation](https://docs.cloudfoundry.org/buildpacks/node/index.html#vendoring) specifies that you should do a `npm install` to install vendored dependencies and pushing your entire application with `cf push`. This is especially
+important for large applications as Cloud Foundry limits the size of an app upload to `1GB` -
+see [Deploying a Large Application](https://docs.cloudfoundry.org/devguide/deploy-apps/large-app-deploy.html) for more information.
+
+- Do not put test harnesses or transpilers in your dependencies object. View the npm
+[documentation](https://docs.npmjs.com/files/package.json#dependencies) for more on this.
+
 - Use the [cfenv](https://www.npmjs.com/package/cfenv) module to assist with parsing the `VCAP_APPLICATION` and `VCAP_SERVICES` environment variables.
 
     ```javascript
@@ -56,8 +64,6 @@ Deploying a basic node.js application to Cloud Foundry is relatively uncomplicat
       }
     }
     ```
-
-- Optionally run `npm install` prior to `cf push` to preinstall dependencies rather than having them added during staging.
 
 **Example:**
 
