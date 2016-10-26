@@ -20,7 +20,7 @@ Talk to us in [#cloud-gov-support](https://18f.slack.com/messages/cloud-gov-supp
 
 ## I found a problem or want to suggest an improvement in the documentation.
 
-[Open an issue on GitHub](https://github.com/18F/cg-docs/issues/new).
+[Open an issue on GitHub](https://github.com/18F/cg-site/issues/new).
 
 ## I'm interested in working on cloud.gov.
 
