@@ -7,8 +7,7 @@ title: Github Repos
 
 Here are the repos with the tools and configuration for the platform:
 
-- Landing page: https://github.com/18F/cg-landing
-- Docs Repo (this site): https://github.com/18F/cg-docs
+- Cloud.gov Website Repo (this site): https://github.com/18F/cg-site
 - CF bosh manifests: https://github.com/18F/cg-manifests
 - Collection of scripts: https://github.com/18F/cg-scripts
 - Quotas DB: https://github.com/18F/cg-quotas-db
@@ -28,7 +27,7 @@ We try to keep this page up-to-date, but you may find more repositories [on GitH
 
 ## Public domain
 
-This project is in the worldwide [public domain](https://github.com/18F/cg-docs/blob/master/LICENSE.md). As stated in [CONTRIBUTING](https://github.com/18F/cg-docs/blob/master/CONTRIBUTING.md):
+This project is in the worldwide [public domain](https://github.com/18F/cg-site/blob/master/LICENSE.md). As stated in [CONTRIBUTING](https://github.com/18F/cg-site/blob/master/CONTRIBUTING.md):
 
 > This project is in the public domain within the United States, and copyright and related rights in the work worldwide are waived through the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/).
 >

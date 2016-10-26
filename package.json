@@ -1,5 +1,5 @@
 {
-  "name": "cg-docs",
+  "name": "cg-site",
   "version": "1.0.0",
   "description": "The informational website for the cloud.gov PaaS service",
   "main": "index.js",
@@ -18,12 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/18F/cg-docs.git"
+    "url": "git+https://github.com/18F/cg-site.git"
   },
   "bugs": {
-    "url": "https://github.com/18F/cg-docs/issues"
+    "url": "https://github.com/18F/cg-site/issues"
   },
-  "homepage": "https://github.com/18F/cg-docs#readme",
+  "homepage": "https://github.com/18F/cg-site#readme",
   "devDependencies": {
     "anchor-js": "^3.0.0",
     "browserify": "^13.0.0",
