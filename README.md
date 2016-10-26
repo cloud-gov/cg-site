@@ -1,6 +1,6 @@
-# 18F cloud.gov documentation
+# 18F cloud.gov website
 
-This repository contains the site code for [cloud.gov documentation](https://docs.cloud.gov/).
+This repository contains the site code for the [cloud.gov website](https://cloud.gov/).
 
 cloud.gov is a Platform as a Service based on the Cloud Foundry project, which provides its own [Cloud Foundry documentation](http://docs.cloudfoundry.org/).
 
