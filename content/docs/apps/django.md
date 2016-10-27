@@ -125,7 +125,7 @@ Normally, you would be able to view the site at `APPNAME.18f.gov`, but we gave t
 
 ## Setting Up the Database
 
-**First, read [the database guide](/apps/databases/).** If you are using RDS, you'll need to change your `settings.py ` and set one environment variable to get the database up and connect. In your `settings.py` make sure you import the package we added to the `requirements.txt` file above:
+**First, read [the database guide]({{< relref "docs/apps/databases.md" >}}).** If you are using RDS, you'll need to change your `settings.py ` and set one environment variable to get the database up and connect. In your `settings.py` make sure you import the package we added to the `requirements.txt` file above:
 
 ```python
 import dj_database_url

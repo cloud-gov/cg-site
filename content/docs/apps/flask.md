@@ -114,7 +114,7 @@ If you're going to set up a database you probably need to run `cf push --no-star
 
 ## Setting Up the Database
 
-You don't need a database to work with Flask but if you want to try, be sure to update this page with how you did it. **I'd start with reading [the database guide](/apps/databases/).**
+You don't need a database to work with Flask but if you want to try, be sure to update this page with how you did it. **I'd start with reading [the database guide]({{< relref "docs/apps/databases.md" >}}).**
 
 ### Running the app
 
