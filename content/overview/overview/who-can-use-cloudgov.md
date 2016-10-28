@@ -9,13 +9,33 @@ aliases:
   - /intro/overview/who-can-use-cloudgov
 ---
 
-## Early users
-The first cloud.gov users were 18F’s own product teams. All new 18F projects launch on cloud.gov. Because teams no longer have to build the platform for their work on a project-by-project basis, the product teams stay smaller. This means we can take on more projects, increasing our impact. Our teams regularly describe the platform as a “thing going well” in reviewing their own work.
+## What is the best fit for cloud.gov?
 
-Products like Every Kid in a Park and the College Scorecard were built on the cloud.gov platform and have handled surges of traffic from media coverage and announcements by the President.
+- You have a technical team, or contractor, that can push applications to cloud.gov (See technical requirements).
+- You work for a federal government organization.
+- You understand that cloud.gov is a product under active development and will see changes in the future.
+- Your application is FISMA Moderate or lower.
+- You have to be able to pay for cloud.gov through the IAA/MOU process (see (pricing)[https://cloud.gov/overview/pricing/rates/]).
 
-## Current users
-18F is now working with a set of agencies who are willing to help us uncover and work through the challenges involved in a new service. While we aren’t yet at the point where agencies can use cloud.gov on their own, we are learning to scale support, processes, and infrastructure.
+## What are the technical requirements?
 
-## Coming soon
-We plan to make cloud.gov available to more federal agencies in the future. If you are interested in future availability, [submit your email address](https://cloud.gov/#contact).
+- Your team has access to the cloud.gov API through the cloud.gov command line interface (compatible with Windows, Mac and Linux).
+- Your application stores configuration in the environment.
+- Your application uses one stateless process at a time (that can be horizontally scaled).
+- Your application listens to a single port.
+- Your dependcies are explicitly declared (like `requirements.txt` for Python).
+- You don't rely on local storage for long term data stores.
+- (Optional) Your organization can integrate your identity system with cloud.gov over SAML.
+
+## Who is not a good fit?
+
+- .NET applications (might require custom buildpacks and be compatible with Linux deployments).
+- Your application requires Oracle, SQL Server or propietary databases.
+- You are a local/state government organization.
+
+## Who cannot use cloud.gov?
+
+- Non government organizations.
+
+## Reading Material:
+- (12-factor applications)[https://12factor.net/].
