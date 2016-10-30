@@ -1,7 +1,7 @@
 ---
 menu:
   docs:
-    parent: users
+    parent: operations
 title: AWS Onboarding
 ---
 
