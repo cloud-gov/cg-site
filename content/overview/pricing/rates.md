@@ -25,6 +25,7 @@ Packages are selected based on the kinds of applications to be hosted. [Find mor
 | --- | --- | --- | --- | --- |
 | **Sandbox** | Any user with a `.gov` or `.mil` email address can try out cloud.gov, no paperwork required. **Application resource usage is capped at 1GB.** | Free | Free | Only free services |
 | **Prototyping** | Suitable for many teams to deploy apps, though limited to the `*.apps.cloud.gov` domain. Access control can be delegated to teams. No production data allowed. Usually purchased per agency/department. | $15K |  ~$99/GB/month | All\** |
+| **Open Data** | One public-facing Open Data (no confidentiality risk assessed) system, including all the spaces needed and DNS support. **This account is limited to 2GB of memory usage per month.** | $10K | ~$99/GB/month | All\** (up to $2500/year) |
 | **FISMA Low** | One public-facing FISMA Low system, including all the spaces needed and DNS support. | $20K | ~$99/GB/month | All\** |
 | **FISMA Moderate** | One public-facing FISMA Moderate system, including all the spaces needed and DNS support. Additional support for FISMA Moderate data requirements. | $90K | ~$99/GB/month | All\** |
 
