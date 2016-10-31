@@ -29,6 +29,10 @@ see [Deploying a Large Application](https://docs.cloudfoundry.org/devguide/deplo
 - Do not put test harnesses or transpilers in your dependencies object. View the npm
 [documentation](https://docs.npmjs.com/files/package.json#dependencies) for more on this.
 
+- To ensure you only download the necessary dependencies, you should ensure that `NODE_ENV` is set to
+`production`, or pass the pass the `--production` flag on install. By setting this property, `npm install` will only install modules in your `dependencies`
+section of the `package.json` while ignoring those in the `devDependencies` section.
+
 - Use the [cfenv](https://www.npmjs.com/package/cfenv) module to assist with parsing the `VCAP_APPLICATION` and `VCAP_SERVICES` environment variables.
 
     ```javascript
