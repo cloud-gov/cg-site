@@ -2,16 +2,22 @@
 type: index
 ---
 
-# cloud.gov Documentation
+# cloud.gov Overview
 
-### Introduction to cloud.gov
+### Platform as a Service (PaaS) for Government developers
 
-cloud.gov gives teams working for federal government a secure, fully compliant foundation, integrated with private sector infrastructure providers, on which to build and release products and updates quickly. [Learn more about cloud.gov.]({{< relref "overview/overview/what-is-cloudgov.md" >}})
+cloud.gov allows your development team to focus on what matters: your applications. As a Platform as a Service (PaaS), cloud.gov **eliminates the need to manage infrastructure such as virtual machines and servers**. This enables your development team to rapidly iterate and quickly launch your application to ensure mission success. Because cloud.gov is based on **open-source technologies**, it provides portability to other cloud providers or your existing on-premise solution.
 
-### Usage: developing and deploying apps
+cloud.gov is developed **by the Government, for the Government**. 18F, housed within the General Services Administration’s Technology Transformation Service, develops and operates cloud.gov.
 
-cloud.gov is a Platform as a Service with a compliance toolkit. [Get started with building and deploying applications.]({{< relref "docs/getting-started/accounts.md" >}})
+[Learn more about cloud.gov.]({{< relref "overview/overview/what-is-cloudgov.md" >}})
 
-### Contributing
+### Compliance
 
-cloud.gov is an open source project, based on the Cloud Foundry project with additional components built by 18F and other community members. Our contributing documentation is for cloud.gov operations staff, and we invite others to [learn how we run the platform and contribute to it]({{< relref "docs/ops/repos.md" >}}).
+cloud.gov was designed with **FISMA compliance** in mind. cloud.gov is currently designated as FedRAMP Ready, and the **FedRAMP Moderate** JAB P-ATO assessment process is underway.  The vast majority of FISMA Moderate controls are managed for you. The included compliance toolkit provides assistance with generating compliance documentation, so that even small agency teams can have a quick path to ATO.
+
+### Free Sandbox Accounts
+
+Anyone with a .gov or .mil email address can try out cloud.gov for free by signing up for a sandbox account. **No paperwork required**.
+
+
