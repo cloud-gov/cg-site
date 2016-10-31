@@ -1,6 +1,6 @@
-# 18F cloud.gov documentation
+# 18F cloud.gov website
 
-This repository contains the site code for [cloud.gov documentation](https://docs.cloud.gov/).
+This repository contains the site code for the [cloud.gov website](https://cloud.gov/).
 
 cloud.gov is a Platform as a Service based on the Cloud Foundry project, which provides its own [Cloud Foundry documentation](http://docs.cloudfoundry.org/).
 
@@ -30,10 +30,10 @@ This site uses a shared cloud.gov style, [cg-style](https://github.com/18F/cg-st
 
 1. Download or clone the *cg-style* repository, `git clone git@github.com:18F/cg-style.git`
 2. Run the watching build task in the *cg-style* repository: `npm run watch`
-3. Run `npm install` in the *cg-docs* repository.
-4. Run `npm link` in *cg-docs*.
-5. Run the watching build task in *cg-docs* repository: `npm run watch`
-6. Edit code in the *cg-style* directory and they will propagate down to *cg-docs*
+3. Run `npm install` in the *cg-site* repository.
+4. Run `npm link` in *cg-site*.
+5. Run the watching build task in *cg-site* repository: `npm run watch`
+6. Edit code in the *cg-style* directory and they will propagate down to *cg-site*
 
 ## Acknowledgment
 

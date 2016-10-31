@@ -30,7 +30,7 @@ Security tests need to be executed in the staging environment where changes are 
 ## Change workflow
 
 1. All configuration changes must flow through a git repository, centrally managed through GitHub, unless they contain sensitive information. In these cases, sensitive information should be stored in an S3 bucket with a proper security policy, encryption, and versioned, so that changes can be easily rolled back.
-1. A change is initiated and discussed as a [GitHub issue in 18F/cg-atlas repository](https://github.com/18F/cg-atlas/issues).
+1. A change is initiated and discussed as a GitHub issue in [the relevant 18F repository](https://github.com/18F).
 1. A Pull Request (PR) is created that addresses the change and references the created issue.
     If there is a staging environment available for a given repository, the PR should be
     created against the `staging` branch. Otherwise, the PR should be created against the `master` branch on the canonical repository.
