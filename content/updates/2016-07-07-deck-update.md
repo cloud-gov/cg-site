@@ -35,4 +35,4 @@ As we figure out next steps, we know that people want the Dashboard to help them
 
 ### We’d like your thoughts
 
-Everyone can [file issues](https://github.com/18F/cg-deck/issues) for bugs and suggestions. If you're in 18F, come talk to us about the Dashboard in [#cloud-gov-liberator](https://18f.slack.com/messages/cloud-gov-liberator/). If you're a cloud.gov user outside 18F, you can send thoughts and questions to us at cloud-gov-support@gsa.gov.
+Everyone can [file issues](https://github.com/18F/cg-deck/issues) for bugs and suggestions. If you're in 18F, come talk to us about the Dashboard in [#cloud-gov-navigator](https://18f.slack.com/messages/cloud-gov-navigator/). If you're a cloud.gov user outside 18F, you can send thoughts and questions to us at cloud-gov-support@gsa.gov.
