@@ -17,7 +17,7 @@ Provide the IdP with our [SP metadata](https://login.fr.cloud.gov/saml/metadata)
 
 In return, the IdP needs to provide their metadata (either as an XML file or a URL), a list of domains the IdP is responsible for authenticating, and a logo that will be displayed on our login page.
 
-Using the information provided by the IdP, add a new entry under `login.providers` in the [Cloud Foundry secrets](https://docs.cloud.gov/ops/secrets/) using this template:
+Using the information provided by the IdP, add a new entry under `login.providers` in the [Cloud Foundry secrets]({{< relref "secrets.md" >}}) using this template:
 
     example.com:
       assertionConsumerIndex: 0
@@ -30,4 +30,4 @@ Using the information provided by the IdP, add a new entry under `login.provider
       emailDomain:
         - example.com
 
-After Concourse deploys the updated secrets, the new IdP will be displayed and available for use on the [login page](https://login.fr.cloud.gov)
+After Concourse deploys the updated secrets, the new IdP will be displayed and available for use on the [login page](https://login.fr.cloud.gov).

@@ -11,7 +11,7 @@ jobs:
       status: pending
   - task: build
     input_mapping:
-      cg-docs-source: pull-request
+      cg-site-source: pull-request
     file: pull-request/ci/build.yml
     on_success:
       put: pull-request
@@ -26,27 +26,27 @@ jobs:
 
 - name: deploy-production
   plan:
-  - get: cg-docs-source
+  - get: cg-site-source
     trigger: true
   - task: build
-    file: cg-docs-source/ci/build.yml
+    file: cg-site-source/ci/build.yml
     params:
       COPY_OUTPUT: 1
   - put: old-docs-redirect
     params:
-      manifest: cg-docs-compiled/redirects/docs.cloud.gov/manifest.yml
-      path: cg-docs-compiled/redirects/docs.cloud.gov/
+      manifest: cg-site-compiled/redirects/docs.cloud.gov/manifest.yml
+      path: cg-site-compiled/redirects/docs.cloud.gov/
       current_app_name: docs
   - put: cloud-gov-production
     params:
-      manifest: cg-docs-compiled/manifest.yml
-      path: cg-docs-compiled
+      manifest: cg-site-compiled/manifest.yml
+      path: cg-site-compiled
       current_app_name: landing
     on_failure:
       put: slack
       params:
         text: |
-          :x: FAILED to deploy cg-docs to Production
+          :x: FAILED to deploy cg-site to Production
           <$ATC_EXTERNAL_URL/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME|View build details>
         channel: {{slack-channel}}
         username: {{slack-username}}
@@ -55,23 +55,23 @@ jobs:
       put: slack
       params:
         text: |
-          :white_check_mark: Successfully deployed cg-docs to Production
+          :white_check_mark: Successfully deployed cg-site to Production
           <$ATC_EXTERNAL_URL/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME|View build details>
         channel: {{slack-channel}}
         username: {{slack-username}}
         icon_url: {{slack-icon-url}}
 
 resources:
-- name: cg-docs-source
+- name: cg-site-source
   type: git
   source:
-    uri: {{cg-docs-git-url}}
-    branch: {{cg-docs-branch}}
+    uri: {{cg-site-git-url}}
+    branch: {{cg-site-branch}}
 
 - name: pull-request
   type: pull-request
   source:
-    repo: {{cg-docs-git-repo}}
+    repo: {{cg-site-git-repo}}
     access_token: {{status-access-token}}
     every: true
 

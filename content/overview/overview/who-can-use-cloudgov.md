@@ -9,15 +9,33 @@ aliases:
   - /intro/overview/who-can-use-cloudgov
 ---
 
-# Who can use it?
+## Good fit for cloud.gov
 
-## Early users
-The first cloud.gov users were 18F’s own product teams. All new 18F projects launch on cloud.gov. Because teams no longer have to build the platform for their work on a project-by-project basis, the product teams stay smaller. This means we can take on more projects, increasing our impact. Our teams regularly describe the platform as a “thing going well” in reviewing their own work.
+- You have a technical team (internal or contracted) that can push applications to cloud.gov. (See technical requirements below.)
+- You work for a United States federal government organization.
+- You understand that cloud.gov is a product under active development and will see changes in the future.
+- Your application is FISMA Moderate or lower.
+- You have to be able to pay for cloud.gov through the IAA/MOU process (see [pricing]({{< relref "overview/pricing/rates.md" >}})).
 
-Products like Every Kid in a Park and the College Scorecard were built on the cloud.gov platform and have handled surges of traffic from media coverage and announcements by the President.
+### Technical requirements
 
-## Current users
-18F is now working with a set of agencies who are willing to help us uncover and work through the challenges involved in a new service. While we aren’t yet at the point where agencies can use cloud.gov on their own, we are learning to scale support, processes, and infrastructure.
+- Your team has access to the cloud.gov API through the cloud.gov command line interface (compatible with Windows, Mac, and Linux).
+- Your application stores configuration in the environment.
+- Your application uses one stateless process at a time (that can be horizontally scaled).
+- Your application listens to a single port.
+- Your dependencies are explicitly declared (such as `requirements.txt` for Python).
+- You don't rely on local storage for long-term data stores.
 
-## Coming soon
-We plan to make cloud.gov available to more federal agencies in the future. If you are interested in future availability, [submit your email address](https://cloud.gov/#contact).
+### Optional but recommended
+- Your organization can integrate your identity system with cloud.gov over SAML.
+- Your application can follow the [12-Factor App guidelines](https://12factor.net/).
+
+## Not a good fit
+
+- .NET applications (might require custom buildpacks and be compatible with Linux deployments).
+- Your application requires Oracle, SQL Server, or proprietary databases.
+- You work for a local or state government organization.
+
+## Cannot use cloud.gov
+
+- You work for a non-government organization.

@@ -47,7 +47,7 @@ Application start commands are cached during staging. Specifying a start command
 
 ### Environment variables and service bindings
 
-- Apps must listen on the port specified in the `VCAP_APP_PORT` environment variable.
+- Apps must listen on the port specified in the `PORT` environment variable.
 - Environment variables are updated when the app is staged and persist between application restarts. Be sure to run `cf restage` after updating variables.
 - Specify services in the application manifest via the `application:key`. Bindings will be created when the application is pushed. Avoid creating bindings after the fact with `cf bind-service` as that will create a hidden dependency.
 - Service instance credentials and connection parameters are stored in the JSON-formatted `VCAP_SERVICES`. The format of this variable differs between v1 and v2 services; see [this section](http://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html#VCAP-SERVICES) of the Cloud Foundry docs for more information.

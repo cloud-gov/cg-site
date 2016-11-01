@@ -13,13 +13,13 @@ To start using cloud.gov:
 
 * **If you're in GSA or EPA:** You automatically have access to cloud.gov; you don't need to take any account creation steps before you start using cloud.gov.
     * To log into the [cloud.gov web interface](https://login.cloud.gov/): click "agree and continue", click your agency name, and log in using your agency credentials.
-    * To log into the cloud.gov command line interface (CLI), follow [these instructions to use your agency credentials on the CLI](https://docs.cloud.gov/getting-started/setup/).
+    * To log into the cloud.gov command line interface (CLI), follow [these instructions to use your agency credentials on the CLI]({{< relref "setup.md" >}}).
 * **If you're outside GSA/EPA and your organization/project is registered with cloud.gov:** Ask one of your teammates to follow [these instructions for adding teammates]({{< relref "managing-teammates.md" >}}).
 * **Otherwise:** See [who can use cloud.gov]({{< relref "overview/overview/who-can-use-cloudgov.md" >}}).
 
 ## Resetting your password
 
-If you're in GSA or EPA and can't seem to log into cloud.gov from the command line, first try [these instructions to use your agency credentials on the CLI](https://docs.cloud.gov/getting-started/setup/).
+If you're in GSA or EPA and can't seem to log into cloud.gov from the command line, first try [these instructions to use your agency credentials on the CLI]({{< relref "setup.md" >}}).
 
 If you're in GSA or EPA and you need to reset your agency account password, reset your password using your agency's normal process.
 

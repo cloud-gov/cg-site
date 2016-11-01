@@ -17,7 +17,10 @@ npm run build
 # build the site
 hugo
 
+# move our custom nginx config into the public folder so the buildpack uses it
+cp nginx.conf public/nginx.conf
+
 # copy files to output directory, so that they can be read by subsequent step
 if [ -n "$COPY_OUTPUT" ]; then
-  cp -R . ../cg-docs-compiled
+  cp -R . ../cg-site-compiled
 fi
