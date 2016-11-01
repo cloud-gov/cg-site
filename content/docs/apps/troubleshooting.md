@@ -7,7 +7,7 @@ linktitle: Troubleshooting
 weight: 100
 ---
 
-# Toubleshooting
+# Troubleshooting
 Here are some common problems and recommended practices for solving them. Make sure to [look at the logs]({{< relref "logs.md" >}}) to help troubleshoot.
 
 ## [STG] Staging Phase
