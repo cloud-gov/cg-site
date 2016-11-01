@@ -2,9 +2,10 @@
 menu:
   docs:
     parent: advanced
-title: Managing Teammates
+title: Managing teammates
 ---
 
+# Managing teammates
 ## Invite a teammate
 
 If you're part of a team using cloud.gov, you can invite teammates to get cloud.gov accounts. You can invite anyone you need to work with, including federal employees and federal contractors.
@@ -47,5 +48,5 @@ Then decide which roles to give them, such as:
     ```bash
     cf set-space-role <email> <org> <space> SpaceDeveloper
     ```
-    
+
 For a complete list of cloud.gov roles and permissions that Org and Space Managers can give and remove, see [the Cloud Foundry guide to Org and Space Roles](https://docs.cloudfoundry.org/adminguide/cli-user-management.html#orgs-spaces).

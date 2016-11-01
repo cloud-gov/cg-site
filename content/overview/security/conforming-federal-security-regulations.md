@@ -2,13 +2,14 @@
 menu:
   overview:
     parent: security
-title: Helping Apps Conform to Regs
+title: Helping apps conform to regs
 weight: 20
 aliases:
   - /docs/intro/security/conforming-federal-security-regulations
   - /intro/security/conforming-federal-security-regulations
 ---
 
+# Helping apps conform to regs
 ## A single control layer for your applications
 
 The underlying infrastructure of cloud.gov is a FedRAMP-approved (and therefore, FISMA-approved) use of Amazon Web Services (AWS). However, there are many different controls at the AWS level necessary to comply with FedRAMP and agency security rules in general. Each new system deployed on AWS without a platform-as-a-service opens up the possibility of a mistake or a flaw. Checking all of those controls for each system also takes a significant amount of time that would be better spent on net-new security engineering.

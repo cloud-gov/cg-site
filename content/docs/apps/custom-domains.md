@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: advanced
-title: Custom Domains
+title: Custom domains
 ---
 
 Here's how to put your app on your project's custom domain name. For context, [Cloud Foundry's Routes and Domains documentation](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html) explains the overall model and terminology that cloud.gov uses.

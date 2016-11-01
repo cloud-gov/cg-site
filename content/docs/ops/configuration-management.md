@@ -2,9 +2,10 @@
 menu:
   docs:
     parent: operations
-title: Configuration Management
+title: Configuration management
 ---
 
+# Configuration management
 <!-- This page is important for FedRAMP compliance. See the CM family of controls, including CM-9. -->
 
 This document describes how the 18F cloud.gov team approaches configuration management of the core platform.

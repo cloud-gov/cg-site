@@ -9,6 +9,7 @@ aliases:
   - /intro/pricing/rates
 ---
 
+# Rates
 cloud.gov fees are broken into three components:
 
 - Access package
@@ -17,7 +18,7 @@ cloud.gov fees are broken into three components:
 
 Find out [more about this pricing model]({{< relref "overview/pricing/pricing-model.md" >}}) and [how we define these terms]({{< relref "overview/terminology/pricing-terminology.md" >}})
 
-### Access Package
+## Access Package
 
 Packages are selected based on the kinds of applications to be hosted. [Find more about what's included in all access packages.]({{< relref "overview/pricing/whats-included.md" >}})
 
@@ -34,7 +35,7 @@ Packages are selected based on the kinds of applications to be hosted. [Find mor
 
 ---
 
-### Resource usage
+## Resource usage
 
 You will be charged for the **quota** you set for your resource usage. This is only based on the memory, in MB of RAM, your reserve for your applications.
 
@@ -49,7 +50,7 @@ We require your resource usage quota to **be set in advance**. This helps you co
 
 ---
 
-### Managed services
+## Managed services
 
 [Managed services]({{< relref "docs/apps/managed-services.md" >}}) are those which cloud.gov will spin up quickly and run on your behalf (databases, storage, caching, etc.). You can see the services and plans offered for each by [running `cf marketplace`]({{< relref "docs/apps/managed-services.md" >}}). *We'll include more details on this page in the future.*
 

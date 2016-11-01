@@ -5,6 +5,7 @@ menu:
 title: Deploying Django
 ---
 
+# Deploying Django
 ***See also: the [official Python buildpack documentation](http://docs.cloudfoundry.org/buildpacks/python/).***
 
 ## Creating the App

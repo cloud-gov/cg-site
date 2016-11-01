@@ -2,9 +2,10 @@
 menu:
   docs:
     parent: operations
-title: Contingency Plan
+title: Contingency plan
 ---
 
+# Contingency plan
 This Contingency Plan provides guidance for our team in the case of trouble delivering our essential mission and business functions because of disruption, compromise, or failure of any component of cloud.gov. As a general guideline, we consider "disruption" to mean more than 30 minutes of unexpected downtime or significantly reduced service.
 
 Scenarios where that could happen include unexpected downtime of key external services, data loss, or [high-severity security incidents]({{< relref "security-ir.md#1-high-severity" >}}). In the case of a security incident, the team uses the [Security Incident Response Guide]({{< relref "security-ir.md" >}}) as well.

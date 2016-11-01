@@ -2,10 +2,12 @@
 menu:
   docs:
     parent: advanced
-title: Running One-Off Tasks
+title: Running one-off tasks
 aliases:
 - /getting-started/cf-ssh/
 ---
+
+# Running one-off tasks
 
 There are a couple of ways to run one-off tasks in cloud.gov's version of Cloud Foundry. The most reliable way to do one-off tasks is by deploying a short-lived app.
 

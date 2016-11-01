@@ -2,10 +2,11 @@
 menu:
   docs:
     parent: getting-started
-title: Your First Deploy
+title: Your first deploy
 weight: -30
 ---
 
+# Your first deploy
 cloud.gov is an instance of Cloud Foundry, so [the Cloud Foundry documentation](http://docs.cloudfoundry.org), Stack Overflow questions, etc. should mostly be applicable.
 
 To get used to Cloud Foundry, we recommend that you practice by deploying a simple application before moving into deploying something for production.

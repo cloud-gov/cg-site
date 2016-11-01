@@ -2,12 +2,14 @@
 menu:
   overview:
     parent: overview
-title: The Process of Building It
+title: The process of building it
 weight: 21
 aliases:
   - /docs/intro/overview/building-process
   - /intro/overview/building-process
 ---
+
+# The process of building it
 
 ## How long it took to build
 

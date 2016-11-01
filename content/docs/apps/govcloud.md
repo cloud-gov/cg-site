@@ -2,9 +2,10 @@
 menu:
   docs:
     parent: apps
-title: GovCloud Guide
+title: GovCloud guide
 ---
 
+# GovCloud guide
 cloud.gov currently has two "environments" where orgs can live: the main environment that most orgs are using (located in AWS East/West) and a new GovCloud environment (located in [AWS GovCloud](https://aws.amazon.com/govcloud-us/)).
 
 When your org starts using cloud.gov's GovCloud environment, here are changes to look out for.

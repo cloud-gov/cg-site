@@ -2,9 +2,10 @@
 menu:
   docs:
     parent: apps
-title: Building Static Assets
+title: Building static assets
 ---
 
+# Building static assets
 Applications with non-trivial static assets (Javascript and CSS files) often include a build step to bundle and minify files.
 
 ### Build assets on CI

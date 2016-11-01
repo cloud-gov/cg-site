@@ -2,13 +2,14 @@
 menu:
   overview:
     parent: technology
-title: Other PaaS Choices
+title: Other PaaS choices
 weight: 30
 aliases:
   - /docs/intro/technology/paas-options
   - /intro/technology/paas-options
 ---
 
+# Other PaaS choices
 ## Open source
 
 18F uses and contributes to open source solutions whenever possible. We didn’t build cloud.gov from scratch; the hard work was done in the [open source Cloud Foundry project](https://github.com/cloudfoundry), which is open to anyone, including vendors in the PaaS space.

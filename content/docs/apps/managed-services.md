@@ -2,9 +2,10 @@
 menu:
   docs:
     parent: apps
-title: Managed Services
+title: Managed services
 ---
 
+# Managed services
 ### Background
 
 Cloud Foundry Managed Services provide applications with on-demand access to services outside of the stateless application environment. Typical managed services include databases, queues, and key-value stores.

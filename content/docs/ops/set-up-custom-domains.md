@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: operations
-title: Custom Domains for Users
+title: Custom domains for users
 ---
 
 # How to set up custom domains for users
@@ -29,7 +29,7 @@ There needs to be one ELB pointing to Cloud Foundry per TLS certificate.
 1. Click "Create Record Set".
 1. For `Alias`, select `Yes`.
 1. For `Alias Target`, type the name of your ELB and select it from the list.
-    
+
 ### Creating the Cloud Foundry Domain Association
 
 Before you can create Cloud Foundry applications under the new domain, you must associate the domain to an organization. There are two options for registration, private and shared.

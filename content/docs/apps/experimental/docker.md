@@ -2,9 +2,10 @@
 menu:
   docs:
     parent: experimental
-title: Deploying Docker Images
+title: Deploying Docker images
 ---
 
+# Deploying Docker images
 [**This is an experimental feature.**]({{< relref "docs/apps/experimental/experimental.md" >}})
 
 #### Docker as apps
@@ -13,7 +14,7 @@ In the new [cloud.gov environment (GovCloud)]({{< relref "docs/apps/govcloud.md"
 
 The only way to push Docker applications right now is through a public Docker registry. We will enable a private registry in the future.
 
-To push a Docker image, use the `-o` flag when pushing your app, for example: 
+To push a Docker image, use the `-o` flag when pushing your app, for example:
 
 `cf push lattice-app -o cloudfoundry/lattice-app`
 

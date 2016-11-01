@@ -2,10 +2,10 @@
 menu:
   docs:
     parent: operations
-title: DNS Settings for Cloud.gov
+title: DNS settings for cloud.gov
 ---
 
-# DNS Settings for Cloud.gov
+# DNS settings for cloud.gov
 
 The [`18F/dns` repository][repo-18f/dns] contains the [`cloud.gov.tf` Terraform
 configuration][repo-18f/dns#cloud.gov.tf] which automatically updates AWS. The

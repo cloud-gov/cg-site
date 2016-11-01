@@ -2,13 +2,14 @@
 menu:
   overview:
     parent: pricing
-title: What's Included
+title: What’s included
 weight: 10
 aliases:
   - /docs/intro/pricing/whats-included
   - /intro/pricing/whats-included
 ---
 
+# What’s included
 All cloud.gov access packages include the following:
 
 - API access, CLI access, Web UI access
