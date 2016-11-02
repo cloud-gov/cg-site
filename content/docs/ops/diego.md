@@ -32,6 +32,12 @@ Deployment is via the `deploy-diego` pipeline in the `cg-deploy-diego` repositor
 
 For the initial Diego deployment, we sized the cells to match existing DEAs in size and number. Future sizing/scaling should take into account a number of factors, including current and anticipated workloads, risk tolerance and recovery performance characteristics in the event a cell or AZ goes offline where containers will come up on surviving cells. See scaling notes at https://docs.cloudfoundry.org/concepts/high-availability.html#processes
 
+#### Disk Quota Over-Enforcement during Container Setup
+
+When copying a droplet, a buildpack, or other assets into a container, the Garden-Linux backend may end up over-reporting the amount of disk used in that container. If this disk usage exceeds the quota allocated to the container, the copying-in operation will fail, and the container will crash. If you see crash events for your CF app with the exit description, "Copying into the container failed", this quota issue is likely the cause.
+
+This erroneous reporting appears to be an interaction between the how the backing filesystem that garden-linux uses for container images accounts for disk usage and how payloads are streamed into the container. View the [Cloud Foundry documentation](https://github.com/cloudfoundry/diego-design-notes/blob/master/migrating-to-diego.md#disk-quota-over-enforcement-during-container-setup) for more detail about this issue including possible workarounds.
+
 #### Performance
 
 Diego is a very high-performance runtime solution, with negligible overhead when scaling into the tens of thousands containers.  For more information, see [this CF Summit talk]( https://www.youtube.com/watch?v=VRLgOUGOo-c&index=4&list=PLhuMOCWn4P9jUjjC6Dma-59N8U9UTjjPI)

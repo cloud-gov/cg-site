@@ -21,6 +21,15 @@ Deploying a basic node.js application to Cloud Foundry is relatively uncomplicat
     ```
 
 - Avoid using the `command:` manifest key to start your application, as this functionality [may be removed](https://github.com/cloudfoundry/nodejs-buildpack/pull/11#issuecomment-67666273). The aforementioned npm start script is preferred.
+
+- Please vendor your dependencies.  Cloud Foundry [documentation](https://docs.cloudfoundry.org/buildpacks/node/index.html#vendoring) specifies that you should do a `npm install` to install vendored dependencies and pushing your entire application with `cf push`. See the Cloud Foundry documentation for more information on [Deploying a Large Application](https://docs.cloudfoundry.org/devguide/deploy-apps/large-app-deploy.html).
+
+- Please do not put test harnesses or transpilers in your dependencies object. View the npm [documentation](https://docs.npmjs.com/files/package.json#dependencies) for more on this. All `devDependencies` should be installed and run on your CI and not during a deployment.
+
+- To ensure you only download the necessary dependencies, you should ensure that `NODE_ENV` is set to
+`production`, or pass the pass the `--production` flag on install. By setting this property, `npm install` will only install modules in your `dependencies`
+section of the `package.json` while ignoring those in the `devDependencies` section.
+
 - Use the [cfenv](https://www.npmjs.com/package/cfenv) module to assist with parsing the `VCAP_APPLICATION` and `VCAP_SERVICES` environment variables.
 
     ```javascript
@@ -56,8 +65,6 @@ Deploying a basic node.js application to Cloud Foundry is relatively uncomplicat
       }
     }
     ```
-
-- Optionally run `npm install` prior to `cf push` to preinstall dependencies rather than having them added during staging.
 
 **Example:**
 
