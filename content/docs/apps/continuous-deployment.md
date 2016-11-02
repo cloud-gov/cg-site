@@ -10,8 +10,46 @@ changes to your desired environment.
 
 Make sure that you've previously looked at the [Production Ready Guide]({{< relref "production-ready.md" >}}) and followed best practices.
 
-
 ## Continuous integration services
+
+*These instructions are different depending on the "environment" your application lives in. If you're not sure, pick East/West. (GovCloud is our new environment.)*
+
+### *GovCloud environment:* Deployer account broker
+
+You can provision a deployer account with permission to deploy to a single org and space using the deployer account service broker:
+
+1. Target the org and space you want to deploy to
+
+    ```bash
+    $ cf target -o $ORG -s $SPACE
+    ```
+
+1. Create a deployer account service instance
+
+    ```bash
+    $ cf create-service deployer-account deployer-account my-deployer-account
+    ```
+
+1. Get the ephemeral credentials link from the service instance
+
+    ```bash
+    $ cf service my-deployer-account
+
+    Service instance: my-deployer-account
+    Service: deployer-account
+    ...
+    Dashboard: https://fugacio.us/m/k3MtzJWVZaNlnjBYJ7FUdpW2ZkDvhmQz
+    ```
+
+1. Retrieve your credentials from the dashboard link. Be sure to retrieve your credentials right away, since the link will only work for a brief length of time.
+
+To delete your deployer account, delete the service instance:
+
+```bash
+$ cf delete-service my-deployer-account
+```
+
+### *East/West environment:* Ask an admin
 
 The first thing you need to do is ask an admin to setup a "deployer" user in your organization and give it permission to deploy to the desired space:
 
