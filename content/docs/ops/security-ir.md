@@ -2,10 +2,9 @@
 menu:
   docs:
     parent: operations
-title: Security IR Guide
+title: Security Incident Response Guide
+linktitle: Security IR Guide
 ---
-
-# Security incident response guide
 
 This document outlines cloud.gov's internal process for responding to security incidents. It outlines roles and responsibilities during and after incidents, and it lays out the steps we'll take to resolve them.
 

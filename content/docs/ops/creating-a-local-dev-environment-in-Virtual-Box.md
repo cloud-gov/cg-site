@@ -6,8 +6,6 @@ title: Creating a Local Dev Environment With VirtualBox
 linktitle: Local
 ---
 
-# Creating a local dev environment with VirtualBox
-
 BOSH Lite is designed to provide a local development environment for BOSH and by extension Cloud Foundry. BOSH Lite will be used run locally via Virtualbox. This guide is primarily concerned with bringing up a single-instance environment VB.
 
 To create a local environment you need to follow the instructions from the Cloud Foundry documentation: http://docs.cloudfoundry.org/deploying/boshlite/index.html.

@@ -3,8 +3,6 @@ title: Help
 aliases:
   - /help
 ---
-
-# Help
 There are several avenues to get help with cloud.gov:
 
 #### I am interested in using cloud.gov.

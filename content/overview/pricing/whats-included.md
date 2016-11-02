@@ -9,7 +9,6 @@ aliases:
   - /intro/pricing/whats-included
 ---
 
-# What’s included
 All cloud.gov access packages include the following:
 
 - API access, CLI access, Web UI access

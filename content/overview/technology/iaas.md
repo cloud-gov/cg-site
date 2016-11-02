@@ -9,7 +9,6 @@ aliases:
   - /intro/technology/iaas
 ---
 
-# cloud.gov and IaaS options
 ## The IaaS underlying cloud.gov
 
 Currently cloud.gov runs on top of Infrastructure as a Service provided by Amazon Web Services (AWS) regions located within the continental United States (US-East and US-West). We are transitioning cloud.gov to the [AWS GovCloud region](https://aws.amazon.com/govcloud-us/), which offers support for formal compliance needs such as [ITAR compliance](https://en.wikipedia.org/wiki/International_Traffic_in_Arms_Regulations). In most cases, new tenants will be placed in the AWS GovCloud environment.

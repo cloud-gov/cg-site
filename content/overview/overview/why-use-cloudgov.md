@@ -9,8 +9,6 @@ aliases:
   - /intro/overview/why-use-cloudgov
 ---
 
-# Why agencies should use it
-
 ## 1. Usability
 
 Hosting applications in the cloud does not automatically solve all the infrastructure problems that agencies face. It eliminates a lot of the concerns around managing data centers, but exposes the need for a new cloud operations skillset which is not widely available in government yet.

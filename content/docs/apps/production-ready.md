@@ -6,7 +6,6 @@ menu:
 title: Production Ready guide
 ---
 
-# Production Ready guide
 ## Your guide to having production ready apps on cloud.gov
 
 Read this guide early and often, especially when you’re starting to consider a future project. It explains things you can do for reliable and responsive applications deployed on cloud.gov.

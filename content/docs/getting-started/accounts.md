@@ -6,7 +6,6 @@ title: Accounts
 weight: -100
 ---
 
-# Accounts
 ## Setting up your account
 
 To start using cloud.gov:

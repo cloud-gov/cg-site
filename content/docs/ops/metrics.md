@@ -5,7 +5,6 @@ menu:
 title: Metrics
 ---
 
-# Metrics
 ***This page is out of date.***
 
 ## Saving and Exporting Dashboards

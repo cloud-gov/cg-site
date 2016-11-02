@@ -5,7 +5,6 @@ menu:
 title: Logs
 ---
 
-# Logs
 For logs to be captured by Cloud Foundry, your application should be writing them to `STDOUT`/`STDERR`, rather than a log file – see the framework-specific guidance in the menu.
 
 ## Current logs

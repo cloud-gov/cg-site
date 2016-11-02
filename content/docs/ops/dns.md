@@ -5,8 +5,6 @@ menu:
 title: DNS settings for cloud.gov
 ---
 
-# DNS settings for cloud.gov
-
 The [`18F/dns` repository][repo-18f/dns] contains the [`cloud.gov.tf` Terraform
 configuration][repo-18f/dns#cloud.gov.tf] which automatically updates AWS. The
 configuration file leverages resources of type `aws_route53_record`. To learn

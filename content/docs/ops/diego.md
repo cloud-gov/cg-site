@@ -4,7 +4,6 @@ menu:
     parent: operations
 title: Diego for 18F operators
 ---
-# Diego for 18F operators
 
 ## Overview
 Diego is the new application runtime system for Cloud Foundry.  While initially a rewrite of the legacy runtime (DEA) in golang, it has evolved into a container management solution, separate from but in practice integrated with Cloud Foundry.  Note the name "Diego" was originally "DEAgo", a portmanteau of the legacy runtime, DEA, and the new implementation language, go (golang).

@@ -5,7 +5,6 @@ menu:
 title: Github repos
 ---
 
-# Github repos
 Here are the repos with the tools and configuration for the platform:
 
 - Cloud.gov Website Repo (this site): https://github.com/18F/cg-site

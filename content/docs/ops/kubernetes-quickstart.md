@@ -4,7 +4,6 @@ menu:
     parent: deployment
 title: Kubernetes quickstart
 ---
-# Kubernetes quickstart
 
 #### Set Path
 export PATH=$PATH:/var/vcap/packages/kubernetes/bin

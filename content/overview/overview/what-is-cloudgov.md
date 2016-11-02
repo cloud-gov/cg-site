@@ -9,8 +9,6 @@ aliases:
   - /intro/overview/what-is-cloudgov
 ---
 
-# What is cloud.gov?
-
 cloud.gov gives teams working for federal government a secure, fully compliant foundation, integrated with private sector infrastructure providers, on which to build and release products and updates quickly.
 
 It handles the shared technical and legal requirements common to all federal government systems, so that teams can skip a large amount of repetitive work and instead focus on delivering software that serves people’s needs. It’s built to keep applications online even with large numbers of users and sharp increases in usage.

@@ -5,7 +5,6 @@ menu:
 title: Managing teammates
 ---
 
-# Managing teammates
 ## Invite a teammate
 
 If you're part of a team using cloud.gov, you can invite teammates to get cloud.gov accounts. You can invite anyone you need to work with, including federal employees and federal contractors.

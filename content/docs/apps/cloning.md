@@ -5,7 +5,6 @@ menu:
 title: Cloning applications
 ---
 
-# Cloning applications
 Say you have an existing deployment on Cloud Foundry, and you want to make a new staging environment. Below are the different scenarios around [application manifests](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html).
 
 ## If you have a single manifest

@@ -2,8 +2,6 @@
 type: index
 ---
 
-# cloud.gov Overview
-
 ### Platform as a Service (PaaS) for Government developers
 
 cloud.gov allows your development team to focus on what matters: your applications. As a Platform as a Service (PaaS), cloud.gov **eliminates the need to manage infrastructure such as virtual machines and servers**. This enables your development team to rapidly iterate and quickly launch your application to ensure mission success. Because cloud.gov is based on **open-source technologies**, it provides portability to other cloud providers or your existing on-premise solution.

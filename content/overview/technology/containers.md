@@ -9,7 +9,6 @@ aliases:
   - /intro/technology/containers
 ---
 
-# cloud.gov and containers
 We use Docker containers to deliver some of the cloud.gov managed services today. In the near future, cloud.gov's internal container system will support using standardized container images directly.
 
 A developer will be able to use Docker locally, or on a different cloud infrastructure, and then deploy into cloud.gov with no major issues. Many of the organizations that work on Cloud Foundry are part of the [Open Container Initiative](http://www.opencontainers.org/), so we are confident that we will increase cross-container support and flexibility going forward.

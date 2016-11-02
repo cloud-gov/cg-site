@@ -9,7 +9,6 @@ aliases:
   - /intro/pricing/rates
 ---
 
-# Rates
 cloud.gov fees are broken into three components:
 
 - Access package

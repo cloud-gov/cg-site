@@ -5,7 +5,6 @@ menu:
 title: Updating Cloud Foundry
 ---
 
-# Updating Cloud Foundry
 Updates to Cloud Foundry should be handled by the [`deploy-cf`](https://ci.cloud.gov/pipelines/deploy-cf) pipeline in [Concourse](https://concourse.ci).
 
 ### Staging
