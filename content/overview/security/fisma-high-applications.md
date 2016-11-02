@@ -2,7 +2,7 @@
 menu:
   overview:
     parent: security
-title: FISMA-High PaaS Alternatives
+title: FISMA-High PaaS alternatives
 weight: 30
 aliases:
   - /docs/intro/security/fisma-high-applications

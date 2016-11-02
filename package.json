@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "anchor-js": "git+https://github.com/msecret/anchorjs.git",
-    "cloudgov-style": "^1.x",
+    "cloudgov-style": "^2.0.0",
     "highlight": "^0.2.4",
     "jquery": "^2.2.0",
     "jquery.scrollto": "^2.1.2"

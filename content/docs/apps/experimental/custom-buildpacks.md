@@ -7,7 +7,7 @@ aliases:
     - /apps/multi-buildpack-deploys/
     - /apps/apt-get/
 
-title: Custom Buildpacks
+title: Custom buildpacks
 ---
 
 [**This is an experimental feature.**]({{< relref "docs/apps/experimental/experimental.md" >}})
@@ -16,7 +16,7 @@ Cloud Foundry (the underlying open source project behind cloud.gov) uses [buildp
 
 cloud.gov [officially supports]({{< relref "overview/pricing/whats-included.md">}}) a set of buildpacks, and it also allows you to provide your own.
 
-For example, if you want to use the ["R" buildpack](https://github.com/alexkago/cf-buildpack-r), you can push your code by typing: 
+For example, if you want to use the ["R" buildpack](https://github.com/alexkago/cf-buildpack-r), you can push your code by typing:
 
 `cf push myapp -b https://github.com/alexkago/cf-buildpack-r`
 

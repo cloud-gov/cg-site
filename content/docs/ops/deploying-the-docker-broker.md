@@ -2,9 +2,8 @@
 menu:
   docs:
     parent: deployment
-title: Deploying the Docker Broker
+title: Deploying the Docker broker
 ---
-
 This guide covers the high level steps required to configure, deploy and enable docker-boshrelease and included cf-containers-broker.
 
 #### Background
@@ -130,7 +129,7 @@ A few critical things to note when adding a service.
 
 ### Understanding how hosts are made visible to the appropriate orgs in New Relic
 
-This is done by including the organization’s New Relic license key in the broker manifest. 
+This is done by including the organization’s New Relic license key in the broker manifest.
 
 ##### License Key:
 
@@ -153,7 +152,7 @@ Include the `newrelic-monitor` template in each job.
 jobs:
   - name: broker
     templates:
-      ... 
+      ...
       - name: newrelic-monitor
         release: newrelic
   - name: docker
@@ -161,7 +160,7 @@ jobs:
       ...
       - name: newrelic-monitor
         release: newrelic
-        
+
 ```
 
 Include the license key and a concise deployment tag in the manifest properties.
@@ -174,7 +173,7 @@ properties:
     deployment_tag: docker-swarm
 ```
 
-After deploying the manifest data should begin appearing in the New Relic console wit 5 minutes. 
+After deploying the manifest data should begin appearing in the New Relic console wit 5 minutes.
 
 ##### Tagging and Alerting
 
@@ -237,10 +236,10 @@ Getting services in org ORG / space SPACE as user@gsa.gov...
 OK
 
 name                 service             plan       bound apps         last operation   
-es                   elasticsearch-swarm standard   my-app             update 
+es                   elasticsearch-swarm standard   my-app             update
 ```
 
-Confirm that the host:port and any credentials have been injected into the application env. 
+Confirm that the host:port and any credentials have been injected into the application env.
 
 ```
 cf env my-app
@@ -279,14 +278,14 @@ By default, the broker fetches images before starting, a large number of images 
 
 Not clear what causes this. Theorizing that newly added docker nodes must fetch images the first time they recieve placement for that service. Perhaps solved by ensuring the fetch errand is run after every manifest update.
 
-**Service instance port assignments don't persist after update/restart.** 
+**Service instance port assignments don't persist after update/restart.**
 
 This functionality was added in release 13 or 14 so it should not be an issue moving forward. If this happens, any application bound the service must be unbound, re-bound and restaged. Nic has a '[dodgy script](https://gist.github.com/drnic/cb695417db200bd10f6c)' that might help with this. Permanently fixing this is accomplished by setting container `PortBindings` via the [remote API](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.21/) when creating of starting a container. If a service instance isn't retaining its bindings check for proper port bindings with `docker inspect`. Populate those bindings stopping the container and restarting with a proper binding via the remote API.
 
 
 ### We understand how container placement works
 
-By default, the spread [placement strategy](https://docs.docker.com/swarm/scheduler/strategy/) is used. This is configurable in the `swarm_manager` job properties: 
+By default, the spread [placement strategy](https://docs.docker.com/swarm/scheduler/strategy/) is used. This is configurable in the `swarm_manager` job properties:
 - [code](https://github.com/cloudfoundry-community/docker-boshrelease/blob/1521218c438b774a8f6f3f24bbd560511f1b2a67/jobs/swarm_manager/templates/bin/job_properties.sh.erb#L31-L32)
 - [template](https://bosh.io/jobs/swarm_manager?source=github.com/cf-platform-eng/docker-boshrelease&version=22).
 

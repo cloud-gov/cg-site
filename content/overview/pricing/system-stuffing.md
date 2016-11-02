@@ -2,7 +2,7 @@
 menu:
   overview:
     parent: pricing
-title: Grouping Unrelated Spaces and Apps
+title: Grouping unrelated spaces and apps
 weight: 40
 aliases:
   - /docs/intro/pricing/system-stuffing

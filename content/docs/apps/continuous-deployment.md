@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: advanced
-title: Continuous Deployment
+title: Continuous deployment
 ---
 
 Setting up continuous deployment allows you to automatically upload your

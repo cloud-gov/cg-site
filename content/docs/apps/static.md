@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: apps
-title: Deploying Static Sites
+title: Deploying static sites
 ---
 
 ### Basics

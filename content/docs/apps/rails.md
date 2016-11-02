@@ -5,7 +5,9 @@ menu:
 title: Deploying Rails
 ---
 
-See the official CF guide: [Getting Started Deploying Ruby on Rails Apps](http://docs.cloudfoundry.org/buildpacks/ruby/gsg-ror.html). Here are the minimal steps for a basic Rails app:
+See the official CF guide: [Getting Started Deploying Ruby on Rails Apps](http://docs.cloudfoundry.org/buildpacks/ruby/gsg-ror.html).
+
+Here are the minimal steps for a basic Rails app:
 
 1. Follow the setup instructions in [Getting Started](/getting-started/setup/) and review [concepts](/getting-started/concepts/).  If you are just getting started learning CloudFoundry, you can use the sandbox space:
 

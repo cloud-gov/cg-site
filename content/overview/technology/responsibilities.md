@@ -2,7 +2,7 @@
 menu:
   overview:
     parent: technology
-title: What the cloud.gov PaaS Offers
+title: What the cloud.gov PaaS offers
 weight: 5
 aliases:
   - /docs/intro/technology/responsibilities

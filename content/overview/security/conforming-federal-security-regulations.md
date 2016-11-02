@@ -2,7 +2,7 @@
 menu:
   overview:
     parent: security
-title: Helping Apps Conform to Regs
+title: Helping apps conform to regs
 weight: 20
 aliases:
   - /docs/intro/security/conforming-federal-security-regulations

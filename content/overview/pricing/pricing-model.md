@@ -2,14 +2,12 @@
 menu:
   overview:
     parent: pricing
-title: What Is the Pricing Model?
+title: What is the pricing model?
 weight: 10
 aliases:
   - /docs/intro/pricing/pricing-model
   - /intro/pricing/pricing-model
 ---
-
-## Pricing model
 
 18F provides its services to other agencies on a _full_ cost-recovery model. This is true not only for cloud.gov, but also for our consulting, delivery, and other work.
 

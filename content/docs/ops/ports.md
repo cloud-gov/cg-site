@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: operations
-title: Port Descriptions
+title: Port descriptions
 ---
 
 Here are some ports in Bosh security group and the descriptions:

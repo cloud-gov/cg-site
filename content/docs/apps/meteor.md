@@ -5,7 +5,7 @@ menu:
 title: Deploying Meteor
 ---
 
-# About Meteor
+## About Meteor
 
 [Meteor](https://www.meteor.com/) is a Javascript framework that makes it very easy to synchronize data between the client and server. Moreover it's also very easy to share code between client and server.
 
@@ -16,9 +16,9 @@ Meteor includes nearly everything you need to get a web application up and runni
 - MongoDB for persistence
 - Asset pipeline (automagically include and minify CSS, JS, etc)
 
-# Hello world
+## Hello world
 
-## Install Meteor locally
+### Install Meteor locally
 
 See https://www.meteor.com/install. On OSX or Linux you can just run this in the terminal:
 
@@ -26,7 +26,7 @@ See https://www.meteor.com/install. On OSX or Linux you can just run this in the
 curl https://install.meteor.com/ | sh
 ```
 
-## Create a boilerplate app
+### Create a boilerplate app
 
 ```
 $ meteor create hello
@@ -37,7 +37,7 @@ $ meteor
 # press ctrl-c to exit the server when you are done
 ```
 
-## Adding the manifest.yml
+### Adding the manifest.yml
 
 Create at the root of your application a file called `manifest.yml` and add:
 
@@ -55,7 +55,7 @@ applications:
 
 You should customize the application name.
 
-## Deploy
+### Deploy
 
 Simply run
 
@@ -63,15 +63,15 @@ Simply run
 cf push
 ```
 
-# With a database
+## With a database
 
 To truly take advantage of Meteor's data syncing, you should set up a database collection using MongoDB.
 
-## Make a Todo list
+### Make a Todo list
 
 Follow this [tutorial](https://www.meteor.com/tutorials/blaze/creating-an-app). Make sure everything works fine locally.
 
-## Set up a Cloud Foundry Mongo Instance
+### Set up a Cloud Foundry Mongo Instance
 
 Peruse the Marketplace for available services:
 
@@ -97,4 +97,3 @@ Restage:
 ```bash
 cf restage hello-meteor
 ```
-

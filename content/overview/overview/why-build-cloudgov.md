@@ -2,7 +2,7 @@
 menu:
   overview:
     parent: overview
-title: Why 18F Built It
+title: Why 18F built it
 weight: 20
 aliases:
   - /docs/intro/overview/why-build-cloudgov

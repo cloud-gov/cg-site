@@ -2,7 +2,7 @@
 menu:
   overview:
     parent: technology
-title: Other PaaS Choices
+title: Other PaaS choices
 weight: 30
 aliases:
   - /docs/intro/technology/paas-options

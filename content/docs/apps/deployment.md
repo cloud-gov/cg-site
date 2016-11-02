@@ -2,8 +2,8 @@
 menu:
   docs:
     parent: apps
-title: General Deployment Tips
-linktitle: General Tips
+title: General deployment tips
+linktitle: General tips
 weight: -100
 ---
 

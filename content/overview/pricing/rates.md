@@ -17,7 +17,7 @@ cloud.gov fees are broken into three components:
 
 Find out [more about this pricing model]({{< relref "overview/pricing/pricing-model.md" >}}) and [how we define these terms]({{< relref "overview/terminology/pricing-terminology.md" >}})
 
-### Access Package
+## Access Package
 
 Packages are selected based on the kinds of applications to be hosted. [Find more about what's included in all access packages.]({{< relref "overview/pricing/whats-included.md" >}})
 
@@ -25,6 +25,7 @@ Packages are selected based on the kinds of applications to be hosted. [Find mor
 | --- | --- | --- | --- | --- |
 | **Sandbox** | Any user with a `.gov` or `.mil` email address can try out cloud.gov, no paperwork required. **Application resource usage is capped at 1GB.** | Free | Free | Only free services |
 | **Prototyping** | Suitable for many teams to deploy apps, though limited to the `*.apps.cloud.gov` domain. Access control can be delegated to teams. No production data allowed. Usually purchased per agency/department. | $15K |  ~$99/GB/month | All\** |
+| **Open Data** | One public-facing Open Data (no confidentiality risk assessed) system, including all the spaces needed and DNS support. **This account is limited to 2GB of memory usage per month.** | $10K | ~$99/GB/month | All\** (up to $2500/year) |
 | **FISMA Low** | One public-facing FISMA Low system, including all the spaces needed and DNS support. | $20K | ~$99/GB/month | All\** |
 | **FISMA Moderate** | One public-facing FISMA Moderate system, including all the spaces needed and DNS support. Additional support for FISMA Moderate data requirements. | $90K | ~$99/GB/month | All\** |
 
@@ -34,7 +35,7 @@ Packages are selected based on the kinds of applications to be hosted. [Find mor
 
 ---
 
-### Resource usage
+## Resource usage
 
 You will be charged for the **quota** you set for your resource usage. This is only based on the memory, in MB of RAM, your reserve for your applications.
 
@@ -49,7 +50,7 @@ We require your resource usage quota to **be set in advance**. This helps you co
 
 ---
 
-### Managed services
+## Managed services
 
 [Managed services]({{< relref "docs/apps/managed-services.md" >}}) are those which cloud.gov will spin up quickly and run on your behalf (databases, storage, caching, etc.). You can see the services and plans offered for each by [running `cf marketplace`]({{< relref "docs/apps/managed-services.md" >}}). *We'll include more details on this page in the future.*
 

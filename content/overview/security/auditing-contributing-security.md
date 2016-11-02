@@ -2,7 +2,7 @@
 menu:
   overview:
     parent: security
-title: Auditing or Contributing
+title: Auditing or contributing
 weight: 40
 aliases:
   - /docs/intro/security/auditing-contributing-security

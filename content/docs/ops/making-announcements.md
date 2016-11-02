@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: operations
-title: Making Announcements
+title: Making announcements
 ---
 
 ### Contents

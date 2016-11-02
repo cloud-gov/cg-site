@@ -2,8 +2,6 @@
 type: index
 ---
 
-# cloud.gov Documentation
-
 ### Introduction to cloud.gov
 
 cloud.gov gives teams working for federal government a secure, fully compliant foundation, integrated with private sector infrastructure providers, on which to build and release products and updates quickly. [Learn more about cloud.gov.]({{< relref "overview/overview/what-is-cloudgov.md" >}})

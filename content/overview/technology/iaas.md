@@ -2,7 +2,7 @@
 menu:
   overview:
     parent: technology
-title: cloud.gov and IaaS Options
+title: cloud.gov and IaaS options
 weight: 20
 aliases:
   - /docs/intro/technology/iaas

@@ -2,7 +2,7 @@
 menu:
   overview:
     parent: pricing
-title: How Do Agencies Pay?
+title: How do agencies pay?
 weight: 20
 aliases:
   - /docs/intro/pricing/payment-process

@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: users
-title: Managing Users
+title: Managing users
 ---
 
 ## Note for GovCloud environment

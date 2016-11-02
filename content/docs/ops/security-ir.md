@@ -2,12 +2,13 @@
 menu:
   docs:
     parent: operations
-title: Security IR Guide
+title: Security Incident Response Guide
+linktitle: Security IR Guide
 ---
 
-# Security Incident Response Guide
+This document outlines cloud.gov's internal process for responding to security incidents. It outlines roles and responsibilities during and after incidents, and it lays out the steps we'll take to resolve them.
 
-This document outlines cloud.gov's internal process for responding to security incidents. It outlines roles and responsibilities during and after incidents, and it lays out the steps we'll take to resolve them. *If you're responding to an incident, [here's our IR checklist]({{< relref "security-ir-checklist.md" >}}) as a short, actionable companion to this guide.*
+*If you're responding to an incident, [here's our IR checklist]({{< relref "security-ir-checklist.md" >}}) as a short, actionable companion to this guide.*
 
 (If you're outside 18F: if you notice something that may be a security problem, please email <a href="mailto:cloud-gov-support@gsa.gov">cloud-gov-support@gsa.gov</a>. Thanks!)
 
@@ -60,14 +61,14 @@ The IC makes sure that the [18F incident response process](https://handbook.18f.
 
 #### Comms at the Initiate phase
 
-Note that at this point the issue's status is "investigating" — we haven't confirmed that it's really an issue yet. So, we should actually refer to this as just an "event" at this point; it doesn't become an "incident" until we've confirmed it. 
+Note that at this point the issue's status is "investigating" — we haven't confirmed that it's really an issue yet. So, we should actually refer to this as just an "event" at this point; it doesn't become an "incident" until we've confirmed it.
 
 At this phase, communications should follow these steps (and any additional steps listed at [18F incident response process](https://handbook.18f.gov/security-incidents/)):
 
 - The IC should inform GSA IT, the GSA IT Service Desk, and our DevOps teams of the investigation by emailing `gsa-ir@gsa.gov`, `itservicedesk@gsa.gov`, and `devops@gsa.gov` with a description of the incident, via a single email to all three addresses. If GSA Gmail itself is down or compromised, call the GSA IT Service Desk at 1-866-450-5250. **This step needs to happen within one hour of detecting a potential incident.**
 - Real-time chat should happen in [`#incident-response`](https://18f.slack.com/messages/incident-response/).
 - Create an issue in the [`security-incidents`](https://github.com/18f/security-incidents) GitHub repository. Copy the following template to create the issue:
- 
+
 ```
 Short description of what's going on
 
@@ -92,9 +93,9 @@ The next step is to assess the issue. We need to answer two questions:
 - Is this an incident (i.e., did the thing we suspect happen actually happen?)
 - If so, how severe is it? (This will determine how our response proceeds.)
 
-To answer these questions, the IC should form a response team by DM'ing people in Slack. The response team should work to confirm the issue and assess its impact. 
+To answer these questions, the IC should form a response team by DM'ing people in Slack. The response team should work to confirm the issue and assess its impact.
 
-If the issue turns out to be a false alarm, the IC should update the ticket, setting the status to "false alarm", and closing the issue. 
+If the issue turns out to be a false alarm, the IC should update the ticket, setting the status to "false alarm", and closing the issue.
 
 If the issue is valid, the team should assess its impact and determine an initial severity following the incident severity guide below. (Note that the severity can change over the lifespan of the incident, so it's OK to determine the initial severity fairly quickly.)
 
@@ -128,7 +129,7 @@ This sitrep should be:
 
 #### Comms at the Assess phase
 
-Updates and real-time chat should continue as above (updates on the GitHub issue, chat in Slack or Google Hangouts). 
+Updates and real-time chat should continue as above (updates on the GitHub issue, chat in Slack or Google Hangouts).
 
 ### Remediate
 
@@ -166,13 +167,13 @@ Once the incident is no longer active — i.e. the breach has been contained, th
 
 #### Comms at the Remediate phase
 
-- Updates and real-time chat should continue as above (updates on the GitHub issue, chat in Slack or Google Hangouts). 
+- Updates and real-time chat should continue as above (updates on the GitHub issue, chat in Slack or Google Hangouts).
 
 - The IC should continue to post updated sitreps on a regular cadence (the section on severities, below, suggests cadences for each level). These sitreps should be sent to Slack, to GSA-IT and US-CERT via email, and to any other stakeholders identified throughout the process (e.g. clients).
 
 ### Retrospective
 
-The final step in handling a security incident is figuring out what we learned. The IC (or one of the ICs if there were multiple, or a designated other party) should lead a retrospective and develop an incident report. 
+The final step in handling a security incident is figuring out what we learned. The IC (or one of the ICs if there were multiple, or a designated other party) should lead a retrospective and develop an incident report.
 
 Conducting retrospectives is out of the scope of this document, but as a crash course, here's an [introduction to blameless postmortems](https://codeascraft.com/2012/05/22/blameless-postmortems/). We follow the [basic steps listed at cg-postmortems](https://github.com/18F/cg-postmortems).
 
@@ -236,4 +237,3 @@ Guidelines for addressing Low-sev issues:
 - Response should be business-hours.
 - Responders should avoid service degradation unless stakeholders agree.
 - Sitreps should be sent approximately daily.
-

@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: getting-started
-title: Your First Deploy
+title: Your first deploy
 weight: -30
 ---
 

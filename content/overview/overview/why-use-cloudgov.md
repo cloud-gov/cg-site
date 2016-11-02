@@ -2,7 +2,7 @@
 menu:
   overview:
     parent: overview
-title: Why Agencies Should Use It
+title: Why agencies should use it
 weight: 31
 aliases:
   - /docs/intro/overview/why-use-cloudgov

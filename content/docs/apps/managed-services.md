@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: apps
-title: Managed Services
+title: Managed services
 ---
 
 ### Background

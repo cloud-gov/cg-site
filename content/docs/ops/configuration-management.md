@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: operations
-title: Configuration Management
+title: Configuration management
 ---
 
 <!-- This page is important for FedRAMP compliance. See the CM family of controls, including CM-9. -->

@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: apps
-title: Deployment Troubleshooting
+title: Deployment troubleshooting
 linktitle: Troubleshooting
 weight: 100
 ---

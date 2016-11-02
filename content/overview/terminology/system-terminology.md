@@ -2,7 +2,7 @@
 menu:
   overview:
     parent: terminology
-title: cloud.gov PaaS Terms
+title: cloud.gov PaaS terms
 weight: 10
 aliases:
   - /docs/intro/terminology/system-terminology

@@ -2,7 +2,7 @@
 menu:
   overview:
     parent: pricing
-title: What's Included
+title: What’s included
 weight: 10
 aliases:
   - /docs/intro/pricing/whats-included

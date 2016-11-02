@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: advanced
-title: Running One-Off Tasks
+title: Running one-off tasks
 aliases:
 - /getting-started/cf-ssh/
 ---

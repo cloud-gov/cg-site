@@ -2,7 +2,7 @@
 menu:
   overview:
     parent: overview
-title: How to Use It
+title: How to use it
 weight: 40
 aliases:
   - /docs/intro/overview/using-cloudgov-paas

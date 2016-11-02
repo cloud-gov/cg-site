@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: operations
-title: Secret Key Management
+title: Secret key management
 ---
 
 ### Sharing secret keys
