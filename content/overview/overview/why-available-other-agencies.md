@@ -9,18 +9,14 @@ aliases:
   - /intro/overview/why-available-other-agencies
 ---
 
-Just as it has for us at 18F, we think cloud.gov will help other federal agencies deliver taxpayer-funded services the American people deserve in a faster, more user-centered way.
+cloud.gov will help other federal agencies deliver taxpayer-funded services the American people deserve in a faster, more user-centered way.
 
 ## Solving the cloud operations bottleneck
 
-All federal agencies have a mandate to deploy their services in the cloud. We believe any agency tackling this problem will face the same regulatory and compliance impediments we faced, as well as bottlenecks around cloud operations expertise.
-
-Some agencies will tackle these problems with little cloud operations capability or experience. They may not know of the platform-as-a-service (PaaS) options that now exist and that provide more appropriate functionality than an infrastructure-as-a-service (IaaS) provides. Even when agencies do understand what they should do, many won’t be able to do it, whether because of resource shortages, confusion about choosing a PaaS solution, bureaucracy, or other reasons.
+All federal agencies have a mandate to deploy their services in the cloud. Any agency tackling this problem will face regulatory and compliance challenges. Some agencies will tackle these problems with little cloud operations capability or experience. Even agencies with the right expertise can face resource shortages, confusion about choosing a Platform as a Service (PaaS) solution, bureaucracy, or other limitations.
 
 Many separate agencies and IT organizations are independently trying to solve these problems, resulting in redundant efforts. A centralized PaaS model, one that is already compliant with federal rules, would reduce the work and cost of wider cloud adoption.
 
 ## More efficiency across government
 
-One of 18F’s goals is to produce technology to make the whole government more effective and efficient and help with a wide transition to a more agile enterprise governance model. We want other agencies to see if they can realize the same gains in productivity that we have seen.
-
-By showing that this model works with real government apps, making it available for use, and making it replicable as an open source project, 18F hopes to increase the efficiency with which any agency can deliver digital services. The potential economy of scale is huge.
+One of our goals for cloud.gov is to give other agencies access to the same gains in productivity that we have seen. By deploying government apps with this model, then making the model available for other agencies, as well as making it replicable as an open source project, we hope to increase the efficiency with which any agency can deliver digital services. The potential economy of scale is huge.

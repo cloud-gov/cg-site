@@ -19,7 +19,7 @@ We are building on the public [Cloud Foundry project](http://www.cloudfoundry.or
 
 By using Cloud Foundry’s “stemcell” capability, we can deploy all apps on a [hardened](https://github.com/18F/cg-harden-boshrelease) operating system image that is tightly audited for compliance with federal standards. We can also centrally scan and audit the platform itself, as well as applications running on it.
 
-The cloud.gov deployment is [publicly documented in GitHub]({{< relref "docs/ops/repos.md" >}}). We will steadily improve it over time, centrally improving the security of all apps running on top of it. We encourage other agencies and even the general public to contribute. They are also free to take our work to make it easier for them to deploy their own platform-as-a-service by following in our footsteps. That said, we think working together on a single PaaS deployment will produce the greatest economy of scale in operations and security.
+The cloud.gov deployment is [publicly documented in GitHub]({{< relref "docs/ops/repos.md" >}}). We will steadily improve it over time, centrally improving the security of all apps running on top of it. We encourage other agencies and even the general public to contribute. They are also free to take our work to make it easier for them to deploy their own Platform as a Service by following in our footsteps. That said, we think working together on a single PaaS deployment will produce the greatest economy of scale in operations and security.
 
 
 ## 3. Conformity with federal rules

@@ -11,7 +11,7 @@ aliases:
 
 #### Do agencies need a separate billing relationship with the IaaS provider?
 
-No. However, they may want their own relationship if they want to use specific capabilities offered at the infrastructure-as-a-service level that are not exposed via cloud.gov.
+No. However, they may want their own relationship if they want to use specific capabilities offered at the Infrastructure as a Service level that are not exposed via cloud.gov.
 
 #### Does cloud.gov pricing include usage of New Relic or other external services?
 
