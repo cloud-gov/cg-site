@@ -116,7 +116,7 @@ $ psql/bin/pg_dump --format=custom $DATABASE_URL > backup.pg
 On your local host:
 
 ```sh
-$ cf files {app name} backup.pg | tail -n +4 > backup.pg
+$ cf files {app name} app/backup.pg | tail -n +4 > backup.pg
 ```
 
 > [Documentation for `cf files`](http://cli.cloudfoundry.org/en-US/cf/files.html)
