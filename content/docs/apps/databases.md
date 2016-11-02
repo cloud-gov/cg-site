@@ -5,7 +5,6 @@ menu:
 title: Databases
 ---
 
-# Databases
 There are multiple options for how to set up databases for use with applications in cloud.gov's version of Cloud Foundry.
 
 ## Services

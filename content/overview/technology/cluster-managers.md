@@ -9,7 +9,6 @@ aliases:
   - /intro/technology/cluster-managers
 ---
 
-# Kubernetes, Mesos, etc.
 These tools address different and complementary models to the platform-as-a-service workflow we are supporting, like domain microservices and service discovery.
 
 In our research, we have found government agencies typically aren’t in a state where they’re ready for broad and direct deployment of services using those models. We feel the PaaS model is better suited to the most common problems observed in government agencies today.

@@ -5,8 +5,6 @@ menu:
 title: Billing
 ---
 
-# Billing
-
 This document describes how the 18F cloud.gov team will manage billing systems for the platform.
 
 ## Abacus

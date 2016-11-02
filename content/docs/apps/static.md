@@ -5,7 +5,6 @@ menu:
 title: Deploying static sites
 ---
 
-# Deploying static sites
 ### Basics
 
 Create `index.html`:

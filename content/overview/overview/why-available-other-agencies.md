@@ -9,8 +9,6 @@ aliases:
   - /intro/overview/why-available-other-agencies
 ---
 
-# Why it’s available
-
 Just as it has for us at 18F, we think cloud.gov will help other federal agencies deliver taxpayer-funded services the American people deserve in a faster, more user-centered way.
 
 ## Solving the cloud operations bottleneck

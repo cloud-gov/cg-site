@@ -5,7 +5,6 @@ menu:
 title: Deploying Meteor
 ---
 
-# Deploying Meteor
 ## About Meteor
 
 [Meteor](https://www.meteor.com/) is a Javascript framework that makes it very easy to synchronize data between the client and server. Moreover it's also very easy to share code between client and server.

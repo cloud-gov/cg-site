@@ -6,7 +6,6 @@ title: Experimental services
 slug: services
 ---
 
-# Experimental services
 [**This is an experimental feature.**]({{< relref "docs/apps/experimental/experimental.md" >}})
 
 Some services in the cloud.gov platform are experimental but can provide value to your applications.

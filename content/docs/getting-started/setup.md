@@ -6,7 +6,6 @@ title: Setup
 weight: -50
 ---
 
-# Setup
 ## Setting up the command line
 As a user, nearly all of your interactions with Cloud Foundry will be through the command line. To get it set up:
 

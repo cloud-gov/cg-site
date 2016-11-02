@@ -2,10 +2,9 @@
 menu:
   docs:
     parent: operations
-title: Custom domains for users
+title: How to set up custom domains for users
+linktitle: Custom domains for users
 ---
-
-# How to set up custom domains for users
 
 This is the operations side of the [user instructions for setting up custom domains]({{< relref "docs/apps/custom-domains.md" >}}).
 

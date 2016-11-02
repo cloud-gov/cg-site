@@ -5,7 +5,6 @@ menu:
 title: Continuous deployment
 ---
 
-# Continuous deployment
 Setting up continuous deployment allows you to automatically upload your
 changes to your desired environment.
 

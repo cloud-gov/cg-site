@@ -5,7 +5,6 @@ menu:
 title: Deploying Docker images
 ---
 
-# Deploying Docker images
 [**This is an experimental feature.**]({{< relref "docs/apps/experimental/experimental.md" >}})
 
 #### Docker as apps

@@ -5,7 +5,6 @@ menu:
 title: Concepts
 ---
 
-# Concepts
 Here's an overview of key cloud.gov terms and concepts. cloud.gov uses Cloud Foundry terms, so the [Cloud Foundry glossary](http://docs.cloudfoundry.org/concepts/glossary.html) is a helpful reference too.
 
 ## Organizations

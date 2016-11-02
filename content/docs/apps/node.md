@@ -5,7 +5,6 @@ menu:
 title: Deploying node.js
 ---
 
-# Deploying node.js
 Deploying a basic node.js application to Cloud Foundry is relatively uncomplicated. The [node.js tips document](http://docs.cloudfoundry.org/buildpacks/node/node-tips.html) on cloudfoundry.org covers the process in detail.
 
 **Summary:**

@@ -5,7 +5,6 @@ menu:
 title: Working With cloud.gov authentication
 ---
 
-# Working With cloud.gov authentication
 cloud.gov uses Cloud Foundry's [User Account and Authentication (UAA) server]
 [uaa-server-docs] to provide identity management capabilities for the cloud.gov
 platform. Users of cloud.gov need to contact a member of the cloud.gov team,

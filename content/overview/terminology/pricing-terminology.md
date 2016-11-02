@@ -9,8 +9,6 @@ aliases:
   - /intro/terminology/pricing-terminology
 ---
 
-# Terms we use in pricing
-
 We use these terms among others to define a number of products and services we offer. Our billing structure is built around them. We will add additional terms if confusion about them comes up frequently in questions from partner agencies or the public.
 
 ### System

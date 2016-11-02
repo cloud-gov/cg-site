@@ -4,8 +4,6 @@ menu:
     parent: operations
 title: Troubleshooting Bosh
 ---
-
-# Troubleshooting Bosh
 ## Accessing jumpboxes
 
 If you're going to be accessing Bosh, you will need to intercept a jumpbox via

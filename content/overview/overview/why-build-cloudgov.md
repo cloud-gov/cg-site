@@ -9,8 +9,6 @@ aliases:
   - /intro/overview/why-build-cloudgov
 ---
 
-# Why 18F built it
-
 The law and federal agency requirements describe a long list of good practices for government digital services. But there is no accompanying tooling support for implementers, so delivering and deploying an app requires a lot of work. An agency needs operations expertise to follow all the regulations, manage the ATO process, and design a robust service infrastructure.
 
 As 18F scaled up the number of teams deploying applications at any given time, we wanted to avoid turning cloud operations talent into the kind of bottleneck that slows down development for many federal teams. We focused on technical operations that could act as force-multipliers for each team, enabling our cloud ops staffers to focus on solving new problems.

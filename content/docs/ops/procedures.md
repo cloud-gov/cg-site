@@ -5,7 +5,6 @@ menu:
 title: Common procedures
 ---
 
-# Common procedures
 ## Creating Metrics accounts
 
 Accounts in the metrics site require GitHub login. Local accounts are not allowed.

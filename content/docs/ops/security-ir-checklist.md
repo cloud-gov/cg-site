@@ -2,10 +2,9 @@
 menu:
   docs:
     parent: operations
-title: Security IR checklist
+title: Security Incident Response checklist
+linktitle: Security IR checklist
 ---
-
-# Security incident response checklist
 
 *This is a short, actionable checklist for the Incident Commander (IC) to follow during incident response. It's a companion to the [IR guide]({{< relref "security-ir.md" >}}), where you can find the full details of each step.*
 

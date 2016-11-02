@@ -9,8 +9,6 @@ aliases:
   - /intro/overview/using-cloudgov-paas
 ---
 
-# How to use it
-
 ## Using the cloud.gov PaaS with 18F
 
 18F uses cloud.gov to develop and deploy applications in our work with agency partners. If 18F is delivering a product, the use of cloud.gov is implicit, and we recoup costs from the partner agency. This ensures the least possible friction for our teams. For example, [Every Kid in a Park](https://everykidinapark.gov/) (for the Department of the Interior) and [College Scorecard](https://collegescorecard.ed.gov/) (for the Department of Education) were both developed and launched using cloud.gov.

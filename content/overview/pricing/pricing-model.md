@@ -9,8 +9,6 @@ aliases:
   - /intro/pricing/pricing-model
 ---
 
-# What is the pricing model?
-
 18F provides its services to other agencies on a _full_ cost-recovery model. This is true not only for cloud.gov, but also for our consulting, delivery, and other work.
 
 ---

@@ -10,7 +10,6 @@ aliases:
 title: Custom buildpacks
 ---
 
-# Custom buildpacks
 [**This is an experimental feature.**]({{< relref "docs/apps/experimental/experimental.md" >}})
 
 Cloud Foundry (the underlying open source project behind cloud.gov) uses [buildpacks]({{< relref "docs/getting-started/concepts.md">}}#buildpacks) to allow your applications to be deployed.

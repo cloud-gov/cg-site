@@ -5,7 +5,6 @@ menu:
 title: Making announcements
 ---
 
-# Making announcements
 ### Contents
 * [Announcing Maintenance](#announcing-maintenance)
 * [Announcing Incidents/Outages](#announcing-incidents)

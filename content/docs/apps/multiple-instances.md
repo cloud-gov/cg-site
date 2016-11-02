@@ -5,8 +5,6 @@ menu:
     parent: advanced
 title: Running multiple instances
 ---
-
-# Running multiple instances
 ## Starting Multiple Instances
 There are three ways to start multiple app instances in Cloud Foundry:
 

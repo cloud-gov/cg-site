@@ -5,7 +5,6 @@ menu:
 title: Port descriptions
 ---
 
-# Port descriptions
 Here are some ports in Bosh security group and the descriptions:
 
 | Port   | Description       |

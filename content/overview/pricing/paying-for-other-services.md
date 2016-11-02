@@ -9,7 +9,6 @@ aliases:
   - /intro/pricing/paying-for-otherservices
 ---
 
-# Other included services
 #### Do agencies need a separate billing relationship with the IaaS provider?
 
 No. However, they may want their own relationship if they want to use specific capabilities offered at the infrastructure-as-a-service level that are not exposed via cloud.gov.

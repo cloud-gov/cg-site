@@ -9,7 +9,6 @@ aliases:
   - /intro/security/improving-application-security
 ---
 
-# Security for all applications
 Probably the biggest security improvement afforded by cloud.gov is that it enforces an immutable infrastructure.
 
 Instead of logging into a live system to make a change, we deploy an entirely new system with security updates applied. That ensures any foothold which might have been exploited by hackers gets wiped away at the same time.

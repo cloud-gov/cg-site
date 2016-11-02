@@ -5,7 +5,6 @@ menu:
 title: Leveraging cloud.gov authentication
 ---
 
-# Leveraging cloud.gov authentication
 cloud.gov uses Cloud Foundry's [User Account and Authentication (UAA) server](https://docs.cloudfoundry.org/concepts/architecture/uaa.html) to provide identity management capabilities for the cloud.gov platform.
 
 App developers can also leverage cloud.gov's UAA instance as a backend that brokers authentication with supported identity providers (currently GSA and EPA). Essentially, you can (and probably should) use cloud.gov's authentication brokering if the users that you need to authenticate in your application are employees of any of the supported agencies.
