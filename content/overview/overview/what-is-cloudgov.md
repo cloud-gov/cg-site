@@ -25,7 +25,7 @@ All the software components of the cloud.gov Platform as a Service are [open sou
 
 cloud.gov gives teams working for federal government a secure, fully compliant foundation on which to build and release products and updates quickly. It handles the shared technical and legal requirements common to federal government systems, so that teams can skip a large amount of repetitive work and instead focus on delivering software that serves people’s needs. It’s built to keep applications online even with large numbers of users and sharp increases in usage.
 
-cloud.gov is built by [18F](https://18f.gsa.gov/) in the [U.S. General Services Administration](http://www.gsa.gov/portal/category/100000). cloud.gov is a cost-recoverable service funded by charging a fee to the teams that use it.
+cloud.gov is built and maintained by [18F](https://18f.gsa.gov/) as part of the U.S. General Services Administration’s [Technology Transformation Service](http://www.gsa.gov/portal/category/25729) portfolio. cloud.gov is a cost-recoverable service funded by charging a fee to the teams that use it.
 
 ## cloud.gov provides a compliance toolkit
 
