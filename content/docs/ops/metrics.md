@@ -5,7 +5,7 @@ menu:
 title: Metrics
 ---
 
-***This page is out of date.***
+**This page is out of date.**
 
 ## Saving and Exporting Dashboards
 The Dashboards created in Metrics provide rich data. Any changes to the configuration need to be exported and put into the [repository](https://github.com/18F/cg-metrics/tree/master/grafana/dashboards).
