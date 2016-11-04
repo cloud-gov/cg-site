@@ -22,7 +22,9 @@ If you're in GSA or EPA and can't seem to log into cloud.gov from the command li
 
 If you're in GSA or EPA and you need to reset your agency account password, reset your password using your agency's normal process.
 
-If you log in with a cloud.gov account that has its own password (such as `ORGNAME_deployer` accounts), you can reset your password by going to https://login.cloud.gov/forgot_password.
+If you log in with a cloud.gov account that has its own password, you can reset your password by going to https://login.cloud.gov/forgot_password.
+
+For `ORGNAME_deployer` accounts, if you need the password reset, please contact [cloud.gov support](/help/), providing the account name with your request, and a member of the cloud.gov team will provide you with a new password. If you are using our [deployer account broker]({{< relref "docs/apps/continuous-deployment.md" >}}) you can delete and recreate your account to reset the credentials.
 
 ## Using your account responsibly
 
