@@ -7,21 +7,24 @@ aliases:
 - /getting-started/cf-ssh/
 ---
 
-The most reliable way to do one-off tasks is by deploying a short-lived app. If you need to perform deeper inspection of how your application is running you may want to [use SSH]({{< relref "docs/apps/using-ssh.md" >}}) instead.
+The most reliable way to do one-off tasks is by deploying a short-lived app. If you need to perform deeper inspection of how your application is running, you may want to [use SSH]({{< relref "docs/apps/using-ssh.md" >}}) instead.
 
-## Disclaimers
 
-* Both require a "complete" [application manifest](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) (which needs to include all of your service bindings, etc.) &mdash; if you don't have one yet, generate one from an existing app:
+## Deploy a short-lived app
+
+### Know before you deploy
+
+* This requires a "complete" [application manifest](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) (which needs to include all of your service bindings, etc.) &mdash; if you don't have one yet, generate one from an existing app:
 
     ```bash
     cf create-app-manifest <APP_NAME> -p manifest.yml
     ```
 
-* Both will spin up an instance of your environment uploading your **local** code.
+* This will spin up an instance of your environment uploading your **local** code.
     * Note that this may not be in sync with your live app.
     * You can leverage this fact to include files that your one-off task might need, such as a data file for importing.
 
-## Short-lived app
+### How to deploy
 
 The idea here is that we are going to deploy a new application, but running the one-off task, rather than starting a server or whatever it would normally do. Note that this will not work for any command that is interactive.
 
@@ -56,3 +59,5 @@ The idea here is that we are going to deploy a new application, but running the 
 
 1. If needed, use [`cf files`][] to collect any artifacts.
 1. Run `cf delete task-runner` to clean it up.
+
+[`cf files`]: http://cli.cloudfoundry.org/en-US/cf/files.html
