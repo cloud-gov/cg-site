@@ -17,7 +17,7 @@ You can also interact directly with your the services bound to your application 
 
 ### *East/West environment:* CF-SSH
 
-Another way to run one-off commands is via `cf-ssh`. `cf-ssh` is a shared ssh session with an application container that you can connect to. This allows you to debug the environment and your application without disturbing a running container.
+You can get a shell via the `cf-ssh` command (note the dash). `cf-ssh` is a shared ssh session with an application container that you can connect to. This allows you to debug the environment and your application without disturbing a running container.
 
 Our `cf-ssh` is customized to our Cloud Foundry installation, so please **do not use the community version of [`cf ssh`](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html)**. Also note that only one person can use `cf-ssh` for any particular app at any particular time.
 
