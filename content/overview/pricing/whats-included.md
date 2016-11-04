@@ -33,6 +33,8 @@ All cloud.gov access packages include the following:
 - Platform maintenance and managed service expansion overhead
 - Support for customer-provided DNS for applications (including support for IPv6)
 
+Note that the access package covers [both the AWS East/West and GovCloud environments]({{< relref "overview/pricing/rates.md#access-package" >}}), while that migration is in progress.
+
 <!--
 TODO
 - TCO statement (red/not-included stuff)
