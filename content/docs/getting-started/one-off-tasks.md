@@ -7,7 +7,7 @@ aliases:
 - /getting-started/cf-ssh/
 ---
 
-There are a couple of ways to run one-off tasks in cloud.gov's version of Cloud Foundry. The most reliable way to do one-off tasks is by deploying a short-lived app. If you need to perform deeper inspection of how your application is running you may want to [use SSH]({{< relref "docs/apps/using-ssh.md" >}}) instead.
+The most reliable way to do one-off tasks is by deploying a short-lived app. If you need to perform deeper inspection of how your application is running you may want to [use SSH]({{< relref "docs/apps/using-ssh.md" >}}) instead.
 
 ## Disclaimers
 
