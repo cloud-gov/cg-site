@@ -39,6 +39,23 @@ As part of [cloud.gov achieving FedRAMP authorization](https://18f.gsa.gov/2016/
 
 Any systems running in the AWS East/West version of cloud.gov. To find all of the apps you have access to, visit https://dashboard.cloud.gov. All apps that aren't moved by [TODO] will be deleted, so make sure that you or someone on your team [coordinates]({{< relref "docs/help.md" >}}) with the cloud.gov team to ensure your migration is completed as smoothly as possible.
 
+#### Costs
+
+For [resource usage]({{< relref "overview/pricing/rates.md" >}}), we will bill East/West usage until your migration is complete, then switch to billing GovCloud usage. In other words, you will not be double-charged while migrating.
+
+The cloud.gov team estimates that **migrating a single "system" should take between one hour and one week** of developer time, depending on:
+
+* For the developer(s) handling the move:
+    * Level of cloud.gov experience
+    * Familiarity with the architecture of the system
+* Complexity of the architecture
+* Whether the system is already following the [deployment best practices]({{< relref "docs/apps/production-ready.md" >}})
+* If the system is using one or more databases/[services]({{< relref "docs/apps/managed-services.md" >}})
+* The [availability](https://simple.wikipedia.org/wiki/Availability) requirements of your system
+    * How big of a deal is it if your system goes down for a few minutes? or an hour or more?
+
+Any labor involved from your project team is the responsibility of your project. There is no additional charge for support from the cloud.gov team assisting your developers with the migration.
+
 #### Process
 
 1. Ensure that a organization is created for your system in GovCloud. [TODO explain how to do this]
@@ -66,4 +83,4 @@ The cloud.gov team is still working through details on the following:
 * Timeline/[deadlines](https://github.com/18F/cg-product/issues/403) for completing the migration
 * The support arrangement that the cloud.gov team will provide for migration assistance
 
-All affected tenants will be notified as soon as we have more information.
+All affected tenants will be notified as more information is available.
