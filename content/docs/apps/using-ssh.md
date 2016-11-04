@@ -12,7 +12,8 @@ You may on occasion want to get a SSH shell in the environment where your app is
 
 ### *GovCloud environment:* CF SSH
 
-Another way to run one-off commands is via [`cf ssh`](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#ssh-command), which lets you securely login to an application instance where you can perform debugging, environment inspection, and other tasks.
+You can get a shell via the [`cf ssh`](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#ssh-command) command, which lets you securely login to an application instance where you can perform debugging, environment inspection, and other tasks.
+You can also interact directly with your the services bound to your application via [port-forwarding](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-services.html). This allows you to access those services using native clients on your local machine.
 
 ### *East/West environment:* CF-SSH
 
