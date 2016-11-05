@@ -12,7 +12,7 @@ Make sure that you've previously looked at the [Production Ready Guide]({{< relr
 
 ## Provisioning deployment credentials
 
-Continuous deployment systems need credentials for use in pushing new versions of your application code to cloud.gov. You should use a restricted set of credentials that can only access a particular target space, rather than credentials tied to a user who has more access, or who may lose access when leaving your team or project. This "least privilege" approach minimizes the harm that is possible if the credentials are compromised in any way.
+Continuous deployment systems require credentials for use in pushing new versions of your application code to cloud.gov. You should use a restricted set of credentials that can only access a particular target space, rather than credentials tied to a user who has more access, or who may lose access when leaving your team or project. This "least privilege" approach minimizes the harm that is possible if the credentials are compromised in any way.
 
 *These instructions are different depending on the "environment" your application lives in. If you're not sure, pick East/West. (GovCloud is our new environment.)*
 
@@ -20,7 +20,7 @@ Continuous deployment systems need credentials for use in pushing new versions o
 
 You can provision a deployer account with permission to deploy to a single space using the deployer account service broker:
 
-1. Target the org and space you want to have credentials for
+1. Target the org and space for which you want credentials
 
     ```bash
     $ cf target -o $ORG -s $SPACE
@@ -43,7 +43,7 @@ You can provision a deployer account with permission to deploy to a single space
     Dashboard: https://fugacio.us/m/k3MtzJWVZaNlnjBYJ7FUdpW2ZkDvhmQz
     ```
 
-1. Retrieve your credentials from the dashboard link. Be sure to retrieve your credentials right away, since the link will only work for a brief length of time.
+1. Retrieve your credentials from the dashboard link. Be sure to retrieve your credentials right away, since the link will only work for a brief length of time. Keep these credentials secure. If they're compromised, delete your deployer account and create another.
 
 To delete your deployer account, delete the service instance:
 
