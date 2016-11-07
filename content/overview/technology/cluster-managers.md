@@ -5,8 +5,8 @@ menu:
 title: Kubernetes, Mesos, etc.
 weight: 50
 aliases:
-  - /docs/intro/technology/cluster-managers
-  - /intro/technology/cluster-managers
+  - /overview/technology/cluster-managers
+  - /technology/cluster-managers
 ---
 
 These tools address different and complementary models to the Platform as a Service workflow we are supporting, like domain microservices and service discovery.

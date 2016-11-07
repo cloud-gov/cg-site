@@ -5,8 +5,8 @@ menu:
 title: Why agencies should use it
 weight: 31
 aliases:
-  - /docs/intro/overview/why-use-cloudgov
-  - /intro/overview/why-use-cloudgov
+  - /overview/overview/why-use-cloudgov
+  - /overview/why-use-cloudgov
 ---
 
 ## 1. Security

@@ -5,8 +5,8 @@ menu:
 title: cloud.gov PaaS terms
 weight: 10
 aliases:
-  - /docs/intro/terminology/system-terminology
-  - /intro/terminology/system-terminology
+  - /overview/terminology/system-terminology
+  - /terminology/system-terminology
 ---
 
 For terminology that is used within the Platform as a Service at the heart of cloud.gov, start with [Cloud Foundry’s glossary](http://docs.cloudfoundry.org/concepts/glossary.html).

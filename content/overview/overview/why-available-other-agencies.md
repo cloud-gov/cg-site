@@ -5,8 +5,8 @@ menu:
 title: Why it’s available
 weight: 30
 aliases:
-  - /docs/intro/overview/why-available-other-agencies
-  - /intro/overview/why-available-other-agencies
+  - /overview/overview/why-available-other-agencies
+  - /overview/why-available-other-agencies
 ---
 
 cloud.gov will help other federal agencies deliver taxpayer-funded services the American people deserve in a faster, more user-centered way.

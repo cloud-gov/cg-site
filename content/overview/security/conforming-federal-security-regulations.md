@@ -5,8 +5,8 @@ menu:
 title: Helping apps conform to regs
 weight: 20
 aliases:
-  - /docs/intro/security/conforming-federal-security-regulations
-  - /intro/security/conforming-federal-security-regulations
+  - /overview/security/conforming-federal-security-regulations
+  - /security/conforming-federal-security-regulations
 ---
 
 ## A single control layer for your applications

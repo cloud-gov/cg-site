@@ -5,8 +5,8 @@ menu:
 title: The process of building it
 weight: 21
 aliases:
-  - /docs/intro/overview/building-process
-  - /intro/overview/building-process
+  - /overview/overview/building-process
+  - /overview/building-process
 ---
 
 ## How long it took to build

@@ -5,8 +5,8 @@ menu:
 title: What Is cloud.gov?
 weight: 10
 aliases:
-  - /docs/intro/overview/what-is-cloudgov
-  - /intro/overview/what-is-cloudgov
+  - /overview/overview/what-is-cloudgov
+  - /overview/what-is-cloudgov
 ---
 
 ## What is cloud.gov?
