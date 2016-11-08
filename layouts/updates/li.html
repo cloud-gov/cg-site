@@ -1,5 +1,5 @@
-   <div class="usa-width-one-whole usa-end-row">
+
+   <div class="usa-width-two-thirds usa-end-row content">
       {{ .Date.Format "Jan 2, 2006" }}<a href="{{ .RelPermalink }}"><h3>{{ .Title }}</h3></a>
-      <p>{{ .Summary }}</p>
-      <p><a href="{{ .RelPermalink }}">More...</a></p>
+      {{ .Content }}
     </div>

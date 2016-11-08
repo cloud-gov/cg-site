@@ -7,20 +7,21 @@
 
     {{ partial "header.html" . }}
 
-<section class="content">
-  <div class="usa-grid">
-    <h2>Updates</h2>
-
-    {{ range .Data.Pages }}
-    {{ .Render "li" }}
-    {{ end }}
+  <div class="header-view">
+    <div class="usa-grid">
+      <h1>Updates</h1>
+    </div>
   </div>
-  </section>
+  <div class="usa-grid">
+    <div>
+      {{ range .Data.Pages }}
+      {{ .Render "li" }}
+      {{ end }}
+    </div>
+  </div>
 
     {{ partial "footer.html" . }}
     {{ partial "javascript.html" . }}
 
   </body>
 </html>
-
-
