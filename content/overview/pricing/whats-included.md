@@ -28,6 +28,7 @@ All cloud.gov access packages include the following:
   + go_buildpack
   + python_buildpack
   + php_buildpack
+  + dotnet_core_buildpack
   + binary_buildpack
 - Self-service management of spaces and users within an organization
 - Platform maintenance and managed service expansion overhead
