@@ -22,13 +22,6 @@ When your org starts using cloud.gov's GovCloud environment, here are changes to
     | `rds` | `aws-rds` |
     | `redis*-swarm` | `redis*` |
 
-- Elasticsearch service instances no longer provide a `uri` property under the `credentials`.
-    - The URL needs to be constructed manually (with a protocol of `http://`), or the URL components need to be passed to your driver directly. The components are:
-        - `username`
-        - `password`
-        - `hostname`
-        - `port`
-
 ### New features
 
 - To run [one-off tasks]({{< relref "docs/getting-started/one-off-tasks.md" >}}), [`cf-ssh`]({{< relref "docs/apps/using-ssh.md#east-west-environment-cf-ssh" >}}) is not available in GovCloud. Instead, you can use [`cf ssh`]({{< relref "docs/apps/using-ssh.md#govcloud-environment-cf-ssh" >}}) (note the space instead of the `-`), which is more flexible than `cf-ssh`.
