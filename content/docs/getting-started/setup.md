@@ -6,6 +6,8 @@ title: Setup
 weight: -50
 ---
 
+> TODO Update with cloud.gov IdP
+
 ## Setting up the command line
 As a user, nearly all of your interactions with Cloud Foundry will be through the command line. To get it set up:
 

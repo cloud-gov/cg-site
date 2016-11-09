@@ -14,6 +14,7 @@ To start using cloud.gov:
     * To log into the [cloud.gov web interface](https://login.cloud.gov/): click "agree and continue", click your agency name, and log in using your agency credentials.
     * To log into the cloud.gov command line interface (CLI), follow [these instructions to use your agency credentials on the CLI]({{< relref "setup.md" >}}).
 * **If you're outside GSA/EPA and your organization/project is registered with cloud.gov:** Ask one of your teammates to follow [these instructions for adding teammates]({{< relref "managing-teammates.md" >}}).
+* > TODO Update with cloud.gov IdP
 * **Otherwise:** See [who can use cloud.gov]({{< relref "overview/overview/who-can-use-cloudgov.md" >}}).
 
 ## Resetting your password

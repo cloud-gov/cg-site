@@ -5,6 +5,8 @@ menu:
 title: Managing teammates
 ---
 
+> TODO Update with cloud.gov IdP
+
 ## Invite a teammate
 
 If you're part of a team using cloud.gov, you can invite teammates to get cloud.gov accounts. You can invite anyone you need to work with, including federal employees and federal contractors.
