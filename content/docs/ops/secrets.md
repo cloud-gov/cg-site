@@ -42,7 +42,7 @@ Use [this script](https://github.com/18F/cg-pipeline-tasks/blob/master/generate_
 BUCKET=my-bucket PASSPHRASE=somethingorother ./generate_key.sh
 ```
 
-Once the key is uploaded to AWS, the [cf-secrets.yml](https://github.com/18F/cg-manifests/blob/master/cf/cf-secrets-example.yml) file you use for deployment needs to be updated. Modify `key_name` to use the new key, then start a new production deployment.
+Once the key is uploaded to AWS, the [cf-secrets.yml](https://github.com/18F/cg-deploy-cf/blob/staging/cf-secrets-example.yml) file you use for deployment needs to be updated. Modify `key_name` to use the new key, then start a new production deployment.
 
 #### Dealing with secrets
 
