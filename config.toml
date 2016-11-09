@@ -70,8 +70,8 @@ publishdir = "public"
     identifier = "deployment"
     parent = "ops"
 [[menu.docs]]
-    name = "Users"
-    identifier = "users"
+    name = "Tenants"
+    identifier = "tenants"
     parent = "ops"
 [[menu.docs]]
     name = "Operations"

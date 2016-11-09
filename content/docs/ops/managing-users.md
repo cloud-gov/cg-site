@@ -1,7 +1,7 @@
 ---
 menu:
   docs:
-    parent: users
+    parent: tenants
 title: Managing users
 ---
 
