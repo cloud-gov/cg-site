@@ -14,6 +14,20 @@ When your org starts using cloud.gov's GovCloud environment, here are changes to
 - GSA and EPA accounts already work in GovCloud. No other login credentials work at this time.
 - The API endpoint (for now) is `api.fr.cloud.gov`. When you [log in on the command line]({{< relref "docs/getting-started/setup.md" >}}), use this new command: `cf login -a https://api.fr.cloud.gov --sso`
 - To access the Dashboard, visit [`https://dashboard.fr.cloud.gov/`](https://dashboard.fr.cloud.gov/).
+- There are different names and plans for some services.
+
+    | AWS East/West service name | AWS GovCloud equivalent |
+    | --- | --- |
+    | `elasticsearch-swarm-*` | `elasticsearch*` |
+    | `rds` | `aws-rds` |
+    | `redis*-swarm` | `redis*` |
+
+- Elasticsearch service instances no longer provide a `uri` property under the `credentials`.
+    - The URL needs to be constructed manually (with a protocol of `http://`), or the URL components need to be passed to your driver directly. The components are:
+        - `username`
+        - `password`
+        - `hostname`
+        - `port`
 
 ### New features
 
