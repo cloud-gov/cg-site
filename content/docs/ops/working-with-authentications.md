@@ -12,7 +12,7 @@ while following [this guide] [leverage-cloud-auth]. The following documentation
 provides the steps to creating cloud.gov authentication.
 
 [uaa-server-docs]: https://docs.cloudfoundry.org/concepts/architecture/uaa.html "UAA server authentication documentation"
-[leverage-cloud-auth]: /apps/leveraging-authentication/ "Leveraging cloud.gov Authentication"
+[leverage-cloud-auth]: /docs/apps/leveraging-authentication/ "Leveraging cloud.gov Authentication"
 
 ## Creating a cloud.gov authentication
 
