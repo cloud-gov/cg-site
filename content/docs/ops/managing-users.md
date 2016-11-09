@@ -13,7 +13,7 @@ No local accounts to UAA shall be created for user access.
 
 ## Creating users
 
-The preferred way to invite new users is to [invite them](https://login.cloud.gov/invitations/new). If you need to create a user manually, follow the instructions for [the `provision-user-space` CLI plugin](https://github.com/18F/cf-provision-user-space-plugin).
+The preferred way to add new users is to [invite them]({{< relref "docs/apps/managing-teammates.md#invite-a-teammate" >}}). If you need to create a user manually, follow the instructions for [the `provision-user-space` CLI plugin](https://github.com/18F/cf-provision-user-space-plugin).
 
 ## Changing passwords
 
