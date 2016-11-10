@@ -63,7 +63,8 @@ GovCloud)
 
 *These instructions are different depending on the "environment" your application lives in. If you're not sure, pick East/West. (GovCloud is our new environment.)*
 
-### *East/West environment:* Using cf-ssh
+{{% eastwest %}}
+### Using cf-ssh
 
 To access a service database, use the [cf-ssh]({{< relref "docs/getting-started/one-off-tasks.md#cf-ssh" >}}) CLI to start an instance that is bound to the service and download the `psql` binary to that instance:
 
@@ -72,8 +73,10 @@ To access a service database, use the [cf-ssh]({{< relref "docs/getting-started/
     ./psql/bin/psql $DATABASE_URL
 
 You should now have an open `psql` terminal connected to the service database.
+{{% /eastwest %}}
 
-### *GovCloud environment:* Using cf ssh
+{{% govcloud %}}
+### Using cf ssh
 
 To access a service database, use the [cf ssh]({{< relref "docs/getting-started/one-off-tasks.md#cf-ssh" >}}) CLI command to login to an instance that is bound to the service and download the `psql` binary to that instance:
 
@@ -82,7 +85,7 @@ To access a service database, use the [cf ssh]({{< relref "docs/getting-started/
     ./psql/bin/psql $DATABASE_URL
 
 You should now have an open `psql` terminal connected to the service database.
-
+{{% /govcloud %}}
 
 ## Export
 

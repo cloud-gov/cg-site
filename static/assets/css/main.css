@@ -1,0 +1,28 @@
+.env-block {
+  border-left-width: 3px;
+  border-left-style: solid;
+  padding-left: 12px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin-bottom: 1em;
+}
+
+.env-specifier {
+  font-weight: bold;
+  font-size: 0.8em;
+  margin-left: -3px;
+}
+
+.env-east-west {
+  border-left-color: red;
+}
+.env-east-west .env-specifier {
+  color: red;
+}
+
+.env-govcloud {
+  border-left-color: blue;
+}
+.env-govcloud .env-specifier {
+  color: blue;
+}

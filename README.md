@@ -14,6 +14,18 @@ Hugo uses Markdown to build the pages. Add your page to the section you want ins
 1. Run `npm install` to download all the dependencies.
 1. Run `npm run start` and browse to [http://localhost:1313](http://localhost:1313).
 
+### Environment-specific information
+
+For a block of content that is specific to AWS East/West, use the following [shortcode](https://gohugo.io/extras/shortcodes/):
+
+```
+{{% eastwest %}}
+East/West-specific Markdown content goes here.
+{{% /eastwest %}}
+```
+
+Ditto for `govcloud`.
+
 ### Making redirects
 
 If you delete or rename a page, you can make a redirect to avoid breaking links from other sites: [make an alias](https://gohugo.io/extras/aliases/) (use the "YAML frontmatter" style).
