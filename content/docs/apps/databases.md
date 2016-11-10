@@ -61,8 +61,6 @@ GovCloud)
 
 ## Access a postgres database
 
-*These instructions are different depending on the "environment" your application lives in. If you're not sure, pick East/West. (GovCloud is our new environment.)*
-
 {{% eastwest %}}
 ### Using cf-ssh
 
