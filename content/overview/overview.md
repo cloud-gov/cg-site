@@ -16,6 +16,6 @@ cloud.gov was designed with **FISMA compliance** in mind. cloud.gov is currently
 
 ### Free Sandbox Accounts
 
-Anyone with a .gov or .mil email address can try out cloud.gov for free by signing up for a sandbox account. **No paperwork required**.
+Anyone with a .gov or .mil email address can try out cloud.gov for free by [signing up for a sandbox account]({{< relref "docs/help.md" >}}). **No paperwork required**.
 
 
