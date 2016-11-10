@@ -4,6 +4,9 @@ menu:
     parent: deployment
 title: Deploying the Docker broker
 ---
+
+***Note this page only applies to the AWS East/West environment.***
+
 This guide covers the high level steps required to configure, deploy and enable docker-boshrelease and included cf-containers-broker.
 
 #### Background

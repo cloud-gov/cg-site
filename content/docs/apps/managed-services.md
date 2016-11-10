@@ -21,23 +21,6 @@ To create a service instance and binding for use with an application, you first 
 % cf marketplace
 ```
 
-**Output:**
-
-```
-Getting services from marketplace in org ORG / space SPACE as USERNAME
-OK
-
-service                     plans                                    description   
-elasticsearch-swarm-1.7.1   3x, 6x, 1x                               Elasticsearch 1.7.1   
-rds                         shared-psql, micro-psql*, medium-psql*   RDS Database Broker   
-redis28-swarm               standard                                 Redis 2.8 service for application development and testing   
-s3                          basic*                                   Amazon S3 is storage for the Internet.   
-
-* These service plans have an associated cost. Creating a service instance will incur this cost.
-
-TIP:  Use 'cf marketplace -s SERVICE' to view descriptions of individual plans of a given service.
-```
-
 #### Create a service instance
 
 Target the org and space which will hold the app to which the service instance will be bound.
@@ -52,7 +35,7 @@ Create a new service instance by specifying a service, plan, and a name of your 
 % cf create-service SERVICE_NAME PLAN_NAME INSTANCE_NAME
 ```
 
-For example, to create an instance of the elasticsearch service using the free plan with name *myapp-elasticsearch*:
+For example, to create an instance of the elasticsearch service using the free plan with name `myapp-elasticsearch`:
 
 ```
 % cf create-service elasticsearch-swarm-1.7.1 1x myapp-elasticsearch
