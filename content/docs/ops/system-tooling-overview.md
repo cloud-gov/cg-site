@@ -7,10 +7,10 @@ title: System tooling overview
 
 For new members of our team, this is an overview of system tooling elements used in cloud.gov operations and how they're implemented in our BOSH/Cloud Foundry architecture. 
 
-### Architecture components
+## Architecture components
 
-#### Log aggregation
-##### Logs to AWS CloudWatch
+### Log aggregation
+#### Logs to AWS CloudWatch
 
 cloud.gov operations uses Amazon's [CloudWatch log agent](http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_GettingStarted.html) to collect system and Cloud Foundry logs and push them to CloudWatch. 
 
@@ -20,9 +20,9 @@ The job also runs a pre-start script on each host, which creates an additional c
 
 For more information, consult the [CloudWatch agent reference](http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html).
 
-#### Monitoring
+### Monitoring
 
-#### NTP
+### NTP
 
 To keep system clock time accurate, the cloud.gov operations BOSH deployment installs a `cron` job on each host for the root user, which runs `ntpdate` every 15 minutes. 
 
