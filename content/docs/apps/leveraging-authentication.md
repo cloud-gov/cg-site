@@ -13,7 +13,7 @@ App developers can also leverage cloud.gov's UAA instance as a backend that brok
 
 ### Register your application instances
 
-You will first need to register all instances (such as dev, staging, and production) with cloud.gov's UAA. Right now this is a manual process, so you will need to contact a member of the cloud.gov team, preferably through the [#cloud-gov-support](https://18f.slack.com/messages/cloud-gov-support) channel in Slack.
+You will first need to register all instances (such as dev, staging, and production) with cloud.gov's UAA. Right now this is a manual process, so you will need to contact a member of the cloud.gov team, preferably through the [#cloud-gov-support](https://gsa-tts.slack.com/messages/cloud-gov-support) channel in Slack.
 
 For each application instance, you will need to provide:
 
