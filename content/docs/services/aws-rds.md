@@ -1,36 +1,62 @@
 ---
 menu:
   docs:
-    parent: apps
-title: Databases
+    parent: services
+title: AWS RDS
 ---
 
-There are multiple options for how to set up databases for use with applications in cloud.gov's version of Cloud Foundry.
+If your application uses relational databases for storage, you can use the cloud.gov AWS RDS service to create a database instance.
 
-## Services
+## Plans
 
-The easiest way to set up a database is via [services](http://docs.cloudfoundry.org/devguide/services/), which are managed by Cloud Foundry itself. To see what database options are available, run `cf marketplace`. You will now see a list of `service`s, each with a corresponding list of `plan`s.
+Plan Name | Description | Price
+--------- | ----------- | -----
+`shared-psql`            | Shared infrastructure for Postgres DB               | Free
+`medium-psql`            | Dedicated Medium RDS Postgres DB Instance           | $0.115 / hr + storage
+`medium-psql-redundant`  | Dedicated Redundant Medium RDS Postgres DB Instance | $0.230 / hr + storage
+`large-psql`             | Dedicated Large RDS Postgres DB Instance            | $0.230 / hr + storage
+`large-psql-redundant`   | Dedicated Redundant Large RDS Postgres DB Instance  | $0.470 / hr + storage
+`shared-mysql`           | Shared infrastructure for MySQL DB                  | Free
+`medium-mysql`           | Dedicated Medium RDS MySQL DB Instance              | $0.110 / hr + storage
+`medium-mysql-redundant` | Dedicated Redundant Medium RDS MySQL DB Instance    | $0.220 / hr + storage
+`large-mysql`            | Dedicated Large RDS MySQL DB Instance               | $0.220 / hr + storage
+`large-mysql-redundant`  | Dedicated Redundant Large RDS MySQL DB Instance     | $0.440 / hr + storage
 
-To start a database service instance within Cloud Foundry (where `DB_NAME` is something like `APP_NAME-ENV-db`):
+### Storage Pricing:
+
+- Shared Instance: Free
+- Simple Instance: $0.138 per GB per month
+- Redundant Instance: $0.276 per GB per month
+
+## Options
+
+Name | Required | Description | Default
+--- | --- | --- | ---
+`storage` |  | Number of GB available to the database instance | 10
+
+## How to create an instance
+
+To create a service instance run the following command:
 
 ```bash
-cf create-service <SERVICE> <PLAN> <DB_NAME>
-cf bind-service <APP_NAME> <DB_NAME>
-cf restage <APP_NAME>
+cf create-service aws-rds medium-psql my-db-service
 ```
 
-If you want to use PostgreSQL, use the `aws-rds` service rather than `postgresql*`. This gives you things like database snapshots automatically. The `shared-psql` plan(s) uses an existing instance, which is preferred for staging environments or simple open data apps. For a production application with sensitive data, use `micro-psql` or `medium-psql`. To use the `aws-rds` service with `myapp` in your staging environment, for example, you would do something like:
+If you want to specify the storage available to the instance:
 
 ```bash
-cf create-service aws-rds shared-psql myapp-staging-db
-cf bind-service myapp myapp-staging-db
-cf restage myapp
+cf create-service aws-rds medium-psql my-db-service -c '{"storage": 50}'
 ```
+
+## More Information
+
+### Binding to an application
 
 `cf bind-service` will provide a `DATABASE_URL` environment variable for your app, which is then picked up by the `restage`. Note that for a Rails app, `bind-service` will [overwrite your `database.yml`](http://docs.cloudfoundry.org/buildpacks/ruby/ruby-service-bindings.html#rails-applications-have-autoconfigured-database-yml). The full documentation for managing service instances is [here](https://docs.cloudfoundry.org/devguide/services/managing-services.html).
 
 The contents of the `DATABASE_URL` environment variable contain the credentials to access your database. Treat the contents of this and all other environment variables as sensitive.
 
+<<<<<<< 69d18ccb3eeb20f14a30e3165ff35c9e381d9e76:content/docs/apps/databases.md
 ## Access The Data In The Database
 
 There are currently two ways to access the database.
@@ -43,9 +69,10 @@ requires manually downloading the tool(s) needed to access the database. The
 only type of database supported via this method is Postgres.
 
 ---
+=======
+### Access a postgres database
 
 ## cg-export-db Plugin
-
 The easiest way to access the data in your database is via the `cg-export-db`
 plugin.
 
@@ -63,6 +90,9 @@ GovCloud)
 
 {{% eastwest %}}
 ### Using cf-ssh
+=======
+#### *East/West environment:* Using cf-ssh
+>>>>>>> Add services section with pricing and details:content/docs/services/aws-rds.md
 
 To access a service database, use the [cf-ssh]({{< relref "docs/getting-started/one-off-tasks.md#cf-ssh" >}}) CLI to start an instance that is bound to the service and download the `psql` binary to that instance:
 
@@ -73,8 +103,7 @@ To access a service database, use the [cf-ssh]({{< relref "docs/getting-started/
 You should now have an open `psql` terminal connected to the service database.
 {{% /eastwest %}}
 
-{{% govcloud %}}
-### Using cf ssh
+#### *GovCloud environment:* Using cf ssh
 
 To access a service database, use the [cf ssh]({{< relref "docs/getting-started/one-off-tasks.md#cf-ssh" >}}) CLI command to login to an instance that is bound to the service and download the `psql` binary to that instance:
 
@@ -85,9 +114,9 @@ To access a service database, use the [cf ssh]({{< relref "docs/getting-started/
 You should now have an open `psql` terminal connected to the service database.
 {{% /govcloud %}}
 
-## Export
+### Export
 
-### Create backup
+#### Create backup
 
 {{% eastwest %}}
 #### Using cf-ssh
@@ -195,3 +224,7 @@ dump.
 ```sh
 $  pg_restore --clean --no-owner --no-acl --dbname={database name} backup.pg
 ```
+
+### The broker in GitHub
+
+You can find the broker here: [https://github.com/18F/aws-broker](https://github.com/18F/aws-broker).
