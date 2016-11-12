@@ -8,7 +8,7 @@ aliases:
 
 Fill out our [contact form](/#contact) for notification when access is widely available.
 
-You can also email [cloud-gov-inquiries@gsa.gov](cloud-gov-inquiries@gsa.gov) to learn more, including to request a [free sandbox account]({{< relref "overview/pricing/rates.md" >}}) (available to anyone with .gov or .mil email).
+You can also email [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov) to learn more, including to request a [free sandbox account]({{< relref "overview/pricing/rates.md" >}}) (available to anyone with .gov or .mil email).
 
 ### I have a cloud.gov account and need help.
 
