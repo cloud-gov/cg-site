@@ -16,7 +16,7 @@ Email [cloud-gov-support@gsa.gov](mailto:cloud-gov-support@gsa.gov).
 
 ### I'm 18F staff and need help.
 
-Talk to us in [#cloud-gov-support](https://18f.slack.com/messages/cloud-gov-support).
+Talk to us in [#cloud-gov-support](https://gsa-tts.slack.com/messages/cloud-gov-support).
 
 ### I found a problem or want to suggest an improvement in the documentation.
 
