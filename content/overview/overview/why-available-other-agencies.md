@@ -9,7 +9,7 @@ aliases:
   - /overview/why-available-other-agencies
 ---
 
-cloud.gov will help other federal agencies deliver taxpayer-funded services the American people deserve in a faster, more user-centered way.
+cloud.gov helps federal agencies deliver taxpayer-funded services the American people deserve in a faster, more user-centered way.
 
 ## Solving the cloud operations bottleneck
 
