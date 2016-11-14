@@ -11,6 +11,8 @@ When your org starts using cloud.gov's GovCloud environment, here are changes to
 
 ### Breaking changes
 
+#### Changes specific to cloud.gov
+
 - GSA and EPA accounts already work in GovCloud. No other login credentials work at this time.
 - The API endpoint (for now) is `api.fr.cloud.gov`. When you [log in on the command line]({{< relref "docs/getting-started/setup.md" >}}), use this new command: `cf login -a https://api.fr.cloud.gov --sso`
 - To access the Dashboard, visit [`https://dashboard.fr.cloud.gov/`](https://dashboard.fr.cloud.gov/).
@@ -21,6 +23,8 @@ When your org starts using cloud.gov's GovCloud environment, here are changes to
     | `elasticsearch-swarm-*` | `elasticsearch*` |
     | `rds` | `aws-rds` |
     | `redis*-swarm` | `redis*` |
+    
+- There is a small set of differences between the older "Warden/DEA" backend (used for the AWS East/West environment) and the newer "Diego/cells" backend (used for the AWS GovCloud environment). Review the [Diego migration guide](https://docs.cloudfoundry.org/running/apps-enable-diego.html#disable-health-checks) for minor changes you may need to make before migrating, and [check for common issues](https://docs.cloudfoundry.org/running/apps-enable-diego.html#troubleshoot) if you run into a problem.
 
 ### New features
 
