@@ -23,6 +23,8 @@ As a user, nearly all of your interactions with Cloud Foundry will be through th
     cf login -a api.cloud.gov --sso
     ```
 
+    *(If you know you should log into [GovCloud]({{< relref "docs/apps/govcloud.md" >}}), use `api.fr.cloud.gov`.)*
+
     Then follow the link to get your one-time authentication code and enter it to log in.
 
     **Or if you log in with a cloud.gov account that has its own password** (including `ORGNAME_deployer` accounts), log in by running
