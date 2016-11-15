@@ -24,7 +24,7 @@ Quotas limit the following resources:
 - Service instances.  
 - Access to paid plans.  
 
-If a new application `push` would exceed your organization's quota the request will fail with status code `400` and a message describing the limit that would be exceeded.
+If a new application `push` would exceed your organization's quota, the request will fail with status code `400` and a message that describes the limit that would be exceeded.
 
 **Example:**
 
@@ -36,4 +36,4 @@ In this situation you have three options:
 
 1. Delete existing resources with `cf delete`, `delete-service`, `delete-route` or similar.
 2. Reconfigure individual existing [Application Quotas]({{< relref "docs/apps/limits.md" >}}) and redeploy.
-3. Request a quota change by an administrator via a [DevOps issue](https://github.com/18F/DevOps/issues).
+3. Request a quota change by [asking support](/help/).
