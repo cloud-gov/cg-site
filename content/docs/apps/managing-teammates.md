@@ -5,8 +5,6 @@ menu:
 title: Managing teammates
 ---
 
-> TODO Update with cloud.gov IdP
-
 ## Invite a teammate
 
 If you're part of a team using cloud.gov, you can invite teammates to get cloud.gov accounts. You can invite anyone you need to work with, including federal employees and federal contractors.
@@ -16,6 +14,26 @@ If you're part of a team using cloud.gov, you can invite teammates to get cloud.
 1. Confirm with them that they have received and accepted the invite.
 
 Now they have a cloud.gov account. If you invited them with an agency email address and they're part of an agency that has automatic sandbox spaces, they'll automatically get a sandbox space in their agency's cloud.gov org.
+
+### *GovCloud environment:* cloud.gov IdP
+
+In the GovCloud environment, we provide a cloud.gov Identity Provider ( IdP ) to
+allow for multi-factor ( MFA ) / time-based one-time password ( TOTP )
+authentication. This authentication still requires a password, but also enforces
+a TOTP token to be entered to complete the MFA process.
+
+This means that when teammates login to cloud.gov via their web browser, they
+will need to select the `cloud.gov` provider when they come to the login screen
+and **not the login / password fields found below the list of providers**. The
+following screenshot highlights the button that teammates invited to use
+`cloud.gov` will need to use to login using MFA / TOTP authentication.
+
+![cloud.gov provider button on login page highlighted in blue](/img/cloud-gov-idp-button.png "to ensure that they are using")
+
+### *East/West environment:* UAA local accounts
+
+In the East/West environment, we provide local UAA accounts which simply use the
+login and password to authenticate users.
 
 ## Give roles to a teammate
 
