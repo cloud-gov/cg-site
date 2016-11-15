@@ -19,7 +19,7 @@ In order to export a dashboard:
   * Make sure there are no spaces in the file name and remove the timestamp from the end.
 
 ## Requesting an account on Metrics
-1. Please [create a ticket](https://github.com/18f/devops/issues/new) with the title including `[Metrics Acct Req]`
+1. Please [create a ticket](https://github.com/18f/infrastructure/issues/new) with the title including `[Metrics Acct Req]`
 1. Please indicate if you need an `admin` account or `regular` account.
 
 ## Updating the Metrics containers.

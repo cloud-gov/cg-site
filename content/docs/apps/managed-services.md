@@ -71,7 +71,7 @@ FAILED
 Server error, status code: 400, error code: 60007, message: The service instance cannot be created because paid service plans are not allowed.
 ```
 
-Please [ask an administrator](/help/) to [enable paid services](/ops/quotas/).
+Please [ask support](/help/) to enable [paid services]({{< relref "overview/pricing/quotas.md" >}}).
 
 #### Bind the service instance
 
