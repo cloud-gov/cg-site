@@ -22,7 +22,7 @@ Quotas limit the following resources:
 - Application routes.  
 - Application memory.  
 - Service instances.  
-- Access to paid plans.  
+- Access to paid service plans.  
 
 If a new application `push` would exceed your organization's quota, the request will fail with status code `400` and a message that describes the limit that would be exceeded.
 
