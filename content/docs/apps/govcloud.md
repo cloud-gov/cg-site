@@ -73,10 +73,9 @@ Any labor involved from your project team is the responsibility of your project.
     * This is a good time to ensure that you are following [deployment best practices]({{< relref "docs/apps/production-ready.md" >}}).
 1. If you are using a data store provided by cloud.gov, [migrate the data](https://github.com/18F/cg-product/issues/211). This includes the following [services]({{< relref "docs/apps/managed-services.md" >}}):
     * [Elasticsearch](https://github.com/18F/cg-product/issues/233)
-    * [MySQL](https://github.com/18F/cg-product/issues/231)
-    * [PostgreSQL](https://github.com/18F/cg-product/issues/230)
     * [Redis](https://github.com/18F/cg-product/issues/234)
     * [S3](https://github.com/18F/cg-product/issues/235)
+    * MySQL and PostgreSQL should use the [cg-export-db plugin](/docs/apps/databases/#cg-export-db-plugin)
 1. Test the new deployment(s) thoroughly.
 1. [Set up your custom domain]({{< relref "docs/apps/custom-domains.md#managed-service-method" >}}), if applicable.
 1. [Set up continuous deployment.]({{< relref "docs/apps/continuous-deployment.md" >}}) (Not required, but strongly recommended.)
