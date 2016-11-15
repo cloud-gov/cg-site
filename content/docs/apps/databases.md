@@ -31,6 +31,34 @@ cf restage myapp
 
 The contents of the `DATABASE_URL` environment variable contain the credentials to access your database. Treat the contents of this and all other environment variables as sensitive.
 
+## Access The Data In The Database
+
+There are currently two ways to access the database.
+
+1. [The `cg-export-db` plugin](#cg-export-db-plugin). It is a self contained
+executable which will interactively assist with accessing the data in the
+database. It supports accessing data from different types of databases.
+1. [Manually accessing the database](#access-a-postgres-database). This way
+requires manually downloading the tool(s) needed to access the database. The
+only type of database supported via this method is Postgres.
+
+---
+
+## cg-export-db Plugin
+
+The easiest way to access the data in your database is via the `cg-export-db`
+plugin.
+
+Please check out the [repository](https://github.com/18F/cg-export-db)
+for instructions on how to install the plugin, backup data, import data,
+download a local copy of the data, and upload a local copy of the data.
+
+It also includes a [how-to](https://github.com/18F/cg-export-db#1-migrating-from-ew-to-govcloud-in-4-steps)
+for migrating data from one environment to another. (e.g. from East-West to
+GovCloud)
+
+---
+
 ## Access a postgres database
 
 *These instructions are different depending on the "environment" your application lives in. If you're not sure, pick East/West. (GovCloud is our new environment.)*
