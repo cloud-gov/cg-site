@@ -28,7 +28,7 @@ and **not the login / password fields found below the list of providers**. The
 following screenshot highlights the button that teammates invited to use
 `cloud.gov` will need to use to login using MFA / TOTP authentication.
 
-![cloud.gov provider button on login page highlighted in blue](/img/cloud-gov-idp-button.png "to ensure that they are using")
+![cloud.gov provider button on login page highlighted in blue](/img/cloud-gov-idp-button.png "cloud.gov provider button to login page is highlighted in blue")
 
 ### *East/West environment:* UAA local accounts
 
