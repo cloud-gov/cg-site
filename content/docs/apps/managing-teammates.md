@@ -23,9 +23,8 @@ authentication. This authentication still requires a password, but also enforces
 a TOTP token to be entered to complete the MFA process.
 
 This means that when teammates login to cloud.gov via their web browser, they
-will need to select the `cloud.gov` provider when they come to the login screen
-and **not the login / password fields found below the list of providers**. The
-following screenshot highlights the button that teammates invited to use
+will need to select the `cloud.gov` provider when they come to the login screen.
+The following screenshot highlights the button that teammates invited to use
 `cloud.gov` will need to use to login using MFA / TOTP authentication.
 
 ![cloud.gov provider button on login page highlighted in blue](/img/cloud-gov-idp-button.png "cloud.gov provider button to login page is highlighted in blue")
