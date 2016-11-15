@@ -78,7 +78,7 @@ cloud.gov offers a managed service that allows you to forward a domain you contr
 
     ```
     $ cf create-service cdn-route cdn-route my-cdn-route \
-        -c '{"domain": "my.domain.gov", "origin": "my-app.apps.cloud.gov"}'
+        -c '{"domain": "my.domain.gov", "origin": "my-app.fr.cloud.gov"}'
 
     Create in progress. Use 'cf services' or 'cf service my-cdn-route' to check operation status.
     ```
@@ -87,7 +87,7 @@ cloud.gov offers a managed service that allows you to forward a domain you contr
 
     ```
     $ cf create-service cdn-route cdn-route my-cdn-route \
-        -c '{"domain": "my.domain.gov,www.my.domain.gov", "origin": "my-app.apps.cloud.gov"}'
+        -c '{"domain": "my.domain.gov,www.my.domain.gov", "origin": "my-app.fr.cloud.gov"}'
 
     Create in progress. Use 'cf services' or 'cf service my-cdn-route' to check operation status.
     ```
