@@ -19,15 +19,29 @@ Now they have a cloud.gov account. If you invited them with an agency email addr
 
 In the GovCloud environment, we provide a cloud.gov Identity Provider ( IdP ) to
 allow for multi-factor ( MFA ) / time-based one-time password ( TOTP )
-authentication. This authentication still requires a password, but also enforces
+authentication.
+
+> `TODO: add an explanation about MFA.`
+
+This authentication method still requires a password, but also enforces
 a TOTP token to be entered to complete the MFA process.
 
-This means that when teammates login to cloud.gov via their web browser, they
-will need to select the `cloud.gov` provider when they come to the login screen.
-The following screenshot highlights the button that teammates invited to use
-`cloud.gov` will need to use to login using MFA / TOTP authentication.
+> TODO
+> This means that when teammates login to cloud.gov via their web browser, they
+> will need to select the `cloud.gov` provider when they come to the login screen.
+> The following screenshot highlights the button that teammates invited to use
+> `cloud.gov` will need to use to login using MFA / TOTP authentication.
 
 ![cloud.gov provider button on login page highlighted in blue](/img/cloud-gov-idp-button.png "cloud.gov provider button to login page is highlighted in blue")
+
+#### Managing MFA / TOTP with authentication applications
+
+In order to use the `cloud.gov` provider, you will need to have an
+authentication application to generate time-based one-time passwords to login to
+cloud.gov.
+
+- https://www.authy.com/app/mobile/
+- https://support.google.com/accounts/answer/1066447?hl=en
 
 ### *East/West environment:* UAA local accounts
 
