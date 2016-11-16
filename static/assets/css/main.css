@@ -1,27 +1,33 @@
 .env-block {
-  border-left-width: 3px;
-  border-left-style: solid;
-  padding-left: 12px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  margin-bottom: 1em;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.env-block::before {
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 3px;
+  content: '';
+  height: 100%;
+  left: -1rem;
+  position: absolute;
+  width: 3px;
 }
 
 .env-specifier {
-  font-weight: bold;
   font-size: 0.8em;
-  margin-left: -3px;
+  font-weight: bold;
 }
 
-.env-east-west {
-  border-left-color: red;
+.env-east-west::before {
+  border-color: red;
 }
 .env-east-west .env-specifier {
   color: red;
 }
 
-.env-govcloud {
-  border-left-color: blue;
+.env-govcloud::before {
+  border-color: blue;
 }
 .env-govcloud .env-specifier {
   color: blue;
