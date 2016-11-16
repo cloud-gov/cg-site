@@ -103,6 +103,8 @@ To access a service database, use the [cf-ssh]({{< relref "docs/getting-started/
 You should now have an open `psql` terminal connected to the service database.
 {{% /eastwest %}}
 
+{{% govcloud %}}
+
 #### *GovCloud environment:* Using cf ssh
 
 To access a service database, use the [cf ssh]({{< relref "docs/getting-started/one-off-tasks.md#cf-ssh" >}}) CLI command to login to an instance that is bound to the service and download the `psql` binary to that instance:
