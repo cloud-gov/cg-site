@@ -17,31 +17,20 @@ Now they have a cloud.gov account. If you invited them with an agency email addr
 
 ### *GovCloud environment:* cloud.gov IdP
 
-In the GovCloud environment, we provide a cloud.gov Identity Provider ( IdP ) to
-allow for multi-factor ( MFA ) / time-based one-time password ( TOTP )
-authentication.
+In the GovCloud environment, we provide a cloud.gov Identity Provider (IdP) which performs multi-factor (MFA)/time-based one-time password (TOTP) authentication. To log into the system, you need two "factors" -- something you know (your password) and something you have on your person (your smartphone).
 
-> `TODO: add an explanation about MFA.`
-
-This authentication method still requires a password, but also enforces
-a TOTP token to be entered to complete the MFA process.
-
-> TODO
-> This means that when teammates login to cloud.gov via their web browser, they
-> will need to select the `cloud.gov` provider when they come to the login screen.
-> The following screenshot highlights the button that teammates invited to use
-> `cloud.gov` will need to use to login using MFA / TOTP authentication.
+When teammates login to cloud.gov via their web browser, on the login screen they should select the `cloud.gov` provider as shown here:
 
 ![cloud.gov provider button on login page highlighted in blue](/img/cloud-gov-idp-button.png "cloud.gov provider button to login page is highlighted in blue")
 
 #### Managing MFA / TOTP with authentication applications
 
-In order to use the `cloud.gov` provider, you will need to have an
-authentication application to generate time-based one-time passwords to login to
-cloud.gov.
+In order to perform multi-factor authentication with the `cloud.gov` provider, you need an authentication application that generates time-based one-time passwords. We recommend one of the following:
 
-- https://www.authy.com/app/mobile/
-- https://support.google.com/accounts/answer/1066447?hl=en
+- [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en)
+- [Authy](https://www.authy.com/app/mobile)
+
+Download the app on your mobile device, and then follow the instructions to store the `cloud.gov` key in your application.
 
 ### *East/West environment:* UAA local accounts
 
