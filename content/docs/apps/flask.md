@@ -64,7 +64,7 @@ To add that environment variable, run:
 cf set-env APPNAME PRODUCTION VALUE
 ```
 
-In that example, `APPNAME` is the name your your app and `VALUE` is whatever you want it to be (as long as it's not `"0"`).
+In that example, `APPNAME` is the name of your app, and `VALUE` is whatever you want it to be (as long as it's not `"0"`).
 
 ### The Procfile
 
