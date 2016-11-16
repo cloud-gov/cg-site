@@ -1,17 +1,17 @@
 .env-block {
   margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
   position: relative;
 }
 
 .env-block::before {
-  border-radius: 5px;
+  border-radius: 3px;
   border-style: solid;
   border-width: 3px;
   content: '';
   height: 100%;
   left: -1rem;
   position: absolute;
-  width: 3px;
 }
 
 .env-specifier {
@@ -22,18 +22,20 @@
   text-decoration: underline;
 }
 
+/* $color-primary-darker from cg-style */
 .env-east-west::before {
-  border-color: red;
+  border-color: #2c3e50;
 }
 .env-east-west .env-specifier,
 .env-east-west .env-specifier a {
-  color: red;
+  color: #2c3e50;
 }
 
+/* $color-blue from cg-style */
 .env-govcloud::before {
-  border-color: blue;
+  border-color: #056dd4;
 }
 .env-govcloud .env-specifier,
 .env-govcloud .env-specifier a {
-  color: blue;
+  color: #056dd4;
 }
