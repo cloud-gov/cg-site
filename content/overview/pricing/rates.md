@@ -33,8 +33,6 @@ Packages are selected based on the kinds of applications to be hosted. [Find mor
 
 \*\*We aren't yet charging for paid services. See the [managed services](#managed-services) section for details.
 
----
-
 ## Resource usage
 
 You will be charged for the **quota** you set for your resource usage. This is only based on the memory, in MB of RAM, your reserve for your applications.
@@ -48,11 +46,9 @@ We require your resource usage quota to **be set in advance**. This helps you co
 
 [Find more about setting quotas and resource usage.]({{< relref "overview/pricing/quotas.md" >}})
 
----
-
 ## Managed services
 
-[Managed services]({{< relref "docs/apps/managed-services.md" >}}) are those which cloud.gov will spin up quickly and run on your behalf (databases, storage, caching, etc.). You can see the services and plans offered for each by [running `cf marketplace`]({{< relref "docs/apps/managed-services.md" >}}). *We'll include more details on this page in the future.*
+[Managed services]({{< relref "docs/apps/managed-services.md" >}}) are those which cloud.gov will spin up quickly and run on your behalf (databases, storage, caching, etc.). You can see the services and plans offered for each by [running `cf marketplace`]({{< relref "docs/apps/managed-services.md" >}}).
 
 While we aren't currently charging for these, we plan to charge for them in the future, to account for the resources they consume and our efforts to provide them as a service. The pricing for each service will be different. 18F provided services will be billed by the service instance, invoiced per month, and will be severable. We will ensure users of those services are aware of the rates when they are set, and they will not be charged before then.
 
