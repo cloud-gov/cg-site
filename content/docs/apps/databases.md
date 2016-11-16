@@ -89,9 +89,8 @@ You should now have an open `psql` terminal connected to the service database.
 
 ### Create backup
 
-*These instructions are different depending on the "environment" your application lives in. If you're not sure, pick East/West. (GovCloud is our new environment.)*
-
-#### *East/West environment:* Using cf-ssh
+{{% eastwest %}}
+#### Using cf-ssh
 
 First, spin up a host to connect to the database:
 
@@ -113,8 +112,10 @@ $ psql/bin/pg_dump --format=custom $DATABASE_URL > backup.pg
 ```
 
 Leave the ssh connection open.
+{{% /eastwest %}}
 
-#### *GovCloud environment:* Using cf ssh
+{{% govcloud %}}
+#### Using cf ssh
 
 First, connect to an instance:
 
@@ -134,14 +135,11 @@ Now you can create the export file:
 ```sh
 $ psql/bin/pg_dump --format=custom $DATABASE_URL > backup.pg
 ```
-
+{{% /govcloud %}}
 
 ### Download
 
-*These instructions are different depending on the "environment" your application lives in. If you're not sure, pick East/West. (GovCloud is our new environment.)*
-
-#### *East/West environment*
-
+{{% eastwest %}}
 On your local host:
 
 ```sh
@@ -155,9 +153,9 @@ Now you may close the ssh connection to cloud.gov, back in tmux:
 ```sh
 $ exit
 ```
+{{% /eastwest %}}
 
-#### *GovCloud environment*
-
+{{% govcloud %}}
 > [Documentation for using scp and sftp](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#other-ssh-access)
 
 On your local host:
@@ -185,7 +183,7 @@ Connected to ssh.fr.cloud.gov.
 sftp> get backup.pg
 sftp> quit
 ```
-
+{{% /govcloud %}}
 
 ### Restore to local database
 
