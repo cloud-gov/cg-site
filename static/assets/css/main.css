@@ -17,7 +17,7 @@
 
 .env-specifier {
   color: #333; /* $color-textblack */
-  font-family: '18Franklin'; /* $font-sans */
+  font-family: '18Franklin-webfont', system, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; /* $font-sans */
   font-size: 14px; /* $sans-s4 */
   font-weight: 400;
 }
