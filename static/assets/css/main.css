@@ -18,17 +18,22 @@
   font-size: 0.8em;
   font-weight: bold;
 }
+.env-specifier a {
+  text-decoration: underline;
+}
 
 .env-east-west::before {
   border-color: red;
 }
-.env-east-west .env-specifier {
+.env-east-west .env-specifier,
+.env-east-west .env-specifier a {
   color: red;
 }
 
 .env-govcloud::before {
   border-color: blue;
 }
-.env-govcloud .env-specifier {
+.env-govcloud .env-specifier,
+.env-govcloud .env-specifier a {
   color: blue;
 }
