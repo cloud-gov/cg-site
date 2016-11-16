@@ -9,6 +9,18 @@ cloud.gov currently has two "environments" where orgs can live: the main environ
 
 When your org starts using cloud.gov's GovCloud environment, here are changes to look out for.
 
+### Documentation
+
+Some instructions/information will vary from one environment to the other. You will see the following throughout this site:
+
+{{% eastwest %}}
+East/West-specific information
+{{% /eastwest %}}
+
+{{% govcloud %}}
+GovCloud-specific information
+{{% /govcloud %}}
+
 ### Breaking changes
 
 - GSA and EPA accounts already work in GovCloud. No other login credentials work at this time.

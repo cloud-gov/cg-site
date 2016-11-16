@@ -1,0 +1,57 @@
+.env-block {
+  margin-bottom: 24px; /* $grid-3 */
+  margin-left: 16px; /* $grid-3 */
+  margin-top: 24px; /* $grid-3 */
+  position: relative;
+}
+
+.env-block::before {
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 2px;
+  content: '';
+  height: 100%;
+  left: -16px; /* -$grid-3 */
+  position: absolute;
+}
+
+.env-specifier {
+  color: #333; /* $color-textblack */
+  font-family: '18Franklin-webfont', system, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; /* $font-sans */
+  font-size: 14px; /* $sans-s4 */
+  font-weight: 400;
+}
+
+.env-specifier strong {
+  font-size: 14px; /* $sans-s4 */
+  font-weight: 600;
+}
+
+.env-specifier a {
+  color: #333; /* $color-textblack */
+  text-decoration: underline;
+}
+
+.env-specifier + h2,
+.env-specifier + h3,
+.env-specifier + h4{
+  margin-top: 8px; /* $grid-1 */
+}
+
+.env-east-west .env-specifier,
+.env-east-west .env-specifier a {
+  color: #333; /* $color-textblack */
+}
+
+.env-east-west::before {
+  border-color: #74B1DB;
+}
+
+.env-govcloud .env-specifier,
+.env-govcloud .env-specifier a {
+  color: #333; /* $color-textblack */
+}
+
+.env-govcloud::before {
+  border-color: #333; /* $color-textblack */
+}
