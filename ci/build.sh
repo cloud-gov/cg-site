@@ -4,7 +4,7 @@ set -e
 set -x
 
 # install Hugo
-HUGO_VERSION=0.16
+HUGO_VERSION=0.17
 cd /tmp/
 curl -O -L https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-64bit.tgz
 tar xzf hugo_${HUGO_VERSION}_linux-64bit.tgz
