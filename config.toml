@@ -65,6 +65,7 @@ publishdir = "public"
 [[menu.docs]]
     name = "Contributing"
     identifier = "ops"
+    pre = "<i class='fa fa-fw fa-wrench'></i>"
 [[menu.docs]]
     name = "Deployment"
     identifier = "deployment"
