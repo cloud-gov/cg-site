@@ -1,7 +1,7 @@
 ---
 applications:
-- name: docs
+- name: landing
+  host: landing
 memory: 64M
-buildpack: staticfile_buildpack
-host: docs
 path: public
+buildpack: staticfile_buildpack

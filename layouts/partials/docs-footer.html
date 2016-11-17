@@ -1,0 +1,29 @@
+          <footer>
+            Built with <i class="fa fa-heart"></i> by the cloud.gov team. <a href="https://github.com/18F/cg-site/blob/master/LICENSE.md#readme">This site is in the public domain.</a>
+          </footer>
+          <div class="col-md-1">
+            {{ if .IsPage }}
+            {{ with .GetParam "next" }}
+            <a class="navigation next" href="{{.}}">
+                <i class="fa fa-angle-right"> </i>
+            </a>
+            {{ end }}
+          {{ end }}
+          </div>
+        </div>
+      </main>
+    </div>
+    <!-- javascripts -->
+    <!--custom script for all page-->
+    <script src="/assets/js/main.js"></script>
+    <script type="text/javascript">
+      //<![CDATA[
+        var usasearch_config = { siteHandle:"cloud.gov" };
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "//search.usa.gov/javascripts/remote.loader.js";
+        document.getElementsByTagName("head")[0].appendChild(script);
+      //]]>
+    </script>
+  </body>
+</html>

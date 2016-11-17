@@ -1,0 +1,108 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+    {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+    {{ .Hugo.Generator }}
+
+    <title>{{ .Title }}</title>
+
+    <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/css/cloudgov-style.css" rel="stylesheet">
+    <link href="/assets/css/main.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.ico" />
+
+  </head>
+
+  <body>
+
+    <div class="usa-disclaimer">
+      <div class="usa-grid">
+        <span class="usa-disclaimer-official">An official website of the United States Government
+          <img alt="US flag signifying that this is a United States Federal Government website" src="/assets/img/us_flag_small.png">
+        </span>
+        <span class="usa-disclaimer-stage">This site is currently in alpha. <a href="https://18f.gsa.gov/dashboard/stages/#alpha">Learn more.</a></span>
+      </div>
+    </div>
+
+    <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+    <!-- start header -->
+    <header class="header" role="banner">
+      <div class="header-wrap">
+
+        <!-- start logo -->
+        <h2 class="header-title">
+          <a href="/" class="logo" title="Home" accesskey="1" aria-label="Home">
+            <svg class="logo-img">
+              <use xlink:href="/assets/img/cloudgov-sprite.svg#logo"/>
+            </svg>
+          </a>
+        </h2>
+        <!--end logo -->
+
+        <!-- start top navigation -->
+        <nav role="navigation" class="header-side">
+          <div class="usa-nav-inner">
+            <div class="usa-nav-secondary">
+              <form class="usa-search js-search-form" accept-charset="UTF-8" action="https://search.usa.gov/search" id="search_form" method="get">
+                <div role="search">
+                  <label class="usa-sr-only" for="search-field-small">Search small</label>
+                  <input id="affiliate" name="affiliate" type="hidden" value="cloud.gov" />
+                  <input name="utf8" type="hidden" value="&#x2713;" />
+                  <input id="search-field" autocomplete="off" type="search" name="query" placeholder="Search documentation">
+                  <button type="submit">
+                    <span class="usa-sr-only">Search</span>
+                  </button>
+                </div>
+              </form>
+              <ul class="nav">
+                <li class="nav-link">
+                  <a href="/overview/">Overview</a>
+                </li>
+                <li class="nav-link">
+                  <a href="/docs/">Documentation</a>
+                </li>
+                <li class="nav-link">
+                  <a href="/updates/">Updates</a>
+                </li>
+                <li class="nav-link">
+                  <a href="https://cloudgov.statuspage.io/">Status</a>
+                </li>
+                <li class="nav-link">
+                  <a href="https://dashboard.cloud.gov/">Dashboard</a>
+                </li>
+                <li class="nav-link">
+                  <a href="/docs/help/">Contact</a>
+                </li>
+                <li class="js-search-button-container">
+                  <a class="js-search-button">
+                    <span>Search</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+    </header>
+    <!-- end header -->
+
+    <div class="title_bar">
+      <div class="nav_toggle">
+        <i class="fa fa-bars nav_toggle-icon"></i>
+        <div class="icon-reorder tooltips"
+          data-original-title="Toggle Navigation" data-placement="bottom">
+        </div>
+      </div>
+      <h1 class="title_bar-title">{{ .Title }}</h1>
+    </div>
+
+    <div class="sidenav-parent">
+      {{ partial "docs-menu.html" . }}
+
+
+      <main class="sidenav-main" id="main-content">
+        <div class="usa-content content content-text">
+<h1 id="{{.Title | urlize }}">{{ .Title }}</h1>
