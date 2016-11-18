@@ -6,27 +6,47 @@ title: Accounts
 weight: -100
 ---
 
-## Setting up your account
-
 To start using cloud.gov:
 
 * **If you're in GSA or EPA:** You automatically have access to cloud.gov; you don't need to take any account creation steps before you start using cloud.gov.
-    * To log into the [cloud.gov web interface](https://login.cloud.gov/): click "agree and continue", click your agency name, and log in using your agency credentials.
+    * To log into the [cloud.gov web interface (dashboard)](https://dashboard.cloud.gov/): click "agree and continue", click your agency name, and log in using your agency credentials.
     * To log into the cloud.gov command line interface (CLI), follow [these instructions to use your agency credentials on the CLI]({{< relref "setup.md" >}}).
-* **If you're outside GSA/EPA and your organization/project is registered with cloud.gov:** Ask one of your teammates to follow [these instructions for adding teammates]({{< relref "managing-teammates.md" >}}).
-* **Otherwise:** See [who can use cloud.gov]({{< relref "overview/overview/who-can-use-cloudgov.md" >}}).
+* **If you're outside GSA/EPA and your organization/project is registered with cloud.gov:** Ask a teammate to follow [these instructions for inviting teammates]({{< relref "managing-teammates.md" >}}), and you'll get a cloud.gov account.
+* **Otherwise:** If you're in government and you'd like to try cloud.gov, [email us](/help/).
 
-## Resetting your password
+## How accounts work
 
-If you're in GSA or EPA and can't seem to log into cloud.gov from the command line, first try [these instructions to use your agency credentials on the CLI]({{< relref "setup.md" >}}).
+### Agency single-sign-on accounts
 
-If you're in GSA or EPA and you need to reset your agency account password, reset your password using your agency's normal process.
+If you have a GSA or EPA email address, sign into cloud.gov using your agency credentials as described above. Here are details about using these accounts. 
 
-If you log in with a cloud.gov account that has its own password, you can reset your password by going to https://login.cloud.gov/forgot_password.
+### cloud.gov accounts
 
-For `ORGNAME_deployer` accounts, if you need the password reset, please contact [cloud.gov support](/help/), providing the account name with your request, and a member of the cloud.gov team will provide you with a new password. If you are using our [deployer account broker]({{< relref "docs/apps/continuous-deployment.md" >}}) you can delete and recreate your account to reset the credentials.
+If you were invited with an email address that isn't part of an agency with single-sign-on authentication to cloud.gov, you have a cloud.gov account.
 
-## Using your account responsibly
+#### *GovCloud environment*
+
+In the GovCloud environment, your cloud.gov account requires multi-factor authentication. To log into the system, you need two "factors" -- something you know (your password) and something you have on your person (your smartphone).
+
+When you log in to cloud.gov via a web browser, select the `cloud.gov` provider as shown here:
+
+![cloud.gov provider button on login page highlighted in blue](/img/cloud-gov-idp-button-cropped.png "cloud.gov provider button to login page is highlighted in blue")
+
+##### Managing MFA / TOTP with authentication applications
+
+In order to perform multi-factor authentication with the `cloud.gov` provider, you need an authentication application that generates time-based one-time passwords. We recommend [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) or [Authy](https://www.authy.com/app/mobile). Download the app on your mobile device. When you log into cloud.gov for the first time, follow the instructions to store the `cloud.gov` key in your application.
+
+#### *East/West environment*
+
+In the East/West environment, your cloud.gov account has a username and password. You can [reset your own password](https://login.cloud.gov/forgot_password).
+
+### Deployer accounts
+
+For `ORGNAME_deployer` accounts, if you need the password reset, please contact [cloud.gov support](/help/), providing the account name with your request, and a member of the cloud.gov team will provide you with a new password.
+
+If you're using our [deployer account broker]({{< relref "docs/apps/continuous-deployment.md" >}}), you can delete and recreate that account to reset the credentials.
+
+## Use your account responsibly
 
 Acceptable uses of cloud.gov include:
 
