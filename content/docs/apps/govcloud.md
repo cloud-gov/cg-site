@@ -23,7 +23,7 @@ GovCloud-specific information
 
 ### Breaking changes
 
-- GSA and EPA accounts already work in GovCloud. No other login credentials work at this time.
+- GSA, EPA and FDIC accounts already work in GovCloud. Others need to be explicitly [invited](https://invite.fr.cloud.gov).
 - The API endpoint (for now) is `api.fr.cloud.gov`. When you [log in on the command line]({{< relref "docs/getting-started/setup.md" >}}), use this new command: `cf login -a https://api.fr.cloud.gov --sso`
 - To access the Dashboard, visit [`https://dashboard.fr.cloud.gov/`](https://dashboard.fr.cloud.gov/).
 - There are different names and plans for some services.
