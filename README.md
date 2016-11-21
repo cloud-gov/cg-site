@@ -16,7 +16,7 @@ Hugo uses Markdown to build the pages. Add your page to the section you want ins
 ### Running the site locally
 
 1. Run `npm install` to download all the dependencies.
-1. Run `npm run start` and browse to [http://localhost:1313](http://localhost:1313).
+1. Run `npm start` and browse to [http://localhost:1313](http://localhost:1313).
 
 ### Environment-specific information
 
