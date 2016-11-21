@@ -20,9 +20,9 @@ All cloud.gov access packages include the following:
 - Network security
 - ATO-ready documentation of system components (compliance-masonry form)
 - Regular scanning for infrastructure-level vulnerabilities/misconfiguration
-- Support for [these technologies](http://docs.cloudfoundry.org/buildpacks/#system-buildpacks), through what are called "buildpacks".
-    - All supported buildpacks receive regular security updates.
-    - Note that [custom buildpacks]({{< relref "docs/apps/experimental/custom-buildpacks.md" >}}) can also be used.
+- Support for [these technologies](http://docs.cloudfoundry.org/buildpacks/#system-buildpacks), through what are called "system buildpacks".
+    - All system buildpacks receive regular security updates.
+    - Note that [custom buildpacks]({{< relref "docs/apps/experimental/custom-buildpacks.md" >}}) can also be used for other languages/frameworks, but the cloud.gov will have limited ability to troubleshoot, and there may be compliance implications.
 - Self-service management of spaces and users within an organization
 - Platform maintenance and managed service expansion overhead
 - Support for customer-provided DNS for applications (including support for IPv6)
