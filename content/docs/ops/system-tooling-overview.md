@@ -30,3 +30,7 @@ From the `cg-deploy-bosh` repository, the global NTP configuration is defined in
 
 This configuration is kept geographically diverse by using pool.ntp.org's [continental zones](http://www.pool.ntp.org/zone/@).
 
+This configuration is kept geographically diverse by using [NIST Internet Time
+Servers](http://tf.nist.gov/tf-cgi/servers.cgi) and leveraging the global
+address which resolves across all the server addresses in a round-robin
+sequence to equalize the load across all of the servers.
