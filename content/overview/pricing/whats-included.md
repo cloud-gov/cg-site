@@ -2,7 +2,7 @@
 menu:
   overview:
     parent: pricing
-title: What’s included
+title: What’s included?
 weight: 10
 aliases:
   - /docs/intro/pricing/whats-included
@@ -20,7 +20,9 @@ All cloud.gov access packages include the following:
 - Network security
 - ATO-ready documentation of system components (compliance-masonry form)
 - Regular scanning for infrastructure-level vulnerabilities/misconfiguration
-- Regular security updates for [supported buildpacks](http://docs.cloudfoundry.org/buildpacks/#system-buildpacks). Run `cf buildpacks` for an up-to-date list and version info.
+- Support for [these technologies](http://docs.cloudfoundry.org/buildpacks/#system-buildpacks), through what are called "buildpacks".
+    - All supported buildpacks receive regular security updates.
+    - Note that [custom buildpacks]({{< relref "docs/apps/experimental/custom-buildpacks.md" >}}) can also be used.
 - Self-service management of spaces and users within an organization
 - Platform maintenance and managed service expansion overhead
 - Support for customer-provided DNS for applications (including support for IPv6)
