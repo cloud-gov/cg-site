@@ -1,3 +1,4 @@
+blockquote,
 .env-block {
   margin-bottom: 24px; /* $grid-3 */
   margin-left: 16px; /* $grid-3 */
@@ -5,6 +6,7 @@
   position: relative;
 }
 
+blockquote::before,
 .env-block::before {
   border-radius: 3px;
   border-style: solid;
@@ -54,4 +56,8 @@
 
 .env-govcloud::before {
   border-color: #333; /* $color-textblack */
+}
+
+blockquote::before {
+  border-color: #8e8e8e; /* $color-mediumgray */
 }
