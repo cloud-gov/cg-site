@@ -18,13 +18,13 @@ To start using cloud.gov:
 
 ### Agency single-sign-on accounts
 
-If you have a GSA or EPA email address, sign into cloud.gov using your agency credentials as described above. Here are details about using these accounts. 
+If you have a GSA or EPA email address, sign into cloud.gov using your agency credentials as described above.
 
 ### cloud.gov accounts
 
 If you were invited with an email address that isn't part of an agency with single-sign-on authentication to cloud.gov, you have a cloud.gov account.
 
-#### *GovCloud environment*
+{{% govcloud %}}
 
 In the GovCloud environment, your cloud.gov account requires multi-factor authentication. To log into the system, you need two "factors" -- something you know (your password) and something you have on your person (your smartphone).
 
@@ -35,10 +35,12 @@ When you log in to cloud.gov via a web browser, select the `cloud.gov` provider 
 ##### Managing MFA / TOTP with authentication applications
 
 In order to perform multi-factor authentication with the `cloud.gov` provider, you need an authentication application that generates time-based one-time passwords. We recommend [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) or [Authy](https://www.authy.com/app/mobile). Download the app on your mobile device. When you log into cloud.gov for the first time, follow the instructions to store the `cloud.gov` key in your application.
+{{% /govcloud %}}
 
-#### *East/West environment*
+{{% eastwest %}}
 
 In the East/West environment, your cloud.gov account has a username and password. You can [reset your own password](https://login.cloud.gov/forgot_password).
+{{% /eastwest %}}
 
 ### Deployer accounts
 
