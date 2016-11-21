@@ -5,8 +5,7 @@ menu:
 title: Deploying the Docker broker
 ---
 
-***Note this page only applies to the AWS East/West environment.***
-
+{{% eastwest %}}
 This guide covers the high level steps required to configure, deploy and enable docker-boshrelease and included cf-containers-broker.
 
 #### Background
@@ -301,3 +300,4 @@ Access control must be baked into the docker image used to provide the service. 
 1. SSH into the docker vm. `bosh ssh docker <index>`
 1. Once in the docker vm, find the container you want by listing all the containers via `/var/vcap/packages/docker/bin/docker -H=tcp://127.0.0.1:4243 ps`
 1. Connect to the container by taking the id hash of the container and running `/var/vcap/packages/docker/bin/docker -H=tcp://127.0.0.1:4243 exec -it <hash id> /bin/bash`
+{{% /eastwest %}}
