@@ -81,7 +81,6 @@ Any labor involved from your project team is the responsibility of your project.
     * Specify that the org should be created in `GovCloud`.
     * An admin will confirm the information, and [create the org]({{< relref "docs/ops/create-org.md#non-sandboxes" >}}) for you.
 1. Install the [CF Targets plugin](https://github.com/guidowb/cf-targets-plugin).
-1. [Set up the spaces.]({{< relref "docs/apps/production-ready.md#space-per-environment" >}})
 1. [Give permissions to the appropriate people.]({{< relref "docs/apps/managing-teammates.md" >}})
 1. Deploy the application to the GovCloud environment.
     * This is a good time to ensure that you are following [deployment best practices]({{< relref "docs/apps/production-ready.md" >}}).
