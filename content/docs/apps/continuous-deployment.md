@@ -10,11 +10,10 @@ changes to your desired environment.
 
 Make sure that you've previously looked at the [Production Ready Guide]({{< relref "production-ready.md" >}}) and followed best practices.
 
-## Continuous integration services
+## Deployer account
 
-*These instructions are different depending on the "environment" your application lives in. If you're not sure, pick East/West. (GovCloud is our new environment.)*
-
-### *GovCloud environment:* Deployer account broker
+{{% govcloud %}}
+### Deployer account broker
 
 You can provision a deployer account with permission to deploy to a single org and space using the deployer account service broker:
 
@@ -48,8 +47,10 @@ To delete your deployer account, delete the service instance:
 ```bash
 $ cf delete-service my-deployer-account
 ```
+{{% /govcloud %}}
 
-### *East/West environment:* Ask an admin
+{{% eastwest %}}
+### Ask an admin
 
 The first thing you need to do is ask an admin to setup a "deployer" user in your organization and give it permission to deploy to the desired space:
 
@@ -57,8 +58,9 @@ The first thing you need to do is ask an admin to setup a "deployer" user in you
 cf create-user ORGNAME_deployer RANDOM-PASSWORD
 cf set-space-role ORGNAME_deployer ORG SPACE SpaceDeveloper
 ```
+{{% /eastwest %}}
 
-***
+## Continuous integration services
 
 Depending on your CI system the setup is going to be a bit different. **For all cases you will need a `manifest.yml` file.**
 

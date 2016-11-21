@@ -5,11 +5,11 @@ menu:
 title: Managing users
 ---
 
-## Note for GovCloud environment
-
+{{% govcloud %}}
 Only single sign-on user accounts are allowed. Service accounts, such as deployer credentials, are permissible with the condition that they are scoped to a particular space with limited access.
 
 No local accounts to UAA shall be created for user access.
+{{% /govcloud %}}
 
 ## Creating users
 

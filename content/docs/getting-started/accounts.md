@@ -25,8 +25,7 @@ If you have a GSA or EPA email address, sign into cloud.gov using your agency cr
 If you were invited with an email address that isn't part of an agency with single-sign-on authentication to cloud.gov, you have a cloud.gov account.
 
 {{% govcloud %}}
-
-In the GovCloud environment, your cloud.gov account requires multi-factor authentication. To log into the system, you need two "factors" -- something you know (your password) and something you have on your person (your smartphone).
+Your cloud.gov account requires multi-factor authentication. To log into the system, you need two "factors" -- something you know (your password) and something you have on your person (your smartphone).
 
 When you log in to cloud.gov via a web browser, select the `cloud.gov` provider as shown here:
 
@@ -38,8 +37,7 @@ In order to perform multi-factor authentication with the `cloud.gov` provider, y
 {{% /govcloud %}}
 
 {{% eastwest %}}
-
-In the East/West environment, your cloud.gov account has a username and password. You can [reset your own password](https://login.cloud.gov/forgot_password).
+Your cloud.gov account has a username and password. You can [reset your own password](https://login.cloud.gov/forgot_password).
 {{% /eastwest %}}
 
 ### Deployer accounts
