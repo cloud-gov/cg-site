@@ -16,7 +16,7 @@ https://invite.cloud.gov/
 {{% /eastwest %}}
 
 {{% govcloud %}}
-https://invite.fr.cloud.gov/
+https://account.fr.cloud.gov/invite
 {{% /govcloud %}}
 
 Then, confirm with them that they have received and accepted the invite. Now they have a cloud.gov account!

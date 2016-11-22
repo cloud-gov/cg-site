@@ -8,13 +8,13 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
 
 ### Added
 - cloud.gov supports the [.NET Core buildpack](https://docs.cloudfoundry.org/buildpacks/dotnet-core/index.html) ([learn about buildpacks]({{< relref "docs/getting-started/concepts.md" >}}#buildpacks)).
-- You can [invite](https://invite.fr.cloud.gov) teammates who aren’t in agencies with supported single-sign-on authentication (GSA, EPA, FDIC). After you invite them, they can log in by creating a cloud.gov account with multi-factor authentication.
+- You can [invite](https://account.fr.cloud.gov/invite) teammates who aren’t in agencies with supported single-sign-on authentication (GSA, EPA, FDIC). After you invite them, they can log in by creating a cloud.gov account with multi-factor authentication.
 - The [dashboard](https://dashboard.fr.cloud.gov) shows the current memory, disk usage and quota limits for apps.
 - You can create [deployer accounts]({{< relref "docs/apps/continuous-deployment.md" >}}#govcloud-environment-deployer-account-broker) programmatically.
 - For FDIC users: you can log into cloud.gov using your agency single-sign-on credentials.
 
 ### Changed
-- We upgraded Cloud Foundry (the underlying open source project that powers cloud.gov) to [Release v246](https://github.com/cloudfoundry/cf-release/releases/tag/v246), which includes updates to buildpacks and improvements for internal components. 
+- We upgraded Cloud Foundry (the underlying open source project that powers cloud.gov) to [Release v246](https://github.com/cloudfoundry/cf-release/releases/tag/v246), which includes updates to buildpacks and improvements for internal components.
 
 ### Security
 You can [restage](https://docs.cloudfoundry.org/devguide/deploy-apps/start-restart-restage.html#restage) your application to incorporate the latest security fixes and ensure you’re running the most recent language version supported.
