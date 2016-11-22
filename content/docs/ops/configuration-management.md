@@ -5,7 +5,7 @@ menu:
 title: Configuration management
 ---
 
-<!-- This page is important for FedRAMP compliance. See the CM family of controls, including CM-9. -->
+<!-- This page is important for FedRAMP compliance. See the CM family of controls, including CM-9. Code Climate is part of SA-11 (1), SI-3, and RA-5. -->
 
 This document describes how the 18F cloud.gov team approaches configuration management of the core platform.
 
