@@ -38,6 +38,8 @@ GovCloud-specific information
 
 - To run [one-off tasks]({{< relref "docs/getting-started/one-off-tasks.md" >}}), [`cf-ssh`]({{< relref "docs/apps/using-ssh.md#east-west-environment-cf-ssh" >}}) is not available in GovCloud. Instead, you can use [`cf ssh`]({{< relref "docs/apps/using-ssh.md#govcloud-environment-cf-ssh" >}}) (note the space instead of the `-`), which is more flexible than `cf-ssh`.
 - To set up custom domains, you can use the [managed service method]({{< relref "docs/apps/custom-domains.md#managed-service-method" >}}).
+- Elasticsearch 2.3 is available.
+    - If you're using 1.7, it's recommended that you upgrade, since 1.7 hits [end of life](https://www.elastic.co/support/eol) on January 6, 2017. [Read about the breaking changes.](https://www.elastic.co/guide/en/elasticsearch/reference/2.0/breaking-changes-2.0.html)
 
 #### Experimental new features
 
