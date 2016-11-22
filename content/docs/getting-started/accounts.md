@@ -8,17 +8,18 @@ weight: -100
 
 To start using cloud.gov:
 
-* **If you're in GSA or EPA:** You automatically have access to cloud.gov; you don't need to take any account creation steps before you start using cloud.gov.
+* **If you're in GSA, EPA or FDIC:** You automatically have access to cloud.gov; you don't need to take any account creation steps before you start using cloud.gov.
     * To log into the [cloud.gov web interface (dashboard)](https://dashboard.cloud.gov/): click "agree and continue", click your agency name, and log in using your agency credentials.
     * To log into the cloud.gov command line interface (CLI), follow [these instructions to use your agency credentials on the CLI]({{< relref "setup.md" >}}).
-* **If you're outside GSA/EPA and your organization/project is registered with cloud.gov:** Ask a teammate to follow [these instructions for inviting teammates]({{< relref "managing-teammates.md" >}}), and you'll get a cloud.gov account.
+* **If you're in FDIC and are unable to sign in:** contact your agency's identity team to be added to the cloud.gov access group.
+* **If you're outside GSA/EPA/FDIC and your organization/project is registered with cloud.gov:** Ask a teammate to follow [these instructions for inviting teammates]({{< relref "managing-teammates.md" >}}), and you'll get a cloud.gov account.
 * **Otherwise:** If you're in government and you'd like to try cloud.gov, [email us](/help/).
 
 ## How accounts work
 
 ### Agency single-sign-on accounts
 
-If you have a GSA or EPA email address, sign into cloud.gov using your agency credentials as described above.
+If you have a GSA, EPA or FDIC email address, sign into cloud.gov using your agency credentials as described above.
 
 ### cloud.gov accounts
 
