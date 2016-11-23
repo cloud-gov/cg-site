@@ -5,7 +5,7 @@ menu:
 title: Configuration management
 ---
 
-<!-- This page is important for FedRAMP compliance. See the CM family of controls, including CM-9. -->
+<!-- This page is important for FedRAMP compliance. See the CM family of controls, including CM-9. Code Climate is part of SA-11 (1), SI-3, and RA-5. -->
 
 This document describes how the 18F cloud.gov team approaches configuration management of the core platform.
 
@@ -18,7 +18,7 @@ Here are some examples that should be in configuration management:
 - Infrastructure/network configuration (Terraform)
 - VM setup and quantity (BOSH)
 - Software configuration (BOSH)
-
+- 18F-developed code
 
 ## Where should all this configuration go?
 All configuration must be stored in GitHub using the following "Change Workflow" unless it is a _secret_.
@@ -34,6 +34,7 @@ Security tests need to be executed in the staging environment where changes are 
 1. A Pull Request (PR) is created that addresses the change and references the created issue.
     If there is a staging environment available for a given repository, the PR should be
     created against the `staging` branch. Otherwise, the PR should be created against the `master` branch on the canonical repository.
+1. If the repository contains 18F-developed code, the PR must have an automated Code Climate check, which must pass before the PR can be merged.
 1. The PR is reviewed by someone other than the committer. Pairing via screen-sharing
 is encouraged and qualifies as a review. Review should include architectural design, DRY principles, security and code quality.
 1. The reviewer merges the PR.
