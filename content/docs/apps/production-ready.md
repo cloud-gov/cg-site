@@ -29,7 +29,7 @@ Environment variables defined with `cf set-env` are ephemeral to the specific de
 
 #### How
 * Create [user-provided services](https://docs.cloudfoundry.org/devguide/services/user-provided.html) with `cf cups` and bind them with `cf bs`. Once you have updated your application to read your stored credentials from the service, [update your `manifest.yml`](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#services-block) to make it part of your configuration. For non-sensitive information, use [an env: block](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block) in your `manifest.yml`.
-* Protect access to platform provided variables such as `VCAP_SERVICES` for [managed services]({{< relref "managed-services.md" >}}) and `DATABASE_URL` for [databases]({{< relref "databases.md" >}}).
+* Protect access to platform provided variables such as `VCAP_SERVICES` for [managed services]({{< relref "managed-services.md" >}}) and `DATABASE_URL` for [the database service]({{< relref "docs/services/relational-database.md" >}}).
   * Minimize your number of users with the `SpaceDeveloper` role, as they can access all environment variables using `cf env`.
   * Educate users who require the `SpaceDeveloper` role to protect access to environment variables.
 

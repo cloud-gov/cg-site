@@ -52,6 +52,11 @@ publishdir = "public"
     pre = "<i class='fa fa-fw fa-file-text'></i>"
     weight = -110
 [[menu.docs]]
+    name = "Services"
+    identifier = "services"
+    pre = "<i class='fa fa-fw fa-database'></i>"
+    weight = -100
+[[menu.docs]]
     name = "Advanced"
     identifier = "advanced"
     pre = "<i class='fa fa-fw fa-rocket'></i>"
