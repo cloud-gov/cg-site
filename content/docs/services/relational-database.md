@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: services
-title: Relational Database Service (aws-rds)
+title: Relational Databases (aws-rds)
 ---
 
 If your application uses relational databases for storage, you can use the cloud.gov AWS RDS service to create a database instance.
