@@ -1,6 +1,6 @@
 ---
 menu:
-  main:
+  docs:
     parent: operations
 title: Ongoing Platform Maintenance
 ---
