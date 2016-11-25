@@ -72,15 +72,15 @@ only type of database supported via this method is Postgres.
 =======
 ### Access a postgres database
 
-## cg-export-db Plugin
-The easiest way to access the data in your database is via the `cg-export-db`
+## cg-migrate-db Plugin
+The easiest way to access the data in your database is via the `cg-migrate-db`
 plugin.
 
-Please check out the [repository](https://github.com/18F/cg-export-db)
+Please check out the [repository](https://github.com/18F/cg-migrate-db)
 for instructions on how to install the plugin, backup data, import data,
 download a local copy of the data, and upload a local copy of the data.
 
-It also includes a [how-to](https://github.com/18F/cg-export-db#1-migrating-from-ew-to-govcloud-in-4-steps)
+It also includes a [how-to](https://github.com/18F/cg-migrate-db#1-migrating-from-ew-to-govcloud-in-4-steps)
 for migrating data from one environment to another. (e.g. from East-West to
 GovCloud)
 
@@ -92,7 +92,6 @@ GovCloud)
 ### Using cf-ssh
 =======
 #### *East/West environment:* Using cf-ssh
->>>>>>> Add services section with pricing and details:content/docs/services/aws-rds.md
 
 To access a service database, use the [cf-ssh]({{< relref "docs/getting-started/one-off-tasks.md#cf-ssh" >}}) CLI to start an instance that is bound to the service and download the `psql` binary to that instance:
 
