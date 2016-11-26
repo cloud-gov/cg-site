@@ -86,9 +86,11 @@ The instructions below are for PostgreSQL, but should be similar for MySQL or ot
 
 To access a service database, use the [cf-ssh]({{< relref "docs/getting-started/one-off-tasks.md#cf-ssh" >}}) CLI to start an instance that is bound to the service and download the `psql` binary to that instance:
 
-    cf-ssh APP_NAME
-    curl https://s3.amazonaws.com/18f-cf-cli/psql-9.4.4-ubuntu-14.04.tar.gz | tar xvz
-    ./psql/bin/psql $DATABASE_URL
+```sh
+cf-ssh APP_NAME
+curl https://s3.amazonaws.com/18f-cf-cli/psql-9.4.4-ubuntu-14.04.tar.gz | tar xvz
+./psql/bin/psql $DATABASE_URL
+```
 
 You should now have an open `psql` terminal connected to the service database.
 {{% /eastwest %}}
@@ -98,9 +100,11 @@ You should now have an open `psql` terminal connected to the service database.
 
 To access a service database, use the [cf ssh]({{< relref "docs/getting-started/one-off-tasks.md#cf-ssh" >}}) CLI command to login to an instance that is bound to the service and download the `psql` binary to that instance:
 
-    cf ssh APP_NAME
-    curl https://s3.amazonaws.com/18f-cf-cli/psql-9.4.4-ubuntu-14.04.tar.gz | tar xvz
-    ./psql/bin/psql $DATABASE_URL
+```sh
+cf ssh APP_NAME
+curl https://s3.amazonaws.com/18f-cf-cli/psql-9.4.4-ubuntu-14.04.tar.gz | tar xvz
+./psql/bin/psql $DATABASE_URL
+```
 
 You should now have an open `psql` terminal connected to the service database.
 {{% /govcloud %}}
@@ -216,6 +220,6 @@ dump.
 $ pg_restore --clean --no-owner --no-acl --dbname={database name} backup.pg
 ```
 
-### The broker in GitHub
+## The broker in GitHub
 
 You can find the broker here: [https://github.com/18F/aws-broker](https://github.com/18F/aws-broker).
