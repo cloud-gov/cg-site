@@ -34,7 +34,7 @@ Name | Required | Description | Default
 --- | --- | --- | ---
 `storage` |  | Number of GB available to the database instance | 10
 
-## How to create an instance
+## Create an instance
 
 To create a service instance run the following command:
 
@@ -48,31 +48,24 @@ If you want to specify the storage available to the instance:
 cf create-service aws-rds medium-psql my-db-service -c '{"storage": 50}'
 ```
 
-## More Information
-
-### Binding to an application
+### Bind to an application
 
 `cf bind-service` will provide a `DATABASE_URL` environment variable for your app, which is then picked up by the `restage`. Note that for a Rails app, `bind-service` will [overwrite your `database.yml`](http://docs.cloudfoundry.org/buildpacks/ruby/ruby-service-bindings.html#rails-applications-have-autoconfigured-database-yml). The full documentation for managing service instances is [here](https://docs.cloudfoundry.org/devguide/services/managing-services.html).
 
 The contents of the `DATABASE_URL` environment variable contain the credentials to access your database. Treat the contents of this and all other environment variables as sensitive.
 
-<<<<<<< 69d18ccb3eeb20f14a30e3165ff35c9e381d9e76:content/docs/apps/databases.md
-## Access The Data In The Database
+## Access the data in the database
 
 There are currently two ways to access the database.
 
-1. [The `cg-export-db` plugin](#cg-export-db-plugin). It is a self contained
+1. [The `cg-migrate-db` plugin](#cg-migrate-db-plugin). It is a self contained
 executable which will interactively assist with accessing the data in the
 database. It supports accessing data from different types of databases.
-1. [Manually accessing the database](#access-a-postgres-database). This way
+1. [Manually accessing the database](#manually-access-a-database). This way
 requires manually downloading the tool(s) needed to access the database. The
 only type of database supported via this method is Postgres.
 
----
-=======
-### Access a postgres database
-
-## cg-migrate-db Plugin
+### cg-migrate-db plugin
 The easiest way to access the data in your database is via the `cg-migrate-db`
 plugin.
 
@@ -84,33 +77,34 @@ It also includes a [how-to](https://github.com/18F/cg-migrate-db#1-migrating-fro
 for migrating data from one environment to another. (e.g. from East-West to
 GovCloud)
 
----
+### Manually access a database
 
-## Access a postgres database
+The instructions below are for PostgreSQL, but should be similar for MySQL or others.
 
 {{% eastwest %}}
 ### Using cf-ssh
-=======
-#### *East/West environment:* Using cf-ssh
 
 To access a service database, use the [cf-ssh]({{< relref "docs/getting-started/one-off-tasks.md#cf-ssh" >}}) CLI to start an instance that is bound to the service and download the `psql` binary to that instance:
 
-    cf-ssh APP_NAME
-    curl https://s3.amazonaws.com/18f-cf-cli/psql-9.4.4-ubuntu-14.04.tar.gz | tar xvz
-    ./psql/bin/psql $DATABASE_URL
+```sh
+cf-ssh APP_NAME
+curl https://s3.amazonaws.com/18f-cf-cli/psql-9.4.4-ubuntu-14.04.tar.gz | tar xvz
+./psql/bin/psql $DATABASE_URL
+```
 
 You should now have an open `psql` terminal connected to the service database.
 {{% /eastwest %}}
 
 {{% govcloud %}}
-
-#### *GovCloud environment:* Using cf ssh
+#### Using cf ssh
 
 To access a service database, use the [cf ssh]({{< relref "docs/getting-started/one-off-tasks.md#cf-ssh" >}}) CLI command to login to an instance that is bound to the service and download the `psql` binary to that instance:
 
-    cf ssh APP_NAME
-    curl https://s3.amazonaws.com/18f-cf-cli/psql-9.4.4-ubuntu-14.04.tar.gz | tar xvz
-    ./psql/bin/psql $DATABASE_URL
+```sh
+cf ssh APP_NAME
+curl https://s3.amazonaws.com/18f-cf-cli/psql-9.4.4-ubuntu-14.04.tar.gz | tar xvz
+./psql/bin/psql $DATABASE_URL
+```
 
 You should now have an open `psql` terminal connected to the service database.
 {{% /govcloud %}}
@@ -206,7 +200,7 @@ Run `sftp` or `scp` to transfer files to/from an application instance.  You must
 
 For example, to connect to instance 0 of the application with GUID 0745e60b-c7f3-49a7-a6c2-878516a34796:
 
-```sh
+```
 $ sftp -P 2222 cf:0745e60b-c7f3-49a7-a6c2-878516a34796/0@ssh.fr.cloud.gov
 cf:0745e60b-c7f3-49a7-a6c2-878516a34796/0@ssh.fr.cloud.gov's password: ******
 Connected to ssh.fr.cloud.gov.
@@ -223,9 +217,9 @@ local copy of the database already, you might run into inconsistencies when doin
 dump.
 
 ```sh
-$  pg_restore --clean --no-owner --no-acl --dbname={database name} backup.pg
+$ pg_restore --clean --no-owner --no-acl --dbname={database name} backup.pg
 ```
 
-### The broker in GitHub
+## The broker in GitHub
 
 You can find the broker here: [https://github.com/18F/aws-broker](https://github.com/18F/aws-broker).

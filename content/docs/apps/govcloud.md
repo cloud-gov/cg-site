@@ -91,7 +91,7 @@ Any labor involved from your project team is the responsibility of your project.
     * [Elasticsearch](https://github.com/18F/cg-product/issues/233)
     * [Redis](https://github.com/18F/cg-product/issues/234)
     * [S3](https://github.com/18F/cg-product/issues/235)
-    * MySQL and PostgreSQL should use the [cg-export-db plugin](/docs/apps/databases/#cg-export-db-plugin)
+    * MySQL and PostgreSQL should use the [cg-migrate-db plugin]({{< relref "docs/services/relational-database.md#cg-migrate-db-plugin" >}})
 1. Test the new deployment(s) thoroughly.
 1. [Set up your custom domain]({{< relref "docs/apps/custom-domains.md#managed-service-method" >}}), if applicable.
 1. [Set up continuous deployment.]({{< relref "docs/apps/continuous-deployment.md" >}}) (Not required, but strongly recommended.)
