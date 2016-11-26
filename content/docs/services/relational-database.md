@@ -58,15 +58,15 @@ The contents of the `DATABASE_URL` environment variable contain the credentials 
 
 There are currently two ways to access the database.
 
-1. [The `cg-export-db` plugin](#cg-export-db-plugin). It is a self contained
+1. [The `cg-migrate-db` plugin](#cg-migrate-db-plugin). It is a self contained
 executable which will interactively assist with accessing the data in the
 database. It supports accessing data from different types of databases.
 1. [Manually accessing the database](#manually-access-a-database). This way
 requires manually downloading the tool(s) needed to access the database. The
 only type of database supported via this method is Postgres.
 
-### cg-export-db plugin
-The easiest way to access the data in your database is via the `cg-export-db`
+### cg-migrate-db plugin
+The easiest way to access the data in your database is via the `cg-migrate-db`
 plugin.
 
 Please check out the [repository](https://github.com/18F/cg-migrate-db)
