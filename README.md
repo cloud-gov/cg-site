@@ -30,9 +30,16 @@ East/West-specific Markdown content goes here.
 
 Ditto for `govcloud`.
 
-### Making redirects
+### Links
 
-If you delete or rename a page, you can make a redirect to avoid breaking links from other sites: [make an alias](https://gohugo.io/extras/aliases/) (use the "YAML frontmatter" style).
+To link to another page within cg-site, use `relref` to create [relative links](https://gohugo.io/extras/crossreferences/). Examples:
+
+* `[What is cloud.gov?]({{< relref "overview/overview/what-is-cloudgov.md" >}})`
+* `[Sharing secret keys]({{< relref "docs/ops/secrets.md#sharing-secret-keys“ >}})`
+
+### Redirects
+
+If you delete or rename a page, make a redirect to avoid breaking links from other sites: [make an alias](https://gohugo.io/extras/aliases/) (use the "YAML frontmatter" style).
 
 ### Search
 
