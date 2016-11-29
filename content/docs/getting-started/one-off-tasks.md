@@ -53,7 +53,7 @@ The idea here is that we are going to deploy a new application, but running the 
 1. Deploy the one-off app, and view the output:
 
     ```bash
-    cf push -f task_manifest.yml
+    cf push -f task_manifest.yml -u none
     cf logs --recent task-runner
     ```
 
