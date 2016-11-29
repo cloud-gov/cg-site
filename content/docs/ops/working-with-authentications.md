@@ -146,3 +146,9 @@ Example credentials pasted into Fugacious
 Example URL from Fugacious
     => https://fugacious.18f.gov/m/iWmMDEl6zZoEx78Lxsa5QJLLQVpiuLGox
 ```
+
+When sharing the Fugacious URL with tenants, it's important to meet our
+[compliance requirements][cg-compliance-secrets] and helpful to remind tenants
+of the limits for the links shared with them containing secrets.
+
+[cg-compliance-secrets]: https://cloud.gov/docs/ops/secrets/#sharing-secret-keys
