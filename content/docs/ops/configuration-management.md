@@ -53,12 +53,14 @@ A more detailed example of this process can be seen in [Updating Cloud Foundry](
 If possible, Configuration Management tools need to be set up to always roll back to a known state. Other than that, these tools need to be able to "recreate" all settings from the known configurations.
 
 ## GitHub contribution guidelines
+
+As part of 18F, we follow [the 18F requirements for using GitHub](https://handbook.18f.gov/github/). These are our team practices within those requirements.
+
 ### Forking vs. branching
 
 The team prefers forking.
 
-The rationale for preferring forking is that all contributors work the same way,
-regardless of whether or not they may commit directly to the canonical repository, such as the case of contractors that may work on the platform.
+The rationale for preferring forking is that all contributors work the same way, regardless of whether or not they may commit directly to the canonical repository, such as the case of contractors that may work on the platform.
 
 ### Squashing commits
 
