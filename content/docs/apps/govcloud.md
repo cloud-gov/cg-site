@@ -86,15 +86,15 @@ Any labor involved from your project team is the responsibility of your project.
 1. [Give permissions to the appropriate people.]({{< relref "docs/apps/managing-teammates.md" >}})
 1. Deploy the application to the GovCloud environment.
     * This is a good time to ensure that you are following [deployment best practices]({{< relref "docs/apps/production-ready.md" >}}).
-1. If you are using a data store provided by cloud.gov, [migrate the data](https://github.com/18F/cg-product/issues/211). This includes the following [services]({{< relref "docs/apps/managed-services.md" >}}):
+1. If you are using a data store provided by cloud.gov, migrate the data. More information for each [service]({{< relref "docs/apps/managed-services.md" >}}):
     * [Elasticsearch](https://github.com/18F/cg-product/issues/233)
     * [Redis](https://github.com/18F/cg-product/issues/234)
     * [S3](https://github.com/18F/cg-product/issues/235)
-    * MySQL and PostgreSQL should use the [cg-migrate-db plugin]({{< relref "docs/services/relational-database.md#cg-migrate-db-plugin" >}})
+    * [MySQL and PostgreSQL, via the cg-migrate-db plugin]({{< relref "docs/services/relational-database.md#cg-migrate-db-plugin" >}})
 1. Test the new deployment(s) thoroughly.
 1. [Set up your custom domain]({{< relref "docs/apps/custom-domains.md#managed-service-method" >}}), if applicable.
 1. [Set up continuous deployment.]({{< relref "docs/apps/continuous-deployment.md" >}}) (Not required, but strongly recommended.)
-1. Once you are confident that the move is complete, [ask support]({{< relref "docs/help.md" >}}) to delete the old (if applicable):
+1. Once you are confident that the move is complete, [ask support]({{< relref "docs/help.md" >}}) to delete the old resources. Some might not be applicable.
     * [Elastic Load Balancers](https://aws.amazon.com/elasticloadbalancing/)
     * Organizations
     * [Quotas]({{< relref "overview/pricing/quotas.md" >}})
