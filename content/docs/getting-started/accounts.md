@@ -6,20 +6,20 @@ title: Accounts
 weight: -100
 ---
 
-To start using cloud.gov:
+## Get a cloud.gov account
 
-* **If you're in GSA, EPA or FDIC:** You automatically have access to cloud.gov; you don't need to take any account creation steps before you start using cloud.gov.
-    * To log into the [cloud.gov web interface (dashboard)](https://dashboard.cloud.gov/): click "agree and continue", click your agency name, and log in using your agency credentials.
-    * To log into the cloud.gov command line interface (CLI), follow [these instructions to use your agency credentials on the CLI]({{< relref "setup.md" >}}).
-* **If you're in FDIC and are unable to sign in:** contact your agency's identity team to be added to the cloud.gov access group.
+* **If you're in GSA or EPA:** You automatically have access to cloud.gov; you don't need to take any account creation steps before you start using cloud.gov.
+* **If you're in FDIC:** Some FDIC staff automatically have access to cloud.gov and can log in without taking any account creation steps. If you're in FDIC and you don't have access, contact your agency's identity team to be added to the cloud.gov access group.
 * **If you're outside GSA/EPA/FDIC and your organization/project is registered with cloud.gov:** Ask a teammate to follow [these instructions for inviting teammates]({{< relref "managing-teammates.md" >}}), and you'll get a cloud.gov account.
-* **Otherwise:** If you're in government and you'd like to try cloud.gov, [email us](/help/).
+* **Otherwise:** If you're in the U.S. federal government and you'd like to try cloud.gov, [email us](/help/).
 
-## How accounts work
+## Log into cloud.gov
 
 ### Agency single-sign-on accounts
 
-If you have a GSA, EPA or FDIC email address, sign into cloud.gov using your agency credentials as described above.
+If you have a GSA, EPA, or FDIC email address, you'll sign into cloud.gov using your agency credentials. When you log in using the web UI (dashboard), click the button labeled with your agency name.
+
+Follow [these instructions to log in on the command line (CLI) and web UI (dashboard)]({{< relref "setup.md" >}}).
 
 ### cloud.gov accounts
 
@@ -28,7 +28,7 @@ If you were invited with an email address that isn't part of an agency with sing
 {{% govcloud %}}
 Your cloud.gov account requires multi-factor authentication. To log into the system, you need two "factors" -- something you know (your password) and something you have on your person (your smartphone).
 
-When you log in to cloud.gov via a web browser, select the `cloud.gov` provider as shown here:
+Follow [these instructions to log in on the command line (CLI) and web UI (dashboard)]({{< relref "setup.md" >}}). When you log in to cloud.gov via a web browser, select the `cloud.gov` provider as shown here:
 
 ![cloud.gov provider button on login page highlighted in blue](/img/cloud-gov-idp-button-cropped.png "cloud.gov provider button to login page is highlighted in blue")
 
@@ -38,14 +38,20 @@ In order to perform multi-factor authentication with the `cloud.gov` provider, y
 {{% /govcloud %}}
 
 {{% eastwest %}}
-Your cloud.gov account has a username and password. You can [reset your own password](https://login.cloud.gov/forgot_password).
+Your cloud.gov account has a username and password. Follow [these instructions to log in on the command line (CLI) and web UI (dashboard)]({{< relref "setup.md" >}}).
+
+You can [reset your own password](https://login.cloud.gov/forgot_password).
 {{% /eastwest %}}
 
 ### Deployer accounts
 
-For `ORGNAME_deployer` accounts, if you need the password reset, please contact [cloud.gov support](/help/), providing the account name with your request, and a member of the cloud.gov team will provide you with a new password.
-
+{{% govcloud %}}
 If you're using our [deployer account broker]({{< relref "docs/apps/continuous-deployment.md" >}}), you can delete and recreate that account to reset the credentials.
+{{% /govcloud %}}
+
+{{% eastwest %}}
+For `ORGNAME_deployer` accounts, if you need the password reset, please contact [cloud.gov support](/help/), providing the account name with your request, and a member of the cloud.gov team will provide you with a new password.
+{{% /eastwest %}}
 
 ## Use your account responsibly
 
