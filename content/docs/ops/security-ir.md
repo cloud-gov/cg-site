@@ -18,9 +18,9 @@ At a high level, incident response follows this process:
 
 [Initiate](#initiate):
 
-- An 18F staff member inside or outside the cloud.gov team (the *reporter*) notices and reports a cloud.gov-related incident, using the [18F incident response process](https://github.com/18F/security-incidents#process) and notifying the cloud.gov team in [`#cloud-gov`](https://gsa-tts.slack.com/messages/cloud-gov/).
+- An 18F staff member inside or outside the cloud.gov team (the *reporter*) notices and reports a cloud.gov-related incident, using the [18F incident response process](https://handbook.18f.gov/security-incidents/) and then notifying the cloud.gov team in [`#cloud-gov`](https://gsa-tts.slack.com/messages/cloud-gov/) using `@cloud-gov-team`.
 - The first responder on the cloud.gov team (which could be the reporter if the reporter is on the team) becomes the initial *Incident Commander* (IC).
-- The IC follows the [18F incident response process](https://handbook.18f.gov/security-incidents/) (or supports the reporter if the reporter already started it), including notifying GSA IT, notifying [`#incident-response`](https://gsa-tts.slack.com/messages/incident-response/), and creating an issue in the [security-incidents](https://github.com/18f/security-incidents) GitHub repository to track the event.
+- The IC follows the [18F incident response process](https://handbook.18f.gov/security-incidents/) (or supports the reporter if the reporter already started it).
 
 [Assess](#assess):
 
@@ -32,6 +32,7 @@ At a high level, incident response follows this process:
 
 - The responders work to contain and remediate the issue; timelines vary based on the assessed severity.
 - The IC coordinates, communicates, and tracks the investigation and remediation.
+- If appropriate to the situation, GSA, TTS, and cloud.gov coordinate on notifying affected customers.
 
 [Retrospective](#retrospective):
 
@@ -51,9 +52,9 @@ For full details, read on.
 
 An incident begins when someone becomes aware of a potential incident. We define "incident" broadly, following [NIST SP 800-61](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf), as "a violation or imminent threat of violation of computer security policies, acceptable use policies, or standard security practices" (6). This is a deliberately broad definition, designed to encompass any scenario that might threaten the security of cloud.gov.
 
-When a person outside the cloud.gov team (the *reporter*) notices a cloud.gov-related incident, they should begin reporting it by using the [18F incident response process](https://handbook.18f.gov/security-incidents/), and then post about it in [`#cloud-gov`](https://gsa-tts.slack.com/messages/cloud-gov/). If they don't get acknowledgment from the cloud.gov team right away, they should escalate by contacting the cloud.gov leads directly until they receive acknowledgment of their report.
+When a person outside the cloud.gov team (the *reporter*) notices a cloud.gov-related incident, they should begin reporting it by using the [18F incident response process](https://handbook.18f.gov/security-incidents/), and then post about it in [`#cloud-gov`](https://gsa-tts.slack.com/messages/cloud-gov/) using `@cloud-gov-team`. If they don't get acknowledgment from the cloud.gov team right away, they should escalate by contacting the cloud.gov leads directly until they receive acknowledgment of their report.
 
-When a cloud.gov team member is the first person to notice an incident, they should also begin reporting it by using the [18F incident response process](https://handbook.18f.gov/security-incidents/) and posting about it in [`#cloud-gov`](https://gsa-tts.slack.com/messages/cloud-gov/) (including notifying the cloud.gov leads).
+When a cloud.gov team member is the first person to notice an incident, they should also begin reporting it by using the [18F incident response process](https://handbook.18f.gov/security-incidents/) and posting about it in [`#cloud-gov`](https://gsa-tts.slack.com/messages/cloud-gov/) using `@cloud-gov-team` (including notifying the cloud.gov leads).
 
 In either case, the first participant on the cloud.gov team becomes the initial *Incident Commander* (IC) and carries out the next steps in the response. The IC's responsibility is coordination, not necessarily investigation. The IC's primary role is to guide the process. The first responder may remain IC throughout the process, or they may hand off IC duties later in the process.
 
@@ -63,11 +64,7 @@ The IC makes sure that the [18F incident response process](https://handbook.18f.
 
 Note that at this point the issue's status is "investigating" — we haven't confirmed that it's really an issue yet. So, we should actually refer to this as just an "event" at this point; it doesn't become an "incident" until we've confirmed it.
 
-At this phase, communications should follow these steps (and any additional steps listed at [18F incident response process](https://handbook.18f.gov/security-incidents/)):
-
-- The IC should inform GSA IT, the GSA IT Service Desk, and our DevOps teams of the investigation by emailing `gsa-ir@gsa.gov`, `itservicedesk@gsa.gov`, and `devops@gsa.gov` with a description of the incident, via a single email to all three addresses. If GSA Gmail itself is down or compromised, call the GSA IT Service Desk at 1-866-450-5250. **This step needs to happen within one hour of detecting a potential incident.**
-- Real-time chat should happen in [`#incident-response`](https://gsa-tts.slack.com/messages/incident-response/).
-- Create an issue in the [`security-incidents`](https://github.com/18f/security-incidents) GitHub repository. Copy the following template to create the issue:
+At this phase, communications should follow the steps in the [18F incident response process](https://handbook.18f.gov/security-incidents/) including creating an issue in the [`security-incidents`](https://github.com/18f/security-incidents) GitHub repository. Copy the following template to create the issue:
 
 ```
 Short description of what's going on
@@ -139,7 +136,8 @@ At this point, we're trying to fix the issue! Remediation will be very situation
 
 - The team will develop a list of **leads** — actionable information about breaches, stolen data, etc. The IC should track these leads, maintain information about which are being investigated (and by whom), and what information that investigation leads. These can be tracked as checklists in the GitHub issue.
 
-- Similarly, the team will develop a list of **remediation steps**. The IC is likewise responsible for tracking those, making sure they're assigned and followed-up, and verifying them as they're completed. These may be tracked in the central GitHub issue as well. The IC should distinguish between immediate concerns which should be completed before the incident is considered resolved and long-term improvements/hardening which can be deferred to the Retrospective. If the incident involved exposure of information to an unauthorized party, the long-term remediation steps include notifying the recipient of their obligations for appropriate handling of the information in the context of applicable federal laws, directives, policies, and/or regulations.
+- Similarly, the team will develop a list of **remediation steps**. The IC is likewise responsible for tracking those, making sure they're assigned and followed-up, and verifying them as they're completed. These may be tracked in the central GitHub issue as well. The IC should distinguish between immediate concerns which should be completed before the incident is considered resolved and long-term improvements/hardening which can be deferred to the Retrospective. 
+	- **If the incident involved exposure of information to an unauthorized party,** the remediation steps must include working with TTS Infrastructure and GSA Information Security to notify the owner of the information, coordinate with the owner of the information, and notify the recipient of their obligations for appropriate handling of the information in the context of applicable federal laws, directives, policies, and/or regulations. The specific appropriate point of contact for customers depends on the situation.
 
 - The response team should aim to adopt a *containment* strategy: if machines are compromised, they should avoid destroying or shutting them down if possible (this can hamper forensics). For AWS instances, you can leave the instance running and instead reconfigure the Security Group for the instance to drop all ingress and egress traffic until forensics can be performed.
 
@@ -147,7 +145,7 @@ At this point, we're trying to fix the issue! Remediation will be very situation
 
     - For High-severity incidents, the team should take action immediately, even if this causes disruption. A notification about the disruption should be sent out as soon as possible, but the team needs no permission to take action at this level.
 
-    - For Medium-severity incidents, the team should notify the cloud.gov leads (Diego and Bret) of the planned action, and help them assess the relative risk of disruption vs. security. If the leads are unavailable via Slack, they should be contacted using the phone numbers in their Slack profiles. The team should reach a collaborative decision on action, with a bias towards disruption. If they can't be reached within 1 hour, the team may take action without them.
+    - For Medium-severity incidents, the team should notify the cloud.gov leads of the planned action, and help them assess the relative risk of disruption vs. security. If the leads are unavailable via Slack, they should be contacted using the phone numbers in their Slack profiles. The team should reach a collaborative decision on action, with a bias towards disruption. If they can't be reached within 1 hour, the team may take action without them.
 
     - For Low-severity issues, the team should notify as above, and not take action until a mutually-agreed-on course of action has been determined.
 
