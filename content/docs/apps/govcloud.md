@@ -94,7 +94,13 @@ Any labor involved from your project team is the responsibility of your project.
 1. Test the new deployment(s) thoroughly.
 1. [Set up your custom domain]({{< relref "docs/apps/custom-domains.md#managed-service-method" >}}), if applicable.
 1. [Set up continuous deployment.]({{< relref "docs/apps/continuous-deployment.md" >}}) (Not required, but strongly recommended.)
-1. Once you are confident that the move is complete, [ask support]({{< relref "docs/help.md" >}}) to delete your old organization.
+1. Once you are confident that the move is complete, [ask support]({{< relref "docs/help.md" >}}) to delete the old (if applicable):
+    * [Elastic Load Balancers](https://aws.amazon.com/elasticloadbalancing/)
+    * Organizations
+    * [Quotas]({{< relref "overview/pricing/quotas.md" >}})
+    * [RDS](https://aws.amazon.com/rds/) instances
+    * [Route 53](https://aws.amazon.com/route53/) entries
+    * [S3](https://aws.amazon.com/s3/) buckets
 
 #### Unresolved details
 
