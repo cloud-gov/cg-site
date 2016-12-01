@@ -6,14 +6,14 @@ title: Accounts
 weight: -100
 ---
 
-## Get a cloud.gov account
+## To get a cloud.gov account
 
 * **If you're in GSA or EPA:** You automatically have access to cloud.gov; you don't need to take any account creation steps before you start using cloud.gov.
 * **If you're in FDIC:** Some FDIC staff automatically have access to cloud.gov and can log in without taking any account creation steps. If you're in FDIC and you don't have access, contact your agency's identity team to be added to the cloud.gov access group.
 * **If you're outside GSA/EPA/FDIC and your organization/project is registered with cloud.gov:** Ask a teammate to follow [these instructions for inviting teammates]({{< relref "managing-teammates.md" >}}), and you'll get a cloud.gov account.
 * **Otherwise:** If you're in the U.S. federal government and you'd like to try cloud.gov, [email us](/help/).
 
-## Log into cloud.gov
+## To log into cloud.gov
 
 ### Agency single-sign-on accounts
 
