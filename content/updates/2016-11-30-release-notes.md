@@ -16,7 +16,7 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
 - **Dashboard**: We fixed an [issue](https://github.com/18F/cg-dashboard/issues/672) that prevented creating service instances on the marketplace page.
 
 ### Security
-The Cloud Foundry release addresses several vulnerabilities.
+The base filesystem used for running your application has been updated to address several security vulnerabilities. You can [restage your application](http://cli.cloudfoundry.org/en-US/cf/restage.html) to ensure you [incorporate fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) and are running the most recent language version supported by your [buildpack](https://docs.cloudfoundry.org/buildpacks/).
 
 - [USN-3116-1: DBus vulnerabilities](https://www.ubuntu.com/usn/usn-3116-1/). The associated CVE is [CVE-2015-0245](https://people.canonical.com/~ubuntu-security/cve/2015/CVE-2015-0245)
 - [USN-3117-1: GD library vulnerabilities](https://www.ubuntu.com/usn/usn-3117-1/). The associated CVEs are [CVE-2016-6911](https://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-6911), [CVE-2016-7568](https://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-7568), [CVE-2016-8670](https://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-8670)
