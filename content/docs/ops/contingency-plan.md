@@ -93,7 +93,7 @@ Cloud Operations will:
 After these steps are complete, updates will be deployed per usual policy using GitLab in place of GitHub.
 
 ### PagerDuty
-If there is a disruption in PagerDuty service, Cloud Operations will configure all alerts to be delivered via email to [cloud-gov-support@gsa.gov](mailto:cloud-gov-support@gsa.gov).
+If there is a disruption in PagerDuty service, all alerts automatically get delivered to the Cloud Operations team via GSA email.
 
 ### New Relic
 There is no direct impact to the platform if a disruption occurs.  When debugging any issues where New Relic would provide insight, the team will use manual investigation to access the same information directly from the affected system(s).
