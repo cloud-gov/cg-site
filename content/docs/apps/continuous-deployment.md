@@ -39,7 +39,7 @@ You can provision a deployer account with permission to deploy to a single space
     Service instance: my-deployer-account
     Service: deployer-account
     ...
-    Dashboard: https://fugacio.us/m/k3MtzJWVZaNlnjBYJ7FUdpW2ZkDvhmQz
+    Dashboard: https://fugacious.18f.gov/m/k3MtzJWVZaNlnjBYJ7FUdpW2ZkDvhmQz
     ```
 
 1. Retrieve your credentials from the dashboard link. Be sure to retrieve your credentials right away, since the link will only work for a brief length of time. Keep these credentials secure. If they're compromised, delete your deployer account and create another.
@@ -52,11 +52,9 @@ $ cf delete-service my-deployer-account
 {{% /govcloud %}}
 
 {{% eastwest %}}
-### Ask an admin
+### Ask support
 
-Ask an admin to setup a "deployer" user in your organization and give it permission to deploy to the desired space.
-
-***
+Ask [cloud.gov support]({{< relref "docs/help.md" >}}) to set up a "deployer" user in your organization and give it permission to deploy to the desired space.
 
 {{% /eastwest %}}
 
@@ -136,7 +134,7 @@ Replace `DEPLOYER_USER`, `ORG`, and `SPACE` accordingly and export the `CF_PASS`
 
 ### Wercker
 
-On your `wercker.yml` file add:
+In your `wercker.yml` file add:
 
 ```
 steps:
