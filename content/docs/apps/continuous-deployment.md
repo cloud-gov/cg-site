@@ -53,12 +53,7 @@ $ cf delete-service my-deployer-account
 
 ### *East/West environment:* Ask an admin
 
-Ask an admin to setup a "deployer" user in your organization and give it permission to deploy to the desired space:
-
-```
-cf create-user ORGNAME_deployer RANDOM-PASSWORD
-cf set-space-role ORGNAME_deployer ORG SPACE SpaceDeveloper
-```
+Ask an admin to setup a "deployer" user in your organization and give it permission to deploy to the desired space.
 
 ***
 
