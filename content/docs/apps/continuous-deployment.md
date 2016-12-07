@@ -58,6 +58,8 @@ Ask an admin to setup a "deployer" user in your organization and give it permiss
 
 ***
 
+{{% /eastwest %}}
+
 ## Continuous integration services
 
 Depending on your CI system the setup is going to be a bit different. **For all cases you will need a `manifest.yml` file.**
