@@ -54,13 +54,9 @@ $ cf delete-service my-deployer-account
 {{% eastwest %}}
 ### Ask an admin
 
-Ask an admin to setup a "deployer" user in your organization and give it permission to deploy to the desired space:
+Ask an admin to setup a "deployer" user in your organization and give it permission to deploy to the desired space.
 
-```
-cf create-user ORGNAME_deployer RANDOM-PASSWORD
-cf set-space-role ORGNAME_deployer ORG SPACE SpaceDeveloper
-```
-{{% /eastwest %}}
+***
 
 ## Continuous integration services
 
