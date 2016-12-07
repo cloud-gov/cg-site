@@ -24,7 +24,7 @@ This section will contain instructions on how to install any useful plugins from
 
 ### Developing Plugins
 
-The CloudFoundry CLI is written in Go and compiled down to an executable. This means that plugins aren’t able to be dynamically linked into the main CLI's code. Instead, plugins are also Go applications that inherit from a base interface and implement a few predefined commands. These applications then run as little localized servers essentially and get commands via RPC from the CF CLI. [The whole architecture is described in depth on the CloudFoundry site](https://github.com/cloudfoundry/cli/tree/master/plugin_examples). Any plugin you might right will have to implement two commands from the CF Plugin interface:
+The CloudFoundry CLI is written in Go and compiled down to an executable. This means that plugins aren’t able to be dynamically linked into the main CLI's code. Instead, plugins are also Go applications that inherit from a base interface and implement a few predefined commands. These applications then run as little localized servers essentially and get commands via RPC from the CF CLI. [The whole architecture is described in depth on the CloudFoundry site](https://github.com/cloudfoundry/cli/tree/master/plugin/plugin_examples). Any plugin you might right will have to implement two commands from the CF Plugin interface:
 
 1. A `Run` command that is passed a `plugin.CliConnection` which can be used to invoke any methods within the core CF CLI from your plugin and is also passed arguments from invocation.
 2. A `GetMetadata` command that returns information about the plugin for displaying help to command-line users.

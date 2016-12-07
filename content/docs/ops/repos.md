@@ -17,7 +17,6 @@ Here are the repos with the tools and configuration for the platform:
 - Cron app: https://github.com/18F/cg-cron
 - Hubot CF notifications: https://github.com/18F/hubot-cf-notifications
 - 18F CF custom bosh release: https://github.com/18F/cg-cf-release
-- Hubot helpers: https://github.com/18F/hubot-cf
 - New Relic Bosh Release: https://github.com/cloudfoundry-community/newrelic-boshrelease
 - RDS Service Broker: https://github.com/cloudfoundry-community/rds-broker
 - Hardening Bosh Release: https://github.com/18f/harden-boshrelease
