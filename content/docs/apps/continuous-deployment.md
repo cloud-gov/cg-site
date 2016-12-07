@@ -14,9 +14,8 @@ Make sure that you've previously looked at the [Production Ready Guide]({{< relr
 
 Continuous deployment systems require credentials for use in pushing new versions of your application code to cloud.gov. You should use a restricted set of credentials that can only access a particular target space, rather than credentials tied to a user who has more access, or who may lose access when leaving your team or project. This "least privilege" approach minimizes the harm that is possible if the credentials are compromised in any way.
 
-*These instructions are different depending on the "environment" your application lives in. If you're not sure, pick East/West. (GovCloud is our new environment.)*
-
-### *GovCloud environment:* Deployer account broker
+{{% govcloud %}}
+### Deployer account broker
 
 You can provision a deployer account with permission to deploy to a single space using the deployer account service broker:
 
@@ -50,8 +49,10 @@ To delete your deployer account, delete the service instance:
 ```bash
 $ cf delete-service my-deployer-account
 ```
+{{% /govcloud %}}
 
-### *East/West environment:* Ask an admin
+{{% eastwest %}}
+### Ask an admin
 
 Ask an admin to setup a "deployer" user in your organization and give it permission to deploy to the desired space:
 
@@ -59,8 +60,7 @@ Ask an admin to setup a "deployer" user in your organization and give it permiss
 cf create-user ORGNAME_deployer RANDOM-PASSWORD
 cf set-space-role ORGNAME_deployer ORG SPACE SpaceDeveloper
 ```
-
-***
+{{% /eastwest %}}
 
 ## Continuous integration services
 
@@ -108,7 +108,6 @@ deploy:
 - [Travis - Cloud Foundry Deployment](http://docs.travis-ci.com/user/deployment/cloudfoundry/)
 - [Travis - The Lifecycle of a Travis CI Build](http://docs.travis-ci.com/user/build-lifecycle/)
 
-***
 
 ### CircleCI
 
@@ -136,7 +135,6 @@ Replace `DEPLOYER_USER`, `ORG`, and `SPACE` accordingly and export the `CF_PASS`
 
 **Note**: if your `manifest.yml` describes more than one app you might want to specify which app to push in the `cf push` line.
 
-***
 
 ### Wercker
 
@@ -176,5 +174,3 @@ And setup the following environment variables in a "deploy target":
 
 
 You can also add the `alt_appname` attribute to do [Blue-Green deploys](http://docs.pivotal.io/pivotalcf/devguide/deploy-apps/blue-green.html).
-
-***

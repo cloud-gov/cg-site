@@ -9,11 +9,19 @@ title: Managing teammates
 
 If you're part of a team using cloud.gov, you can invite teammates to get cloud.gov accounts. You can invite anyone you need to work with, including federal employees and federal contractors.
 
-1. [Send them an invite](https://login.cloud.gov/invitations/new) (this may prompt you to log into your cloud.gov account first).
+First, send them an invite from the following link. (This may prompt you to log into your cloud.gov account first.)
 
-1. Confirm with them that they have received and accepted the invite.
+{{% eastwest %}}
+https://invite.cloud.gov/
+{{% /eastwest %}}
 
-Now they have a cloud.gov account. If you invited them with an agency email address and they're part of an agency that has automatic sandbox spaces, they'll automatically get a sandbox space in their agency's cloud.gov org.
+{{% govcloud %}}
+https://account.fr.cloud.gov/invite
+{{% /govcloud %}}
+
+Then, confirm with them that they have received and accepted the invite. Now they have a cloud.gov account!
+
+If you invited them with an agency email address and they're part of an agency that has automatic sandbox spaces, they'll also automatically get a sandbox space in their agency's cloud.gov org.
 
 ## Give roles to a teammate
 

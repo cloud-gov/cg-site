@@ -1,0 +1,3 @@
+name = "elasticsearch17"
+description = "[Elasticsearch](https://www.elastic.co/) version 1.7"
+status = "Alpha"

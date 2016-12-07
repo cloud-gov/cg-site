@@ -8,15 +8,38 @@ cloud.gov is a Platform as a Service based on the Cloud Foundry project, which p
 
 Hugo uses Markdown to build the pages. Add your page to the section you want inside the content folder.
 
+### Basic install
+
+1. Install [Python](https://www.python.org/) 2, if it's not on your system already. (Required for [node-sass](https://github.com/sass/node-sass)->[node-gyp](https://github.com/nodejs/node-gyp#installation).)
+1. Install [Hugo](https://gohugo.io).
+
 ### Running the site locally
 
-1. This project uses [Hugo](https://gohugo.io) to build the site. Once Hugo is installed, run `hugo` to build the site.
 1. Run `npm install` to download all the dependencies.
-1. Run `npm run start` and browse to [http://localhost:1313](http://localhost:1313).
+1. Run `npm start` and browse to [http://localhost:1313](http://localhost:1313).
 
-### Making redirects
+### Environment-specific information
 
-If you delete or rename a page, you can make a redirect to avoid breaking links from other sites: [make an alias](https://gohugo.io/extras/aliases/) (use the "YAML frontmatter" style).
+For a block of content that is specific to AWS East/West, use the following [shortcode](https://gohugo.io/extras/shortcodes/):
+
+```
+{{% eastwest %}}
+East/West-specific Markdown content goes here.
+{{% /eastwest %}}
+```
+
+Ditto for `govcloud`.
+
+### Links
+
+To link to another page within cg-site, use `relref` to create [relative links](https://gohugo.io/extras/crossreferences/). Examples:
+
+* `[What is cloud.gov?]({{< relref "overview/overview/what-is-cloudgov.md" >}})`
+* `[Sharing secret keys]({{< relref "docs/ops/secrets.md#sharing-secret-keys" >}})`
+
+### Redirects
+
+If you delete or rename a page, make a redirect to avoid breaking links from other sites: [make an alias](https://gohugo.io/extras/aliases/) (use the "YAML frontmatter" style).
 
 ### Search
 

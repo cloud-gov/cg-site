@@ -1,0 +1,3 @@
+name = "deployer-account"
+description = "Create deployer accounts for to use in automated deployment systems"
+status = "Beta"

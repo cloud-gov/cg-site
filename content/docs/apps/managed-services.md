@@ -5,9 +5,7 @@ menu:
 title: Managed services
 ---
 
-### Background
-
-Cloud Foundry Managed Services provide applications with on-demand access to services outside of the stateless application environment. Typical managed services include databases, queues, and key-value stores.
+Cloud Foundry managed services provide applications with on-demand access to services outside of the stateless application environment. Typical managed services include databases, queues, and key-value stores.
 
 ### Prerequisites
 
@@ -15,29 +13,12 @@ Verify your [setup is complete]({{< relref "docs/getting-started/setup.md" >}}).
 
 ### Procedure
 
-In order to create a service instance and binding for use with an application, we first need to identify the available services and their respective plans.
+To create a service instance and binding for use with an application, you first need to identify the available services and their respective plans.
 
 #### List services
 
 ```
 % cf marketplace
-```
-
-**Output:**
-
-```
-Getting services from marketplace in org ORG / space SPACE as USERNAME
-OK
-
-service                     plans                                    description   
-elasticsearch-swarm-1.7.1   3x, 6x, 1x                               Elasticsearch 1.7.1   
-rds                         shared-psql, micro-psql*, medium-psql*   RDS Database Broker   
-redis28-swarm               standard                                 Redis 2.8 service for application development and testing   
-s3                          basic*                                   Amazon S3 is storage for the Internet.   
-
-* These service plans have an associated cost. Creating a service instance will incur this cost.
-
-TIP:  Use 'cf marketplace -s SERVICE' to view descriptions of individual plans of a given service.
 ```
 
 #### Create a service instance
@@ -54,7 +35,7 @@ Create a new service instance by specifying a service, plan, and a name of your 
 % cf create-service SERVICE_NAME PLAN_NAME INSTANCE_NAME
 ```
 
-For example, to create an instance of the elasticsearch service using the free plan with name *myapp-elasticsearch*:
+For example, to create an instance of the elasticsearch service using the free plan with name `myapp-elasticsearch`:
 
 ```
 % cf create-service elasticsearch-swarm-1.7.1 1x myapp-elasticsearch
@@ -62,7 +43,9 @@ For example, to create an instance of the elasticsearch service using the free p
 
 ##### Paid services
 
-If you get an error like the following:
+The note `* These service plans have an associated cost` indicates paid services. [Learn about managed service pricing.]({{< relref "overview/pricing/rates.md#managed-services" >}})
+
+Sandbox accounts (free accounts) can't use paid services. If you have a sandbox account, you'll get an error like this if you try to use them:
 
 ```
 % cf create-service <service> <plan> <service_instance>
@@ -71,7 +54,7 @@ FAILED
 Server error, status code: 400, error code: 60007, message: The service instance cannot be created because paid service plans are not allowed.
 ```
 
-Please [ask an administrator](/help/) to [enable paid services](/ops/quotas/).
+If you get that error and you have a non-sandbox account, [ask support](/help/) to enable paid services.
 
 #### Bind the service instance
 

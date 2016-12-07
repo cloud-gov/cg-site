@@ -32,7 +32,6 @@ aliases:
 
 ## Not a good fit
 
-- .NET applications (might require custom buildpacks and be compatible with Linux deployments).
 - Your application requires Oracle, SQL Server, or proprietary databases.
 - You work for a local or state government organization.
 

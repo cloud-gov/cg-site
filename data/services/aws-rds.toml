@@ -1,0 +1,3 @@
+name = "aws-rds"
+description = "Persistent databases using Amazon Relational Database System"
+status = "Production Ready"
