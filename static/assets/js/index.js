@@ -1,5 +1,14 @@
 (function (document, window, $) {
   $(document).ready(function(){
+    /* Setting search focus */
+    $('#js-search-focus').click(function(){
+        $('#search-field').focus();
+    });
+    $('#search-field').keyup(function(e) {
+      if (e.keyCode == 27) {
+      $("#js-search-focus").focus();
+  }
+});
     ajaxifyContactForm();
   });
 
