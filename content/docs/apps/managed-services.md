@@ -89,12 +89,12 @@ Use `cf env APPLICATION` to display the application environment variables, inclu
   "elasticsearch-swarm-1.7.1": [
     {
       "credentials": {
-        "host": "10.10.3.129",
-        "hostname": "10.10.3.129",
+        "host": "192.0.2.129",
+        "hostname": "192.0.2.129",
         "name": "elasticsearch-UUID-A",
         "password": "UUID-B",
         "port": 45001,
-        "url": "http://UUID-C:UUID-B@10.10.3.129:45001",
+        "url": "http://UUID-C:UUID-B@192.0.2.129:45001",
         "username": "UUID-C"
       },
       "label": "elasticsearch-swarm-1.7.1",
