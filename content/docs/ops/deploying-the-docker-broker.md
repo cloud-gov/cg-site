@@ -255,7 +255,7 @@ System-Provided:
   "es": [
    {
     "credentials": {
-     "hostname": "10.10.10.100",
+     "hostname": "192.0.2.100",
      "password": "639ec1d00ecdb218321964008646c561",
      "port": "32781",
      "ports": {
