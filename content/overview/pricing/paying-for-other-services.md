@@ -5,8 +5,8 @@ menu:
 title: Other included services
 weight: 30
 aliases:
-  - /overview/pricing/paying-for-otherservices
-  - /pricing/paying-for-otherservices
+  - /docs/intro/pricing/paying-for-otherservices
+  - /intro/pricing/paying-for-otherservices
 ---
 
 #### Do agencies need a separate billing relationship with the IaaS provider?

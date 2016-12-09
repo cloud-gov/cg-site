@@ -5,8 +5,8 @@ menu:
 title: Why 18F built it
 weight: 20
 aliases:
-  - /overview/overview/why-build-cloudgov
-  - /overview/why-build-cloudgov
+  - /docs/intro/overview/why-build-cloudgov
+  - /intro/overview/why-build-cloudgov
 ---
 
 The law and federal agency requirements describe a long list of good practices for government digital services. An agency needs operations expertise to follow all the regulations, manage the ATO process, and design a robust service infrastructure.
