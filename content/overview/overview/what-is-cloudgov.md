@@ -9,8 +9,6 @@ aliases:
   - /intro/overview/what-is-cloudgov
 ---
 
-## What is cloud.gov?
-
 cloud.gov is a Platform as a Service.
 
 cloud.gov allows federal digital service teams to focus on developing and deploying their custom application code, without needing to manage underlying server infrastructure.
