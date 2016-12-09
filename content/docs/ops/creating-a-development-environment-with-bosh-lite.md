@@ -194,18 +194,18 @@ When complete, use bosh vms to have a look at the resulting environment.
 	+------------------------------------+---------+---------------+--------------+
 	| Job/index                          | State   | Resource Pool | IPs          |
 	+------------------------------------+---------+---------------+--------------+
-	| api_z1/0                           | running | large_z1      | 10.244.0.138 |
-	| etcd_z1/0                          | running | medium_z1     | 10.244.0.42  |
-	| ha_proxy_z1/0                      | running | router_z1     | 10.244.0.34  |
-	| hm9000_z1/0                        | running | medium_z1     | 10.244.0.142 |
-	| loggregator_trafficcontroller_z1/0 | running | small_z1      | 10.244.0.150 |
-	| loggregator_z1/0                   | running | medium_z1     | 10.244.0.146 |
-	| login_z1/0                         | running | medium_z1     | 10.244.0.134 |
-	| nats_z1/0                          | running | medium_z1     | 10.244.0.6   |
-	| postgres_z1/0                      | running | medium_z1     | 10.244.0.30  |
-	| router_z1/0                        | running | router_z1     | 10.244.0.22  |
-	| runner_z1/0                        | running | runner_z1     | 10.244.0.26  |
-	| uaa_z1/0                           | running | medium_z1     | 10.244.0.130 |
+	| api_z1/0                           | running | large_z1      | 192.0.2.138 |
+	| etcd_z1/0                          | running | medium_z1     | 192.0.2.42  |
+	| ha_proxy_z1/0                      | running | router_z1     | 192.0.2.34  |
+	| hm9000_z1/0                        | running | medium_z1     | 192.0.2.142 |
+	| loggregator_trafficcontroller_z1/0 | running | small_z1      | 192.0.2.150 |
+	| loggregator_z1/0                   | running | medium_z1     | 192.0.2.146 |
+	| login_z1/0                         | running | medium_z1     | 192.0.2.134 |
+	| nats_z1/0                          | running | medium_z1     | 192.0.2.6   |
+	| postgres_z1/0                      | running | medium_z1     | 192.0.2.30  |
+	| router_z1/0                        | running | router_z1     | 192.0.2.22  |
+	| runner_z1/0                        | running | runner_z1     | 192.0.2.26  |
+	| uaa_z1/0                           | running | medium_z1     | 192.0.2.130 |
 	+------------------------------------+---------+---------------+--------------+
 
 	VMs total: 12

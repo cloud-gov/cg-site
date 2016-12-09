@@ -44,34 +44,40 @@ publishdir = "public"
 [[menu.docs]]
     name = "Getting Started"
     identifier = "getting-started"
-    pre = "<i class='fa fa-road'></i>"
+    pre = "<i class='fa fa-road fa-fw'></i>"
     weight = -120
 [[menu.docs]]
     name = "Deploying Apps"
     identifier = "apps"
-    pre = "<i class='fa fa-file-text'></i>"
+    pre = "<i class='fa fa-file-text fa-fw'></i>"
     weight = -110
+[[menu.docs]]
+    name = "Services"
+    identifier = "services"
+    pre = "<i class='fa fa-fw fa-database'></i>"
+    weight = -100
 [[menu.docs]]
     name = "Advanced"
     identifier = "advanced"
-    pre = "<i class='fa fa-rocket'></i>"
+    pre = "<i class='fa fa-rocket fa-fw'></i>"
     weight = -100
 [[menu.docs]]
     name = "Experimental Features"
     identifier = "experimental"
-    pre = "<i class='fa fa-flask'></i>"
+    pre = "<i class='fa fa-flask fa-fw'></i>"
     weight = -90
 
 [[menu.docs]]
     name = "Contributing"
     identifier = "ops"
+    pre = "<i class='fa fa-fw fa-wrench'></i>"
 [[menu.docs]]
     name = "Deployment"
     identifier = "deployment"
     parent = "ops"
 [[menu.docs]]
-    name = "Users"
-    identifier = "users"
+    name = "Tenants"
+    identifier = "tenants"
     parent = "ops"
 [[menu.docs]]
     name = "Operations"

@@ -3,7 +3,7 @@ window.jQuery = $;
 window.$ = $;
 require('cloudgov-style');
 
-var anchors = require('anchor-js');
+var anchorJS = require('anchor-js');
 require('jquery.scrollto');
 
 function hideSidenav() {
@@ -73,6 +73,7 @@ function initializeJS() {
   });
 
   // AnchorJS
+  var anchors = new anchorJS();
   anchors.options.visible = 'touch';
   anchors.add('.content h2,.content h3,.content h4,.content h5');
 }

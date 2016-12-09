@@ -2,25 +2,18 @@
 menu:
   docs:
     parent: operations
-title: Working With cloud.gov authentication
+title: Working with cloud.gov authentication
 ---
 
-cloud.gov uses Cloud Foundry's [User Account and Authentication (UAA) server]
-[uaa-server-docs] to provide identity management capabilities for the cloud.gov
-platform. Users of cloud.gov need to contact a member of the cloud.gov team,
-while following [this guide] [leverage-cloud-auth]. The following documentation
-provides the steps to creating cloud.gov authentication.
+When users of cloud.gov want to leverage the cloud.gov UAA for authentication for an application, they should follow [the "Leveraging cloud.gov authentication" guide]({{< relref "docs/apps/leveraging-authentication.md" >}}). That guide includes contacting a member of the cloud.gov team for help setting it up.
 
-[uaa-server-docs]: https://docs.cloudfoundry.org/concepts/architecture/uaa.html "UAA server authentication documentation"
-[leverage-cloud-auth]: /apps/leveraging-authentication/ "Leveraging cloud.gov Authentication"
+The following documentation provides the associated steps for cloud.gov team members for creating cloud.gov authentication.
 
 ## Creating a cloud.gov authentication
 
 To work with the UAA server, you will need to have the `uaac` client installed
 on your system. For more information, [please refer to the official UAA
-documentation] [uaac-install].
-
-[uaac-install]: https://github.com/cloudfoundry/cf-uaac#installation "UAAC Installation"
+documentation](https://github.com/cloudfoundry/cf-uaac#installation).
 
 ```shell
 gem install cf-uaac
@@ -51,7 +44,7 @@ Context: admin, from client admin
 ### Use the cg-scripts repository
 
 To help with the creation of authentication endpoints for application instances,
-the [`cg-scripts` repository] [cg-scripts] provides scripts to automate parts of
+the [`cg-scripts` repository](https://github.com/18F/cg-scripts) provides scripts to automate parts of
 the process involving `scope`, `authorized_grant_types`, and `authorities`.
 
 ```shell
@@ -61,8 +54,6 @@ the process involving `scope`, `authorized_grant_types`, and `authorities`.
   --authorities "uaa.none"  \
   # ... truncated for brevity
 ```
-
-[cg-scripts]: https://github.com/18F/cg-scripts "18F cloud.gov scripts repository"
 
 Please use the `cg-scripts/uaa-create-auth-client.sh` script to create
 authentication clients, instead of doing this process manually.
@@ -74,9 +65,7 @@ the application instances, it's helpful to create executable files which hard-
 code the `CLIENT_NAME`, `CLIENT_SECRET`, and `CLIENT_CALLBACK` as parameters.
 
 This file should be used to both create the authentication client _and_ to provide
-the credentials to the user using [Fugacious] [fugacious].
-
-[fugacious]: https://fugacious.18f.gov/ "Open Source Short Term Secure Messaging"
+the credentials to the user using [Fugacious](https://fugacious.18f.gov/).
 
 Running the following command will generate boilerplate for a client creation
 file. Create a separate client secret file for each kind application instance
@@ -122,13 +111,14 @@ sh my-project-production-auth
 
 ### Handing off credentials to the user
 
-Once the client creation file(s) have successfully be run, handing over
-credentials is very straight-forward. Open the client creation file(s) in a text
+Once the client creation file(s) have successfully been run, here's how to hand over credentials.
+
+Open the client creation file(s) in a text
 editor and copy out the `CLIENT_NAME` and `CLIENT_SECRET` values, removing the
 single quotes at the beginning and end of each, and separate them with a `:`
-( colon character ). Then use [Fugacious] [fugacious] to send it to the user.
-Due to a limitation of how Fugacious processes whitespace, it's recommended that
-one Fugacious link is generated for each client authorization instance.
+(colon character).
+
+Then use [Fugacious](https://fugacious.18f.gov/) to send it to the user. Choose the Fugacious settings according to our [sharing secret keys policy]({{< relref "docs/ops/secrets.md#sharing-secret-keys" >}}), and tell the user that the link is limited to those hours and views. Due to a limitation of how Fugacious processes whitespace, you should create one Fugacious link for each client authorization instance.
 
 ```txt
 Example credentials pasted into Fugacious

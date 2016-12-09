@@ -1,0 +1,33 @@
+{{ partial "docs-header.html" . }}
+
+{{ .Content }}
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Service Name</th>
+      <th>Description</th>
+      <th>Support Status</th>
+      <th>Read More</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{ range $.Site.Data.services }}
+    <tr>
+      <td><a href="{{ "/docs/services/" | relLangURL }}{{ .name | urlize }}">{{ .name }}</a></td>
+      <td>{{ .description | markdownify }}</td>
+      <td>{{ .status }}</td>
+      <td>More</td>
+    </tr>
+  {{ end }}
+  </tbody>
+</table>
+
+<h3><a id="support_status"></a>Support Status</h3>
+<ul>
+  <li><strong>Production Ready</strong>: The service has been tested to ensure it has the resiliency required for a production system.</li>
+  <li><strong>Beta</strong>: The service is stable but still requires further development to ensure it can be deployed to production systems.</li>
+  <li><strong>Alpha</strong>: The service is under development and some downtime or data loss can occur.</li>
+</ul>
+
+{{ partial "docs-footer.html" . }}

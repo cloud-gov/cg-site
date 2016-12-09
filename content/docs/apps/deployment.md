@@ -66,7 +66,6 @@ If you would like to be notified about deployments in your Slack channel, follow
 ## Cloud.Gov related guides:
 
 * Connecting to a [service]({{< relref "docs/apps/managed-services.md" >}})
-    * [Databases]({{< relref "docs/apps/databases.md" >}})
 * Rollback
     * Just `checkout` the old version and `cf-push`
 * [Running one-off commands]({{< relref "docs/getting-started/one-off-tasks.md" >}})

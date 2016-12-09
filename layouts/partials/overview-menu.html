@@ -46,7 +46,7 @@
             </li>
             {{end}}
             {{ if .IsPage }}
-            {{ $File := .File }}  {{with $File.Path }}<li><a href="https://github.com/18f/cg-site/edit/master/content/{{ $File.Dir }}{{ $File.LogicalName }}" target="blank"><i class='fa fa-edit'></i> Refine this Page</a> </li>{{end}}
+            {{ $File := .File }}  {{with $File.Path }}<li><a href="https://github.com/18f/cg-site/edit/master/content/{{ $File.Dir }}{{ $File.LogicalName }}" target="blank"><i class='fa fa-edit fa-fw'></i> Refine this Page</a> </li>{{end}}
             {{ end }}
   </ul>
 </aside>

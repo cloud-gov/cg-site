@@ -29,7 +29,7 @@ Authorized federal staff rotate, encrypt, and backup keys monthly. Privileged us
 
 If you need to view/update secrets:
 
-1. Ask in [#cloud-gov-atlas](https://18f.slack.com/messages/cloud-gov-atlas/) for an account to read/write from the S3 buckets.
+1. Ask in [#cloud-gov-atlas](https://gsa-tts.slack.com/messages/cloud-gov-atlas/) for an account to read/write from the S3 buckets.
 1. Set up a [named profile](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-multiple-profiles) for [the AWS CLI](https://aws.amazon.com/cli/).
 
 The examples below use `--profile govcloud`, but replace with the name of your profile.
@@ -42,7 +42,7 @@ Use [this script](https://github.com/18F/cg-pipeline-tasks/blob/master/generate_
 BUCKET=my-bucket PASSPHRASE=somethingorother ./generate_key.sh
 ```
 
-Once the key is uploaded to AWS, the [cf-secrets.yml](https://github.com/18F/cg-manifests/blob/master/cf/cf-secrets-example.yml) file you use for deployment needs to be updated. Modify `key_name` to use the new key, then start a new production deployment.
+Once the key is uploaded to AWS, the [cf-secrets.yml](https://github.com/18F/cg-deploy-cf/blob/staging/cf-secrets-example.yml) file you use for deployment needs to be updated. Modify `key_name` to use the new key, then start a new production deployment.
 
 #### Dealing with secrets
 
@@ -86,7 +86,7 @@ Substitute `cf.yml` in the following steps for the relevant file.
 
 ##### Change secrets
 
-1. Post in [#cloud-gov-atlas](https://18f.slack.com/messages/cloud-gov-atlas/) saying you're updating `cf.yml`.
+1. Post in [#cloud-gov-atlas](https://gsa-tts.slack.com/messages/cloud-gov-atlas/) saying you're updating `cf.yml`.
 1. Follow the decryption steps above, up until the cleanup.
 1. Modify the `cf.yml` with the new values.
 1. Re-encrypt the file.
