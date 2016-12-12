@@ -9,11 +9,21 @@ cloud.gov currently has two "environments" where orgs can live: the main environ
 
 When your org starts using cloud.gov's GovCloud environment, here are changes to look out for.
 
+### Documentation
+
+Some instructions/information will vary from one environment to the other. You will see the following throughout this site:
+
+{{% eastwest %}}
+East/West-specific information
+{{% /eastwest %}}
+
+{{% govcloud %}}
+GovCloud-specific information
+{{% /govcloud %}}
+
 ### Breaking changes
 
-#### Changes specific to cloud.gov
-
-- GSA and EPA accounts already work in GovCloud. No other login credentials work at this time.
+- GSA, EPA and FDIC accounts already work in GovCloud. Others need to be explicitly [invited](https://account.fr.cloud.gov/invite).
 - The API endpoint (for now) is `api.fr.cloud.gov`. When you [log in on the command line]({{< relref "docs/getting-started/setup.md" >}}), use this new command: `cf login -a https://api.fr.cloud.gov --sso`
 - To access the Dashboard, visit [`https://dashboard.fr.cloud.gov/`](https://dashboard.fr.cloud.gov/).
 - There are different names and plans for some services.
@@ -30,6 +40,8 @@ When your org starts using cloud.gov's GovCloud environment, here are changes to
 
 - To run [one-off tasks]({{< relref "docs/getting-started/one-off-tasks.md" >}}), [`cf-ssh`]({{< relref "docs/apps/using-ssh.md#east-west-environment-cf-ssh" >}}) is not available in GovCloud. Instead, you can use [`cf ssh`]({{< relref "docs/apps/using-ssh.md#govcloud-environment-cf-ssh" >}}) (note the space instead of the `-`), which is more flexible than `cf-ssh`.
 - To set up custom domains, you can use the [managed service method]({{< relref "docs/apps/custom-domains.md#managed-service-method" >}}).
+- Elasticsearch 2.3 is available.
+    - If you're using 1.7, it's recommended that you upgrade, since 1.7 hits [end of life](https://www.elastic.co/support/eol) on January 6, 2017. [Read about the breaking changes.](https://www.elastic.co/guide/en/elasticsearch/reference/2.0/breaking-changes-2.0.html)
 
 #### Experimental new features
 
@@ -69,22 +81,28 @@ Any labor involved from your project team is the responsibility of your project.
 
 #### Process
 
-1. Ensure that a organization is created for your system in GovCloud. [TODO explain how to do this]
+1. Fill out the [organization request form](https://docs.google.com/a/gsa.gov/forms/d/e/1FAIpQLSd4HmcGfJW3EBnpewTFDD-urRFPp1LN0DcwNB_FxZgUn8ho9g/viewform?c=0&w=1).
+    * Specify that the org should be created in `GovCloud`.
+    * An admin will confirm the information, and [create the org]({{< relref "docs/ops/create-org.md#non-sandboxes" >}}) for you.
 1. Install the [CF Targets plugin](https://github.com/guidowb/cf-targets-plugin).
-1. [Set up the spaces.]({{< relref "docs/apps/production-ready.md#space-per-environment" >}})
 1. [Give permissions to the appropriate people.]({{< relref "docs/apps/managing-teammates.md" >}})
 1. Deploy the application to the GovCloud environment.
     * This is a good time to ensure that you are following [deployment best practices]({{< relref "docs/apps/production-ready.md" >}}).
-1. If you are using a data store provided by cloud.gov, [migrate the data](https://github.com/18F/cg-product/issues/211). This includes the following [services]({{< relref "docs/apps/managed-services.md" >}}):
+1. If you are using a data store provided by cloud.gov, migrate the data. More information for each [service]({{< relref "docs/apps/managed-services.md" >}}):
     * [Elasticsearch](https://github.com/18F/cg-product/issues/233)
-    * [MySQL](https://github.com/18F/cg-product/issues/231)
-    * [PostgreSQL](https://github.com/18F/cg-product/issues/230)
     * [Redis](https://github.com/18F/cg-product/issues/234)
     * [S3](https://github.com/18F/cg-product/issues/235)
+    * [MySQL and PostgreSQL, via the cg-migrate-db plugin]({{< relref "docs/services/relational-database.md#cg-migrate-db-plugin" >}})
 1. Test the new deployment(s) thoroughly.
 1. [Set up your custom domain]({{< relref "docs/apps/custom-domains.md#managed-service-method" >}}), if applicable.
 1. [Set up continuous deployment.]({{< relref "docs/apps/continuous-deployment.md" >}}) (Not required, but strongly recommended.)
-1. Once you are confident that the move is complete, [ask support]({{< relref "docs/help.md" >}}) to delete your old organization.
+1. Once you are confident that the move is complete, [ask support]({{< relref "docs/help.md" >}}) to delete the old resources. Some might not be applicable.
+    * [Elastic Load Balancers](https://aws.amazon.com/elasticloadbalancing/)
+    * Organizations
+    * [Quotas]({{< relref "overview/pricing/quotas.md" >}})
+    * [RDS](https://aws.amazon.com/rds/) instances
+    * [Route 53](https://aws.amazon.com/route53/) entries
+    * [S3](https://aws.amazon.com/s3/) buckets
 
 #### Unresolved details
 

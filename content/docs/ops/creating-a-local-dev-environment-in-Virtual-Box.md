@@ -59,5 +59,4 @@ Verify deployment
 
 	vagrant destroy
 	vagrant up
-	bosh target 192.168.50.4 lite
 	bosh deploy

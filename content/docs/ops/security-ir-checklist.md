@@ -12,16 +12,11 @@ linktitle: Security IR checklist
 
 You're the first cloud.gov team member to notice a non-team-member's report of a possible security incident regarding cloud.gov, or you've noticed an unreported possible security incident yourself. Congratulations, you're now the Incident Commander (IC)! Follow these steps:
 
-1. As instructed by the [18F security incident response process](https://handbook.18f.gov/security-incidents/), notify `gsa-ir@gsa.gov`, `itservicedesk@gsa.gov`, and `devops@gsa.gov` with a description of the incident, via a single email to all three addresses. If GSA Gmail itself is down or compromised, call the GSA IT Service Desk at 1-866-450-5250. **This step needs to happen within one hour of detecting a potential incident.**
-1. Move incident discussion to [`#incident-response`](https://gsa-tts.slack.com/messages/incident-response/).
-1. Create an issue ([using this template]({{< relref "security-ir.md#initiate" >}})) in the [security-incidents](https://github.com/18f/security-incidents) GitHub repository with a more detailed description.
-1. If needed, create a GSA Google Doc to track sensitive information that can't be shared in Slack/GitHub.
-1. If needed, start a GSA Google Hangout for responders.
-
+First, **follow the the [18F security incident response process](https://handbook.18f.gov/security-incidents/)**. At step 6 ("If the incident involves cloud.gov"), notify the rest of the cloud.gov team in [`#cloud-gov`](https://gsa-tts.slack.com/messages/cloud-gov/) using `@cloud-gov-team`.
 
 ## Assess
 
-- Confirm the incident — is it a real incident?
+- Confirm the incident — was it a real incident?
     - If it's not a real incident, go to [False Alarm](#false-alarm).
 - Assess the severity, using [the rubric in the IR guide]({{< relref "security-ir.md#incident-severities" >}}).
 - Update the GitHub issue:
@@ -38,7 +33,7 @@ You're the first cloud.gov team member to notice a non-team-member's report of a
 
 - Keep the ticket/docs updated as people work, tracking:
     - Leads, and who's following them
-    - Remediation items, and who's working on them
+    - Remediation items, and who's working on them, including customer notification (if appropriate to the situation)
 - Send out sitreps on a regular cadence (high: hourly; medium: 2x daily; low: daily).
 - Go into work shifts if the incident lasts longer then 3 hours.
 - [Hand off IC](#handing-off-ic) if the incident lasts longer than 3 hours.
