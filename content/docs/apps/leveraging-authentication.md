@@ -79,8 +79,8 @@ access token. Here is where things get fun.
     parameters:
 
     - `code=<CODE FROM QUERY PARAM IN CALLBACK REQUEST>`
-    - `grant_type='authorization_code'`
-    - `response_type='token'`
+    - `grant_type=authorization_code`
+    - `response_type=token`
     - `client_id=<YOUR APP'S REGISTERED NAME>`
     - `client_secret=<THE SECRET KEY YOU RECEIVED WHEN REGISTERING YOUR APP>`
     - `redirect_uri=<A REGISTERED CALLBACK URL>` (required if you have multiple registered callback URLs)
