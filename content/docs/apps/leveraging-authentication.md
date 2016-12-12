@@ -18,7 +18,7 @@ You will first need to register all instances (such as dev, staging, and product
 For each application instance, you will need to provide:
 
 - a name (such as `my-project-dev`)
-- a callback URL (such as `http://example.com/auth/callback`)
+- one or more callback URLs (such as `http://example.com/auth/callback`)
 
 The cloud.gov team member who is assisting you will provide a `client_secret` for each registered application. You should protect these secret keys as you would a password.
 
@@ -40,7 +40,12 @@ query parameters:
 
 * `client_id=<YOUR APP'S REGISTERED NAME>`
 * `response_type=code`
-* (optional) `state=<ANYTHING>`
+* `redirect_uri=<A REGISTERED CALLBACK URL>` (required if you have multiple registered callback URLs)
+* `state=<ANYTHING>` (optional)
+
+You only need to provide `redirect_uri` if you have multiple registered callback URLs for a single
+UAA registration (for instance, if you have both an "app.cloud.gov" URL and a production URL).
+The value of `redirect_uri` must match one of the registered callback URLs.
 
 You can optionally set a `state` parameter with any value you'd like.
 It will be returned to you in a later step. While optional, it's highly
@@ -78,6 +83,7 @@ access token. Here is where things get fun.
     - `response_type='token'`
     - `client_id=<YOUR APP'S REGISTERED NAME>`
     - `client_secret=<THE SECRET KEY YOU RECEIVED WHEN REGISTERING YOUR APP>`
+    - `redirect_uri=<A REGISTERED CALLBACK URL>` (required if you have multiple registered callback URLs)
 
 2.  If everything works and UAA is able to verify your request, the response
     from that `POST` request will be JSON encoded and will contain these
