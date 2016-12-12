@@ -11,7 +11,7 @@ aliases:
 
 ## How long it took to build
 
-After exploring configuration-management based approaches and tools, we turned instead to the platform-as-a-service (PaaS) model. By building on Cloud Foundry, we were able to deploy a functioning PaaS quickly, then fine-tune it with each project we launched on it. The first prototype of the platform took about three months to complete, and production apps started launching about a month after that.
+After exploring configuration-management based approaches and tools, we turned instead to the Platform as a Service (PaaS) model. By building on Cloud Foundry, we were able to deploy a functioning PaaS quickly, then fine-tune it with each project we launched on it. The first prototype of the platform took about three months to complete, and production apps started launching about a month after that.
 
 As an agile project, cloud.gov is always under development. As we observe its use, we will continue to add new features that move the platform forward. Therefore, we do not refer to it as “complete” and probably never will.
 

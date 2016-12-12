@@ -11,7 +11,7 @@ aliases:
 
 ## A single control layer for your applications
 
-The underlying infrastructure of cloud.gov is a FedRAMP-approved (and therefore, FISMA-approved) use of Amazon Web Services (AWS). However, there are many different controls at the AWS level necessary to comply with FedRAMP and agency security rules in general. Each new system deployed on AWS without a platform-as-a-service opens up the possibility of a mistake or a flaw. Checking all of those controls for each system also takes a significant amount of time that would be better spent on net-new security engineering.
+The underlying infrastructure of cloud.gov is a FedRAMP-approved (and therefore, FISMA-approved) use of Amazon Web Services (AWS). However, there are many different controls at the AWS level necessary to comply with FedRAMP and agency security rules in general. Each new system deployed on AWS without a Platform as a Service opens up the possibility of a mistake or a flaw. Checking all of those controls for each system also takes a significant amount of time that would be better spent on net-new security engineering.
 
 With the cloud.gov PaaS, we have fundamental technological assurances that each new system cannot alter or change our desired AWS configuration. This allows us to enforce a single control layer across all systems with significantly less effort. Instead, we spend more time focusing on the web facing  portion of a system, which is most often the source of attacks anyway.
 
