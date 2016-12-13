@@ -45,7 +45,7 @@ No. However, they may want their own relationship if they want to use specific c
 
 ### Does cloud.gov pricing include usage of New Relic or other external services?
 
-No. For now, New Relic is passed through as a separate charge via 18F, invoiced every other quarter. Typical costs have been about $820 per project for six months, but on average costs are rapidly decreasing. We are also evaluating other non-3rd-party options.
+No. For now, New Relic is passed through as a separate charge, invoiced every other quarter. Typical costs have been about $820 per project for six months, but on average costs are rapidly decreasing. We are also evaluating other non-3rd-party options.
 
 ### Does cloud.gov pricing include usage of S3 storage, or similar cloud storage?
 
