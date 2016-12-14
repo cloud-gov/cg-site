@@ -30,7 +30,7 @@ cf create-service redis28-swarm standard myredis
 
 {{% govcloud %}}
 ```sh
-cf create-service elasticsearch23 1x mysearch
+cf create-service elasticsearch24 1x mysearch
 ```
 
 or
