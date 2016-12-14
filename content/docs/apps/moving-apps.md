@@ -2,10 +2,12 @@
 menu:
   docs:
     parent: advanced
-title: Moving apps between spaces
+title: Moving apps
 ---
 
 If you have an app that exists in one org/space but you need to move it to another:
+
+The [Copy Plugin](https://github.com/mevansam/cf-copy-plugin) may help. The manual steps (which might be required anyway):
 
 1. Deploy the new application instance using the appropriate steps on the [cloning]({{< relref "docs/apps/cloning.md" >}}) page.
     * Make sure to run `cf target -o <NEW_ORG> -s <NEW_SPACE>` before running `cf push`.
