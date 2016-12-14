@@ -30,7 +30,7 @@ cf create-service elasticsearch17 1x my-elastic-service
 
 ### Deprecation of Elasticsearch 1.7
 
-Elasticsearch 1.x is deprecated, we recommend that you use [Elasticsearch 2.3]({{< relref "docs/services/elasticsearch23.md" >}}). Also, please see the [Elastic guide for moving from 1.x to 2.x](https://www.elastic.co/blog/key-point-to-be-aware-of-when-upgrading-from-elasticsearch-1-to-2).
+Elasticsearch 1.x is deprecated, we recommend that you use [Elasticsearch 2.4]({{< relref "docs/services/elasticsearch24.md" >}}). Also, please see the [Elastic guide for moving from 1.x to 2.x](https://www.elastic.co/blog/key-point-to-be-aware-of-when-upgrading-from-elasticsearch-1-to-2).
 
 ### The broker in GitHub
 

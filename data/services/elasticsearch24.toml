@@ -1,0 +1,3 @@
+name = "elasticsearch24"
+description = "[Elasticsearch](https://www.elastic.co/) 2.4"
+status = "Alpha"

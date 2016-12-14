@@ -2,13 +2,13 @@
 menu:
   docs:
     parent: services
-title: Elasticsearch 2.3
-name: "elasticsearch23"
-description: "[ElasticSearch](https://www.elastic.co/) 2.3"
+title: Elasticsearch 2.4
+name: "elasticsearch24"
+description: "[ElasticSearch](https://www.elastic.co/) 2.4"
 status: "Alpha"
 ---
 
-cloud.gov offers [Elasticsearch](https://www.elastic.co/) 2.3 as a service. **This service is still in Alpha mode**: downtime and data loss is possible.
+cloud.gov offers [Elasticsearch](https://www.elastic.co/) 2.4 as a service. **This service is still in Alpha mode**: downtime and data loss is possible.
 
 ## Plans
 
@@ -23,15 +23,15 @@ Plan Name | Description | Price
 To create a service instance run the following command:
 
 ```bash
-cf create-service elasticsearch23 1x my-elastic-service
+cf create-service elasticsearch24 1x my-elastic-service
 ```
-
-## More Information
-
-### Deprecation of Elasticsearch 2.3
-
-We recommend that you use [Elasticsearch 2.4]({{< relref "docs/services/elasticsearch24.md" >}}) instead of ElasticSearch 2.3.
 
 ### The broker in GitHub
 
 You can find the broker here: [https://github.com/18F/kubernetes-broker](https://github.com/18F/kubernetes-broker).
+
+### Additional Notes
+
+ElasticSearch 2.4 allows for dots in field names. This is a feature that existed
+pre-ElasticSearch 2.0 but was disabled in versions 2.0 to 2.3. Learn more about
+that [here](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/dots-in-names.html).
