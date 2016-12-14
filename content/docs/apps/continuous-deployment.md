@@ -8,7 +8,7 @@ title: Continuous deployment
 Setting up continuous deployment allows you to automatically upload your
 changes to your desired environment.
 
-Make sure that you've previously looked at the [Production Ready Guide]({{< relref "production-ready.md" >}}) and followed best practices.
+Before setting this up, go through the [Production Ready Guide]({{< relref "production-ready.md" >}}) and make sure you're following those core best practices.
 
 ## Provisioning deployment credentials
 
@@ -60,11 +60,11 @@ Ask [cloud.gov support]({{< relref "docs/help.md" >}}) to set up a "deployer" us
 
 ## Continuous integration services
 
-Depending on your CI system the setup is going to be a bit different. **For all cases you will need a `manifest.yml` file.**
+To set up any of these services, your application needs a `manifest.yml` file.
 
 ### Travis
 
-See [the Travis documentation](http://docs.travis-ci.com/user/deployment/cloudfoundry/), using `api: https://api.cloud.gov` and encrypting the password.
+See [the Travis documentation](http://docs.travis-ci.com/user/deployment/cloudfoundry/), using `api: https://api.cloud.gov` for East/West and `api: https://api.fr.cloud.gov` for GovCloud. You must encrypt the password, and you must [**escape any symbol characters in the password**](https://docs.travis-ci.com/user/encryption-keys#Note-on-escaping-certain-symbols), to prevent possible situations where Travis could dump an error message that contains passwords or environment variables.
 
 #### Using Conditional Deployments
 
