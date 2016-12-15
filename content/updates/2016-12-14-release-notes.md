@@ -10,14 +10,10 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
 - New [dashboard](https://dashboard.fr.cloud.gov) features:
   - On an application page, you can now edit the number of application instances, instance memory, and disk quota.
   - Org and space level views now include a quick overview of the health of application instances.
-- We’ve launched [cloud.gov community](https://community.cloud.gov), a new resource for asking questions and sharing best practices for using cloud.gov.
 
 ### Changed
 - We upgraded Cloud Foundry (the underlying open source project that powers cloud.gov) to [Release v249](https://github.com/cloudfoundry/cf-release/releases/tag/v249) (see also [Release v248](https://github.com/cloudfoundry/cf-release/releases/tag/v248)), which includes updates to buildpacks and improvements for internal components.
-- Cloud Foundry upgraded the command line interface (CLI) client (`cf`). Please upgrade your local version to the [latest version](https://github.com/cloudfoundry/cli/releases/latest) ([installation instructions](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)).
-
-### Deprecated
-We no longer support command line interface (CLI) client versions lower than v6.22.2. You can check your installed version with `cf -v`. [Get the latest version here](https://github.com/cloudfoundry/cli/releases/latest) ([installation instructions](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)).
+- Changes in Cloud Foundry require an upgrade to the latest version of the command line interface (CLI) client (`cf`) in order for `cf logs` to work properly. Please upgrade your local version to the [latest version](https://github.com/cloudfoundry/cli/releases/latest) ([installation instructions](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)).
 
 ### Fixed
 - The latest Cloud Foundry command line interface client ([available here](https://github.com/cloudfoundry/cli/releases/latest)) addresses an issue where inspecting application logs returned errors.
