@@ -62,16 +62,15 @@ As part of 18F, we follow [the 18F requirements for using GitHub](https://handbo
 
 Both forking and branching are welcome in our repositories. Contributors inside 18F can use forking or branching according to their personal preferences, and contributors outside 18F can fork repositories.
 
-The team often practices branching. The rationale for practicing branching is that when pairing, collaborating on a
-single branch reduces friction on the team. The friction we avoid by practicing
-branching when pairing is as follows:
+The team often practices branching. The rationale for branching within a team is
+that paired collaboration on a single branch avoids certain types of friction:
 
 - Having to create multiple forked PRs in order to contribute to the branch
 - Having to add new users to forked repositories as collaborators in order to
   have people directly contribute on short-lived forked branches
 
-When contributing directly on a branch, we're able to modify WIP commits and
-encourage collaboration across the Cloud Operations team.
+When contributing directly on a branch, we're able to modify work in progress
+(WIP) commits and encourage collaboration across the Cloud Operations team.
 
 ### Squashing commits
 
