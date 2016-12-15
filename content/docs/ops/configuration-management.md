@@ -62,6 +62,19 @@ The team prefers forking.
 
 The rationale for preferring forking is that all contributors work the same way, regardless of whether or not they may commit directly to the canonical repository, such as the case of contractors that may work on the platform.
 
+The team also practices branching.
+
+The rationale for practicing branching is that when pairing collaborating on a
+single branch reduces friction on the team. The friction we avoid by practicing
+branching when pairing is as follows:
+
+- having to create multiple forked PRs in order to contribute to the branch
+- having to add new users to forked repositories as collaborators in order to
+  have people directly contribute on short-lived forked branches
+
+When contributing directly on a branch, we are able to modify WIP commits and
+encourage collaboration across the cloud.gov Operator team.
+
 ### Squashing commits
 
 [Squashing commits](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History#Squashing-Commits) is allowed but discouraged, except in rare instances.
