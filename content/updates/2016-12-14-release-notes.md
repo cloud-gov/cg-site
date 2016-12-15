@@ -7,27 +7,27 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
 <!--more-->
 
 ### Added
-- New [dashboard](https://dashboard.fr.cloud.gov) features
-  - The number of application instances, instance memory and disk quota can now be edited from the application page.
+- New [dashboard](https://dashboard.fr.cloud.gov) features:
+  - On an application page, you can now edit the number of application instances, instance memory, and disk quota.
   - Org and space level views now include a quick overview of the health of application instances.
-- We’ve launched [cloud.gov community](https://community.cloud.gov), a new resource for asking questions, and sharing best practices for using cloud.gov.
+- We’ve launched [cloud.gov community](https://community.cloud.gov), a new resource for asking questions and sharing best practices for using cloud.gov.
 
 ### Changed
 - We upgraded Cloud Foundry (the underlying open source project that powers cloud.gov) to [Release v249](https://github.com/cloudfoundry/cf-release/releases/tag/v249) (see also [Release v248](https://github.com/cloudfoundry/cf-release/releases/tag/v248)), which includes updates to buildpacks and improvements for internal components.
-- CloudFoundry upgraded the command line interface (CLI) client. Please upgrade to the [latest version](https://github.com/cloudfoundry/cli/releases/latest).
+- Cloud Foundry upgraded the command line interface (CLI) client (`cf`). Please upgrade your local version to the [latest version](https://github.com/cloudfoundry/cli/releases/latest) ([installation instructions](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)).
 
 ### Deprecated
-Command line interface (CLI) client versions lower than v6.22.2 are no longer supported. Get the latest version [here](https://github.com/cloudfoundry/cli/releases/latest).
+We no longer support command line interface (CLI) client versions lower than v6.22.2. You can check your installed version with `cf -v`. [Get the latest version here](https://github.com/cloudfoundry/cli/releases/latest) ([installation instructions](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)).
 
 ### Fixed
-- The latest CloudFoundry command line interface client (available [here](https://github.com/cloudfoundry/cli/releases/latest)) addresses an issue where inspecting application logs returned errors.
-- The cloud.gov account creation form was updated to include previously missing password requirements.
+- The latest Cloud Foundry command line interface client ([available here](https://github.com/cloudfoundry/cli/releases/latest)) addresses an issue where inspecting application logs returned errors.
+- We updated the cloud.gov account creation form to include previously-missing information about password requirements.
 
 ### Security
-The base filesystem used for running your application has been updated to address several security vulnerabilities. You can [restage your application](https://cli.cloudfoundry.org/en-US/cf/restage.html) to ensure you [incorporate fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) and are running the most recent language version supported by your [buildpack](https://docs.cloudfoundry.org/buildpacks/).
+The Cloud Foundry upgrade included updates for the base filesystem used for running your application, addressing several security vulnerabilities in that filesystem. You can [restage your application](https://cli.cloudfoundry.org/en-US/cf/restage.html) to ensure you [incorporate fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) and are running the most recent language version supported by your [buildpack](https://docs.cloudfoundry.org/buildpacks/).
 
-- [CVE-2016-6659 UAA Privilege Escalation](https://pivotal.io/security/cve-2016-6659).
-- [CVE-2016-6816 Apache Tomcat Information Disclosure, UAA Tomcat updated to 8.0.39](https://tomcat.apache.org/security-9.html).
+- [CVE-2016-6659: UAA Privilege Escalation](https://pivotal.io/security/cve-2016-6659).
+- [CVE-2016-6816: Apache Tomcat Information Disclosure, UAA Tomcat updated to 8.0.39](https://tomcat.apache.org/security-9.html).
 - [USN-3142-1: ImageMagick vulnerabilities](https://www.ubuntu.com/usn/USN-3142-1/). The associated CVEs are [CVE-2016-7799](https://people.canonical.com/~ubuntu-security/cve/CVE-2016-7799), [CVE-2016-7906](https://people.canonical.com/~ubuntu-security/cve/CVE-2016-7906), [CVE-2016-8677](https://people.canonical.com/~ubuntu-security/cve/CVE-2016-8677), [CVE-2016-8862](https://people.canonical.com/~ubuntu-security/cve/CVE-2016-8862), [CVE-2016-9556](https://people.canonical.com/~ubuntu-security/cve/CVE-2016-9556).
 - [USN-3139-1: Vim vulnerability](https://www.ubuntu.com/usn/USN-3139-1/). The associated CVE is [CVE-2016-1248](https://people.canonical.com/~ubuntu-security/cve/CVE-2016-1248).
 - [USN-3134-1: Python vulnerabilities](https://www.ubuntu.com/usn/USN-3134-1/). The associated CVEs are [CVE-2016-0772](https://people.canonical.com/~ubuntu-security/cve/CVE-2016-0772), [CVE-2016-1000110](https://people.canonical.com/~ubuntu-security/cve/CVE-2016-1000110), [CVE-2016-5636](https://people.canonical.com/~ubuntu-security/cve/CVE-2016-5636), [CVE-2016-5699](https://people.canonical.com/~ubuntu-security/cve/CVE-2016-5699).
