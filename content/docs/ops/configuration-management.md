@@ -54,26 +54,24 @@ If possible, Configuration Management tools need to be set up to always roll bac
 
 ## GitHub contribution guidelines
 
+<!-- As long as these GitHub guidelines comply with the FedRAMP-required policies above and our 18F GitHub requirements, we can adjust them at will, according to our team preferences. -->
+
 As part of 18F, we follow [the 18F requirements for using GitHub](https://handbook.18f.gov/github/). These are our team practices within those requirements.
 
 ### Forking vs. branching
 
-The team prefers forking.
+Both forking and branching are welcome in our repositories. Contributors inside 18F can use forking or branching according to their personal preferences, and contributors outside 18F can fork repositories.
 
-The rationale for preferring forking is that all contributors work the same way, regardless of whether or not they may commit directly to the canonical repository, such as the case of contractors that may work on the platform.
-
-The team also practices branching.
-
-The rationale for practicing branching is that when pairing collaborating on a
+The team often practices branching. The rationale for practicing branching is that when pairing, collaborating on a
 single branch reduces friction on the team. The friction we avoid by practicing
 branching when pairing is as follows:
 
-- having to create multiple forked PRs in order to contribute to the branch
-- having to add new users to forked repositories as collaborators in order to
+- Having to create multiple forked PRs in order to contribute to the branch
+- Having to add new users to forked repositories as collaborators in order to
   have people directly contribute on short-lived forked branches
 
-When contributing directly on a branch, we are able to modify WIP commits and
-encourage collaboration across the cloud.gov Operator team.
+When contributing directly on a branch, we're able to modify WIP commits and
+encourage collaboration across the Cloud Operations team.
 
 ### Squashing commits
 
@@ -91,8 +89,8 @@ with the `review-needed` label. If you create a work-in-progress PR, you might a
 ### Should PRs be assigned?
 
 PRs are typically not assigned in GitHub, unless someone specifically needs to sign off on the change.
-Mentioning someone in the PR with the `@` notation and/or contacting them outside the GitHub
-context to request a review is preferred.
+
+You can request a review using GitHub's built-in tools, mention someone in the PR with the `@` notation, or contact them outside the GitHub context to request a review.
 
 ### When reviewing a PR, should the change be tested locally?
 
