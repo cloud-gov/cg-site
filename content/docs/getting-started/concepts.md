@@ -71,9 +71,9 @@ cf target -o ORGNAME -s SPACENAME
 
 ## Buildpacks
 
-All apps need to use a "buildpack" specific to their language, which sets up dependencies for their language stack. There are [standard buildpacks for most languages](https://docs.cloudfoundry.org/buildpacks/), and they will usually be auto-detected and auto-applied by Cloud Foundry when you deploy an app. We strongly encourage you to use the standard buildpacks. cloud.gov supports these standard buildpacks and provides security updates for them.
+All apps need to use a "buildpack" specific to their language, which sets up dependencies for their language stack. There are [standard buildpacks for most languages](https://docs.cloudfoundry.org/buildpacks/), and Cloud Foundry usually auto-detects and auto-applies the appropriate one when you deploy an app (one exception is that it doesn't auto-apply the special [binary buildpack](https://docs.cloudfoundry.org/buildpacks/binary/index.html)). We strongly encourage you to use the standard buildpacks. cloud.gov supports these standard buildpacks and provides security updates for them. (You're responsible for supporting and security-patching the applications you deploy with these standard buildpacks, and you'll also need to redeploy or restage your application to pick up buildpack updates.)
 
-In the rare case where the buildpack does not get auto-detected correctly, or to use a [custom buildpack]({{< relref "docs/apps/experimental/custom-buildpacks.md">}}), you can specify a buildpack in the manifest (as below) or with the `-b` flag. To reference it, use either the buildpack name:
+In the rare case where Cloud Foundry doesn't correctly auto-detect the buildpack, or if you want to use a binary buildpack or [custom buildpack]({{< relref "docs/apps/experimental/custom-buildpacks.md">}}), you can specify a buildpack in the manifest (as below) or with the `-b` flag. To reference it, use either the buildpack name:
 
     buildpack: python_buildpack
 
@@ -87,7 +87,7 @@ Or a URL:
 * To run multiple long-running processes, run them as separate applications.
 * To build static assets on cloud.gov, [build assets on CI]({{< relref "assets.md#build-assets-on-ci" >}}).
 
-**Custom buildpacks:** If your application can't use a standard buildpack, you can use a [custom buildpack]({{< relref "docs/apps/experimental/custom-buildpacks.md">}}), which is an experimental feature. If you use a custom buildpack, ensure you understand [your responsibilities]({{< relref "overview/technology/responsibilities.md">}}), which include keeping your buildpack up-to-date and patching known vulnerabilities.
+**Custom buildpacks:** If your application can't use a standard buildpack, you can use a [custom buildpack]({{< relref "docs/apps/experimental/custom-buildpacks.md">}}), which are unsupported. This means that if you use a custom buildpack, you're responsible for keeping your buildpack up-to-date and patching vulnerabilities in it. See [this chart illustrating your responsibilities]({{< relref "overview/technology/responsibilities.md">}}) for more detail.
 
 ### Buildpack Release Schedule
 
