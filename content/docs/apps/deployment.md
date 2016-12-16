@@ -28,7 +28,7 @@ The command to create a new app and to push a new version of an existing one are
     cf push <APPNAME>
     ```
 
-The app should now be live at `APPNAME.18f.gov`.
+The app should now be live at `APPNAME.app.cloud.gov`.
 
 ## Caveats
 
@@ -58,15 +58,3 @@ A couple of important points on the `.cfignore`:
 
 1. if you have a more advanced app setup and have apps with a `path` other than the project root (where you run `cf push` from), you will need an additional `.cfignore` file located in each app `path`;
 2. also note that more advanced `.gitignore` syntax, such as the `**` recursive subdirectory wildcard, are _not_ supported by `.cfignore`.
-
-## Deployment notifications
-
-If you would like to be notified about deployments in your Slack channel, follow [these instructions](https://github.com/18F/hubot-cf-notifications#adding-applications), and add the [configuration](https://github.com/18F/hubot-cf-notifications#configuration) to [Charlie](https://github.com/18F/18f-bot/blob/master/cf_config.json).
-
-## Cloud.Gov related guides:
-
-* Connecting to a [service]({{< relref "docs/apps/managed-services.md" >}})
-* Rollback
-    * Just `checkout` the old version and `cf-push`
-* [Running one-off commands]({{< relref "docs/getting-started/one-off-tasks.md" >}})
-* Deleting an application (`cf delete`)

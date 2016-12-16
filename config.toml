@@ -42,12 +42,12 @@ publishdir = "public"
     weight = -100
 
 [[menu.docs]]
-    name = "Getting Started"
+    name = "Getting started"
     identifier = "getting-started"
     pre = "<i class='fa fa-road fa-fw'></i>"
     weight = -120
 [[menu.docs]]
-    name = "Deploying Apps"
+    name = "Deploying apps"
     identifier = "apps"
     pre = "<i class='fa fa-file-text fa-fw'></i>"
     weight = -110
@@ -57,12 +57,12 @@ publishdir = "public"
     pre = "<i class='fa fa-fw fa-database'></i>"
     weight = -100
 [[menu.docs]]
-    name = "Advanced"
+    name = "Managing apps"
     identifier = "advanced"
     pre = "<i class='fa fa-rocket fa-fw'></i>"
     weight = -100
 [[menu.docs]]
-    name = "Experimental Features"
+    name = "Experimental features"
     identifier = "experimental"
     pre = "<i class='fa fa-flask fa-fw'></i>"
     weight = -90

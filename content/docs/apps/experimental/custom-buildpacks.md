@@ -10,7 +10,7 @@ aliases:
 title: Custom buildpacks
 ---
 
-[**This is an experimental feature.**]({{< relref "docs/apps/experimental/experimental.md" >}})
+[**This is an experimental feature.**]({{< relref "docs/apps/experimental/experimental.md" >}}) In this case, this means: we offer long-term support for the *ability* to have custom buildpacks, but you are responsible for maintaining your custom buildpack.
 
 Cloud Foundry (the underlying open source project behind cloud.gov) uses [buildpacks]({{< relref "docs/getting-started/concepts.md">}}#buildpacks) to allow your applications to be deployed.
 
