@@ -10,7 +10,7 @@ slug: services
 
 Some services in the cloud.gov platform are experimental but can provide value to your applications.
 
-To enable any of these services, email cloud-gov-support@gsa.gov. Use them at your own risk.
+To enable any of these services, [ask support]({{< relref "docs/help.md" >}}). Use them at your own risk.
 
 ### Elasticsearch and Redis
 
