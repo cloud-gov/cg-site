@@ -68,7 +68,7 @@ publishdir = "public"
     weight = -90
 
 [[menu.docs]]
-    name = "Contributing"
+    name = "cloud.gov team docs"
     identifier = "ops"
     pre = "<i class='fa fa-fw fa-wrench'></i>"
 [[menu.docs]]
@@ -76,10 +76,14 @@ publishdir = "public"
     identifier = "deployment"
     parent = "ops"
 [[menu.docs]]
-    name = "Tenants"
+    name = "Tenant support"
     identifier = "tenants"
     parent = "ops"
 [[menu.docs]]
     name = "Operations"
     identifier = "operations"
+    parent = "ops"
+[[menu.docs]]
+    name = "Plans and policies"
+    identifier = "policies"
     parent = "ops"

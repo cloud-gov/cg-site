@@ -1,7 +1,7 @@
 ---
 menu:
   docs:
-    parent: operations
+    parent: policies
 title: Continuous monitoring strategy
 ---
 
@@ -14,6 +14,7 @@ This page documents policies and procedures related to cloud.gov continuous moni
 Within the FedRAMP Security Assessment Framework, once an authorization has been granted, cloud.gov’s security posture is monitored according to the assessment and authorization process.  Monitoring security controls is part of the overall risk management framework for information security and is a requirement for cloud.gov to maintain a security authorization that meets the FedRAMP requirements.  
 
 Traditionally, this process has been referred to as “Continuous Monitoring” as noted in *NIST SP 800-137 Information Security Continuous Monitoring for Federal Information Systems and Organizations*.  Other NIST documents such as NIST SP 800-37, Revision 1 refer to “ongoing assessment of security controls”.  It is important to note that both the terms “Continuous Monitoring” and “Ongoing Security Assessments” mean essentially the same thing and should be interpreted as such.  
+
 Performing ongoing security assessments determines whether the set of deployed security controls in a cloud information system remains effective in light of new exploits and attacks, and planned and unplanned changes that occur in the system and its environment over time.  To maintain an authorization that meets the FedRAMP requirements, cloud.gov must monitor their security controls, assess them on a regular basis, and demonstrate that the security posture of their service offering is continuously acceptable.  
 
 Ongoing assessment of security controls results in greater control over the security posture of the cloud.gov system and enables timely risk-management decisions.  Security-related information collected through continuous monitoring is used to make recurring updates to the security assessment package.  Ongoing due diligence and review of security controls enables the security authorization package to remain current which allows agencies to make informed risk management decisions as they use cloud services.  
@@ -85,7 +86,6 @@ In order to be effective in this role, 3PAOs are responsible for ensuring that t
 ### Team responsibilities
 
 The cloud.gov team is responsible for implementing, verifying, and validating the cloud.gov continuous monitoring strategy.
-
 
 The cloud.gov Program Manager coordinates the tasks needed for the continuous monitoring strategy. They guide the team in assigning necessary tasks to team members in an agile way, including individuals on the Cloud Operations sub-team. 
 
