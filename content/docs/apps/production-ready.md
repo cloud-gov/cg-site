@@ -3,7 +3,7 @@ date: 2015-08-28T10:32:59-04:00
 menu:
   docs:
     parent: apps
-title: Production Ready guide
+title: Production-ready guide
 ---
 
 This is your guide to building production-ready apps on cloud.gov. Read this early and often, especially when you’re starting to consider a future project. It explains things you can do for reliable and responsive applications deployed on cloud.gov.
@@ -12,7 +12,7 @@ This is your guide to building production-ready apps on cloud.gov. Read this ear
 To build consistent, healthy, production-ready applications on cloud.gov, incorporate the following practices into your development workflow from the beginning.
 
 ### Configuration as code
-To ensure consistency and reproducibility, you should capture your application configuration in version control.
+To ensure consistency and reproducibility, capture your application configuration in version control.
 
 #### How
 * Write an [application manifest](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) that defines your application configuration, such as the application name, or what previously created services to use.
@@ -22,10 +22,10 @@ It is critical that your production application has more than one instance. Then
 there are any issues with one of the platform runners where your app instances are assigned, your app will continue to function correctly.
 
 #### How
-* See the [multiple instances]({{< relref "multiple-instances.md" >}}) page.
+* See [multiple instances]({{< relref "multiple-instances.md" >}}).
 
 ### Protect access to sensitive credentials
-Environment variables defined with `cf set-env` are ephemeral to the specific deployment of each application. You should use user-provided services to store sensitive information such as credentials or API keys, and use your `manifest.yml` for non-sensitive variables.
+Environment variables defined with `cf set-env` are ephemeral to the specific deployment of each application. Use user-provided services to store sensitive information such as credentials or API keys, and use your `manifest.yml` for non-sensitive variables.
 
 #### How
 * Create [user-provided services](https://docs.cloudfoundry.org/devguide/services/user-provided.html) with `cf cups` and bind them with `cf bs`. Once you have updated your application to read your stored credentials from the service, [update your `manifest.yml`](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#services-block) to make it part of your configuration. For non-sensitive information, use [an env: block](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block) in your `manifest.yml`.
@@ -70,9 +70,9 @@ To reduce the risk associated with manual deployments, consider automating the p
 The best way to prevent performance issues is to enable caching on your application.
 
 #### How
-* cloud.gov has a memcached service, but you can also use [S3 file storage]({{< relref "s3.md" >}}) for caches.
+* You can use [S3 file storage]({{< relref "s3.md" >}}) for caches.
 
-### Asset Serving
+### Asset serving
 It's best not to serve static files from cloud.gov directly.
 
 #### How
