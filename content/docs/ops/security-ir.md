@@ -1,7 +1,7 @@
 ---
 menu:
   docs:
-    parent: operations
+    parent: policies
 title: Security Incident Response Guide
 linktitle: Security IR Guide
 ---

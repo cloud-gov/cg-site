@@ -2,7 +2,8 @@
 menu:
   docs:
     parent: ops
-title: Github repos
+title: GitHub repositories
+weight: -100
 ---
 
 Here are the repos with the tools and configuration for the platform:

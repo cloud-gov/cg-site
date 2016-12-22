@@ -1,7 +1,7 @@
 ---
 menu:
   docs:
-    parent: operations
+    parent: tenants
 title: How to set up custom domains for users
 linktitle: Custom domains for users
 ---
