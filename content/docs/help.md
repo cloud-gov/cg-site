@@ -2,6 +2,7 @@
 title: Help
 aliases:
   - /help
+  - /contact
 ---
 
 ### I'm interested in using cloud.gov.
