@@ -14,7 +14,7 @@
   <tbody>
   {{ range $.Site.Data.services }}
     <tr>
-      <td><a href="{{ "/docs/services/" | relLangURL }}{{ .name | urlize }}">{{ .name }}</a></td>
+      <td><a href="{{ "/docs/services/" | relLangURL }}{{ .page_name | default .name | urlize }}">{{ .name }}</a></td>
       <td>{{ .description | markdownify }}</td>
       <td>{{ .status }}</td>
       <td>More</td>
