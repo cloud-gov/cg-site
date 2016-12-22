@@ -3,7 +3,7 @@ date: 2015-08-28T10:32:59-04:00
 menu:
   docs:
     parent: apps
-title: Production-ready guide
+title: Production ready guide
 ---
 
 This is your guide to building production-ready apps on cloud.gov. Read this early and often, especially when you’re starting to consider a future project. It explains things you can do for reliable and responsive applications deployed on cloud.gov.
