@@ -2,14 +2,19 @@
 type: index
 ---
 
-### Introduction to cloud.gov
+Learn how to deploy and manage your applications, so you can deliver your digital services to the people who need them.
 
-cloud.gov gives teams working for federal government a secure, fully compliant foundation, integrated with private sector infrastructure providers, on which to build and release products and updates quickly. [Learn more about cloud.gov.]({{< relref "overview/overview/what-is-cloudgov.md" >}})
+### Learning and reference
 
-### Usage: developing and deploying apps
+New here? Start with the top of the sidebar and work your way down. The docs include both guides and reference material for you.
 
-cloud.gov is a Platform as a Service with a compliance toolkit. [Get started with building and deploying applications.]({{< relref "docs/getting-started/accounts.md" >}})
+| Shortcuts to common tasks |
+| --- |
+| [Set up the command line]({{< relref "docs/getting-started/setup.md#set-up-the-command-line" >}}) |
+| [Basic deployment tips]({{< relref "docs/apps/deployment.md" >}}) |
+| [Custom domains]({{< relref "docs/apps/custom-domains.md" >}}) |
+| [Managing teammates]({{< relref "docs/apps/managing-teammates.md" >}}) |
 
-### Contributing
+### cloud.gov team docs
 
-cloud.gov is an open source project, based on the Cloud Foundry project with additional components built by 18F and other community members. Our contributing documentation is for cloud.gov operations staff, and we invite others to [learn how we run the platform and contribute to it]({{< relref "docs/ops/repos.md" >}}).
+cloud.gov is an open source project based on [Cloud Foundry](https://www.cloudfoundry.org/) with additional components built by our team and other community members. We maintain our code and team documentation publicly here, and we invite you to read it, contribute to it, and adapt it for other projects. See [our list of repositories]({{< relref "docs/ops/repos.md" >}}).
