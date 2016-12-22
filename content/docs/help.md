@@ -13,7 +13,7 @@ You can also email [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.
 
 ### I have a cloud.gov account and need help.
 
-Email [cloud-gov-support@gsa.gov](mailto:cloud-gov-support@gsa.gov).
+Email [cloud-gov-support@gsa.gov](mailto:cloud-gov-support@gsa.gov). We provide support for cloud.gov during typical business hours for the East and West coasts of the U.S. We don't guarantee support for cloud.gov outside those hours, though we're always monitoring for signs of trouble that might affect customers.
 
 ### I'm 18F staff and need help.
 
