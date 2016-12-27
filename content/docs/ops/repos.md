@@ -4,12 +4,17 @@ menu:
     parent: ops
 title: GitHub repositories
 weight: -100
+aliases:
+  - /docs/intro/security/auditing-contributing-security
+  - /intro/security/auditing-contributing-security
 ---
 
-Here are the repos with the tools and configuration for the platform:
+cloud.gov is an open source project based on [Cloud Foundry](https://www.cloudfoundry.org/) with additional components built by our team and other community members. We welcome you to audit our security or contribute to it — or to make any other kind of contribution, from documentation to design.
 
-- Cloud.gov Website Repo (this site): https://github.com/18F/cg-site
-- CF bosh manifests: https://github.com/18F/cg-manifests
+Here are some of our repositories with tools and configuration for the platform:
+
+- cloud.gov website (this site): https://github.com/18F/cg-site
+- Cloud Foundry BOSH manifests: https://github.com/18F/cg-manifests
 - Collection of scripts: https://github.com/18F/cg-scripts
 - Quotas DB: https://github.com/18F/cg-quotas-db
 - Dashboard: https://github.com/18F/cg-dashboard
@@ -17,13 +22,13 @@ Here are the repos with the tools and configuration for the platform:
 - Provision User CLI plugin: https://github.com/18F/cf-provision-user-space-plugin
 - Cron app: https://github.com/18F/cg-cron
 - Hubot CF notifications: https://github.com/18F/hubot-cf-notifications
-- 18F CF custom bosh release: https://github.com/18F/cg-cf-release
-- New Relic Bosh Release: https://github.com/cloudfoundry-community/newrelic-boshrelease
+- 18F CF custom BOSH release: https://github.com/18F/cg-cf-release
+- New Relic BOSH Release: https://github.com/cloudfoundry-community/newrelic-boshrelease
 - RDS Service Broker: https://github.com/cloudfoundry-community/rds-broker
-- Hardening Bosh Release: https://github.com/18f/harden-boshrelease
-- Secure Proxy Bosh Release: https://github.com/18f/secureproxy-boshrelease
+- Hardening BOSH Release: https://github.com/18f/harden-boshrelease
+- Secure Proxy BOSH Release: https://github.com/18f/secureproxy-boshrelease
 
-We try to keep this page up-to-date, but you may find more repositories [on GitHub](https://github.com/search?o=desc&q=user%3A18F+%28cf+OR+cg+OR+%22cloud+foundry%22+OR+cloud.gov%29+NOT+cfn&ref=searchresults&s=updated&type=Repositories&utf8=%E2%9C%93).
+You can find more repositories [on GitHub](https://github.com/search?o=desc&q=user%3A18F+%28cf+OR+cg+OR+%22cloud+foundry%22+OR+cloud.gov%29+NOT+cfn&ref=searchresults&s=updated&type=Repositories&utf8=%E2%9C%93).
 
 ## Public domain
 
