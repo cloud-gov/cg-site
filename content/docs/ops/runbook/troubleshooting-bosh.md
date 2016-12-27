@@ -1,7 +1,8 @@
 ---
 menu:
   docs:
-    parent: operations
+    parent: runbook
+
 title: Troubleshooting Bosh
 ---
 ## Accessing jumpboxes
