@@ -84,6 +84,11 @@ publishdir = "public"
     identifier = "operations"
     parent = "ops"
 [[menu.docs]]
+    name = "Runbook"
+    identifier = "runbook"
+    parent = "ops"
+[[menu.docs]]
     name = "Plans and policies"
     identifier = "policies"
     parent = "ops"
+
