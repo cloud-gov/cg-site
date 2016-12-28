@@ -13,12 +13,13 @@ App developers can also leverage cloud.gov's UAA instance as a backend that brok
 
 ### Register your application instances
 
-You will first need to register all instances (such as dev, staging, and production) with cloud.gov's UAA. Right now this is a manual process, so you will need to contact a member of the cloud.gov team, preferably through the [#cloud-gov-support](https://gsa-tts.slack.com/messages/cloud-gov-support) channel in Slack.
+You will first need to register all instances (such as dev, staging, and production) with cloud.gov's UAA. Right now this is a manual process, so you will need to [contact a member of the cloud.gov team]({{< relref "docs/help.md" >}}). Please note that you will need to request a separate registration for the GovCloud environment.
 
 For each application instance, you will need to provide:
 
 - a name (such as `my-project-dev`)
-- a callback URL (such as `http://example.com/auth/callback`)
+- a callback URL (such as `https://example.com/auth/callback`)
+- the cloud.gov environment (GovCloud or E/W)
 
 The cloud.gov team member who is assisting you will provide a `client_secret` for each registered application. You should protect these secret keys as you would a password.
 
@@ -27,13 +28,19 @@ The cloud.gov team member who is assisting you will provide a `client_secret` fo
 UAA handles authentication according to the [OpenID Connect](http://openid.net/connect/) specification, which is "a simple identity layer on top of the OAuth 2.0 protocol."
 
 There are two important cloud.gov URLs you will need to use:
+{{% govcloud %}}
+- `https://login.fr.cloud.gov/oauth/authorize`, which is where you will direct the user to login with their agency credentials
+- `https://uaa.fr.cloud.gov/oauth/token`, which is where you will exchange auth codes for auth tokens
+{{% /govcloud %}}
 
+{{% eastwest %}}
 - `https://login.cloud.gov/oauth/authorize`, which is where you will direct the user to login with their agency credentials
 - `https://uaa.cloud.gov/oauth/token`, which is where you will exchange auth codes for auth tokens
+{{% /eastwest %}}
 
 If you are already familiar with OAuth 2.0, you might know where to go from here. If not, read on for a minimal example of how to do the OAuth dance. Below is the basic gist of it.
 
-#### Send your user to login.cloud.gov
+#### Send your user to login.fr.cloud.gov
 
 First, generate a link (or redirect the user) to the authorize URL with these
 query parameters:
@@ -49,7 +56,7 @@ recommended that you use it for [security reasons](http://www.twobotechnologies.
 Here is an example:
 
 ```html
-<a href="https://login.cloud.gov/oauth/authorize?client_id=NAME&response_type=code">
+<a href="https://login.fr.cloud.gov/oauth/authorize?client_id=NAME&response_type=code">
   Log in
 </a>
 ```
@@ -70,7 +77,7 @@ access token. Here is where things get fun.
 
 1.  First, exchange the `code` for an authorization token by sending a
     `POST` request to the token endpoint
-    (`https://uaa.cloud.gov/oauth/token`) with the following form-encoded
+    (`https://uaa.fr.cloud.gov/oauth/token`) with the following form-encoded
     parameters:
 
     - `code=<CODE FROM QUERY PARAM IN CALLBACK REQUEST>`
