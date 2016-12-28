@@ -19,4 +19,4 @@ Many separate agencies and IT organizations are independently trying to solve th
 
 ## More efficiency across government
 
-One of our goals for cloud.gov is to give other agencies access to the same gains in productivity that we have seen. By deploying government apps with this model, then making the model available for other agencies, as well as making it replicable as an open source project, we hope to increase the efficiency with which any agency can deliver digital services. The potential economy of scale is huge.
+One of our goals for cloud.gov is to give other agencies access to the same gains in productivity that 18F has seen from using cloud.gov. By deploying government apps with this model, then making the model available for other agencies, as well as making it replicable as an open source project, we hope to increase the efficiency with which any agency can deliver digital services. The potential economy of scale is huge.
