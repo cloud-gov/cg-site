@@ -13,3 +13,5 @@ cloud.gov is a Platform as a Service with a compliance toolkit. [Get started wit
 ### Contributing
 
 cloud.gov is an open source project, based on the Cloud Foundry project with additional components built by 18F and other community members. Our contributing documentation is for cloud.gov operations staff, and we invite others to [learn how we run the platform and contribute to it]({{< relref "docs/ops/repos.md" >}}).
+
+{{< relref "/breaking/the/build/intentionally" >}}
