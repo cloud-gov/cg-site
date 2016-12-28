@@ -6,7 +6,7 @@
     });
     $('#search-field').keyup(function(e) {
       if (e.keyCode == 27) {
-      $("#js-search-focus").focus();
+      $('#js-search-focus').focus();
   }
 });
     ajaxifyContactForm();

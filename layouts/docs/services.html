@@ -8,7 +8,6 @@
       <th>Service Name</th>
       <th>Description</th>
       <th>Support Status</th>
-      <th>Read More</th>
     </tr>
   </thead>
   <tbody>
@@ -17,7 +16,6 @@
       <td><a href="{{ "/docs/services/" | relLangURL }}{{ .page_name | default .name | urlize }}">{{ .name }}</a></td>
       <td>{{ .description | markdownify }}</td>
       <td>{{ .status }}</td>
-      <td>More</td>
     </tr>
   {{ end }}
   </tbody>
@@ -30,4 +28,5 @@
   <li><strong>Alpha</strong>: The service is under development and some downtime or data loss can occur.</li>
 </ul>
 
-{{ partial "docs-footer.html" . }}
+{{ partial "footer.html" . }}
+{{ partial "javascript.html" . }}

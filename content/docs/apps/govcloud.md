@@ -91,6 +91,8 @@ Any labor involved from your project team is the responsibility of your project.
     * [Redis](https://github.com/18F/cg-product/issues/234)
     * [S3](https://github.com/18F/cg-product/issues/235)
     * [MySQL and PostgreSQL, via the cg-migrate-db plugin]({{< relref "docs/services/relational-database.md#cg-migrate-db-plugin" >}})
+1. If you are [leveraging cloud.gov's User Account and Authentication (UAA) server]({{< relref "docs/apps/leveraging-authentication.md" >}})
+   you must [register your application with the GovCloud UAA server]({{< relref "docs/apps/leveraging-authentication.md#register-your-application-instances" >}}), [update your integration to use the GovCloud endpoints]({{< relref "docs/apps/leveraging-authentication.md#integrate-with-your-application" >}}) and make sure to use your newly issued `client_secret`.
 1. Test the new deployment(s) thoroughly.
 1. [Set up your custom domain]({{< relref "docs/apps/custom-domains.md#managed-service-method" >}}), if applicable.
 1. [Set up continuous deployment.]({{< relref "docs/apps/continuous-deployment.md" >}}) (Not required, but strongly recommended.)
