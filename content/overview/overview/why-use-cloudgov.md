@@ -11,7 +11,7 @@ aliases:
 
 ## 1. Security
 
-cloud.gov is built on the public [Cloud Foundry project](http://www.cloudfoundry.org/). Cloud Foundry’s “stemcell” capability allows cloud.gov to deploy all apps on a [hardened](https://github.com/18F/cg-harden-boshrelease) operating system image that is tightly audited for compliance with federal standards. The cloud.gov team can centrally scan and audit the platform itself, as well as applications running on it. We are continually improving the security of the platform, which in turn centrally improves the security of your products that are running on the platform.
+cloud.gov is built on the public [Cloud Foundry project](http://www.cloudfoundry.org/). Cloud Foundry’s “stemcell” capability allows cloud.gov to deploy all apps on a [hardened](https://github.com/18F/cg-harden-boshrelease) operating system image that is tightly audited for compliance with federal standards. We are continually improving the security of the platform, which in turn centrally improves the security of your products that are running on the platform.
 
 ## 2. Conformity with federal rules
 

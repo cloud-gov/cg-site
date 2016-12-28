@@ -13,7 +13,7 @@ aliases:
 
 The underlying infrastructure of cloud.gov is a FedRAMP-approved (and therefore, FISMA-approved) use of Amazon Web Services (AWS). There are many controls at the AWS level necessary to comply with FedRAMP and agency security rules. Each new system deployed on AWS without a Platform as a Service opens up the possibility of a flaw. Checking all of those controls for each system also takes significant time that would be better spent on net-new security engineering.
 
-The cloud.gov PaaS provides fundamental technological assurances that each new system cannot alter or change our desired AWS configuration. Enforce this single control layer across all systems takes significantly less effort overall. Instead, teams spend more time focusing on the web facing portion of a system, which is most often the source of attacks anyway.
+The cloud.gov PaaS provides fundamental technological assurances that each new system cannot alter or change our desired AWS configuration. Enforcing this single control layer across all systems takes significantly less effort overall. Instead, teams spend more time focusing on the web facing portion of a system, which is most often the source of attacks anyway.
 
 ## Helping system developers reduce effort needed to gain ATO
 
@@ -21,7 +21,7 @@ Once a system is deployed on cloud.gov, partner agencies can use the cloud.gov s
 
 After an agency has accepted the controls implemented on the IaaS and PaaS layers, they can focus their attention on the product itself they are deploying. The cloud.gov team has a list of roughly 24 NIST-recommended controls that you should always evaluate when creating a web system. This huge time saver directly increases the security of a system, since it leads teams to spend more time on the most important controls.
 
-cloud.gov doesn’t stop there, though. Trusted non-governmental third-parties will evaluate the platform, as well. Updates on that process are forthcoming.
+cloud.gov doesn’t stop there, though. An accredited Third Party Assessment Organization (3PAO) also evaluates the platform as part of the FedRAMP P-ATO authorization process.
 
 ## Building up cloud.gov’s conformity with federal regulations
 

@@ -26,7 +26,7 @@ Our mission is broader than making it easier for government agencies to adopt cl
 
 Comparing cloud.gov’s pricing model to private Platform as a Service (PaaS) providers is difficult, as it is not an apples to apples comparison. A price comparison would include the up-front and opportunity costs of procurement, operations, security, and compliance teams in obtaining a solution. These costs can be difficult to isolate, especially if they are covered by various working capital funds in your agency.
 
-cloud.gov avoids many of these costs and delivers a proven, ready-to-ATO infrastructure to your teams’ hands on day one via a relatively simple Inter-agency Agreement (IAA). cloud.gov’s resource usage is already priced competitively with the private market, and is the superior option in reducing compliance friction to access the cloud.
+cloud.gov avoids many of these costs and delivers a proven, ready-to-ATO infrastructure to your teams’ hands on day one via an Inter-agency Agreement (IAA). cloud.gov’s resource usage is already priced competitively with the private market, and is the superior option in reducing compliance friction to access the cloud.
 
 cloud.gov’s pricing model is an ongoing experiment. Whether it fits the needs of federal agencies is still being validated. The cloud.gov promise to partner agencies is that prices will not change on them mid-fiscal year, and the price of any particular part of the platform will *not go up*.
 

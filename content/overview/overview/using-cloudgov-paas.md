@@ -11,14 +11,14 @@ aliases:
 
 ## Using the cloud.gov PaaS as self-service
 
-- To use cloud.gov without 18F’s other delivery services, your agency needs an organization account. (As stated elsewhere, the cloud.gov team is currently [limiting access while we address scaling points]({{< relref "who-can-use-cloudgov.md" >}}).) 18F works with agencies to set up their cloud.gov presence. After that, the rest of the work is self-service. It wouldn’t require any more interaction with 18F.
+- To use cloud.gov without 18F’s other delivery services, your agency needs an organization account. 18F works with agencies to set up their cloud.gov presence. After that, the rest of the work is self-service. It wouldn’t require any more interaction with 18F.
 
-- You can then use cloud.gov to set up a number of online “spaces” required for developing a federal website. Your team could choose from a list of additional, optional applications that cloud.gov offers, including technical back-end and search capabilities. Once the requested services are available (which happens automatically upon request), you can use them from within your code.
+- You can then use cloud.gov to set up a number of online “spaces” required for developing a federal website. Your team could choose from a list of additional, optional services that cloud.gov offers, including database and search capabilities. Once the requested services are available (which happens automatically upon request), you can use them from within your code.
 
 - After your team is set up on cloud.gov, the team can:
   - Set up a Cloud Foundry “org” that correctly references the agency for billing purposes. This would include a quota.
   - Add “spaces” to represent as many environments as you need (for example: blue-green production, QA and CI, personal development, etc.)
-  - Choose from cloud.gov’s list of supported “managed services” (for example: memcache, elasticsearch). You would then provision “service instances” specific to your spaces.
+  - Choose from cloud.gov’s list of supported “managed services”. You would then provision “service instances” specific to your spaces.
   - Deploy applications and services that you will manage on your own into those same spaces, and bind them to the managed service instances to ensure you can use them.
   - Bind “routes” to your applications in order to enable traffic from the outside world to reach them.
   - Watch metrics, logs, and events as your service is used. You can redeploy applications to add capabilities or fix problems.
