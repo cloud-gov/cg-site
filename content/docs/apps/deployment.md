@@ -2,8 +2,7 @@
 menu:
   docs:
     parent: apps
-title: General deployment tips
-linktitle: General tips
+title: Basic deployment tips
 weight: -100
 ---
 
@@ -36,11 +35,11 @@ The app should now be live at `APPNAME.app.cloud.gov`.
 * Instances will be restarted if they exceed [memory limits]({{< relref "docs/apps/limits.md" >}})
 * Proper [logging]({{< relref "docs/apps/logs.md" >}}) might require special libraries/configuration for your app
 
-## Twelve-Factor Apps
+## Twelve-factor apps
 
 In general, applications will be easiest to deploy to Cloud Foundry if they follow the [Twelve Factor App](http://12factor.net/) guidelines.
 
-## Setting Environment Variables
+## Setting environment variables
 
 See Cloud Foundry's [documentation on environment variables](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html).
 
