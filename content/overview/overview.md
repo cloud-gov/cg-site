@@ -12,7 +12,7 @@ cloud.gov is developed **by the Government, for the Government**. 18F, housed wi
 
 ### Compliance
 
-cloud.gov was designed with **FISMA compliance** in mind. cloud.gov is currently designated as FedRAMP Ready, and the **FedRAMP Moderate** JAB P-ATO assessment process is underway.  The vast majority of FISMA Moderate controls are managed for you. The included compliance toolkit provides assistance with generating compliance documentation, so that even small agency teams can have a quick path to ATO.
+cloud.gov was designed with **FISMA compliance** in mind. cloud.gov is currently designated as FedRAMP Ready, and the **FedRAMP Moderate** JAB P-ATO assessment process is underway.  The vast majority of FISMA Moderate controls are managed for you.
 
 ### Free Sandbox Accounts
 

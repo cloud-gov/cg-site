@@ -25,8 +25,6 @@ cloud.gov gives teams working for federal government a secure, fully compliant f
 
 cloud.gov is built and maintained by [18F](https://18f.gsa.gov/) as part of the U.S. General Services Administration’s [Technology Transformation Service](http://www.gsa.gov/portal/category/25729) portfolio. cloud.gov is a cost-recoverable service funded by charging a fee to the teams that use it.
 
-## cloud.gov provides a compliance toolkit
+## cloud.gov provides Compliance as a Service
 
-cloud.gov provides tools for customers to create the security documentation and continuing assurance necessary for federal services to comply with FISMA regulations and agency-specific “Authority to Operate” (ATO) requirements.
-
-These tools are the Compliance Toolkit, including [Compliance Masonry](https://github.com/opencontrol/compliance-masonry). The Compliance Toolkit supports cloud.gov's ATO and the ATOs of customer applications, and they’re all open source. Other teams, including agencies and industry teams, can also use these tools for unrelated projects with similar needs.
+cloud.gov's built-in compliance support helps customers create the security documentation and continuing assurance necessary for federal services to comply with FISMA regulations and agency-specific “Authority to Operate” (ATO) requirements.
