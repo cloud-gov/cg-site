@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "anchor-js": "^3.2.1",
-    "cloudgov-style": "^2.0.0",
+    "cloudgov-style": "^2.4.0",
     "highlight": "^0.2.4",
     "jquery": "^3.1.1",
     "jquery.scrollto": "^2.1.2"
