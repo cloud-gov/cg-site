@@ -33,6 +33,8 @@ GovCloud-specific information
     | `elasticsearch-swarm-*` | `elasticsearch*` |
     | `rds` | `aws-rds` |
     | `redis*-swarm` | `redis*` |
+    
+- There is a small set of differences between the older "Warden/DEA" backend (used for the AWS East/West environment) and the newer "Diego/cells" backend (used for the AWS GovCloud environment). Review the [Diego migration guide](https://docs.cloudfoundry.org/running/apps-enable-diego.html#disable-health-checks) for minor changes you may need to make before migrating, and [check for common issues](https://docs.cloudfoundry.org/running/apps-enable-diego.html#troubleshoot) if you run into a problem.
 
 ### New features
 
