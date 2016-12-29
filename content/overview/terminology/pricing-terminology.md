@@ -1,12 +1,13 @@
 ---
 menu:
   overview:
-    parent: terminology
+    parent: pricing
 title: Terms we use in pricing
 weight: 20
 aliases:
   - /docs/intro/terminology/pricing-terminology
   - /intro/terminology/pricing-terminology
+  - /overview/terminology/pricing-terminology/
 ---
 
 These terms, among others, define a number of products and services offered by cloud.gov and 18F. The billing structure that 18F applies to cloud.gov is built around them. If other terms present frequent points of confusion, clarifications will be added to this page.
