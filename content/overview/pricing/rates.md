@@ -3,7 +3,7 @@ menu:
   overview:
     parent: pricing
 title: Rates
-weight: 10
+weight: -10
 aliases:
   - /docs/intro/pricing/rates
   - /intro/pricing/rates
@@ -15,9 +15,9 @@ cloud.gov fees are broken into three components:
 - Resource usage quota
 - Managed services
 
-Find out [more about this pricing model]({{< relref "overview/pricing/pricing-model.md" >}}) and [how we define these terms]({{< relref "overview/terminology/pricing-terminology.md" >}})
+Find out [more about this pricing model]({{< relref "overview/pricing/pricing-model.md" >}}) and [how we define these terms]({{< relref "overview/terminology/pricing-terminology.md" >}}).
 
-## Access Package
+## Access package
 
 Packages are selected based on the kinds of applications to be hosted. [Find more about what's included in all access packages.]({{< relref "overview/pricing/whats-included.md" >}})
 

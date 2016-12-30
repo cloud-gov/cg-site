@@ -2,12 +2,12 @@
 menu:
   docs:
     parent: services
-title: Relational Databases (aws-rds)
+title: Relational databases (aws-rds)
 aliases:
   - /docs/apps/databases
 ---
 
-If your application uses relational databases for storage, you can use the cloud.gov AWS RDS service to create a database instance.
+If your application uses relational databases for storage, you can use the AWS RDS service to create a database instance.
 
 ## Plans
 
@@ -24,11 +24,11 @@ Plan Name | Description | Price
 `large-mysql`            | Dedicated Large RDS MySQL DB Instance               | $0.220 / hr + storage
 `large-mysql-redundant`  | Dedicated Redundant Large RDS MySQL DB Instance     | $0.440 / hr + storage
 
-### Storage Pricing:
+### Storage pricing:
 
-- Shared Instance: Free
-- Simple Instance: $0.138 per GB per month
-- Redundant Instance: $0.276 per GB per month
+- Shared instance: Free
+- Simple instance: $0.138 per GB per month
+- Redundant instance: $0.276 per GB per month
 
 ## Options
 

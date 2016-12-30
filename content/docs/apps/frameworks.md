@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: apps
-title: Languages and Frameworks
+title: Languages and frameworks
 aliases:
 - /docs/apps/django
 - /docs/apps/flask

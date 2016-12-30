@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: operations
-title: Ongoing Platform Maintenance
+title: Ongoing platform maintenance
 ---
 
 ## Regular maintenance task list

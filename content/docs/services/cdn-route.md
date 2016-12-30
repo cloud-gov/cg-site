@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: services
-title: CDN Service
+title: CDN service
 name: "cdn-route"
 description: "Custom routes with HTTPS certificates using Amazon CloudFront"
 status: "Production Ready"

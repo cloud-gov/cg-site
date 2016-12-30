@@ -2,11 +2,11 @@
 menu:
   docs:
     parent: tenants
-title: Federated Identity
+title: Federated identity
 weight: 10
 ---
 
-Federated Identity in cloud.gov is supported via [SAML 2.0](https://en.wikipedia.org/wiki/SAML_2.0).  UAA acts as a SAML service provider (SP) to authenticate with trusted identity providers (IdP).
+Federated identity in cloud.gov is supported via [SAML 2.0](https://en.wikipedia.org/wiki/SAML_2.0).  UAA acts as a SAML service provider (SP) to authenticate with trusted identity providers (IdP).
 
 Approval from the Program Manager is required before adding a new trusted identity provider.
 

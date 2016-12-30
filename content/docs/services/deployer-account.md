@@ -2,13 +2,13 @@
 menu:
   docs:
     parent: services
-title: Deployer Account
+title: Deployer account
 name: "deployer-account"
 description: "Create deployer accounts for to use in automated deployment systems"
 status: "Beta"
 ---
 
-To set up your application to be deployed with an automated system you will need a deployer account that has access to push your application.
+To set up your application to be deployed with an automated system, you need a deployer account that has access to push your application.
 
 ## Plans
 
@@ -24,9 +24,9 @@ To create a service instance run the following command:
 cf create-service deployer-account deployer-account my-deployer-account
 ```
 
-## More Information
+## More information
 
-To read more details on how to use this service see the [Continuous Deployment]({{< relref "docs/apps/continuous-deployment.md" >}}).
+To use this service, see [continuous deployment]({{< relref "docs/apps/continuous-deployment.md" >}}).
 
 
 ### The broker in GitHub
