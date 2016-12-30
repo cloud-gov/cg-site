@@ -3,6 +3,10 @@ menu:
   docs:
     parent: getting-started
 title: Concepts
+aliases:
+  - /docs/intro/terminology/system-terminology
+  - /intro/terminology/system-terminology
+  - /overview/terminology/system-terminology
 ---
 
 Here's an overview of key cloud.gov terms and concepts. cloud.gov uses Cloud Foundry terms, so the [Cloud Foundry glossary](http://docs.cloudfoundry.org/concepts/glossary.html) is a helpful reference too.

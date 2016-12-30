@@ -36,10 +36,6 @@ publishdir = "public"
     name = "Technology"
     identifier = "technology"
     weight = -105
-[[menu.overview]]
-    name = "Terminology"
-    identifier = "terminology"
-    weight = -100
 
 [[menu.docs]]
     name = "Getting started"
