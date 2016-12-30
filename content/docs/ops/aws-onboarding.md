@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: operations
-title: AWS Onboarding
+title: AWS onboarding
 ---
 
 ### Levels of access

@@ -3,25 +3,16 @@ menu:
   overview:
     parent: pricing
 title: How the pricing model is managed
-weight: 10
+weight: 30
 aliases:
   - /docs/intro/pricing/pricing-model
   - /intro/pricing/pricing-model
 ---
 
-cloud.gov services are available to other agencies on a _full_ cost-recovery model.
+cloud.gov services are available to other agencies on a full cost-recovery model.
 
----
+The current cloud.gov pricing model has three components: **access package**, **resource usage**, and **managed services**. Find out more about each component via our [pricing terminology page]({{< relref "overview/terminology/pricing-terminology.md" >}}) or see the [dedicated page with our rates]({{< relref "overview/pricing/rates.md" >}}).
 
-The current cloud.gov pricing model has three components:
-
-- Access package
-- Resource usage
-- Managed services
-
-Find out more about each component via our [pricing terminology page]({{< relref "overview/terminology/pricing-terminology.md" >}}) or see the [dedicated page with our rates]({{< relref "overview/pricing/rates.md" >}}).
-
----
 Our mission is broader than making it easier for government agencies to adopt cloud deployment. The mission of cloud.gov is to enable agencies to deliver services to the public as fast as they can develop them while applying best practices in security and compliance with minimal effort.
 
 Comparing cloud.gov’s pricing model to private Platform as a Service (PaaS) providers is difficult, as it is not an apples to apples comparison. A price comparison would include the up-front and opportunity costs of procurement, operations, security, and compliance teams in obtaining a solution. These costs can be difficult to isolate, especially if they are covered by various working capital funds in your agency.

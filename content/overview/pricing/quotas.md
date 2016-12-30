@@ -3,19 +3,19 @@ menu:
   overview:
     parent: pricing
 title: Quotas
-weight: -10
+weight: -5
 aliases:
   - /docs/intro/pricing/quotas
   - /intro/pricing/quotas
 ---
 
-Cloud Foundry capacity is billed by quota. Quotas provide a not-to-exceed reservation of memory, compute, application routes and service instances. Quotas are associated with and billed to a project IAA number or equivalent billing tag. Quota capacity is a hard limit; unused capacity does not ‘roll over’ month to month.
+cloud.gov capacity is billed by quota. Quotas provide a not-to-exceed reservation of memory, compute, application routes and service instances. Quotas are associated with and billed to a project IAA number or equivalent billing tag. Quota capacity is a hard limit; unused capacity does not "roll over" month to month.
 
-## Quota Billing:
+## Quota billing
 
 Quotas are billed by the amount of memory reserved and tallied daily. A monthly bill might include 9 days at 1 GB of RAM, 11 days at 2 GB of RAM and 10 days at 4 GB of RAM.
 
-## Quota Limits:
+## Quota limits
 
 Quotas limit the following resources:  
 
