@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: apps
-title: Production ready guide
+title: Production-ready guide
 weight: -90
 ---
 
@@ -15,11 +15,11 @@ To build consistent, healthy, production-ready applications on cloud.gov, incorp
 To ensure consistency and reproducibility, capture your application configuration in version control.
 
 #### How
-* Write an [application manifest](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) that defines your application configuration, such as the application name, or what previously created services to use.
+* Write an [application manifest](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) that defines your application configuration, such as the application name and the previously-created services to use.
 
 ### More than one instance
 It is critical that your production application has more than one instance. Then if
-there are any issues with one of the platform runners where your app instances are assigned, your app will continue to function correctly.
+there are any issues with one of the platform runners where your app instances are assigned, or we upgrade platform components underneath an instance, your app will continue to function correctly (with less risk of downtime).
 
 #### How
 * See [multiple instances]({{< relref "multiple-instances.md" >}}).
