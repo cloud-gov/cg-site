@@ -10,7 +10,10 @@ Here's how to put your app on your project's custom domain name. For context, [C
 The [Manual Method](#manual-method) is available to all users.
 
 {{% govcloud %}}
-We've also developed a [Managed Service Method](#managed-service-method).
+We've also developed a [Managed Service Method](#managed-service-method). This option is vastly preferred, as it
+
+* Is (somewhat) self-service
+* Will automatically create renew the certificate
 {{% /govcloud %}}
 
 Both options support IPv6.
@@ -109,7 +112,10 @@ cloud.gov offers a managed service that allows you to forward a domain you contr
     Message: Provisioning in progress; CNAME domain "my.domain.gov" to "d3kajwa62y9xrp.cloudfront.net."
     ```
 
+1. Repeat last step until the CloudFront distribution is provisioned. Note this can take up to 30 minutes.
 1. Create/update your DNS configuration.
-1. Wait up to 30 minutes for the CloudFront distribution to be provisioned and the DNS changes to propagate.
+    * In AWS Route 53, this will (confusingly) be an `A` record with an `Alias` to `<something>.cloudfront.net`.
+    * If you can, wait to **do this step during low-traffic hours**. It can take up to 15 minutes before the certificate is in place, and visitors will get a certificate error when visiting the custom domain in the meantime.
+1. Wait for the DNS changes to propagate.
 1. Visit `my.domain.gov`, and see that you have a valid certificate (i.e. that visiting your site in a modern browser doesn't give you a certificate warning).
 {{% /govcloud %}}
