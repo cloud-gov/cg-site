@@ -10,10 +10,10 @@ Here's how to put your app on your project's custom domain name. For context, [C
 The [Manual Method](#manual-method) is available to all users.
 
 {{% govcloud %}}
-We've also developed a [Managed Service Method](#managed-service-method). This option is vastly preferred, as it
+We've also developed a [Managed Service Method](#managed-service-method). This option is vastly preferred to the manual one, for the following reasons:
 
-* Is (somewhat) self-service
-* Will automatically create renew the certificate
+* It is (somewhat) self-service
+* It will automatically create and renew the certificate
 {{% /govcloud %}}
 
 Both options support IPv6.
