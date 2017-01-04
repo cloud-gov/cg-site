@@ -51,7 +51,7 @@ To use it, first create an instance:
 
 Then bind it to a route:
 
-`cf bind-route-service apps.cloud.gov authy --hostname hello`
+`cf bind-route-service app.cloud.gov authy --hostname hello`
 
 After that, your apps will require cloud.gov authentication before proceeding.
 {{% /govcloud %}}

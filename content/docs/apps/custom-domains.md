@@ -81,11 +81,11 @@ cloud.gov offers a managed service that allows you to forward a domain you contr
     $ cf target -o <org> -s <space>
     ```
 
-1. Create a service instance. Replace *my-app.apps.cloud.gov* with the  domain that has been automatically assigned to your app by cloud.gov.
+1. Create a service instance. Replace *my-app.app.cloud.gov* with the  domain that has been automatically assigned to your app by cloud.gov.
 
     ```
     $ cf create-service cdn-route cdn-route my-cdn-route \
-        -c '{"domain": "my.domain.gov", "origin": "my-app.fr.cloud.gov"}'
+        -c '{"domain": "my.domain.gov", "origin": "my-app.app.cloud.gov"}'
 
     Create in progress. Use 'cf services' or 'cf service my-cdn-route' to check operation status.
     ```
@@ -94,7 +94,7 @@ cloud.gov offers a managed service that allows you to forward a domain you contr
 
     ```
     $ cf create-service cdn-route cdn-route my-cdn-route \
-        -c '{"domain": "my.domain.gov,www.my.domain.gov", "origin": "my-app.fr.cloud.gov"}'
+        -c '{"domain": "my.domain.gov,www.my.domain.gov", "origin": "my-app.app.cloud.gov"}'
 
     Create in progress. Use 'cf services' or 'cf service my-cdn-route' to check operation status.
     ```
