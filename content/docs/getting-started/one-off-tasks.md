@@ -7,8 +7,11 @@ aliases:
 - /getting-started/cf-ssh/
 ---
 
-The most reliable way to do one-off tasks is by deploying a short-lived app. If you need to perform deeper inspection of how your application is running, you may want to [use SSH]({{< relref "docs/apps/using-ssh.md" >}}) instead.
+There are several options for running tasks in cloud.gov.
 
+* [Cloud Foundry Tasks](https://docs.cloudfoundry.org/devguide/using-tasks.html) ([GovCloud]({{< relref "docs/apps/govcloud.md#migration" >}}) only)
+* [SSH]({{< relref "docs/apps/using-ssh.md" >}})
+* [Short-lived apps]({{< relref "#deploy-a-short-lived-app" >}})
 
 ## Deploy a short-lived app
 
