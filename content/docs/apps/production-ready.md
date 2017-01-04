@@ -83,3 +83,13 @@ When you need a domain name dedicated for your application, DNS delegation for t
 
 #### How
 * See [custom domains]({{< relref "custom-domains.md" >}}).
+
+### Graceful shutdown
+Your application should respond to [shutdown
+events](http://docs.cloudfoundry.org/devguide/deploy-apps/app-lifecycle.html#shutdown)
+by closing connections and cleaning up resources.
+
+#### How
+- Listen to `SIGTERM` and complete the shutdown within 10 seconds.
+- Refuse any new connections and complete any in-flight requests.
+- Flush and close any open connections.
