@@ -8,7 +8,7 @@ description: "Custom routes with HTTPS certificates using Amazon CloudFront"
 status: "Production Ready"
 ---
 
-Once your application is ready to move to production you will want a custom URL for it instead of the default cloud.gov one. The CDN Route service provides 3 key elements to support production applications: custom URL, Content Distribution Network (CDN) caching, and free TLS certificates with auto renewal.
+Once your application is ready to move to production, you'll want a custom domain instead of the default cloud.gov one. The CDN Route service provides three key elements to support production applications: a custom domain, Content Distribution Network (CDN) caching, and TLS certificates with auto renewal.
 
 ## Plans
 
@@ -27,16 +27,16 @@ Name | Required | Description | Default
 
 ## How to create an instance
 
-To create a service instance run the following command:
+To create a service instance, run the following command:
 
 ```bash
 cf create-service cdn-route cdn-route my-cdn-route \
-    -c '{"domain": "my.domain.gov", "origin": "my-app.apps.cloud.gov"}'
+    -c '{"domain": "my.domain.gov", "origin": "my-app.app.cloud.gov"}'
 ```
 
 ### How to set up DNS
 
-Once you created the service instance you need to retrieve the instructions to set up your DNS. To do that you need to run the following command, replacing `my-cdn-route` with the service instance name you used in the previous step.
+Once you create the service instance, you need to retrieve the instructions to set up your DNS. Run the following command, replacing `my-cdn-route` with the service instance name you used in the previous step.
 
 ```bash
 $ cf service my-cdn-route
@@ -48,15 +48,15 @@ Message: Provisioning in progress; CNAME domain "my.domain.gov" to "d3kajwa62y9x
 
 In this case, you need to create a CNAME record in your DNS server pointing `my.domain.gov` to `d3kajwa62y9xrp.cloudfront.net.`.
 
-After the record is created, wait up to 30 minutes for the CloudFront distribution to be provisioned and the DNS changes to propagate. Then visit your custom URL, and see that you have a valid certificate (i.e. that visiting your site in a modern browser doesn't give you a certificate warning).
+After the record is created, wait up to 30 minutes for the CloudFront distribution to be provisioned and the DNS changes to propagate. Then visit your custom domain and see whether you have a valid certificate (in other words, that visiting your site in a modern browser doesn't give you a certificate warning).
 
 ## How to update an instance
 
-To update a service instance run the following command:
+To update a service instance, run the following command:
 
 ```bash
 cf update-service my-cdn-route \
-    -c '{"domain": "my.domain.gov", "origin": "my-app.apps.cloud.gov"}'
+    -c '{"domain": "my.domain.gov", "origin": "my-app.app.cloud.gov"}'
 ```
 
 *Replace `my-cdn-route` with the service instance name.*
@@ -72,7 +72,7 @@ shows the old content after the DNS changes propagate.
 ### When to update the DNS
 
 You only need to add a CNAME entry when the `domain`
-field is updated. Refer to the [instructions above](/docs/services/cdn-route/#how-to-set-up-dns) for guidance.
+field is updated. Refer to ["How to set up DNS"](#how-to-set-up-dns) for guidance.
 
 ### The broker in GitHub
 
