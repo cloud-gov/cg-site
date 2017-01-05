@@ -2,26 +2,24 @@
 menu:
   docs:
     parent: services
-title: UAA client credentials
-name: "uaa-client-credentials"
-description: "Create UAA clients for app authentication"
+title: Cloud.gov identity provider
+name: "cloud-gov-identity-provider"
+description: "Manage client credentials for authenticating cloud.gov users in your app"
 status: "Beta"
 ---
-
-To set up your application to be deployed with an automated system, you need a deployer account that has access to push your application.
 
 ## Plans
 
 Plan Name | Description | Price
 --------- | ----------- | -----
-`deployer-account-client` | Register a UAA client for app authentication | Free
+`oauth-client` | Register a UAA client for app authentication | Free
 
 ## How to create an instance
 
 To create a service instance run the following command:
 
 ```bash
-cf create-service uaa-credentials-client uaa-credentials-client my-uaa-client \
+cf create-service cloud-gov-identity-provider oauth-client my-uaa-client \
   -c '{"redirect_uri": ["https://my.app.cloud.gov"]}'
 ```
 
