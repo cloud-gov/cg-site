@@ -13,15 +13,7 @@ App developers can also leverage cloud.gov's UAA instance as a backend that brok
 
 ### Register your application instances
 
-You will first need to register all instances (such as dev, staging, and production) with cloud.gov's UAA. Right now this is a manual process, so you will need to [contact a member of the cloud.gov team]({{< relref "docs/help.md" >}}). Please note that you will need to request a separate registration for the GovCloud environment.
-
-For each application instance, you will need to provide:
-
-- a name (such as `my-project-dev`)
-- a callback URL (such as `https://example.com/auth/callback`)
-- the cloud.gov environment (GovCloud or E/W)
-
-The cloud.gov team member who is assisting you will provide a `client_secret` for each registered application. You should protect these secret keys as you would a password.
+You will first need to register all instances (such as dev, staging, and production) with cloud.gov's UAA. To register your instance, use the [uaa-credentials-client]({{< relref "docs/services/uaa-credentials-client.md" >}}) service.
 
 ### Integrate with your application
 

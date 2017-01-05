@@ -2,9 +2,9 @@
 menu:
   docs:
     parent: services
-title: Deployer account
-name: "deployer-account"
-description: "Create deployer accounts for use in automated deployment systems"
+title: UAA client credentials
+name: "uaa-client-credentials"
+description: "Create UAA clients for app authentication"
 status: "Beta"
 ---
 
@@ -14,19 +14,20 @@ To set up your application to be deployed with an automated system, you need a d
 
 Plan Name | Description | Price
 --------- | ----------- | -----
-`deployer-account-user` | Provision one account with "SpaceDeveloper" access to the space where the service is created | Free
+`deployer-account-client` | Register a UAA client for app authentication | Free
 
 ## How to create an instance
 
 To create a service instance run the following command:
 
 ```bash
-cf create-service uaa-credentials-user uaa-credentials-user my-deployer-account
+cf create-service uaa-credentials-client uaa-credentials-client my-uaa-client \
+  -c '{"redirect_uri": ["https://my.app.cloud.gov"]}'
 ```
 
 ## More information
 
-To use this service, see [continuous deployment]({{< relref "docs/apps/continuous-deployment.md" >}}).
+See [leveraging authentication]({{< relref "docs/apps/leveraging-authentication.md" >}}) for details.
 
 ### The broker in GitHub
 
