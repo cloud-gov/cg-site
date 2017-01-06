@@ -5,7 +5,7 @@ menu:
 
 title: Troubleshooting SMTP
 ---
-### Overview 
+### Overview
 Often times a service is functioning properly, but mail will not deliver.  The 
 general root cause for this is the mail service silently rejecting mail, or
 sometimes a firewall change.
