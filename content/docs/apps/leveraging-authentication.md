@@ -13,7 +13,7 @@ App developers can also leverage cloud.gov's UAA instance as a backend that brok
 
 ### Register your application instances
 
-You will first need to register all instances (such as dev, staging, and production) with cloud.gov's UAA. To register your instance, use the [uaa-credentials-client]({{< relref "docs/services/cloud-gov-identity-provider.md" >}}) service.
+You will first need to register all instances (such as dev, staging, and production) with cloud.gov's UAA. To register your instance, use the [cloud.gov identity provider]({{< relref "docs/services/cloud-gov-identity-provider.md" >}}) service.
 
 ### Integrate with your application
 

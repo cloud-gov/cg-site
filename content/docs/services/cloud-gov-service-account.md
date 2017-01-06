@@ -2,10 +2,12 @@
 menu:
   docs:
     parent: services
-title: Cloud.gov service account
+title: cloud.gov service account
 name: "cloud-gov-service-account"
 description: "Manage cloud.gov service accounts with access to your organization"
 status: "Beta"
+aliases:
+- /docs/services/deployer-account/
 ---
 
 To set up your application to be deployed with an automated system, you need a deployer account that has access to push your application.
@@ -18,7 +20,7 @@ Plan Name | Description | Price
 
 ## How to create an instance
 
-To create a service instance run the following command:
+To create a service instance, run the following command:
 
 ```bash
 cf create-service cloud-gov-service-account space-deployer my-service-account

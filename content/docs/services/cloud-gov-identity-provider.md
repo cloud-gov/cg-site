@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: services
-title: Cloud.gov identity provider
+title: cloud.gov identity provider
 name: "cloud-gov-identity-provider"
 description: "Manage client credentials for authenticating cloud.gov users in your app"
 status: "Beta"
@@ -16,7 +16,7 @@ Plan Name | Description | Price
 
 ## How to create an instance
 
-To create a service instance run the following command:
+To create a service instance, run the following command:
 
 ```bash
 cf create-service cloud-gov-identity-provider oauth-client my-uaa-client \
