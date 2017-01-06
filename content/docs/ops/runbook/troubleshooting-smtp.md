@@ -46,7 +46,7 @@ DATA
 354 End data with <CR><LF>.<CR><LF>
 From: noreply@cloud.gov
 To: your-test-email-address@cloud.gov
-Subject: Our mail really does work 
+Subject: Our mail really does work
 
 We have worked with the best scientists abroad, and found that indeed this works.
 .
