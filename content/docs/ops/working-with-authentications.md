@@ -139,7 +139,7 @@ Example URL from Fugacious
 
 ### Multiple whitelisted callbacks
 Some users may have multiple URIs which are valid callbacks.  These can be added using the UAA client in
-the `redirect_uri` client property, seperated by spaces.
+the `redirect_uri` client property, separated by spaces.
 
 ```shell
 uaac client update my-project-dev --redirect_uri 'https://my-project-dev.18f.gov/auth/cg/callback https://my-project-dev.fr.cloud.gov/auth/cg/callback'
