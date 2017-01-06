@@ -39,9 +39,9 @@ You can change the number of instances for a running app using the [cf-scale](ht
 cf scale <<APP_NAME>> -i 2
 ```
 
-#### Managing multiple instances with [CF-INSTANCE-INDEX](http://docs.run.pivotal.io/devguide/deploy-apps/environment-variable.html#CF-INSTANCE-INDEX)
+#### Managing multiple instances with [CF-INSTANCE-INDEX](http://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html#CF-INSTANCE-INDEX)
 
-Running multiple instances may sometimes cause scheduled tasks or data loads to run multiple times. This issue can be prevented by using the [CF-INSTANCE-INDEX](http://docs.run.pivotal.io/devguide/deploy-apps/environment-variable.html#CF-INSTANCE-INDEX) environment variable. This variable denotes the specific instance number.
+Running multiple instances may sometimes cause scheduled tasks or data loads to run multiple times. This issue can be prevented by using the [CF-INSTANCE-INDEX](http://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html#CF-INSTANCE-INDEX) environment variable. This variable denotes the specific instance number.
 
 The example below shows a bash load script for a Python project. The commands within the `if` condition are only run when the first app instance is starting.
 
