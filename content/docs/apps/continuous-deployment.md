@@ -17,7 +17,7 @@ Continuous deployment systems require credentials for use in pushing new version
 {{% govcloud %}}
 ### Deployer account broker
 
-You can provision a deployer account with permission to deploy to a single space using the deployer account service broker:
+You can provision a deployer account with permission to deploy to a single space using the [cloud.gov service account]({{< relref "docs/services/cloud-gov-service-account.md" >}}) service broker:
 
 1. Target the org and space for which you want credentials
 
@@ -28,16 +28,16 @@ You can provision a deployer account with permission to deploy to a single space
 1. Create a deployer account service instance
 
     ```bash
-    $ cf create-service deployer-account deployer-account my-deployer-account
+    $ cf create-service cloud-gov-service-account space-deployer my-service-account
     ```
 
 1. Get the ephemeral credentials link from the service instance
 
     ```bash
-    $ cf service my-deployer-account
+    $ cf service my-service-account
 
-    Service instance: my-deployer-account
-    Service: deployer-account
+    Service instance: my-service-account
+    Service: cloud-gov-service-account
     ...
     Dashboard: https://fugacious.18f.gov/m/k3MtzJWVZaNlnjBYJ7FUdpW2ZkDvhmQz
     ```
@@ -47,7 +47,7 @@ You can provision a deployer account with permission to deploy to a single space
 To delete your deployer account, delete the service instance:
 
 ```bash
-$ cf delete-service my-deployer-account
+$ cf delete-service my-service-account
 ```
 {{% /govcloud %}}
 
@@ -169,4 +169,4 @@ And setup the following environment variables in a "deploy target":
 
 
 
-You can also add the `alt_appname` attribute to do [Blue-Green deploys](http://docs.pivotal.io/pivotalcf/devguide/deploy-apps/blue-green.html).
+You can also add the `alt_appname` attribute to do [Blue-Green deploys](https://docs.cloudfoundry.org/devguide/deploy-apps/blue-green.html).

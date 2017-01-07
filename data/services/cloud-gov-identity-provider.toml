@@ -1,0 +1,3 @@
+name = "cloud-gov-identity-provider"
+description = "Manage client credentials for authenticating cloud.gov users in your app"
+status = "Beta"
