@@ -11,21 +11,19 @@ aliases:
 
 ## Using the cloud.gov PaaS as self-service
 
-- To use cloud.gov without 18F’s other delivery services, your agency needs an organization account. 18F works with agencies to set up their cloud.gov presence. After that, the rest of the work is self-service. It wouldn’t require any more interaction with 18F.
+To make cloud.gov available for your team, have your agency work with 18F to set up an inter-agency agreement, which will be used for for billing purposes. 18F will create an organization for each individual team or system upon agency request, and designate someone from your team as an Organization Manager. After that, the rest of your team's work is self-service and requires no further interaction with 18F.
 
-- You can then use cloud.gov to set up a number of online “spaces” required for developing a federal website. Your team could choose from a list of additional, optional services that cloud.gov offers, including database and search capabilities. Once the requested services are available (which happens automatically upon request), you can use them from within your code.
+- You can instantly set up environments ("spaces") as needed for your team (for example: blue-green production spaces, testing, development). 
+- You can manage access for individual team members at either the organization or space level. 
+- You can automatically create instances of optional managed services that cloud.gov offers in each space, including database and search. 
+- You can deploy your own "application" code which uses credentials provided by the environment to access your services.
+- You can bind "routes" to your application in order to enable traffic from the outside world to reach it via DNS. 
+- You can watch metrics, logs, and events as your application is used.
+- You can instantly scale your application vertically or horizontally to handle more traffic.
+- You can access your running application to troubleshoot or perform migrations.
+- You can redeploy your applications to add capabilities or fix problems.
 
-- After your team is set up on cloud.gov, the team can:
-  - Set up a Cloud Foundry “org” that correctly references the agency for billing purposes. This would include a quota.
-  - Add “spaces” to represent as many environments as you need (for example: blue-green production, QA and CI, personal development, etc.)
-  - Choose from cloud.gov’s list of supported “managed services”. You would then provision “service instances” specific to your spaces.
-  - Deploy applications and services that you will manage on your own into those same spaces, and bind them to the managed service instances to ensure you can use them.
-  - Bind “routes” to your applications in order to enable traffic from the outside world to reach them.
-  - Watch metrics, logs, and events as your service is used. You can redeploy applications to add capabilities or fix problems.
-
-- Beyond the first step above, the rest of the steps are self-service. You can self-manage access for individual team members at either the org or space level.
-
-- Once your team is comfortable with the CLI and web-based interface for cloud.gov, the team can write scripts to orchestrate more complex processes involving multiple applications and spaces, all built on the Cloud Foundry API.
+Once your team is comfortable with the CLI and web-based interface for cloud.gov, you can write scripts to orchestrate more complex processes involving multiple applications and spaces, all built on the Cloud Foundry API.
 
 ## Using the cloud.gov PaaS with an 18F team
 
