@@ -48,7 +48,7 @@ $ cf push
 
 ### Builds
 
-If you are using a static site generator (e.g. it uses [Jekyll]({{< relref "#jekyll" >}}) or [Hugo](http://gohugo.io/)) or and/or it requires dependencies to be installed at deploy-time, it's _especially_ recommended that you set up [continuous deployment]({{< relref "continuous-deployment.md" >}}). This way, the build happens in your Continuous Integration (CI) system rather than during the deploy itself within Cloud Foundry. This helps to make your deployments more reliable, have a smaller footprint, and reduce downtime.
+If you are using a static site generator (e.g. [Jekyll]({{< relref "#jekyll" >}}) or [Hugo](http://gohugo.io/)) and/or it requires dependencies to be installed at deploy-time, it's _especially_ recommended that you set up [continuous deployment]({{< relref "continuous-deployment.md" >}}). This way, the build happens in your Continuous Integration (CI) system rather than during the deploy itself within Cloud Foundry. This helps to make your deployments more reliable, have a smaller footprint, and reduce downtime.
 
 ### Jekyll
 
