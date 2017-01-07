@@ -8,7 +8,7 @@ description: "Manage client credentials for authenticating cloud.gov users in yo
 status: "Beta"
 ---
 
-You can leverage cloud.gov's identity hub to reduce the burden of authenticating users from government agencies and contracors in your app.
+You can leverage cloud.gov's identity hub to reduce the burden of authenticating users from government agencies and partners in your app.
 
 ## Plans
 
