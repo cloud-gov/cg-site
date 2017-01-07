@@ -5,7 +5,7 @@ menu:
 title: Using SSH
 ---
 
-Here's how to get a SSH shell in the environment where your app is running. You can use this to inspect how your app is operating, transfer files via SCP, or interact directly with your bound services. (To run one-off tasks, you can also [deploy a short-lived app]({{< relref "docs/getting-started/one-off-tasks.md" >}}).)
+Here's how to get a SSH shell in the environment where your app is running. You can use this to inspect how your app is operating, transfer files via SCP, or interact directly with your bound services. [More information about one-off tasks.]({{< relref "docs/getting-started/one-off-tasks.md" >}})
 
 {{% govcloud %}}
 ### CF SSH
