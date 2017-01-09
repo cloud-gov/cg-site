@@ -38,6 +38,7 @@ Custom components for our Cloud Foundry deployment:
 - [InfluxDB firehose nozzle](https://github.com/18F/influxdb-firehose-nozzle)
 
 BOSH releases:
+
 - [awslogs](https://github.com/18F/cg-awslogs-boshrelease)
 - [ClamAV](https://github.com/18F/cg-clamav-boshrelease)
 - [Cloud Foundry](https://github.com/18F/cg-cf-release)
@@ -57,6 +58,7 @@ BOSH releases:
 - [Tripwire](https://github.com/18F/cg-tripwire-boshrelease)
 
 Service brokers:
+
 - [RDS #1](https://github.com/cloudfoundry-community/rds-broker)
 - [RDS #2](https://github.com/18F/aws-broker)
 - [CDN (CloudFront and Let's Encrypt)](https://github.com/18F/cf-cdn-service-broker)
@@ -65,12 +67,14 @@ Service brokers:
 - [S3](https://github.com/cloudfoundry-community/s3-broker)
 
 Configuration/deployment support:
+
 - [Infrastructure provisioning and deployment](https://github.com/18F/cg-provision)
 - [Common Concourse pipeline tasks](https://github.com/18F/cg-pipeline-tasks)
 - [Common Concourse resource](https://github.com/18F/cg-common-resource)
 - [Bootstrap Concourse AMI](https://github.com/18F/cg-bootstrap-concourse-ami)
 
 Deployment pipelines:
+
 - [Abacus](https://github.com/18F/cg-deploy-abacus)
 - [Admin user interface](https://github.com/18F/cg-deploy-admin-ui)
 - [AWS light stemcell images](https://github.com/18F/cg-deploy-aws-light-stemcell-builder)
@@ -93,6 +97,7 @@ Deployment pipelines:
 - [Shibboleth](https://github.com/18F/cg-deploy-shibboleth)
 
 Metadata for our team, such as issues, checklists, and other documents:
+
 - [Agent Q theme work](https://github.com/18F/cg-agent-q)
 - [Atlas theme work](https://github.com/18F/cg-atlas)
 - [Design work](https://github.com/18F/cg-design)
@@ -101,15 +106,18 @@ Metadata for our team, such as issues, checklists, and other documents:
 - [Product work](https://github.com/18F/cg-product)
 
 Collections of scripts for our team:
+
 - [Scripts](https://github.com/18F/cg-scripts)
 
 Optional code offered to our team and customers:
+
 - [Hello world apps](https://github.com/18F/cf-hello-worlds)
 - [Notifications plugin for Hubot](https://github.com/18F/hubot-cf-notifications)
 - [Redirect app](https://github.com/18F/cf-redirect)
 - [Fake UAA for testing](https://github.com/18F/cg-fake-uaa)
 
 Optional Cloud Foundry CLI plugins offered to our team and customers:
+
 - [Route lookup](https://github.com/18F/cf-route-lookup)
 - [Service connection](https://github.com/18F/cf-service-connect)
 
