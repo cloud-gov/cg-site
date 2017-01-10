@@ -10,10 +10,10 @@ changes to your desired environment.
 
 Before setting this up, go through
 
+1. The [Production Ready Guide]({{< relref "production-ready.md" >}})
 1. Setting up continuous integration
     * This will protect you from deploying a broken application.
     * You can use the same service for continuous integration+deployment — see list [below]({{< relref "#continuous-integration-services" >}}) for suggestions.
-1. The [Production Ready Guide]({{< relref "production-ready.md" >}})
 
 ## Provisioning deployment credentials
 
