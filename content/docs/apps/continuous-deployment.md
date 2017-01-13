@@ -8,14 +8,14 @@ title: Continuous deployment
 Setting up continuous deployment allows you to automatically upload your
 changes to your desired environment.
 
-Before setting this up, go through
+## Get ready
 
-1. The [Production Ready Guide]({{< relref "production-ready.md" >}})
-1. Setting up continuous integration
-    * This will protect you from deploying a broken application.
-    * You can use the same service for continuous integration+deployment — see list [below]({{< relref "#continuous-integration-services" >}}) for suggestions.
+Before setting up continuous deployment:
 
-## Provisioning deployment credentials
+1. Go through the [production-ready guide]({{< relref "production-ready.md" >}}) to ensure your application uses the [core best practices]({{< relref "production-ready.md#core-best-practices" >}}) and [zero-downtime deployment]({{< relref "production-ready.md#zero-downtime-deploy" >}}). This will help you use continuous deployment with reduced risk of errors and outages.
+1. Set up continuous integration. This will protect you from deploying a broken application. You can use the same service for continuous integration and continuous deployment — see [the list of continuous integration services below]({{< relref "#continuous-integration-services" >}}) for suggestions.
+
+## Provision deployment credentials
 
 Continuous deployment systems require credentials for use in pushing new versions of your application code to cloud.gov. You should use a restricted set of credentials that can only access a particular target space, rather than credentials tied to a user who has more access, or who may lose access when leaving your team or project. This "least privilege" approach minimizes the harm that is possible if the credentials are compromised in any way.
 
@@ -69,7 +69,13 @@ To set up any of these services, your application needs a `manifest.yml` file.
 
 ### Travis
 
-See [the Travis documentation](http://docs.travis-ci.com/user/deployment/cloudfoundry/), using `api: https://api.cloud.gov` for East/West and `api: https://api.fr.cloud.gov` for GovCloud. You must encrypt the password, and you must [**escape any symbol characters in the password**](https://docs.travis-ci.com/user/encryption-keys#Note-on-escaping-certain-symbols), to prevent possible situations where Travis could dump an error message that contains passwords or environment variables.
+See [the Travis documentation](http://docs.travis-ci.com/user/deployment/cloudfoundry/). 
+
+On East/West: use `api: https://api.cloud.gov`
+
+On GovCloud: use `api: https://api.fr.cloud.gov`
+
+You must encrypt the password, and you must [**escape any symbol characters in the password**](https://docs.travis-ci.com/user/encryption-keys#Note-on-escaping-certain-symbols), to prevent possible situations where Travis could dump an error message that contains passwords or environment variables.
 
 #### Using Conditional Deployments
 
