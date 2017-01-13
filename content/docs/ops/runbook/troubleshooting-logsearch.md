@@ -16,7 +16,7 @@ curl localhost:9200/_cluster/settings?pretty
 If necessary, reenable allocation:
 
 ```bash
-curl -X PUT localhost:9200/_cluster/settings -d '{"cluster.routing.allocation.enable":"all"}'
+curl -X PUT localhost:9200/_cluster/settings -d '{"transient":{"cluster.routing.allocation.enable":"all"}}'
 ```
 
 If reenabling allocation doesn't restore the cluster, manually reassigning unallocated shards may be necessary: https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-reroute.html.
