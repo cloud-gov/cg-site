@@ -11,7 +11,7 @@ aliases:
 
 ## Using the cloud.gov PaaS as self-service
 
-To make cloud.gov available for your team, [have your agency work with 18F to set up an interagency agreement](https://cloud.gov/overview/overview/how-to-purchase/), which will be used for for billing purposes. 18F will create an organization for each individual team or system upon agency request, and designate someone from your team as an Organization Manager. After that, the rest of your team's work is self-service and requires no further interaction with 18F.
+To make cloud.gov available for your team, [have your agency work with 18F to set up an interagency agreement]({{< relref "overview/overview/how-to-purchase.md" >}}), which will be used for for billing. 18F will create an organization for each individual team or system upon agency request, and designate someone from your team as an Organization Manager. After that, the rest of your team's work is self-service and requires no further interaction with 18F.
 
 - You can instantly set up environments ("spaces") as needed for your team (for example: blue-green production spaces, testing, development). 
 - You can manage access for individual team members at either the organization or space level. 
