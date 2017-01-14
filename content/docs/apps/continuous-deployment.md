@@ -71,13 +71,19 @@ To set up any of these services, your application needs a `manifest.yml` file.
 
 See [the Travis documentation](http://docs.travis-ci.com/user/deployment/cloudfoundry/). 
 
-On East/West: use `api: https://api.cloud.gov`
+{{% eastwest %}}
+Use `api: https://api.cloud.gov`
+{{% /eastwest %}}
 
-On GovCloud: use `api: https://api.fr.cloud.gov`
+{{% govcloud %}}
+Use `api: https://api.fr.cloud.gov`
+{{% /govcloud %}}
 
 You must encrypt the password, and you must [**escape any symbol characters in the password**](https://docs.travis-ci.com/user/encryption-keys#Note-on-escaping-certain-symbols), to prevent possible situations where Travis could dump an error message that contains passwords or environment variables.
 
-#### Using Conditional Deployments
+For more information about configuring Travis, see [Customizing the Build](https://docs.travis-ci.com/user/customizing-the-build/).
+
+#### Using Conditional Deployments with Travis
 
 A common pattern for team workflows is to use separate development and master branches, along with using a staging or QA deployment with the development branch, and a production deployment with the master branch. This can be achieved in Travis with [`on:`](https://docs.travis-ci.com/user/deployment#Conditional-Releases-with-on%3A) to specify a branch, and using unique manifests for each deployment.
 
@@ -95,7 +101,7 @@ deploy:
 
 Each manifest should at the very least define an unique `name`, but can also define an unique `host`. Also, it may be necessary to define unique services for each application to use. See [Cloning Applications]({{< relref "cloning.md" >}}) for more information.
 
-#### Jekyll
+#### Jekyll with Travis
 
 To deploy a Jekyll site, add the following to your `.travis.yml`:
 
@@ -109,16 +115,12 @@ deploy:
   # ...
 ```
 
-#### Additional resources
-
-- [Jekyll - Continuous Integration](http://jekyllrb.com/docs/continuous-integration/)
-- [Travis - Cloud Foundry Deployment](http://docs.travis-ci.com/user/deployment/cloudfoundry/)
-- [Travis - The Lifecycle of a Travis CI Build](http://docs.travis-ci.com/user/build-lifecycle/)
+For details, see [Jekyll's Continuous Integration guide](http://jekyllrb.com/docs/continuous-integration/).
 
 
 ### CircleCI
 
-Add this items to your `circle.yml` file:
+Add these items to your `circle.yml` file:
 
 ```
 dependencies:
@@ -129,7 +131,7 @@ dependencies:
 
 test:
   post:
-    - cf login -a https://api.cloud.gov -u DEPLOYER_USER -p $CF_PASS -o ORG -s SPACE
+    - cf login -a https://api.fr.cloud.gov -u DEPLOYER_USER -p $CF_PASS -o ORG -s SPACE
 
 deployment:
   production:
@@ -138,14 +140,14 @@ deployment:
       - cf push
 ```
 
-Replace `DEPLOYER_USER`, `ORG`, and `SPACE` accordingly and export the `CF_PASS` environment variable in the Circle interface to add the deployer's password.
+Replace `DEPLOYER_USER`, `ORG`, and `SPACE` accordingly, and export the `CF_PASS` environment variable in the Circle interface to add the deployer's password. If you're using the East/West environment, replace `api.fr.cloud.gov` with `api.cloud.gov`.
 
-**Note**: if your `manifest.yml` describes more than one app you might want to specify which app to push in the `cf push` line.
+**Note**: If your `manifest.yml` describes more than one app, you might want to specify which app to push in the `cf push` line.
 
 
 ### Wercker
 
-In your `wercker.yml` file add:
+In your `wercker.yml` file, add:
 
 ```
 steps:
@@ -160,19 +162,17 @@ deploy:
         password: $CF_PASS
         organization: $CF_ORG
         space: $CF_SPACE
-        appname: myapp
-        domain: 18f.gov
+        appname: APP
+        domain: DOMAIN
         hostname: myapp
         skip_ssl: true
 ```
 
-(make sure to change the "domain" and "hostname" as needed)
-
-And setup the following environment variables in a "deploy target":
+Change `APP` and `DOMAIN` to match your application, and set up the following environment variables in a "deploy target":
 
 | Name    | Value              |
 |---------|--------------------|
-| CF_API  | `api.cloud.gov`      |
+| CF_API  | East/West: `api.cloud.gov` / GovCloud: `api.fr.cloud.gov`     |
 | CF_USER | deployer username  |
 | CF_PASS | deployer password  |
 | CF_ORG  | target organization|
