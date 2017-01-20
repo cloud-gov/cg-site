@@ -98,7 +98,7 @@ Substitute `cf.yml` in the following steps for the relevant file.
 1. Copy the new file up to S3.
 
     ```bash
-    aws s3 cp tmp/cf.yml.enc-new s3://cloud-gov-varz/cf.yml --profile govcloud
+    aws s3 cp tmp/cf.yml.enc-new s3://cloud-gov-varz/cf.yml --profile govcloud --sse AES256
     ```
 
 1. Clean up the secrets.
