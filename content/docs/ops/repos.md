@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: ops
-title: GitHub repositories
+title: Code repositories
 weight: -100
 aliases:
   - /docs/intro/security/auditing-contributing-security
@@ -13,15 +13,17 @@ cloud.gov is an open source project based on [Cloud Foundry](https://www.cloudfo
 
 If you're interested in contributing to cloud.gov but not sure where to start, or if you have questions about contributing, feel free to join the [18F DevOps or open source chat channels](https://chat.18f.gov/) and explain your question. You can also open an issue with your question in a relevant repository.
 
+To contribute to these repositories, you'll need to use [a GitHub account](https://help.github.com/articles/signing-up-for-a-new-github-account/), which is free to open and use. If you're part of the federal government, many agencies have approved use of public repository services such as GitHub ([some examples here](https://18f.gsa.gov/2016/08/08/facts-about-publishing-open-source-code-in-government/)).
+
 ## Repositories
 
-Here are many of our main repositories with components, tools, and configuration for the platform. This isn't a complete or fully up-to-date list; we intend to continuously update it, but sometimes we fall behind a bit. You can find more repositories [on GitHub](https://github.com/search?utf8=%E2%9C%93&q=user%3A18F+%28cf+OR+cg+OR+%22cloud+foundry%22+OR+cloud.gov%29+NOT+cfn+fork%3Atrue&type=Repositories&ref=advsearch&l=&l=).
+Here are many of our main repositories with components, tools, and configuration for the platform. This isn't a complete or fully up-to-date list; we intend to continuously update it, but sometimes we fall behind a bit. You can [find more cloud.gov repositories on GitHub](https://github.com/search?utf8=%E2%9C%93&q=user%3A18F+%28cf+OR+cg+OR+%22cloud+foundry%22+OR+cloud.gov%29+NOT+cfn+fork%3Atrue&type=Repositories&ref=advsearch&l=&l=).
 
 Components run as applications on top of the platform, for users:
 
 - [cloud.gov website (this site)](https://github.com/18F/cg-site)
 - [Dashboard](https://github.com/18F/cg-dashboard)
-- [Styles](https://github.com/18F/cg-style) (not its own application, but a library supporting the website and dashboard)
+- [Styles](https://github.com/18F/cg-style) (a library supporting the website and dashboard)
 
 Components run as applications on top of the platform, for our team:
 
@@ -129,4 +131,4 @@ All components by the cloud.gov team (or other parts of 18F) are in the worldwid
 >
 > All contributions to this project will be released under the CC0 dedication. By submitting a pull request, you are agreeing to comply with this waiver of copyright interest.
 
-Components based on work from other people may be in the public domain or have varying open source licenses. All license details for each component are listed in the LICENSE file for that repository.
+Components based on work from other people may be in the public domain or have various open source licenses. All license details for each component are listed in the LICENSE file for that repository.
