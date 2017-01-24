@@ -37,4 +37,4 @@ aliases:
 
 ## Cannot use cloud.gov
 
-- You work for a non-government organization.
+- You do not work for a government organization, and the applications you are building are not on behalf of a government organization.
