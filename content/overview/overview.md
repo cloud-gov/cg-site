@@ -4,15 +4,17 @@ type: index
 
 ### Platform as a Service (PaaS) for government developers
 
-cloud.gov allows your development team to focus on what matters: your applications. As a Platform as a Service (PaaS), cloud.gov **eliminates the need to manage infrastructure such as virtual machines and servers**. This enables your development team to rapidly iterate and quickly launch your application to ensure mission success. Because cloud.gov is based on **open-source technologies**, it provides portability to other cloud providers or your existing on-premise solution.
+cloud.gov allows your development team to focus on your applications. As a Platform as a Service (PaaS), cloud.gov **eliminates the need to manage infrastructure such as virtual machines and servers**. This enables your development team to rapidly iterate and quickly launch your application to ensure mission success. Because cloud.gov is based on **open-source technologies**, it provides portability to other cloud providers or your existing on-premise solution.
 
-cloud.gov is developed **by the government, for the government**. 18F, housed within the General Services Administration’s Technology Transformation Service, develops and operates cloud.gov.
+cloud.gov is developed **by the government, for the government**. 18F, housed within the U.S. General Services Administration’s Technology Transformation Service, develops and operates cloud.gov.
+
+cloud.gov's mission is to support agency efforts to improve the way they manage information technology. This can include growing more comfortable and familiar with cloud technology, which enables deeper partnerships with both industry cloud providers as well as vendors and contractors that prefer to build using cloud platforms.
 
 [Learn more about cloud.gov.]({{< relref "overview/overview/what-is-cloudgov.md" >}})
 
 ### Compliance
 
-cloud.gov was designed with **FISMA compliance** in mind. cloud.gov is currently designated as FedRAMP Ready, and the **FedRAMP Moderate** JAB P-ATO assessment process is underway.  The vast majority of FISMA Moderate controls are managed for you.
+cloud.gov was designed with **FISMA compliance** in mind. cloud.gov has a FedRAMP Joint Authorization Board (JAB) Provisional Authority to Operate (P-ATO) at the Moderate impact level.  The vast majority of Low and Moderate controls are managed for you.
 
 ### Free sandbox accounts
 

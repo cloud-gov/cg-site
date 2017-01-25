@@ -1,12 +1,13 @@
 ---
 menu:
   overview:
-    parent: security
+    parent: technology
 title: FISMA-High PaaS alternatives
 weight: 30
 aliases:
   - /docs/intro/security/fisma-high-applications
   - /intro/security/fisma-high-applications
+  - /overview/security/fisma-high-applications/
 ---
 
 ## Is cloud.gov appropriate?
