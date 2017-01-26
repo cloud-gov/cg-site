@@ -46,7 +46,7 @@ The IC notifies and coordinates with the following people as well:
 * Cloud Operations
 * GSA Information Security, including ISSO
 * Designated FedRAMP personnel (when applicable)
-* cloud.gov users ([through StatusPage]({{< relref "making-announcements.md" >}}) (when applicable)
+* cloud.gov users ([through StatusPage]({{< relref "making-announcements.md" >}}), when applicable)
 
 The IC keeps a log of the situation in a GSA Google Drive document; if this is also a security incident, the IC also follows the [security incident communications process]({{< relref "security-ir.md#initiate" >}}) (which includes updating a GitHub issue, updating the 18F #incident-response channel, and sending sitreps by email to GSA Information Security). The IC should delegate assistant ICs for aspects of the situation as necessary.
 
