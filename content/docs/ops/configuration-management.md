@@ -34,7 +34,7 @@ Security tests need to be executed in the staging environment where changes are 
 1. A pull request (PR) is created that addresses the change and references the created issue.
     If there is a staging environment available for a given repository, the PR should be
     created against the `staging` branch. Otherwise, the PR should be created against the `master` branch on the canonical repository.
-1. If the repository contains 18F-developed code, the PR must have an automated Code Climate check, which must pass before the PR can be merged.
+1. If the repository contains 18F-developed code, the PR must have an automated [Code Climate](https://codeclimate.com) check, which must pass before the PR can be merged.
 1. The PR is reviewed by someone other than the committer. Pairing via screen-sharing
 is encouraged and qualifies as a review. Review should include architectural design, DRY principles, security and code quality.
 1. The reviewer merges the PR.
