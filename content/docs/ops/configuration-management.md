@@ -56,7 +56,7 @@ If possible, Configuration Management tools need to be set up to always roll bac
 
 <!-- As long as these GitHub guidelines comply with the FedRAMP-required policies above and our 18F GitHub requirements, we can adjust them at will, according to our team preferences. -->
 
-As part of 18F, we follow [the 18F requirements for using GitHub](https://handbook.18f.gov/github/). These are our team practices within those requirements.
+As cloud.gov is part of 18F, we follow [the 18F requirements for using GitHub](https://handbook.18f.gov/github/). These are our team practices within those requirements.
 
 ### Forking vs. branching
 
