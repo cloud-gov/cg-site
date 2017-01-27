@@ -9,7 +9,7 @@ aliases:
   - /intro/security/auditing-contributing-security
 ---
 
-cloud.gov is an open source project based on [Cloud Foundry](https://www.cloudfoundry.org/) with additional components built by our team and other community members. We welcome you to audit our security or contribute to it — or to make any other kind of contribution, from documentation to design.
+cloud.gov is part of 18F, which has an [open source policy](https://18f.gsa.gov/open-source-policy/) that guides our work: we use and develop open source software, and we encourage you to reuse and adapt our work. cloud.gov is an open source project based on [Cloud Foundry](https://www.cloudfoundry.org/) with additional components built by our team and other community members. We welcome you to audit our security or contribute to it — or to make any other kind of contribution, from documentation to design.
 
 If you're interested in contributing to cloud.gov but not sure where to start, or if you have questions about contributing, feel free to join the [18F DevOps or open source chat channels](https://chat.18f.gov/) and explain your question. You can also open an issue with your question in a relevant repository.
 
