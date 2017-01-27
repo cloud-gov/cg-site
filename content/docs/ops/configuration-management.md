@@ -43,7 +43,7 @@ is encouraged and qualifies as a review. Review should include assessment of arc
     - Any and all automated tests are run.
     - If all tests pass, changes can be promoted for deployment to production in the pipeline.
 
-1. The CI/CD tool uses GitHub repositories and S3 stored sensitive content as the canonical source of truth for what the platform should look like, and it will reset the state of all systems to match in the case of any manual changes.
+1. The CI/CD tool uses GitHub repositories and S3-stored sensitive content as the canonical source of truth for what the platform should look like. If there are manual changes, it will reset the state of all systems to match.
 
 ![Pipeline Example](/img/pipeline-example.png)
 
