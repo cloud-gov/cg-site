@@ -2,35 +2,33 @@
 menu:
   docs:
     parent: getting-started
-title: Setup
+title: Set up cloud.gov and log in
 weight: -50
 ---
 
-You can work with cloud.gov in two ways: the command line (CLI) with full features, and the web user interface (dashboard) with quick access to common tasks.
-
-You need [an account]({{< relref "accounts.md" >}}) before you can get started with this.
+You need [an account]({{< relref "accounts.md" >}}) before you can get started with this. Then you can log into cloud.gov in two ways: the command line (CLI) with full features, and the web user interface (dashboard) with quick access to common tasks.
 
 ## Set up the command line
 
 1. [Install the Cloud Foundry CLI](https://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html). (cloud.gov is based on Cloud Foundry.)
-1. Confirm the installation by running
+1. Confirm the installation by running `cf -v` -- this should return a version number.
 
-    ```bash
-    cf -v
-    ```
-    
-    This should return a version number.
-
-1. Log in with a command as explained below:
+1. Log in with a command as explained below. Select the East/West or GovCloud instructions based on where your applications are located. If you're not sure which environment to select, ask a teammate or [ask support]({{< relref "docs/help.md" >}}).
 
 {{% eastwest %}}
-**If you log in using your agency's account system:** run `cf login -a api.cloud.gov --sso` -- then follow the link to get your one-time authentication code and enter it to log in.
+**If you're at GSA or EPA and you log in with your agency account:** 
+
+Run `cf login -a api.cloud.gov --sso`
+
+Then follow the link to get your one-time authentication code and enter it.
     
 **If you log in with a cloud.gov account that has its own password** (including `ORGNAME_deployer` accounts): run `cf login -a api.cloud.gov`
 {{% /eastwest %}}
 
 {{% govcloud %}}
-**All accounts:** run `cf login -a api.fr.cloud.gov --sso` -- then follow the link to get your one-time authentication code and enter it to log in.
+Run `cf login -a api.fr.cloud.gov --sso` 
+
+Then follow the link to get your one-time authentication code and enter it.
 {{% /govcloud %}}
 
 
@@ -44,6 +42,8 @@ Visit your dashboard! It's probably a little empty since you probably haven't de
 
 {{% govcloud %}}
 [`https://dashboard.fr.cloud.gov/`](https://dashboard.fr.cloud.gov/)
+
+Tip: the `fr` in this URL indicates the GovCloud environment.
 {{% /govcloud %}}
 
 ## Play around in your "sandbox"
