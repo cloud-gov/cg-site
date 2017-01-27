@@ -69,8 +69,7 @@ that paired collaboration on a single branch avoids certain types of friction:
 - Having to add new users to forked repositories as collaborators in order to
   have people directly contribute on short-lived forked branches
 
-When contributing directly on a branch, we're able to modify work in progress
-(WIP) commits and encourage collaboration across the Cloud Operations team.
+When contributing directly on a branch, we're able to modify work-in-progress (WIP) pull requests and encourage collaboration across the Cloud Operations team.
 
 ### Squashing commits
 
