@@ -21,8 +21,8 @@ To announce maintenance on the status page:
   * Indicate whether you expect any disruption in service as a result.
   * Direct users to support channels if they have questions or are worried about the timing of the maintenance.
   * Use an appropriate time window.
-      * Pay attention to the timezone, which is specified in Eastern Time!
-      * Be sure to leave a little more time than you expect will be needed. Better to be done earlier than announced than run later than expected!
+      * Pay attention to the timezone, which is specified in Eastern Time.
+      * Be sure to leave a little more time than you expect will be needed. Better to be done earlier than announced than run later than expected.
   * If disruption *is* expected, *check the box that says "Automatically remind subscribers"* so they are proactively warned in advance of the window.
 1. Extend the window if you're not done in time. End it early if you're done sooner than announced.
 
