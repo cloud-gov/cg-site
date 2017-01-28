@@ -7,7 +7,7 @@ title: Configuration management
 
 <!-- This page is important for FedRAMP compliance. See the CM family of controls, including CM-9. Code Climate is part of SA-11 (1), SI-3, and RA-5. -->
 
-This document describes how the 18F cloud.gov team approaches configuration management of the core platform.
+This document describes how the cloud.gov team approaches configuration management of the core platform.
 
 ## What goes into configuration management?
 In short, everything needed to run and operate the platform that is not a _secret_. (See [Secret Key Management]({{< relref "docs/ops/secrets.md" >}}) for that.)
@@ -56,7 +56,7 @@ If possible, Configuration Management tools need to be set up to always roll bac
 
 <!-- As long as these GitHub guidelines comply with the FedRAMP-required policies above and our 18F GitHub requirements, we can adjust them at will, according to our team preferences. -->
 
-Because cloud.gov is part of 18F, we follow [the 18F requirements for using GitHub](https://handbook.18f.gov/github/). These are our team practices within those requirements.
+Because cloud.gov is built and maintained by 18F, we follow [the 18F requirements for using GitHub](https://handbook.18f.gov/github/). These are our team practices within those requirements.
 
 ### Forking vs. branching
 
