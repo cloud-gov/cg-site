@@ -5,7 +5,7 @@ menu:
 title: Logs
 ---
 
-For logs to be captured by Cloud Foundry, your application should be writing them to `STDOUT`/`STDERR`, rather than a log file – see the framework-specific guidance in the menu.
+For logs to be captured by cloud.gov, your application should be writing them to `STDOUT`/`STDERR`, rather than a log file – see the framework-specific guidance in the menu.
 
 ## Current logs
 
@@ -62,6 +62,10 @@ We have also provided several dashboards that present different visualizations o
 ![Select dashboards](/img/select-dashboard-450.png)
 
 These visualizations are provided via Kibana; you may want to [find out more about it](https://www.elastic.co/guide/en/kibana/current/index.html).
+
+## How to automatically copy your logs elsewhere
+
+If you want to also set up your own storage for your application logs, you can set up [a "log drain" service](https://docs.cloudfoundry.org/devguide/services/log-management.html) that sends the logs to S3 or your preferred location.
 
 ## Troubleshooting logs
 
