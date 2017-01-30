@@ -26,6 +26,9 @@ Then follow the link to get your one-time authentication code and enter it.
 {{% /eastwest %}}
 
 {{% govcloud %}}
+
+**For all accounts in the GovCloud environment:**
+
 Run `cf login -a api.fr.cloud.gov --sso` 
 
 Then follow the link to get your one-time authentication code and enter it.
