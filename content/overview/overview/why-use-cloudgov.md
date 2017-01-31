@@ -19,7 +19,7 @@ cloud.gov is built on the open source [Cloud Foundry project](http://www.cloudfo
 
 cloud.gov enforces an immutable infrastructure. Instead of logging into a live system to make a change, we deploy an entirely new system with security updates applied. That ensures any foothold which might have been exploited by hackers gets wiped away at the same time. The same is true for applications deployed on cloud.gov. When vulnerabilities in a software stack are identified, we can re-deploy applications that use it on a clean and updated baseline. This happens independently of the application team’s availability, as often as needed, and without downtime.
 
-## 2. Conformity with federal rules
+## 2. Compliance with federal requirements
 
 cloud.gov has a [Provisional Authority to Operate (P-ATO) at the Moderate impact level from the FedRAMP Joint Authorization Board (JAB)]({{< relref "overview/security/fedramp-tracker.md" >}}). When you deploy a system on cloud.gov, you can [leverage this P-ATO](https://www.fedramp.gov/resources/faqs/how-does-an-agency-leverage-a-fedramp-authorization/) as part of your agency ATO.
 

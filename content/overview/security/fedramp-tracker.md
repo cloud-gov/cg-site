@@ -13,8 +13,25 @@ aliases:
 
 cloud.gov has a [Provisional Authority to Operate (P-ATO) at the Moderate impact level from the FedRAMP Joint Authorization Board (JAB)](https://marketplace.fedramp.gov/#/product/18f-cloudgov).
 
-Any federal agency can [leverage the cloud.gov P-ATO](https://www.fedramp.gov/resources/faqs/how-does-an-agency-leverage-a-fedramp-authorization/) as part of the ATO for an agency system. If you're interested in this, you can request the cloud.gov P-ATO documentation package using the [FedRAMP Package Access Request Form](https://www.fedramp.gov/files/2015/03/FedRAMP-Package-Request-Form_V4_06192014.pdf).
+## How this helps your team
 
-The majority of federal systems are at the [Low and Moderate impact levels](http://csrc.nist.gov/publications/fips/fips199/FIPS-PUB-199-final.pdf#page=6); [cloud.gov can't yet host High impact systems](/overview/security/fisma-high-applications/).
+This P-ATO represents a comprehensive security and compliance assessment that enables federal agencies interested in cloud.gov to start using it with significantly reduced effort.
+
+Historically each agency would have to conduct their own in-depth assessment of cloud.gov’s security and compliance before allowing their teams to use it, which would be important but labor-intensive and redundant work.
+
+[FedRAMP (Federal Risk and Authorization Management Program)](https://www.fedramp.gov/) solves that problem. It coordinates a [Joint Authorization Board (JAB)](https://www.gsa.gov/portal/content/134223) made up of the three Chief Information Officers of DoD, DHS, and GSA. These CIOs and their teams assessed cloud.gov using rigorous standards for security and compliance, and because cloud.gov met the requirements, they endorsed this P-ATO. This means other agencies don't have to repeat their in-depth assessment.
+
+## How you can use this
+
+Any federal agency can [use the cloud.gov P-ATO](https://www.fedramp.gov/resources/faqs/how-does-an-agency-leverage-a-fedramp-authorization/) as part of the ATO for an agency system built on cloud.gov, which substantially reduces the effort it takes to give that system an ATO. If you're interested in this, request the cloud.gov P-ATO documentation package using the [FedRAMP Package Access Request Form](https://www.fedramp.gov/files/2015/03/FedRAMP-Package-Request-Form_V4_06192014.pdf).
+
+The majority of federal systems are at the [Low and Moderate impact levels](http://csrc.nist.gov/publications/fips/fips199/FIPS-PUB-199-final.pdf#page=6), which can be hosted on cloud.gov. [cloud.gov can't yet host High impact systems.](/overview/security/fisma-high-applications/)
+
+FedRAMP requires cloud.gov to maintain continuous monitoring and undergo annual re-assessment to retain the P-ATO, instead of being a one-time review, which gives your agency ongoing assurance of cloud.gov compliance.
+
+## Sharing our work for reuse
 
 We plan to publish much of the documentation from our P-ATO package, as part of our open source system documentation, after we process it and add context for public release.
+
+As a government team with a mission to support agency efforts to improve the way they manage information technology, we want our compliance documentation to be available as a model that helps additional Platform as a Service providers (including commercial providers) write the documentation they need to achieve FedRAMP JAB P-ATO as well.
+

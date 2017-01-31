@@ -20,6 +20,6 @@ cloud.gov services are sold through 18F, a federal digital consultancy housed wi
 
 ## Vendor and contractor teams
 
-cloud.gov is also a building block for vendors and contractors that supply services to federal agencies. If you're part of a vendor or contractor, you can submit proposals to agencies for services to be built on top of cloud.gov.
+cloud.gov can be a building block for vendors and contractors that supply services to federal agencies. If you're part of a vendor or contractor, you can submit proposals to agencies for services to be built on top of cloud.gov.
 
-If you’re part of a vendor or contractor interested in using cloud.gov, ask your agency partners to evaluate this option.
+If you’re part of a vendor or contractor that already works with government agencies and you're interested in using cloud.gov, ask your agency partners to evaluate this option.
