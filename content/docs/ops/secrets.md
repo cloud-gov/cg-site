@@ -48,6 +48,11 @@ Once the key is uploaded to AWS, the [cf-secrets.yml](https://github.com/18F/cg-
 
 Substitute `cf.yml` in the following steps for the relevant file.
 
+
+#### UAA credentials
+
+All UAA clients and users and associated credentials should be created via the Cloud Foundry secrets or the [service account]({{< relref "docs/services/cloud-gov-service-account.md" >}}) or [identity provider]({{< relref "docs/services/cloud-gov-identity-provider.md" >}}) services. UAA accounts should not be created manually; we reserve the right to drop permissions for or deprovision hand-propped accounts.
+
 ##### View secrets
 
 1. Clone the [cg-pipeline-tasks](https://github.com/18F/cg-pipeline-tasks) repository.

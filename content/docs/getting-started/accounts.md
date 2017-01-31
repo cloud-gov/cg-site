@@ -17,24 +17,21 @@ weight: -100
 
 ### Agency single-sign-on accounts
 
-If you have a GSA, EPA, or FDIC email address, you'll sign into cloud.gov using your agency credentials. When you log in using the web UI (dashboard), click the button labeled with your agency name.
-
-Follow [these instructions to log in on the command line (CLI) and web UI (dashboard)]({{< relref "setup.md" >}}).
+If you have a GSA, EPA, or FDIC email address, you'll sign into cloud.gov using your agency credentials. Follow [these instructions to log in on the command line (CLI) and web UI (dashboard)]({{< relref "setup.md" >}}).
 
 ### cloud.gov accounts
 
 If you were invited with an email address that isn't part of an agency with single-sign-on authentication to cloud.gov, you have a cloud.gov account.
 
 {{% govcloud %}}
-Your cloud.gov account requires multi-factor authentication. To log into the system, you need two "factors" -- something you know (your password) and something you have on your person (your smartphone).
 
 Follow [these instructions to log in on the command line (CLI) and web UI (dashboard)]({{< relref "setup.md" >}}). When you log in to cloud.gov via a web browser, select the `cloud.gov` provider as shown here:
 
 ![cloud.gov provider button on login page highlighted in blue](/img/cloud-gov-idp-button-cropped.png "cloud.gov provider button to login page is highlighted in blue")
 
-##### Managing MFA / TOTP with authentication applications
+Your cloud.gov account requires multi-factor authentication. To log into the system, you need two "factors" -- something you know (your password) and something you have on your person (your smartphone).
 
-In order to perform multi-factor authentication with the `cloud.gov` provider, you need an authentication application that generates time-based one-time passwords. We recommend [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) or [Authy](https://www.authy.com/app/mobile). Download the app on your mobile device. When you log into cloud.gov for the first time, follow the instructions to store the `cloud.gov` key in your application.
+In order to perform multi-factor authentication, you need an authentication application that generates time-based one-time passcodes. We recommend [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) or [Authy](https://www.authy.com/app/mobile). Download the app on your mobile device. When you log into cloud.gov for the first time, follow the instructions to store the `cloud.gov` key in your application.
 {{% /govcloud %}}
 
 {{% eastwest %}}
