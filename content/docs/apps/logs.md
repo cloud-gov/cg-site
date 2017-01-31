@@ -21,8 +21,6 @@ Used alone, `cf logs` will tail the combined stream of logs from each Cloud Foun
 cf logs APPNAME --recent
 ```
 
-For other helpful cf CLI troubleshooting commands, including `cf events APP-NAME`, see [this Cloud Foundry list](https://docs.cloudfoundry.org/devguide/deploy-apps/troubleshoot-app-health.html#cf-commands).
-
 ### Example log
 
   	2015-03-16T17:37:47.82-0400 [DEA/1]      OUT Starting app instance (index 0) with guid GUID
@@ -34,6 +32,8 @@ For other helpful cf CLI troubleshooting commands, including `cf events APP-NAME
 
 * [Information about the log format](https://docs.cloudfoundry.org/devguide/deploy-apps/streaming-logs.html)
 * [Viewing your application's logs](https://docs.cloudfoundry.org/devguide/deploy-apps/streaming-logs.html#view)
+
+For other helpful cf CLI troubleshooting commands, including `cf events APP-NAME`, see [this Cloud Foundry list](https://docs.cloudfoundry.org/devguide/deploy-apps/troubleshoot-app-health.html#cf-commands).
 
 ## Historic logs
 
@@ -53,19 +53,19 @@ After logging in, you'll see the App Overview dashboard.
 
 ![App Overview dashboard](/img/app-overview-450.png)
 
-If you would like to change the time period of data that you are viewing, or to turn on auto-refresh, click on the time period you are currently viewing in the top right menu. The default time period is "Last 15 minutes".
+To change the time period of data that you are viewing, or to turn on auto-refresh, click on the time period in the top right menu. The default time period is "Last 15 minutes".
 
 ![Time period selection](/img/time-period-450.png)
 
-We have also provided several dashboards that present different visualizations of your log data. You can select these by clicking on the 'Load Saved Dashboard' icon near the search bar.
+You can also view several dashboards that present different visualizations of your log data. You can select these by clicking the "Load Saved Dashboard" icon near the search bar.
 
 ![Select dashboards](/img/select-dashboard-450.png)
 
-These visualizations are provided via Kibana; you may want to [find out more about it](https://www.elastic.co/guide/en/kibana/current/index.html).
+These visualizations are provided via Kibana, which has a [user guide](https://www.elastic.co/guide/en/kibana/current/index.html) that explains more about how to use it and customize your views.
 
 ## How to automatically copy your logs elsewhere
 
-If you want to also set up your own storage for your application logs, you can set up [a "log drain" service](https://docs.cloudfoundry.org/devguide/services/log-management.html) that sends the logs to S3 or your preferred location.
+If you want to set up your own storage for your application logs, you can set up [a "log drain" service](https://docs.cloudfoundry.org/devguide/services/log-management.html) that sends the logs to S3 or your preferred location.
 
 ## Troubleshooting logs
 
@@ -74,5 +74,5 @@ Not seeing the logs you expect? Here are a few questions to ask yourself to help
 Logs front end (logs.cloud.gov and logs.fr.cloud.gov):
 
 1. Are you viewing the right logs front end for the environment that your apps are in (GovCloud or East/West)?
-1. Check the time period in the upper right corner, since the default is "Last 15 minutes" -- you may need to expand that time period to hours or days.
+1. Check the time period in the upper right corner, since the default is "Last 15 minutes". You may need to expand that time period to hours or days.
 1. Check [cloud.gov status](https://cloudgov.statuspage.io/) to see if the the logs front end is under scheduled maintenance.
