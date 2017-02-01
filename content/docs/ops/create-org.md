@@ -17,11 +17,10 @@ Non-sandbox organizations need to be created by hand. To do so:
 1. After requesting an org, a cloud.gov Business Unit person must verify the org request and check that all the necessary info is there. They automatically receive a notification (it goes to Zendesk), but if they haven't responded yet and you need a response soon, ask in #cloud-gov-business for a cloud.gov Business Unit person to take a look. They will verify the info and assign the Zendesk ticket to a person who can run the command (this may be you if you have permission).
 1. Run the [`cf-create-org`](https://github.com/18F/cg-scripts/blob/master/cf-create-org.sh) script. You will need the following information, some of which is in the [form output](https://docs.google.com/spreadsheets/d/1Bdzl9n2E1MXWV4elXvZ-nYuZmmEj4PEU-u5aZlNGZF4/edit#gid=131031416) (consult the script itself for how to pass in the arguments):
    * **Agency**: the requesting agency, column B of the form output.
-   * **Note**: currently provided by first-tier support.
-   * **Memory**: 4G by default; this should be set to a reasonable initial cap for the systems expected to live in that quota so that clients aren't shocked at their first bill. They can ask for increases as needed.
+   * **Memory**: use the amount from column H of the form output.
    * **System name**: the agency's system, column C of the form output.
-   * **Unique business ID**: the organization and agency should allow you to find the business ID in column H of [this document](https://docs.google.com/spreadsheets/d/1v4QfXGaJVy9-CZ0n6cFLHGGs_5TL1l8uCh6ZyNYjMDk/edit#gid=0), or consult first-tier support
-NOTE: We don't yet have a standard convention for what to put in the note field.
+   * **Unique business ID**: agreement name, column F of form output.
+
 1. [Make the primary (technical) point of contact an `OrgManager`.]({{< relref "docs/apps/managing-teammates.md#give-roles-to-a-teammate" >}})
     * They can grant themselves and others additional access using those same instructions.
 1. Notify the `OrgManager` that the organization is created. Here's a template:
