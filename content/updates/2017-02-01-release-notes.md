@@ -8,7 +8,7 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
 
 ### Added
 - cloud.gov account holders in the GovCloud environment get automated notifications of expiring passwords, starting ten days before expiration.
-- The dashboard provides a “start” button for stopped apps (on the app page).
+- The dashboard provides a start button for stopped apps (on the app page).
 
 ### Changed
 - The dashboard homepage shows a more detailed summary of all your orgs, spaces, and apps.
