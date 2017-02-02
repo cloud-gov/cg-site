@@ -8,7 +8,7 @@ cloud.gov allows your development team to focus on your applications. As a Platf
 
 cloud.gov is developed **by a government team, for government work**. 18F, housed within the U.S. General Services Administration’s Technology Transformation Service, develops and operates cloud.gov.
 
-cloud.gov's mission is to support agency efforts to improve the way they manage information technology. This includes growing more comfortable and familiar with cloud technology, which enables deeper partnerships with both industry cloud providers as well as vendors and contractors that prefer to build using cloud platforms.
+cloud.gov’s mission is to support agency efforts to improve the way they manage information technology. This includes growing more comfortable and familiar with cloud technology, which enables deeper partnerships with both industry cloud providers as well as vendors and contractors that prefer to build using cloud platforms.
 
 [Learn more about cloud.gov.]({{< relref "overview/overview/what-is-cloudgov.md" >}})
 
