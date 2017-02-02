@@ -17,9 +17,11 @@ cloud.gov fees are broken into three components:
 
 Find out [more about this pricing model]({{< relref "overview/pricing/pricing-model.md" >}}) and [how we define these terms]({{< relref "overview/terminology/pricing-terminology.md" >}}).
 
+Agencies pay through [an Interagency Agreement (IAA) with 18F]({{< relref "overview/overview/how-to-purchase.md" >}}).
+
 ## Access package
 
-Packages are selected based on the kinds of applications to be hosted. [Find more about what's included in all access packages.]({{< relref "overview/pricing/whats-included.md" >}})
+You select a package based on the kinds of applications to be hosted. [Find out more about what's included in all access packages.]({{< relref "overview/pricing/whats-included.md" >}})
 
 | Package | What's included? | Base annual fee\* | Application resource usage | Managed services available |
 | --- | --- | --- | --- | --- |
@@ -31,7 +33,7 @@ Packages are selected based on the kinds of applications to be hosted. [Find mor
 
 \*Access agreements are severable, and the access package fees are invoiced monthly.
 
-\*\*We aren't yet charging for paid services. See the [managed services](#managed-services) section for details.
+\*\*We aren't yet charging for paid services. See [managed services](#managed-services) for details.
 
 ## Resource usage quota
 
@@ -48,11 +50,11 @@ We require your resource usage quota to **be set in advance**. This helps you co
 
 ## Managed services
 
-[Managed services]({{< relref "docs/apps/managed-services.md" >}}) are those which cloud.gov will spin up quickly and run on your behalf (databases, storage, caching, etc.). You can see the services and plans offered for each by [running `cf marketplace`]({{< relref "docs/apps/managed-services.md" >}}).
+[Managed services]({{< relref "docs/apps/managed-services.md" >}}) are services which cloud.gov can spin up quickly and run on your behalf (databases, storage, caching, etc.). You can see the services and plans offered for each by [running `cf marketplace`]({{< relref "docs/apps/managed-services.md" >}}).
 
-While we aren't currently charging for these, we plan to charge for them in the future, to account for the resources they consume and our efforts to provide them as a service. The pricing for each service will be different. 18F-provided services will be billed by the service instance, invoiced per month, and will be severable. We will ensure users of those services are aware of the rates when they are set, and they will not be charged before then.
+While we aren't currently charging for these, we plan to charge for them in the future, to account for the resources they consume and our efforts to provide them as a service. The pricing for each service will be different. Managed services will be billed by the service instance, invoiced per month, and will be severable. We will ensure users of those services are aware of the rates when they are set, and they will not be charged before then.
 
-This pricing will _only_ be for services created through cloud.gov. If you are using additional public or private services offered by 18F Infrastructure, they are priced and billed separately - speak with your 18F Finance point of contact for more information. You can also use external databases, SMTP servers, etc. that are _not_ managed by 18F or cloud.gov with no additional fee.
+This pricing will _only_ be for services created through cloud.gov. If you are using additional public or private services offered by TTS Infrastructure, they are priced and billed separately - speak with your 18F Finance point of contact for more information. You can also use external databases, SMTP servers, etc. that are _not_ managed by 18F or cloud.gov with no additional fee.
 
 <!--
 TODO

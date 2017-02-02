@@ -7,15 +7,20 @@ weight: 20
 aliases:
   - /docs/intro/overview/who-can-use-cloudgov
   - /intro/overview/who-can-use-cloudgov
+  - /docs/intro/technology/appropriate-deployments
+  - /intro/technology/appropriate-deployments
+  - /overview/overview/who-can-use-cloudgov/
 ---
+
+cloud.gov is suitable for a wide range of applications, including websites and non-website applications for internal and public uses.
 
 ## Good fit for cloud.gov
 
-- You have a technical team (internal or contracted) that can push applications to cloud.gov. (See technical requirements below.)
-- You work for a United States federal government organization.
+- You have a technical team (employees and/or contractors) that can push applications to cloud.gov. (See technical requirements below.)
+- Your application is for a United States federal government organization.
 - You understand that cloud.gov is a product under active development and will see changes in the future.
 - Your application is FISMA Moderate or lower.
-- You have to be able to pay for cloud.gov through the IAA/MOU process (see [pricing]({{< relref "overview/pricing/rates.md" >}})).
+- You can pay for cloud.gov through the IAA/MOU process (see [how to purchase]({{< relref "overview/overview/how-to-purchase.md" >}})).
 
 ### Technical requirements
 

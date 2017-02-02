@@ -11,7 +11,7 @@ aliases:
 
 ## Open source
 
-cloud.gov is not built from scratch; the hard work was done in the [open source Cloud Foundry project](https://github.com/cloudfoundry), which is open to anyone, including vendors in the PaaS space.
+cloud.gov is not built from scratch; the bulk of the work is done in the [open source Cloud Foundry project](https://www.cloudfoundry.org/), which is open to anyone, including vendors in the PaaS space.
 
 Using Cloud Foundry and making cloud.gov available as open source raises the “lowest common denominator” capabilities that agencies should expect from any PaaS vendor, while enabling greater competition.
 
@@ -25,6 +25,6 @@ Cloud Foundry maintains a [list of certified commercial vendors](https://www.clo
 
 ### Non-Cloud Foundry vendors
 
-Our service will increase the migration of government applications to a [12-factor architecture](http://12factor.net/), making PaaS and similar products more usable for government digital products. 12-factor applications have very little dependency on the exact platform that is supporting them, so they can be ported from cloud.gov to non-Cloud Foundry solutions more easily than applications designed for a straight IaaS model.
+cloud.gov increases the migration of government applications to a [12-factor architecture](http://12factor.net/), making PaaS and similar products more usable for government digital products. 12-factor applications have very little dependency on the exact platform that is supporting them, so they can be ported from cloud.gov to non-Cloud Foundry solutions more easily than applications designed for a straight IaaS model.
 
 Because cloud.gov is open source, vendors of non-Cloud Foundry systems have open access to how it works. They can provide easy on-ramp solutions to migrate government applications to their platform, or innovate on top of what cloud.gov is doing.

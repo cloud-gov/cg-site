@@ -29,11 +29,7 @@ publishdir = "public"
     identifier = "pricing"
     weight = -115
 [[menu.overview]]
-    name = "Security"
-    identifier = "security"
-    weight = -110
-[[menu.overview]]
-    name = "Technology"
+    name = "Technology and security"
     identifier = "technology"
     weight = -105
 
