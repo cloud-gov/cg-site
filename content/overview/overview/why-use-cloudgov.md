@@ -7,21 +7,23 @@ weight: 31
 aliases:
   - /docs/intro/overview/why-use-cloudgov
   - /intro/overview/why-use-cloudgov
+  - /overview/security/improving-application-security/
+  - /docs/intro/security/improving-application-security
+  - /intro/security/improving-application-security
+  - /overview/security/improving-application-security/
 ---
 
 ## 1. Security
 
-cloud.gov is built on the public [Cloud Foundry project](http://www.cloudfoundry.org/). Cloud Foundry’s “stemcell” capability allows cloud.gov to deploy all apps on a [hardened](https://github.com/18F/cg-harden-boshrelease) operating system image that is tightly audited for compliance with federal standards. We are continually improving the security of the platform, which in turn centrally improves the security of your products that are running on the platform.
+cloud.gov is built on the open source [Cloud Foundry project](http://www.cloudfoundry.org/), which is run by a non-profit foundation with many commercial members and an active community of contributors. Cloud Foundry’s “stemcell” capability allows cloud.gov to deploy all apps on a hardened operating system image that is tightly audited for compliance with federal standards. We are continually improving the security of the platform, which in turn centrally improves the security of your products that are running on the platform.
 
-## 2. Conformity with federal rules
+cloud.gov enforces an immutable infrastructure. Instead of logging into a live system to make a change, we deploy an entirely new system with security updates applied. That ensures any foothold which might have been exploited by hackers gets wiped away at the same time. The same is true for applications deployed on cloud.gov. When vulnerabilities in a software stack are identified, we can re-deploy applications that use it on a clean and updated baseline. This happens independently of the application team’s availability, as often as needed, and without downtime.
 
-We are documenting all NIST controls that exist in the PaaS, infrastructure, and human layers that implement cloud.gov. And we are doing this in a software-friendly way that lets us “render” out different documents for different contexts: human-readable, gap analysis, spreadsheet matrix, web page visualization, etc.
+## 2. Compliance with federal requirements
 
-Typically, agencies show compliance with FISMA and gain Authority to Operate (ATO) by creating a lengthy, largely copy-pasted document enumerating the full design of the system. When you deploy an app on cloud.gov, you can use our “parts-included” descriptions in building your own documentation. You need to supply only the information about what your product adds on top of the PaaS. See our video, [“Handling FISMA Faster and Better”](https://www.youtube.com/watch?v=T1S52B1-NT4), for an overview.
+cloud.gov has a [Provisional Authority to Operate (P-ATO) at the Moderate impact level from the FedRAMP Joint Authorization Board (JAB)]({{< relref "overview/security/fedramp-tracker.md" >}}). When you deploy a system on cloud.gov, you can [leverage this P-ATO](https://www.fedramp.gov/resources/faqs/how-does-an-agency-leverage-a-fedramp-authorization/) as part of your agency ATO.
 
-The tools and formats we are developing to enable this are applicable outside the cloud.gov context. We have seen other agencies interested in contributing, even when they are not interested in cloud.gov. For more information, please see the [Compliance Masonry repository](https://github.com/opencontrol/compliance-masonry).
-
-Our goal for the future is to generate monitoring dashboards and continuous audits based on the supplied information. This will dramatically reduce the costs of auditing a site and ensuring it remains in compliance, while improving security across the board.
+Out of the 320 security controls required for Moderate-impact systems, cloud.gov handles 269 controls, and 41 controls are a shared responsibility (where cloud.gov provides part of the requirement, and your applications provide the rest). You only need to provide full implementations for the remaining 15 controls, such as ensuring you make data backups and using reliable DNS (Domain Name System) name servers for your websites.
 
 ## 3. Usability
 
@@ -29,4 +31,4 @@ A PaaS can save you the resources of managing your own cloud deployments, but it
 
 The cloud.gov UI delivers the main concepts of the Cloud Foundry project in a straightforward form. Cloud Foundry provides a good API and tools for teams to manage all the environments, services, and applications necessary to deliver an app to production with minimal hassle. Cloud Foundry also provides well-designed tenancy controls. They make it easy to manage both who can access what, and how usage will be billed back to specific projects or agencies.
 
-The cloud.gov deployment is [publicly documented in GitHub]({{< relref "docs/ops/repos.md" >}}). We encourage other agencies and the general public to contribute. Anyone is also free to take our work to deploy their own platform-as-a-service, though we think working together on a single PaaS deployment will produce the greatest economy of scale in operations and security.
+The cloud.gov deployment is [publicly documented in GitHub]({{< relref "docs/ops/repos.md" >}}). We encourage other agencies and the general public to contribute. Anyone is also free to take our work to deploy their own Platform as a Service.
