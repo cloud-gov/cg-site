@@ -24,12 +24,12 @@ All cloud.gov access packages include the following:
 - Regular scanning for infrastructure-level vulnerabilities/misconfiguration
 - Support for [these technologies](http://docs.cloudfoundry.org/buildpacks/#system-buildpacks), through system buildpacks (which we also call standard buildpacks).
     - All system buildpacks receive regular security updates.
-    - [Custom buildpacks]({{< relref "docs/apps/experimental/custom-buildpacks.md" >}}) can also be used for other languages/frameworks, but the cloud.gov will have limited ability to troubleshoot, and there may be compliance implications.
+    - Note that [custom buildpacks]({{< relref "docs/apps/experimental/custom-buildpacks.md" >}}) can also be used for other languages/frameworks, but the cloud.gov will have limited ability to troubleshoot, and there may be compliance implications.
 - Self-service management of spaces and users within an organization
 - Platform maintenance and managed service expansion overhead
 - Support for customer-provided DNS for applications (including support for IPv6)
 
-Each [access package]({{< relref "overview/pricing/rates.md#access-package" >}}) covers access to both [the East/West and GovCloud environments]({{< relref "docs/apps/govcloud.md" >}}) while we complete migration of existing customers from the legacy East/West environment to the main GovCloud environment.
+Note that the access package covers [both the AWS East/West and GovCloud environments]({{< relref "overview/pricing/rates.md#access-package" >}}), while that migration is in progress.
 
 <!--
 TODO
