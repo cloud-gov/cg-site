@@ -5,7 +5,7 @@ title = "East/West Sandbox Deprecation Notice"
 
 The original cloud.gov environment in AWS East/West is now officially deprecated and will be retired. We will be in touch to assist with migration of Prototyping, FISMA Moderate, and FISMA Low organizations to the new environment shortly.
 
-Sandbox organizations in AWS East/West will be retired as of January 15. We will be deleting these sandbox organizations after this date. If you have hosted anything in a sandbox space that you would like to preserve, you must back it up or [migrate it to the new environment]({{< relref "docs/apps/govcloud.md" >}}) yourself.
+Sandbox organizations in AWS East/West will be retired soon. We will establish and share a cutoff date and delete these sandbox organizations after this date. If you have hosted anything in a sandbox space that you would like to preserve, you must back it up or [migrate it to the new environment]({{< relref "docs/apps/govcloud.md" >}}) yourself.
 <!--more-->
 ### Required steps
 
