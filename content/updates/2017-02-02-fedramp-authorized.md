@@ -4,7 +4,7 @@ title = "cloud.gov is now FedRAMP Authorized."
 +++
 
 ## Now it’s easier than ever to get started with cloud.gov.
-We’re delighted to announce that cloud.gov has received a FedRAMP Joint Authorization Board (JAB) Provisional Authority to Operate (P-ATO) at the Moderate impact level. This means means that cloud.gov successfully completed a comprehensive security and compliance assessment performed by a board of the CIOs and their teams from the General Services Administration, the Department of Defense, and the Department of Homeland Security. cloud.gov is the [first completely open source service to receive FedRAMP authorization](https://gsablogs.gsa.gov/gsablog/2017/02/02/cloud-gov-becomes-first-fully-open-source-fedramp-solution/). Teams can now use cloud.gov with less upfront work, so they can use cloud.gov to deliver services even faster.
+We’re delighted to announce that cloud.gov has received a FedRAMP Joint Authorization Board (JAB) Provisional Authority to Operate (P-ATO) at the Moderate impact level. This means that cloud.gov successfully completed a comprehensive security and compliance assessment performed by a board of the CIOs and their teams from the General Services Administration, the Department of Defense, and the Department of Homeland Security. cloud.gov is the [first completely open source service to receive FedRAMP authorization](https://gsablogs.gsa.gov/gsablog/2017/02/02/cloud-gov-becomes-first-fully-open-source-fedramp-solution/). Teams can now use cloud.gov with less upfront work, so they can use cloud.gov to deliver services even faster.
 
 [Read more about how this new authorization can help your team.](https://18f.gsa.gov/2017/02/02/cloud-gov-is-now-fedramp-authorized/)
 <!--more-->
@@ -12,7 +12,7 @@ We’re delighted to announce that cloud.gov has received a FedRAMP Joint Author
 ## Other new and improved features
 
 ### Native multifactor authentication
-For teams that cannot integrate their agency single-sign-on authentication provider with cloud.gov, or for teammates who don’t have access to agency accounts (such as some contractors), cloud.gov now provides a [built-in authentication option]({{< relref "docs/getting-started/accounts.md" >}}#to-log-into-cloud-gov) with multifactor authentication.  This is not yet included in the FedRAMP Authorization, but teams can use it if their agency approves.
+For teams that cannot integrate their agency single-sign-on authentication provider with cloud.gov, or for teammates who don’t have access to agency accounts (such as some contractors), cloud.gov now provides a [built-in authentication option]({{< relref "docs/getting-started/accounts.md" >}}#to-log-into-cloud-gov) with multifactor authentication. This is not yet included in the FedRAMP Authorization, but teams can use it if their agency approves.
 
 ### Clearer pricing and product information
 We’ve been making changes to the cloud.gov website in order to make our [pricing model]({{< relref "overview/pricing/rates.md" >}}) and our [offerings]({{< relref "overview/pricing/whats-included.md" >}}) clearer. We will continue to make improvements to the website and can only do so with feedback from our visitors. If you have anything to share with us, drop us a line at cloud-gov-inquiries@gsa.gov.
