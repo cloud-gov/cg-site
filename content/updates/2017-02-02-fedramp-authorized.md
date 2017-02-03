@@ -12,13 +12,13 @@ We’re delighted to announce that cloud.gov has received a FedRAMP Joint Author
 ## Other new and improved features
 
 ### Native multifactor authentication
-For teams that cannot integrate their agency single-sign-on authentication provider with cloud.gov, or for teammates who don’t have access to agency accounts (such as some contractors), cloud.gov now provides a built-in authentication option with multifactor authentication.  This is not yet included in the FedRAMP Authorization, but teams can use it if their agency approves.
+For teams that cannot integrate their agency single-sign-on authentication provider with cloud.gov, or for teammates who don’t have access to agency accounts (such as some contractors), cloud.gov now provides a [built-in authentication option]({{< relref "docs/getting-started/accounts.md" >}}#to-log-into-cloud-gov) with multifactor authentication.  This is not yet included in the FedRAMP Authorization, but teams can use it if their agency approves.
 
 ### Clearer pricing and product information
-We’ve been making changes to the cloud.gov website in order to make our pricing model and our offerings clearer. We will continue to make improvements to the website and can only do so with feedback from our visitors. If you have anything to share with us, drop us a line at cloud-gov-inquiries@gsa.gov.
+We’ve been making changes to the cloud.gov website in order to make our [pricing model]({{< relref "overview/pricing/rates.md" >}}) and our [offerings]({{< relref "overview/pricing/whats-included.md" >}}) clearer. We will continue to make improvements to the website and can only do so with feedback from our visitors. If you have anything to share with us, drop us a line at cloud-gov-inquiries@gsa.gov.
 
 ### A more functional dashboard for using cloud.gov without using the command line
-Our web-based dashboard gives people an easy web-based way to perform the essential functions in managing their applications. You can see an overview of your apps, spaces, and their current state. The dashboard offers more visual clarity between activities. And now you can edit limits on your applications with a few clicks.
+Our web-based [dashboard](https://dashboard.cloud.gov/) gives people an easy web-based way to perform the essential functions in managing their applications. You can see an overview of your apps, spaces, and their current state. The dashboard now offers more visual clarity between activities. And now you can edit limits on your applications with a few clicks.
 
 ![Demonstration of edit mode on the cloud.gov dashboard app panel. User clicks “Modify allocation and scale” to change their application’s allocated memory and disk space.](https://cloud.gov/img/cloud-gov_editapplimits.gif "Editing app limits in the dashboard")
 
