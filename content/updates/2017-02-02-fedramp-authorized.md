@@ -1,5 +1,5 @@
 +++
-date = "2017-02-01"
+date = "2017-02-02"
 title = "cloud.gov is now FedRAMP Authorized."
 +++
 
