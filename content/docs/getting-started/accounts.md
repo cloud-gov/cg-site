@@ -6,7 +6,7 @@ title: Accounts
 weight: -100
 ---
 
-## To get a cloud.gov account
+## To get access to cloud.gov
 
 * **If you're in GSA or EPA:** You automatically have access to cloud.gov; you don't need to take any account creation steps before you start using cloud.gov.
 * **If you're in FDIC:** Some FDIC staff automatically have access to cloud.gov and can log in without taking any account creation steps. If you're in FDIC and you don't have access, contact your agency's identity team to be added to the cloud.gov access group.
@@ -15,13 +15,13 @@ weight: -100
 
 ## To log into cloud.gov
 
-### Agency single-sign-on accounts
+### Agency single sign-on accounts
 
 If you have a GSA, EPA, or FDIC email address, you'll sign into cloud.gov using your agency credentials. Follow [these instructions to log in on the command line (CLI) and web UI (dashboard)]({{< relref "setup.md" >}}).
 
 ### cloud.gov accounts
 
-If you were invited with an email address that isn't part of an agency with single-sign-on authentication to cloud.gov, you have a cloud.gov account.
+If you were invited with an email address that isn't part of an agency with single sign-on authentication to cloud.gov, you have a cloud.gov account.
 
 {{% govcloud %}}
 
@@ -43,7 +43,7 @@ You can [reset your own password](https://login.cloud.gov/forgot_password).
 ### Deployer accounts
 
 {{% govcloud %}}
-If you're using our [deployer account broker]({{< relref "docs/apps/continuous-deployment.md" >}}), you can delete and recreate that account to reset the credentials.
+If you're using the [deployer account broker]({{< relref "docs/apps/continuous-deployment.md" >}}), you can delete and recreate that account to reset the credentials.
 {{% /govcloud %}}
 
 {{% eastwest %}}
@@ -72,7 +72,7 @@ In order to help us keep cloud.gov secure, we require that you use your account 
 - Don't configure your browser to ignore security warnings which may involve your connection with cloud.gov; report warnings that you can't explain to [cloud.gov support](/help/).
 - If you believe you've been granted more access than necessary to perform your legitimate tasks or assigned duties, immediately notify [cloud.gov support](/help/).
 
-If you use a cloud.gov account (instead of using an agency single-sign-on account), you have an additional rule of behavior:
+If you use a cloud.gov account (instead of using an agency single sign-on account), you have an additional rule of behavior:
 
 - Don't share your account with another person or create anonymous or group accounts. Your account is just for you.
 
