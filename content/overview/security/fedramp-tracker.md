@@ -23,7 +23,7 @@ Historically each agency would have to conduct their own in-depth assessment of 
 
 ## How you can use this
 
-Any federal agency can [use the cloud.gov P-ATO](https://www.fedramp.gov/resources/faqs/how-does-an-agency-leverage-a-fedramp-authorization/) as part of the ATO for an agency system built on cloud.gov, which substantially reduces the effort required to give that system an ATO. If you're interested in this, you can request the cloud.gov P-ATO documentation package using the [FedRAMP Package Access Request Form](https://www.fedramp.gov/files/2015/03/FedRAMP-Package-Request-Form_V4_06192014.pdf).
+Any federal agency can [use the cloud.gov P-ATO](https://www.fedramp.gov/resources/faqs/how-does-an-agency-leverage-a-fedramp-authorization/) as part of the ATO for an agency system built on cloud.gov, which substantially reduces the effort required to give that system an ATO. If you're interested in this, you can request the cloud.gov P-ATO documentation package [from FedRAMP](https://www.fedramp.gov/).
 
 The majority of federal systems are at the [Low and Moderate impact levels](http://csrc.nist.gov/publications/fips/fips199/FIPS-PUB-199-final.pdf#page=6), which can be hosted on cloud.gov. [cloud.gov can’t yet host High impact systems.](/overview/security/fisma-high-applications/)
 
