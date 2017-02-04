@@ -20,15 +20,17 @@ You need [an account]({{< relref "accounts.md" >}}) before you can get started w
 
 Run `cf login -a api.cloud.gov --sso`
 
-Then follow the link to get your one-time authentication code and enter it.
+Then it'll say `One Time Code ( Get one at `[`https://login.cloud.gov/passcode`](https://login.cloud.gov/passcode)` )` -- visit that link in your browser to get your code, copy and paste the code into the command line (no typing indicators will show), and enter it.
     
 **If you log in with a cloud.gov account that has its own password** (including `ORGNAME_deployer` accounts): run `cf login -a api.cloud.gov`
 {{% /eastwest %}}
 
 {{% govcloud %}}
+**For all accounts in the GovCloud environment:**
+
 Run `cf login -a api.fr.cloud.gov --sso` 
 
-Then follow the link to get your one-time authentication code and enter it.
+Then it'll say `One Time Code ( Get one at `[`https://login.fr.cloud.gov/passcode`](https://login.fr.cloud.gov/passcode)` )` -- visit that link in your browser to get your code, copy and paste the code into the command line (no typing indicators will show), and enter it.
 {{% /govcloud %}}
 
 
