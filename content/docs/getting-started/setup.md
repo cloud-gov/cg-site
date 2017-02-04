@@ -13,7 +13,7 @@ You need [an account]({{< relref "accounts.md" >}}) before you can get started w
 1. [Install the Cloud Foundry CLI](https://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html). (cloud.gov is based on Cloud Foundry.)
 1. Confirm the installation by running `cf -v` -- this should return a version number.
 
-1. Log in with a command as explained below. Select the East/West or GovCloud instructions based on where your applications are located. If you're not sure which environment to select, ask a teammate or [ask support]({{< relref "docs/help.md" >}}).
+1. Log in with a command as explained below. Select the East/West or GovCloud instructions based on where your spaces are located. If you're not sure which environment to select, GovCloud is the main environment for new sandbox accounts and new teams. You can also ask a teammate or [ask support]({{< relref "docs/help.md" >}}).
 
 {{% eastwest %}}
 **If you're at GSA or EPA and you log in with your agency account:** 
