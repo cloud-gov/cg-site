@@ -8,16 +8,16 @@ weight: -100
 
 ## To get access to cloud.gov
 
-* **If you're in GSA or EPA:** You automatically have access to cloud.gov; you don't need to take any account creation steps before you start using cloud.gov.
-* **If you're in FDIC:** Some FDIC staff automatically have access to cloud.gov and can log in without taking any account creation steps. If you're in FDIC and you don't have access, contact your agency's identity team to be added to the cloud.gov access group.
-* **If you're outside GSA/EPA/FDIC and your organization/project is registered with cloud.gov:** Ask a teammate to follow [these instructions for inviting teammates]({{< relref "managing-teammates.md" >}}), and you'll get a cloud.gov account.
-* **Otherwise:** If you're in the U.S. federal government and you'd like to try cloud.gov, [email us](/help/).
+* **If you're in GSA or EPA:** You automatically have access and can log in.
+* **If you're in FDIC:** Some FDIC staff automatically have access and can log in. If you get an error, contact the FDIC identity team to be added to the cloud.gov access group.
+* **If you're outside GSA/EPA/FDIC and your team uses cloud.gov:** Ask a teammate to [invite you]({{< relref "managing-teammates.md" >}}).
+* **Otherwise:** If you'd like to try cloud.gov, [email us to ask for sandbox access]({{< relref "docs/help.md" >}}) or see [how to purchase cloud.gov]({{< relref "overview/overview/how-to-purchase.md" >}}).
 
 ## To log into cloud.gov
 
 ### Agency single sign-on accounts
 
-If you have a GSA, EPA, or FDIC email address, you'll sign into cloud.gov using your agency credentials. Follow [these instructions to log in on the command line (CLI) and web UI (dashboard)]({{< relref "setup.md" >}}).
+If you have a GSA, EPA, or FDIC email address, sign into cloud.gov using your agency credentials. Follow [these instructions to log in on the command line (CLI) and web UI (dashboard)]({{< relref "setup.md" >}}).
 
 ### cloud.gov accounts
 
@@ -25,13 +25,13 @@ If you were invited with an email address that isn't part of an agency with sing
 
 {{% govcloud %}}
 
-Follow [these instructions to log in on the command line (CLI) and web UI (dashboard)]({{< relref "setup.md" >}}). When you log in to cloud.gov via a web browser, select the `cloud.gov` provider as shown here:
+Follow [these instructions to log in on the command line (CLI) and web UI (dashboard)]({{< relref "setup.md" >}}). When you log in to cloud.gov via a web browser, select the **cloud.gov** option.
 
-![cloud.gov provider button on login page highlighted in blue](/img/cloud-gov-idp-button-cropped.png "cloud.gov provider button to login page is highlighted in blue")
+<!--<img src="/img/cloud-gov-idp-button-cropped.png" alt="cloud.gov provider button to login page is highlighted in blue" width="373" height="187" />-->
 
 Your cloud.gov account requires multi-factor authentication. To log into the system, you need two "factors" -- something you know (your password) and something you have on your person (your smartphone).
 
-In order to perform multi-factor authentication, you need an authentication application that generates time-based one-time passcodes. We recommend [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) or [Authy](https://www.authy.com/app/mobile). Download the app on your mobile device. When you log into cloud.gov for the first time, follow the instructions to store the `cloud.gov` key in your application.
+In order to perform multi-factor authentication, you need an authentication application that generates time-based one-time passcodes, such as [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) or [Authy](https://www.authy.com/app/mobile). Download the app on your mobile device. When you log into cloud.gov for the first time, follow the instructions to store the `cloud.gov` key in your application.
 {{% /govcloud %}}
 
 {{% eastwest %}}
