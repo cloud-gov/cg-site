@@ -11,7 +11,7 @@ aliases:
 
 cloud.gov services are available to other agencies on a full cost-recovery model.
 
-The current cloud.gov pricing model has three components: **access package**, **resource usage**, and **managed services**. Find out more about each component via our [pricing terminology page]({{< relref "overview/terminology/pricing-terminology.md" >}}) or see the [dedicated page with our rates]({{< relref "overview/pricing/rates.md" >}}).
+The current cloud.gov pricing model has three components: **access package**, **resource usage**, and **managed services**. Find out more about each component via our [pricing terminology page]({{< relref "overview/pricing/pricing-terminology.md" >}}) or see the [dedicated page with our rates]({{< relref "overview/pricing/rates.md" >}}).
 
 Our mission is broader than making it easier for government agencies to adopt cloud deployment. The mission of cloud.gov is to enable agencies to deliver services to the public as fast as they can develop them while applying best practices in security and compliance with minimal effort.
 
