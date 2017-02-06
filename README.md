@@ -1,6 +1,6 @@
 # 18F cloud.gov website
 
-This repository contains the site code for the [cloud.gov website](https://cloud.gov/).
+This repository contains the code and content for the [cloud.gov website](https://cloud.gov/).
 
 cloud.gov is a Platform as a Service based on the Cloud Foundry project, which provides its own [Cloud Foundry documentation](http://docs.cloudfoundry.org/).
 
@@ -18,6 +18,10 @@ Hugo uses Markdown to build the pages. Add your page to the section you want ins
 1. Run `npm install` to download all the dependencies.
 1. Run `npm start` and browse to [http://localhost:1313](http://localhost:1313).
 
+### Process tips for cloud.gov team members
+
+We usually use branches to write updates. After you merge a PR, click GitHub's button to delete that branch. (We don't need it anymore.)
+
 ### Environment-specific information
 
 For a block of content that is specific to AWS East/West, use the following [shortcode](https://gohugo.io/extras/shortcodes/):
@@ -28,18 +32,29 @@ East/West-specific Markdown content goes here.
 {{% /eastwest %}}
 ```
 
-Ditto for `govcloud`.
+Ditto for `govcloud`:
+
+```
+{{% govcloud %}}
+GovCloud-specific Markdown content goes here.
+{{% /govcloud %}}
+```
 
 ### Links
 
 To link to another page within cg-site, use `relref` to create [relative links](https://gohugo.io/extras/crossreferences/). Examples:
 
+* `[Example text]({{< relref "directory/filename.md" >}})`
 * `[What is cloud.gov?]({{< relref "overview/overview/what-is-cloudgov.md" >}})`
 * `[Sharing secret keys]({{< relref "docs/ops/secrets.md#sharing-secret-keys" >}})`
 
 ### Redirects
 
 If you delete or rename a page, make a redirect to avoid breaking links from other sites: [make an alias](https://gohugo.io/extras/aliases/) (use the "YAML frontmatter" style).
+
+### Images
+
+If you want to include an image in a page on the site, put it in `/static/img/`. Images there will show up at `https://cloud.gov/img/example.png`.
 
 ### Search
 
