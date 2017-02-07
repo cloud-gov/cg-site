@@ -7,14 +7,10 @@ title: Custom domains
 
 Here's how to put your app on your project's custom domain name. For context, [Cloud Foundry's Routes and Domains documentation](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html) explains the overall model and terminology that cloud.gov uses.
 
-The [Manual Method](#manual-method) is available to all users.
-
-{{% govcloud %}}
-We've also developed a [Managed Service Method](#managed-service-method). This option is vastly preferred to the manual one, for the following reasons:
+There is a [Manual Method](#manual-method) and a [Managed Service Method](#managed-service-method). The latter is vastly preferred to the former, for the following reasons:
 
 * It is (somewhat) self-service
 * It will automatically create and renew the certificate
-{{% /govcloud %}}
 
 Both options support IPv6.
 
@@ -71,7 +67,6 @@ Or:
 
 [API](http://apidocs.cloudfoundry.org/206/routes/associate_app_with_the_route.html)
 
-{{% govcloud %}}
 ## Managed Service Method
 
 See the [CDN Route service page]({{< relref "docs/services/cdn-route.md" >}}) for more information.
@@ -118,4 +113,3 @@ cloud.gov offers a managed service that allows you to forward a domain you contr
     * If you can, wait to **do this step during low-traffic hours**. It can take up to 15 minutes before the certificate is in place, and visitors will get a certificate error when visiting the custom domain in the meantime.
 1. Wait for the DNS changes to propagate.
 1. Visit `my.domain.gov`, and see that you have a valid certificate (i.e. that visiting your site in a modern browser doesn't give you a certificate warning).
-{{% /govcloud %}}
