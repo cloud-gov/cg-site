@@ -3,13 +3,13 @@ menu:
   overview:
     parent: overview
 title: Why it’s available
-weight: 30
+weight: 95
 aliases:
   - /docs/intro/overview/why-available-other-agencies
   - /intro/overview/why-available-other-agencies
 ---
 
-cloud.gov helps federal agencies deliver taxpayer-funded services the American people deserve in a faster, more user-centered way.
+Our mission is broader than making it easier for government agencies to adopt cloud deployment. The mission of cloud.gov is to enable agencies to deliver services to the public as fast as they can develop them while applying best practices in security and compliance with minimal effort. cloud.gov helps federal agencies deliver taxpayer-funded services the American people deserve in a faster, more user-centered way.
 
 ## Solving the cloud operations bottleneck
 
