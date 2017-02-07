@@ -21,11 +21,11 @@ publishdir = "public"
 
 
 [[menu.overview]]
-    name = "Overview"
+    name = "cloud.gov overview"
     identifier = "overview"
     weight = -120
 [[menu.overview]]
-    name = "Pricing"
+    name = "Purchase and pricing"
     identifier = "pricing"
     weight = -115
 [[menu.overview]]
@@ -83,4 +83,3 @@ publishdir = "public"
     name = "Plans and policies"
     identifier = "policies"
     parent = "ops"
-

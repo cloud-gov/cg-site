@@ -1,9 +1,9 @@
 ---
 menu:
   overview:
-    parent: overview
+    parent: pricing
 title: How to purchase
-weight: 20
+weight: -20
 aliases:
   - /docs/intro/pricing/payment-process
   - /intro/pricing/payment-process
