@@ -8,6 +8,7 @@ aliases:
   - /docs/intro/pricing/payment-process
   - /intro/pricing/payment-process
   - /overview/pricing/payment-process
+  - /overview/overview/how-to-purchase
 ---
 
 cloud.gov services can only be purchased by government agencies. Currently, cloud.gov’s business is limited to federal agencies, though we hope to provide services to state and local agencies in the future.
