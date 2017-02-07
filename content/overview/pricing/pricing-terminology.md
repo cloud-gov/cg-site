@@ -34,7 +34,7 @@ The “access package” component covers access to the cloud.gov Platform as a 
 
 The access package component is “non-severable” and therefore non-refundable. As a result, a payment in one fiscal year does not expire regardless of the status of the underlying appropriation.
 
-### Resource usage
+### Resource usage quota
 
 To support tenant applications and managed service instances, cloud.gov allocates resources (like compute nodes and memory) from an underlying IaaS. What we charge for this component covers the costs for the resources that cloud.gov allocates to hosted systems and teams. It also includes a small margin that covers our labor in managing those resources.
 
