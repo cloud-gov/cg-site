@@ -3,7 +3,7 @@ menu:
   overview:
     parent: overview
 title: The process of building it
-weight: 21
+weight: 90
 aliases:
   - /docs/intro/overview/building-process
   - /intro/overview/building-process
