@@ -3,7 +3,7 @@ menu:
   overview:
     parent: overview
 title: What is cloud.gov?
-weight: 10
+weight: 0
 aliases:
   - /docs/intro/overview/what-is-cloudgov
   - /intro/overview/what-is-cloudgov

@@ -3,7 +3,7 @@ menu:
   overview:
     parent: overview
 title: FedRAMP Authorized
-weight: 20
+weight: 5
 aliases:
   - /docs/intro/security/fedramp-tracker
   - /intro/security/fedramp-tracker
@@ -34,4 +34,3 @@ FedRAMP requires cloud.gov to maintain continuous monitoring and undergo annual 
 We plan to publish much of the documentation from our P-ATO package, as part of our open source system documentation, after we add context for public release.
 
 As a government team with a mission to support agency efforts to improve the way they deliver services to the public, we want our compliance documentation to be available as a model that helps additional Platform as a Service providers (including commercial providers) write the documentation they need to achieve FedRAMP JAB P-ATO as well.
-
