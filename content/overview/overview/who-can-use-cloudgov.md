@@ -3,7 +3,7 @@ menu:
   overview:
     parent: overview
 title: Who can use it?
-weight: 20
+weight: 15
 aliases:
   - /docs/intro/overview/who-can-use-cloudgov
   - /intro/overview/who-can-use-cloudgov
