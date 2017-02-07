@@ -7,7 +7,7 @@ aliases:
 
 ### Want to use cloud.gov?
 
-Start with our [intake form](https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform) to tell us about your organization and applications</a>. We’ll schedule a call where we can go over needs, options, and questions. You can also email [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov), including to request a [free sandbox account]({{< relref "overview/pricing/rates.md" >}}) (available to anyone with a .gov or .mil email address).
+Start with our [interest form](https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform) to tell us about your organization and applications</a>. We’ll schedule a call where we can go over needs, options, and questions. You can also email [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov), including to request a [free sandbox account]({{< relref "overview/pricing/rates.md" >}}) (available to anyone with a .gov or .mil email address).
 
 To get news about cloud.gov, [sign up for email updates](/#updates).
 
