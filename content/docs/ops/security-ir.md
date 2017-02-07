@@ -10,7 +10,7 @@ This document outlines cloud.gov's internal process for responding to security i
 
 *If you're responding to an incident, [here's our IR checklist]({{< relref "security-ir-checklist.md" >}}) as a short, actionable companion to this guide.*
 
-(If you're outside 18F: if you notice something that may be a security problem, please email <a href="mailto:cloud-gov-support@gsa.gov">cloud-gov-support@gsa.gov</a>. Thanks!)
+(If you're a member of the public who has noticed something in cloud.gov that may be a security problem, please see [our vulnerability disclosure policy and reporting process](https://18f.gsa.gov/vulnerability-disclosure-policy/). As it explains, we want security researchers to feel comfortable reporting vulnerabilities they’ve discovered, as set out in that policy, so that we can fix them and keep our information safe.)
 
 ## Overview
 
