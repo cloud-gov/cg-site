@@ -10,25 +10,30 @@ You need [an account]({{< relref "accounts.md" >}}) before you can get started w
 
 ## Set up the command line
 
-1. [Install the Cloud Foundry CLI](https://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html). (cloud.gov is based on Cloud Foundry.)
+cloud.gov is based on Cloud Foundry.
+
+1. Install the Cloud Foundry CLI using the installer for your system: [Windows](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#windows) / [Mac OS X](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#mac) / [Linux](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#linux) 
+  - If your organization restrictions the use of the installer, you can [download the CLI binary and install it manually](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#bin).
 1. Confirm the installation by running `cf -v` -- this should return a version number.
 
-1. Log in with a command as explained below. Select the East/West or GovCloud instructions based on where your applications are located. If you're not sure which environment to select, ask a teammate or [ask support]({{< relref "docs/help.md" >}}).
+1. Log in with a command as explained below. Select the East/West or GovCloud instructions based on where your spaces are located. If you're not sure which environment to select, GovCloud is the main environment for new sandbox accounts and new teams. You can also ask a teammate or [ask support]({{< relref "docs/help.md" >}}).
 
 {{% eastwest %}}
 **If you're at GSA or EPA and you log in with your agency account:** 
 
 Run `cf login -a api.cloud.gov --sso`
 
-Then follow the link to get your one-time authentication code and enter it.
+Then it'll say `One Time Code ( Get one at `[`https://login.cloud.gov/passcode`](https://login.cloud.gov/passcode)` )` -- visit that link in your browser to get your code, copy and paste the code into the command line (no typing indicators will show), and enter it.
     
 **If you log in with a cloud.gov account that has its own password** (including `ORGNAME_deployer` accounts): run `cf login -a api.cloud.gov`
 {{% /eastwest %}}
 
 {{% govcloud %}}
+**For all accounts in the GovCloud environment:**
+
 Run `cf login -a api.fr.cloud.gov --sso` 
 
-Then follow the link to get your one-time authentication code and enter it.
+Then it'll say `One Time Code ( Get one at `[`https://login.fr.cloud.gov/passcode`](https://login.fr.cloud.gov/passcode)` )` -- visit that link in your browser to get your code, copy and paste the code into the command line (no typing indicators will show), and enter it.
 {{% /govcloud %}}
 
 
