@@ -6,14 +6,14 @@ title: Set up cloud.gov and log in
 weight: -50
 ---
 
-You need [an account]({{< relref "accounts.md" >}}) before you can get started with this. Then you can log into cloud.gov in two ways: the command line (CLI) with full features, and the web user interface (dashboard) with quick access to common tasks.
+You need [an account]({{< relref "accounts.md" >}}) before you can log in. Then you can log into cloud.gov in the following ways.
 
 ## Set up the command line
 
-cloud.gov is based on Cloud Foundry.
+cloud.gov is based on Cloud Foundry, so cloud.gov uses the Cloud Foundry command line interface (CLI) to give you full access to cloud.gov.
 
-1. Install the Cloud Foundry CLI using the installer for your system: [Windows](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#windows) / [Mac OS X](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#mac) / [Linux](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#linux) 
-  - If your organization restrictions the use of the installer, you can [download the CLI binary and install it manually](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#bin).
+1. Install the Cloud Foundry CLI using the installer for your system: [Windows](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#windows), [Mac OS X](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#mac), or [Linux](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#linux).
+  - If your organization restricts the use of the installer, you can [download the CLI binary and install it manually](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#bin).
 1. Confirm the installation by running `cf -v` -- this should return a version number.
 
 1. Log in with a command as explained below. Select the East/West or GovCloud instructions based on where your spaces are located. If you're not sure which environment to select, GovCloud is the main environment for new sandbox accounts and new teams. You can also ask a teammate or [ask support]({{< relref "docs/help.md" >}}).
@@ -39,7 +39,9 @@ Then it'll say `One Time Code ( Get one at `[`https://login.fr.cloud.gov/passcod
 
 ## Check out the dashboard
 
-Visit your dashboard! It's probably a little empty since you probably haven't deployed any applications yet, but it's good to know it exists:
+cloud.gov also has a dashboard that gives you easy web-based access to common tasks.
+
+Try visiting your dashboard! It's probably a little empty since you probably haven't deployed any applications yet, but it's good to know it exists:
 
 {{% eastwest %}}
 [`https://dashboard.cloud.gov/`](https://dashboard.cloud.gov/)
