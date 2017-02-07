@@ -17,7 +17,7 @@ cloud.gov fees are broken into three components:
 
 Find out [more about this pricing model]({{< relref "overview/pricing/pricing-model.md" >}}) and [how we define these terms]({{< relref "overview/pricing/pricing-terminology.md" >}}).
 
-Agencies pay through [an Interagency Agreement (IAA) with 18F]({{< relref "overview/overview/how-to-purchase.md" >}}).
+Agencies pay through [an Interagency Agreement (IAA) with 18F]({{< relref "overview/pricing/how-to-purchase.md" >}}).
 
 ## Access package
 

@@ -20,7 +20,7 @@ cloud.gov is suitable for a wide range of applications, including websites and n
 - Your application is for a United States federal government organization.
 - You understand that cloud.gov is a product under active development and will see changes in the future.
 - Your application is FISMA Moderate or lower.
-- You can pay for cloud.gov through the IAA/MOU process (see [how to purchase]({{< relref "overview/overview/how-to-purchase.md" >}})).
+- You can pay for cloud.gov through the IAA/MOU process (see [how to purchase]({{< relref "overview/pricing/how-to-purchase.md" >}})).
 
 ### Technical requirements
 
