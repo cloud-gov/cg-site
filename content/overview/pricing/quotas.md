@@ -2,18 +2,20 @@
 menu:
   overview:
     parent: pricing
-title: Quotas
-weight: -5
+title: Quota billing and limits
+weight: 20
 aliases:
   - /docs/intro/pricing/quotas
   - /intro/pricing/quotas
 ---
 
-cloud.gov capacity is billed by quota. Quotas provide a not-to-exceed reservation of memory, compute, application routes and service instances. Quotas are associated with and billed to a project IAA number or equivalent billing tag. Quota capacity is a hard limit; unused capacity does not "roll over" month to month.
+cloud.gov capacity is [billed by quota]({{< relref "overview/pricing/rates.md" >}}#resource-usage-quota). Quotas provide a not-to-exceed reservation of memory, compute, application routes and service instances.
+
+Usage quotas are **set in advance**. This helps you control the maximum amount that your team will spend, and helps us avoid over-provisioning resources that won’t be used. Quota capacity is a hard limit; unused capacity does not "roll over" month to month.
 
 ## Quota billing
 
-Quotas are billed by the amount of memory reserved and tallied daily. A monthly bill might include 9 days at 1 GB of RAM, 11 days at 2 GB of RAM and 10 days at 4 GB of RAM.
+Quotas are associated with and billed to a project IAA number or equivalent billing tag. Quotas are billed by the amount of memory reserved and tallied daily. A monthly bill might include 9 days at 1 GB of RAM, 11 days at 2 GB of RAM and 10 days at 4 GB of RAM.
 
 ## Quota limits
 
