@@ -17,7 +17,7 @@ cloud.gov costs are broken into three components:
 
 Agencies pay through [an Interagency Agreement (IAA) with 18F]({{< relref "overview/pricing/how-to-purchase.md" >}}).
 
-What follows is information about each pricing component, as well as a table so you can compare the components across packages.
+What follows is information about each pricing component, as well as a [table to help you compare](#package-comparison-table) the components across packages.
 
 ## Access package
 
