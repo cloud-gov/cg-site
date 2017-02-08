@@ -15,7 +15,7 @@ cloud.gov services can only be purchased by government agencies. Currently, clou
 
 ## Federal teams
 
-If you represent an agency that wants to use cloud.gov services, please contact us by filling out [our initial interest form] (https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform). After we review what you tell us, we’ll contact you to schedule a followup conversation to discuss your team’s goals and needs, and how we can help. To get a sense for yourself of the options, we recommend [comparing packages and rates]({{< relref "overview/pricing/rates.md" >}}).
+If you represent an agency that wants to use cloud.gov services, please contact us by filling out [our initial interest form] (https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform). We’ll contact you to schedule a followup conversation to discuss your team’s goals and needs, and how we can help. You can [compare packages and rates]({{< relref "overview/pricing/rates.md" >}}) to get a sense of the options.
 
 cloud.gov services are sold through 18F, a federal digital consultancy housed within the [General Service Administration's Technology Transformation Service](https://www.gsa.gov/tts). 18F sells services to other agencies through the Interagency Agreement ("IAA") process. Currently, processing an IAA takes an average of 6-8 weeks (we are working to make this faster). If you would like to learn more about the IAA process and the information that you need to have ready to begin the process, please visit [18F's primer on IAAs] (https://pages.18f.gov/iaa-forms/primer.html).
 
