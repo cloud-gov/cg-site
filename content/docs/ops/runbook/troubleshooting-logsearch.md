@@ -46,6 +46,120 @@ If the cluster state is green, then validate the parsers are healthly:  Log into
 ### Continue to monitor memory usage and redis queue
 Once the issue has been resolved, continue to monitor the memory usage and number of messages waiting in redis and ensure both are decreasing.  Once the redis queue length has reached 0 the system has returned to normal operation.
 
+
+## Reindexing data from S3
+
+A copy of all data received by the logsearch ingestors is archived in S3.  This data can be used to restore logsearch to a known good state if the data in ElasticSearch is corrupted or lost.
+
+### Create a custom logstash.conf for the restore operation
+
+Log into any `parser` node and make a copy of it's current logstash configuration.
+```bash
+# these example commands use the bosh v2 cli
+bosh -d logsearch ssh parser/0
+
+cp /var/vcap/jobs/parser/config/logstash.conf /tmp/logstash-restore.conf
+```
+
+Edit the `/tmp/logstash-restore.conf` and make the following changes:
+
+#### Remove the `redis` input and replace it with an `s3` input
+```
+  s3 {
+    bucket => ":bucket:"
+    region => ":region:"
+
+    type => "syslog"
+    sincedb_path => "/tmp/s3_import.sincedb"
+  }
+
+```
+
+The values for `:bucket:` and `:region:` can be found in [cg-provision](https://github.com/18F/cg-provision/blob/master/terraform/modules/cloudfoundry/buckets.tf#L25-L30) or retrieved from the bosh manifest:
+```bash
+spruce merge --cherry-pick properties.logstash_ingestor.outputs <(bosh -d logsearch manifest)`
+```
+
+When run with default configuration the S3 input plugin will reindex ALL data in the bucket. To reindex a specific subset of data pass [additional options to the s3 input plugin](https://www.elastic.co/guide/en/logstash/2.3/plugins-inputs-s3.html).
+
+For example, to reindex only data from November 15th, 1968 use an `exclude_pattern` to exclude all files EXCEPT those that match that date: `exclude_pattern => "^((?!1968-11-15).)*$"`.
+
+
+#### Disable the timecop filter
+
+The default Logsearch-for-CloudFoundry configuration will drop any messages older than 24 hours. When reindexing older data this sanity check needs to be disabled.
+
+To disable the timecop filter set the environment variable `TIMECOP_REJECT_LESS_THAN_HOURS` to match the desired rentention policy:
+```bash
+export TIMECOP_REJECT_LESS_THAN_HOURS=$((180 * 24))
+```
+
+or remove this section from `/tmp/logstash-restore.conf`
+
+```
+# Unparse logs with @timestamps outside the configured acceptable range
+ruby {
+  code => '
+    max_hours = (ENV["TIMECOP_REJECT_GREATER_THAN_HOURS"] || 1).to_i
+    min_hours = (ENV["TIMECOP_REJECT_LESS_THAN_HOURS"] || 24).to_i
+    max_timestamp = Time.now + 60 * 60 * max_hours
+    min_timestamp = Time.new - 60 * 60 * min_hours
+    if event["@timestamp"] > max_timestamp || event["@timestamp"] < min_timestamp
+      event.overwrite( LogStash::Event.new( {
+        "tags" => event["tags"] << "fail/timecop",
+        "invalid_fields" => { "@timestamp" => event["@timestamp"] },
+        "@raw" => event["@raw"],
+        "@source" => event["@source"],
+        "@shipper" => event["@shipper"]
+      } ) )
+    end
+  '
+}
+```
+
+#### Configure logstash to index log entries by the date in the file and not the current time.
+
+Using the default configuration logstash will reindex documents into an index for the current day. To avoid this configure logstash to generate indexes based on the timestamps in the data being imported from S3.
+
+
+Add this stanza to the end of the `filters` section in `/tmp/logstash-restore.conf`
+
+```
+mutate {
+        add_field => {"index-date" => "%{@timestamp}"}
+}
+date {
+    match => [ "index-date", "ISO8601" ]
+    timezone => "UTC"
+    add_field => { "[@metadata][index-date]" => "%{+YYYY.MM.dd}" }
+
+}
+mutate {
+  remove_field => "index-date"
+}
+
+```
+
+Edit the `output` section in `/tmp/logstash-restore.conf` and change `index` to:
+```
+index => "logs-%{@index_type}-%{[@metadata][index-date]}"
+```
+
+### Start the reindexing
+Run logstash passing in your edited configuration file:
+
+```bash
+/var/vcap/packages/logstash/bin/logstash agent -f /tmp/logstash-restore.config
+```
+
+### Monitor progress
+
+Logstash will run forever once started. Monitor the progress of the reindex, and stop logstash once the data has been reindexed. Progress can be monitored by tailing the sincedb file which logstash will update after each file it processes.
+
+```bash
+tail -f /tmp/s3_import.sincedb
+```
+
 ## Other Useful ElasticSearch commands
 
 ### Check Disk Space
