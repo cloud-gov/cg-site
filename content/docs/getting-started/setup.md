@@ -18,6 +18,14 @@ cloud.gov is based on the Cloud Foundry open source project, so cloud.gov uses t
 
 1. Log in with a command as explained below. Select the East/West or GovCloud instructions based on where your spaces are located. If you're not sure which environment to select, GovCloud is the main environment for new sandbox accounts and new teams. You can also ask a teammate or [ask support]({{< relref "docs/help.md" >}}).
 
+{{% govcloud %}}
+**For all accounts in the GovCloud environment:**
+
+Run `cf login -a api.fr.cloud.gov --sso` 
+
+Then it'll say `One Time Code ( Get one at `[`https://login.fr.cloud.gov/passcode`](https://login.fr.cloud.gov/passcode)` )` -- visit that link in your browser to get your code, copy and paste the code into the command line (no typing indicators will show), and enter it.
+{{% /govcloud %}}
+
 {{% eastwest %}}
 **If you're at GSA or EPA and you log in with your agency account:** 
 
@@ -28,14 +36,6 @@ Then it'll say `One Time Code ( Get one at `[`https://login.cloud.gov/passcode`]
 **If you log in with a cloud.gov account that has its own password** (including `ORGNAME_deployer` accounts): run `cf login -a api.cloud.gov`
 {{% /eastwest %}}
 
-{{% govcloud %}}
-**For all accounts in the GovCloud environment:**
-
-Run `cf login -a api.fr.cloud.gov --sso` 
-
-Then it'll say `One Time Code ( Get one at `[`https://login.fr.cloud.gov/passcode`](https://login.fr.cloud.gov/passcode)` )` -- visit that link in your browser to get your code, copy and paste the code into the command line (no typing indicators will show), and enter it.
-{{% /govcloud %}}
-
 
 ## Check out the dashboard
 
@@ -43,15 +43,15 @@ cloud.gov also has a dashboard that gives you easy web-based access to common ta
 
 Try visiting your dashboard! It's probably a little empty since you probably haven't deployed any applications yet, but it's good to know it exists:
 
-{{% eastwest %}}
-[`https://dashboard.cloud.gov/`](https://dashboard.cloud.gov/)
-{{% /eastwest %}}
-
 {{% govcloud %}}
 [`https://dashboard.fr.cloud.gov/`](https://dashboard.fr.cloud.gov/)
 
 Tip: the `fr` in this URL indicates the GovCloud environment.
 {{% /govcloud %}}
+
+{{% eastwest %}}
+[`https://dashboard.cloud.gov/`](https://dashboard.cloud.gov/)
+{{% /eastwest %}}
 
 ## Play around in your "sandbox"
 
