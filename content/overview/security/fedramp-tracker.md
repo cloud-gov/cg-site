@@ -23,9 +23,9 @@ Historically each agency would have to conduct their own in-depth assessment of 
 
 ## How you can use this
 
-Any federal agency can [use the cloud.gov P-ATO](https://www.fedramp.gov/resources/faqs/how-does-an-agency-leverage-a-fedramp-authorization/) as part of the ATO for an agency system built on cloud.gov, which substantially reduces the effort required to give that system an ATO. If you're interested in this, you can request the cloud.gov P-ATO documentation package [from FedRAMP](https://www.fedramp.gov/).
+Any federal agency can [use the cloud.gov P-ATO](https://www.fedramp.gov/resources/faqs/how-does-an-agency-leverage-a-fedramp-authorization/) as part of the ATO for an agency system built on cloud.gov, which substantially reduces the effort required to give that system an ATO. If you're interested in this, you can request the cloud.gov P-ATO documentation package [from FedRAMP](https://www.fedramp.gov/contact-us/). For a quick summary, you can download the [Control Implementation Summary + Customer Responsibility Matrix (.xlsx)](/resources/cloud.gov-CIS-Worksheet.xlsx), which lists whether each Low and Moderate security control is handled by cloud.gov, shared responsibility, or customer responsibility.
 
-The majority of federal systems are at the [Low and Moderate impact levels](http://csrc.nist.gov/publications/fips/fips199/FIPS-PUB-199-final.pdf#page=6), which can be hosted on cloud.gov. [cloud.gov can’t yet host High impact systems.](/overview/security/fisma-high-applications/)
+The majority of federal systems are at the [Low and Moderate impact levels](http://csrc.nist.gov/publications/fips/fips199/FIPS-PUB-199-final.pdf#page=6), which can be hosted on cloud.gov. [cloud.gov can’t yet host High impact systems.]({{< relref "overview/security/fisma-high-applications.md" >}})
 
 FedRAMP requires cloud.gov to maintain continuous monitoring and undergo annual re-assessment to retain the P-ATO, which gives your agency ongoing assurance that cloud.gov is compliant.
 
