@@ -15,43 +15,12 @@ cloud.gov is based on the Cloud Foundry open source project, so cloud.gov uses t
 1. Install the Cloud Foundry CLI using the installer for your system: [Windows](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#windows), [Mac OS X](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#mac), or [Linux](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#linux).
   - If your organization restricts the use of the installer, you can [download the CLI binary and install it manually](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#bin).
 1. Confirm the installation by running `cf -v` -- this should return a version number.
-
-1. Log in with a command as explained below. Select the East/West or GovCloud instructions based on where your spaces are located. If you're not sure which environment to select, GovCloud is the main environment for new sandbox accounts and new teams. You can also ask a teammate or [ask support]({{< relref "docs/help.md" >}}).
-
-{{% eastwest %}}
-**If you're at GSA or EPA and you log in with your agency account:** 
-
-Run `cf login -a api.cloud.gov --sso`
-
-Then it'll say `One Time Code ( Get one at `[`https://login.cloud.gov/passcode`](https://login.cloud.gov/passcode)` )` -- visit that link in your browser to get your code, copy and paste the code into the command line (no typing indicators will show), and enter it.
-    
-**If you log in with a cloud.gov account that has its own password** (including `ORGNAME_deployer` accounts): run `cf login -a api.cloud.gov`
-{{% /eastwest %}}
-
-{{% govcloud %}}
-**For all accounts in the GovCloud environment:**
-
-Run `cf login -a api.fr.cloud.gov --sso` 
-
-Then it'll say `One Time Code ( Get one at `[`https://login.fr.cloud.gov/passcode`](https://login.fr.cloud.gov/passcode)` )` -- visit that link in your browser to get your code, copy and paste the code into the command line (no typing indicators will show), and enter it.
-{{% /govcloud %}}
-
+1. Run `cf login -a api.fr.cloud.gov --sso` 
+1. Open the link from the command line in a browser, and copy the code back into the command line (no typing indicators will show for security)
 
 ## Check out the dashboard
 
-cloud.gov also has a dashboard that gives you easy web-based access to common tasks.
-
-Try visiting your dashboard! It's probably a little empty since you probably haven't deployed any applications yet, but it's good to know it exists:
-
-{{% eastwest %}}
-[`https://dashboard.cloud.gov/`](https://dashboard.cloud.gov/)
-{{% /eastwest %}}
-
-{{% govcloud %}}
-[`https://dashboard.fr.cloud.gov/`](https://dashboard.fr.cloud.gov/)
-
-Tip: the `fr` in this URL indicates the GovCloud environment.
-{{% /govcloud %}}
+cloud.gov also has a dashboard that gives you easy web-based access to common tasks.  The dashboard can be found at [`https://dashboard.fr.cloud.gov/`](https://dashboard.fr.cloud.gov/).  Since no applications are deployed yet, the list of applications will be empty.  Proceed to the next step to deploy a application!
 
 ## Play around in your "sandbox"
 
