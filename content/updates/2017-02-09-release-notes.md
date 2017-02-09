@@ -11,7 +11,7 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
 
 ### Fixed
 - When a user of the web-based dashboard reaches the end of their activity log, the log no longer displays a “Show more” button. Previously this button implied there might be more content when there was not.
-- Dashboard users with administrative permissions can now see all of the spaces and apps they were administrators for on the overview page. Previously, only the most recent requests were providing data to this view.
+- Dashboard users with many organizations can now see all of the spaces and apps for which they are a member. Previously, on the overview page, some organizations would appear empty or with some spaces and apps missing.
 
 ### Security
 
