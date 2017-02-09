@@ -10,8 +10,8 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
 - The [cloud.gov status page](https://cloudgov.statuspage.io/), which uses another domain to publicly report the availability and performance of cloud.gov, now includes the availability of the new, FedRAMP Authorized AWS GovCloud environment. It also reports the availability of the legacy AWS East/West environment as some users’ systems have not yet been migrated.
 
 ### Fixed
-- When a user reaches the end of their activity log, the log no longer displays a “Show more” button. Previously this button implied there might be more content when there was not.
-- Users with administrative permissions can now see all of the spaces and apps they were administrators for on the overview page. Previously, only the most recent requests were providing data to this view.
+- When a user of the web-based dashboard reaches the end of their activity log, the log no longer displays a “Show more” button. Previously this button implied there might be more content when there was not.
+- Dashboard users with administrative permissions can now see all of the spaces and apps they were administrators for on the overview page. Previously, only the most recent requests were providing data to this view.
 
 ### Security
 
