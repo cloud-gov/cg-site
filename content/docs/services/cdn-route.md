@@ -21,17 +21,22 @@ Plan Name | Description | Price
 Name | Required | Description | Default
 --- | --- | --- | ---
 `domain` | <i class="fa fa-check" aria-hidden="true"></i> | Your custom domain (or domains separated by commas) |
-`origin` | <i class="fa fa-check" aria-hidden="true"></i> | The origin root URL of the application |
+`origin` | <i class="fa fa-check" aria-hidden="true"></i> | (For non-cloud.gov apps only) The origin root URL of the application |
 `path` |  | The path for the application within the main URL supplied | `""`
 `insecure_origin` |  | Read the application over HTTP instead of HTTPS | `false`
 
 ## How to create an instance
 
+First, create a private domain in your organization:
+
+```bash
+cf create-domain <my-org> my.domain.gov
+```
+
 To create a service instance, run the following command:
 
 ```bash
-cf create-service cdn-route cdn-route my-cdn-route \
-    -c '{"domain": "my.domain.gov", "origin": "my-app.app.cloud.gov"}'
+cf create-service cdn-route cdn-route my-cdn-route -c '{"domain": "my.domain.gov"}'
 ```
 
 ### How to set up DNS
@@ -55,8 +60,7 @@ After the record is created, wait up to 30 minutes for the CloudFront distributi
 To update a service instance, run the following command:
 
 ```bash
-cf update-service my-cdn-route \
-    -c '{"domain": "my.domain.gov", "origin": "my-app.app.cloud.gov"}'
+cf update-service my-cdn-route -c '{"domain": "my.domain.gov"}'
 ```
 
 *Replace `my-cdn-route` with the service instance name.*
@@ -73,6 +77,17 @@ shows the old content after the DNS changes propagate.
 
 You only need to add a CNAME entry when the `domain`
 field is updated. Refer to ["How to set up DNS"](#how-to-set-up-dns) for guidance.
+
+## External applications
+
+To create a custom domain for an application that is not managed by cloud.gov, such as a public S3 bucket, pass the `origin` option:
+
+```bash
+cf create-service cdn-route cdn-route my-cdn-route \
+    -c '{"domain": "my.domain.gov", "origin": "my-app.external.gov"}'
+```
+
+There's no need to create a private domain for externally managed appliations.
 
 ### The broker in GitHub
 
