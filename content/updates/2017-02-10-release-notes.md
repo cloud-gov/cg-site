@@ -7,7 +7,7 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
 <!--more-->
 
 ### Added
-- You can download the [cloud.gov Control Implementation Summary + Customer Responsibility Matrix]({{< relref "overview/security/fedramp-tracker.md#how-you-can-use-this" >}}), a summary from the FedRAMP JAB P-ATO documentation. It lists whether each Low and Moderate security control is handled by cloud.gov, shared responsibility, or customer responsibility.
+You can download the [cloud.gov Control Implementation Summary + Customer Responsibility Matrix]({{< relref "overview/security/fedramp-tracker.md#how-you-can-use-this" >}}), a summary from the FedRAMP JAB P-ATO documentation. It lists whether each Low and Moderate security control is handled by cloud.gov, shared responsibility, or customer responsibility.
 
 ### Fixed
 - In the dashboard, when you reach the end of your activity log, the log no longer displays a “Show more” button. Previously this button implied there might be more content when there was not.
