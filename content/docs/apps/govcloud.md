@@ -7,7 +7,9 @@ title: GovCloud guide
 
 cloud.gov currently has two "environments" where orgs can live: the legacy East/West environment (located in AWS East/West) and the main GovCloud environment (located in [AWS GovCloud](https://aws.amazon.com/govcloud-us/)). The cloud.gov [FedRAMP JAB P-ATO]({{< relref "overview/security/fedramp-tracker.md" >}}) only covers the GovCloud environment.
 
-When your org starts using cloud.gov's GovCloud environment, here are changes to look out for.
+All new sandboxes and new orgs are in GovCloud, so new users should use the GovCloud instructions throughout the cloud.gov documentation.
+
+For people who have been using cloud.gov for a while, your team may have already migrated your orgs and applications to GovCloud, or your team may still be in the process of migrating. You may need to use both environments until that migration is complete. When your org starts using cloud.gov's GovCloud environment, here are changes to look out for.
 
 ### Documentation
 
@@ -21,7 +23,7 @@ East/West-specific information
 GovCloud-specific information
 {{% /govcloud %}}
 
-### Breaking changes
+### Breaking changes in GovCloud
 
 - GSA, EPA and FDIC accounts already work in GovCloud. Others need to be explicitly [invited](https://account.fr.cloud.gov/invite).
 - The API endpoint (for now) is `api.fr.cloud.gov`. When you [log in on the command line]({{< relref "docs/getting-started/setup.md" >}}), use this new command: `cf login -a https://api.fr.cloud.gov --sso`
