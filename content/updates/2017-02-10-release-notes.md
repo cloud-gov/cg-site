@@ -7,11 +7,11 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
 <!--more-->
 
 ### Added
-- We have published a [spreadsheet of responsibilities for each of the 325 FISMA Low and Moderate security controls (.xlsx format)](https://cloud.gov/resources/cloud.gov-CIS-Worksheet.xlsx) that are part of cloud.gov's FedRAMP P-ATO. For each control, the spreadsheet details whether it is handled by cloud.gov (269 controls), shared (41), or customer responsibility (15). For the complete P-ATO documentation package, [contact FedRAMP](https://www.fedramp.gov/contact-us/).
+- You can download the [cloud.gov Control Implementation Summary + Customer Responsibility Matrix]({{< relref "overview/security/fedramp-tracker.md#how-you-can-use-this" >}}), a summary from the FedRAMP JAB P-ATO documentation. It lists whether each Low and Moderate security control is handled by cloud.gov, shared responsibility, or customer responsibility.
 
 ### Fixed
-- When a user of the web-based dashboard reaches the end of their activity log, the log no longer displays a “Show more” button. Previously this button implied there might be more content when there was not.
-- Dashboard users with many organizations can now see all of the spaces and apps for which they are a member. Previously, on the overview page, some organizations would appear empty or with some spaces and apps missing.
+- In the dashboard, when you reach the end of your activity log, the log no longer displays a “Show more” button. Previously this button implied there might be more content when there was not.
+- If you're a member of many organizations, the dashboard can now display all of the spaces and apps for which you're a member. Previously, on the overview page, some organizations would appear empty or with some spaces and apps missing.
 
 ### Security
 
