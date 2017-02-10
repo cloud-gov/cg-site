@@ -29,7 +29,9 @@ All cloud.gov access packages include the following:
 - Platform maintenance and managed service expansion overhead
 - Support for customer-provided DNS for applications (including support for IPv6)
 
-Each [access package]({{< relref "overview/pricing/rates.md#access-package" >}}) covers access to both [the East/West and GovCloud environments]({{< relref "docs/apps/govcloud.md" >}}) while we complete migration of existing customers from the legacy East/West environment to the main GovCloud environment.
+There are [several different access packages]({{< relref "overview/pricing/rates.md#access-package" >}}) available for cloud.gov. If you’re interested in purchasing a package but aren’t sure which one is right for your team, fill out our [initial interest form](https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform). Our team will follow up with you to figure out how we can best address your team’s needs.
+
+Each access package covers access to both [the East/West and GovCloud environments]({{< relref "docs/apps/govcloud.md" >}}) while we complete migration of existing customers from the legacy East/West environment to the main GovCloud environment.
 
 <!--
 TODO
