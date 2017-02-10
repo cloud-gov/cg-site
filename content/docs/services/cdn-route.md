@@ -65,9 +65,6 @@ cf update-service my-cdn-route -c '{"domain": "my.domain.gov"}'
 
 *Replace `my-cdn-route` with the service instance name.*
 
-Unlike the `create-service` command which needs both `domain` **and** `origin`
-fields, the `update-service` requires at least `domain` **or** `origin`.
-
 Similarly to instance creation, after the record is updated, wait up to
 30 minutes for the CloudFront distribution to be updated and the DNS changes
 to propagate. In addition, you may have to clear your browser's cache if it
