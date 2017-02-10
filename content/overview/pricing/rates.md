@@ -21,19 +21,19 @@ What follows is information about each pricing component, as well as a [table to
 
 ## Access package
 
-You select an access package based on the kinds of applications you plan to host. This is the basic unit for cloud.gov access. The access package sets your annual fee, as well as the base price for all components. Some packages set a cap on resource usage for your cloud.gov account. [Find out more about what’s included in all access packages.]({{< relref "overview/pricing/whats-included.md" >}})
+You select an access package based on the kinds of applications you plan to host. This is the basic unit for cloud.gov access. The access package sets your annual fee, and your other costs are added on top of this annual fee. Some packages set a cap on resource usage for your cloud.gov account. [Find out more about what’s included in all access packages.]({{< relref "overview/pricing/whats-included.md" >}})
 
 These are the access package options:
 
-- **Sandbox:** A way to try cloud.gov for a limited time for free
+- **Sandbox:** A way to try cloud.gov for free (with limitations), not for production. Free.
 
-- **Prototyping:** Deploying demo applications with a cloud.gov domain, not for production
+- **Prototyping:** Deploying demo applications with a cloud.gov domain, not for production. $15K per year.
 
-- **Open Data:** One system with no confidentiality risk assessed, with DNS support included
+- **Open Data:** One system with no confidentiality risk assessed, with custom domain support included. $10K per year.
 
-- **FISMA Low:** One public-facing FISMA Low system, with DNS support included
+- **FISMA Low:** One public-facing FISMA Low system, with custom domain support included. $20K per year.
 
-- **FISMA Moderate:** One public-facing FISMA Moderate system, with DNS support and additional support for FISMA Moderate data requirements included
+- **FISMA Moderate:** One public-facing FISMA Moderate system, with custom domain support included. $90K per year.
 
 See the [package comparison table](#package-comparison-table) below for more details about suitable uses for each package.
 
