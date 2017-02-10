@@ -73,3 +73,32 @@ cf target -o sandbox-gsa -s harry.truman
 ```
 
 Run your version of that command, and then follow [your first deploy]({{< relref "your-first-deploy.md" >}}).
+
+## Quick reference for login
+
+Here's a summary of how to log into cloud.gov. (See above for details.)
+
+Command line interface:
+
+{{% govcloud %}}
+
+Everyone: `cf login -a api.fr.cloud.gov --sso` 
+
+{{% /govcloud %}}
+
+{{% eastwest %}}
+GSA and EPA: `cf login -a api.cloud.gov --sso`
+
+Everyone else: `cf login -a api.cloud.gov`
+{{% /eastwest %}}
+
+
+Web interface (dashboard):
+
+{{% govcloud %}}
+[`https://dashboard.fr.cloud.gov/`](https://dashboard.fr.cloud.gov/)
+{{% /govcloud %}}
+
+{{% eastwest %}}
+[`https://dashboard.cloud.gov/`](https://dashboard.cloud.gov/)
+{{% /eastwest %}}
