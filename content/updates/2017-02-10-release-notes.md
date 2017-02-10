@@ -1,6 +1,6 @@
 +++
-date = "2017-02-09"
-title = "Platform Release Notes: February 9, 2017"
+date = "2017-02-10"
+title = "Platform Release Notes: February 10, 2017"
 +++
 
 Curious what’s new that you might find helpful as a cloud.gov application developer? Here are highlights from our platform updates over the past two weeks.
