@@ -7,13 +7,13 @@ title: GovCloud guide
 
 cloud.gov currently has two "environments" where orgs can live: the legacy East/West environment (located in AWS East/West) and the main GovCloud environment (located in [AWS GovCloud](https://aws.amazon.com/govcloud-us/)). The cloud.gov [FedRAMP JAB P-ATO]({{< relref "overview/security/fedramp-tracker.md" >}}) only covers the GovCloud environment.
 
-All new sandboxes and new orgs are in GovCloud, so new users should use the GovCloud instructions throughout the cloud.gov documentation.
+**For new users:** All new sandboxes and orgs are in the GovCloud environment, so if you just started using cloud.gov, follow the GovCloud instructions throughout the cloud.gov documentation.
 
-For people who have been using cloud.gov for a while, your team may have already migrated your orgs and applications to GovCloud, or your team may still be in the process of migrating. You may need to use both environments until that migration is complete. When your org starts using cloud.gov's GovCloud environment, here are changes to look out for.
+**For teams migrating to GovCloud:** If you've been using cloud.gov for a while, you and your team may have already migrated your orgs and applications to GovCloud, or you may still be in the process of migrating. This page explains changes to look out for in GovCloud.
 
-### Documentation
+### Documentation for East/West and GovCloud
 
-Some instructions/information will vary from one environment to the other. You will see the following throughout this site:
+cloud.gov documentation has different instructions for East/West and GovCloud users in many places, especially for [logging into the command line interface and dashboard]({{< relref "docs/getting-started/setup.md" >}}). You'll see the following notation:
 
 {{% eastwest %}}
 East/West-specific information
