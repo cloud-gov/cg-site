@@ -11,7 +11,7 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
 
 ### Fixed
 - In the dashboard, when you reach the end of your activity log, the log no longer displays a “Show more” button. Previously this button implied there might be more content when there was not.
-- If you're a member of many organizations, the dashboard can now display all of the spaces and apps for which you're a member. Previously, on the overview page, some organizations would appear empty or with some spaces and apps missing.
+- If you’re a member of many organizations, the dashboard can now display all of the spaces and apps for which you're a member. Previously, on the overview page, some organizations would appear empty or with some spaces and apps missing.
 
 ### Security
 
