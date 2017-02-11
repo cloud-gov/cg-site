@@ -74,7 +74,9 @@ cf target -o sandbox-gsa -s harry.truman
 
 Run your version of that command, and then follow [your first deploy]({{< relref "your-first-deploy.md" >}}).
 
-## Quick reference for login
+## Quick reference
+
+<!-- If you change this section title, update /layouts/header.html as well, since this anchor is linked from the cloud.gov header -->
 
 Here's a summary of how to log into cloud.gov. (See above for details.)
 
