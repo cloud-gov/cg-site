@@ -63,7 +63,7 @@ Start with the following `cf target` command:
 cf target -o <ORG> -s <SPACE>
 ```
 
-Your `<ORG>` is a Cloud Foundry _organization_ named "sandbox". In most cases, your `<SPACE>` is your email address. Cloud Foundry _spaces_ let applications run independently within an organization.
+Your `<ORG>` is a cloud.gov _organization_ named "sandbox". Your `<SPACE>` is your email address. cloud.gov _spaces_ let applications run independently within an organization.
 
 For example:
 
