@@ -8,7 +8,7 @@ description: "Custom routes with HTTPS certificates using Amazon CloudFront"
 status: "Production Ready"
 ---
 
-Once your application is ready to move to production, you'll want a custom domain instead of the default cloud.gov one. The CDN service provides three key elements to support production applications: a custom domain, Content Distribution Network (CDN) caching, and TLS certificates with auto renewal.
+When you want a custom domain instead of the default `*.app.cloud.gov` domain, use the CDN service. It provides three key elements to support production applications: custom domain use, Content Distribution Network (CDN) caching (using [AWS CloudFront](https://aws.amazon.com/cloudfront/)), and free TLS certificates with auto renewal.
 
 ## Plans
 
@@ -21,19 +21,21 @@ Plan Name | Description | Price
 Name | Required | Description | Default
 --- | --- | --- | ---
 `domain` | *Required* | Your custom domain (or domains separated by commas) |
-`origin` | *Optional* | *Leave blank for cloud.gov tenant applications.* For services/applications that are not cloud.gov tenant applications ([more info](#external-services-and-applications)): the origin root URL of the application |
+`origin` | *Optional* | *Don't put this in your command for cloud.gov tenant applications.* For services/applications that are not cloud.gov tenant applications ([more info](#external-services-and-applications)): the origin root URL of the application |
 `path` | *Optional* | The path for the application within the main domain supplied | `""`
 `insecure_origin` | *Optional* | Read the application over HTTP instead of HTTPS | `false`
 
-## How to create an instance
+## How to create an instance of this service
 
-First, create a private domain in your organization:
+*Use these instructions for cloud.gov tenant applications. If you're creating a custom domain for something else (such as a public S3 bucket), see [external services and applications](#external-services-and-applications).*
+
+First, create a private domain in your organization (replace `my-org` with your org name, and replace `my.example.gov` with your domain):
 
 ```bash
-cf create-domain <my-org> my.example.gov
+cf create-domain my-org my.example.gov
 ```
 
-To create a service instance, run the following command:
+Then, to create a `cdn-route` service instance, run the following command (replace `my-cdn-route` with a name for your service instance, and replace `my.example.gov` with your domain):
 
 ```bash
 cf create-service cdn-route cdn-route my-cdn-route \
@@ -52,19 +54,25 @@ Status: create in progress
 Message: Provisioning in progress; CNAME domain "my.example.gov" to "d3kajwa62y9xrp.cloudfront.net."
 ```
 
-In this case, you need to create a CNAME record in your DNS server pointing `my.example.gov` to `d3kajwa62y9xrp.cloudfront.net.`.
+In this case, you need to create a CNAME record in your DNS server pointing `my.example.gov` to `d3kajwa62y9xrp.cloudfront.net.`. 
 
 After the record is created, wait up to 30 minutes for the CloudFront distribution to be provisioned and the DNS changes to propagate. Then visit your custom domain and see whether you have a valid certificate (in other words, that visiting your site in a modern browser doesn't give you a certificate warning).
 
-## How to update an instance
+### Troubleshooting
 
-To update a service instance, run the following command:
+If nothing has changed when you visit your custom domain:
+
+* If you're setting up a domain for a cloud.gov tenant application, make sure you're using the [instructions above](#how-to-create-an-instance-of-this-service), updated in February 2017.
+* Make sure you've waited at least 30 minutes.
+* Check your DNS setup to make sure you completed the CNAME record creation.
+
+## How to update a service instance
+
+To update a service instance, run the following command (replace `my-cdn-route` with your service instance name, and replace `my.example.gov` with your domain):
 
 ```bash
 cf update-service my-cdn-route -c '{"domain": "my.example.gov"}'
 ```
-
-*Replace `my-cdn-route` with the service instance name.*
 
 Similarly to instance creation, after the record is updated, wait up to
 30 minutes for the CloudFront distribution to be updated and the DNS changes
@@ -73,19 +81,21 @@ shows the old content after the DNS changes propagate.
 
 ### When to update the DNS
 
-You only need to add a CNAME entry when the `domain`
-field is updated. Refer to ["How to set up DNS"](#how-to-set-up-dns) for guidance.
+You only need to add a CNAME entry when you update the `domain`
+field. If you do, follow ["How to set up DNS"](#how-to-set-up-dns) again.
 
 ## External services and applications
 
-To create a custom domain for a service or application that is not a cloud.gov tenant application (such as a public S3 bucket), pass the `origin` option:
+To create a custom domain for a service or application that is not a cloud.gov tenant application (such as a public S3 bucket), put in the `origin` option:
 
 ```bash
 cf create-service cdn-route cdn-route my-cdn-route \
     -c '{"domain": "my.example.gov", "origin": "my-app.external-example.gov"}'
 ```
 
-There's no need to create a private domain for externally managed services and applications.
+Unlike creating custom domains for cloud.gov tenant applications, you don't need to run the `cf create-domain` command first -- there's no need to create a private domain for externally-managed services and applications.
+
+Then [set up DNS](#how-to-set-up-dns).
 
 ### The broker in GitHub
 
