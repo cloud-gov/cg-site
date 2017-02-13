@@ -21,18 +21,18 @@ cloud.gov is based on the Cloud Foundry open source project, so cloud.gov uses t
 {{% govcloud %}}
 **For all accounts in the GovCloud environment:**
 
-Run `cf login -a api.fr.cloud.gov --sso` 
+Run `cf login -a api.fr.cloud.gov --sso`
 
 Then it'll say `One Time Code ( Get one at `[`https://login.fr.cloud.gov/passcode`](https://login.fr.cloud.gov/passcode)` )` -- visit that link in your browser to get your code, copy and paste the code into the command line (no typing indicators will show), and enter it.
 {{% /govcloud %}}
 
 {{% eastwest %}}
-**If you're at GSA or EPA and you log in with your agency account:** 
+**If you're at GSA or EPA and you log in with your agency account:**
 
 Run `cf login -a api.cloud.gov --sso`
 
 Then it'll say `One Time Code ( Get one at `[`https://login.cloud.gov/passcode`](https://login.cloud.gov/passcode)` )` -- visit that link in your browser to get your code, copy and paste the code into the command line (no typing indicators will show), and enter it.
-    
+
 **If you log in with a cloud.gov account that has its own password** (including `ORGNAME_deployer` accounts): run `cf login -a api.cloud.gov`
 {{% /eastwest %}}
 
@@ -63,13 +63,12 @@ Start with the following `cf target` command:
 cf target -o <ORG> -s <SPACE>
 ```
 
-Your `<ORG>` is a Cloud Foundry _organization_ named "sandbox-&lt;agencypart&gt;", where &lt;agencypart&gt; is whatever comes right before `.gov` or `.mil` in your
-e-mail address. For example, this may be `sandbox-gsa` or `sandbox-epa`. In most cases, your `<SPACE>` is the part of your email before the `@`, e.g. `firstname.lastname`. Cloud Foundry _spaces_ let applications run independently within an organization.  
+Your `<ORG>` is a Cloud Foundry _organization_ named "sandbox". In most cases, your `<SPACE>` is your email address. Cloud Foundry _spaces_ let applications run independently within an organization.
 
 For example:
 
 ```bash
-cf target -o sandbox-gsa -s harry.truman
+cf target -o sandbox -s harry.truman@whitehouse.gov
 ```
 
 Run your version of that command, and then follow [your first deploy]({{< relref "your-first-deploy.md" >}}).
@@ -84,7 +83,7 @@ Command line interface:
 
 {{% govcloud %}}
 
-Everyone: `cf login -a api.fr.cloud.gov --sso` 
+Everyone: `cf login -a api.fr.cloud.gov --sso`
 
 {{% /govcloud %}}
 
