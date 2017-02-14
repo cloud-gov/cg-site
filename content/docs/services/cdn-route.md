@@ -8,7 +8,11 @@ description: "Custom routes with HTTPS certificates using Amazon CloudFront"
 status: "Production Ready"
 ---
 
-When you want a custom domain instead of the default `*.app.cloud.gov` domain, use the CDN service. It provides three key elements to support production applications: custom domain use, Content Distribution Network (CDN) caching (using [AWS CloudFront](https://aws.amazon.com/cloudfront/)), and free TLS certificates with auto renewal.
+This service provides three key elements to support production applications:
+
+1. Custom domain support, so that your application can have your domain instead of the default `*.app.cloud.gov` domain.
+2. Content Distribution Network (CDN) caching (using [AWS CloudFront](https://aws.amazon.com/cloudfront/)), for fast delivery of content to your users.
+3. HTTPS support via free TLS certificates with auto-renewal (using [Let's Encrypt](https://letsencrypt.org/)), so that user traffic is encrypted.
 
 ## Plans
 
@@ -29,9 +33,15 @@ Name | Required | Description | Default
 
 *Use these instructions for cloud.gov tenant applications. If you're creating a custom domain for something else (such as a public S3 bucket), see [external services and applications](#external-services-and-applications).*
 
-Note: CDN service instances cannot be updated or deleted until they have been successfully configured. Until this issue is resolved, please double-check all commands related to provisioning and updating instances.
+Before you begin, note that once you create a CDN service instance, you can't update or delete it until it has been successfully configured. We consider this a bug and plan to make mistakes easier to fix, but for now, consider checking your commands with a teammate to help you avoid typos and mistakes.
 
-First, create a private domain in your organization (replace `my-org` with your org name, and replace `my.example.gov` with your domain):
+First, target the space your application is running in:
+
+```bash
+cf target -o <org> -s <space>
+```
+
+Create a private domain in your organization (replace `my-org` with your org name, and replace `my.example.gov` with your domain):
 
 ```bash
 cf create-domain my-org my.example.gov
@@ -42,6 +52,13 @@ Then, to create a `cdn-route` service instance, run the following command (repla
 ```bash
 cf create-service cdn-route cdn-route my-cdn-route \
     -c '{"domain": "my.example.gov"}'
+```
+
+If you have more than one domain, you can pass a comma-delimited list to the `domain` parameter (just keep in mind that the broker will wait until all domains are CNAME'd, as explained in the next step):
+
+```bash
+cf create-service cdn-route cdn-route my-cdn-route \
+    -c '{"domain": "my.example.gov,www.my.example.gov"}'
 ```
 
 ### How to set up DNS
@@ -56,7 +73,7 @@ Status: create in progress
 Message: Provisioning in progress; CNAME domain "my.example.gov" to "d3kajwa62y9xrp.cloudfront.net."
 ```
 
-In this case, you need to create a CNAME record in your DNS server pointing `my.example.gov` to `d3kajwa62y9xrp.cloudfront.net.`. 
+In this case, you need to create a CNAME record in your DNS server pointing `my.example.gov` to `d3kajwa62y9xrp.cloudfront.net.`.
 
 After the record is created, wait up to 30 minutes for the CloudFront distribution to be provisioned and the DNS changes to propagate. Then visit your custom domain and see whether you have a valid certificate (in other words, that visiting your site in a modern browser doesn't give you a certificate warning).
 
