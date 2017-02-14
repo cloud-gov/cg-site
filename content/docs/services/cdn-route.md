@@ -29,6 +29,8 @@ Name | Required | Description | Default
 
 *Use these instructions for cloud.gov tenant applications. If you're creating a custom domain for something else (such as a public S3 bucket), see [external services and applications](#external-services-and-applications).*
 
+Note: CDN service instances cannot be updated or deleted until they have been successfully configured. Until this issue is resolved, please double-check all commands related to provisioning and updating instances.
+
 First, create a private domain in your organization (replace `my-org` with your org name, and replace `my.example.gov` with your domain):
 
 ```bash
