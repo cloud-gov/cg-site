@@ -16,9 +16,11 @@ These terms, among others, define a number of products and services offered by c
 
 ### System
 
-A “System” roughly corresponds to a product or project team, including all the individual spaces, apps, and services necessary to realize their service, across as many environments as needed.
+A “system” roughly corresponds to a product or project team, including all the individual spaces, apps, and services necessary to deliver their product to users.
 
-A system maps to an [“org” in Cloud Foundry](http://docs.cloudfoundry.org/concepts/roles.html#orgs).
+A system maps to an [“org” in cloud.gov and Cloud Foundry](http://docs.cloudfoundry.org/concepts/roles.html#orgs).
+
+Recommendation: If your product needs Authority to Operate (ATO) from your agency, we recommend that your ATO system boundary should align with your cloud.gov system boundary. In other words, your cloud.gov org shouldn't contain two or more things that each need their own ATO, because that would make your compliance process harder. If you have a very complex system with multiple sub-systems, you may choose to build that with multiple cloud.gov orgs. For formal guidance on system boundaries, see [NIST Special Publication 800-18, section 2](http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-18r1.pdf).
 
 ### Support {#support}
 
