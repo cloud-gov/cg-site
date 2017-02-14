@@ -4,7 +4,7 @@ menu:
     parent: services
 title: CDN service
 name: "cdn-route"
-description: "Custom routes with HTTPS certificates using Amazon CloudFront"
+description: "Custom domains, CDN caching, and TLS certificates using Amazon CloudFront"
 status: "Production Ready"
 ---
 
@@ -14,7 +14,7 @@ Once your application is ready to move to production, you'll want a custom domai
 
 Plan Name | Description | Price
 --------- | ----------- | -----
-`cdn-route` | A CDN distribution with custom URL and free TLS certificate with auto renewal | Free
+`cdn-route` | Custom domains, CDN caching, and TLS certificate with auto renewal | Free
 
 ## Options
 

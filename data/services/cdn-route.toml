@@ -1,3 +1,3 @@
 name = "cdn-route"
-description = "Custom routes with HTTPS certificates using Amazon CloudFront"
+description = "Custom domains, CDN caching, and TLS certificates using Amazon CloudFront"
 status = "Production Ready"

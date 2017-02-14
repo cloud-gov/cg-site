@@ -4,7 +4,7 @@ menu:
     parent: services
 title: cloud.gov service account
 name: "cloud-gov-service-account"
-description: "Manage cloud.gov service accounts with access to your organization"
+description: "cloud.gov service accounts with access to your organization"
 status: "Beta"
 aliases:
 - /docs/services/deployer-account/
@@ -16,7 +16,7 @@ To set up your application to be deployed with an automated system, you need a d
 
 Plan Name | Description | Price
 --------- | ----------- | -----
-`space-deployer` | Provision one account with "SpaceDeveloper" access to the space where the service is created | Free
+`space-deployer` | An account for continuous deployment, limited to a single space | Free
 
 ## How to create an instance
 

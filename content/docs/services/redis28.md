@@ -4,7 +4,7 @@ menu:
     parent: services
 title: Redis 2.8
 name: "redis28"
-description: "[Redis](https://redis.io/) version 2.8"
+description: "[Redis](https://redis.io/) version 2.8 an in-memory data structure store"
 status: "Alpha"
 ---
 
@@ -14,7 +14,7 @@ cloud.gov offers [Redis](https://www.redis.io/) 2.8 as a service. **This service
 
 Plan Name | Description | Price
 --------- | ----------- | -----
-`standard` | Redis instance with unlimited storage | Free in Alpha
+`standard` | Redis instance with several GB storage | Free in Alpha
 
 ## How to create an instance
 

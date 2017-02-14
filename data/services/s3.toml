@@ -1,3 +1,3 @@
 name = "s3"
-description = "Amazon Simple Storage System (persistent storage)"
+description = "Amazon S3 provides developers with secure, durable, highly-scalable object storage"
 status = "Production Ready"
