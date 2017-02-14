@@ -9,15 +9,15 @@ aliases:
   - /intro/pricing/rates
 ---
 
-cloud.gov costs are broken into three components:
+When you purchase cloud.gov, your monthly cost is made of three components:
 
-- [Access package](#access-package)
-- [Resource usage quota](#resource-usage-quota)
-- [Managed services](#managed-services)
+- [**Access package**](#access-package)
+- [**Resource usage quota**](#resource-usage-quota)
+- [**Managed services**](#managed-services)
+
+The following sections explain the options and pricing for each component. The last section is a summary: [**a table of cost options**](#package-comparison-table).
 
 Agencies pay through [an Interagency Agreement (IAA) with 18F]({{< relref "overview/pricing/how-to-purchase.md" >}}).
-
-What follows is information about each pricing component, as well as a [table to help you compare](#package-comparison-table) the components across packages.
 
 ## Access package
 
@@ -29,11 +29,11 @@ These are the access package options:
 
 - **Prototyping:** Deploying demo applications with a cloud.gov domain, not for production. $15K per year.
 
-- **Open Data:** One system with no confidentiality risk assessed, with custom domain support included. $10K per year.
+- **Open Data:** One [system]({{< relref "overview/pricing/pricing-terminology.md#system" >}}) with no confidentiality risk assessed, with custom domain support included. $10K per year.
 
-- **FISMA Low:** One public-facing FISMA Low system, with custom domain support included. $20K per year.
+- **FISMA Low:** One public-facing FISMA Low [system]({{< relref "overview/pricing/pricing-terminology.md#system" >}}), with custom domain support included. $20K per year.
 
-- **FISMA Moderate:** One public-facing FISMA Moderate system, with custom domain support included. $90K per year.
+- **FISMA Moderate:** One public-facing FISMA Moderate [system]({{< relref "overview/pricing/pricing-terminology.md#system" >}}), with custom domain support included. $90K per year.
 
 See the [package comparison table](#package-comparison-table) below for more details about suitable uses for each package.
 

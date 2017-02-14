@@ -20,7 +20,7 @@ A “system” roughly corresponds to a product or project team, including all t
 
 A system maps to an [“org” in cloud.gov and Cloud Foundry](http://docs.cloudfoundry.org/concepts/roles.html#orgs).
 
-Recommendation: If your product needs Authority to Operate (ATO) from your agency, we recommend that your ATO system boundary should align with your cloud.gov system boundary. In other words, your cloud.gov org shouldn't contain two or more things that each need their own ATO, because that would make your compliance process harder. If you have a very complex system with multiple sub-systems, you may choose to build that with multiple cloud.gov orgs. For formal guidance on system boundaries, see [NIST Special Publication 800-18, section 2](http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-18r1.pdf).
+*Recommendation:* If your product needs Authority to Operate (ATO) from your agency, we suggest that your cloud.gov “system” should align with your ATO system boundary. (In other words, your cloud.gov org shouldn't contain two or more products that each need their own ATO, because that would make your compliance process more difficult.) If you have a very complex product with multiple sub-systems, you may choose to build that with multiple cloud.gov orgs/“systems”. For formal guidance on system boundaries, see [NIST Special Publication 800-18, section 2](http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-18r1.pdf).
 
 ### Support {#support}
 
