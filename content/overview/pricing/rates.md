@@ -67,9 +67,9 @@ All three pricing components are factored into every access package. Use this ta
 | --- | --- | --- | --- | --- |
 | **Sandbox** | Any user with a `.gov` or `.mil` email address can try out cloud.gov for a limited time with no paperwork required. | Free | Free, **capped at 1GB/month** | Only free services |
 | **Prototyping** | Suitable for many teams to deploy apps, though limited to the `*.app.cloud.gov` domain. Access control can be delegated to teams. No production data allowed. Usually purchased per agency/department. | $15K |  ~$99/GB/month | All\** |
-| **Open Data** | One public-facing Open Data (no confidentiality risk assessed) system, including all the spaces needed and DNS support. | $10K | ~$99/GB/month, **capped at 2GB/month** | All\** (up to $2500/year) |
-| **FISMA Low** | One public-facing FISMA Low system, including all the spaces needed and DNS support. | $20K | ~$99/GB/month | All\** |
-| **FISMA Moderate** | One public-facing FISMA Moderate system, including all the spaces needed and DNS support. Additional support for FISMA Moderate data requirements. | $90K | ~$99/GB/month | All\** |
+| **Open Data** | One public-facing Open Data (no confidentiality risk assessed) [system]({{< relref "overview/pricing/pricing-terminology.md#system" >}}), including all the spaces needed and DNS support. | $10K | ~$99/GB/month, **capped at 2GB/month** | All\** (up to $2500/year) |
+| **FISMA Low** | One public-facing FISMA Low [system]({{< relref "overview/pricing/pricing-terminology.md#system" >}}), including all the spaces needed and DNS support. | $20K | ~$99/GB/month | All\** |
+| **FISMA Moderate** | One public-facing FISMA Moderate [system]({{< relref "overview/pricing/pricing-terminology.md#system" >}}), including all the spaces needed and DNS support. Additional support for FISMA Moderate data requirements. | $90K | ~$99/GB/month | All\** |
 
 \*Access agreements are severable, and the access package fees are invoiced monthly.
 
