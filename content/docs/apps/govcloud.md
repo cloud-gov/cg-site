@@ -83,18 +83,15 @@ Any labor involved from your project team is the responsibility of your project.
 
 #### Process
 
-1. Fill out the [organization request form](https://docs.google.com/a/gsa.gov/forms/d/e/1FAIpQLSd4HmcGfJW3EBnpewTFDD-urRFPp1LN0DcwNB_FxZgUn8ho9g/viewform?c=0&w=1).
-    * Specify that the org should be created in `GovCloud`.
-    * An admin will confirm the information, and [create the org]({{< relref "docs/ops/create-org.md#non-sandboxes" >}}) for you.
+1. [Get access to the GovCloud environment] **SELF-INVITATION LINK TBD**.
+1. Request the creation of your org in the GovCloud environment:
+    * If you are in 18F/TTS at GSA, fill out the [organization request form](https://docs.google.com/a/gsa.gov/forms/d/e/1FAIpQLSd4HmcGfJW3EBnpewTFDD-urRFPp1LN0DcwNB_FxZgUn8ho9g/viewform?c=0&w=1). Specify that the org should be created in `GovCloud`. An admin will confirm the information, [create the org]({{< relref "docs/ops/create-org.md#non-sandboxes" >}}) for you, and notify you. This should happen within one business day.
+    * For everyone else, one of your org managers should email [cloud-gov-support@gsa.gov](mailto:cloud-gov-support@gsa.gov) to request the creation of your org in GovCloud. Include the name of your East/West org so that we can create the new org with the appropriate org name.
 1. Install the [CF Targets plugin](https://github.com/guidowb/cf-targets-plugin).
 1. [Give permissions to the appropriate people.]({{< relref "docs/apps/managing-teammates.md" >}})
 1. Deploy the application to the GovCloud environment.
     * This is a good time to ensure that you are following [deployment best practices]({{< relref "docs/apps/production-ready.md" >}}).
-1. If you are using a data store provided by cloud.gov, migrate the data. More information for each [service]({{< relref "docs/apps/managed-services.md" >}}):
-    * [Elasticsearch](https://github.com/18F/cg-product/issues/233)
-    * [Redis](https://github.com/18F/cg-product/issues/234)
-    * [S3](https://github.com/18F/cg-product/issues/235)
-    * [MySQL and PostgreSQL, via the cg-migrate-db plugin]({{< relref "docs/services/relational-database.md#cg-migrate-db-plugin" >}})
+1. If you are using a data store provided by cloud.gov, migrate the data. See the [services documentation]({{< relref "docs/apps/managed-services.md" >}}). For MySQL and PostgreSQL, you can use [the cg-migrate-db plugin]({{< relref "docs/services/relational-database.md#cg-migrate-db-plugin" >}}).
 1. If you are [leveraging cloud.gov's User Account and Authentication (UAA) server]({{< relref "docs/apps/leveraging-authentication.md" >}})
    you must [register your application with the GovCloud UAA server]({{< relref "docs/apps/leveraging-authentication.md#register-your-application-instances" >}}), [update your integration to use the GovCloud endpoints]({{< relref "docs/apps/leveraging-authentication.md#integrate-with-your-application" >}}) and make sure to use your newly issued `client_secret`.
 1. Test the new deployment(s) thoroughly.
@@ -107,13 +104,3 @@ Any labor involved from your project team is the responsibility of your project.
     * [RDS](https://aws.amazon.com/rds/) instances
     * [Route 53](https://aws.amazon.com/route53/) entries
     * [S3](https://aws.amazon.com/s3/) buckets
-
-#### Unresolved details
-
-The cloud.gov team is still working through details on the following:
-
-* More explicit instructions for the steps above
-* Timeline/[deadlines](https://github.com/18F/cg-product/issues/403) for completing the migration
-* The support arrangement that the cloud.gov team will provide for migration assistance
-
-All affected tenants will be notified as more information is available.
