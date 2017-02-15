@@ -56,13 +56,11 @@ GovCloud-specific information
 
 ### Migration
 
-_This section is a work in progress._
-
-As part of [cloud.gov achieving FedRAMP authorization](https://18f.gsa.gov/2016/07/18/cloud-gov-full-steam-ahead-fedramp-assessment-process/), all tenants in the AWS East/West will need to move to the new GovCloud environment.
+As part of [cloud.gov achieving FedRAMP authorization](https://18f.gsa.gov/2016/07/18/cloud-gov-full-steam-ahead-fedramp-assessment-process/), all tenants in the AWS East/West will need to move to the new GovCloud environment. **March 15th is the deadline** for moving to the new GovCloud environment.
 
 #### Who this affects
 
-Any systems running in the AWS East/West version of cloud.gov. To find all of the apps you have access to, visit https://dashboard.cloud.gov. All apps that aren't moved by [TODO] will be deleted, so make sure that you or someone on your team [coordinates]({{< relref "docs/help.md" >}}) with the cloud.gov team to ensure your migration is completed as smoothly as possible.
+Any systems running in the AWS East/West version of cloud.gov. To find all of the apps you have access to, visit https://dashboard.cloud.gov. All apps that aren't moved by March 15th **will be deleted,** so make sure that you or someone on your team [coordinates]({{< relref "docs/help.md" >}}) with the cloud.gov team to ensure your migration is completed as smoothly as possible.
 
 #### Costs
 
@@ -107,13 +105,3 @@ Any labor involved from your project team is the responsibility of your project.
     * [RDS](https://aws.amazon.com/rds/) instances
     * [Route 53](https://aws.amazon.com/route53/) entries
     * [S3](https://aws.amazon.com/s3/) buckets
-
-#### Unresolved details
-
-The cloud.gov team is still working through details on the following:
-
-* More explicit instructions for the steps above
-* Timeline/[deadlines](https://github.com/18F/cg-product/issues/403) for completing the migration
-* The support arrangement that the cloud.gov team will provide for migration assistance
-
-All affected tenants will be notified as more information is available.
