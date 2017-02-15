@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: getting-started
-title: Accounts
+title: Get access to cloud.gov
 weight: -100
 ---
 
