@@ -21,7 +21,7 @@ Non-sandbox organizations need to be created by hand. To do so:
     * If they don't have an account yet (for example if they don't have a GovCloud account yet), [invite them](https://account.fr.cloud.gov/invite) and ask them to accept the invite (and to let you know when they've accepted it). After they have an account, make them an OrgManager.
     * They can grant themselves and others additional access using those same instructions.
     
-1. Remove yourself from any roles in the org that you automatically received.
+1. Check to make sure you're removed from any roles in the org that you automatically received.
 
 1. Notify the `OrgManager` that the organization is created. Here's a template:
 
