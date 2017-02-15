@@ -33,7 +33,7 @@ Name | Required | Description | Default
 
 *Use these instructions for cloud.gov tenant applications. If you're creating a custom domain for something else (such as a public S3 bucket), see [external services and applications](#external-services-and-applications).*
 
-Before you begin, note that once you create a CDN service instance, you can't update or delete it until it has been successfully configured. We consider this a bug and plan to make mistakes easier to fix, but for now, consider checking your commands with a teammate to help you avoid typos and mistakes.
+Before you begin, note that once you create a CDN service instance, you can't update or delete it until it has been successfully configured (so if you make a mistake that prevents it from being successfully configured, you'll need to ask support to manually delete the service instance). We consider this a bug and plan to make mistakes easier to fix, but for now, consider checking your commands with a teammate to help you avoid typos and mistakes.
 
 First, target the space your application is running in:
 
