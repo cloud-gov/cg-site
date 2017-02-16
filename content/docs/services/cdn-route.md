@@ -105,6 +105,10 @@ shows the old content after the DNS changes propagate.
 You only need to add a CNAME entry when you update the `domain`
 field. If you do, follow ["How to set up DNS"](#how-to-set-up-dns) again.
 
+### Deleting a service instance
+
+After you delete an existing service instance, you may need to wait up to 30 minutes for the changes to complete and propagate.
+
 ## External services and applications
 
 To create a custom domain for a service or application that is not a cloud.gov tenant application (such as a public S3 bucket), put in the `origin` option:
@@ -118,6 +122,6 @@ Unlike creating custom domains for cloud.gov tenant applications, you don't need
 
 Then [set up DNS](#how-to-set-up-dns).
 
-### The broker in GitHub
+## The broker in GitHub
 
 You can find the broker here: [https://github.com/18F/cf-cdn-service-broker](https://github.com/18F/cf-cdn-service-broker).
