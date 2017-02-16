@@ -16,8 +16,8 @@ cloud.gov’s mission is to support agency efforts to improve the way they manag
 
 cloud.gov was designed with **FISMA compliance** in mind. cloud.gov has a [FedRAMP Joint Authorization Board (JAB) Provisional Authority to Operate (P-ATO)]({{< relref "overview/security/fedramp-tracker.md" >}}) at the Moderate impact level.  The vast majority of Low and Moderate controls are managed for you.
 
-### Free sandbox accounts
+### Free sandboxes
 
-Anyone with a .gov or .mil email address can try out cloud.gov for free by [signing up for a sandbox account]({{< relref "docs/help.md" >}}). **No paperwork required**.
+Anyone with a U.S. federal government email address can get access to a [free sandbox space]({{< relref "overview/pricing/free-limited-sandbox.md" >}}) and try cloud.gov immediately. **No paperwork required**.
 
 
