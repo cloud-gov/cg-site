@@ -85,7 +85,7 @@ Any labor involved from your project team is the responsibility of your project.
 
 1. Fill out the [organization request form](https://docs.google.com/a/gsa.gov/forms/d/e/1FAIpQLSd4HmcGfJW3EBnpewTFDD-urRFPp1LN0DcwNB_FxZgUn8ho9g/viewform?c=0&w=1).
     * Specify that the org should be created in `GovCloud`.
-    * An admin will confirm the information, and [create the org]({{< relref "docs/ops/create-org.md#non-sandboxes" >}}) for you.
+    * An admin will confirm the information, [create the org]({{< relref "docs/ops/create-org.md#non-sandboxes" >}}) for you, and notify you. This should happen within one business day.
 1. Install the [CF Targets plugin](https://github.com/guidowb/cf-targets-plugin).
 1. [Give permissions to the appropriate people.]({{< relref "docs/apps/managing-teammates.md" >}})
 1. Deploy the application to the GovCloud environment.
