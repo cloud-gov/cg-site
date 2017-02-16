@@ -25,7 +25,7 @@ You select an access package based on the kinds of applications you plan to host
 
 These are the access package options:
 
-- **Sandbox:** A way to try cloud.gov for free (with limitations), not for production. Free.
+- **[Sandbox]({{< relref "overview/pricing/free-limited-sandbox.md" >}}):** A way to try cloud.gov for free (with limitations), not for production. Free.
 
 - **Prototyping:** Deploying demo applications with a cloud.gov domain, not for production. $15K per year.
 
@@ -43,7 +43,7 @@ Along with the access package you select, you will be charged for the **quota** 
 
 Quotas are monitored daily and are invoiced monthly at these rates:
 
-- **Sandbox**: Free, with resource usage capped at 1 GB of RAM per month.
+- **[Sandbox]({{< relref "overview/pricing/free-limited-sandbox.md" >}})**: Free, with resource usage capped at 1 GB of RAM per month.
 
 - **Open Data**: $0.0033 per MB reserved per day, capped at 2 GB of RAM per month.
 
@@ -65,7 +65,7 @@ All three pricing components are factored into every access package. Use this ta
 
 | Package | What’s included? | Annual access package fee\* | Usage quota price | Managed services available |
 | --- | --- | --- | --- | --- |
-| **Sandbox** | Any user with a `.gov` or `.mil` email address can try out cloud.gov for a limited time with no paperwork required. | Free | Free, **capped at 1GB/month** | Only free services |
+| **[Sandbox]({{< relref "overview/pricing/free-limited-sandbox.md" >}})** | Anyone with a U.S. federal government email address can try a limited free cloud.gov space. | Free | Free, **capped at 1GB/month** | Only free services |
 | **Prototyping** | Suitable for many teams to deploy apps, though limited to the `*.app.cloud.gov` domain. Access control can be delegated to teams. No production data allowed. Usually purchased per agency/department. | $15K |  ~$99/GB/month | All\** |
 | **Open Data** | One public-facing Open Data (no confidentiality risk assessed) system, including all the spaces needed and DNS support. | $10K | ~$99/GB/month, **capped at 2GB/month** | All\** (up to $2500/year) |
 | **FISMA Low** | One public-facing FISMA Low system, including all the spaces needed and DNS support. | $20K | ~$99/GB/month | All\** |
