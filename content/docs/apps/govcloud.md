@@ -84,7 +84,7 @@ Any labor involved from your project team is the responsibility of your project.
 1. [Get access to the GovCloud environment](https://account.fr.cloud.gov/signup).
 1. Request the creation of your org in the GovCloud environment:
     * If you are in 18F/TTS at GSA, fill out the [organization request form](https://docs.google.com/a/gsa.gov/forms/d/e/1FAIpQLSd4HmcGfJW3EBnpewTFDD-urRFPp1LN0DcwNB_FxZgUn8ho9g/viewform?c=0&w=1). Specify that the org should be created in `GovCloud`. An admin will confirm the information, [create the org]({{< relref "docs/ops/create-org.md#non-sandboxes" >}}) for you, and notify you. This should happen within one business day.
-    * For everyone else, one of your org managers should email [cloud-gov-support@gsa.gov](mailto:cloud-gov-support@gsa.gov) to request the creation of your org in GovCloud. Include the name of your East/West org so that we can create the new org with the appropriate org name.
+    * For everyone else, one of your org managers should email [cloud-gov-support@gsa.gov](mailto:cloud-gov-support@gsa.gov?subject=[GovCloud Org Request]) to request the creation of your org in GovCloud. Please include "[GovCloud Org Request]" in the subject heading and specify the name of your current East/West org.
 1. Install the [CF Targets plugin](https://github.com/guidowb/cf-targets-plugin).
 1. [Give permissions to the appropriate people.]({{< relref "docs/apps/managing-teammates.md" >}})
 1. Deploy the application to the GovCloud environment.
