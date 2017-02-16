@@ -40,7 +40,7 @@ Limitations include:
 * Currently sandbox applications may run indefinitely, but **soon we will delete sandbox content once a month**. We will send notice emails to all sandbox users before we implement this.
 * Sandboxes can only use free [managed services]({{< relref "docs/services/index.md" >}}).
 * Don't put production applications or production data in sandboxes.
-* Sandboxes do not have an "org manager" role available. You can control access and permissions for your own sandbox space.
+* Sandboxes do not have an "org manager" role available. (You can control access and permissions for your own sandbox space.) If you want to manage an org of prototyping spaces for people at your agency, consider purchasing prototyping-tier access.
 * You can't set up [custom domains]({{< relref "docs/apps/custom-domains.md" >}}) for your applications. By default, your applications receive a `*.app.cloud.gov` domain.
 
 
