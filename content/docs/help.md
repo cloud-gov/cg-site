@@ -17,13 +17,11 @@ Email [cloud-gov-support@gsa.gov](mailto:cloud-gov-support@gsa.gov). We provide 
 
 (If you're TTS/18F staff, you can also talk to us in [#cloud-gov-support](https://gsa-tts.slack.com/messages/cloud-gov-support).)
 
-### Questions from industry
+### Questions from the public and industry
 
-If you're part of a company with a question on behalf of your company and not on behalf of a federal agency, we invite you to post your question [publicly as an issue on GitHub](https://github.com/18F/cg-site/issues/new) (requires a free GitHub account), so that we can write an answer available to everyone. If you'd prefer not to post publicly, you can email [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov), and we can let you know when we update our website with an answer to your question.
+If you have a question that isn't on behalf of a U.S. government organization (such as if you're a member of the public or representing a company), we invite you to post your question [publicly as an issue on GitHub](https://github.com/18F/cg-site/issues/new) (requires a free GitHub account), so that we can write an answer available to everyone. If you prefer not to post publicly, you can email [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov), and we can let you know if/when we update this website with an answer to your question.
 
-### Suggestions and questions from the public
-
-This is an open source website, and we welcome your ideas, corrections, and questions for cloud.gov documentation and other content. We invite you to [open an issue on GitHub](https://github.com/18F/cg-site/issues/new) (requires a free GitHub account).
+This is [an open source website](https://github.com/18F/cg-site), and we also invite you to suggest improvements to the documentation and other content as [pull requests](https://help.github.com/articles/about-pull-requests/) on the repository (requires a free GitHub account).
 
 ### Are you interested in working on cloud.gov?
 
