@@ -12,7 +12,7 @@ aliases:
   - /overview/pricing/paying-for-other-services
 ---
 
-All cloud.gov access packages include the following:
+All paid cloud.gov access packages include the following:
 
 - API access, CLI access, Web UI access
 - Documentation/tutorial material (including continuing development)

@@ -20,16 +20,16 @@ cloud.gov is suitable for a wide range of applications, including websites and n
 - Your application is for a United States federal government organization.
 - You understand that cloud.gov is a product under active development and will see changes in the future.
 - Your application is FISMA Moderate or lower.
-- You can pay for cloud.gov through the IAA/MOU process (see [how to purchase]({{< relref "overview/pricing/how-to-purchase.md" >}})).
+- You can pay for cloud.gov through the federal Interagency Agreement (IAA/MOU) process (see [how to purchase]({{< relref "overview/pricing/how-to-purchase.md" >}})).
 
 ### Technical requirements
 
-- Your team has access to the cloud.gov API through the cloud.gov command line interface (compatible with Windows, Mac, and Linux).
-- Your application stores configuration in the environment.
+- Your team can install the [cloud.gov command line interface]({{< relref "docs/getting-started/setup.md" >}}) (compatible with Windows, Mac, and Linux).
+- Your application can read configuration from the environment.
 - Your application uses one stateless process at a time (that can be horizontally scaled).
 - Your application listens to a single port.
-- Your dependencies are explicitly declared (such as `requirements.txt` for Python).
-- You don't rely on local storage for long-term data stores.
+- Your application's dependencies are explicitly declared (such as `requirements.txt` for Python).
+- Your application doesn't rely on local storage for long-term data stores.
 
 ### Optional but recommended
 - Your organization can integrate your identity system with cloud.gov over SAML.
@@ -38,8 +38,8 @@ cloud.gov is suitable for a wide range of applications, including websites and n
 ## Not a good fit
 
 - Your application requires Oracle, SQL Server, or proprietary databases.
-- You work for a local or state government organization.
+- Your team is unable to use the [federal Interagency Agreement process]({{< relref "overview/pricing/how-to-purchase.md" >}}) for payment. For example, this may apply for teams working for U.S. local, state, tribal, or territory government organizations. If this applies to your team, [sign up for updates](/#updates) so that we can notify you if we add other options.
 
 ## Cannot use cloud.gov
 
-- You do not work for a government organization, and the applications you are building are not on behalf of a government organization.
+- The applications you're building are not on behalf of a U.S. government organization.

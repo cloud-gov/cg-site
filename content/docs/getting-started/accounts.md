@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: getting-started
-title: Accounts
+title: Get access to cloud.gov
 weight: -100
 ---
 
@@ -10,8 +10,8 @@ weight: -100
 
 * **If you're in GSA or EPA:** You automatically have access and can log in.
 * **If you're in FDIC:** Some FDIC staff automatically have access and can log in. If you get an error, contact the FDIC identity team to be added to the cloud.gov access group.
-* **If you're outside GSA/EPA/FDIC and your team uses cloud.gov:** Ask a teammate to [invite you]({{< relref "managing-teammates.md" >}}).
-* **Otherwise:** If you'd like to try cloud.gov, [email us to ask for sandbox access]({{< relref "docs/help.md" >}}) or see [how to purchase cloud.gov]({{< relref "overview/pricing/how-to-purchase.md" >}}).
+* **If you're outside GSA/EPA/FDIC and your team already uses cloud.gov:** Ask a teammate to [invite you]({{< relref "managing-teammates.md" >}}).
+* **Otherwise:** If you have a U.S. federal government email address and would like to try cloud.gov, you can [get access to a sandbox space]({{< relref "overview/pricing/free-limited-sandbox.md" >}}).
 
 ## To log into cloud.gov
 
