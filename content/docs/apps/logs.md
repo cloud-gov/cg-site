@@ -36,19 +36,19 @@ For other helpful cf CLI troubleshooting commands, including `cf events APP-NAME
 
 ### Common error messages
 
-* `Please ask your Cloud Foundry Operator to check the platform configuration (trafficcontroller endpoint is wss://doppler.fr.cloud.gov:4443).` This can happen if your workplace has a firewall that blocks connections to ports other than 80 and 443. You can use the web-based logs interface instead.
+* If you get something like the following: `Please ask your Cloud Foundry Operator to check the platform configuration (trafficcontroller endpoint is wss://doppler.fr.cloud.gov:4443).` This can happen if your workplace has a firewall that blocks connections to ports other than 80 and 443. You can use the web-based logs interface instead, as described below.
 
 ## Web-based logs with historic log data
 
 To view and search your logs on the web, including historic log data, visit: 
 
-{{% eastwest %}}
-https://logs.cloud.gov
-{{% /eastwest %}}
-
 {{% govcloud %}}
 https://logs.fr.cloud.gov
 {{% /govcloud %}}
+
+{{% eastwest %}}
+https://logs.cloud.gov
+{{% /eastwest %}}
 
 Logs are currently retained for 180 days, and you will only see data for applications deployed within the [orgs](http://docs.cloudfoundry.org/concepts/roles.html#orgs) and [spaces](http://docs.cloudfoundry.org/concepts/roles.html#spaces) where you have access.
 
@@ -74,7 +74,7 @@ If you want to set up your own storage for your application logs, you can set up
 
 Not seeing the logs you expect? Here are a few questions to ask yourself to help identify the problem.
 
-Logs front end (logs.cloud.gov and logs.fr.cloud.gov):
+### Logs front end ([logs.fr.cloud.gov](https://logs.fr.cloud.gov) and [logs.cloud.gov](https://logs.cloud.gov))
 
 1. Are you viewing the right logs front end for the environment that your apps are in (GovCloud or East/West)?
 1. Check the time period in the upper right corner, since the default is "Last 15 minutes". You may need to expand that time period to hours or days.
