@@ -36,7 +36,7 @@ For other helpful cf CLI troubleshooting commands, including `cf events APP-NAME
 
 ### Error messages
 
-* Errors can sometimes be caused by having an old version of the cf CLI. Try `cf -v` and see if your version is older than the [latest version](https://github.com/cloudfoundry/cli/releases). If it is, you can [update it]({{< relref "docs/getting-started/setup.md#set-up-the-command-line" >}}) and try again.
+* Errors can sometimes be caused by having an old version of the cf CLI. Try `cf -v` and see if it's older than the [latest version](https://github.com/cloudfoundry/cli/releases). If it is, you can [install the latest version]({{< relref "docs/getting-started/setup.md#set-up-the-command-line" >}}) and try again.
 * If you get something like the following: `Please ask your Cloud Foundry Operator to check the platform configuration (trafficcontroller endpoint is wss://doppler.fr.cloud.gov:4443)` -- this can happen if your workplace has a firewall that blocks connections to ports other than 80 and 443. You can use the web-based logs interface instead, as described below.
 
 ## Web-based logs with historic log data
