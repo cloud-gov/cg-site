@@ -39,7 +39,7 @@ Once you get a sense of these, check out the [production-ready guide]({{< relref
 
 ### Avoid writing to the local file system
 
-Don't write to local file system storage. When your application restarts (for example, if you restart it, or if the platform automatically restarts it for you), files on the local filesystem will disappear. Instead, use a storage [service]({{< relref "docs/apps/managed-services.md" >}}).
+Don't depend on local file system storage. When your application restarts (for example, if you restart it, or if the platform automatically restarts it for you), files on the local filesystem will disappear. Instead, use a storage [service]({{< relref "docs/apps/managed-services.md" >}}).
 
 ### The platform may restart your application
 
