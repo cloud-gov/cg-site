@@ -15,10 +15,6 @@ Here's an overview of key cloud.gov terms and concepts. cloud.gov uses Cloud Fou
 
 Cloud Foundry groups its users by [organizations](http://docs.cloudfoundry.org/concepts/roles.html#orgs), or "orgs" for short. Orgs group together users for management and present a shared perimeter for services, domains and quotas. When your account is created, it gets permissions to an org and a personal space.
 
-### Naming convention
-
-Within 18F, the `ORGNAME` corresponds to a project/client, e.g. `cap` for GSA's [Common Acquisition Platform](http://www.gsa.gov/portal/category/106839), or `devops` for internal apps such as [Hubot](https://github.com/18F/18f-bot).
-
 ### List available orgs
 
 ```bash
@@ -92,11 +88,3 @@ Or a URL:
 * To build static assets on cloud.gov, [build assets on CI]({{< relref "assets.md#build-assets-on-ci" >}}).
 
 **Custom buildpacks:** If your application can't use a standard buildpack, you can use a [custom buildpack]({{< relref "docs/apps/experimental/custom-buildpacks.md">}}), which are unsupported. This means that if you use a custom buildpack, you're responsible for keeping your buildpack up-to-date and patching vulnerabilities in it. See [this chart illustrating your responsibilities]({{< relref "overview/technology/responsibilities.md">}}) for more detail.
-
-### Buildpack Release Schedule
-
-18F's selection of buildpacks may occasionally lag behind CF's by a month or more (except for security patches), in which case you may need to specify the URL in order to get a more up-to-date version. The buildpack release schedule looks like the following:
-
-- The CF buildpack team develops on a branch and cuts buildpack releases.
-- The CF release team cuts a release for CF with new buildpacks every ~2 weeks.
-- 18F grabs those releases and deploys them as soon as we can.
