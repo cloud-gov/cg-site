@@ -13,11 +13,7 @@ Here's an overview of key cloud.gov terms and concepts. cloud.gov uses Cloud Fou
 
 ## Organizations
 
-Cloud Foundry groups its users by [organizations](http://docs.cloudfoundry.org/concepts/roles.html#orgs), or "orgs" for short. Orgs group together users for management and present a shared perimeter for services, domains and quotas. When your account is created, it gets permissions to an org and a personal space.
-
-### Naming convention
-
-Within 18F, the `ORGNAME` corresponds to a project/client, e.g. `cap` for GSA's [Common Acquisition Platform](http://www.gsa.gov/portal/category/106839), or `devops` for internal apps such as [Hubot](https://github.com/18F/18f-bot).
+Cloud Foundry groups its users by [organizations](http://docs.cloudfoundry.org/concepts/roles.html#orgs), or "orgs" for short. Orgs group together users for management and present a shared perimeter for services, domains and quotas. When your account is created, it may already have permissions in an existing org and spaces.
 
 ### List available orgs
 
@@ -77,7 +73,7 @@ cf target -o ORGNAME -s SPACENAME
 
 All apps need to use a "buildpack" specific to their language, which sets up dependencies for their language stack. There are [standard buildpacks for most languages](https://docs.cloudfoundry.org/buildpacks/), and Cloud Foundry usually auto-detects and auto-applies the appropriate one when you deploy an app (one exception is that it doesn't auto-apply the special [binary buildpack](https://docs.cloudfoundry.org/buildpacks/binary/index.html)). We strongly encourage you to use the standard buildpacks. cloud.gov supports these standard buildpacks and provides security updates for them. (You're responsible for supporting and security-patching the applications you deploy with these standard buildpacks, and you'll also need to redeploy or restage your application to pick up buildpack updates.)
 
-In the rare case where Cloud Foundry doesn't correctly auto-detect the buildpack, or if you want to use a binary buildpack or [custom buildpack]({{< relref "docs/apps/experimental/custom-buildpacks.md">}}), you can specify a buildpack in the manifest (as below) or with the `-b` flag. To reference it, use either the buildpack name:
+In the rare case where Cloud Foundry doesn't correctly auto-detect the buildpack, or if you want to use a binary buildpack or [custom buildpack]({{< relref "docs/apps/experimental/custom-buildpacks.md">}}), you can specify a buildpack in the [application manifest](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) (as below) or with the `-b` flag. To reference it, use either the buildpack name:
 
     buildpack: python_buildpack
 
@@ -92,11 +88,3 @@ Or a URL:
 * To build static assets on cloud.gov, [build assets on CI]({{< relref "assets.md#build-assets-on-ci" >}}).
 
 **Custom buildpacks:** If your application can't use a standard buildpack, you can use a [custom buildpack]({{< relref "docs/apps/experimental/custom-buildpacks.md">}}), which are unsupported. This means that if you use a custom buildpack, you're responsible for keeping your buildpack up-to-date and patching vulnerabilities in it. See [this chart illustrating your responsibilities]({{< relref "overview/technology/responsibilities.md">}}) for more detail.
-
-### Buildpack Release Schedule
-
-18F's selection of buildpacks may occasionally lag behind CF's by a month or more (except for security patches), in which case you may need to specify the URL in order to get a more up-to-date version. The buildpack release schedule looks like the following:
-
-- The CF buildpack team develops on a branch and cuts buildpack releases.
-- The CF release team cuts a release for CF with new buildpacks every ~2 weeks.
-- 18F grabs those releases and deploys them as soon as we can.
