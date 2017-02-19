@@ -13,7 +13,7 @@ Here's an overview of key cloud.gov terms and concepts. cloud.gov uses Cloud Fou
 
 ## Organizations
 
-Cloud Foundry groups its users by [organizations](http://docs.cloudfoundry.org/concepts/roles.html#orgs), or "orgs" for short. Orgs group together users for management and present a shared perimeter for services, domains and quotas. When your account is created, it may already have permissions to view an org and spaces.
+Cloud Foundry groups its users by [organizations](http://docs.cloudfoundry.org/concepts/roles.html#orgs), or "orgs" for short. Orgs group together users for management and present a shared perimeter for services, domains and quotas. When your account is created, it may already have permissions in an existing org and spaces.
 
 ### List available orgs
 
