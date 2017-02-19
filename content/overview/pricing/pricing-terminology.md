@@ -26,7 +26,7 @@ A system maps to an [“org” in Cloud Foundry](http://docs.cloudfoundry.org/co
 
 ### Consulting
 
-“Consulting” is advice, development, documentation, etc. that is custom or specific the context of your application, system, or organization. If the outcome of the activity will not be reusable for our entire community of users, it’s consulting. Base platform fees for cloud.gov do not include consulting, and our team does not offer cloud-focused consulting outside of projects directly undertaken on behalf of a partner agency. This includes, for example, general information about migrating your products to the cloud. (All cloud.gov documentation and deployment are open source, so anyone may use this information to their benefit at any time.)
+“Consulting” is providing advice, development, documentation, and other resources that are custom or specific to the context of your application, system, or organization. If the outcome of the activity would not be reusable for our entire community of users, it’s consulting. Base platform fees for cloud.gov do not include consulting, and our team does not offer cloud-focused consulting outside of projects directly undertaken on behalf of a partner agency. This includes, for example, general information about migrating your products to the cloud. (All cloud.gov documentation and deployment are open source, so anyone may use this information to their benefit at any time.)
 
 ### Access package
 
@@ -36,7 +36,7 @@ The access package component is “non-severable” and therefore non-refundable
 
 ### Resource usage quota
 
-To support tenant applications and managed service instances, cloud.gov allocates resources (like compute nodes and memory) from an underlying IaaS. What we charge for this component covers the costs for the resources that cloud.gov allocates to hosted systems and teams. It also includes a small margin that covers our labor in managing those resources.
+To support tenant applications and managed service instances, cloud.gov allocates resources (like compute nodes and memory) from an underlying Infrastructure as a Service provider. What we charge for this component covers the costs for the resources that cloud.gov allocates to hosted systems and teams. It also includes a small margin that covers our labor in managing those resources.
 
 Resource usage fees on-demand are understood to be “severable” as they can be controlled in a self-service manner by provisioning more or fewer apps, and therefore must be treated accordingly.
 
