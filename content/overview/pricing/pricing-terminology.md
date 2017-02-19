@@ -16,9 +16,9 @@ These terms, among others, define a number of products and services offered by c
 
 ### System
 
-A “System” roughly corresponds to a product or project team, including all the individual spaces, apps, and services necessary to realize their service, across as many environments as needed.
+A “system” roughly corresponds to a product or project team, including all the individual spaces, apps, and services necessary to deliver their product to users.
 
-A system maps to an [“org” in Cloud Foundry](http://docs.cloudfoundry.org/concepts/roles.html#orgs).
+A system maps to an [“org” in cloud.gov and Cloud Foundry](http://docs.cloudfoundry.org/concepts/roles.html#orgs).
 
 ### Support {#support}
 
