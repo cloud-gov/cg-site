@@ -6,7 +6,7 @@ title: Set up cloud.gov and log in
 weight: -50
 ---
 
-First get [an account]({{< relref "accounts.md" >}}), and then you can log into cloud.gov in the following ways -- command line and dashboard (web interface).
+If you have set up your [access to cloud.gov]({{< relref "accounts.md" >}}), you can log into cloud.gov in the following ways -- command line and dashboard (web interface).
 
 ## Set up the command line
 
