@@ -11,7 +11,7 @@ To get used to cloud.gov, practice by deploying a simple "hello world" applicati
 1. First, [go through account setup]({{< relref "setup.md" >}}) (if you haven't already), so that you're logged into the cloud.gov CLI and have targeted your sandbox.
 1. Visit [this collection of "hello world" applications (tiny sample applications)](https://github.com/18F/cf-hello-worlds) and use **Clone or download** to make a copy on your computer. (This is easiest if you have [Git](https://git-scm.com/downloads) installed on your computer.) For example, if you use `git` on the command line, enter `git clone https://github.com/18F/cf-hello-worlds.git`
 1. Move into that directory, for example: `cd cf-hello-worlds`
-1. Look at the collection of tiny apps, and `cd` into the directory for the language/framework you feel most comfortable with. For example: `cd flask`
+1. Look at the collection of tiny apps, and `cd` into the directory for the language/framework you feel most comfortable with. For example: `cd python-flask`
 1. Deploy the application, where `APPNAME` should be something unique like `FRAMEWORK-YOURNAME` (e.g. `nodejs-aidan`). By default on cloud.gov, `APPNAME` is used to construct a route to make your application reachable at https://APPNAME.app.cloud.gov/. Route names must be unique across the platform.
 
 
