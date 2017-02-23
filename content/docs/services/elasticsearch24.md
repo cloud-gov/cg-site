@@ -4,7 +4,7 @@ menu:
     parent: services
 title: Elasticsearch 2.4
 name: "elasticsearch24"
-description: "[Elasticsearch](https://www.elastic.co/products/elasticsearch) version 2.4 a distributed, RESTful search and analytics engine"
+description: "Elasticsearch version 2.4: a distributed, RESTful search and analytics engine"
 status: "Alpha"
 ---
 

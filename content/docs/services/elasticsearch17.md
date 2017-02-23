@@ -4,7 +4,7 @@ menu:
     parent: services
 title: Elasticsearch 1.7
 name: "elasticsearch17"
-description: "[Elasticsearch](https://www.elastic.co/products/elasticsearch) version 1.7 a distributed, RESTful search and analytics engine"
+description: "Elasticsearch version 1.7: a distributed, RESTful search and analytics engine"
 status: "Alpha"
 ---
 

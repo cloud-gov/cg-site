@@ -4,7 +4,7 @@ menu:
     parent: services
 title: Redis 2.8
 name: "redis28"
-description: "[Redis](https://redis.io/) version 2.8 an in-memory data structure store"
+description: "Redis version 2.8: an in-memory data structure store"
 status: "Alpha"
 ---
 

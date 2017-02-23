@@ -4,7 +4,7 @@ menu:
     parent: services
 title: CDN service
 name: "cdn-route"
-description: "Custom domains, CDN caching, and TLS certificates using Amazon CloudFront"
+description: "Custom domains, CDN caching, and TLS certificates with automatic renewal"
 status: "Production Ready"
 ---
 
@@ -18,7 +18,7 @@ This service provides three key elements to support production applications:
 
 Plan Name | Description | Price
 --------- | ----------- | -----
-`cdn-route` | Custom domains, CDN caching, and TLS certificates with auto renewal | Free
+`cdn-route` | Custom domains, CDN caching, and TLS certificates with automatic renewal | Free
 
 ## Options
 
