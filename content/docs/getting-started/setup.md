@@ -6,7 +6,32 @@ title: Set up cloud.gov and log in
 weight: -50
 ---
 
-If you have set up your [access to cloud.gov]({{< relref "accounts.md" >}}), you can log into cloud.gov in the following ways -- command line and dashboard (web interface).
+If you have set up your [access to cloud.gov]({{< relref "accounts.md" >}}), you can log into cloud.gov in the following ways -- dashboard (web interface) and command line.
+
+## Log into the dashboard (web interface)
+
+cloud.gov has a dashboard that gives you easy web-based access to common tasks.
+
+Your dashboard is probably empty right now since you probably haven't deployed any applications yet, but it's good to try logging in and looking at it as your first step, since you'll use it in the future.
+
+Two notes before you log in:
+
+* When you log in for the first time, cloud.gov will create a [sandbox space]({{< relref "overview/pricing/free-limited-sandbox.md" >}}) for you, but it may take up to **5 minutes** for cloud.gov to complete its automatic creation of your sandbox space. If your teammates have already given your account access to orgs and spaces, it may also take a few minutes for your access to appear.
+* Throughout the cloud.gov documentation, select the **GovCloud environment** or **East/West environment** instructions based on where your spaces are located. If you're not sure which to select, the **GovCloud environment** is the environment for new sandbox accounts and new teams. You can also ask a teammate or [ask support]({{< relref "docs/help.md" >}}).
+
+Now try logging in:
+
+{{% govcloud %}}
+[`https://dashboard.fr.cloud.gov/`](https://dashboard.fr.cloud.gov/)
+
+**Tip:** The `fr.` in this URL (and other cloud.gov URLs) indicates the GovCloud environment.
+{{% /govcloud %}}
+
+{{% eastwest %}}
+[`https://dashboard.cloud.gov/`](https://dashboard.cloud.gov/)
+
+**Note:** If you just logged into the cloud.gov East/West environment for the first time, you won't receive a sandbox space in the East/West environment. You can log into the cloud.gov GovCloud environment to get access to a sandbox space.
+{{% /eastwest %}}
 
 ## Set up the command line
 
@@ -16,7 +41,7 @@ cloud.gov is based on the Cloud Foundry open source project, so cloud.gov uses t
   - If your organization restricts the use of the installer, you can [download the CLI binary and install it manually](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#bin).
 1. Confirm the installation by running `cf -v` -- this should return a version number.
 
-1. Log in with a command as explained below. Select the East/West or GovCloud instructions based on where your spaces are located. If you're not sure which environment to select, GovCloud is the main environment for new sandbox accounts and new teams. You can also ask a teammate or [ask support]({{< relref "docs/help.md" >}}).
+1. Log in with a command as explained below. Just like with the dashboard instructions, the **GovCloud environment** is the main environment for new accounts and teams.
 
 {{% govcloud %}}
 **For all accounts in the GovCloud environment:**
@@ -36,26 +61,9 @@ Then it'll say `One Time Code ( Get one at `[`https://login.cloud.gov/passcode`]
 **If you log in with a cloud.gov account that has its own password** (including `ORGNAME_deployer` accounts): run `cf login -a api.cloud.gov`
 {{% /eastwest %}}
 
-
-## Check out the dashboard
-
-cloud.gov also has a dashboard that gives you easy web-based access to common tasks.
-
-Try visiting your dashboard! It's probably a little empty since you probably haven't deployed any applications yet, but it's good to know it exists:
-
-{{% govcloud %}}
-[`https://dashboard.fr.cloud.gov/`](https://dashboard.fr.cloud.gov/)
-
-Tip: the `fr` in this URL indicates the GovCloud environment.
-{{% /govcloud %}}
-
-{{% eastwest %}}
-[`https://dashboard.cloud.gov/`](https://dashboard.cloud.gov/)
-{{% /eastwest %}}
-
 ## Play around in your "sandbox"
 
-Here's how to deploy a test app in your sandbox for practice, using the CLI. (Note that **if you log in immediately after your account or organization was created,** you may not see any orgs or spaces to which you have access. Your sandbox space may take up to **5 minutes** to provision.)
+Here's how to deploy a test app in your sandbox for practice, using the CLI.
 
 Start with the following `cf target` command:
 
@@ -95,7 +103,7 @@ Everyone else: `cf login -a api.cloud.gov`
 {{% /eastwest %}}
 
 
-Web interface (dashboard):
+Dashboard (web interface):
 
 {{% govcloud %}}
 [`https://dashboard.fr.cloud.gov/`](https://dashboard.fr.cloud.gov/)
