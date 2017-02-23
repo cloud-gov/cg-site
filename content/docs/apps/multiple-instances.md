@@ -12,7 +12,7 @@ There are three ways to start multiple app instances on cloud.gov:
 2.  In the `manifest.yml`
 3.  Using the `cf scale` command
 
-When you scale your app by running multiple instances, cloud.gov schedules those instances across availability zones to maximize your app's resiliency. cloud.gov also load-balances access from users by default, so you should set up your instances to share session data (for example using [Redis]({{< relref "docs/services/redis28.md" >}})) to avoid unexpected behavior.
+When you scale your app by running multiple instances, cloud.gov schedules those instances across availability zones to maximize your app's resiliency. cloud.gov also load-balances access from users by default, so you should set up your instances to share session data to avoid unexpected behavior. If your application already stores data in a database, you can use it for this as well; applications that don't yet have databases can establish one (for example using [AWS RDS]({{< relref "docs/services/relational-database.md" >}})) or use another type of data storage (such as [Redis]({{< relref "docs/services/redis28.md" >}})).
 
 #### Push command method
 
