@@ -65,7 +65,7 @@ Ask [cloud.gov support]({{< relref "docs/help.md" >}}) to set up a "deployer" us
 
 ## Continuous integration services
 
-To set up any of these services, your application needs a `manifest.yml` file.
+To set up any of these services, you will need to provide [a `manifest.yml` file](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) that captures the intended deployment configuration for your application.
 
 ### Travis
 
