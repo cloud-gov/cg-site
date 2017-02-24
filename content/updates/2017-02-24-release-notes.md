@@ -17,9 +17,7 @@ If you have an email address that ends in .gov, .mil, or .fed.us, you can now cr
 ### Fixed
 Services now appear in the web-based dashboard. Previously, the UI continued to act as if it was loading them without ever actually serving them to you.
 
-
-### Migration reminder
-Now that cloud.gov is FedRAMP Authorized in our new environment, Amazon Web Services (AWS) GovCloud, we’re phasing out our original environment, AWS East/West. Apps on East/West need to migrate to the new environment by March 15th. We strongly suggest you start as soon as you can to allow for any unforeseen complications. For instructions on migrating, getting a list of all your apps, and accessing support, see [our GovCloud migration guidance]({{< relref="docs/apps/govcloud.md#migration" >}}).
-
 ### See also
-If you’re interested in details about recent dashboard updates, you can also see the [dashboard release notes](https://github.com/18F/cg-dashboard/releases).
+- **Dashboard releases:** If you’re interested in details about recent dashboard updates, you can also see the [dashboard release notes](https://github.com/18F/cg-dashboard/releases).
+
+- **Reminder to migrate apps to the new environment:** Now that cloud.gov is FedRAMP Authorized in our new environment, Amazon Web Services (AWS) GovCloud, we’re phasing out our original environment, AWS East/West. Apps on East/West need to migrate to the new environment by March 15th. We strongly suggest you start as soon as you can to allow for any unforeseen complications. For instructions on migrating, getting a list of all your apps, and accessing support, see [our GovCloud migration guidance]({{< relref="docs/apps/govcloud.md#migration" >}}).
