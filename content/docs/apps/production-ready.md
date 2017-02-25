@@ -49,7 +49,7 @@ When running an application for development or testing, it is best to have a sep
 You want to receive alerts about application errors, downtime, and throughput issues.
 
 #### How
-* New Relic provides extensive application performance and availability monitoring with "Insights". You can set up and receive alerts on a variety of metrics.
+* There are many external services that provide alerting. For example, New Relic provides application availability monitoring with "Synthetics".
 
 ## Additional practices
 The following practices are very helpful to incorporate into most cloud.gov apps. Evaluate which ones you need for your team and users.
