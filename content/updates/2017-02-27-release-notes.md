@@ -8,7 +8,7 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
 <!--more-->
 
 ### Added
-If you have an email address that ends in .gov, .mil, or .fed.us, you can now create your own cloud.gov account. Previously, anyone who wanted to use cloud.gov had to send us an email requesting an invite. Now, you can generate an invite just by entering your government email address at https://account.fr.cloud.gov/signup.
+If you have an email address that ends in .gov, .mil, or .fed.us, you can now send yourself an invitation for a free sandbox space. Previously, anyone who wanted to use cloud.gov had to send us an email requesting an invite. Now, you can generate an invite just by entering your government email address at https://account.fr.cloud.gov/signup.
 
 ### Changed
 - You can now [configure CDN instances]({{< relref="docs/services/cdn-route.md" >}}) that pass the original host to your application. This lets you set up relative redirects with your own domain name rather than with `*.app.cloud.gov`.
