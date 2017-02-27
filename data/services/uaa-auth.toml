@@ -1,0 +1,3 @@
+name = "uaa-auth"
+description = "Protect applications with cloud foundry authentication in the routing path"
+status = "Alpha"
