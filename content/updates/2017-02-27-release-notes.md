@@ -11,7 +11,7 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
 If you have an email address that ends in .gov, .mil, or .fed.us, you can now create your own cloud.gov account. Previously, anyone who wanted to use cloud.gov had to send us an email requesting an invite. Now, you can generate an invite just by entering your government email address at https://account.fr.cloud.gov/signup.
 
 ### Changed
-- You can now configure broker instances that pass the original host to your application. This lets you set up relative redirects with your own domain name rather than with `*.app.cloud.gov`.
+- You can now [configure CDN instances]({{< relref="docs/services/cdn-route.md" >}}) that pass the original host to your application. This lets you set up relative redirects with your own domain name rather than with `*.app.cloud.gov`.
 - The way you accept a cloud.gov invitation now requires one small extra step. Some government agencies use software that verifies URLs in incoming emails. This change prevents that software from causing invitations sent via email to expire before they could be used. Now, the URL in the email serves you a page with a `Redeem your invitation` button. You have to click the button to accept the invitation.
 
 ### Fixed
