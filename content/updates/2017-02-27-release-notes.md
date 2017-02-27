@@ -15,7 +15,7 @@ If you have an email address that ends in .gov, .mil, or .fed.us, you can now cr
 - The way you accept a cloud.gov invitation now requires one small extra step. Some government agencies use software that verifies URLs in incoming emails. This change prevents that software from causing invitations sent via email to expire before they could be used. Now, the URL in the email serves you a page with a `Redeem your invitation` button. You have to click the button to accept the invitation.
 
 ### Fixed
-Your services now appear consistently in the web-based dashboard. Previously, the UI continued to act as if it was loading them without ever actually serving them to you.
+Your services now appear consistently in the [cloud.gov dashboard](https://dashboard.fr.cloud.gov). Previously, the UI continued to act as if it was loading them without ever actually serving them to you.
 
 ### See also
 - **Dashboard releases:** If you’re interested in details about recent dashboard updates, you can also see the [dashboard release notes](https://github.com/18F/cg-dashboard/releases).
