@@ -73,7 +73,7 @@ Note that this will not work for any command that is interactive.
     cf logs --recent task-runner
     ```
 1. If needed, use [`cf files`][] to collect any artifacts.
-1. Run `cf delete task-runner` to clean it up.
+1. Run `cf delete task-runner` to clean it up. **If you forget to do this, you might find your app runs again due to a restart in future!** (For example, if cloud.gov itself is updated, it may migrate your app to another runner by starting a separate instance there prior to removing the existing one.)
 
 [`cf files`]: http://cli.cloudfoundry.org/en-US/cf/files.html
 
