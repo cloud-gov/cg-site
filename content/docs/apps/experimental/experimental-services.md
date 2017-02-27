@@ -4,6 +4,8 @@ menu:
     parent: experimental
 title: Experimental services
 slug: services
+aliases:
+- /docs/services/uaa-auth
 ---
 
 [**This is an experimental feature.**]({{< relref "docs/apps/experimental/experimental.md" >}})

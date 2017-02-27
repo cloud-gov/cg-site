@@ -3,6 +3,7 @@ menu:
   docs:
     parent: services
 title: Relational databases (aws-rds)
+description: "Persistent, relational databases using Amazon RDS"
 aliases:
   - /docs/apps/databases
 ---
@@ -13,16 +14,16 @@ If your application uses relational databases for storage, you can use the AWS R
 
 Plan Name | Description | Price
 --------- | ----------- | -----
-`shared-psql`            | Shared infrastructure for Postgres DB               | Free
-`medium-psql`            | Dedicated Medium RDS Postgres DB Instance           | $0.115 / hr + storage
-`medium-psql-redundant`  | Dedicated Redundant Medium RDS Postgres DB Instance | $0.230 / hr + storage
-`large-psql`             | Dedicated Large RDS Postgres DB Instance            | $0.230 / hr + storage
-`large-psql-redundant`   | Dedicated Redundant Large RDS Postgres DB Instance  | $0.470 / hr + storage
-`shared-mysql`           | Shared infrastructure for MySQL DB                  | Free
-`medium-mysql`           | Dedicated Medium RDS MySQL DB Instance              | $0.110 / hr + storage
-`medium-mysql-redundant` | Dedicated Redundant Medium RDS MySQL DB Instance    | $0.220 / hr + storage
-`large-mysql`            | Dedicated Large RDS MySQL DB Instance               | $0.220 / hr + storage
-`large-mysql-redundant`  | Dedicated Redundant Large RDS MySQL DB Instance     | $0.440 / hr + storage
+`shared-psql`            | Shared PostgresSQL database for prototyping (no sensitive or production data) | Free
+`medium-psql`            | Dedicated medium RDS PostgreSQL DB instance                                   | $0.115 / hr + storage
+`medium-psql-redundant`  | Dedicated redundant medium RDS PostgreSQL DB instance                         | $0.230 / hr + storage
+`large-psql`             | Dedicated large RDS PostgreSQL DB instance                                    | $0.230 / hr + storage
+`large-psql-redundant`   | Dedicated redundant large RDS PostgreSQL DB instance                          | $0.470 / hr + storage
+`shared-mysql`           | Shared MySQL database for prototyping (no sensitive or production data)       | Free
+`medium-mysql`           | Dedicated medium RDS MySQL DB instance                                        | $0.110 / hr + storage
+`medium-mysql-redundant` | Dedicated redundant medium RDS MySQL DB instance                              | $0.220 / hr + storage
+`large-mysql`            | Dedicated large RDS MySQL DB instance                                         | $0.220 / hr + storage
+`large-mysql-redundant`  | Dedicated redundant large RDS MySQL DB instance                               | $0.440 / hr + storage
 
 ### Storage pricing:
 
@@ -65,7 +66,7 @@ executable which will interactively assist with accessing the data in the
 database. It supports accessing data from different types of databases.
 1. [Manually accessing the database](#manually-access-a-database). This way
 requires manually downloading the tool(s) needed to access the database. The
-only type of database supported via this method is Postgres.
+only type of database supported via this method is PostgreSQL.
 
 ### cg-migrate-db plugin
 The easiest way to access the data in your database is via the `cg-migrate-db`

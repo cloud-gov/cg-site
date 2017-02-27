@@ -4,7 +4,7 @@ menu:
     parent: services
 title: cloud.gov identity provider
 name: "cloud-gov-identity-provider"
-description: "Manage client credentials for authenticating cloud.gov users in your app"
+description: "Authenticate cloud.gov users in your app"
 status: "Beta"
 ---
 
@@ -14,7 +14,7 @@ You can leverage cloud.gov's identity hub to reduce the burden of authenticating
 
 Plan Name | Description | Price
 --------- | ----------- | -----
-`oauth-client` | Register a UAA client for app authentication | Free
+`oauth-client` | OAuth2 client credentials for authenticating cloud.gov users in your app | Free
 
 ## How to create an instance
 
