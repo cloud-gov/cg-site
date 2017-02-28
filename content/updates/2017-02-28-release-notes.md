@@ -8,7 +8,7 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
 <!--more-->
 
 ### Added
-People who have a federal government email address, can create a free sandbox space using https://account.fr.cloud.gov/signup. Previously, they had to send an email requesting an invite.
+People who have a federal government email address can create a free sandbox space using https://account.fr.cloud.gov/signup. Previously, they had to send an email requesting an invite.
 
 ### Changed
 - You can configure CDN instances that pass the original host to your application. This lets you set up relative redirects with your own domain name rather than with `*.app.cloud.gov`. Related, the [commands for creating a new CDN service instance]({{< relref "docs/services/cdn-route.md#how-to-create-an-instance-of-this-service" >}}) have changed slightly.
