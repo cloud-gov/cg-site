@@ -12,7 +12,7 @@ People who have a federal government email address, can create a free sandbox sp
 
 ### Changed
 - You can configure CDN instances that pass the original host to your application. This lets you set up relative redirects with your own domain name rather than with `*.app.cloud.gov`. Related, the [commands for creating a new CDN service instance]({{< relref="docs/services/cdn-route.md#how-to-create-an-instance-of-this-service" >}}) have changed slightly.
-- To accept a cloud.gov invitation, you have to click a button after visiting the link in the invitation email, in order to stop the invitations from expiring before use. Some government agencies use services that scan URLs in incoming emails by automatically clicking them, which caused earlier invites to expire before they could be used.
+- To accept a cloud.gov invitation, you have to click a button after visiting the link in the invitation email. This prevents invitations from expiring before use. Some government agencies use services that scan URLs in incoming emails by automatically clicking them, which caused earlier invites to expire before they could be used.
 
 ### Fixed
 Available services appear consistently in the [cloud.gov dashboard](https://dashboard.fr.cloud.gov). Previously, the UI sometimes acted as though it was loading them without ever serving them to you.
