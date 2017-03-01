@@ -14,9 +14,10 @@ cloud.gov offers [Elasticsearch](https://www.elastic.co/) 2.4 as a service. **Th
 
 Plan Name | Description | Price
 --------- | ----------- | -----
-`1x` | Elasticsearch instance with 1GB of RAM and 1 slice of CPU | Free in Alpha
-`3x` | Elasticsearch instance with 3GB of RAM and 3 slices of CPU | Free in Alpha
-`6x` | Elasticsearch instance with 6GB of RAM and 6 slices of CPU | Free in Alpha
+`1x`  | Elasticsearch instance with 1GB of RAM and 1 slice of CPU   | Free in Alpha
+`3x`  | Elasticsearch instance with 3GB of RAM and 1 slice of CPU   | Free in Alpha
+`6x`  | Elasticsearch instance with 6GB of RAM and 1 slice of CPU   | Free in Alpha
+`12x` | Elasticsearch instance with 12GB of RAM and 2 slices of CPU | Free in Alpha
 
 ## How to create an instance
 
