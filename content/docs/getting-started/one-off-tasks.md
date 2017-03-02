@@ -14,8 +14,8 @@ This table shows a handful of common operations, with the recommended way to per
 What are you trying to do? | East/West | GovCloud
 --- | --- | ---
 Inspect an app instance to figure out what's wrong | Not possible, unfortunately. | [`cf ssh`]({{< relref "docs/apps/using-ssh.md" >}})
-Work with one of my service instances | [`cf-ssh`]({{< relref "docs/apps/using-ssh.md" >}}) | [`cf ssh` with port forwarding]({{< relref "docs/apps/using-ssh.md" >}})
-Run a non-interactive process that generates a report, cleans up garbage, mails people, processes some data, etc. | [Short-lived app]({{< relref "#deploy-a-short-lived-app" >}}) | [Cloud Foundry Tasks](https://docs.cloudfoundry.org/devguide/using-tasks.html)
+Work with one of your service instances | [`cf-ssh`]({{< relref "docs/apps/using-ssh.md" >}}) | [`cf ssh` with port forwarding]({{< relref "docs/apps/using-ssh.md" >}})
+Run a non-interactive process that does a task (such as generating a report, cleaning up garbage, mailing people, processing some data, etc.) | [Short-lived app]({{< relref "#deploy-a-short-lived-app" >}}) | [Cloud Foundry Tasks](https://docs.cloudfoundry.org/devguide/using-tasks.html)
 
 ## Deploy a short-lived app
 
