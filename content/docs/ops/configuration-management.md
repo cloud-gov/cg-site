@@ -7,7 +7,7 @@ title: Configuration management
 
 <!-- This page is important for FedRAMP compliance. See the CM family of controls, including CM-9. Code Climate is part of SA-11 (1), SI-3, and RA-5. -->
 
-This document describes how the 18F cloud.gov team approaches configuration management of the core platform.
+This document describes how the cloud.gov team approaches configuration management of the core platform.
 
 ## What goes into configuration management?
 In short, everything needed to run and operate the platform that is not a _secret_. (See [Secret Key Management]({{< relref "docs/ops/secrets.md" >}}) for that.)
@@ -29,21 +29,21 @@ Security tests need to be executed in the staging environment where changes are 
 
 ## Change workflow
 
-1. All configuration changes must flow through a git repository, centrally managed through GitHub, unless they contain sensitive information. In these cases, sensitive information should be stored in an S3 bucket with a proper security policy, encryption, and versioned, so that changes can be easily rolled back.
+1. All configuration changes must flow through a git repository, centrally managed through GitHub, unless they contain sensitive information. In these cases, sensitive information should be stored in an S3 bucket with a proper security policy and encryption, versioned such that changes can be easily rolled back.
 1. A change is initiated and discussed as a GitHub issue in [the relevant 18F repository](https://github.com/18F).
-1. A Pull Request (PR) is created that addresses the change and references the created issue.
+1. A pull request (PR) is created that addresses the change and references the created issue.
     If there is a staging environment available for a given repository, the PR should be
     created against the `staging` branch. Otherwise, the PR should be created against the `master` branch on the canonical repository.
-1. If the repository contains 18F-developed code, the PR must have an automated Code Climate check, which must pass before the PR can be merged.
+1. If the repository contains 18F-developed code, the PR must have an automated [Code Climate](https://codeclimate.com) check, which must pass before the PR can be merged.
 1. The PR is reviewed by someone other than the committer. Pairing via screen-sharing
-is encouraged and qualifies as a review. Review should include architectural design, DRY principles, security and code quality.
+is encouraged and qualifies as a review. Review should include assessment of architectural design, DRY principles, security and code quality.
 1. The reviewer merges the PR.
 1. A continuous integration (CI) server handles automated tests and continuous deployment (CD) of the merged changes.
     - All changes are deployed to a testing environment, such as staging.
     - Any and all automated tests are run.
     - If all tests pass, changes can be promoted for deployment to production in the pipeline.
 
-1. The CI/CD tool uses GitHub repositories and S3 stored sensitive content as the canonical source of truth for what the platform should look like, and it will reset the state of all systems to match in the case of any manual changes.
+1. The CI/CD tool uses GitHub repositories and S3-stored sensitive content as the canonical source of truth for what the platform should look like. If there are manual changes, it will reset the state of all systems to match.
 
 ![Pipeline Example](/img/pipeline-example.png)
 
@@ -56,7 +56,7 @@ If possible, Configuration Management tools need to be set up to always roll bac
 
 <!-- As long as these GitHub guidelines comply with the FedRAMP-required policies above and our 18F GitHub requirements, we can adjust them at will, according to our team preferences. -->
 
-As part of 18F, we follow [the 18F requirements for using GitHub](https://handbook.18f.gov/github/). These are our team practices within those requirements.
+Because cloud.gov is built and maintained by 18F, we follow [the 18F requirements for using GitHub](https://handbook.18f.gov/github/). These are our team practices within those requirements.
 
 ### Forking vs. branching
 
@@ -69,8 +69,7 @@ that paired collaboration on a single branch avoids certain types of friction:
 - Having to add new users to forked repositories as collaborators in order to
   have people directly contribute on short-lived forked branches
 
-When contributing directly on a branch, we're able to modify work in progress
-(WIP) commits and encourage collaboration across the Cloud Operations team.
+When contributing directly on a branch, we're able to modify work-in-progress (WIP) pull requests and encourage collaboration across the Cloud Operations team.
 
 ### Squashing commits
 
