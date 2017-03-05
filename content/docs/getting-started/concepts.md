@@ -13,7 +13,7 @@ Here's an overview of key cloud.gov terms and concepts. cloud.gov uses Cloud Fou
 
 ## Organizations
 
-Cloud Foundry groups its users by [organizations](http://docs.cloudfoundry.org/concepts/roles.html#orgs), or "orgs" for short. Orgs group together users for management and present a shared perimeter for services, domains and quotas. When your account is created, it may already have permissions in an existing org and spaces.
+Your work inside cloud.gov takes place within [organizations](http://docs.cloudfoundry.org/concepts/roles.html#orgs), or "orgs" for short. Orgs group together users for management and present a shared perimeter for services, domains and quotas. When your account is created, it may already have permissions in an existing org.
 
 ### List available orgs
 
@@ -41,15 +41,15 @@ cf target -o ORGNAME
 
 ## Spaces
 
-Every application is scoped to a [space](http://docs.cloudfoundry.org/concepts/roles.html#spaces). Applications in the same space share a location for app development, deployment, and maintenance.
+Each org contains [spaces](http://docs.cloudfoundry.org/concepts/roles.html#spaces), which can contain applications. Applications in the same space share a location for app development, deployment, and maintenance.
 
 ### Naming convention
 
-Within 18F, the `SPACENAME` corresponds to an environment, e.g. `dev` or `prod`. If the org is more general (e.g. `devops`), the space may correspond to the name of the project (e.g. `hubot`).
+For orgs that contain production systems (or systems under development before release), we recommend setting up spaces to correspond to each environment, such as `development`, `staging`, and `production`. If you have a prototyping org that contains many prototypes, each space may correspond to a project (such as `test-bot` and `blog-experiment`).
 
-### Management
+### Space management
 
-To create a space:
+To [create a space](http://cli.cloudfoundry.org/en-US/cf/create-space.html):
 
 ```bash
 cf create-space SPACENAME
@@ -63,7 +63,7 @@ cf org-users ORGNAME
 
 ## Target
 
-The Cloud Foundry CLI keeps a global state of whatever [organization]({{< relref "#organizations" >}})+[space]({{< relref "#spaces" >}}) you're interacting with. This is known as the "target", and you can set it with:
+The Cloud Foundry CLI keeps a global state of the [organization]({{< relref "#organizations" >}})+[space]({{< relref "#spaces" >}}) you're interacting with. This is known as the "target", and you can set it with:
 
 ```bash
 cf target -o ORGNAME -s SPACENAME
