@@ -19,16 +19,19 @@ the resources with a `_vX` version suffix. These resources are then referenced
 in our output with a suffix for previous and current keys e.g. `_prev` and `_curr`.
 
 This is used to avoid invalidating all the previous credentials during a secrets
-rotation. This gives the operator enough a window to update credentials across
+rotation. This gives the operator enough of a window to update credentials across
 our various deployments.
 
 ### Rotating IAM user access key ids and secret access keys
 
 When rotating IAM user credentials, it's important to generate new ones while
 making sure the old ones stay around until Concourse pipelines and Bosh
-manifests are updated with the latest version's output. The following examples
+manifests are updated with the latest version output. The following examples
 show file-diffs for a single user. You will repeat this process across all user
-modules and submit a single PR to begin the secret rotation window.
+modules and submit a single PR to begin the secret rotation window. You can also
+find examples of closed and merged pull requests in the [`cg-provision`
+repository](https://github.com/18F/cg-provision/pulls?utf8=✓&q=is%3Apr%20is%3Aclosed%20rotate)
+around rotating IAM roles
 
 #### Update the rotation iam_user module to have two access key resources
 
@@ -58,7 +61,7 @@ diff --git a/terraform/modules/iam_user/limit_check_user/user.tf b/terraform/mod
 
 ```
 
-The example above shows keys being rotated from `_v1` to `_v2`. The example
+The example above shows keys being rotated from `_v2` to `_v3`. The example
 below shows that the named resources from above `iam_access_key_vX` are set as
 values for the `_prev` and `_curr` outputs.
 
@@ -91,8 +94,10 @@ diff --git a/terraform/modules/iam_user/limit_check_user/outputs.tf b/terraform/
 Repeat this process across all the `modules/iam_user/*/user.tf` and
 `modules/iam_user/*/outputs.tf` files. Once that's done, submit a pull request
 against `master` for `cg-provision`. Once the pull request is merged, run the
-provisioning set in Concourse. Capture the outputs for `_curr` and replace all
-the values of `_prev` in either Bosh manifests secrets stubs or Concourse credentials.
+provisioning step in Concourse.
+
+Capture the outputs for `_curr` and replace all the values of `_prev` in either
+Bosh manifests secrets stubs or Concourse credentials.
 
 #### Revert the source for all modules
 
@@ -121,8 +126,8 @@ diff --git a/terraform/modules/iam_user/limit_check_user/user.tf b/terraform/mod
 
 ```
 
-The example above leverages `_v2` as the now current version by removing the
-`_v1` version from the `user.tf` file. The example below removes the output
+The example above references `_v3` as the now current version by removing the
+`_v2` version from the `user.tf` file. The example below removes the output
 value from the `_prev` output since the previous version was removed in the
 `user.tf` file.
 
@@ -150,6 +155,6 @@ diff --git a/terraform/modules/iam_user/limit_check_user/outputs.tf b/terraform/
  }
 ```
 
-Once that's done, submit a pull request against `master` for `cg-provision`.
-Once the pull request is merged, run the provisioning set in Concourse. The
-Terraform `apply` will delete all the `_prev` credentials from AWS.
+Once that's done, submit a pull request against `master` for `cg-provision`
+again. Once the pull request is merged, run the provisioning step in Concourse.
+The Terraform `apply` will delete all the `_prev` credentials from AWS.
