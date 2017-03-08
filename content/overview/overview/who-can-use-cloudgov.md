@@ -20,7 +20,7 @@ cloud.gov is suitable for a wide range of applications, including websites and n
 - Your application is for a United States federal government organization.
 - You understand that cloud.gov is a product under active development and will see changes in the future.
 - Your application is FISMA Moderate or lower.
-- You can pay for cloud.gov through the federal Interagency Agreement (IAA/MOU) process (see [how to purchase]({{< relref "overview/pricing/how-to-purchase.md" >}})).
+- You can pay for cloud.gov through the federal Interagency Agreement (IAA/MOU) process (see [how to purchase]({{< relref "overview/pricing/start-using-cloudgov.md" >}})).
 
 ### Technical requirements
 
@@ -38,7 +38,7 @@ cloud.gov is suitable for a wide range of applications, including websites and n
 ## Not a good fit
 
 - Your application requires Oracle, SQL Server, or proprietary databases.
-- Your team is unable to use the [federal Interagency Agreement process]({{< relref "overview/pricing/how-to-purchase.md" >}}) for payment. For example, this may apply for teams working for U.S. local, state, tribal, or territory government organizations. If this applies to your team, [sign up for updates](/#updates) so that we can notify you if we add other options.
+- Your team is unable to use the [federal Interagency Agreement process]({{< relref "overview/pricing/start-using-cloudgov.md" >}}) for payment. For example, this may apply for teams working for U.S. local, state, tribal, or territory government organizations. If this applies to your team, [sign up for updates](/#updates) so that we can notify you if we add other options.
 
 ## Cannot use cloud.gov
 

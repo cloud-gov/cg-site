@@ -17,7 +17,7 @@ When you purchase cloud.gov, your monthly cost is made of three components:
 
 The following sections explain the options and pricing for each component. The last section is a summary: [**a table of cost options**](#package-comparison-table).
 
-Agencies pay through [an Interagency Agreement (IAA) with 18F]({{< relref "overview/pricing/how-to-purchase.md" >}}).
+Agencies pay through [an Interagency Agreement (IAA) with 18F]({{< relref "overview/pricing/start-using-cloudgov.md" >}}).
 
 ## Access package
 

@@ -10,7 +10,7 @@ aliases:
 ---
 
 
-[There are a few ways to get started using cloud.gov.]({{< relref "overview/pricing/how-to-purchase.md" >}}) Once you have an interagency agreement (IAA) in place with 18F, the cloud.gov team will create an organization for each individual team or system upon agency request, and designate someone from your team as an Organization Manager. After that, everything is self-service, with support as needed from the cloud.gov team.
+[There are a few ways to get started using cloud.gov.]({{< relref "start-using-cloudgov.md" >}}) Once you have an interagency agreement (IAA) in place with 18F, the cloud.gov team will create an organization for each individual team or system upon agency request, and designate someone from your team as an Organization Manager. After that, everything is self-service, with support as needed from the cloud.gov team.
 
 cloud.gov gives your team a range of powerful capabilities.
 
