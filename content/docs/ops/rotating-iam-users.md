@@ -82,11 +82,11 @@ diff --git a/terraform/modules/iam_user/limit_check_user/outputs.tf b/terraform/
 +  value = "${aws_iam_access_key.iam_access_key_v2.secret_access_key}"
  }
  output "access_key_id_curr" {
--  value = "${aws_iam_access_key.iam_access_key.access_key_id}"
+-  value = "${aws_iam_access_key.iam_access_key_v2.access_key_id}"
 +  value = "${aws_iam_access_key.iam_access_key_v3.access_key_id}"
  }
  output "secret_access_key_curr" {
--  value = "${aws_iam_access_key.iam_access_key.secret_access_key}"
+-  value = "${aws_iam_access_key.iam_access_key_v2.secret_access_key}"
 +  value = "${aws_iam_access_key.iam_access_key_v3.secret_access_key}"
  }
 ```
@@ -116,13 +116,11 @@ diff --git a/terraform/modules/iam_user/limit_check_user/user.tf b/terraform/mod
 -}
 -
 
-+resource "aws_iam_access_key" "iam_access_key_v3" {
-+  user = "${aws_iam_user.iam_user.name}"
-+}
-+
- resource "aws_iam_user_policy" "iam_policy" {
-   name = "${aws_iam_user.iam_user.name}-policy"
+ resource "aws_iam_access_key" "iam_access_key_v3" {
    user = "${aws_iam_user.iam_user.name}"
+ }
+
+ resource "aws_iam_user_policy" "iam_policy" {
 
 ```
 
