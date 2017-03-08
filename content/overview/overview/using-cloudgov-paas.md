@@ -2,16 +2,17 @@
 menu:
   overview:
     parent: overview
-title: How to use it
+title: Using the cloud.gov platform
 weight: 20
 aliases:
   - /docs/intro/overview/using-cloudgov-paas
   - /intro/overview/using-cloudgov-paas
 ---
 
-## Using the cloud.gov PaaS as self-service
 
-To make cloud.gov available for your team, [have your agency work with 18F to set up an interagency agreement]({{< relref "overview/pricing/how-to-purchase.md" >}}), which will be used for for billing. 18F will create an organization for each individual team or system upon agency request, and designate someone from your team as an Organization Manager. After that, the rest of your team's work is self-service and requires no further interaction with 18F.
+[There are a few ways to get started using cloud.gov.]({{< relref "overview/pricing/how-to-purchase.md" >}}) Once you have an interagency agreement (IAA) in place with 18F, the cloud.gov team will create an organization for each individual team or system upon agency request, and designate someone from your team as an Organization Manager. After that, everything is self-service, with support as needed from the cloud.gov team.
+
+cloud.gov gives your team a range of powerful capabilities.
 
 - You can instantly set up environments ("spaces") as needed for your team (for example: blue-green production spaces, testing, development).
 - You can manage access for individual team members at either the organization or space level.
@@ -24,9 +25,5 @@ To make cloud.gov available for your team, [have your agency work with 18F to se
 - You can redeploy your applications to add capabilities or fix problems.
 
 Once your team is comfortable with the CLI and web-based interface for cloud.gov, you can write scripts to orchestrate more complex processes involving multiple applications and spaces, all built on the Cloud Foundry API.
-
-## Using the cloud.gov PaaS with an 18F team
-
-18F teams that are working with agency partners use cloud.gov to develop and deploy applications. If 18F is delivering a product, the use of cloud.gov is implicit, and we recoup costs from the partner agency. This ensures the least possible friction for our teams. For example, [Every Kid in a Park](https://everykidinapark.gov/) (for the Department of the Interior) and [College Scorecard](https://collegescorecard.ed.gov/) (for the Department of Education) were both developed and launched using cloud.gov.
 
 The cloud.gov team delivered a presentation about [our early experience developing and using cloud.gov](http://www.altoros.com/cflive/gsa-cuts-app-deployment-from-14-months-to-2-3-days-with-cloud-foundry/) at the May 2015 Cloud Foundry conference.
