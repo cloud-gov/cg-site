@@ -29,4 +29,4 @@ cloud.gov cannot run applications that use .NET Framework, or application binari
 
 ## Examples
 
-Check out the [Cloud Foundry sample applications](https://github.com/cloudfoundry-samples) for examples of applications in many different languages.
+Check out the [Cloud Foundry sample applications](https://github.com/cloudfoundry-samples) and [cloud.gov's collection of Hello World applications](https://github.com/18F/cf-hello-worlds) for examples of applications in many different languages.
