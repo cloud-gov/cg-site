@@ -61,7 +61,7 @@ cf create-service cdn-route cdn-route my-cdn-route \
     -c '{"domain": "my.example.gov,www.my.example.gov"}'
 ```
 
-The maximum number of domains that can be associated with a single cdn-route service is 100.
+The maximum number of domains that can be associated with a single cdn-route service instance is 100.
 
 ### How to set up DNS
 
