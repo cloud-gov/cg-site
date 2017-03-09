@@ -39,6 +39,8 @@ You can:
 
 Sandboxes are limited because cloud.gov is a cost-recoverable service. They're a free trial to help you evaluate whether to purchase cloud.gov.
 
+Sandboxes are for testing; they're suitable for information and applications that require no confidentiality, integrity, or availability. (Don't put production applications or production data in sandboxes; that's not what they're for.)
+
 Limitations include:
 
 * Resource usage is capped at 1 GB of memory total, for all the applications in your space combined.
@@ -46,8 +48,6 @@ Limitations include:
 * Sandboxes can only use free [managed services]({{< relref "docs/services/index.md" >}}).
 * Sandboxes do not have an "org manager" role available. (You can control access and permissions for your own sandbox space.) If you want to manage an org of prototyping spaces for people at your agency, consider purchasing prototyping-tier access.
 * You can't set up [custom domains]({{< relref "docs/apps/custom-domains.md" >}}) for your applications. By default, your applications receive a `*.app.cloud.gov` domain.
-
-Don't put production applications or production data in sandboxes; that's not what they're for.
 
 <!--TO DO
 - write user flows and see if they are followable
