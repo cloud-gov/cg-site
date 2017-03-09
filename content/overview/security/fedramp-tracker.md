@@ -21,7 +21,7 @@ Historically each agency would have to conduct their own in-depth assessment of 
 
 [FedRAMP (Federal Risk and Authorization Management Program)](https://www.fedramp.gov/) solves that problem. It coordinates a [Joint Authorization Board (JAB)](https://www.gsa.gov/portal/content/134223) made up of the three Chief Information Officers of DoD, DHS, and GSA. These CIOs and their teams assessed cloud.gov using rigorous standards for security and compliance, and because cloud.gov met the requirements, they endorsed this P-ATO. This means other agencies don't have to repeat their in-depth assessment.
 
-## How you can use this
+## How you can use this P-ATO
 
 Any federal agency can [use the cloud.gov P-ATO](https://www.fedramp.gov/resources/faqs/how-does-an-agency-leverage-a-fedramp-authorization/) as part of the ATO for an agency system built on cloud.gov, which substantially reduces the effort required to give that system an ATO. If you're interested in this, you can [**request the P-ATO documentation package from FedRAMP**](https://s3.amazonaws.com/sitesusa/wp-content/uploads/sites/482/2015/03/FedRAMP-Package-Request-Form_V4_06192014.pdf) (the Package ID for that form is F1607067912). You can also view the [FedRAMP Marketplace page for cloud.gov](https://marketplace.fedramp.gov/#/product/18f-cloudgov?sort=productName).
 
