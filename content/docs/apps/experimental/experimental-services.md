@@ -10,9 +10,9 @@ aliases:
 
 [**This is an experimental feature.**]({{< relref "docs/apps/experimental/experimental.md" >}})
 
-Some services in the cloud.gov platform are experimental but can provide value to your applications.
+Here are experimental services we've released to get feedback. Use them at your own risk. Don't use them for production, since they may be unreliable, not tested, or stop being available.
 
-To enable any of these services, [ask support]({{< relref "docs/help.md" >}}). Use them at your own risk.
+To enable any of these services, [ask support]({{< relref "docs/help.md" >}}). 
 
 ### Elasticsearch and Redis
 
@@ -40,20 +40,4 @@ or
 ```sh
 cf create-service redis28 standard myredis
 ```
-{{% /govcloud %}}
-
-{{% govcloud %}}
-### Authorization proxy
-
-You can enable a service to automatically require cloud.gov authentication to access your application. The authorization proxy is a [route service](https://docs.cloudfoundry.org/services/route-services.html).
-
-To use it, first create an instance:
-
-`cf create-service uaa-auth uaa-auth authy`
-
-Then bind it to a route:
-
-`cf bind-route-service app.cloud.gov authy --hostname hello`
-
-After that, your apps will require cloud.gov authentication before proceeding.
 {{% /govcloud %}}
