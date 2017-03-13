@@ -1,3 +1,5 @@
+# Service metadata lives
+# https://github.com/cloudfoundry-community/uaa-credentials-broker/blob/ee4743a/broker.go#L26
 name = "cloud-gov-identity-provider"
 description = "Authenticate cloud.gov users in your app"
 status = "Beta"
