@@ -5,29 +5,69 @@ menu:
 title: Ongoing platform maintenance
 ---
 
-## Regular maintenance task list
+The platform requires regular support and maintenance activities to remain in a compliant state. If you are on support and you can’t complete any of the items personally, you are responsible for ensuring that an appropriate person does it.
 
-* Keep all forks up-to-date with all upstream changes.
-    * Use [this list of all forks with `cg-` in their
-      names](https://github.com/18F?utf8=%E2%9C%93&query=%20only%3Aforks%20cg-). We add forks regularly, so check that list during each maintenance run.
-* Respond to PagerDuty alerts, including researching causes.
-* Respond to `cloud-gov-support@gsa.gov` emails about scans for vulnerabilities and compliance in a timely manner.
-* Reconcile `staging` and `master` branches via pull requests for
-  `cg-deploy-cf`.
+# Is it your first day of support?
 
-## Manual scans for indicators of compromise
+- Update the `#cloud-gov-atlas` topic to include your name as the support contact.
+- Update the support schedule by moving yourself to the end of the list.
+- Join/unmute `#cloud-gov-support` and `#cloud-gov-atlas-news`.
+- Meet with the previous support person and take responsibility for any open support items they are still working on.
 
-Review all of the following and take action on items that may need further research or other work:
 
-* [PagerDuty alerts](https://18fi.pagerduty.com/incidents)
-  * Snort Network Intrusion alerts
-  * ClamAV malicious behavior / signature alerts
-* Amazon CloudTrail API Activity
-* Amazon CloudWatch logs
-  * [auth.log access](https://console.amazonaws-us-gov.com/cloudwatch/home?region=us-gov-west-1#metrics:graph=!AX9!D07-2!E01-2!ET8!MN6~5!NS3-2!PD2-2!SS4-2!ST0!VA-P90D~%252Fvar%252Flog%252Fauth.log~300~AWS%252FLogs~Average~IncomingBytes~IncomingLogEvents~LogGroupName~P0D~RIGHT)
-  * [auditd logs](https://console.amazonaws-us-gov.com/cloudwatch/home?region=us-gov-west-1#metrics:graph=!D07-2!E01-2!ET8!MN6~5!NS3-2!PD2-2!SS4-2!ST0!VA-P90D~%25252Fvar%25252Flog%25252Fmessages~300~AWS%25252FLogs~Average~IncomingBytes~IncomingLogEvents~LogGroupName~P0D) for [`shadow`, `password`], file modifications, and deletions
-  * [syslog](https://console.amazonaws-us-gov.com/cloudwatch/home?region=us-gov-west-1#metrics:graph=!D07-2!E01-2!ET8!MN6~5!NS3-2!PD2-2!SS4-2!ST0!VA-P90D~%25252Fvar%25252Flog%25252Fsyslog~300~AWS%25252FLogs~Average~IncomingBytes~IncomingLogEvents~LogGroupName~P0D) for suspicious daemons, services, time skew, or other suspicious activity
-* Nessus security scanning reports
-* [Upstream stemcell releases](http://bosh.cloudfoundry.org/stemcells/) for security patches
-* [US Cert Alerts](https://www.us-cert.gov/ncas/alerts)
-* [Pivotal Alerts](https://pivotal.io/security)
+# Daily maintenance checklist
+
+The tasks on this checklist should be performed each day.
+
+## Ensure all VMs are running the current stemcell
+  
+- Get the latest stemcell version from http://bosh.cloudfoundry.org/stemcells/.
+
+- Check https://ci.fr.cloud.gov/teams/main/pipelines/aws-light-stemcell-builder to ensure it has built the same version.
+
+- On each bosh director run `bosh deployments` and verify the stemcell in-use for each deployment is current.
+
+## Review and respond to open alerts
+
+Review all recent alerts and notifications delivered to `cg-notifications` and `#cloud-gov-atlas-news`.  
+
+### Are there no alerts or notifications?
+Verify the monitoring system is functioning correctly and confirm that alerts are reaching their expected destinations.
+
+### Is the alert a real issue?
+Remediate it.
+
+### Is the alert a false-positive?
+If the alert can be tuned to to reduce the number of false-positives with less than one day's work, do it.  If more work is required to tune the alert, add a card to capture the work that needs to be done or +1 an existing card if one already exists for tuning the alert.
+
+Be prepared to represent support needs at the next grooming meeting to ensure that cards to fix alerts are prioritized properly.
+
+## Review AWS CloudTrail logs for the following Events:
+- AuthorizeSecurityGroupEgress
+- AuthorizeSecurityGroupIngress
+- ConsoleLogin
+- CreatePolicy
+- CreateSecurityGroup
+- DeleteTrail
+- ModifyVpcAttribute
+- PutUserPolicy
+- PutRolePolicy
+- RevokeSecurityGroupEgress
+- RevokeSecurityGroupIngress
+- UpdateTrail
+
+If any suspicious activity is discovered discuss with appropriate team members and if neccessary follow the [Security Incident Response Guide]({{< relref "docs/ops/security-ir.md" >}}).
+
+## Review vulnerability and compliance reports
+- Nessus Vulnerability Reports
+- Nessus Compliance Reports
+- [CloudFoundry Alerts](https://www.cloudfoundry.org/category/security/)
+- [US Cert Alerts](https://www.us-cert.gov/ncas/alerts)
+
+If the reports contain any HIGH items work to remediate them.
+
+## Is a stemcell update required to remediate?
+Ask for a date when new stemcells will be delivered in #security in the [CF Slack](https://cloudfoundry.slack.com/).
+
+## Is a bosh release update required to remediate?
+Update the bosh release and file a PR for the changes.  Once the PR is merged, ensure the updated release is deployed to all required VMs.
