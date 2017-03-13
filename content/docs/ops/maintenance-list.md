@@ -66,11 +66,11 @@ If any suspicious activity is discovered discuss with appropriate team members a
 
 If the reports contain any HIGH items work to remediate them.
 
-## Is an update from our IaaS provided required to remediate?
+### Is an update from our IaaS provided required to remediate?
 Open a case with the IaaS provider and monitor the case until it has been resolved.
 
-## Is a stemcell update required to remediate?
+### Is a stemcell update required to remediate?
 Ask for a date when new stemcells will be delivered in #security in the [CF Slack](https://cloudfoundry.slack.com/).
 
-## Is a bosh release update required to remediate?
+### Is a bosh release update required to remediate?
 Update the bosh release and file a PR for the changes.  Once the PR is merged, ensure the updated release is deployed to all required VMs.
