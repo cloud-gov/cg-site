@@ -77,4 +77,6 @@ Update the bosh release and file a PR for the changes.  Once the PR is merged, e
 
 ## Review open support requests
 
-Review open Zendesk tickets and provide technical support / details as needed.  When possible reply directly to the customer; if the customer response requires internal discussion post any relevant information in `#cg-supportstream` and coordinate a response with the rest of the team.
+Review the "new" (yellow) and "open" (red) Zendesk tickets. First-tier support (cloud.gov BU) has primary responsibility to do the work of answering these, and you serve as second-tier support providing technical expertise. You're welcome to reply to the customer with answers if you like (choose "pending" when you submit the answer),* but your main responsibility is to provide technical diagnoses/advice/details. The easiest way to do that is to write comments on the associated posts in `#cg-supportstream`. First-tier support may also ask you for pairing time to work out responses together.
+
+*People with @gsa.gov emails can't receive email via Zendesk, so we have to email them via the [cloud-gov-support Google Group instead](https://groups.google.com/a/gsa.gov/forum/#!forum/cloud-gov-support).
