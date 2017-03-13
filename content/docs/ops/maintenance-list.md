@@ -10,7 +10,7 @@ The platform requires regular support and maintenance activities to remain in a 
 # Is it your first day of support?
 
 - Update the `#cloud-gov-atlas` topic to include your name as the support contact.
-- Update the support schedule by moving yourself to the end of the list.
+- Update the support schedule by moving yourself to the end of the list in the [slackbot auto response](https://gsa-tts.slack.com/customize/slackbot) for `atlas support schedule`.
 - Join/unmute `#cloud-gov-support` and `#cloud-gov-atlas-news`.
 - Meet with the previous support person and take responsibility for any open support items they are still working on.
 
