@@ -125,8 +125,8 @@ Add these items to your `circle.yml` file:
 ```
 dependencies:
   pre:
-    - wget http://go-cli.s3-website-us-east-1.amazonaws.com/releases/latest/cf-cli_amd64.deb -qO temp.deb
-    - sudo dpkg -i temp.deb
+    - curl -v -L -o cf-cli_amd64.deb 'https://cli.run.pivotal.io/stable?release=debian64&source=github'
+    - sudo dpkg -i cf-cli_amd64.deb
     - cf -v
 
 test:
