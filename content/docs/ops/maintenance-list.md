@@ -74,3 +74,7 @@ Ask for a date when new stemcells will be delivered in #security in the [CF Slac
 
 ### Is a bosh release update required to remediate?
 Update the bosh release and file a PR for the changes.  Once the PR is merged, ensure the updated release is deployed to all required VMs.
+
+## Review open support requests
+
+Review open Zendesk tickets and provide technical support / details as needed.  When possible reply directly to the customer; if the customer response requires internal discussion post any relevant information in `#cg-supportstream` and coordinate a response with the rest of the team.
