@@ -1,5 +1,0 @@
-# Service metadata lives
-# https://github.com/cloudfoundry-community/cf-uaa-guard-service/blob/caf3923a34c814803c2bf28927a79e69e0c34071/broker/broker.go#L25
-name = "uaa-auth"
-description = "[Experimental] Protect applications with cloud foundry authentication in the routing path"
-status = "Alpha"
