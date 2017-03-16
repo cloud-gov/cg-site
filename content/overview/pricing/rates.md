@@ -9,13 +9,17 @@ aliases:
   - /intro/pricing/rates
 ---
 
-When you purchase cloud.gov, your monthly cost is made of three components:
+The cost of using cloud.gov is built on three components:
 
 - [**Access package**](#access-package)
 - [**Resource usage quota**](#resource-usage-quota)
 - [**Managed services**](#managed-services)
 
-The following sections explain the options and pricing for each component. The last section is a summary: [**a table of cost options**](#package-comparison-table).
+These are the only things you will be billed for, so once we have an interagency agreement (IAA) in place, you can predict exactly what upcoming invoices for your system will include.
+
+The kind of system you have is going to determine what kind of access package you buy, so it’s important to understand what a system is. Simply put, a system is everything you need to deliver a product. Refer to our terminology list for [more information about systems]({{< relref "overview/pricing/pricing-terminology.md#system" >}}). Once you fill out the [initial interest form](https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform), the cloud.gov team will work with you to figure out what makes sense to include in your system.
+
+The following sections explain the rates and options for each pricing component. The last section is a summary: [**a table of cost options**](#package-comparison-table).
 
 Agencies pay through [an Interagency Agreement (IAA) with 18F]({{< relref "overview/pricing/start-using-cloudgov.md" >}}).
 
