@@ -16,7 +16,7 @@ These terms, among others, define a number of products and services offered by c
 
 ### System
 
-A “system” roughly corresponds to a product or project team, including all the individual spaces, apps, and services necessary to deliver their product to users.
+A “system” roughly corresponds to a product or project team, including all the individual spaces, apps, and services necessary to deliver your product to users. Whether that product is a single application or built from several depends on how your team works.
 
 A system maps to an [“org” in cloud.gov and Cloud Foundry](http://docs.cloudfoundry.org/concepts/roles.html#orgs).
 
@@ -26,7 +26,7 @@ A system maps to an [“org” in cloud.gov and Cloud Foundry](http://docs.cloud
 
 ### Consulting
 
-“Consulting” is providing advice, development, documentation, and other resources that are custom or specific to the context of your application, system, or organization. If the outcome of the activity would not be reusable for our entire community of users, it’s consulting. Base platform fees for cloud.gov do not include consulting, and our team does not offer cloud-focused consulting outside of projects directly undertaken on behalf of a partner agency. This includes, for example, general information about migrating your products to the cloud. (All cloud.gov documentation and deployment are open source, so anyone may use this information to their benefit at any time.)
+“Consulting” is providing advice, development, documentation, and other resources that are custom or specific to the context of your application, system, or organization. If the outcome of the activity would not be reusable for our entire community of users, it’s consulting. Base platform fees for cloud.gov do not include consulting, and our team does not offer cloud-focused consulting outside of projects directly undertaken on behalf of a partner agency. This includes, for example, general information about migrating your products to the cloud. (All cloud.gov documentation and deployment are open source, so you may use this information to your benefit at any time.)
 
 ### Access package
 
