@@ -36,7 +36,10 @@ For other helpful cf CLI troubleshooting commands, including `cf events APP-NAME
 
 ### Error messages
 
-* Errors can sometimes be caused by having an old version of the cf CLI. Try `cf -v` and see if it's older than the [latest version](https://github.com/cloudfoundry/cli/releases). If it is, you can [install the latest version]({{< relref "docs/getting-started/setup.md#set-up-the-command-line" >}}) and try again.
+If you receive `Error dialing trafficcontroller server`:
+
+* This can be caused by having an old version of the cf CLI. Try `cf -v` and see if it's older than the [latest version](https://github.com/cloudfoundry/cli/releases). If it is, [install the latest version]({{< relref "docs/getting-started/setup.md#set-up-the-command-line" >}}) and try again.
+* This can also be caused by port 443 being blocked on your network. If you can, open that port or try a different network.
 
 ## Web-based logs with historic log data
 
