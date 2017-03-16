@@ -111,7 +111,7 @@ curl https://s3.amazonaws.com/18f-cf-cli/psql-9.4.4-ubuntu-14.04.tar.gz | tar xv
 
 You should now have an open `psql` terminal connected to the service database.
 
-You can also use the [cf-service-connect plugin](https://github.com/18F/cf-service-connect#cloud-foundry-cli-service-connection-plugin--) for a shortcut way to do this.
+You can also use the [cf-service-connect plugin](https://github.com/18F/cf-service-connect#readme) for a shortcut way to do this.
 
 {{% /govcloud %}}
 
