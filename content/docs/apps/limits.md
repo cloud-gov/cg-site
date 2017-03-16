@@ -5,7 +5,7 @@ menu:
 title: Application limits
 ---
 
-As a cloud.gov, user you’re free to divide your [organization's quota]({{< relref "overview/pricing/quotas.md" >}}) capacity among your applications as you see fit by way of application limits. Application limits are specified in your [application manifest](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) or as `cf push` command line options.
+cloud.gov Org Managers are free to divide your [organization's quota]({{< relref "overview/pricing/quotas.md" >}}) capacity among your applications as you see fit by way of application limits. Application limits are specified in your [application manifest](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) or as `cf push` command line options.
 
 ## Application limit options
 
