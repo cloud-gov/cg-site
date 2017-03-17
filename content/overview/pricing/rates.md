@@ -13,7 +13,7 @@ aliases:
 
 ---
 
-One team’s platform needs aren’t necessarily the same as another’s, so we aren’t offering one-size-fits-all pricing. We offer several packages, depending on what you need cloud.gov to do for you. And because the rates are set right when you start using cloud.gov, you’ll be able to budget for your system easily.
+One team’s platform needs aren’t necessarily the same as another’s, so we aren’t offering one-size-fits-all pricing. We offer several packages, depending on what you need cloud.gov to do for you. And because the rates are set right when you start using cloud.gov, you’ll be able to budget for your system in advance.
 
 ## Pricing components
 
