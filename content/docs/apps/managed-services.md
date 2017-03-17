@@ -45,17 +45,6 @@ For example, to create an instance of the elasticsearch service using the free p
 
 The note `* These service plans have an associated cost` indicates paid services. [Learn about managed service pricing.]({{< relref "overview/pricing/rates.md#managed-services" >}})
 
-Sandbox accounts (free accounts) can't use paid services. If you have a sandbox account, you'll get an error like this if you try to use them:
-
-```
-% cf create-service <service> <plan> <service_instance>
-Creating service instance <service_instance> in org <org> / space <space> as <user>...
-FAILED
-Server error, status code: 400, error code: 60007, message: The service instance cannot be created because paid service plans are not allowed.
-```
-
-If you get that error and you have a non-sandbox account, [ask support](/help/) to enable paid services.
-
 #### Bind the service instance
 
 A service instance must be bound to the application which will access it. This can be done in a single step by adding a binding to the application's `manifest.yml`.
