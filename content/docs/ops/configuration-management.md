@@ -24,8 +24,8 @@ Here are some examples that should be in configuration management:
 All configuration must be stored in GitHub using the following "Change Workflow" unless it is a _secret_.
 
 ## How do we test these changes?
-If possible, first test the changes locally. After that, upload them to a staging environment where either manual or automated testing needs to be run.
-Security tests need to be executed in the staging environment where changes are applied.
+If possible, first test the changes locally. After that, upload them to a development environment where either manual or automated testing needs to be run.
+Security tests need to be executed in the development environment where changes are applied.
 
 ## Change workflow
 
@@ -39,7 +39,7 @@ Security tests need to be executed in the staging environment where changes are 
 is encouraged and qualifies as a review. Review should include assessment of architectural design, DRY principles, security and code quality.
 1. The reviewer merges the PR.
 1. A continuous integration (CI) server handles automated tests and continuous deployment (CD) of the merged changes.
-    - All changes are deployed to a testing environment, such as staging.
+    - All changes are deployed to a testing environment, such as development.
     - Any and all automated tests are run.
     - If all tests pass, changes can be promoted for deployment to production in the pipeline.
 
@@ -81,7 +81,7 @@ The team prefers [rebasing over merging](https://www.atlassian.com/git/tutorials
 
 ### When should a PR be created?
 
-Work-in-progress PRs are allowed. When a PR is ready for review, it should be tagged in GitHub
+Work-in-progress PRs are encouraged. When a PR is ready for review, it should be tagged in GitHub
 with the `review-needed` label. If you create a work-in-progress PR, you might also make it plain in the PR name with a `[WIP]` prefix.
 
 ### Should PRs be assigned?
