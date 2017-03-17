@@ -27,7 +27,7 @@ To get used to cloud.gov, practice by deploying a simple "hello world" applicati
 
 Check out [**Status**](https://cloudgov.statuspage.io/), which tells you about cloud.gov service disruptions. You can use **Subscribe to Updates** in the upper right corner to get email or SMS notifications about platform problems that may affect cloud.gov users.
 
-cloud.gov is an instance of Cloud Foundry, so in general, the [the Cloud Foundry documentation](http://docs.cloudfoundry.org) and other Cloud Foundry resources mostly apply to cloud.gov. For example, you can also try deploying the [sample apps maintained by the Cloud Foundry community](https://github.com/cloudfoundry-samples).
+cloud.gov is based on Cloud Foundry, so in general, the [the Cloud Foundry documentation](http://docs.cloudfoundry.org) and other Cloud Foundry resources mostly apply to cloud.gov. For example, you can also try deploying the [sample apps maintained by the Cloud Foundry community](https://github.com/cloudfoundry-samples).
 
 ## Next steps
 
