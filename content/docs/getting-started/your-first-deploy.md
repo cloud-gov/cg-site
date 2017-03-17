@@ -20,7 +20,7 @@ To get used to cloud.gov, practice by deploying a simple "hello world" applicati
     ```
 1. Visit it at https://APPNAME.app.cloud.gov/
 1. Try editing the app locally (without committing) and run `cf push <APPNAME>` again to see your changes. The changes will be reflected even without being committed to Git. cloud.gov is not Git-aware – it simply deploys whatever is contained in the directory that you `push` from. You can set up [continuous deployment]({{< relref "docs/apps/continuous-deployment.md" >}}) from a Git repository.
-1. Visit the dashboard ([`https://dashboard.fr.cloud.gov/`](https://dashboard.fr.cloud.gov/)) to see your options for managing your application with the dashboard.
+1. Visit the dashboard ([`https://dashboard.fr.cloud.gov/`](https://dashboard.fr.cloud.gov/)) to see your options for managing your application via your browser.
 1. If you're done, you can delete your app by running `cf delete <APPNAME>`
 
 ## Good to know
