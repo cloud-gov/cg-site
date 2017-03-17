@@ -16,7 +16,7 @@ These terms, among others, define a number of products and services offered by c
 
 ### System
 
-A “system” roughly corresponds to a product or project team, including all the individual spaces, apps, and services necessary to deliver your product to users. Whether that product is a single application or built from several depends on how your team works.
+A “system” roughly corresponds to a product or project team, including all the individual spaces, apps, and services necessary to deliver your product to users. Simply put, it’s everything you need to deliver a product.
 
 A system maps to an [“org” in cloud.gov and Cloud Foundry](http://docs.cloudfoundry.org/concepts/roles.html#orgs).
 
@@ -44,4 +44,4 @@ Agencies can purchase reserved capacity via 18F as well, which is understood to 
 
 ### Managed services
 
-See [**managed services**]({{< relref "overview/pricing/rates.md#managed-services" >}}).
+[Managed services]({{< relref "docs/apps/managed-services.md" >}}) are services that cloud.gov can spin up quickly and run on your behalf (databases, storage, caching, etc.).

@@ -2,69 +2,106 @@
 menu:
   overview:
     parent: pricing
-title: Rates
+title: Packages and rates
 weight: -10
 aliases:
   - /docs/intro/pricing/rates
   - /intro/pricing/rates
+  - /docs/intro/pricing/whats-included
+  - /intro/pricing/whats-included
+  - /overview/pricing/rates
+
 ---
 
-The cost of using cloud.gov is built on three components:
+One team’s platform needs aren’t necessarily the same as another’s, so we aren’t offering one-size-fits-all pricing. We offer several packages, depending on what you need cloud.gov to do for you. And because the rates are set right when you start using cloud.gov, you’ll be able to budget for your system easily.
 
-- [**Access package**](#access-package)
-- [**Resource usage quota**](#resource-usage-quota)
-- [**Managed services**](#managed-services)
+## Pricing components
 
-These are the only things you will be billed for, so once we have an [interagency agreement (IAA)]({{< relref "overview/pricing/start-using-cloudgov.md" >}}) in place, you can predict exactly what upcoming invoices for your system will include.
+All packages are priced based on three components:
 
-The kind of system you have is going to determine what kind of access package you buy, so it’s important to understand what a system is. Simply put, a system is everything you need to deliver a product. Refer to our terminology list for [more information about systems]({{< relref "overview/pricing/pricing-terminology.md#system" >}}). Once you fill out the [initial interest form](https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform), the cloud.gov team will work with you to figure out what makes sense to include in your system.
+- [**Access package:**](#cloud-gov-packages) The basic unit of purchase. What package you choose depends on what kinds of applications you want to host.
+- [**Resource usage quota:**]({{< relref "overview/pricing/quotas.md" >}}): The memory, in MB of RAM, you reserve for your applications. Assessed monthly and doesn’t roll over month-to-month.
+- [**Managed services:**]({{< relref "overview/pricing/managed-services-cost.md" >}}) Services that cloud.gov can spin up quickly and run on your behalf. Currently free. See the services and plans offered for each service by [running `cf marketplace`]({{< relref "docs/apps/managed-services.md" >}}).
 
-## Access package
+Once you fill out the [initial interest form](https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform), the cloud.gov team will work with you to figure out what package makes the most sense for your work.
 
-The basic unit of purchase for cloud.gov is the access package. What package you choose depends on what kinds of applications you want to host. The access package sets an annual fee, and it defines the capabilities you have, including whether your resource usage quota will be capped and what managed services you can use. [Find out more about what’s included in all access packages.]({{< relref "overview/pricing/whats-included.md" >}})
+## cloud.gov packages
 
-These are the packages we offer:
+### Prototyping
 
-- **Prototyping:** Deploying demo applications with a cloud.gov domain, not for production. $15K per year.
+Our most basic paid package lets many teams build and deploy apps, with access control delegated to teams. Prototyping accounts cannot host production data; all apps are limited to the `*.app.cloud.gov` domain. Whole agencies or departments often purchase a single prototyping package.
 
-- **Open Data:** One [system]({{< relref "overview/pricing/pricing-terminology.md#system" >}}) with no confidentiality risk assessed, with custom domain support included. $10K per year.
+**Annual fee:** $15K<br>
+**Resource usage quota:** $99 per GB per month, up to any limit set by user<br>
+**Managed services:** Full access
 
-- **FISMA Low:** One public-facing FISMA Low [system]({{< relref "overview/pricing/pricing-terminology.md#system" >}}), with custom domain support included. $20K per year.
+### Open data
 
-- **FISMA Moderate:** One public-facing FISMA Moderate [system]({{< relref "overview/pricing/pricing-terminology.md#system" >}}), with custom domain support included. $90K per year.
+Host one public-facing system with no confidentiality risk assessed. Open data accounts include all the spaces you need and DNS support. This is the lightest production-level package.
 
-- **[Sandbox]({{< relref "overview/pricing/free-limited-sandbox.md" >}}):** A way to try cloud.gov for free (with limitations), not for production. Free.
+**Annual fee:** $10K<br>
+**Resource usage quota:** $99 per GB per month, up to 2GB<br>
+**Managed services:** Full access
 
-## Resource usage quota
+### FISMA Low
 
-Along with the access package you select, you will need to set a quota for your resource usage. The quota is the memory, in MB of RAM, you reserve for your applications. Unused memory is not refunded, and it does not ‘roll over’ month to month.
+Host one public-facing system, authorized at the FISMA Low risk assessment level. This includes all the spaces you need and DNS support.
 
-Most packages are $0.0033 per MB reserved per day, with no limit except the quota you set. Open Data packages have a 2 GB of RAM per month limit. Resource usage for a sandbox package is free, but it is capped at 1 GB of RAM per month.
+**Annual fee:** $20K<br>
+**Resource usage quota:** $99 per GB per month, up to any limit set by user<br>
+**Managed services:** Full access
 
-[Find more about quota billing and limits.]({{< relref "overview/pricing/quotas.md" >}})
+### FISMA Moderate
 
-## Managed services
+Host one public-facing system, authorized at the FISMA Moderate risk assessment level. This includes all the spaces you need and DNS support, as well as additional support for FISMA Moderate data requirements.
 
-[Managed services]({{< relref "docs/apps/managed-services.md" >}}) are services that cloud.gov can spin up quickly and run on your behalf (databases, storage, caching, etc.). You can see the services and plans offered for each service by [running `cf marketplace`]({{< relref "docs/apps/managed-services.md" >}}).
+**Annual fee:** $80K<br>
+**Resource usage quota:** $99 per GB per month, up to any limit set by user<br>
+**Managed services:** Full access
 
-Currently, we don’t charge for managed services. We plan to start charging for them in the future to account for the resources they consume and our work to provide them. The pricing for each service will be different, and they will be severable. We will ensure users of these services are aware of the rates when they are set, and they will not be charged before then.
+### Sandbox
 
-This pricing will _only_ be for services created through cloud.gov. Any additional services offered by TTS that are not part of cloud.gov are billed separately, so speak with your 18F Finance point of contact for more information. You can also use external services not managed by cloud.gov or a TTS team at no additional charge.
+Free of charge and without any paperwork, anyone with a government email address can use a limited version of cloud.gov for a limited time. Before the time on any sandbox expires, we will reach out to alert you and discuss whether moving forward on another package makes sense for your system. You can’t use sandboxes for production.
 
-## What support is included
+**Annual fee:** FREE<br>
+**Resource usage quota:** Free, up to 1GB<br>
+**Managed services:** Access to any free services
 
-The cloud.gov team supports the cloud.gov platform’s functionality and performance. All access packages include this support.
+[Find out more about what’s included in all access packages.]({{< relref "overview/pricing/whats-included.md" >}})
 
-The cloud.gov team also maintains the platform’s FedRAMP Moderate P-ATO and the controls covered by this authorization. Keeping our controls in place and our documentation up to date is also included in all access packages. This also means all our users benefit from our work on a single consistent environment, rather than requiring repeated effort by multiple teams at multiple agencies. The savings you gain from this continue throughout your use of cloud.gov
+## What’s included
+
+All paid cloud.gov access packages include the following:
+
+- API access, CLI access, Web UI access
+- Documentation/tutorial material (including continuing development)
+- Web-based support during business hours (platform available 24/7, problems addressed as-possible).
+- Allocation of underlying IaaS (AWS) instances
+- OS security updates and regular hardening of OS image
+- Regular updates to platform security
+- Network security
+- Regular scanning for infrastructure-level vulnerabilities/misconfiguration
+- Support for [these technologies](http://docs.cloudfoundry.org/buildpacks/#system-buildpacks), through system buildpacks (which we also call standard buildpacks).
+    - All system buildpacks receive regular security updates.
+    - [Custom buildpacks]({{< relref "docs/apps/experimental/custom-buildpacks.md" >}}) can also be used for other languages/frameworks, but cloud.gov will have limited ability to assist with their usage, and there may be compliance implications.
+- Self-service management of spaces and users within an organization
+- Platform maintenance and managed service expansion overhead
+- Support for customer-provided DNS for applications (including support for IPv6)
+
+### Support for the platform and compliance
+
+All packages include support for the cloud.gov platform’s functionality and performance.
+
+We also maintain cloud.gov’s FedRAMP Moderate P-ATO and the controls covered by this authorization. All our users benefit from our work on a single consistent environment, rather than requiring repeated effort by multiple teams at multiple agencies. The savings you gain from this continue throughout your use of cloud.gov
 
 Our support does not include work on the applications you build.
 
-## Changing purchases
+## Adding to your purchase
 
 cloud.gov is purchased via an [IAA with 18F]({{< relref "overview/pricing/start-using-cloudgov.md" >}}). Accommodating increased expenses (like a more comprehensive access package or larger resource quota) requires a new IAA. We will happily work with you to develop it.
 
 <!--
-TABLE IS NOT HELPFUL RIGHT NOW.
+Table may not be helpful right now, but I don't want to lose it.
 
 ## Package comparison table
 
