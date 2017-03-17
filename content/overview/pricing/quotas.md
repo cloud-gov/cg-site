@@ -13,15 +13,20 @@ cloud.gov capacity is billed by quota. Quotas provide a not-to-exceed reservatio
 
 ## Costs
 
-Most packages are $0.0033 per MB reserved per day, with no limit except the quota you set. There are two exceptions. Open Data packages have a 2 GB of RAM per month limit. Sandboxes offer resource usage for free, but it is capped at 1 GB of RAM per month.
+Most packages are $0.0033 per MB reserved per day, with no limit except the quota you set.
+
+There are two exceptions:
+
+- Open data packages have a 2 GB of RAM per month limit.
+- Sandboxes offer resource usage for free, but it is capped at 1 GB of RAM per month.
 
 Usage quotas are **set in advance**. This helps you control the maximum amount that your team will spend, and helps us avoid over-provisioning resources that won’t be used.
 
-## Quota billing
+## Billing
 
 Quotas are associated with and billed to a project IAA number or equivalent billing tag. Quotas are billed by the amount of memory reserved and tallied daily. A monthly bill might include 9 days at 1 GB of RAM, 11 days at 2 GB of RAM and 10 days at 4 GB of RAM. Quota capacity is a hard limit; unused capacity does not “roll over” month to month.
 
-## Quota limits
+## What quotas limit
 
 Quotas limit the following resources:  
 

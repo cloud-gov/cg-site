@@ -19,13 +19,13 @@ One team’s platform needs aren’t necessarily the same as another’s, so we 
 
 All packages are priced based on three components:
 
-- [**Access package:**](#cloud-gov-packages) The basic unit of purchase. What package you choose depends on what kinds of applications you want to host.
+- [**Access package:**](#cloud-gov-access-packages) The basic unit of purchase. What package you choose depends on what kinds of applications you want to host.
 - [**Resource usage quota:**]({{< relref "overview/pricing/quotas.md" >}}): The memory, in MB of RAM, you reserve for your applications. Assessed monthly and doesn’t roll over month-to-month.
 - [**Managed services:**]({{< relref "overview/pricing/managed-services-cost.md" >}}) Services that cloud.gov can spin up quickly and run on your behalf. Currently free. See the services and plans offered for each service by [running `cf marketplace`]({{< relref "docs/apps/managed-services.md" >}}).
 
 Once you fill out the [initial interest form](https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform), the cloud.gov team will work with you to figure out what package makes the most sense for your work.
 
-## cloud.gov packages
+## cloud.gov access packages
 
 ### Prototyping
 
