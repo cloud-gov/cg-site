@@ -3,7 +3,7 @@ menu:
   overview:
     parent: pricing
 title: The cost of managed services
-weight: 50
+weight: 10
 aliases:
   - /overview/pricing/managed-services
 ---

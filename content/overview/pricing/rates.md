@@ -3,7 +3,7 @@ menu:
   overview:
     parent: pricing
 title: Packages and rates
-weight: -10
+weight: -15
 aliases:
   - /docs/intro/pricing/rates
   - /intro/pricing/rates
@@ -67,7 +67,7 @@ Free of charge and without any paperwork, anyone with a government email address
 **Resource usage quota:** Free, up to 1GB<br>
 **Managed services:** Access to any free services
 
-[Find out more about what’s included in all access packages.]({{< relref "overview/pricing/whats-included.md" >}})
+[Learn more about sandboxes.]({{< relref "overview/pricing/free-limited-sandbox.md" >}})
 
 ## What’s included
 

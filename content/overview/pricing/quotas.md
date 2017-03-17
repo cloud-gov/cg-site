@@ -3,7 +3,7 @@ menu:
   overview:
     parent: pricing
 title: Quota costs, billing, and limits
-weight: 15
+weight: 5
 aliases:
   - /docs/intro/pricing/quotas
   - /intro/pricing/quotas

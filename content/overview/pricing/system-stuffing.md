@@ -3,7 +3,7 @@ menu:
   overview:
     parent: pricing
 title: Grouping unrelated spaces and apps
-weight: 40
+weight: 20
 aliases:
   - /docs/intro/pricing/system-stuffing
   - /intro/pricing/system-stuffing

@@ -3,7 +3,7 @@ menu:
   overview:
     parent: pricing
 title: Other services
-weight: 10
+weight: 25
 aliases:
   - /docs/intro/pricing/paying-for-otherservices
   - /intro/pricing/paying-for-otherservices

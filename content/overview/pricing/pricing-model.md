@@ -3,7 +3,7 @@ menu:
   overview:
     parent: pricing
 title: How the pricing model is managed
-weight: 20
+weight: 30
 aliases:
   - /docs/intro/pricing/pricing-model
   - /intro/pricing/pricing-model

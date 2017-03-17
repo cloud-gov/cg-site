@@ -3,7 +3,7 @@ menu:
   overview:
     parent: pricing
 title: Try a free sandbox space
-weight: -9
+weight: -10
 aliases:
   - /overview/pricing/free-limited-sandbox
 ---
@@ -25,7 +25,7 @@ Then, if you're interested in [purchasing full access]({{< relref "overview/pric
 
 ## A few things you can try in your sandbox
 
-On a technical level, a sandbox is a specially-limited ["space"]({{< relref "docs/getting-started/concepts.md#spaces" >}}) within a sandbox-only ["organization"]({{< relref "docs/getting-started/concepts.md#organizations" >}}) that is managed by cloud.gov. 
+On a technical level, a sandbox is a specially-limited ["space"]({{< relref "docs/getting-started/concepts.md#spaces" >}}) within a sandbox-only ["organization"]({{< relref "docs/getting-started/concepts.md#organizations" >}}) that is managed by cloud.gov.
 
 You can:
 
