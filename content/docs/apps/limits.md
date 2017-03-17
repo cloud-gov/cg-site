@@ -5,13 +5,13 @@ menu:
 title: Application limits
 ---
 
-As a Cloud Foundry user you’re free to divide your [organization's quota]({{< relref "overview/pricing/quotas.md" >}}) capacity amongst your applications as you see fit by way of application limits. Application limits are specified in your application manifest or as `cf push` command line options.
+cloud.gov Org Managers are free to divide your [organization's quota]({{< relref "overview/pricing/quotas.md" >}}) capacity among your applications as you see fit by way of application limits. Application limits are specified in your [application manifest](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) or as `cf push` command line options.
 
-## Application Limit Options:
+## Application limit options
 
 `memory: / -m`
 
-The application memory limit. This setting has a dual-purpose as your application compute limit is derived from its memory limit. This relationship is explained in detail below.
+The application memory limit. This setting has a dual-purpose, as your application compute limit is derived from its memory limit. This relationship is explained in detail below.
 
 `disk_quota / -k`
 
@@ -21,9 +21,9 @@ The maximum amount of disk space available to your app.
 
 Sets the number of application instances to launch. Each additional instance receives the same memory and disk reservation. An application with a manifest specifying `memory: 256M` and `instances: 4` would reserve 1GB (256M x 4) total.
 
-## Application Limit Options : Memory Share equals Compute Share
+## Application limit options: memory share equals compute share
 
-As noted above, your application's compute limit is derived from a its memory limit. Each application receives a compute share equal to its relative share of memory.
+As noted above, your application's compute limit is derived from its memory limit. Each application receives a compute share equal to its relative share of memory.
 
 For example, with a 1 unit (3.75GB) quota:
 
@@ -49,7 +49,7 @@ Your application can use all available CPU time. If there are other applications
 The application cannot access more than the specified amount of memory.
 
 
-## Application Limit Options : Sizing
+## Application limit options: sizing
 
 - The environment default of 512MB `memory:` is sufficient for most applications. Static sites and utility applications such as schedulers or loaders may require less. Use `cf app APPNAME` to check your application's current memory and compute utilization.
 
