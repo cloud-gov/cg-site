@@ -10,6 +10,7 @@ aliases:
   - /docs/intro/pricing/whats-included
   - /intro/pricing/whats-included
   - /overview/pricing/rates
+  - /overview/pricing/whats-included
 
 ---
 
