@@ -14,7 +14,7 @@ title: Custom buildpacks
 
 Cloud Foundry (the underlying open source project behind cloud.gov) uses [buildpacks]({{< relref "docs/getting-started/concepts.md">}}#buildpacks) to allow your applications to be deployed.
 
-cloud.gov [officially supports]({{< relref "overview/pricing/whats-included.md">}}) a set of buildpacks, and it also allows you to provide your own.
+cloud.gov [officially supports]({{< relref "overview/pricing/rates.md">}}#what-s-included) a set of buildpacks, and it also allows you to provide your own.
 
 For example, if you want to use the ["R" buildpack](https://github.com/alexkago/cf-buildpack-r), you can push your code by typing:
 

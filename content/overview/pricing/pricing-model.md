@@ -3,7 +3,7 @@ menu:
   overview:
     parent: pricing
 title: How the pricing model is managed
-weight: 20
+weight: 30
 aliases:
   - /docs/intro/pricing/pricing-model
   - /intro/pricing/pricing-model
@@ -11,7 +11,7 @@ aliases:
 
 cloud.gov is available to teams working on behalf of federal agencies. The pricing model is based on full cost recovery.
 
-The current cloud.gov pricing model has three components: **access package**, **resource usage**, and **managed services**. Find the curren costs of these components on our [rates page]({{< relref "overview/pricing/rates.md" >}}).
+The current cloud.gov pricing model has three components: **access package**, **resource usage**, and **managed services**. Find the current costs of a package that suits your needs on our [packages and rates page]({{< relref "overview/pricing/rates.md" >}}).
 
 ## The commitment of the cloud.gov pricing model
 
