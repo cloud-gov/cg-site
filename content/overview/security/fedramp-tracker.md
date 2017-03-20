@@ -3,7 +3,7 @@ menu:
   overview:
     parent: overview
 title: FedRAMP Authorized
-weight: 5
+weight: 0
 aliases:
   - /docs/intro/security/fedramp-tracker
   - /intro/security/fedramp-tracker
