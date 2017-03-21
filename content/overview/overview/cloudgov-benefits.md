@@ -2,15 +2,20 @@
 menu:
   overview:
     parent: overview
-title: Why agencies should use it
-weight: 10
+title: The benefits of cloud.gov
+weight: -50
 aliases:
   - /docs/intro/overview/why-use-cloudgov
   - /intro/overview/why-use-cloudgov
+  - /overview/overview/why-use-cloudgov
   - /overview/security/improving-application-security/
   - /docs/intro/security/improving-application-security
   - /intro/security/improving-application-security
   - /overview/security/improving-application-security/
+  - /docs/intro/overview/why-available-other-agencies
+  - /intro/overview/why-available-other-agencies
+  - /overview/overview/why-available-other-agencies
+
 ---
 
 ## 1. Security
@@ -27,7 +32,7 @@ Out of the 320 security controls required for Moderate-impact systems, cloud.gov
 
 ## 3. Usability
 
-A PaaS can save you the resources of managing your own cloud deployments, but it has to work the way you need it to work. cloud.gov was built inside a government development environment by government developers. The cloud.gov team has the same security and compliance requirements that other government teams do, and our coworkers on other teams deploy their applications on cloud.gov. We know first-hand that it works for government teams.
+A Platform as a Service (PaaS) like cloud.gov can save you the resources of managing your own cloud deployments, but it has to work the way you need it to work. cloud.gov was built inside a government development environment by government developers. We face similar security and compliance requirements to the ones that other government teams do, and our coworkers on other teams deploy their applications on cloud.gov. We know first-hand that it works for government teams.
 
 The cloud.gov UI delivers the main concepts of the Cloud Foundry project in a straightforward form. Cloud Foundry provides a good API and tools for teams to manage all the environments, services, and applications necessary to deliver an app to production with minimal hassle. Cloud Foundry also provides well-designed tenancy controls. They make it easy to manage both who can access what, and how usage will be billed back to specific projects or agencies.
 
