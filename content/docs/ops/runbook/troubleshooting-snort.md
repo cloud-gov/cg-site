@@ -26,4 +26,5 @@ Snort is a network intrusion detection system that runs on all cloud.gov hosts.
         ```
 
 * If the alert appears to be a false positive, consider excluding the rule from the snort configuration.
+    * Excluded rules are currently managed centrally in https://github.com/18F/cg-snort-boshrelease/blob/master/ci/config/disablesid.conf; if we find that different VMs require different exclusions, this may be moved to a job property.
 * If the alert appears to be a true positive, read about mitigations and apply if appropriate.
