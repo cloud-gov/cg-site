@@ -2,7 +2,7 @@
 menu:
   overview:
     parent: overview
-title: Using the cloud.gov platform
+title: What you can do with the cloud.gov platform
 weight: 20
 aliases:
   - /docs/intro/overview/using-cloudgov-paas
@@ -10,9 +10,7 @@ aliases:
 ---
 
 
-[There are a few ways to get started using cloud.gov.]({{< relref "start-using-cloudgov.md" >}}) Once you have an interagency agreement (IAA) in place with 18F, the cloud.gov team will create an organization for each individual team or system upon agency request, and designate someone from your team as an Organization Manager. After that, everything is self-service, with support as needed from the cloud.gov team.
-
-cloud.gov gives your team a range of powerful capabilities.
+[There are a few ways to get started using cloud.gov.]({{< relref "overview/pricing/start-using-cloudgov.md" >}}) Once your [system]({{< relref "overview/pricing/pricing-terminology.md" >}}#system) is set up, the cloud.gov team will make sure someone from your team is designated as an Organization Manager. After that, everything is self-service. We support the platform, infrastructure, and compliance. The rest of these capabilities belong to your team.
 
 - You can instantly set up environments ("spaces") as needed for your team (for example: blue-green production spaces, testing, development).
 - You can manage access for individual team members at either the organization or space level.
