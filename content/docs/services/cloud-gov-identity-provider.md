@@ -25,6 +25,15 @@ cf create-service cloud-gov-identity-provider oauth-client my-uaa-client \
   -c '{"redirect_uri": ["https://my.app.cloud.gov"]}'
 ```
 
+By default, identity provider service instances use the `openid` scope. You can request custom scopes using the `scopes` option:
+
+```bash
+cf create-service cloud-gov-identity-provider oauth-client my-uaa-client \
+  -c '{"redirect_uri": ["https://my.app.cloud.gov"], "scopes": ["openid", "cloud_controller.read"]}'
+```
+
+Note: You can only request the `openid` and `cloud_controller.read` scopes at present.
+
 ## More information
 
 See [leveraging authentication]({{< relref "docs/apps/leveraging-authentication.md" >}}) for details.
