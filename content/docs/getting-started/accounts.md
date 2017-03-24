@@ -11,6 +11,7 @@ weight: -100
 * **If you're in GSA or EPA:** You automatically have access and can log in using your agency credentials.
 * **If you're in FDIC:** Some FDIC staff automatically have access and can log in using agency credentials. If you try to log in and receive a "status message is null" error, contact the FDIC identity team to be added to the cloud.gov access group.
 * **If you're outside GSA/EPA/FDIC and your team already uses cloud.gov:** Ask a teammate to [invite you]({{< relref "managing-teammates.md" >}}).
+* **If you only need a cloud.gov account for auth:** fill out the [sighn up form](https://account.fr.cloud.gov/signup)
 * **Otherwise:** If you have a U.S. federal government email address and would like to try cloud.gov, you can [get access to a sandbox space]({{< relref "overview/pricing/free-limited-sandbox.md" >}}).
 
 ## To log into cloud.gov
