@@ -24,13 +24,13 @@ Plan Name | Description | Price
 To create a service instance that can deploy applications, run the following command:
 
 ```bash
-cf create-service cloud-gov-service-account space-deployer my-service-account
+cf create-service cloud-gov-service-account space-deployer <SERVICE-INSTANCE-NAME>
 ```
 
 If your service account only requires read access and does not need the ability to deploy applications, use the `space-auditor` plan instead:
 
 ```bash
-cf create-service cloud-gov-service-account space-auditor my-service-account
+cf create-service cloud-gov-service-account space-auditor <SERVICE-INSTANCE-NAME>
 ```
 
 ## More information
