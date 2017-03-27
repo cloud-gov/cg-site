@@ -14,11 +14,10 @@ When you create a [cloud.gov identity provider service instance](https://cloud.g
 We recommend updating to the [latest version (6.25)](https://github.com/cloudfoundry/cli/releases/tag/v6.25.0) of the Cloud Foundry command line interface (CLI). This can prevent errors when using the cf CLI. You can check your currently-installed version using `cf -v`
 
 ### Fixed
--  The cloud.gov dashboard’s loading icon no longer displays after pages finish loading. Before, they would continue indefinitely.
-- The dashboard now shows error notifications about missing data only if data is actually missing. Previously, these notifications would display even when the data was correct.
+The cloud.gov dashboard’s loading icon no longer displays after pages finish loading. Before, they would continue indefinitely.
 
 ### Deprecated
-On March 15th, we deprecated support for the cloud.gov East/West environment in preparation for an upcoming shutdown of that environment. We now support the GovCloud environment exclusively.
+On March 15th, we deprecated support for building and deployment on the cloud.gov East/West environment. This is in preparation for an upcoming shutdown of that environment. We are supporting a few customers in the process of migrating from East/West to GovCloud, but in all other cases we now support the GovCloud environment exclusively.
 
 ### Removed
 
