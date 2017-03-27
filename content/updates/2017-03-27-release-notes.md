@@ -24,7 +24,7 @@ The cloud.gov dashboard’s loading icon no longer displays after pages finish l
 The latest Go buildpack no longer supports Go 1.5.
 
 ### Security
-We upgraded the Cloud Foundry deployment to [v254](https://github.com/cloudfoundry/cf-release/releases/tag/v254). We have also upgraded the following buildpacks to versions newer than the subcomponents included in CF v254:
+We upgraded the Cloud Foundry deployment to [v254](https://github.com/cloudfoundry/cf-release/releases/tag/v254). We have also upgraded the following buildpacks to versions newer than the buildpacks included in CF v254:
 
 - [php buildpack 4.3.29](https://github.com/cloudfoundry/php-buildpack/releases/tag/v4.3.29)
 - [.NET Core buildpack 1.0.13](https://github.com/cloudfoundry/dotnet-core-buildpack/releases/tag/v1.0.13)
