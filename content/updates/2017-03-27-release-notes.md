@@ -18,7 +18,7 @@ The cloud.gov dashboard’s loading icon no longer displays after pages finish l
 
 ### Deprecated
 - On March 15th, we deprecated support for building and deployment on the cloud.gov East/West environment. This is in preparation for an upcoming shutdown of that environment. We are supporting a few customers in the process of migrating from East/West to GovCloud, but in all other cases we now support the GovCloud environment exclusively.
-- The latest Go buildpack, included as part of our most recent Cloud Foundry deployment upgrade, deprecates support for Go 1.6. The next Go release will remove support for 1.6.
+- The latest Go buildpack deprecates support for Go 1.6. The next Go release will remove support for 1.6.
 
 ### Removed
 The latest Go buildpack no longer supports Go 1.5.
