@@ -17,11 +17,11 @@ We recommend updating to the [latest version (6.25)](https://github.com/cloudfou
 The cloud.gov dashboard’s loading icon no longer displays after pages finish loading. Before, they would continue indefinitely.
 
 ### Deprecated
-On March 15th, we deprecated support for building and deployment on the cloud.gov East/West environment. This is in preparation for an upcoming shutdown of that environment. We are supporting a few customers in the process of migrating from East/West to GovCloud, but in all other cases we now support the GovCloud environment exclusively.
+- On March 15th, we deprecated support for building and deployment on the cloud.gov East/West environment. This is in preparation for an upcoming shutdown of that environment. We are supporting a few customers in the process of migrating from East/West to GovCloud, but in all other cases we now support the GovCloud environment exclusively.
+- The latest Go buildpack, included as part of our most recent Cloud Foundry deployment upgrade, deprecates support for Go 1.6. The next Go release will remove support for 1.6.
 
 ### Removed
-
-cloud.gov no longer includes Go 1.5. We have also deprecated support for Go 1.6, which we expect to remove in an upcoming release.
+The latest Go buildpack no longer supports Go 1.5.
 
 ### Security
 We upgraded the Cloud Foundry deployment to [v254](https://github.com/cloudfoundry/cf-release/releases/tag/v254). We have also upgraded the following buildpacks to versions newer than the subcomponents included in CF v254:
