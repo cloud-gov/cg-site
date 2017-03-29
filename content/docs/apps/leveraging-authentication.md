@@ -7,7 +7,9 @@ title: Leveraging cloud.gov authentication
 
 cloud.gov uses Cloud Foundry's [User Account and Authentication (UAA) server](https://docs.cloudfoundry.org/concepts/architecture/uaa.html) to provide identity management capabilities for the cloud.gov platform.
 
-App developers can also leverage cloud.gov's UAA instance as a backend that brokers authentication with supported identity providers (currently GSA, EPA and FDIC). Essentially, you can (and probably should) use cloud.gov's authentication brokering if the users that you need to authenticate in your application are employees of any of the supported agencies.
+App developers can leverage cloud.gov's UAA instance as a backend that brokers authentication with [supported identity providers]({{< relref "accounts.md#to-get-access-to-cloud-gov" >}}) (currently EPA, FDIC, GSA, and a cloud.gov provider that supports other agencies). You can use cloud.gov's authentication brokering if the users that you need to authenticate in your application are federal employees and contractors who can use those authentication methods.
+
+This service handles only authentication, not authorization -- it's up to your application to manage what they can access within the application. Once you set it up, you can direct your users to the [list of ways to get cloud.gov access]({{< relref "accounts.md#to-get-access-to-cloud-gov" >}}); they don't need any org or space roles, they just need to be able to log into cloud.gov.
 
 ## Using cloud.gov authentication
 
@@ -30,7 +32,7 @@ There are two important cloud.gov URLs you will need to use:
 - `https://uaa.cloud.gov/oauth/token`, which is where you will exchange auth codes for auth tokens
 {{% /eastwest %}}
 
-If you are already familiar with OAuth 2.0, you might know where to go from here. If not, read on for a minimal example of how to do the OAuth dance. Below is the basic gist of it.
+If you are already familiar with OAuth 2.0, you might know where to go from here. If not, read on for a basic example of how to do the OAuth dance.
 
 #### Send your user to login.fr.cloud.gov
 
