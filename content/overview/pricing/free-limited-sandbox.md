@@ -23,9 +23,9 @@ Then, if you’re interested in [purchasing full access]({{< relref "overview/pr
 
 ## A few things you can try in your sandbox
 
-On a technical level, a sandbox is a specially-limited ["space"]({{< relref "docs/getting-started/concepts.md#spaces" >}}) within a sandbox-only ["organization"]({{< relref "docs/getting-started/concepts.md#organizations" >}}) that is managed by cloud.gov.
+On a technical level, a sandbox is a specially-limited ["space"]({{< relref "docs/getting-started/concepts.md#spaces" >}}) within a sandbox-only ["organization"]({{< relref "docs/getting-started/concepts.md#organizations" >}}) that is managed by cloud.gov. In paid accounts, you would manage your own organization and set up spaces for different applications. With a sandbox, you are managing one space and the applications and services within it.
 
-You can:
+As part of that, you can:
 
 * Try the [web interface (dashboard)]({{< relref "docs/getting-started/setup.md#check-out-the-dashboard" >}}) and the command line options.
 * Deploy a demo app or two! You can use [one of these sample apps]({{< relref "docs/getting-started/your-first-deploy.md" >}}) or your own code. You can also try [an app from the Cloud Foundry community](https://github.com/cloudfoundry-samples) (we don't maintain or vouch for these).
