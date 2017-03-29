@@ -70,7 +70,7 @@ Interested in a FISMA Moderate account? [Fill out our initial interest form.](ht
 
 ### Sandbox
 
-Free of charge and without any paperwork, anyone with a government email address can use a limited version of cloud.gov for a limited time. Before the time on any sandbox expires, we will reach out to alert you and discuss whether moving forward on another package makes sense for your system. You can’t use sandboxes for production.
+Free of charge and without any paperwork, anyone with a government email address can use a [limited version of cloud.gov]({{< relref "overview/pricing/free-limited-sandbox.md" >}}). The use of sandboxes is [limited]({{< relref "overview/pricing/free-limited-sandbox.md" >}}#sandbox-limitations), and the contents of all sandboxes are cleared every 30 days. But we will also reach out to alert you before any deletion point to remind you to save your data, and to discuss whether moving forward on another package makes sense for your system.
 
 **Annual fee:** FREE<br>
 **Resource usage quota:** Free, up to 1GB<br>
