@@ -17,13 +17,20 @@ To set up your application to be deployed with an automated system, you need a d
 Plan Name | Description | Price
 --------- | ----------- | -----
 `space-deployer` | A service account for continuous deployment, limited to a single space | Free
+`space-auditor` | A service account for auditing configuration and monitoring events limited to a single space | Free
 
 ## How to create an instance
 
-To create a service instance, run the following command:
+To create a service instance that can deploy applications, run the following command:
 
 ```bash
-cf create-service cloud-gov-service-account space-deployer my-service-account
+cf create-service cloud-gov-service-account space-deployer <SERVICE-INSTANCE-NAME>
+```
+
+If your service account only requires read access and does not need the ability to deploy applications, use the `space-auditor` plan instead:
+
+```bash
+cf create-service cloud-gov-service-account space-auditor <SERVICE-INSTANCE-NAME>
 ```
 
 ## More information
