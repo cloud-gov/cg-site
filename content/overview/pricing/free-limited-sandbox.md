@@ -8,7 +8,7 @@ aliases:
   - /overview/pricing/free-limited-sandbox
 ---
 
-A sandbox is a free cloud.gov account that you can use for a limited time to see if it might suit your team’s needs. You can build and deploy applications to get a sense of how cloud.gov would work for your team. From the [setup process]({{< relref "docs/getting-started/setup.md" >}}) through [deploying an app]({{< relref "docs/getting-started/your-first-deploy.md" >}}), it works similarly to using a [paid access package]({{< relref "overview/pricing/rates.md" >}}), with [some limitations](#sandbox-limitations).
+A sandbox is a free account that you can use to see if cloud.gov might suit your team’s needs. From the [setup process]({{< relref "docs/getting-started/setup.md" >}}) through [deploying an app]({{< relref "docs/getting-started/your-first-deploy.md" >}}), it works similarly to using a [paid access package]({{< relref "overview/pricing/rates.md" >}}), with [some limitations](#sandbox-limitations).
 
 ## Get a sandbox
 
@@ -42,7 +42,7 @@ Sandboxes are for testing; they’re suitable for information and applications t
 Limitations include:
 
 * Resource usage is capped at 1 GB of memory total, for all the applications in your space combined.
-* Currently sandbox applications may run indefinitely, but **soon we will delete sandbox content once a month**. We will send notice emails to all sandbox users before we implement this change in policy. Once this new policy is in place, we’ll also send a note to sandbox users a few days before deletions. If your sandbox has been deleted, you can create a new one or move to a stable paid account.
+* Currently sandbox applications may run indefinitely, but **soon we will delete sandbox content once a month**. We will send notice emails to all sandbox users before we implement this change in policy. Once this new policy is in place, we’ll also send a note to sandbox users a few days before deletions so people can preserve information they need.
 * Sandboxes do not have an “org manager” role available. (You can control access and permissions for your own sandbox space.) If you want to manage an org of prototyping spaces for people at your agency, consider purchasing prototyping-tier access.
 
 <!--TO DO
