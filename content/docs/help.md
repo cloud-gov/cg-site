@@ -19,6 +19,8 @@ To get news about cloud.gov, [**sign up for email updates**](/#updates).
 
 Email [**cloud-gov-support@gsa.gov**](mailto:cloud-gov-support@gsa.gov). We provide support for cloud.gov during typical business hours for U.S. East and West Coasts. We don't guarantee support for cloud.gov outside those hours, though we're always monitoring for signs of trouble that might affect customers.
 
+You shouldn't include any sensitive environment variables or passwords in your support emails; we don't need that information to help you, and we recommend you keep it limited to view by as few people as possible.
+
 (If you're GSA TTS staff, you can also talk to us in [#cloud-gov-support](https://gsa-tts.slack.com/messages/cloud-gov-support).)
 
 ### Questions from the public and industry
