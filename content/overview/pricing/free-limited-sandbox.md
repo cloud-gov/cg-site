@@ -8,7 +8,7 @@ aliases:
   - /overview/pricing/free-limited-sandbox
 ---
 
-A sandbox is a free account that you can use to see if cloud.gov might suit your team’s needs. From the [setup process]({{< relref "docs/getting-started/setup.md" >}}) through [deploying an app]({{< relref "docs/getting-started/your-first-deploy.md" >}}), it works similarly to using a [paid access package]({{< relref "overview/pricing/rates.md" >}}), with [some limitations](#sandbox-limitations).
+A sandbox is a free space that you can use to see if cloud.gov might suit your team’s needs. From the [setup process]({{< relref "docs/getting-started/setup.md" >}}) through [deploying an app]({{< relref "docs/getting-started/your-first-deploy.md" >}}), it works similarly to other spaces that are included in [paid access packages]({{< relref "overview/pricing/rates.md" >}}), with [some limitations](#sandbox-limitations).
 
 ## Get a sandbox
 
@@ -23,7 +23,7 @@ Then, if you’re interested in [purchasing full access]({{< relref "overview/pr
 
 ## A few things you can try in your sandbox
 
-On a technical level, a sandbox is a specially-limited ["space"]({{< relref "docs/getting-started/concepts.md#spaces" >}}) within a sandbox-only ["organization"]({{< relref "docs/getting-started/concepts.md#organizations" >}}) that is managed by cloud.gov. In paid accounts, you would manage your own organization and set up spaces for different applications. With a sandbox, you are managing one space and the applications and services within it.
+On a technical level, a sandbox is a specially-limited ["space"]({{< relref "docs/getting-started/concepts.md#spaces" >}}) within a sandbox-only ["organization"]({{< relref "docs/getting-started/concepts.md#organizations" >}}) that is managed by cloud.gov. You can build and deploy applications and services within that space.
 
 As part of that, you can:
 
