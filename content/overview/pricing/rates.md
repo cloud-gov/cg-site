@@ -62,7 +62,7 @@ Interested in a FISMA Low account? [Fill out our initial interest form.](https:/
 
 Host one public-facing system, authorized at the FISMA Moderate risk assessment level. This includes all the spaces you need and DNS support, as well as additional support for FISMA Moderate data requirements.
 
-**Annual fee:** $80K<br>
+**Annual fee:** $90K<br>
 **Resource usage quota:** $99 per GB per month, up to any limit set by user<br>
 **Managed services:** Full access
 
