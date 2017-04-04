@@ -41,10 +41,10 @@ First, target the space your application is running in:
 cf target -o <org> -s <space>
 ```
 
-Create a private domain in your organization (replace `my-org` with your org name, and replace `my.example.gov` with your domain):
+Create a private domain in your organization (replace `<org>` with your org name, and replace `my.example.gov` with your domain):
 
 ```bash
-cf create-domain my-org my.example.gov
+cf create-domain <org> my.example.gov
 ```
 
 Then, to create a `cdn-route` service instance, run the following command (replace `my-cdn-route` with a name for your service instance, and replace `my.example.gov` with your domain):
@@ -53,6 +53,8 @@ Then, to create a `cdn-route` service instance, run the following command (repla
 cf create-service cdn-route cdn-route my-cdn-route \
     -c '{"domain": "my.example.gov"}'
 ```
+
+(The command includes `cdn-route cdn-route` because `cdn-route` is the name of the service *and* the name of the service plan.)
 
 If you have more than one domain, you can pass a comma-delimited list to the `domain` parameter (just keep in mind that the broker will wait until all domains are CNAME'd, as explained in the next step):
 
