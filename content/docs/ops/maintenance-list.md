@@ -45,6 +45,7 @@ Be prepared to represent support needs at the next grooming meeting to ensure th
 ## Review AWS CloudTrail events
 
 Use the [AWS Console](http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-console.html) to [review API activity history](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html) for the following events:
+
 - AuthorizeSecurityGroupEgress
 - AuthorizeSecurityGroupIngress
 - ConsoleLogin
@@ -58,7 +59,7 @@ Use the [AWS Console](http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/go
 - RevokeSecurityGroupIngress
 - UpdateTrail
 
-If any suspicious activity is discovered discuss with appropriate team members and if neccessary follow the [Security Incident Response Guide]({{< relref "docs/ops/security-ir.md" >}}).
+If any suspicious activity is discovered discuss with appropriate team members and if necessary follow the [Security Incident Response Guide]({{< relref "docs/ops/security-ir.md" >}}).
 
 ## Review vulnerability and compliance reports
 - [Nessus Vulnerability Reports](https://nessus.fr.cloud.gov/)
@@ -81,4 +82,4 @@ Update the bosh release and file a PR for the changes.  Once the PR is merged, e
 
 Review the "new" (yellow) and "open" (red) Zendesk tickets. First-tier support (cloud.gov BU) has primary responsibility to do the work of answering these, and you serve as second-tier support providing technical expertise. You're welcome to reply to the customer with answers if you like (choose "pending" when you submit the answer)*, but your main responsibility is to provide technical diagnoses/advice/details. The easiest way to do that is to write comments on the associated posts in `#cg-supportstream`. First-tier support may also ask you for pairing time to work out responses together.
 
-*People with @gsa.gov emails can't receive email via Zendesk, so we have to email them via the [cloud-gov-support Google Group instead](https://groups.google.com/a/gsa.gov/forum/#!forum/cloud-gov-support).
+* People with @gsa.gov emails can't receive email via Zendesk, so we have to email them via the [cloud-gov-support Google Group instead](https://groups.google.com/a/gsa.gov/forum/#!forum/cloud-gov-support).
