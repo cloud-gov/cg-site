@@ -28,6 +28,7 @@ Name | Required | Description | Default
 `origin` | *Optional* | *Don't put this in your command for cloud.gov tenant applications.* For services/applications that are not cloud.gov tenant applications ([more info](#external-services-and-applications)): the origin root URL of the application |
 `path` | *Optional* | The path for the application within the main domain supplied | `""`
 `insecure_origin` | *Optional* | Read the application over HTTP instead of HTTPS | `false`
+`cookies` | *Optional* | Forward cookies to the origin | `true`
 
 ## How to create an instance of this service
 
@@ -80,6 +81,15 @@ Message: Provisioning in progress; CNAME domain "my.example.gov" to "d3kajwa62y9
 In this case, you need to create a CNAME record in your DNS server pointing `my.example.gov` to `d3kajwa62y9xrp.cloudfront.net.`.
 
 After the record is created, wait up to 30 minutes for the CloudFront distribution to be provisioned and the DNS changes to propagate. Then visit your custom domain and see whether you have a valid certificate (in other words, that visiting your site in a modern browser doesn't give you a certificate warning).
+
+### CDN Configuration Options
+
+[Forwarding cookies to your origin](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html) can be disabled by setting the `cookies` parameter to `false`.
+
+```bash
+cf create-service cdn-route cdn-route my-cdn-route \
+    -c '{"domain": "my.example.gov", "cookies": false}'
+```
 
 ### Troubleshooting
 
