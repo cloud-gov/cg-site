@@ -37,6 +37,8 @@ cf create-service cloud-gov-service-account space-auditor <SERVICE-INSTANCE-NAME
 
 To use this service, see [continuous deployment]({{< relref "docs/apps/continuous-deployment.md" >}}).
 
+After this process is completed, you will see the space deployer as a SpaceDeveloper with a guid as its name.
+
 ### The broker in GitHub
 
 You can find the broker here: [https://github.com/cloudfoundry-community/uaa-credentials-broker](https://github.com/cloudfoundry-community/uaa-credentials-broker).
