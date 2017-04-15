@@ -2,44 +2,34 @@
 menu:
   docs:
     parent: apps
-title: Basic deployment tips
+title: Basic deployment instructions
 weight: -100
 ---
 
+Learn [how to get your application up](#how-deployment-works) and [important application architecture principles](#application-architecture-principles).
+
 ## How deployment works
 
-The command to create a new app and to push a new version of an existing one are the same: `cf push`. The basic steps:
+The command to create a new app and to push a new version of an existing one are the same: `cf push`. The steps:
 
-1. Set up your local directory with the code you want to deploy. For example, if you use Git or another version control system, check out the version of the code you want to deploy:
-
-    ```bash
-    git checkout master
-    ```
+1. Set up your local directory with the code you want to deploy. For example, if you use Git or another version control system, check out the version of the code you want to deploy: `git checkout master`
 
 1. [Target]({{< relref "docs/getting-started/concepts.md#target" >}}) the appropriate [organization]({{< relref "docs/getting-started/concepts.md#organizations" >}})/[space]({{< relref "docs/getting-started/concepts.md#spaces" >}}):
 
     ```bash
     cf target -o <SOMEORG> -s <SOMESPACE>
     ```
-1. Deploy the application:
-
-    ```bash
-    cf push <APPNAME>
-    ```
+1. Deploy the application: `cf push <APPNAME>`
 
 The app should now be live at `APPNAME.app.cloud.gov`.
 
-## Application architecture recommendations
+## Application architecture principles
 
-To avoid surprises, here are basic architecture principles for this cloud environment.
-
-See Cloud Foundry's [Considerations for Designing and Running an Application in the Cloud](https://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html) -- these apply to cloud.gov as well. As they say, applications will be easiest to deploy if they follow the [Twelve-Factor App](http://12factor.net/) guidelines.
-
-Once you get a sense of these, check out the [production-ready guide]({{< relref "docs/apps/production-ready.md" >}}) as well.
+Here are core architecture principles for this cloud environment -- the five things you need to know to avoid surprises when running your applications on cloud.gov.
 
 ### Avoid writing to the local file system
 
-Don't depend on local file system storage. When your application restarts (for example, if you restart it, or if the platform automatically restarts it for you), files on the local filesystem will disappear. Instead, use a storage [service]({{< relref "docs/apps/managed-services.md" >}}).
+Don't depend on local file system storage. When your application restarts (for example, if you restart it, or if the platform automatically restarts it for you), *files on the local filesystem will disappear*. Instead, use a storage [service]({{< relref "docs/apps/managed-services.md" >}}).
 
 ### The platform may restart your application
 
@@ -55,15 +45,10 @@ See Cloud Foundry's [documentation on environment variables](https://docs.cloudf
 
 ### Ignore unnecessary files when pushing
 
-cloud.gov isn't version-control-aware, so `cf push` will deploy the working state of whatever files you have in that directory. In most cases, you will want to [exclude files](http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html#exclude) ignored by Git. From within your project directory, run
+By default, `cf push` will deploy the working state of all the files you have in that directory. You should [exclude files](https://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html#exclude) that your application doesn't need, to prevent those files from slowing down your `cf push` process.
 
-```bash
-ln -s .gitignore .cfignore
-```
+## Next steps on application architecture
 
-and commit the `.cfignore` to your repository. However, read on if you have a more advanced CF setup.
-
-A couple of important points on the `.cfignore`:
-
-1. If you have a more advanced app setup and have apps with a `path` other than the project root (where you run `cf push` from), you will need an additional `.cfignore` file located in each app `path`;
-2. Also note that more advanced `.gitignore` syntax, such as the `**` recursive subdirectory wildcard, are _not_ supported by `.cfignore`.
+1. cloud.gov works best with applications that follow the [Twelve-Factor App](http://12factor.net/) guidelines. This is more of a comprehensive philosophy than a set of requirements, and it helps explain how cloud.gov expects applications to behave.
+1. The Cloud Foundry [Considerations for Designing and Running an Application in the Cloud](https://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html) apply to cloud.gov as well, including more details about the core principles above.
+1. The cloud.gov [production-ready guide]({{< relref "docs/apps/production-ready.md" >}}) explains how to prepare your application for success in production on cloud.gov.

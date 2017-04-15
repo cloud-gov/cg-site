@@ -31,4 +31,4 @@ cloud.gov is based on Cloud Foundry, so in general, the [the Cloud Foundry docum
 
 ## Next steps
 
-Next, take a look at the [Concepts]({{< relref "concepts.md" >}}) page. Once you're ready to deploy your own application, head over to the [general deployment tips]({{< relref "docs/apps/deployment.md" >}}).
+Next, check out [Concepts]({{< relref "concepts.md" >}}) for an overview of cloud.gov terms and architecture. Then, head over to [general deployment tips]({{< relref "docs/apps/deployment.md" >}}) for an important introduction to deploying your own applications on cloud.gov.

@@ -5,7 +5,7 @@ menu:
 title: Managed services
 ---
 
-Cloud Foundry managed services provide applications with on-demand access to services outside of the stateless application environment. Typical managed services include databases, queues, and key-value stores.
+Managed services provide applications with on-demand access to services outside of the stateless application environment. Typical managed services include databases, queues, and key-value stores.
 
 ### Prerequisites
 
@@ -20,6 +20,8 @@ To create a service instance and binding for use with an application, you first 
 ```
 % cf marketplace
 ```
+
+See [the services guide]({{< relref "docs/services/index.md" >}}) as well.
 
 #### Create a service instance
 
