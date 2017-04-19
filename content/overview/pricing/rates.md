@@ -33,7 +33,7 @@ Once you fill out the [initial interest form](https://docs.google.com/forms/d/e/
 Our most basic paid package lets many teams build and deploy apps, with access control delegated to teams. Prototyping accounts cannot host production data; all apps are limited to the `*.app.cloud.gov` domain. Whole agencies or departments often purchase a single prototyping package.
 
 **Annual fee:** $15K<br>
-**Resource usage quota:** $99 per GB per month, up to any limit set by user<br>
+**Resource usage quota:** ~$99 per GB per month[*](#quota-pricing), up to any limit set by user<br>
 **Managed services:** Full access
 
 Interested in a prototyping account? [Fill out our initial interest form.](https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform)
@@ -43,7 +43,7 @@ Interested in a prototyping account? [Fill out our initial interest form.](https
 Host one public-facing system with no confidentiality risk assessed. Open data accounts include all the spaces you need and DNS support. This is the lightest production-level package.
 
 **Annual fee:** $10K<br>
-**Resource usage quota:** $99 per GB per month, up to 2GB<br>
+**Resource usage quota:** ~$99 per GB per month[*](#quota-pricing), up to 2GB<br>
 **Managed services:** Full access
 
 Interested in an open data account? [Fill out our initial interest form.](https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform)
@@ -53,7 +53,7 @@ Interested in an open data account? [Fill out our initial interest form.](https:
 Host one public-facing system, authorized at the FISMA Low risk assessment level. This includes all the spaces you need and DNS support.
 
 **Annual fee:** $20K<br>
-**Resource usage quota:** $99 per GB per month, up to any limit set by user<br>
+**Resource usage quota:** ~$99 per GB per month[*](#quota-pricing), up to any limit set by user<br>
 **Managed services:** Full access
 
 Interested in a FISMA Low account? [Fill out our initial interest form.](https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform)
@@ -63,7 +63,7 @@ Interested in a FISMA Low account? [Fill out our initial interest form.](https:/
 Host one public-facing system, authorized at the FISMA Moderate risk assessment level. This includes all the spaces you need and DNS support, as well as additional support for FISMA Moderate data requirements.
 
 **Annual fee:** $90K<br>
-**Resource usage quota:** $99 per GB per month, up to any limit set by user<br>
+**Resource usage quota:** ~$99 per GB per month[*](#quota-pricing), up to any limit set by user<br>
 **Managed services:** Full access
 
 Interested in a FISMA Moderate account? [Fill out our initial interest form.](https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform)
@@ -77,6 +77,16 @@ Free of charge and without any paperwork, anyone with a government email address
 **Managed services:** Access to any free services
 
 [Learn more about sandboxes.]({{< relref "overview/pricing/free-limited-sandbox.md" >}})
+
+## Quota pricing
+
+Quotas are priced at $0.0033 per MB reserved per day and assessed monthly. In practice, this works out to $99 per GB per month, based on a 30-day month:
+
+`$0.0033 * 1000 MB * 30 days = $99 per GB per month`
+
+The monthly cost will vary slightly from $92.40 per GB in a 28-day month to $102.30 per GB in a 31-day month.
+
+See [details on quota costs, billing, and limits]({{< relref "overview/pricing/quotas.md" >}}) for more.
 
 ## Find the right package for your work
 
