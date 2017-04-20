@@ -29,9 +29,9 @@ Follow [these instructions to log in on the command line (CLI) and web UI (dashb
 
 <!--<img src="/img/cloud-gov-idp-button-cropped.png" alt="cloud.gov provider button to login page is highlighted in blue" width="373" height="187" />-->
 
-Your cloud.gov account requires multi-factor authentication. To log into the system, you need two "factors" -- something you know (your password) and something you have on your person (your smartphone).
+Your cloud.gov account requires multi-factor authentication: something you know (your password) and something you have on your person (your smartphone). In order to perform multi-factor authentication, you need an authentication application that generates time-based one-time passcodes, such as [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) or [Authy](https://www.authy.com/app/mobile). When you log into cloud.gov for the first time, follow the instructions to set this up.
 
-In order to perform multi-factor authentication, you need an authentication application that generates time-based one-time passcodes, such as [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) or [Authy](https://www.authy.com/app/mobile). Download the app on your mobile device. When you log into cloud.gov for the first time, follow the instructions to store the `cloud.gov` key in your application.
+
 {{% /govcloud %}}
 
 {{% eastwest %}}
