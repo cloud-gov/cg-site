@@ -24,15 +24,7 @@ We usually use branches to write updates. After you merge a PR, click GitHub's b
 
 ### Environment-specific information
 
-For a block of content that is specific to AWS East/West, use the following [shortcode](https://gohugo.io/extras/shortcodes/):
-
-```
-{{% eastwest %}}
-East/West-specific Markdown content goes here.
-{{% /eastwest %}}
-```
-
-Ditto for `govcloud`:
+For a block of content that is specific to the hosting environment GovCloud, use the following [shortcode](https://gohugo.io/extras/shortcodes/):
 
 ```
 {{% govcloud %}}
