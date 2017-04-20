@@ -27,12 +27,14 @@ To create a service instance run the following command:
 cf create-service elasticsearch24 1x my-elastic-service
 ```
 
-### The broker in GitHub
+### Additional notes
 
-You can find the broker here: [https://github.com/18F/kubernetes-broker](https://github.com/18F/kubernetes-broker).
-
-### Additional Notes
+Each instance is one node; there is not currently a way to make multi-node instances.
 
 ElasticSearch 2.4 allows for dots in field names. This is a feature that existed
 pre-ElasticSearch 2.0 but was disabled in versions 2.0 to 2.3. Learn more about
 that [here](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/dots-in-names.html).
+
+### The broker in GitHub
+
+You can find the broker here: [https://github.com/18F/kubernetes-broker](https://github.com/18F/kubernetes-broker).
