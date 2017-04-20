@@ -27,11 +27,6 @@ There are two important cloud.gov URLs you will need to use:
 - `https://uaa.fr.cloud.gov/oauth/token`, which is where you will exchange auth codes for auth tokens
 {{% /govcloud %}}
 
-{{% eastwest %}}
-- `https://login.cloud.gov/oauth/authorize`, which is where you will direct the user to login with their agency credentials
-- `https://uaa.cloud.gov/oauth/token`, which is where you will exchange auth codes for auth tokens
-{{% /eastwest %}}
-
 If you are already familiar with OAuth 2.0, you might know where to go from here. If not, read on for a basic example of how to do the OAuth dance.
 
 #### Send your user to login.fr.cloud.gov

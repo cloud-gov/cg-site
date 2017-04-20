@@ -15,10 +15,6 @@ First, send them an invite from the following link. (This may prompt you to log 
 https://account.fr.cloud.gov/invite
 {{% /govcloud %}}
 
-{{% eastwest %}}
-https://invite.cloud.gov/
-{{% /eastwest %}}
-
 Then, confirm with them that they have received and accepted the invite. Now they have a cloud.gov account!
 
 If you invited them with an agency email address and they're part of an agency that has automatic sandbox spaces, they'll also automatically get a sandbox space in their agency's cloud.gov org.

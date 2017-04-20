@@ -15,10 +15,6 @@ cloud.gov currently has two "environments" where orgs can live: the legacy East/
 
 cloud.gov documentation has different instructions for East/West and GovCloud users in many places, especially for [logging into the command line interface and dashboard]({{< relref "docs/getting-started/setup.md" >}}). You'll see the following notation:
 
-{{% eastwest %}}
-East/West-specific information
-{{% /eastwest %}}
-
 {{% govcloud %}}
 GovCloud-specific information
 {{% /govcloud %}}

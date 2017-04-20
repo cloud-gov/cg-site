@@ -56,24 +56,13 @@ $ cf delete-service my-service-account
 ```
 {{% /govcloud %}}
 
-{{% eastwest %}}
-### Ask support
-
-Ask [cloud.gov support]({{< relref "docs/help.md" >}}) to set up a "deployer" user in your organization and give it permission to deploy to the desired space.
-
-{{% /eastwest %}}
-
 ## Continuous integration services
 
 To set up any of these services, you will need to provide [a `manifest.yml` file](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) that captures the intended deployment configuration for your application.
 
 ### Travis
 
-See [the Travis documentation](http://docs.travis-ci.com/user/deployment/cloudfoundry/). 
-
-{{% eastwest %}}
-Use `api: https://api.cloud.gov`
-{{% /eastwest %}}
+See [the Travis documentation](http://docs.travis-ci.com/user/deployment/cloudfoundry/).
 
 {{% govcloud %}}
 Use `api: https://api.fr.cloud.gov`

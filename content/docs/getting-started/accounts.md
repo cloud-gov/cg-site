@@ -48,21 +48,11 @@ If you lose access to your authentication application (such as if you lose your 
 
 {{% /govcloud %}}
 
-{{% eastwest %}}
-Your cloud.gov account has a username and password. Follow [these instructions to log in on the command line (CLI) and web UI (dashboard)]({{< relref "setup.md" >}}).
-
-You can [reset your own password](https://login.cloud.gov/forgot_password).
-{{% /eastwest %}}
-
 ### Deployer accounts
 
 {{% govcloud %}}
 If you're using the [deployer account broker]({{< relref "docs/apps/continuous-deployment.md" >}}), you can delete and recreate that account to reset the credentials.
 {{% /govcloud %}}
-
-{{% eastwest %}}
-For `ORGNAME_deployer` accounts, if you need the password reset, please contact [cloud.gov support](/help/), providing the account name with your request, and a member of the cloud.gov team will provide you with a new password.
-{{% /eastwest %}}
 
 ## Use your account responsibly
 

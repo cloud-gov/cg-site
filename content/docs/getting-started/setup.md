@@ -27,12 +27,6 @@ Now try logging in:
 **Tip:** The `fr.` in this URL (and other cloud.gov URLs) indicates the GovCloud environment.
 {{% /govcloud %}}
 
-{{% eastwest %}}
-[`https://dashboard.cloud.gov/`](https://dashboard.cloud.gov/)
-
-**Note:** If you just logged into the cloud.gov East/West environment for the first time, you won't receive a sandbox space in the East/West environment. You can log into the cloud.gov GovCloud environment to get access to a sandbox space.
-{{% /eastwest %}}
-
 ## Set up the command line
 
 cloud.gov is based on the Cloud Foundry open source project, so cloud.gov uses the Cloud Foundry command line interface (CLI) to give you full access to cloud.gov.
@@ -50,16 +44,6 @@ Run `cf login -a api.fr.cloud.gov --sso`
 
 Then it'll say `One Time Code ( Get one at `[`https://login.fr.cloud.gov/passcode`](https://login.fr.cloud.gov/passcode)` )` -- visit that link in your browser to get your code, copy and paste the code into the command line (no typing indicators will show), and enter it.
 {{% /govcloud %}}
-
-{{% eastwest %}}
-**If you're at GSA or EPA and you log in with your agency account:** 
-
-Run `cf login -a api.cloud.gov --sso`
-
-Then it'll say `One Time Code ( Get one at `[`https://login.cloud.gov/passcode`](https://login.cloud.gov/passcode)` )` -- visit that link in your browser to get your code, copy and paste the code into the command line (no typing indicators will show), and enter it.
-    
-**If you log in with a cloud.gov account that has its own password** (including `ORGNAME_deployer` accounts): run `cf login -a api.cloud.gov`
-{{% /eastwest %}}
 
 ## Play around in your "sandbox"
 
@@ -96,19 +80,8 @@ Everyone: `cf login -a api.fr.cloud.gov --sso`
 
 {{% /govcloud %}}
 
-{{% eastwest %}}
-GSA and EPA: `cf login -a api.cloud.gov --sso`
-
-Everyone else: `cf login -a api.cloud.gov`
-{{% /eastwest %}}
-
-
 Dashboard (web interface):
 
 {{% govcloud %}}
 [`https://dashboard.fr.cloud.gov/`](https://dashboard.fr.cloud.gov/)
 {{% /govcloud %}}
-
-{{% eastwest %}}
-[`https://dashboard.cloud.gov/`](https://dashboard.cloud.gov/)
-{{% /eastwest %}}

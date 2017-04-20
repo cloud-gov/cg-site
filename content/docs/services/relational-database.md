@@ -86,20 +86,6 @@ GovCloud)
 
 The instructions below are for PostgreSQL, but should be similar for MySQL or others.
 
-{{% eastwest %}}
-### Using cf-ssh
-
-To access a service database, use the [cf-ssh]({{< relref "docs/getting-started/one-off-tasks.md#cf-ssh" >}}) CLI to start an instance that is bound to the service and download the `psql` binary to that instance:
-
-```sh
-cf-ssh APP_NAME
-curl https://s3.amazonaws.com/18f-cf-cli/psql-9.4.4-ubuntu-14.04.tar.gz | tar xvz
-./psql/bin/psql $DATABASE_URL
-```
-
-You should now have an open `psql` terminal connected to the service database.
-{{% /eastwest %}}
-
 {{% govcloud %}}
 #### Using cf ssh
 
@@ -120,31 +106,6 @@ You can also use the [cf-service-connect plugin](https://github.com/18F/cf-servi
 ### Export
 
 #### Create backup
-
-{{% eastwest %}}
-#### Using cf-ssh
-
-First, spin up a host to connect to the database:
-
-```sh
-$ cf-ssh {app name}
-```
-
-When it finishes, you'll be in a tmux connection and you must install the Postgresql tools:
-
-```sh
-$ curl https://s3.amazonaws.com/18f-cf-cli/psql-9.4.4-ubuntu-14.04.tar.gz > psql.tgz
-$ tar xzvf psql.tgz
-```
-
-Now you can create the export file:
-
-```sh
-$ psql/bin/pg_dump --format=custom $DATABASE_URL > backup.pg
-```
-
-Leave the ssh connection open.
-{{% /eastwest %}}
 
 {{% govcloud %}}
 #### Using cf ssh
@@ -170,22 +131,6 @@ $ psql/bin/pg_dump --format=custom $DATABASE_URL > backup.pg
 {{% /govcloud %}}
 
 ### Download
-
-{{% eastwest %}}
-On your local host:
-
-```sh
-$ cf files {app name} app/backup.pg | tail -n +4 > backup.pg
-```
-
-> [Documentation for `cf files`](http://cli.cloudfoundry.org/en-US/cf/files.html)
-
-Now you may close the ssh connection to cloud.gov, back in tmux:
-
-```sh
-$ exit
-```
-{{% /eastwest %}}
 
 {{% govcloud %}}
 > [Documentation for using scp and sftp](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#other-ssh-access)
