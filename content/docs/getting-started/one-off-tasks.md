@@ -7,15 +7,13 @@ aliases:
 - /getting-started/cf-ssh/
 ---
 
-There are several options for running tasks in cloud.gov.
+This table shows a handful of common operations, with the recommended way to perform them in GovCloud.
 
-This table shows a handful of common operations, with the recommended way to perform them in each environment.
-
-What are you trying to do? | East/West | GovCloud
+What are you trying to do? | GovCloud
 --- | --- | ---
-Inspect an app instance to figure out what's wrong | Not possible, unfortunately. | [`cf ssh`]({{< relref "docs/apps/using-ssh.md" >}})
-Work with one of your service instances | [`cf-ssh`]({{< relref "docs/apps/using-ssh.md" >}}) | [`cf ssh` with port forwarding]({{< relref "docs/apps/using-ssh.md" >}})
-Run a non-interactive process that does a task (such as generating a report, cleaning up garbage, mailing people, processing some data, etc.) | [Short-lived app]({{< relref "#deploy-a-short-lived-app" >}}) | [Cloud Foundry Tasks](https://docs.cloudfoundry.org/devguide/using-tasks.html)
+Inspect an app instance to figure out what's wrong | [`cf ssh`]({{< relref "docs/apps/using-ssh.md" >}})
+Work with one of your service instances | [`cf ssh` with port forwarding]({{< relref "docs/apps/using-ssh.md" >}})
+Run a non-interactive process that does a task (such as generating a report, cleaning up garbage, mailing people, processing some data, etc.) | [Cloud Foundry Tasks](https://docs.cloudfoundry.org/devguide/using-tasks.html)
 
 ## Deploy a short-lived app
 

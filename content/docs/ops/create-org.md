@@ -25,7 +25,7 @@ Non-sandbox organizations need to be created by hand. To do so:
 
 1. Notify the `OrgManager` that the organization is created. Here's a template:
 
-    > Your organization has been created in the [East/West or GovCloud] environment. After signing in (https://cloud.gov/docs/getting-started/setup/), you can target it with
+    > Your organization has been created in the GovCloud environment. After signing in (https://cloud.gov/docs/getting-started/setup/), you can target it with
     >
     >     $ cf target -o [org name]
     >

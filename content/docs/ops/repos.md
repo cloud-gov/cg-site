@@ -40,7 +40,7 @@ Custom components for our Cloud Foundry deployment:
 - [User Account and Authentication (UAA) Server](https://github.com/18F/cg-uaa)
 - [UAA extra features](https://github.com/18F/cg-uaa-extras)
 - [Sandbox creation bot](https://github.com/18F/cg-sandbox-bot)
-- [CF-SSH](https://github.com/18F/cf-ssh) (for our East/West environment)
+- [CF-SSH](https://github.com/18F/cf-ssh)
 - [InfluxDB firehose nozzle](https://github.com/18F/influxdb-firehose-nozzle)
 
 BOSH releases:

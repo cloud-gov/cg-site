@@ -73,8 +73,7 @@ If you want to set up your own storage for your application logs, you can set up
 
 Not seeing the logs you expect? Here are a few questions to ask yourself to help identify the problem.
 
-### Logs front end ([logs.fr.cloud.gov](https://logs.fr.cloud.gov) and [logs.cloud.gov](https://logs.cloud.gov))
+### Logs front end ([logs.fr.cloud.gov](https://logs.fr.cloud.gov))
 
-1. Are you viewing the right logs front end for the environment that your apps are in (GovCloud or East/West)?
 1. Check the time period in the upper right corner, since the default is "Last 15 minutes". You may need to expand that time period to hours or days.
 1. Check [cloud.gov status](https://cloudgov.statuspage.io/) to see if the the logs front end is under scheduled maintenance.

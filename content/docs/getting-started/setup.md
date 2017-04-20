@@ -16,8 +16,7 @@ Your dashboard is probably empty right now since you probably haven't deployed a
 
 Two notes before you log in:
 
-* When you log in for the first time, cloud.gov will create a [sandbox space]({{< relref "overview/pricing/free-limited-sandbox.md" >}}) for you, but it may take up to **5 minutes** for cloud.gov to complete its automatic creation of your sandbox space.
-* Throughout the cloud.gov documentation, select the **GovCloud environment** or **East/West environment** instructions based on where your spaces are located. If you're not sure which to select, the **GovCloud environment** is the environment for new sandbox accounts and new teams. You can also ask a teammate or [ask support]({{< relref "docs/help.md" >}}).
+* When you log in for the first time, cloud.gov will create a [sandbox space]({{< relref "overview/pricing/free-limited-sandbox.md" >}}) for you, but it may take up to **5 minutes** for cloud.gov to complete its automatic creation of your sandbox space. If you get stuck, ask a teammate or [support]({{< relref "docs/help.md" >}}).
 
 Now try logging in:
 

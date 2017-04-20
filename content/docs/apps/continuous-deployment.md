@@ -129,7 +129,7 @@ deployment:
       - cf push
 ```
 
-Replace `DEPLOYER_USER`, `ORG`, and `SPACE` accordingly, and export the `CF_PASS` environment variable in the Circle interface to add the deployer's password. If you're using the East/West environment, replace `api.fr.cloud.gov` with `api.cloud.gov`.
+Replace `DEPLOYER_USER`, `ORG`, and `SPACE` accordingly, and export the `CF_PASS` environment variable in the Circle interface to add the deployer's password.
 
 **Note**: If your `manifest.yml` describes more than one app, you might want to specify which app to push in the `cf push` line.
 
@@ -161,7 +161,7 @@ Change `APP` and `DOMAIN` to match your application, and set up the following en
 
 | Name    | Value              |
 |---------|--------------------|
-| CF_API  | East/West: `api.cloud.gov` / GovCloud: `api.fr.cloud.gov`     |
+| CF_API  | GovCloud: `api.fr.cloud.gov`     |
 | CF_USER | deployer username  |
 | CF_PASS | deployer password  |
 | CF_ORG  | target organization|

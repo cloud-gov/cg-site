@@ -13,8 +13,6 @@ aliases:
 
 cloud.gov runs on top of Infrastructure as a Service provided by Amazon Web Services (AWS) in the [AWS GovCloud region](https://aws.amazon.com/govcloud-us/), which has a [FedRAMP JAB P-ATO at the High impact level](https://marketplace.fedramp.gov/index.html#/product/aws-govcloud-high). GovCloud also offers support for other formal compliance needs such as [ITAR compliance](https://en.wikipedia.org/wiki/International_Traffic_in_Arms_Regulations).
 
-We also have an older cloud.gov environment within the AWS US-East and US-West regions ("East/West" for short), and we're helping existing cloud.gov tenants in East/West transition to the GovCloud environment. New tenants will be placed in the AWS GovCloud environment.
-
 ## Other IaaS vendors we can support
 
 cloud.gov is a Platform as a Service (PaaS), which offers an additional level of services and functions beyond the basics offered by an Infrastructure as a Service (IaaS) provider. We built cloud.gov based on the [Cloud Foundry open source project](https://www.cloudfoundry.org/), which was designed to be compatible with multiple IaaS providers. For that reason, it would be possible to provide cloud.gov services using Google Compute Engine, Microsoft Azure, or any public, commercial, or private OpenStack instance in the future.
