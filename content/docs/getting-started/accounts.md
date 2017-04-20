@@ -27,11 +27,10 @@ If you were invited with an email address that isn't part of an agency with sing
 
 Follow [these instructions to log in on the command line (CLI) and web UI (dashboard)]({{< relref "setup.md" >}}). When you log in to cloud.gov via a web browser, select the **cloud.gov** option.
 
-<!--<img src="/img/cloud-gov-idp-button-cropped.png" alt="cloud.gov provider button to login page is highlighted in blue" width="373" height="187" />-->
+Your cloud.gov account requires multi-factor authentication: something you know (your password) and something you have on your person (your smartphone). In order to perform multi-factor authentication, you need an authentication application that generates time-based one-time passcodes, such as [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) or [Authy](https://www.authy.com/app/mobile). When you log into cloud.gov for the first time, follow the instructions to set this up.
 
-Your cloud.gov account requires multi-factor authentication. To log into the system, you need two "factors" -- something you know (your password) and something you have on your person (your smartphone).
+If you lose access to your authentication application (such as if you lose your phone), contact [cloud.gov support](/help/). If you have access to paid organizations, we’ll ask for verification of your request from your organization’s system owner, and after we receive confirmation that it’s a legitimate request, we’ll reset your second factor so that you can set it up again. If you only have access to sandbox spaces, we'll delete the contents of your own sandbox space and remove any access you have to other sandbox spaces, and then we’ll reset your second factor so you can start fresh.
 
-In order to perform multi-factor authentication, you need an authentication application that generates time-based one-time passcodes, such as [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) or [Authy](https://www.authy.com/app/mobile). Download the app on your mobile device. When you log into cloud.gov for the first time, follow the instructions to store the `cloud.gov` key in your application.
 {{% /govcloud %}}
 
 {{% eastwest %}}
