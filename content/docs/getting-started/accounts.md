@@ -31,6 +31,13 @@ Follow [these instructions to log in on the command line (CLI) and web UI (dashb
 
 Your cloud.gov account requires multi-factor authentication: something you know (your password) and something you have on your person (your smartphone). In order to perform multi-factor authentication, you need an authentication application that generates time-based one-time passcodes, such as [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) or [Authy](https://www.authy.com/app/mobile). When you log into cloud.gov for the first time, follow the instructions to set this up.
 
+If you lose access to your authentication application (such as if you lose your phone), email [cloud.gov support](/help/) so that we can allow you to set up a new one. We'll follow this process to mitigate the risk of requests from compromised email addresses:
+
+1. Delete the contents of your sandbox space (if you have one).
+2. Remove your permissions to any other spaces and orgs.
+3. For those spaces and orgs, notify the Space Managers and Org Managers that we've removed your access because of your request to reset your second factor.
+4. Reset your second factor.
+5. Let you know this is complete, so that you can set up a new second factor and request access from your Space Managers and Org Managers again. It is their responsibility to verify that this is a legitimate request from you.
 
 {{% /govcloud %}}
 
