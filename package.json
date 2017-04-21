@@ -10,7 +10,7 @@
     "clean": "rm -rf ./public",
     "copy": "npm run copy-img && npm run copy-font",
     "copy-img": "cp -r node_modules/cloudgov-style/img/* ./public/assets/img/",
-    "copy-font": "cp node_modules/cloudgov-style/fonts/* ./public/assets/fonts/",
+    "copy-font": "cp node_modules/cloudgov-style/font/* ./public/assets/fonts/",
     "make-dirs": "mkdir -p ./public/assets/css && mkdir -p ./public/assets/js && mkdir -p ./public/assets/img && mkdir -p ./public/assets/fonts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "onchange './node_modules/cloudgov-style/css/*.scss' './node_modules/cloudgov-style/img/*' -v -- npm run build",
