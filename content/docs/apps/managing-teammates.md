@@ -11,9 +11,7 @@ If you're part of a team using cloud.gov, you can invite teammates to get cloud.
 
 First, send them an invite from the following link. (This may prompt you to log into your cloud.gov account first.)
 
-{{% govcloud %}}
 https://account.fr.cloud.gov/invite
-{{% /govcloud %}}
 
 Then, confirm with them that they have received and accepted the invite. Now they have a cloud.gov account!
 

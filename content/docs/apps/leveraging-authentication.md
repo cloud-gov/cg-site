@@ -22,10 +22,8 @@ You will first need to register all instances (such as dev, staging, and product
 UAA handles authentication according to the [OpenID Connect](http://openid.net/connect/) specification, which is "a simple identity layer on top of the OAuth 2.0 protocol."
 
 There are two important cloud.gov URLs you will need to use:
-{{% govcloud %}}
 - `https://login.fr.cloud.gov/oauth/authorize`, which is where you will direct the user to login with their agency credentials
 - `https://uaa.fr.cloud.gov/oauth/token`, which is where you will exchange auth codes for auth tokens
-{{% /govcloud %}}
 
 If you are already familiar with OAuth 2.0, you might know where to go from here. If not, read on for a basic example of how to do the OAuth dance.
 

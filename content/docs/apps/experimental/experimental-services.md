@@ -18,7 +18,6 @@ To enable any of these services, [ask support]({{< relref "docs/help.md" >}}).
 
 Elasticsearch and Redis are available in the `cf marketplace`, and they can be instantiated for your application. You can see the plans and their information in the marketplace. To create an instance, you can use:
 
-{{% govcloud %}}
 ```sh
 cf create-service elasticsearch24 1x mysearch
 ```
@@ -28,4 +27,3 @@ or
 ```sh
 cf create-service redis28 standard myredis
 ```
-{{% /govcloud %}}

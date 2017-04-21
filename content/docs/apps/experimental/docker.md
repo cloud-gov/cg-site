@@ -8,7 +8,6 @@ aliases:
   - /overview/technology/containers
 ---
 
-{{% govcloud %}}
 [**This is an experimental feature.**]({{< relref "docs/apps/experimental/experimental.md" >}})
 
 #### Docker as apps
@@ -37,4 +36,3 @@ Here are some considerations to keep in mind when deciding to use Docker images 
 #### Docker as tasks
 
 There is [an experimental Cloud Foundry API for tasks creation](http://v3-apidocs.cloudfoundry.org/version/3.0.0-alpha.1/index.html#tasks). This will allow single, one-off tasks to be triggered through the API.
-{{% /govcloud %}}

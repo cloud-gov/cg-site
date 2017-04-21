@@ -22,16 +22,6 @@ Hugo uses Markdown to build the pages. Add your page to the section you want ins
 
 We usually use branches to write updates. After you merge a PR, click GitHub's button to delete that branch. (We don't need it anymore.)
 
-### Environment-specific information
-
-For a block of content that is specific to the hosting environment GovCloud, use the following [shortcode](https://gohugo.io/extras/shortcodes/):
-
-```
-{{% govcloud %}}
-GovCloud-specific Markdown content goes here.
-{{% /govcloud %}}
-```
-
 ### Links
 
 To link to another page within cg-site, use `relref` to create [relative links](https://gohugo.io/extras/crossreferences/). Examples:

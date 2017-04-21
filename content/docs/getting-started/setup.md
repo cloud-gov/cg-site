@@ -20,11 +20,9 @@ Two notes before you log in:
 
 Now try logging in:
 
-{{% govcloud %}}
 [`https://dashboard.fr.cloud.gov/`](https://dashboard.fr.cloud.gov/)
 
-**Tip:** The `fr.` in this URL (and other cloud.gov URLs) indicates the GovCloud environment.
-{{% /govcloud %}}
+**Tip:** The `fr.` in this URL (and other cloud.gov URLs) indicates the GovCloud environment. ('FR' stands for 'FedRAMP'.)
 
 ## Set up the command line
 
@@ -36,13 +34,11 @@ cloud.gov is based on the Cloud Foundry open source project, so cloud.gov uses t
 
 1. Log in with a command as explained below. Just like with the dashboard instructions, the **GovCloud environment** is the main environment for new accounts and teams.
 
-{{% govcloud %}}
 **For all accounts in the GovCloud environment:**
 
-Run `cf login -a api.fr.cloud.gov --sso` 
+Run `cf login -a api.fr.cloud.gov --sso`
 
 Then it'll say `One Time Code ( Get one at `[`https://login.fr.cloud.gov/passcode`](https://login.fr.cloud.gov/passcode)` )` -- visit that link in your browser to get your code, copy and paste the code into the command line (no typing indicators will show), and enter it.
-{{% /govcloud %}}
 
 ## Play around in your "sandbox"
 
@@ -73,14 +69,8 @@ Here's a summary of how to log into cloud.gov. (See above for details.)
 
 Command line interface:
 
-{{% govcloud %}}
-
-Everyone: `cf login -a api.fr.cloud.gov --sso` 
-
-{{% /govcloud %}}
+Everyone: `cf login -a api.fr.cloud.gov --sso`
 
 Dashboard (web interface):
 
-{{% govcloud %}}
 [`https://dashboard.fr.cloud.gov/`](https://dashboard.fr.cloud.gov/)
-{{% /govcloud %}}

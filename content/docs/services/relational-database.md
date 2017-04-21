@@ -86,7 +86,6 @@ GovCloud)
 
 The instructions below are for PostgreSQL, but should be similar for MySQL or others.
 
-{{% govcloud %}}
 #### Using cf ssh
 
 To access a service database, use the [cf ssh]({{< relref "docs/getting-started/one-off-tasks.md#cf-ssh" >}}) CLI command to login to an instance that is bound to the service and download the `psql` binary to that instance:
@@ -101,13 +100,10 @@ You should now have an open `psql` terminal connected to the service database.
 
 You can also use the [cf-service-connect plugin](https://github.com/18F/cf-service-connect#readme) for a shortcut way to do this.
 
-{{% /govcloud %}}
-
 ### Export
 
 #### Create backup
 
-{{% govcloud %}}
 #### Using cf ssh
 
 First, connect to an instance:
@@ -128,11 +124,9 @@ Now you can create the export file:
 ```sh
 $ psql/bin/pg_dump --format=custom $DATABASE_URL > backup.pg
 ```
-{{% /govcloud %}}
 
 ### Download
 
-{{% govcloud %}}
 > [Documentation for using scp and sftp](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#other-ssh-access)
 
 On your local host:
@@ -160,7 +154,6 @@ Connected to ssh.fr.cloud.gov.
 sftp> get backup.pg
 sftp> quit
 ```
-{{% /govcloud %}}
 
 ### Restore to local database
 
