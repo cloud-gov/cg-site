@@ -38,7 +38,7 @@ If you lose access to your authentication application (such as if you lose your 
 1. Delete the contents of your sandbox space (if you have one).
 2. Remove your permissions to any other spaces and orgs.
 3. For those spaces and orgs, notify the Space Managers and Org Managers that we've removed your access because of your request to reset your account's authentication application.
-4. Reset your second factor.
+4. Reset your account's authentication application.
 5. Let you know this is complete, so that you can set up a new authentication application and request access from your Space Managers and Org Managers again. It is their responsibility to verify that this is a legitimate request from you.
 
 {{% /govcloud %}}
