@@ -14,7 +14,7 @@ A sandbox is a free space that you can use to see if cloud.gov might suit your t
 
 Anyone with a U.S. federal government email address (ending in `.gov`, `.mil`, or `.fed.us`) can [**sign up for a free sandbox space**](https://account.fr.cloud.gov/signup). No paperwork is required from us. (It’s up to you to determine whether you may need permission from your organization.) If you have other questions or comments, see [Contact]({{< relref "docs/help.md" >}}).
 
-Then, if you’re interested in [purchasing full access]({{< relref "overview/pricing/rates.md" >}}) (whether for **Prototyping** or for production systems at the **Open Data**, **FISMA Low**, or **FISMA Moderate** levels), fill out [this interest form](https://docs.google.com/a/gsa.gov/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform) or email us again.
+If you’re interested in [purchasing full access]({{< relref "overview/pricing/rates.md" >}}) (whether for **Prototyping** or for production systems at the **Open Data**, **FISMA Low**, or **FISMA Moderate** levels), email [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov) and we'll help you get started.
 
 ## Keep in mind before you try your sandbox
 

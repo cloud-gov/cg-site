@@ -22,7 +22,7 @@ If you need to set up an app on a domain managed by GSA TTS, you may also be int
 
 ## Manual Method
 
-Send a request to cloud.gov support (cloud-gov-support@gsa.gov for any customer, or [#cloud-gov-support](https://18f.slack.com/messages/cloud-gov-support) for 18F staff) to tell us you want to set up a custom domain. Include your domain and org name.
+Send a request to [cloud.gov support]({{< relref "docs/help.md" >}}) to tell us you want to set up a custom domain. Include your domain and org name.
 
 We'll configure your org to make your domain available for use with that org, and we'll tell you the entry to put in your DNS. Next you'll set up your application route, as explained in the next section.
 

@@ -7,11 +7,9 @@ aliases:
 
 ### Want to use cloud.gov?
 
-If you're interested in using cloud.gov, [**fill out our interest form**](https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform) to tell us about your organization and applications. We’ll schedule a call where we can go over needs, options, and any remaining questions, then get the [federal Inter-Agency Agreement (IAA/MOU) process]({{< relref "overview/pricing/start-using-cloudgov.md" >}}) underway.
+If you're interested in using cloud.gov, email [**cloud-gov-inquiries@gsa.gov**](mailto:cloud-gov-inquiries@gsa.gov) to tell us about your project and your questions. We’ll schedule a call where we can go over needs, options, and questions, then get the [federal Inter-Agency Agreement (IAA/MOU) process]({{< relref "overview/pricing/start-using-cloudgov.md" >}}) underway.
 
 If you have a U.S. federal government email address, you can [**get access to a free sandbox space**]({{< relref "overview/pricing/free-limited-sandbox.md" >}}) and try cloud.gov right away.
-
-You can also email [**cloud-gov-inquiries@gsa.gov**](mailto:cloud-gov-inquiries@gsa.gov) with questions to help you understand whether cloud.gov is right for your team.
 
 To get news about cloud.gov, [**sign up for email updates**](/#updates).
 
@@ -21,7 +19,7 @@ Email [**cloud-gov-support@gsa.gov**](mailto:cloud-gov-support@gsa.gov). We prov
 
 You shouldn't include any sensitive environment variables or passwords in your support emails; we don't need that information to help you, and we recommend you keep it limited to view by as few people as possible.
 
-(If you're GSA TTS staff, you can also talk to us in [#cloud-gov-support](https://gsa-tts.slack.com/messages/cloud-gov-support).)
+(If you're GSA TTS staff, you can also talk to us in [#cg-support](https://gsa-tts.slack.com/messages/cg-support).)
 
 ### Questions from the public and industry
 

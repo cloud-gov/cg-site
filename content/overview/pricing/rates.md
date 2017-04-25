@@ -24,29 +24,29 @@ All packages are priced based on three components:
 - [**Resource usage quota:**]({{< relref "overview/pricing/quotas.md" >}}): The memory, in MB of RAM, you reserve for your applications. Assessed monthly and doesn’t roll over month-to-month.
 - [**Managed services:**]({{< relref "overview/pricing/managed-services-cost.md" >}}) Services that cloud.gov can spin up quickly and run on your behalf. Currently free. See the services and plans offered for each service by [running `cf marketplace`]({{< relref "docs/apps/managed-services.md" >}}).
 
-Once you fill out the [initial interest form](https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform), the cloud.gov team will work with you to figure out what package makes the most sense for your work.
+You can email [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov) to work with the cloud.gov team on estimating your costs, or to start your purchase.
 
 ## cloud.gov access packages
 
 ### Prototyping
 
-Our most basic paid package lets many teams build and deploy apps, with access control delegated to teams. Prototyping accounts cannot host production data; all apps are limited to the `*.app.cloud.gov` domain. Whole agencies or departments often purchase a single prototyping package.
+Our most basic paid package lets many teams build and deploy apps, with access control delegated to teams. Prototyping packages cannot host production data; all apps are limited to the `*.app.cloud.gov` domain. Whole agencies or departments often purchase a single prototyping package.
 
 **Annual fee:** $15K<br>
 **Resource usage quota:** ~$99 per GB per month[*](#quota-pricing), up to any limit set by user<br>
 **Managed services:** Full access
 
-Interested in a prototyping account? [Fill out our initial interest form.](https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform)
+Interested in a prototyping package? [Fill out our initial interest form.](https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform)
 
 ### Open data
 
-Host one public-facing system with no confidentiality risk assessed. Open data accounts include all the spaces you need and DNS support. This is the lightest production-level package.
+Host one public-facing system with no confidentiality risk assessed. Open data packages include all the spaces you need and DNS support. This is the lightest production-level package.
 
 **Annual fee:** $10K<br>
 **Resource usage quota:** ~$99 per GB per month[*](#quota-pricing), up to 2GB<br>
 **Managed services:** Full access
 
-Interested in an open data account? [Fill out our initial interest form.](https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform)
+Interested in an open data package? [Fill out our initial interest form.](https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform)
 
 ### FISMA Low
 
@@ -56,7 +56,7 @@ Host one public-facing system, authorized at the FISMA Low risk assessment level
 **Resource usage quota:** ~$99 per GB per month[*](#quota-pricing), up to any limit set by user<br>
 **Managed services:** Full access
 
-Interested in a FISMA Low account? [Fill out our initial interest form.](https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform)
+Interested in a FISMA Low package? [Fill out our initial interest form.](https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform)
 
 ### FISMA Moderate
 
@@ -66,7 +66,7 @@ Host one public-facing system, authorized at the FISMA Moderate risk assessment 
 **Resource usage quota:** ~$99 per GB per month[*](#quota-pricing), up to any limit set by user<br>
 **Managed services:** Full access
 
-Interested in a FISMA Moderate account? [Fill out our initial interest form.](https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform)
+Interested in a FISMA Moderate package? [Fill out our initial interest form.](https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform)
 
 ### Sandbox
 
