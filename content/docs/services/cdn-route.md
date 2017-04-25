@@ -79,20 +79,31 @@ $ cf service my-cdn-route
 
 Last Operation
 Status: create in progress
-Message: TODO TODO Swap with new output with dns01 challenge when finalized TODO TODO"
+Message: Provisioning in progress [my.example.gov => cdn-broker-origin.fr.cloud.gov]; CNAME or ALIAS domain my.example.gov to d3nrs0916m1mk2.cloudfront.net or create TXT record(s):
+name: _acme-my.example.gov., value: ngd2suc9gwUnH3btm7N6hSU7sBbNp-qYtSPYyny325E, ttl: 120
+
 ```
 Create the TXT record(s) as instructed by the broker. The existence of these records will be validated by [Let's Encrypt](https://letsencrypt.org/) when issuing your certificate and will not affect your site.
 
-
-After the records have been created run the `cf service my-cdn-route` command again and verify your certificate has been provisioned.
+After the records have been created wait up to 1 hour for the certificate to be provisioned. Your certificate has been provisioned when the `cf service my-cdn-route` command reports the status as `create succeeded`.
 
 ```
-TODO TODO output of broker after DNS challenge is done TODO TODO
+Last Operation
+Status: create succeeded
+Message: Service instance provisioned [my.example.gov => cdn-broker-origin.fr.cloud.gov]; CDN domain d3nrs0916m1mk2.cloudfront.net
 ```
 
 #### Step 2: Create CNAME record(s)
 
-Create the TXT record(s) as instructed by the broker.
+Once the TXT records have been validated, or if you've decided to skip that step, you need to point your custom domain at the CDN. Run `cf service my-cdn-route` with the service instance name you choose.
+
+```
+Last Operation
+Status: create succeeded
+Message: Service instance provisioned [my.example.gov => cdn-broker-origin.fr.cloud.gov]; CDN domain d3nrs0916m1mk2.cloudfront.net
+```
+
+The output will include the CDN domain the broker has created for you. In this case, you need to create a CNAME record in your DNS server pointing `my.example.gov` to `d3nrs0916m1mk2.cloudfront.net.`.
 
 After the record is created, wait up to 1 hour for the CloudFront distribution to be provisioned and the DNS changes to propagate. Then visit your custom domain and see whether you have a valid certificate (in other words, that visiting your site in a modern browser doesn't give you a certificate warning).
 
