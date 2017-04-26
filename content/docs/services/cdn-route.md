@@ -68,6 +68,10 @@ The maximum number of domains that can be associated with a single cdn-route ser
 
 ### How to set up DNS
 
+**Note:** If you are creating a new site on cloud.gov or you are migrating an existing site to cloud.gov that can tolerate a small amount of downtime during the migration, you can skip the first step and proceed directly to [Create CNAME record(s)](#step-2-create-cname-record-s)
+
+#### Step 1: Create TXT record(s)
+
 Once you create the service instance, you need to retrieve the instructions to set up your DNS. Run the following command, replacing `my-cdn-route` with the service instance name you used in the previous step.
 
 ```bash
@@ -75,12 +79,33 @@ $ cf service my-cdn-route
 
 Last Operation
 Status: create in progress
-Message: Provisioning in progress; CNAME domain "my.example.gov" to "d3kajwa62y9xrp.cloudfront.net."
+Message: Provisioning in progress [my.example.gov => cdn-broker-origin.fr.cloud.gov]; CNAME or ALIAS domain my.example.gov to d3nrs0916m1mk2.cloudfront.net or create TXT record(s):
+name: _acme-my.example.gov., value: ngd2suc9gwUnH3btm7N6hSU7sBbNp-qYtSPYyny325E, ttl: 120
+
+```
+Create the TXT record(s) as instructed by the broker. The existence of these records will be validated by [Let's Encrypt](https://letsencrypt.org/) when issuing your certificate and will not affect your site.
+
+After the records have been created wait up to 1 hour for the certificate to be provisioned. Your certificate has been provisioned when the `cf service my-cdn-route` command reports the status as `create succeeded`.
+
+```
+Last Operation
+Status: create succeeded
+Message: Service instance provisioned [my.example.gov => cdn-broker-origin.fr.cloud.gov]; CDN domain d3nrs0916m1mk2.cloudfront.net
 ```
 
-In this case, you need to create a CNAME record in your DNS server pointing `my.example.gov` to `d3kajwa62y9xrp.cloudfront.net.`.
+#### Step 2: Create CNAME record(s)
 
-After the record is created, wait up to 30 minutes for the CloudFront distribution to be provisioned and the DNS changes to propagate. Then visit your custom domain and see whether you have a valid certificate (in other words, that visiting your site in a modern browser doesn't give you a certificate warning).
+Once the TXT records have been validated, or if you've decided to skip that step, you need to point your custom domain at the CDN. Run `cf service my-cdn-route` with the service instance name you choose.
+
+```
+Last Operation
+Status: create succeeded
+Message: Service instance provisioned [my.example.gov => cdn-broker-origin.fr.cloud.gov]; CDN domain d3nrs0916m1mk2.cloudfront.net
+```
+
+The output will include the CDN domain the broker has created for you. In this case, you need to create a CNAME record in your DNS server pointing `my.example.gov` to `d3nrs0916m1mk2.cloudfront.net.`.
+
+After the record is created, wait up to 1 hour for the CloudFront distribution to be provisioned and the DNS changes to propagate. Then visit your custom domain and see whether you have a valid certificate (in other words, that visiting your site in a modern browser doesn't give you a certificate warning).
 
 ### CDN Configuration Options
 

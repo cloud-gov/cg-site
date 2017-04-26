@@ -29,9 +29,18 @@ Follow [these instructions to log in on the command line (CLI) and web UI (dashb
 
 <!--<img src="/img/cloud-gov-idp-button-cropped.png" alt="cloud.gov provider button to login page is highlighted in blue" width="373" height="187" />-->
 
-Your cloud.gov account requires multi-factor authentication. To log into the system, you need two "factors" -- something you know (your password) and something you have on your person (your smartphone).
+Your cloud.gov account requires setting up both a password and an authentication application that generates token codes, such as [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) or [Authy](https://www.authy.com/app/mobile). (You can use any authentication application that supports the standard [Time-based One-Time Password algorithm](https://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm).) When you log into cloud.gov for the first time, follow the instructions to set this up.
 
-In order to perform multi-factor authentication, you need an authentication application that generates time-based one-time passcodes, such as [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) or [Authy](https://www.authy.com/app/mobile). Download the app on your mobile device. When you log into cloud.gov for the first time, follow the instructions to store the `cloud.gov` key in your application.
+#### If you can't access your token codes
+
+If you lose access to your authentication application (such as if you lose your phone), email [cloud.gov support](/help/) so that we can allow you to set up a new one. We'll follow this process to mitigate the risk of requests from compromised email addresses:
+
+1. Delete the contents of your sandbox space (if you have one).
+2. Remove your permissions to any other spaces and orgs.
+3. For those spaces and orgs, notify the Space Managers and Org Managers that we've removed your access because of your request to reset your account's authentication application.
+4. Reset your account's authentication application.
+5. Let you know this is complete, so that you can set up a new authentication application and request access from your Space Managers and Org Managers again. It is their responsibility to verify that this is a legitimate request from you.
+
 {{% /govcloud %}}
 
 {{% eastwest %}}
