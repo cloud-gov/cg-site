@@ -148,27 +148,6 @@ field. If you do, follow ["How to set up DNS"](#how-to-set-up-dns) again.
 
 After you delete an existing service instance, you may need to wait up to 30 minutes for the changes to complete and propagate.
 
-## Caching
-
-CloudFront [uses](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html)
-your application's `Cache-Control` or `Expires` HTTP headers to determine how
-long to cache content. If your application does not provide these headers,
-CloudFront will use a default timeout of **24 hours**. This can be
-particularly confusing as different requests might be routed to different
-CloudFront Edge endpoints.
-
-While there is no mechanism for cloud.gov users to trigger a cache clear, the
-cloud.gov support team can. Note however, that cache invalidation is not
-instantaneous; Amazon expecting a lag time of 10-15 minutes (more if there are
-many distinct endpoints.)
-
-## Authentication
-
-As noted above, cookies are passed through the CDN by default, meaning that
-cookie-based authentication will work as expected. Other headers, such as HTTP
-auth, are stripped by default but can be configured otherwise by the cloud.gov
-support team.
-
 ## External services and applications
 
 To create a custom domain for a service or application that is not a cloud.gov tenant application (such as a public S3 bucket), put in the `origin` option:
@@ -181,6 +160,28 @@ cf create-service cdn-route cdn-route my-cdn-route \
 Unlike creating custom domains for cloud.gov tenant applications, you don't need to run the `cf create-domain` command first -- there's no need to create a private domain for externally-managed services and applications.
 
 Then [set up DNS](#how-to-set-up-dns).
+
+## More about how the CDN works
+
+### Caching
+
+CloudFront [uses](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html)
+your application's `Cache-Control` or `Expires` HTTP headers to determine how
+long to cache content. If your application does not provide these headers,
+CloudFront will use a default timeout of **24 hours**. This can be
+particularly confusing as different requests might be routed to different
+CloudFront Edge endpoints.
+
+While there is no mechanism for cloud.gov users to trigger a cache clear, 
+[cloud.gov support](/help/) can. Note however, that cache invalidation is not
+instantaneous; Amazon recommends expecting a lag time of 10-15 minutes (more if there are
+many distinct endpoints.)
+
+### Authentication
+
+As noted above, cookies are passed through the CDN by default, meaning that
+cookie-based authentication will work as expected. Other headers, such as HTTP
+auth, are stripped by default. If you need a different configuration, contact [cloud.gov support](/help/).
 
 ## The broker in GitHub
 
