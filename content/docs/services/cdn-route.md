@@ -175,7 +175,7 @@ CloudFront Edge endpoints.
 While there is no mechanism for cloud.gov users to trigger a cache clear, 
 [cloud.gov support](/help/) can. Note however, that cache invalidation is not
 instantaneous; Amazon recommends expecting a lag time of 10-15 minutes (more if there are
-many distinct endpoints.)
+many distinct endpoints).
 
 ### Authentication
 
