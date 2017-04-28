@@ -39,7 +39,7 @@ For other helpful cf CLI troubleshooting commands, including `cf events APP-NAME
 If you receive `Error dialing trafficcontroller server`:
 
 * This can be caused by having an old version of the `cf` CLI. Try `cf -v` and see if it's older than the [latest version](https://github.com/cloudfoundry/cli/releases). If it is, [install the latest version]({{< relref "docs/getting-started/setup.md#set-up-the-command-line" >}}) and try again.
-* This can also be caused by outbound connections to port 443 being blocked on your network. Often in these situations your organization will require that your web browser use a proxy for outbound access to https:// sites. You can [set up the `cf` CLI to use that proxy as well](https://github.com/18F/cg-site/edit/error-info/content/docs/apps/logs.md?pr=/18F/cg-site/pull/829). Alternatively, talk to your network administrators about opening that port, or try a different network. 
+* This can also be caused by outbound connections to port 443 being blocked on your network. If your organization requires your web browser to use a proxy for outbound access to https:// sites, you can [set up the `cf` CLI to use that proxy as well](https://docs.cloudfoundry.org/cf-cli/http-proxy.html). If it's simply blocked, you can talk to your network administrators about opening that port or try a different network.
 
 ## Web-based logs with historic log data
 
