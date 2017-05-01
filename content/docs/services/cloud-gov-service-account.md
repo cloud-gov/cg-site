@@ -21,7 +21,7 @@ Plan Name | Description | Price
 
 ## How to create an instance
 
-After you create one of these service instances, you will see a new "user" in your org and space with a name made of 36 letters and numbers as its unique identifier. It's good to know that this is normal.
+After you create one of these service instances, you will see a new "user" in your org and space with a name made of 36 letters, numbers, and dashes as its unique identifier. 
 
 To create a service instance that can deploy applications, run the following command:
 
