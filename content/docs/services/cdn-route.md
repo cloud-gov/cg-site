@@ -161,6 +161,28 @@ Unlike creating custom domains for cloud.gov tenant applications, you don't need
 
 Then [set up DNS](#how-to-set-up-dns).
 
+## More about how the CDN works
+
+### Caching
+
+CloudFront [uses](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html)
+your application's `Cache-Control` or `Expires` HTTP headers to determine how
+long to cache content. If your application does not provide these headers,
+CloudFront will use a default timeout of **24 hours**. This can be
+particularly confusing as different requests might be routed to different
+CloudFront Edge endpoints.
+
+While there is no mechanism for cloud.gov users to trigger a cache clear, 
+[cloud.gov support](/help/) can. Note however, that cache invalidation is not
+instantaneous; Amazon recommends expecting a lag time of 10-15 minutes (more if there are
+many distinct endpoints).
+
+### Authentication
+
+As noted above, cookies are passed through the CDN by default, meaning that
+cookie-based authentication will work as expected. Other headers, such as HTTP
+auth, are stripped by default. If you need a different configuration, contact [cloud.gov support](/help/).
+
 ## The broker in GitHub
 
 You can find the broker here: [https://github.com/18F/cf-cdn-service-broker](https://github.com/18F/cf-cdn-service-broker).
