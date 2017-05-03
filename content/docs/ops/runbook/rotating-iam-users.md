@@ -1,7 +1,8 @@
 ---
 menu:
   docs:
-    parent: operations
+    parent: runbook
+
 title: Rotating IAM users with Terraform
 ---
 
