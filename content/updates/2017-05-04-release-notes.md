@@ -41,13 +41,6 @@ These additional upgrades address the following vulnerabilities:
 - [USN-3259-1: Bind vulnerabilities](https://www.ubuntu.com/usn/usn-3259-1/)
 - [USN-3263-1 FreeType vulnerability](https://www.ubuntu.com/usn/usn-3263-1/)
 
-- [USN-3225-1: libarchive vulnerabilities](https://www.ubuntu.com/usn/USN-3225-1/)
-- [USN-3227-1: ICU vulnerabilities](https://www.ubuntu.com/usn/USN-3227-1/)
-- [USN-3232-1: ImageMagick vulnerabilities](https://www.ubuntu.com/usn/USN-3232-1/)
-- [USN-3235-1: libxml2 vulnerabilities](https://www.ubuntu.com/usn/USN-3235-1/)
-- [USN-3237-1: FreeType vulnerability](https://www.ubuntu.com/usn/usn-3237-1/)
-- [USN-3239-1: GNU C Library vulnerabilities](https://www.ubuntu.com/usn/usn-3239-1/)
-
 ### See also
 
 If you’re interested in details about recent dashboard updates, you can also see the [dashboard release notes](https://github.com/18F/cg-dashboard/releases).
