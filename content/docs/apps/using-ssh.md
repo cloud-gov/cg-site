@@ -15,7 +15,7 @@ ssh`](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#ssh-comma
 command, which lets you securely log in to an application instance where you can
 perform debugging, environment inspection, and other tasks.
 
-Your application environment is not completely setup when you log in. You'll want
+Your application environment is not completely setup when you log in. You'll probably need
 to [configure your session to match your application's
 environment](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#ssh-env)
 in order to debug your application.
