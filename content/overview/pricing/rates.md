@@ -90,6 +90,21 @@ See [details on quota costs, billing, and limits]({{< relref "overview/pricing/q
 
 ## Find the right package for your work
 
+### Estimate your costs
+This spreadsheet can help you estimate the total cost of cloud.gov across all access packages and quotas your team might need without having to figure out the math. Complete two steps, and it will generate an estimated annual cost for your review.
+
+**cloud.gov cost estimator**
+
+Formats: [.xlsx](/resources/cloudgov_cost_estimator.xlsx) | [.ods](/resources/cloudgov_cost_estimator.ods) <br />
+*last updated: April 25, 2017*
+
+<!-- The full URLs for the spreadsheet calculators are, respectively:
+.xls format: https://cloud.gov/resources/cloudgov_cost_estimator.xlsx
+.ods format: https://cloud.gov/resources/cloudgov_cost_estimator.ods
+ -->
+
+
+### Get in touch
 Fill out our initial interest form to let us know what kind of work you’re doing and how you think you might use cloud.gov. We’ll set up a conversation to explore your goals and how we can help.
 
 [<button class="action action-primary usa-button usa-button-primary">Tell us what you’re working on</button>](https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform)
