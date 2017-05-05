@@ -29,17 +29,14 @@ We upgraded the Cloud Foundry deployment to [v257](https://github.com/cloudfound
 - [Python buildpack 1.5.17](https://github.com/cloudfoundry/python-buildpack/releases/tag/v1.5.17)
 - [Staticfile buildpack 1.4.4](https://github.com/cloudfoundry/staticfile-buildpack/releases/tag/v1.4.4)
 - [Ruby buildpack 1.6.37](https://github.com/cloudfoundry/ruby-buildpack/releases/tag/v1.6.37)
-- [RootFS cflinuxfs2 1.115.0](https://github.com/cloudfoundry/cflinuxfs2/releases/tag/1.115.0)
 - [Diego 1.14.1](https://github.com/cloudfoundry/diego-release/tree/v1.14.1)
-- Stemcell 3312.23
-
-These additional upgrades address the following vulnerabilities:
-
-- [USN-3246-1: Eject vulnerability](https://www.ubuntu.com/usn/usn-3246-1/)
-- [USN-3249-2: Linux kernel (Xenial HWE) vulnerability](hhttps://www.ubuntu.com/usn/usn-3249-2/)
-- [USN-3256-1: Linux kernel vulnerability](https://www.ubuntu.com/usn/usn-3256-1/)
-- [USN-3259-1: Bind vulnerabilities](https://www.ubuntu.com/usn/usn-3259-1/)
-- [USN-3263-1 FreeType vulnerability](https://www.ubuntu.com/usn/usn-3263-1/)
+- [RootFS cflinuxfs2 1.115.0](https://github.com/cloudfoundry/cflinuxfs2/releases/tag/1.115.0), which address vulnerabilities described in these security notices:
+    - [USN-3246-1: Eject vulnerability](https://www.ubuntu.com/usn/usn-3246-1/)
+    - [USN-3259-1: Bind vulnerabilities](https://www.ubuntu.com/usn/usn-3259-1/)
+    - [USN-3263-1: FreeType vulnerability](https://www.ubuntu.com/usn/usn-3263-1/)    
+- Stemcell 3312.23, which address vulnerabilities described in these security notices:
+  - [USN-3249-2: Linux kernel (Xenial HWE) vulnerability](hhttps://www.ubuntu.com/usn/usn-3249-2/)
+  - [USN-3256-1: Linux kernel vulnerability](https://www.ubuntu.com/usn/usn-3256-1/)
 
 ### See also
 
