@@ -98,6 +98,11 @@ This spreadsheet can help you estimate the total cost of cloud.gov across all ac
 Formats: [.xlsx](/resources/cloudgov_cost_estimator.xlsx) | [.ods](/resources/cloudgov_cost_estimator.ods) <br />
 *last updated: April 25, 2017*
 
+<!-- The full URLs for the spreadsheet calculators are, respectively:
+.xls format: https://cloud.gov/resources/cloudgov_cost_estimator.xlsx
+.ods format: https://cloud.gov/resources/cloudgov_cost_estimator.ods
+ -->
+
 
 ### Get in touch
 Fill out our initial interest form to let us know what kind of work you’re doing and how you think you might use cloud.gov. We’ll set up a conversation to explore your goals and how we can help.
