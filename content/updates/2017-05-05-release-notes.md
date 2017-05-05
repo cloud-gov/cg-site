@@ -1,6 +1,6 @@
 +++
-date = "2017-05-04"
-title = "Platform Release Notes: May 4, 2017"
+date = "2017-05-05"
+title = "Platform Release Notes: May 5, 2017"
 +++
 
 Curious what’s new that you might find helpful as a cloud.gov application developer? Here are highlights from our platform updates over the past five weeks.
@@ -29,7 +29,7 @@ We upgraded the Cloud Foundry deployment to [v257](https://github.com/cloudfound
 - [Python buildpack 1.5.17](https://github.com/cloudfoundry/python-buildpack/releases/tag/v1.5.17)
 - [Staticfile buildpack 1.4.4](https://github.com/cloudfoundry/staticfile-buildpack/releases/tag/v1.4.4)
 - [Ruby buildpack 1.6.37](https://github.com/cloudfoundry/ruby-buildpack/releases/tag/v1.6.37)
-- [Diego 1.14.1](https://github.com/cloudfoundry/diego-release/tree/v1.14.1)
+- [Diego 1.14.1](https://github.com/cloudfoundry/diego-release/releases/tag/v1.14.1)
 - [RootFS cflinuxfs2 1.115.0](https://github.com/cloudfoundry/cflinuxfs2/releases/tag/1.115.0), which address vulnerabilities described in these security notices:
     - [USN-3246-1: Eject vulnerability](https://www.ubuntu.com/usn/usn-3246-1/)
     - [USN-3259-1: Bind vulnerabilities](https://www.ubuntu.com/usn/usn-3259-1/)
