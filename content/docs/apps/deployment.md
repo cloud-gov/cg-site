@@ -21,7 +21,7 @@ The command to create a new app and to push a new version of an existing one are
     ```
 1. Deploy the application: `cf push <APPNAME>`
 
-The app should now be live at `APPNAME.app.cloud.gov`.
+Check the resulting `cf` command line messages for the route for your app, usually `APPNAME.app.cloud.gov` or similar.
 
 ## Application architecture principles
 
