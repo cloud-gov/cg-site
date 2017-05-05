@@ -52,9 +52,12 @@ To link to another page within cg-site, use `relref` to create [relative links](
 
 If you delete or rename a page, make a redirect to avoid breaking links from other sites: [make an alias](https://gohugo.io/extras/aliases/) (use the "YAML frontmatter" style).
 
-### Images
+### Images and static assets
 
-If you want to include an image in a page on the site, put it in `/static/img/`. Images there will show up at `https://cloud.gov/img/example.png`.
+If you want to include an image in a page on the site, put it in `/static/img/`. Images there will show up at `https://cloud.gov/img/example.png`. When you're editing a page, embed them as `
+![alt text](/img/example.png)`
+
+If you want to link to a file, such as a PDF or spreadsheet, put it in `/static/resources/`. Resources there will show up at `https://cloud.gov/resources/example.pdf`. When you're editing a page, link to them as `[link text](/resources/example.pdf)`.
 
 ### Search
 
