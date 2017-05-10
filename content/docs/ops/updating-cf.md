@@ -30,7 +30,7 @@ Using the [`targets`](https://github.com/guidowb/cf-targets-plugin) plugin is re
 
 1. Follow the instructions.
 
-You may need to ask in #cloud-gov-atlas to be given access to orgs.
+You may need to ask in [#cg-platform](https://gsa-tts.slack.com/messages/cg-platform/) to be given access to orgs.
 
 ### Production
 Upon successfully going through the staging portion of the pipeline, you are now ready to tackle production.

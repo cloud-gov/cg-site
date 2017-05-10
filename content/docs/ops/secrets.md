@@ -29,7 +29,7 @@ Authorized federal staff rotate, encrypt, and backup keys monthly. Privileged us
 
 If you need to view/update secrets:
 
-1. Ask in [#cloud-gov-atlas](https://gsa-tts.slack.com/messages/cloud-gov-atlas/) for an account to read/write from the S3 buckets.
+1. Ask in [#cg-platform](https://gsa-tts.slack.com/messages/cg-platform/) for an account to read/write from the S3 buckets.
 1. Set up a [named profile](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-multiple-profiles) for [the AWS CLI](https://aws.amazon.com/cli/).
 
 The examples below use `--profile govcloud`, but replace with the name of your profile.
@@ -91,7 +91,7 @@ All UAA clients and users and associated credentials should be created via the C
 
 ##### Change secrets
 
-1. Post in [#cloud-gov-atlas](https://gsa-tts.slack.com/messages/cloud-gov-atlas/) saying you're updating `cf.yml`.
+1. Post in [#cg-platform](https://gsa-tts.slack.com/messages/cg-platform/) saying you're updating `cf.yml`.
 1. Follow the decryption steps above, up until the cleanup.
 1. Modify the `cf.yml` with the new values.
 1. Re-encrypt the file.

@@ -9,9 +9,9 @@ The platform requires regular support and maintenance activities to remain in a 
 
 # Is it your first day of support?
 
-- Update the `#cloud-gov-atlas` topic to include your name as the support contact.
+- Update the [`#cg-platform`](https://gsa-tts.slack.com/messages/cg-platform/) topic to include your name as the support contact.
 - Update the support schedule by moving yourself to the end of the list in the [slackbot auto response](https://gsa-tts.slack.com/customize/slackbot) for `atlas support schedule`.
-- Join/unmute `#cloud-gov-support` and `#cloud-gov-atlas-news`.
+- Join/unmute [`#cg-support`](https://gsa-tts.slack.com/messages/cg-support/) and [`#cg-platform-news`](https://gsa-tts.slack.com/messages/cg-platform-news/)
 - Meet with the previous support person and take responsibility for any open support items they are still working on.
 
 
@@ -29,7 +29,7 @@ The tasks on this checklist should be performed each day.
 
 ## Review and respond to open alerts
 
-Review all recent alerts and notifications delivered to `cg-notifications` and `#cloud-gov-atlas-news`.  
+Review all recent alerts and notifications delivered to `cg-notifications` and [`#cg-platform-news`](https://gsa-tts.slack.com/messages/cg-platform-news/).
 
 ### Are there no alerts or notifications?
 Verify the monitoring system is functioning correctly and confirm that alerts are reaching their expected destinations.
@@ -80,6 +80,6 @@ Update the bosh release and file a PR for the changes.  Once the PR is merged, e
 
 ## Review open support requests
 
-Review the "new" (yellow) and "open" (red) Zendesk tickets. First-tier support (cloud.gov BU) has primary responsibility to do the work of answering these, and you serve as second-tier support providing technical expertise. You're welcome to reply to the customer with answers if you like (choose "pending" when you submit the answer)*, but your main responsibility is to provide technical diagnoses/advice/details. The easiest way to do that is to write comments on the associated posts in `#cg-supportstream`. First-tier support may also ask you for pairing time to work out responses together.
+Review the "new" (yellow) and "open" (red) Zendesk tickets. First-tier support (cloud.gov BU) has primary responsibility to do the work of answering these, and you serve as second-tier support providing technical expertise. You're welcome to reply to the customer with answers if you like (choose "pending" when you submit the answer)*, but your main responsibility is to provide technical diagnoses/advice/details. The easiest way to do that is to write comments on the associated posts in [`#cg-supportstream`](https://gsa-tts.slack.com/messages/cg-supportstream). First-tier support may also ask you for pairing time to work out responses together.
 
 * People with @gsa.gov emails can't receive email via Zendesk, so we have to email them via the [cloud-gov-support Google Group instead](https://groups.google.com/a/gsa.gov/forum/#!forum/cloud-gov-support).
