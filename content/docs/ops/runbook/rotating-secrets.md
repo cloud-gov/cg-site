@@ -6,6 +6,19 @@ menu:
 title: Rotating Secrets
 ---
 
+This guide assumes that you're following the Offboarding Checklist [found
+here](https://github.com/18F/cg-product/blob/master/OffboardingChecklist.md) and
+removed direct access to our AWS accounts. The following guide walks a cloud.gov
+operator through rotating all sensitive information (secrets) including the
+following:
+
+- Passphrases
+- AWS IAM users
+- Deployer users
+- Certificates
+- Clients
+- Service Brokers
+
 # Start by rotating access to various services and IAM accounts.
 
 - Access AWS
