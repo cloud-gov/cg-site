@@ -9,7 +9,13 @@ weight: 100
 
 Here are some common problems and recommended practices for solving them. Make sure to [look at the logs]({{< relref "logs.md" >}}) to help troubleshoot.
 
+## Crash messages
+
+If you review logs for an app that is functioning normally and you see recent messages such as `The app crashed because of an unknown reason.` and `audit.app.process.crash isn't handled`, this may be because [the platform automatically restarted your application]({{< relref "docs/apps/deployment.md#application-architecture-principles" >}}) due to routine platform updates, and your application didn't stop on request. The platform sends a request to apps to stop nicely so the platform can move them while this happens, but when they don't stop on request, the platform force-kills them, reports them as crashed, and moves them anyway. Usually this doesn't cause interruptions in service, just a few crash messages. In the recommended [12-factor app architecture](https://12factor.net/), see the [disposability factor](https://12factor.net/disposability).
+
 ## [STG] Staging Phase
+
+If you see problems in your logs in lines that include the label `[STG]`, these recommendations may help you resolve them.
 
 ### App dependency specification
 
@@ -33,6 +39,8 @@ Cloud Foundry will attempt to detect the buildpack to use with your app by exami
 If you're seeing errors installing any Python dependencies, check whether you have a `vendor/` directory in your app's root. The Python buildpack won't use PyPI if you have a `vendor/` directory, so you'll need to rename that directory to something else.
 
 ## [DEA] Droplet Execution Phase
+
+If you see problems in your logs in lines that include the label `[DEA]`, these recommendations may help you resolve them.
 
 ### App manifest contents
 
