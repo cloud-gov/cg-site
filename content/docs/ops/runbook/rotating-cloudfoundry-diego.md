@@ -11,11 +11,12 @@ proper steps in order to perform a rolling update to the platform. There are six
 deployments that need to be synchronized across two Bosh deployments. These
 deployments are focused on the Consul components for Cloud Foundry and Diego.
 
-Follow the following documentation to see which values to replace.
+Follow the following documentation to get familiar with which values are going
+to be replaced.
 
 - [Cloud Foundry AWS Stub](http://docs.cloudfoundry.org/deploying/aws/cf-stub.html)
 - [Security Configuration for Consul](http://docs.cloudfoundry.org/deploying/common/consul-security.html)
-- [Generating all the deploy-cf certificates](https://github.com/18F/cg-deploy-cf#how-to-generate-the-final-manifest)
+- [Generating all the Cloud Foundry certificates](https://github.com/18F/cg-deploy-cf#how-to-generate-the-final-manifest)
 
 ## Prepare a local directory for rotating secret files
 
