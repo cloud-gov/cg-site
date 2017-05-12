@@ -20,7 +20,7 @@ The platform requires regular support and maintenance activities to remain in a 
 The tasks on this checklist should be performed each day.
 
 ## Ensure all VMs are running the current stemcell
-  
+
 - Get the latest stemcell version from http://bosh.cloudfoundry.org/stemcells/.
 
 - Check https://ci.fr.cloud.gov/teams/main/pipelines/aws-light-stemcell-builder to ensure it has built the same version.
@@ -29,7 +29,7 @@ The tasks on this checklist should be performed each day.
 
 ## Review and respond to open alerts
 
-Review all recent alerts and notifications delivered to `cg-notifications` and [`#cg-platform-news`](https://gsa-tts.slack.com/messages/cg-platform-news/).
+Review all recent alerts and notifications delivered to [`cg-notifications`](https://groups.google.com/a/gsa.gov/forum/#!forum/cloud-gov-notifications) and [`#cg-platform-news`](https://gsa-tts.slack.com/messages/cg-platform-news/).
 
 ### Are there no alerts or notifications?
 Verify the monitoring system is functioning correctly and confirm that alerts are reaching their expected destinations.
