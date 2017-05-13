@@ -31,7 +31,10 @@ Follow [these instructions to log in on the command line (CLI) and web UI (dashb
 
 Your cloud.gov account requires setting up both a password and an authentication application that generates token codes, such as [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) or [Authy](https://www.authy.com/app/mobile). (You can use any authentication application that supports the standard [Time-based One-Time Password algorithm](https://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm).) When you log into cloud.gov for the first time, follow the instructions to set this up.
 
-To change your password: if you're logged in, you can [change your password here](https://account.fr.cloud.gov/change-password). If you're logged out and forgot your password, you can [reset your password](https://account.fr.cloud.gov/forgot-password) to log in with a temporary password, then [change your password](https://account.fr.cloud.gov/change-password).
+#### To change your password
+
+* **If you're logged in:** You can [change your password here](https://account.fr.cloud.gov/change-password).
+* **If you're logged out and forgot your password:** You can [reset your password](https://account.fr.cloud.gov/forgot-password) to log in with a temporary password, then [change your password](https://account.fr.cloud.gov/change-password).
 
 #### If you can't access your token codes
 
