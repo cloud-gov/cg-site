@@ -23,6 +23,8 @@ The command to create a new app and to push a new version of an existing one are
 
 Check the resulting `cf` command line messages for the route for your app, usually `APPNAME.app.cloud.gov` or similar.
 
+For details about `cf push` options, see [Deploy an Application](https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html) in the Cloud Foundry documentation.
+
 ## Application architecture principles
 
 Here are core architecture principles for this cloud environment -- the five things you need to know to avoid surprises when running your applications on cloud.gov.
