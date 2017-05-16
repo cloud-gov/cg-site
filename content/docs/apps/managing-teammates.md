@@ -25,35 +25,31 @@ If you invited them with an agency email address and they're part of an agency t
 
 ## Give roles to a teammate
 
-After a teammate gets a cloud.gov account, an Org Manager or Space Manager will need to give them roles in your orgs and spaces so they can collaborate with you.
+After a teammate gets a cloud.gov account, an Org Manager or Space Manager will need to give them roles in your orgs and spaces so they can collaborate with you. For details about how org and space roles and permissions work, see [Cloud Foundry roles and permissions](http://docs.cloudfoundry.org/concepts/roles.html#roles).
 
-If you're an Org Manager or Space Manager, here's how to give roles to your teammates to give them permissions for your orgs and spaces. For details about how cloud.gov org and space roles and permissions work, see [Cloud Foundry roles and permissions](http://docs.cloudfoundry.org/concepts/roles.html#roles).
+If you're an Org Manager or Space Manager, here's how to give your teammates roles for your orgs and spaces. You can check whether you're an Org Manager using `cf org-users <org>` and whether you're a Space Manager using `cf space-users <org> <space>`.
 
-First check whether you're running version >= [6.14.0](https://github.com/cloudfoundry/cli/releases/tag/v6.14.0) of the CLI:
+Check what version of the CLI you're running: `cf -v`. If that's older than the [latest version listed here](https://github.com/cloudfoundry/cli/releases), you should [upgrade it](https://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html) to avoid unexpected errors.
 
-```bash
-cf -v
-```
+Decide which roles to give them. For a complete list of roles, see [the Cloud Foundry guide to Org and Space Roles](https://docs.cloudfoundry.org/adminguide/cli-user-management.html#orgs-spaces). Examples:
 
-(If not, you'll need to [upgrade](https://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html).)
-
-Then decide which roles to give them, such as:
-
-* To give them read-only permissions to the organization, run
-
-    ```bash
-    cf set-org-role <email> <org> OrgAuditor
-    ```
-
-* If you want to make them an admin for your organization, run
+* If you want to make them an admin for your organization, run:
 
     ```bash
     cf set-org-role <email> <org> OrgManager
     ```
-* If you want to give them permission to deploy, add them to each space:
+* If you want to give them admin access for a space, run:
+
+    ```bash
+    cf set-space-role <email> <org> <space> SpaceManager
+    ```
+* If you want to give them permission to deploy applications in a space, run:
 
     ```bash
     cf set-space-role <email> <org> <space> SpaceDeveloper
     ```
+* To give them read-only permissions to the organization, run:
 
-For a complete list of cloud.gov roles and permissions that Org and Space Managers can give and remove, see [the Cloud Foundry guide to Org and Space Roles](https://docs.cloudfoundry.org/adminguide/cli-user-management.html#orgs-spaces).
+    ```bash
+    cf set-org-role <email> <org> OrgAuditor
+    ```
