@@ -33,19 +33,23 @@ Check what version of the CLI you're running: `cf -v`. If that's older than the 
 
 Decide which roles to give them. For a complete list of roles, see [the Cloud Foundry guide to Org and Space Roles](https://docs.cloudfoundry.org/adminguide/cli-user-management.html#orgs-spaces). Examples:
 
-* To give them read-only permissions to the organization, run
-
-    ```bash
-    cf set-org-role <email> <org> OrgAuditor
-    ```
-
-* If you want to make them an admin for your organization, run
+* If you want to make them an admin for your organization, run:
 
     ```bash
     cf set-org-role <email> <org> OrgManager
     ```
-* If you want to give them permission to deploy, add them to each space:
+* If you want to give them admin access for a space, run:
+
+    ```bash
+    cf set-space-role <email> <org> <space> SpaceManager
+    ```
+* If you want to give them permission to deploy applications in a space, run:
 
     ```bash
     cf set-space-role <email> <org> <space> SpaceDeveloper
+    ```
+* To give them read-only permissions to the organization, run:
+
+    ```bash
+    cf set-org-role <email> <org> OrgAuditor
     ```
