@@ -11,7 +11,7 @@ Not a guide for:
 
 * Hours outside of East Coast business hours -- out of scope for this document.
 * Security incidents -- switch to [security incident guide]({{< relref "docs/ops/security-ir.md" >}}).
-* Major service disruptions (more than 30 minutes of unexpected downtime or significantly reduced service) -- switch to [contingency plan]({{< relref "docs/ops/contingency-plan.md" >}}).
+* Major service disruptions (more than 7 days of unexpected downtime or significantly reduced service) -- switch to [contingency plan]({{< relref "docs/ops/contingency-plan.md" >}}).
 
 ## Threshold for "service disruption"
 
