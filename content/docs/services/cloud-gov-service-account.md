@@ -35,6 +35,16 @@ If your service account only requires read access and does not need the ability 
 cf create-service cloud-gov-service-account space-auditor <SERVICE-INSTANCE-NAME>
 ```
 
+## Obtaining credentials
+
+Once you've created the service instance, you'll want to obtain the username and password from it:
+
+```bash
+cf service <SERVICE-INSTANCE-NAME>
+```
+
+This will display a link to a page on [Fugacious](https://fugacious.18f.gov/) which contains your credentials. These can be used with the `cf login` command in automated deployment scripts.
+
 ## More information
 
 To use this service, see [continuous deployment]({{< relref "docs/apps/continuous-deployment.md" >}}).
