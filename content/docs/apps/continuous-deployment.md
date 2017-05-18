@@ -157,7 +157,7 @@ Change `APP` and `DOMAIN` to match your application, and set up the following en
 
 | Name    | Value              |
 |---------|--------------------|
-| CF_API  | GovCloud: `api.fr.cloud.gov`     |
+| CF_API  | `api.fr.cloud.gov` |
 | CF_USER | deployer username  |
 | CF_PASS | deployer password  |
 | CF_ORG  | target organization|
