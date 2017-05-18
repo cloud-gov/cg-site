@@ -69,7 +69,7 @@ Here's a summary of how to log into cloud.gov. (See above for details.)
 
 Command line interface:
 
-Everyone: `cf login -a api.fr.cloud.gov --sso`
+`cf login -a api.fr.cloud.gov --sso`
 
 Dashboard (web interface):
 
