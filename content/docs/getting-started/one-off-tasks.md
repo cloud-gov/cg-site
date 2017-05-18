@@ -3,14 +3,12 @@ menu:
   docs:
     parent: advanced
 title: Running one-off tasks
-aliases:
-- /getting-started/cf-ssh/
 ---
 
 This table shows a handful of common operations, with the recommended way to perform them in GovCloud.
 
-What are you trying to do? | GovCloud
---- | --- | ---
+What are you trying to do? | Documentation
+--- | ---
 Inspect an app instance to figure out what's wrong | [`cf ssh`]({{< relref "docs/apps/using-ssh.md" >}})
 Work with one of your service instances | [`cf ssh` with port forwarding]({{< relref "docs/apps/using-ssh.md" >}})
 Run a non-interactive process that does a task (such as generating a report, cleaning up garbage, mailing people, processing some data, etc.) | [Cloud Foundry Tasks](https://docs.cloudfoundry.org/devguide/using-tasks.html)
