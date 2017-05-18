@@ -29,7 +29,7 @@ uaac target uaa.cloud.gov
 
 ## Resetting TOTP tokens
 
-Follow the process below for users logging in with a cloud.gov account. It is our responsibility to verify the reset request is legitimate.
+Follow the process below for users logging in with a cloud.gov account.
 
 If the user requesting a reset has any apps, routes, or services in their sandbox or access to any other spaces or orgs make sure they **[are informed]({{< relref "docs/getting-started/accounts.md#if-you-can-t-access-your-token-codes" >}})** these will be removed.
 
