@@ -9,9 +9,7 @@ title: Managing teammates
 
 If you're part of a team using cloud.gov, you can invite teammates to get cloud.gov accounts. You can invite anyone you need to work with, including federal employees and federal contractors.
 
-First, send them an invite from the following link. (This may prompt you to log into your cloud.gov account first.)
-
-https://account.fr.cloud.gov/invite
+First, [send them an invite](https://account.fr.cloud.gov/invite). (This may prompt you to log into your cloud.gov account first.)
 
 Then, confirm with them that they have received and accepted the invite. Now they have a cloud.gov account!
 
