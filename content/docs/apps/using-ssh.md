@@ -5,9 +5,7 @@ menu:
 title: Using SSH
 ---
 
-Here's how to get a SSH shell in the environment where your app is running. You can use this to inspect how your app is operating, transfer files via SCP, or interact directly with your bound services. [More information about one-off tasks.]({{< relref "docs/getting-started/one-off-tasks.md" >}})
-
-### CF SSH
+You can use SSH to inspect how your app is operating, transfer files via SCP, or interact directly with your bound services. [More information about one-off tasks.]({{< relref "docs/getting-started/one-off-tasks.md" >}})
 
 You can get a shell via the [`cf
 ssh`](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#ssh-command)
