@@ -35,10 +35,12 @@ If the user requesting a reset has any apps, routes, or services in their sandbo
 
 1. Remove all apps, routes, and services from the user's sandbox.
 2. Remove user's permissions to all [spaces and orgs](https://docs.cloudfoundry.org/adminguide/cli-user-management.html#orgs-spaces) other than their sandbox.
-  - For those spaces and orgs, notify the Space Managers and Org Managers that we've removed the user's access because of their request to reset their account's authentication application.
+
+    For those spaces and orgs, notify the Space Managers and Org Managers that we've removed the user's access because of their request to reset their account's authentication application.
+
 3. Reset the user's totp_seed in cloudfoundry's uaa database.
 
-    Login to a **[concourse jumpbox]({{< relref "docs/ops/runbook/troubleshooting-bosh/#creating-and-intercepting-ephemeral-jumpboxes" >}})**.
+    Login to a **[concourse jumpbox]({{< relref "docs/ops/runbook/troubleshooting-bosh.md#creating-and-intercepting-ephemeral-jumpboxes" >}})**.
 
     ```bash
     $ psql postgres://db_user@db_pass:db_address\uaadb
