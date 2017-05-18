@@ -22,7 +22,7 @@ Now try logging in:
 
 [`https://dashboard.fr.cloud.gov/`](https://dashboard.fr.cloud.gov/)
 
-**Tip:** The `fr.` in this URL (and other cloud.gov URLs) indicates the GovCloud environment. ('FR' stands for 'FedRAMP'.)
+**Tip:** The `fr.` in this URL (and other cloud.gov URLs) is short for FedRAMP.
 
 ## Set up the command line
 
