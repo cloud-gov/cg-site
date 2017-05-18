@@ -5,7 +5,7 @@ menu:
 title: Running one-off tasks
 ---
 
-This table shows a handful of common operations, with the recommended way to perform them in GovCloud.
+This table shows a handful of common operations, with the recommended way to perform them.
 
 What are you trying to do? | Documentation
 --- | ---
