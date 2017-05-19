@@ -43,8 +43,8 @@ If the user requesting a reset has any apps, routes, or services in their sandbo
     Login to a **[concourse jumpbox]({{< relref "docs/ops/runbook/troubleshooting-bosh.md#creating-and-intercepting-ephemeral-jumpboxes" >}})**.
 
     ```bash
-    $ psql postgres://db_user@db_pass:db_address\uaadb
-    => delete from totp_seed where username = "email.address";
+    $ psql postgres://{db_user}:{db_pass}@{db_address:port}/uaadb
+    => delete from totp_seed where username = "{email.address}";
     ```
 
 4. Let the user know the reset process is complete, so they can set up a new authentication application and request access from Space Managers and Org Managers again.
