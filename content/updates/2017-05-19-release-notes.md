@@ -45,4 +45,4 @@ You should [restage your application](http://cli.cloudfoundry.org/en-US/cf/resta
 
 ### See also
 
-- If you’re interested in details about recent dashboard updates, you can also see the [dashboard release notes](https://github.com/18F/cg-dashboard/releases).
+If you’re interested in details about recent dashboard updates, you can also see the [dashboard release notes](https://github.com/18F/cg-dashboard/releases).
