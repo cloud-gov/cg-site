@@ -103,12 +103,6 @@ Formats: [.xlsx](/resources/cloudgov_cost_estimator.xlsx) | [.ods](/resources/cl
 .ods format: https://cloud.gov/resources/cloudgov_cost_estimator.ods
  -->
 
-
-### Get in touch
-Fill out our initial interest form to let us know what kind of work you’re doing and how you think you might use cloud.gov. We’ll set up a conversation to explore your goals and how we can help.
-
-[<button class="action action-primary usa-button usa-button-primary">Tell us what you’re working on</button>](https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform)
-
 ## What’s included
 
 All paid cloud.gov access packages include the following:
