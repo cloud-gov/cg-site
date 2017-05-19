@@ -5,18 +5,22 @@ title = "Platform Release Notes: May 18, 2017"
 
 Curious what’s new that you might find helpful as a cloud.gov application developer? Here are highlights from our platform updates over the past two weeks.
 <!--more-->
+
+### Researching
+The cloud.gov team is looking to make the cloud.gov platform easier to evaluate and use, and we’re recruiting volunteers to help us do that. If you’re interested, let us know at [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov). We’ll ask you a few questions and ask you to walk us through using some aspect of the platform via screenshare.
+
 ### Added
-- We’ve published a cost estimator spreadsheet (in [XLSX](/resources/cloudgov_cost_estimator.xlsx) and [ODS](/resources/cloudgov_cost_estimator.ods) formats) that your team can use to get a sense of [how much cloud.gov will cost for your organization]({{< relref "overview/pricing/rates.md#find-the-right-package-for-your-work" >}}). If you’re interested in switching from a sandbox to a paid cloud.gov package, or if you want to expand your use of the platform to additional systems, use the estimator to get a sense of what the access package and usage quota fees will be across all your cloud.gov systems.
-- The Defense Information Systems Agency (DISA) has issued a [provisional authorization for Department of Defense teams]({{< relref "overview/security/fedramp-tracker.md#how-this-p-ato-helps-your-team" >}}) to use cloud.gov’s FedRAMP P-ATO for systems at the DISA level 2 impact level. This is a followup to the P-ATO; Level 2 is quivalent to FedRAMP the Moderate impact level.
-- The latest production releases for cloud.gov now support PHP 7.1.4 and 7.0.18.
+- We’ve published a cost estimator spreadsheet (in [XLSX](/resources/cloudgov_cost_estimator.xlsx) and [ODS](/resources/cloudgov_cost_estimator.ods) formats) that your team can use to get a sense of [how much cloud.gov will cost for your organization]({{< relref "overview/pricing/rates.md#find-the-right-package-for-your-work" >}}). If you’re interested in switching from a sandbox to a paid cloud.gov package, or if you want to expand your use of the platform to additional applications, use the estimator to get a sense of what the access package and usage quota fees will be across all your cloud.gov systems.
+- The Defense Information Systems Agency (DISA) has issued a [provisional authorization for Department of Defense teams]({{< relref "overview/security/fedramp-tracker.md#how-this-p-ato-helps-your-team" >}}) to use cloud.gov’s FedRAMP P-ATO for systems at the DISA level 2 impact level. This is a followup to the P-ATO; Level 2 is equivalent to FedRAMP Moderate.
+- The latest version of the PHP buildpack supports PHP 7.1.4 and 7.0.18.
 
 ### Fixed
-Elastic Load Balancers (ELBs) now perform router health checks before putting a particular router back in service. Previously, ELBs occasionally produced 502 errors by sending traffic across unhealthy routers.
+We’ve improved our automated process for updating the part of cloud.gov that routes traffic to your application. Previously, you might have seen occasional 502 errors in your application when we made updates.
 
 ### Removed
-The latest production releases remove support for PHP 7.1.2 and 7.0.16. If your systems rely on one of these versions you will need to upgrade.
+The latest version of the PHP buildpack removes support for PHP 7.1.2 and 7.0.16. If your applications rely on one of these versions, you need to update your application to use a supported version of PHP.
 
-### Production releases
+### Platform releases
 We upgraded the Cloud Foundry deployment to [v258](https://github.com/cloudfoundry/cf-release/releases/tag/v258). This upgrade addresses these security vulnerabilities:
 - [CVE-2017-4972: Blind SQL Injection in UAA](https://www.cloudfoundry.org/cve-2017-4972/)
 - [CVE-2017-4973: Privilege Escalation in UAA](https://www.cloudfoundry.org/cve-2017-4973/)
@@ -42,4 +46,3 @@ You should [restage your application](http://cli.cloudfoundry.org/en-US/cf/resta
 ### See also
 
 - If you’re interested in details about recent dashboard updates, you can also see the [dashboard release notes](https://github.com/18F/cg-dashboard/releases).
-- The cloud.gov team is looking to make the cloud.gov platform easier to evaluate and use. We’ll ask you a few questions and ask you to walk us through using some aspect of the platform via screenshare. If you’re interested, let us know at [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov)
