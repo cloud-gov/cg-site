@@ -6,7 +6,7 @@ title = "Platform Release Notes: May 22, 2017"
 Curious what’s new that you might find helpful as a cloud.gov application developer? Here are highlights from our platform updates over the past two weeks.
 <!--more-->
 
-### Researching
+### Volunteers needed
 The cloud.gov team is looking to make the cloud.gov platform easier to evaluate and use, and we’re recruiting volunteers to help us do that. If you’re interested, let us know at [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov). We’ll ask you a few questions and ask you to walk us through using some aspect of the platform via screenshare.
 
 ### Added
