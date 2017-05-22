@@ -18,14 +18,14 @@ The cloud.gov team is looking to make the cloud.gov platform easier to evaluate 
 We’ve improved our automated process for updating the part of cloud.gov that routes traffic to your application. Previously, you might have seen occasional 502 errors in your application when we made updates.
 
 ### Removed
-The latest version of the PHP buildpack removes support for PHP 7.1.2 and 7.0.16. If your applications rely on one of these versions, you need to update your application to use a supported version of PHP.
+The latest version of the PHP buildpack removes support for PHP 7.1.2 and 7.0.16. If your applications rely on one of these versions, **update your application** to use a supported version of PHP.
 
 ### Platform releases
 We upgraded the Cloud Foundry deployment to [v258](https://github.com/cloudfoundry/cf-release/releases/tag/v258). This upgrade addresses these security vulnerabilities:
 - [CVE-2017-4972: Blind SQL Injection in UAA](https://www.cloudfoundry.org/cve-2017-4972/)
 - [CVE-2017-4973: Privilege Escalation in UAA](https://www.cloudfoundry.org/cve-2017-4973/)
 
-You should [restage your application](http://cli.cloudfoundry.org/en-US/cf/restage.html) to [incorporate fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) and ensure you’re running the most recent language version supported by your buildpack.
+**[Restage your application](http://cli.cloudfoundry.org/en-US/cf/restage.html)** to [incorporate fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) and ensure you’re running the most recent language version supported by your buildpack.
 
 #### Additional upgrades
 - [PHP buildpack 4.3.31](https://github.com/cloudfoundry/php-buildpack/releases/tag/v4.3.31)
