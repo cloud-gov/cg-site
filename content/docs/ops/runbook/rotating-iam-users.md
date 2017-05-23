@@ -3,7 +3,7 @@ menu:
   docs:
     parent: runbook
 
-title: Rotating IAM users with Terraform
+title: Rotating Secrets - IAM users via Terraform
 ---
 
 ### IAM Users infrastructure as a code with Terraform

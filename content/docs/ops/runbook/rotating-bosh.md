@@ -3,7 +3,7 @@ menu:
   docs:
     parent: runbook
 
-title: Rotating Bosh
+title: Rotating Secrets - Bosh
 ---
 
 ## As part of secrets rotation
