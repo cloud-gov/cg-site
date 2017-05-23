@@ -8,12 +8,14 @@ title: Rotating Secrets
 
 This guide assumes that you're following the Offboarding Checklist [found
 here](https://github.com/18F/cg-product/blob/master/OffboardingChecklist.md) and
-removed direct access to our AWS accounts. The following guide walks a cloud.gov
-operator through rotating all sensitive information (secrets) including the
-following:
+removed direct access to cloud.gov AWS accounts. The following guide walks a
+cloud.gov operator through rotating all sensitive information (secrets)
+including the following:
 
 - Passphrases
+    - [Read about secret key management]({{< relref "docs/ops/secrets.md" >}})
 - AWS IAM users
+    - [Read about rotating IAM users]({{< relref "docs/ops/runbook/rotating-iam-users.md" >}})
 - Deployer users
 - Certificates
 - Clients
@@ -21,19 +23,12 @@ following:
 
 # Start by rotating access to various services and IAM accounts.
 
-- Access AWS
-- Rotate these specific IAM Users first
-    - `bosh_user`
-    - `concourse_user`
-    - `cf_user`
-    - `release_user`
-    - `stemcell_user`
-    - `read_only_admin`
-- [Rotating Concourse secrets stub]({{< relref "ops/runbook/rotating-concourse.md" >}})
-- [Rotating Bosh secrets stub]({{< relref "ops/runbook/rotating-bosh.md" >}})
-- [Rotating Cloud Foundry / Diego secrets stub]({{< relref "ops/runbook/rotating-cloudfoundry-diego.md" >}})
-
-- Rotate Bosh stuff and resurrect them
+- Delete access from AWS
+- [Rotate any IAM Users first]({{< relref "docs/ops/runbook/rotating-iam-users.md" >}})
+- [Rotating Concourse secrets stub]({{< relref "docs/ops/runbook/rotating-concourse.md" >}})
+- [Rotating Bosh secrets stub]({{< relref "docs/ops/runbook/rotating-bosh.md" >}})
+- [Rotating Cloud Foundry / Diego secrets stub]({{< relref "docs/ops/runbook/rotating-cloudfoundry-diego.md" >}})
+- Rotate Bosh and deploy, then resurrect all the `unresponsive-agent` VMs
 
 ## Rotate deployment users
 
