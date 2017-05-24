@@ -50,3 +50,112 @@ Service Account deployers.
              - `uaac member add cloud_controller.admin ${guid_of_deployer}`
         - Refly the pipeline with updated credentials
         - Delete the `${name_of_deployer}_prev` service account deployer.
+
+## Rotate secrets passphrases
+
+Create a new temporary directory as a workspace for all the secrets file(s) for
+any deployments which contain resources of type `common` and with names starting
+with `common-*`.
+
+```sh
+mkdir rotate-all-passphrases
+```
+
+After creating the directory, make sure you have authenticated with Concourse
+using `fly login`. Change into the temporary directory and run the following
+command to loop through all the pipelines and create a `all-secrets-list` text
+file with the current state of all `cg-common` resources matching a name that
+starts with `common-*`.
+
+### Downloading all pipelines and cg-common resources
+
+```sh
+for pipeline in $( fly --target fr pipelines |  grep -vE 'yes.+no' |  grep -Eo '^[a-z0-9\-]+' )
+do
+  fly --target fr get-pipeline --pipeline "${pipeline}" | \
+  spruce json | \
+  jq -r -e '
+    .resources[] |
+    select(
+      .name |
+      test( "common-" )
+    ) |
+    select(
+      .type |
+      test( "common" )
+    )
+  '
+  if [ $? -eq 0 ]
+  then
+    echo "^^^^^   ${pipeline}"
+    echo "========================================"
+    echo
+    fly --target fr get-pipeline --pipeline ${pipeline} > ${pipeline}.yml
+  fi
+done | tee all-secrets-list.txt
+```
+
+### Reviewing the cg-common resources file
+
+Now open the `all-secrets-list.txt` file in a text editor. You will be using
+this file to create the following sets of commands to perform the secrets
+passphrase rotation.
+
+- **Get** the completed pipeline and `source` information for `cg-common` resources.
+- **Download** the encrypted secrets file(s) using the `source` information.
+- **Decrypt** the secrets file(s) using the `secrets_passphrase`.
+- **Generate** a new `secrets_passphrase` using `$CG_SCRIPTS/generate-passphrase`.
+- **Encrypt** the secrets file(s) using the generated `secrets_passphrase`.
+- **Edit** the downloaded completed pipeline using `sed` to replace the previous
+  `secrets_passphrase` with the current `secrets_passphrase`.
+- **Set** the pipeline using the edited completed pipeline, verify that the
+  `secrets_passphrase` are being updated in the pipeline.
+- **Upload** the encrypted secrets file(s).
+
+### Running through the steps above using boilerplate
+
+The example below is meant to be used as a boilerplate to help rotating the
+passphrases manually. Below you will find guidance for following the steps from
+above using the contents from `all-secrets-list.txt`. Paste this boilerplate
+into the file between the `===` lines under each `deployment name: ` line in the
+`all-secrets-list.txt` file.
+
+Please reference [secret key management]({{< relref "docs/ops/secrets.md" >}})
+for more information on what `$CG_PIPELINE/decrypt.sh` and `$CG_PIPELINE/encrypt.sh`
+are doing in the example below.
+
+```sh
+# Download secrets file.
+aws s3 cp \
+s3://${bucket_name}/${secrets_file}.yml \
+${secrets_file}.yml.enc;
+
+# Decrypt secrets file.
+INPUT_FILE=${secrets_file}.yml.enc \
+OUTPUT_FILE=${secrets_file}.yml \
+PASSPHRASE="${old_passphrase}" \
+$CG_PIPELINE/decrypt.sh;
+
+# Encrypt secrets file with newly generated passphrase.
+INPUT_FILE=${secrets_file}.yml \
+OUTPUT_FILE=${secrets_file}.yml.enc \
+PASSPHRASE="${new_passphrase}" \
+$CG_PIPELINE/encrypt.sh;
+
+# Edit the downloaded pipeline and replace the old_passphrase with the new_passphrase.
+sed -i -- \
+'s/old_passphrase/new_passphrase/' \
+${deploy_pipeline_name}.yml;
+
+# Set the pipeline with the newly updated properties ( the diff should show the secrets_passphrases being updated ).
+fly --target fr \
+set-pipeline \
+--pipeline ${deploy_pipeline_name} \
+--config=${deploy_pipeline_name}.yml;
+
+# Upload the secrets file.
+aws s3 cp \
+--sse AES256 \
+${secrets_file}.yml.enc \
+s3://${bucket_name}/${secrets_file}.yml;
+```
