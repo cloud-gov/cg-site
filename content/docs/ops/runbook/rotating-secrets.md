@@ -24,11 +24,10 @@ including the following:
 # Start by rotating access to various services and IAM accounts.
 
 - Delete access from AWS
-- [Rotate any IAM Users first]({{< relref "docs/ops/runbook/rotating-iam-users.md" >}})
-- [Rotating Concourse secrets stub]({{< relref "docs/ops/runbook/rotating-concourse.md" >}})
-- [Rotating Bosh secrets stub]({{< relref "docs/ops/runbook/rotating-bosh.md" >}})
-- [Rotating Cloud Foundry / Diego secrets stub]({{< relref "docs/ops/runbook/rotating-cloudfoundry-diego.md" >}})
-- Rotate Bosh and deploy, then resurrect all the `unresponsive-agent` VMs
+- [Rotate all IAM Users]({{< relref "docs/ops/runbook/rotating-iam-users.md" >}})
+- [Rotating Concourse secrets]({{< relref "docs/ops/runbook/rotating-concourse.md" >}})
+- [Rotating Bosh secrets]({{< relref "docs/ops/runbook/rotating-bosh.md" >}})
+- [Rotating Cloud Foundry / Diego secrets]({{< relref "docs/ops/runbook/rotating-cloudfoundry-diego.md" >}})
 
 ## Rotate deployment users
 
