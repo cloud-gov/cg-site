@@ -27,6 +27,28 @@ If they log in with a cloud.gov account that has its own password (including `OR
 uaac target uaa.cloud.gov
 ```
 
+## Resetting TOTP tokens
+
+Follow the process below for users logging in with a cloud.gov account.
+
+If the user requesting a reset has any apps, routes, or services in their sandbox or access to any other spaces or orgs make sure they **[are informed]({{< relref "docs/getting-started/accounts.md#if-you-can-t-access-your-token-codes" >}})** these will be removed.
+
+1. Remove all apps, routes, and services from the user's sandbox.
+2. Remove user's permissions to all [spaces and orgs](https://docs.cloudfoundry.org/adminguide/cli-user-management.html#orgs-spaces) other than their sandbox.
+
+    For those spaces and orgs, notify the Space Managers and Org Managers that we've removed the user's access because of their request to reset their account's authentication application.
+
+3. Reset the user's totp_seed in cloudfoundry's uaa database.
+
+    Login to a **[concourse jumpbox]({{< relref "docs/ops/runbook/troubleshooting-bosh.md#creating-and-intercepting-ephemeral-jumpboxes" >}})**.
+
+    ```bash
+    $ psql postgres://{db_user}:{db_pass}@{db_address:port}/uaadb
+    => delete from totp_seed where username = "{email.address}";
+    ```
+
+4. Let the user know the reset process is complete, so they can set up a new authentication application and request access from Space Managers and Org Managers again.
+
 ## Additional access
 
 ### Organizations and spaces
