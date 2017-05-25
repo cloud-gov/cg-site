@@ -36,8 +36,6 @@ Our most basic paid package lets many teams build and deploy apps, with access c
 **Resource usage quota:** ~$99 per GB per month[*](#quota-pricing), up to any limit set by user<br>
 **Managed services:** Full access
 
-Interested in a prototyping package? [Fill out our initial interest form.](https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform)
-
 ### Open data
 
 Host one public-facing system with no confidentiality risk assessed. Open data packages include all the spaces you need and DNS support. This is the lightest production-level package.
@@ -45,8 +43,6 @@ Host one public-facing system with no confidentiality risk assessed. Open data p
 **Annual fee:** $10K<br>
 **Resource usage quota:** ~$99 per GB per month[*](#quota-pricing), up to 2GB<br>
 **Managed services:** Full access
-
-Interested in an open data package? [Fill out our initial interest form.](https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform)
 
 ### FISMA Low
 
@@ -56,8 +52,6 @@ Host one public-facing system, authorized at the FISMA Low risk assessment level
 **Resource usage quota:** ~$99 per GB per month[*](#quota-pricing), up to any limit set by user<br>
 **Managed services:** Full access
 
-Interested in a FISMA Low package? [Fill out our initial interest form.](https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform)
-
 ### FISMA Moderate
 
 Host one public-facing system, authorized at the FISMA Moderate risk assessment level. This includes all the spaces you need and DNS support, as well as additional support for FISMA Moderate data requirements.
@@ -65,8 +59,6 @@ Host one public-facing system, authorized at the FISMA Moderate risk assessment 
 **Annual fee:** $90K<br>
 **Resource usage quota:** ~$99 per GB per month[*](#quota-pricing), up to any limit set by user<br>
 **Managed services:** Full access
-
-Interested in a FISMA Moderate package? [Fill out our initial interest form.](https://docs.google.com/forms/d/e/1FAIpQLSevZfuJ_4KE-MZlm9gttYfsXQp0PJL7OR6k6LbZ9XnFn-oA6g/viewform)
 
 ### Sandbox
 
