@@ -185,9 +185,9 @@ As noted above, cookies are passed through the CDN by default, meaning that
 cookie-based authentication will work as expected. Other headers, such as HTTP
 auth, are stripped by default. If you need a different configuration, contact [cloud.gov support](/help/).
 
-### Certificate Validity and Renewal
+### Certificate validity and renewal
 
-Let's Encrypt certificates are valid for 90 days.  The broker will automatically renew your certificate every 60 days.  This process is usually immedate but can take several days to complete.  If your certificate is expiring withing in the next 21 days and has not been renewed automatically contact [cloud.gov support](/help/).
+Let's Encrypt TLS certificates are valid for 90 days.  The broker will automatically renew your certificate every 60 days.  This process is usually immedate but can take several days to complete.  If your certificate is expiring within the next 21 days and has not been renewed automatically, contact [cloud.gov support](/help/).
 
 ## The broker in GitHub
 
