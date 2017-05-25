@@ -163,3 +163,53 @@ $ cd /var/vcap/sys/log
 $ tail <SOME-LOG>.log
 # ... analyze process logs
 ```
+
+### Troubleshooting a long-running deployments
+
+The main deployments for Bosh ( `cg-deploy-bosh` ) generally don't take longer
+than 20 minutes. You can get recent historical build times from Concourse.
+
+```sh
+fly -t fr builds | \
+grep -E 'deploy-bosh.*succeeded' | \
+awk '{ print $2 " " $7 }'
+```
+
+If an environment's deployment is taking an unusually long amount of time, it
+usually related a stuck Bosh deployment. A common symptom of this is seeing
+failing Smoke Tests for Cloud Foundry and Logsearch in
+[#cg-platform](https://gsa-tts.slack.com/messages/cg-platform).
+
+When this happens, create a jumpbox in the Tooling environment and begin
+troubleshooting the Bosh deployment to confirm it's in a `failing` state.
+
+```sh
+bosh-cli vms -d ${environment}bosh
+```
+
+Once confirmed, use `bosh-cli ssh` to login to that VM.
+
+```sh
+bosh-cli ssh -d ${environment}bosh bosh
+```
+
+Once in the virtual machine, check `monit` for anything in a `not monitored`
+state, `monit summary`. You can also run `watch -n 1 'monit summary'` to monitor
+jobs coming back up.
+
+Verify that none of these jobs are running on the machine by checking running
+processes `ps ax` for any jobs running that are `not monitored`.
+
+Once confirming that processes are stuck and running but aren't monitored by
+`monit`, you should stop all the jobs and restart them.
+
+
+```sh
+monit stop all
+monit restart all
+```
+
+At this point, you can watch the output of `monit summary` and if the deployment
+is still running, `monit` will update the states a few times stopping and
+starting the machine. At this point you may be logged out of the Bosh VM and
+dropped back into the Concourse jumpbox.
