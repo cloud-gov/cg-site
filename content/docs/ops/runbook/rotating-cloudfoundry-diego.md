@@ -56,6 +56,8 @@ $ fly -t fr get-pipeline --pipeline deploy-cf | \
     - For `uaa.clients.doppler` change `loggregator.uaa.client_secret` as well.
     - For `uaa.clients.tcp_emitter` change `acceptance_tests.oauth_password` as well.
 
+#### Generate all the certificates
+
 Add all the CA certificates signed by the Bosh root CA certificate. These root
 certificate and key files can be grabbed with the `--grab-cert` flag for the
 `generate-all-certificates.sh` file in
@@ -75,6 +77,8 @@ $ ci_env=fr ../generate-all-certificates.sh --grab-cert && \
 This script will generate all 25 of the certificates for both Diego and
 Cloud Foundry. Since these deployments need to be deployed back-to-back, the
 certificate generation is consolidated in the `cg-deploy-cf` repository.
+
+#### Mind the Security Configuration for Consul schedule
 
 These properties need to be rotated on the same schedule mentioned in the
 _Security Configuration for Consul_ documentation for Cloud Foundry. The
@@ -106,6 +110,11 @@ in the secrets file, e.g. `certs_dir/hm9000_server.crt` maps to
 CERTIFICATE-----` and `-----END CERTIFICATE----- ` and indent the value under
 the YAML stanza to ensure valid YAML syntax.
 
+#### Remaining secrets
+
+The remaining secrets in this file besides certificates can all be rotated at
+once. Do this ahead of the first deployment so that subsequent deployments only
+need to follow the _Security Configuration for Consul_.
 
 ### External secrets (external.yml)
 
@@ -176,7 +185,7 @@ find ${path_to_local_cg_repositories} -d 2 | xargs ack -n -i "(client.+: ${clien
 ## Recreating the Smoke Tests VMs
 
 If after secrets rotation, the smoke test VMs for staging and production fail to
-start, you may need to restart the VM. From inside a Production jumpbox, run the
+start, you may need to restart the VM. From inside a Concourse jumpbox, run the
 following command to restart the VM and clear up the old smoke tests VM.
 
 ```sh
@@ -185,3 +194,9 @@ $ bosh-cli restart \
   $(bosh-cli vms -d cf-production | grep smoke_tests | cut -d ' ' -f 1)
 ```
 
+This should clear up any strange errors that reference
+
+```sh
+Running errand 'smoke_tests':
+  Expected task ${task_number} to succeed but was state is 'error'
+```
