@@ -6,37 +6,43 @@ menu:
 title: Rotating Secrets
 ---
 
+## Introduction
+
 This guide assumes that you're following the Offboarding Checklist [found
 here](https://github.com/18F/cg-product/blob/master/OffboardingChecklist.md) and
 removed direct access to cloud.gov AWS accounts. The following guide walks a
-cloud.gov operator through rotating all sensitive information (secrets)
-including the following:
+cloud.gov operator through rotating all sensitive information (secrets).
 
-- Passphrases
-    - [Read about secret key management]({{< relref "docs/ops/secrets.md" >}})
-- AWS IAM users
-    - [Read about rotating IAM users]({{< relref "docs/ops/runbook/rotating-iam-users.md" >}})
-- Deployer users
-- Certificates
-- Clients
-- Service Brokers
+Please familiarize yourself with [secret key management]({{< relref "docs/ops/secrets.md" >}}).
+You will be touching various parts of the platform from soup to nuts. Remember
+you have support from the entire team and it is helpful to coordinate with
+cloud.gov operators in case they are working on a particular piece of software
+that will requires a secrets rotation.
 
-### Start by rotating access to various services and IAM accounts.
+## Rotate Access
 
-- Delete any IAM keys and users from AWS consoles belonging to the user.
-- [Rotate all IAM Users]({{< relref "docs/ops/runbook/rotating-iam-users.md" >}})
-- [Rotating Concourse secrets]({{< relref "docs/ops/runbook/rotating-concourse.md" >}})
-- [Rotating Bosh secrets]({{< relref "docs/ops/runbook/rotating-bosh.md" >}})
-- [Rotating Cloud Foundry / Diego secrets]({{< relref "docs/ops/runbook/rotating-cloudfoundry-diego.md" >}})
+It's important that you rotate access to the platform first. This can be
+categorized with three different types of secrets.
 
-### Rotate CF deployment users
+- AWS keys
+- Cloud Foundry deploy users
+- UAA clients
+
+1. [Rotate all IAM Users]({{< relref "docs/ops/runbook/rotating-iam-users.md" >}})
+1. [Rotate CF deployment users](#rotate-cf-deployment-users)
+1. [Rotate `cg-common` passphrases](#rotate-secrets-passphrases)
+1. [Rotating Bosh]({{< relref "docs/ops/runbook/rotating-bosh.md" >}})
+1. [Rotating Concourse]({{< relref "docs/ops/runbook/rotating-concourse.md" >}})
+1. [Rotating Cloud Foundry / Diego]({{< relref "docs/ops/runbook/rotating-cloudfoundry-diego.md" >}})
+
+## Rotate CF deployment users
 
 Some of our Concourse pipelines deploy to Cloud Foundry using cloud.gov service
 account deployers. In order to rotate these, you need to target the correct
 org and space in order to create the cloud.gov service deployer account
 instance.
 
-#### Auditing all CF deployment users
+### Auditing all CF deployment users
 
 Use the `get-all-cf-deployers.sh` file in the
 [`cg-scripts`](https://github.com/18F/cg-scripts) repository to audit all of the
@@ -50,7 +56,7 @@ When rotating these accounts, you need ensure you don't delete the previous
 deployer service instance _until after_ the credentials have been successfully
 used in a deployment in order to minimize downtime.
 
-#### Steps for rotating cloud.gov Service Account deployers
+### Steps for rotating cloud.gov Service Account deployers
 
 1. Target the appropriate org and space in the current environment.
 1. Check the services, if one exists for this deployer renamed it with a `_prev`
@@ -71,7 +77,7 @@ used in a deployment in order to minimize downtime.
 1. Delete the `${name_of_deployer}_prev` service account deployer.
    - `cf delete-service ${name_of_deployer}_prev -f`
 
-### Rotate secrets passphrases
+## Rotate secrets passphrases
 
 Create a new temporary directory as a workspace for all the secrets file(s) for
 any deployments which contain resources of type `common` and with names starting
@@ -121,7 +127,7 @@ do
 done | tee all-secrets-list.txt
 ```
 
-#### Reviewing the cg-common resources file
+### Reviewing the cg-common resources file
 
 Now open the `all-secrets-list.txt` file in a text editor. You will be using
 this file to create the following sets of commands to perform the secrets
@@ -138,7 +144,7 @@ passphrase rotation.
   `secrets_passphrase` are being updated in the pipeline.
 - **Upload** the encrypted secrets file(s).
 
-#### Running through the steps above using boilerplate
+### Running through the steps above using boilerplate
 
 The example below is meant to be used as a boilerplate to help rotating the
 passphrases manually. Below you will find guidance for following the steps from
