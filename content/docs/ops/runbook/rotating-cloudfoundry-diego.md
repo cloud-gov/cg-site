@@ -32,7 +32,7 @@ The Cloud Foundry manifest is split into two parts, a `main.yml` and
 `external.yml`. Internal secrets can be rotated either all at once or on a
 rolling schedule of deployments. You can pull the information needed to decrypt
 these from the `cg-deploy-cf` pipeline. You can easily grab the information
-needed to [decrypt and encrypt secrets]({{< relref "ops/secrets.md" >}}) from
+needed to [decrypt and encrypt secrets]({{< relref "docs/ops/secrets.md" >}}) from
 Concourse using the `fly-cli`.
 
 ```sh
