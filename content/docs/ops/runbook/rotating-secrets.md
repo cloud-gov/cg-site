@@ -21,36 +21,57 @@ including the following:
 - Clients
 - Service Brokers
 
-# Start by rotating access to various services and IAM accounts.
+### Start by rotating access to various services and IAM accounts.
 
-- Delete access from AWS
+- Delete any IAM keys and users from AWS consoles belonging to the user.
 - [Rotate all IAM Users]({{< relref "docs/ops/runbook/rotating-iam-users.md" >}})
 - [Rotating Concourse secrets]({{< relref "docs/ops/runbook/rotating-concourse.md" >}})
 - [Rotating Bosh secrets]({{< relref "docs/ops/runbook/rotating-bosh.md" >}})
 - [Rotating Cloud Foundry / Diego secrets]({{< relref "docs/ops/runbook/rotating-cloudfoundry-diego.md" >}})
 
-## Rotate deployment users
+### Rotate CF deployment users
 
-Rotating deployment users that are either manually created CF users or cloud.gov
-Service Account deployers.
+Some of our Concourse pipelines deploy to Cloud Foundry using cloud.gov service
+account deployers. In order to rotate these, you need to target the correct
+org and space in order to create the cloud.gov service deployer account
+instance.
 
-- Rotating cloud.gov Service Account deployers
-    - Run `$CG_SCRIPT/get-all-cf-deployers <environment>` to get the all the current
-      deployer accounts.
-    - Rotate each one.
-        - `cf target -o $org_name -s $space_name`
-        - `cf rename-service $name_of_deployer "${name_of_deployer}_prev"`
-        - `cf create-service cloud-gov-service-account space-deployer "${name_of_deployer}"`
-        - `cf service "${name_of_deployer}"`
-        - View the Fugacious link and save the credentials locally in the
-          `credentials.yml`
-        - If the user is a broker, give it the proper `cloud_controller.admin` scope
-          manually using `uaac`
-             - `uaac member add cloud_controller.admin ${guid_of_deployer}`
-        - Refly the pipeline with updated credentials
-        - Delete the `${name_of_deployer}_prev` service account deployer.
+#### Auditing all CF deployment users
 
-## Rotate secrets passphrases
+Use the `get-all-cf-deployers.sh` file in the
+[`cg-scripts`](https://github.com/18F/cg-scripts) repository to audit all of the
+CF users deploying to all environments using Concourse.
+
+The script outputs the login commands for all matching environments for both the
+deployer account and for operators using `--sso`. It's useful to run this
+command redirect the output to a file for the next steps.
+
+When rotating these accounts, you need ensure you don't delete the previous
+deployer service instance _until after_ the credentials have been successfully
+used in a deployment in order to minimize downtime.
+
+#### Steps for rotating cloud.gov Service Account deployers
+
+1. Target the appropriate org and space in the current environment.
+1. Check the services, if one exists for this deployer renamed it with a `_prev`
+   suffix for later deletion.
+   - `cf rename-service ${name_of_deployer} ${name_of_deployer}_prev`
+1. Create a new service instance.
+  - `cf create-service cloud-gov-service-account space-deployer "${name_of_deployer}"`
+1. Read the service instance details for the deployer.
+  - `cf service "${name_of_deployer}"`
+1. Open the Fugacious link and save the credentials locally in the `credentials.yml`
+  - `cf service ${name_of_deployer} | grep Dashboard | awk '{ print $2 }'`
+1. If the deployer user is used for more than a `cf push`, give it the proper
+  `cloud_controller.admin` scope manually using `uaac`. Otherwise it will fail
+  in the pipeline job in Concourse. Make sure you authenticate with the correct
+  UAA server when escalating the scopes of the deployer user.
+     - `uaac member add cloud_controller.admin ${guid_of_deployer}`
+1. Refly the pipeline with updated credentials and start a new job.
+1. Delete the `${name_of_deployer}_prev` service account deployer.
+   - `cf delete-service ${name_of_deployer}_prev -f`
+
+### Rotate secrets passphrases
 
 Create a new temporary directory as a workspace for all the secrets file(s) for
 any deployments which contain resources of type `common` and with names starting
@@ -67,6 +88,12 @@ file with the current state of all `cg-common` resources matching a name that
 starts with `common-*`.
 
 ### Downloading all pipelines and cg-common resources
+
+The following command will create an audit file name `all-secrets-list.txt` and
+individual `*.pipeline.yml` files for each pipeline it finds a `cg-common`
+resource for. Use this file to build and track your progress on passphrase
+rotation. Replace the `--target fr` with the correct name for your Concourse
+target.
 
 ```sh
 for pipeline in $( fly --target fr pipelines |  grep -vE 'yes.+no' |  grep -Eo '^[a-z0-9\-]+' )
@@ -89,12 +116,12 @@ do
     echo "^^^^^   ${pipeline}"
     echo "========================================"
     echo
-    fly --target fr get-pipeline --pipeline ${pipeline} > ${pipeline}.yml
+    fly --target fr get-pipeline --pipeline ${pipeline} > ${pipeline}.pipeline.yml
   fi
 done | tee all-secrets-list.txt
 ```
 
-### Reviewing the cg-common resources file
+#### Reviewing the cg-common resources file
 
 Now open the `all-secrets-list.txt` file in a text editor. You will be using
 this file to create the following sets of commands to perform the secrets
@@ -111,7 +138,7 @@ passphrase rotation.
   `secrets_passphrase` are being updated in the pipeline.
 - **Upload** the encrypted secrets file(s).
 
-### Running through the steps above using boilerplate
+#### Running through the steps above using boilerplate
 
 The example below is meant to be used as a boilerplate to help rotating the
 passphrases manually. Below you will find guidance for following the steps from
