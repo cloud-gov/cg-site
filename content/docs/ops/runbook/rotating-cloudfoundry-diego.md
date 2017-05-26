@@ -6,6 +6,8 @@ menu:
 title: Rotating Secrets - Cloud Foundry and Diego
 ---
 
+## Introduction
+
 When rotating secrets for Cloud Foundry and Diego you will need to follow the
 proper steps in order to perform a rolling update to the platform. There are six
 deployments that need to be synchronized across two Bosh deployments. These
@@ -160,7 +162,16 @@ with secrets and passphrase changes for various other deployments. You can
 in the `cf-secrets.external.yml` example file in the `cg-deploy-cf` repository
 
 You can search through the `cg-deploy-*` repositories to find which client secret goes
-with which deployment.
+with which deployment. If you have all the repositories cloned locally, you can
+`grep` through all of the repositories with the following command or using the
+GitHub search
+
+```sh
+path_to_local_cg_respositories='file/path';
+client_name='example';
+open "https://github.com/search?q=user%3A18F+cg-deploy+%22${client_name}%22&type=Code"
+find ${path_to_local_cg_repositories} -d 2 | xargs ack -n -i "(client.+: ${client_name})" -A2 -B2
+```
 
 ## Recreating the Smoke Tests VMs
 
