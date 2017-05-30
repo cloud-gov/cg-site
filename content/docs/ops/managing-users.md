@@ -5,11 +5,9 @@ menu:
 title: Managing users
 ---
 
-{{% govcloud %}}
 Only single sign-on user accounts are allowed. Service accounts, such as deployer credentials, are to be generated only via the [service account](https://cloud.gov/docs/services/cloud-gov-service-account/) managed service to ensure that they are scoped to a particular space with limited access.
 
 No local accounts to UAA shall be created for user access.
-{{% /govcloud %}}
 
 ## Creating users
 

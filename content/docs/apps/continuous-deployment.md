@@ -19,7 +19,6 @@ Before setting up continuous deployment:
 
 Continuous deployment systems require credentials for use in pushing new versions of your application code to cloud.gov. You should use a restricted set of credentials that can only access a particular target space, rather than credentials tied to a user who has more access, or who may lose access when leaving your team or project. This "least privilege" approach minimizes the harm that is possible if the credentials are compromised in any way.
 
-{{% govcloud %}}
 ### Deployer account broker
 
 You can provision a deployer account with permission to deploy to a single space using the [cloud.gov service account]({{< relref "docs/services/cloud-gov-service-account.md" >}}) service broker:
@@ -54,14 +53,6 @@ To delete your deployer account, delete the service instance:
 ```bash
 $ cf delete-service my-service-account
 ```
-{{% /govcloud %}}
-
-{{% eastwest %}}
-### Ask support
-
-Ask [cloud.gov support]({{< relref "docs/help.md" >}}) to set up a "deployer" user in your organization and give it permission to deploy to the desired space.
-
-{{% /eastwest %}}
 
 ## Continuous integration services
 
@@ -69,15 +60,9 @@ To set up any of these services, you will need to provide [a `manifest.yml` file
 
 ### Travis
 
-See [the Travis documentation](http://docs.travis-ci.com/user/deployment/cloudfoundry/). 
+See [the Travis documentation](http://docs.travis-ci.com/user/deployment/cloudfoundry/).
 
-{{% eastwest %}}
-Use `api: https://api.cloud.gov`
-{{% /eastwest %}}
-
-{{% govcloud %}}
 Use `api: https://api.fr.cloud.gov`
-{{% /govcloud %}}
 
 You must encrypt the password, and you must [**escape any symbol characters in the password**](https://docs.travis-ci.com/user/encryption-keys#Note-on-escaping-certain-symbols), to prevent possible situations where Travis could dump an error message that contains passwords or environment variables.
 
@@ -140,7 +125,7 @@ deployment:
       - cf push
 ```
 
-Replace `DEPLOYER_USER`, `ORG`, and `SPACE` accordingly, and export the `CF_PASS` environment variable in the Circle interface to add the deployer's password. If you're using the East/West environment, replace `api.fr.cloud.gov` with `api.cloud.gov`.
+Replace `DEPLOYER_USER`, `ORG`, and `SPACE` accordingly, and export the `CF_PASS` environment variable in the Circle interface to add the deployer's password.
 
 **Note**: If your `manifest.yml` describes more than one app, you might want to specify which app to push in the `cf push` line.
 
@@ -172,7 +157,7 @@ Change `APP` and `DOMAIN` to match your application, and set up the following en
 
 | Name    | Value              |
 |---------|--------------------|
-| CF_API  | East/West: `api.cloud.gov` / GovCloud: `api.fr.cloud.gov`     |
+| CF_API  | `api.fr.cloud.gov` |
 | CF_USER | deployer username  |
 | CF_PASS | deployer password  |
 | CF_ORG  | target organization|

@@ -16,22 +16,13 @@ Your dashboard is probably empty right now since you probably haven't deployed a
 
 Two notes before you log in:
 
-* When you log in for the first time, cloud.gov will create a [sandbox space]({{< relref "overview/pricing/free-limited-sandbox.md" >}}) for you, but it may take up to **5 minutes** for cloud.gov to complete its automatic creation of your sandbox space.
-* Throughout the cloud.gov documentation, select the **GovCloud environment** or **East/West environment** instructions based on where your spaces are located. If you're not sure which to select, the **GovCloud environment** is the environment for new sandbox accounts and new teams. You can also ask a teammate or [ask support]({{< relref "docs/help.md" >}}).
+* When you log in for the first time, cloud.gov will create a [sandbox space]({{< relref "overview/pricing/free-limited-sandbox.md" >}}) for you, but it may take up to **5 minutes** for cloud.gov to complete its automatic creation of your sandbox space. If you get stuck, ask a teammate or [support]({{< relref "docs/help.md" >}}).
 
 Now try logging in:
 
-{{% govcloud %}}
 [`https://dashboard.fr.cloud.gov/`](https://dashboard.fr.cloud.gov/)
 
-**Tip:** The `fr.` in this URL (and other cloud.gov URLs) indicates the GovCloud environment.
-{{% /govcloud %}}
-
-{{% eastwest %}}
-[`https://dashboard.cloud.gov/`](https://dashboard.cloud.gov/)
-
-**Note:** If you just logged into the cloud.gov East/West environment for the first time, you won't receive a sandbox space in the East/West environment. You can log into the cloud.gov GovCloud environment to get access to a sandbox space.
-{{% /eastwest %}}
+**Tip:** The `fr.` in this URL (and other cloud.gov URLs) is short for FedRAMP.
 
 ## Set up the command line
 
@@ -43,23 +34,11 @@ cloud.gov is based on the Cloud Foundry open source project, so cloud.gov uses t
 
 1. Log in with a command as explained below. Just like with the dashboard instructions, the **GovCloud environment** is the main environment for new accounts and teams.
 
-{{% govcloud %}}
 **For all accounts in the GovCloud environment:**
 
-Run `cf login -a api.fr.cloud.gov --sso` 
+Run `cf login -a api.fr.cloud.gov --sso`
 
 Then it'll say `One Time Code ( Get one at `[`https://login.fr.cloud.gov/passcode`](https://login.fr.cloud.gov/passcode)` )` -- visit that link in your browser to get your code, copy and paste the code into the command line (no typing indicators will show), and enter it.
-{{% /govcloud %}}
-
-{{% eastwest %}}
-**If you're at GSA or EPA and you log in with your agency account:** 
-
-Run `cf login -a api.cloud.gov --sso`
-
-Then it'll say `One Time Code ( Get one at `[`https://login.cloud.gov/passcode`](https://login.cloud.gov/passcode)` )` -- visit that link in your browser to get your code, copy and paste the code into the command line (no typing indicators will show), and enter it.
-    
-**If you log in with a cloud.gov account that has its own password** (including `ORGNAME_deployer` accounts): run `cf login -a api.cloud.gov`
-{{% /eastwest %}}
 
 ## Play around in your "sandbox"
 
@@ -90,25 +69,8 @@ Here's a summary of how to log into cloud.gov. (See above for details.)
 
 Command line interface:
 
-{{% govcloud %}}
-
-Everyone: `cf login -a api.fr.cloud.gov --sso` 
-
-{{% /govcloud %}}
-
-{{% eastwest %}}
-GSA and EPA: `cf login -a api.cloud.gov --sso`
-
-Everyone else: `cf login -a api.cloud.gov`
-{{% /eastwest %}}
-
+`cf login -a api.fr.cloud.gov --sso`
 
 Dashboard (web interface):
 
-{{% govcloud %}}
 [`https://dashboard.fr.cloud.gov/`](https://dashboard.fr.cloud.gov/)
-{{% /govcloud %}}
-
-{{% eastwest %}}
-[`https://dashboard.cloud.gov/`](https://dashboard.cloud.gov/)
-{{% /eastwest %}}

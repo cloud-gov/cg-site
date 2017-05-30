@@ -23,8 +23,6 @@ If you have a GSA, EPA, or FDIC email address, sign into cloud.gov using your ag
 
 If you were invited with an email address that isn't part of an agency with single sign-on authentication to cloud.gov, you have a cloud.gov account.
 
-{{% govcloud %}}
-
 Follow [these instructions to log in on the command line (CLI) and web UI (dashboard)]({{< relref "setup.md" >}}). When you log in to cloud.gov via a web browser, select the **cloud.gov** option.
 
 <!--<img src="/img/cloud-gov-idp-button-cropped.png" alt="cloud.gov provider button to login page is highlighted in blue" width="373" height="187" />-->
@@ -46,23 +44,11 @@ If you lose access to your authentication application (such as if you lose your 
 4. Reset your account's authentication application.
 5. Let you know this is complete, so that you can set up a new authentication application and request access from your Space Managers and Org Managers again. It is their responsibility to verify that this is a legitimate request from you.
 
-{{% /govcloud %}}
-
-{{% eastwest %}}
-Your cloud.gov account has a username and password. Follow [these instructions to log in on the command line (CLI) and web UI (dashboard)]({{< relref "setup.md" >}}).
-
-You can [reset your own password](https://login.cloud.gov/forgot_password).
-{{% /eastwest %}}
+In order to perform multi-factor authentication, you need an authentication application that generates time-based one-time passcodes, such as [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) or [Authy](https://www.authy.com/app/mobile). Download the app on your mobile device. When you log into cloud.gov for the first time, follow the instructions to store the `cloud.gov` key in your application.
 
 ### Deployer accounts
 
-{{% govcloud %}}
 If you're using the [deployer account broker]({{< relref "docs/apps/continuous-deployment.md" >}}), you can delete and recreate that account to reset the credentials.
-{{% /govcloud %}}
-
-{{% eastwest %}}
-For `ORGNAME_deployer` accounts, if you need the password reset, please contact [cloud.gov support](/help/), providing the account name with your request, and a member of the cloud.gov team will provide you with a new password.
-{{% /eastwest %}}
 
 ## Use your account responsibly
 
