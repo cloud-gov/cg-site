@@ -21,7 +21,7 @@ Plan Name | Description | Price
 
 ## How to create an instance
 
-After you create one of these service instances, you will see a new "user" in your org and space with a name made of 36 letters, numbers, and dashes as its unique identifier, similar to `f6ab4cfb-6e6c-4b10-8585-3f39e740905c`.
+After you create one of these service instances, you will see a new "user" in your org and space with a name made of 36 letters, numbers, and dashes as its unique identifier, similar to `f6ab4cfb-6e6c-4b10-8585-3f39e740905c`. This will display as service-account@cloud.gov in event logs.
 
 To create a service instance that can deploy applications, run the following command:
 
