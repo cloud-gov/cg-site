@@ -78,10 +78,6 @@ Please check out the [repository](https://github.com/18F/cg-migrate-db)
 for instructions on how to install the plugin, backup data, import data,
 download a local copy of the data, and upload a local copy of the data.
 
-It also includes a [how-to](https://github.com/18F/cg-migrate-db#1-migrating-from-ew-to-govcloud-in-4-steps)
-for migrating data from one environment to another. (e.g. from East-West to
-GovCloud)
-
 ### Manually access a database
 
 The instructions below are for PostgreSQL, but should be similar for MySQL or others.
