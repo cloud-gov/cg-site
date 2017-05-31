@@ -7,7 +7,7 @@ title: Custom domains
 
 Here's how to put your app on your project's custom domain name. For context, [Cloud Foundry's Routes and Domains documentation](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html) explains the overall model and terminology that cloud.gov uses.
 
-There is a [Manual Method](#manual-method) and a [Managed Service Method](#managed-service-method). The latter is vastly preferred to the former, for the following reasons:
+There is a [Managed Service Method](#managed-service-method) and a [Manual Method](#manual-method). We recommend the Managed Service Method, for the following reasons:
 
 * It is (somewhat) self-service
 * It will automatically create and renew the certificate
@@ -19,6 +19,10 @@ For all custom domains, we recommend incorporating [HTTPS-Only Standard guidance
 If your application requires DNSSEC, you are responsible for ensuring your custom domain is DNSSEC-enabled before following these instructions.
 
 If you need to set up an app on a domain managed by GSA TTS, you may also be interested in [18F/dns](https://github.com/18F/dns).
+
+## Managed Service Method
+
+See the [CDN service page]({{< relref "docs/services/cdn-route.md" >}}) for instructions.
 
 ## Manual Method
 
@@ -66,7 +70,3 @@ Or:
 	cf map-route myapp app.parent.tld
 
 [API](http://apidocs.cloudfoundry.org/206/routes/associate_app_with_the_route.html)
-
-## Managed Service Method
-
-See the [CDN service page]({{< relref "docs/services/cdn-route.md" >}}) for instructions.
