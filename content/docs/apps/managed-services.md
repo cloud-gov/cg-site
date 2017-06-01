@@ -45,7 +45,7 @@ For example, to create an instance of the elasticsearch service using the free p
 
 ##### Paid services
 
-The note `* These service plans have an associated cost` indicates paid services. [Learn about managed service pricing.]({{< relref "overview/pricing/rates.md#managed-services" >}})
+The note `* These service plans have an associated cost` indicates paid services. [Learn about managed service pricing.]({{< relref "overview/pricing/managed-services-cost.md" >}})
 
 #### Bind the service instance
 

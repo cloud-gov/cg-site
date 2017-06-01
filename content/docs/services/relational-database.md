@@ -15,21 +15,18 @@ If your application uses relational databases for storage, you can use the AWS R
 Plan Name | Description | Price
 --------- | ----------- | -----
 `shared-psql`            | Shared PostgresSQL database for prototyping (no sensitive or production data) | Free
-`medium-psql`            | Dedicated medium RDS PostgreSQL DB instance                                   | $0.115 / hr + storage
-`medium-psql-redundant`  | Dedicated redundant medium RDS PostgreSQL DB instance                         | $0.230 / hr + storage
-`large-psql`             | Dedicated large RDS PostgreSQL DB instance                                    | $0.230 / hr + storage
-`large-psql-redundant`   | Dedicated redundant large RDS PostgreSQL DB instance                          | $0.470 / hr + storage
+`medium-psql`            | Dedicated medium RDS PostgreSQL DB instance                                   | Will be paid per hour + storage
+`medium-psql-redundant`  | Dedicated redundant medium RDS PostgreSQL DB instance                         | Will be paid per hour + storage
+`large-psql`             | Dedicated large RDS PostgreSQL DB instance                                    | Will be paid per hour + storage
+`large-psql-redundant`   | Dedicated redundant large RDS PostgreSQL DB instance                          | Will be paid per hour + storage
 `shared-mysql`           | Shared MySQL database for prototyping (no sensitive or production data)       | Free
-`medium-mysql`           | Dedicated medium RDS MySQL DB instance                                        | $0.110 / hr + storage
-`medium-mysql-redundant` | Dedicated redundant medium RDS MySQL DB instance                              | $0.220 / hr + storage
-`large-mysql`            | Dedicated large RDS MySQL DB instance                                         | $0.220 / hr + storage
-`large-mysql-redundant`  | Dedicated redundant large RDS MySQL DB instance                               | $0.440 / hr + storage
+`medium-mysql`           | Dedicated medium RDS MySQL DB instance                                        | Will be paid per hour + storage
+`medium-mysql-redundant` | Dedicated redundant medium RDS MySQL DB instance                              | Will be paid per hour + storage
+`large-mysql`            | Dedicated large RDS MySQL DB instance                                         | Will be paid per hour + storage
+`large-mysql-redundant`  | Dedicated redundant large RDS MySQL DB instance                               | Will be paid per hour + storage
 
-### Storage pricing:
-
-- Shared instance: Free
-- Simple instance: $0.138 per GB per month
-- Redundant instance: $0.276 per GB per month
+### Pricing
+Shared instances are free. Simple and redundant instances will have pricing per hour and per GB per month. [Learn more about managed service pricing.]({{< relref "overview/pricing/managed-services-cost.md" >}})
 
 ## Options
 
