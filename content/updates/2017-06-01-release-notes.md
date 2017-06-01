@@ -1,6 +1,6 @@
 +++
-date = "2017-05-31"
-title = "Platform Release Notes: May 31, 2017"
+date = "2017-06-01"
+title = "Platform Release Notes: June 6, 2017"
 +++
 
 Curious what’s new that you might find helpful as a cloud.gov application developer? Here are highlights from our platform updates over the past week and a half.
@@ -39,7 +39,3 @@ Stemcell 3312.26
   - [USN-3287-1: Git vulnerability](https://www.ubuntu.com/usn/USN-3287-1/)
   - [USN-3294-1: Bash vulnerabilities](https://www.ubuntu.com/usn/USN-3294-1/)
   - [USN-3295-1: JasPer vulnerabilities](https://www.ubuntu.com/usn/USN-3295-1/)
-
-### See also
-
-If you’re interested in details about recent dashboard updates, you can also see the [dashboard release notes](https://github.com/18F/cg-dashboard/releases).
