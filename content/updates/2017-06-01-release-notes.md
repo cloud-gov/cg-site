@@ -14,10 +14,10 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
 - cloud.gov documentation no longer provides instructions for using the deprecated East/West environment, because all customer applications have migrated to the GovCloud environment.
 
 ### Platform releases
+cloud.gov now includes the following releases and upgrades. You will need to [restage your application](http://cli.cloudfoundry.org/en-US/cf/restage.html) to [incorporate fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) and ensure you’re running the most recent language version supported by your buildpack.
+
 We upgraded the Cloud Foundry deployment to [v262](https://github.com/cloudfoundry/cf-release/releases/tag/v262). This upgrade addresses this security vulnerability:
 [CVE-2017-4991: UAA password reset vulnerability](https://cloudfoundry.org/cve-2017-4991/)
-
-**[Restage your application](http://cli.cloudfoundry.org/en-US/cf/restage.html)** to [incorporate fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) and ensure you’re running the most recent language version supported by your buildpack.
 
 #### Additional upgrades
 - [PHP buildpack 4.3.33](https://github.com/cloudfoundry/php-buildpack/releases/tag/v4.3.33)
