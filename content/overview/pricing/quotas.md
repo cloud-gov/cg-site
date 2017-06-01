@@ -48,3 +48,14 @@ In this situation you have three options:
 1. Delete existing resources with `cf delete`, `delete-service`, `delete-route` or similar.
 2. Reconfigure individual existing [Application Quotas]({{< relref "docs/apps/limits.md" >}}) and redeploy.
 3. Request a quota change by [asking support](/help/).
+
+
+## Tracking quota usage
+
+There are two useful `cf` CLI plugins that address common needs around right-sizing your instance count and memory limits. There are both available from the _CF-Community_ plugin site when you run: `cf add-plugin-repo CF-Community http://plugins.cloudfoundry.org/`
+
+- The Usage Report plugin gives you a report of how your quota is used across visible organizations and spaces (admins, :warning: it takes forever and may crash on you due to lots of requests/data): https://github.com/krujos/usagereport-plugin. To install: `cf install-plugin 'Usage Report' -r CF-Community`
+
+- The Statistics plugin gives you real-time visibility of the actual memory usage for each application instance vs the memory limit: https://github.com/swisscom/cf-statistics-plugin. To install: `cf install-plugin Statistics -r CF-Community`
+
+You can use these two in combination to get a good sense of where you can lower instance memory limits to make room for more instances elsewhere in your org or just reduce your quota to reduce costs. 
