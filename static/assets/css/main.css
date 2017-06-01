@@ -50,15 +50,6 @@ blockquote li,
   margin-top: 8px; /* $grid-1 */
 }
 
-.env-east-west .env-specifier,
-.env-east-west .env-specifier a {
-  color: #333; /* $color-textblack */
-}
-
-.env-east-west::before {
-  border-color: #74B1DB;
-}
-
 .env-govcloud .env-specifier,
 .env-govcloud .env-specifier a {
   color: #333; /* $color-textblack */
