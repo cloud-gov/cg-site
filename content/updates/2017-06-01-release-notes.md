@@ -1,6 +1,6 @@
 +++
 date = "2017-06-01"
-title = "Platform Release Notes: June 6, 2017"
+title = "Platform Release Notes: June 1, 2017"
 +++
 
 Curious what’s new that you might find helpful as a cloud.gov application developer? Here are highlights from our platform updates over the past week and a half.
@@ -28,7 +28,7 @@ We upgraded the Cloud Foundry deployment to [v262](https://github.com/cloudfound
 - [Staticfile Buildpack 1.4.6](https://github.com/cloudfoundry/staticfile-buildpack/releases/tag/v1.4.6)
 - [Ruby Buildpack 1.6.39](https://github.com/cloudfoundry/ruby-buildpack/releases/tag/v1.6.39)
 - [Diego 1.16.1](https://github.com/cloudfoundry/diego-release/releases/tag/v1.16.1)
-Stemcell 3312.26
+- Stemcell 3312.26
 - [RootFS cflinuxfs2 1.123.0](https://github.com/cloudfoundry/cflinuxfs2/releases/tag/1.123.0), which address vulnerabilities described in these security notices:
   - [USN-3271-1: Libxslt vulnerabilities](https://www.ubuntu.com/usn/USN-3271-1/)
   - [USN-3274-1: ICU vulnerabilities](https://www.ubuntu.com/usn/USN-3274-1/)
