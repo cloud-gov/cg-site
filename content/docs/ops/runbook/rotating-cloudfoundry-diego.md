@@ -182,6 +182,10 @@ open "https://github.com/search?q=user%3A18F+cg-deploy+%22${client_name}%22&type
 find ${path_to_local_cg_repositories} -d 2 | xargs ack -n -i "(client.+: ${client_name})" -A2 -B2
 ```
 
+- [18F/cg-deploy-logsearch](https://github.com/18F/cg-deploy-logsearch)
+  - `kibana_oauth2_client:`
+  - `logsearch_firehose_ingestor:`
+
 ## Recreating the Smoke Tests VMs
 
 If after secrets rotation, the smoke test VMs for staging and production fail to
