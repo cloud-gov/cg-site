@@ -6,10 +6,12 @@ title = "Platform Release Notes: May 31, 2017"
 Curious what’s new that you might find helpful as a cloud.gov application developer? Here are highlights from our platform updates over the past week and a half.
 <!--more-->
 
-### Changed
-- cloud.gov document now covers only managing apps in the GovCloud environment. This follows the migration of all apps that had been in the East/West environment into GovCloud.
-- Different organizations in cloud.gov are now handled within separate accounts for purposes of encryption calls. Previously, all apps hosted on cloud.gov were handled through a single account with the encryption provider, and rate-limiting was causing TLS certificates to expire. Using separate accounts resolves this issue.
-- We have implemented regular kubernetes “liveness” probes of services used by applications. Previously, services were checked generally but not whether they were responding properly application-by-application. The regular monitoring means non-responsive services will automatically restart.
+### Fixed
+- TLS certificates (for custom domains) provided by the [CDN Route service]({{< relref "docs/services/cdn-route.md" >}}) are now automatically obtained with [less risk of rate-limiting](https://cloudgov.statuspage.io/incidents/z49pkl4ms21j).
+- We improved monitoring and reliability for the [Redis]({{< relref "docs/services/redis28.md" >}}) and [Elasticsearch]({{< relref "docs/services/elasticsearch24.md" >}}) services, enabling them to automatically restart if non-responsive.
+
+### Removed
+- cloud.gov documentation no longer provides instructions for using the deprecated East/West environment, because all customer applications have migrated to the GovCloud environment.
 
 ### Platform releases
 We upgraded the Cloud Foundry deployment to [v262](https://github.com/cloudfoundry/cf-release/releases/tag/v262). This upgrade addresses this security vulnerability:
