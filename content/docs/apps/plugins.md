@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: advanced
-title: Plugins
+title: CF CLI plugins
 ---
 
 Cloud Foundry includes a framework for plugins for the `cf` command-line interface, so that you can use and build additional command-line features for managing your orgs, spaces, and applications.
