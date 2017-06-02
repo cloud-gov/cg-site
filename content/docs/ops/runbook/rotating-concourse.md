@@ -39,3 +39,7 @@ fly --target ${ci_env} \
     --pipeline deploy-concourse \
 > tmp/deploy-concourse.pipeline.yml
 ```
+
+Pull down the secrets files for each Concourse. Reference the [secret key
+management documentation]({{< relref "docs/ops/secrets.md" >}}) for downloading
+and uploading those secrets.
