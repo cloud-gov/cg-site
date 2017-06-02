@@ -66,7 +66,7 @@ bosh-cli task ${task_id}
 
 You can detach from the task without canceling it with `Ctrl-C`.
 
-### Coordinate & monitor deployments
+## Coordinate & monitor deployments
 
 There are two types of deployments that need to be coordinated here. All of the
 BOSH directors deploy using the previous BOSH director in the pipeline with the
@@ -75,14 +75,14 @@ exception of the environment BOSH deployments (e.g. `development`, `staging`,
 `deploy-bosh` pipeline which use the BOSH credentials in either their secrets or
 credential files.
 
-#### External deployments
+### External deployments
 
 There are various pipelines that require BOSH credentials which will immediately
 be out of date once the BOSH deployment it targets and cause deployment failures
 and potentially cause downtime. All pipelines depending on BOSH must be paused
 and updated before unpausing them again.
 
-##### Finding deployments with BOSH dependencies
+#### Finding deployments with BOSH dependencies
 
 Search GitHub for the `BOSH_TARGET` and `BOSH_ENVIRONMENT` with a `YAML`
 filetype to find all the different deployments that will need to be paused and
@@ -100,7 +100,7 @@ Once these pipelines are paused, update the values after all BOSH deployments
 have successfully deployed. Then unpause pipelines after you have successfully
 uploaded secrets or reflown pipelines.
 
-#### BOSH deployments
+### BOSH deployments
 
 There are five BOSH deployments which are used to deploy cloud.gov. Master BOSH
 deploys Tooling BOSH which deploys Development, Staging, and Production BOSH.
@@ -112,7 +112,7 @@ these steps.
 Besides certificates, all secrets in each BOSH deployment can be generated and
 replaced or can be updated from [rotated IAM users]({{< relref "docs/ops/runbook/rotating-iam-users.md" >}}).
 
-##### Validating BOSH deployments
+#### Validating BOSH deployments
 
 Each BOSH deployment contains a set a releases that is uploaded to it from the
 `deploy-bosh` pipeline. After a successful deployment of BOSH in a given
@@ -128,7 +128,7 @@ fly --target fr \
 Run this step after each successful BOSH rotation deployment. If it completes
 without errors, BOSH has been successfully rotated and deployed.
 
-##### Deploying Master BOSH
+#### Deploying Master BOSH
 
 Start with the Master bosh deployment and secrets. This will require that you
 create a new root CA certificate for this deployment and to sign certificates
@@ -150,7 +150,7 @@ secrets. See the [secret key management]({{< relref "docs/ops/secrets.md" >}})
 and substitute the file you're downloading for the Master BOSH file found in the
 `deploy-bosh` pipeline.
 
-###### Encrypting private key
+##### Encrypting private key
 
 Use the same secrets passphrase you generated for the encrypting both the
 secrets file and the private key. Encrypt and upload the private key using the
@@ -163,7 +163,7 @@ PASSPHRASE=${master_bosh_secrets_passphrase} \
 $CG_SCRIPT/encrypt.sh
 ```
 
-##### Deploying Tooling BOSH
+#### Deploying Tooling BOSH
 
 In the [`cg-deploy-bosh`](https://github.com/18F/cg-deploy-bosh) repository, you
 will find a `generate-bosh-certs.sh`. Create a `./tmp` directory and run that
@@ -175,7 +175,10 @@ found in the secrets file you're rotating as either `${BOSH_TARGET}` or
 ./generate-bosh-certs.sh Tooling ${tooling_bosh_ip_address}
 ```
 
-##### Deploying other BOSH environments
+Wait to deploy this BOSH until after Master BOSH deploys successfully and is
+validated.
+
+#### Deploying other BOSH environments
 
 These deployments are deployed with the Tooling BOSH director.  In the
 [`cg-deploy-bosh`](https://github.com/18F/cg-deploy-bosh) repository, you will
