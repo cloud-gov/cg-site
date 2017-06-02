@@ -33,6 +33,7 @@ Your cloud.gov account requires setting up both a password and an authentication
 
 * **If you know your current password:** You can [log in](https://login.fr.cloud.gov/login) and then [change your password here](https://account.fr.cloud.gov/change-password).
 * **If you're logged out and forgot your password:** You can [reset your password](https://account.fr.cloud.gov/forgot-password) to log in with a temporary password, then [change your password](https://account.fr.cloud.gov/change-password).
+* **If you're logged out and your password has expired:** You still [reset your password](https://account.fr.cloud.gov/forgot-password) to log in with a temporary password, then [change your password](https://account.fr.cloud.gov/change-password).
 
 #### If you can't access your token codes
 
