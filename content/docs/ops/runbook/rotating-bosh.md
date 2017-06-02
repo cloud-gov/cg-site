@@ -3,7 +3,7 @@ menu:
   docs:
     parent: runbook
 
-title: Rotating Secrets - BOSH
+title: Rotating Secrets III - BOSH
 ---
 
 ## Introduction
