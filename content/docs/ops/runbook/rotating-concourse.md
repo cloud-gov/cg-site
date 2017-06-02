@@ -8,7 +8,9 @@ title: Rotating Secrets IV - Concourse
 
 ## Introduction
 
-Rotate the UAA client secret
+We integrate and deliver cloud.gov with Concourse. Concourse is also
+used for the [`18F/concourse-broker`](https://github.com/18F/concourse-broker)
+and is called `tenant-concourse-*`.
 
 ### Working with the deployment
 
@@ -28,7 +30,8 @@ Concourse credentials.
 ## Working with multiple Concourses
 
 Concourse is running in multiple environments of cloud.gov. Take note the of the
-Bosh targets in the `deploy-concourse` pipeline.
+Bosh targets in the `deploy-concourse` pipeline. Save it locally to a `./tmp`
+directory.
 
 ```sh
 fly --target ${ci_env} \
@@ -36,5 +39,3 @@ fly --target ${ci_env} \
     --pipeline deploy-concourse \
 > tmp/deploy-concourse.pipeline.yml
 ```
-
-## Working with both pipelines
