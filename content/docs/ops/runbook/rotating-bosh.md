@@ -57,7 +57,16 @@ ID.
 bosh-cli tasks -a -r | head
 ```
 
-## Coordinate & monitor deployments
+Once you have a list of task IDs, you can launch into it by attaching to the
+task.
+
+```sh
+bosh-cli task ${task_id}
+```
+
+You can detach from the task without canceling it with `Ctrl-C`.
+
+### Coordinate & monitor deployments
 
 There are two types of deployments that need to be coordinated here. All of the
 BOSH directors deploy using the previous BOSH director in the pipeline with the
@@ -66,35 +75,117 @@ exception of the environment BOSH deployments (e.g. `development`, `staging`,
 `deploy-bosh` pipeline which use the BOSH credentials in either their secrets or
 credential files.
 
-### BOSH deployments
+#### External deployments
 
-#### Deploying Master BOSH
+There are various pipelines that require BOSH credentials which will immediately
+be out of date once the BOSH deployment it targets and cause deployment failures
+and potentially cause downtime. All pipelines depending on BOSH must be paused
+and updated before unpausing them again.
+
+##### Finding deployments with BOSH dependencies
+
+Search GitHub for the `BOSH_TARGET` and `BOSH_ENVIRONMENT` with a `YAML`
+filetype to find all the different deployments that will need to be paused and
+updated after all the Bosh deployments are
+
+```bash
+open \
+  'https://github.com/search?l=YAML&q=user%3A18F+BOSH_TARGET&type=Code&utf8=%E2%9C%93' \
+  'https://github.com/search?l=YAML&q=user%3A18F+BOSH_ENVIRONMENT&type=Code&utf8=%E2%9C%93' \
+  'https://github.com/search?l=YAML&q=user%3A18F+upload-release&type=Code' \
+  'https://github.com/search?l=YAML&q=user%3A18F+bosh-errand&type=Code'
+```
+
+Once these pipelines are paused, update the values after all BOSH deployments
+have successfully deployed. Then unpause pipelines after you have successfully
+uploaded secrets or reflown pipelines.
+
+#### BOSH deployments
+
+There are five BOSH deployments which are used to deploy cloud.gov. Master BOSH
+deploys Tooling BOSH which deploys Development, Staging, and Production BOSH.
+During a deployment of the BOSH director, BOSH will be unresponsive and will
+lead to errors in [any deployments that interact with the director](#external-deployments).
+Verify that these external deployments have been paused before proceeding with
+these steps.
+
+Besides certificates, all secrets in each BOSH deployment can be generated and
+replaced or can be updated from [rotated IAM users]({{< relref "docs/ops/runbook/rotating-iam-users.md" >}}).
+
+##### Validating BOSH deployments
+
+Each BOSH deployment contains a set a releases that is uploaded to it from the
+`deploy-bosh` pipeline. After a successful deployment of BOSH in a given
+environment, run the `common-releases-${bosh_environment}` job in Concourse.
+
+```sh
+fly --target fr \
+    trigger-job \
+    --job deploy-bosh/common-releases-${bosh_environment} \
+    --watch
+```
+
+Run this step after each successful BOSH rotation deployment. If it completes
+without errors, BOSH has been successfully rotated and deployed.
+
+##### Deploying Master BOSH
 
 Start with the Master bosh deployment and secrets. This will require that you
 create a new root CA certificate for this deployment and to sign certificates
 for subsequent BOSH deployments (e.g. Tooling, Development, Staging,
 Production).
 
-#### Deploying Tooling BOSH
+In the [`cg-deploy-bosh`](https://github.com/18F/cg-deploy-bosh) repository, you
+will find a `generate-master-bosh-certs.sh`. Create a `./tmp` directory
+and run that script in there with the IP address for Master BOSH. The IP address
+can be found in the secrets file you're rotating as either `${BOSH_TARGET}` or
+`${BOSH_ENVIRONMENT}`.
 
-After Master BOSH has been deployed and validated, it's time to update Tooling
-BOSH.
+```sh
+./generate-master-bosh-certs.sh ${master_bosh_ip_address}
+```
 
-#### Deploying other BOSH environments
+Once the certificates have been generated, update the values in the Master BOSH
+secrets. See the [secret key management]({{< relref "docs/ops/secrets.md" >}})
+and substitute the file you're downloading for the Master BOSH file found in the
+`deploy-bosh` pipeline.
 
-This sections covers deploy development, staging, and production BOSH. These
-deployments are deployed with the Tooling BOSH director. These deployments can
-happen serially or
+###### Encrypting private key
 
-### External deployments
+Use the same secrets passphrase you generated for the encrypting both the
+secrets file and the private key. Encrypt and upload the private key using the
+same technique for [secret key management]({{< relref "docs/ops/secrets.md" >}}).
 
-Enumerate dependencies in CF pipelines. These pipelines should be paused before rotating BOSH secrets,
-as they will fail until corresponding values have been rotated in each of their secrets files.
+```sh
+INPUT_FILE=master-bosh.key \
+OUTPUT_FILE=master-bosh.pem \
+PASSPHRASE=${master_bosh_secrets_passphrase} \
+$CG_SCRIPT/encrypt.sh
+```
 
-#### Finding deployments with BOSH dependencies
+##### Deploying Tooling BOSH
 
-```bash
-open \
-  'https://github.com/search?l=YAML&q=user%3A18F+BOSH_TARGET&type=Code&utf8=%E2%9C%93' \
-  'https://github.com/search?l=YAML&q=user%3A18F+BOSH_ENVIRONMENT&type=Code&utf8=%E2%9C%93'
+In the [`cg-deploy-bosh`](https://github.com/18F/cg-deploy-bosh) repository, you
+will find a `generate-bosh-certs.sh`. Create a `./tmp` directory and run that
+script in there with the IP address for Tooling BOSH. The IP address can be
+found in the secrets file you're rotating as either `${BOSH_TARGET}` or
+`${BOSH_ENVIRONMENT}`.
+
+```sh
+./generate-bosh-certs.sh Tooling ${tooling_bosh_ip_address}
+```
+
+##### Deploying other BOSH environments
+
+These deployments are deployed with the Tooling BOSH director.  In the
+[`cg-deploy-bosh`](https://github.com/18F/cg-deploy-bosh) repository, you will
+find a `generate-bosh-certs.sh`. Create a `./tmp` directory and run that script
+in there with the IP address for each BOSH (e.g. Development, Staging,
+Production). The IP address can be found in the secrets file you're rotating as
+either `${BOSH_TARGET}` or `${BOSH_ENVIRONMENT}`.
+
+```sh
+./generate-bosh-certs.sh Development ${development_bosh_ip_address}
+./generate-bosh-certs.sh Staging ${staging_bosh_ip_address}
+./generate-bosh-certs.sh Production ${production_bosh_ip_address}
 ```
