@@ -24,13 +24,10 @@ that will requires a secrets rotation.
 It's important that you rotate access to the platform first. This can be
 categorized with three different types of secrets.
 
-- AWS keys
-- Cloud Foundry deploy users
-- UAA clients
-
-1. [Rotate all IAM Users]({{< relref "docs/ops/runbook/rotating-iam-users.md" >}})
-1. [Rotate CF deployment users](#rotate-cf-deployment-users)
+1. Remove access to Ops UAA
 1. [Rotate `cg-common` passphrases](#rotate-secrets-passphrases)
+1. [Rotate CF deployment users](#rotate-cf-deployment-users)
+1. [Rotate all IAM Users]({{< relref "docs/ops/runbook/rotating-iam-users.md" >}})
 1. [Rotating Bosh]({{< relref "docs/ops/runbook/rotating-bosh.md" >}})
 1. [Rotating Concourse]({{< relref "docs/ops/runbook/rotating-concourse.md" >}})
 1. [Rotating Cloud Foundry / Diego]({{< relref "docs/ops/runbook/rotating-cloudfoundry-diego.md" >}})
