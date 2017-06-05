@@ -28,7 +28,7 @@ to be rotated for the secrets files. Create a `./tmp` directory inside the
 
 ## Dealing with multiple secret files
 
-The Cloud Foundry manifest is split into two parts, a `main.yml` and
+The Cloud Foundry secrets are split into two parts, a `main.yml` and
 `external.yml`. Internal secrets can be rotated either all at once or on a
 rolling schedule of deployments. You can pull the information needed to decrypt
 these from the `cg-deploy-cf` pipeline. You can easily grab the information
@@ -38,7 +38,7 @@ Concourse using the `fly-cli`.
 ```sh
 # note the target name `fr` here is the output of `fly targets`
 $ fly -t fr get-pipeline --pipeline deploy-cf | \
-  spurce json | \
+  spruce json | \
   jq -r '.resources | select(.name | test("common-"))'
 ```
 
@@ -74,7 +74,7 @@ $ ci_env=fr ../generate-all-certificates.sh --grab-cert && \
   mv all-cert-certs production-cf-diego-certs
 ```
 
-This script will generate all 25 of the certificates for both Diego and
+This script will generate all of the certificates for both Diego and
 Cloud Foundry. Since these deployments need to be deployed back-to-back, the
 certificate generation is consolidated in the `cg-deploy-cf` repository.
 
@@ -105,8 +105,8 @@ updates from _Security Configuration for Consul_ in order to prevent downtime.
 #### Updating certificates in secrets
 
 Replace all the certificates corresponding to the filename and property matching
-in the secrets file, e.g. `certs_dir/hm9000_server.crt` maps to
-`properties.hm9000.server_cert`. Be sure to include the `-----BEGIN
+in the secrets file, e.g. `certs_dir/cloud-controller.crt` maps to
+`properties.cc.public_cert`. Be sure to include the `-----BEGIN
 CERTIFICATE-----` and `-----END CERTIFICATE----- ` and indent the value under
 the YAML stanza to ensure valid YAML syntax.
 
