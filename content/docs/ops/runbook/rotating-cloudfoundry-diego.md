@@ -126,28 +126,14 @@ without data loss.
 
 1. `uaa.clients.*.secrets` properties need to be coordinated across various Bosh
    deployments and cloud.gov apps or service brokers.
-1. `collectd.riemann_server` property for Riemann server address.
-1. `nessus-agent.*` properties for Nessus.
 1. `login.smtp.*` properties for Mandrill.
 
 #### Metadata and properties for external SAML providers
 
 1. `login.providers.*` metadata along with `login.saml.*` properties for
    certificates and keys.
-    - The metadata comes from our external SAML providers. In order to rotate
-      these coordinate with them to exchange new metadata. The properties for
-      `login.saml.*` can be generate with the following documentation, although
-      this data will also need to be coordinated and exchanged with all
-      providers.
-
-#### Credentials for RDS instances
-
-1. `ccdb.*` properties AWS RDS connection configuration.
-    - These properties need to be coordinated with our `cg-provision`
-      repository.
-1. `uaadb.*` properties AWS RDS connection configuration.
-    - These properties need to be coordinated with our `cg-provision`
-      repository.
+    - The metadata comes from our external SAML providers. [These properties
+      cannot be rotated without downtime.](https://www.pivotaltracker.com/n/projects/997278/stories/142082611).
 
 #### New Relic external accounts
 
