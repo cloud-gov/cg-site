@@ -18,7 +18,7 @@ At a high level, incident response follows this process:
 
 [Initiate](#initiate):
 
-- An 18F staff member inside or outside the cloud.gov team (the *reporter*) notices and reports a cloud.gov-related incident, using the [18F incident response process](https://handbook.18f.gov/security-incidents/) and then notifying the cloud.gov team in [`#cloud-gov`](https://gsa-tts.slack.com/messages/cloud-gov/) using `@cloud-gov-team`.
+- An 18F staff member inside or outside the cloud.gov team (the *reporter*) notices and reports a cloud.gov-related incident, using the [18F incident response process](https://handbook.18f.gov/security-incidents/) and then notifying the cloud.gov team in [`#cloud-gov`](https://gsa-tts.slack.com/messages/cloud-gov/) using `@cg-team`.
 - The first responder on the cloud.gov team (which could be the reporter if the reporter is on the team) becomes the initial *Incident Commander* (IC).
 - The IC follows the [18F incident response process](https://handbook.18f.gov/security-incidents/) (or supports the reporter if the reporter already started it).
 
@@ -52,9 +52,9 @@ For full details, read on.
 
 An incident begins when someone becomes aware of a potential incident. We define "incident" broadly, following [NIST SP 800-61](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf), as "a violation or imminent threat of violation of computer security policies, acceptable use policies, or standard security practices" (6). This is a deliberately broad definition, designed to encompass any scenario that might threaten the security of cloud.gov.
 
-When a person outside the cloud.gov team (the *reporter*) notices a cloud.gov-related incident, they should begin reporting it by using the [18F incident response process](https://handbook.18f.gov/security-incidents/), and then post about it in [`#cloud-gov`](https://gsa-tts.slack.com/messages/cloud-gov/) using `@cloud-gov-team`. If they don't get acknowledgment from the cloud.gov team right away, they should escalate by contacting the cloud.gov leads directly until they receive acknowledgment of their report.
+When a person outside the cloud.gov team (the *reporter*) notices a cloud.gov-related incident, they should begin reporting it by using the [18F incident response process](https://handbook.18f.gov/security-incidents/), and then post about it in [`#cloud-gov`](https://gsa-tts.slack.com/messages/cloud-gov/) using `@cg-team`. If they don't get acknowledgment from the cloud.gov team right away, they should escalate by contacting the cloud.gov leads directly until they receive acknowledgment of their report.
 
-When a cloud.gov team member is the first person to notice an incident, they should also begin reporting it by using the [18F incident response process](https://handbook.18f.gov/security-incidents/) and posting about it in [`#cloud-gov`](https://gsa-tts.slack.com/messages/cloud-gov/) using `@cloud-gov-team` (including notifying the cloud.gov leads).
+When a cloud.gov team member is the first person to notice an incident, they should also begin reporting it by using the [18F incident response process](https://handbook.18f.gov/security-incidents/) and posting about it in [`#cloud-gov`](https://gsa-tts.slack.com/messages/cloud-gov/) using `@cg-team` (including notifying the cloud.gov leads).
 
 In either case, the first participant on the cloud.gov team becomes the initial *Incident Commander* (IC) and carries out the next steps in the response. The IC's responsibility is coordination, not necessarily investigation. The IC's primary role is to guide the process. The first responder may remain IC throughout the process, or they may hand off IC duties later in the process.
 
