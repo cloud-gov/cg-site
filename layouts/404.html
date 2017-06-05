@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+  {{ partial "head.html" . }}
+
+  <body>
+
+    {{ partial "header.html" . }}
+
+    <section class="section section-blue section-chevron_alt section-first" id="main">
+      <div class="usa-grid section-bg-parent">
+        <div class="usa-width-whole billboard section-bg">
+          <h1 class="billboard-display_text lh-hed">404 Page not found</h1>
+        </div>
+      </div>
+    </section>
+
+    <section class="usa-content section-middle section-light">
+      <div class="usa-grid">
+        <h2 class="section-content usa-content">
+          Looks like that page doesn't exist! If you think it should, send us a <a href="https://github.com/18F/cg-site/pulls", target="_blank">pull request</a>, or
+          <a href="/">return to cloud.gov</a>.
+        </h2>
+      </div>
+    </section>
+
+    {{ partial "footer.html" . }}
+    {{ partial "javascript.html" . }}
+
+  </body>
+</html>
