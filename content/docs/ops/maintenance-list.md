@@ -27,6 +27,8 @@ The tasks on this checklist should be performed each day.
 
 - On each bosh director run `bosh deployments` and verify the stemcell in-use for each deployment is current.
 
+- **Note:** The [nessus manager deployment](https://github.com/18F/cg-deploy-nessus-manager) requires that the System Owner reset the license key after a stemcell upgrade.  Coordinate with the System Owner to ensure the key is ready to be reset before deploying an update that will upgrade the stemcell.
+
 ## Review and respond to open alerts
 
 Review all recent alerts and notifications delivered to [`cg-notifications`](https://groups.google.com/a/gsa.gov/forum/#!forum/cloud-gov-notifications) and [`#cg-platform-news`](https://gsa-tts.slack.com/messages/cg-platform-news/).
