@@ -42,7 +42,7 @@ Once you've created the service instance, you'll want to obtain your client ID a
 cf service my-uaa-client
 ```
 
-This will display a link to a page on [Fugacious](https://fugacious.18f.gov/) which contains your credentials.
+This will display a link to a page on [Fugacious](https://fugacious.18f.gov/) which contains your credentials. Be sure to retrieve your credentials right away, since the link will only work for a brief length of time. Keep these credentials secure. If they’re compromised, the way to invalidate the credentials is to delete the service instance (you can create another, and it will have a fresh set of credentials). <!-- this advice should match on /docs/apps/continuous-deployment/ + /docs/services/cloud-gov-service-account/ + /docs/services/cloud-gov-identity-provider/ -->
 
 ## More information
 
