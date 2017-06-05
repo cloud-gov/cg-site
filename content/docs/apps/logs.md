@@ -43,9 +43,7 @@ If you receive `Error dialing trafficcontroller server`:
 
 ## Web-based logs with historic log data
 
-To view and search your logs on the web, including historic log data, visit: 
-
-https://logs.fr.cloud.gov
+To view and search your logs on the web, including historic log data, visit [https://logs.fr.cloud.gov/](https://logs.fr.cloud.gov/).
 
 Logs are currently retained for 180 days, and you will only see data for applications deployed within the [orgs](http://docs.cloudfoundry.org/concepts/roles.html#orgs) and [spaces](http://docs.cloudfoundry.org/concepts/roles.html#spaces) where you have access.
 

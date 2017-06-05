@@ -73,7 +73,7 @@ Deploying a [Jekyll](http://jekyllrb.com/) site requires a few things:
     buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
     ```
 
-See [18F/notalone](https://github.com/18F/notalone) and [18F/18f.gsa.gov](https://github.com/18F/18f.gsa.gov) for working examples.
+See [18F/notalone](https://github.com/18F/notalone) for an example.
 
 ### Redirect all traffic
 

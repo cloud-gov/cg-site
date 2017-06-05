@@ -18,9 +18,7 @@ Two notes before you log in:
 
 * When you log in for the first time, cloud.gov will create a [sandbox space]({{< relref "overview/pricing/free-limited-sandbox.md" >}}) for you, but it may take up to **5 minutes** for cloud.gov to complete its automatic creation of your sandbox space. If you get stuck, ask a teammate or [support]({{< relref "docs/help.md" >}}).
 
-Now try logging in:
-
-[`https://dashboard.fr.cloud.gov/`](https://dashboard.fr.cloud.gov/)
+Now try logging in: [`https://dashboard.fr.cloud.gov/`](https://dashboard.fr.cloud.gov/)
 
 **Tip:** The `fr.` in this URL (and other cloud.gov URLs) is short for FedRAMP.
 
@@ -32,13 +30,8 @@ cloud.gov is based on the Cloud Foundry open source project, so cloud.gov uses t
   - If your organization restricts the use of the installer, you can [download the CLI binary and install it manually](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#bin).
 1. Confirm the installation by running `cf -v` -- this should return a version number.
 
-1. Log in with a command as explained below. Just like with the dashboard instructions, the **GovCloud environment** is the main environment for new accounts and teams.
-
-**For all accounts in the GovCloud environment:**
-
-Run `cf login -a api.fr.cloud.gov --sso`
-
-Then it'll say `One Time Code ( Get one at `[`https://login.fr.cloud.gov/passcode`](https://login.fr.cloud.gov/passcode)` )` -- visit that link in your browser to get your code, copy and paste the code into the command line (no typing indicators will show), and enter it.
+1. Log in with this command: `cf login -a api.fr.cloud.gov --sso`
+  - Then it'll say `One Time Code ( Get one at `[`https://login.fr.cloud.gov/passcode`](https://login.fr.cloud.gov/passcode)` )` -- visit that link in your browser to get your code, copy and paste the code into the command line (no typing indicators will show), and enter it.
 
 ## Play around in your "sandbox"
 
