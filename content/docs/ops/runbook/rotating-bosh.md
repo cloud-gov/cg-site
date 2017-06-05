@@ -138,11 +138,10 @@ Production).
 In the [`cg-deploy-bosh`](https://github.com/18F/cg-deploy-bosh) repository, you
 will find a `generate-master-bosh-certs.sh`. Create a `./tmp` directory
 and run that script in there with the IP address for Master BOSH. The IP address
-can be found in the secrets file you're rotating as either `${BOSH_TARGET}` or
-`${BOSH_ENVIRONMENT}`.
+can be found in the Terraform output for the Tooling environment as `master_bosh_static_ip`.
 
 ```sh
-./generate-master-bosh-certs.sh ${master_bosh_ip_address}
+./generate-master-bosh-certs.sh ${master_bosh_static_ip}
 ```
 
 Once the certificates have been generated, update the values in the Master BOSH
@@ -168,11 +167,10 @@ $CG_SCRIPT/encrypt.sh
 In the [`cg-deploy-bosh`](https://github.com/18F/cg-deploy-bosh) repository, you
 will find a `generate-bosh-certs.sh`. Create a `./tmp` directory and run that
 script in there with the IP address for Tooling BOSH. The IP address can be
-found in the secrets file you're rotating as either `${BOSH_TARGET}` or
-`${BOSH_ENVIRONMENT}`.
+found in the Terraform output for the Tooling environment as `tooling_bosh_static_ip`.
 
 ```sh
-./generate-bosh-certs.sh Tooling ${tooling_bosh_ip_address}
+./generate-bosh-certs.sh Tooling ${tooling_bosh_static_ip}
 ```
 
 Wait to deploy this BOSH until after Master BOSH deploys successfully and is
@@ -184,11 +182,11 @@ These deployments are deployed with the Tooling BOSH director.  In the
 [`cg-deploy-bosh`](https://github.com/18F/cg-deploy-bosh) repository, you will
 find a `generate-bosh-certs.sh`. Create a `./tmp` directory and run that script
 in there with the IP address for each BOSH (e.g. Development, Staging,
-Production). The IP address can be found in the secrets file you're rotating as
-either `${BOSH_TARGET}` or `${BOSH_ENVIRONMENT}`.
+Production). The IP addresses can be found in the Terraform output for each
+environment as `bosh_static_ip`.
 
 ```sh
-./generate-bosh-certs.sh Development ${development_bosh_ip_address}
-./generate-bosh-certs.sh Staging ${staging_bosh_ip_address}
-./generate-bosh-certs.sh Production ${production_bosh_ip_address}
+./generate-bosh-certs.sh Development ${development_bosh_static_ip}
+./generate-bosh-certs.sh Staging ${staging_bosh_static_ip}
+./generate-bosh-certs.sh Production ${production_bosh_static_ip}
 ```
