@@ -148,8 +148,9 @@ without data loss_ on the other.
 
 You will need to coordinate these changes with secrets and passphrase changes
 for various other deployments. You can [reference the list of external
-clients](https://github.com/18F/cg-deploy-cf/blob/master/cf-secrets-example.external.yml#L60-L87)
-in the `cf-secrets.external.yml` example file in the `cg-deploy-cf` repository
+clients](https://github.com/18F/cg-deploy-cf/blob/master/cf-properties.yml)
+in the `cf-properties.yml` file in the `cg-deploy-cf` repository under the
+`properties.uaa.clients.*` YAML stanza.
 
 You can search through the `cg-deploy-*` repositories to find which client secret goes
 with which deployment. If you have all the repositories cloned locally, you can
