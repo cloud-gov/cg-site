@@ -24,7 +24,7 @@ that will requires a secrets rotation.
 It's important that you rotate access to the platform first. This can be
 categorized with three different types of secrets.
 
-1. Remove access to Ops UAA
+1. [Remove access to Ops UAA]({{< relref "docs/ops/managing-users.md#removing-admins" >}})
 1. [Rotate `cg-common` passphrases](#rotate-secrets-passphrases)
 1. [Rotate CF deployment users](#rotate-cf-deployment-users)
 1. [Rotate all IAM Users]({{< relref "docs/ops/runbook/rotating-iam-users.md" >}})
