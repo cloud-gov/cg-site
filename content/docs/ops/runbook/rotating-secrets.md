@@ -91,32 +91,26 @@ starts with `common-*`.
 
 ### Downloading all pipelines and cg-common resources
 
-The following commands will create an audit file name `all-secrets-list.txt` and
-individual `*.pipeline.yml` files for each pipeline it finds a `cg-common`
-resource for. Use this file to build and track your progress on passphrase
-rotation. Replace the `--target fr` with the correct name for your Concourse
-target (e.g. `fly targets`).
+Leverage the Concourse Credentials bucket to update secrets passphrases. You can
+verify generate a list of all passphrases that need to be updated by querying
+Concourse. Though, every pipeline's `credentials.yml` must be updated and uploaded
+from that bucket in order to sync work across team members.
+
+Gather a list of all the pipelines currently deployed from Concourse.
 
 ```sh
-for pipeline in $( fly --target fr pipelines |  grep -vE 'yes.+no' |  grep -Eo '^[a-z0-9\-]+' )
-do
-  fly --target fr get-pipeline --pipeline "${pipeline}" | \
-  spruce json | \
-  jq -r -e '
-    .resources[] |
-    select( .type == "cg-common" )
-  '
-  if [ $? -eq 0 ]
-  then
-    echo "${pipeline}"
-    echo "===============Workspace================"
-    echo
-    echo "========================================"
-    echo
-    fly --target fr get-pipeline --pipeline ${pipeline} > ${pipeline}.pipeline.yml
-  fi
-done | tee all-secrets-list.txt
+fly --target fr pipelines | grep -Eo '^[a-z0-9\-]+'
 ```
+
+Match this audit of active pipelines with those from Concourse credentials.
+
+```sh
+aws s3 ls s3://concourse-credentials/
+```
+
+Names found in the S3 bucket reference the name of the GitHub repository so it
+is necessary to add a prefix of `cg-` to the pipelines returned from `fly
+pipelines`.
 
 ### Reviewing the cg-common resources file
 
@@ -124,24 +118,21 @@ Now open the `all-secrets-list.txt` file in a text editor. You will be using
 this file to create the following sets of commands to perform the secrets
 passphrase rotation.
 
-- **Get** the completed pipeline and `source` information for `cg-common` resources.
+- **Get** the pipeline and `source` information for `cg-common` resources.
+- **Download** Concourse credentials in order to fly the new pipeline
 - **Download** the encrypted secrets file(s) using the `source` information.
 - **Decrypt** the secrets file(s) using the `secrets_passphrase`.
 - **Generate** a new `secrets_passphrase` using `$CG_SCRIPTS/generate-passphrase`.
 - **Encrypt** the secrets file(s) using the generated `secrets_passphrase`.
 - **Edit** the downloaded completed pipeline using `sed` to replace the previous
   `secrets_passphrase` with the current `secrets_passphrase`.
-- **Set** the pipeline using the edited completed pipeline, verify that the
+- **Set** the pipeline using the edited Concourse credentials, verify that the
   `secrets_passphrase` are being updated in the pipeline.
+- **Upload** Concourse credentials to the appropriate file path in the Concourse
+  credentials bucket.
 - **Upload** the encrypted secrets file(s).
 
 ### Running through the steps above using boilerplate
-
-The example below is meant to be used as a boilerplate to help rotating the
-passphrases manually. Below you will find guidance for following the steps from
-above using the contents from `all-secrets-list.txt`. Paste this boilerplate
-into the file between the `===` lines under each `deployment name: ` line in the
-`all-secrets-list.txt` file.
 
 Please reference [secret key management]({{< relref "docs/ops/secrets.md" >}})
 for more information on what `$CG_PIPELINE/decrypt.sh` and `$CG_PIPELINE/encrypt.sh`
@@ -166,15 +157,14 @@ PASSPHRASE="${new_passphrase}" \
 $CG_PIPELINE/encrypt.sh;
 
 # Edit the downloaded pipeline and replace the old_passphrase with the new_passphrase.
-sed -i -- \
-'s/old_passphrase/new_passphrase/' \
-${deploy_pipeline_name}.yml;
+sed -i -- 's/old_passphrase/new_passphrase/' credentials.yml;
 
-# Set the pipeline with the newly updated properties ( the diff should show the secrets_passphrases being updated ).
+# Set the pipeline with the newly updated properties ( the diff only shows the secrets_passphrases being updated ).
 fly --target fr \
 set-pipeline \
 --pipeline ${deploy_pipeline_name} \
---config=${deploy_pipeline_name}.yml;
+--config=pipeline.yml;
+--load-vars-from=credentials.yml;
 
 # Upload the secrets file.
 aws s3 cp \
