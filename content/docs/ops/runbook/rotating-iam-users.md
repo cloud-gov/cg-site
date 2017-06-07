@@ -1,8 +1,9 @@
 ---
 menu:
   docs:
-    parent: operations
-title: Rotating IAM users with Terraform
+    parent: runbook
+
+title: Rotating Secrets II - IAM users via Terraform
 ---
 
 ### IAM Users infrastructure as a code with Terraform

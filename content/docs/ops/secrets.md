@@ -46,7 +46,7 @@ Once the key is uploaded to AWS, the [cf-secrets.yml](https://github.com/18F/cg-
 
 #### Dealing with secrets
 
-Substitute `cf.yml` in the following steps for the relevant file.
+Substitute `cf.main.yml` in the following steps for the relevant file.
 
 
 #### UAA credentials
@@ -66,21 +66,40 @@ All UAA clients and users and associated credentials should be created via the C
 
     ```bash
     mkdir -p tmp
-    aws s3 cp s3://cloud-gov-varz/cf.yml tmp/cf.yml.enc --profile govcloud
+    aws s3 cp s3://cloud-gov-varz/cf.main.yml tmp/cf.main.yml.enc --profile govcloud
     ```
 
 1. Get the encryption passphrase.
-    1. View the `deploy-cf` pipeline configuration.
+    1. View the `deploy-cf` pipeline configuration for any of the `common-*`
+       environments. The following command outputs all the `cg-common`
+       resources. You can modify the test for `test("common-")` to grab specific
+       credentials about each resource.
 
         ```bash
-        fly -t <target> get-pipeline -p deploy-cf | less
+        fly --target <target> get-pipeline --pipeline deploy-cf | \
+        spruce json | \
+        jq -r '.resources[] | select(.name | test("common-"))'
         ```
 
-    1. Grab the `secrets_passphrase` under the `common-prod` section.
+    1. Grab the `secrets_passphrase` under the **common-prod** resource. The
+       following command grabs just the **common-prod** resource and parses out
+       the `secrets_passphrase` found in the `pipeline.yml` file for
+       `cg-deploy-cf`. This is useful for feeding this value to other commands
+       without visually exposing the secret in your terminal.
+
+        ```bash
+        fly --target <target> get-pipeline --pipeline deploy-cf | \
+        spruce json | \
+        jq -r '.resources[] | select(.name | test("common-prod")) | .sources.secrets_passphrase'
+        ```
+
 1. Decrypt the secrets file.
 
     ```bash
-    INPUT_FILE=tmp/cf.yml.enc OUTPUT_FILE=tmp/cf.yml PASSPHRASE=... ./decrypt.sh
+    INPUT_FILE=tmp/cf.main.yml.enc
+    OUTPUT_FILE=tmp/cf.main.yml
+    PASSPHRASE=$(fly --target <target> get-pipeline --pipeline deploy-cf | spruce json | jq -r '.resources[] | select(.name | test("common-prod")) | .sources.secrets_passphrase')
+    ./decrypt.sh
     ```
 
 1. Don't leave the secrets lying around (for security reasons, and because they get stale).
@@ -91,19 +110,22 @@ All UAA clients and users and associated credentials should be created via the C
 
 ##### Change secrets
 
-1. Post in [#cg-platform](https://gsa-tts.slack.com/messages/cg-platform/) saying you're updating `cf.yml`.
+1. Post in [#cg-platform](https://gsa-tts.slack.com/messages/cg-platform/) saying you're updating `cf.main.yml`.
 1. Follow the decryption steps above, up until the cleanup.
-1. Modify the `cf.yml` with the new values.
+1. Modify the `cf.main.yml` with the new values.
 1. Re-encrypt the file.
 
     ```bash
-    INPUT_FILE=tmp/cf.yml OUTPUT_FILE=tmp/cf.yml.enc-new PASSPHRASE=... ./encrypt.sh
+    INPUT_FILE=tmp/cf.main.yml
+    OUTPUT_FILE=tmp/cf.main.yml.enc
+    PASSPHRASE=$(fly --target <target> get-pipeline --pipeline deploy-cf | spruce json | jq -r '.resources[] | select(.name | test("common-prod")) | .sources.secrets_passphrase')
+    ./encrypt.sh
     ```
 
 1. Copy the new file up to S3.
 
     ```bash
-    aws s3 cp tmp/cf.yml.enc-new s3://cloud-gov-varz/cf.yml --profile govcloud --sse AES256
+    aws s3 cp tmp/cf.main.yml.enc-new s3://cloud-gov-varz/cf.main.yml --profile govcloud --sse AES256
     ```
 
 1. Clean up the secrets.
