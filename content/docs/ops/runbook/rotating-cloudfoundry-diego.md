@@ -127,6 +127,8 @@ without data loss.
 1. `uaa.clients.*.secrets` properties need to be coordinated across various Bosh
    deployments and cloud.gov apps or service brokers.
 1. `login.smtp.*` properties for Mandrill.
+1. `uaa.scim.users.broker-deployer` secret needs to be coordinated across our
+   Service Broker deployments for cloud.gov.
 
 #### Metadata and properties for external SAML providers
 
@@ -167,10 +169,6 @@ client_name='example';
 open "https://github.com/search?q=user%3A18F+cg-deploy+%22${client_name}%22&type=Code"
 find ${path_to_local_cg_repositories} -d 2 | xargs ack -n -i "(client.+: ${client_name})" -A2 -B2
 ```
-
-- [18F/cg-deploy-logsearch](https://github.com/18F/cg-deploy-logsearch)
-  - `kibana_oauth2_client:`
-  - `logsearch_firehose_ingestor:`
 
 ## Recreating the Smoke Tests VMs
 
