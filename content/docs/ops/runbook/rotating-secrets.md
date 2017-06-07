@@ -91,11 +91,11 @@ starts with `common-*`.
 
 ### Downloading all pipelines and cg-common resources
 
-The following command will create an audit file name `all-secrets-list.txt` and
+The following commands will create an audit file name `all-secrets-list.txt` and
 individual `*.pipeline.yml` files for each pipeline it finds a `cg-common`
 resource for. Use this file to build and track your progress on passphrase
 rotation. Replace the `--target fr` with the correct name for your Concourse
-target.
+target (e.g. `fly targets`).
 
 ```sh
 for pipeline in $( fly --target fr pipelines |  grep -vE 'yes.+no' |  grep -Eo '^[a-z0-9\-]+' )
@@ -104,18 +104,13 @@ do
   spruce json | \
   jq -r -e '
     .resources[] |
-    select(
-      .name |
-      test( "common-" )
-    ) |
-    select(
-      .type |
-      test( "common" )
-    )
+    select( .type == "cg-common" )
   '
   if [ $? -eq 0 ]
   then
-    echo "^^^^^   ${pipeline}"
+    echo "${pipeline}"
+    echo "===============Workspace================"
+    echo
     echo "========================================"
     echo
     fly --target fr get-pipeline --pipeline ${pipeline} > ${pipeline}.pipeline.yml
