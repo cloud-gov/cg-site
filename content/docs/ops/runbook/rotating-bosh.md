@@ -18,7 +18,7 @@ repository along with the rest of this guide.
 ### Agent limitations when updating BOSH
 
 The following should be referenced throughout the various deployments. [According
-to the BOSH development team](https://cloudfoundry.slack.com/archives/C02HPPYQ2/p1492784585438034),
+to the BOSH development team](https://github.com/cloudfoundry/bosh/issues/1140),
 there is currently no way to update the BOSH password without recreating the
 virtual machines (VMs). This is easy enough to do with the BOSH CLI. It is a
 time-consuming process which recreates all of the VMs for a particular
