@@ -32,47 +32,6 @@ categorized with three different types of secrets.
 1. [Rotating Concourse]({{< relref "docs/ops/runbook/rotating-concourse.md" >}})
 1. [Rotating Cloud Foundry / Diego]({{< relref "docs/ops/runbook/rotating-cloudfoundry-diego.md" >}})
 
-## Rotate CF deployment users
-
-Some of our Concourse pipelines deploy to Cloud Foundry using cloud.gov service
-account deployers. In order to rotate these, you need to target the correct
-org and space in order to create the cloud.gov service deployer account
-instance.
-
-### Auditing all CF deployment users
-
-Use the `get-all-cf-deployers.sh` file in the
-[`cg-scripts`](https://github.com/18F/cg-scripts) repository to audit all of the
-CF users deploying to all environments using Concourse.
-
-The script outputs the login commands for all matching environments for both the
-deployer account and for operators using `--sso`. It's useful to run this
-command redirect the output to a file for the next steps.
-
-When rotating these accounts, you need ensure you don't delete the previous
-deployer service instance _until after_ the credentials have been successfully
-used in a deployment in order to minimize downtime.
-
-### Steps for rotating cloud.gov Service Account deployers
-
-Make sure that cloud.gov Service Account users are only used for basic `cf push`
-deployments. If you're deploying service brokers, read the [Rotate Secrets V CF
-external secrets section]({{< relref "docs/ops/runbook/rotating-cloudfoundry-diego.md" >}}).
-
-1. Target the appropriate org and space in the current environment.
-1. Check the services, if one exists for this deployer renamed it with a `_prev`
-   suffix for later deletion.
-   - `cf rename-service ${name_of_deployer} ${name_of_deployer}_prev`
-1. Create a new service instance.
-  - `cf create-service cloud-gov-service-account space-deployer "${name_of_deployer}"`
-1. Read the service instance details for the deployer.
-  - `cf service "${name_of_deployer}"`
-1. Open the Fugacious link and save the credentials locally in the `credentials.yml`
-  - `cf service ${name_of_deployer} | grep Dashboard | awk '{ print $2 }'`
-1. Refly the pipeline with updated credentials and start a new job.
-1. Delete the `${name_of_deployer}_prev` service account deployer.
-   - `cf delete-service ${name_of_deployer}_prev -f`
-
 ## Rotate secrets passphrases
 
 Create a new temporary directory as a workspace for all the secrets file(s) for
@@ -172,3 +131,44 @@ aws s3 cp \
 ${secrets_file}.yml.enc \
 s3://${bucket_name}/${secrets_file}.yml;
 ```
+
+## Rotate CF deployment users
+
+Some of our Concourse pipelines deploy to Cloud Foundry using cloud.gov service
+account deployers. In order to rotate these, you need to target the correct
+org and space in order to create the cloud.gov service deployer account
+instance.
+
+### Auditing all CF deployment users
+
+Use the `get-all-cf-deployers.sh` file in the
+[`cg-scripts`](https://github.com/18F/cg-scripts) repository to audit all of the
+CF users deploying to all environments using Concourse.
+
+The script outputs the login commands for all matching environments for both the
+deployer account and for operators using `--sso`. It's useful to run this
+command redirect the output to a file for the next steps.
+
+When rotating these accounts, you need ensure you don't delete the previous
+deployer service instance _until after_ the credentials have been successfully
+used in a deployment in order to minimize downtime.
+
+### Steps for rotating cloud.gov Service Account deployers
+
+Make sure that cloud.gov Service Account users are only used for basic `cf push`
+deployments. If you're deploying service brokers, read the [Rotate Secrets V CF
+external secrets section]({{< relref "docs/ops/runbook/rotating-cloudfoundry-diego.md" >}}).
+
+1. Target the appropriate org and space in the current environment.
+1. Check the services, if one exists for this deployer renamed it with a `_prev`
+   suffix for later deletion.
+   - `cf rename-service ${name_of_deployer} ${name_of_deployer}_prev`
+1. Create a new service instance.
+  - `cf create-service cloud-gov-service-account space-deployer "${name_of_deployer}"`
+1. Read the service instance details for the deployer.
+  - `cf service "${name_of_deployer}"`
+1. Open the Fugacious link and save the credentials locally in the `credentials.yml`
+  - `cf service ${name_of_deployer} | grep Dashboard | awk '{ print $2 }'`
+1. Refly the pipeline with updated credentials and start a new job.
+1. Delete the `${name_of_deployer}_prev` service account deployer.
+   - `cf delete-service ${name_of_deployer}_prev -f`
