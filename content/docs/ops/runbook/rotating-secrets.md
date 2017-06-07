@@ -57,7 +57,7 @@ used in a deployment in order to minimize downtime.
 
 Make sure that cloud.gov Service Account users are only used for basic `cf push`
 deployments. If you're deploying service brokers, read the [Rotate Secrets V CF
-external secrets section]({{< relref "docs/ops/runbook/rotating-]rotating-cloudfoundry-diego.md" >}}).
+external secrets section]({{< relref "docs/ops/runbook/rotating-cloudfoundry-diego.md" >}}).
 
 1. Target the appropriate org and space in the current environment.
 1. Check the services, if one exists for this deployer renamed it with a `_prev`
