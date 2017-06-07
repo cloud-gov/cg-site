@@ -13,10 +13,15 @@ You can set up your cloud.gov application to communicate with any external servi
 
 ## Restricting network exposure of an external service 
 
-Some service providers filter clients based on IP ranges to minimize the surface area of their service on the open internet. If your service provider requires this, you can provide the cloud.gov egress addresses to the people who handle network security for the service. All traffic from cloud.gov-hosted applications will originate from these IP ranges:
+Some service providers filter clients based on IP ranges to minimize the surface area of their service on the open internet. If your service provider requires this, you can provide the cloud.gov egress addresses below to the people who handle network security for the service. 
+
+**Note:** Filtering by IP address **alone** will only ensure that traffic is originating from a cloud.gov application. It provides no guarantee that the traffic is from _your_ application. Applications from other agencies and [sandbox accounts]({{< relref "overview/pricing/free-limited-sandbox.md" >}}) will also originate from the same addresses.
+
+
+### cloud.gov egress addresses
+All traffic from cloud.gov-hosted applications originates from these IP ranges:
 
 * `52.222.122.97/32`
 * `52.222.123.172/32`
 
-**Note:** Filtering by IP address **alone** will only ensure that traffic is originating from a cloud.gov application. It provides no guarantee that the traffic is from _your_ application. Applications from other agencies and [sandbox accounts]({{< relref "overview/pricing/free-limited-sandbox.md" >}}) will also originate from the same addresses.
 
