@@ -18,7 +18,7 @@ Some service providers filter clients based on IP ranges to minimize the surface
 **Note:** Filtering by IP address **alone** will only ensure that traffic is originating from a cloud.gov application. It provides no guarantee that the traffic is from _your_ application. Applications from other agencies and [sandbox accounts]({{< relref "overview/pricing/free-limited-sandbox.md" >}}) will also originate from the same addresses.
 
 
-### cloud.gov egress addresses
+### cloud.gov egress ranges
 All traffic from cloud.gov-hosted applications originates from these IP ranges:
 
 * `52.222.122.97/32`
