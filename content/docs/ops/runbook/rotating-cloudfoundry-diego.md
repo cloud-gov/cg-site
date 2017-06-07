@@ -118,9 +118,9 @@ need to follow the _Security Configuration for Consul_.
 
 ### External secrets (external.yml)
 
-External secrets fall into a few categories which range from _rotatable_ with
-coordination with other cloud.gov deployments on one end and _non-rotatable_
-without data loss.
+External secrets fall into a spectrum categories which ranges from _rotatable
+with coordination_ with other cloud.gov deployments on one end and _non-rotatable
+without data loss_ on the other.
 
 #### Properties used in other deployments
 
@@ -130,13 +130,6 @@ without data loss.
 1. `uaa.scim.users.broker-deployer` secret needs to be coordinated across our
    Service Broker deployments for cloud.gov.
 
-#### Metadata and properties for external SAML providers
-
-1. `login.providers.*` metadata along with `login.saml.*` properties for
-   certificates and keys.
-    - The metadata comes from our external SAML providers. [These properties
-      cannot be rotated without downtime.](https://www.pivotaltracker.com/n/projects/997278/stories/142082611).
-
 #### New Relic external accounts
 
 1. `collector.newrelic_insights.*` properties NewRelic license keys and
@@ -145,17 +138,21 @@ without data loss.
    configuration.
 1. `uaa.newrelic.*` properties NewRelic license keys and configuration.
 1. `newrelic.*` properties NewRelic license keys and configuration.
-- Non-rotatable properties
-    1. `cc.db_encryption_key` **cannot be rotated** once set on a running CF deployment.
-        - There is currently no way to rotate this encryption key for the Cloud
-          Controller database.
+
+#### Non-rotatable properties
+1. `cc.db_encryption_key` **cannot be rotated** once set on a running CF deployment.
+    - There is currently no way to rotate this encryption key for the Cloud
+      Controller database.
+1. `login.providers.*` metadata along with `login.saml.*` properties for
+   certificates and keys.
+    - The metadata comes from our external SAML providers. [These properties
+      cannot _currently_ be rotated without downtime](https://www.pivotaltracker.com/n/projects/997278/stories/142082611).
 
 #### Rotating external UAA client secrets
 
-When deploying `uaa.clients.*.secret` properties, it takes about 10 minutes to
-perform a single client secret update. You will need to coordinate these changes
-with secrets and passphrase changes for various other deployments. You can
-[reference the list of external clients](https://github.com/18F/cg-deploy-cf/blob/master/cf-secrets-example.external.yml#L60-L87)
+You will need to coordinate these changes with secrets and passphrase changes
+for various other deployments. You can [reference the list of external
+clients](https://github.com/18F/cg-deploy-cf/blob/master/cf-secrets-example.external.yml#L60-L87)
 in the `cf-secrets.external.yml` example file in the `cg-deploy-cf` repository
 
 You can search through the `cg-deploy-*` repositories to find which client secret goes

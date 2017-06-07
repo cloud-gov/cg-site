@@ -55,6 +55,10 @@ used in a deployment in order to minimize downtime.
 
 ### Steps for rotating cloud.gov Service Account deployers
 
+Make sure that cloud.gov Service Account users are only used for basic `cf push`
+deployments. If you're deploying service brokers, read the [Rotate Secrets V CF
+external secrets section]({{< relref "docs/ops/runbook/rotating-]rotating-cloudfoundry-diego.md" >}}).
+
 1. Target the appropriate org and space in the current environment.
 1. Check the services, if one exists for this deployer renamed it with a `_prev`
    suffix for later deletion.
@@ -65,11 +69,6 @@ used in a deployment in order to minimize downtime.
   - `cf service "${name_of_deployer}"`
 1. Open the Fugacious link and save the credentials locally in the `credentials.yml`
   - `cf service ${name_of_deployer} | grep Dashboard | awk '{ print $2 }'`
-1. If the deployer user is used for more than a `cf push`, give it the proper
-  `cloud_controller.admin` scope manually using `uaac`. Otherwise it will fail
-  in the pipeline job in Concourse. Make sure you authenticate with the correct
-  UAA server when escalating the scopes of the deployer user.
-     - `uaac member add cloud_controller.admin ${guid_of_deployer}`
 1. Refly the pipeline with updated credentials and start a new job.
 1. Delete the `${name_of_deployer}_prev` service account deployer.
    - `cf delete-service ${name_of_deployer}_prev -f`
