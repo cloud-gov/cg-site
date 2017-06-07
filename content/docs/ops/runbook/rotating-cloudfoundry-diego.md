@@ -46,12 +46,8 @@ $ fly -t fr get-pipeline --pipeline deploy-cf | \
 
 1. Rotate all UAA user passwords with passwords matching the UAA restrictions
    set in [the spec](https://github.com/18F/uaa-customized-boshrelease/) for our
-   `uaa-customized-boshrelease`.
-    - `uaa.password.policy.minLength`
-    - `uaa.password.policy.requireUpperCaseCharacter`
-    - `uaa.password.policy.requireLowerCaseCharacter`
-    - `uaa.password.policy.requireDigit`
-    - `uaa.password.policy.requireSpecialCharacter`
+   `uaa-customized-boshrelease`. Be sure to match these UAA restrictions as it
+   can cause a stalled deployment when the users cannot be set appropriately.
 1. Rotate all the `uaa.clients.*` secrets.
     - For `uaa.clients.doppler` change `loggregator.uaa.client_secret` as well.
     - For `uaa.clients.tcp_emitter` change `acceptance_tests.oauth_password` as well.
