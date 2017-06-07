@@ -84,9 +84,11 @@ and updated before unpausing them again.
 
 #### Finding deployments with BOSH dependencies
 
-Search GitHub for the `BOSH_TARGET` and `BOSH_ENVIRONMENT` with a `YAML`
-filetype to find all the different deployments that will need to be paused and
-updated after all the Bosh deployments are
+Create a jumpbox for each environment and run `bosh-cli deployments` to get a
+list of all the deployments that will require pausing in Concourse. This list
+can be cross-referenced with the following searchings on searches on GitHub for
+the `BOSH_TARGET` and `BOSH_ENVIRONMENT` with a `YAML` filetype to find all the
+different deployments
 
 ```bash
 open \
