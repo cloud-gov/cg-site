@@ -114,22 +114,6 @@ these steps.
 Besides certificates, all secrets in each BOSH deployment can be generated and
 replaced or can be updated from [rotated IAM users]({{< relref "docs/ops/runbook/rotating-iam-users.md" >}}).
 
-#### Validating BOSH deployments
-
-Each BOSH deployment contains a set a releases that is uploaded to it from the
-`deploy-bosh` pipeline. After a successful deployment of BOSH in a given
-environment, run the `common-releases-${bosh_environment}` job in Concourse.
-
-```sh
-fly --target fr \
-    trigger-job \
-    --job deploy-bosh/common-releases-${bosh_environment} \
-    --watch
-```
-
-Run this step after each successful BOSH rotation deployment. If it completes
-without errors, BOSH has been successfully rotated and deployed.
-
 #### Deploying Master BOSH
 
 Start with the Master bosh deployment and secrets. This will require that you
