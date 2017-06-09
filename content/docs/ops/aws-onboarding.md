@@ -13,6 +13,20 @@ While we try to minimize interaction with AWS directly (explained in next sectio
 * **Read-only accounts:** This is provided to GSA Security staff, who need access for incident response.
 * **Indirect access through jumpboxes:** While the remainder of the Atlas team isn't given an AWS IAM account directly, they are able to SSH in to access the various BOSH machines by creating ephemeral jumpboxes. See the [Troubleshooting BOSH](../troubleshooting-bosh/) page for more information.
 
+#### Restoring access for team members
+
+If cloud.gov team members have lost access to their MFA application or need to
+reset their password, verify their identity and coordinate or pair with them.
+
+1. Find their user in AWS console.
+1. Delete any AWS access keys they may have in their account.
+1. Remove their MFA device.
+1. Reset their password and download the CSV from Amazon.
+1. Use https://fugacious.18f.gov to send them their credentials.
+  - Set the expiration to 2 views / 12 hours.
+1. Slack DM the Fugacious link to them.
+  - Remind them to set their two-factor authentication via MFA device.
+
 ### Changing AWS configuration
 
 As mentioned previously, the cloud.gov team tries to minimize the amount of direct access and manipulation made to AWS directly, instead favoring automation and configuration-as-code through [BOSH](http://bosh.io/) and [Terraform](https://www.terraform.io/). Terraform is used to do the bootstrapping of the AWS environment—this information can be found in the [cg-provision](https://github.com/18F/cg-provision) repository. This includes:
