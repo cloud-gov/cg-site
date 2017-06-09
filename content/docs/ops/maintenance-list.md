@@ -8,6 +8,8 @@ title: Ongoing platform maintenance
 The platform requires regular support and maintenance activities to remain in a 
 compliant state. If you are on support and you can’t complete any of the items 
 personally, you are responsible for ensuring that an appropriate person does it.
+If you haven't already reached out on Slack, reach out during standup to get
+visibility with the people who might best help.
 
 # Is it your first day of support?
 
@@ -87,7 +89,8 @@ for the following events:
 - UpdateTrail
 
 If you observe any non-Terraform activity, discuss the event(s) with the 
-indicated cloud.gov operator(s) and if necessary follow the 
+indicated [cloud.gov operator(s)](https://docs.google.com/spreadsheets/d/1mW3tphZ98ExmMxLHPogSpTq8DzYr5Oh8_SHnOTvjRWM/edit) 
+and if necessary follow the 
 [Security Incident Response Guide]({{< relref "docs/ops/security-ir.md" >}}).
 
 ## Review vulnerability and compliance reports
