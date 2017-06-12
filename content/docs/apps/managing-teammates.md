@@ -70,4 +70,4 @@ If you're an Org Manager, you can change your teammate's roles for your org.
 
 First, log in to the [Dashboard](https://dashboard.fr.cloud.gov). Second, go to the organization where you have Org Manager permisions and you want to invite your teammate. 
 
-As long as you're an Org Manager, you will see a panel titled "Organization users". In the "Organization users" panel, you will notice a list of all the organization users and their organization roles. These roles can be changed by clicking the checkboxes beside their names.
+As an Org Manager, you will see a panel titled "Organization users". From there, you will notice a list of all the organization users and their organization roles. These roles can be changed by clicking the checkboxes beside their names.
