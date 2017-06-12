@@ -25,7 +25,7 @@ If you are an organization manager, you can invite teammates to cloud.gov direct
 
 First, log in to the [Dashboard](https://dashboard.fr.cloud.gov). Second, go to the organization where you have Org Manager permisions and you want to invite your teammate. 
 
-As long as you're an Org Manager, you will see a panel titled "Organization users". In the "Organization user" panel, submit the email address of the teammate you would like to invite to cloud.gov. After submission, your teammate will have a cloud.gov account and they will receive an email to confirm their login credentials.
+As an Org Manager, you will see a panel titled "Organization users". From there, submit the email address of the teammate you would like to invite to cloud.gov. After submission, your teammate will have a cloud.gov account and they will receive an email to confirm their login credentials.
 
 If you invited them with an agency email address and they're part of an agency that has automatic sandbox spaces, they'll also automatically get a sandbox space in their agency's cloud.gov org.
 
