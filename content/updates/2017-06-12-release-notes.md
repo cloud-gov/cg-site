@@ -6,8 +6,6 @@ title = "Platform Release Notes: June 12, 2017"
 Curious what’s new that you might find helpful as a cloud.gov application developer? Here are highlights from our platform updates over the past week and a half.
 <!--more-->
 
-This week was light on releases you'll notice as a customer because we spent a lot of time updating and fixing things that will help us better serve you going forward.
-
 ### Fixed
 
 - We finished migrating all tenants from East/West into GovCloud! Thank you to all our customers for their patience and cooperation in making this move successful.
