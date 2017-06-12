@@ -14,6 +14,12 @@ Quota modification is most commonly necessary for increasing their resource allo
     ```
 
 1. Find the quota name from the `quota:` property.
+1. View the current quota.
+
+    ```bash
+    cf quota <quota>
+    ```
+
 1. [Update the quota](https://docs.cloudfoundry.org/adminguide/quota-plans.html#update-quota).
 
     ```bash

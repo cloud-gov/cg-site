@@ -48,3 +48,20 @@ In this situation you have three options:
 1. Delete existing resources with `cf delete`, `delete-service`, `delete-route` or similar.
 2. Reconfigure individual existing [Application Quotas]({{< relref "docs/apps/limits.md" >}}) and redeploy.
 3. Request a quota change by [asking support](/help/).
+
+## How to look up your quota
+
+To view your current quota:
+
+1. List the details about the organization.
+
+    ```bash
+    cf org <org>
+    ```
+
+1. Find the quota name from the `quota:` property.
+1. View the current quota.
+
+    ```bash
+    cf quota <quota>
+    ```
