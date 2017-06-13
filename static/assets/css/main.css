@@ -71,3 +71,16 @@ blockquote li,
 blockquote::before {
   border-color: #d3d3d3; /* $color-mediumgray */
 }
+
+.env-commandline .env-specifier,
+.env-dashboard .env-specifier,
+.env-commandline .env-specifier a
+.env-dashboard .env-specifier a
+{
+  color: #333; /* $color-textblack */
+}
+
+.env-commandline::before,
+.env-dashboard::before {
+  border-color: #74B1DB;
+}
