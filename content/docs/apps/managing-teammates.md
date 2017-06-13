@@ -25,11 +25,11 @@ Org Managers can assign roles using the dashboard or command line. Space Manager
 
 If you're an Org Manager, go to your dashboard and click on the name of your org.
 
-Go to the organization where you have Org Manager permisions and you want to invite your teammate.
-
 ![User roles](/img/user-role-management.png)
 
-As an Org Manager, you will see a panel titled "Organization users". From there, you will notice a list of all the organization users and their organization roles. The user roles can be changed by clicking the checkboxes beside their names.
+Go to the organization where you have Org Manager permissions.
+
+On the Organization page, scroll down to the "Organization users" section. From there, you will notice a list of all the organization users and their organization roles. The user roles can be changed by clicking the checkboxes beside their names.
 
 {{% /dashboard %}}
 
