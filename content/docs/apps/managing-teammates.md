@@ -19,7 +19,7 @@ If you invited them with an agency email address and they're part of an agency t
 
 After a teammate gets a cloud.gov account, an Org Manager or Space Manager will need to give them roles in your orgs and spaces so they can collaborate with you. For details about how org and space roles and permissions work, see [Cloud Foundry roles and permissions](http://docs.cloudfoundry.org/concepts/roles.html#roles).
 
-There are two ways to add roles and permissions to teammates.
+Org managers can invite users and assign roles using the dashboard or command line. Space managers can invite users and assign roles using only the command line.
 
 {{% dashboard %}}
 
