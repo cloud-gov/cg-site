@@ -5,9 +5,7 @@ menu:
 title: Managing teammates
 ---
 
-## Add a teammate
-
-There are two ways to invite teammates into cloud.gov.
+## Invite a teammate
 
 ### Invite application
 
