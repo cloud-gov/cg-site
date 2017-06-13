@@ -23,6 +23,18 @@ After a teammate gets a cloud.gov account, an Org Manager or Space Manager will 
 
 There are two ways to add roles and permissions to teammates.
 
+{{% dashboard %}}
+
+If you're an Org Manager, you can change your teammate's roles for your org.
+
+Go to the organization where you have Org Manager permisions and you want to invite your teammate.
+
+![User roles](/img/user-role-management.png)
+
+As an Org Manager, you will see a panel titled "Organization users". From there, you will notice a list of all the organization users and their organization roles. The user roles can be changed by clicking the checkboxes beside their names.
+
+{{% /dashboard %}}
+
 {{% commandline %}}
 
 If you're an Org Manager or Space Manager, here's how to give your teammates roles for your orgs and spaces. You can check whether you're an Org Manager using `cf org-users <org>` and whether you're a Space Manager using `cf space-users <org> <space>`.
@@ -52,15 +64,3 @@ Decide which roles to give them. For a complete list of roles, see [the Cloud Fo
     cf set-org-role <email> <org> OrgAuditor
     ```
 {{% /commandline %}}
-
-{{% dashboard %}}
-
-If you're an Org Manager, you can change your teammate's roles for your org.
-
-Go to the organization where you have Org Manager permisions and you want to invite your teammate.
-
-![User roles](/img/user-role-management.png)
-
-As an Org Manager, you will see a panel titled "Organization users". From there, you will notice a list of all the organization users and their organization roles. The user roles can be changed by clicking the checkboxes beside their names.
-
-{{% /dashboard %}}
