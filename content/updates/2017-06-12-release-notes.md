@@ -8,8 +8,9 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
 
 ### Changed
 
-- [Fixed IP addresses for communicating with external apps](https://cloud.gov/docs/apps/static-egress/#cloud-gov-egress-addresses): Our customers often want cloud.gov apps that can talk to the outside and we now have an enabler to make that happen in a more secure way. Outbound traffic from cloud.gov comes from specific IP addresses to help customers open up a connection between cloud.gov and something hosted elsewhere.
-- We finished migrating all tenants from East/West into GovCloud! Thank you to all our customers for their patience and cooperation in making this move successful.
+- [Static IP addresses for communicating with external apps](https://cloud.gov/docs/apps/static-egress/#cloud-gov-egress-addresses): Outbound traffic from cloud.gov now comes from specific IP addresses to help customers open up a connection between cloud.gov and outside data centers.
+- We verified that all tenants were migrated from East/West into GovCloud! Thank you to all our customers for their patience and cooperation in making this move successful.
+- Make sure you upgrade your CloudFoundry CLI to [the latest version](https://github.com/cloudfoundry/cli/releases).
 
 ### Fixed
 
@@ -17,8 +18,12 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
 
 ### Platform releases
 
+cloud.gov now includes the following releases and upgrades. You will need to [restage your application](http://cli.cloudfoundry.org/en-US/cf/restage.html) to incorporate fixes and ensure you’re running the most recent language version supported by your buildpack.
+
+We upgraded the Cloud Foundry deployment to [v263](https://github.com/cloudfoundry/cf-release/releases/tag/v263).
+
+#### Additional upgrades
 - [RootFS cflinuxfs2 1.129.0](https://github.com/cloudfoundry/cflinuxfs2-rootfs-release/releases/tag/v1.129.0)
-- [CloudFoundry v263](https://github.com/cloudfoundry/cf-release/releases/tag/v263)
 - [Diego 1.18.0](https://github.com/cloudfoundry/diego-release/releases/tag/v1.18.0)
 - Stemcell 3312.28
 - 31 CVEs remediated
