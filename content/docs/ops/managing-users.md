@@ -5,7 +5,7 @@ menu:
 title: Managing users
 ---
 
-Only single sign-on user accounts are allowed. Service accounts, such as deployer credentials, are to be generated only via the [service account](https://cloud.gov/docs/services/cloud-gov-service-account/) managed service to ensure that they are scoped to a particular space with limited access.
+Only single sign-on user accounts and cloud.gov IDP accounts are allowed. Service accounts, such as deployer credentials, are to be generated only via the [service account](https://cloud.gov/docs/services/cloud-gov-service-account/) managed service to ensure that they are scoped to a particular space with limited access.
 
 No local accounts to UAA shall be created for user access.
 
@@ -15,15 +15,9 @@ The preferred way to add new users is to [invite them]({{< relref "docs/apps/man
 
 ## Changing passwords
 
-First ask the user **[to try resetting their own password]({{< relref "docs/getting-started/accounts.md#resetting-your-password" >}})**.
+Users should **[reset their own password]({{< relref "docs/getting-started/accounts.md#to-change-your-password" >}})**.
 
 If a user logs in using their agency's account system, the only way to reset that password is for them to use their agency's normal password reset process.
-
-If they log in with a cloud.gov account that has its own password (including `ORGNAME_deployer` accounts), you can [change their password for them](http://docs.cloudfoundry.org/adminguide/uaa-user-management.html#changing-passwords), using
-
-```bash
-uaac target uaa.cloud.gov
-```
 
 ## Resetting TOTP tokens
 
