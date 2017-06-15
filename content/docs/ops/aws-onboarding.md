@@ -22,10 +22,8 @@ reset their password, verify their identity and coordinate or pair with them.
 1. Delete any AWS access keys they may have in their account.
 1. Remove their MFA device.
 1. Reset their password and download the CSV from Amazon.
-1. Use https://fugacious.18f.gov to send them their credentials.
-  - Set the expiration to 2 views / 12 hours.
-1. Slack DM the Fugacious link to them.
-  - Remind them to set their two-factor authentication via MFA device.
+1. Use https://fugacious.18f.gov to send them their credentials. Set the expiration to 2 views / 12 hours.
+1. Slack DM the Fugacious link to them. Remind them to set their two-factor authentication via MFA device.
 
 ### Changing AWS configuration
 
