@@ -23,6 +23,16 @@ and [`#cg-platform-news`](https://gsa-tts.slack.com/messages/cg-platform-news/)
 - Meet with the previous support person and take responsibility for any open 
 support items they are still working on.
 
+## At least once during your week of support
+
+- Confirm that all AWS users have MFA configured. The following should return `[]`
+or the users that don't have MFA enabled:
+```shell
+users=$(aws iam list-users | jq '[.[]| .[] | select (.PasswordLastUsed) | .UserName] | sort')
+mfa_users=$(aws iam list-virtual-mfa-devices | jq '[.[]| .[].User.UserName]| sort')
+echo "{ \"users\": $users, \"mfa_users\": $mfa_users}" | jq '.users - .mfa_users'
+```
+
 # Daily maintenance checklist
 
 The tasks on this checklist should be performed each day.
@@ -30,7 +40,7 @@ The tasks on this checklist should be performed each day.
 ## PR as you go
 
 If you see a way to make this checklist better, just submit a PR to the 
-[cg-site](https://github.com/18F/cg-site) repo.
+[cg-site](https://github.com/18F/cg-site) repo for `content/docs/ops/maintenance-list.md`
 
 ## Ensure all VMs are running the current stemcell
 
