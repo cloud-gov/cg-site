@@ -23,6 +23,16 @@ and [`#cg-platform-news`](https://gsa-tts.slack.com/messages/cg-platform-news/)
 - Meet with the previous support person and take responsibility for any open 
 support items they are still working on.
 
+## At least once during your week of support
+
+- Confirm that all AWS users have MFA configured:
+```shell
+# compare list of active users 
+aws iam list-users | jq '.[]| .[] | select (.PasswordLastUsed) | .UserName'
+# to list of users with virtual MFA devices
+aws iam list-virtual-mfa-devices | jq '.[]| .[].User.UserName'
+```
+
 # Daily maintenance checklist
 
 The tasks on this checklist should be performed each day.
