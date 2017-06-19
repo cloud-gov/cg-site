@@ -8,17 +8,17 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
 
 ### Changed
 
-- [Static IP addresses for communicating with external apps](https://cloud.gov/docs/apps/static-egress/#cloud-gov-egress-addresses): Outbound traffic from cloud.gov now comes from specific IP addresses to help customers open up a connection between cloud.gov and outside data centers.
+- [Static IP addresses for communicating with external apps](docs/apps/static-egress/): Outbound traffic from cloud.gov now comes from specific IP addresses to help customers open up a connection between cloud.gov and outside data centers.
 - We verified that all tenants were migrated from East/West into GovCloud! Thank you to all our customers for their patience and cooperation in making this move successful.
 - Make sure you upgrade your CloudFoundry CLI to [the latest version](https://github.com/cloudfoundry/cli/releases).
 
 ### Fixed
 
-- Clarified documentation about deployer accounts: Previously actions from space-deployer service accounts displayed in logs as `devops@gsa.gov`. Now they display as the more specific and less confusing `service-account@gsa.gov`. [We've updated the documentation to reflect this](https://cloud.gov/docs/services/cloud-gov-service-account/).
+- Clarified documentation about deployer accounts: Previously actions from space-deployer service accounts displayed in logs as `devops@gsa.gov`. Now they display as the more specific and less confusing `service-account@gsa.gov`. [We've updated the documentation to reflect this](docs/services/cloud-gov-service-account/).
 
 ### Platform releases
 
-cloud.gov now includes the following releases and upgrades. You will need to [restage your application](http://cli.cloudfoundry.org/en-US/cf/restage.html) to incorporate fixes and ensure you’re running the most recent language version supported by your buildpack.
+cloud.gov now includes the following releases and upgrades. You will need to [restage your application](http://cli.cloudfoundry.org/en-US/cf/restage.html) to [incorporate fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) and ensure you’re running the most recent language version supported by your buildpack.
 
 We upgraded the Cloud Foundry deployment to [v263](https://github.com/cloudfoundry/cf-release/releases/tag/v263).
 
