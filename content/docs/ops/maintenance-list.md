@@ -92,10 +92,8 @@ aws cloudtrail lookup-events --lookup-attributes AttributeKey=EventName,Attribut
 These `EventNames` should be attributed to human individuals on the cloud.gov team:
 - ConsoleLogin
 
-All of human-generated events should be mapped to named users, e.g. `firstname.lastname`, and NOT to `Administrator`.
-The source IPs should be within the GSA CIDR range, and the dates and times should correspond to users' working hours.
-If you observe any activity outside of normal hours, or from unidentified IPs, discuss the event(s) with the
-indicated [cloud.gov operator(s)](https://docs.google.com/spreadsheets/d/1mW3tphZ98ExmMxLHPogSpTq8DzYr5Oh8_SHnOTvjRWM/edit)
+All human-generated events should be mapped to named users, e.g. `firstname.lastname`, and NOT to `Administrator`. 
+Discuss the event(s) with the indicated [cloud.gov operator(s)](https://docs.google.com/spreadsheets/d/1mW3tphZ98ExmMxLHPogSpTq8DzYr5Oh8_SHnOTvjRWM/edit)
 
 All events in the following `EventNames` should be attributed to Terraform.
 - DeleteTrail
@@ -112,7 +110,7 @@ All events in the following `EventNames` should be attributed to Terraform.
 
 Terraform runs on instances that use instance profile roles, so authorized events will include:
 * a user name like `i-17deadbeef1234567`
-* a source IP address with AWS.
+* a source IP address within AWS.
 * an AWS access key starting with `ASIA`
 
 If you observe any non-Terraform activity, discuss the event(s) with the 
