@@ -128,5 +128,7 @@ associated posts in
 First-tier support may also ask you for pairing time to work out responses 
 together.
 
-* People with @gsa.gov emails can't receive email via Zendesk, so we have to 
+`*` People with @gsa.gov emails can't receive email via Zendesk, so we have to 
 email them via the [cloud-gov-support Google Group instead](https://groups.google.com/a/gsa.gov/forum/#!forum/cloud-gov-support).
+
+See also: [Detailed guidance on working with our support tools](https://docs.google.com/document/d/1QXZvcUl-6gtI7jEQObXV9FyiIpJC-Fx1R7RzB0C6PHM/edit#heading=h.80zn694rriw3).
