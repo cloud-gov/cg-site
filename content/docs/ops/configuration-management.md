@@ -47,8 +47,6 @@ is encouraged and qualifies as a review. Review should include assessment of arc
 
 ![Pipeline Example](/img/pipeline-example.png)
 
-A more detailed example of this process can be seen in [Updating Cloud Foundry]({{< relref "updating-cf.md" >}}).
-
 ## What if a configuration changed and it is not in Configuration Management?
 If possible, Configuration Management tools need to be set up to always roll back to a known state. Other than that, these tools need to be able to "recreate" all settings from the known configurations.
 
