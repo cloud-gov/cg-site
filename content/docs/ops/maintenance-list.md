@@ -81,26 +81,42 @@ that cards to fix alerts are prioritized properly.
 
 ## Review AWS CloudTrail events
 
-Use the [AWS Console](http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-console.html) 
-to [review API activity history](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html) 
-for the following events:
+Use the [AWS Console](http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-console.html)
+to [review API activity history](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html)
+for the _EventNames_ listed below.
+Or, use the AWS CLI with the appropriate `$event_name`, and parse the emitted JSON:
+```shell
+aws cloudtrail lookup-events --lookup-attributes AttributeKey=EventName,AttributeValue=$event_name
+```
 
-- AuthorizeSecurityGroupEgress
-- AuthorizeSecurityGroupIngress
+These `EventNames` should be attributed to human individuals on the cloud.gov team:
 - ConsoleLogin
-- CreatePolicy
-- CreateSecurityGroup
+
+All human-generated events should be mapped to named users, e.g. `firstname.lastname`, and NOT to `Administrator`. 
+Discuss the event(s) with the indicated [cloud.gov operator(s)](https://docs.google.com/spreadsheets/d/1mW3tphZ98ExmMxLHPogSpTq8DzYr5Oh8_SHnOTvjRWM/edit)
+
+All events in the following `EventNames` should be attributed to Terraform.
 - DeleteTrail
+- UpdateTrail
 - ModifyVpcAttribute
 - PutUserPolicy
 - PutRolePolicy
 - RevokeSecurityGroupEgress
 - RevokeSecurityGroupIngress
-- UpdateTrail
+- AuthorizeSecurityGroupEgress
+- AuthorizeSecurityGroupIngress
+- CreatePolicy
+- CreateSecurityGroup
+
+Terraform runs on instances that use instance profile roles, so authorized events will include:
+* a user name like `i-17deadbeef1234567`
+* a source IP address within AWS.
+* an AWS access key starting with `ASIA`
 
 If you observe any non-Terraform activity, discuss the event(s) with the 
-indicated [cloud.gov operator(s)](https://docs.google.com/spreadsheets/d/1mW3tphZ98ExmMxLHPogSpTq8DzYr5Oh8_SHnOTvjRWM/edit) 
-and if necessary follow the 
+indicated cloud.gov operator(s) (see above)
+
+If you're unable to ascertain an event was authorized, follow the 
 [Security Incident Response Guide]({{< relref "docs/ops/security-ir.md" >}}).
 
 ## Review vulnerability and compliance reports
