@@ -27,9 +27,9 @@ If you're an Org Manager, go to your dashboard and click on the name of your org
 
 ![User roles](/img/user-role-management.png)
 
-Go to the organization where you have Org Manager permissions.
+On the Organization page, scroll down to the "Organization users" section. This has a list of all the organization users and their organization roles. You can change the user roles by clicking the checkboxes beside their names.
 
-On the Organization page, scroll down to the "Organization users" section. From there, you will notice a list of all the organization users and their organization roles. The user roles can be changed by clicking the checkboxes beside their names.
+Note: If you are the only person in the organgization, you won't see a list of users - you'll just see "You are the only user in this organization".
 
 {{% /dashboard %}}
 
