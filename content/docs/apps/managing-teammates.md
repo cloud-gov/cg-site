@@ -23,7 +23,7 @@ Org Managers can assign roles using the dashboard or command line. Space Manager
 
 {{% dashboard %}}
 
-If you're an Org Manager, go to your dashboard and click on the name of your org.
+If you're an Org Manager, go to your [dashboard](https://dashboard.fr.cloud.gov/) and click on the name of your org.
 
 ![User roles](/img/user-role-management.png)
 
