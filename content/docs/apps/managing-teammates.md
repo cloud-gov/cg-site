@@ -17,9 +17,9 @@ If you invited them with an agency email address and they're part of an agency t
 
 ## Give roles to a teammate
 
-After a teammate gets a cloud.gov account, an Org Manager or Space Manager will need to give them roles in your orgs and spaces so they can collaborate with you. For details about how org and space roles and permissions work, see [Cloud Foundry roles and permissions](http://docs.cloudfoundry.org/concepts/roles.html#roles).
+After a teammate gets a cloud.gov account, an Org Manager or Space Manager will need to give them roles in your orgs and spaces so they can collaborate with you. For details about how org and space roles and permissions work, see [Cloud Foundry's documentation](http://docs.cloudfoundry.org/concepts/roles.html#roles).
 
-Org Managers can assign roles using the dashboard or command line. Space Managers can assign roles using the command line.
+Org Managers can assign roles using the [dashboard](https://dashboard.fr.cloud.gov/) or command line. Space Managers can assign roles using the command line.
 
 {{% dashboard %}}
 
@@ -29,7 +29,7 @@ If you're an Org Manager, go to your [dashboard](https://dashboard.fr.cloud.gov/
 
 On the Organization page, scroll down to the "Organization users" section. This has a list of all the organization users and their organization roles. You can change the user roles by clicking the checkboxes beside their names.
 
-Note: If you are the only person in the organization, you won't see a list of users - you'll just see "You are the only user in this organization".
+Note: If you are the only person in the organization, you won't see a list of users — you'll just see "You are the only user in this organization".
 
 {{% /dashboard %}}
 
