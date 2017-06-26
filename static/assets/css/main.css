@@ -81,7 +81,7 @@ blockquote::before {
 }
 
 .env-commandline::before{
-  border-color: #333;
+  border-color: #333; /* $color-textblack */
 }
 .env-dashboard::before {
   border-color: #74B1DB;
