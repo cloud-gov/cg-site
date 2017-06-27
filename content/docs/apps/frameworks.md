@@ -17,6 +17,10 @@ cloud.gov uses [buildpacks]({{< relref "docs/getting-started/concepts.md#buildpa
 
 cloud.gov supports applications written in Go, Java, Node.js, .NET Core, PHP, Python, and Ruby. cloud.gov also supports applications that rely on a static binary that uses the 64-bit Linux kernel ABI, or that consist of static HTML, CSS, and Javascript assets. See the [Cloud Foundry system (supported) buildpacks list](http://docs.cloudfoundry.org/buildpacks/#system-buildpacks) for details.
 
+## Examples
+
+Check out [cloud.gov's collection of Hello World applications](https://github.com/18F/cf-hello-worlds) and [Cloud Foundry's sample applications](https://github.com/cloudfoundry-samples) for examples in many different languages and frameworks, including [Drupal](https://github.com/18F/cf-ex-drupal), [WordPress](https://github.com/18F/cf-ex-wordpress) and [SuiteCRM](https://github.com/18F/cf-example-suitecrm).
+
 ## Other languages
 
 You can use a custom buildpack to support other languages. See [custom buildpacks]({{< relref "docs/apps/experimental/custom-buildpacks.md" >}}) for more information about this experimental feature.
@@ -26,7 +30,3 @@ Cloud Foundry has a list of [community buildpacks](http://docs.cloudfoundry.org/
 ## Cannot run
 
 cloud.gov cannot run applications that use .NET Framework, or application binaries that require access to Microsoft Windows kernel or system APIs.
-
-## Examples
-
-Check out the [Cloud Foundry sample applications](https://github.com/cloudfoundry-samples) and [cloud.gov's collection of Hello World applications](https://github.com/18F/cf-hello-worlds) for examples of applications in many different languages.
