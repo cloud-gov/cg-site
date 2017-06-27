@@ -21,7 +21,9 @@ topic to include your name as the support contact.
 - Join/unmute [`#cg-support`](https://gsa-tts.slack.com/messages/cg-support/) 
 and [`#cg-platform-news`](https://gsa-tts.slack.com/messages/cg-platform-news/)
 - Meet with the previous support person and take responsibility for any open 
-support items they are still working on.
+support items they are still working on. There is a standing support sync meeting 
+(Tuesday 4:30-5 pm ET) that you should join if you are rolling on or off support
+that week.
 
 ## At least once during your week of support
 
@@ -142,7 +144,7 @@ ensure the updated release is deployed to all required VMs.
 ## Review open support requests
 
 Review the "new" (yellow) and "open" (red) Zendesk tickets. First-tier support 
-(cloud.gov BU) has primary responsibility to do the work of answering these, and 
+(customer squad) has primary responsibility to do the work of answering these, and 
 you serve as second-tier support providing technical expertise. You're welcome 
 to reply to the customer with answers if you like (choose "pending" when you 
 submit the answer)*, but your main responsibility is to provide technical 
@@ -152,5 +154,7 @@ associated posts in
 First-tier support may also ask you for pairing time to work out responses 
 together.
 
-* People with @gsa.gov emails can't receive email via Zendesk, so we have to 
+`*` People with @gsa.gov emails can't receive email via Zendesk, so we have to 
 email them via the [cloud-gov-support Google Group instead](https://groups.google.com/a/gsa.gov/forum/#!forum/cloud-gov-support).
+
+See also: [Detailed guidance on working with our support tools](https://docs.google.com/document/d/1QXZvcUl-6gtI7jEQObXV9FyiIpJC-Fx1R7RzB0C6PHM/edit#heading=h.80zn694rriw3).
