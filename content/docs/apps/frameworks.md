@@ -19,7 +19,7 @@ cloud.gov supports applications written in Go, Java, Node.js, .NET Core, PHP, Py
 
 ## Examples
 
-You can explore example applications in many languages and frameworks:
+You can deploy example applications in many languages and frameworks:
 
 * [Hello worlds](https://github.com/18F/cf-hello-worlds): Java, Clojure, NodeJS, PHP, Flask (Python), Padrino (Ruby), Sinatra (Ruby)
 * [Drupal](https://github.com/18F/cf-ex-drupal)
