@@ -37,13 +37,14 @@ cf create-service cloud-gov-service-account space-auditor <SERVICE-INSTANCE-NAME
 
 ## Obtaining credentials
 
-Once you've created the service instance, you'll want to obtain the username and password from it:
+Once you've created the service instance, you'll want to obtain the username and password from it by creating a [service key](https://docs.cloudfoundry.org/devguide/services/service-keys.html):
 
-```sh
-cf service <SERVICE-INSTANCE-NAME>
+```bash
+cf create-service-key ${SERVICE_INSTANCE_NAME} ${SERVICE_KEY_NAME}
+cf service-key ${SERVICE_INSTANCE_NAME} ${SERVICE_KEY_NAME}
 ```
 
-This will display a link to a page on [Toaster](https://fugacious.18f.gov/) (Fugacious) which contains your credentials. Be sure to retrieve your credentials right away, since the link will only work for a brief length of time. Keep these credentials secure. If they’re compromised, the way to invalidate the credentials is to delete the service instance (you can create another, and it will have a fresh set of credentials). <!-- this advice should match on /docs/apps/continuous-deployment/ + /docs/services/cloud-gov-service-account/ + /docs/services/cloud-gov-identity-provider/ -->
+This will create a cloud.gov service account and make the credentials available to you via a service key. Keep these credentials secure. If they’re compromised, the way to invalidate the credentials is to delete the service key (you can create another, and it will have a fresh set of credentials). <!-- this advice should match on /docs/apps/continuous-deployment/ + /docs/services/cloud-gov-service-account/ + /docs/services/cloud-gov-identity-provider/ -->
 
 These credentials can be used with the `cf login` command in automated deployment scripts.
 

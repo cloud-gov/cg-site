@@ -36,13 +36,13 @@ Note: The user will be prompted to grant any permissions required by custom scop
 
 ## Obtaining credentials
 
-Once you've created the service instance, you'll want to obtain your client ID and client secret:
+Once you've created the service instance, you'll want to obtain your client ID and client secret by creating a [service key](https://docs.cloudfoundry.org/devguide/services/service-keys.html):
 
 ```sh
 cf service my-uaa-client
 ```
 
-This will display a link to a page on [Toaster](https://fugacious.18f.gov/) (Fugacious) which contains your credentials. Be sure to retrieve your credentials right away, since the link will only work for a brief length of time. Keep these credentials secure. If they’re compromised, the way to invalidate the credentials is to delete the service instance (you can create another, and it will have a fresh set of credentials). <!-- this advice should match on /docs/apps/continuous-deployment/ + /docs/services/cloud-gov-service-account/ + /docs/services/cloud-gov-identity-provider/ -->
+This will create a cloud.gov identity provider and make the credentials available to you via a service key. Keep these credentials secure. If they’re compromised, the way to invalidate the credentials is to delete the service instance (you can create another, and it will have a fresh set of credentials). <!-- this advice should match on /docs/apps/continuous-deployment/ + /docs/services/cloud-gov-service-account/ + /docs/services/cloud-gov-identity-provider/ -->
 
 ## More information
 
