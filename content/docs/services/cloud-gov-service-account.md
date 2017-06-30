@@ -21,30 +21,30 @@ Plan Name | Description | Price
 
 ## How to create an instance
 
-After you create one of these service instances, you will see a new "user" in your org and space with a name made of 36 letters, numbers, and dashes as its unique identifier, similar to `f6ab4cfb-6e6c-4b10-8585-3f39e740905c`. In your event logs, its actions will display as actions by `service-account@cloud.gov`.
+To create a service instance that can provision service accounts, run the following command:
 
-To create a service instance that can deploy applications, run the following command:
-
-```sh
-cf create-service cloud-gov-service-account space-deployer <SERVICE-INSTANCE-NAME>
+```bash
+cf create-service cloud-gov-service-account space-deployer my-service-account
 ```
 
 If your service account only requires read access and does not need the ability to deploy applications, use the `space-auditor` plan instead:
 
-```sh
-cf create-service cloud-gov-service-account space-auditor <SERVICE-INSTANCE-NAME>
+```bash
+cf create-service cloud-gov-service-account space-auditor my-service-account
 ```
 
 ## Obtaining credentials
 
-Once you've created the service instance, you'll want to obtain the username and password from it by creating a [service key](https://docs.cloudfoundry.org/devguide/services/service-keys.html):
+To create a service account, bind a [service key](https://docs.cloudfoundry.org/devguide/services/service-keys.html) to the service instance:
 
 ```bash
-cf create-service-key ${SERVICE_INSTANCE_NAME} ${SERVICE_KEY_NAME}
-cf service-key ${SERVICE_INSTANCE_NAME} ${SERVICE_KEY_NAME}
+cf create-service-key my-service-account my-service-key
+cf service-key my-service-account my-service-key
 ```
 
-This will create a cloud.gov service account and make the credentials available to you via a service key. Keep these credentials secure. If they’re compromised, the way to invalidate the credentials is to delete the service key (you can create another, and it will have a fresh set of credentials). <!-- this advice should match on /docs/apps/continuous-deployment/ + /docs/services/cloud-gov-service-account/ + /docs/services/cloud-gov-identity-provider/ -->
+This will create a cloud.gov service account and make the credentials available to you via a service key. Keep these credentials secure. If they’re compromised, the way to invalidate the credentials is to delete the service key (you can create another, and it will have a fresh set of credentials). Each service key that you bind to your instance creates a separate service account with different credentials; you can create as many services keys per instance as you like. <!-- this advice should match on /docs/apps/continuous-deployment/ + /docs/services/cloud-gov-service-account/ + /docs/services/cloud-gov-identity-provider/ -->
+
+After you create one of these service keys, you will see a new "user" in your org and space with a name made of 36 letters, numbers, and dashes as its unique identifier, similar to `f6ab4cfb-6e6c-4b10-8585-3f39e740905c`. In your event logs, its actions will display as actions by `service-account@cloud.gov`.
 
 These credentials can be used with the `cf login` command in automated deployment scripts.
 
