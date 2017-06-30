@@ -11,7 +11,7 @@ Not a guide for:
 
 * Hours outside of East Coast business hours -- out of scope for this document.
 * Security incidents -- switch to [security incident guide]({{< relref "docs/ops/security-ir.md" >}}).
-* Major service disruptions (more than 7 days of unexpected downtime or significantly reduced service) -- switch to [contingency plan]({{< relref "docs/ops/contingency-plan.md" >}}).
+* Major service disruptions (more than 30 minutes of unexpected downtime or significantly reduced service) -- switch to [contingency plan]({{< relref "docs/ops/contingency-plan.md" >}}).
 
 ## Threshold for "service disruption"
 
@@ -24,22 +24,20 @@ Examples:
 * Two or more teams using cloud.gov have reported the same non-trivial problem, which indicates it isn't just a problem with a customer application.
 * AWS or another service we depend on is causing problems for our users.
 
-
 ## How soon to post to Status Page
 
 As soon as possible. Goal: at most 15 minutes after the first cloud.gov team member notices the problem.
 
 ## Who is responsible for posting and updating
 
-* First person on the cloud.gov team who notices a problem is responsible for finding the right people to address it (can include themself).
-* Atlas person on support rotation should be the first person to begin addressing the technical issue (and the first person for non-Atlas people to ping for help with this). See the Atlas channel topic for the current person.
-* People with Status Page access: Aaron, Bret, Chris, James S, Josh, Marco, Adam, Roger, Steve.
+* First person on the cloud.gov team who notices a problem is responsible for finding the right people to address it (can include themself), including finding a person with Status Page access to post about it (can include themself).
+* Platform squad person on support rotation should be the first person to begin addressing the technical issue (and the first person for non-platform squad people to ping for help with this). See the platform squad channel topic for the current person.
 * A person should explicitly say “I'm taking care of Status Page for this” and continue being responsible for updates until they explicitly hand off that responsibility.
 
 ### Drafting and approval
 
-* **If you're Atlas/Navigator:** Draft and ping for comms help (Bret, Britta), but if they aren’t available within 5 minutes, just post it.
-* **If you're not:** Draft and ask for technical check before posting.
+* **If you're platform squad:** Draft and ping for comms help (Bret, Britta), but if they aren’t available within 5 minutes, just post it.
+* **If you're not:** Draft and ask platform squad for technical check before posting.
 
 [We have some templates and drafting space in this doc.](https://docs.google.com/document/d/1paDOxlB7GFItrEJ9pqPExApiAd4GeB_SpGR6Ronf4Lw/edit)
 
