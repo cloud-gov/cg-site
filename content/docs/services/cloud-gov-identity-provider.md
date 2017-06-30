@@ -16,6 +16,8 @@ Plan Name | Description | Price
 --------- | ----------- | -----
 `oauth-client` | OAuth2 client credentials for authenticating cloud.gov users in your app | Free
 
+Note: these instructions have changed as of July 3, 2017. If you created a service account instance before this date, please review the following.
+
 ## How to create an instance
 
 To create a service instance that can provision identity provider credentials, run the following command:
