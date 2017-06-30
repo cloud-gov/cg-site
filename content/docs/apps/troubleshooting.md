@@ -11,13 +11,11 @@ Here are some common problems and recommended practices for solving them. Make s
 
 ## Application restarts and crash messages
 
-The platform [automatically restarts application instances]({{< relref "docs/apps/deployment.md#application-architecture-principles" >}}) due to routine platform updates, which can be several times a week. If you review logs for an app that is functioning normally and you see recent messages about instance restarts for no apparent reason, platform updates may be the cause.
+The platform [automatically restarts application instances]({{< relref "docs/apps/deployment.md#application-architecture-principles" >}}) due to routine platform updates, which can be several times a week. If you review logs for an app that is functioning normally and you see recent messages about a series of instance restarts for no apparent reason, platform updates are probably the cause. This is ok!
 
-If you see recent messages such as `The app crashed because of an unknown reason.` and `audit.app.process.crash isn't handled`, this may be because your application didn't stop on request. The platform sends a request to apps to stop nicely so the platform can move them while this happens, but when they don't stop on request, the platform force-kills them, reports them as crashed, and moves them anyway. Usually this doesn't cause interruptions in service, just a few crash messages.
+If you see recent messages such as `The app crashed because of an unknown reason.` and `audit.app.process.crash isn't handled`, this may be because your application didn't stop on request. The platform sends a request to apps to stop nicely so the platform can move them while this happens, but when they don't stop on request, the platform force-kills them, reports them as crashed, and moves them anyway. Usually this doesn't cause interruptions in service, just a few crash messages. To prevent the error messages, you can change your application to stop gracefully. In the recommended [12-factor app architecture](https://12factor.net/), see the [disposability factor](https://12factor.net/disposability).
 
 If your application only has one instance, you may see brief interruptions in service during restarts due to routine platform updates. You can fix this by setting up [multiple application instances]({{< relref "docs/apps/multiple-instances.md" >}}).
-
-In the recommended [12-factor app architecture](https://12factor.net/), see the [disposability factor](https://12factor.net/disposability).
 
 ## [STG] Staging Phase
 
