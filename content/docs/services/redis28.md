@@ -20,7 +20,7 @@ Plan Name | Description | Price
 
 To create a service instance run the following command:
 
-```bash
+```sh
 cf create-service redis28 standard my-redis-service
 ```
 

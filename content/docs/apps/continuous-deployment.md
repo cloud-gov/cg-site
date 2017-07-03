@@ -25,19 +25,19 @@ You can provision a deployer account with permission to deploy to a single space
 
 1. Target the org and space for which you want credentials
 
-    ```bash
+    ```sh
     $ cf target -o $ORG -s $SPACE
     ```
 
 1. Create a deployer account service instance
 
-    ```bash
+    ```sh
     $ cf create-service cloud-gov-service-account space-deployer my-service-account
     ```
 
 1. Get the ephemeral credentials link from the service instance
 
-    ```bash
+    ```sh
     $ cf service my-service-account
 
     Service instance: my-service-account
@@ -50,7 +50,7 @@ You can provision a deployer account with permission to deploy to a single space
 
 To delete your deployer account, delete the service instance:
 
-```bash
+```sh
 $ cf delete-service my-service-account
 ```
 
@@ -107,7 +107,7 @@ For details, see [Jekyll's Continuous Integration guide](http://jekyllrb.com/doc
 
 Add these items to your `circle.yml` file:
 
-```
+```yaml
 dependencies:
   pre:
     - curl -v -L -o cf-cli_amd64.deb 'https://cli.run.pivotal.io/stable?release=debian64&source=github'
@@ -134,7 +134,7 @@ Replace `DEPLOYER_USER`, `ORG`, and `SPACE` accordingly, and export the `CF_PASS
 
 In your `wercker.yml` file, add:
 
-```
+```yaml
 steps:
   ...
   - dlapiduz/cloud-foundry-deploy

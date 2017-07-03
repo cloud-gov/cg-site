@@ -20,7 +20,7 @@ There are three ways to start multiple app instances on cloud.gov:
 #### Push command method
 
 When pushing an app, use the `-i` flag to declare the number of instances. The example below demonstrates pushing an app with 2 instances:
-```bash
+```sh
 cf push <<APP_NAME>> -i 2
 ```
 
@@ -38,7 +38,7 @@ applications:
 #### Scale command method
 
 You can change the number of instances for a running app using the [cf-scale](http://docs.cloudfoundry.org/devguide/deploy-apps/cf-scale.html) command:
-```bash
+```sh
 cf scale <<APP_NAME>> -i 2
 ```
 

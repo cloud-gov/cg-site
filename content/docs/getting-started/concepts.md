@@ -17,7 +17,7 @@ Your work inside cloud.gov takes place within [organizations](http://docs.cloudf
 
 ### List available orgs
 
-```bash
+```sh
 cf orgs
 ```
 
@@ -27,7 +27,7 @@ This only displays orgs where you've been assigned an org role, or those which c
 
 ...including quotas, routing domains and which spaces it includes:
 
-```bash
+```sh
 cf org ORGNAME
 ```
 
@@ -35,7 +35,7 @@ cf org ORGNAME
 
 In order to work with spaces, you'll need to do this first:
 
-```bash
+```sh
 cf target -o ORGNAME
 ```
 
@@ -51,13 +51,13 @@ For orgs that contain production systems (or systems under development before re
 
 To [create a space](http://cli.cloudfoundry.org/en-US/cf/create-space.html):
 
-```bash
+```sh
 cf create-space SPACENAME
 ```
 
 **Note:**  To create a space within a given org, you must have the `OrgManager` role. You can see which users are managers for your org with:
 
-```bash
+```sh
 cf org-users ORGNAME
 ```
 
@@ -65,7 +65,7 @@ cf org-users ORGNAME
 
 The Cloud Foundry CLI keeps a global state of the [organization]({{< relref "#organizations" >}})+[space]({{< relref "#spaces" >}}) you're interacting with. This is known as the "target", and you can set it with:
 
-```bash
+```sh
 cf target -o ORGNAME -s SPACENAME
 ```
 

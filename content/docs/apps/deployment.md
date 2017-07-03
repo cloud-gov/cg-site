@@ -15,6 +15,7 @@ The command to create a new app and to push a new version of an existing one are
 1. Set up your local directory with the code you want to deploy. For example, if you use Git, check out the code you want to deploy: `git checkout master`
 
 1. [Target]({{< relref "docs/getting-started/concepts.md#target" >}}) the appropriate [organization]({{< relref "docs/getting-started/concepts.md#organizations" >}})/[space]({{< relref "docs/getting-started/concepts.md#spaces" >}}): `cf target -o <ORG> -s <SPACE>`
+1. Deploy the application: `cf push <APPNAME>`
 
 Check the resulting `cf` command line messages for the route for your app, usually `APPNAME.app.cloud.gov` or similar.
 
