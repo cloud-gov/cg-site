@@ -4,8 +4,8 @@ title = "Changes to our UAA credentials broker"
 +++
 
 Use our [UAA credentials broker](https://github.com/cloudfoundry-community/uaa-credentials-broker)
-for either [cloud.gov identity provider]({{< relref "services/cloud-gov-identity-provider" >}})
-or [cloud.gov service account]({{< relref "services/cloud-gov-service-account" >}})?
+for either [cloud.gov identity provider]({{< relref "docs/services/cloud-gov-identity-provider.md" >}})
+or [cloud.gov service account]({{< relref "docs/services/cloud-gov-service-account.md" >}})?
 Check out our latest update which removes the Fugacious / Toaster dependency and
 improves the user experience of managing UAA credentials.
 <!--more-->
@@ -16,15 +16,21 @@ Previously, you provisioned a service instance to create a service account or id
 
 Create service key:
 
-    $ cf create-service-key ${my_service_account} my-service-key
+```bash
+$ cf create-service-key my-service-account my-service-key
+```
 
 Retrieve credentials from service key:
 
-    $ cf service-key ${my_service_account} my-service-key
+```bash
+$ cf service-key my-service-account my-service-key
+```
 
 To rotate or deprovision when user or client is no longer needed, delete the service key:
 
-    $ cf delete-service-key my-service-account my-service-key
+```bash
+$ cf delete-service-key my-service-account my-service-key
+```
 
 Existing service accounts and identity providers will continue to work as normal (your existing credentials for those services continue to work, so your continuous deployments won’t be disrupted). To switch to using this new method for getting credentials, delete your service instances and create new ones.
 
