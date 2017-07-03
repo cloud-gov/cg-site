@@ -21,6 +21,7 @@ Continuous deployment systems require credentials for use in pushing new version
 
 ### Deployer account broker
 
+<<<<<<< HEAD
 You can provision a deployer account with permission to deploy to a single space using the [cloud.gov service account]({{< relref "docs/services/cloud-gov-service-account.md" >}}) service broker:
 
 1. Target the org and space for which you want credentials
@@ -49,10 +50,7 @@ You can provision a deployer account with permission to deploy to a single space
 1. Retrieve your credentials from the dashboard link. Be sure to retrieve your credentials right away, since the link will only work for a brief length of time. Keep these credentials secure. If they’re compromised, the way to invalidate the credentials is to delete the service instance (you can create another, and it will have a fresh set of credentials). <!-- this advice should match on /docs/apps/continuous-deployment/ + /docs/services/cloud-gov-service-account/ + /docs/services/cloud-gov-identity-provider/ -->
 
 To delete your deployer account, delete the service instance:
-
-```sh
-$ cf delete-service my-service-account
-```
+You can provision a deployer account with permission to deploy to a single space using the [cloud.gov service account]({{< relref "docs/services/cloud-gov-service-account.md" >}}) service broker.
 
 ## Continuous integration services
 
@@ -162,7 +160,5 @@ Change `APP` and `DOMAIN` to match your application, and set up the following en
 | CF_PASS | deployer password  |
 | CF_ORG  | target organization|
 | CF_SPACE| target space       |
-
-
 
 You can also add the `alt_appname` attribute to do [Blue-Green deploys](https://docs.cloudfoundry.org/devguide/deploy-apps/blue-green.html).
