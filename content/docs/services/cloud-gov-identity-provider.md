@@ -20,14 +20,14 @@ Plan Name | Description | Price
 
 To create a service instance, run the following command:
 
-```bash
+```sh
 cf create-service cloud-gov-identity-provider oauth-client my-uaa-client \
   -c '{"redirect_uri": ["https://my.app.cloud.gov"]}'
 ```
 
 By default, identity provider service instances use the `openid` scope. You can request custom scopes using the `scopes` option:
 
-```bash
+```sh
 cf create-service cloud-gov-identity-provider oauth-client my-uaa-client \
   -c '{"redirect_uri": ["https://my.app.cloud.gov"], "scopes": ["openid", "cloud_controller.read"]}'
 ```
@@ -38,7 +38,7 @@ Note: The user will be prompted to grant any permissions required by custom scop
 
 Once you've created the service instance, you'll want to obtain your client ID and client secret:
 
-```bash
+```sh
 cf service my-uaa-client
 ```
 

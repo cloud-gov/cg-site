@@ -41,13 +41,13 @@ Name | Required | Description | Default
 
 To create a service instance run the following command:
 
-```bash
+```sh
 cf create-service aws-rds medium-psql my-db-service
 ```
 
 If you want to specify the storage available to the instance:
 
-```bash
+```sh
 cf create-service aws-rds medium-psql my-db-service -c '{"storage": 50}'
 ```
 

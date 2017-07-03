@@ -19,7 +19,7 @@ Run a non-interactive process that does a task (such as generating a report, cle
 
 * This requires a "complete" [application manifest](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) (which needs to include all of your service bindings, etc.) &mdash; if you don't have one yet, generate one from an existing app:
 
-    ```bash
+    ```sh
     cf create-app-manifest <APP_NAME> -p manifest.yml
     ```
 
@@ -35,7 +35,7 @@ Note that this will not work for any command that is interactive.
 
 1. Make a copy of your application manifest:
 
-    ```bash
+    ```sh
     cp manifest.yml task_manifest.yml
     ```
 
@@ -64,7 +64,7 @@ Note that this will not work for any command that is interactive.
    changes to your copied manifest at a minimum, you can provide these
    configuration options directly on the command-line.
 
-    ```bash
+    ```sh
     cf push -f task_manifest.yml --health-check-type none --no-route
     cf logs --recent task-runner
     ```

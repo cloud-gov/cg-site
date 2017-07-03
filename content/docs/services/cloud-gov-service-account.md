@@ -25,13 +25,13 @@ After you create one of these service instances, you will see a new "user" in yo
 
 To create a service instance that can deploy applications, run the following command:
 
-```bash
+```sh
 cf create-service cloud-gov-service-account space-deployer <SERVICE-INSTANCE-NAME>
 ```
 
 If your service account only requires read access and does not need the ability to deploy applications, use the `space-auditor` plan instead:
 
-```bash
+```sh
 cf create-service cloud-gov-service-account space-auditor <SERVICE-INSTANCE-NAME>
 ```
 
@@ -39,7 +39,7 @@ cf create-service cloud-gov-service-account space-auditor <SERVICE-INSTANCE-NAME
 
 Once you've created the service instance, you'll want to obtain the username and password from it:
 
-```bash
+```sh
 cf service <SERVICE-INSTANCE-NAME>
 ```
 

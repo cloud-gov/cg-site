@@ -22,7 +22,7 @@ Say you have an existing deployment on Cloud Foundry, and you want to make a new
 
 1. Generate a manifest from an existing application:
 
-    ```bash
+    ```sh
     cf target -o <EXISTING_APP_ORG> -s <EXISTING_APP_SPACE>
     cf create-app-manifest <EXISTING_APP_NAME>
     cp <EXISTING_APP_NAME>_manifest.yml <NEW_APP_NAME>_manifest.yml
@@ -34,7 +34,7 @@ Say you have an existing deployment on Cloud Foundry, and you want to make a new
     * `services`
 1. Deploy the new environment:
 
-    ```bash
+    ```sh
     cf push <NEW_APP_NAME> -f <NEW_APP_NAME>_manifest.yml
     ```
 

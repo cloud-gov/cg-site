@@ -43,22 +43,22 @@ Decide which roles to give them. For a complete list of roles, see [the Cloud Fo
 
 * If you want to make them an admin for your organization, run:
 
-    ```bash
+    ```sh
     cf set-org-role <email> <org> OrgManager
     ```
 * If you want to give them admin access for a space, run:
 
-    ```bash
+    ```sh
     cf set-space-role <email> <org> <space> SpaceManager
     ```
 * If you want to give them permission to deploy applications in a space, run:
 
-    ```bash
+    ```sh
     cf set-space-role <email> <org> <space> SpaceDeveloper
     ```
 * To give them read-only permissions to the organization, run:
 
-    ```bash
+    ```sh
     cf set-org-role <email> <org> OrgAuditor
     ```
 {{% /commandline %}}

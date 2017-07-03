@@ -38,7 +38,7 @@ The examples below use `--profile govcloud`, but replace with the name of your p
 
 Use [this script](https://github.com/18F/cg-pipeline-tasks/blob/master/generate_key.sh) to generate keys and upload them as access keys to AWS EC2 and an encrypted backup to AWS S3. You just need to provide a `BUCKET` destination for the backup and a decryption `PASSPHRASE`. In your terminal:
 
-```bash
+```sh
 BUCKET=my-bucket PASSPHRASE=somethingorother ./generate_key.sh
 ```
 
@@ -57,14 +57,14 @@ All UAA clients and users and associated credentials should be created via the C
 
 1. Clone the [cg-pipeline-tasks](https://github.com/18F/cg-pipeline-tasks) repository.
 
-    ```bash
+    ```sh
     git clone https://github.com/18F/cg-pipeline-tasks.git
     ```
 
 1. If you don't already have the AWS CLI set up with credentials, see [the steps above](#aws-credentials).
 1. Download the credentials file.
 
-    ```bash
+    ```sh
     mkdir -p tmp
     aws s3 cp s3://cloud-gov-varz/cf.main.yml tmp/cf.main.yml.enc --profile govcloud
     ```
@@ -75,7 +75,7 @@ All UAA clients and users and associated credentials should be created via the C
        resources. You can modify the test for `test("common-")` to grab specific
        credentials about each resource.
 
-        ```bash
+        ```sh
         fly --target <target> get-pipeline --pipeline deploy-cf | \
         spruce json | \
         jq -r '.resources[] | select(.name | test("common-"))'
@@ -87,7 +87,7 @@ All UAA clients and users and associated credentials should be created via the C
        `cg-deploy-cf`. This is useful for feeding this value to other commands
        without visually exposing the secret in your terminal.
 
-        ```bash
+        ```sh
         fly --target <target> get-pipeline --pipeline deploy-cf | \
         spruce json | \
         jq -r '.resources[] | select(.name | test("common-prod")) | .sources.secrets_passphrase'
@@ -95,7 +95,7 @@ All UAA clients and users and associated credentials should be created via the C
 
 1. Decrypt the secrets file.
 
-    ```bash
+    ```sh
     INPUT_FILE=tmp/cf.main.yml.enc
     OUTPUT_FILE=tmp/cf.main.yml
     PASSPHRASE=$(fly --target <target> get-pipeline --pipeline deploy-cf | spruce json | jq -r '.resources[] | select(.name | test("common-prod")) | .sources.secrets_passphrase')
@@ -104,7 +104,7 @@ All UAA clients and users and associated credentials should be created via the C
 
 1. Don't leave the secrets lying around (for security reasons, and because they get stale).
 
-    ```bash
+    ```sh
     rm -rf tmp
     ```
 
@@ -115,7 +115,7 @@ All UAA clients and users and associated credentials should be created via the C
 1. Modify the `cf.main.yml` with the new values.
 1. Re-encrypt the file.
 
-    ```bash
+    ```sh
     INPUT_FILE=tmp/cf.main.yml
     OUTPUT_FILE=tmp/cf.main.yml.enc
     PASSPHRASE=$(fly --target <target> get-pipeline --pipeline deploy-cf | spruce json | jq -r '.resources[] | select(.name | test("common-prod")) | .sources.secrets_passphrase')
@@ -124,12 +124,12 @@ All UAA clients and users and associated credentials should be created via the C
 
 1. Copy the new file up to S3.
 
-    ```bash
+    ```sh
     aws s3 cp tmp/cf.main.yml.enc-new s3://cloud-gov-varz/cf.main.yml --profile govcloud --sse AES256
     ```
 
 1. Clean up the secrets.
 
-    ```bash
+    ```sh
     rm -rf tmp
     ```

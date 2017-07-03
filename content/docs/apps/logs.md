@@ -11,13 +11,13 @@ For logs to be captured by cloud.gov, your application should be writing them to
 
 The most direct way to view events related to your application through the deploy process is:
 
-```bash
+```sh
 cf logs APPNAME
 ```
 
 Used alone, `cf logs` will tail the combined stream of logs from each Cloud Foundry service involved in your application deploy. Running with the `--recent` flag will stream the entire logs buffer for your app.
 
-```bash
+```sh
 cf logs APPNAME --recent
 ```
 

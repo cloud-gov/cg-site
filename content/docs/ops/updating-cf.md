@@ -24,7 +24,7 @@ Using the [`targets`](https://github.com/guidowb/cf-targets-plugin) plugin is re
 1. Click "Sign in with GSA.gov".
 1. Run
 
-    ```bash
+    ```sh
     cf login --sso -a https://api.green.18f.gov
     ```
 
@@ -53,20 +53,20 @@ Wildcard Routes [BeforeEach] Adding a wildcard route to a domain completes succe
     - Production: `cloud-gov-varz/cf.yml`
 - Get the passphrase from the pipeline
 
-```
+```sh
 fly get-pipeline --pipeline deploy-cf
 ```
 
 - Use [this script](https://github.com/18F/cg-pipeline-tasks/blob/master/decrypt.sh) for decryption. In your terminal:
 
-```
+```sh
 INPUT_FILE=secrets.yml OUTPUT_FILE=unencrypted-secrets.yml PASSPHRASE=pipelinepassphrase ./decrypt.sh
 ```
 
 - Make changes to the `unencrypted-secrets.yml`
 - Use [this script](https://github.com/18F/cg-pipeline-tasks/blob/master/encrypt.sh) for encryption. In your terminal:
 
-```
+```sh
 INPUT_FILE=unencrypted-secrets.yml OUTPUT_FILE=secrets.yml PASSPHRASE=pipelinepassphrase ./encrypt.sh
 ```
 

@@ -29,7 +29,7 @@ that week.
 
 - Confirm that all AWS users have MFA configured. The following should return `[]`
 or the users that don't have MFA enabled:
-```shell
+```sh
 users=$(aws iam list-users | jq '[.[]| .[] | select (.PasswordLastUsed) | .UserName] | sort')
 mfa_users=$(aws iam list-virtual-mfa-devices | jq '[.[]| .[].User.UserName]| sort')
 echo "{ \"users\": $users, \"mfa_users\": $mfa_users}" | jq '.users - .mfa_users'
@@ -87,7 +87,7 @@ Use the [AWS Console](http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/go
 to [review API activity history](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html)
 for the _EventNames_ listed below.
 Or, use the AWS CLI with the appropriate `$event_name`, and parse the emitted JSON:
-```shell
+```sh
 aws cloudtrail lookup-events --lookup-attributes AttributeKey=EventName,AttributeValue=$event_name
 ```
 
