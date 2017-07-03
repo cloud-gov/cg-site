@@ -90,7 +90,7 @@ can be cross-referenced with the following searchings on searches on GitHub for
 the `BOSH_TARGET` and `BOSH_ENVIRONMENT` with a `YAML` filetype to find all the
 different deployments
 
-```bash
+```sh
 open \
   'https://github.com/search?l=YAML&q=user%3A18F+BOSH_TARGET&type=Code&utf8=%E2%9C%93' \
   'https://github.com/search?l=YAML&q=user%3A18F+BOSH_ENVIRONMENT&type=Code&utf8=%E2%9C%93' \

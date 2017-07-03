@@ -9,13 +9,13 @@ Quota modification is most commonly necessary for increasing their resource allo
 
 1. List the details about the organization.
 
-    ```bash
+    ```sh
     cf org <org>
     ```
 
 1. Find the quota name from the `quota:` property.
 1. [Update the quota](https://docs.cloudfoundry.org/adminguide/quota-plans.html#update-quota).
 
-    ```bash
+    ```sh
     cf update-quota <quota> [options]
     ```
