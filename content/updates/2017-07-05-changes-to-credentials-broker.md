@@ -1,5 +1,5 @@
 +++
-date = "2017-07-03"
+date = "2017-07-05"
 title = "New instructions for service account and identity provider services"
 +++
 
