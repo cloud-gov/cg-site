@@ -1,36 +1,18 @@
 +++
 date = "2017-07-03"
-title = "Changes to our UAA credentials broker"
+title = "New instructions for service account and identity provider services"
 +++
 
-Use our [UAA credentials broker](https://github.com/cloudfoundry-community/uaa-credentials-broker)
-for either [cloud.gov identity provider]({{< relref "docs/services/cloud-gov-identity-provider.md" >}})
-or [cloud.gov service account]({{< relref "docs/services/cloud-gov-service-account.md" >}})?
-Check out our latest update which removes the Fugacious / Toaster dependency and
-improves the user experience of managing UAA credentials.
-<!--more-->
+If you use the [cloud.gov identity provider]({{< relref "docs/services/cloud-gov-identity-provider.md" >}})
+or [cloud.gov service account]({{< relref "docs/services/cloud-gov-service-account.md" >}}) services, check out their new instructions for obtaining credentials from new instances of these services.
 
-The service account and identity provider services have been updated to give you service credentials directly from cloud.gov, without using Toaster (formerly Fugacious). This simplifies how you set up these services, and it enables you to access the service credentials any time you need to. It also reduces our dependencies on other services.
+We've updated these services to give you credentials directly (using "service keys"), without needing to use temporary links from [Toaster (formerly Fugacious)](https://fugacious.18f.gov/). This simplifies how you set up these services, and it enables you to access the service credentials any time you need to.
 
-Previously, you provisioned a service instance to create a service account or identity provider, then accessed the credentials using a temporary link from Toaster (Fugacious). Now you provision a service instance, then bind it to a service key to create a service account or identity provider. You now access credentials for that service key directly from the cloud.gov command line (CF CLI). If you want another service account or identity provider for the same space, you can bind it to another service key.
+**Previously:** You provisioned a service instance to create a service account or identity provider, then accessed the credentials using a temporary link from Toaster (Fugacious).
 
-Create service key:
+**Now:** Now you provision a service instance, then bind it to a service key to create a service account or identity provider. You access credentials for that service key directly from the cloud.gov command line (CF CLI). If you want another service account or identity provider for the same space, you can bind it to another service key.
 
-```bash
-$ cf create-service-key my-service-account my-service-key
-```
+Existing service accounts and identity providers will continue to work as normal (your existing credentials for existing service instances continue to work, so your deployments and authentication won’t be disrupted).
 
-Retrieve credentials from service key:
-
-```bash
-$ cf service-key my-service-account my-service-key
-```
-
-To rotate or deprovision when user or client is no longer needed, delete the service key:
-
-```bash
-$ cf delete-service-key my-service-account my-service-key
-```
-
-Existing service accounts and identity providers will continue to work as normal (your existing credentials for those services continue to work, so your continuous deployments won’t be disrupted). To switch to using this new method for getting credentials, delete your service instances and create new ones.
+To switch to using this new method for getting credentials, delete your service instances and create new ones.
 
