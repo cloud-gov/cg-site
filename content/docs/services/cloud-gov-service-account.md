@@ -19,7 +19,7 @@ Plan Name | Description | Price
 `space-deployer` | A service account for continuous deployment, limited to a single space | Free
 `space-auditor` | A service account for auditing configuration and monitoring events limited to a single space | Free
 
-Note: these instructions have changed as of July 3, 2017. If you created a service account instance before this date, please review the following.
+Note: As of July 5, 2017, the instructions for obtaining credentials have changed. If you created a service account instance before this date, see [this post for changes]({{< relref "updates/2017-07-05-changes-to-credentials-broker.md" >}}).
 
 ## How to create an instance
 
