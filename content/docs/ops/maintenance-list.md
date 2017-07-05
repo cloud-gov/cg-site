@@ -47,12 +47,10 @@ If you see a way to make this checklist better, just submit a PR to the
 
 ## Ensure all VMs are running the current stemcell
 
-- Get the latest stemcell version from http://bosh.cloudfoundry.org/stemcells/.
+- Get the latest stemcell version from http://bosh.cloudfoundry.org/stemcells/
+  for AWS Xen-HVM Light
 
-- Check https://ci.fr.cloud.gov/teams/main/pipelines/aws-light-stemcell-builder 
-to ensure it has built the same version.
-
-- On each bosh director run `bosh deployments` and verify the stemcell in-use 
+- From the jumpbox in each of our four environments, run `bosh deployments` and verify the stemcell in-use 
 for each deployment is current.
 
 - **Note:** The 
@@ -93,12 +91,14 @@ aws cloudtrail lookup-events --lookup-attributes AttributeKey=EventName,Attribut
 ```
 
 These `EventNames` should be attributed to human individuals on the cloud.gov team:
-- ConsoleLogin
+
+* ConsoleLogin
 
 All human-generated events should be mapped to named users, e.g. `firstname.lastname`, and NOT to `Administrator`. 
 Discuss the event(s) with the indicated [cloud.gov operator(s)](https://docs.google.com/spreadsheets/d/1mW3tphZ98ExmMxLHPogSpTq8DzYr5Oh8_SHnOTvjRWM/edit)
 
-All events in the following `EventNames` should be attributed to Terraform.
+All events in the following `EventNames` should be attributed to Terraform:
+
 - DeleteTrail
 - UpdateTrail
 - ModifyVpcAttribute
@@ -112,6 +112,7 @@ All events in the following `EventNames` should be attributed to Terraform.
 - CreateSecurityGroup
 
 Terraform runs on instances that use instance profile roles, so authorized events will include:
+
 * a user name like `i-17deadbeef1234567`
 * a source IP address within AWS.
 * an AWS access key starting with `ASIA`
