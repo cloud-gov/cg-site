@@ -29,6 +29,7 @@ that week.
 
 - Confirm that all AWS users have MFA configured. The following should return `[]`
 or the users that don't have MFA enabled:
+
 ```sh
 users=$(aws iam list-users | jq '[.[]| .[] | select (.PasswordLastUsed) | .UserName] | sort')
 mfa_users=$(aws iam list-virtual-mfa-devices | jq '[.[]| .[].User.UserName]| sort')
