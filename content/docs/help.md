@@ -7,7 +7,7 @@ aliases:
 
 ### Support for people who use cloud.gov
 
-Email [**cloud-gov-support@gsa.gov**](mailto:cloud-gov-support@gsa.gov). We provide support for cloud.gov during typical business hours for U.S. East and West Coasts. We don't guarantee support for cloud.gov outside those hours, though we're always monitoring for signs of trouble that might affect customers.
+Email [**cloud-gov-support@gsa.gov**](mailto:cloud-gov-support@gsa.gov). If you need to report a security issue to us, the report must come from the System Owner. We provide support for cloud.gov during typical business hours for U.S. East and West Coasts. We don't guarantee support for cloud.gov outside those hours, though we're always monitoring for signs of trouble that might affect customers.  
 
 You shouldn't include any sensitive environment variables or passwords in your support emails; we don't need that information to help you, and we recommend you keep it limited to view by as few people as possible.
 
