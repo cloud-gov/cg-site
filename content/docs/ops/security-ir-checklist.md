@@ -17,7 +17,8 @@ First, **follow the the [18F security incident response process](https://handboo
 ## Assess
 
 - Confirm the incident — was it a real incident?
-    - If it's not a real incident, go to [False Alarm](#false-alarm).
+    - If it's expected behavior, go to [False Alarm](#false-alarm).
+    - If it's unexpected behavior, it is a real incident even if it may not be cloud.gov's responsibility.
 - Assess the severity, using [the rubric in the IR guide]({{< relref "security-ir.md#incident-severities" >}}).
 - Update the GitHub issue:
     - Status → "confirmed"
