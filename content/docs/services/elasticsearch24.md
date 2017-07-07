@@ -35,6 +35,10 @@ ElasticSearch 2.4 allows for dots in field names. This is a feature that existed
 pre-ElasticSearch 2.0 but was disabled in versions 2.0 to 2.3. Learn more about
 that [here](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/dots-in-names.html).
 
+### Rotating credentials
+
+The elasticsearch24 service does not support self-service credential rotation. To rotate credentials, file a ticket with [cloud.gov support](mailto:cloud-gov-support@gsa.gov).
+
 ### The broker in GitHub
 
 You can find the broker here: [https://github.com/18F/kubernetes-broker](https://github.com/18F/kubernetes-broker).

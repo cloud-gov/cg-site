@@ -149,6 +149,10 @@ dump.
 $ pg_restore --clean --no-owner --no-acl --dbname={database name} backup.pg
 ```
 
+### Rotating credentials
+
+The relational database service does not support self-service credential rotation. To rotate credentials, file a ticket with [cloud.gov support](mailto:cloud-gov-support@gsa.gov).
+
 ## The broker in GitHub
 
 You can find the broker here: [https://github.com/18F/aws-broker](https://github.com/18F/aws-broker).

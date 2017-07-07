@@ -24,6 +24,10 @@ To create a service instance run the following command:
 cf create-service redis28 standard my-redis-service
 ```
 
+### Rotating credentials
+
+The redis28 service does not support self-service credential rotation. To rotate credentials, file a ticket with [cloud.gov support](mailto:cloud-gov-support@gsa.gov).
+
 ### The broker in GitHub
 
 You can find the broker here: [https://github.com/18F/kubernetes-broker](https://github.com/18F/kubernetes-broker).

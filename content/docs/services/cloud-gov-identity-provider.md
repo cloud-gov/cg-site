@@ -57,6 +57,10 @@ cf create-service-key my-uaa-client my-service-key -c '{"redirect_uri": ["https:
 
 See [leveraging authentication]({{< relref "docs/apps/leveraging-authentication.md" >}}) for details.
 
+### Rotating credentials
+
+The identity provider service creates unique cloud.gov credentials for each service key. To rotate credentials associated with a service key, delete and recreate the service key.
+
 ### The broker in GitHub
 
 You can find the broker here: [https://github.com/cloudfoundry-community/uaa-credentials-broker](https://github.com/cloudfoundry-community/uaa-credentials-broker).
