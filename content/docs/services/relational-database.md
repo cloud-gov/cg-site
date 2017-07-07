@@ -151,7 +151,7 @@ $ pg_restore --clean --no-owner --no-acl --dbname={database name} backup.pg
 
 ### Rotating credentials
 
-The relational database service does not support self-service credential rotation. To rotate credentials, file a ticket with [cloud.gov support](mailto:cloud-gov-support@gsa.gov).
+You can rotate credentials by creating a new instance and deleting the existing instance. If this is not an option, email [cloud.gov support](mailto:cloud-gov-support@gsa.gov) to request rotating the credentials manually.
 
 ## The broker in GitHub
 
