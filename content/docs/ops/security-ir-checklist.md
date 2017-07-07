@@ -31,6 +31,9 @@ First, **follow the the [18F security incident response process](https://handboo
 
 ## Remediate
 
+- You may not be able to "walk backwards" from the observed behavior to the root cause.
+  - Consider the things that must be true for the behavior to occur, and test those hypothesis against the information that
+  is available to you.
 - Keep the ticket/docs updated as people work, tracking:
     - Leads, and who's following them
     - Remediation items, and who's working on them, including customer notification (if appropriate to the situation)
