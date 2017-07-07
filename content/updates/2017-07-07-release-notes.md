@@ -25,7 +25,7 @@ We upgraded the Cloud Foundry deployment to [v264](https://github.com/cloudfound
 You should [restage your application](http://cli.cloudfoundry.org/en-US/cf/restage.html) to [incorporate fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) and ensure you’re running the most recent language version supported by your [buildpack](https://docs.cloudfoundry.org/buildpacks/).
 
 #### Additional upgrades
-- [RootFS cflinuxfs2 1.133.0](https://github.com/cloudfoundry/cflinuxfs2-rootfs-release/releases/tag/v1.133.0), which address vulnerabilities described in these security notices:
+- [RootFS cflinuxfs2 1.133.0](https://github.com/cloudfoundry/cflinuxfs2/releases/tag/1.133.0), which address vulnerabilities described in these security notices:
   - [USN-3309-1: Libtasn1 vulnerability](https://www.ubuntu.com/usn/USN-3309-1/)
   - [USN-3304-1: Sudo vulnerability](https://www.ubuntu.com/usn/USN-3304-1/)
   - [USN-3212-2: LibTIFF regression](https://www.ubuntu.com/usn/USN-3212-2/)
