@@ -16,7 +16,7 @@ Plan Name | Description | Price
 --------- | ----------- | -----
 `oauth-client` | OAuth2 client credentials for authenticating cloud.gov users in your app | Free
 
-Note: As of July 5, 2017, the instructions for obtaining credentials have changed. If you created an identity provider instance before this date, see [this post for changes]({{< relref "updates/2017-07-05-changes-to-credentials-broker.md" >}}).
+Note: As of July 7, 2017, the instructions for obtaining credentials have changed. If you created an identity provider instance before this date, see [this post for changes]({{< relref "updates/2017-07-05-changes-to-credentials-broker.md" >}}).
 
 ## How to create an instance
 
