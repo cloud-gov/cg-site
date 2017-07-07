@@ -8,7 +8,7 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
 
 ### Added
 * Organization managers can now [add new teammates to your org]({{< relref "docs/apps/managing-teammates.md#give-roles-to-a-teammate" >}}) and manage user permissions right from the [dashboard](https://dashboard.fr.cloud.gov/).
-* [cf-service-connect](https://cloud.gov/docs/services/relational-database/#manually-access-a-database) now supports Windows. [See how to install it here.](https://github.com/18F/cf-service-connect#local-installation)
+* [cf-service-connect]({{< relref "docs/services/relational-database.md#manually-access-a-database" >}}) now supports Windows. [See how to install it here.](https://github.com/18F/cf-service-connect#local-installation)
 
 ### Changed
 
