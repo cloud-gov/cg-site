@@ -54,6 +54,10 @@ These credentials can be used with the `cf login` command in automated deploymen
 
 To use this service, see [continuous deployment]({{< relref "docs/apps/continuous-deployment.md" >}}).
 
+### Rotating credentials
+
+The service account service creates unique cloud.gov credentials for each service key. To rotate credentials associated with a service key, delete and recreate the service key.
+
 ### The broker in GitHub
 
 You can find the broker here: [https://github.com/cloudfoundry-community/uaa-credentials-broker](https://github.com/cloudfoundry-community/uaa-credentials-broker).

@@ -149,6 +149,10 @@ dump.
 $ pg_restore --clean --no-owner --no-acl --dbname={database name} backup.pg
 ```
 
+### Rotating credentials
+
+You can rotate credentials by creating a new instance and deleting the existing instance. If this is not an option, email [cloud.gov support](mailto:cloud-gov-support@gsa.gov) to request rotating the credentials manually.
+
 ## The broker in GitHub
 
 You can find the broker here: [https://github.com/18F/aws-broker](https://github.com/18F/aws-broker).
