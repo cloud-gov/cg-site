@@ -30,7 +30,7 @@ You can email [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov) 
 
 ### Prototyping
 
-Our most basic paid package lets many teams build and deploy apps, with access control delegated to teams. Prototyping packages cannot host production data; all apps are limited to the `*.app.cloud.gov` domain. Whole agencies or departments often purchase a single prototyping package.
+The [prototyping package]({{< relref "overview/pricing/prototyping.md" >}}) lets many teams build and deploy apps, with full access control. Prototyping packages cannot host production data; all apps are limited to the `*.app.cloud.gov` domain. Whole agencies or departments often purchase a single prototyping package.
 
 **Annual fee:** $15K<br>
 **Resource usage quota:** ~$99 per GB per month[*](#quota-pricing), up to any limit set by user<br>
