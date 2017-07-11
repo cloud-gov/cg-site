@@ -37,7 +37,9 @@ Security tests need to be executed in the development environment where changes 
 1. If the repository contains 18F-developed code, the PR must have an automated [Code Climate](https://codeclimate.com) check, which must pass before the PR can be merged.
 1. The PR is reviewed by someone other than the committer. Pairing via screen-sharing
 is encouraged and qualifies as a review. Review should include assessment of architectural design, DRY principles, security and code quality.
-1. The reviewer merges the PR.
+    The reviewer approves the PR via GitHub.
+1. The reviewer merges the approved PR.
+    The committer may merge an approved PR if the changes made are time-sensitive.
 1. A continuous integration (CI) server handles automated tests and continuous deployment (CD) of the merged changes.
     - All changes are deployed to a testing environment, such as development.
     - Any and all automated tests are run.
