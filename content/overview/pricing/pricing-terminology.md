@@ -9,6 +9,7 @@ aliases:
   - /intro/terminology/pricing-terminology
   - /overview/terminology/pricing-terminology/
   - /overview/pricing/pricing-terminology/
+  - /overview/pricing/system-stuffing/
 
 ---
 
