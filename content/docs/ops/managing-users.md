@@ -11,7 +11,7 @@ No local accounts to UAA shall be created for user access.
 
 ## Creating users
 
-The preferred way to add new users is to [invite them]({{< relref "docs/apps/managing-teammates.md#invite-a-teammate" >}}). If you need to create a user manually, follow the instructions for [the `provision-user-space` CLI plugin](https://github.com/18F/cf-provision-user-space-plugin).
+Add new users by [inviting them]({{< relref "docs/apps/managing-teammates.md#invite-a-teammate" >}}).
 
 ## Changing passwords
 
@@ -42,12 +42,6 @@ If the user requesting a reset has any apps, routes, or services in their sandbo
     ```
 
 4. Let the user know the reset process is complete, so they can set up a new authentication application and request access from Space Managers and Org Managers again.
-
-## Additional access
-
-### Organizations and spaces
-
-You can grant the user access to additional organizations and spaces by giving them additional [roles](http://docs.cloudfoundry.org/concepts/roles.html#roles). See [the instructions](https://docs.cloudfoundry.org/adminguide/cli-user-management.html#orgs-spaces) for changing them.
 
 ## Managing Admins
 Make sure you have a copy of the [cg-scripts repository](https://github.com/18F/cg-scripts) so you have access to several utility scripts.
