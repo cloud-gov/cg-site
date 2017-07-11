@@ -43,7 +43,7 @@ Limitations include:
 
 * Resource usage is capped at 1 GB of memory total, for all the applications in your space combined.
 * Currently sandbox applications may run indefinitely, but **soon we will delete sandbox content once a month**. We will send notice emails to all sandbox users before we implement this change in policy. Once this new policy is in place, we’ll also send a note to sandbox users a few days before deletions so people can preserve information they need.
-* Sandboxes do not have an “org manager” role available. (You can control access and permissions for your own sandbox space.) If you want to manage an org of prototyping spaces for people at your agency, consider purchasing prototyping-tier access.
+* Sandboxes do not have an “org manager” role available. (You can control access and permissions for your own sandbox space.) If you want to manage an org of prototyping spaces for people at your agency, consider purchasing a [prototyping package]({{< relref "overview/pricing/prototyping.md" >}}).
 
 <!--TO DO
 - write user flows and see if they are followable

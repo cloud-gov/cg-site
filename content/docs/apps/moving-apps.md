@@ -12,13 +12,13 @@ If you have an app that exists in one org/space but you need to move it to anoth
     * If you keep the app name the same, you may need to use a different `host` to avoid route conflicts.
 1. Go back to the old space.
 
-    ```bash
+    ```sh
     cf target -o <OLD_ORG> -s <OLD_SPACE>
     ```
 
 1. If you are changing orgs, remove the [domain](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html#delete-private-domain)/[route](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html#delete-route).
 
-    ```bash
+    ```sh
     cf delete-domain <DOMAIN>
     # or
     cf delete-route <SHARED_DOMAIN> -n <HOST>
@@ -26,19 +26,19 @@ If you have an app that exists in one org/space but you need to move it to anoth
 
 1. Go back to the new space.
 
-    ```bash
+    ```sh
     cf target -o <NEW_ORG> -s <NEW_SPACE>
     ```
 
 1. If you changed orgs and are using a Domain, [re-create it]({{< relref "docs/apps/custom-domains.md" >}}).
 
-    ```bash
+    ```sh
     cf create-domain <DOMAIN>
     ```
 
 1. Map the domain/route.
 
-    ```bash
+    ```sh
     cf map-route <APP_NAME> <DELEGATED_DOMAIN>
     # or
     cf map-route <APP_NAME> <SHARED_DOMAIN> -n <HOST>
@@ -46,7 +46,7 @@ If you have an app that exists in one org/space but you need to move it to anoth
 
 1. Delete the old app.
 
-    ```bash
+    ```sh
     cf target -o <OLD_ORG> -s <OLD_SPACE>
     cf delete <APP_NAME>
     ```

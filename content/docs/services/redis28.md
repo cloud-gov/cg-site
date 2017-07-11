@@ -20,9 +20,13 @@ Plan Name | Description | Price
 
 To create a service instance run the following command:
 
-```bash
+```sh
 cf create-service redis28 standard my-redis-service
 ```
+
+### Rotating credentials
+
+You can rotate credentials by creating a new instance and deleting the existing instance. If this is not an option, email [cloud.gov support](mailto:cloud-gov-support@gsa.gov) to request rotating the credentials manually.
 
 ### The broker in GitHub
 

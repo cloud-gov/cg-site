@@ -19,40 +19,7 @@ Before setting up continuous deployment:
 
 Continuous deployment systems require credentials for use in pushing new versions of your application code to cloud.gov. You should use a restricted set of credentials that can only access a particular target space, rather than credentials tied to a user who has more access, or who may lose access when leaving your team or project. This "least privilege" approach minimizes the harm that is possible if the credentials are compromised in any way.
 
-### Deployer account broker
-
-You can provision a deployer account with permission to deploy to a single space using the [cloud.gov service account]({{< relref "docs/services/cloud-gov-service-account.md" >}}) service broker:
-
-1. Target the org and space for which you want credentials
-
-    ```bash
-    $ cf target -o $ORG -s $SPACE
-    ```
-
-1. Create a deployer account service instance
-
-    ```bash
-    $ cf create-service cloud-gov-service-account space-deployer my-service-account
-    ```
-
-1. Get the ephemeral credentials link from the service instance
-
-    ```bash
-    $ cf service my-service-account
-
-    Service instance: my-service-account
-    Service: cloud-gov-service-account
-    ...
-    Dashboard: https://fugacious.18f.gov/m/k3MtzJWVZaNlnjBYJ7FUdpW2ZkDvhmQz
-    ```
-
-1. Retrieve your credentials from the dashboard link. Be sure to retrieve your credentials right away, since the link will only work for a brief length of time. Keep these credentials secure. If they’re compromised, the way to invalidate the credentials is to delete the service instance (you can create another, and it will have a fresh set of credentials). <!-- this advice should match on /docs/apps/continuous-deployment/ + /docs/services/cloud-gov-service-account/ + /docs/services/cloud-gov-identity-provider/ -->
-
-To delete your deployer account, delete the service instance:
-
-```bash
-$ cf delete-service my-service-account
-```
+To provision a deployer account with permission to deploy to a single space, [set up an instance of a cloud.gov service account]({{< relref "docs/services/cloud-gov-service-account.md" >}}).
 
 ## Continuous integration services
 
@@ -107,7 +74,7 @@ For details, see [Jekyll's Continuous Integration guide](http://jekyllrb.com/doc
 
 Add these items to your `circle.yml` file:
 
-```
+```yaml
 dependencies:
   pre:
     - curl -v -L -o cf-cli_amd64.deb 'https://cli.run.pivotal.io/stable?release=debian64&source=github'
@@ -134,7 +101,7 @@ Replace `DEPLOYER_USER`, `ORG`, and `SPACE` accordingly, and export the `CF_PASS
 
 In your `wercker.yml` file, add:
 
-```
+```yaml
 steps:
   ...
   - dlapiduz/cloud-foundry-deploy
@@ -162,7 +129,5 @@ Change `APP` and `DOMAIN` to match your application, and set up the following en
 | CF_PASS | deployer password  |
 | CF_ORG  | target organization|
 | CF_SPACE| target space       |
-
-
 
 You can also add the `alt_appname` attribute to do [Blue-Green deploys](https://docs.cloudfoundry.org/devguide/deploy-apps/blue-green.html).

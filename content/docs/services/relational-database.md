@@ -24,6 +24,9 @@ Plan Name | Description | Price
 `medium-mysql-redundant` | Dedicated redundant medium RDS MySQL DB instance                              | Will be paid per hour + storage
 `large-mysql`            | Dedicated large RDS MySQL DB instance                                         | Will be paid per hour + storage
 `large-mysql-redundant`  | Dedicated redundant large RDS MySQL DB instance                               | Will be paid per hour + storage
+`medium-oracle-se1`      | Dedicated medium RDS Oracle SE1 DB; available by request via [cloud.gov support](mailto:cloud-gov-support@gsa.gov) | Will be paid per hour + storage
+
+Note: the `medium-oracle-se1` plan is only available by request because AWS is [deprecating](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Oracle.html#Oracle.Concepts.Deprecate.12101) Oracle SE1. AWS GovCloud expects to support [Oracle SE2](http://www.oracle.com/us/products/database/oracle-db-se2-brief-2680836.pdf) in July 2017; at that point, we'll add a corresponding service plan and make it available to all users without requesting access.
 
 ### Pricing
 Shared instances are free. Simple and redundant instances will have pricing per hour and per GB per month. [Learn more about managed service pricing.]({{< relref "overview/pricing/managed-services-cost.md" >}})
@@ -38,13 +41,13 @@ Name | Required | Description | Default
 
 To create a service instance run the following command:
 
-```bash
+```sh
 cf create-service aws-rds medium-psql my-db-service
 ```
 
 If you want to specify the storage available to the instance:
 
-```bash
+```sh
 cf create-service aws-rds medium-psql my-db-service -c '{"storage": 50}'
 ```
 
@@ -81,41 +84,28 @@ The instructions below are for PostgreSQL, but should be similar for MySQL or ot
 
 #### Using cf ssh
 
-To access a service database, use the [cf ssh]({{< relref "docs/getting-started/one-off-tasks.md#cf-ssh" >}}) CLI command to login to an instance that is bound to the service and download the `psql` binary to that instance:
-
-```sh
-cf ssh APP_NAME
-curl https://s3.amazonaws.com/18f-cf-cli/psql-9.4.4-ubuntu-14.04.tar.gz | tar xvz
-./psql/bin/psql $DATABASE_URL
-```
-
-You should now have an open `psql` terminal connected to the service database.
-
-You can also use the [cf-service-connect plugin](https://github.com/18F/cf-service-connect#readme) for a shortcut way to do this.
+To access a service database, use the [cf-service-connect plugin](https://github.com/18F/cf-service-connect#readme).
 
 ### Export
 
 #### Create backup
 
-#### Using cf ssh
-
-First, connect to an instance:
+First, connect to an instance using the [cf-service-connect plugin](https://github.com/18F/cf-service-connect#readme):
 
 ```sh
-$ cf ssh {app name}
+$ cf connect-to-service --no-client ${APP_NAME} ${SERVICE_NAME}
+...
+Host: localhost
+Port: ...
+Username: ...
+Password: ...
+Name: ...
 ```
 
-Next, install the Postgresql tools:
+Without closing the SSH session managed by the cf-service-connect plugin, create the backup file using the parameters provided by the plugin:
 
 ```sh
-$ curl https://s3.amazonaws.com/18f-cf-cli/psql-9.4.4-ubuntu-14.04.tar.gz > psql.tgz
-$ tar xzvf psql.tgz
-```
-
-Now you can create the export file:
-
-```sh
-$ psql/bin/pg_dump --format=custom $DATABASE_URL > backup.pg
+$ pg_dump postgresql://${USERNAME}:${PASSWORD}@${HOST}/${PORT}/${NAME} -f backup.pg
 ```
 
 ### Download
@@ -152,12 +142,16 @@ sftp> quit
 
 Load the dump into your local database using the [pg_restore](https://www.postgresql.org/docs/current/static/app-pgrestore.html) tool. If objects exist in a
 local copy of the database already, you might run into inconsistencies when doing a
-`pg_restore`. This Pg_restore invocation does not drop all of the objects in the database when loading the
+`pg_restore`. This pg_restore invocation does not drop all of the objects in the database when loading the
 dump.
 
 ```sh
 $ pg_restore --clean --no-owner --no-acl --dbname={database name} backup.pg
 ```
+
+### Rotating credentials
+
+You can rotate credentials by creating a new instance and deleting the existing instance. If this is not an option, email [cloud.gov support](mailto:cloud-gov-support@gsa.gov) to request rotating the credentials manually.
 
 ## The broker in GitHub
 

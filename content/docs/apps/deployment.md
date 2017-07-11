@@ -12,13 +12,9 @@ Learn [how to get your application up](#how-deployment-works) and [important app
 
 The command to create a new app and to push a new version of an existing one are the same: `cf push`. The steps:
 
-1. Set up your local directory with the code you want to deploy. For example, if you use Git or another version control system, check out the version of the code you want to deploy: `git checkout master`
+1. Set up your local directory with the code you want to deploy. For example, if you use Git, check out the code you want to deploy: `git checkout master`
 
-1. [Target]({{< relref "docs/getting-started/concepts.md#target" >}}) the appropriate [organization]({{< relref "docs/getting-started/concepts.md#organizations" >}})/[space]({{< relref "docs/getting-started/concepts.md#spaces" >}}):
-
-    ```bash
-    cf target -o <SOMEORG> -s <SOMESPACE>
-    ```
+1. [Target]({{< relref "docs/getting-started/concepts.md#target" >}}) the appropriate [organization]({{< relref "docs/getting-started/concepts.md#organizations" >}})/[space]({{< relref "docs/getting-started/concepts.md#spaces" >}}): `cf target -o <ORG> -s <SPACE>`
 1. Deploy the application: `cf push <APPNAME>`
 
 Check the resulting `cf` command line messages for the route for your app, usually `APPNAME.app.cloud.gov` or similar.
@@ -33,9 +29,11 @@ Here are core architecture principles for this cloud environment -- the five thi
 
 Don't depend on local file system storage. When your application restarts (for example, if you restart it, or if the platform automatically restarts it for you), *files on the local filesystem will disappear*. Instead, use a storage [service]({{< relref "docs/apps/managed-services.md" >}}).
 
-### The platform may restart your application
+### The platform will restart your application
 
-cloud.gov will automatically restart your application instances occasionally. For example, instances will be restarted if they exceed [memory limits]({{< relref "docs/apps/limits.md" >}}), and they may be restarted when the cloud.gov platform is updated.
+cloud.gov will automatically restart your application instances occasionally. For example, application instances will be restarted if they exceed [memory limits]({{< relref "docs/apps/limits.md" >}}).
+
+Application instances will also be restarted when the cloud.gov platform is updated, which can be several times a week. This shouldn't disrupt your running application if you [set up multiple application instances]({{< relref "docs/apps/multiple-instances.md" >}}) and avoid writing to the local file system.
 
 ### Check your log configuration
 

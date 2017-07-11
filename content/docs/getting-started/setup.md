@@ -39,7 +39,7 @@ Here's how to deploy a test app in your sandbox for practice, using the CLI.
 
 Start with the following `cf target` command:
 
-```bash
+```sh
 cf target -o <ORG> -s <SPACE>
 ```
 
@@ -48,7 +48,7 @@ e-mail address. For example, this may be `sandbox-gsa` or `sandbox-epa`. In most
 
 For example:
 
-```bash
+```sh
 cf target -o sandbox-gsa -s harry.truman
 ```
 

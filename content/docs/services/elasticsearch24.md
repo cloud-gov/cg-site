@@ -23,7 +23,7 @@ Plan Name | Description | Price
 
 To create a service instance run the following command:
 
-```bash
+```sh
 cf create-service elasticsearch24 1x my-elastic-service
 ```
 
@@ -34,6 +34,10 @@ Each instance is one node; there is not currently a way to make multi-node insta
 ElasticSearch 2.4 allows for dots in field names. This is a feature that existed
 pre-ElasticSearch 2.0 but was disabled in versions 2.0 to 2.3. Learn more about
 that [here](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/dots-in-names.html).
+
+### Rotating credentials
+
+You can rotate credentials by creating a new instance and deleting the existing instance. If this is not an option, email [cloud.gov support](mailto:cloud-gov-support@gsa.gov) to request rotating the credentials manually.
 
 ### The broker in GitHub
 

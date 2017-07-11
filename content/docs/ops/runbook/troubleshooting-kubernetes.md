@@ -16,12 +16,12 @@ If the namespace is `default` and the pod name is a random string then it is a m
 
 #### Fixing non-running pods
 Login to a kubernetes master and describe the pod:
-```bash
+```sh
 /var/vcap/packages/kubernetes/bin/kubectl --namespace :namespace describe pod :pod-name
 ```
 
 The `Events` section should indicate why the pod cannot be started.  Resolve the underlying issue and the pod should transition into a `Running` state.  If you need to force the pod to be restarted you can delete it which will cause kubernetes to immediately recreate it.
-```bash
+```sh
 /var/vcap/packages/kubernetes/bin/kubectl --namespace :namespace delete pod :pod-name
 ```
 
@@ -30,13 +30,13 @@ The `Events` section should indicate why the pod cannot be started.  Resolve the
 
 #### Set Path
 Kubernetes binaries are shipped in a BOSH package:
-```shell
+```sh
 export PATH=$PATH:/var/vcap/packages/kubernetes/bin
 ```
 
 #### Get a list of pods
 Pods are created to satisfy a deployment requirement.
-```shell
+```sh
 kubectl get pods
 ```
 
@@ -44,17 +44,17 @@ kubectl get pods
 Deployments describe how to provision a application, including
 memory, disk, and services.  For example, a WordPress deployment
 would need both a PHP pod and a MySQL pod.
-```shell
+```sh
 kubectl get deployments
 ```
 
 #### Get a list of replica sets
-```shell
+```sh
 kubectl get rs
 ```
 
 #### Get a list of services / ports and ips
-```shell
+```sh
 kubectl get svc
 ```
 
@@ -63,23 +63,23 @@ Pods output logs to STDOUT, and these are temporary stored
 by Kubernetes for review.  Pods should not contain their
 own logging mechanisms (ie ElasticSearch should not also
 run logrotate):
-```shell
+```sh
 kubectl logs x0e41a06287f54-master-1362982585-aamfj
 ```
 
 #### Show pod status
-```shell
+```sh
 kubectl describe pod x0e41a06287f54-master-1362982585-aamfj
 ```
 
 #### Stop entire Kubernetes deployment
-```shell
+```sh
 bosh stop kubernetes
 ```
 
 #### Get a shell in a particular pod
 Sometimes you need to connect inside a pod:
-```shell
+```sh
 kubectl exec -it x0e41a06287f54-master-1362982585-aamfj /bin/bash
 ```
 
@@ -88,7 +88,7 @@ Sometimes a pod gets scheduled, and the EBS volume
 is unable to be mounted on that instance.  You can
 safely delete a pod and it will be automatically
 rescheduled:
-```shell
+```sh
 kubectl delete pod x0e41a06287f54-master-1362982585-aamfj
 ```
 
@@ -99,7 +99,7 @@ Currently services are deployed via NodePort, which means that Kubernetes genera
   - Service Port 9200
 
   ## Both of these return the same host via iptables:
-  ```
+  ```sh
   curl http://0.master.default.kubernetes.bosh
   curl http://1.master.default.kubernetes.bosh
   ```

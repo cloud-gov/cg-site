@@ -34,10 +34,10 @@ If the user requesting a reset has any apps, routes, or services in their sandbo
 
     Login to a **[concourse jumpbox]({{< relref "docs/ops/runbook/troubleshooting-bosh.md#creating-and-intercepting-ephemeral-jumpboxes" >}})**.
 
-    ```bash
+    ```sh
     $ psql postgres://{db_user}:{db_pass}@{db_address:port}/uaadb
     => begin;
-    => delete from totp_seed where username = "{email.address}";
+    => delete from totp_seed where "username" = '{email.address}';
     => commit;
     ```
 
@@ -55,7 +55,7 @@ Make sure you have a copy of the [cg-scripts repository](https://github.com/18F/
 ### Creating Admins
 First, target and get a token for the main CloudFoundry UAA, and make the user a CloudFoundry admin using their GSA email address.
 
-```bash
+```sh
 cd /path/to/cg-scripts
 uaac target <CF_UAA_FQDN>
 uaac token client get admin -s <CF_UAA_ADMINCLIENT_PASSPHRASE>
@@ -64,7 +64,7 @@ uaac token client get admin -s <CF_UAA_ADMINCLIENT_PASSPHRASE>
 
 Secondly, target and get a token for the Ops UAA, and then make the user a Concourse admin using their GSA email address.
 
-```bash
+```sh
 uaac target <OPS_UAA_FQDN>
 uaac token client get admin -s <OPS_UAA_ADMINCLIENT_PASSPHRASE>
 ./make-ops-admin.sh <EMAIL_ADDRESS>
@@ -73,7 +73,7 @@ uaac token client get admin -s <OPS_UAA_ADMINCLIENT_PASSPHRASE>
 ### Removing Admins
 First, target and get a token for the main CloudFoundry UAA, and remove the user as a CloudFoundry admin using their GSA email address.
 
-```bash
+```sh
 cd /path/to/cg-scripts
 uaac target <CF_UAA_FQDN>
 uaac token client get admin -s <CF_UAA_ADMINCLIENT_PASSPHRASE>
@@ -82,7 +82,7 @@ uaac token client get admin -s <CF_UAA_ADMINCLIENT_PASSPHRASE>
 
 Secondly, target and get a token for the Ops UAA, and then remove the user as a Concourse admin using their GSA email address.
 
-```bash
+```sh
 cd /path/to/cg-scripts
 uaac target <OPS_UAA_FQDN>
 uaac token client get admin -s <OPS_UAA_ADMINCLIENT_PASSPHRASE>

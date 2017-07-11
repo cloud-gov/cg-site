@@ -18,7 +18,7 @@ help with account credentials if needed.
 SMTP Authentication should be used to send mail.  In order to communicate,
 the username and password need to be sent base64 encoded:
 
-```shell
+```sh
 # Get the username in base64
 perl -MMIME::Base64 -e 'print encode_base64("noreply\@cloud.gov")'
 
@@ -28,7 +28,7 @@ perl -MMIME::Base64 -e 'print encode_base64("secretpassword")'
 
 #### Sending a test email
 "VXNlcm5hbWU6" is base64 for "Username:".  "UGFzc3dvcmQ6" is base64 for "Password:".
-```shell
+```sh
 # Connect to the server
 nc smtp.mandrillapp.com 25
 220 smtp.mandrillapp.com ESMTP

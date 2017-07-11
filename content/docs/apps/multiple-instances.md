@@ -5,6 +5,11 @@ menu:
     parent: advanced
 title: Running multiple instances
 ---
+
+It is critical that your production application has more than one instance. Then if there are any issues with one of the platform runners where your app instances are assigned, or we upgrade platform components underneath an instance, your app will continue to function correctly (with less risk of downtime).
+
+When you scale your app by running multiple instances, cloud.gov schedules those instances across availability zones to maximize your app's resiliency. cloud.gov also load-balances access from users by default, so you should set up your instances to share session data to avoid unexpected behavior. If your application already stores data in a database, you can use it for this as well; applications that don't yet have databases can establish one (for example using [AWS RDS]({{< relref "docs/services/relational-database.md" >}})) or use another type of data storage (such as [Redis]({{< relref "docs/services/redis28.md" >}})).
+
 ## Starting multiple instances
 There are three ways to start multiple app instances on cloud.gov:
 
@@ -12,12 +17,10 @@ There are three ways to start multiple app instances on cloud.gov:
 2.  In the `manifest.yml`
 3.  Using the `cf scale` command
 
-When you scale your app by running multiple instances, cloud.gov schedules those instances across availability zones to maximize your app's resiliency. cloud.gov also load-balances access from users by default, so you should set up your instances to share session data to avoid unexpected behavior. If your application already stores data in a database, you can use it for this as well; applications that don't yet have databases can establish one (for example using [AWS RDS]({{< relref "docs/services/relational-database.md" >}})) or use another type of data storage (such as [Redis]({{< relref "docs/services/redis28.md" >}})).
-
 #### Push command method
 
 When pushing an app, use the `-i` flag to declare the number of instances. The example below demonstrates pushing an app with 2 instances:
-```bash
+```sh
 cf push <<APP_NAME>> -i 2
 ```
 
@@ -35,7 +38,7 @@ applications:
 #### Scale command method
 
 You can change the number of instances for a running app using the [cf-scale](http://docs.cloudfoundry.org/devguide/deploy-apps/cf-scale.html) command:
-```bash
+```sh
 cf scale <<APP_NAME>> -i 2
 ```
 
