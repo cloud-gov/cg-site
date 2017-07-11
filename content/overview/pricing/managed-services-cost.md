@@ -6,6 +6,7 @@ title: The cost of managed services
 weight: 10
 aliases:
   - /overview/pricing/managed-services
+  - /overview/pricing/other-services/
 ---
 
 Currently, we don’t charge for [managed services]({{< relref "overview/pricing/pricing-terminology.md#managed-services" >}}). We plan to start charging for them in the future to account for the resources they consume and our work to provide them. The pricing for each service will be different, and they will be severable. We will ensure that users of these services are aware of the rates when they are set, and they will not be charged before then.

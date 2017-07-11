@@ -38,19 +38,19 @@ Before you begin, note that once you create a CDN service instance, you can't up
 
 First, target the space your application is running in:
 
-```bash
+```sh
 cf target -o <org> -s <space>
 ```
 
 Create a private domain in your organization (replace `<org>` with your org name, and replace `my.example.gov` with your domain):
 
-```bash
+```sh
 cf create-domain <org> my.example.gov
 ```
 
 Then, to create a `cdn-route` service instance, run the following command (replace `my-cdn-route` with a name for your service instance, and replace `my.example.gov` with your domain):
 
-```bash
+```sh
 cf create-service cdn-route cdn-route my-cdn-route \
     -c '{"domain": "my.example.gov"}'
 ```
@@ -59,7 +59,7 @@ cf create-service cdn-route cdn-route my-cdn-route \
 
 If you have more than one domain, you can pass a comma-delimited list to the `domain` parameter (just keep in mind that the broker will wait until all domains are CNAME'd, as explained in the next step):
 
-```bash
+```sh
 cf create-service cdn-route cdn-route my-cdn-route \
     -c '{"domain": "my.example.gov,www.my.example.gov"}'
 ```
@@ -74,7 +74,7 @@ The maximum number of domains that can be associated with a single cdn-route ser
 
 Once you create the service instance, you need to retrieve the instructions to set up your DNS. Run the following command, replacing `my-cdn-route` with the service instance name you used in the previous step.
 
-```bash
+```sh
 $ cf service my-cdn-route
 
 Last Operation
@@ -111,7 +111,7 @@ After the record is created, wait up to 1 hour for the CloudFront distribution t
 
 [Forwarding cookies to your origin](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html) can be disabled by setting the `cookies` parameter to `false`.
 
-```bash
+```sh
 cf create-service cdn-route cdn-route my-cdn-route \
     -c '{"domain": "my.example.gov", "cookies": false}'
 ```
@@ -132,7 +132,7 @@ If you're working with many subdomains for the same domain name, Let's Encrypt h
 
 To update a service instance, run the following command (replace `my-cdn-route` with your service instance name, and replace `my.example.gov` with your domain):
 
-```bash
+```sh
 cf update-service my-cdn-route -c '{"domain": "my.example.gov"}'
 ```
 
@@ -154,7 +154,7 @@ After you delete an existing service instance, you may need to wait up to 30 min
 
 To create a custom domain for a service or application that is not a cloud.gov tenant application (such as a public S3 bucket), put in the `origin` option:
 
-```bash
+```sh
 cf create-service cdn-route cdn-route my-cdn-route \
     -c '{"domain": "my.example.gov", "origin": "my-app.external-example.gov"}'
 ```

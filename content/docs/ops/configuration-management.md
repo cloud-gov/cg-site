@@ -37,7 +37,9 @@ Security tests need to be executed in the development environment where changes 
 1. If the repository contains 18F-developed code, the PR must have an automated [Code Climate](https://codeclimate.com) check, which must pass before the PR can be merged.
 1. The PR is reviewed by someone other than the committer. Pairing via screen-sharing
 is encouraged and qualifies as a review. Review should include assessment of architectural design, DRY principles, security and code quality.
-1. The reviewer merges the PR.
+    The reviewer approves the PR via GitHub.
+1. The reviewer merges the approved PR.
+    The committer may merge an approved PR if the changes made are time-sensitive.
 1. A continuous integration (CI) server handles automated tests and continuous deployment (CD) of the merged changes.
     - All changes are deployed to a testing environment, such as development.
     - Any and all automated tests are run.
@@ -46,6 +48,8 @@ is encouraged and qualifies as a review. Review should include assessment of arc
 1. The CI/CD tool uses GitHub repositories and S3-stored sensitive content as the canonical source of truth for what the platform should look like. If there are manual changes, it will reset the state of all systems to match.
 
 ![Pipeline Example](/img/pipeline-example.png)
+
+A more detailed example of this process can be seen in [Updating Cloud Foundry]({{< relref "updating-cf.md" >}}).
 
 ## What if a configuration changed and it is not in Configuration Management?
 If possible, Configuration Management tools need to be set up to always roll back to a known state. Other than that, these tools need to be able to "recreate" all settings from the known configurations.

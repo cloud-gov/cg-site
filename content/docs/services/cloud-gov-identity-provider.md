@@ -16,18 +16,20 @@ Plan Name | Description | Price
 --------- | ----------- | -----
 `oauth-client` | OAuth2 client credentials for authenticating cloud.gov users in your app | Free
 
+Note: As of July 7, 2017, the instructions for obtaining credentials have changed. If you created an identity provider instance before this date, see [this post for changes]({{< relref "updates/2017-07-07-changes-to-credentials-broker.md" >}}).
+
 ## How to create an instance
 
-To create a service instance, run the following command:
+To create a service instance that can provision identity provider credentials, run the following command:
 
-```bash
+```sh
 cf create-service cloud-gov-identity-provider oauth-client my-uaa-client \
   -c '{"redirect_uri": ["https://my.app.cloud.gov"]}'
 ```
 
 By default, identity provider service instances use the `openid` scope. You can request custom scopes using the `scopes` option:
 
-```bash
+```sh
 cf create-service cloud-gov-identity-provider oauth-client my-uaa-client \
   -c '{"redirect_uri": ["https://my.app.cloud.gov"], "scopes": ["openid", "cloud_controller.read"]}'
 ```
@@ -36,17 +38,28 @@ Note: The user will be prompted to grant any permissions required by custom scop
 
 ## Obtaining credentials
 
-Once you've created the service instance, you'll want to obtain your client ID and client secret:
+To create an identity provider, bind a [service key](https://docs.cloudfoundry.org/devguide/services/service-keys.html) to the service instance:
 
 ```bash
-cf service my-uaa-client
+cf create-service-key my-uaa-client my-service-key -c '{"redirect_uri": ["https://my.app.cloud.gov"]}'
+cf service-key my-uaa-client my-service-key
 ```
 
-This will display a link to a page on [Fugacious](https://fugacious.18f.gov/) which contains your credentials. Be sure to retrieve your credentials right away, since the link will only work for a brief length of time. Keep these credentials secure. If they’re compromised, the way to invalidate the credentials is to delete the service instance (you can create another, and it will have a fresh set of credentials). <!-- this advice should match on /docs/apps/continuous-deployment/ + /docs/services/cloud-gov-service-account/ + /docs/services/cloud-gov-identity-provider/ -->
+This will create a cloud.gov identity provider and make the credentials available to you via a service key. Keep these credentials secure. If they’re compromised, the way to invalidate the credentials is to delete the service key (you can create another, and it will have a fresh set of credentials). Each service key that you bind to your instance creates a separate identity provider with different credentials; you can create as many service keys per instance as you like. <!-- this advice should match on /docs/services/cloud-gov-service-account/ + /docs/services/cloud-gov-identity-provider/ -->
+
+By default, identity provider service instances use the `openid` scope. You can request custom scopes using the `scopes` option:
+
+```bash
+cf create-service-key my-uaa-client my-service-key -c '{"redirect_uri": ["https://my.app.cloud.gov"], "scopes": ["openid", "cloud_controller.read"]}'
+```
 
 ## More information
 
 See [leveraging authentication]({{< relref "docs/apps/leveraging-authentication.md" >}}) for details.
+
+### Rotating credentials
+
+The identity provider service creates unique cloud.gov credentials for each service key. To rotate credentials associated with a service key, delete and recreate the service key.
 
 ### The broker in GitHub
 

@@ -12,13 +12,13 @@ ElasticSearch is generally resilient when configured with multiple primary and  
 
 Shard allocation is disabled on elasticsearch [drain](https://github.com/cloudfoundry-community/logsearch-boshrelease/blob/develop/jobs/elasticsearch/templates/bin/drain.erb). Check that allocation was reenabled:
 
-```bash
+```sh
 curl localhost:9200/_cluster/settings?pretty
 ```
 
 If necessary, reenable allocation:
 
-```bash
+```sh
 curl -X PUT localhost:9200/_cluster/settings -d '{"transient":{"cluster.routing.allocation.enable":"all"}}'
 ```
 
@@ -32,7 +32,7 @@ High memory usage on queue nodes is an indicator that logs are backing up in red
 Login to the queue node, examine the list of processes and validate it is redis using the majority of memory.
 
 Check the number of log messages waiting in redis:
-```bash
+```sh
 /var/vcap/packages/redis/bin/redis-cli llen logsearch
 ```
 Normally this number should be 0. If it is greater than 0 and climbing then logs are not reaching ElasticSearch and accumulating in memory.
@@ -54,7 +54,7 @@ A copy of all data received by the logsearch ingestors is archived in S3.  This 
 ### Create a custom logstash.conf for the restore operation
 
 Log into any `parser` node and make a copy of it's current logstash configuration.
-```bash
+```sh
 # these example commands use the bosh v2 cli
 bosh -d logsearch ssh parser/0
 
@@ -76,7 +76,7 @@ Edit the `/tmp/logstash-restore.conf` and make the following changes:
 ```
 
 The values for `:bucket:` and `:region:` can be found in [cg-provision](https://github.com/18F/cg-provision/blob/master/terraform/modules/cloudfoundry/buckets.tf#L25-L30) or retrieved from the bosh manifest:
-```bash
+```sh
 spruce merge --cherry-pick properties.logstash_ingestor.outputs <(bosh -d logsearch manifest)`
 ```
 
@@ -90,7 +90,7 @@ For example, to reindex only data from November 15th, 1968 use an `exclude_patte
 The default Logsearch-for-CloudFoundry configuration will drop any messages older than 24 hours. When reindexing older data this sanity check needs to be disabled.
 
 To disable the timecop filter set the environment variable `TIMECOP_REJECT_LESS_THAN_HOURS` to match the desired rentention policy:
-```bash
+```sh
 export TIMECOP_REJECT_LESS_THAN_HOURS=$((180 * 24))
 ```
 
@@ -148,7 +148,7 @@ index => "logs-%{@index_type}-%{[@metadata][index-date]}"
 ### Start the reindexing
 Run logstash passing in your edited configuration file:
 
-```bash
+```sh
 /var/vcap/packages/logstash/bin/logstash agent -f /tmp/logstash-restore.config
 ```
 
@@ -156,43 +156,43 @@ Run logstash passing in your edited configuration file:
 
 Logstash will run forever once started. Monitor the progress of the reindex, and stop logstash once the data has been reindexed. Progress can be monitored by tailing the sincedb file which logstash will update after each file it processes.
 
-```bash
+```sh
 tail -f /tmp/s3_import.sincedb
 ```
 
 ## Other Useful ElasticSearch commands
 
 ### Check Disk Space
-```shell
+```sh
 # df -h
 ```
 ### Check Allocation Status
-```shell
+```sh
 curl -s 'localhost:9200/_cat/allocation?v'
 ```
 
 ### Check Cluster Settings
-```shell
+```sh
 curl 'http://localhost:9200/_cluster/settings?pretty'
 ```
 
 ### List Indices
-```shell
+```sh
 curl -s 'localhost:9200/_cat/indices'
 ```
 
 ### Check Cluster Health
-```shell
+```sh
 curl -XGET 'http://localhost:9200/_cluster/health?pretty=true'
 ```
 
 ### Isolate Unassigned
-```shell
+```sh
 curl -XGET http://localhost:9200/_cat/shards | grep UNASSIGNED | tee unassigned-shards
 ```
 
 ### Force Reallocation
-```shell
+```sh
 curl -XGET http://localhost:9200/_cat/shards | grep UNASSIGNED > unassigned-shards
 for line in `cat unassigned-shards | awk '{print $1 ":" $2}'`; do index=`echo $line | awk -F: '{print $1}'`; \
     shard=`echo $line | awk -F: '{print $2}'`; curl -XPOST 'localhost:9200/_cluster/reroute' -d "{

@@ -21,13 +21,16 @@ topic to include your name as the support contact.
 - Join/unmute [`#cg-support`](https://gsa-tts.slack.com/messages/cg-support/) 
 and [`#cg-platform-news`](https://gsa-tts.slack.com/messages/cg-platform-news/)
 - Meet with the previous support person and take responsibility for any open 
-support items they are still working on.
+support items they are still working on. There is a standing support sync meeting 
+(Tuesday 4:30-5 pm ET) that you should join if you are rolling on or off support
+that week.
 
 ## At least once during your week of support
 
 - Confirm that all AWS users have MFA configured. The following should return `[]`
 or the users that don't have MFA enabled:
-```shell
+
+```sh
 users=$(aws iam list-users | jq '[.[]| .[] | select (.PasswordLastUsed) | .UserName] | sort')
 mfa_users=$(aws iam list-virtual-mfa-devices | jq '[.[]| .[].User.UserName]| sort')
 echo "{ \"users\": $users, \"mfa_users\": $mfa_users}" | jq '.users - .mfa_users'
@@ -44,12 +47,10 @@ If you see a way to make this checklist better, just submit a PR to the
 
 ## Ensure all VMs are running the current stemcell
 
-- Get the latest stemcell version from http://bosh.cloudfoundry.org/stemcells/.
+- Get the latest stemcell version from http://bosh.cloudfoundry.org/stemcells/
+  for AWS Xen-HVM Light
 
-- Check https://ci.fr.cloud.gov/teams/main/pipelines/aws-light-stemcell-builder 
-to ensure it has built the same version.
-
-- On each bosh director run `bosh deployments` and verify the stemcell in-use 
+- From the jumpbox in each of our four environments, run `bosh deployments` and verify the stemcell in-use 
 for each deployment is current.
 
 - **Note:** The 
@@ -81,26 +82,45 @@ that cards to fix alerts are prioritized properly.
 
 ## Review AWS CloudTrail events
 
-Use the [AWS Console](http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-console.html) 
-to [review API activity history](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html) 
-for the following events:
+Use the [AWS Console](http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-console.html)
+to [review API activity history](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html)
+for the _EventNames_ listed below.
+Or, use the AWS CLI with the appropriate `$event_name`, and parse the emitted JSON:
+```sh
+aws cloudtrail lookup-events --lookup-attributes AttributeKey=EventName,AttributeValue=$event_name
+```
 
-- AuthorizeSecurityGroupEgress
-- AuthorizeSecurityGroupIngress
-- ConsoleLogin
-- CreatePolicy
-- CreateSecurityGroup
+These `EventNames` should be attributed to human individuals on the cloud.gov team:
+
+* ConsoleLogin
+
+All human-generated events should be mapped to named users, e.g. `firstname.lastname`, and NOT to `Administrator`. 
+Discuss the event(s) with the indicated [cloud.gov operator(s)](https://docs.google.com/spreadsheets/d/1mW3tphZ98ExmMxLHPogSpTq8DzYr5Oh8_SHnOTvjRWM/edit)
+
+All events in the following `EventNames` should be attributed to Terraform:
+
 - DeleteTrail
+- UpdateTrail
 - ModifyVpcAttribute
 - PutUserPolicy
 - PutRolePolicy
 - RevokeSecurityGroupEgress
 - RevokeSecurityGroupIngress
-- UpdateTrail
+- AuthorizeSecurityGroupEgress
+- AuthorizeSecurityGroupIngress
+- CreatePolicy
+- CreateSecurityGroup
+
+Terraform runs on instances that use instance profile roles, so authorized events will include:
+
+* a user name like `i-17deadbeef1234567`
+* a source IP address within AWS.
+* an AWS access key starting with `ASIA`
 
 If you observe any non-Terraform activity, discuss the event(s) with the 
-indicated [cloud.gov operator(s)](https://docs.google.com/spreadsheets/d/1mW3tphZ98ExmMxLHPogSpTq8DzYr5Oh8_SHnOTvjRWM/edit) 
-and if necessary follow the 
+indicated cloud.gov operator(s) (see above)
+
+If you're unable to ascertain an event was authorized, follow the 
 [Security Incident Response Guide]({{< relref "docs/ops/security-ir.md" >}}).
 
 ## Review vulnerability and compliance reports
@@ -126,7 +146,7 @@ ensure the updated release is deployed to all required VMs.
 ## Review open support requests
 
 Review the "new" (yellow) and "open" (red) Zendesk tickets. First-tier support 
-(cloud.gov BU) has primary responsibility to do the work of answering these, and 
+(customer squad) has primary responsibility to do the work of answering these, and 
 you serve as second-tier support providing technical expertise. You're welcome 
 to reply to the customer with answers if you like (choose "pending" when you 
 submit the answer)*, but your main responsibility is to provide technical 
@@ -136,5 +156,7 @@ associated posts in
 First-tier support may also ask you for pairing time to work out responses 
 together.
 
-* People with @gsa.gov emails can't receive email via Zendesk, so we have to 
+`*` People with @gsa.gov emails can't receive email via Zendesk, so we have to 
 email them via the [cloud-gov-support Google Group instead](https://groups.google.com/a/gsa.gov/forum/#!forum/cloud-gov-support).
+
+See also: [Detailed guidance on working with our support tools](https://docs.google.com/document/d/1QXZvcUl-6gtI7jEQObXV9FyiIpJC-Fx1R7RzB0C6PHM/edit#heading=h.80zn694rriw3).

@@ -32,12 +32,13 @@ cloud.gov is suitable for a wide range of applications, including websites and n
 - Your application doesn't rely on local storage for long-term data stores.
 
 ### Optional but recommended
+
 - Your organization can integrate your identity system with cloud.gov over SAML.
 - Your application can follow the [12-Factor App guidelines](https://12factor.net/).
 
 ## Not a good fit
 
-- Your application requires Oracle, SQL Server, or proprietary databases.
+- Your application requires proprietary databases not listed in our [database service documentation]({{< relref "docs/services/relational-database.md" >}}).
 - Your team is unable to use the [federal Interagency Agreement process]({{< relref "overview/pricing/start-using-cloudgov.md" >}}) for payment. For example, this may apply for teams working for U.S. local, state, tribal, or territory government organizations. If this applies to your team, [sign up for updates](/#updates) so that we can notify you if we add other options.
 
 ## Cannot use cloud.gov

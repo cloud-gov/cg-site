@@ -14,7 +14,7 @@ To get used to cloud.gov, practice by deploying a simple "hello world" applicati
 1. Look at the collection of tiny apps, and `cd` into the directory for the language/framework you feel most comfortable with. For example: `cd python-flask`
 1. Deploy the application, where `APPNAME` should be something unique like `FRAMEWORK-YOURNAME` (e.g. `nodejs-aidan`). By default, your `APPNAME` will become part of the route to make your application publicly reachable, usually `https://APPNAME.app.cloud.gov/` or similar, and route names must be unique across the platform.
 
-    ```bash
+    ```sh
     cf push APPNAME
     ```
 1. You'll see a series of messages noting the stages of creating the app. When complete, it'll say "App started" and give information about your app. Use the `urls` line (`urls: [ROUTENAME].app.cloud.gov`) to visit your app on the web.
