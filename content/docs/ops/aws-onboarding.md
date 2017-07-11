@@ -3,7 +3,13 @@ menu:
   docs:
     parent: operations
 title: AWS onboarding
+aliases:
+  - /docs/ops/aws-accounts/
 ---
+
+### AWS accounts
+
+See [how our AWS accounts work](https://docs.google.com/document/d/110o1L7EOby3hvE5d-cDhg2LBLHymbZLnMPe9kuk4qp8/edit#), including the list of accounts we have, how we manage our admin credentials, and how to file and escalate support tickets.
 
 ### Levels of access
 
@@ -11,7 +17,6 @@ While we try to minimize interaction with AWS directly (explained in next sectio
 
 * **Full administrative accounts:** This is be provided to the people known in our compliance documentation as the "Cloud Operations team".
 * **Read-only accounts:** This is provided to GSA Security staff, who need access for incident response.
-* **Indirect access through jumpboxes:** While the remainder of the Atlas team isn't given an AWS IAM account directly, they are able to SSH in to access the various BOSH machines by creating ephemeral jumpboxes. See the [Troubleshooting BOSH](../troubleshooting-bosh/) page for more information.
 
 #### Restoring access for team members
 
@@ -25,7 +30,7 @@ reset their password, verify their identity and coordinate or pair with them.
 1. Use https://fugacious.18f.gov to send them their credentials. Set the expiration to 2 views / 12 hours.
 1. Slack DM the Fugacious link to them. Remind them to set their two-factor authentication via MFA device.
 
-*** Setting up two-factor authentication
+*** Setting up two-factor authentication (required)
 
 To set up multi-factor authentication (MFA):
 
