@@ -82,6 +82,8 @@ that cards to fix alerts are prioritized properly.
 
 ## Review AWS CloudTrail events
 
+> [Get familiar with the documentation for CloudTrail logs](http://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html).
+
 Use the [AWS Console](http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-console.html)
 to [review API activity history](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html)
 for the _EventNames_ listed below.
