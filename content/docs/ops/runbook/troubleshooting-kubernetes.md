@@ -74,7 +74,7 @@ kubectl describe pod x0e41a06287f54-master-1362982585-aamfj
 
 #### Stop entire Kubernetes deployment
 ```sh
-bosh stop kubernetes
+bosh -d kubernetes stop
 ```
 
 #### Get a shell in a particular pod
