@@ -31,30 +31,23 @@ Components run as applications on top of the platform, for users:
 
 Components run as applications on top of the platform, for our team:
 
-- [Compliance documentation (draft)](https://github.com/18F/cg-compliance) ([accompanying deployment pipeline](https://github.com/18F/cg-deploy-compliance-documentation))
 - [Compliance documentation system diagrams](https://github.com/18F/cg-diagrams)
-- [Quota database](https://github.com/18F/cg-quotas-db)
 
 Custom components for our Cloud Foundry deployment:
 
-- [User Account and Authentication (UAA) Server](https://github.com/18F/cg-uaa)
 - [UAA extra features](https://github.com/18F/cg-uaa-extras)
 - [Sandbox creation bot](https://github.com/18F/cg-sandbox-bot)
-- [InfluxDB firehose nozzle](https://github.com/18F/influxdb-firehose-nozzle)
 
 BOSH releases:
 
 - [awslogs](https://github.com/18F/cg-awslogs-boshrelease)
 - [ClamAV](https://github.com/18F/cg-clamav-boshrelease)
-- [Cloud Foundry](https://github.com/18F/cg-cf-release)
 - [collectd](https://github.com/18F/cg-collectd-boshrelease)
-- [Encrypt S3 blobstores](https://github.com/18F/cg-encrypt-blobstore-boshrelease)
 - [Grafana](https://github.com/18F/cg-grafana-boshrelease)
 - [InfluxDB](https://github.com/18F/cg-influxdb-boshrelease)
 - [Nessus Agent](https://github.com/18F/cg-nessus-agent-boshrelease)
 - [Nessus Manager](https://github.com/18F/cg-nessus-manager-boshrelease)
-- [New Relic #1](https://github.com/cloudfoundry-community/newrelic-boshrelease)
-- [New Relic #2](https://github.com/18F/cg-newrelic-boshrelease)
+- [New Relic](https://github.com/cloudfoundry-community/newrelic-boshrelease)
 - [Riemann](https://github.com/18F/cg-riemann-boshrelease)
 - [riemannc](https://github.com/18F/cg-riemannc-boshrelease)
 - [SecureProxy](https://github.com/18F/cg-secureproxy-boshrelease)
@@ -64,8 +57,7 @@ BOSH releases:
 
 Service brokers:
 
-- [RDS #1](https://github.com/cloudfoundry-community/rds-broker)
-- [RDS #2](https://github.com/18F/aws-broker)
+- [RDS](https://github.com/18F/aws-broker)
 - [CDN (CloudFront and Let's Encrypt)](https://github.com/18F/cf-cdn-service-broker)
 - [Kubernetes](https://github.com/18F/kubernetes-broker)
 - [UAA credentials](https://github.com/cloudfoundry-community/uaa-credentials-broker)
@@ -80,19 +72,14 @@ Configuration/deployment support:
 
 Deployment pipelines:
 
-- [Abacus](https://github.com/18F/cg-deploy-abacus)
 - [Admin user interface](https://github.com/18F/cg-deploy-admin-ui)
-- [AWS light stemcell images](https://github.com/18F/cg-deploy-aws-light-stemcell-builder)
 - [BOSH](https://github.com/18F/cg-deploy-bosh)
-- [Bots](https://github.com/18F/cg-deploy-bots)
 - [Cloud Foundry](https://github.com/18F/cg-deploy-cf)
 - [Concourse](https://github.com/18F/cg-deploy-concourse)
 - [Concourse task Docker image](https://github.com/18F/cg-deploy-concourse-docker-image)
-- [Diego](https://github.com/18F/cg-deploy-diego)
 - [Discourse](https://github.com/18F/cg-deploy-discourse)
 - [ELK/logsearch](https://github.com/18F/cg-deploy-logsearch)
 - [Fugacious](https://github.com/18F/cg-deploy-fugacious)
-- [InfluxDB firehose nozzle](https://github.com/18F/cg-deploy-influxdb-firehose-nozzle)
 - [Kubernetes](https://github.com/18F/cg-deploy-kubernetes)
 - [Monitoring](https://github.com/18F/cg-deploy-monitoring)
 - [Nessus Manager](https://github.com/18F/cg-deploy-nessus-manager)
@@ -103,11 +90,7 @@ Deployment pipelines:
 
 Metadata for our team, such as issues, checklists, and other documents:
 
-- [Agent Q theme work](https://github.com/18F/cg-agent-q)
-- [Atlas theme work](https://github.com/18F/cg-atlas)
-- [Design work](https://github.com/18F/cg-design)
 - [Policies and procedures](https://github.com/18F/compliance-docs)
-- [Postmortems](https://github.com/18F/cg-postmortems)
 - [Product work](https://github.com/18F/cg-product)
 
 Collections of scripts for our team:
@@ -117,7 +100,6 @@ Collections of scripts for our team:
 Optional code offered to our team and customers:
 
 - [Hello world apps](https://github.com/18F/cf-hello-worlds)
-- [Notifications plugin for Hubot](https://github.com/18F/hubot-cf-notifications)
 - [Redirect app](https://github.com/18F/cf-redirect)
 - [Fake UAA for testing](https://github.com/18F/cg-fake-uaa)
 
