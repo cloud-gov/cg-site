@@ -17,7 +17,7 @@ Curious what’s new that you might find helpful as a cloud.gov user? Here are h
 ### Platform releases
 We upgraded the Cloud Foundry deployment to [v267](https://github.com/cloudfoundry/cf-release/releases/tag/v267).
 
-You should restage your application to incorporate fixes in the base filesystem and ensure you’re running the most recent language version supported by your buildpack.
+You should [restage your application](http://cli.cloudfoundry.org/en-US/cf/restage.html) to [incorporate fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) and ensure you’re running the most recent language version supported by your [buildpack](https://docs.cloudfoundry.org/buildpacks/).
 
 #### Additional upgrades
 * [RootFS cflinuxfs2 1.138.0](https://github.com/cloudfoundry/cflinuxfs2/releases/tag/1.138.0), which addresses this security vulnerability:
