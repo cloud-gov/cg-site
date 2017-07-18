@@ -12,7 +12,7 @@ Curious what’s new that you might find helpful as a cloud.gov user? Here are h
 * We created [a page explaining prototyping packages](https://cloud.gov/overview/pricing/prototyping/), how you might use them, and what they cost.
 
 ### Changed
-If you have .NET applications you’re interested in running on cloud.gov, the updated [.NET Core buildpack](https://docs.cloudfoundry.org/buildpacks/dotnet-core/index.html) supports [.NET Core 2 Preview (currently in alpha)](https://blogs.msdn.microsoft.com/dotnet/2017/06/28/announcing-net-core-2-0-preview-2/). It’s ready for you to prototype with your .NET applications.
+* If you have .NET applications you’re interested in running on cloud.gov, the updated [.NET Core buildpack](https://docs.cloudfoundry.org/buildpacks/dotnet-core/index.html) supports [.NET Core 2 Preview (currently in alpha)](https://blogs.msdn.microsoft.com/dotnet/2017/06/28/announcing-net-core-2-0-preview-2/). It’s ready for you to prototype with your .NET applications.
 
 ### Platform releases
 We upgraded the Cloud Foundry deployment to [v267](https://github.com/cloudfoundry/cf-release/releases/tag/v267).
@@ -20,7 +20,7 @@ We upgraded the Cloud Foundry deployment to [v267](https://github.com/cloudfound
 You should restage your application to incorporate fixes in the base filesystem and ensure you’re running the most recent language version supported by your buildpack.
 
 #### Additional upgrades
-* [RootFS cflinuxfs2 1.134.0](https://github.com/cloudfoundry/cflinuxfs2/releases/tag/1.134.0), which addresses this security vulnerability:
+* [RootFS cflinuxfs2 1.138.0](https://github.com/cloudfoundry/cflinuxfs2/releases/tag/1.138.0), which addresses this security vulnerability:
 * [CVE-2017-11103](http://people.ubuntu.com/~ubuntu-security/cve/CVE-2017-11103), service impersonation attack only affecting applications using or embedding Heimdal code before 7.4.
 * [Diego v1.22.0](https://github.com/cloudfoundry/diego-release/releases/tag/v1.22.0)
 * Stemcell
