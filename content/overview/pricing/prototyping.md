@@ -11,12 +11,13 @@ The prototyping package enables teams to build and deploy many experimental appl
 
 ## Flexible structure
 
-A prototyping package allows for an unlimited number of users and an unlimited number of separate application environments with a variety of applications. An entire agency, office, or department can purchase a prototyping package.
+A prototyping package can have an unlimited number of users (such as developers and program managers) and an unlimited number of separate application environments with a variety of applications. An entire agency, office, or department can purchase a prototyping package. A person or team at the agency (such as an IT services team) manages access to the package.
 
 ### Example use cases
 
 - Enable teams to evaluate compatibility with cloud.gov for candidate systems before moving them to production on cloud.gov, including load testing.
 - Give each technical team member their own cloud environment as a professional development opportunity, helping them train on modern technologies.
+- Reduce shadow IT by giving staff an approved environment, with oversight, to try experiments and new ideas.
 
 ### Limitations
 
@@ -24,10 +25,10 @@ Prototyping packages cannot host production data. All prototyping package applic
 
 ## Full oversight and configuration for administrators
 
-- Give and remove user access to individual environments.
+- Give and remove user access to individual environments. (This can include employees and contractors.)
 - View all applications and all users with access to each environment.
 - Set and adjust the resource usage limit for entire package, as well as setting and adjusting resource usage limits for each environment within the package.
-- Integrate your agency identity provider with cloud.gov so that staff and contractors log in with agency credentials.
+- Integrate your agency identity provider with cloud.gov so that employees and contractors log in with agency credentials.
 - Use the cloud.gov API to build tools for managing the prototyping package.
 
 ## Price
