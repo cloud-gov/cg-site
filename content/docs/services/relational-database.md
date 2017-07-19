@@ -146,7 +146,11 @@ dump.
 $ pg_restore --clean --no-owner --no-acl --dbname={database name} backup.pg
 ```
 
-### Rotating credentials
+## Encryption
+
+Every RDS instance configured through cloud.gov is [encrypted at rest](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html).
+
+## Rotating credentials
 
 You can rotate credentials by creating a new instance and deleting the existing instance. If this is not an option, email [cloud.gov support](mailto:cloud-gov-support@gsa.gov) to request rotating the credentials manually.
 
