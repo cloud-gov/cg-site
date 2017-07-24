@@ -15,7 +15,7 @@ To get news about cloud.gov, [**sign up for email updates**](/#updates).
 
 ### Support for people who use cloud.gov
 
-Email [**cloud-gov-support@gsa.gov**](mailto:cloud-gov-support@gsa.gov?body=What%20are%20you%20trying%20to%20do%3F%0A%0AWhat%20do%20you%20expect%20to%20happen%3F%0A%0AWhat%20actually%20happened%3F%0A%0AAttach%20relevant%20logs%20or%20screenshots%20with%20sensitive%20information%20removed%3A). We provide support for cloud.gov during typical business hours for U.S. East and West Coasts. We don't guarantee support for cloud.gov outside those hours, though we're always monitoring for signs of trouble that might affect customers.
+Email [**cloud-gov-support@gsa.gov**](mailto:cloud-gov-support@gsa.gov?body=What%20are%20you%20trying%20to%20do%3F%0A%0AWhat%20do%20you%20expect%20to%20happen%3F%0A%0AWhat%20actually%20happened%3F%0A%0AAttach%20relevant%20logs%20or%20screenshots%20%28with%20sensitive%20information%20removed%29%3A). We provide support for cloud.gov during typical business hours for U.S. East and West Coasts. We don't guarantee support for cloud.gov outside those hours, though we're always monitoring for signs of trouble that might affect customers.
 
 You shouldn't include any sensitive environment variables or passwords in your support emails; we don't need that information to help you, and we recommend you keep it limited to view by as few people as possible.
 
