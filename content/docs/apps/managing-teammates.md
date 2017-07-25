@@ -79,7 +79,7 @@ To remove a teammate from an organization, you must first remove them from any o
 
 ![App Overview dashboard](/img/remove-organization.png)
 
-### Space Users
+### Space users
 
 If you're an Org Manager or Space Manager, go to the space with the teammate you want to remove.
 
@@ -95,7 +95,7 @@ If you're an Org Manager or Space Manager, here's how to remove teammates from y
 
 Check what version of the CLI you're running: `cf -v`. If that's older than the [latest version listed here](https://github.com/cloudfoundry/cli/releases), you should [upgrade it](https://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html) to avoid unexpected errors.
 
-### Organization Users
+### Organization users
 
 To remove teammates from your organization, run the following:
 
@@ -130,7 +130,7 @@ To remove teammates from your organization, run the following:
     cf curl -X DELETE '/v2/organizations/<ORG_GUID>/users' -d '{"username": "<email>"}'
     ```
 
-### Space Users
+### Space users
 
 To remove teammates from your space, run the following:
 
