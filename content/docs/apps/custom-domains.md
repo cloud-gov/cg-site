@@ -7,7 +7,7 @@ title: Custom domains
 
 To put your app on your project's custom domain name, use the [CDN service]({{< relref "docs/services/cdn-route.md" >}}).
 
-This will automatically create and renew your HTTPS certificate, and it supports IPv6.
+This supports IPv6.
 
 For all custom domains, we recommend incorporating [HTTPS-Only Standard guidance](https://https.cio.gov/), including [HSTS](https://https.cio.gov/hsts/) and [preloading](https://https.cio.gov/guide/#options-for-hsts-compliance).
 
