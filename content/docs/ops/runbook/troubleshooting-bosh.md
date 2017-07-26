@@ -96,7 +96,9 @@ admin-ui               clamav/9                             bosh-aws-xen-hvm-ubu
 
 # ... output shortened for brevity
 
-Deployments total: X
+X deployments
+
+Succeeded
 ```
 
 After selecting a deployment from the named list from the above's output, you
@@ -112,14 +114,12 @@ First, get a list of the VMs for your chosen deployment.
 
 ```sh
 $ bosh -d <DEPLOYMENT_NAME> vms
-+---------------------+---------+-----+------------+--------------+
-| VM                  | State   | AZ  | VM Type    | IPs          |
-+---------------------+---------+-----+------------+--------------+
-| influxdb/0 (asdf)   | running | n/a | size_z1    | 192.168.x.x  |
+Instance                                       Process State  AZ  IPs        VM CID               VM Type
+admin-ui/some-guid                             running        z1  ab.cd.e.f  i-some-id            admin-ui
 
 # ... output shortened for brevity
 
-X deployments
+X vms
 
 Succeeded
 ```
