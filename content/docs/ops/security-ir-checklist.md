@@ -8,11 +8,12 @@ linktitle: Security IR checklist
 
 *This is a short, actionable checklist for the Incident Commander (IC) to follow during incident response. It's a companion to the [IR guide]({{< relref "security-ir.md" >}}), where you can find the full details of each step.*
 
-## Initiate
-
 You're the first cloud.gov team member to notice a non-team-member's report of a possible security incident regarding cloud.gov, or you've noticed an unreported possible security incident yourself. Congratulations, you're now the Incident Commander (IC)! Follow these steps:
 
-First, **follow the the [18F security incident response process](https://handbook.18f.gov/security-incidents/)**. At step 6 ("If the incident involves cloud.gov"), notify the rest of the cloud.gov team in [`#cloud-gov`](https://gsa-tts.slack.com/messages/cloud-gov/) using `@cg-team`.
+## Initiate
+
+- **follow the the [18F security incident response process](https://handbook.18f.gov/security-incidents/)**.
+  - At step 6 ("If the incident involves cloud.gov"), notify the rest of the cloud.gov team in [`#cloud-gov`](https://gsa-tts.slack.com/messages/cloud-gov/) using `@cg-team`.
 
 ## Assess
 
