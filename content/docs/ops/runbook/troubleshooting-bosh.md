@@ -85,8 +85,6 @@ jumpbox, outlined previously.
 
 ### Finding the deployment
 
-In the pre-v2 BOSH CLI, you needed to set your deployment.
-In BOSH CLI v2, you just use the name of the deployment in all the commands you use.
 In order see all the deployments, run the following command:
 
 ```sh
