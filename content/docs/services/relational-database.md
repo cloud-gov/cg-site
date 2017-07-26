@@ -102,7 +102,7 @@ Name: ...
 Without closing the SSH session managed by the cf-service-connect plugin, create the backup file using the parameters provided by the plugin:
 
 ```sh
-$ pg_dump postgresql://${USERNAME}:${PASSWORD}@${HOST}/${PORT}/${NAME} -f backup.pg
+$ pg_dump postgresql://${USERNAME}:${PASSWORD}@${HOST}:${PORT}/${NAME} -f backup.pg
 ```
 
 ### Download
