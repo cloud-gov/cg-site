@@ -55,7 +55,7 @@ cf create-service aws-rds medium-psql my-db-service -c '{"storage": 50}'
 
 To use the service instance from your application, bind the service instance to the application. For an overview of this process and how to retrieve the credentials for the service instance from environment variables, see [Bind a Service Instance](https://docs.cloudfoundry.org/devguide/services/managing-services.html#bind) and the linked details at [Delivering Service Credentials to an Application](https://docs.cloudfoundry.org/devguide/services/application-binding.html).
 
-In short, `cf bind-service` will provide a `DATABASE_URL` environment variable for your app, which is then picked up by the `restage`. Note that for a Rails app, `bind-service` will [overwrite your `database.yml`](http://docs.cloudfoundry.org/buildpacks/ruby/ruby-service-bindings.html#rails-applications-have-autoconfigured-database-yml).
+In short, `cf bind-service` will provide a `DATABASE_URL` environment variable for your app, which is then picked up by the `restage`.
 
 The contents of the `DATABASE_URL` environment variable contain the credentials to access your database. Treat the contents of this and all other environment variables as sensitive.
 
@@ -67,20 +67,15 @@ There are currently two ways to access the database directly.
 executable which will interactively assist with accessing the data in the
 database. It supports accessing data from different types of databases.
 1. [Manually accessing the database](#manually-access-a-database). This way
-requires manually downloading the tool(s) needed to access the database. The
-only type of database supported via this method is PostgreSQL.
+requires manually downloading the tool(s) needed to access the database.
 
 ### cg-migrate-db plugin
-The easiest way to access the data in your database is via the `cg-migrate-db`
-plugin.
-
-Please check out the [repository](https://github.com/18F/cg-migrate-db)
+You can access the data in your database via the `cg-migrate-db`
+plugin. See the [repository](https://github.com/18F/cg-migrate-db)
 for instructions on how to install the plugin, backup data, import data,
 download a local copy of the data, and upload a local copy of the data.
 
 ### Manually access a database
-
-The instructions below are for PostgreSQL, but should be similar for MySQL or others.
 
 #### Using cf ssh
 
@@ -89,6 +84,8 @@ To access a service database, use the [cf-service-connect plugin](https://github
 ### Export
 
 #### Create backup
+
+The instructions below are for PostgreSQL, but should be similar for MySQL or others.
 
 First, connect to an instance using the [cf-service-connect plugin](https://github.com/18F/cf-service-connect#readme):
 
@@ -105,7 +102,7 @@ Name: ...
 Without closing the SSH session managed by the cf-service-connect plugin, create the backup file using the parameters provided by the plugin:
 
 ```sh
-$ pg_dump postgresql://${USERNAME}:${PASSWORD}@${HOST}/${PORT}/${NAME} -f backup.pg
+$ pg_dump postgresql://${USERNAME}:${PASSWORD}@${HOST}:${PORT}/${NAME} -f backup.pg
 ```
 
 ### Download
@@ -148,6 +145,14 @@ dump.
 ```sh
 $ pg_restore --clean --no-owner --no-acl --dbname={database name} backup.pg
 ```
+
+## Encryption
+
+Every RDS instance configured through cloud.gov is [encrypted at rest](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html).
+
+## Rotating credentials
+
+You can rotate credentials by creating a new instance and deleting the existing instance. If this is not an option, email [cloud.gov support](mailto:cloud-gov-support@gsa.gov) to request rotating the credentials manually.
 
 ## The broker in GitHub
 

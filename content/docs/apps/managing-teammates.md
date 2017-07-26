@@ -62,3 +62,97 @@ Decide which roles to give them. For a complete list of roles, see [the Cloud Fo
     cf set-org-role <email> <org> OrgAuditor
     ```
 {{% /commandline %}}
+
+## Removing a teammate
+
+If you are an Org Manager or Space Manager, you can remove teammates from orgs and spaces respectively.
+
+{{% dashboard %}}
+
+### Organization Users
+
+If you're an Org Manager, go to the org with the teammate you want to remove.
+
+On the Organization page, scroll down to the “Organization users” section. This has a list of all the organization users. Click the "Remove User From Org" button.
+
+To remove a teammate from an organization, you must first remove them from any of the organization's spaces first.
+
+![App Overview dashboard](/img/remove-organization.png)
+
+### Space users
+
+If you're an Org Manager or Space Manager, go to the space with the teammate you want to remove.
+
+On the Space page, scroll down to the “Space users” section. This has a list of all the space users. Click the "Remove All Space Roles" button.
+
+You can also remove a user from a Space by unchecking all of their space roles.
+
+{{% /dashboard %}}
+
+{{% commandline %}}
+
+If you're an Org Manager or Space Manager, here's how to remove teammates from your orgs and spaces. You can check whether you're an Org Manager using `cf org-users <org>` and whether you're a Space Manager using `cf space-users <org> <space>`.
+
+Check what version of the CLI you're running: `cf -v`. If that's older than the [latest version listed here](https://github.com/cloudfoundry/cli/releases), you should [upgrade it](https://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html) to avoid unexpected errors.
+
+### Organization users
+
+To remove teammates from your organization, run the following:
+
+1. Show your org info, by running:
+
+    ```sh
+    cf org <org>
+    ```
+2. List the spaces belonging to the org, by running:
+
+    ```sh
+    cf spaces
+    ```
+3. List the users and roles for each space, by running:
+
+    ```sh
+    cf space-users <org> <space>
+    ```
+4. Remove the user for each combination of space and role, by running:
+
+    ```sh
+    cf unset-space-role <email> <org> <space> <role>
+    ```
+5. Find the org GUID, by running:
+
+    ```sh
+    cf org --guid
+    ```
+6. Use the API to remove the user from the org, by running:
+
+    ```sh
+    cf curl -X DELETE '/v2/organizations/<ORG_GUID>/users' -d '{"username": "<email>"}'
+    ```
+
+### Space users
+
+To remove teammates from your space, run the following:
+
+1. Show your org info, by running:
+
+    ```sh
+    cf org <org>
+    ```
+2. List the spaces belonging to the org, by running:
+
+    ```sh
+    cf spaces
+    ```
+3. List the users and roles for each space, by running:
+
+    ```sh
+    cf space-users <org> <space>
+    ```
+4. Remove the user for each combination of space and role, by running:
+
+    ```sh
+    cf unset-space-role <email> <org> <space> <role>
+    ```
+
+{{% /commandline %}}
