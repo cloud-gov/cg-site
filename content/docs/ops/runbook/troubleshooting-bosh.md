@@ -103,7 +103,7 @@ After selecting a deployment from the named list from the above's output, you
 will need to download the manifest for that deployment to the local file-system.
 
 ```sh
-$ bosh -d <DEPLOYMENT_NAME manifest > ./<DEPLOYMENT_NAME>.yml
+$ bosh -d <DEPLOYMENT_NAME> manifest > ./<DEPLOYMENT_NAME>.yml
 ```
 
 ### Troubleshooting individual VMs
