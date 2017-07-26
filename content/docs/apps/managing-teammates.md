@@ -83,9 +83,9 @@ To remove a teammate from an organization, you must first remove them from any o
 
 If you're an Org Manager or Space Manager, go to the space with the teammate you want to remove.
 
-On the Space page, scroll down to the “Space users” section. This has a list of all the space users.
+On the Space page, scroll down to the “Space users” section. This has a list of all the space users. Click the "Remove All Space Roles" button.
 
-You can remove a user from a Space by unchecking all of their space roles.
+You can also remove a user from a Space by unchecking all of their space roles.
 
 {{% /dashboard %}}
 
