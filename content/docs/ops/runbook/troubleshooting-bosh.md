@@ -83,29 +83,16 @@ the Troubleshooting Bosh Managed VMS section below.
 In order to troubleshoot a Bosh-managed VMS, you will need to first access a
 jumpbox, outlined previously.
 
-### Setting the deployment
+### Finding the deployment
 
-You'll need to set up `bosh` to the correct deployment. You can verify that the
-deployment is set by running the following command:
-
-```sh
-$ bosh status
-
-# ... output shortened for brevity
-
-Deployment
-  not set
-```
-
-You can get a list of all the current deployments by running the following
-command:
+In the pre-v2 BOSH CLI, you needed to set your deployment.
+In BOSH CLI v2, you just use the name of the deployment in all the commands you use.
+In order see all the deployments, run the following command:
 
 ```sh
 $ bosh deployments
-+----------+-------------------+-------------------------+
-| Name     | Release(s)        | Stemcell(s)             |
-+----------+-------------------+-------------------------+
-| admin-ui | admin-ui/10       | bosh-aws-xen/3232.11    |
+Name                   Release(s)                           Stemcell(s)                                      Team(s)  Cloud Config
+admin-ui               clamav/9                             bosh-aws-xen-hvm-ubuntu-trusty-go_agent/3421.11  -        latest
 
 # ... output shortened for brevity
 
@@ -116,14 +103,7 @@ After selecting a deployment from the named list from the above's output, you
 will need to download the manifest for that deployment to the local file-system.
 
 ```sh
-$ bosh download manifest <DEPLOYMENT_NAME> ./<DEPLOYMENT_NAME>.yml
-$ bosh deployment ./<DEPLOYMENT_NAME>.yml
-$ bosh status
-
-# ... output shortened for brevity
-
-Deployment
-  Manifest: /path/to/<DEPLOYMENT_NAME>.yml
+$ bosh -d <DEPLOYMENT_NAME manifest > ./<DEPLOYMENT_NAME>.yml
 ```
 
 ### Troubleshooting individual VMs
@@ -131,7 +111,7 @@ Deployment
 First, get a list of the VMs for your chosen deployment.
 
 ```sh
-$ bosh vms <DEPLOYMENT_NAME>
+$ bosh -d <DEPLOYMENT_NAME> vms
 +---------------------+---------+-----+------------+--------------+
 | VM                  | State   | AZ  | VM Type    | IPs          |
 +---------------------+---------+-----+------------+--------------+
@@ -139,13 +119,15 @@ $ bosh vms <DEPLOYMENT_NAME>
 
 # ... output shortened for brevity
 
-VMs total: X
+X deployments
+
+Succeeded
 ```
 
 We can now have Bosh provide an ssh connection inside the VM.
 
 ```sh
-$ bosh ssh <VM_NAME>
+$ bosh -d <DEPLOYMENT_NAME> ssh <VM_NAME>
 # ... shells into virtual machine from within jumpbox
 ```
 
