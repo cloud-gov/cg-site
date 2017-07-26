@@ -25,14 +25,6 @@ documentation](https://github.com/concourse/fly#installing-from-the-concourse-ui
 1. Login to Concourse through the web, click on the link next to `cli:` to download `fly` for your platform
 1. Save to a location in your path and make it executable
 
-### Creating and Intercepting ephemeral jumpboxes
-
-1. Go to [Concourse web](https://ci.fr.cloud.gov/login) and login if necessary
-1. Select the [jumpbox pipeline](https://ci.fr.cloud.gov/pipelines/jumpbox)
-1. Select the job that corresponds to whichever BOSH you want to work with, e.g. `container-bosh-staging`
-1. Click the plus button to start your own build of your selected job. Remember
-   the build number as you'll be referencing it in the `builds` command.
-
 If you haven't already, set a target to your concourse using the following command
 
 ```sh
@@ -42,6 +34,22 @@ You should now see that target when you issue the following command.
 ```sh
 $ fly targets
 ```
+
+### Creating and Intercepting ephemeral jumpboxes
+
+1. Go to [Concourse web](https://ci.fr.cloud.gov/login) and login if necessary
+1. Select the [jumpbox pipeline](https://ci.fr.cloud.gov/pipelines/jumpbox)
+1. Select the job that corresponds to whichever BOSH you want to work with, e.g. `container-bosh-staging`
+1. Click the plus button to start your own build of your selected job. Remember
+   the build number as you'll be referencing it in the `builds` command.
+
+If using the command-line is easier, you can trigger a job with the following
+command instead of going through the UI.
+
+```shell
+fly -t <YOUR_CONCOURSE_TARGET_NAME> trigger-job -j jumpbox/<JOB_NAME>
+```
+
 Using the `fly` CLI, check the builds in your targeted Concourse. Builds are
 displayed in reverse chronological order, so more recent builds will be
 visible towards the top.
