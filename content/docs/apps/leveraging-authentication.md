@@ -88,13 +88,13 @@ access token. Here is where things get fun.
     to get the authenticated user's `email`, which you can then use within
     your application to identify and/or authorize the user.
 
+    After decoding the token verify the signature to ensure the token is authentic.
+    The JWK Set for cloud.gov's UAA is located at `https://uaa.fr.cloud.gov/token_keys`.
+
     If you get an expired token error at some point in the future, you can
     exchange the `refresh_token` from the previous step to get a new `access_token`,
     so you might want to securely save the `refresh_token` associated with the
     authenticated user.
-
-For an example of this entire process in under 100 lines of node JS, see the
-[example client](https://github.com/18F/cg-fake-uaa/tree/master/example-client).
 
 ## Using the fake UAA server
 
