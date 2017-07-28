@@ -19,14 +19,14 @@ If you need help with an application security incident, the request should come 
 
 You should not include any passwords or sensitive environment variables in your email (we don't need them to help you, and you should keep them protected).
 
-### Report a security issue
+### Report a vulnerability
 
-We welcome vulnerability reports [according to our vulnerability disclosure policy](https://18f.gsa.gov/vulnerability-disclosure-policy/), which includes specific contact information for reports.
+We welcome vulnerability reports [according to our vulnerability disclosure policy](https://18f.gsa.gov/vulnerability-disclosure-policy/), which includes how to best contact us for this kind of information.
 
 ### Questions from the public and industry
 
 If you have a question that isn't on behalf of a U.S. government organization (such as if you're a member of the public or representing a company), we invite you to post your question [publicly as an issue on GitHub](https://github.com/18F/cg-site/issues/new) (requires a free GitHub account), so that we can write an answer available to everyone. If you prefer not to post publicly, you can email [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov).
 
-### Are you interested in working on cloud.gov?
+### Interested in working on or contributing to cloud.gov?
 
-Check out [Joining 18F](https://pages.18f.gov/joining-18f/) if you'd like to join 18F, or talk to us in [18F's public DevOps chat channel](https://chat.18f.gov/) about how to collaborate.
+Check out [Joining 18F](https://pages.18f.gov/joining-18f/) if you'd like to join 18F, or talk to us in [18F's public DevOps chat channel](https://chat.18f.gov/) about how to collaborate, including how to contribute to [our open source work]({{< relref "docs/ops/repos.md" >}}).
