@@ -12,14 +12,15 @@ A sandbox is a free space that you can use to see if cloud.gov might suit your t
 
 ## Get a sandbox
 
-Anyone with a U.S. federal government email address (ending in `.gov`, `.mil`, or `.fed.us`) can [**sign up for a free sandbox space**](https://account.fr.cloud.gov/signup). No paperwork is required from us. (It’s up to you to determine whether you may need permission from your organization.) If you have other questions or comments, see [Contact]({{< relref "docs/help.md" >}}).
+Anyone with a U.S. federal government email address (ending in `.gov`, `.mil`, or `.fed.us`) can [**sign up for a free sandbox space**](https://account.fr.cloud.gov/signup). No paperwork is required from us. (It’s up to you to determine whether you may need permission from your agency.) If you have other questions or comments, see [Contact]({{< relref "docs/help.md" >}}).
 
 If you’re interested in [purchasing full access]({{< relref "overview/pricing/rates.md" >}}) (whether for **Prototyping** or for production systems at the **Open Data**, **FISMA Low**, or **FISMA Moderate** levels), email [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov) and we'll help you get started.
 
 ## Keep in mind before you try your sandbox
 
 * If your agency has not already integrated its single-sign on authentication provider with cloud.gov (only GSA, EPA, and FDIC have done this so far), you will access your sandbox through a [cloud.gov account]({{< relref "docs/getting-started/accounts.md#cloud-gov-accounts" >}}). This account requires multi-factor authentication using a mobile app such as [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) or [Authy](https://www.authy.com/app/mobile/). If you cannot install or use these apps, such as if your workplace prohibits mobile phones or mobile phone cameras, you might not be able to set up access. (Paid access packages support integration with your agency single sign-on authentication provider.)
-* If your organization prohibits installing the [cloud.gov command line interface]({{< relref "docs/getting-started/setup.md#set-up-the-command-line" >}}) on your computer, you won’t be able to deploy applications in your sandbox. (For paid access packages, we can coordinate with your agency to help them approve this tool.)
+* If your agency prohibits installing the [cloud.gov command line interface]({{< relref "docs/getting-started/setup.md#set-up-the-command-line" >}}) on your computer, you won’t be able to deploy applications in your sandbox. (For paid access packages, we can coordinate with your agency to help them approve this tool.)
+* If your agency blocks many network ports, you might receive errors when you try [`cf logs`]({{< relref "docs/apps/logs.md" >}}) or [`cf ssh`]({{< relref "docs/apps/using-ssh.md" >}}). (For paid access packages, we can coordinate with your agency to ask for unblocking those ports.)
 
 ## A few things you can try in your sandbox
 
