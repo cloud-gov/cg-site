@@ -1,12 +1,5 @@
 ---
-menu:
-  overview:
-    parent: overview
-title: Case Study: Federal Election Commission
-weight: -50
-aliases:
-  - /case-studies/fec/
-  - /case-studies/federal-election-commission/
+title: "Case Study: Federal Election Commission"
 ---
 The Federal Election Commission (FEC) recently worked with 18F to redesign its website. By hosting FEC.gov on cloud.gov and moving its data to the cloud, the FEC anticipates saving 85% in hosting costs and is better prepared for peak traffic events.
 
