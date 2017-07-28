@@ -5,19 +5,23 @@ menu:
 title: Elasticsearch 2.4
 name: "elasticsearch24"
 description: "Elasticsearch version 2.4: a distributed, RESTful search and analytics engine"
-status: "Alpha"
+status: "Beta"
 ---
 
-cloud.gov offers [Elasticsearch](https://www.elastic.co/) 2.4 as a service. **This service is still in Alpha mode**: downtime and data loss is possible.
+cloud.gov offers [Elasticsearch](https://www.elastic.co/) 2.4 as a service.
 
 ## Plans
 
 Plan Name | Description | Price
 --------- | ----------- | -----
-`1x`  | Elasticsearch instance with 1GB of RAM and 1 slice of CPU   | Free in Alpha
-`3x`  | Elasticsearch instance with 3GB of RAM and 1 slice of CPU   | Free in Alpha
-`6x`  | Elasticsearch instance with 6GB of RAM and 1 slice of CPU   | Free in Alpha
-`12x` | Elasticsearch instance with 12GB of RAM and 2 slices of CPU | Free in Alpha
+`1x`  | Elasticsearch instance with 1GB of RAM and 1 slice of CPU   | Will be paid per hour + storage
+`3x`  | Elasticsearch instance with 3GB of RAM and 1 slice of CPU   | Will be paid per hour + storage
+`6x`  | Elasticsearch instance with 6GB of RAM and 1 slice of CPU   | Will be paid per hour + storage
+`12x` | Elasticsearch instance with 12GB of RAM and 2 slices of CPU | Will be paid per hour + storage
+`small-ha` | Elasticsearch cluster with 3 masters and 3 data nodes | Will be paid per hour + storage
+`large-ha` | Elasticsearch cluster with 3 masters and 3 data nodes | Will be paid per hour + storage
+
+Note: The `small-ha` and `large-ha` plans run multiple Elasticsearch master and data nodes on different machines, so that service is not interrupted by routine platform maintenance. The `1x`, `3x`, `6x`, and `12x` plans all run on a single instance and will be briefly unavailable during platform maintenance; these plans should not be used for production applications.
 
 ## How to create an instance
 
@@ -40,6 +44,8 @@ that [here](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/dots-in-
 You can rotate credentials by creating a new instance and deleting the existing instance. If this is not an option, email [cloud.gov support](mailto:cloud-gov-support@gsa.gov) to request rotating the credentials manually.
 
 ### Managing backups
+
+Note: The Elasticsearch service does not currently have the ability to back up and restore your data. Data loss is possible in the event of a catastropic failure at the infrastructure layer or user error (e.g., accidentally deleting your data).
 
 The Elasticsearch service includes the [AWS Cloud Plugin](https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/cloud-aws.html), which supports snapshot and restore with AWS S3. For detailed instructions, see the [Snapshot and Restore](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-snapshots.html) [Cloud AWS Repository](https://www.elastic.co/guide/en/elasticsearch/plugins/2.2/cloud-aws-repository.html) documentation.
 

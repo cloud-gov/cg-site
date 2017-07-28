@@ -1,5 +1,5 @@
 # Service metadata lives
 # https://github.com/18F/kubernetes-broker/blob/938b2836363e6142ebfbd351aa65d77b626cc5e0/catalogData/elasticsearch23/service.json#L4
 name = "elasticsearch24"
-description = "[Experimental] [Elasticsearch](https://www.elastic.co/products/elasticsearch) version 2.4: a distributed, RESTful search and analytics engine"
-status = "Alpha"
+description = "[Elasticsearch](https://www.elastic.co/products/elasticsearch) version 2.4: a distributed, RESTful search and analytics engine"
+status = "Beta"
