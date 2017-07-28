@@ -24,9 +24,7 @@ Plan Name | Description | Price
 `medium-mysql-redundant` | Dedicated redundant medium RDS MySQL DB instance                              | Will be paid per hour + storage
 `large-mysql`            | Dedicated large RDS MySQL DB instance                                         | Will be paid per hour + storage
 `large-mysql-redundant`  | Dedicated redundant large RDS MySQL DB instance                               | Will be paid per hour + storage
-`medium-oracle-se1`      | Dedicated medium RDS Oracle SE1 DB; available by request via [cloud.gov support](mailto:cloud-gov-support@gsa.gov) | Will be paid per hour + storage
-
-Note: the `medium-oracle-se1` plan is only available by request because AWS is [deprecating](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Oracle.html#Oracle.Concepts.Deprecate.12101) Oracle SE1. AWS GovCloud expects to support [Oracle SE2](http://www.oracle.com/us/products/database/oracle-db-se2-brief-2680836.pdf) in July 2017; at that point, we'll add a corresponding service plan and make it available to all users without requesting access.
+`medium-oracle-se2`      | Dedicated medium RDS Oracle SE2 DB instance                                   | Will be paid per hour + storage
 
 ### Pricing
 Shared instances are free. Simple and redundant instances will have pricing per hour and per GB per month. [Learn more about managed service pricing.]({{< relref "overview/pricing/managed-services-cost.md" >}})
