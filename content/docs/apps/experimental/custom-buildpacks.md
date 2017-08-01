@@ -26,6 +26,6 @@ Once you push your code using a custom buildpack, cloud.gov cannot update it for
 
 ### apt-buildpack
 
-cloud.gov does not allow the use of `sudo` inside of buildpacks. If your app depends on a library that is `apt-get` installable, you can use the CF flavor of [`apt-buildpack`](https://github.com/pivotal-cf-experimental/apt-buildpack), which is a custom buildpack. This can work with `cf-buildpack-multi`.
+cloud.gov does not allow the use of `sudo` inside of buildpacks. If your app depends on a library that is `apt-get` installable, you can use the CF flavor of [`apt-buildpack`](https://github.com/pivotal-cf-experimental/apt-buildpack), which is a custom buildpack.
 
 You can see this in the wild in 18F's [`iaa-pdf-api`](https://github.com/18f/iaa-pdf-api) repo, which depends on the [`pdftk`](https://www.pdflabs.com/tools/pdftk-server/) library.
