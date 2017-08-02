@@ -38,7 +38,7 @@ query parameters:
 
 You can set a `state` parameter with any value you'd like.
 It will be returned to you in a later step. While optional, we *strongly*
-recommend that you use it with a high-quality random number or a hash generated with a secret key, because it [protects against cross-site request forgery attacks](https://tools.ietf.org/id/draft-bradley-oauth-jwt-encoded-state-07.html).
+recommend that you use it with a high-quality random number or a hash generated with a secret key, because it [protects against cross-site request forgery attacks](http://www.thread-safe.com/2014/05/the-correct-use-of-state-parameter-in.html).
 
 Here is an example:
 
