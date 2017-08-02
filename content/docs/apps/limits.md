@@ -15,7 +15,7 @@ To view your [org quota]({{< relref "overview/pricing/quotas.md" >}}):
 2. Find your quota name from the `quota:` property.
 3. View your quota: `cf quota <quota>`
 
-To change your org quota, [ask support](/help/). You can request an increase in number of routes or service instances with no cost impact. Increasing or decreasing org memory quota changes your usage costs.
+To change your org quota, [ask support](/help/). You can request an increase in number of [application routes]({{< relref "docs/apps/custom-domains.md" >}}) or [service instances]({{< relref "docs/apps/managed-services.md" >}}) with no cost impact. Increasing or decreasing org memory quota changes your usage costs.
 
 ### Tracking quota usage
 
