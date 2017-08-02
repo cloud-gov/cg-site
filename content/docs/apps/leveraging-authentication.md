@@ -36,14 +36,14 @@ query parameters:
 * `response_type=code`
 * (optional) `state=<ANYTHING>`
 
-You can optionally set a `state` parameter with any value you'd like.
-It will be returned to you in a later step. While optional, it's highly
-recommended that you use it for [security reasons](http://www.twobotechnologies.com/blog/2014/02/importance-of-state-in-oauth2.html).
+You can set a `state` parameter with any value you'd like.
+It will be returned to you in a later step. While optional, we *strongly*
+recommend that you use it with a high-quality random number or a hash generated with a secret key, because it [protects against cross-site request forgery attacks](https://tools.ietf.org/id/draft-bradley-oauth-jwt-encoded-state-07.html).
 
 Here is an example:
 
 ```html
-<a href="https://login.fr.cloud.gov/oauth/authorize?client_id=NAME&response_type=code">
+<a href="https://login.fr.cloud.gov/oauth/authorize?client_id=NAME&response_type=code&state=9ab894ad91d99eb9ee4b30ea7f02b9d8e43eb15db58ff93e4894f3b49817d7ab">
   Log in
 </a>
 ```
