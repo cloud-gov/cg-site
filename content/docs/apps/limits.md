@@ -9,7 +9,13 @@ Org Managers are free to configure your org's [quota]({{< relref "overview/prici
 
 ## Org
 
-To change your [org quota]({{< relref "overview/pricing/quotas.md" >}}), [ask support](/help/). You can request an increase in number of routes or service instances with no cost impact. Increasing or decreasing org memory quota changes your usage costs.
+To view your [org quota]({{< relref "overview/pricing/quotas.md" >}}):
+
+1. List the details about your org: `cf org <org>`
+2. Find your quota name from the `quota:` property.
+3. View your quota: `cf quota <quota>`
+
+To change your org quota, [ask support](/help/). You can request an increase in number of routes or service instances with no cost impact. Increasing or decreasing org memory quota changes your usage costs.
 
 ### Tracking quota usage
 
