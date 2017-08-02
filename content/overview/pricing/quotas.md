@@ -46,5 +46,5 @@ If a new application `push` would exceed your organization's quota, the request 
 In this situation you have three options:
 
 1. Delete existing resources with `cf delete`, `delete-service`, `delete-route` or similar.
-2. Reconfigure individual existing [Application Quotas]({{< relref "docs/apps/limits.md" >}}) and redeploy.
+2. Reconfigure individual existing [application quotas]({{< relref "docs/apps/limits.md#app" >}}) and redeploy.
 3. Request a quota change by [asking support](/help/). You can request an increase in number of routes or service instances with no cost impact. Increasing memory quota changes your costs (as described above).
