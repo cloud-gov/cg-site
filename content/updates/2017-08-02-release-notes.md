@@ -6,8 +6,6 @@ title = "Platform Release Notes: August 2, 2017"
 Curious what’s new that you might find helpful as a cloud.gov user? Here are highlights from our platform updates over the past two weeks.
 <!--more-->
 
-Curious what’s new that you might find helpful as a cloud.gov user? Here are highlights from our platform updates over the past two weeks.
-
 ### Added
 You can [add people to spaces]({{< relref "docs/apps/managing-teammates.md#give-roles-to-a-teammate" >}}) from the [dashboard](https://dashboard.fr.cloud.gov/#/) if you’re an Org Manager. For example, this makes it easier for program managers to add developers to projects without using the command line tool.
 
