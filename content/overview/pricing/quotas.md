@@ -30,10 +30,10 @@ Quotas are associated with and billed to a project IAA number or equivalent bill
 
 Quotas limit the following resources:  
 
-- Application routes.  
-- Application memory.  
-- Service instances.  
-- Access to paid service plans.  
+- Number of [application routes]({{< relref "docs/apps/custom-domains.md" >}})
+- Amount of application memory
+- Number of [service instances]({{< relref "docs/apps/managed-services.md" >}})
+- Access to paid service plans
 
 If a new application `push` would exceed your organization's quota, the request will fail with status code `400` and a message that describes the limit that would be exceeded.
 
