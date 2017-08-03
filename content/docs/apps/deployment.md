@@ -31,7 +31,7 @@ Don't depend on local file system storage. When your application restarts (for e
 
 ### The platform will restart your application
 
-cloud.gov will automatically restart your application instances occasionally. For example, application instances will be restarted if they exceed [memory limits]({{< relref "docs/apps/limits.md" >}}).
+cloud.gov will automatically restart your application instances occasionally. For example, application instances will be restarted if they exceed [memory limits]({{< relref "docs/apps/limits.md#app" >}}).
 
 Application instances will also be restarted when the cloud.gov platform is updated, which can be several times a week. This shouldn't disrupt your running application if you [set up multiple application instances]({{< relref "docs/apps/multiple-instances.md" >}}) and avoid writing to the local file system.
 
