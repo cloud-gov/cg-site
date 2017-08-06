@@ -30,10 +30,10 @@ Quotas are associated with and billed to a project IAA number or equivalent bill
 
 Quotas limit the following resources:  
 
-- Application routes.  
-- Application memory.  
-- Service instances.  
-- Access to paid service plans.  
+- Number of [application routes]({{< relref "docs/apps/custom-domains.md" >}})
+- Amount of application memory
+- Number of [service instances]({{< relref "docs/apps/managed-services.md" >}})
+- Access to paid service plans
 
 If a new application `push` would exceed your organization's quota, the request will fail with status code `400` and a message that describes the limit that would be exceeded.
 
@@ -46,5 +46,5 @@ If a new application `push` would exceed your organization's quota, the request 
 In this situation you have three options:
 
 1. Delete existing resources with `cf delete`, `delete-service`, `delete-route` or similar.
-2. Reconfigure individual existing [Application Quotas]({{< relref "docs/apps/limits.md" >}}) and redeploy.
-3. Request a quota change by [asking support](/help/).
+2. Reconfigure individual existing [application quotas]({{< relref "docs/apps/limits.md#app" >}}) and redeploy.
+3. Request a quota change by [asking support](/help/). You can request an increase in number of routes or service instances with no cost impact. Increasing memory quota changes your costs (as described above).

@@ -4,5 +4,4 @@ applications:
   host: landing
 memory: 64M
 instances: 2
-path: public
 buildpack: staticfile_buildpack

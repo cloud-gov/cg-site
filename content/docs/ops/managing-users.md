@@ -5,25 +5,19 @@ menu:
 title: Managing users
 ---
 
-Only single sign-on user accounts are allowed. Service accounts, such as deployer credentials, are to be generated only via the [service account](https://cloud.gov/docs/services/cloud-gov-service-account/) managed service to ensure that they are scoped to a particular space with limited access.
+Only single sign-on user accounts and cloud.gov IDP accounts are allowed. Service accounts, such as deployer credentials, are to be generated only via the [service account](https://cloud.gov/docs/services/cloud-gov-service-account/) managed service to ensure that they are scoped to a particular space with limited access.
 
 No local accounts to UAA shall be created for user access.
 
 ## Creating users
 
-The preferred way to add new users is to [invite them]({{< relref "docs/apps/managing-teammates.md#invite-a-teammate" >}}). If you need to create a user manually, follow the instructions for [the `provision-user-space` CLI plugin](https://github.com/18F/cf-provision-user-space-plugin).
+Add new users by [inviting them]({{< relref "docs/apps/managing-teammates.md#invite-a-teammate" >}}).
 
 ## Changing passwords
 
-First ask the user **[to try resetting their own password]({{< relref "docs/getting-started/accounts.md#resetting-your-password" >}})**.
+Users should **[reset their own password]({{< relref "docs/getting-started/accounts.md#to-change-your-password" >}})**.
 
 If a user logs in using their agency's account system, the only way to reset that password is for them to use their agency's normal password reset process.
-
-If they log in with a cloud.gov account that has its own password (including `ORGNAME_deployer` accounts), you can [change their password for them](http://docs.cloudfoundry.org/adminguide/uaa-user-management.html#changing-passwords), using
-
-```sh
-uaac target uaa.cloud.gov
-```
 
 ## Resetting TOTP tokens
 
@@ -48,12 +42,6 @@ If the user requesting a reset has any apps, routes, or services in their sandbo
     ```
 
 4. Let the user know the reset process is complete, so they can set up a new authentication application and request access from Space Managers and Org Managers again.
-
-## Additional access
-
-### Organizations and spaces
-
-You can grant the user access to additional organizations and spaces by giving them additional [roles](http://docs.cloudfoundry.org/concepts/roles.html#roles). See [the instructions](https://docs.cloudfoundry.org/adminguide/cli-user-management.html#orgs-spaces) for changing them.
 
 ## Managing Admins
 Make sure you have a copy of the [cg-scripts repository](https://github.com/18F/cg-scripts) so you have access to several utility scripts.

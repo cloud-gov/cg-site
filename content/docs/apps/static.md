@@ -5,6 +5,10 @@ menu:
 title: Deploying static sites
 ---
 
+To push static content to the web, use the Staticfile buildpack. Examples of static content are front-end JavaScript apps and static HTML content. 
+
+To get a full list of configuration options, including how to configure nginx, see the [Cloud Foundry Staticfile buildpack documentation](https://docs.cloudfoundry.org/buildpacks/staticfile/index.html).
+
 ### Basics
 
 Create `index.html`:

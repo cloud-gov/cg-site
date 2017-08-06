@@ -7,15 +7,9 @@ title: Managed services
 
 Managed services provide applications with on-demand access to services outside of the stateless application environment. Typical managed services include databases, queues, and key-value stores.
 
-### Prerequisites
-
-Verify your [setup is complete]({{< relref "docs/getting-started/setup.md" >}}).
-
-### Procedure
+### List services
 
 To create a service instance and binding for use with an application, you first need to identify the available services and their respective plans.
-
-#### List services
 
 ```
 % cf marketplace
@@ -23,7 +17,7 @@ To create a service instance and binding for use with an application, you first 
 
 See [the services guide]({{< relref "docs/services/index.md" >}}) as well.
 
-#### Create a service instance
+### Create a service instance
 
 Target the org and space which will hold the app to which the service instance will be bound.
 
@@ -37,17 +31,11 @@ Create a new service instance by specifying a service, plan, and a name of your 
 % cf create-service SERVICE_NAME PLAN_NAME INSTANCE_NAME
 ```
 
-For example, to create an instance of the elasticsearch service using the free plan with name `myapp-elasticsearch`:
-
-```
-% cf create-service elasticsearch-swarm-1.7.1 1x myapp-elasticsearch
-```
-
-##### Paid services
+#### Paid services
 
 The note `* These service plans have an associated cost` indicates paid services. [Learn about managed service pricing.]({{< relref "overview/pricing/managed-services-cost.md" >}})
 
-#### Bind the service instance
+### Bind the service instance
 
 A service instance must be bound to the application which will access it. This can be done in a single step by adding a binding to the application's `manifest.yml`.
 
@@ -105,7 +93,7 @@ In this case, `url` alone could be sufficient for establishing a connection from
 
 The contents of the `VCAP_SERVICES` environment variable contain the credentials to access your service. Treat the contents of this and all other environment variables as sensitive.
 
-#### Access the service configuration
+### Access the service configuration
 
 Configuration and credentials for the bound service can be accessed in several ways:
 
@@ -113,7 +101,7 @@ Configuration and credentials for the bound service can be accessed in several w
 * Through a language-specific module such as [cfenv](https://www.npmjs.org/package/cfenv) for node.js.
 * Through buildpack-populated environment variables as in the [Ruby buildpack](http://docs.cloudfoundry.org/buildpacks/ruby/ruby-service-bindings.html#vcap-services-defines-database-url).
 
-##### Node.js example
+#### Node.js example
 
 To access the elasticsearch service described above with a node app:
 
@@ -144,7 +132,7 @@ var client = new elasticsearch.Client({
 // ...
 ```
 
-##### Ruby on Rails example
+#### Ruby on Rails example
 
 **config/initializers/elasticsearch.rb**
 
