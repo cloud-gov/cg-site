@@ -29,15 +29,17 @@ sudo bash
 
 #### Fixing non-running pods
 Login to a kubernetes master, find the namespaces, and describe the pods:
-```bash
-kubeclt get namespaces 
+```sh
+kubectl get namespaces 
 kubectl --namespace :namespace describe pod :pod-name
 ```
-where you provide values for :namespace and :pod-name, where a pod-name is
-will be something like `xc956b1d94dd64-master-0`
+where you provide values for :namespace and :pod-name. A pod-name will be something like `xc956b1d94dd64-master-0`
 
-The `Events` section should indicate why the pod cannot be started.  Resolve the underlying issue and the pod should transition into a `Running` state.  If you need to force the pod to be restarted you can delete it which will cause kubernetes to immediately recreate it:
-```bash
+The `Events` section should indicate why the pod cannot be started. Resolve the underlying issue and the pod should transition into a `Running` state.  
+
+For pods that are part of persistent set, like a `statefulset`, `deployment`, `daemonset`, etc, you can force a pod restart by deleting it, and letting the kubernetes scheduler recreate it:
+
+```sh
 kubectl --namespace :namespace delete pod :pod-name
 ```
 
