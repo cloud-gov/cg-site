@@ -33,15 +33,15 @@ cf create-service elasticsearch24 1x my-elastic-service
 
 ### Additional notes
 
-Each instance is one node; there is not currently a way to make multi-node instances.
-
 Elasticsearch 2.4 allows for dots in field names. This is a feature that existed
 pre-ElasticSearch 2.0 but was disabled in versions 2.0 to 2.3. Learn more about
 that [here](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/dots-in-names.html).
 
-### Rotating credentials
+### Shard/replca configuration for HA
 
-You can rotate credentials by creating a new instance and deleting the existing instance. If this is not an option, email [cloud.gov support](mailto:cloud-gov-support@gsa.gov) to request rotating the credentials manually.
+When using an HA plan indexes must be configured with a proper number of [shards & replicas](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/_basic_concepts.html#_shards_amp_replicas) or it is still possible for your instance to experience downtime during platform maintenance.
+
+All HA instances default to 3 shards and 2 replicas per index which is the recommended configuration.
 
 ### Managing backups
 
@@ -50,6 +50,11 @@ Note: The Elasticsearch service does not currently have the ability to back up a
 The Elasticsearch service includes the [AWS Cloud Plugin](https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/cloud-aws.html), which supports snapshot and restore with AWS S3. For detailed instructions, see the [Snapshot and Restore](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-snapshots.html) [Cloud AWS Repository](https://www.elastic.co/guide/en/elasticsearch/plugins/2.2/cloud-aws-repository.html) documentation.
 
 You can also use this simple example. The example assumes you already have an elasticsearch service called `my-elasticsearch` and an app called `my-app`, and that you have [curl](https://curl.haxx.se/), [jq](https://stedolan.github.io/jq/), and the [AWS command line interface](https://aws.amazon.com/cli/) available.
+
+### Rotating credentials
+
+You can rotate credentials by creating a new instance and deleting the existing instance. If this is not an option, email [cloud.gov support](mailto:cloud-gov-support@gsa.gov) to request rotating the credentials manually.
+
 
 * Create an instance of the [S3 service]({{< relref "docs/services/s3.md" >}}):
 
