@@ -32,6 +32,10 @@ publishdir = "public"
     name = "Technology and security"
     identifier = "technology"
     weight = -105
+[[menu.overview]]
+    name = "Customer stories"
+    identifier = "customer-stories"
+    weight = -100
 
 [[menu.docs]]
     name = "Getting started"
