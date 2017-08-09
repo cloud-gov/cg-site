@@ -27,9 +27,9 @@ If you're an Org Manager, go to your [dashboard](https://dashboard.fr.cloud.gov/
 
 ![User roles](/img/user-role-management.png)
 
-On the Organization page, scroll down to the "Organization users" section. This has a list of all the organization users and their organization roles. You can change the user roles by clicking the checkboxes beside their names.
+On the org page, scroll down to "Organization users". This lists the org users and their org roles. Change the roles by clicking the checkboxes beside their names. (If you're the only person in the org, you'll just see "You are the only user in this organization".)
 
-Note: If you are the only person in the organization, you won't see a list of users — you'll just see "You are the only user in this organization".
+To give a teammate access to a space, go to your org page, click a space name, and scroll down to "Space users". You can add a person, and then you can give them roles with the checkboxes.
 
 {{% /dashboard %}}
 
