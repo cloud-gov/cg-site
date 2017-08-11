@@ -8,8 +8,9 @@ title: Troubleshooting Kubernetes
 
 ## Overview
 Kubernetes is used to provided managed services to tenant applications via [18F/kubernetes-broker](https://github.com/18F/kubernetes-broker).
-We deploy the [Kubernetes Bosh release](https://github.com/18F/kubernetes-release)
-via the [18F/cg-deploy-kubernetes](https://github.com/18F/cg-deploy-kubernetes) repository.
+We deploy both the [Kubernetes Bosh release](https://github.com/18F/kubernetes-release)
+and the broker via the [18F/cg-deploy-kubernetes](https://github.com/18F/cg-deploy-kubernetes)
+repository. Custom images can be found in the [Kubernetes broker](https://github.com/18F/kubernetes-broker/tree/master/custom_images).
 
 ### Responding to Kubernetes alerts
 Alerts are generated whenever a pod's status is not `Running`. Alerts contains the [namespace](https://kubernetes.io/docs/user-guide/namespaces/), [pod name](https://kubernetes.io/docs/user-guide/pods/), and [pod status](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-phase).
