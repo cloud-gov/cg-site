@@ -48,14 +48,10 @@ kubectl --namespace :namespace delete pod :pod-name
 
 #### Manually pulling an image from Docker
 
-When you are publishing a new Docker image and not updating the tag for it,
-Kubernetes may not pull the update image down if there is a pull image policy of
-`Always` with a tag of `:latest`. The Kubernetes [_Best Practices for
-Configuration_](https://kubernetes.io/docs/concepts/configuration/overview/#container-images)
-does not recommend a tag of `:latest` for images nor a pull image policy of
-`Always`. So to manually re-pull images when you don't update tags, run the
-following command within a Jumpbox and target the Kubernetes deployment. This
-will perform a docker pull on all the Minion VMs.
+By default, Kubernetes does not pull docker images that already exist on the
+node. When updating an existing image and tag, force Kubernetes to pull the
+latest version from a [jumpbox]({{< relref "docs/ops/runbook/troubleshooting-bosh.md" >}})
+with the following command.
 
 ```shell
 bosh -d kubernetes ssh minion 'bash -c "/var/vcap/packages/docker/bin/docker --host unix:///var/vcap/sys/run/docker/docker.sock pull ${DOCKER_USER}/${IMAGE_NAME}:${DOCKER_TAG}"'
