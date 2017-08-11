@@ -23,8 +23,8 @@ From a jumpbox in the appropriate environment:
 
 ```sh
 bosh -d kubernetes ssh master/0
-PATH=$PATH:/var/vcap/packages/kubernetes/bin
 sudo bash
+export PATH=$PATH:/var/vcap/packages/kubernetes/bin
 ```
 
 #### Fixing non-running pods
