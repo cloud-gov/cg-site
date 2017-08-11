@@ -8,6 +8,8 @@ title: Troubleshooting Kubernetes
 
 ## Overview
 Kubernetes is used to provided managed services to tenant applications via [18F/kubernetes-broker](https://github.com/18F/kubernetes-broker).
+We deploy the [Kubernetes Bosh release](https://github.com/18F/kubernetes-release)
+via the [18F/cg-deploy-kubernetes](https://github.com/18F/cg-deploy-kubernetes) repository.
 
 ### Responding to Kubernetes alerts
 Alerts are generated whenever a pod's status is not `Running`. Alerts contains the [namespace](https://kubernetes.io/docs/user-guide/namespaces/), [pod name](https://kubernetes.io/docs/user-guide/pods/), and [pod status](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-phase).
@@ -30,12 +32,12 @@ export PATH=$PATH:/var/vcap/packages/kubernetes/bin
 #### Fixing non-running pods
 Login to a kubernetes master, find the namespaces, and describe the pods:
 ```sh
-kubectl get namespaces 
+kubectl get namespaces
 kubectl --namespace :namespace describe pod :pod-name
 ```
 where you provide values for :namespace and :pod-name. A pod-name will be something like `xc956b1d94dd64-master-0`
 
-The `Events` section should indicate why the pod cannot be started. Resolve the underlying issue and the pod should transition into a `Running` state.  
+The `Events` section should indicate why the pod cannot be started. Resolve the underlying issue and the pod should transition into a `Running` state.
 
 For pods that are part of persistent set, like a `statefulset`, `deployment`, `daemonset`, etc, you can force a pod restart by deleting it, and letting the kubernetes scheduler recreate it:
 
@@ -43,7 +45,22 @@ For pods that are part of persistent set, like a `statefulset`, `deployment`, `d
 kubectl --namespace :namespace delete pod :pod-name
 ```
 
-### Other useful Kubernetes `kubectl` commands 
+#### Manually pulling an image from Docker
+
+When you are publishing a new Docker image and not updating the tag for it,
+Kubernetes may not pull the update image down if there is a pull image policy of
+`Always` with a tag of `:latest`. The Kubernetes [_Best Practices for
+Configuration_](https://kubernetes.io/docs/concepts/configuration/overview/#container-images)
+does not recommend a tag of `:latest` for images nor a pull image policy of
+`Always`. So to manually re-pull images when you don't update tags, run the
+following command within a Jumpbox and target the Kubernetes deployment. This
+will perform a docker pull on all the Minion VMs.
+
+```shell
+bosh -d kubernetes ssh minon 'bash -c "/var/vcap/packages/docker/bin/docker --host unix:///var/vcap/sys/run/docker/docker.sock pull ${DOCKER_USER}/${IMAGE_NAME}:${DOCKER_TAG}"'
+```
+
+### Other useful Kubernetes `kubectl` commands
 
 All of these assume you are logged into a Kubernetes master:
 
