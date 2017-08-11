@@ -58,7 +58,7 @@ following command within a Jumpbox and target the Kubernetes deployment. This
 will perform a docker pull on all the Minion VMs.
 
 ```shell
-bosh -d kubernetes ssh minon 'bash -c "/var/vcap/packages/docker/bin/docker --host unix:///var/vcap/sys/run/docker/docker.sock pull ${DOCKER_USER}/${IMAGE_NAME}:${DOCKER_TAG}"'
+bosh -d kubernetes ssh minion 'bash -c "/var/vcap/packages/docker/bin/docker --host unix:///var/vcap/sys/run/docker/docker.sock pull ${DOCKER_USER}/${IMAGE_NAME}:${DOCKER_TAG}"'
 ```
 
 ### Other useful Kubernetes `kubectl` commands
