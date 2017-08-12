@@ -24,5 +24,20 @@ You can interact directly with the services bound to your application via [port-
 
 ## SSH-Related Questions
 
-*Q: What version of SSH does cloud.gov use to access application containers?
+*Q*: When I SSH to my application and I try to run `python`  I get `ImportError: No module named site`. How should I set that up?
+
+*A*: You'll need to configure your application environment with these commands:
+
+```
+for f in /home/vcap/app/.profile.d/*.sh; 
+  do source "$f"; 
+done
+export LD_LIBRARY_PATH=/home/vcap/deps/0/python/lib/
+export PYTHONHOME=/home/vcap/deps/0/python
+```
+
+*Q*: What version of SSH does cloud.gov use to access application containers?
+
+*A*: The cloud.gov application containers use the SSH-2.0 protocol. The SSH service uses the CloudFoundry SSH implementation, https://github.com/cloudfoundry/diego-ssh. For more on how CloudFoundry implements SSH, refer to https://docs.cloudfoundry.org/concepts/diego/ssh-conceptual.html.
+
 
