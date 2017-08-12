@@ -20,3 +20,9 @@ in order to debug your application.
 You can interact directly with the services bound to your application via [port-forwarding](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-services.html). This allows you to access those services using native clients on your local machine. The [Service Connect plugin](https://github.com/18F/cf-service-connect#readme) makes this even easier.
 
 `cf ssh` uses port 2222. If your network blocks port 2222, you may receive an error message such as `Error opening SSH connection`.
+
+
+## SSH-Related Questions
+
+*Q: What version of SSH does cloud.gov use to access application containers?
+
