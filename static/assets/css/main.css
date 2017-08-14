@@ -32,6 +32,7 @@ blockquote li,
   font-family: '18Franklin-webfont', system, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; /* $font-sans */
   font-size: 14px; /* $sans-s4 */
   font-weight: 400;
+  padding-top: 12px;
 }
 
 .env-specifier strong {
@@ -71,9 +72,59 @@ blockquote::before {
   color: #333; /* $color-textblack */
 }
 
-.env-commandline::before{
+
+.env-block pre{
+  white-space: pre-wrap;       /* css-3 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;
+}
+
+.ui-tabs-panel .env-block {
+  margin-top: 0px;
+  margin-bottom: 12px;
+}
+
+.ui-tabs-panel .env-block pre {
+  padding: 0px 10px 10px 0px;
+}
+
+.tabs {
+  margin-top: 20px;
+  padding-top: 15px;
+}
+
+.ui-tabs-nav li.ui-tabs-active a.tab-note {
+  border-bottom-color: #4ca3fa;
+}
+
+.ui-tabs-nav li a.tab-note {
+  padding: 1px 0px 0px;
+  float: left;
+  font-size:12px;
+}
+
+.tabs > p {
+  display: none;
+}
+
+.tabs .env-commandline {
   border-color: #333; /* $color-textblack */
 }
-.env-dashboard::before {
+
+.tabs .env-dashboard {
   border-color: #74B1DB;
+}
+
+.tabs .env-block {
+  padding: 15px 0px 15px 25px;
+  border-style: solid;
+  border-width: 0px;
+  border-left-width: 4px;
+  margin-left: 0px;
+}
+
+.tabs .env-block::before {
+  display: none;
 }
