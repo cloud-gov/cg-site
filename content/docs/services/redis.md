@@ -11,8 +11,7 @@ aliases:
 
 cloud.gov offers two [Redis](http://www.redis.io/) services. A single instance
 of Redis 2.8 service and a highly-available multi-instance [Sentinel](https://www.redis.io/topics/sentinel/)
-and Redis 3.2.10 service. **This service is still in Beta mode**: downtime and
-data loss is possible.
+and Redis 3.2.10 service.
 .
 
 ## Plans
@@ -29,6 +28,9 @@ To create a service instance run the following command:
 
 ```sh
 cf create-service redis28 standard my-redis-service
+
+**This service is still in Beta mode**: downtime and data loss is possible.
+
 ```
 <h3 id="redis32">Redis 3.2</h3>
 
@@ -43,6 +45,9 @@ To create a service instance run the following command:
 ```sh
 cf create-service redis32 standard-ha my-redis-service
 ```
+
+**This service is still in Beta mode**: connections may be dropped during
+platform updates or server failover.
 
 ## Rotating credentials
 
