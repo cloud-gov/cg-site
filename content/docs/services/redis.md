@@ -21,14 +21,14 @@ Service Name | Plan Name | Description | Price
 
 #### How to create an instance
 
-To create a service instance run the following command:
+To create a service instance, run the following command (replace `my-redis-service` with a name for the service):
 
 ```sh
 cf create-service redis28 standard my-redis-service
+```
 
 **This service is still in Beta mode**: downtime and data loss is possible.
 
-```
 <h3 id="redis32">Redis 3.2</h3>
 
 Service Name | Plan Name | Description | Price
@@ -37,7 +37,7 @@ Service Name | Plan Name | Description | Price
 
 #### How to create an instance
 
-To create a service instance run the following command:
+To create a service instance, run the following command (replace `my-redis-service` with a name for the service):
 
 ```sh
 cf create-service redis32 standard-ha my-redis-service
