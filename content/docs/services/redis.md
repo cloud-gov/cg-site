@@ -17,23 +17,26 @@ data loss is possible.
 
 ## Plans
 
+<h3 id="redis28">Redis 2.8</h3>
+
 Service Name | Plan Name | Description | Price
 ------------ | --------- | ----------- | -----
 `redis28` | `standard` | Redis instance with several GB storage | Free in Beta
 
-### How to create an instance
+#### How to create an instance
 
 To create a service instance run the following command:
 
 ```sh
 cf create-service redis28 standard my-redis-service
 ```
+<h3 id="redis32">Redis 3.2</h3>
 
 Service Name | Plan Name | Description | Price
 ------------ | --------- | ----------- | -----
 `redis32` | `standard-ha` | Redis instance with several GB storage | Free in Beta
 
-### How to create an instance
+#### How to create an instance
 
 To create a service instance run the following command:
 
