@@ -1,0 +1,14 @@
+<div class="tabs">
+  <ul>
+    <li>
+      <a class="env-specifier" href='#{{ .Get "dashboard" }}'>
+      Using the dashboard</a>
+      <a class="env-specifier tab-note" href="/docs/getting-started/setup/#log-into-the-dashboard-web-interface">(what's this?)</a>
+    </li>
+    <li>
+      <a class="env-specifier" href='#{{ .Get "cli" }}'>Using the command line </a>
+      <a class="env-specifier tab-note" href="/docs/getting-started/setup/#set-up-the-command-line">(what's this?)</a>
+    </li>
+  </ul>
+  {{ .Inner }}
+</div>
