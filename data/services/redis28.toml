@@ -1,5 +1,5 @@
 # Service metadata lives
-# https://github.com/18F/kubernetes-broker/blob/938b283/catalogData/redis28/service.json#L4
+# https://github.com/18F/kubernetes-broker/blob/master/catalogData/redis28/service.json#L4
 name = "redis28"
-description = "[Experimental] [Redis](https://redis.io/) version 2.8: an in-memory data structure store"
-status = "Alpha"
+description = "[Redis](https://redis.io/) version 2.8: An open source in-memory data structure store."
+status = "Beta"
