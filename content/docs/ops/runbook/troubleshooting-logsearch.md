@@ -24,28 +24,14 @@ curl -X PUT localhost:9200/_cluster/settings -d '{"transient":{"cluster.routing.
 
 If reenabling allocation doesn't restore the cluster, [manually reassigning unallocated shards may be necessary]({{< ref "#force-reallocation" >}})
 
-
-## Debugging queue memory usage
-High memory usage on queue nodes is an indicator that logs are backing up in redis and not reaching ElasticSearch. [This diagram](https://github.com/cloudfoundry-community/logsearch-boshrelease/blob/develop/docs/architecture.md) illustrates how data flows through the queue to reach ElasticSearch.
-
-### Ensure the high memory usage is from redis and not some other process
-Login to the queue node, examine the list of processes and validate it is redis using the majority of memory.
-
-Check the number of log messages waiting in redis:
-```sh
-/var/vcap/packages/redis/bin/redis-cli llen logsearch
-```
-Normally this number should be 0. If it is greater than 0 and climbing then logs are not reaching ElasticSearch and accumulating in memory.
-
 ### Check cluster health
-Log into any `elasticsearch_*` node and [check the cluster health]({{< ref "#check-cluster-health">}}). If the cluster state is not green or has a high number of pending tasks then ElasticSearch cannot accept data from the redis queue.  Resolve the issues with the ElasticSearch cluster and once it's state is green, the queue should be begin to drain.
+Log into any `elasticsearch_*` node and [check the cluster health]({{< ref "#check-cluster-health">}}). If the cluster state is not green or has a high number of pending tasks then ElasticSearch cannot accept data from the ingestors.  Resolve the issues with the ElasticSearch cluster and once its state is green, the ingestor queues should be begin to drain.
 
-### Check parser health
-If the cluster state is green, then validate the parsers are healthly:  Log into each parser node and check the system health. Review the logs for the logstash instance running on the parser which are stored in `/var/vcap/sys/log/parser/`. Restart the parsers if needed by running `monit restart parser`.
+### Check ingestor health
+If the cluster state is green, then validate the ingestors are healthly:  Log into each ingestor node and check the system health. Review the logs for the logstash instance running on the ingestor which are stored in `/var/vcap/sys/log/ingestor_syslog/`. Restart the ingestors if needed by running `monit restart ingestor_syslog`.
 
-### Continue to monitor memory usage and redis queue
-Once the issue has been resolved, continue to monitor the memory usage and number of messages waiting in redis and ensure both are decreasing.  Once the redis queue length has reached 0 the system has returned to normal operation.
-
+### Continue to monitor ingestor queues
+Once the issue has been resolved, continue to monitor the number of messages waiting in the ingestor queues. Once the queue lengths have reached 0 the system has returned to normal operation.
 
 ## Reindexing data from S3
 
@@ -53,12 +39,11 @@ A copy of all data received by the logsearch ingestors is archived in S3.  This 
 
 ### Create a custom logstash.conf for the restore operation
 
-Log into any `parser` node and make a copy of it's current logstash configuration.
+Log into any `ingestor` node and make a copy of its current logstash configuration.
 ```sh
-# these example commands use the bosh v2 cli
-bosh -d logsearch ssh parser/0
+bosh -d logsearch ssh ingestor/0
 
-cp /var/vcap/jobs/parser/config/logstash.conf /tmp/logstash-restore.conf
+cp /var/vcap/jobs/ingestor_syslog/config/logstash.conf /tmp/logstash-restore.conf
 ```
 
 Edit the `/tmp/logstash-restore.conf` and make the following changes:
@@ -72,7 +57,6 @@ Edit the `/tmp/logstash-restore.conf` and make the following changes:
     type => "syslog"
     sincedb_path => "/tmp/s3_import.sincedb"
   }
-
 ```
 
 The values for `:bucket:` and `:region:` can be found in [cg-provision](https://github.com/18F/cg-provision/blob/master/terraform/modules/cloudfoundry/buckets.tf#L25-L30) or retrieved from the bosh manifest:
@@ -80,10 +64,9 @@ The values for `:bucket:` and `:region:` can be found in [cg-provision](https://
 spruce merge --cherry-pick properties.logstash_ingestor.outputs <(bosh -d logsearch manifest)`
 ```
 
-When run with default configuration the S3 input plugin will reindex ALL data in the bucket. To reindex a specific subset of data pass [additional options to the s3 input plugin](https://www.elastic.co/guide/en/logstash/2.3/plugins-inputs-s3.html).
+When run with default configuration the S3 input plugin will reindex ALL data in the bucket. To reindex a specific subset of data pass [additional options to the s3 input plugin](https://www.elastic.co/guide/en/logstash/current/plugins-inputs-s3.html).
 
 For example, to reindex only data from November 15th, 1968 use an `exclude_pattern` to exclude all files EXCEPT those that match that date: `exclude_pattern => "^((?!1968-11-15).)*$"`.
-
 
 #### Disable the timecop filter
 
