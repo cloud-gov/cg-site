@@ -1,5 +1,8 @@
 (function (document, window, $) {
   $(document).ready(function(){
+    if ( $( ".tabs" ) ) {
+      $( ".tabs" ).tabs();
+    }
     /* Setting search focus */
     $('#js-search-focus').click(function(){
         $('#search-field').focus();
