@@ -4,7 +4,6 @@ menu:
     parent: services
 title: Redis
 description: "Redis: an in-memory data structure store"
-status: "Beta"
 aliases:
   - docs/services/redis28/
 ---
@@ -12,22 +11,6 @@ aliases:
 cloud.gov offers two [Redis](http://www.redis.io/) services: a single-instance Redis 2.8 service and a highly-available multi-instance [Sentinel](https://www.redis.io/topics/sentinel/) and Redis 3.2.10 service.
 
 ## Plans
-
-<h3 id="redis28">Redis 2.8</h3>
-
-Service Name | Plan Name | Description | Price
------------- | --------- | ----------- | -----
-`redis28` | `standard` | Redis instance with several GB storage | Free in Beta
-
-#### How to create an instance
-
-To create a service instance, run the following command (replace `my-redis-service` with a name for the service):
-
-```sh
-cf create-service redis28 standard my-redis-service
-```
-
-**This service is still in Beta mode**: downtime and data loss is possible.
 
 <h3 id="redis32">Redis 3.2</h3>
 
@@ -43,8 +26,30 @@ To create a service instance, run the following command (replace `my-redis-servi
 cf create-service redis32 standard-ha my-redis-service
 ```
 
-**This service is still in Beta mode**: connections may be dropped during
-platform updates or server failover.
+**This service is still in Beta mode**
+
+The `standard-ha` plan is highly-available in particular around redundancy,
+three Redis Servers sized similarly to the `standard` plan, and availability,
+the server is available within a 500 millisecond window during a Redis server
+failover. We are offering it in **beta** to test this plan under production
+load. If you have feedback about this service, please don't hesitate to
+[contact us](mailto:cloud-gov-support@gsa.gov).
+
+<h3 id="redis28">Redis 2.8</h3>
+
+Service Name | Plan Name | Description | Price
+------------ | --------- | ----------- | -----
+`redis28` | `standard` | Redis instance with several GB storage | Free in Alpha
+
+#### How to create an instance
+
+To create a service instance, run the following command (replace `my-redis-service` with a name for the service):
+
+```sh
+cf create-service redis28 standard my-redis-service
+```
+
+**This service is still in Alpha mode**: downtime and data loss is possible.
 
 ## Rotating credentials
 
