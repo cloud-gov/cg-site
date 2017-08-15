@@ -39,7 +39,7 @@ If you're an Space Manager, go to your [dashboard](https://dashboard.fr.cloud.go
 
 On the space page, scroll down to "Space users". This lists the space users and their space roles. Change the roles by clicking the checkboxes beside their names. (If you're the only person in the space, you'll just see "You are the only user in this space".)
 
-To give a organization user access to a space, go to your space page, click a space name, and scroll down to "Space users". You can add a person, and then you can give them roles with the checkboxes.
+To give an existing organization user access to a space, go to your space page, click a space name, and scroll down to "Space users". You can add a person, and then you can give them roles with the checkboxes.
 
 {{% /dashboard %}}
 
