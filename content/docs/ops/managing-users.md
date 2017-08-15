@@ -25,7 +25,7 @@ Follow the process below for users logging in with a cloud.gov account.
 
 If the user requesting a reset has any apps, routes, or services in their sandbox or access to any other spaces or orgs make sure they **[are informed]({{< relref "docs/getting-started/accounts.md#if-you-can-t-access-your-token-codes" >}})** these will be removed.
 
-1. Remove all apps, routes, and services from the user's sandbox.
+1. Remove all apps, routes, and services from the user's sandbox. Search for the user in the Admin interface can help locate the relevant orgs and spaces.
 2. Remove user's permissions to all [spaces and orgs](https://docs.cloudfoundry.org/adminguide/cli-user-management.html#orgs-spaces) other than their sandbox.
 
     For those spaces and orgs, notify the Space Managers and Org Managers that we've removed the user's access because of their request to reset their account's authentication application.
