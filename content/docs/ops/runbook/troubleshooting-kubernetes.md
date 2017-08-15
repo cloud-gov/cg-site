@@ -8,6 +8,9 @@ title: Troubleshooting Kubernetes
 
 ## Overview
 Kubernetes is used to provided managed services to tenant applications via [18F/kubernetes-broker](https://github.com/18F/kubernetes-broker).
+We deploy both the [Kubernetes Bosh release](https://github.com/18F/kubernetes-release)
+and the broker via the [18F/cg-deploy-kubernetes](https://github.com/18F/cg-deploy-kubernetes)
+repository. Custom images can be found in the [Kubernetes broker](https://github.com/18F/kubernetes-broker/tree/master/custom_images).
 
 ### Responding to Kubernetes alerts
 Alerts are generated whenever a pod's status is not `Running`. Alerts contains the [namespace](https://kubernetes.io/docs/user-guide/namespaces/), [pod name](https://kubernetes.io/docs/user-guide/pods/), and [pod status](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-phase).
@@ -30,12 +33,12 @@ export PATH=$PATH:/var/vcap/packages/kubernetes/bin
 #### Fixing non-running pods
 Login to a kubernetes master, find the namespaces, and describe the pods:
 ```sh
-kubectl get namespaces 
+kubectl get namespaces
 kubectl --namespace :namespace describe pod :pod-name
 ```
 where you provide values for :namespace and :pod-name. A pod-name will be something like `xc956b1d94dd64-master-0`
 
-The `Events` section should indicate why the pod cannot be started. Resolve the underlying issue and the pod should transition into a `Running` state.  
+The `Events` section should indicate why the pod cannot be started. Resolve the underlying issue and the pod should transition into a `Running` state.
 
 For pods that are part of persistent set, like a `statefulset`, `deployment`, `daemonset`, etc, you can force a pod restart by deleting it, and letting the kubernetes scheduler recreate it:
 
@@ -43,7 +46,18 @@ For pods that are part of persistent set, like a `statefulset`, `deployment`, `d
 kubectl --namespace :namespace delete pod :pod-name
 ```
 
-### Other useful Kubernetes `kubectl` commands 
+#### Manually pulling an image from Docker
+
+By default, Kubernetes does not pull docker images that already exist on the
+node. When updating an existing image and tag, force Kubernetes to pull the
+latest version from a [jumpbox]({{< relref "docs/ops/runbook/troubleshooting-bosh.md" >}})
+with the following command.
+
+```shell
+bosh -d kubernetes ssh minion 'bash -c "/var/vcap/packages/docker/bin/docker --host unix:///var/vcap/sys/run/docker/docker.sock pull ${DOCKER_USER}/${IMAGE_NAME}:${DOCKER_TAG}"'
+```
+
+### Other useful Kubernetes `kubectl` commands
 
 All of these assume you are logged into a Kubernetes master:
 
