@@ -23,7 +23,7 @@ Org Managers can assign roles using the [dashboard](https://dashboard.fr.cloud.g
 
 
 
-{{% tabs dashboard="dashboard-org-give-role" cli="cli-org-give-role" %}}
+{{% alternatives dashboard="dashboard-org-give-role" cli="cli-org-give-role" %}}
 {{% dashboard %}}
 
 ### Organization users
@@ -75,13 +75,13 @@ Decide which roles to give them. For a complete list of roles, see [the Cloud Fo
     cf set-org-role <email> <org> OrgAuditor
     ```
 {{% /commandline %}}
-{{% /tabs %}}
+{{% /alternatives %}}
 
 ## Removing a teammate
 
 If you are an Org Manager or Space Manager, you can remove teammates from orgs and spaces respectively.
 
-{{% tabs dashboard="dashboard-org-remove-role" cli="cli-org-remove-role" %}}
+{{% alternatives dashboard="dashboard-org-remove-role" cli="cli-org-remove-role" %}}
 {{% dashboard %}}
 
 ### Organization Users
@@ -170,4 +170,4 @@ To remove teammates from your space, run the following:
     ```
 
 {{% /commandline %}}
-{{% /tabs %}}
+{{% /alternatives %}}
