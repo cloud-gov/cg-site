@@ -23,17 +23,29 @@ Org Managers can assign roles using the [dashboard](https://dashboard.fr.cloud.g
 
 {{% dashboard %}}
 
+### Organization users
+
 If you're an Org Manager, go to your [dashboard](https://dashboard.fr.cloud.gov/) and click on the name of your org.
 
 ![User roles](/img/user-role-management.png)
 
 On the org page, scroll down to "Organization users". This lists the org users and their org roles. Change the roles by clicking the checkboxes beside their names. (If you're the only person in the org, you'll just see "You are the only user in this organization".)
 
-To give a teammate access to a space, go to your org page, click a space name, and scroll down to "Space users". You can add a person, and then you can give them roles with the checkboxes.
+### Space users
+
+If you're an Space Manager, go to your [dashboard](https://dashboard.fr.cloud.gov/) and click on the name of your org, then click on the name of your space.
+
+![Space roles](/img/space-user-role-management.png)
+
+On the space page, scroll down to "Space users". This lists the space users and their space roles. Change the roles by clicking the checkboxes beside their names. (If you're the only person in the space, you'll just see "You are the only user in this space".)
+
+To give a organization user access to a space, go to your space page, click a space name, and scroll down to "Space users". You can add a person, and then you can give them roles with the checkboxes.
 
 {{% /dashboard %}}
 
 {{% commandline %}}
+
+### Organization and Space users
 
 If you're an Org Manager or Space Manager, here's how to give your teammates roles for your orgs and spaces. You can check whether you're an Org Manager using `cf org-users <org>` and whether you're a Space Manager using `cf space-users <org> <space>`.
 
