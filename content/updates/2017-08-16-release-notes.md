@@ -1,13 +1,13 @@
 +++
-title: "Platform Release Notes: August 14, 2017"
+title = "Platform Release Notes: August 14, 2017"
 +++
 
 Curious what’s new that you might find helpful as a cloud.gov user? Here are highlights from our platform updates over the past two weeks.
 
 ### Added
 
-* Space managers can [add any member of your organization to a space from the dashboard](https://cloud.gov/docs/apps/managing-teammates/#space-users).
-* Documentation for how to take [snapshots and restore backups of your ElasticSearch service data](https://cloud.gov/docs/services/elasticsearch).
+* Space managers can [add any member of your organization to a space from the dashboard]({{< relref "/docs/apps/managing-teammates.md#space-users" >}}).
+* Documentation for how to take [snapshots and restore backups of your ElasticSearch service data]({{< relref "/docs/services/elasticsearch.md" >}}).
 All customers can now use [Oracle’s SE2 relational database](https://cloud.gov/docs/services/relational-database/).
 
 ### Changed
