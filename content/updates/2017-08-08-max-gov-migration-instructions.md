@@ -20,8 +20,8 @@ Soon, we will switch these users to use OMB MAX to log in to cloud.gov. **We wil
 **If you use a cloud.gov account to log in and don’t have a MAX account:** You need to create a MAX account with a Secure+ 2-factor device. Once we switch, you’ll be required to use that account to login to cloud.gov and all associated services.
 
 To create a MAX account:
-* Go to login.max.gov, if you see your agency's logo, click it and sign in with your agency credentials.
-* Go to login.max.gov, if you don't see you agency's logo, click the green Register Now button in the top right corner.
+* Go to [login.max.gov](https://login.max.gov), if you see your agency's logo, click it and sign in with your agency credentials.
+* Go to [login.max.gov](https://login.max.gov), if you don't see you agency's logo, click the green Register Now button in the top right corner.
   * Register with a PIV/CAC card if you have one and a working card reader
   * Make sure to add a Secure+ 2-factor device to your account
 
