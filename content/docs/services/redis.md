@@ -8,7 +8,7 @@ aliases:
   - docs/services/redis28/
 ---
 
-cloud.gov offers two [Redis](http://www.redis.io/) services: a single-instance Redis 2.8 service and a highly-available multi-instance [Sentinel](https://www.redis.io/topics/sentinel/) and Redis 3.2.10 service.
+cloud.gov offers two [Redis](http://www.redis.io/) services: a single-instance Redis 2.8 service and a highly-available multi-instance [Sentinel](https://www.redis.io/topics/sentinel/) and Redis 3.2 service.
 
 ## Plans
 
