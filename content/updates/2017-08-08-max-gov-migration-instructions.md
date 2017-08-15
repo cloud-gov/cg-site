@@ -1,5 +1,5 @@
 +++
-date = "2017-08-08"
+date = "2017-08-15"
 title = "Announcement: cloud.gov accounts will migrate to OMB MAX"
 +++
 
