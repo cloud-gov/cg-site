@@ -57,7 +57,9 @@ for each deployment is current.
 [nessus manager deployment](https://github.com/18F/cg-deploy-nessus-manager)
 requires that the System Owner reset the license key after a stemcell upgrade.
 Coordinate with the System Owner to ensure the key is ready to be reset before
-deploying an update that will upgrade the stemcell.
+deploying an update that will upgrade the stemcell and read through the
+[Troubleshooting Nessus runbook]({{< relref
+"docs/ops/runbook/troubleshooting-nessus.md">}}).
 
 ## Review and respond to open alerts
 
