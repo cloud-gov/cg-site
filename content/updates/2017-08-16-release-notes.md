@@ -6,9 +6,9 @@ Curious what’s new that you might find helpful as a cloud.gov user? Here are h
 
 ### Added
 
-* Space managers can [add any member of your organization to a space from the dashboard]({{< relref "/docs/apps/managing-teammates.md#space-users" >}}).
-* Documentation for how to take [snapshots and restore backups of your ElasticSearch service data]({{< relref "/docs/services/elasticsearch.md" >}}).
-All customers can now use [Oracle’s SE2 relational database](https://cloud.gov/docs/services/relational-database/).
+* Space managers can [add any member of your organization to a space from the dashboard]({{< relref "docs/apps/managing-teammates.md#space-users" >}}).
+* Documentation for how to take [snapshots and restore backups of your ElasticSearch service data]({{< relref "docs/services/elasticsearch24.md" >}}).
+All customers can now use [Oracle’s SE2 relational database]({{< relref "docs/services/relational-database.md" >}}).
 
 ### Changed
 
@@ -29,7 +29,7 @@ We upgraded the Cloud Foundry deployment to [v270](https://github.com/cloudfound
 * [USN-3364-2: Linux kernel (Xenial HWE) vulnerabilities](https://usn.ubuntu.com/usn/usn-3364-2/)
 * [USN-3367-1: gdb vulnerabilities](https://usn.ubuntu.com/usn/usn-3367-1/)
 
-Check out our new page on [application maintenance](https://cloud.gov/docs/getting-started/app-maintenance/). It explains how to restage your application and what else you should do to keep your app up to date and secure. Restaging will [incorporate fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) included with this release and ensure you’re running the most recent language version supported by your [buildpack](https://docs.cloudfoundry.org/buildpacks/).
+Check out our new page on [application maintenance]({{< relref "docs/getting-started/app-maintenance.md" >}}). It explains how to restage your application and what else you should do to keep your app up to date and secure. Restaging will [incorporate fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) included with this release and ensure you’re running the most recent language version supported by your [buildpack](https://docs.cloudfoundry.org/buildpacks/).
 
 #### Additional upgrades
 * [RootFS cflinuxfs2 v1.146.0](https://github.com/cloudfoundry/stacks/releases/tag/1.146.0)
