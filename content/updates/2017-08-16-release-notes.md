@@ -1,4 +1,5 @@
 +++
+date = "2017-08-14"
 title = "Platform Release Notes: August 14, 2017"
 +++
 
@@ -8,16 +9,17 @@ Curious what’s new that you might find helpful as a cloud.gov user? Here are h
 
 * Space managers can [add any member of your organization to a space from the dashboard]({{< relref "docs/apps/managing-teammates.md#space-users" >}}).
 * Documentation for how to take [snapshots and restore backups of your ElasticSearch service data]({{< relref "docs/services/elasticsearch24.md" >}}).
-All customers can now use [Oracle’s SE2 relational database]({{< relref "docs/services/relational-database.md" >}}).
+* All customers can now use [Oracle’s SE2 relational database]({{< relref "docs/services/relational-database.md" >}}).
 
 ### Changed
 
 * On the dashboard, new error messages alert you when you try to remove someone from your organization who still has roles in your spaces.
-![remove space user dashboard screen](/img/remove-space-user.png)
+<br/>![remove space user dashboard screen](/img/remove-space-user.png)
 * Visualization of platform uptime available from the [cloud.gov status page](https://cloudgov.statuspage.io/). You can see current and the previous 90 days uptime for customer applications, API, dashboard, and many other components of the cloud.gov platform.
 
 ### Platform releases
-We upgraded the Cloud Foundry deployment to [v270](https://github.com/cloudfoundry/cf-release/releases/tag/v270). Which remediates the following vulnerabilities:
+We upgraded the Cloud Foundry deployment to [v270](https://github.com/cloudfoundry/cf-release/releases/tag/v270), which remediates the following vulnerabilities:
+
 * [USN-3378-2: Linux kernel (Xenial HWE) vulnerabilities](https://usn.ubuntu.com/usn/usn-3378-2/)
 * [USN-3346-1: bind9 vulnerabilities](https://usn.ubuntu.com/usn/usn-3346-1/)
 * [USN-3347-1: Libgcrypt vulnerabilities](https://usn.ubuntu.com/usn/usn-3347-1/)
