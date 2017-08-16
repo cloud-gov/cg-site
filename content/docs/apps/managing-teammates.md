@@ -33,7 +33,7 @@ On the org page, scroll down to "Organization users". This lists the org users a
 
 ### Space users
 
-If you're an Space Manager, go to your [dashboard](https://dashboard.fr.cloud.gov/) and click on the name of your org, then click on the name of your space.
+If you're a Space Manager, go to your [dashboard](https://dashboard.fr.cloud.gov/) and click on the name of your org, then click on the name of your space.
 
 ![Space roles](/img/space-user-role-management.png)
 
