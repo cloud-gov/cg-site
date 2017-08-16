@@ -47,11 +47,27 @@ If you see a way to make this checklist better, just submit a PR to the
 
 ## Ensure all VMs are running the current stemcell
 
-- Get the latest stemcell version from http://bosh.cloudfoundry.org/stemcells/
-  for AWS Xen-HVM Light
+- Check the latest stemcell version for AWS Xen-HVM Light at http://bosh.cloudfoundry.org/stemcells/
 
-- From the jumpbox in each of our four environments, run `bosh deployments` and verify the stemcell in-use
-for each deployment is current.
+- From the jumpbox in each of our four environments, `tooling`, `development`, `staging` and `production`, run `bosh deployments` and verify the stemcell in use for each deployment is current. For example, the 3431.13 stemcells are outdated below:
+```sh
+root@PRODUCTION:/tmp/build/8e72821d$ bosh deployments | grep go_agent
+admin-ui             	clamav/9                           	bosh-aws-xen-hvm-ubuntu-trusty-go_agent/3445   	-	outdated
+cf-production        	clamav/9                           	bosh-aws-xen-hvm-ubuntu-trusty-go_agent/3431.13	-	none
+                     	awslogs/27                         	bosh-aws-xen-hvm-ubuntu-trusty-go_agent/3445
+cf-production-diego  	clamav/9                           	bosh-aws-xen-hvm-ubuntu-trusty-go_agent/3431.13	-	none
+concourse            	clamav/9                           	bosh-aws-xen-hvm-ubuntu-trusty-go_agent/3445   	-	latest
+kubernetes           	cron/17                            	bosh-aws-xen-hvm-ubuntu-trusty-go_agent/3445   	-	latest
+logsearch            	cron/17                            	bosh-aws-xen-hvm-ubuntu-trusty-go_agent/3445   	-	latest
+shibboleth-production	clamav/9                           	bosh-aws-xen-hvm-ubuntu-trusty-go_agent/3445   	-	latest
+```
+
+- When the stemcells are out-of-date:
+  - Review the release notes at http://bosh.cloudfoundry.org/stemcells/bosh-aws-xen-hvm-ubuntu-trusty-go_agent
+  - Trigger the appropriate `deploy-...` jobs in Concourse
+    - Triggering more than 3 jobs simultaneously is not advised
+  - Trigger the `cf-production` jobs in the `deploy-cf` pipeline only after development and staging have completed
+    - The `cf-production` job is launched by running `acceptance-tests-staging`
 
 - **Note:** The
 [nessus manager deployment](https://github.com/18F/cg-deploy-nessus-manager)
