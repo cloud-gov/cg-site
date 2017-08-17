@@ -48,8 +48,9 @@ cp /var/vcap/jobs/ingestor_syslog/config/logstash.conf /tmp/logstash-restore.con
 
 Edit the `/tmp/logstash-restore.conf` and make the following changes:
 
-#### Remove the `redis` input and replace it with an `s3` input
+#### Update the "input" block to only contain s3
 ```
+input {
   s3 {
     bucket => ":bucket:"
     region => ":region:"
@@ -57,6 +58,7 @@ Edit the `/tmp/logstash-restore.conf` and make the following changes:
     type => "syslog"
     sincedb_path => "/tmp/s3_import.sincedb"
   }
+}
 ```
 
 The values for `:bucket:` and `:region:` can be found in [cg-provision](https://github.com/18F/cg-provision/blob/master/terraform/modules/cloudfoundry/buckets.tf#L25-L30) or retrieved from the bosh manifest:
