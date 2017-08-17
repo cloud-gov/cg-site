@@ -9,15 +9,13 @@ Every quarter we update you with the important news about new features and updat
 
 #### Use the dashboard to invite new users to your team
 
-Managing users in your organization and granting them the permissions they need should be a straightforward process so your team can get to work building your app on cloud.gov. To make it easier for you, we built new features for inviting new users and giving them roles within your organization using the dashboard. With these changes, even the least technical people on your team can invite new folks and manage their role without involving cloud.gov support.
+Managing users in your organization and granting them the permissions they need should be a straightforward process so your team can get to work building your app on cloud.gov. To make it easier for you and us, we built new features for inviting new users and giving them roles within your organization using the dashboard. With these changes, it's easy for even the least technical people on your team to invite new folks and manage their roles.
 
 <img src="/img/invite-users.png" alt="The user invitation screen with notification" width="624" height="272" />
 
-Being able to manage your users from the dashboard will also allow you to have finer control over who has access to different parts of your system without having to involve your technical staff. Our users requested this functionality, so if you get a chance to use it please let us know how it’s working for you. Watch for more developments like this in the future.
-
 #### Continuous improvement
 
-Staying compliant with federal laws is crucial to us and to you, but compliant simply isn’t good enough, or fast enough, for us. That’s why [cloud.gov is designed and operated to routinely provide apps the latest security updates](https://www.google.com/url?q=https://cloud.gov/overview/overview/cloudgov-benefits/&sa=D&ust=1501263385089000&usg=AFQjCNGRQGmoDF2V5KRSRg1JaAFp_yMYYg) within a day of their release. When there’s a major vulnerability in a component managed by cloud.gov, our team makes these updates across the entire platform, so you don’t have to spend time doing it. For updates to the buildpack, operating system, or [any other component we manage](https://cloud.gov/overview/technology/responsibilities/), all that’s typically required is a [restage of your apps](https://cloud.gov/docs/getting-started/app-maintenance/#restaging-your-app), even as they scale and grow, making security straightforward and easy for you.
+Staying compliant with federal laws is crucial to us and to you, but compliant simply isn’t good enough, or fast enough, for us. That’s why [cloud.gov is designed and operated to routinely provide apps the latest security updates](https://cloud.gov/overview/overview/cloudgov-benefits/) within a day of their release. When there’s a major vulnerability in a component managed by cloud.gov, our team makes these updates across the entire platform, so you don’t have to spend time doing it. For updates to the buildpack, operating system, or [any other component we manage](https://cloud.gov/overview/technology/responsibilities/), all that’s typically required is a [restage of your apps](https://cloud.gov/docs/getting-started/app-maintenance/#restaging-your-app), even as they scale and grow.
 
 #### Improved support and documentation to help you use cloud.gov
 
@@ -51,6 +49,6 @@ The Federal Bureau of Investigation (FBI) recently launched their new Crime Data
 
 #### Federal Election Commission
 
-The Federal Election Commission (FEC) recently relaunched their flagship website, fec.gov, with cloud.gov. The FEC collects financial reports for all federal elections and discloses fundraising figures to the public. By hosting FEC.gov on cloud.gov and moving its data to the cloud, the FEC anticipates saving 85% in hosting costs and is better prepared for peak traffic events. Read a case study about the FEC here: [https://cloud.gov/case-study/fec/](https://cloud.gov/overview/customer-stories/fec/) and check out their new, cloud.gov-hosted website at [https://fec.gov](https://fec.gov)
+The Federal Election Commission (FEC) recently relaunched their flagship website, fec.gov, with cloud.gov. The FEC collects financial reports for all federal elections and discloses fundraising figures to the public. By hosting FEC.gov on cloud.gov and moving its data to the cloud, the FEC anticipates saving 85% in hosting costs and is better prepared for peak traffic events. Read a case study about the FEC here: [https://cloud.gov/overview/customer-stories/fec/](https://cloud.gov/overview/customer-stories/fec/) and check out their new, cloud.gov-hosted website at [https://fec.gov](https://fec.gov)
 
 <img src="/img/fec-screen.png" alt="the new cloud.gov hosted fec homepage" width="624" height="320" />
