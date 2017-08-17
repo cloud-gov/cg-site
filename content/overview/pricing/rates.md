@@ -33,7 +33,7 @@ You can email [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov) 
 The [prototyping package]({{< relref "overview/pricing/prototyping.md" >}}) lets many teams build and deploy apps, with full access control. Prototyping packages cannot host production data; all apps are limited to the `*.app.cloud.gov` domain. Whole agencies or departments often purchase a single prototyping package.
 
 **Annual fee:** $15K<br>
-**Resource usage quota:** ~$99 per GB per month[*](#quota-pricing), up to any limit set by user<br>
+**Resource usage quota:** ~$100 per GB per month[*](#quota-pricing), up to any limit set by user<br>
 **Managed services:** Full access
 
 ### Open data
@@ -41,7 +41,7 @@ The [prototyping package]({{< relref "overview/pricing/prototyping.md" >}}) lets
 Host one public-facing system with no confidentiality risk assessed. Open data packages include all the spaces you need and DNS support. This is the lightest production-level package.
 
 **Annual fee:** $10K<br>
-**Resource usage quota:** ~$99 per GB per month[*](#quota-pricing), up to 2GB<br>
+**Resource usage quota:** ~$100 per GB per month[*](#quota-pricing), up to 2GB<br>
 **Managed services:** Full access
 
 ### FISMA Low
@@ -49,7 +49,7 @@ Host one public-facing system with no confidentiality risk assessed. Open data p
 Host one public-facing system, authorized at the FISMA Low risk assessment level. This includes all the spaces you need and DNS support.
 
 **Annual fee:** $20K<br>
-**Resource usage quota:** ~$99 per GB per month[*](#quota-pricing), up to any limit set by user<br>
+**Resource usage quota:** ~$100 per GB per month[*](#quota-pricing), up to any limit set by user<br>
 **Managed services:** Full access
 
 ### FISMA Moderate
@@ -57,7 +57,7 @@ Host one public-facing system, authorized at the FISMA Low risk assessment level
 Host one public-facing system, authorized at the FISMA Moderate risk assessment level. This includes all the spaces you need and DNS support, as well as additional support for FISMA Moderate data requirements.
 
 **Annual fee:** $90K<br>
-**Resource usage quota:** ~$99 per GB per month[*](#quota-pricing), up to any limit set by user<br>
+**Resource usage quota:** ~$100 per GB per month[*](#quota-pricing), up to any limit set by user<br>
 **Managed services:** Full access
 
 ### Sandbox
@@ -72,11 +72,11 @@ Free of charge and without any paperwork, anyone with a government email address
 
 ## Quota pricing
 
-Quotas are priced at $0.0033 per MB reserved per day and assessed monthly. In practice, this works out to $99 per GB per month, based on a 30-day month:
+Quotas are priced at $0.0033 per MB reserved per day and assessed monthly. In practice, this works out to about $100 per GB per month:
 
-`$0.0033 * 1024 MB * 30 days = $99 per GB per month`
+`$0.0033 * 1024 MB * 30 days = $101.37 per GB per month`
 
-The monthly cost will vary slightly from $92.40 per GB in a 28-day month to $102.30 per GB in a 31-day month.
+The monthly cost will vary slightly from $94.62 per GB in a 28-day month to $104.76 per GB in a 31-day month.
 
 See [details on quota costs, billing, and limits]({{< relref "overview/pricing/quotas.md" >}}) for more.
 
@@ -88,7 +88,7 @@ This spreadsheet can help you estimate the total cost of cloud.gov across all ac
 **cloud.gov cost estimator**
 
 Formats: [.xlsx](/resources/cloudgov_cost_estimator.xlsx) | [.ods](/resources/cloudgov_cost_estimator.ods) <br />
-*last updated: April 25, 2017*
+*last updated: August 16, 2017*
 
 <!-- The full URLs for the spreadsheet calculators are, respectively:
 .xls format: https://cloud.gov/resources/cloudgov_cost_estimator.xlsx
@@ -136,10 +136,10 @@ All three pricing components are factored into every access package. Use this ta
 | Package | What’s included? | Annual access package fee\* | Usage quota price | Managed services available |
 | --- | --- | --- | --- | --- |
 | **[Sandbox]({{< relref "overview/pricing/free-limited-sandbox.md" >}})** | Anyone with a U.S. federal government email address can try a limited free cloud.gov space. | Free | Free, **capped at 1GB/month** | Only free services |
-| **Prototyping** | Suitable for many teams to deploy apps, though limited to the `*.app.cloud.gov` domain. Access control can be delegated to teams. No production data allowed. Usually purchased per agency/department. | $15K |  ~$99/GB/month | All\** |
-| **Open Data** | One public-facing Open Data (no confidentiality risk assessed) [system]({{< relref "overview/pricing/pricing-terminology.md#system" >}}), including all the spaces needed and DNS support. | $10K | ~$99/GB/month, **capped at 2GB/month** | All\** (up to $2500/year) |
-| **FISMA Low** | One public-facing FISMA Low [system]({{< relref "overview/pricing/pricing-terminology.md#system" >}}), including all the spaces needed and DNS support. | $20K | ~$99/GB/month | All\** |
-| **FISMA Moderate** | One public-facing FISMA Moderate [system]({{< relref "overview/pricing/pricing-terminology.md#system" >}}), including all the spaces needed and DNS support. Additional support for FISMA Moderate data requirements. | $90K | ~$99/GB/month | All\** |
+| **Prototyping** | Suitable for many teams to deploy apps, though limited to the `*.app.cloud.gov` domain. Access control can be delegated to teams. No production data allowed. Usually purchased per agency/department. | $15K |  ~$100/GB/month | All\** |
+| **Open Data** | One public-facing Open Data (no confidentiality risk assessed) [system]({{< relref "overview/pricing/pricing-terminology.md#system" >}}), including all the spaces needed and DNS support. | $10K | ~$100/GB/month, **capped at 2GB/month** | All\** (up to $2500/year) |
+| **FISMA Low** | One public-facing FISMA Low [system]({{< relref "overview/pricing/pricing-terminology.md#system" >}}), including all the spaces needed and DNS support. | $20K | ~$100/GB/month | All\** |
+| **FISMA Moderate** | One public-facing FISMA Moderate [system]({{< relref "overview/pricing/pricing-terminology.md#system" >}}), including all the spaces needed and DNS support. Additional support for FISMA Moderate data requirements. | $90K | ~$100/GB/month | All\** |
 
 \*Access agreements are severable, and the access package fees are invoiced monthly.
 
@@ -147,13 +147,4 @@ All three pricing components are factored into every access package. Use this ta
 
 Find out [more about this pricing model]({{< relref "overview/pricing/pricing-model.md" >}}) and [how we define these terms]({{< relref "overview/pricing/pricing-terminology.md" >}}).
 
--->
-
-
-<!--
-TODO
----
-
-- Create buildpack page with list and compliance trade-offs
-- Add examples
 -->
