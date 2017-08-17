@@ -74,7 +74,7 @@ Free of charge and without any paperwork, anyone with a government email address
 
 Quotas are priced at $0.0033 per MB reserved per day and assessed monthly. In practice, this works out to $99 per GB per month, based on a 30-day month:
 
-`$0.0033 * 1000 MB * 30 days = $99 per GB per month`
+`$0.0033 * 1024 MB * 30 days = $99 per GB per month`
 
 The monthly cost will vary slightly from $92.40 per GB in a 28-day month to $102.30 per GB in a 31-day month.
 
