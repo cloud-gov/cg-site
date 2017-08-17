@@ -135,6 +135,7 @@ Run logstash passing in your edited configuration file:
 
 ```sh
 export JAVA_HOME=/var/vcap/packages/java8
+rm /tmp/s3_import.sincedb
 /var/vcap/packages/logstash/bin/logstash --path.config /tmp/logstash-restore.config
 ```
 
