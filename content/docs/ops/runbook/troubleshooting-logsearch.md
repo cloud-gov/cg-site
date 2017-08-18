@@ -147,6 +147,14 @@ Logstash will run forever once started. Monitor the progress of the reindex, and
 tail -f /tmp/s3_import.sincedb
 ```
 
+### Recreate ingestor
+
+To restore the ingestor to known good configuration after the restore, recreate the VM:
+
+```sh
+bosh -d logsearch recreate ingestor/0
+```
+
 ## Other Useful ElasticSearch commands
 
 ### Check Disk Space
