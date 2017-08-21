@@ -1,5 +1,5 @@
 +++
-date = "2017-08-15"
+date = "2017-08-21"
 title = "Announcement: cloud.gov accounts will migrate to OMB MAX"
 +++
 
@@ -22,13 +22,13 @@ Soon, we will switch these users to use OMB MAX to log in to cloud.gov. We’re 
 To create a MAX account:
 
 * Go to [login.max.gov](https://login.max.gov), if you see your agency's logo, click it and sign in with your agency credentials.
-* Go to [login.max.gov](https://login.max.gov), if you don't see you agency's logo, click the green Register Now button in the top right corner.
+* Go to [login.max.gov](https://login.max.gov), if you don't see your agency's logo, click the green Register Now button in the top right corner.
   * Register with a PIV/CAC card if you have one and a working card reader
   * Register with a username, password, and a Secure+ 2-factor device to your account if you don't have a card reader.
 
 ### What about contractors?
 
-Contractors with a federal agency email address (.gov or .mil) should be able to self-register just like federal employees. If there are contractors or others on your team without a government email address, you’ll need to [contact OMB MAX directly](https://max.gov/maxportal/home.action) to get accounts for them.
+If you're a contractor with a federal agency email address, you should be able to self-register just like federal employees. If you're a contractors or working with cloud.gov without a government email address, you’ll need to ask your agency to [contact OMB MAX directly](https://max.gov/maxportal/home.action) to create your account for you.
 
 ## Prepare for the switch
 
@@ -42,4 +42,4 @@ OMB MAX is a governmentwide collaboration platform with an authentication system
 
 Though we currently use multi-factor authentication for all cloud.gov accounts, switching to MAX accounts enables agencies which require PIV/CAC cards for login to use cloud.gov more easily. MAX also makes it easier for agencies to meet their own compliance requirements for users of cloud.gov by implementing single sign-on with agency services. For most users, this will provide a better user experience by not having a separate login and second factor to keep track of for cloud.gov.
 
-We appreciate your patience and cooperation as we work to implement MAX authentication with cloud.gov.
+If you have questions about logging into cloud.gov, please email us. For questions about MAX.gov and setting up your account, contact OMB MAX directly. We appreciate your patience and cooperation as we work to implement MAX authentication with cloud.gov.
