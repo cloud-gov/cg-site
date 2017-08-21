@@ -36,18 +36,17 @@ On the org page, scroll down to "Organization users". This lists the org users a
 
 ### Space users
 
-If you're an Space Manager, go to your [dashboard](https://dashboard.fr.cloud.gov/) and click on the name of your space.
+If you're an Space Manager, go to your [dashboard](https://dashboard.fr.cloud.gov/) and click on the name of your org, then click on the name of your space.
 
-![Space roles](/img/space-role-management.png)
+![Space roles](/img/space-user-role-management.png)
 
 On the space page, scroll down to "Space users". This lists the space users and their space roles. Change the roles by clicking the checkboxes beside their names. (If you're the only person in the space, you'll just see "You are the only user in this space".)
 
-To give a organization user access to a space, go to your space page, click a space name, and scroll down to "Space users". You can add a person, and then you can give them roles with the checkboxes.
+To give an existing organization user access to a space, go to your space page, click a space name, and scroll down to "Space users". You can add a person, and then you can give them roles with the checkboxes.
 
 {{% /dashboard %}}
 {{% commandline %}}
 
-### Organization and Space users
 If you're an Org Manager or Space Manager, here's how to give your teammates roles for your orgs and spaces. You can check whether you're an Org Manager using `cf org-users <org>` and whether you're a Space Manager using `cf space-users <org> <space>`.
 
 Check what version of the CLI you're running: `cf -v`. If that's older than the [latest version listed here](https://github.com/cloudfoundry/cli/releases), you should [upgrade it](https://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html) to avoid unexpected errors.
