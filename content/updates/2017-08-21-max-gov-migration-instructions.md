@@ -42,4 +42,4 @@ OMB MAX is a governmentwide collaboration platform with an authentication system
 
 Though we currently use multi-factor authentication for all cloud.gov accounts, switching to MAX accounts enables agencies which require PIV/CAC cards for login to use cloud.gov more easily. MAX also makes it easier for agencies to meet their own compliance requirements for users of cloud.gov by implementing single sign-on with agency services. For most users, this will provide a better user experience by not having a separate login and second factor to keep track of for cloud.gov.
 
-If you have questions about logging into cloud.gov, please email us. For questions about MAX.gov and setting up your account, contact OMB MAX directly. We appreciate your patience and cooperation as we work to implement MAX authentication with cloud.gov.
+If you have questions about logging into cloud.gov, please [email us](https://cloud.gov/docs/help/). For questions about MAX.gov and setting up your account, [contact OMB MAX directly](https://max.gov/maxportal/webPage/contactUs.action). We appreciate your patience and cooperation as we work to implement MAX authentication with cloud.gov.
