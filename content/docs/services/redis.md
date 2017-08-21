@@ -8,15 +8,16 @@ aliases:
   - docs/services/redis28/
 ---
 
-cloud.gov offers two [Redis](http://www.redis.io/) services: a single-instance Redis 2.8 service and a highly-available multi-instance [Sentinel](https://www.redis.io/topics/sentinel/) and Redis 3.2 service.
+cloud.gov offers [Redis](http://www.redis.io/) 2.8 and 3.2 as a service.
 
 ## Plans
 
-<h3 id="redis32">Redis 3.2</h3>
-
 Service Name | Plan Name | Description | Price
 ------------ | --------- | ----------- | -----
+`redis28` | `standard` | Redis instance with several GB storage | Free in Beta
 `redis32` | `standard-ha` | Redis instance with several GB storage | Free in Beta
+
+**Note:** The `standard-ha` plan runs multiple redis instances on different machines, so that service is not interrupted by routine platform maintenance. The `standard` plan runs a single instance and will be briefly unavailable during platform maintenance; this plan should not be used for production applications.
 
 #### How to create an instance
 
@@ -26,30 +27,12 @@ To create a service instance, run the following command (replace `my-redis-servi
 cf create-service redis32 standard-ha my-redis-service
 ```
 
-**This service is still in Beta mode**
+## HA client configuration
 
-The `standard-ha` plan is highly-available in particular around redundancy,
-three Redis Servers sized similarly to the `standard` plan, and availability,
-the server is available within a 500 millisecond window during a Redis server
-failover. We are offering it in **beta** to test this plan under production
-load. If you have feedback about this service, please don't hesitate to
-[contact us](mailto:cloud-gov-support@gsa.gov).
+During platform maintenance each redis instance in the cluster will be temporarily removed while it is being updated.  All clients connected to the instance will be disconnected during this process.
 
-<h3 id="redis28">Redis 2.8</h3>
+To ensure your application stays up during this process configure your client to use a short (~ 1 second) timeout and to automatically reconnect to redis when disconnected.
 
-Service Name | Plan Name | Description | Price
------------- | --------- | ----------- | -----
-`redis28` | `standard` | Redis instance with several GB storage | Free in Alpha
-
-#### How to create an instance
-
-To create a service instance, run the following command (replace `my-redis-service` with a name for the service):
-
-```sh
-cf create-service redis28 standard my-redis-service
-```
-
-**This service is still in Alpha mode**: downtime and data loss is possible.
 
 ## Rotating credentials
 
