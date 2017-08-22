@@ -1,5 +1,5 @@
 +++
-date = "2017-08-21"
+date = "2017-08-22"
 title = "Announcement: cloud.gov accounts will migrate to OMB MAX"
 +++
 
@@ -17,7 +17,7 @@ Soon, we will switch these users to use OMB MAX to log in to cloud.gov. We’re 
 
 **If you use a cloud.gov account and already have a MAX account:** Double check that you can log in successfully to MAX using a PIV/CAC card or username and password with a Secure+ SMS 2-factor device.
 
-**If you use a cloud.gov account to log in and don’t have a MAX account:** You need to create a MAX account with your PIV/CAC card or a Secure+ 2-factor device. Once we switch, you’ll be required to use that account to login to cloud.gov and all associated services.
+**If you use a cloud.gov account to log in and don’t have a MAX account:** You need to create a MAX account with your PIV/CAC card or username and password with a Secure+ 2-factor device. Once we switch, you’ll be required to use that account to login to cloud.gov and all associated services. *You can create your account at any time.*
 
 To create a MAX account:
 
