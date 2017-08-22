@@ -72,7 +72,6 @@ blockquote::before {
   color: #333; /* $color-textblack */
 }
 
-
 .env-block pre{
   white-space: pre-wrap;       /* css-3 */
   white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
@@ -94,15 +93,45 @@ blockquote::before {
   margin-top: 20px;
   padding-top: 15px;
 }
-
-.ui-tabs-nav li.ui-tabs-active a.tab-note {
-  border-bottom-color: #4ca3fa;
+.tabs.ui-tabs {
+  border: 1px solid #ddd;
 }
-
+.ui-tabs-panel.ui-widget-content {
+  border: none;
+  padding-top: 20px;
+}
+.ui-tabs-nav {
+  background-color: #f5f5f3;
+}
+ul.ui-widget-header {
+  box-shadow: 0 1px 0 0 #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.ui-tabs-nav li {
+  border: 1px solid #ddd;
+  padding: 15px 20px 0 15px;
+}
+.ui-tabs .ui-tabs-nav li {
+  /*box-shadow: 0 1px 0 0 #ddd;*/
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+  background: #fff;
+  border-top: 3px solid #046cd5;
+  box-shadow: 0 2px 0 0 #fff;
+  padding-top: 12px;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a {
+  color: #333;
+}
 .ui-tabs-nav li a.tab-note {
   padding: 1px 0px 0px;
   float: left;
-  font-size:12px;
+  font-size: 12px;
+  font-family: Georgia, serif;
+  font-weight: 500;
+}
+.ui-tabs-nav li.ui-state-default {
+  border-bottom: 1px solid #999;
 }
 
 .tabs > p {
@@ -121,7 +150,7 @@ blockquote::before {
   padding: 15px 0px 15px 25px;
   border-style: solid;
   border-width: 0px;
-  border-left-width: 4px;
+  /*border-left-width: 4px;*/
   margin-left: 0px;
 }
 
