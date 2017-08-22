@@ -113,6 +113,7 @@ ul.ui-widget-header {
 }
 .ui-tabs .ui-tabs-nav li {
   /*box-shadow: 0 1px 0 0 #ddd;*/
+  background-color: #fafaf9;
 }
 .ui-tabs .ui-tabs-nav li.ui-tabs-active {
   background: #fff;
