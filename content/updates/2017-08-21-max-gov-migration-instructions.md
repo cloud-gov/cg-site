@@ -9,7 +9,7 @@ cloud.gov is migrating all users with native cloud.gov accounts (not users with 
 
 Right now, there are two ways to log in to cloud.gov: either you use your agency’s credentials or a cloud.gov account. This change *only affects users with a cloud.gov account*.
 
-Soon, we will switch these users to use OMB MAX to log in to cloud.gov. We’re making this change to make managing your account easier for you and your agency.
+Soon, we will switch these users to use OMB MAX to log in to cloud.gov. We’re making this change to make managing your account easier for you and your agency. We don't have a definitive deadline yet but we will give you __at least three weeks notice__ before we make the switch.
 
 ## What does this mean for me?
 
