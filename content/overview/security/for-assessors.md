@@ -21,13 +21,26 @@ cloud.gov is a platform as a service. This means customers provide the code for 
 
 ## Terminology / Overview of terms
 
-[@todo: Validate the assumption that it's important for them to retain the relevant jargon (orgs, spaces, roles). If the understanding is important but the jargon isn't, let's explain this using the simplest possible terms.]
+### Organizations
 
-['org assessor' has been a point of considerable confusion.]
+Your work inside cloud.gov takes place within [organizations](http://docs.cloudfoundry.org/concepts/roles.html#orgs), or “orgs” for short. Orgs group together users for management and present a shared perimeter for services, domains and quotas.
 
-- orgs:
-- spaces:
-- roles:
+### Spaces
+
+Each org contains [spaces](http://docs.cloudfoundry.org/concepts/roles.html#spaces), which can contain applications. Applications in the same space share a location for app development, deployment, and maintenance.
+
+### Roles
+
+As the [Cloud Foundry documentation](http://docs.cloudfoundry.org/concepts/roles.html#roles) says:
+
+> A user can have one or more roles. The combination of these roles defines the user’s overall permissions in the org and within specific spaces in that org.
+
+cloud.gov currently permits the following roles:
+
+ * **Org Managers** are managers or other users who need to administer the org.
+ * **Space Managers** are managers or other users who administer a space within an org.
+ * **Space Developers:** are application developers or other users who manage applications and services in a space.
+ * **Space Auditors:** view but cannot edit the space.
 
 
 ## Division of responsibilities
