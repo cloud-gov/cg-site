@@ -32,7 +32,7 @@ aliases:
 
 ### Security updates
 
-When a new security update is available, cloud.gov updates the relevant buildpacks (ex: PHP for [X], [Y]). These changes don't take effect on individual apps until the apps are restaged, though. You know your apps better than we do, and we prefer to minimize surprises, so your dev team is responsible for restaging your app(s).
+When a new security update is available, cloud.gov updates the relevant buildpacks (ex: PHP for [X], [Y]). These changes don't take effect on individual apps until the apps are restaged, though. You know your apps better than we do, and we prefer to minimize surprises, so your dev team is responsible for restaging your app(s). For more information, see the [app maintenance documentation](https://cloud.gov/docs/getting-started/app-maintenance/).
 
 ### Encryption
 
