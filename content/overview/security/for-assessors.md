@@ -38,6 +38,7 @@ As the [Cloud Foundry documentation](http://docs.cloudfoundry.org/concepts/roles
 cloud.gov currently permits the following roles:
 
  * **Org Managers** are managers or other users who need to administer the org.
+ * **Org Auditors** view but cannot edit user information and org quota usage information.
  * **Space Managers** are managers or other users who administer a space within an org.
  * **Space Developers:** are application developers or other users who manage applications and services in a space.
  * **Space Auditors:** view but cannot edit the space.
