@@ -12,15 +12,11 @@ aliases:
 
 ## How cloud.gov works
 
-[@todo: Add a quick start to understanding how different components relate to each other, and the security implication of each component. ("Containers in containers in a virtualized resource [has been] unclear.")]
-
 cloud.gov is a platform as a service. This means customers provide the code for their app and we provide the infrastructure, operating system, and supporting technologies required to run the app. There are three basic components to any cloud.gov app:
 
 1. Hardware infrastructure provided by Amazon Web Services's GovCloud environment including web servers, relational database servers, DNS routing services, and other systems the customer might need.
 1. A container providing the operating system and web server software (NGINX) and other basic software required to run any app. Apps are deployed into this container and isolated from other apps on the platform.
 1. Software components specific to the app the customer is launching, deployed along with the customer's app. These components, called buildpacks, provide programming languages and other dependencies required by the app. We strongly encourage customers to use the buildpacks we provide, though it is possible for customers to use their own.
-
-[ illustration or graphic — captioned, of course — TK ]
 
 
 ## Terminology / Overview of terms
