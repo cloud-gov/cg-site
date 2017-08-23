@@ -34,6 +34,6 @@ You can interact directly with the services bound to your application via [port-
 
 ### SSH version information 
 
-The cloud.gov application containers use the SSH-2.0 protocol. The SSH service uses the [CloudFoundry SSH implementation](https://github.com/cloudfoundry/diego-ssh). For more on how CloudFoundry implements SSH, refer to CloudFoundry's documentation on [Understanding Application SSH](https://docs.cloudfoundry.org/concepts/diego/ssh-conceptual.html).
+The cloud.gov application containers use the SSH-2.0 protocol. The SSH service uses the [CloudFoundry SSH implementation](https://github.com/cloudfoundry/diego-ssh). For more on how Cloud Foundry implements SSH, refer to Cloud Foundry's documentation on [Understanding Application SSH](https://docs.cloudfoundry.org/concepts/diego/ssh-conceptual.html).
 
 
