@@ -40,4 +40,4 @@ Every database service configured through cloud.gov is encrypted at rest. For an
 
 ### Auditing login attempts
 
-Through multi-factor authentication and other means, the cloud.gov team verifies that people logging into cloud.gov legitimately own their accounts. But users don't log in to orgs and spaces, they log into cloud.gov itself. Accordingly, instead of monitoring cloud.gov logins/logouts, you'll want to audit what individual accounts did in the individual spaces to which they had access. For more information, see https://docs.cloudfoundry.org/loggregator/cc-uaa-logging.html.
+Through multi-factor authentication and other means, the cloud.gov team verifies that people logging into cloud.gov legitimately own their accounts. But users don't log in to orgs and spaces, they log into cloud.gov itself. Accordingly, customers don't have direct access to logs of login attempts, but you can ask us to perform specific log searches on your behalf.
