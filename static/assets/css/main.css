@@ -94,7 +94,7 @@ blockquote::before {
   padding-top: 15px;
 }
 .tabs.ui-tabs {
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
 }
 .ui-tabs-panel.ui-widget-content {
   border: none;
@@ -105,14 +105,13 @@ blockquote::before {
 }
 ul.ui-widget-header {
   box-shadow: 0 1px 0 0 #ddd;
-  border-bottom: 1px solid #ddd;
+  /*border-bottom: 1px solid #ccc;*/
 }
 .ui-tabs-nav li {
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
   padding: 15px 20px 0 15px;
 }
 .ui-tabs .ui-tabs-nav li {
-  /*box-shadow: 0 1px 0 0 #ddd;*/
   background-color: #fafaf9;
 }
 .ui-tabs .ui-tabs-nav li.ui-tabs-active {
@@ -120,6 +119,8 @@ ul.ui-widget-header {
   border-top: 3px solid #046cd5;
   box-shadow: 0 2px 0 0 #fff;
   padding-top: 12px;
+  padding-bottom: 1px;
+  top: 1px;
 }
 .ui-tabs .ui-tabs-nav li.ui-tabs-active a {
   color: #333;
@@ -148,11 +149,10 @@ ul.ui-widget-header {
 }
 
 .tabs .env-block {
-  padding: 15px 0px 15px 25px;
+  padding: 15px 0 15px 25px;
   border-style: solid;
-  border-width: 0px;
-  /*border-left-width: 4px;*/
-  margin-left: 0px;
+  border-width: 0;
+  margin-left: 0;
 }
 
 .tabs .env-block::before {
