@@ -1,13 +1,13 @@
 <div class="tabs">
   <ul>
-    <li>
-      <a class="env-specifier" href='#{{ .Get "dashboard" }}'>
+    <li tabindex="-1">
+      <a class="env-specifier" tabindex="0" href='#{{ .Get "dashboard" }}'>
       Using the dashboard</a>
-      <a class="env-specifier tab-note" href="/docs/getting-started/setup/#log-into-the-dashboard-web-interface">(what's this?)</a>
+      <a class="env-specifier tab-note" tabindex="-1" href="/docs/getting-started/setup/#log-into-the-dashboard-web-interface">(what's this?)</a>
     </li>
-    <li>
-      <a class="env-specifier" href='#{{ .Get "cli" }}'>Using the command line </a>
-      <a class="env-specifier tab-note" href="/docs/getting-started/setup/#set-up-the-command-line">(what's this?)</a>
+    <li tabindex="-1">
+      <a class="env-specifier" tabindex="0" href='#{{ .Get "cli" }}'>Using the command line </a>
+      <a class="env-specifier tab-note" tabindex="-1" href="/docs/getting-started/setup/#set-up-the-command-line">(what's this?)</a>
     </li>
   </ul>
   {{ .Inner }}
