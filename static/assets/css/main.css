@@ -32,6 +32,7 @@ blockquote li,
   font-family: '18Franklin-webfont', system, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; /* $font-sans */
   font-size: 14px; /* $sans-s4 */
   font-weight: 400;
+  padding-top: 12px;
 }
 
 .env-specifier strong {
@@ -71,9 +72,89 @@ blockquote::before {
   color: #333; /* $color-textblack */
 }
 
-.env-commandline::before{
+.env-block pre{
+  white-space: pre-wrap;       /* css-3 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;
+}
+
+.ui-tabs-panel .env-block {
+  margin-top: 0px;
+  margin-bottom: 12px;
+}
+
+.ui-tabs-panel .env-block pre {
+  padding: 0px 10px 10px 0px;
+}
+
+.tabs {
+  margin-top: 20px;
+  padding-top: 15px;
+}
+.tabs.ui-tabs {
+  border: 1px solid #ccc;
+}
+.ui-tabs-panel.ui-widget-content {
+  border: none;
+  padding-top: 20px;
+  padding-right: 20px;
+}
+.ui-tabs-nav {
+  background-color: #f5f5f3;
+}
+ul.ui-widget-header {
+  box-shadow: 0 1px 0 0 #ddd;
+}
+.ui-tabs-nav li {
+  border: 1px solid #ccc;
+  padding: 15px 20px 0 15px;
+}
+.ui-tabs .ui-tabs-nav li {
+  background-color: #fafaf9;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+  background: #fff;
+  border-top: 3px solid #046cd5;
+  box-shadow: 0 2px 0 0 #fff;
+  padding-top: 12px;
+  padding-bottom: 1px;
+  top: 1px;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a {
+  color: #333;
+}
+.ui-tabs-nav li a.tab-note {
+  padding: 1px 0px 0px;
+  float: left;
+  font-size: 12px;
+  font-family: Georgia, serif;
+  font-weight: 500;
+}
+.ui-tabs-nav li.ui-state-default {
+  border-bottom: 1px solid #999;
+}
+
+.tabs > p {
+  display: none;
+}
+
+.tabs .env-commandline {
   border-color: #333; /* $color-textblack */
 }
-.env-dashboard::before {
+
+.tabs .env-dashboard {
   border-color: #74B1DB;
+}
+
+.tabs .env-block {
+  padding: 15px 0 15px 25px;
+  border-style: solid;
+  border-width: 0;
+  margin-left: 0;
+}
+
+.tabs .env-block::before {
+  display: none;
 }

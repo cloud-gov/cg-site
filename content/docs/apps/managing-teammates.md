@@ -21,6 +21,9 @@ After a teammate gets a cloud.gov account, an Org Manager or Space Manager will 
 
 Org Managers can assign roles using the [dashboard](https://dashboard.fr.cloud.gov/) or command line. Space Managers can assign roles using the command line.
 
+
+
+{{% alternatives dashboard="dashboard-org-give-role" cli="cli-org-give-role" %}}
 {{% dashboard %}}
 
 ### Organization users
@@ -42,10 +45,7 @@ On the space page, scroll down to "Space users". This lists the space users and 
 To give an existing organization user access to a space, go to your space page, click a space name, and scroll down to "Space users". You can add a person, and then you can give them roles with the checkboxes.
 
 {{% /dashboard %}}
-
 {{% commandline %}}
-
-### Organization and Space users
 
 If you're an Org Manager or Space Manager, here's how to give your teammates roles for your orgs and spaces. You can check whether you're an Org Manager using `cf org-users <org>` and whether you're a Space Manager using `cf space-users <org> <space>`.
 
@@ -74,11 +74,13 @@ Decide which roles to give them. For a complete list of roles, see [the Cloud Fo
     cf set-org-role <email> <org> OrgAuditor
     ```
 {{% /commandline %}}
+{{% /alternatives %}}
 
 ## Removing a teammate
 
 If you are an Org Manager or Space Manager, you can remove teammates from orgs and spaces respectively.
 
+{{% alternatives dashboard="dashboard-org-remove-role" cli="cli-org-remove-role" %}}
 {{% dashboard %}}
 
 ### Organization Users
@@ -100,7 +102,6 @@ On the Space page, scroll down to the “Space users” section. This has a list
 You can also remove a user from a Space by unchecking all of their space roles.
 
 {{% /dashboard %}}
-
 {{% commandline %}}
 
 If you're an Org Manager or Space Manager, here's how to remove teammates from your orgs and spaces. You can check whether you're an Org Manager using `cf org-users <org>` and whether you're a Space Manager using `cf space-users <org> <space>`.
@@ -168,3 +169,4 @@ To remove teammates from your space, run the following:
     ```
 
 {{% /commandline %}}
+{{% /alternatives %}}
