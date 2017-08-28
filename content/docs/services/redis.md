@@ -5,7 +5,7 @@ menu:
 title: Redis
 description: "Redis: an in-memory data structure store"
 aliases:
-  - docs/services/redis28/
+- docs/services/redis28/
 ---
 
 cloud.gov offers [Redis](http://www.redis.io/) 2.8 and 3.2 as a service.
@@ -14,8 +14,8 @@ cloud.gov offers [Redis](http://www.redis.io/) 2.8 and 3.2 as a service.
 
 Service Name | Plan Name | Description | Price
 ------------ | --------- | ----------- | -----
-`redis28` | `standard` | Redis instance with several GB storage | Free in Beta
-`redis32` | `standard-ha` | Redis instance with several GB storage | Free in Beta
+`redis28` | `standard` | Redis instance with 10 GB storage | Free in Beta
+`redis32` | `standard-ha` | Redis instance with 10 GB storage | Free in Beta
 
 **Note:** The `standard-ha` plan runs multiple redis instances on different machines, so that service is not interrupted by routine platform maintenance. The `standard` plan runs a single instance and will be briefly unavailable during platform maintenance; this plan should not be used for production applications.
 
