@@ -2,5 +2,5 @@
 # Service metadata lives
 # https://github.com/18F/kubernetes-broker/blob/master/catalogData/redis32/service.json#L4
 name = "redis32"
-description = "[Redis](https://redis.io/) version 3.2.10: An open source in-memory data structure store. and [Redis Sentinel](https://redis.io/topics/sentinel) for high-availability."
+description = "[Redis](https://redis.io/) version 3.2: An open source in-memory database."
 status = "Beta"
