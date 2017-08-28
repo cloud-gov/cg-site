@@ -95,39 +95,3 @@ deployment:
 Replace `DEPLOYER_USER`, `ORG`, and `SPACE` accordingly, and export the `CF_PASS` environment variable in the Circle interface to add the deployer's password.
 
 **Note**: If your `manifest.yml` describes more than one app, you might want to specify which app to push in the `cf push` line.
-
-
-### Wercker
-
-In your `wercker.yml` file, add:
-
-```yaml
-steps:
-  ...
-  - dlapiduz/cloud-foundry-deploy
-  ...
-deploy:
-  steps:
-    - dlapiduz/cloud-foundry-deploy:
-        api: $CF_API
-        username: $CF_USER
-        password: $CF_PASS
-        organization: $CF_ORG
-        space: $CF_SPACE
-        appname: APP
-        domain: DOMAIN
-        hostname: myapp
-        skip_ssl: true
-```
-
-Change `APP` and `DOMAIN` to match your application, and set up the following environment variables in a "deploy target":
-
-| Name    | Value              |
-|---------|--------------------|
-| CF_API  | `api.fr.cloud.gov` |
-| CF_USER | deployer username  |
-| CF_PASS | deployer password  |
-| CF_ORG  | target organization|
-| CF_SPACE| target space       |
-
-You can also add the `alt_appname` attribute to do [Blue-Green deploys](https://docs.cloudfoundry.org/devguide/deploy-apps/blue-green.html).
