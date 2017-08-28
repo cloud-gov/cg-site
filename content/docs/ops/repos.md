@@ -2,6 +2,7 @@
 menu:
   docs:
     parent: ops
+layout: ops
 title: Code repositories
 weight: -100
 aliases:

@@ -2,6 +2,7 @@
 menu:
   docs:
     parent: operations
+layout: ops
 title: AWS onboarding
 aliases:
   - /docs/ops/aws-accounts/

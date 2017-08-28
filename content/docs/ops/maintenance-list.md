@@ -2,6 +2,7 @@
 menu:
   docs:
     parent: operations
+layout: ops
 title: Ongoing platform maintenance
 ---
 

@@ -2,6 +2,7 @@
 menu:
   docs:
     parent: runbook
+layout: ops
 
 title: Rotating Secrets V - Cloud Foundry and Diego
 ---
