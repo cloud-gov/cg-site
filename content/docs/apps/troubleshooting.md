@@ -42,9 +42,9 @@ Cloud Foundry will attempt to detect the buildpack to use with your app by exami
 
 If you're seeing errors installing any Python dependencies, check whether you have a `vendor/` directory in your app's root. The Python buildpack won't use PyPI if you have a `vendor/` directory, so you'll need to rename that directory to something else.
 
-## Potential causes of issues during Droplet Execution Phase [DEA]
+## Potential causes of issues during app starting/stopping [CELL]
 
-If you see problems in your logs in lines that include the label `[DEA]`, these explanations may help you resolve them.
+If you see problems in your logs in lines that include the label `[CELL]`, these explanations may help you resolve them.
 
 ### App manifest contents
 
