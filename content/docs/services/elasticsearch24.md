@@ -18,10 +18,9 @@ Plan Name | Description | Price
 `3x`  | Elasticsearch instance with 3GB of RAM and 1 slice of CPU   | Will be paid per hour + storage
 `6x`  | Elasticsearch instance with 6GB of RAM and 1 slice of CPU   | Will be paid per hour + storage
 `12x` | Elasticsearch instance with 12GB of RAM and 2 slices of CPU | Will be paid per hour + storage
-`small-ha` | Elasticsearch cluster with 3 masters and 3 data nodes | Will be paid per hour + storage
-`large-ha` | Elasticsearch cluster with 3 masters and 3 data nodes | Will be paid per hour + storage
+`medium-ha` | Elasticsearch cluster with three master nodes (3584M memory limit, 1792M heap) and three data nodes (3584M memory limit, 1792M heap, 10G disk) | Will be paid per hour + storage
 
-Note: The `small-ha` and `large-ha` plans run multiple Elasticsearch master and data nodes on different machines, so that service is not interrupted by routine platform maintenance. The `1x`, `3x`, `6x`, and `12x` plans all run on a single instance and will be briefly unavailable during platform maintenance; these plans should not be used for production applications.
+Note: The `medium-ha` plan runs multiple Elasticsearch master and data nodes on different machines, so that service is not interrupted by routine platform maintenance. The `1x`, `3x`, `6x`, and `12x` plans all run on a single instance and will be briefly unavailable during platform maintenance; these plans should not be used for production applications.
 
 ## How to create an instance
 
