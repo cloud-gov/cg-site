@@ -17,7 +17,7 @@ Service Name | Plan Name | Description | Price
 `redis28` | `standard` | Redis instance with 10 GB storage | Free in Beta
 `redis32` | `standard-ha` | Redis instance with 10 GB storage | Free in Beta
 
-**Note:** The `standard-ha` plan runs multiple redis instances on different machines, so that service is not interrupted by routine platform maintenance. The `standard` plan runs a single instance and will be briefly unavailable during platform maintenance; this plan should not be used for production applications.
+**Note:** The `standard-ha` plan runs multiple Redis instances on different machines, so that service is not interrupted by routine platform maintenance. The `standard` plan runs a single instance and will be briefly unavailable during platform maintenance; this plan should not be used for production applications.
 
 #### How to create an instance
 
@@ -29,9 +29,9 @@ cf create-service redis32 standard-ha my-redis-service
 
 ## HA client configuration
 
-During platform maintenance each redis instance in the cluster will be temporarily removed while it is being updated.  All clients connected to the instance will be disconnected during this process.
+During platform maintenance each Redis instance in the cluster will be temporarily removed while it is being updated.  All clients connected to the instance will be disconnected during this process.
 
-To ensure your application stays up during this process configure your client to use a short (~ 1 second) timeout and to automatically reconnect to redis when disconnected.
+To ensure your application stays up during this process, configure your client to use a short (~ 1 second) timeout and to automatically reconnect to Redis when disconnected.
 
 
 ## Rotating credentials
