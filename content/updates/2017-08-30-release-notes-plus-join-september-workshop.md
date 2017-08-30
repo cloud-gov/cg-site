@@ -2,7 +2,7 @@
 date = "2017-08-30"
 title = "cloud.gov platform release notes plus, join our workshop in September"
 +++
-Curious what’s new that you might find helpful as a cloud.gov user? Here are highlights from our platform updates over the past [TIME] weeks.
+Curious what’s new that you might find helpful as a cloud.gov user? Here are highlights from our platform updates over the past two weeks.
 
 ### Announcements
 
