@@ -29,7 +29,7 @@ Your work inside cloud.gov takes place within [organizations](http://docs.cloudf
 
 ### Spaces
 
-Each org contains [spaces](http://docs.cloudfoundry.org/concepts/roles.html#spaces), which can contain applications. Applications in the same space share a location for app development, deployment, and maintenance.
+Each org contains [spaces](http://docs.cloudfoundry.org/concepts/roles.html#spaces), which can contain applications. Applications in the same space share a location for app development, deployment, and maintenance. (For example, a customer may have spaces for production, staging and development, and may have multiple apps within each of those spaces.)
 
 ### Roles
 
