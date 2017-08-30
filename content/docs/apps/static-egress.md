@@ -31,3 +31,4 @@ All traffic from cloud.gov-hosted applications originates from these IP ranges:
 * `52.222.122.97/32`
 * `52.222.123.172/32`
 
+We publish these egress (outbound) IP ranges because that information is already public if you look at any cloud.gov application. Filtering by egress IP range is only suitable in *addition* to authentication and authorization between the client and server applications.
