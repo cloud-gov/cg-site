@@ -16,7 +16,7 @@ cloud.gov is a platform as a service (PaaS). This means customers provide the co
 
 1. Hardware and infrastructure-level software, including web servers, relational database servers, DNS routing services, and other systems the customer might need.
 1. A container providing the operating system and web server software (NGINX) and other basic software required to run any app. Apps are deployed into this container and isolated from other apps on the platform.
-1. Software components specific to the app the customer is launching, deployed along with the customer's app. These components, called buildpacks, provide programming languages and some additional dependencies required by the app. Though it's possible for customers to use their own buildpacks, we strongly encourage you to use the buildpacks we provide. That way you can benefit from our security updates (see below).
+1. Software components specific to the app the customer is launching, deployed along with the customer's app. These components, called buildpacks, provide programming languages and some additional dependencies required by the app. Though it's possible for customers to use their own buildpacks, we strongly encourage customers to use the buildpacks we provide. That way customers can benefit from our security updates (see below).
 
 cloud.gov is built specifically for government. It's based on Cloud Foundry and makes use of Amazon Web Services' GovCloud environment.
 
@@ -50,7 +50,7 @@ cloud.gov currently permits the following roles:
 
 ### Security updates
 
-When a new security update is available for one of cloud.gov's underlying technologies, we update the relevant buildpacks. These changes don't take effect on individual apps until the apps are restaged, though. You know your apps better than we do, and we prefer to minimize surprises, so your dev team is responsible for restaging your app(s). For more information, see the [app maintenance documentation](https://cloud.gov/docs/getting-started/app-maintenance/).
+When a new security update is available for one of cloud.gov's underlying technologies, we update the relevant buildpacks. These changes don't take effect on individual apps until the apps are restaged, though. Customers know their apps best, and we prefer to minimize surprises, so the customer's dev team is responsible for restaging their own app(s). For more information, see the [app maintenance documentation](https://cloud.gov/docs/getting-started/app-maintenance/).
 
 ### Encryption
 
