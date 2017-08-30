@@ -6,9 +6,9 @@ Curious what’s new that you might find helpful as a cloud.gov user? Here are h
 
 ### Announcements
 
-[**You’re invited to our free cloud.gov workshop on September 28th**](https://www.digitalgov.gov/event/hands-on-workshop-with-cloud-gov/). If you’re evaluating cloud.gov or getting started with it, you will learn how to launch applications and see the power and advantages that come from using a Platform as a Service. Whether you’re in-person or online, bring your laptop and prepare to learn how cloud.gov can work for you.
+[**cloud.gov Workshop:** You’re invited to our free cloud.gov workshop on September 28th](https://www.digitalgov.gov/event/hands-on-workshop-with-cloud-gov/). If you’re evaluating cloud.gov or getting started with it, you will learn how to launch applications and see the power and advantages that come from using a Platform as a Service. Whether you’re in-person or online, bring your laptop and prepare to learn how cloud.gov can work for you.
 
-If you use a cloud.gov account (not if you use EPA, FDIC, or GSA single sign-on login), [read our August 22 update about our plan to migrate your account’s authentication to OMB MAX](https://cloud.gov/updates/2017-08-21-max-gov-migration-instructions/). We’ll notify you at least three weeks before we make the switch. You can create your MAX account any time, and we encourage you to do it soon so you’re set well in advance.
+**cloud.gov authentication moving to OMB MAX:** If you use a cloud.gov account (not if you use EPA, FDIC, or GSA single sign-on login), [read our August 22 update about our plan to migrate your account’s authentication to OMB MAX](https://cloud.gov/updates/2017-08-21-max-gov-migration-instructions/). We’ll notify you at least three weeks before we make the switch. You can create your MAX account any time. We encourage you to do it soon so you’re set well in advance.
 
 ### Added
 
