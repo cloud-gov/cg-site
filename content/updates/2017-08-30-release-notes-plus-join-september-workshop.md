@@ -1,6 +1,6 @@
 +++
 date = "2017-08-30"
-title = "cloud.gov platform release notes plus, join our workshop in September"
+title = "cloud.gov platform release notes, plus join our workshop on September 28"
 +++
 Curious what’s new that you might find helpful as a cloud.gov user? Here are highlights from our platform updates over the past two weeks.
 
