@@ -1,12 +1,8 @@
 +++
-<<<<<<< HEAD:content/updates/2017-08-31-release-notes-plus-join-september-workshop.md
 date = "2017-08-31"
-title = "cloud.gov platform release notes plus, join our workshop in September"
-=======
-date = "2017-08-30"
 title = "cloud.gov platform release notes, plus join our workshop on September 28"
->>>>>>> fd5c7a3d18e624633be950b836957efd678c4ba8:content/updates/2017-08-30-release-notes-plus-join-september-workshop.md
 +++
+
 Curious what’s new that you might find helpful as a cloud.gov user? Here are highlights from our platform updates over the past two weeks.
 
 ### Announcements
