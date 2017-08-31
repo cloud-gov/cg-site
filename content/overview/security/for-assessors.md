@@ -54,7 +54,9 @@ When a new security update is available for one of cloud.gov's underlying techno
 
 ### Encryption
 
-Every database service configured through cloud.gov is encrypted at rest. For an RDS example, see [Amazon's overview](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html). For details, see SC-28 in the cloud.gov SSP in our [P-ATO documentation package](https://cloud.gov/overview/security/fedramp-tracker/#how-you-can-use-this-p-ato).
+Every database service configured through cloud.gov is [encrypted at rest](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html). We use the industry standard AES-256 encryption algorithm to encrypt your data on the server that hosts your database service instance. The database service then handles authenticating access and decrypting your data, with minimal performance impact and without requiring you to modify your applications.
+
+For details, see SC-28 in the cloud.gov SSP in our [P-ATO documentation package](https://cloud.gov/overview/security/fedramp-tracker/#how-you-can-use-this-p-ato).
 
 ### Auditing login attempts
 
