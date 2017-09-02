@@ -53,7 +53,7 @@ If you see a way to make this checklist better, just submit a PR to the
 - From the jumpbox in each of our four environments, run `bosh deployments` and verify the stemcell in-use
 for each deployment is current.
 
-- **Nessus warning:** Before deploying an update that will upgrade the stemcell on the Nessus VM, be aware that we need to ensure a 10 day waiting period between Nessus VM stemcell upgrades. This is because the
+- **Nessus warning:** Before deploying an update that will recreate the Nessus VM, such as updating the stemcell or VM type, be aware that we need to ensure a 10 day waiting period between Nessus VM stemcell upgrades. This is because the
 [Nessus manager deployment](https://github.com/18F/cg-deploy-nessus-manager)
 requires that the System Owner reset the license key after a stemcell upgrade, and the license key can only be reset every [10 days](https://docs.tenable.com/nessus/Content/ResetActivationCode.htm).
 Coordinate with the System Owner to ensure the key is ready to be reset before
