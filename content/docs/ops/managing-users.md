@@ -41,13 +41,37 @@ cf delete-service service
     
 3. Reset the user's totp_seed in cloudfoundry's uaa database.
 
-    Login to a **[concourse jumpbox]({{< relref "docs/ops/runbook/troubleshooting-bosh.md#creating-and-intercepting-ephemeral-jumpboxes" >}})**.
-
+    Login to a **[concourse jumpbox]({{< relref "docs/ops/runbook/troubleshooting-bosh.md#creating-and-intercepting-ephemeral-jumpboxes" >}})**, connect to the appropriate DB, and remove the user, as in this example:
+    
     ```sh
-    $ psql postgres://{db_user}:{db_pass}@{db_address:port}/uaadb
-    => begin;
-    => delete from totp_seed where "username" = '{email.address}';
-    => commit;
+    root@PRODUCTION:/tmp/build/8e72821d$ bosh -d cf-production manifest | grep -A7 uaadb
+      uaadb:
+	address: production.dns.name.aws.gov
+	databases:
+	- name: uaadb
+	  tag: uaa
+	db_scheme: postgresql
+	port: 5432
+	roles:
+	- name: cfdb
+	  password: secret_password
+	  tag: admin
+      
+    root@PRODUCTION:/tmp/build/8e72821d$ psql postgres://cfdb:secret_password@production.dns.name.aws.gov
+
+    uaadb=> select * from totp_seed where username='pat.jones@agency.gov';
+	  username              |       seed         | backup_code
+    ----------------------+--------------------+-------------
+     pat.jones@agency.gov | EAAS9HANFSD90ENADF |
+    (1 row)
+
+    uaadb=> begin;
+    BEGIN
+    uaadb=> delete from totp_seed where username='pat.jones@agency.gov';
+    DELETE 1
+    uaadb=> commit;
+    COMMIT
+    uaadb=>
     ```
 
 4. Let the user know the reset process is complete, so they can set up a new authentication application and request access from Space Managers and Org Managers again.
