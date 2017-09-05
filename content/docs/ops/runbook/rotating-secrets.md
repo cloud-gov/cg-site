@@ -44,18 +44,38 @@ with `common-*`.
 mkdir rotate-all-passphrases
 ```
 
+### Downloading all cg-common resources
+
 After creating the directory, make sure you have authenticated with Concourse
 using `fly login`. Change into the temporary directory and run the following
-command to loop through all the pipelines and create a `all-secrets-list` text
+snippet to loop through all the pipelines and create a `all-secrets-list` JSON
 file with the current state of all `cg-common` resources matching a name that
 starts with `common-*`.
 
-### Downloading all pipelines and cg-common resources
+```sh
+echo "{" >> all-secrets-list.json
+for pipeline in $(fly --target fr pipelines | grep -Eo '^[a-z0-9\-]+' | grep 'deploy')
+do
+  hash=$(fly --target fr get-pipeline --pipeline $pipeline --json |
+  jq -er '.resources[] | select( .name | test( "common-?" ) ) | { "name": .name, "secrets_files": .source.secrets_files, "secrets_file": .source.secrets_file, "passphrase", .source.passphrase, "bucket": .source.bucket_name }' |
+  jq -s '.')
+  echo
+  echo -n "\"${pipeline}\": "
+  echo -n $hash
+  echo ","
+done | tee -a all-secrets-list.json
+echo "\"generated_at\": \"$( date "+%Y-%m-%d %H:%M:%S" )\"" >> all-secrets-list.json
+echo "}" >> all-secrets-list.json
+```
+
+### Downloading all Concourse credentials
 
 Leverage the Concourse Credentials bucket to update secrets passphrases. You can
 verify generate a list of all passphrases that need to be updated by querying
-Concourse. Though, every pipeline's `credentials.yml` must be updated and uploaded
-from that bucket in order to sync work across team members.
+Concourse. Though, every pipeline's `credentials.yml` must alos be updated and
+uploaded from that bucket in order to sync work across team members. **In other
+words, _do not rotate passphrases without also updating the matching
+`concourse-credentials` file in the S3 bucket_**.
 
 Gather a list of all the pipelines currently deployed from Concourse.
 
@@ -71,7 +91,21 @@ aws s3 ls s3://concourse-credentials/
 
 Names found in the S3 bucket reference the name of the GitHub repository so it
 is necessary to add a prefix of `cg-` to the pipelines returned from `fly
-pipelines`.
+pipelines`, e.g. match the name based GitHub URL
+
+#### Get the name of the repository by the remote URL
+
+```sh
+file_name=$(git config --local --get-regexp remote.origin.url | awk '{ print $2 }' | cut -d '/' -f 2 | sed 's/\.git//')
+aws s3 cp s3://concourse-credentials/${file_name}.yml .
+```
+
+#### Get the name of the repository by the directory name
+
+```sh
+aws s3 cp s3://concourse-credentials/${PWD##*/}.yml .
+```
+
 
 ### Reviewing the cg-common resources file
 
