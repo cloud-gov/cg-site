@@ -22,7 +22,7 @@
   });
 
   function toggleGovBar() {
-    if ($('#gov-banner').hasClass('hide')) {
+    if ($govBarContent.hasClass('hide')) {
       expandGovBar();
     } else {
       shrinkGovBar();
