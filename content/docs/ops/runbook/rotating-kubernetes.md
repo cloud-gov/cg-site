@@ -2,6 +2,7 @@
 menu:
   docs:
     parent: runbook
+layout: ops
 
 title: Rotating Secrets VI - Kubernetes
 ---

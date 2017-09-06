@@ -2,6 +2,7 @@
 menu:
   docs:
     parent: tenants
+layout: ops
 title: Federated identity
 weight: 10
 ---

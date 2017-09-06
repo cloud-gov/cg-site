@@ -2,6 +2,7 @@
 menu:
   docs:
     parent: deployment
+layout: ops
 title: Updating Cloud Foundry
 ---
 
