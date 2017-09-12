@@ -17,7 +17,7 @@ For sharing the following types of [sensitive information](https://github.com/18
 
 The cloud.gov team must comply with 18F's [policies in the Handbook](https://handbook.18f.gov/sensitive-information/#fugacious), with the following additional restrictions (for security and compliance reasons):
 
-* Expiry must be set to 12 hours or fewer
+* Expiry must be set to 12 hours or less
 * Number of opens must be set to two views, per person who needs to open it
 
 ### Maintenance of system secret keys
