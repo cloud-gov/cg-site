@@ -11,14 +11,14 @@ Curious what’s new that you might find helpful as a cloud.gov user? Here are h
 
 ### Added
 * [Redis 3.2]({{< relref "docs/services/redis.md" >}}), including both standard and high availability versions, are now available! If you use Redis, we encourage you to upgrade your application to use these beta version 3.2 services instead of the older alpha version 2.8 service.
-* The [.NET Core buildpack](https://docs.cloudfoundry.org/buildpacks/dotnet-core/index.html#cli-tools) includes support for .NET Core 2.0. The[ 2.0 SDK is now the default](https://github.com/cloudfoundry/dotnet-core-buildpack/releases/tag/v1.0.25) for C# and Visual Basic apps. .NET Core 2.0 supports [.NET Standard 2.0](https://docs.microsoft.com/en-us/dotnet/api/?view=netstandard-2.0), more than doubling that set of APIs that available for your .NET projects on cloud.gov.
+* The [.NET Core buildpack](https://docs.cloudfoundry.org/buildpacks/dotnet-core/index.html#cli-tools) includes support for .NET Core 2.0. The[ 2.0 SDK is now the default](https://github.com/cloudfoundry/dotnet-core-buildpack/releases/tag/v1.0.25) for C# and Visual Basic apps. .NET Core 2.0 supports [.NET Standard 2.0](https://docs.microsoft.com/en-us/dotnet/api/?view=netstandard-2.0), more than doubling that set of APIs available for your .NET projects on cloud.gov.
 * Updated documentation about how to [securely authenticate your communication with external services]({{< relref "docs/apps/static-egress.md" >}}).
 
 ### Deprecated
 * Redis version 2.8 is no longer supported and will eventually be unavailable. Please migrate to version 3.2 as soon as possible and watch upcoming release notes for news about this service’s end of life.
 
 ### Fixed
-* Org managers are now able to properly adjust user roles in their spaces.
+* In the dashboard, org managers are now able to properly adjust user roles in their spaces.
 * Some marketplace services cannot be configured via the dashboard. The dashboard now directs you to instructions for using the CLI to provision the service.
 
 ### Platform releases
@@ -27,8 +27,6 @@ We upgraded the Cloud Foundry deployment to [v272](https://github.com/cloudfound
 You should [restage your application]({{< relref "docs/getting-started/app-maintenance.md" >}}) to [incorporate fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) included with this release and ensure you’re running the most recent language version supported by your [buildpack](https://docs.cloudfoundry.org/buildpacks/).
 
 #### Additional upgrades
-
-#### Additional upgrades (pull this list from the slide in the weekly sprint review)
 * [Diego v1.25.3](https://github.com/cloudfoundry/diego-release/releases/tag/v1.25.3)
 * [Stemcell v3445.7](https://bosh.io/stemcells/bosh-aws-xen-hvm-ubuntu-trusty-go_agent)
 * Buildpacks:
