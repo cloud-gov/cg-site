@@ -107,20 +107,31 @@ The output will include the CDN domain the broker has created for you. In this c
 
 After the record is created, wait up to 1 hour for the CloudFront distribution to be provisioned and the DNS changes to propagate. Then visit your custom domain and see whether you have a valid certificate (in other words, that visiting your site in a modern browser doesn't give you a certificate warning).
 
-### CDN Configuration Options
+#### Step 3: Map the route to your application
 
-[Forwarding cookies to your origin](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html) can be disabled by setting the `cookies` parameter to `false`.
+You need to map [the domain you created](#how-to-create-an-instance-of-this-service) to your application.
+
+You can do that by adding the domain(s) to your application [`manifest.yml` file](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) under the
+[`routes`](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#routes) section:
+
+```yaml
+...
+routes:
+- route: my.example.gov
+```
+
+Then deploy your application with your updated manifest.
+
+*Alternate option:* If you don't want to put this in your manifest, you can manually add the route to your application:
 
 ```sh
-cf create-service cdn-route cdn-route my-cdn-route \
-    -c '{"domain": "my.example.gov", "cookies": false}'
+cf map-route APPNAME my.example.gov
 ```
 
 ### Troubleshooting
 
 If nothing has changed when you visit your custom domain:
 
-* If you're setting up a domain for a cloud.gov tenant application, make sure you're using the [instructions above](#how-to-create-an-instance-of-this-service), updated in February 2017.
 * Make sure you've waited at least 30 minutes.
 * Check your DNS setup to make sure you completed the CNAME record creation.
 
@@ -164,6 +175,15 @@ Unlike creating custom domains for cloud.gov tenant applications, you don't need
 Then [set up DNS](#how-to-set-up-dns).
 
 ## More about how the CDN works
+
+### CDN configuration options
+
+If you don't want to [forward cookies to your origin](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html), you can disable this by setting the `cookies` parameter to `false`:
+
+```sh
+cf create-service cdn-route cdn-route my-cdn-route \
+    -c '{"domain": "my.example.gov", "cookies": false}'
+```
 
 ### Caching
 
