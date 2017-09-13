@@ -18,7 +18,9 @@ Service Name | Plan Name | Description | Price
 `redis32` | `standard` | Redis instance with 10 GB storage | Free in Beta
 `redis32` | `standard-ha` | Redis instance with 10 GB storage | Free in Beta
 
-**Note:** The `standard-ha` plan runs multiple Redis instances on different machines, so that service is not interrupted by routine platform maintenance. The `standard` plan runs a single instance and will be briefly unavailable during platform maintenance; this plan should not be used for production applications.
+*These instances are available in [sandbox spaces]({{< relref "overview/pricing/free-limited-sandbox.md#sandbox-limitations" >}}).*
+
+Note: The `standard-ha` plan runs multiple Redis instances on different machines, so that service is not interrupted by routine platform maintenance. The `standard` plan runs a single instance and will be briefly unavailable during platform maintenance; this plan should not be used for production applications.
 
 #### How to create an instance
 

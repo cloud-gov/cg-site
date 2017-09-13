@@ -20,6 +20,8 @@ Plan Name | Description | Price
 --------- | ----------- | -----
 `cdn-route` | Custom domains, CDN caching, and TLS certificates with automatic renewal | Free
 
+*Not available in [sandbox spaces]({{< relref "overview/pricing/free-limited-sandbox.md#sandbox-limitations" >}}) or [prototyping orgs]({{< relref "overview/pricing/prototyping.md#limitations" >}}).*
+
 ## Options
 
 Name | Required | Description | Default
