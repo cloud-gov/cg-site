@@ -1,8 +1,8 @@
 ---
 menu:
   docs:
-    parent: advanced
-title: Restricting access
+    parent: orgs
+title: Restricting system access by IP address
 ---
 
 To comply with the [TIC Initiative](https://www.dhs.gov/trusted-internet-connections), you can configure cloud.gov to restrict access to cloud.gov system services to a set of IP address ranges. This restriction prevents users from your email domain (e.g., `gsa.gov`) from accessing cloud.gov services unless their requests originate from one of your whitelisted IP address ranges.
