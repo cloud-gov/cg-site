@@ -107,16 +107,12 @@ The output will include the CDN domain the broker has created for you. In this c
 
 After the record is created, wait up to 1 hour for the CloudFront distribution to be provisioned and the DNS changes to propagate. Then visit your custom domain and see whether you have a valid certificate (in other words, that visiting your site in a modern browser doesn't give you a certificate warning).
 
-#### Step 3: Map the route to your application instance
+#### Step 3: Map the route to your application
 
-You need to make sure the domain you created in the step
-[above](http://localhost:1313/docs/services/cdn-route/#how-to-create-an-instance-of-this-service)
-is mapped to your application.
+You need to map [the domain you created](#how-to-create-an-instance-of-this-service) to your application.
 
-You can do that one of two ways:
-
-**1. Add the domain(s) to your application manifest under the
-[`routes`](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#routes) section (_Recommended_).**
+You can do that by adding the domain(s) to your application [`manifest.yml` file](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) under the
+[`routes`](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#routes) section:
 
 ```yaml
 ...
@@ -124,15 +120,17 @@ routes:
 - route: my.example.gov
 ```
 
-**2. Manually add the routes to your application.**
+Then deploy your application with your updated manifest.
+
+*Alternate option:* If you don't want to put this in your manifest, you can manually add the route to your application:
 
 ```sh
 cf map-route APPNAME my.example.gov
 ```
 
-### CDN Configuration Options
+### CDN configuration options
 
-[Forwarding cookies to your origin](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html) can be disabled by setting the `cookies` parameter to `false`.
+If you don't want to [forward cookies to your origin](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html), you can disable this by setting the `cookies` parameter to `false`.
 
 ```sh
 cf create-service cdn-route cdn-route my-cdn-route \
