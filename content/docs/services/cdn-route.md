@@ -132,7 +132,6 @@ cf map-route APPNAME my.example.gov
 
 If nothing has changed when you visit your custom domain:
 
-* If you're setting up a domain for a cloud.gov tenant application, make sure you're using the [instructions above](#how-to-create-an-instance-of-this-service), updated in February 2017.
 * Make sure you've waited at least 30 minutes.
 * Check your DNS setup to make sure you completed the CNAME record creation.
 
