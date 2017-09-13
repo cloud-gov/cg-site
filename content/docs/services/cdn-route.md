@@ -128,15 +128,6 @@ Then deploy your application with your updated manifest.
 cf map-route APPNAME my.example.gov
 ```
 
-### CDN configuration options
-
-If you don't want to [forward cookies to your origin](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html), you can disable this by setting the `cookies` parameter to `false`.
-
-```sh
-cf create-service cdn-route cdn-route my-cdn-route \
-    -c '{"domain": "my.example.gov", "cookies": false}'
-```
-
 ### Troubleshooting
 
 If nothing has changed when you visit your custom domain:
@@ -185,6 +176,15 @@ Unlike creating custom domains for cloud.gov tenant applications, you don't need
 Then [set up DNS](#how-to-set-up-dns).
 
 ## More about how the CDN works
+
+### CDN configuration options
+
+If you don't want to [forward cookies to your origin](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html), you can disable this by setting the `cookies` parameter to `false`:
+
+```sh
+cf create-service cdn-route cdn-route my-cdn-route \
+    -c '{"domain": "my.example.gov", "cookies": false}'
+```
 
 ### Caching
 
