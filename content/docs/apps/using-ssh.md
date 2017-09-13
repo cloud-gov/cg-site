@@ -32,6 +32,10 @@ You can interact directly with the services bound to your application via [port-
     export PYTHONHOME=/home/vcap/deps/0/python
     ```
 
+### How to disable SSH access
+
+SSH access is enabled by default. Space Developers can disable SSH access to individual applications, and Space Managers can disable SSH access to all apps running within a space. See [Enabling and Disabling SSH Access](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#enable-disable-ssh) for the commands.
+
 ### SSH version information 
 
 The cloud.gov application containers use the SSH-2.0 protocol. The SSH service uses the [CloudFoundry SSH implementation](https://github.com/cloudfoundry/diego-ssh). For more on how Cloud Foundry implements SSH, refer to Cloud Foundry's documentation on [Understanding Application SSH](https://docs.cloudfoundry.org/concepts/diego/ssh-conceptual.html).
