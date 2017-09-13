@@ -107,6 +107,29 @@ The output will include the CDN domain the broker has created for you. In this c
 
 After the record is created, wait up to 1 hour for the CloudFront distribution to be provisioned and the DNS changes to propagate. Then visit your custom domain and see whether you have a valid certificate (in other words, that visiting your site in a modern browser doesn't give you a certificate warning).
 
+#### Step 3: Map the route to your application instance
+
+You need to make sure the domain you created in the step
+[above](http://localhost:1313/docs/services/cdn-route/#how-to-create-an-instance-of-this-service)
+is mapped to your application.
+
+You can do that one of two ways:
+
+**1. Add the domain(s) to your application manifest under the
+[`routes`](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#routes) section (_Recommended_).**
+
+```yaml
+...
+routes:
+- route: my.example.gov
+```
+
+**2. Manually add the routes to your application.**
+
+```sh
+cf map-route APPNAME my.example.gov
+```
+
 ### CDN Configuration Options
 
 [Forwarding cookies to your origin](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html) can be disabled by setting the `cookies` parameter to `false`.
