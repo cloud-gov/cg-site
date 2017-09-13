@@ -24,7 +24,11 @@ To provision a deployer account with permission to deploy to a single space, [se
 
 ## Configure your service
 
-cloud.gov does not yet provide a CI/CD (continuous integration/continuous deployment) service, but you can use any CI/CD service of your choice. Here are examples of how to set up two common cloud-based services that have free tiers for open source projects, [Travis](https://travis-ci.org/) and [CircleCI](https://circleci.com/). (You can also find and adapt instructions for using other CI/CD services with other Cloud Foundry deployments, such as [this explanation of how to use Jenkins](https://docs.cloud.service.gov.uk/#setting-up-the-cloud-foundry-jenkins-plugin).)
+cloud.gov does not yet provide a CI/CD (continuous integration/continuous deployment) service, but you can use any CI/CD service of your choice.
+
+You can configure your code repositories, [spaces]({{< relref "docs/getting-started/concepts.md#spaces" >}}), and CI/CD service together to enable automated or semi-automated deployments to your environments (such as development, staging, and production environments). For deployments in each environment, you can configure access control and testing requirements according to your project's needs.
+
+Here are examples of how to set up two cloud-based services that have free tiers for open source projects, [Travis](https://docs.travis-ci.com/) and [CircleCI](https://circleci.com/docs/1.0/). (You can also find and adapt instructions for using other CI/CD services with other Cloud Foundry deployments, such as [this explanation of how to use Jenkins](https://docs.cloud.service.gov.uk/#setting-up-the-cloud-foundry-jenkins-plugin).)
 
 ### Travis
 
