@@ -16,8 +16,6 @@ Plan Name | Description | Price
 --------- | ----------- | -----
 `oauth-client` | OAuth2 client credentials for authenticating cloud.gov users in your app | Free
 
-Note: As of July 7, 2017, the instructions for obtaining credentials have changed. If you created an identity provider instance before this date, see [this post for changes]({{< relref "updates/2017-07-07-changes-to-credentials-broker.md" >}}).
-
 ## How to create an instance
 
 To create a service instance that can provision identity provider credentials, run the following command:
@@ -52,6 +50,12 @@ By default, identity provider service instances use the `openid` scope. You can 
 ```bash
 cf create-service-key my-uaa-client my-service-key -c '{"redirect_uri": ["https://my.app.cloud.gov"], "scopes": ["openid", "cloud_controller.read"]}'
 ```
+
+### If you can't find your service keys
+
+<!-- this description matches on cloud-gov-identity-provider.md and cloud-gov-service-account.md -->
+
+If you're trying to retrieve credentials for a service instance created before July 7, 2017, those old service instances had a different way of retrieving credentials. You can check this by running `cf services` to get your service instance name and then running `cf service service-instance-name` -- if the service information includes a link to `fugacious.18f.gov`, it's an old service instance. See [this post for changes]({{< relref "updates/2017-07-07-changes-to-credentials-broker.md" >}}) -- your best next step is to delete the old service instance and create a new one.
 
 ## More information
 
