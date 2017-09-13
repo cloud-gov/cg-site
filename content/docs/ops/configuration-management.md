@@ -8,7 +8,7 @@ title: Configuration management
 
 <!-- This page is important for FedRAMP compliance. See the CM family of controls, including CM-9. Code Climate is part of SA-11 (1), SI-3, and RA-5. -->
 
-This document describes how the cloud.gov team approaches configuration management of the core platform.
+This document describes how the cloud.gov team approaches configuration management of the core platform. Before configuration changes go into production, they need to pass our [significant change rubric]({{< relref "docs/ops/continuous-monitoring.md#appendix-significant-change-rubric" >}}), as described in our [Feature Lifecycle](https://github.com/18F/cg-product/blob/master/FeatureLifecycle.md) and [Story Lifecycle](https://github.com/18F/cg-product/blob/master/StoryLifecycle.md).
 
 ## What goes into configuration management?
 In short, everything needed to run and operate the platform that is not a _secret_. (See [Secret Key Management]({{< relref "docs/ops/secrets.md" >}}) for that.)
