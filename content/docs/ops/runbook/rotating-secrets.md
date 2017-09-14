@@ -48,24 +48,24 @@ mkdir rotate-all-passphrases
 
 After creating the directory, make sure you have authenticated with Concourse
 using `fly login`. Change into the temporary directory and run the following
-snippet to loop through all the pipelines and create a `all-secrets-list` JSON
+snippet to loop through all the pipelines and create a `state-passphrases` JSON
 file with the current state of all `cg-common` resources matching a name that
 starts with `common-*`.
 
 ```sh
-echo "{" >> all-secrets-list.json
+echo "{" >> state-passphrases-$( date "+%Y-%m-%dT%H:%M%S" ).json
 for pipeline in $(fly --target fr pipelines | grep -Eo '^[a-z0-9\-]+' | grep 'deploy')
 do
   hash=$(fly --target fr get-pipeline --pipeline $pipeline --json |
-  jq -er '.resources[] | select( .name | test( "common-?" ) ) | { "name": .name, "secrets_files": .source.secrets_files, "secrets_file": .source.secrets_file, "passphrase", .source.passphrase, "bucket": .source.bucket_name }' |
+  jq -er '.resources[] | select( .name | test( "common-?" ) ) | { "name": .name, "secrets_files": .source.secrets_files, "secrets_file": .source.secrets_file, "passphrase": .source.passphrase, "bucket": .source.bucket_name }' |
   jq -s '.')
   echo
   echo -n "\"${pipeline}\": "
   echo -n $hash
   echo ","
-done | tee -a all-secrets-list.json
-echo "\"generated_at\": \"$( date "+%Y-%m-%d %H:%M:%S" )\"" >> all-secrets-list.json
-echo "}" >> all-secrets-list.json
+done | tee -a state-passphrases.json
+echo "\"generated_at\": \"$( date "+%Y-%m-%dT%H:%M%S" )\"" >> state-passphrases-$( date "+%Y-%m-%dT%H:%M%S" ).json
+echo "}" >> state-passphrases-$( date "+%Y-%m-%dT%H:%M%S" ).json
 ```
 
 ### Downloading all Concourse credentials
