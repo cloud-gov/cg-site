@@ -31,7 +31,7 @@ A system maps to an [“org” in cloud.gov and Cloud Foundry](http://docs.cloud
 
 ### Access package
 
-The “access package” component covers access to the cloud.gov Platform as a Service (PaaS) and [support]({{< relref "#support" >}}) for it to stay up and available in its current form, as well as expanded over time. The access package component is paid 12 months at a time, and scales along with the number of systems being hosted and the impact level of the systems being launched on the platform, as defined by [Federal Information Processing Standard (FIPS) 199](http://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.199.pdf).
+The “access package” component covers access to the cloud.gov Platform as a Service (PaaS) and [support]({{< relref "#support" >}}) for it to stay up and available in its current form, as well as expanded over time. The access package component is invoiced monthly, and scales along with the number of systems being hosted and the impact level of the systems being launched on the platform, as defined by [Federal Information Processing Standard (FIPS) 199](http://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.199.pdf).
 
 The access package component is “non-severable” and therefore non-refundable. As a result, a payment in one fiscal year does not expire regardless of the status of the underlying appropriation.
 
