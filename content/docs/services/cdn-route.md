@@ -10,8 +10,8 @@ status: "Production Ready"
 
 This service provides three key elements to support production applications:
 
-1. Custom domain support, so that your application can have your domain instead of the default `*.app.cloud.gov` domain.
-2. Content Distribution Network (CDN) caching (using [AWS CloudFront](https://aws.amazon.com/cloudfront/)), for fast delivery of content to your users.
+1. [Custom domain]({{< relref "docs/apps/custom-domains.md" >}}) support, so that your application can have your domain instead of the default `*.app.cloud.gov` domain.
+2. Content Distribution Network (CDN) caching (using [AWS CloudFront](https://aws.amazon.com/cloudfront/)), for fast delivery of content to your users. Before setting up this service, review [how the CDN works](#more-about-how-the-cdn-works).
 3. HTTPS support via free TLS certificates with auto-renewal (using [Let's Encrypt](https://letsencrypt.org/)), so that user traffic is encrypted.
 
 ## Plans
@@ -179,15 +179,6 @@ Then [set up DNS](#how-to-set-up-dns).
 
 ## More about how the CDN works
 
-### CDN configuration options
-
-If you don't want to [forward cookies to your origin](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html), you can disable this by setting the `cookies` parameter to `false`:
-
-```sh
-cf create-service cdn-route cdn-route my-cdn-route \
-    -c '{"domain": "my.example.gov", "cookies": false}'
-```
-
 ### Caching
 
 CloudFront [uses](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html)
@@ -198,17 +189,25 @@ particularly confusing as different requests might be routed to different
 CloudFront Edge endpoints.
 
 While there is no mechanism for cloud.gov users to trigger a cache clear, 
-[cloud.gov support](/help/) can. Note however, that cache invalidation is not
+[cloud.gov support](/help/) can. Cache invalidation is not
 instantaneous; Amazon recommends expecting a lag time of 10-15 minutes (more if there are
 many distinct endpoints).
 
 ### Authentication
 
-As noted above, cookies are passed through the CDN by default, meaning that
-cookie-based authentication will work as expected. Other headers, such as HTTP
-auth, are stripped by default. If you need a different configuration, contact [cloud.gov support](/help/).
+Cookies are passed through the CDN by default, meaning that
+cookie-based authentication will work as expected. If you don't want to [forward cookies to your origin](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html), you can disable this by setting the `cookies` parameter to `false`:
 
-### Certificate validity and renewal
+```sh
+cf create-service cdn-route cdn-route my-cdn-route \
+    -c '{"domain": "my.example.gov", "cookies": false}'
+```
+
+Other headers, such as HTTP auth, are stripped by default.
+
+If you need a different configuration, contact [cloud.gov support](/help/).
+
+## Certificate validity and renewal
 
 Let's Encrypt TLS certificates are valid for 90 days.  The broker will automatically renew your certificate every 60 days.  This process is usually immedate but can take several days to complete.  If your certificate is expiring within the next 21 days and has not been renewed automatically, contact [cloud.gov support](/help/).
 
