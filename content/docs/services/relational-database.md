@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: services
-title: Relational databases (aws-rds)
+title: Relational databases (RDS)
 description: "Persistent, relational databases using Amazon RDS"
 aliases:
   - /docs/apps/databases
@@ -14,7 +14,7 @@ If your application uses relational databases for storage, you can use the AWS R
 
 Plan Name | Description | Price
 --------- | ----------- | -----
-`shared-psql`            | Shared PostgresSQL database for prototyping (no sensitive or production data) | Free
+`shared-psql`            | Shared PostgreSQL database for prototyping (no sensitive or production data) | Free
 `medium-psql`            | Dedicated medium RDS PostgreSQL DB instance                                   | Will be paid per hour + storage
 `medium-psql-redundant`  | Dedicated redundant medium RDS PostgreSQL DB instance                         | Will be paid per hour + storage
 `large-psql`             | Dedicated large RDS PostgreSQL DB instance                                    | Will be paid per hour + storage
