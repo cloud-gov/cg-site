@@ -65,9 +65,8 @@ shibboleth-production	clamav/9                           	bosh-aws-xen-hvm-ubunt
 - When the stemcells are out-of-date:
   - Review the release notes at http://bosh.cloudfoundry.org/stemcells/bosh-aws-xen-hvm-ubuntu-trusty-go_agent
   - Trigger the appropriate `deploy-...` jobs in Concourse
-    - Triggering more than 3 jobs simultaneously is not advised
-  - Trigger the `cf-production` jobs in the `deploy-cf` pipeline only after development and staging have completed
-    - The `cf-production` job is launched by running `acceptance-tests-staging`
+    - Triggering more than X jobs simultaneously is not advised in case any issues arise during the deployment or if you're interrupted. X being a number you're comfortable with monitoring which can vary based on experience or confidence in the deployment.  If you're not sure, '3' is a good starting point.
+
 
 - **Note:** The
 [nessus manager deployment](https://github.com/18F/cg-deploy-nessus-manager)
