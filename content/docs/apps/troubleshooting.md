@@ -80,3 +80,5 @@ Install https://github.com/18F/cf-route-lookup: a great tool to find a CDN route
 Bound to:
 gsa-18f-federalist/redirects/pages-redirects
 ```
+
+Note this will only show applications in orgs/spaces that the logged-in user has permissions to view.
