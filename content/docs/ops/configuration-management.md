@@ -33,7 +33,7 @@ Security tests need to be executed in the development environment where changes 
 1. All configuration changes must flow through a git repository, centrally managed through GitHub, unless they contain sensitive information. In these cases, sensitive information should be stored in an S3 bucket with a proper security policy and encryption, versioned such that changes can be easily rolled back.
 1. A change is initiated and discussed as a GitHub issue in [the relevant 18F repository](https://github.com/18F).
 1. A pull request (PR) is created that addresses the change and references the created issue.
-    All components should run within a staging environment where it can undergo integration testing. Exceptions should be rare and carefuly documented. A proposed code change should be a PR created against the `master` branch on the canonical repository, which must be tested within the `staging` environment before merging to master and rolling to production. 
+    All components should run within a staging environment where it can undergo integration testing. Exceptions should be rare and carefully documented. A proposed code change should be a PR created against the `master` branch on the canonical repository, which must be tested within the `staging` environment before merging to master and rolling to production. 
 1. If the repository contains 18F-developed code, the PR must have an automated [Code Climate](https://codeclimate.com) check, which must pass before the PR can be merged.
 1. The PR is reviewed by someone other than the committer. Pairing via screen-sharing
 is encouraged and qualifies as a review. Review should include assessment of architectural design, DRY principles, security and code quality.
