@@ -69,16 +69,3 @@ Application start commands are cached during staging. Specifying a start command
 By default, applications must start within 60 seconds. This timeout can be extended to a maximum of 180 second via the `-t` command line switch or `timeout:` manifest key.
 
 Avoid placing long-running or multi-step tasks in the application start command. Consider using worker apps as part of a multi-application manifest instead.
-
-
-### Finding the appropriate org/space/app for a particular domain/route
-
-Install https://github.com/18F/cf-route-lookup: a great tool to find a CDN route via search when you don't know where it is in cloud.gov. For example:
-
-```sh
-> cf lookup-route 18f.gov
-Bound to:
-gsa-18f-federalist/redirects/pages-redirects
-```
-
-Note this will only show applications in orgs/spaces that the logged-in user has permissions to view.
