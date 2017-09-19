@@ -4,16 +4,18 @@ menu:
     parent: advanced
 title: Custom domains
 ---
-By default, your application will be accessible via a subdomain of `app.cloud.gov`. You can make your application accessible via your own domain by creating entries in your own DNS system and configuring cloud.gov.
+By default, your application will be accessible via a subdomain of `app.cloud.gov`. To make your application accessible via your own domain, you need to create entries in your DNS system and configure cloud.gov.
 
 ## How to set up a custom domain
-To make your app accessible via your custom domain name, use the [CDN service]({{< relref "docs/services/cdn-route.md" >}}).
+To make your app accessible via your custom domain name, use the [CDN service]({{< relref "docs/services/cdn-route.md" >}}). That page provides instructions for the DNS entries you need to create in your DNS system.
 
 ### Addressing federal requirements and recommendations
-* IPv6: cloud.gov ensures all applications are accessible over IPv6. You don't have to take any action.
-* HTTPS: cloud.gov ensures all applications are accessible only over HTTPS with [HTTP Strict Transport Security (HSTS) headers](https://https.cio.gov/hsts/) in accordance with the [HTTPS-Only Standard](https://https.cio.gov/). You don't have to take any action.
-  * [HSTS preloading](https://https.cio.gov/guide/#options-for-hsts-compliance): cloud.gov can't set up HSTS preloading for your domain. You need to set that up on your own.
-* DNSSEC: cloud.gov can't configure DNSSEC in your DNS system. If you need DNSSEC, you are responsible for configuring it in your DNS system.
+* **IPv6**: cloud.gov ensures all applications are accessible over IPv6. You don't have to take any action.
+* **HTTPS**: cloud.gov ensures all applications are accessible only over HTTPS with [HTTP Strict Transport Security (HSTS) headers](https://https.cio.gov/hsts/) in accordance with the [HTTPS-Only Standard](https://https.cio.gov/). You don't have to take any action.
+  * [**HSTS preloading**](https://https.cio.gov/guide/#options-for-hsts-compliance): cloud.gov can't set up HSTS preloading for your domain, following [the guidance from the maintainers of the HSTS preload list](https://hstspreload.org/#opt-in). If you need HSTS preloading, you need to set that up on your own. The HTTPS-Only Standard encourages HSTS preloading.
+* **DNSSEC**: cloud.gov can't configure DNSSEC in your DNS system, because cloud.gov does not have access to your DNS system. If you need DNSSEC for your domain, you are responsible for configuring DNSSEC in your DNS system. cloud.gov supports your ability to map that domain to your application that is hosted on cloud.gov.
+
+*Additional details are available in the [cloud.gov FedRAMP P-ATO documentation package]({{< relref "overview/security/fedramp-tracker.md#how-you-can-use-this-p-ato" >}}), including in System Security Plan controls SC-20, SC-21, SC-22, and SC-23.*
 
 ## How domains and routes work in cloud.gov
 
