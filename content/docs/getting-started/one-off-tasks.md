@@ -12,8 +12,13 @@ What are you trying to do? | Documentation
 Inspect an app instance to figure out what's wrong | [`cf ssh`]({{< relref "docs/apps/using-ssh.md" >}})
 Work with one of your service instances | [`cf ssh` with port forwarding]({{< relref "docs/apps/using-ssh.md" >}})
 Run a non-interactive process that does a task (such as generating a report, cleaning up garbage, mailing people, processing some data, etc.) | [Cloud Foundry Tasks](https://docs.cloudfoundry.org/devguide/using-tasks.html)
+Alternative way to run a non-interactive process that does a task (may be suitable if you want full control over the task app lifecycle) | [Deploy an app that performs a task](#deploy-an-app-that-performs-a-task)
 
-## Deploy a short-lived app
+## Run periodic scheduled tasks
+
+If you'd like to run a periodic scheduled task (similar to a cron job), you should find a cron-like library in the programming language that you're working with, and implement the task using that library. You can run this as part of an existing application or as a separate application.
+
+## Deploy an app that performs a task
 
 ### Know before you deploy
 
@@ -39,7 +44,7 @@ Note that this will not work for any command that is interactive.
     cp manifest.yml task_manifest.yml
     ```
 
-1. Modify the `task_manifest.yml`:
+2. Modify the `task_manifest.yml`:
     * Change the `name` value to be `task-runner` (or something descriptive).
     * Remove the following attributes, if present:
         * `domain`
@@ -54,22 +59,19 @@ Note that this will not work for any command that is interactive.
         command: (<your command> && echo SUCCESS || echo FAIL) && sleep infinity
         ```
 
-1. Deploy the one-off app, and view the output:
-
-   When deploying the one-off tasks, it's important to disable health-checks and
+3. Deploy the one-off app, and view the output. When deploying the one-off tasks, it's important to disable health-checks and
    routes in order to prevent deployment issues during the buildpack phase and
    having multiple applications with the same mapped route respectively. For
    more information on these options, see the [`--no-route`][cf-no-route] and
    [`--health-check-type`][cf-health-check] documentation. In order to keep
    changes to your copied manifest at a minimum, you can provide these
-   configuration options directly on the command-line.
-
-    ```sh
-    cf push -f task_manifest.yml --health-check-type none --no-route
-    cf logs --recent task-runner
-    ```
-1. If needed, use [`cf files`][] to collect any artifacts.
-1. Run `cf delete task-runner` to clean it up. **If you don't do this, your short-lived app may automatically run itself again in the future.** cloud.gov sometimes automatically restarts apps as part of routine operations (such as platform updates), which can include restarting this kind of app if it hasn't been deleted.
+   configuration options directly on the command-line:
+```sh
+cf push -f task_manifest.yml --health-check-type none --no-route
+cf logs --recent task-runner
+```
+4. If needed, use [`cf files`][] to collect any artifacts.
+5. Run `cf delete task-runner` to clean it up. **If you don't do this, your app may automatically run itself again in the future.** cloud.gov sometimes automatically restarts apps as part of routine operations (such as platform updates), which can include restarting this kind of app if it hasn't been deleted.
 
 [`cf files`]: http://cli.cloudfoundry.org/en-US/cf/files.html
 
