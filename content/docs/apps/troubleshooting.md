@@ -54,7 +54,7 @@ When starting multiple apps via a single manifest tree, apps will start in the o
 
 By default, an application will start with a command specified by its buildpack. The `command:` in an application manifest will override the buildpack start command. The `-c` switch used with `cf push` overrides both the buildpack and manifest start commands.
 
-Application start commands are cached during staging. Specifying a start command via `-c` does not update the staged command. Check the staged command with `cf files APPNAME app_staging.yml`. Specifying `-c 'null'` forces the buildpack start command to be used.
+Application start commands are cached during staging. Specifying a start command via `-c` does not update the staged command. Check the staged command with `cf ssh APPNAME -c "cat staging_info.yml"`. Specifying `-c 'null'` forces the buildpack start command to be used.
 
 ### Environment variables and service bindings
 
