@@ -126,8 +126,6 @@ Our support does not include work on the applications you build.
 
 cloud.gov is purchased via an [IAA with 18F]({{< relref "overview/pricing/start-using-cloudgov.md" >}}). Accommodating increased expenses (like a more comprehensive access package or larger resource quota) requires a new IAA. We will happily work with you to develop it.
 
-<!--
-Table may not be helpful right now, but I don't want to lose it.
 
 ## Package comparison table
 
@@ -136,15 +134,14 @@ All three pricing components are factored into every access package. Use this ta
 | Package | What’s included? | Annual access package fee\* | Usage quota price | Managed services available |
 | --- | --- | --- | --- | --- |
 | **[Sandbox]({{< relref "overview/pricing/free-limited-sandbox.md" >}})** | Anyone with a U.S. federal government email address can try a limited free cloud.gov space. | Free | Free, **capped at 1GB/month** | Only free services |
-| **Prototyping** | Suitable for many teams to deploy apps, though limited to the `*.app.cloud.gov` domain. Access control can be delegated to teams. No production data allowed. Usually purchased per agency/department. | $15K |  ~$100/GB/month | All\** |
-| **Open Data** | One public-facing Open Data (no confidentiality risk assessed) [system]({{< relref "overview/pricing/pricing-terminology.md#system" >}}), including all the spaces needed and DNS support. | $10K | ~$100/GB/month, **capped at 2GB/month** | All\** (up to $2500/year) |
-| **FISMA Low** | One public-facing FISMA Low [system]({{< relref "overview/pricing/pricing-terminology.md#system" >}}), including all the spaces needed and DNS support. | $20K | ~$100/GB/month | All\** |
-| **FISMA Moderate** | One public-facing FISMA Moderate [system]({{< relref "overview/pricing/pricing-terminology.md#system" >}}), including all the spaces needed and DNS support. Additional support for FISMA Moderate data requirements. | $90K | ~$100/GB/month | All\** |
+| **[Prototyping]({{< relref "overview/pricing/prototyping.md" >}})** | Suitable for many teams to deploy apps, though limited to the `*.app.cloud.gov` domain. Access control can be delegated to teams. No production data allowed. Usually purchased per agency/department. | $15K |  ~$100/GB/month | All\** |
+| **Open Data** | One Open Data (no confidentiality risk assessed) [system]({{< relref "overview/pricing/pricing-terminology.md#system" >}}), including all the spaces needed. | $10K | ~$100/GB/month, **capped at 2GB/month** | All\** |
+| **FISMA Low** | One FISMA Low [system]({{< relref "overview/pricing/pricing-terminology.md#system" >}}), including all the spaces needed. | $20K | ~$100/GB/month | All\** |
+| **FISMA Moderate** | One FISMA Moderate [system]({{< relref "overview/pricing/pricing-terminology.md#system" >}}), including all the spaces needed. | $90K | ~$100/GB/month | All\** |
 
 \*Access agreements are severable, and the access package fees are invoiced monthly.
 
-\*\*We aren’t yet charging for paid services. See [managed services](#managed-services) for details.
+\*\*We aren’t yet charging for paid services. See [managed services]({{< relref "overview/pricing/managed-services-cost.md" >}}) for details.
 
 Find out [more about this pricing model]({{< relref "overview/pricing/pricing-model.md" >}}) and [how we define these terms]({{< relref "overview/pricing/pricing-terminology.md" >}}).
 
--->
