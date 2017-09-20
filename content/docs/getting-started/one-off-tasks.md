@@ -73,7 +73,7 @@ cf logs --recent task-runner
 4. If needed, use [`cf files`][] to collect any artifacts.
 5. Run `cf delete task-runner` to clean it up. **If you don't do this, your app may automatically run itself again in the future.** cloud.gov sometimes automatically restarts apps as part of routine operations (such as platform updates), which can include restarting this kind of app if it hasn't been deleted.
 
-[`cf files`]: http://cli.cloudfoundry.org/en-US/cf/files.html
+[`cf files`]: https://cli.cloudfoundry.org/en-US/cf/files.html
 
 [cf-no-route]: https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#no-route "CloudFoundry Documentation about --no-route"
 [cf-health-check]: https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#health-check-type "CloudFoundry Documentation about --health-check-type"
