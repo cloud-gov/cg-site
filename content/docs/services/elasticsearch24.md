@@ -52,7 +52,7 @@ You can also use this simple example. The example assumes you already have an El
 
 ### Rotating credentials
 
-You can rotate credentials by creating a new instance and deleting the existing instance. If this is not an option, email [cloud.gov support](mailto:cloud-gov-support@gsa.gov) to request rotating the credentials manually.
+You can rotate credentials by creating a new instance and [deleting the existing instance](https://cli.cloudfoundry.org/en-US/cf/delete-service.html). If this is not an option, email [cloud.gov support](mailto:cloud-gov-support@gsa.gov) to request rotating the credentials manually.
 
 
 * Create an instance of the [S3 service]({{< relref "docs/services/s3.md" >}}):
@@ -67,7 +67,7 @@ You can rotate credentials by creating a new instance and deleting the existing 
     cf create-service-key my-elasticsearch-backup my-key
     ```
 
-* Connect to your Elasticsearch service using port forwarding. Note: You'll need to leave the `cf ssh` command running and follow the next steps in a different terminal so that you can access the remote Elasticsearch instance from your local environment:
+* Connect to your Elasticsearch service using port forwarding. Note: You'll need to leave the [`cf ssh`]({{< relref "docs/apps/using-ssh.md" >}}) command running and follow the next steps in a different terminal so that you can access the remote Elasticsearch instance from your local environment:
 
     ```sh
     es_credentials=$(cf service-key my-elasticsearch my-key | tail -n +3)

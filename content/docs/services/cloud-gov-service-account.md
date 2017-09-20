@@ -60,7 +60,7 @@ To use this service, see [continuous deployment]({{< relref "docs/apps/continuou
 
 ### Rotating credentials
 
-The service account service creates unique cloud.gov credentials for each service key. To rotate credentials associated with a service key, delete and recreate the service key.
+The service account service creates unique cloud.gov credentials for each service key. To rotate credentials associated with a service key, [delete](https://docs.cloudfoundry.org/devguide/services/service-keys.html#delete) and recreate the service key.
 
 ### The broker in GitHub
 
