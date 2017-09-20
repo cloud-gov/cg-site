@@ -18,6 +18,8 @@ Alternative way to run a non-interactive process that does a task (may be suitab
 
 If you'd like to run a periodic scheduled task (similar to a cron job), you should find a cron-like library in the programming language that you're working with, and implement the task using that library. You can run this as part of an existing application or as a separate application.
 
+If you use [continuous deployment]({{< relref "docs/apps/continuous-deployment.md" >}}), you can use a timer as an input to a task or pipeline that runs a [Cloud Foundry Task](https://docs.cloudfoundry.org/devguide/using-tasks.html).
+
 ## Deploy an app that performs a task
 
 ### Know before you deploy
