@@ -144,6 +144,10 @@ dump.
 $ pg_restore --clean --no-owner --no-acl --dbname={database name} backup.pg
 ```
 
+## Backups
+
+For shared plans (`shared-psql` and `shared-mysql`), RDS does not back up your data. For dedicated plans, RDS automatically retains backups for one day, and you can [email support](mailto:cloud-gov-support@gsa.gov) to access that backup if you need to. You can also create manual backups using the [export process](#export) described above. In general, you are responsible for making sure that your backup procedures are adequate for your needs; see CP-9 in the cloud.gov SSP.
+
 ## Encryption
 
 Every RDS instance configured through cloud.gov is [encrypted at rest](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html). We use the industry standard AES-256 encryption algorithm to encrypt your data on the server that hosts your RDS instance. The RDS then handles authenticating access and decrypting your data, with minimal performance impact and without requiring you to modify your applications.
