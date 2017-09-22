@@ -12,7 +12,7 @@ ssh`](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#ssh-comma
 command, which lets you securely log in to an application instance where you can
 perform debugging, environment inspection, and other tasks.
 
-Your application environment is not completely setup when you log in. You'll probably need
+Your application environment is not completely set up when you log in. You'll probably need
 to [configure your session to match your application's
 environment](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#ssh-env)
 in order to debug your application.
@@ -39,6 +39,6 @@ SSH access is enabled by default. Space Developers can disable SSH access to ind
 
 ### SSH version information 
 
-The cloud.gov application containers use the SSH-2.0 protocol. The SSH service uses the [CloudFoundry SSH implementation](https://github.com/cloudfoundry/diego-ssh). For more on how Cloud Foundry implements SSH, refer to Cloud Foundry's documentation on [Understanding Application SSH](https://docs.cloudfoundry.org/concepts/diego/ssh-conceptual.html).
+Application containers use the SSH-2.0 protocol. The SSH service uses the [Cloud Foundry SSH implementation](https://github.com/cloudfoundry/diego-ssh). For more on how Cloud Foundry implements SSH, refer to Cloud Foundry's documentation on [Understanding Application SSH](https://docs.cloudfoundry.org/concepts/diego/ssh-conceptual.html).
 
 
