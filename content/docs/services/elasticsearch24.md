@@ -61,7 +61,7 @@ You can rotate credentials by creating a new instance and [deleting the existing
     cf create-service s3 basic my-s3-bucket
     ```
 
-* Create a [service key](https://docs.cloudfoundry.org/devguide/services/service-keys.html) to access S3 credentials:
+* Create a [service key](https://docs.cloudfoundry.org/devguide/services/service-keys.html) to access Elasticsearch credentials:
 
     ```sh
     cf create-service-key my-elasticsearch-backup my-key
