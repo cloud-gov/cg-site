@@ -1,5 +1,5 @@
 var $ = require( 'jquery' );
-window.jQuery = $;
+var jQuery = window.jQuery = $;
 window.$ = $;
 require('cloudgov-style');
 
@@ -267,7 +267,25 @@ function initializeJS() {
 	})();
 })(jQuery);
 
+var swimWithTheMermaids = function() {
+
+  // Are there any diagrams here? if not skip.
+  if ( 1 > $( '#js-stage' ).length ) {
+    return undefined;
+  }
+
+  mermaid.mermaidAPI.render(
+    'js-stage',
+    ss.textContent.replace( /\n/g, '\\n' ),
+    function callbackMermaidRender( c ) {
+      ss.innerHTML = c;
+    }
+  );
+
+}
+
 jQuery(document).ready(function(){
     initializeJS();
     $('[rel=show-github]').showGithub();
+    swimWithTheMermaids();
 });
