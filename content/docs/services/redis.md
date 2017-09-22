@@ -64,7 +64,7 @@ redis_port=$(echo "${redis_credentials}" | jq -r '.port')
 redis_username=$(echo "${redis_credentials}" | jq -r '.username')
 redis_password=$(echo "${redis_credentials}" | jq -r '.password')
 
-cf ssh my-app -L "9200:${redis_hostname}:${redis_port}"
+cf ssh my-app -L "6379:${redis_hostname}:${redis_port}"
 ```
 
 You can now connect to your Redis service from your local machine using port
