@@ -125,7 +125,7 @@ Run `sftp` or `scp` to transfer files to/from an application instance.  You must
 
 For example, to connect to instance 0 of the application with GUID 0745e60b-c7f3-49a7-a6c2-878516a34796:
 
-```
+```sh
 $ sftp -P 2222 cf:0745e60b-c7f3-49a7-a6c2-878516a34796/0@ssh.fr.cloud.gov
 cf:0745e60b-c7f3-49a7-a6c2-878516a34796/0@ssh.fr.cloud.gov's password: ******
 Connected to ssh.fr.cloud.gov.
@@ -155,6 +155,15 @@ Every RDS instance configured through cloud.gov is [encrypted at rest](http://do
 ## Rotating credentials
 
 You can rotate credentials by creating a new instance and deleting the existing instance. If this is not an option, email [cloud.gov support](mailto:cloud-gov-support@gsa.gov) to request rotating the credentials manually.
+
+## Version information
+
+In general, you can view version information about database instances bound to applications using [`cf ssh`]({{< relref "docs/apps/using-ssh.md" >}}) and the standard database-specific commands for viewing version information.
+
+**PostgreSQL**: 
+
+* New dedicated PostgreSQL service instances (`medium-psql`, `medium-psql-redundant`, `large-psql`, `large-psql-redundant`) are on PostgreSQL 9.6.2. We periodically update this to the latest stable release available in AWS RDS GovCloud US.
+* Shared PostgreSQL service instances (`shared-psql`) are on an older version.
 
 ## The broker in GitHub
 
