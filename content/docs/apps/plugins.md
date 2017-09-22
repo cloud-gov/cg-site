@@ -9,7 +9,7 @@ Cloud Foundry includes a framework for plugins for the `cf` command-line interfa
 
 ### Using Plugins
 
-You install plugins locally on your system using the `cf install-plugin` command. [Detailed instructions on using plugins](http://docs.cloudfoundry.org/devguide/installcf/use-cli-plugins.html) can be found at the Cloud Foundry site, but there are two main means of fetching plugins:
+You install plugins locally on your system using the `cf install-plugin` command. [Detailed instructions on using plugins](https://docs.cloudfoundry.org/devguide/installcf/use-cli-plugins.html) can be found at the Cloud Foundry site, but there are two main means of fetching plugins:
 
 1. You can download a compiled plugin binary from a remote site and install it from local disk.
 2. You can specify a plugin-repo to pull compiled plugins from. The standard Cloud Foundry directory is at [plugins.cloudfoundry.org](https://plugins.cloudfoundry.org/).
