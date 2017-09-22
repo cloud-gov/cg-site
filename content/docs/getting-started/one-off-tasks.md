@@ -46,7 +46,7 @@ Note that this will not work for any command that is interactive.
     cp manifest.yml task_manifest.yml
     ```
 
-2. Modify the `task_manifest.yml`:
+1. Modify the `task_manifest.yml`:
     * Change the `name` value to be `task-runner` (or something descriptive).
     * Remove the following attributes, if present:
         * `domain`
@@ -61,7 +61,7 @@ Note that this will not work for any command that is interactive.
         command: (<your command> && echo SUCCESS || echo FAIL) && sleep infinity
         ```
 
-3. Deploy the one-off app, and view the output. When deploying the one-off tasks, it's important to disable health-checks and
+1. Deploy the one-off app, and view the output. When deploying the one-off tasks, it's important to disable health-checks and
    routes in order to prevent deployment issues during the buildpack phase and
    having multiple applications with the same mapped route respectively. For
    more information on these options, see the [`--no-route`][cf-no-route] and
@@ -72,8 +72,8 @@ Note that this will not work for any command that is interactive.
 cf push -f task_manifest.yml --health-check-type none --no-route
 cf logs --recent task-runner
 ```
-4. If needed, use [`cf ssh`]({{< relref "docs/apps/using-ssh.md" >}}) to collect any artifacts.
-5. Run `cf delete task-runner` to clean it up. **If you don't do this, your app may automatically run itself again in the future.** cloud.gov sometimes automatically restarts apps as part of routine operations (such as platform updates), which can include restarting this kind of app if it hasn't been deleted.
+1. If needed, use [`cf ssh`]({{< relref "docs/apps/using-ssh.md" >}}) to collect any artifacts.
+1. Run `cf delete task-runner` to clean it up. **If you don't do this, your app may automatically run itself again in the future.** cloud.gov sometimes automatically restarts apps as part of routine operations (such as platform updates), which can include restarting this kind of app if it hasn't been deleted.
 
 [cf-no-route]: https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#no-route "CloudFoundry Documentation about --no-route"
 [cf-health-check]: https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#health-check-type "CloudFoundry Documentation about --health-check-type"
