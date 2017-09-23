@@ -48,7 +48,7 @@ Create a [service key](https://docs.cloudfoundry.org/devguide/services/service-k
 to access Redis credentials:
 
 ```sh
-cf create-service-key my-redis-backup my-key
+cf create-service-key my-redis my-key
 ```
 
 Connect to your Redis service using port forwarding (see [Using SSH]({{< relref "docs/apps/using-ssh.md" >}})). You'll need to
@@ -61,14 +61,16 @@ redis_credentials=$(cf service-key my-redis my-key | tail -n +3)
 
 redis_hostname=$(echo "${redis_credentials}" | jq -r '.hostname')
 redis_port=$(echo "${redis_credentials}" | jq -r '.port')
-redis_username=$(echo "${redis_credentials}" | jq -r '.username')
 redis_password=$(echo "${redis_credentials}" | jq -r '.password')
 
 cf ssh my-app -L "6379:${redis_hostname}:${redis_port}"
 ```
 
-You can now connect to your Redis service from your local machine using port
-`9200` and the password set to `$redis_password`.
+You can now connect to your Redis service from your local machine using port `6379` and the password set to `$redis_password`, e.g. using the redis command line:
+
+```sh
+redis-cli -a "${redis_password}" -p 6379
+```
 
 ## Rotating credentials
 
