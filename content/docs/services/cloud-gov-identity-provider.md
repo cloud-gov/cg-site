@@ -16,6 +16,8 @@ Plan Name | Description | Price
 --------- | ----------- | -----
 `oauth-client` | OAuth2 client credentials for authenticating cloud.gov users in your app | Free
 
+*These instances are available in [sandbox spaces]({{< relref "overview/pricing/free-limited-sandbox.md#sandbox-limitations" >}}).*
+
 ## How to create an instance
 
 To create a service instance that can provision identity provider credentials, run the following command:
