@@ -12,7 +12,7 @@ If your application uses relational databases for storage, you can use the AWS R
 
 ## Plans
 
-Plan Name | Description | Version | Price
+Plan Name | Description | Software Version | Price
 --------- | ----------- | ------- | -----
 `shared-psql`            | Shared PostgreSQL database for prototyping (no sensitive or production data) | 9.4.7 | Free
 `medium-psql`            | Dedicated medium RDS PostgreSQL DB instance                                  | 9.6.2 |  Will be paid per hour + storage
@@ -150,7 +150,7 @@ For shared plans (`shared-psql` and `shared-mysql`), RDS does not back up your d
 
 ## Encryption
 
-Every RDS instance configured through cloud.gov is [encrypted at rest](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html). We use the industry standard AES-256 encryption algorithm to encrypt your data on the server that hosts your RDS instance. The RDS then handles authenticating access and decrypting your data, with minimal performance impact and without requiring you to modify your applications.
+Every RDS instance configured through cloud.gov is [encrypted at rest](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html). We use the industry standard AES-256 encryption algorithm to encrypt your data on the server that hosts your RDS instance. The RDS then handles authenticating access and decrypting your data, with minimal performance impact and without requiring you to modify your applications.
 
 ## Rotating credentials
 
@@ -158,9 +158,9 @@ You can rotate credentials by creating a new instance and deleting the existing 
 
 ## Version information
 
-Dedicated RDS plans use the latest database version available from AWS at the time. Shared plans may use older database versions.
+Dedicated RDS plans use the latest database version available from AWS RDS GovCloud (US) at the time. Shared plans may use older database versions.
 
-All RDS plans are configured to automatically upgrade to the most recent compatible [minor version](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html) available via AWS.
+All RDS plans are configured to automatically upgrade to the most recent compatible [minor version](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html) available via AWS RDS GovCloud (US).
 
 In general, you can view version information about database instances bound to applications using [`cf ssh`]({{< relref "docs/apps/using-ssh.md" >}}) and the standard database-specific commands for viewing version information.
 
