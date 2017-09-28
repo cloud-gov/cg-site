@@ -26,9 +26,11 @@
   "homepage": "https://github.com/18F/cg-site#readme",
   "devDependencies": {
     "browserify": "^13.1.0",
+    "mermaid": "^7.1.0",
     "node-sass": "^3.10.0",
     "onchange": "git+https://git@github.com/msecret/onchange.git",
-    "postcss-import": "^8.1.2"
+    "postcss-import": "^8.1.2",
+    "scuttle": "^1.0.0"
   },
   "dependencies": {
     "anchor-js": "^3.2.1",
