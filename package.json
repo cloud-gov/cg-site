@@ -29,8 +29,7 @@
     "mermaid": "^7.1.0",
     "node-sass": "^3.10.0",
     "onchange": "git+https://git@github.com/msecret/onchange.git",
-    "postcss-import": "^8.1.2",
-    "scuttle": "^1.0.0"
+    "postcss-import": "^8.1.2"
   },
   "dependencies": {
     "anchor-js": "^3.2.1",
