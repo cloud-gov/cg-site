@@ -22,7 +22,8 @@ cloud.gov is always responsible for the following components at its platform lev
 * Logging
 * Alerting
 
-App #1 uses a [standard buildpack]({{< relref "docs/getting-started/concepts.md#buildpacks" >}}). (A buildpack provides support for a programming language.) The customer is only responsible for the app code and its dependencies.
+Below are some example application architecture diagrams explaining the three
+types of apps that can be deployed onto cloud.gov.
 
 {{< diagrams id-prefix="app-example-1" >}}
 graph LR
@@ -37,12 +38,43 @@ graph LR
   at(Alerting)
   cc[Your application code]
 
-  subgraph customer responsibility
+  subgraph Customer responsibility
     cc
   end
   subgraph cloud.gov responsibility
     cc --> sbp
     sbp --- os
+    os --- conmon
+    conmon --- amw
+    amw --- ns
+    ns --- vs
+    vs --- sc
+    sc --- lg
+    lg --- at
+  end
+{{< /diagrams >}}
+
+App #1 uses a [standard buildpack]({{< relref "docs/getting-started/concepts.md#buildpacks" >}}). (A buildpack provides support for a programming language.) The customer is only responsible for the app code and its dependencies.
+
+{{< diagrams id-prefix="app-example-2" >}}
+graph LR
+  os(Operating System)
+  conmon(Continuous Monitoring)
+  amw(Anti-Malware)
+  ns(Network Security)
+  vs(Versioning)
+  sc(Scaling)
+  lg(Logging)
+  at(Alerting)
+  cbp["Custom (unsupported) buildpack"]
+  cc[Your App Code]
+
+  subgraph Customer responsibility
+    cc --- cbp
+    cbp
+  end
+  subgraph cloud.gov responsibility
+    cbp --> os
     os --- conmon
     conmon --- amw
     amw --- ns
@@ -59,38 +91,6 @@ App #2 uses an [unsupported/custom buildpack]({{< relref "docs/apps/experimental
 * Continually updating your runtime and dependencies as new vulnerabilities are discovered and fixed.
 * Maintaining a best practice baseline configuration for your application framework/runtime that meets all applicable security standards.
 
-{{< diagrams id-prefix="app-example-2" >}}
-graph LR
-  os(Operating System)
-  conmon(Continuous Monitoring)
-  amw(Anti-Malware)
-  ns(Network Security)
-  vs(Versioning)
-  sc(Scaling)
-  lg(Logging)
-  at(Alerting)
-  cbp["Custom (unsupported) buildpack"]
-  cc[Your App Code]
-
-  subgraph customer responsibility
-    cc --- cbp
-    cbp
-  end
-  subgraph cloud.gov responsibility
-    cbp --> os
-    os --- conmon
-    conmon --- amw
-    amw --- ns
-    ns --- vs
-    vs --- sc
-    sc --- lg
-    lg --- at
-  end
-{{< /diagrams >}}
-
-
-App #3 is a Docker setup, where the customer is fully responsible for their Docker container and custom image. [Learn about this experimental feature.]({{< relref "docs/apps/experimental/docker.md" >}})
-
 {{< diagrams id-prefix="app-example-3" >}}
 graph LR
   os(Operating System)
@@ -104,7 +104,7 @@ graph LR
   cig["Custom (unsupported) image"]
   cc[Docker container]
 
-  subgraph customer responsibility
+  subgraph Customer responsibility
     cc --- cig
     cig
   end
@@ -117,4 +117,8 @@ graph LR
     vs --- sc
     sc --- lg
     lg --- at
+  end
 {{< /diagrams >}}
+
+App #3 is a Docker setup, where the customer is fully responsible for their Docker container and custom image. [Learn about this experimental feature.]({{< relref "docs/apps/experimental/docker.md" >}})
+
