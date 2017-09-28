@@ -162,8 +162,6 @@ Dedicated RDS plans use the latest database version available from AWS RDS GovCl
 
 All RDS plans are configured to automatically upgrade to the most recent compatible [minor version](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html) available via AWS RDS GovCloud (US).
 
-In general, you can view version information about database instances bound to applications using [`cf ssh`]({{< relref "docs/apps/using-ssh.md" >}}) and the standard database-specific commands for viewing version information.
-
 ## The broker in GitHub
 
 You can find the broker here: [https://github.com/18F/aws-broker](https://github.com/18F/aws-broker).
