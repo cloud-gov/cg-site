@@ -273,7 +273,7 @@ function initializeJS() {
 })(jQuery);
 
 // Right now this only supports a single Mermaid diagram on the page.
-var swimWithTheMermaids = function() {
+var renderDiagrams = function() {
   // Are there any diagrams here?
   if ( 1 > $( '.js-diagrams' ).length ) {
     return undefined;
@@ -304,5 +304,5 @@ var swimWithTheMermaids = function() {
 jQuery(document).ready(function(){
     initializeJS();
     $('[rel=show-github]').showGithub();
-    swimWithTheMermaids();
+    renderDiagrams();
 });
