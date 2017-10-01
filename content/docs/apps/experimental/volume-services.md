@@ -18,12 +18,15 @@ We're making this service available so that customers can explore migrating thei
 * The filesystem service is *not* tuned for high performance. 
 * The filesystem service is backed by NFS, and applications requiring file locking will therefore need to be aware of NFS file locking mechanics. 
 
-All of these points are expected to be addressed before we make the filesystem service available in a fully self-service manner for use by all customers. We encourage use of this service now as a way to determine whether certain applications could run in cloud.gov, but we do not regard is as suitable for supporting a production application. **For this reason, the filesystem service will only be turned on for spaces in sandbox and prototyping oganizations.** If there is sufficient customer demand, a production-ready version of this service may be possible in Q2 2018.
+All of these points are expected to be addressed before we make the filesystem service available in a fully self-service manner for use by all customers. We encourage use of this service now as a way to determine whether certain applications could run in cloud.gov, but we do not regard is as suitable for supporting a production application. **For this reason, the filesystem service will only be turned on for spaces in sandbox and prototyping oganizations.**
 
 ## How to use this service
 
 First [contact support]({{< relref "/docs/help" >}}) to ask that the service be made available. Include
-* The name of the org and space where you want to use the service
-* The size of the volume you want to be created
 
-We will respond with a unique string corresponding to your volume. You will then follow the [instructions for creating the service and binding the volume to your application](](https://docs.cloudfoundry.org/devguide/services/using-vol-services.html)), using the string returned by support as the `share` attribute in `SHARE-JSON`.
+* the name of the org and space where you want to use the service
+* the size of the volume you want to be created
+
+You will be provided with a unique string corresponding to your volume. 
+
+Using the string returned by support as the `share` attribute in `SHARE-JSON`, follow the [instructions for creating the service and binding the volume to your application](https://docs.cloudfoundry.org/devguide/services/using-vol-services.html).
