@@ -8,7 +8,7 @@ title: Volume services
 
 [**This is an experimental feature.**]({{< relref "docs/apps/experimental/experimental.md" >}}) cloud.gov has enabled experimental support for provisioning persistent filesystem volumes for use by customer applications. This experimental service is provided to help test whether cloud.gov is suitable for hosting applications that depend on a durable filesystem to store their state. See below for caveats and notes about production use.
 
-Volumes are brokered and then bound to applications in the same way as our [Redis]({{< relref "docs/services/redis.md">}}), [Elasticsearch]({{< relref "docs/services/elasticsearch24.md">}}), [database]({{< relref "docs/services/relational-database.md">}}), and [blob store]({{< relref "docs/services/s3.md">}}) services. The volume will be available to the application at a path provided in the VCAP_SERVICES environment variable.
+Volumes are brokered and then bound to applications in the same way as our [Redis]({{< relref "docs/services/redis.md">}}), [Elasticsearch]({{< relref "docs/services/elasticsearch24.md">}}), [database]({{< relref "docs/services/relational-database.md">}}), and [blob store]({{< relref "docs/services/s3.md">}}) services. The volume will be available to the application at a path provided in the `VCAP_SERVICES` environment variable.
 
 ## Caveats for this service
 We're making this service available so that customers can explore migrating their filesystem-dependent applications to cloud.gov. We encourage use of this service now as a way to determine whether certain applications could run in cloud.gov, but we do not regard is as suitable for supporting a production application. **For this reason, the filesystem service will only be turned on for spaces in sandbox and prototyping oganizations.**
@@ -21,7 +21,7 @@ We'll address the following points before we make the filesystem service availab
 
 ## How to use this service
 
-First [contact support]({{< relref "/docs/help" >}}) to ask that the service be made available. Include
+First [contact support]({{< relref "docs/help.md" >}}) to ask that the service be made available. Include
 
 * the name of the org and space where you want to use the service
 * the size of the volume you want to be created
