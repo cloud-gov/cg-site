@@ -25,6 +25,6 @@ Be forewarned that you will have to handle the implementation of many more NIST 
 
 ## How to use this service
 
-First [contact support]({{< relref "/docs/help" >}}) to ask for the IaaS Sidecar service. Include the name of the org and space where you want to use the service. Also include the cloud.gov account names of anyone who should have their own credentials for administering the service.
+First [contact support]({{< relref "docs/help.md" >}}) to ask for the IaaS Sidecar service. Include the name of the org and space where you want to use the service. Also include the cloud.gov account names of anyone who should have their own credentials for administering the service.
 
 Further instructions will be provided in response to your inquiry.
