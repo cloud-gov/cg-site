@@ -24,9 +24,9 @@ For DoD teams: the Defense Information Systems Agency (DISA) categorizes [FedRAM
 
 ## How you can use this P-ATO
 
-FedRAMP is like an outfitter for cloud services. Your agency still needs to grant the system you want to build an Authority to Operate but FedRAMP has done the labor intensive work of reviewing cloud.gov's security posture and endorsed it. Your agency's authorizing official can request the P-ATO documentation package from FedRAMP and accept that endorsement for your own system. 
+FedRAMP is like an outfitter for cloud services. Your agency still needs to grant the system you want to build an Authority to Operate but FedRAMP has done the labor intensive work of reviewing cloud.gov's security posture and endorsed it. Your agency's authorizing official can request the P-ATO documentation package from FedRAMP and accept that endorsement for your own system.
 
-![Graph showing the breakdown of how many controls are fully covered by cloud.gov.]()
+![Graph showing the breakdown of how many controls are fully covered by cloud.gov.](/img/fedramp-moderate-controls.png)
 
 Here's how it works: Every "moderate" impact federal system needs to account for 325 required controls before it can be granted an ATO. Once your agency reviews and accepts cloud.gov's P-ATO, 269 of these requirements are already implemented and documented. 41 of them are shared between cloud.gov and your application, and only 15 are fully your responsibility.
 
