@@ -40,7 +40,9 @@ If the user requesting a reset has any apps, routes, or services in their sandbo
 
     For those spaces and orgs, notify the Space Managers and Org Managers that we've removed the user's access because of their request to reset their account's authentication application. 
     
-3. Reset the user's totp_seed in cloudfoundry's uaa database. Login to a **[concourse jumpbox]({{< relref "docs/ops/runbook/troubleshooting-bosh.md#creating-and-intercepting-ephemeral-jumpboxes" >}})**, connect to the appropriate DB, and remove the user, as in this example:
+3. Reset the user's totp_seed in cloudfoundry's uaa database. 
+
+    Login to a **[concourse jumpbox]({{< relref "docs/ops/runbook/troubleshooting-bosh.md#creating-and-intercepting-ephemeral-jumpboxes" >}})**, connect to the appropriate DB, and remove the user, as in this example:
 
 
         root@PRODUCTION:/tmp/build/8e72821d$ bosh -d cf-production manifest | grep -A7 uaadb
@@ -58,19 +60,19 @@ If the user requesting a reset has any apps, routes, or services in their sandbo
               
         root@PRODUCTION:/tmp/build/8e72821d$ psql postgres://cfdb:secret_password@production.dns.name.aws.gov/uaadb
 
-          uaadb=> select * from totp_seed where username='pat.jones@agency.gov';
-            username              |       seed         | backup_code
-            ----------------------+--------------------+-------------
-            pat.jones@agency.gov | EAAS9HANFSD90ENADF |
-            (1 row)
+        uaadb=> select * from totp_seed where username='pat.jones@agency.gov';
+          username              |       seed         | backup_code
+          ----------------------+--------------------+-------------
+          pat.jones@agency.gov | EAAS9HANFSD90ENADF |
+          (1 row)
 
-          uaadb=> begin;
-            BEGIN
-          uaadb=> delete from totp_seed where username='pat.jones@agency.gov';
-            DELETE 1
-          uaadb=> commit;
-            COMMIT
-          uaadb=>
+        uaadb=> begin;
+          BEGIN
+        uaadb=> delete from totp_seed where username='pat.jones@agency.gov';
+          DELETE 1
+        uaadb=> commit;
+          COMMIT
+        uaadb=>
 
 
 4. Let the user know the reset process is complete, so they can set up a new authentication application and request access from Space Managers and Org Managers again.
