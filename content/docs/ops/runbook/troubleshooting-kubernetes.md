@@ -58,6 +58,23 @@ with the following command.
 bosh -d kubernetes ssh minion 'bash -c "/var/vcap/packages/docker/bin/docker --host unix:///var/vcap/sys/run/docker/docker.sock pull ${DOCKER_USER}/${IMAGE_NAME}:${DOCKER_TAG}"'
 ```
 
+
+#### Manually unmounting a volume
+
+Sometimes a pod in replicaSet or Deployment will get stuck trying to come up
+and attach an EBS volume, with events like this:
+
+```
+Warning        FailedMount    Failed to attach volume
+"pvc-643cd2d6-f3b8-11e6-8e2a-0226aec4c083" on node
+"ip-10-xxx-yyy-zzz.us-gov-west-1.compute.internal" with: Error attaching EBS
+volume "vol-0317f33df50d987ab" to instance "i-03869479337e8d5ee": VolumeInUse:
+vol-0317f33df50d987ab is already attached to an instance
+```
+
+Until we isolate this issue, you'll need to manually detach the volumes with
+`aws ec2 detach-volume ...`
+
 ### Other useful Kubernetes `kubectl` commands
 
 All of these assume you are logged into a Kubernetes master:
