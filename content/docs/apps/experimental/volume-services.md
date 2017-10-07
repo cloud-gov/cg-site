@@ -11,9 +11,10 @@ title: Volume services
 Volumes are brokered and then bound to applications in the same way as our [Redis]({{< relref "docs/services/redis.md">}}), [Elasticsearch]({{< relref "docs/services/elasticsearch24.md">}}), [database]({{< relref "docs/services/relational-database.md">}}), and [blob store]({{< relref "docs/services/s3.md">}}) services. The volume will be available to the application at a path provided in the `VCAP_SERVICES` environment variable.
 
 ## Caveats for this service
-We're making this service available so that customers can explore migrating their filesystem-dependent applications to cloud.gov. We encourage use of this service now as a way to determine whether certain applications could run in cloud.gov, but we do not regard is as suitable for supporting a production application. **For this reason, the filesystem service will only be turned on for spaces in sandbox and prototyping oganizations.**
+We're making this service available so that customers can explore migrating their filesystem-dependent applications to cloud.gov. We encourage use of this service now as a way to determine whether certain applications could run in cloud.gov, but we do not regard is as suitable for supporting a production application. **For this reason, the filesystem service will only be turned on for spaces in sandbox and prototyping organizations.**
 
-We'll address the following points before we make the filesystem service available in a fully self-service manner for use by all customers. 
+We'll address the following points before we make the filesystem service available in a fully self-service manner for use by all customers:
+
 * The filesystem service is only available for particular spaces after customers contact cloud.gov support to have it turned on.
 * The filesystem service is *not* highly-available. This means that the brokered volume may be unavailable briefly from time to time as we update cloud.gov.
 * The filesystem service is *not* tuned for high performance. 
@@ -21,10 +22,10 @@ We'll address the following points before we make the filesystem service availab
 
 ## How to use this service
 
-First [contact support]({{< relref "docs/help.md" >}}) to ask that the service be made available. Include
+First [contact support]({{< relref "docs/help.md" >}}) to ask that the service be made available. Include:
 
-* the name of the org and space where you want to use the service
-* the size of the volume you want to be created
+* The name of the org and space where you want to use the service
+* The size of the volume you want to be created
 
 You will be provided with a unique string corresponding to your volume. 
 
