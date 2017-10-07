@@ -33,6 +33,7 @@ For example, `cf set-env APPNAME VERBOSE true` enables verbose logging for the d
 - The combined size of application files and the specified buildpack must total less than 1.5GB.
 - The entire compiled droplet must total less than 4GB.
 - Staging must complete within 15 minutes and application must start within 5 minutes by default.
+- Larger files should be stored in an S3 service instance. If your application needs these files to perform for one-off commands (e.g. a legacy database migration), you can pipe them from the S3 bucket to another of your application's service. If your agency security requirements prevent the usage of external services, we may be able to temporarily increase your application's storage.
 
 ### Buildpacks used
 
