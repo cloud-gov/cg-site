@@ -160,11 +160,27 @@ ul.ui-widget-header {
 }
 
 /* Disclaimer */
-
-img.right-arrow{
-  color: white;
+/*
+#gov-banner {
+  padding: 2rem 0 2rem 0;
+}*/
+img.right-arrow {
   float: right;
   width: 0.7rem;
+}
+
+.usa-disclaimer {
+  padding: 0 !important;
+}
+
+.disclaimer-image {
+  margin-top: -3px !important;
+  vertical-align: middle
+}
+
+.action {
+  cursor: pointer;
+  display: inline-block;
 }
 
 .usa-width-one-half:first-child>:first-child{
@@ -243,8 +259,6 @@ img.right-arrow{
       padding: 2rem;
   }
 }
-
-
 
 @media screen and (min-width: 481px){
   .usa-banner-button[aria-expanded=true]:hover:after {

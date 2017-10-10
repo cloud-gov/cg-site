@@ -44,9 +44,7 @@ Limitations include:
 
 * Resource usage is capped at 1 GB of memory total, for all the applications in your space combined.
 * You're [capped at using a maximum]({{< relref "overview/pricing/quotas.md#what-quotas-limit" >}}) of 10 [service instances]({{< relref "docs/apps/managed-services.md" >}}), 10 [service keys](https://docs.cloudfoundry.org/devguide/services/service-keys.html), and 10 [application routes]({{< relref "docs/apps/custom-domains.md" >}}), for all the applications in your space combined.
-* Currently sandbox applications may run indefinitely, but **soon we will delete sandbox content once a month**. We will send notice emails to all sandbox users before we implement this change in policy. Once this new policy is in place, we’ll also send a note to sandbox users a few days before deletions so people can preserve information they need.
+* You can only create free managed service instances. (See each [service documentation page]({{< relref "docs/services/index.md" >}}) for details about which service instances are available in sandboxes.) You cannot create [managed service instances that will require payment in the future]({{< relref "overview/pricing/managed-services-cost.md" >}}).
+* You can only use the default `*.app.cloud.gov` domain, not [custom domains]({{< relref "docs/apps/custom-domains.md" >}}).
+* Currently sandbox applications may run indefinitely, but **soon we will delete sandbox content periodically**. We will send notice emails to all sandbox users before we implement this change in policy. Once this new policy is in place, we’ll also send a note to sandbox users before deletions so people can preserve information they need.
 * Sandboxes do not have an “org manager” role available. (You can control access and permissions for your own sandbox space.) If you want to manage an org of prototyping spaces for people at your agency, consider purchasing a [prototyping package]({{< relref "overview/pricing/prototyping.md" >}}).
-
-<!--TO DO
-- write user flows and see if they are followable
--->

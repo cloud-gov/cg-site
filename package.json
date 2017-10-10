@@ -26,13 +26,14 @@
   "homepage": "https://github.com/18F/cg-site#readme",
   "devDependencies": {
     "browserify": "^13.1.0",
+    "mermaid": "^7.1.0",
     "node-sass": "^3.10.0",
     "onchange": "git+https://git@github.com/msecret/onchange.git",
     "postcss-import": "^8.1.2"
   },
   "dependencies": {
     "anchor-js": "^3.2.1",
-    "cloudgov-style": "^2.7.0",
+    "cloudgov-style": "2.9.1",
     "highlight.js": "^9.12.0",
     "jquery": "^3.1.1",
     "jquery.scrollto": "^2.1.2"
