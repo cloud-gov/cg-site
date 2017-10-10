@@ -26,11 +26,10 @@ You can interact directly with the services bound to your application via [port 
   * To resolve this, configure your SSH session environment with these commands:
 
 ```bash
+export DEPS_DIR=/home/vcap/deps
 for f in /home/vcap/app/.profile.d/*.sh;
   do source "$f";
 done
-export LD_LIBRARY_PATH=/home/vcap/deps/0/python/lib/
-export PYTHONHOME=/home/vcap/deps/0/python
 ```
 
 ## How to disable SSH access
