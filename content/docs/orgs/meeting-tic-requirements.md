@@ -17,7 +17,7 @@ The TIC reference architecture includes two use case examples on pages 63 and 64
 
 You can ensure that developer and operator access to cloud.gov services traverses your agency's TIC so that all manipulation of your application's deployment is monitored.
 
-{{< diagrams id-prefix="Restricting-access-to-cloud.gov-services" >}}
+{{< diagrams id-prefix="Restricting-developer-and-operator-access-to-cloud.gov-services" >}}
 graph TB
 
 subgraph Agency network
