@@ -80,8 +80,15 @@ If the user requesting a reset has any apps, routes, or services in their sandbo
 ## Managing Admins
 Make sure you have a copy of the [cg-scripts repository](https://github.com/18F/cg-scripts) so you have access to several utility scripts.
 
-### Creating Admins
-First, target and get a token for the main CloudFoundry UAA, and make the user a CloudFoundry admin using their GSA email address.
+#### Creating Admins
+
+First, target and get a token for the main CloudFoundry UAA. To get the current `CF_UAA_ADMINCLIENT_PASSPHRASE`, get a production jumpbox, then run:
+
+```
+bosh -d cf-production manifest | spruce json | jq '.properties.uaa.admin.client_secret
+```
+
+With the passphrase, make the user a CloudFoundry admin using their GSA email address.
 
 ```sh
 cd /path/to/cg-scripts
@@ -98,8 +105,17 @@ uaac token client get admin -s <OPS_UAA_ADMINCLIENT_PASSPHRASE>
 ./make-ops-admin.sh <EMAIL_ADDRESS>
 ```
 
+For the Ops UAA passphrase, you'll need to look in `tooling-bosh-main.yml`
+
 ### Removing Admins
-First, target and get a token for the main CloudFoundry UAA, and remove the user as a CloudFoundry admin using their GSA email address.
+
+First, target and get a token for the main CloudFoundry UAA. To get the current `CF_UAA_ADMINCLIENT_PASSPHRASE`, get a production jumpbox, then run:
+
+```
+bosh -d cf-production manifest | spruce json | jq '.properties.uaa.admin.client_secret
+```
+
+With the passphrase, remove the user as a CloudFoundry admin using their GSA email address.
 
 ```sh
 cd /path/to/cg-scripts
@@ -116,3 +132,5 @@ uaac target <OPS_UAA_FQDN>
 uaac token client get admin -s <OPS_UAA_ADMINCLIENT_PASSPHRASE>
 ./make-ops-admin.sh -r <EMAIL_ADDRESS>
 ```
+
+For the Ops UAA passphrase, you'll need to look in `tooling-bosh-main.yml`
