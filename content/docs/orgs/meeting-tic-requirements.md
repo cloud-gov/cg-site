@@ -13,7 +13,9 @@ The cloud.gov System Security Plan has a formal description of customer responsi
 ## Use-cases for accessing cloud.gov
 The TIC reference architecture includes two use case examples on pages 63 and 64 that are relevant for federal agencies using cloud.gov. Here we describe how to interpret those use cases in the cloud.gov-specific context.
 
-### Restricting administrator access to your application's deployment
+### Restricting developer and operator access to cloud.gov services
+
+You can ensure that developer and operator access to cloud.gov services traverses your agency's TIC so that all manipulation of your application's deployment is monitored.
 
 {{< diagrams id-prefix="Restricting-access-to-cloud.gov-services" >}}
 graph TB
@@ -40,7 +42,6 @@ PUser -->|"TLS (encrypted tunnel)"|PRouter
 TIC -->|"TLS (encrypted tunnel)"| APIRouter[cloud.gov API]
 APIRouter -->|Manage app| App
 PRouter -->|Access app| App
-
 
 {{< /diagrams >}}
 
@@ -92,7 +93,7 @@ RouteService[App logic or route service] --> App
 
 For remote workers or partners outside the normal agency network boundary, you should require use of a VPN to ensure that cloud.gov-bound traffic is routed over the agency network and TIC (shown in Figure 15 of the TIC Reference architecture).
 
-You should then reject requests to your app unless they come from your agency's TIC egress range. You can do this by modifying your application logic or deploying a [user-provided route-service](https://docs.cloudfoundry.org/services/route-services.html#user-provided) to act as a proxy. (You can create a simple route service by pushing an `nginx.conf` file with the desired configuration using the Staticfile buildpack.)
+You should then reject requests to your app unless they come from your agency's TIC egress range. You can do this by modifying your application logic or deploying a [user-provided route-service](https://docs.cloudfoundry.org/services/route-services.html#user-provided) to act as a proxy. (You can create a simple route service by [deploying the Staticfile buildpack configured with a custom `nginx.conf` file](https://docs.cloudfoundry.org/buildpacks/staticfile/index.html#config-process).)
 
 
 
