@@ -58,9 +58,9 @@ publishdir = "public"
     pre = "<i class='fa fa-rocket fa-fw'></i>"
     weight = -100
 [[menu.docs]]
-    name = "Managing orgs"
-    identifier = "orgs"
-    pre = "<i class='fa fa-lock fa-fw'></i>"
+    name = "Compliance"
+    identifier = "compliance"
+    pre = "<i class='fa fa-check-square-o fa-fw'></i>"
     weight = -100
 [[menu.docs]]
     name = "Experimental features"

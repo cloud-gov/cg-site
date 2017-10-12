@@ -1,7 +1,7 @@
 ---
 menu:
   docs:
-    parent: orgs
+    parent: experimental
 title: Restricting users to trusted IP ranges
 ---
 
