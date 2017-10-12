@@ -17,7 +17,7 @@ The [TIC reference architecture](https://s3.amazonaws.com/sitesusa/wp-content/up
 
 You can ensure that developer and operator access to cloud.gov services traverses your agency's TIC so that you can monitor all changes to your organizations, spaces, applications and services. The diagram below shows how the traffic flows.
 
-{{< diagrams id-prefix="Restricting-access-to-agency-origin" >}}
+{{< diagrams id-prefix="Figure-1.-Restricting-changes-to-agency-origin" >}}
 graph TB
 
 subgraph Agency network
@@ -63,7 +63,7 @@ Requests from the public accessing an application hosted on cloud.gov do not tra
 
 You may also need to restrict access through the "front door" of your deployed applications, such as administrator access to a Wordpress site, or public access to an internal-only service. The diagram below shows where you can implement this restriction.
 
-{{< diagrams id-prefix="Restricting-client-access-to-your-application" >}}
+{{< diagrams id-prefix="Figure-2.-Restricting-client-access-to-your-application" >}}
 graph TB
 
 subgraph Internet
