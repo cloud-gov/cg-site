@@ -3,6 +3,8 @@ menu:
   docs:
     parent: compliance
 title: Meeting TIC requirements
+aliases:
+  - /docs/orgs/meeting-tic-requirements
 ---
 It is your responsibility to identify and comply with relevant Trusted Internet Connetions (TIC) requirements as guided by your agency. To help you with compliance, here's guidance for interpreting [the TIC reference architecture v2.0](https://s3.amazonaws.com/sitesusa/wp-content/uploads/sites/482/2015/04/TIC_Ref_Arch_v2-0_2013.pdf) as it concerns cloud.gov.
 
