@@ -1,5 +1,5 @@
-<p>{{ .Get "id-prefix" | humanize }}</p>
 <div class="cg-diagrams js-diagrams mermaid">
   <div class="cg-diagrams-hidden js-diagrams__raw">{{ .Inner | safeHTML }}</div>
   <div id="cg-diagram-{{ .Get "id-prefix" | md5 }}" class="cg-diagrams-stage js-diagrams__stage"></div>
 </div>
+<p><em>{{ .Get "id-prefix" | humanize }}</em></p>
