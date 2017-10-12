@@ -61,7 +61,7 @@ publishdir = "public"
     name = "Compliance"
     identifier = "compliance"
     pre = "<i class='fa fa-check-square-o fa-fw'></i>"
-    weight = -100
+    weight = -95
 [[menu.docs]]
     name = "Experimental features"
     identifier = "experimental"
