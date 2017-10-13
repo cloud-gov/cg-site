@@ -1,0 +1,66 @@
+.eyebrow {
+  font-size: 12px;
+  font-weight: 600 !important;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 20px;
+  margin-bottom: 60px;
+}
+.eyebrow::after {
+  background-color: #333333;
+  content: '';
+  height: 1px;
+  left: 0;
+  position: absolute;
+  bottom: 0;
+  width: 35px;
+  }
+.editorial-content {
+  padding: 60px 0;
+}
+.section-editorial h3  {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+.section-editorial h4 {
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+.section-editorial p {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+.section-editorial .byline {
+  font-size: 14px;
+  font-family: '18Franklin-webfont', system, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; /* $font-sans */
+}
+.section-editorial ul.button-list,
+.section-editorial ul.button-list li {
+  font-size: 18px;
+  font-weight: 600;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.section-editorial ul.button-list {
+  margin: 60px 0 30px 0;
+}
+.section-editorial ul.button-list li a {
+  display: block;
+  border-bottom: 1px solid #ccc;
+  padding: 30px 30px 30px 0;
+  text-decoration: none;
+  background: url(/img/angle-arrow-right.svg) center right no-repeat;
+  background-size: 10px;
+}
+.section-editorial ul.button-list li:first-child a {
+  border-top: 1px solid #ccc;
+}
+.section-editorial ul.button-list li a:hover {
+  color: #990000;
+}
