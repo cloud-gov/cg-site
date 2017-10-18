@@ -9,6 +9,7 @@ aliases:
   - /intro/security/fedramp-tracker
   - /overview/security/fedramp-tracker
   - /docs/apps/govcloud
+  - /compliance/
 ---
 
 
