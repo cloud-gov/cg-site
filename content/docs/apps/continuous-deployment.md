@@ -28,6 +28,34 @@ cloud.gov does not yet provide a CI/CD (continuous integration/continuous deploy
 
 You can configure your code repositories, [spaces]({{< relref "docs/getting-started/concepts.md#spaces" >}}), and CI/CD service together to enable automated or semi-automated deployments to your environments (such as development, staging, and production environments). For deployments in each environment, you can configure access control and testing requirements according to your project's needs.
 
+An overview of a common workflow for CI/CD with cloud.gov:
+
+{{< diagrams id-prefix="Figure-1.-Continuous-deployment-workflow" >}}
+graph TD
+
+subgraph cloud.gov
+  subgraph Org
+  subgraph Dev space
+      Dev[App]
+    end
+    subgraph Staging space
+      Staging[App]
+    end
+    subgraph Production space
+      Prod[App]
+    end
+  end
+end
+
+Developer((Developer)) -->|Commit code| Repo(Code repository)
+Repo -->|Automatically notify that a commit happened|CD(Continuous Deployment service)
+CD -->|If dev branch, deploy| Dev
+CD -->|If staging branch, deploy| Staging
+CD -->|If prod branch, deploy| Prod
+{{< /diagrams >}}
+
+## Service examples
+
 Here are examples of how to set up two cloud-based services that have free tiers for open source projects, [Travis](https://docs.travis-ci.com/) and [CircleCI](https://circleci.com/docs/1.0/). (You can also find and adapt instructions for using other CI/CD services with other Cloud Foundry deployments, such as [this explanation of how to use Jenkins](https://docs.cloud.service.gov.uk/#setting-up-the-cloud-foundry-jenkins-plugin).)
 
 ### Travis
