@@ -19,7 +19,7 @@ To make your app accessible via your custom domain name, use the [CDN service]({
 
 ### Comparison of default domains and custom domains
 
-Here's an example of the difference between a default *.app.cloud.gov domain and a custom agency domain. In this example, a staging application is using a default domain, and the production version of the same application is using a custom domain.
+Here's an example of the difference between a default *.app.cloud.gov domain and a custom domain. In this example, a staging application is using a default domain, and the production version of the application is using a custom domain.
 
 {{< diagrams id-prefix="Figure-1.-Domain-comparison" >}}
 graph TD
@@ -28,6 +28,7 @@ subgraph Amazon Web Services
   subgraph cloud.gov
     CDN
     CG-DNS
+    Router[App router]
     subgraph Org
     subgraph Staging space
         Staging[App]
@@ -39,11 +40,13 @@ subgraph Amazon Web Services
   end
 end
 
-Public((Public)) -->|HTTPS| A-DNS(Agency DNS: example.gov)
-Public((Public)) -->|HTTPS| CG-DNS(DNS: example.app.cloud.gov)
+Public((Public user)) -->|HTTPS| A-DNS(Agency DNS: example.gov)
+Public((Public user)) -->|HTTPS| CG-DNS(DNS: example.app.cloud.gov)
 A-DNS -->|HTTPS| CDN(CDN)
-CG-DNS -->|HTTPS|Staging
-CDN -->|HTTPS|Production
+CG-DNS -->Router
+CDN -->Router
+Router-->Staging
+Router-->Production
 {{< /diagrams >}}
 
 ## How domains and routes work in cloud.gov
