@@ -35,7 +35,8 @@ To link to another page within cg-site, use `relref` to create [relative links](
 To add a diagram to a documentation page, use the `{{< diagrams
 id-prefix="title-for-diagram" >}}` shortcode to create them inline for the
 documentation pages. Use the [Mermaid language syntax](https://github.com/knsv/mermaid)
-to create diagrams in the same way diagrams are made for [cg-diagrams](https://github.com/18F/cg-diagrams).
+to create diagrams in the same way diagrams are made for [cg-diagrams](https://github.com/18F/cg-diagrams). 
+Try the [Mermaid live editor](https://mermaidjs.github.io/mermaid-live-editor/)!
 
 > If you find you have a need to create these diagrams on pages outside of the
 > documentation pages, please open a PR to discuss what other pages it should
