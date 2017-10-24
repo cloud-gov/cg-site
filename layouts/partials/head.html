@@ -22,6 +22,7 @@
 
   <link rel="canonical" href='{{ .URL }}'>
   <link rel="alternate" type="application/rss+xml" title="{{ .Title }}" href="/updates/index.xml" />
+  {{ partial "tag-manager-head.html" . }}
   <script>
     if (/^www\./.test(window.location.hostname)) {
       window.location = window.location.href.replace('www.', '');

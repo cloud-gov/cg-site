@@ -4,7 +4,7 @@
   {{ partial "head.html" . }}
 
   <body>
-
+    {{ partial "tag-manager-head.html" . }}
     {{ partial "header.html" . }}
 
 
@@ -142,11 +142,11 @@
       </p>
       <ul class="button-list">
         <li>
-          <a href="assets/files/cloudgov-select-customers.pdf">Download select customer list (PDF)</a>
+          <a href="assets/files/cloudgov-select-customers.pdf" id="customer-list-pdf">Download select customer list (PDF)</a>
           <!-- Source for this PDF is https://drive.google.com/open?id=0B0QZeVsyd4B_UUVVOGVtMnZhS0E -->
         </li>
         <li>
-          <a href="https://cloud.gov/overview/customer-stories/fec/">More customer stories: Federal Election Commission case study</a>
+          <a href="https://cloud.gov/overview/customer-stories/fec/" id="customer-stories">More customer stories: Federal Election Commission case study</a>
         </li>
       </ul>
     </div>
@@ -160,7 +160,6 @@
     </div>
   </div>
 </section>
-
 
  {{ partial "footer.html" . }}
     {{ partial "javascript.html" . }}
