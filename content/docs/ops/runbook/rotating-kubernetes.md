@@ -59,16 +59,21 @@ for pod in $(kubectl --namespace kube-system get pod | grep "fluentd-cloudwatch"
 
 Rotating Consul certificates breaks the communication between the Consul proxy
 jobs on the Kubernetes `master` and `minion` VMs and the internal Kubernetes DNS
-pods. Fix Kubernetes DNS resolution with the following command.
+pods. Fix Kubernetes DNS resolution with the following command. Connect to a
+`master` or `minion` VM to run the command.
 
 ```sh
 kubectl get pods --namespace kube-system | grep kube-dns | awk '{ print $1 }' | xargs kubectl delete pods --namespace kube-system
 ```
 
+## Restarting the proxy job in the BOSH VMs
+
 Restart the proxy job in the `master` and `minion` Kubernetes BOSH deployment
-with the following commands.
+with the following commands. Connect to the appropriate BOSH Director with [the
+shared `cg-script` Jumpbox script](https://github.com/18F/cg-scripts/blob/master/jumpbox).
 
 ```sh
 bosh ssh -d kubernetes master -c "sudo /var/vcap/bosh/bin/monit restart proxy"
 bosh ssh -d kubernetes minion -c "sudo /var/vcap/bosh/bin/monit restart proxy"
 ```
+
