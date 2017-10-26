@@ -9,7 +9,19 @@ title: Rotating Secrets VI - Kubernetes
 
 ## Introduction
 
-Cloud.gov uses kubernetes to provided managed services, including elasticsearch and redis. The kubernetes bosh deployment and service broker are deployed from https://github.com/18F/cg-deploy-kubernetes.
+cloud.gov uses Kubernetes to provided managed services, including elasticsearch
+and redis. The Kubernetes bosh deployment and service broker are deployed from
+https://github.com/18F/cg-deploy-kubernetes.
+
+When rotating Kubernetes, you must open a scheduled maintenance window in
+Statuspage. Use the **Maint - GovCloud - Experimental services disruption**
+_Scheduled Maintenance_ template. Schedule the window to last at least three
+hours in order to complete all the steps below when rotating secrets in
+Kubernetes.
+
+Lastly, get familiar with the [Troubleshooting Kubernetes]({{< relref
+"docs/ops/runbook/troubleshooting-kubernetes.md" >}}) runbook in case
+anything goes wrong during the deployment.
 
 ## Rotating certificates
 
@@ -41,4 +53,22 @@ for pod in $(kubectl get pod | grep "kube2iam" | awk '{print $1}'); do kubectl d
 
 kubectl --namespace kube-system delete secret $(kubectl --namespace kube-system get secrets | grep "default-token" | awk '{print $1}')
 for pod in $(kubectl --namespace kube-system get pod | grep "fluentd-cloudwatch" | awk '{print $1}'); do kubectl --namespace kube-system delete pod ${pod}; done
+```
+
+## Recreating Kubernetes DNS pods
+
+Rotating Consul certificates breaks the communication between the Consul proxy
+jobs on the Kubernetes `master` and `minion` VMs and the internal Kubernetes DNS
+pods. Fix Kubernetes DNS resolution with the following command.
+
+```sh
+kubectl get pods --namespace kube-system | grep kube-dns | awk '{ print $1 }' | xargs kubectl delete pods --namespace kube-system
+```
+
+Restart the proxy job in the `master` and `minion` Kubernetes BOSH deployment
+with the following commands.
+
+```sh
+bosh ssh -d kubernetes master -c "sudo /var/vcap/bosh/bin/monit restart proxy"
+bosh ssh -d kubernetes minion -c "sudo /var/vcap/bosh/bin/monit restart proxy"
 ```
