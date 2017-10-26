@@ -106,6 +106,19 @@ Sometimes you need to connect inside a pod:
 kubectl exec -it :pod-name /bin/bash
 ```
 
+#### Rotating secrets for pods
+
+If a secret shared for a deployment or stateful-set needs to be rotated, you
+should be able to follow the current steps using the `kubectl` binary on the
+`master` and `minion` VMs in the Kubernetes BOSH deployment. Please refer to the
+[official Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/secret/)
+around **Secrets** for more information.
+
+```
+kubectl describe pod ${YOUR_POD} | grep -i auth
+kubectl edit secret ${THE_ID_FROM_LAST_CMD}
+```
+
 #### Deleting a pod
 Sometimes a pod gets scheduled, and the EBS volume
 is unable to be mounted on that instance.  You can
