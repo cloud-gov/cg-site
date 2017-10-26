@@ -123,6 +123,8 @@ without data loss_ on the other.
 
 1. `uaa.clients.*.secrets` properties need to be coordinated across various Bosh
    deployments and cloud.gov apps or service brokers.
+1. `uaa.users.*.password` properties need to be coordinated across various Bosh
+   deployments and cloud.gov apps or service brokers.
 1. `login.smtp.*` properties for Mandrill.
 1. `uaa.scim.users.broker-deployer` secret needs to be coordinated across our
    Service Broker deployments for cloud.gov.
