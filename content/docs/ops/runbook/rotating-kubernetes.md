@@ -13,18 +13,27 @@ Cloud.gov uses kubernetes to provided managed services, including elasticsearch 
 
 ## Rotating certificates
 
-Generate new certificates for consul and kubernetes using the master bosh certificate authority. Certificates for both consul and kubernetes should be rotated in three steps, as described in https://docs.cloudfoundry.org/deploying/common/consul-security.html#rotating-certs:
+Generate new certificates for consul and Kubernetes using the master bosh
+certificate authority. Certificates for both consul and Kubernetes should be
+rotated in three steps, as described in https://docs.cloudfoundry.org/deploying/common/consul-security.html#rotating-certs:
 
 * Append new CA certificate
 * Replace old certificates and keys
 * Drop old CA certificate
 
 Generate consul certificates using https://github.com/18F/cg-deploy-kubernetes/blob/master/generate-consul-certs.sh.
-Generate kubernetes certificates using the master bosh CA certificate and the IP SANs in https://github.com/18F/kubernetes-release/blob/master/generate-certificates.sh. Note: we should automate this step next time we rotate secrets.
+Generate Kubernetes certificates using the master bosh CA certificate and the IP
+SANs in https://github.com/18F/kubernetes-release/blob/master/generate-certificates.sh.
 
-## Recreating kubernetes secrets and daemonset-managed pods
+> Note: we should automate this step next time we rotate secrets.
 
-Rotating kubernetes certificates breaks the automatically generated [secrets](https://kubernetes.io/docs/concepts/configuration/secret/). To fix, destroy the default secret in the `default` and `kube-system` namespaces, then destroy the daemonset-managed pods that use those secrets. Note: both the secrets and the pods will be recreated automatically by kubernetes.
+## Recreating Kubernetes secrets and daemonset-managed pods
+
+Rotating Kubernetes certificates breaks the automatically generated
+[secrets](https://kubernetes.io/docs/concepts/configuration/secret/). To fix,
+destroy the default secret in the `default` and `kube-system` namespaces, then
+destroy the daemonset-managed pods that use those secrets. Note: both the
+secrets and the pods will be recreated automatically by Kubernetes.
 
 ```sh
 kubectl delete secret $(kubectl get secrets | grep "default-token" | awk '{print $1}')
