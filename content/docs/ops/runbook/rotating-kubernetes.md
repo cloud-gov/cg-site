@@ -13,11 +13,10 @@ cloud.gov uses Kubernetes to provided managed services, including elasticsearch
 and redis. The Kubernetes bosh deployment and service broker are deployed from
 https://github.com/18F/cg-deploy-kubernetes.
 
-When rotating Kubernetes, you must open a scheduled maintenance window in
-Statuspage. Use the **Maint - GovCloud - Experimental services disruption**
-_Scheduled Maintenance_ template. Schedule the window to last at least three
-hours in order to complete all the steps below when rotating secrets in
-Kubernetes.
+When rotating Kubernetes, you must open a scheduled maintenance window. Use the
+**Maint - GovCloud - Experimental services disruption** _Scheduled Maintenance_
+template. Schedule the window to last at least three hours in order to complete
+all the steps below when rotating secrets in Kubernetes.
 
 Lastly, get familiar with the [Troubleshooting Kubernetes]({{< relref
 "docs/ops/runbook/troubleshooting-kubernetes.md" >}}) runbook in case
