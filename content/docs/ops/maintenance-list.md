@@ -37,6 +37,8 @@ mfa_users=$(aws iam list-virtual-mfa-devices | jq '[.[]| .[].User.UserName]| sor
 echo "{ \"users\": $users, \"mfa_users\": $mfa_users}" | jq '.users - .mfa_users'
 ```
 
+- In [logs.fr.cloud.gov](https://logs.fr.cloud.gov/), go under "Management" -> "Advanced Settings" and check the Kibana [timezone setting](https://www.elastic.co/guide/en/kibana/current/advanced-options.html) (`dateFormat:tz`) - it should be set to `Browser`. If anyone has changed it, change it back to `Browser`.
+
 # Daily maintenance checklist
 
 The tasks on this checklist should be performed each day.
