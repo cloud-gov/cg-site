@@ -148,3 +148,14 @@ ${secrets_file}.yml.enc \
 s3://${bucket_name}/${secrets_file}.yml;
 ```
 
+## Rotating certificates
+
+Generate new certificates for deployments using mutual TLS from the same Root CA
+certificate. These certificates should be rotated in three steps, as described in https://docs.cloudfoundry.org/deploying/common/consul-security.html#rotating-certs:
+
+1. Append new CA certificate
+1. Replace old certificates and keys
+1. Drop old CA certificate
+
+Please see the [`cg-secret-rotation`](`https://github.com/18F/cg-secret-rotation)
+repository for more information about generating these certificates.
