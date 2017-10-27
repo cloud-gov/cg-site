@@ -147,6 +147,10 @@ Secrets.
 - https://kubernetes.io/docs/concepts/configuration/secret/#decoding-a-secret
 - https://kubernetes.io/docs/concepts/configuration/secret/#secret-and-pod-lifetime-interaction
 
+Once the password and the pods have been changed and come up in a healthy state
+respectively. The service instance needs to be unbound and bound again to the
+application in order for the changes to reflect in VCAP services.
+
 #### Deleting a pod
 Sometimes a pod gets scheduled, and the EBS volume
 is unable to be mounted on that instance.  You can
