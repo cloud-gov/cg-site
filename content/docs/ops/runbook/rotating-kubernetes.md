@@ -76,3 +76,10 @@ bosh ssh -d kubernetes master -c "sudo /var/vcap/bosh/bin/monit restart proxy"
 bosh ssh -d kubernetes minion -c "sudo /var/vcap/bosh/bin/monit restart proxy"
 ```
 
+When restarting all of these proxies at once, make sure that the proxy starts up
+and reports healthy with Monit before closing the maintenance window.
+
+```sh
+bosh ssh -d kubernetes master -c "sudo /var/vcap/bosh/bin/monit summary | grep proxy"
+bosh ssh -d kubernetes minion -c "sudo /var/vcap/bosh/bin/monit summary | grep proxy"
+```
