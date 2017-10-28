@@ -147,9 +147,9 @@ Secrets.
 - https://kubernetes.io/docs/concepts/configuration/secret/#decoding-a-secret
 - https://kubernetes.io/docs/concepts/configuration/secret/#secret-and-pod-lifetime-interaction
 
-Once the password and the pods have been changed and come up in a healthy state
-respectively. The service instance needs to be unbound and bound again to the
-application in order for the changes to reflect in VCAP services.
+Once the password has been changed and the pods have come up in a healthy state, you'll need the application to use the updated VCAP service.  Typically, you'll unbind the service from the application (`cf unbind-service`), bind it again (`cf bind-service`), then restage the application (`cf restage`)
+
+**You should expect application failure from the time you've reset the Kubernetes pods until you've restaged the application.** During this window the application will be using outdated credentials.
 
 #### Deleting a pod
 Sometimes a pod gets scheduled, and the EBS volume
