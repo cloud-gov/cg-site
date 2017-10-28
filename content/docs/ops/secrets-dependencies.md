@@ -53,7 +53,7 @@ graph TB;
 
 This chart represents the dependencies that rely on the single Root CA
 certificate. These dependencies exist in BOSH deployment manifests and in
-Concourse pipelines.
+Concourse resources.
 
-Any Concourse pipelines with a type of `bosh-deployment` all use the Root CA
+Any Concourse resource with a type of `bosh-deployment` all use the Root CA
 certificate in the pipeline definition.
