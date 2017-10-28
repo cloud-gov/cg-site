@@ -83,8 +83,8 @@ properly.
 
 Things to look for include:
 
-- Is `monit` reporting healthy for the process?
-- Are there multipl PIDs for the process?
-- Are the proxy logs through errors about multiple listeners?
+- Is `monit summary` reporting healthy for the process?
+- Are there multiple PIDs for the process?
+- Do the proxy logs include errors about multiple listeners or problems binding to a port?
 
 Once the deployment is in a healthy state, you may close the maintenance window.
