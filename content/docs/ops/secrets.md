@@ -8,17 +8,12 @@ title: Secret key management
 
 ### Sharing secret keys
 
-For sharing the following types of [sensitive information](https://github.com/18F/open-source-policy/blob/master/practice.md#protecting-sensitive-information) related to cloud.gov, cloud.gov team members must use [Fugacious](https://fugacious.18f.gov/) links, shared over a GSA application (such as GSA Gmail or TTS Slack). The team member must share the Fugacious link only with intended recipient(s) who need to know the sensitive information.
+For sharing the following types of [sensitive information](https://github.com/18F/open-source-policy/blob/master/practice.md#protecting-sensitive-information) related to cloud.gov, cloud.gov team members must use GSA Google Hangouts. The team member must share the information only with intended recipient(s) who need to know the sensitive information. Team members can use the Hangouts screen-sharing feature or verbally share the information.
 
 * Passwords
 * Secret keys
 * Sensitive environment variables
 * Other secret authentication information
-
-The cloud.gov team must comply with 18F's [policies in the Handbook](https://handbook.18f.gov/sensitive-information/#fugacious), with the following additional restrictions (for security and compliance reasons):
-
-* Expiry must be set to 12 hours or less
-* Number of opens must be set to two views, per person who needs to open it
 
 ### Maintenance of system secret keys
 
