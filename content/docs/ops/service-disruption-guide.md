@@ -67,11 +67,11 @@ For non-security-sensitive work, work to resolve root causes does not have to be
 
 We typically use a **What happened** + **What we're doing** structure.
 
-Try checking your draft against the following questions that customers typically have:
+Check your draft against the following questions that customers typically have:
 
-* What part of the system had a problem, in terms that I recognize?
-* How long did the problem last?
-* What was the effect on my applications and my own users?
+* What part(s) of the system had a problem, in terms that I recognize?
+* How long did the problem last, and at what time?
+* What was the effect on my applications and my own users? (This is important.)
 * How are you going to prevent it from happening again?
 * What actions should I take, if any?
 
