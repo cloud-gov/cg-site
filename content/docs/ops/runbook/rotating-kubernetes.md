@@ -69,9 +69,14 @@ bosh ssh -d kubernetes minion -c "sudo /var/vcap/bosh/bin/monit restart proxy"
 ```
 
 When restarting all of these proxies at once, make sure that the proxy starts up
-and reports healthy with Monit before closing the maintenance window.
+and reports healthy with Monit before closing the maintenance window. SSH into
+each `master` and `minion` in order to verify that the service has restarted
+properly.
 
-```sh
-bosh ssh -d kubernetes master -c "sudo /var/vcap/bosh/bin/monit summary | grep proxy"
-bosh ssh -d kubernetes minion -c "sudo /var/vcap/bosh/bin/monit summary | grep proxy"
-```
+Things to look for include:
+
+- Is `monit summary` reporting healthy for the process?
+- Are there multiple PIDs for the process?
+- Do the proxy logs include errors about multiple listeners or problems binding to a port?
+
+Once the deployment is in a healthy state, you may close the maintenance window.
