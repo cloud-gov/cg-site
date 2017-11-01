@@ -24,19 +24,11 @@ anything goes wrong during the deployment.
 
 ## Rotating certificates
 
-Generate new certificates for consul and Kubernetes using the master bosh
-certificate authority. Certificates for both consul and Kubernetes should be
-rotated in three steps, as described in https://docs.cloudfoundry.org/deploying/common/consul-security.html#rotating-certs:
+Please see the documentation for [_Rotating certificates_]({{< relref
+"rotating-secrets.md#rotating-certificates" >}}).
 
-* Append new CA certificate
-* Replace old certificates and keys
-* Drop old CA certificate
-
-Generate consul certificates using https://github.com/18F/cg-deploy-kubernetes/blob/master/generate-consul-certs.sh.
-Generate Kubernetes certificates using the master bosh CA certificate and the IP
-SANs in https://github.com/18F/kubernetes-release/blob/master/generate-certificates.sh.
-
-> Note: we should automate this step next time we rotate secrets.
+Generate all certificates using https://github.com/18F/cg-deploy-kubernetes/blob/master/generate-consul-certs.sh.
+Generate kubernetes certificates using the master bosh CA certificate and the IP SANs in https://github.com/18F/kubernetes-release/blob/master/generate-certificates.sh. Note: we should automate this step next time we rotate secrets.
 
 ## Recreating Kubernetes secrets and daemonset-managed pods
 
