@@ -19,7 +19,7 @@ To make your app accessible via your custom domain name, use the [CDN service]({
 
 ### Comparison of default domains and custom domains
 
-Here's an example of the difference between a default *.app.cloud.gov domain and a custom domain. In this example, a staging application is using a default domain, and the production version of the application is using a custom domain.
+Here's an example of the difference between a default *.app.cloud.gov domain and a custom domain. In this example, an agency's application `App A` is using a default domain, and their application `App B` is using a custom domain.
 
 {{< diagrams id-prefix="Figure-1.-Domain-comparison" >}}
 graph TD
