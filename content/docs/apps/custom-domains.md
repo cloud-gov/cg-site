@@ -29,24 +29,24 @@ subgraph Amazon Web Services
     CDN
     CG-DNS
     Router[App router]
-    subgraph Org
-    subgraph Staging space
-        Staging[App]
+    subgraph Org: agency-org
+    subgraph App A prod space
+        AppA[App A]
       end
-      subgraph Production space
-        Production[App]
+      subgraph App B prod space
+        AppB[App B]
       end
     end     
   end
 end
 
-Public((Public user)) -->|HTTPS| A-DNS(Agency DNS: example.gov)
-Public((Public user)) -->|HTTPS| CG-DNS(DNS: example.app.cloud.gov)
+Public((Public user)) -->|HTTPS| A-DNS(Agency DNS: appB.agency.gov)
+Public((Public user)) -->|HTTPS| CG-DNS(DNS: appA_agency.app.cloud.gov)
 A-DNS -->|HTTPS| CDN(CDN)
 CG-DNS -->Router
 CDN -->Router
-Router-->Staging
-Router-->Production
+Router -->AppA
+Router -->AppB
 {{< /diagrams >}}
 
 ## How domains and routes work in cloud.gov

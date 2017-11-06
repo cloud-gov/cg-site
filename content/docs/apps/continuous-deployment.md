@@ -28,7 +28,7 @@ cloud.gov does not yet provide a CI/CD (continuous integration/continuous deploy
 
 You can configure your code repositories, [spaces]({{< relref "docs/getting-started/concepts.md#spaces" >}}), and CI/CD service together to enable automated or semi-automated deployments to your environments (such as development, staging, and production environments). For deployments in each environment, you can configure access control and testing requirements according to your project's needs.
 
-An overview of a common workflow for CI/CD with cloud.gov:
+To illustrate how a CI/CD workflow could be incorporated with cloud.gov:
 
 {{< diagrams id-prefix="Figure-1.-Continuous-deployment-workflow" >}}
 graph TD
