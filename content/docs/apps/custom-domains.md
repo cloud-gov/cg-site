@@ -30,10 +30,10 @@ subgraph Amazon Web Services
     CG-DNS
     Router[App router]
     subgraph Org: agency-org
-    subgraph App A prod space
+    subgraph App A space
         AppA[App A]
       end
-      subgraph App B prod space
+      subgraph App B space
         AppB[App B]
       end
     end     
