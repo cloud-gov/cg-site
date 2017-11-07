@@ -13,7 +13,8 @@ changes to your desired environment.
 Before setting up continuous deployment:
 
 1. Go through the [production-ready guide]({{< relref "production-ready.md" >}}) to ensure your application uses the [core best practices]({{< relref "production-ready.md#core-best-practices" >}}) and [zero-downtime deployment]({{< relref "production-ready.md#zero-downtime-deploy" >}}). This will help you use continuous deployment with reduced risk of errors and outages.
-1. Set up continuous integration. This will protect you from deploying a broken application. You can use the same service for continuous integration and continuous deployment — see [the list of continuous integration services below]({{< relref "#continuous-integration-services" >}}) for suggestions.
+ * The essential requirements: your code needs to be in version control, and it needs to include [a `manifest.yml` file](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) that captures the intended deployment configuration for your application.
+1. Set up continuous integration. This will protect you from deploying a broken application. You can use the same service for continuous integration and continuous deployment — see [the list of continuous integration services below]({{< relref "#configure-your-service" >}}) for suggestions.
 
 ## Provision deployment credentials
 
@@ -21,9 +22,13 @@ Continuous deployment systems require credentials for use in pushing new version
 
 To provision a deployer account with permission to deploy to a single space, [set up an instance of a cloud.gov service account]({{< relref "docs/services/cloud-gov-service-account.md" >}}).
 
-## Continuous integration services
+## Configure your service
 
-To set up any of these services, you will need to provide [a `manifest.yml` file](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) that captures the intended deployment configuration for your application.
+cloud.gov does not yet provide a CI/CD (continuous integration/continuous deployment) service, but you can use any CI/CD service of your choice.
+
+You can configure your code repositories, [spaces]({{< relref "docs/getting-started/concepts.md#spaces" >}}), and CI/CD service together to enable automated or semi-automated deployments to your environments (such as development, staging, and production environments). For deployments in each environment, you can configure access control and testing requirements according to your project's needs.
+
+Here are examples of how to set up two cloud-based services that have free tiers for open source projects, [Travis](https://docs.travis-ci.com/) and [CircleCI](https://circleci.com/docs/1.0/). (You can also find and adapt instructions for using other CI/CD services with other Cloud Foundry deployments, such as [this explanation of how to use Jenkins](https://docs.cloud.service.gov.uk/#setting-up-the-cloud-foundry-jenkins-plugin).)
 
 ### Travis
 
@@ -72,7 +77,9 @@ For details, see [Jekyll's Continuous Integration guide](http://jekyllrb.com/doc
 
 ### CircleCI
 
-Add these items to your `circle.yml` file:
+See [Getting Started with CircleCI](https://circleci.com/docs/1.0/getting-started/) -- you'll need to set up a CircleCI account and give it access to your code repository.
+
+In your code repository, use the following template to set up your `circle.yml` file. This uses CircleCI 1.0 syntax.
 
 ```yaml
 dependencies:
@@ -83,7 +90,7 @@ dependencies:
 
 test:
   post:
-    - cf login -a https://api.fr.cloud.gov -u DEPLOYER_USER -p $CF_PASS -o ORG -s SPACE
+    - cf login -a https://api.fr.cloud.gov -u DEPLOYER_SERVICE_ACCOUNT_USERNAME -p $CF_PASS -o ORG -s SPACE
 
 deployment:
   production:
@@ -92,42 +99,8 @@ deployment:
       - cf push
 ```
 
-Replace `DEPLOYER_USER`, `ORG`, and `SPACE` accordingly, and export the `CF_PASS` environment variable in the Circle interface to add the deployer's password.
+Replace `DEPLOYER_SERVICE_ACCOUNT_USERNAME`, `ORG`, and `SPACE` with your information. **Do not replace** `$CF_PASS` with your deployer service account password -- instead, export the `CF_PASS` environment variable [in the CircleCI interface](https://circleci.com/docs/1.0/environment-variables/#setting-environment-variables-for-all-commands-without-adding-them-to-git) and put the deployer password there.
+
+You can also review their [sample circle.yml file](https://circleci.com/docs/1.0/config-sample/) for more configuration options.
 
 **Note**: If your `manifest.yml` describes more than one app, you might want to specify which app to push in the `cf push` line.
-
-
-### Wercker
-
-In your `wercker.yml` file, add:
-
-```yaml
-steps:
-  ...
-  - dlapiduz/cloud-foundry-deploy
-  ...
-deploy:
-  steps:
-    - dlapiduz/cloud-foundry-deploy:
-        api: $CF_API
-        username: $CF_USER
-        password: $CF_PASS
-        organization: $CF_ORG
-        space: $CF_SPACE
-        appname: APP
-        domain: DOMAIN
-        hostname: myapp
-        skip_ssl: true
-```
-
-Change `APP` and `DOMAIN` to match your application, and set up the following environment variables in a "deploy target":
-
-| Name    | Value              |
-|---------|--------------------|
-| CF_API  | `api.fr.cloud.gov` |
-| CF_USER | deployer username  |
-| CF_PASS | deployer password  |
-| CF_ORG  | target organization|
-| CF_SPACE| target space       |
-
-You can also add the `alt_appname` attribute to do [Blue-Green deploys](https://docs.cloudfoundry.org/devguide/deploy-apps/blue-green.html).

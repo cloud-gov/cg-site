@@ -2,22 +2,27 @@
 menu:
   docs:
     parent: services
-title: Elasticsearch 2.4
+title: Elasticsearch
 name: "elasticsearch24"
 description: "Elasticsearch version 2.4: a distributed, RESTful search and analytics engine"
-status: "Alpha"
+status: "Beta"
 ---
 
-cloud.gov offers [Elasticsearch](https://www.elastic.co/) 2.4 as a service. **This service is still in Alpha mode**: downtime and data loss is possible.
+cloud.gov offers [Elasticsearch](https://www.elastic.co/) 2.4 as a service.
 
 ## Plans
 
 Plan Name | Description | Price
 --------- | ----------- | -----
-`1x`  | Elasticsearch instance with 1GB of RAM and 1 slice of CPU   | Free in Alpha
-`3x`  | Elasticsearch instance with 3GB of RAM and 1 slice of CPU   | Free in Alpha
-`6x`  | Elasticsearch instance with 6GB of RAM and 1 slice of CPU   | Free in Alpha
-`12x` | Elasticsearch instance with 12GB of RAM and 2 slices of CPU | Free in Alpha
+`1x`  | Elasticsearch instance with 1GB of RAM and 1 slice of CPU   | Will be paid per hour + storage
+`3x`  | Elasticsearch instance with 3GB of RAM and 1 slice of CPU   | Will be paid per hour + storage
+`6x`  | Elasticsearch instance with 6GB of RAM and 1 slice of CPU   | Will be paid per hour + storage
+`12x` | Elasticsearch instance with 12GB of RAM and 2 slices of CPU | Will be paid per hour + storage
+`medium-ha` | Elasticsearch cluster with three master nodes (3584M memory limit, 1792M heap) and three data nodes (3584M memory limit, 1792M heap, 10G disk) | Will be paid per hour + storage
+
+*These instances are available in [sandbox spaces]({{< relref "overview/pricing/free-limited-sandbox.md#sandbox-limitations" >}}).*
+
+Note: The `medium-ha` plan runs multiple Elasticsearch master and data nodes on different machines, so that service is not interrupted by routine platform maintenance. The `1x`, `3x`, `6x`, and `12x` plans all run on a single instance and will be briefly unavailable during platform maintenance; these plans should not be used for production applications.
 
 ## How to create an instance
 
@@ -29,21 +34,23 @@ cf create-service elasticsearch24 1x my-elastic-service
 
 ### Additional notes
 
-Each instance is one node; there is not currently a way to make multi-node instances.
-
 Elasticsearch 2.4 allows for dots in field names. This is a feature that existed
 pre-ElasticSearch 2.0 but was disabled in versions 2.0 to 2.3. Learn more about
 that [here](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/dots-in-names.html).
 
-### Rotating credentials
+### Shard/replica configuration for high availability
 
-You can rotate credentials by creating a new instance and deleting the existing instance. If this is not an option, email [cloud.gov support](mailto:cloud-gov-support@gsa.gov) to request rotating the credentials manually.
+When using a high availability (HA) plan, indexes must be configured with a proper number of [shards and replicas](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/_basic_concepts.html#_shards_amp_replicas) or it is still possible for your instance to experience downtime during platform maintenance.
 
-### Managing backups
+All HA instances default to 3 shards and 2 replicas per index which is the recommended configuration.
+
+## Managing backups
+
+Note: The Elasticsearch service does not currently have the ability to back up and restore your data. Data loss is possible in the event of a catastrophic failure at the infrastructure layer or user error (e.g., accidentally deleting your data).
 
 The Elasticsearch service includes the [AWS Cloud Plugin](https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/cloud-aws.html), which supports snapshot and restore with AWS S3. For detailed instructions, see the [Snapshot and Restore](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-snapshots.html) [Cloud AWS Repository](https://www.elastic.co/guide/en/elasticsearch/plugins/2.2/cloud-aws-repository.html) documentation.
 
-You can also use this simple example. The example assumes you already have an elasticsearch service called `my-elasticsearch` and an app called `my-app`, and that you have [curl](https://curl.haxx.se/), [jq](https://stedolan.github.io/jq/), and the [AWS command line interface](https://aws.amazon.com/cli/) available.
+You can also use this example. The example assumes you already have an Elasticsearch service called `my-elasticsearch` and an app called `my-app`, and that you have [curl](https://curl.haxx.se/), [jq](https://stedolan.github.io/jq/), and the [AWS command line interface](https://aws.amazon.com/cli/) available.
 
 * Create an instance of the [S3 service]({{< relref "docs/services/s3.md" >}}):
 
@@ -51,13 +58,13 @@ You can also use this simple example. The example assumes you already have an el
     cf create-service s3 basic my-s3-bucket
     ```
 
-* Create a [service key](https://docs.cloudfoundry.org/devguide/services/service-keys.html) to access S3 credentials:
+* Create a [service key](https://docs.cloudfoundry.org/devguide/services/service-keys.html) to access Elasticsearch credentials:
 
     ```sh
     cf create-service-key my-elasticsearch-backup my-key
     ```
 
-* Connect to your elasticsearch service using port forwarding. Note: You'll need to leave the `cf ssh` command running and follow the next steps in a different terminal so that you can access the remote elasticsearch instance from your local environment:
+* Connect to your Elasticsearch service using port forwarding. Note: You'll need to leave the [`cf ssh`]({{< relref "docs/apps/using-ssh.md" >}}) command running and follow the next steps in a different terminal so that you can access the remote Elasticsearch instance from your local environment:
 
     ```sh
     es_credentials=$(cf service-key my-elasticsearch my-key | tail -n +3)
@@ -100,11 +107,15 @@ You can also use this simple example. The example assumes you already have an el
     curl -X PUT -u "${es_username}:${es_password}" "localhost:9200/_snapshot/my_s3_repository/my_s3_snapshot"
     ```
 
-* Restore from a snapshot. Note: to restore to a new elasticsearch instance, you'll need to connect to your new instance (see "Connect to your elasticsearch service using port forwarding" above) and add the existing S3 repository (see "Create a snapshot repository" above).
+* Restore from a snapshot. Note: to restore to a new Elasticsearch instance, you'll need to connect to your new instance (see "Connect to your Elasticsearch service using port forwarding" above) and add the existing S3 repository (see "Create a snapshot repository" above).
 
     ```sh
     curl -X POST -u "${es_username}:${es_password}" "localhost:9200/_snapshot/my_s3_repository/my_s3_snapshot/_restore"
     ```
+
+## Rotating credentials
+
+You can rotate credentials by creating a new instance and [deleting the existing instance](https://cli.cloudfoundry.org/en-US/cf/delete-service.html). If this is not an option, email [cloud.gov support](mailto:cloud-gov-support@gsa.gov) to request rotating the credentials manually.
 
 ### The broker in GitHub
 

@@ -21,18 +21,30 @@ After a teammate gets a cloud.gov account, an Org Manager or Space Manager will 
 
 Org Managers can assign roles using the [dashboard](https://dashboard.fr.cloud.gov/) or command line. Space Managers can assign roles using the command line.
 
+
+
+{{% alternatives dashboard="dashboard-org-give-role" cli="cli-org-give-role" %}}
 {{% dashboard %}}
+
+### Organization users
 
 If you're an Org Manager, go to your [dashboard](https://dashboard.fr.cloud.gov/) and click on the name of your org.
 
 ![User roles](/img/user-role-management.png)
 
-On the Organization page, scroll down to the "Organization users" section. This has a list of all the organization users and their organization roles. You can change the user roles by clicking the checkboxes beside their names.
+On the org page, scroll down to "Organization users". This lists the org users and their org roles. Change the roles by clicking the checkboxes beside their names. (If you're the only person in the org, you'll just see "You are the only user in this organization".)
 
-Note: If you are the only person in the organization, you won't see a list of users — you'll just see "You are the only user in this organization".
+### Space users
+
+If you're a Space Manager, go to your [dashboard](https://dashboard.fr.cloud.gov/) and click on the name of your org, then click on the name of your space.
+
+![Space roles](/img/space-user-role-management.png)
+
+On the space page, scroll down to "Space users". This lists the space users and their space roles. Change the roles by clicking the checkboxes beside their names. (If you're the only person in the space, you'll just see "You are the only user in this space".)
+
+To give an existing organization user access to a space, go to your space page, click a space name, and scroll down to "Space users". You can add a person, and then you can give them roles with the checkboxes.
 
 {{% /dashboard %}}
-
 {{% commandline %}}
 
 If you're an Org Manager or Space Manager, here's how to give your teammates roles for your orgs and spaces. You can check whether you're an Org Manager using `cf org-users <org>` and whether you're a Space Manager using `cf space-users <org> <space>`.
@@ -62,11 +74,13 @@ Decide which roles to give them. For a complete list of roles, see [the Cloud Fo
     cf set-org-role <email> <org> OrgAuditor
     ```
 {{% /commandline %}}
+{{% /alternatives %}}
 
 ## Removing a teammate
 
 If you are an Org Manager or Space Manager, you can remove teammates from orgs and spaces respectively.
 
+{{% alternatives dashboard="dashboard-org-remove-role" cli="cli-org-remove-role" %}}
 {{% dashboard %}}
 
 ### Organization Users
@@ -88,7 +102,6 @@ On the Space page, scroll down to the “Space users” section. This has a list
 You can also remove a user from a Space by unchecking all of their space roles.
 
 {{% /dashboard %}}
-
 {{% commandline %}}
 
 If you're an Org Manager or Space Manager, here's how to remove teammates from your orgs and spaces. You can check whether you're an Org Manager using `cf org-users <org>` and whether you're a Space Manager using `cf space-users <org> <space>`.
@@ -156,3 +169,4 @@ To remove teammates from your space, run the following:
     ```
 
 {{% /commandline %}}
+{{% /alternatives %}}

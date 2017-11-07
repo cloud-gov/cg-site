@@ -2,7 +2,7 @@
 menu:
   overview:
     parent: technology
-title: How it helps apps comply with requirements
+title: How cloud.gov helps teams comply with requirements
 weight: 20
 aliases:
   - /docs/intro/security/conforming-federal-security-regulations

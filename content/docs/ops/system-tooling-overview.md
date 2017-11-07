@@ -2,6 +2,7 @@
 menu:
   docs:
     parent: operations
+layout: ops
 title: System tooling overview
 ---
 

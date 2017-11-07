@@ -2,6 +2,7 @@
 menu:
   docs:
     parent: policies
+layout: ops
 title: Service disruption guide
 ---
 
@@ -23,6 +24,7 @@ Examples:
 * A platform-owned component such as the dashboard or brokers is giving errors.
 * Two or more teams using cloud.gov have reported the same non-trivial problem, which indicates it isn't just a problem with a customer application.
 * AWS or another service we depend on is causing problems for our users.
+* Something unexpected went wrong during scheduled maintenance, and it impacts users.
 
 ## How soon to post to Status Page
 
@@ -41,6 +43,10 @@ As soon as possible. Goal: at most 15 minutes after the first cloud.gov team mem
 
 [We have some templates and drafting space in this doc.](https://docs.google.com/document/d/1paDOxlB7GFItrEJ9pqPExApiAd4GeB_SpGR6Ronf4Lw/edit)
 
+### Updates
+
+* If you're writing an update to a post about a new related problem, also update the post summary (the subject line) to make it summarize the whole event.
+
 ## When to close
 
 We close the event when **we believe the disruption is no longer affecting customers**.
@@ -54,3 +60,25 @@ A postmortem is not necessary to close, and it does not have to happen immediate
 ## Ensure a postmortem happens
 
 The person who closes the event should then put a card on the component-owning squad’s board in the urgent lane about writing and posting a postmortem.
+
+For non-security-sensitive work, work to resolve root causes does not have to be completely done before we post the postmortem.
+
+### Checklist for drafting postmortems
+
+We typically use a **What happened** + **What we're doing** structure.
+
+Check your draft against the following questions that customers typically have:
+
+* What part(s) of the system had a problem, in terms that I recognize?
+* How long did the problem last, and at what time?
+* What was the effect on my applications and my own users? (This is important.)
+* How are you going to prevent it from happening again?
+* What actions should I take, if any?
+
+They also have a baseline expectation that we have good answers to the following questions. The answers to these questions might be implied in your explanation, instead of being explicitly addressed:
+
+* Did you notice the problem quickly after it started happening?
+* Did you take appropriate actions after you noticed the problem?
+* Do you know why the problem happened?
+* If it happens again, how are you going to notice faster and respond better next time?
+* Was there anything suspicious from a security perspective, or do you have confidence that all of the cause-and-effect steps were caused by ordinary reasons instead of malicious actors?

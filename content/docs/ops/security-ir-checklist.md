@@ -2,6 +2,7 @@
 menu:
   docs:
     parent: policies
+layout: ops
 title: Security Incident Response checklist
 linktitle: Security IR checklist
 ---

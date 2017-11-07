@@ -2,6 +2,7 @@
 menu:
   docs:
     parent: operations
+layout: ops
 title: Ongoing platform maintenance
 ---
 
@@ -36,6 +37,8 @@ mfa_users=$(aws iam list-virtual-mfa-devices | jq '[.[]| .[].User.UserName]| sor
 echo "{ \"users\": $users, \"mfa_users\": $mfa_users}" | jq '.users - .mfa_users'
 ```
 
+- In [logs.fr.cloud.gov](https://logs.fr.cloud.gov/), go under "Management" -> "Advanced Settings" and check the Kibana [timezone setting](https://www.elastic.co/guide/en/kibana/current/advanced-options.html) (`dateFormat:tz`) - it should be set to `Browser`. If anyone has changed it, change it back to `Browser`.
+
 # Daily maintenance checklist
 
 The tasks on this checklist should be performed each day.
@@ -53,11 +56,13 @@ If you see a way to make this checklist better, just submit a PR to the
 - From the jumpbox in each of our four environments, run `bosh deployments` and verify the stemcell in-use
 for each deployment is current.
 
-- **Note:** The
-[nessus manager deployment](https://github.com/18F/cg-deploy-nessus-manager)
-requires that the System Owner reset the license key after a stemcell upgrade.
+- **Nessus warning:** Before deploying an update that will recreate the Nessus VM, such as updating the stemcell or VM type, be aware that we need to ensure a 10 day waiting period between Nessus VM stemcell upgrades. This is because the
+[Nessus manager deployment](https://github.com/18F/cg-deploy-nessus-manager)
+requires that the System Owner reset the license key after a stemcell upgrade, and the license key can only be reset every [10 days](https://docs.tenable.com/nessus/Content/ResetActivationCode.htm).
 Coordinate with the System Owner to ensure the key is ready to be reset before
-deploying an update that will upgrade the stemcell.
+deploying an update that will upgrade the stemcell. You should also read the
+[Troubleshooting Nessus runbook]({{< relref
+"docs/ops/runbook/troubleshooting-nessus.md">}}).
 
 ## Review and respond to open alerts
 

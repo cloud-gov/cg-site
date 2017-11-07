@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: services
-title: Relational databases (aws-rds)
+title: Relational databases (RDS)
 description: "Persistent, relational databases using Amazon RDS"
 aliases:
   - /docs/apps/databases
@@ -12,22 +12,24 @@ If your application uses relational databases for storage, you can use the AWS R
 
 ## Plans
 
-Plan Name | Description | Price
---------- | ----------- | -----
-`shared-psql`            | Shared PostgresSQL database for prototyping (no sensitive or production data) | Free
-`medium-psql`            | Dedicated medium RDS PostgreSQL DB instance                                   | Will be paid per hour + storage
-`medium-psql-redundant`  | Dedicated redundant medium RDS PostgreSQL DB instance                         | Will be paid per hour + storage
-`large-psql`             | Dedicated large RDS PostgreSQL DB instance                                    | Will be paid per hour + storage
-`large-psql-redundant`   | Dedicated redundant large RDS PostgreSQL DB instance                          | Will be paid per hour + storage
-`shared-mysql`           | Shared MySQL database for prototyping (no sensitive or production data)       | Free
-`medium-mysql`           | Dedicated medium RDS MySQL DB instance                                        | Will be paid per hour + storage
-`medium-mysql-redundant` | Dedicated redundant medium RDS MySQL DB instance                              | Will be paid per hour + storage
-`large-mysql`            | Dedicated large RDS MySQL DB instance                                         | Will be paid per hour + storage
-`large-mysql-redundant`  | Dedicated redundant large RDS MySQL DB instance                               | Will be paid per hour + storage
-`medium-oracle-se2`      | Dedicated medium RDS Oracle SE2 DB | Will be paid per hour + storage
+Plan Name | Description | Software Version | Price
+--------- | ----------- | ------- | -----
+`shared-psql`            | Shared PostgreSQL database for prototyping (no sensitive or production data) | 9.4.7 | Free
+`medium-psql`            | Dedicated medium RDS PostgreSQL DB instance                                  | 9.6.2 |  Will be paid per hour + storage
+`medium-psql-redundant`  | Dedicated redundant medium RDS PostgreSQL DB instance                        | 9.6.2 | Will be paid per hour + storage
+`large-psql`             | Dedicated large RDS PostgreSQL DB instance                                   | 9.6.2 | Will be paid per hour + storage
+`large-psql-redundant`   | Dedicated redundant large RDS PostgreSQL DB instance                         | 9.6.2 | Will be paid per hour + storage
+`shared-mysql`           | Shared MySQL database for prototyping (no sensitive or production data)      | 5.6.27 | Free
+`medium-mysql`           | Dedicated medium RDS MySQL DB instance                                       | 5.6.35 | Will be paid per hour + storage
+`medium-mysql-redundant` | Dedicated redundant medium RDS MySQL DB instance                             | 5.6.35 | Will be paid per hour + storage
+`large-mysql`            | Dedicated large RDS MySQL DB instance                                        | 5.6.35 | Will be paid per hour + storage
+`large-mysql-redundant`  | Dedicated redundant large RDS MySQL DB instance                              | 5.6.35 | Will be paid per hour + storage
+`medium-oracle-se2`      | Dedicated medium RDS Oracle SE2 DB | 12.0.1.2.v8 | Will be paid per hour + storage
 
 ### Pricing
 Shared instances are free. Simple and redundant instances will have pricing per hour and per GB per month. [Learn more about managed service pricing.]({{< relref "overview/pricing/managed-services-cost.md" >}})
+
+Shared instances are available in [sandbox spaces]({{< relref "overview/pricing/free-limited-sandbox.md#sandbox-limitations" >}}).
 
 ## Options
 
@@ -125,7 +127,7 @@ Run `sftp` or `scp` to transfer files to/from an application instance.  You must
 
 For example, to connect to instance 0 of the application with GUID 0745e60b-c7f3-49a7-a6c2-878516a34796:
 
-```
+```sh
 $ sftp -P 2222 cf:0745e60b-c7f3-49a7-a6c2-878516a34796/0@ssh.fr.cloud.gov
 cf:0745e60b-c7f3-49a7-a6c2-878516a34796/0@ssh.fr.cloud.gov's password: ******
 Connected to ssh.fr.cloud.gov.
@@ -144,13 +146,23 @@ dump.
 $ pg_restore --clean --no-owner --no-acl --dbname={database name} backup.pg
 ```
 
+## Backups
+
+For shared plans (`shared-psql` and `shared-mysql`), RDS does not back up your data. For dedicated plans, RDS automatically retains backups for one day, and you can [email support](mailto:cloud-gov-support@gsa.gov) to access that backup if you need to. You can also create manual backups using the [export process](#export) described above. In general, you are responsible for making sure that your backup procedures are adequate for your needs; see CP-9 in the cloud.gov SSP.
+
 ## Encryption
 
-Every RDS instance configured through cloud.gov is [encrypted at rest](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html).
+Every RDS instance configured through cloud.gov is [encrypted at rest](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html). We use the industry standard AES-256 encryption algorithm to encrypt your data on the server that hosts your RDS instance. The RDS then handles authenticating access and decrypting your data, with minimal performance impact and without requiring you to modify your applications.
 
 ## Rotating credentials
 
-You can rotate credentials by creating a new instance and deleting the existing instance. If this is not an option, email [cloud.gov support](mailto:cloud-gov-support@gsa.gov) to request rotating the credentials manually.
+You can rotate credentials by creating a new instance and [deleting the existing instance](https://cli.cloudfoundry.org/en-US/cf/delete-service.html). If this is not an option, email [cloud.gov support](mailto:cloud-gov-support@gsa.gov) to request rotating the credentials manually.
+
+## Version information
+
+Dedicated RDS plans use the latest database version available from AWS RDS GovCloud (US) at the time. Shared plans may use older database versions.
+
+All RDS plans are configured to automatically upgrade to the most recent compatible [minor version](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html) available via AWS RDS GovCloud (US).
 
 ## The broker in GitHub
 

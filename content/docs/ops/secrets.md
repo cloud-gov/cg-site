@@ -2,28 +2,24 @@
 menu:
   docs:
     parent: operations
+layout: ops
 title: Secret key management
 ---
 
 ### Sharing secret keys
 
-For sharing the following types of [sensitive information](https://github.com/18F/open-source-policy/blob/master/practice.md#protecting-sensitive-information) related to cloud.gov, cloud.gov team members must use [Fugacious](https://fugacious.18f.gov/) links, shared over a GSA application (such as GSA Gmail or TTS Slack). The team member must share the Fugacious link only with intended recipient(s) who need to know the sensitive information.
+For sharing the following types of [sensitive information](https://github.com/18F/open-source-policy/blob/master/practice.md#protecting-sensitive-information) related to cloud.gov, cloud.gov team members must use GSA Google Hangouts. The team member must share the information only with intended recipient(s) who need to know the sensitive information. Team members can use the Hangouts screen-sharing feature or verbally share the information.
 
 * Passwords
 * Secret keys
 * Sensitive environment variables
 * Other secret authentication information
 
-The cloud.gov team must comply with 18F's [policies in the Handbook](https://handbook.18f.gov/sensitive-information/#fugacious), with the following additional restrictions (for security and compliance reasons):
-
-* Expiry must be set to 12 hours or fewer
-* Number of opens must be set to two views, per person who needs to open it
-
 ### Maintenance of system secret keys
 
 To meet NIST security control [SC-12 (1)](https://web.nvd.nist.gov/view/800-53/Rev4/control?controlName=SC-12), we maintain the availability of all information on the platform in the event a cryptographic access key is lost or compromised.
 
-Authorized federal staff rotate, encrypt, and backup keys monthly. Privileged users can access the keys only with two-factor authentication and a decryption passphrase. In the rare case that both the keys and the decryption passphrase for the backup are lost or compromised, new keys can be rotated in by authorized federal staff, while maintaining availability of information.
+Authorized federal staff rotate, encrypt, and backup keys yearly. Privileged users can access the keys only with two-factor authentication and a decryption passphrase. In the rare case that both the keys and the decryption passphrase for the backup are lost or compromised, new keys can be rotated in by authorized federal staff, while maintaining availability of information.
 
 #### AWS credentials
 

@@ -29,11 +29,11 @@ cloud.gov is suitable for a wide range of applications, including websites and n
 - Your application uses one stateless process at a time (that can be horizontally scaled).
 - Your application listens to a single port.
 - Your application's dependencies are explicitly declared (such as `requirements.txt` for Python).
-- Your application doesn't rely on local storage for long-term data stores.
-
 ### Optional but recommended
 
 - Your organization can integrate your identity system with cloud.gov over SAML.
+- Your application doesn't rely on the filesystem for storing its state.
+    - An [experimental service]({{< relref "docs/apps/experimental/volume-services.md" >}}) supports filesystem-dependent applications.
 - Your application can follow the [12-Factor App guidelines](https://12factor.net/).
 
 ## Not a good fit
