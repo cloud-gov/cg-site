@@ -89,7 +89,7 @@ All UAA clients and users and associated credentials should be created via the C
     ```sh
     aws-vault exec cloud-gov-govcloud bash
     mkdir -p tmp
-    aws s3 cp s3://cloud-gov-varz/cf.main.yml tmp/cf.main.yml.enc govcloud
+    aws s3 cp s3://cloud-gov-varz/cf.main.yml tmp/cf.main.yml.enc
     ```
 
 1. Get the encryption passphrase.
