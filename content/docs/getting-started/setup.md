@@ -10,7 +10,7 @@ If you have [access to cloud.gov]({{< relref "accounts.md" >}}), here's how to l
 
 ## Log into the dashboard (web interface)
 
-The dashboard gives you web-based access to common tasks: [**`https://dashboard.fr.cloud.gov/`**](https://dashboard.fr.cloud.gov/)
+The dashboard gives you web-based access to common tasks: [**https://dashboard.fr.cloud.gov/**](https://dashboard.fr.cloud.gov/)
 
 
 ## Set up the command line
