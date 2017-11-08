@@ -30,6 +30,34 @@ If you need to view/update secrets:
 
 The examples below use `--profile govcloud`, but replace with the name of your profile.
 
+#### Install aws-vault for AWS credentials
+`aws-vault` secures credentials locally and generates temporary credentials to provide an additional layer of security.  To install `aws-vault` use the brew command:
+```sh
+brew cask install aws-vault
+aws-vault add cloud-gov-govcloud
+```
+
+#### Configure MFA for aws-vault
+All operators should have MFA enabled, which can be viewed under `Services -> IAM -> Users -> firstname.lastname -> Security Credentials`.  This MFA device needs to be added to the Amazon configuration to enable short lived tokens:
+
+```sh
+echo '[profile cloud-gov-govcloud]' >> ~/.aws/config
+echo 'region = us-gov-west-1' >> ~/.aws/config
+echo 'mfa_serial = arn:aws-us-gov:iam::1234567890:mfa/firstname.lastname' >> ~/.aws/config
+```
+
+#### Executing a command with short lived credentials
+You can execute any system command with short lived credentials using the `aws-vault exec` command:
+
+```sh
+aws-vault exec cloud-gov-govcloud bash
+```
+
+Running `env | grep AWS` will show you a new set of credentials which are different from the primary IAM role credentials, as they are short lived and issued at runtime.  This means that if a malicious script or program attempts to read `~/.aws/credentials` or `~/.aws/config` all they will be unable to retrieve the primary credentials.
+
+## Next Steps
+Once this is complete, operators can provision profiles which use only specific resources, or specific permissions such as read only.  This scopes the role of the temporary credentials to further reduce the attack surface.
+
 #### Generate and upload keys
 
 Use [this script](https://github.com/18F/cg-pipeline-tasks/blob/master/generate_key.sh) to generate keys and upload them as access keys to AWS EC2 and an encrypted backup to AWS S3. You just need to provide a `BUCKET` destination for the backup and a decryption `PASSPHRASE`. In your terminal:
