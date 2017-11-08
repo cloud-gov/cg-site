@@ -26,9 +26,7 @@ Authorized federal staff rotate, encrypt, and backup keys yearly. Privileged use
 If you need to view/update secrets:
 
 1. Ask in [#cg-platform](https://gsa-tts.slack.com/messages/cg-platform/) for an account to read/write from the S3 buckets.
-1. Set up a [named profile](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-multiple-profiles) for [the AWS CLI](https://aws.amazon.com/cli/).
-
-The examples below use `--profile govcloud`, but replace with the name of your profile.
+1. Setup aws-vault
 
 #### Install aws-vault for AWS credentials
 `aws-vault` secures credentials locally and generates temporary credentials to provide an additional layer of security.  To install `aws-vault` use the brew command:
@@ -89,8 +87,9 @@ All UAA clients and users and associated credentials should be created via the C
 1. Download the credentials file.
 
     ```sh
+    aws-vault exec cloud-gov-govcloud bash
     mkdir -p tmp
-    aws s3 cp s3://cloud-gov-varz/cf.main.yml tmp/cf.main.yml.enc --profile govcloud
+    aws s3 cp s3://cloud-gov-varz/cf.main.yml tmp/cf.main.yml.enc govcloud
     ```
 
 1. Get the encryption passphrase.
@@ -149,7 +148,8 @@ All UAA clients and users and associated credentials should be created via the C
 1. Copy the new file up to S3.
 
     ```sh
-    aws s3 cp tmp/cf.main.yml.enc-new s3://cloud-gov-varz/cf.main.yml --profile govcloud --sse AES256
+    aws-vault exec cloud-gov-govcloud bash
+    aws s3 cp tmp/cf.main.yml.enc-new s3://cloud-gov-varz/cf.main.yml --sse AES256
     ```
 
 1. Clean up the secrets.
