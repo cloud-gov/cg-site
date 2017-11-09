@@ -129,18 +129,18 @@ The cloud.gov continuous monitoring strategy also includes manual tasks that are
 
 In order to maintain operational visibility, the cloud.gov continuous monitoring program provides reports to the AOs at least monthly. These deliverables include:
 
-* Condition of previous assessment
-* Weakness identified since the last assessment
-* Known or suspected testing/continuous monitoring failure
-* Control implementation that has changed since last assessment
-* Newly discovered vulnerability, zero-day attack, or exploit
-* Recommendation of Authorizing Official or Organization
+* Condition of previous findings
+* Weaknesses identified since the last assessment
+* Known or suspected testing/continuous monitoring failures
+* Newly discovered vulnerabilities, zero-day attacks, or exploits
 
 ### Change control
 
 cloud.gov is a dynamic system in a constant state of change. Configuration management and change control processes help maintain the secure baseline configuration of the cloud.gov architecture.  Routine day-to-day changes are managed through the cloud.gov change management process described in the [configuration management plan]({{< relref "docs/ops/configuration-management.md" >}}).
 
 cloud.gov notifies the AO with a minimum of 30 days before implementing any planned major significant changes, including an analysis of the potential security impact.
+
+See the [significant change rubric](#appendix-significant-change-rubric) for how we determine whether a change is routine or significant.
 
 ### Incident response
 
@@ -156,4 +156,102 @@ As described in the FedRAMP requirements, cloud.gov must provide monthly reports
 
 We use our [Continuous Monitoring Checklist Template](https://github.com/18F/cg-product/blob/master/ConMonChecklist.md) to help us deliver these monthly updates.
 
-On a monthly basis, Authorizing Officials will be monitoring these deliverables to ensure that cloud.gov maintains an appropriate risk posture – which typically means the risk posture stays at the level of authorization or improves. As a part of any authorization letter, cloud.gov is required to maintain a continuous monitoring program. This analysis on a monthly basis leads to a continuous authorization decision every month by Authorizing Officials.
+On a monthly basis, Authorizing Officials will be monitoring these deliverables to ensure that cloud.gov maintains an appropriate risk posture -– which typically means the risk posture stays at the level of authorization or improves. As a part of any authorization letter, cloud.gov is required to maintain a continuous monitoring program. This analysis on a monthly basis leads to a continuous authorization decision every month by Authorizing Officials.
+
+## Appendix: Significant change rubric
+
+We follow this rubric for changes before they are deployed to production. This is part of the [Security Impact Analysis step of our Feature Lifecycle](https://github.com/18F/cg-product/blob/master/FeatureLifecycle.md). This rubric supports controls including CA-6 (c), CM-2 (1), and RA-3.
+
+### When no discussion or SCR (Significant Change Request) is needed for a change
+
+*No timeline required.*
+
+The change:
+
+* Fits our existing SSP control descriptions, diagrams, and attachments, as well as our policies and procedures (including our [configuration management plan]({{< relref "docs/ops/configuration-management.md" >}})). No updates to the SSP would be necessary to reflect the change.
+
+This includes:
+
+* Integrating routine updates to existing upstream open source system components, including updates that resolve CVEs, fix bugs, add new features, and/or update the operating system.
+* Routine updates to existing open source components that we maintain, such as fixing bugs and improving security and reliability.
+* Improvements to the configuration of services and system components.
+* Improving our implementations in excess of the minimum requirements described in our SSP control descriptions.
+* Using a new feature of an approved external service that we already use (where the feature doesn’t change our SSP or risk posture).
+
+Examples:
+
+* BOSH stemcell update that fixes CVEs
+* Buildpack updates that don’t change security model
+* User documentation updates
+* Most dashboard updates (not major changes that may have security impact)
+* Configuring platform alerts to be more specific or precise
+* Adding platform alerts
+* Adding automated tests to any component
+* Adjusting configuration or number of platform “virtual machine” components, such as disk size (not major changes to configuration that may have security impact, such as a whole different operating system)
+* An upstream open source component integrates a new dependency
+
+### When a change should be discussed with our JAB TRs (Technical Representatives)
+
+*Start the discussion when we identify that we want to make this kind of change. Must be discussed at least one week ahead of planned change.*
+
+The change fits one or more of the following criteria:
+
+* Requires minor clarifications to SSP control descriptions, diagrams, or attachments - not changing the substance of implementation of a requirement.
+* Relaxes requirements in our policies and procedures.
+* Adds or removes a point of contact for our system (a named person in our SSP, such as a new System Owner).
+
+This includes:
+
+* Changes to some aspect of our external system boundary, such as ports, that don’t change the risk posture.
+* Removing use of an external service.
+* Minor updates (that don’t have security impact) to roles and authorized privileges listed in the Types of Users table.
+* Removing internal dependencies. (In other words, simplifying a diagram.)
+* Exposing a new brokered service or service plan for customers.
+
+Examples:
+
+* Changing a substantial aspect of our logging that isn’t required by our SSP.
+* Using an additional aspect of an existing protocol that we already use.
+* Changing a substantial aspect of how we manage free trial (sandboxes) spaces.
+* Adding an additional service plan to an AWS service that we already broker.
+* Adding a high-availability plan to a service that cloud.gov operates.
+
+### When a change requires an approved SCR but not 3PAO testing
+
+*SCR must be submitted at least 30 days ahead of planned change.*
+
+The change:
+
+* Would require changing the SSP in a non-trivial way (such as updating the control descriptions, diagrams, tables, or attachments to reflect the new or changed functionality), but it primarily uses existing 3PAO-tested features in AWS or cloud.gov to implement the change.
+
+This includes:
+
+* Integrating a new external service that has a FedRAMP Moderate or higher authorization, using an existing integration system.
+* Adding a new component to the system inside the authorization boundary that doesn’t substantially change the risk posture.
+* Integrating a new open source codebase that we’ve reviewed according to our procedures.
+
+Example:
+
+* Integrating a new service that is FedRAMP Authorized in AWS GovCloud.
+
+### When a change requires both an approved SCR and 3PAO testing
+
+*SCR must be submitted at least 30 days ahead of planned change.*
+
+The change fits one or more of the following criteria:
+
+* Changes the system boundary by adding a new component that substantially changes the risk posture.
+* Changes our risk posture in a major way not reflected in our SSP.
+
+This includes:
+
+* Integrating a new external service that does not have a FedRAMP Moderate or higher authorization.
+* Integrating a new external service using a new integration system.
+* Adding new brokered services that we operate.
+* Exposing new services on new domains or IP ranges.
+* Modifications to cryptographic modules or services.
+
+Examples:
+
+* Adding a built-in Continuous Integration / Continuous Deployment service (such as providing brokered Concourse to tenant applications).
+* Giving customer agencies a way to restrict network requests from agency staff to a specific set of IP origins, to support their TIC compliance.
