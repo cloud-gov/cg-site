@@ -7,7 +7,9 @@
 .bgcolor-ltputty {
   background-color: #f1f1f1;
 }
-
+.bgcolor-medputty {
+  background-color: #e7e9eb;
+}
 .hero {
   padding-top: 60px;
   padding-bottom: 150px;
@@ -44,22 +46,22 @@
   line-height: 1;
   text-transform: uppercase;
   max-width: 540px;
-  padding-top: 115px;
+  padding-top: 50px;
 }
-.quickstart .step h2:before {
+.step h2:before {
   content: '';
   display: block;
-  padding-bottom: 40px;
+  padding-bottom: 80px;
   margin-bottom: 40px;
   /*border-bottom: 1px solid #28517b;*/
   width: 60px;
   height: 60px;
   border-bottom: 2px solid #28517b;
 }
-.quickstart .step.first h2:before {
+.step.first h2:before {
   content: '1';
 }
-.quickstart .step.second h2:before {
+.step.second h2:before {
   content: '2';
 }
 .step p {
@@ -67,4 +69,61 @@
   font-size: 18px;
   max-width: 480px !important;
   padding-bottom: 30px;
+}
+.quickstart .eyebrow {
+  display: block;
+  padding: 12px 0;
+  font-size: 12px;
+  font-weight: 500 !important;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.step h3 {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -.015em;
+}
+.content-tutorials {
+  margin: 50px 0;
+  display: flex;
+}
+.content-tutorials section {
+  width: 100%;
+}
+.content-tutorials section article.usa-width-one-third {
+  padding: 50px 0;
+}
+.content-tutorials section article iframe {
+  padding: 10px;
+  background-color: #fff;
+  margin-bottom: 30px;
+}
+.content-tutorials section article.usa-width-one-third h4 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.content-tutorials section article.usa-width-one-third p,
+.content-tutorials section article.usa-width-one-third ul li {
+  font-size: 13px;
+  line-height: 1.5;
+  padding: 0 30px 0 0;
+  margin: 0;
+}
+.content-tutorials section article.usa-width-one-third p {
+  margin-bottom: 15px;
+}
+.content-tutorials section article.usa-width-one-third ul {
+  padding: 0;
+  list-style-type: none;
+}
+.content-tutorials section article.usa-width-one-third ul li a {
+  display: block;
+  padding: 13px 0 14px 0;
+  border-bottom: 1px solid #aaa;
+}
+.content-tutorials section article.usa-width-one-third ul li:first-of-type a {
+  border-top: 1px solid #aaa;
+
 }
