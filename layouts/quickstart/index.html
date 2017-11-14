@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+  {{ partial "head-landing.html" . }}
+
+  <body>
+
+    {{ partial "header.html" . }}
+
+    <!-- <div class="header-view">
+      <div class="usa-grid">
+        <h1><a class="link-textblack" href="/updates/">Updates</a></h1>
+      </div>
+    </div> -->
+
+    <main class="quickstart">
+
+      <div class="usa-content bgcolor-deepblue">
+        <div class="usa-grid">
+          <section class="hero">
+            <h1>Try cloud.gov for free</h1>
+            <p>
+              Follow this quick start guide to create an account and deploy a sample app in your own free sandbox.
+            </p>
+          </section>
+
+
+
+          <!-- <div class="usa-width-two-thirds panel content-text">
+            <header class="post-header">
+              <span class="panel-new-date">{{ .Date.Format "Jan 2, 2006" }}{{ if .Params.author }} • {{ .Params.author }}{{ end }}{{ if .Params.meta }} • {{ .Params.meta }}{{ end }}</span>
+            </header>
+            <h1>{{ .Title }}</h1>
+
+            {{ if .Params.image }}
+            <div class="page--banner" style="background-image: url({{ .Params.image}});"></div>
+            {{ end }}
+
+            {{ .Content }}
+         </div> -->
+
+        </div>
+      </div>
+
+      <div class="usa-content bgcolor-ltbluegrey">
+        <div class="usa-grid">
+          <section class="step first">
+            <h2>Get trial access and a free sandbox account</h2>
+            <p>
+              Federal employees and contractors with an email ending in .mil, .gov, or .fed.us can obtain a free sandbox account. To register, you’ll need access to your email and a smartphone with Google Authenticator installed.            </p>
+          </section>
+
+        </div>
+      </div>
+
+      <div class="usa-content bgcolor-ltputty">
+        <div class="usa-grid">
+          <section class="step second">
+            <h2>Go build in your sandbox</h2>
+            <p>
+              Follow any of the tutorials below to launch your own web application from your sandbox. You’ll need your cloud.gov account and some familiarity with Windows Powershell or Mac/Linux terminal.
+            </p>
+          </section>
+
+        </div>
+      </div>
+
+    </main>
+
+
+    {{ partial "footer.html" . }}
+    {{ partial "javascript.html" . }}
+
+  </body>
+</html>
