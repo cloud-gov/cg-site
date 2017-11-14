@@ -61,6 +61,14 @@ You can also view several dashboards that present different visualizations of yo
 
 These visualizations are provided via Kibana, which has a [user guide](https://www.elastic.co/guide/en/kibana/current/index.html) that explains more about how to use it and customize your views.
 
+### Structured logging
+
+If your application logs are output in JSON, they will be easily searchable in [logs.fr.cloud.gov](https://logs.fr.cloud.gov/). Some tools that make this easier:
+
+- Node: [bunyan](https://www.npmjs.com/package/bunyan)
+- Python: [python-json-logger](https://github.com/madzak/python-json-logger)
+- Ruby: [log_formatter](https://rubygems.org/gems/log_formatter/)
+
 ## How to automatically copy your logs elsewhere
 
 If you want to set up your own storage for your application logs, you can set up [a "log drain" service](https://docs.cloudfoundry.org/devguide/services/log-management.html) that sends the logs to S3 or your preferred location.
