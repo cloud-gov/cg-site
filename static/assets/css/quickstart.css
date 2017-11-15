@@ -1,3 +1,4 @@
+
 .bgcolor-deepblue {
   background-color: #1c304a;
 }
@@ -10,13 +11,19 @@
 .bgcolor-medputty {
   background-color: #e7e9eb;
 }
+.bgcolor-deepblue,
+.bgcolor-ltbluegrey,
+.bgcolor-ltputty,
+.bgcolor-medputty {
+  /*padding-left: 20px;
+  padding-right: 20px;*/
+}
 .hero {
   padding-top: 60px;
   padding-bottom: 150px;
   background: url(/img/peaks.svg) right bottom no-repeat;
   background-size: 1040px 148px;
 }
-
 .hero h1 {
   font-size: 72px;
   font-weight: 800;
@@ -36,7 +43,7 @@
 }
 .step {
   padding-top: 50px;
-  padding-bottom: 150px;
+  padding-bottom: 100px;
 }
 .step h2 {
   color: #28517b;
@@ -63,6 +70,9 @@
 }
 .step.second h2:before {
   content: '2';
+}
+.step.third h2:before {
+  content: '3';
 }
 .step p {
   font-family: '18Franklin-webfont', system, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; /* $font-sans */
@@ -115,49 +125,57 @@
   line-height: 1.1;
   letter-spacing: -.015em;
 }
-.content-tutorials {
-  margin: 50px 0;
+.content-resources {
+  padding: 50px 0;
   display: flex;
 }
-.content-tutorials section {
+.content-resources section {
   width: 100%;
 }
-.content-tutorials section article.usa-width-one-third {
-  padding: 50px 0;
+.content-resources section article.usa-width-one-third {
+  padding: 50px 0 0;
   min-width: 300px;
 }
-.content-tutorials section article iframe {
+.content-resources section article iframe {
   padding: 10px;
   background-color: #fff;
   margin-bottom: 30px;
 }
-.content-tutorials section article.usa-width-one-third h4 {
+.content-resources section article.usa-width-one-third h4 {
   font-size: 18px;
   font-weight: 600;
 }
 
-.content-tutorials section article.usa-width-one-third p,
-.content-tutorials section article.usa-width-one-third ul li {
+.content-resources section article.usa-width-one-third p,
+.content-resources section article.usa-width-one-third ul li {
   font-size: 13px;
   line-height: 1.5;
   padding: 0 30px 0 0;
   margin: 0;
 }
-.content-tutorials section article.usa-width-one-third p {
+.content-resources section article.usa-width-one-third p {
   margin-bottom: 15px;
 }
-.content-tutorials section article.usa-width-one-third ul {
+.content-resources section article.usa-width-one-third ul {
   padding: 0;
   list-style-type: none;
 }
-.content-tutorials section article.usa-width-one-third ul li a {
+.content-resources section article.usa-width-one-third ul li a {
   display: block;
   padding: 13px 30px 14px 0;
   border-bottom: 1px solid #aaa;
   background: url(/img/angle-arrow-right.svg) right center no-repeat;
   background-size: 7px 12px;
 }
-.content-tutorials section article.usa-width-one-third ul li:first-of-type a {
+.content-resources section article.usa-width-one-third ul li:first-of-type a {
   border-top: 1px solid #aaa;
-
+}
+.step .usa-button {
+  display: block;
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  padding: 22px 60px 23px 20px;
+  text-align: left;
+  background: #1c304a url(/img/angle-arrow-right-white.svg) right center no-repeat;
+  background-size: 21px 12px;
 }
