@@ -163,14 +163,15 @@
 .content-resources section article.usa-width-one-third ul li a {
   display: block;
   padding: 13px 30px 14px 0;
-  border-bottom: 1px solid #aaa;
+  border-bottom: 1px solid #ccc;
   background: url(/img/angle-arrow-right.svg) right center no-repeat;
   background-size: 7px 12px;
 }
 .content-resources section article.usa-width-one-third ul li:first-of-type a {
-  border-top: 1px solid #aaa;
+  border-top: 1px solid #ccc;
 }
 .step .usa-button {
+  /*color: #000;*/
   display: block;
   margin: 0 0 10px 0;
   font-size: 16px;
