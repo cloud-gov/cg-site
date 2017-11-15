@@ -70,6 +70,37 @@
   max-width: 480px !important;
   padding-bottom: 30px;
 }
+@media all and (min-width: 480px) {
+  .step form .form-wrapper {
+    /*border: 1px solid #f00;*/
+    display: flex;
+  }
+}
+.step form {
+  margin-top: 20px;
+}
+.step form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.step form input {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  height: 60px;
+  border: none;
+  box-shadow: none;
+}
+.step form input[type=text] {
+  max-width: 480px !important;
+  display: inline-block;
+}
+.step form input[type=submit] {
+  display: inline-block;
+  background-color: #f53;
+  color: #000;
+}
 .quickstart .eyebrow {
   display: block;
   padding: 12px 0;
@@ -93,6 +124,7 @@
 }
 .content-tutorials section article.usa-width-one-third {
   padding: 50px 0;
+  min-width: 300px;
 }
 .content-tutorials section article iframe {
   padding: 10px;
@@ -120,8 +152,10 @@
 }
 .content-tutorials section article.usa-width-one-third ul li a {
   display: block;
-  padding: 13px 0 14px 0;
+  padding: 13px 30px 14px 0;
   border-bottom: 1px solid #aaa;
+  background: url(/img/angle-arrow-right.svg) right center no-repeat;
+  background-size: 7px 12px;
 }
 .content-tutorials section article.usa-width-one-third ul li:first-of-type a {
   border-top: 1px solid #aaa;
