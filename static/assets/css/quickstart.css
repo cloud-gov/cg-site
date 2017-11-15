@@ -18,14 +18,20 @@
   /*padding-left: 20px;
   padding-right: 20px;*/
 }
+.bgcolor-deepblue .usa-grid {
+  padding-left: 0;
+  padding-right: 0;
+}
 .hero {
   padding-top: 60px;
   padding-bottom: 150px;
+  padding-left: 16px;
+  padding-right: 16px;
   background: url(/img/peaks.svg) right bottom no-repeat;
   background-size: 1040px 148px;
 }
 .hero h1 {
-  font-size: 72px;
+  font-size: 54px;
   font-weight: 800;
   max-width: 500px;
   color: #00aee3;
@@ -47,7 +53,7 @@
 }
 .step h2 {
   color: #28517b;
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 300;
   letter-spacing: -.02em;
   line-height: 1;
@@ -79,12 +85,6 @@
   font-size: 18px;
   max-width: 480px !important;
   padding-bottom: 30px;
-}
-@media all and (min-width: 480px) {
-  .step form .form-wrapper {
-    /*border: 1px solid #f00;*/
-    display: flex;
-  }
 }
 .step form {
   margin-top: 20px;
@@ -145,7 +145,6 @@
   font-size: 18px;
   font-weight: 600;
 }
-
 .content-resources section article.usa-width-one-third p,
 .content-resources section article.usa-width-one-third ul li {
   font-size: 13px;
@@ -170,6 +169,10 @@
 .content-resources section article.usa-width-one-third ul li:first-of-type a {
   border-top: 1px solid #ccc;
 }
+.usa-grid.content-resources {
+  padding-left: 16px;
+  padding-right: 16px;
+}
 .step .usa-button {
   /*color: #000;*/
   display: block;
@@ -179,4 +182,16 @@
   text-align: left;
   background: #1c304a url(/img/angle-arrow-right-white.svg) right center no-repeat;
   background-size: 21px 12px;
+}
+
+@media all and (min-width: 480px) {
+  .step form .form-wrapper {
+    display: flex;
+  }
+  .hero h1 {
+    font-size: 72px;
+  }
+  .step h2 {
+    font-size: 48px;
+  }
 }
