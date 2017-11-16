@@ -57,9 +57,15 @@ This will create a cloud.gov service account and make the credentials available 
 
 After you create one of these service keys, you will see a new "user" in your org and space with a name made of 36 letters, numbers, and dashes as its unique identifier, similar to `f6ab4cfb-6e6c-4b10-8585-3f39e740905c`. In your event logs, its actions will display as actions by `service-account@cloud.gov`.
 
-These credentials can be used with the `cf login` command in automated deployment scripts.
+These credentials can be used with the `cf auth` command in automated deployment scripts.
 
-## Updating/Rotating credentials
+### If you can't find your service keys
+
+<!-- this description matches on cloud-gov-identity-provider.md and cloud-gov-service-account.md -->
+
+If you're trying to retrieve credentials for a service instance created before July 7, 2017, those old service instances had a different way of retrieving credentials. You can check this by running `cf services` to get your service instance name and then running `cf service service-instance-name` -- if the service information includes a link to `fugacious.18f.gov`, it's an old service instance. See [this post for changes]({{< relref "updates/2017-07-07-changes-to-credentials-broker.md" >}}) -- your best next step is to delete the old service instance and create a new one.
+
+### Updating credentials
 
 Service accounts are subject to the same password expiration policies as other cloud.gov accounts. If you see an error like:
 
@@ -68,42 +74,20 @@ Error Code: 403
 Raw Response: {"error":"access_denied","error_description":"Your current password has expired. Please reset your password."}
 ```
 
-Then you'll need to delete the service account, recreate it, and update the username/password in your deployment scripts. For example:
+Then you'll need to delete the existing service key, recreate it, and update the username/password in your deployment scripts. For example:
 
 ```
-cf delete-service my-service-account
-cf create-service cloud-gov-service-account space-auditor my-service-account
-cf service-key my-service-account my-service-key
+cf delete-service-key my-service-account my-service-key
+cf create-service-key my-service-account my-service-key
+cf service-key my-service-account my-service-account
 ```
 
-The last command will return a username/password pair, that you can use, like this:
-
-```
-{
- "password": "oYasdfliaweinasfdliecV",
- "username": "deadbeed-aabb-1234-feha0987654321000"
-}
-```
-
-
-
-
-
-
-
-### If you can't find your service keys
-
-<!-- this description matches on cloud-gov-identity-provider.md and cloud-gov-service-account.md -->
-
-If you're trying to retrieve credentials for a service instance created before July 7, 2017, those old service instances had a different way of retrieving credentials. You can check this by running `cf services` to get your service instance name and then running `cf service service-instance-name` -- if the service information includes a link to `fugacious.18f.gov`, it's an old service instance. See [this post for changes]({{< relref "updates/2017-07-07-changes-to-credentials-broker.md" >}}) -- your best next step is to delete the old service instance and create a new one.
+The last command will return the service account username/password pair. These steps can be used at any time to update/rotate credentials for service accounts.
 
 ## More information
 
 To use this service, see [continuous deployment]({{< relref "docs/apps/continuous-deployment.md" >}}).
 
-### Rotating credentials
-
-The service account service creates unique cloud.gov credentials for each service key. To rotate credentials associated with a service key, [delete](https://docs.cloudfoundry.org/devguide/services/service-keys.html#delete) and recreate the service key.
 
 ### The broker in GitHub
 
