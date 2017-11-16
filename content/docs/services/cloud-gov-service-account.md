@@ -59,12 +59,6 @@ After you create one of these service keys, you will see a new "user" in your or
 
 These credentials can be used with the `cf auth` command in automated deployment scripts.
 
-### If you can't find your service keys
-
-<!-- this description matches on cloud-gov-identity-provider.md and cloud-gov-service-account.md -->
-
-If you're trying to retrieve credentials for a service instance created before July 7, 2017, those old service instances had a different way of retrieving credentials. You can check this by running `cf services` to get your service instance name and then running `cf service service-instance-name` -- if the service information includes a link to `fugacious.18f.gov`, it's an old service instance. See [this post for changes]({{< relref "updates/2017-07-07-changes-to-credentials-broker.md" >}}) -- your best next step is to delete the old service instance and create a new one.
-
 ### Updating credentials
 
 Service accounts are subject to the same password expiration policies as other cloud.gov accounts. If you see an error like:
@@ -83,6 +77,12 @@ cf service-key my-service-account my-service-account
 ```
 
 The last command will return the service account username/password pair. These steps can be used at any time to update/rotate credentials for service accounts.
+
+### If you can't find your service keys
+
+<!-- this description matches on cloud-gov-identity-provider.md and cloud-gov-service-account.md -->
+
+If you're trying to retrieve credentials for a service instance created before July 7, 2017, those old service instances had a different way of retrieving credentials. You can check this by running `cf services` to get your service instance name and then running `cf service service-instance-name` -- if the service information includes a link to `fugacious.18f.gov`, it's an old service instance. See [this post for changes]({{< relref "updates/2017-07-07-changes-to-credentials-broker.md" >}}) -- your best next step is to delete the old service instance and create a new one.
 
 ## More information
 
