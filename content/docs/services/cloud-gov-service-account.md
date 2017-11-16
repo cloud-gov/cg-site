@@ -44,11 +44,52 @@ cf create-service-key my-service-account my-service-key
 cf service-key my-service-account my-service-key
 ```
 
+The last command will return a username/password pair, that you can use, like this:
+
+```
+{
+ "password": "oYasdfliaweinasfdliecV",
+ "username": "deadbeed-aabb-1234-feha0987654321000"
+}
+```
+
 This will create a cloud.gov service account and make the credentials available to you via a service key. Keep these credentials secure. If they’re compromised, the way to invalidate the credentials is to delete the service key (you can create another, and it will have a fresh set of credentials). Each service key that you bind to your instance creates a separate service account with different credentials; you can create as many service keys per instance as you like. <!-- this advice should match on /docs/services/cloud-gov-service-account/ + /docs/services/cloud-gov-identity-provider/ -->
 
 After you create one of these service keys, you will see a new "user" in your org and space with a name made of 36 letters, numbers, and dashes as its unique identifier, similar to `f6ab4cfb-6e6c-4b10-8585-3f39e740905c`. In your event logs, its actions will display as actions by `service-account@cloud.gov`.
 
 These credentials can be used with the `cf login` command in automated deployment scripts.
+
+## Updating/Rotating credentials
+
+Service accounts are subject to the same password expiration policies as other cloud.gov accounts. If you see an error like:
+
+```
+Error Code: 403
+Raw Response: {"error":"access_denied","error_description":"Your current password has expired. Please reset your password."}
+```
+
+Then you'll need to delete the service account, recreate it, and update the username/password in your deployment scripts. For example:
+
+```
+cf delete-service my-service-account
+cf create-service cloud-gov-service-account space-auditor my-service-account
+cf service-key my-service-account my-service-key
+```
+
+The last command will return a username/password pair, that you can use, like this:
+
+```
+{
+ "password": "oYasdfliaweinasfdliecV",
+ "username": "deadbeed-aabb-1234-feha0987654321000"
+}
+```
+
+
+
+
+
+
 
 ### If you can't find your service keys
 
