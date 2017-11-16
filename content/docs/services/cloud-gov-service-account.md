@@ -59,7 +59,7 @@ After you create one of these service keys, you will see a new "user" in your or
 
 These credentials can be used with the `cf auth` command in automated deployment scripts.
 
-### Updating credentials
+### Rotating credentials
 
 Service accounts are subject to the same password expiration policies as other cloud.gov accounts. If you see an error like:
 
