@@ -47,6 +47,12 @@
   max-width: 480px !important;
   padding-bottom: 30px;
 }
+.accordion-wrapper {
+  padding: 0 0 60px;
+  display: block;
+  height: auto;
+  overflow: hidden;
+}
 .step {
   padding-top: 50px;
   padding-bottom: 100px;
@@ -57,7 +63,7 @@
   font-weight: 300;
   letter-spacing: -.02em;
   line-height: 1;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   max-width: 540px;
   padding-top: 50px;
 }
@@ -83,7 +89,7 @@
 .step p {
   font-family: '18Franklin-webfont', system, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; /* $font-sans */
   font-size: 18px;
-  max-width: 480px !important;
+  /*max-width: 480px !important;*/
   padding-bottom: 30px;
 }
 .step form {
@@ -135,6 +141,8 @@
 .content-resources section article.usa-width-one-third {
   padding: 50px 0 0;
   min-width: 300px;
+  width: calc(33%);
+  margin-right: 0;
 }
 .content-resources section article iframe {
   padding: 10px;
@@ -182,6 +190,7 @@
   text-align: left;
   background: #1c304a url(/img/angle-arrow-right-white.svg) right center no-repeat;
   background-size: 21px 12px;
+  max-width: 480px;
 }
 
 @media all and (min-width: 480px) {
