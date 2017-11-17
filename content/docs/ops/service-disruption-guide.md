@@ -38,8 +38,14 @@ As soon as possible. Goal: at most 15 minutes after the first cloud.gov team mem
 
 ### Drafting and approval
 
-* **If you're platform squad:** Draft and ping for comms help (Bret, Britta), but if they aren’t available within 5 minutes, just post it.
-* **If you're not:** Draft and ask platform squad for technical check before posting.
+Log into the [status page management console](https://manage.statuspage.io/pages/swcbylb1c30f) and create an incident post.
+
+To draft the post: summarize the observable symptoms and the state of the incident; don't try to explain the detailed internal state/cause in detail! Use active voice as much as you can (*"we discovered x"* rather than *"x was discovered"*).
+
+* **If you're platform squad:** Draft and ping a relevant team member for comms help, but if they aren’t available within 5 minutes, post it.
+* **If you're not platform squad:** Draft and ask platform squad for technical check before posting.
+
+If there are user-visible problems, set the status of appropriate components.
 
 [We have some templates and drafting space in this doc.](https://docs.google.com/document/d/1paDOxlB7GFItrEJ9pqPExApiAd4GeB_SpGR6Ronf4Lw/edit)
 
@@ -54,6 +60,7 @@ We close the event when **we believe the disruption is no longer affecting custo
 The person with Status Page responsibility is responsible for asking “any objections to closing it?” and closing it if none.
 
 * It's helpful but not required to write something that’s informative about the resolution as a closing message.
+* Ensure that the component status is set appropriately.
 
 A postmortem is not necessary to close, and it does not have to happen immediately after closing.
 
