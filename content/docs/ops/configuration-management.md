@@ -50,7 +50,7 @@ is encouraged and qualifies as a review. Review should include assessment of arc
 
 Before we put a new repository into production:
 
-* Give it a name starting with `cg-` or `cf-` (to help us identify our work, unless we have a good reason to name it something else).
+* Give it a name starting with `cg-` or `cf-` (to make clear that it's part of our work, unless we have a good reason to name it something else).
 * [Add `LICENSE`, `CONTRIBUTING`, and `README` files](https://github.com/18F/open-source-policy/blob/master/practice.md#how-to-license-18f-repos) (to support open source reuse of our work).
 * Set up [Code Climate](https://docs.codeclimate.com/docs/github#pull-requests) (SI-3).
 * Configure a [protected master branch](https://help.github.com/articles/about-protected-branches/) with required reviews (CM-9).
