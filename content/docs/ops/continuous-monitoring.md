@@ -160,7 +160,7 @@ On a monthly basis, Authorizing Officials will be monitoring these deliverables 
 
 ## Appendix: Significant change rubric
 
-We follow this rubric for changes before they are deployed to production. This is part of the [Security Impact Analysis step of our Feature Lifecycle](https://github.com/18F/cg-product/blob/master/FeatureLifecycle.md). This rubric supports controls including CA-6 <span>(c)<span>, CM-2 (1), and RA-3.
+We follow this rubric for changes before they are deployed to production. This is part of the [Security Impact Analysis step of our Feature Lifecycle](https://github.com/18F/cg-product/blob/master/FeatureLifecycle.md). This rubric supports controls including CA-6 &#40;c), CM-2 (1), and RA-3.
 
 ### When no discussion or SCR (Significant Change Request) is needed for a change
 
