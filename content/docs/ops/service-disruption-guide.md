@@ -59,11 +59,30 @@ A postmortem is not necessary to close, and it does not have to happen immediate
 
 ## Ensure a postmortem happens
 
-The person who closes the event should then put a card on the component-owning squad’s board in the urgent lane about writing and posting a postmortem.
+The person who closes the event should then put a card on the component-owning squad’s board in the urgent lane about holding a retrospective discussion and writing the public postmortem.
 
 For non-security-sensitive work, work to resolve root causes does not have to be completely done before we post the postmortem.
 
+### Retrospective meeting guide
+
+We hold a retrospective discussion as soon as possible after a cloud.gov service disruption or other incident.
+
+We keep our retro notes in [this folder](https://drive.google.com/drive/folders/0B58iDAWKmw_BSEtqcUFFQ041MHc).
+
+Before or during the meeting, we put together a timeline of the incident in the doc, beginning at the time the incident was announced, and ending at the point we declared the incident over. Everybody is welcome to add their observations to the timeline, including which actions were taken when, the effects observed, and their understanding of the events.
+
+<!-- Discussing remediation steps is important for IR-4 and SI-2 -->
+
+1. The facilitator starts by reading [the retrospective prime directive](http://www.retrospectives.com/pages/retroPrimeDirective.html).
+1. We review the timeline and add anything we have missed.
+1. We analyze the factors that contributed to the incident.
+1. We propose, discuss, and prioritize remediation steps to reduce the likelihood of future incidents, to improve detection and response times for future incidents, to improve our incident handling processes and training, and to validate and test these remediation steps.
+
+We add the work that comes out of the analysis to our backlog, and we write a public postmortem for our users.
+
 ### Checklist for drafting postmortems
+
+In the public post, we exclude any information that may be sensitive, such as information related to exploitable security flaws/vulnerabilities, sensitive infrastructure details, or PII. For details, see our [guidelines for protecting sensitive information](https://github.com/18F/open-source-policy/blob/master/practice.md#protecting-sensitive-information).
 
 We typically use a **What happened** + **What we're doing** structure.
 
