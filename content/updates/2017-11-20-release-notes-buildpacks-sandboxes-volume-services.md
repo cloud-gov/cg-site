@@ -13,7 +13,7 @@ We’ve been hard at work shipping out new features to help you make your apps b
   * How to incorporate a CI/CD workflow into your app: https://cloud.gov/docs/apps/continuous-deployment/#configure-your-service
 * The cloud.gov dashboard now lets you manage environment variables for your apps. To see it in action, go to an app page in the dashboard and try viewing, adding, or editing an environment variable. You can also see all the environment variables set by the system from the same view.
 
-![Screenshot of the environment variable editing view on the dashboard](/img/dashboard-envs.png)
+<img src="/img/dashboard-envs.png" alt="Screenshot of the environment variable editing view on the dashboard" border=5 />
 
 ### Updates
 
