@@ -14,10 +14,10 @@ See [how our AWS accounts work](https://docs.google.com/document/d/110o1L7EOby3h
 
 ### Levels of access
 
-While we minimize interaction with AWS directly (explained in next section), there are different levels of AWS IAM access, provided to different roles:
+While we minimize interaction with AWS directly (explained below), there are different levels of AWS IAM access, provided to different roles:
 
-* **Full administrative accounts:** This is be provided to the people known in our compliance documentation as the "Cloud Operations team".
-* **Read-only accounts:** This is provided to GSA Security staff, who need access for incident response.
+* Full administrative accounts: This is provided to the people known in our compliance documentation as the "Cloud Operations team".
+* Read-only accounts: GSA Information Security may request and receive read-only access to AWS accounts (see Types of Users table in the SSP).
 
 #### Restoring access for team members
 
