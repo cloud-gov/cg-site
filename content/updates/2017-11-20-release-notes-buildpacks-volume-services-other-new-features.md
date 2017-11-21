@@ -10,7 +10,7 @@ We’ve been hard at work shipping out new features to help you make your apps b
 * We have experimental support for [volume services]({{< relref "docs/apps/experimental/volume-services.md" >}}). Since a cloud.gov app normally has a short-lived file system, this enables you to build an app that requires persistent file storage. [Contact us if you’d like to try this]({{< relref "docs/apps/experimental/volume-services.md#how-to-use-this-service" >}}).
 * One of our engineers gave us the ability to make [Mermaid diagrams](https://mermaidjs.github.io/) on the cloud.gov website, and we almost got carried away creating visualizations of different parts of the platform. Here are a couple we think will help you out:
   * [A comparison of how apps with custom domains and those with the default \*.app.cloud.gov domain are served to users]({{< relref "docs/apps/custom-domains.md#comparison-of-default-domains-and-custom-domains" >}}).
-  * [How to incorporate a CI/CD workflow into your app]({{< relref "docs/apps/continuous-deployment.md#configure-your-service" >}})
+  * [How to incorporate a CI/CD workflow into your app]({{< relref "docs/apps/continuous-deployment.md#configure-your-service" >}}).
 * [The cloud.gov dashboard](https://dashboard.fr.cloud.gov/) now lets you manage environment variables for your apps. To see it in action, go to an app page in the dashboard and try viewing, adding, or editing an environment variable. You can also see all the environment variables set by the system from the same view.
 
 <img src="/img/dashboard-envs.png" alt="Screenshot of the environment variable editing view on the dashboard" border="5" />
@@ -27,7 +27,7 @@ We will not, as we previously announced, be [switching users with cloud.gov acco
 
 #### Sandboxes will expire after 90 days
 
-We plan to automatically delete apps in [sandbox spaces]({{< relref "overview/pricing/free-limited-sandbox.md#sandbox-limitations" >}}) after 90 days. We’ll send email notifications before this happens. If you’re developing something you need to keep long-term, we recommend moving it to a prototyping space. If you’d like to [start the process of purchasing a prototyping package]({{< relref "https://cloud.gov/overview/pricing/prototyping.md" >}}), get in touch with us.
+We plan to automatically delete apps in [sandbox spaces]({{< relref "overview/pricing/free-limited-sandbox.md#sandbox-limitations" >}}) after 90 days. We’ll send email notifications before this happens. If you’re developing something you need to keep long-term, we recommend moving it to a prototyping space. If you’d like to [start the process of purchasing a prototyping package]({{< relref "overview/pricing/prototyping.md" >}}), get in touch with us.
 
 #### Additional TIC compliance support
 
