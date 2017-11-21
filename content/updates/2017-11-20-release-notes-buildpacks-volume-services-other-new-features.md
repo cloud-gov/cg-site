@@ -11,7 +11,9 @@ We’ve been hard at work shipping out new features to help you make your apps b
 * One of our engineers gave us the ability to make [Mermaid diagrams](https://mermaidjs.github.io/) on the cloud.gov website, and we almost got carried away creating visualizations of different parts of the platform. Here are a couple we think will help you out:
   * [A comparison of how apps with custom domains and those with the default \*.app.cloud.gov domain are served to users]({{< relref "docs/apps/custom-domains.md#comparison-of-default-domains-and-custom-domains" >}}).
   * [How to incorporate a CI/CD workflow into your app]({{< relref "docs/apps/continuous-deployment.md#configure-your-service" >}}).
-* [The cloud.gov dashboard](https://dashboard.fr.cloud.gov/) now lets you manage environment variables for your apps. To see it in action, go to an app page in the dashboard and try viewing, adding, or editing an environment variable. You can also see all the environment variables set by the system from the same view.
+* [The cloud.gov dashboard](https://dashboard.fr.cloud.gov/) now lets you [manage environment variables](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html) for your apps. To see it in action, go to an app page in the dashboard and try viewing, adding, or editing an environment variable. You can also see all the environment variables set by the system from the same view. Change variables with caution, as environment variables will be lost if your app is recreated. We recommend storing non-sensitive configuration variables in your application manifest and sensitive variables in user-provided services.
+  
+  Thanks to our antipodal compatriots with the [Australian Government Digital Transformation Agency](https://www.dta.gov.au/what-we-do/platforms/cloud/) for this code contribution.
 
 <img src="/img/dashboard-envs.png" alt="Screenshot of the environment variable editing view on the dashboard" style="border:1px solid grey;" />
 
