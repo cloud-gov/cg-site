@@ -69,7 +69,6 @@ Configuration/deployment support:
 - [Infrastructure provisioning and deployment](https://github.com/18F/cg-provision)
 - [Common Concourse pipeline tasks](https://github.com/18F/cg-pipeline-tasks)
 - [Common Concourse resource](https://github.com/18F/cg-common-resource)
-- [Bootstrap Concourse AMI](https://github.com/18F/cg-bootstrap-concourse-ami)
 
 Deployment pipelines:
 
@@ -78,9 +77,7 @@ Deployment pipelines:
 - [Cloud Foundry](https://github.com/18F/cg-deploy-cf)
 - [Concourse](https://github.com/18F/cg-deploy-concourse)
 - [Concourse task Docker image](https://github.com/18F/cg-deploy-concourse-docker-image)
-- [Discourse](https://github.com/18F/cg-deploy-discourse)
 - [ELK/logsearch](https://github.com/18F/cg-deploy-logsearch)
-- [Fugacious](https://github.com/18F/cg-deploy-fugacious)
 - [Kubernetes](https://github.com/18F/cg-deploy-kubernetes)
 - [Monitoring](https://github.com/18F/cg-deploy-monitoring)
 - [Nessus Manager](https://github.com/18F/cg-deploy-nessus-manager)
@@ -102,7 +99,6 @@ Optional code offered to our team and customers:
 
 - [Hello world apps](https://github.com/18F/cf-hello-worlds)
 - [Redirect app](https://github.com/18F/cf-redirect)
-- [Fake UAA for testing](https://github.com/18F/cg-fake-uaa)
 
 Optional Cloud Foundry CLI plugins offered to our team and customers:
 
