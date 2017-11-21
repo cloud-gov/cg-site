@@ -23,11 +23,12 @@ Make sure to use the latest version of the Cloud Foundry CLI. The most recent up
 
 ### Announcement
 
-We will not, as we previously announced, be [switching users with cloud.gov accounts to sign in with MAX.gov]({{< relref "updates/2017-08-21-max-gov-migration-instructions.md" >}}).
+* We will not, as we previously announced, be [switching users with cloud.gov accounts to sign in with MAX.gov]({{< relref "updates/2017-08-21-max-gov-migration-instructions.md" >}}).
+* cloud.gov removed the insecure 3DES cypher from all (including customers) CloudFront CDN distributions ahead of the 120 day deadline. Learn more about this from [the Department of Homeland Security](https://cyber.dhs.gov/#ii-required-actions).
 
 ### Coming soon
 
-#### Sandboxes will expire after 90 days
+#### Sandbox apps will expire after 90 days
 
 We plan to automatically delete apps in [sandbox spaces]({{< relref "overview/pricing/free-limited-sandbox.md#sandbox-limitations" >}}) after 90 days. We’ll send email notifications before this happens. If you’re developing something you need to keep long-term, we recommend moving it to a prototyping space. If you’d like to [start the process of purchasing a prototyping package]({{< relref "overview/pricing/prototyping.md" >}}), get in touch with us.
 
