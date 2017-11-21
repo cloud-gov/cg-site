@@ -46,9 +46,25 @@ is encouraged and qualifies as a review. Review should include assessment of arc
 
 1. The CI/CD tool uses GitHub repositories and S3-stored sensitive content as the canonical source of truth for what the platform should look like. If there are manual changes, it will reset the state of all systems to match.
 
-![Pipeline Example](/img/pipeline-example.png)
+## Checklist for new repositories
 
-A more detailed example of this process can be seen in [Updating Cloud Foundry]({{< relref "updating-cf.md" >}}).
+Before we put a new repository into production:
+
+* Give it a name starting with `cg-` or `cf-` (to make clear that it's part of our work, unless we have a good reason to name it something else).
+* [Add `LICENSE`, `CONTRIBUTING`, and `README` files](https://github.com/18F/open-source-policy/blob/master/practice.md#how-to-license-18f-repos) (to support open source reuse of our work).
+* Set up [Code Climate](https://docs.codeclimate.com/docs/github#pull-requests) (SI-3).
+* Configure a [protected master branch](https://help.github.com/articles/about-protected-branches/) with required reviews (CM-9).
+* Configure permissions (CM-3):
+  * If it's a platform configuration repo, restrict permissions to Cloud Ops, as follows:
+     * `Read` for [18F](https://github.com/orgs/18F/teams/18f/members).
+     * `Read` for [cloud-gov](https://github.com/orgs/18F/teams/cloud-gov/members).
+     * `Admin` for [cloud-gov-ops](https://github.com/orgs/18F/teams/cloud-gov-ops/members).
+  * If it's not a platform configuration repo, configure as follows:
+     * `Read` for [18F](https://github.com/orgs/18F/teams/18f/members).
+     * `Admin` for [cloud-gov](https://github.com/orgs/18F/teams/cloud-gov/members).
+     * `Admin` for [cloud-gov-ops](https://github.com/orgs/18F/teams/cloud-gov-ops/members).
+* Set up CI/CD for changes (CM-3).
+* Open a PR to add it to the [repos list]({{< relref "docs/ops/repos.md#repositories" >}}) (to help us keep track of our repos and support open source reuse of our work).
 
 ## What if a configuration changed and it is not in Configuration Management?
 If possible, Configuration Management tools need to be set up to always roll back to a known state. Other than that, these tools need to be able to "recreate" all settings from the known configurations.
