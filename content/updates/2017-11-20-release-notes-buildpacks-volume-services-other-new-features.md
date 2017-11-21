@@ -31,7 +31,7 @@ We plan to automatically delete apps in [sandbox spaces]({{< relref "overview/pr
 
 #### Additional TIC compliance support
 
-To support agency implementations of [Trusted Internet Connection (TIC)]({{< relref "docs/compliance/meeting-tic-requirements.md" >}}) requirements, we’ve published documentation about complying with TIC for apps on cloud.gov. To support a wider range of agency TIC needs, we’ve also built a way to [support restricting users to trusted IP ranges]({{< relref "docs/apps/experimental/restricting-users-to-trusted-ip-ranges.md" >}}). We’re waiting to fully implement it until after it’s passed FedRAMP review, but in the meantime, let us know if you have questions or want to use it.
+To support agency implementations of Trusted Internet Connection (TIC) requirements, we’ve published [documentation about complying with TIC for apps on cloud.gov]({{< relref "docs/compliance/meeting-tic-requirements.md" >}}). To support a wider range of agency TIC needs, we’ve also built a way to [support restricting users to trusted IP ranges]({{< relref "docs/apps/experimental/restricting-users-to-trusted-ip-ranges.md" >}}). We’re waiting to fully implement it until after it’s passed FedRAMP review, but in the meantime, let us know if you have questions or want to use it.
 
 ### Platform releases
 
