@@ -3,7 +3,7 @@ date = "2017-08-22"
 title = "Announcement: cloud.gov accounts will migrate to OMB MAX"
 +++
 
-## Note: This page is out of date as of Nov. 2017. cloud.gov is no longer migrating any users to OMB MAX
+## Note: This page is out of date as of Nov. 2017. cloud.gov is no longer migrating any users to OMB MAX.
 
 cloud.gov is migrating all users with native cloud.gov accounts (not users with an agency single sign on provider) to use OMB MAX for authentication to the platform. This page is a guide to what will change and how you can prepare for this transition. **We will post future updates on timing at [https://cloud.gov/updates/](https://cloud.gov/updates/) and by email.**
 
