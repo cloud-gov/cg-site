@@ -140,14 +140,14 @@
 .content-resources section {
   width: 100%;
 }
-.content-resources section article.usa-width-one-third {
+.content-resources section.usa-grid article.usa-width-one-third {
   padding: 50px 0 0;
   /*min-width: 300px;*/
-  width: calc(33%);
+  width: calc(100% - 20px);
   margin-right: 0;
-}
-.accordion-container section article.usa-width-one-third {
-
+  /*float: none;
+  display: block !important;
+  width: 100% !important;*/
 }
 .content-resources section article iframe {
   padding: 10px;
@@ -201,7 +201,7 @@
   max-width: 480px;
 }
 
-@media all and (min-width: 480px) {
+@media screen and (min-width: 480px) {
   .step form .form-wrapper {
     display: flex;
   }
@@ -212,60 +212,30 @@
     font-size: 48px;
   }
 }
+@media screen and (min-width: 600px) {
+  .accordion-container article {
+    max-width: 640px;
+    display: flex;
+    /*margin-bottom: 30px;*/
+  }
+  .accordion-container article iframe,
+  .accordion-container article .tutorial-content {
+    flex-flow: column;
+    padding: 0 20px 0 0;
+  }
+  .accordion-container article .tutorial-content {
+    flex-grow: 2.5;
+  }
+}
 
+@media screen and (min-width: 800px) {
+  .content-resources section.usa-grid article.usa-width-one-third {
+    width: 33%;
+  }
+}
 
 /********************************/
 /** Accordion styles ************/
-
-@media all and (min-width: 960px) {
-  .accordion-container {
-    margin: 0 auto;
-    width: 1010px;
-    display: flex;
-  }
-  .accordion-container section {
-    /*padding: 10px;
-    background-color: #d3d9df;*/
-    min-height: 500px;
-    /*max-width: 650px;*/
-
-    /*height: auto;
-    overflow: hidden;*/
-    border-right: 1px solid #fff;
-  }
-  .accordion-container h3 label {
-    min-height: 180px;
-  }
-  .accordion-container h3 span {
-    /*font-family: "Libre Franklin", sans-serif;
-    font-size: 12px;
-    line-height: 1.5;
-    font-weight: 400;*/
-    max-width: 400px;
-    /*margin-bottom: 15px;
-    color: #333;
-    display: block;*/
-  }
-  .accordion-container .option {
-    /*-webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-    padding: 0 10px 0 0;
-    font-size: 2rem;
-    line-height: 1.2;
-    position: relative;*/
-    width: 139px;
-    /*cursor: pointer;
-    -webkit-transition-duration: 0.4s;
-            transition-duration: 0.4s;
-    -webkit-transition-property: width, -webkit-box-flex;
-    transition-property: width, -webkit-box-flex;
-    transition-property: width;
-    transition-property: width, -webkit-box-flex, -ms-flex-positive;
-    -webkit-transition-timing-function: ease-in-out;
-            transition-timing-function: ease-in-out;*/
-  }
-}
 
 .accordion-container section {
   padding: 10px;
@@ -275,12 +245,15 @@
   overflow: hidden;
   /*border-right: 1px solid #fff;*/
 }
+.accordion-container section:not(:last-of-type) {
+  border-bottom: 1px solid #fff;
+}
 .accordion-container section:last-of-type {
   border-right: none;
 }
 .accordion-container h3 span:not(.option__label) {
-  border-bottom: 1px solid #ccc;
-  min-height: 120px;
+  /*border-bottom: 1px solid #ccc;*/
+  /*min-height: 120px;*/
   width: 100%;
   padding-bottom: 20px;
 }
@@ -293,8 +266,8 @@
   font-size: 12px;
   line-height: 1.35;
   font-weight: 500;
-  /*max-width: 400px;*/
   margin-bottom: 15px;
+  /*max-width: 400px;*/
   color: #333;
   display: block;
   letter-spacing: normal;
@@ -343,24 +316,98 @@
   -webkit-box-flex: 8;
       -ms-flex-positive: 8;
           flex-grow: 8;
-  width: 670px;
+  /*width: 670px;*/
 }
 .accordion-container article {
-  max-width: 640px;
-  display: flex;
-  margin-bottom: 30px;
+  /*max-width: 640px;
+  display: flex;*/
+  padding-top: 20px;
+  margin-bottom: 50px;
+  /*display: block;
+  height: auto;
+  overflow: hidden;*/
 }
-.accordion-container article iframe,
+/*.accordion-container article iframe,
 .accordion-container article .tutorial-content {
   flex-flow: column;
   padding: 0 20px 0 0;
-}
-.accordion-container article .tutorial-content {
+}*/
+/*.accordion-container article .tutorial-content {
   flex-grow: 2.5;
-}
+}*/
 .accordion-container article .tutorial-content p,
 .accordion-container article .tutorial-content ul {
   padding: 0;
   font-size: 13px;
   line-height: 1.325;
+}
+
+@media screen and (min-width: 960px) {
+  .accordion-container {
+    margin: 0 auto;
+    width: 1010px;
+    display: flex;
+  }
+  .accordion-container section {
+    /*padding: 10px;
+    background-color: #d3d9df;*/
+    /*min-height: 500px;*/
+    /*max-width: 650px;*/
+    /*height: auto;
+    overflow: hidden;*/
+    border-right: 1px solid #fff;
+    border-bottom: none !important;
+  }
+  .accordion-container h3 label {
+    /*min-height: 180px;*/
+  }
+  .accordion-container h3 span {
+    /*font-family: "Libre Franklin", sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 400;*/
+    /*max-width: 400px;*/
+    /*margin-bottom: 15px;
+    color: #333;
+    display: block;*/
+  }
+  .accordion-container h3 span:not(.option__label) {
+    min-height: 175px;
+    border-bottom: 1px solid #fff;
+    /*min-height: 120px;*/
+    /*width: 100%;
+    padding-bottom: 20px;*/
+  }
+  .accordion-container h3 .option-input:not(:checked) + label > span:not(.option__label)  {
+    background: url(/img/southeast-arrow-white.svg) 2px 125px no-repeat;
+    background-size: 25px 25px;
+  }
+  /*.accordion-container h3 .option-input:checked span:not(.option__label) {
+    background: none;
+  }*/
+  .accordion-container .option {
+    /*-webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    padding: 0 10px 0 0;
+    font-size: 2rem;
+    line-height: 1.2;
+    position: relative;*/
+    width: 139px;
+    /*cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+    -webkit-transition-property: width, -webkit-box-flex;
+    transition-property: width, -webkit-box-flex;
+    transition-property: width;
+    transition-property: width, -webkit-box-flex, -ms-flex-positive;
+    -webkit-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;*/
+  }
+  .accordion-container .option-input:checked + .option {
+    /*-webkit-box-flex: 8;
+        -ms-flex-positive: 8;
+            flex-grow: 8;*/
+    width: 670px;
+  }
 }
