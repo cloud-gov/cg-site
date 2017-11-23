@@ -273,8 +273,8 @@
   letter-spacing: normal;
 }
 .accordion-container h3 span.option__label {
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: 600;
   line-height: 1.2;
 }
 .accordion-container .option {
@@ -282,17 +282,17 @@
       -ms-flex-positive: 1;
           flex-grow: 1;
   padding: 0 10px 0 0;
-  font-size: 2rem;
-  line-height: 1.2;
+  font-size: 12px;
+  line-height: 1.35;
   position: relative;
   /*width: 139px;*/
   cursor: pointer;
-  -webkit-transition-duration: 0.4s;
-          transition-duration: 0.4s;
-  -webkit-transition-property: width, -webkit-box-flex;
-  transition-property: width, -webkit-box-flex;
-  transition-property: width;
-  transition-property: width, -webkit-box-flex, -ms-flex-positive;
+  -webkit-transition-duration: 0.4s, 0.4s;
+          transition-duration: 0.4s, 0.4s;
+  -webkit-transition-property: width, font-size, -webkit-box-flex;
+  transition-property: width, font-size, -webkit-box-flex;
+  transition-property: width, font-size;
+  transition-property: width, font-size, -webkit-box-flex, -ms-flex-positive;
   -webkit-transition-timing-function: ease-in-out;
           transition-timing-function: ease-in-out;
 }
@@ -409,5 +409,10 @@
         -ms-flex-positive: 8;
             flex-grow: 8;*/
     width: 670px;
+  }
+  .accordion-container h3 .option-input:checked + .option > span:not(.option__label) {
+    font-size: 18px;
+    font-weight: 300;
+    padding-right: 60px;
   }
 }
