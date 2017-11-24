@@ -265,7 +265,7 @@
   font-family: "Libre Franklin", sans-serif;
   font-size: 12px;
   line-height: 1.35;
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 15px;
   /*max-width: 400px;*/
   color: #333;
@@ -273,28 +273,29 @@
   letter-spacing: normal;
 }
 .accordion-container h3 span.option__label {
-  font-size: 18px;
+  font-size: 12px;
   font-weight: 600;
   line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: .05em;
 }
 .accordion-container .option {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  padding: 0 10px 0 0;
   font-size: 12px;
   line-height: 1.35;
   position: relative;
   /*width: 139px;*/
   cursor: pointer;
-  -webkit-transition-duration: 0.4s, 0.4s;
-          transition-duration: 0.4s, 0.4s;
+  -webkit-transition-duration: 0.4s, 1s;
+          transition-duration: 0.4s, 1s;
   -webkit-transition-property: width, font-size, -webkit-box-flex;
   transition-property: width, font-size, -webkit-box-flex;
   transition-property: width, font-size;
   transition-property: width, font-size, -webkit-box-flex, -ms-flex-positive;
-  -webkit-transition-timing-function: ease-in-out;
-          transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out, linear;
+          transition-timing-function: ease-in-out, linear;
 }
 
 .accordion-container .option-input + label::before {
@@ -379,7 +380,7 @@
     padding-bottom: 20px;*/
   }
   .accordion-container h3 .option-input:not(:checked) + label > span:not(.option__label)  {
-    background: url(/img/southeast-arrow-white.svg) 2px 125px no-repeat;
+    background: url(/img/southeast-arrow-white.svg) 2px 130px no-repeat;
     background-size: 25px 25px;
   }
   /*.accordion-container h3 .option-input:checked span:not(.option__label) {
@@ -411,7 +412,7 @@
     width: 670px;
   }
   .accordion-container h3 .option-input:checked + .option > span:not(.option__label) {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 300;
     padding-right: 60px;
   }

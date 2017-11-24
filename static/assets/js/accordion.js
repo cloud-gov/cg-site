@@ -11,7 +11,6 @@ $( document ).ready(function() {
   }
 
   $( ".accordion-container .option-input" ).click(function() {
-
     $( ".accordion-container article" ).hide();
     $( ".accordion-container section" ).css( "background-color", "#d3d9df" );
     if ( $(window).width() > 959 ) {
