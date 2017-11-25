@@ -241,8 +241,8 @@
   padding: 10px;
   background-color: #d3d9df;
   /*min-height: 500px;*/
-  height: auto;
-  overflow: hidden;
+  /*height: auto;*/
+  /*overflow: hidden;*/
   /*border-right: 1px solid #fff;*/
 }
 .accordion-container section:not(:last-of-type) {
@@ -415,5 +415,10 @@
     font-size: 24px;
     font-weight: 300;
     padding-right: 60px;
+  }
+  .accordion-container h3 .option-input:checked + .option,
+  .accordion-container article {
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
