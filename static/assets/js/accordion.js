@@ -1,6 +1,7 @@
 $( document ).ready(function() {
 
-  var accordionHeight = $( ".accordion-container section:first-of-type" ).height();
+  // var accordionHeight = $( ".accordion-container section:first-of-type" ).height();
+  var accordionHeight = 1885;
   var defaultHeight = 210;
 
   $( ".accordion-container article" ).hide();
@@ -21,7 +22,6 @@ $( document ).ready(function() {
     if ( $(window).width() > 959 ) {
       $( this ).siblings( ".option").css( "height", defaultHeight );
     }
-
   });
 
   $( window ).resize(function() {

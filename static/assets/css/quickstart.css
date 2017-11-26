@@ -115,8 +115,9 @@
 }
 .step form input[type=submit] {
   display: inline-block;
-  background-color: #f53;
-  color: #000;
+  /*background-color: #f53;*/
+  background-color: #1c304a;
+  color: #fff;
 }
 .quickstart .eyebrow {
   display: block;
@@ -215,15 +216,19 @@
 @media screen and (min-width: 600px) {
   .accordion-container article {
     max-width: 640px;
+    display: block;
+    /*margin-bottom: 30px;*/
+  }
+  .accordion-container article.two-col {
     display: flex;
     /*margin-bottom: 30px;*/
   }
-  .accordion-container article iframe,
-  .accordion-container article .tutorial-content {
+  .accordion-container article.two-col iframe,
+  .accordion-container article.two-col .tutorial-content {
     flex-flow: column;
     padding: 0 20px 0 0;
   }
-  .accordion-container article .tutorial-content {
+  .accordion-container article.two-col .tutorial-content {
     flex-grow: 2.5;
   }
 }
@@ -238,8 +243,9 @@
 /** Accordion styles ************/
 
 .accordion-container section {
-  padding: 10px;
+  padding: 10px 10px 0 10px;
   background-color: #d3d9df;
+  /*background-color: #8fcae7;*/
   /*min-height: 500px;*/
   /*height: auto;*/
   /*overflow: hidden;*/
@@ -260,17 +266,27 @@
 .accordion-container h3 label {
   /*min-height: 180px;*/
 }
+
 .accordion-container h3 span,
-.accordion-container article p {
+.accordion-container article p  {
   font-family: "Libre Franklin", sans-serif;
-  font-size: 12px;
-  line-height: 1.35;
   font-weight: 400;
   margin-bottom: 15px;
   /*max-width: 400px;*/
   color: #333;
   display: block;
   letter-spacing: normal;
+}
+.accordion-container h3 span {
+  font-size: 12px;
+  line-height: 1.35;
+}
+.accordion-container article p {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  padding: 0;
+  /*max-width: 400px;*/
 }
 .accordion-container h3 span.option__label {
   font-size: 12px;
@@ -340,12 +356,26 @@
 .accordion-container article .tutorial-content ul {
   padding: 0;
   font-size: 13px;
-  line-height: 1.325;
+  line-height: 1.5;
+}
+.accordion-container pre,
+.accordion-container code {
+  background-color: #f1f2f3;
+  font-size: 13px;
+}
+.accordion-container pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow: auto;
+}
+.accordion-container code {
+  display: inline-block;
+  margin: 0 4px;
 }
 
 @media screen and (min-width: 960px) {
   .accordion-container {
-    margin: 0 auto;
+    margin: 60px auto;
     width: 1010px;
     display: flex;
   }

@@ -69,7 +69,7 @@
                       </label>
                     </h3>
 
-                    <article>
+                    <article class="two-col">
                       <iframe width="235" height="120" src="https://www.youtube.com/embed/LKb0liZyepA?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
                       <!-- <iframe width="208" height="117" src="https://www.youtube.com/embed/LKb0liZyepA?rel=0" frameborder="0" allowfullscreen></iframe> -->
                       <div class="tutorial-content">
@@ -88,7 +88,7 @@
                       </div>
                     </article>
 
-                    <article>
+                    <article class="two-col">
                       <iframe width="235" height="120" src="https://www.youtube.com/embed/ip8G_Rafb_c?rel=0&t=3m1s&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
                       <div class="tutorial-content">
                         <h4>Part 2: Getting set up</h4>
@@ -109,7 +109,7 @@
                       </div>
                     </article>
 
-                    <article>
+                    <article class="two-col">
                       <iframe width="235" height="120" src="https://www.youtube.com/embed/G2J8dxSF0-I?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
                       <div class="tutorial-content">
                         <h4>Part 3: Hands-on workshop</h4>
@@ -146,9 +146,76 @@
                           </span>
                         </label>
                     </h3>
+
                     <article>
+                      <h4>
+                        Install the CloudFoundry command line interface (CLI)
+                      </h4>
                       <p>
-                        Lorem ipsum dolor sit amet. The difference between .css( "height" ) and .height() is that the latter returns a unit-less pixel value (for example, 400) while the former returns a value with units intact (for example, 400px). The .height() method is recommended when an element's height needs to be used in a mathematical calculation.
+                        Since cloud.gov is based on the Cloud Foundry open source project, it uses the Cloud Foundry CLI. Download and install the CLI for your system:
+                      </p>
+                      <ul class="button-list-row">
+                        <li>
+                          <a href="#">Windows (64-bit)</a>
+                        </li>
+                        <li>
+                          <a href="#">Mac (64-bit)</a>
+                        </li>
+                        <li>
+                          <a href="#">All Downloads</a>
+                        </li>
+                      </ul>
+                      <p>
+                        Test your install with following command:
+                      </p>
+                      <pre>cf help</pre>
+
+                      <h4>Deploy the sample app</h4>
+
+                      <p>
+                        Now that you have your account and the CLI installed, let’s demonstrate how quickly you can deploy a Java web application by downloading the application code, connecting to cloud.gov, and “pushing” the application.
+                      </p>
+                      <p>
+                        Download the application code from Cloud Foundry’s GitHub repository:
+                      </p>
+                      <h5>If you have Git installed</h5>
+                      <pre>
+git clone https://github.com/18F/cf-sample-app-spring
+cd cf-sample-app-spring</pre>
+                      <h5>If you don’t have Git installed</h5>
+                      <p>
+                        Download https://github.com/18F/cf-sample-app-spring/archive/master.zip
+                        Unzip <code>master.zip</code>
+                      </p>
+                      <pre>cd cf-sample-app-spring-master</pre>
+
+                      <h4>Connect to cloud.gov</h4>
+                      <pre>cf login -a https://api.fr.cloud.gov --sso</pre>
+                      <p>
+                        Complete the login in your browser at https://login.fr.cloud.gov/passcode. You’ll get a one-time passcode, which you then paste into your terminal.
+                      </p>
+                      <h4>Push the application</h4>
+                      <pre>cf push</pre>
+                      <p>
+                        The <code>push</code> command will upload your sample app, prepare it for cloud.gov, then tell you what URL to visit in your browser:
+                      </p>
+<pre>
+requested state: started
+instances: 1/1
+usage: 768M x 1 instances
+urls: cf-spring-subpeltate-briner.app.cloud.gov
+last uploaded: Fri Nov 3 17:50:30 UTC 2017
+stack: cflinuxfs2
+buildpack: client-certificate-mapper=1.3.0
+</pre>
+
+                      <h4>View application logs</h4>
+                      <p>
+                        View application logs either in your terminal with the following command:
+                      </p>
+                      <pre>cf logs cf-spring</pre>
+                      <p>
+                        Alternatively, you can also view it with the <a href="https://logs.fr.cloud.gov/">Kibana log view application</a>.
                       </p>
 
                     </article>
