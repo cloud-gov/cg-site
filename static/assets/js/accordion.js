@@ -1,7 +1,7 @@
 $( document ).ready(function() {
 
   // var accordionHeight = $( ".accordion-container section:first-of-type" ).height();
-  var accordionHeight = 1800;
+  var accordionHeight = 1870;
   var defaultHeight = 210;
 
   $( ".accordion-container article" ).hide();

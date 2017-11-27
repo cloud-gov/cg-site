@@ -11,13 +11,6 @@
 .bgcolor-medputty {
   background-color: #e7e9eb;
 }
-.bgcolor-deepblue,
-.bgcolor-ltbluegrey,
-.bgcolor-ltputty,
-.bgcolor-medputty {
-  /*padding-left: 20px;
-  padding-right: 20px;*/
-}
 .bgcolor-deepblue .usa-grid {
   padding-left: 0;
   padding-right: 0;
@@ -39,7 +32,6 @@
   line-height: .9;
   letter-spacing: -.05em;
 }
-
 .hero p {
   color: #fff;
   font-family: '18Franklin-webfont', system, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; /* $font-sans */
@@ -47,13 +39,6 @@
   max-width: 480px !important;
   padding-bottom: 30px;
 }
-/*.accordion-wrapper {
-  padding: 0 0 60px;
-  display: block;
-  height: auto;
-  overflow: hidden;
-}*/
-
 .step {
   padding-top: 50px;
   padding-bottom: 100px;
@@ -64,7 +49,6 @@
   font-weight: 300;
   letter-spacing: -.02em;
   line-height: 1;
-  /*text-transform: uppercase;*/
   max-width: 540px;
   padding-top: 50px;
 }
@@ -73,7 +57,6 @@
   display: block;
   padding-bottom: 80px;
   margin-bottom: 40px;
-  /*border-bottom: 1px solid #28517b;*/
   width: 60px;
   height: 60px;
   border-bottom: 2px solid #28517b;
@@ -90,7 +73,6 @@
 .step p {
   font-family: '18Franklin-webfont', system, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; /* $font-sans */
   font-size: 18px;
-  /*max-width: 480px !important;*/
   padding-bottom: 30px;
 }
 .step form {
@@ -99,8 +81,8 @@
 .step form label {
   display: block;
   margin-bottom: 8px;
-  font-size: 13px;
-  font-weight: 500;
+  /*font-size: 13px;*/
+  /*font-weight: 500;*/
 }
 .step form input {
   margin: 0 0 10px 0;
@@ -115,7 +97,6 @@
 }
 .step form input[type=submit] {
   display: inline-block;
-  /*background-color: #f53;*/
   /*background-color: #1c304a;*/
   background-color: #FB613C;
   color: #000;
@@ -134,7 +115,6 @@
   line-height: 1.1;
   letter-spacing: -.015em;
 }
-
 .content-resources {
   padding: 50px 0;
   display: flex;
@@ -144,12 +124,8 @@
 }
 .content-resources section.usa-grid article.usa-width-one-third {
   padding: 50px 0 0;
-  /*min-width: 300px;*/
   width: calc(100% - 20px);
   margin-right: 0;
-  /*float: none;
-  display: block !important;
-  width: 100% !important;*/
 }
 .content-resources section article iframe {
   padding: 10px;
@@ -220,11 +196,9 @@
   .accordion-container article {
     max-width: 640px;
     display: block;
-    /*margin-bottom: 30px;*/
   }
   .accordion-container article.two-col {
     display: flex;
-    /*margin-bottom: 30px;*/
   }
   .accordion-container article.two-col iframe,
   .accordion-container article.two-col .tutorial-content {
@@ -248,11 +222,6 @@
 .accordion-container section {
   padding: 10px 10px 0 10px;
   background-color: #d3d9df;
-  /*background-color: #8fcae7;*/
-  /*min-height: 500px;*/
-  /*height: auto;*/
-  /*overflow: hidden;*/
-  /*border-right: 1px solid #fff;*/
 }
 .accordion-container section:not(:last-of-type) {
   border-bottom: 1px solid #fff;
@@ -261,21 +230,14 @@
   border-right: none;
 }
 .accordion-container h3 span:not(.option__label) {
-  /*border-bottom: 1px solid #ccc;*/
-  /*min-height: 120px;*/
   width: 100%;
   padding-bottom: 20px;
 }
-.accordion-container h3 label {
-  /*min-height: 180px;*/
-}
-
 .accordion-container h3 span,
 .accordion-container article p  {
   font-family: "Libre Franklin", sans-serif;
   font-weight: 400;
   margin-bottom: 15px;
-  /*max-width: 400px;*/
   color: #333;
   display: block;
   letter-spacing: normal;
@@ -289,7 +251,6 @@
   font-size: 14px;
   line-height: 1.5;
   padding: 0;
-  /*max-width: 400px;*/
 }
 .accordion-container h3 span.option__label {
   font-size: 12px;
@@ -305,7 +266,6 @@
   font-size: 12px;
   line-height: 1.35;
   position: relative;
-  /*width: 139px;*/
   cursor: pointer;
   -webkit-transition-duration: 0.4s, 1s;
           transition-duration: 0.4s, 1s;
@@ -336,25 +296,11 @@
   -webkit-box-flex: 8;
       -ms-flex-positive: 8;
           flex-grow: 8;
-  /*width: 670px;*/
 }
 .accordion-container article {
-  /*max-width: 640px;
-  display: flex;*/
   padding-top: 20px;
   margin-bottom: 50px;
-  /*display: block;
-  height: auto;
-  overflow: hidden;*/
 }
-/*.accordion-container article iframe,
-.accordion-container article .tutorial-content {
-  flex-flow: column;
-  padding: 0 20px 0 0;
-}*/
-/*.accordion-container article .tutorial-content {
-  flex-grow: 2.5;
-}*/
 .accordion-container article h5 {
   font-size: 14px;
   font-weight: 500;
@@ -408,65 +354,21 @@
     display: flex;
   }
   .accordion-container section {
-    /*padding: 10px;
-    background-color: #d3d9df;*/
-    /*min-height: 500px;*/
-    /*max-width: 650px;*/
-    /*height: auto;
-    overflow: hidden;*/
     border-right: 1px solid #fff;
     border-bottom: none !important;
-  }
-  .accordion-container h3 label {
-    /*min-height: 180px;*/
-  }
-  .accordion-container h3 span {
-    /*font-family: "Libre Franklin", sans-serif;
-    font-size: 12px;
-    line-height: 1.5;
-    font-weight: 400;*/
-    /*max-width: 400px;*/
-    /*margin-bottom: 15px;
-    color: #333;
-    display: block;*/
   }
   .accordion-container h3 span:not(.option__label) {
     min-height: 175px;
     border-bottom: 1px solid #fff;
-    /*min-height: 120px;*/
-    /*width: 100%;
-    padding-bottom: 20px;*/
   }
   .accordion-container h3 .option-input:not(:checked) + label > span:not(.option__label)  {
     background: url(/img/southeast-arrow-white.svg) 2px 130px no-repeat;
     background-size: 25px 25px;
   }
-  /*.accordion-container h3 .option-input:checked span:not(.option__label) {
-    background: none;
-  }*/
   .accordion-container .option {
-    /*-webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-    padding: 0 10px 0 0;
-    font-size: 2rem;
-    line-height: 1.2;
-    position: relative;*/
     width: 139px;
-    /*cursor: pointer;
-    -webkit-transition-duration: 0.4s;
-            transition-duration: 0.4s;
-    -webkit-transition-property: width, -webkit-box-flex;
-    transition-property: width, -webkit-box-flex;
-    transition-property: width;
-    transition-property: width, -webkit-box-flex, -ms-flex-positive;
-    -webkit-transition-timing-function: ease-in-out;
-            transition-timing-function: ease-in-out;*/
   }
   .accordion-container .option-input:checked + .option {
-    /*-webkit-box-flex: 8;
-        -ms-flex-positive: 8;
-            flex-grow: 8;*/
     width: 670px;
   }
   .accordion-container h3 .option-input:checked + .option > span:not(.option__label) {
