@@ -116,8 +116,9 @@
 .step form input[type=submit] {
   display: inline-block;
   /*background-color: #f53;*/
-  background-color: #1c304a;
-  color: #fff;
+  /*background-color: #1c304a;*/
+  background-color: #FB613C;
+  color: #000;
 }
 .quickstart .eyebrow {
   display: block;
@@ -160,6 +161,7 @@
   font-weight: 600;
 }
 .content-resources section article.usa-width-one-third p,
+.content-resources section article.usa-width-one-third ol li,
 .content-resources section article.usa-width-one-third ul li {
   font-size: 13px;
   line-height: 1.5;
@@ -191,13 +193,14 @@
   padding-right: 16px;
 }
 .step .usa-button {
-  /*color: #000;*/
+  color: #000;
   display: block;
   margin: 0 0 10px 0;
   font-size: 16px;
   padding: 22px 60px 23px 20px;
   text-align: left;
-  background: #1c304a url(/img/angle-arrow-right-white.svg) right center no-repeat;
+  /*background: #1c304a url(/img/angle-arrow-right-white.svg) right center no-repeat;*/
+  background: #FB613C url(/img/angle-arrow-right-white.svg) right center no-repeat;
   background-size: 21px 12px;
   max-width: 480px;
 }
@@ -283,7 +286,7 @@
 }
 .accordion-container article p {
   font-family: "Libre Franklin", sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.5;
   padding: 0;
   /*max-width: 400px;*/
@@ -352,11 +355,21 @@
 /*.accordion-container article .tutorial-content {
   flex-grow: 2.5;
 }*/
+.accordion-container article h5 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+}
 .accordion-container article .tutorial-content p,
-.accordion-container article .tutorial-content ul {
+.accordion-container article .tutorial-content ul,
+.accordion-container article ol {
   padding: 0;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.5;
+  font-weight: 400;
+}
+.accordion-container article ol {
+  margin: 15px;
 }
 .accordion-container pre,
 .accordion-container code {
@@ -371,6 +384,21 @@
 .accordion-container code {
   display: inline-block;
   margin: 0 4px;
+}
+.accordion-container .button-list-row {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.accordion-container .button-list-row li {
+  display: inline-block;
+}
+.accordion-container .button-list-row li a {
+  display: block;
+  padding: 10px 20px;
+  border: 1px solid #026aea;
+  border-radius: 2px;
+  font-size: 13px;
 }
 
 @media screen and (min-width: 960px) {
