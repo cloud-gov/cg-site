@@ -30,24 +30,20 @@ end
 subgraph cloud.gov boundary
   IPFilter[TIC IP filter]
   APIRouter
-  PRouter[App router] 
   subgraph Agency information system
     App
   end 
 end
 
 subgraph Internet
-  PUser((Public user))
   B((Agency user))
 end
 
 A -->TIC
-PUser -->|"TLS (encrypted tunnel)"|PRouter
 TIC -->|"TLS (encrypted tunnel)"| IPFilter
 B -.->|"TLS (encrypted tunnel)"|IPFilter
 IPFilter --> APIRouter[cloud.gov API]
 APIRouter -->|Change app| App
-PRouter -->|Access app| App
 
 {{< /diagrams >}}
 
