@@ -55,8 +55,6 @@ cloud.gov's TLS endpoint is not restricted, but rather accessible over the open 
 
 Your agency can accomplish this by establishing an operational requirement that all administrative access to cloud.gov services happens via the agency network. You can further enforce this requirement with a technical control: [Prevent users in your domain from using the cloud.gov API except from your agency's TIC egress range]({{< relref "docs/apps/experimental/restricting-users-to-trusted-ip-ranges.md" >}}). Requests from an IP origin that does not match the range we have on record for your TIC will be rejected.
 
-Requests from the public accessing an application hosted on cloud.gov do not traverse an agency boundary, so TIC traversal is not relevant for that kind of traffic. It's shown here only for clarity.
-
 ### Restricting usage of your application
 
 You may also need to restrict access through the "front door" of your deployed applications, such as administrator access to a Wordpress site, or public access to an internal-only service. The diagram below shows where you can implement this restriction.
