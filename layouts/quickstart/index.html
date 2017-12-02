@@ -156,7 +156,6 @@
                           </span>
                         </label>
                     </h3>
-
                     <article>
                       <h4>
                         Install the CloudFoundry command line interface (CLI)
@@ -207,6 +206,9 @@ cd cf-sample-app-spring</pre>
                         The <code>push</code> command will upload your sample app, prepare it for cloud.gov, then after a couple minutes tell you what URL to visit in your browser. Look for the <code>urls: </code> line, as in this example:
                       </p>
 <pre>
+cf push
+Using manifest file ...
+
 Creating app cf-spring in org / space
 OK
 ...[snip]...
@@ -217,14 +219,21 @@ usage: 768M x 1 instances
 last uploaded: Fri Nov 3 17:50:30 UTC 2017
 stack: cflinuxfs2
 buildpack: client-certificate-mapper.... [snip]
+
+     state     since                 
+#0   running   2017-12-02 12:53:29 PM
 </pre>
 
                       <h5>View your application</h5>
                       <p>
-                        Use the <code>urls:</code> output from the push command, and visit https://cf-spring-your-randomwords.app.cloud.gov. Your browser should display something like this:
+                        Use your browser to visit the <code>urls:</code> from the push command 
+                        (in the above example, https://cf-spring-subpeltate-briner.app.cloud.gov). Your browser should display something like this:
                       </p>
                       <img src="/img/cf-spring-sample-app.png"\>
-                      <p>Congratulatons! You now have a running webapp built on the Java <a href="https://spring.io">Spring framework.</a></p>
+                      <p>Congratulatons! You now have a running webapp built on the <a href="https://spring.io">Java Spring framework.</a></p>
+
+                      <h5>Exploring other cloud.gov features</h5>
+                      
                     </article>
 
                   </section>
@@ -287,9 +296,13 @@ cd cf-hello-worlds
                         Choose a framework.
                       </h5>
                       <p>
-                        There are subdirectories for a number of different language + framwork combination. Choose an &lt;example&gt;, then
+                        There are subdirectories for a number of different language + framework combinations. Choose an &lt;example&gt;, then
                       </p>
                       <pre>cd &lt;example&gt;</pre>
+
+                      <p>E.g., <code>cd python-flask</code></p>
+
+                      <p>Regardless of the framework you choose, the remaining steps are all the same.</p>
 
                       <h5>Connect to cloud.gov</h5>
                       <pre>cf login -a https://api.fr.cloud.gov --sso</pre>
@@ -301,100 +314,25 @@ cd cf-hello-worlds
                       <p>
                         The <code>push</code> command will upload your sample app, prepare it for cloud.gov, then after a couple minutes tell you what URL to visit in your browser. Look for the <code>urls: </code> line, as in this example:
                       </p>
+<pre>
+cf push
+Using manifest file ...
 
+Creating app dotnet-core in org / space
+OK
+...[snip]...
+requested state: started
+instances: 1/1
+usage: 512M x 1 instances
+<strong>urls: dotnet-core-nongraphical-logogram.app.cloud.gov</strong>
+last uploaded: Sat Dec 2 17:51:57 UTC 2017
+stack: cflinuxfs2
+buildpack: dotnet-core
 
+     state     since                 
+#0   running   2017-12-02 12:53:29 PM
+</pre>
 
-
-
-
-
-
-
-
-
-
-
-
-                      <p>
-                        The following tutorial is adapted from "<a href="https://cloud.gov/docs/getting-started/your-first-deploy/">Your first deploy</a>" in the cloud.gov documentation.
-                      </p>
-                      <h4>Get ready</h4>
-                      <p>
-                        First, <a href="https://cloud.gov/docs/getting-started/setup/">set up your command line interface (CLI)</a> (if you haven’t already).
-                      </p>
-                      <h4>Target your “sandbox”</h4>
-                      <p>
-                        If you have a federal email address, when you log in for the first time, cloud.gov will automatically create a <a href="https://cloud.gov/overview/pricing/free-limited-sandbox/">sandbox space</a> for you. You might need to wait up to 5 minutes before it becomes available.
-                      </p>
-                      <p>
-                        Here’s how to deploy a test app in your sandbox using the CLI. Start with the following <code>cf target</code> command:
-                      </p>
-                      <pre>cf target -o &lt;ORG&gt; -s &lt;SPACE&gt;</pre>
-                      <p>
-                        Your <code>&lt;ORG&gt;</code> is a Cloud Foundry organization named “sandbox-<agencypart>”, where <code>&lt;agencypart&gt;</code> is whatever comes right before .gov or .mil in your e-mail address. For example, this may be sandbox-gsa or sandbox-epa. In most cases, your <code>&lt;SPACE&gt;</code> is the part of your email before the @, e.g. firstname.lastname.
-                      </p>
-                      <p>
-                        For example:
-                      </p>
-                      <pre>cf target -o sandbox-gsa -s harry.truman</pre>
-                      <h4>Deploy a test "hello world" application</h4>
-                      <ol>
-                        <li>
-                          <p>
-                            Get the code for “hello world” applications (repository):
-                          </p>
-                          <ul>
-                            <li>
-                              <h5>Using Git:</h5>
-                              <pre>git clone https://github.com/18F/cf-hello-worlds.git</pre>
-                            </li>
-                            <li>
-                              <h5>Without Git:</h5>
-                              <p>
-                                Download the code from this GitHub link: <br/>
-                                <a href="Download: https://github.com/18F/cf-hello-worlds/archive/master.zip">https://github.com/18F/cf-hello-worlds/archive/master.zip</a>
-                              </p>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          <p>
-                            Move into that directory. For example:
-                          </p>
-                          <pre>cd cf-hello-worlds</pre>
-                        </li>
-                        <li>
-                          <p>
-                            Look at the collection of tiny apps, and <code>cd</code> into the directory for the language/framework you feel most comfortable with. For example: <code>cd python-flask</code>
-                          </p>
-                        </li>
-                        <li>
-                          <p>
-                            Deploy the application, where <code>APPNAME</code> should be something unique like <code>FRAMEWORK-YOURNAME</code> (e.g. <code>nodejs-aidan</code>). By default, your <code>APPNAME</code> will become part of the route to make your application publicly reachable, usually <code>https://APPNAME.app.cloud.gov/</code> or similar, and route names must be unique across the platform.
-                          </p>
-                          <pre>cf push APPNAME</pre>
-                        </li>
-                        <li>
-                          <p>
-                            You’ll see a series of messages noting the stages of creating the app. When complete, it’ll say “App started” and give information about your app. Use the <code>urls</code> line (<code>urls: [ROUTENAME].app.cloud.gov</code>) to visit your app on the web.
-                          </p>
-                        </li>
-                        <li>
-                          <p>
-                            Try editing the app locally (without committing) and run <code>cf push &lt;APPNAME&gt;</code> again to see your changes. The changes will be reflected even without being committed to Git. cloud.gov is not Git-aware – it simply deploys whatever is contained in the directory that you push from. You can set up <a href="https://cloud.gov/docs/apps/continuous-deployment/">continuous deployment</a> from a Git repository.
-                          </p>
-                        </li>
-                        <li>
-                          <p>
-                            Visit the dashboard &mdash; <a href="https://dashboard.fr.cloud.gov/">https://dashboard.fr.cloud.gov/</a> &mdash; to see your options for managing your application via your browser.
-                          </p>
-                        </li>
-                        <li>
-                          <p>
-                            If you’re done, you can delete your app by running <code>cf delete &lt;APPNAME&gt;</code> (it’s up to you whether to keep it running for more experiments or delete it).
-                          </p>
-                        </li>
-                      </ol>
                     </article>
                   </section>
 
