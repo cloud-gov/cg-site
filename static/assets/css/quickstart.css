@@ -180,7 +180,12 @@
   background-size: 21px 12px;
   max-width: 480px;
 }
-
+.step form input[type=submit]:hover,
+.step .usa-button:hover {
+  /*background-color: #1c304a;*/
+  background-color: #f74;
+  color: #000;
+}
 @media screen and (min-width: 480px) {
   .step form .form-wrapper {
     display: flex;
@@ -326,6 +331,10 @@
   white-space: pre-wrap;
   word-wrap: break-word;
   overflow: auto;
+}
+.accordion-container pre.output {
+  background-color: transparent;
+  border-left: 1px dashed #555;
 }
 .accordion-container code {
   display: inline-block;

@@ -29,16 +29,16 @@
             <p>
               Federal employees and contractors with an email ending in .mil, .gov, or .fed.us can obtain a free sandbox space. To register, you’ll need access to your email and a smartphone with Google Authenticator installed.
             </p>
-            <form>
+            <!-- <form>
               <label for="email">Federal email address</label>
               <div class="form-wrapper">
                 <input type="text" name="email" value="">
                 <input type="submit" value="Submit">
               </div>
-            </form>
-            <!-- <p>
+            </form> -->
+            <p>
               <a href="https://account.fr.cloud.gov/signup" class="usa-button">Get access</a>
-            </p> -->
+            </p>
           </section>
         </div>
       </div>
@@ -50,6 +50,7 @@
             <h2 id="tutorials">Go build in your sandbox</h2>
             <p>
               Follow any of the tutorials to launch your own web application from your sandbox. You’ll need your cloud.gov account and some familiarity with Windows Powershell or Mac/Linux terminal.
+              Learn more about <a href="https://cloud.gov/overview/pricing/free-limited-sandbox/">sandbox spaces</a> and <a href="https://cloud.gov/overview/pricing/free-limited-sandbox/#sandbox-limitations">sandbox limitations</a>.
             </p>
 
             <div class="tutorials-content">
@@ -117,21 +118,23 @@
                           41 minutes
                         </p>
                         <p>
-                          Install the Cloud Foundry tools, connect to cloud.gov, and start running applications — from a static site, to a multi-node application with a data backend. We introduce you to the cloud.gov architecture and concepts, and touch on logging and debugging your running application.                     </p>
+                          Install the Cloud Foundry tools, connect to cloud.gov, and start running applications — from a static site, to a multi-node application with a data backend. We introduce you to the cloud.gov architecture and concepts, and touch on logging and debugging your running application.
+                        </p>
+                        <p>Install the Cloud Foundry command line tool</p>
+                          <ul class="button-list-row">
+                            <li>
+                              <a href="https://cli.run.pivotal.io/stable?release=windows64&source=github">Windows</a>
+                            </li>
+                            <li>
+                              <a href="https://cli.run.pivotal.io/stable?release=macosx64&source=github">Mac</a>
+                            </li>
+                            <li>
+                              <a href="https://github.com/cloudfoundry/cli#downloads">All Downloads</a>
+                            </li>
+                          </ul>
+
                           <ul class="button-list">
-                          <li>Install the Cloud Foundry command line tool
-                              <ul class="button-list-row">
-                                  <li>
-                                    <a href="https://cli.run.pivotal.io/stable?release=windows64&source=github">Windows</a>
-                                  </li>
-                                  <li>
-                                    <a href="https://cli.run.pivotal.io/stable?release=macosx64&source=github">Mac</a>
-                                  </li>
-                                  <li>
-                                    <a href="https://github.com/cloudfoundry/cli#downloads">All Downloads</a>
-                                  </li>
-                                </ul>
-                          </li>
+
                           <li>
                             <a href="../assets/files/03-slides-cloudgov-hands-on-lab.pdf">Download slides</a>
                           </li>
@@ -203,9 +206,9 @@ cd cf-sample-app-spring</pre>
                       <h5>Push the application</h5>
                       <pre>cf push</pre>
                       <p>
-                        The <code>push</code> command will upload your sample app, prepare it for cloud.gov, then after a couple minutes tell you what URL to visit in your browser. Look for the <code>urls: </code> line, as in this example:
+                        The <code>push</code> command will upload your sample app, prepare it for cloud.gov, then after a couple minutes tell you what URL to visit in your browser. Look for the <code>urls: </code> line, as in this example output:
                       </p>
-<pre>
+<pre class="output">
 cf push
 Using manifest file ...
 
@@ -220,13 +223,13 @@ last uploaded: Fri Nov 3 17:50:30 UTC 2017
 stack: cflinuxfs2
 buildpack: client-certificate-mapper.... [snip]
 
-     state     since                 
+     state     since
 #0   running   2017-12-02 12:53:29 PM
 </pre>
 
                       <h5>View your application</h5>
                       <p>
-                        Use your browser to visit the <code>urls:</code> from the push command 
+                        Use your browser to visit the <code>urls:</code> from the push command
                         (in the above example, https://cf-spring-subpeltate-briner.app.cloud.gov). Your browser should display something like this:
                       </p>
                       <img src="/img/cf-spring-sample-app.png"\>
@@ -238,7 +241,7 @@ buildpack: client-certificate-mapper.... [snip]
                       <p>
                       If you’re done, you can delete your app by running <code>cf delete &lt;APPNAME&gt;</code> (it’s up to you whether to keep it running for more experiments or delete it).
                       </p>
-                      
+
                     </article>
 
                   </section>
@@ -281,7 +284,7 @@ buildpack: client-certificate-mapper.... [snip]
                       <h4>Deploy a Hello World app</h4>
 
                       <p>
-                          Now that you have your account and the CLI installed, let’s download the "Hello World" samples, choose one, connect to cloud.gov and "push" the application code. 
+                          Now that you have your account and the CLI installed, let’s download the "Hello World" samples, choose one, connect to cloud.gov and "push" the application code.
                         </p>
                         <h5>
 
@@ -290,15 +293,15 @@ buildpack: client-certificate-mapper.... [snip]
                           Download the Hello World code examples from 18F's GitHub repository
                       </h5>
                       <p>If you have Git installed:</p>
-                      <pre>
+<pre>
 git clone https://github.com/18F/cf-hello-worlds
 cd cf-hello-worlds
-                      </pre>
+</pre>
                       <p>If you don’t have Git installed, download <a href="https://github.com/18F/cf-hello-worlds/archive/master.zip"><code>master.zip</code></a> from the repository, unzip <code>master.zip</code>, then:
                       </p>
                       <pre>cd cf-hello-worlds-master</pre>
                       <h5>
-                        Choose a framework.
+                        Choose a framework
                       </h5>
                       <p>
                         There are subdirectories for a number of different language + framework combinations. Choose an &lt;example&gt;, then
@@ -317,9 +320,9 @@ cd cf-hello-worlds
                       <h5>Push the application</h5>
                       <pre>cf push</pre>
                       <p>
-                        The <code>push</code> command will upload your sample app, prepare it for cloud.gov, then after a couple minutes tell you what URL to visit in your browser. Look for the <code>urls: </code> line, as in this example:
+                        The <code>push</code> command will upload your sample app, prepare it for cloud.gov, then after a couple minutes tell you what URL to visit in your browser. Look for the <code>urls: </code> line, as in this example output:
                       </p>
-<pre>
+<pre class="output">
 cf push
 Using manifest file ...
 
@@ -334,14 +337,14 @@ last uploaded: Sat Dec 2 17:51:57 UTC 2017
 stack: cflinuxfs2
 buildpack: dotnet-core
 
-     state     since                 
+     state     since
 #0   running   2017-12-02 12:53:29 PM
 </pre>
                       <h5>View your application</h5>
                       <p>
                         Use your browser to visit the <code>urls:</code> from the push command (in the above example, https:/dotnet-core-nongraphical-logogram.app.cloud.gov). It should just display <code>Hello World from</code> and the name of your programming language example.
                       </p>
-                      <p>Congratulatons! You now have a running webapp built on the language and framework of your choice.</p>
+                      <p>Congratulations! You now have a running web app built on the language and framework of your choice.</p>
 
                       <!-- Next section largely identical to Exploring from above -->
                       <h5>Exploring other cloud.gov features</h5>
