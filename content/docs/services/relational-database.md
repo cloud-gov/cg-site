@@ -24,7 +24,9 @@ Plan Name | Description | Software Version | Price
 `medium-mysql-redundant` | Dedicated redundant medium RDS MySQL DB instance                             | 5.6.35 | Will be paid per hour + storage
 `large-mysql`            | Dedicated large RDS MySQL DB instance                                        | 5.6.35 | Will be paid per hour + storage
 `large-mysql-redundant`  | Dedicated redundant large RDS MySQL DB instance                              | 5.6.35 | Will be paid per hour + storage
-`medium-oracle-se2`      | Dedicated medium RDS Oracle SE2 DB | 12.0.1.2.v8 | Will be paid per hour + storage
+`medium-oracle-se2`      | Dedicated medium RDS Oracle SE2 DB | 12.0.1.2.v9 | Will be paid per hour + storage
+
+The software versions listed are for new instances.
 
 ### Pricing
 Shared instances are free. Simple and redundant instances will have pricing per hour and per GB per month. [Learn more about managed service pricing.]({{< relref "overview/pricing/managed-services-cost.md" >}})
@@ -162,7 +164,7 @@ You can rotate credentials by creating a new instance and [deleting the existing
 
 Dedicated RDS plans use the latest database version available from AWS RDS GovCloud (US) at the time. Shared plans may use older database versions.
 
-All RDS plans are configured to automatically upgrade to the most recent compatible [minor version](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html) available via AWS RDS GovCloud (US).
+The PostgreSQL and MySQL plans are configured to automatically upgrade currently-running dedicated instances to the most recent compatible [minor version](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html) available via AWS RDS GovCloud (US).
 
 ## The broker in GitHub
 
