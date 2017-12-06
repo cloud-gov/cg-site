@@ -58,16 +58,24 @@ deploying an update that will upgrade the stemcell. You should also read the
 ## Review and respond to open alerts
 
 Review all recent alerts and notifications delivered to [`cg-notifications`](https://groups.google.com/a/gsa.gov/forum/#!forum/cloud-gov-notifications)
-and [`#cg-platform-news`](https://gsa-tts.slack.com/messages/cg-platform-news/).
+, [`#cg-platform-news`](https://gsa-tts.slack.com/messages/cg-platform-news/)
+, and [PagerDuty](https://18fi.pagerduty.com/incidents).
 
 ### Are there no alerts or notifications?
 Verify the monitoring system is functioning correctly and confirm that alerts
 are reaching their expected destinations.
 
-### Is the alert a real issue?
-Remediate it.
+### Investigate open alerts
+- Was the alert caused by known maintenance or testing in dev environments? Check with other members of the cloud.gov team if you can't determine the source. 
+- Is this a recurring alert? Search alert history to determine how frequently it is occuring and what event may have started its firing.
+- Should the underlying condition have caused an alert? Alerts should only be raised when they're something we need to remediate.
 
-### Is the alert a false-positive?
+#### Is the alert a real issue?
+If the alert may indicate a security issue follow the 
+[Security Incident Response Guide]({{< relref "docs/ops/security-ir.md" >}})
+, otherwise work to remediate its cause. 
+
+#### Is the alert a false-positive?
 If the alert can be tuned to reduce the number of false-positives with less than
 one day's work, do it.  If more work is required to tune the alert, add a card
 to capture the work that needs to be done or +1 an existing card if one already
