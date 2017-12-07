@@ -1,6 +1,6 @@
 +++
-title: "Starting now, Sandboxes expire after 90 days"
-date: 2017-12-06
+date = "2017-12-08"
+title = "Starting now, Sandboxes expire after 90 days"
 +++
 
 In our monthly update from November, we mentioned we would start expiring sandboxes after 90 days. Today, we're starting that clock. Here's what to expect.
