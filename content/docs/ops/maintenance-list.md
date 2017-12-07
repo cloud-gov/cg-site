@@ -66,6 +66,7 @@ Verify the monitoring system is functioning correctly and confirm that alerts
 are reaching their expected destinations.
 
 ### Investigate open alerts
+- Use our [guide for reviewing cloud.gov alerts](https://docs.google.com/document/d/1Nk5Cv9FjnqBywK8LPyw_jtmP4WNJBnqdbC-7nIcjMVI/edit#) for alert descriptions, links to the relevant rules, and starting points for reviewing each type of alert.
 - Was the alert caused by known maintenance or testing in dev environments? Check with other members of the cloud.gov team if you can't determine the source. 
 - Is this a recurring alert? Search alert history to determine how frequently it is occuring and what event may have started its firing.
 - Should the underlying condition have caused an alert? Alerts should only be raised when they're something we need to remediate.
