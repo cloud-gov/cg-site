@@ -61,22 +61,6 @@ The contents of the `DATABASE_URL` environment variable contain the credentials 
 
 ## Access the data in the database
 
-There are currently two ways to access the database directly.
-
-1. [The `cg-migrate-db` plugin](#cg-migrate-db-plugin). It is a self contained
-executable which will interactively assist with accessing the data in the
-database. It supports accessing data from different types of databases.
-1. [Manually accessing the database](#manually-access-a-database). This way
-requires manually downloading the tool(s) needed to access the database.
-
-### cg-migrate-db plugin
-You can access the data in your database via the `cg-migrate-db`
-plugin. See the [repository](https://github.com/18F/cg-migrate-db)
-for instructions on how to install the plugin, backup data, import data,
-download a local copy of the data, and upload a local copy of the data.
-
-### Manually access a database
-
 #### Using cf ssh
 
 To access a service database, use the [cf-service-connect plugin](https://github.com/18F/cf-service-connect#readme).
