@@ -7,11 +7,6 @@
 
     {{ partial "header.html" . }}
 
-    <!-- <div class="header-view">
-      <div class="usa-grid">
-        <h1><a class="link-textblack" href="/updates/">Updates</a></h1>
-      </div>
-    </div> -->
 
     <main class="quickstart">
 
@@ -24,30 +19,15 @@
             </p>
           </section>
 
-
-
-          <!-- <div class="usa-width-two-thirds panel content-text">
-            <header class="post-header">
-              <span class="panel-new-date">{{ .Date.Format "Jan 2, 2006" }}{{ if .Params.author }} • {{ .Params.author }}{{ end }}{{ if .Params.meta }} • {{ .Params.meta }}{{ end }}</span>
-            </header>
-            <h1>{{ .Title }}</h1>
-
-            {{ if .Params.image }}
-            <div class="page--banner" style="background-image: url({{ .Params.image}});"></div>
-            {{ end }}
-
-            {{ .Content }}
-         </div> -->
-
         </div>
       </div>
 
       <div class="usa-content bgcolor-ltbluegrey">
         <div class="usa-grid">
           <section class="step first">
-            <h2 id="access">Get trial access and a free sandbox account</h2>
+            <h2 id="access">Get trial access and a free sandbox space</h2>
             <p>
-              Federal employees and contractors with an email ending in .mil, .gov, or .fed.us can obtain a free sandbox account. To register, you’ll need access to your email and a smartphone with Google Authenticator installed.
+              Federal employees and contractors with an email ending in .mil, .gov, or .fed.us can obtain a free sandbox space. To register, you’ll need access to your email and a smartphone with Google Authenticator installed.
             </p>
             <!-- <form>
               <label for="email">Federal email address</label>
@@ -69,135 +49,358 @@
           <section class="step second">
             <h2 id="tutorials">Go build in your sandbox</h2>
             <p>
-              Follow the tutorial to launch your own web application from your sandbox. You’ll need your cloud.gov account and some familiarity with Windows Powershell or Mac/Linux terminal.
+              Follow any of the tutorials to launch your own web application from your sandbox. You’ll need your cloud.gov account and some familiarity with Windows Powershell or Mac/Linux terminal.
+              Learn more about <a href="https://cloud.gov/overview/pricing/free-limited-sandbox/">sandbox spaces</a> and <a href="https://cloud.gov/overview/pricing/free-limited-sandbox/#sandbox-limitations">sandbox limitations</a>.
             </p>
 
-            <div class="content-resources">
+            <div class="tutorials-content">
 
-              <section>
+                <div class="accordion-container">
+
+                  <section>
+                    <h3>
+                      <input class="option-input" checked id="option-1" type="radio" name="options" />
+                      <label class="option" for="option-1">
+                        <span class="option__label">
+                          Video tutorial
+                        </span>
+                        <span>
+                          Get an introduction to basic cloud.gov concepts and learn how to run applications in your sandbox.
+                        </span>
+                      </label>
+                    </h3>
+
+                    <article class="two-col">
+                      <iframe width="235" height="120" src="https://www.youtube.com/embed/LKb0liZyepA?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                      <!-- <iframe width="208" height="117" src="https://www.youtube.com/embed/LKb0liZyepA?rel=0" frameborder="0" allowfullscreen></iframe> -->
+                      <div class="tutorial-content">
+                        <h4>Part 1: Why cloud.gov?</h4>
+                        <p class="duration">
+                          27 minutes
+                        </p>
+                        <p>
+                          Get an overview of the cloud.gov platform and how it reduces lead time, and  ensures security and compliance.
+                        </p>
+                        <ul class="button-list">
+                          <li>
+                            <a href="../assets/files/01-slides-why-cloudgov.pdf">Download slides</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </article>
+
+                    <article class="two-col">
+                      <iframe width="235" height="120" src="https://www.youtube.com/embed/ip8G_Rafb_c?rel=0&t=3m1s&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                      <div class="tutorial-content">
+                        <h4>Part 2: Getting set up</h4>
+                        <p class="duration">
+                          4 minutes
+                        </p>
+                        <p>
+                          A walk-through of the initial registration process (starts at 3:01), including the setup of your one-time password application.
+                        </p>
+                        <ul class="button-list">
+                          <li>
+                            <a href="../assets/files/02-slides-cloudgov-getting-set-up.pdf">Download slides</a>
+                          </li>
+                          <li>
+                            <a href="../assets/files/cloudgov-cheatsheet.pdf">Download cheatsheet</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </article>
+
+                    <article class="two-col">
+                      <iframe width="235" height="120" src="https://www.youtube.com/embed/G2J8dxSF0-I?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                      <div class="tutorial-content">
+                        <h4>Part 3: Hands-on workshop</h4>
+                        <p class="duration">
+                          41 minutes
+                        </p>
+                        <p>
+                          Install the Cloud Foundry tools, connect to cloud.gov, and start running applications — from a static site, to a multi-node application with a data backend. We introduce you to the cloud.gov architecture and concepts, and touch on logging and debugging your running application.
+                        </p>
+                        <p>Install the Cloud Foundry command line tool</p>
+                          <ul class="button-list-row">
+                            <li>
+                              <a href="https://cli.run.pivotal.io/stable?release=windows64&source=github">Windows</a>
+                            </li>
+                            <li>
+                              <a href="https://cli.run.pivotal.io/stable?release=macosx64&source=github">Mac</a>
+                            </li>
+                            <li>
+                              <a href="https://github.com/cloudfoundry/cli#downloads">All Downloads</a>
+                            </li>
+                          </ul>
+
+                          <ul class="button-list">
+
+                          <li>
+                            <a href="../assets/files/03-slides-cloudgov-hands-on-lab.pdf">Download slides</a>
+                          </li>
+                          <li>
+                            <a href="../assets/files/cloudgov-cheatsheet.pdf">Download cheatsheet</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </article>
+
+                  </section>
+
+                  <section>
+                    <h3>
+                      <input class="option-input" id="option-2" type="radio" name="options" />
+                        <label class="option" for="option-2">
+                          <span class="option__label">
+                            Java app
+                          </span>
+                          <span>
+                            Learn how to deploy a Java web application in your sandbox.
+                          </span>
+                        </label>
+                    </h3>
+                    <article>
+                      <h4>
+                        Install the CloudFoundry command line interface (CLI)
+                      </h4>
+                      <p>
+                        Since cloud.gov is based on the open-source Cloud Foundry project, it uses the Cloud Foundry CLI. Download and install the CLI for your system:
+                      </p>
+                      <ul class="button-list-row">
+                        <li>
+                          <a href="https://cli.run.pivotal.io/stable?release=windows64&source=github">Windows (64-bit)</a>
+                        </li>
+                        <li>
+                          <a href="https://cli.run.pivotal.io/stable?release=macosx64&source=github">Mac (64-bit)</a>
+                        </li>
+                        <li>
+                          <a href="https://github.com/cloudfoundry/cli#downloads">All Downloads</a>
+                        </li>
+                      </ul>
+                      <p>
+                        Test your install with following command:
+                      </p>
+                      <pre>cf help</pre>
+
+                      <h4>Deploy the sample app</h4>
+
+                      <p>
+                        Now that you have your account and the CLI installed, let’s deploy a Java web application by downloading the application code, connecting to cloud.gov, and “pushing” the application.
+                      </p>
+                      <h5>
+                        Download the application code from 18F's GitHub repository
+                      </h5>
+                      <p>If you have Git installed:</p>
+                      <pre>
+git clone https://github.com/18F/cf-sample-app-spring
+cd cf-sample-app-spring</pre>
+                      <p>If you don’t have Git installed, download <a href="https://github.com/18F/cf-sample-app-spring/archive/master.zip"><code>master.zip</code></a> from the repository, unzip <code>master.zip</code>, then:
+                      </p>
+                      <pre>cd cf-sample-app-spring-master</pre>
+
+                      <h5>Connect to cloud.gov</h5>
+                      <pre>cf login -a https://api.fr.cloud.gov --sso</pre>
+                      <p>
+                        Complete the login in your browser at <a href="https://login.fr.cloud.gov/passcode">https://login.fr.cloud.gov/passcode</a>. You’ll get a one-time passcode, which you then paste into your terminal.
+                      </p>
+                      <h5>Push the application</h5>
+                      <pre>cf push</pre>
+                      <p>
+                        The <code>push</code> command will upload your sample app, prepare it for cloud.gov, then after a couple minutes tell you what URL to visit in your browser. Look for the <code>urls: </code> line, as in this example output:
+                      </p>
+<pre class="output">
+cf push
+Using manifest file ...
+
+Creating app cf-spring in org / space
+OK
+...[snip]...
+requested state: started
+instances: 1/1
+usage: 768M x 1 instances
+<strong>urls: cf-spring-subpeltate-briner.app.cloud.gov</strong>
+last uploaded: Fri Nov 3 17:50:30 UTC 2017
+stack: cflinuxfs2
+buildpack: client-certificate-mapper.... [snip]
+
+     state     since
+#0   running   2017-12-02 12:53:29 PM
+</pre>
+
+                      <h5>View your application</h5>
+                      <p>
+                        Use your browser to visit the <code>urls:</code> from the push command
+                        (in the above example, https://cf-spring-subpeltate-briner.app.cloud.gov). Your browser should display something like this:
+                      </p>
+                      <img src="/img/cf-spring-sample-app.png"\>
+                      <p>Congratulations! You now have a running webapp built on the <a href="https://spring.io">Java Spring framework.</a></p>
+
+                      <h5>Exploring other cloud.gov features</h5>
+                      <p>Visit the dashboard &mdash; <a href="https://dashboard.fr.cloud.gov/">https://dashboard.fr.cloud.gov/</a> &mdash; to see your options for managing your application via your browser.</p>
+                      <p>View your application logs with <code>cf logs --recent</code> or with the web-based logviewer at <a href="https://logs.fr.cloud.gov">https://logs.fr.cloud.gov</a></p>
+                      <p>
+                      If you’re done, you can delete your app by running <code>cf delete &lt;APPNAME&gt;</code> (it’s up to you whether to keep it running for more experiments or delete it).
+                      </p>
+
+                    </article>
+
+                  </section>
+
+                  <section>
+                    <h3>
+                      <input class="option-input" id="option-3" type="radio" name="options" />
+                      <label class="option" for="option-3">
+                        <span class="option__label">
+                          Other languages
+                        </span>
+                        <span>
+                          Try a simple "Hello world" app in .Net Core, PHP, Python, Ruby, NodeJS or Clojure in your sandbox.
+                        </span>
+                      </label>
+                    </h3>
+                    <article>
+                      <h4>
+                          Install the CloudFoundry command line interface (CLI)
+                      </h4>
+                      <p>
+                        Since cloud.gov is based on the open-source Cloud Foundry project, it uses the Cloud Foundry CLI. Download and install the CLI for your system:
+                      </p>
+                      <ul class="button-list-row">
+                        <li>
+                          <a href="https://cli.run.pivotal.io/stable?release=windows64&source=github">Windows (64-bit)</a>
+                        </li>
+                        <li>
+                          <a href="https://cli.run.pivotal.io/stable?release=macosx64&source=github">Mac (64-bit)</a>
+                        </li>
+                        <li>
+                          <a href="https://github.com/cloudfoundry/cli#downloads">All Downloads</a>
+                        </li>
+                      </ul>
+                      <p>
+                        Test your install with following command:
+                      </p>
+                      <pre>cf help</pre>
+
+                      <h4>Deploy a Hello World app</h4>
+
+                      <p>
+                          Now that you have your account and the CLI installed, let’s download the "Hello World" samples, choose one, connect to cloud.gov and "push" the application code.
+                        </p>
+                        <h5>
 
 
-                <div class="accordion-wrapper">
-                  <!-- <h3>
-                    <span class="eyebrow">Tutorial</span>
-                    Watch our video tutorials
-                  </h3>
-                  <p>
-                    Get an introduction to basic cloud.gov concepts and learn how to run applications in your sandbox.
-                  </p> -->
+                      <h5>
+                          Download the Hello World code examples from 18F's GitHub repository
+                      </h5>
+                      <p>If you have Git installed:</p>
+<pre>
+git clone https://github.com/18F/cf-hello-worlds
+cd cf-hello-worlds
+</pre>
+                      <p>If you don’t have Git installed, download <a href="https://github.com/18F/cf-hello-worlds/archive/master.zip"><code>master.zip</code></a> from the repository, unzip <code>master.zip</code>, then:
+                      </p>
+                      <pre>cd cf-hello-worlds-master</pre>
+                      <h5>
+                        Choose a framework
+                      </h5>
+                      <p>
+                        There are subdirectories for a number of different language + framework combinations. Choose an &lt;example&gt;, then
+                      </p>
+                      <pre>cd &lt;example&gt;</pre>
 
-                  <article class="usa-width-one-third">
-                    <iframe width="280" height="157" src="https://www.youtube.com/embed/LKb0liZyepA?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-                    <!-- <iframe width="208" height="117" src="https://www.youtube.com/embed/LKb0liZyepA?rel=0" frameborder="0" allowfullscreen></iframe> -->
-                    <h4>Part 1: Why cloud.gov?</h4>
-                    <p class="duration">
-                      27 minutes
-                    </p>
-                    <p>
-                      Get an overview of the cloud.gov platform and how it reduces lead time, and  ensures security and compliance.
-                    </p>
-                    <ul>
-                      <li>
-                        <a href="../assets/files/01-slides-why-cloudgov.pdf">Download slides</a>
-                      </li>
-                    </ul>
-                  </article>
+                      <p>E.g., <code>cd python-flask</code></p>
 
-                  <article class="usa-width-one-third">
-                    <iframe width="280" height="157" src="https://www.youtube.com/embed/ip8G_Rafb_c?rel=0&t=3m1s&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-                    <h4>Part 2: Getting set up</h4>
-                    <p class="duration">
-                      4 minutes
-                    </p>
-                    <p>
-                      A walk-through of the initial registration process (starts at 3:01), including the setup of your one-time password application.
-                    </p>
-                    <ul>
-                      <li>
-                        <a href="../assets/files/02-slides-cloudgov-getting-set-up.pdf">Download slides</a>
-                      </li>
-                      <li>
-                        <a href="../assets/files/cloudgov-cheatsheet.pdf">Download cheatsheet</a>
-                      </li>
-                    </ul>
-                  </article>
-                  <article class="usa-width-one-third">
-                    <iframe width="280" height="157" src="https://www.youtube.com/embed/G2J8dxSF0-I?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-                    <h4>Part 3: Hands-on workshop</h4>
-                    <p class="duration">
-                      41 minutes
-                    </p>
-                    <p>
-                      Install the Cloud Foundry tools, connect to cloud.gov, and start running applications — from a static site, to a multi-node application with a data backend. We introduce you to the cloud.gov architecture and concepts, and touch on logging and debugging your running application.                     </p>
-                    <ul>
-                      <li>
-                        <a href="https://github.com/cloudfoundry/cli/releases">Download and install the Cloud Foundry command line tool</a>
-                      </li>
-                      <li>
-                        <a href="../assets/files/03-slides-cloudgov-hands-on-lab.pdf">Download slides</a>
-                      </li>
-                      <li>
-                        <a href="../assets/files/cloudgov-cheatsheet.pdf">Download cheatsheet</a>
-                      </li>
-                    </ul>
-                  </article>
+                      <p>Regardless of the framework you choose, the remaining steps are all the same.</p>
 
-                </div>
+                      <h5>Connect to cloud.gov</h5>
+                      <pre>cf login -a https://api.fr.cloud.gov --sso</pre>
+                      <p>
+                        Complete the login in your browser at <a href="https://login.fr.cloud.gov/passcode">https://login.fr.cloud.gov/passcode</a>. You’ll get a one-time passcode, which you then paste into your terminal.
+                      </p>
+                      <h5>Push the application</h5>
+                      <pre>cf push</pre>
+                      <p>
+                        The <code>push</code> command will upload your sample app, prepare it for cloud.gov, then after a couple minutes tell you what URL to visit in your browser. Look for the <code>urls: </code> line, as in this example output:
+                      </p>
+<pre class="output">
+cf push
+Using manifest file ...
 
-                <h3>Additional resources</h3>
-                <p>
-                  Did we miss a tip or useful resource that you think we should add? <a href="https://github.com/cg-site/issues">Submit a suggestion on GitHub</a> or <a href="mailto:cloud-gov-inquiries@gsa.gov?subject=%5BSuggestion%5D%20&body=%0A%0A%0A%0ARefcode:%20quickstart">send us an email</a>.
-                </p>
+Creating app dotnet-core in org / space
+OK
+...[snip]...
+requested state: started
+instances: 1/1
+usage: 512M x 1 instances
+<strong>urls: dotnet-core-nongraphical-logogram.app.cloud.gov</strong>
+last uploaded: Sat Dec 2 17:51:57 UTC 2017
+stack: cflinuxfs2
+buildpack: dotnet-core
 
-                <article class="usa-width-one-third">
-                  <h4>Sample applications</h4>
-                  <ul>
-                    <li>
-                      <a href="https://github.com/18F/cf-hello-worlds">“Hello World” in different frameworks (Python, Ruby on Rails, PHP, etc)</a>
-                    </li>
-                    <li>
-                      <a href="https://github.com/18F/cf-ex-drupal">Drupal example</a>
-                    </li>
-                    <li>
-                      <a href="https://github.com/18F/cf-ex-wordpress">WordPress example</a>
-                    </li>
-                    <li>
-                      <a href="https://github.com/cloudfoundry-samples">Cloud Foundry community collection of sample applications</a>
-                    </li>
-                    <li>
-                      <a href="https://github.com/cloudfoundry-samples/spring-music">SpringMusic: Java + any of MySQL, Oracle, Postgres or Redis</a>
-                    </li>
-                  </ul>
-                </article>
-                <article class="usa-width-one-third">
-                  <h4>Join the communities</h4>
-                  <ul>
-                    <li>
-                      <a href="https://chat.18f.gov/">The public DevOps channel on 18F's Slack (sign up at chat.18f.gov).</a>
-                    </li>
-                    <li>
-                      <a href="https://www.cloudfoundry.org/community/">Cloud Foundry communities (Slack, newsletters, mail lists)</a>
-                    </li>
-                  </ul>
-                </article>
+     state     since
+#0   running   2017-12-02 12:53:29 PM
+</pre>
+                      <h5>View your application</h5>
+                      <p>
+                        Use your browser to visit the <code>urls:</code> from the push command (in the above example, https:/dotnet-core-nongraphical-logogram.app.cloud.gov). It should just display <code>Hello World from</code> and the name of your programming language example.
+                      </p>
+                      <p>Congratulations! You now have a running web app built on the language and framework of your choice.</p>
 
-              </section>
+                      <!-- Next section largely identical to Exploring from above -->
+                      <h5>Exploring other cloud.gov features</h5>
+                      <p>Visit the dashboard &mdash; <a href="https://dashboard.fr.cloud.gov/">https://dashboard.fr.cloud.gov/</a> &mdash; to see your options for managing your application via your browser.</p>
+                      <p>View your application logs with <code>cf logs --recent</code> or with the web-based logviewer at <a href="https://logs.fr.cloud.gov">https://logs.fr.cloud.gov</a></p>
+                      <p>
+                      If you’re done, you can delete your app by running <code>cf delete &lt;APPNAME&gt;</code> (it’s up to you whether to keep it running for more experiments or delete it).
+                      </p>
 
-              <!-- <section>
-                <h3>
-                  <span class="eyebrow">Tutorial</span>
-                  Deploy a sample Java app
-                </h3>
-              </section>
+                    </article>
+                  </section>
 
-              <section>
-                <h3>
-                  <span class="eyebrow">Tutorial</span>
-                  Your first deploy — Hello World
-                </h3>
-              </section> -->
+                </div><!-- end accordion-wrapper -->
 
-            </div>
+                <div class="content-resources">
+                  <section class="usa-grid">
+                    <h3>Additional resources</h3>
+                      <p>If you've run into any issues with these tutorials, please <a href="mailto:cloud-gov-support@gsa.gov">Contact support at cloud.gov</a>. We're happy to help.</p>
+                      <p>
+                        Did we miss a tip or useful resource that you think we should add? <a href="https://github.com/18F/cg-site/issues/new">Submit a suggestion on GitHub</a> or <a href="mailto:cloud-gov-inquiries@gsa.gov?subject=%5BSuggestion%5D%20&body=%0A%0A%0A%0ARefcode:%20quickstart">send us an email</a>.
+                      </p>
+
+                      <article class="usa-width-one-third">
+                        <h4>Additional sample applications</h4>
+                        <ul>
+                          <li>
+                            <a href="https://github.com/18F/cf-ex-drupal">Drupal example</a>
+                          </li>
+                          <li>
+                            <a href="https://github.com/18F/cf-ex-wordpress">WordPress example</a>
+                          </li>
+                          <li>
+                            <a href="https://github.com/cloudfoundry-samples">Cloud Foundry community collection of sample applications</a>
+                          </li>
+                          <li>
+                            <a href="https://github.com/cloudfoundry-samples/spring-music">SpringMusic: Java + any of MySQL, Oracle, Postgres or Redis</a>
+                          </li>
+                        </ul>
+                      </article>
+                      <article class="usa-width-one-third">
+                        <h4>Join the communities</h4>
+                        <ul>
+                          <li>
+                            <a href="https://chat.18f.gov/">The public DevOps channel on 18F's Slack (sign up at chat.18f.gov).</a>
+                          </li>
+                          <li>
+                            <a href="https://www.cloudfoundry.org/community/">Cloud Foundry communities (Slack, newsletters, mail lists)</a>
+                          </li>
+                        </ul>
+                      </article>
+                  </section>
+                </div><!-- end content-resources -->
+
+
+
+            </div><!-- end tutorials-content -->
 
 
             </div>
@@ -218,42 +421,7 @@
               <a href="mailto:cloud-gov-inquiries@gsa.gov?body=What%27s%20your%20name%3F%0A%0AWhat%20agency%20or%20office%20do%20you%20work%20for%3F%0A%0AWhat%27s%20your%20job%20title%20or%20role%3F%0A%0ATell%20us%20a%20little%20about%20your%20project%20or%20your%20questions%20about%20cloud.gov:%0A%0AIf%20you%27d%20like%20us%20to%20call%20you%2C%20what%27s%20your%20phone%20number%20and%20when%20might%20be%20a%20good%20time%3F%0A%0A%0A%0A%0ARefcode:%20quickstart" class="usa-button">Contact us</a>
             </p>
 
-            <!-- <h3>Additional resources</h3>
-            <p>
-              Did we miss a tip or useful resource that you think we should add? <a href="https://github.com/18F/cg-site">Submit a suggestion.</a>
-            </p>
 
-            <article class="usa-width-one-third">
-              <h4>Sample applications</h4>
-              <ul>
-                <li>
-                  <a href="https://github.com/18F/cf-hello-worlds">“Hello World” in different frameworks (Python, Ruby on Rails, PHP, etc)</a>
-                </li>
-                <li>
-                  <a href="https://github.com/18F/cf-ex-drupal">Drupal example</a>
-                </li>
-                <li>
-                  <a href="https://github.com/18F/cf-ex-wordpress">WordPress example</a>
-                </li>
-                <li>
-                  <a href="https://github.com/cloudfoundry-samples">Cloud Foundry community collection of sample applications</a>
-                </li>
-                <li>
-                  <a href="https://github.com/cloudfoundry-samples/spring-music">SpringMusic: Java + any of MySQL, Oracle, Postgres or Redis</a>
-                </li>
-              </ul>
-            </article>
-            <article class="usa-width-one-third">
-              <h4>Join the communities</h4>
-              <ul>
-                <li>
-                  <a href="https://chat.18f.gov/">The public DevOps channel on 18F's Slack (sign up at chat.18f.gov).</a>
-                </li>
-                <li>
-                  <a href="https://www.cloudfoundry.org/community/">Cloud Foundry communities (Slack, newsletters, mail lists)</a>
-                </li>
-              </ul>
-            </article> -->
 
           </section>
         </div>
