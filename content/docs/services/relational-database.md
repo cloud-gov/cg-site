@@ -166,6 +166,8 @@ New instances of dedicated RDS plans use the latest database version available f
 
 The PostgreSQL and MySQL plans are configured to automatically upgrade currently-running dedicated instances to the most recent compatible [minor version](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html) available via AWS RDS GovCloud (US).
 
+For Oracle plans, minor upgrades are not automatic. To upgrade an existing Oracle database instance, contact [support](mailto:cloud-gov-support@gsa.gov) and schedule a maintenance window for the upgrade to take place.
+
 ## The broker in GitHub
 
 You can find the broker here: [https://github.com/18F/aws-broker](https://github.com/18F/aws-broker).
