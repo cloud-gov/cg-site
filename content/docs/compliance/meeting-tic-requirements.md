@@ -53,7 +53,7 @@ For requests originating from your agency’s TIC egress bound for cloud.gov, ou
 
 cloud.gov's TLS endpoint is not restricted, but rather accessible over the open internet. When an administrator wants to interact with the deployed application through the cloud.gov API, it's your agency’s responsibility to make sure that traffic goes over a TIC connection before it reaches its destination on cloud.gov. For example, you may not want users to be able to manipulate applications on cloud.gov from their home connection or via a wifi access point in the local coffee shop.
 
-Your agency can accomplish this by establishing an operational requirement that all administrative access to cloud.gov services happens via the agency network. You can further enforce this requirement with a technical control: [Prevent users in your domain from using the cloud.gov API except from your agency's TIC egress range]({{< relref "docs/apps/experimental/restricting-users-to-trusted-ip-ranges.md" >}}). Requests from an IP origin that does not match the range we have on record for your TIC (the dotted line in the diagram) will be rejected.
+Your agency can accomplish this by establishing an operational requirement that all administrative access to cloud.gov services happens via the agency network. You can further enforce this requirement with a technical control: [Prevent users in your domain from using the cloud.gov API except from your agency's TIC egress range]({{< relref "docs/apps/experimental/restricting-users-to-trusted-ip-ranges.md" >}}). Requests from an IP origin that does not match the range we have on record for your TIC (the dotted/dashed line in the diagram) will be rejected.
 
 ### Restricting usage of your application
 
