@@ -187,7 +187,7 @@ Examples:
 * Configuring platform alerts to be more specific or precise
 * Adding platform alerts
 * Adding automated tests to any component
-* Adjusting configuration or number of platform “virtual machine” components, such as disk size (not major changes to configuration that may have security impact, such as a whole different operating system)
+* Adjusting configuration or number of platform "virtual machine" components, such as disk size (not major changes to configuration that may have security impact, such as a whole different operating system)
 * An upstream open source component integrates a new dependency
 
 ### When a change should be discussed with our JAB TRs (Technical Representatives)

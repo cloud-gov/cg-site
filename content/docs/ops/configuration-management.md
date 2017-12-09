@@ -52,8 +52,18 @@ Before we put a new repository into production:
 
 * Give it a name starting with `cg-` or `cf-` (to make clear that it's part of our work, unless we have a good reason to name it something else).
 * [Add `LICENSE`, `CONTRIBUTING`, and `README` files](https://github.com/18F/open-source-policy/blob/master/practice.md#how-to-license-18f-repos) (to support open source reuse of our work).
-* Set up [Code Climate](https://docs.codeclimate.com/docs/github#pull-requests) (SI-3).
-* Configure a [protected master branch](https://help.github.com/articles/about-protected-branches/) with required reviews (CM-9).
+* Set up [Code Climate](https://codeclimate.com/) for pull requests (SI-3).
+  * Go to Code Climate and log in using your GitHub auth.
+  * Give Code Climate permissions to access your public repositories including the 18F org.
+  * Go to [the open source dashboard](https://codeclimate.com/oss/dashboard) and [add the new repository](https://codeclimate.com/github/repos/new).
+  * In Code Climate, go to the repository settings, go to Integrations, and enable Pull Request checking.
+  * In the repo, add a [Code Climate configuration file](https://docs.codeclimate.com/docs/advanced-configuration) (`.codeclimate.yml`) to [enable relevant plugins](https://docs.codeclimate.com/docs/list-of-engines).
+* Configure a [protected master branch](https://help.github.com/articles/about-protected-branches/) (CM-9).
+  * Enable "Require pull request reviews before merging"
+  * Enable "Dismiss stale pull request approvals when new commits are pushed"
+  * Enable "Require status checks to pass before merging"
+  * Enable "Require branches to be up to date before merging"
+  * Enable "Include administrators"
 * Configure permissions (CM-3):
   * If it's a platform configuration repo, restrict permissions to Cloud Ops, as follows:
      * `Read` for [18F](https://github.com/orgs/18F/teams/18f/members).
