@@ -90,13 +90,13 @@
       <h2 class="bar-top">Learn more:</h2>
       <ul class="button-list">
         <li>
-          <a href="/quickstart/#tutorials">Video: What is cloud.gov?</a>
+          <a href="/quickstart/#tutorials"><i class="fa fa-fw fa-video-camera" aria-hidden="true"></i> Video: What is cloud.gov?</a>
         </li>
         <li>
-          <a href="#">PDF: Product overview</a>
+          <a href="/assets/files/cloudgov-overview.pdf"><i class="fa fa-fw fa-file-pdf-o" aria-hidden="true"></i> PDF: Product overview</a>
         </li>
         <li>
-          <a href="#">PDF: Customer stories</a>
+          <a href="/assets/files/cloudgov-customers.pdf"><i class="fa fa-fw fa-file-pdf-o" aria-hidden="true"></i> PDF: Customer stories</a>
         </li>
       </ul>
     </article>
@@ -110,20 +110,20 @@
       <article class="usa-width-one-third">
         <h2 class="bar-top">Sandbox space</h2>
         <p>
-          Sandbox spaces are free. All you need is a federal email address &mdash; no paperwork, no hassle.
+          <a href="https://cloud.gov/overview/pricing/free-limited-sandbox/">Sandbox spaces</a> are free. All you need is a federal email address &mdash; no paperwork, no hassle.
         </p>
         <p>
-          <a href="#" class="button-link">Get a free trial sandbox</a>
+          <a href="/quickstart" class="button-link">Get a free trial sandbox</a>
         </p>
       </article>
 
       <article class="usa-width-one-third">
         <h2 class="bar-top">Prototyping packages</h2>
         <p>
-          Upgrade to a prototyping package and develop new apps in a production-ready environment. $15k gets your agency 12 months of full access for unlimited users.
+          Upgrade to a <a href="https://cloud.gov/overview/pricing/prototyping/">prototyping package</a> and develop new apps in a production-ready environment. $15k gets your agency 12 months of full access for unlimited users.
         </p>
         <p>
-          <a href="#" class="button-link">Learn about purchasing</a>
+          <a href="https://cloud.gov/overview/pricing/start-using-cloudgov/" class="button-link">Learn about purchasing</a>
         </p>
       </article>
 
@@ -133,7 +133,7 @@
           FISMA production packages range from $20k to up to $90k per year for FISMA-moderate applications.
         </p>
         <p>
-          <a href="#" class="button-link">Learn about purchasing</a>
+          <a href="https://cloud.gov/overview/pricing/start-using-cloudgov/" class="button-link">Learn about purchasing</a>
         </p>
       </article>
 
@@ -164,7 +164,7 @@
     <div class="editorial-width-one-sixth">
       <embed src="img/logos/ATF-logo.svg" />
       <h5>
-        <a href="#">ATF eRegs</a>
+        <a href="https://regulations.atf.gov/">ATF eRegs</a>
       </h5>
       <p class="bar-top">
         Bureau of Alcohol, Tobacco, Firearms, and Explosives
@@ -173,7 +173,7 @@
     <div class="editorial-width-one-sixth">
       <embed src="img/logos/DOI-logo.svg" />
       <h5>
-        <a href="#">Every Kid in the Park</a>
+        <a href="https://www.everykidinapark.gov/">Every Kid in the Park</a>
       </h5>
       <p class="bar-top">
         Department of the Interior
@@ -182,7 +182,7 @@
     <div class="editorial-width-one-sixth">
       <embed src="img/logos/FEC-logo.svg" />
       <h5>
-        <a href="#">FEC website</a>
+        <a href="https://www.fec.gov/">FEC website</a>
       </h5>
       <p class="bar-top">
         Federal Election Commission
@@ -191,7 +191,7 @@
     <div class="editorial-width-one-sixth">
       <embed src="img/logos/FBI-logo.svg" />
       <h5>
-        <a href="#">Crime Data Explorer</a>
+        <a href="https://crime-data-explorer.fr.cloud.gov/">Crime Data Explorer</a>
       </h5>
       <p class="bar-top">
         Federal Bureau of Investigation
@@ -200,7 +200,7 @@
     <div class="editorial-width-one-sixth">
       <embed src="img/logos/IRS-logo.svg" />
       <h5>
-        <a href="#">Tax Map</a>
+        <a href="https://taxmap.irs.gov/taxmap/tmhome.htm">Tax Map</a>
       </h5>
       <p class="bar-top">
         Internal Revenue Service
@@ -209,7 +209,7 @@
     <div class="editorial-width-one-sixth">
       <embed src="img/logos/GSA-logo.svg" />
       <h5>
-        <a href="#">Analytics.gsa.gov</a>
+        <a href="https://analytics.usa.gov">Analytics.usa.gov</a>
       </h5>
       <p class="bar-top">
         General Services Administration
@@ -223,20 +223,37 @@
   <div class="usa-grid">
 
     <div class="usa-width-one-half">
-      <div class="">
+        <h2 class="bar-top">Release notes</h2>
 
-      </div>
-      <div class="">
-      <!-- <div class="section-content usa-content"> -->
-          {{ partial "newsletter.html" . }}
-      </div>
+        {{ range first 2 (where .Data.Pages "Section" "updates") }}
+          <p class="eyebrow ">
+            {{ .Date.Format "Jan 2, 2006" }}
+          </p>
+          <p>
+            <a href="{{ .RelPermalink }}">{{ .Title }}<i class="fa fa-fw fa-angle-right" aria-hidden="true"></i></a>
+          </p>
+        {{ end }}
+
+      {{ partial "newsletter.html" . }}
     </div>
     <div class="usa-width-one-half">
-      <div class="section-content usa-content">
-
-      </div>
+      <h2 class="bar-top">Industry Reports</h2>
+      <p class="eyebrow ">
+        Research
+      </p>
+      <p>
+        <a href="https://devops-research.com/assets/federal-cloud-infrastructure.pdf">Cloud Infrastructure in the Federal Government: Modern Practices for Effective Risk Management</a>
+      </p>
+      <p class="eyebrow ">
+        Research
+      </p>
+      <p>
+        <a href="https://content.pivotal.io/analyst-reports/the-total-economic-impact-of-pivotal-cloud-foundry">The Total Economic Impact<sup>&trade;</sup> of Pivotal Cloud Foundry</a>
+      </p>
+      <p class="caption">
+        (Sign up required.)
+      </p>
     </div>
-
 
   </div>
 </section>

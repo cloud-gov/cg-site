@@ -63,6 +63,7 @@
 #home #main ul li a,
 #home ul.button-list li a {
   color: #43403c;
+  /*color: #02699b;*/
   display: block;
   padding: 5px 0 15px 0;
   border-bottom: 1px solid #b5b6c3;
@@ -77,6 +78,7 @@
   display: inline-block;
   width: 40px;
   color: #ff5235;
+  /*color: #02699b;*/
   font-family: 'Times New Roman', Arial, sans-serif;
 }
 #home section:nth-of-type(2) article p {
@@ -121,9 +123,6 @@
   font-weight: 400;
   line-height: 1.5;
 }
-#home section .editorial-grid {
-
-}
 #home section .editorial-grid:first-of-type {
   padding-bottom: 120px;
 }
@@ -159,7 +158,8 @@
   font-weight: 600;
   margin-top: 50px;
 }
-#home section:nth-of-type(2) article .caption {
+#home section:nth-of-type(2) article .caption,
+#home .caption {
   font-family: '18Franklin-webfont', system, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; /* $font-sans */
   font-size: 13px;
   line-height: 1.2;
@@ -167,7 +167,7 @@
 #home section .button,
 #home .usa-button {
   display: block;
-  background-color: #ff5235;
+  background-color: rgba(251,97,60,1);    /*background-color: #ff5235;*/
   padding: 15px 20px;
   color: #000;
   margin: 30px 0;
@@ -176,6 +176,22 @@
   font-weight: 500;
   max-width: 320px;
   border-radius: 3px;
+}
+#home section .button:hover,
+#home .usa-button:hover {
+  background-color: rgba(251,97,60,.85);   /*background-color: #ff5235;*/
+}
+#home section .button-secondary {
+  background-color: rgba(0,174,227,1);
+  padding: 15px 20px;
+  margin: 30px 0;
+  font-family: '18Franklin-webfont', system, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; /* $font-sans */
+  font-size: 20px; /* 20px */
+  font-weight: 500;
+  max-width: 320px;
+}
+#home section .button-secondary:hover {
+  background-color: rgba(0,174,227,.85);
 }
 #home section .button span {
   color: #fff;
@@ -229,7 +245,7 @@
 }
 #home section.section-resources {
   margin-top: 60px;
-  padding-top: 60px;
+  padding-top: 120px;
   padding-bottom: 120px;
   border-top: 1px solid #b5b6c3;
 }
@@ -240,15 +256,34 @@
   margin: 0;
   color: #333;
   text-transform: uppercase;
-  letter-spacing: .0325em;
+  letter-spacing: .05em;
+}
+#home section.section-resources .eyebrow {
+  margin-top: 80px;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .03em;
 }
 #home section.section-resources p {
   font-size: 1.5em;
   line-height: 1.5;
   font-family: '18Franklin-webfont', system, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; /* $font-sans */
 }
-#home section.section-resources .newsletter-form {
-
+#home section.section-resources .eyebrow + p {
+  margin-top: 0;
+}
+#home section.section-resources .caption {
+  font-family: '18Franklin-webfont', system, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; /* $font-sans */
+  font-size: 13px;
+  line-height: 1.2;
+}
+#home section.section-resources a {
+  color: #02699b;
+}
+#home section.section-resources a:hover {
+  border-bottom: 1px dotted #02699b;
 }
 #home section.section-resources .newsletter-form label {
   font-weight: 600;
@@ -282,6 +317,45 @@
   height: auto;
   width: calc(100% - 10px);
   max-width: 490px;
+}
+#home a .fa.fa-fw {
+  color: #fb613c;
+}
+#home .button-list a:hover {
+  border-bottom-color: #02699b;
+}
+#home #main h1 a:hover {
+  /*color: #c00;*/
+  color: #02699b;
+  background-image: url(/img/angle-arrow-right-blue.svg);
+  background-size: 48px 48px;
+}
+#home #main ul li a:hover,
+#home .button-list a:hover,
+#home a.button-link:hover {
+  color: #02699b;
+}
+#home a[href^=".pdf"] {
+  padding-right: 30px;
+  background: url(/img/link-icons/icon-pdf.svg) right center no-repeat;
+}
+#home a[href*=".com"],
+#home a[href*=".io"] {
+  padding-right: 23px;
+  background: url(/img/link-icons/icon-external.svg) right center no-repeat;
+}
+#home .editorial-grid h4 + p a[href],
+#home .editorial-grid h5 a[href] {
+  padding-right: 20px;
+  background: url(/img/link-icons/icon-external.svg) right center no-repeat;
+}
+#home .editorial-grid h4 + p a[href] {
+  padding-right: 24px;
+  background: url(/img/link-icons/icon-external.svg) right center no-repeat;
+  background-size: 24px 24px;
+}
+#home .editorial-grid h5 a[href] {
+  background-size: 20px 20px;
 }
 
 @media screen and (min-width: 600px) {
