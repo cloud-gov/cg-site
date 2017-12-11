@@ -43,7 +43,7 @@
     <article class="usa-width-one-third">
       <p class="bar-top">
         Try cloud.gov for free. Create an account and deploy a sample app in your own free sandbox.
-        <a href="/quickstart" class="button">Get a free trial account <span>&rarr;</span></a>
+        <a href="/quickstart" class="usa-button">Get a free trial account <span>&rarr;</span></a>
       </p>
       <p class="caption bar-bottom">
         A federal email address is required to sign up.
@@ -221,9 +221,23 @@
 
 <section class="usa-content section-resources">
   <div class="usa-grid">
-    <div class="section-content usa-content">
-        {{ partial "contact.html" . }}
+
+    <div class="usa-width-one-half">
+      <div class="">
+
+      </div>
+      <div class="">
+      <!-- <div class="section-content usa-content"> -->
+          {{ partial "newsletter.html" . }}
+      </div>
     </div>
+    <div class="usa-width-one-half">
+      <div class="section-content usa-content">
+
+      </div>
+    </div>
+
+
   </div>
 </section>
 
