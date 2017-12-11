@@ -3,25 +3,31 @@
   color: #43403c;
 }
 #home h1 {
-  font-size: 72px;
+  font-size: 54px;
   font-weight: 800;
   line-height: 1.15;
-  letter-spacing: -.025em;
+  letter-spacing: -.0325em;
   max-width: 670px;
 }
 #home section:not(:first-of-type) h1{
   margin-bottom: 80px;
 }
 #home #main h1 {
+  letter-spacing: -.0325em;
   max-width: 840px;
 }
 #home h1 a {
-  display: inline-block;
   color: #ff5235;
   text-decoration: none;
-  padding-right: 65px;
+}
+#home #main h1 a {
+  display: inline-block;
+  padding-right: 40px;
+  text-decoration: none;
   background: url(/img/angle-arrow-right-orange.svg) right 20px no-repeat;
-  background-size: 48px 48px;
+  /*padding-right: 60px;*/
+  /*background-size: 45px 45px;*/
+  background-size: 30px 30px;
 }
 #home h3,
 #home h4 {
@@ -46,6 +52,12 @@
 #home section .editorial-grid h5 a {
   text-decoration: none;
   color: #28517b;
+}
+#home a:not(.action.action-link.action-secondary) {
+  color: #02699b;
+}
+#home a:not(.usa-button):hover {
+  border-bottom: 1px dotted #02699b;
 }
 #home section {
   padding-top: 60px;
@@ -325,10 +337,10 @@
   border-bottom-color: #02699b;
 }
 #home #main h1 a:hover {
-  /*color: #c00;*/
   color: #02699b;
   background-image: url(/img/angle-arrow-right-blue.svg);
-  background-size: 48px 48px;
+  background-size: 30px 30px;
+  padding-right: 40px;
 }
 #home #main ul li a:hover,
 #home .button-list a:hover,
@@ -357,8 +369,21 @@
 #home .editorial-grid h5 a[href] {
   background-size: 20px 20px;
 }
-
 @media screen and (min-width: 600px) {
+  #home h1 {
+    font-size: 72px;
+  }
+  #home #main h1 a {
+    display: inline-block;
+    text-decoration: none;
+    background: url(/img/angle-arrow-right-orange.svg) right 20px no-repeat;
+    padding-right: 60px;
+    background-size: 45px 45px;
+  }
+  #home #main h1 a:hover {
+    padding-right: 60px;
+    background-size: 45px 45px;
+  }
   #home .usa-width-one-third {
     width: 100%;
   }
