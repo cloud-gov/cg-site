@@ -99,16 +99,14 @@
   padding-top: 30px;
 }
 #home section:nth-of-type(2) article p.bar-top {
-  margin-top: 60px;
+  /*margin-top: 60px;*/
   padding-top: 45px;
-  /*padding-right: 20px;*/
   letter-spacing: -.02em;
 }
 #home section:nth-of-type(2) article p.bar-top > a:not(.usa-button) {
   /*color: #02699b;*/
   color: #ff5235;
   font-weight: 500;
-  /*border-bottom: 1px dotted #02699b;*/
 }
 #home .bar-bottom {
   position: relative;
@@ -145,11 +143,39 @@
 #home section .editorial-grid:first-of-type {
   padding-bottom: 120px;
 }
-#home section .editorial-grid .agency-logo {
-  height: 75px;
+#home section .editorial-grid .agency-ATF {
+  padding-top: 75px;
+  background: url(/img/logos/ATF-logo-01.svg) left top no-repeat;
+  background-size: 75px 75px;
 }
-#home section .editorial-grid .agency-logo:not(:first-of-type) {
-  margin-top: 60px;
+#home section .editorial-grid .agency-DOE {
+  background: url(/img/logos/Dept-of-Education-logo-01.svg) 0 0 no-repeat;
+  background-size: 75px 75px;
+}
+#home section .editorial-grid .agency-DOI {
+  padding-top: 75px;
+  background: url(/img/logos/DOI-logo-01.svg) 0 0 no-repeat;
+  background-size: 75px 75px;
+}
+#home section .editorial-grid .agency-FBI {
+  padding-top: 75px;
+  background: url(/img/logos/FBI-logo-01.svg) 0 0 no-repeat;
+  background-size: 75px 75px;
+}
+#home section .editorial-grid .agency-FEC {
+  padding-top: 75px;
+  background: url(/img/logos/FEC-logo-01.svg) 0 0 no-repeat;
+  background-size: 75px 75px;
+}
+#home section .editorial-grid .agency-GSA {
+  padding-top: 75px;
+  background: url(/img/logos/GSA-logo-01.svg) 0 0 no-repeat;
+  background-size: 75px 75px;
+}
+#home section .editorial-grid .agency-IRS {
+  padding-top: 75px;
+  background: url(/img/logos/IRS-logo-01.svg) 0 0 no-repeat;
+  background-size: 75px 75px;
 }
 #home section .editorial-content p {
   font-family: Georgia, "Times New Roman", serif;
