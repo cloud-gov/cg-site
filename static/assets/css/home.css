@@ -16,7 +16,7 @@
   letter-spacing: -.0325em;
   max-width: 900px;
 }
-#home h1 a {
+#home #main h1 a {
   color: #ff5235;
   text-decoration: none;
 }
@@ -50,9 +50,6 @@
 #home section .editorial-grid h5 a {
   text-decoration: none;
   color: #28517b;
-}
-#home a:not(.action.action-link.action-secondary) {
-  color: #02699b;
 }
 #home a:not(.usa-button):hover {
   border-bottom: 1px dotted #02699b;
@@ -148,10 +145,10 @@
 #home section .editorial-grid:first-of-type {
   padding-bottom: 120px;
 }
-#home section .editorial-grid embed {
+#home section .editorial-grid .agency-logo {
   height: 75px;
 }
-#home section .editorial-grid embed:not(:first-of-type) {
+#home section .editorial-grid .agency-logo:not(:first-of-type) {
   margin-top: 60px;
 }
 #home section .editorial-content p {
