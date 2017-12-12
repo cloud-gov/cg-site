@@ -14,7 +14,7 @@
 }
 #home #main h1 {
   letter-spacing: -.0325em;
-  max-width: 840px;
+  max-width: 900px;
 }
 #home h1 a {
   color: #ff5235;
@@ -25,8 +25,6 @@
   padding-right: 40px;
   text-decoration: none;
   background: url(/img/angle-arrow-right-orange.svg) right 20px no-repeat;
-  /*padding-right: 60px;*/
-  /*background-size: 45px 45px;*/
   background-size: 30px 30px;
 }
 #home h3,
@@ -94,7 +92,7 @@
   font-family: 'Times New Roman', Arial, sans-serif;
 }
 #home section:nth-of-type(2) article p {
-  font-size: 1.5em; /* 24px */
+  font-size: 1.325em; /* 24px */
   line-height: 1.5;
   max-width: 576px;
 }
@@ -102,6 +100,18 @@
   position: relative;
   margin-top: 30px;
   padding-top: 30px;
+}
+#home section:nth-of-type(2) article p.bar-top {
+  margin-top: 60px;
+  padding-top: 45px;
+  /*padding-right: 20px;*/
+  letter-spacing: -.02em;
+}
+#home section:nth-of-type(2) article p.bar-top > a:not(.usa-button) {
+  /*color: #02699b;*/
+  color: #ff5235;
+  font-weight: 500;
+  /*border-bottom: 1px dotted #02699b;*/
 }
 #home .bar-bottom {
   position: relative;
@@ -341,6 +351,7 @@
   background-image: url(/img/angle-arrow-right-blue.svg);
   background-size: 30px 30px;
   padding-right: 40px;
+  border-bottom: none;
 }
 #home #main ul li a:hover,
 #home .button-list a:hover,
@@ -370,8 +381,8 @@
   background-size: 20px 20px;
 }
 @media screen and (min-width: 600px) {
-  #home h1 {
-    font-size: 72px;
+  #home #main h1 {
+    font-size: 64px;
   }
   #home #main h1 a {
     display: inline-block;
@@ -383,6 +394,11 @@
   #home #main h1 a:hover {
     padding-right: 60px;
     background-size: 45px 45px;
+  }
+  #home #main p {
+    font-size: 1.6875em;
+    max-width: 800px;
+    margin-bottom: 50px;
   }
   #home .usa-width-one-third {
     width: 100%;
