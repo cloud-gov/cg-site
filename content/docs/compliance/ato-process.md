@@ -11,9 +11,9 @@ This is an outline of a typical ATO process for a cloud.gov customer application
 
 cloud.gov has a FedRAMP Authorization. In precise terms, it is a Provisional Authority to Operate (P-ATO) at the Moderate impact level from the FedRAMP Joint Authorization Board (JAB).
 
-It's normal and expected that this is a **Provisional** ATO. The JAB does not have the authority to issue an ATO for a system at your agency. Only your own agency has the authority to issue ATOs for systems that your agency uses or operates.
+It's normal and expected that this is a **"Provisional"** ATO. The JAB does not have the authority to issue an ATO for a system at your agency. Only your own agency has the authority to issue ATOs for systems that your agency uses or operates.
 
-So instead, the JAB issues a *pre-authorization* that your agency can review, including an audited documentation package and Continuous Monitoring program. If your agency finds that the cloud.gov P-ATO meets their requirements, they can issue an ATO for cloud.gov at the agency. This usually looks like this: [template agency ATO letter (.docx)](https://s3.amazonaws.com/sitesusa/wp-content/uploads/sites/482/2017/03/FedRAMP-ATO-Letter-Template-v1.0.docx).
+So instead, the JAB issues a *pre-authorization* that your agency can review, including [an audited documentation package]({{< relref "overview/security/fedramp-tracker.md" >}}). If your agency finds that the cloud.gov P-ATO meets their requirements, they can issue an ATO for cloud.gov. This usually looks like this: [template agency ATO letter (.docx)](https://s3.amazonaws.com/sitesusa/wp-content/uploads/sites/482/2017/03/FedRAMP-ATO-Letter-Template-v1.0.docx).
 
 ## How customer application ATOs work
 
