@@ -5,7 +5,7 @@ menu:
 title: Redis
 description: "Redis: an in-memory data structure store"
 aliases:
-- docs/services/redis28/
+- docs/services/redis28
 ---
 
 cloud.gov offers [Redis](http://www.redis.io/) 2.8 and 3.2 as a service.
