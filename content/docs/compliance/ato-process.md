@@ -9,7 +9,7 @@ This is an outline of a typical ATO process for a cloud.gov customer application
 
 ## What's a FedRAMP Provisional ATO?
 
-cloud.gov has a FedRAMP Authorization. In precise terms, it is a Provisional Authority to Operate (P-ATO) at the Moderate impact level from the FedRAMP Joint Authorization Board (JAB).
+[cloud.gov has a FedRAMP Authorization.](https://marketplace.fedramp.gov/#/product/18f-cloudgov?sort=productName) In precise terms, it is a Provisional Authority to Operate (P-ATO) at the Moderate impact level from the FedRAMP Joint Authorization Board (JAB).
 
 It's normal and expected that this is a **"Provisional"** ATO. The JAB does not have the authority to issue an ATO for a system at your agency. Only your own agency has the authority to issue ATOs for systems that your agency uses or operates.
 
