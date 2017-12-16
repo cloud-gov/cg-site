@@ -41,7 +41,7 @@ Steps in more detail:
 1. Early in your process, talk to your AOs and explain your plans so that you get on the right track to ATO.
 1. AOs request the cloud.gov FedRAMP P-ATO package and review the materials.
   * 2.5. While they're working on this, you may be able to start working on your system and preparing your ATO materials, but this depends on your AOs -- ask them!
-  * *`*` Disapproval is unlikely, but if your AOs have concerns, [contact us](/help/) -- we can help, and the [FedRAMP program team](https://www.fedramp.gov/contact-us/) can help too.*
+  * *`*` If your AOs have concerns, [contact us](/help/) -- we can help, and the [FedRAMP program team](https://www.fedramp.gov/contact-us/) can help too.*
 1. AOs issue an ATO for cloud.gov itself.
 1. Develop (or migrate) your system and put together your compliance materials.
   * Your System Security Plan should document that your system inherits some controls (partially or fully) from the cloud.gov ATO, as well as documenting the controls handled by your system.
