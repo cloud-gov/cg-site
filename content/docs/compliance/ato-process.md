@@ -33,8 +33,6 @@ DEV -->|Can't take next step until AOs issue cloud.gov ATO| APPATO(4. AOs issue 
 APPATO -->| | PRO(Put app in production)
 {{< /diagrams >}}
 
-You can usually start step 3 (working on your system and preparing your ATO materials) before step 2 (cloud.gov ATO) is complete, but this depends on your AOs -- ask them!
-
 Steps in more detail:
 
 1. Early in your process, talk to your AOs and explain your plans so that you get on the right track to ATO.
