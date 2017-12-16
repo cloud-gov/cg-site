@@ -28,15 +28,6 @@ that week.
 
 ## At least once during your week of support
 
-- Confirm that all AWS users have MFA configured. The following should return `[]`
-or the users that don't have MFA enabled:
-
-```sh
-users=$(aws iam list-users | jq '[.[]| .[] | select (.PasswordLastUsed) | .UserName] | sort')
-mfa_users=$(aws iam list-virtual-mfa-devices | jq '[.[]| .[].User.UserName]| sort')
-echo "{ \"users\": $users, \"mfa_users\": $mfa_users}" | jq '.users - .mfa_users'
-```
-
 - In [logs.fr.cloud.gov](https://logs.fr.cloud.gov/), go under "Management" -> "Advanced Settings" and check the Kibana [timezone setting](https://www.elastic.co/guide/en/kibana/current/advanced-options.html) (`dateFormat:tz`) - it should be set to `Browser`. If anyone has changed it, change it back to `Browser`.
 
 # Daily maintenance checklist
@@ -67,16 +58,25 @@ deploying an update that will upgrade the stemcell. You should also read the
 ## Review and respond to open alerts
 
 Review all recent alerts and notifications delivered to [`cg-notifications`](https://groups.google.com/a/gsa.gov/forum/#!forum/cloud-gov-notifications)
-and [`#cg-platform-news`](https://gsa-tts.slack.com/messages/cg-platform-news/).
+, [`#cg-platform-news`](https://gsa-tts.slack.com/messages/cg-platform-news/)
+, and [PagerDuty](https://18fi.pagerduty.com/incidents).
 
 ### Are there no alerts or notifications?
 Verify the monitoring system is functioning correctly and confirm that alerts
 are reaching their expected destinations.
 
-### Is the alert a real issue?
-Remediate it.
+### Investigate open alerts
+- Use our guides for reviewing cloud.gov alerts ([prometheus](https://github.com/18F/cg-deploy-prometheus/tree/master/bosh/alerts), [elastalert](https://github.com/18F/cg-deploy-logsearch/tree/master/elastalert)) for alert descriptions, links to the relevant rules, and starting points for reviewing each type of alert.
+- Was the alert caused by known maintenance or testing in dev environments? Check with other members of the cloud.gov team if you can't determine the source.
+- Is this a recurring alert? Search alert history to determine how frequently it is occuring and what event may have started its firing.
+- Should the underlying condition have caused an alert? Alerts should only be raised when they're something we need to remediate.
 
-### Is the alert a false-positive?
+#### Is the alert a real issue?
+If the alert may indicate a security issue follow the
+[Security Incident Response Guide]({{< relref "docs/ops/security-ir.md" >}})
+, otherwise work to remediate its cause.
+
+#### Is the alert a false-positive?
 If the alert can be tuned to reduce the number of false-positives with less than
 one day's work, do it.  If more work is required to tune the alert, add a card
 to capture the work that needs to be done or +1 an existing card if one already

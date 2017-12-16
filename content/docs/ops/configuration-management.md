@@ -31,8 +31,8 @@ Security tests need to be executed in the development environment where changes 
 ## Change workflow
 
 1. All configuration changes must flow through a git repository, centrally managed through GitHub, unless they contain sensitive information. In these cases, sensitive information should be stored in an S3 bucket with a proper security policy and encryption, versioned such that changes can be easily rolled back.
-1. A change is initiated and discussed as a GitHub issue in [the relevant 18F repository](https://github.com/18F).
-1. A pull request (PR) against the `master` branch is created that addresses the change and references the created issue.
+1. A change is initiated and discussed, following the steps in our [Story Lifecycle](https://github.com/18F/cg-product/blob/master/StoryLifecycle.md).
+1. In the appropriate GitHub repository for the component, a pull request (PR) against the `master` branch is created that addresses the change.
 1. If the repository contains 18F-developed code, the PR must have an automated [Code Climate](https://codeclimate.com) check, which must pass before the PR can be merged.
 1. The PR is reviewed by someone other than the committer. Pairing via screen-sharing
 is encouraged and qualifies as a review. Review should include assessment of architectural design, DRY principles, security and code quality.
@@ -46,9 +46,35 @@ is encouraged and qualifies as a review. Review should include assessment of arc
 
 1. The CI/CD tool uses GitHub repositories and S3-stored sensitive content as the canonical source of truth for what the platform should look like. If there are manual changes, it will reset the state of all systems to match.
 
-![Pipeline Example](/img/pipeline-example.png)
+## Checklist for new repositories
 
-A more detailed example of this process can be seen in [Updating Cloud Foundry]({{< relref "updating-cf.md" >}}).
+Before we put a new repository into production:
+
+* Give it a name starting with `cg-` or `cf-` (to make clear that it's part of our work, unless we have a good reason to name it something else).
+* [Add `LICENSE`, `CONTRIBUTING`, and `README` files](https://github.com/18F/open-source-policy/blob/master/practice.md#how-to-license-18f-repos) (to support open source reuse of our work).
+* Set up [Code Climate](https://codeclimate.com/) for pull requests (SI-3).
+  * Go to Code Climate and log in using your GitHub auth.
+  * Give Code Climate permissions to access your public repositories including the 18F org.
+  * Go to [the open source dashboard](https://codeclimate.com/oss/dashboard) and [add the new repository](https://codeclimate.com/github/repos/new).
+  * In Code Climate, go to the repository settings, go to Integrations, and enable Pull Request checking.
+  * In the repo, add a [Code Climate configuration file](https://docs.codeclimate.com/docs/advanced-configuration) (`.codeclimate.yml`) to [enable relevant plugins](https://docs.codeclimate.com/docs/list-of-engines).
+* Configure a [protected master branch](https://help.github.com/articles/about-protected-branches/) (CM-9).
+  * Enable "Require pull request reviews before merging"
+  * Enable "Dismiss stale pull request approvals when new commits are pushed"
+  * Enable "Require status checks to pass before merging"
+  * Enable "Require branches to be up to date before merging"
+  * Enable "Include administrators"
+* Configure permissions (CM-3):
+  * If it's a platform configuration repo, restrict permissions to Cloud Ops, as follows:
+     * `Read` for [18F](https://github.com/orgs/18F/teams/18f/members).
+     * `Read` for [cloud-gov](https://github.com/orgs/18F/teams/cloud-gov/members).
+     * `Admin` for [cloud-gov-ops](https://github.com/orgs/18F/teams/cloud-gov-ops/members).
+  * If it's not a platform configuration repo, configure as follows:
+     * `Read` for [18F](https://github.com/orgs/18F/teams/18f/members).
+     * `Admin` for [cloud-gov](https://github.com/orgs/18F/teams/cloud-gov/members).
+     * `Admin` for [cloud-gov-ops](https://github.com/orgs/18F/teams/cloud-gov-ops/members).
+* Set up CI/CD for changes (CM-3).
+* Open a PR to add it to the [repos list]({{< relref "docs/ops/repos.md#repositories" >}}) (to help us keep track of our repos and support open source reuse of our work).
 
 ## What if a configuration changed and it is not in Configuration Management?
 If possible, Configuration Management tools need to be set up to always roll back to a known state. Other than that, these tools need to be able to "recreate" all settings from the known configurations.
