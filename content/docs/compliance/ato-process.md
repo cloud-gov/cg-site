@@ -25,35 +25,41 @@ Here's what this can look like for the first system to use cloud.gov at an agenc
 
 {{< diagrams id-prefix="Figure-1." >}}
 graph TD
-CONCEPT(Concept for the first system on cloud.gov at your agency) -->START(1. Discuss with your AOs and get approval to start)
-START -->| | DEV(3. Work on system and start system ATO process)
-START -->| | REVIEW(2. AOs review cloud.gov P-ATO)
-REVIEW -->|AOs approve| CATO(2. AOs issue cloud.gov ATO)
-DEV -->|Can't take next step until AOs issue cloud.gov ATO| APPATO(4. AOs issue system ATO that inherits from cloud.gov ATO)
-APPATO -->| | PRO(Put app in production)
+CONCEPT(Concept for the first system on cloud.gov at your agency) --> START(1. Talk to AOs about plan to establish system on cloud.gov)
+START -.2.5. If allowed, start work on system.-> DEV
+REVIEW --AOs disapprove-->  STOP(Stop*)
+START --AOs request FedRAMP package--> REVIEW(2. AOs review cloud.gov P-ATO)
+REVIEW --AOs approve-->  CATO(3. AOs issue cloud.gov ATO)
+CATO --> DEV(4. Work on your system and compliance materials inheriting from cloud.gov) 
+DEV -->REQUESTATO(5. Ask AOs to start your ATO review)
+REQUESTATO --AOs review system and compliance materials--> APPATO(6. AOs issue system ATO )
+APPATO -->PROD(Put your system in production)
 {{< /diagrams >}}
 
 Steps in more detail:
 
 1. Early in your process, talk to your AOs and explain your plans so that you get on the right track to ATO.
-1. AOs review the cloud.gov P-ATO and issue an ATO for cloud.gov itself.
-  * While they're working on this, you may be able to start working on your system and preparing your ATO materials, but this depends on your AOs -- ask them! 
-1. Prepare your system and your system ATO materials.
+1. AOs request the cloud.gov FedRAMP P-ATO package and review the materials.
+  * 2.5. While they're working on this, you may be able to start working on your system and preparing your ATO materials, but this depends on your AOs -- ask them!
+  * *`*` Disapproval is unlikely, but if your AOs have concerns, [contact us](/help/) -- we can help, and the [FedRAMP program team](https://www.fedramp.gov/contact-us/) can help too.*
+1. AOs issue an ATO for cloud.gov itself.
+1. Develop (or migrate) your system and put together your compliance materials.
   * Your System Security Plan should document that your system inherits some controls (partially or fully) from the cloud.gov ATO, as well as documenting the controls handled by your system.
-1. Your agency reviews your system and ATO materials, and your agency issues a *new* ATO just for your system.
-1. If somebody else at your agency wants to run an system on cloud.gov, they can repeat steps 3 and 4. The agency issues a new ATO just for that system.
+1. Your agency reviews your system and ATO materials.
+1. Your agency issues a *new* ATO just for your system.
 
-This means that the cloud.gov ATO is easy to reuse at your agency!
+Then if somebody else at your agency wants to run a system on cloud.gov, the cloud.gov ATO is easy to reuse! They don't have to repeat steps 2 and 3 to review the cloud.gov P-ATO.
 
 Here's what the second system ATO process can look like:
 
 {{< diagrams id-prefix="Figure-2." >}}
 
 graph TD
-CONCEPT(Concept for second system on cloud.gov at your agency) -->START(Discuss with your AOs and get approval to start)
-START -->| | DEV(Work on system and start system ATO process)
-DEV -->| | APPATO(AOs issue system ATO that inherits from cloud.gov ATO)
-APPATO -->| | PRO(Put system in production)
+CONCEPT(Concept for second system on cloud.gov at your agency) -->START(Talk to AOs about plan to establish system on cloud.gov)
+START -->| | DEV(Work on system and compliance materials inheriting from cloud.gov)
+DEV -->REQUESTATO(Ask AOs to start your ATO review)
+REQUESTATO --AOs review system and compliance materials--> APPATO(AOs issue system ATO )
+APPATO -->PROD(Put system in production)
 
 {{< /diagrams >}}
 
