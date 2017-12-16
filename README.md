@@ -18,6 +18,15 @@ Hugo uses Markdown to build the pages. Add your page to the section you want ins
 1. Run `npm install` to download all the dependencies.
 1. Run `npm start` and browse to [http://localhost:1313](http://localhost:1313).
 
+
+### Running the site on cloud.gov
+
+1. Run: `npm install && npm run build && hugo`
+1. Login: `cf login --sso`
+1. Push: `cf push -n landing-unique`
+1. Browse to your unique https://landing-unique.app.cloud.gov
+1. Make updates with `npm run build && hugo && cf push -n landing-unique`
+
 ### Process tips for cloud.gov team members
 
 We usually use branches to write updates. After you merge a PR, click GitHub's button to delete that branch. (We don't need it anymore.)
