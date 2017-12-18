@@ -93,6 +93,10 @@ cf service-key my-service-account my-service-account
 
 The last command will return the service account username/password pair. These steps can be used at any time to update/rotate credentials for service accounts.
 
+### Not for human consumption
+
+Don't use service account credentials to manually log into cloud.gov as a human. cloud.gov has no technical mechanism to prevent you from doing this, because there's no way to distinguish a human from an automated script at login. Typically, your agency and system security compliance requirements require people to only log in using their own accounts (agency single sign-on accounts or cloud.gov accounts with multi-factor authentication).
+
 ### The broker in GitHub
 
 You can find the broker here: [https://github.com/cloudfoundry-community/uaa-credentials-broker](https://github.com/cloudfoundry-community/uaa-credentials-broker).
