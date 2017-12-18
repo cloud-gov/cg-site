@@ -18,7 +18,14 @@ If you have a federal email address, when you log in for the first time, cloud.g
 
 Here's how to deploy a test app in your sandbox using the CLI.
 
-Start with the following `cf target` command:
+Log in:
+
+```
+cf login -a api.fr.cloud.gov --sso
+```
+  - It'll say `One Time Code ( Get one at `[`https://login.fr.cloud.gov/passcode`](https://login.fr.cloud.gov/passcode)` )` -- visit that link in your browser to log in and get your 10-character code. Copy and paste the code into the command line (no typing indicators will show), and enter it.
+
+Enter the following `cf target` command:
 
 ```sh
 cf target -o <ORG> -s <SPACE>
