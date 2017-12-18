@@ -2,6 +2,7 @@
 applications:
 - name: landing
   host: landing
+  command: erb < $HOME/nginx/conf/includes/cg_redir.conf.erb > $HOME/nginx/conf/includes/cg_redir.conf && $HOME/boot.sh
 memory: 64M
 instances: 2
 buildpack: staticfile_buildpack
