@@ -26,7 +26,7 @@ Here's what this can look like for the first system to use cloud.gov at an agenc
 {{< diagrams id-prefix="Figure-1." >}}
 graph TD
 CONCEPT(Concept for the first system on cloud.gov at your agency) --> START(1. Talk to AOs about plan to establish system on cloud.gov)
-START -.2.5. If allowed, start work on system.-> DEV
+START -.1.5. If allowed, start work on system.-> DEV
 REVIEW --AOs disapprove-->  STOP(Stop*)
 START --AOs request FedRAMP package--> REVIEW(2. AOs review cloud.gov P-ATO)
 REVIEW --AOs approve-->  CATO(3. AOs issue cloud.gov ATO)
@@ -39,8 +39,8 @@ APPATO -->PROD(Put your system in production)
 Steps in more detail:
 
 1. Early in your process, talk to your AOs and explain your plans so that you get on the right track to ATO.
+  * 1.5. You may be able to start working on your system and preparing your ATO materials -- ask your AOs.
 1. AOs request the cloud.gov FedRAMP P-ATO package and review the materials.
-  * 2.5. While they're working on this, you may be able to start working on your system and preparing your ATO materials, but this depends on your AOs -- ask them!
   * *`*` If your AOs have concerns, [contact us](/help/) -- we can help, and the [FedRAMP program team](https://www.fedramp.gov/contact-us/) can help too.*
 1. AOs issue an ATO for cloud.gov itself.
 1. Develop (or migrate) your system and put together your compliance materials.
