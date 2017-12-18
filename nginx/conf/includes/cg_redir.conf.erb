@@ -1,0 +1,8 @@
+
+<% if ENV["CG_REDIR_HOST"] -%>
+location / {
+	if (-d $request_filename) {
+			rewrite [^/]$ $scheme://<%= ENV["CG_REDIR_HOST"] %>$uri/ permanent;
+	}
+}
+<% end -%>
