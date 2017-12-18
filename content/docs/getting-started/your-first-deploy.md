@@ -12,18 +12,18 @@ Practice deploying a simple "hello world" application using the cloud.gov comman
 
 First, [set up your command line interface (CLI)]({{< relref "setup.md" >}}) (if you haven't already).
 
-## Target your "sandbox"
-
-If you have a federal email address, when you log in for the first time, cloud.gov will start automatically creating a [sandbox space]({{< relref "overview/pricing/free-limited-sandbox.md" >}}) for you. You might need to wait up to 5 minutes before it becomes available.
-
-Here's how to deploy a test app in your sandbox using the CLI.
-
 Log in:
 
 ```
 cf login -a api.fr.cloud.gov --sso
 ```
   - It'll say `One Time Code ( Get one at `[`https://login.fr.cloud.gov/passcode`](https://login.fr.cloud.gov/passcode)` )` -- visit that link in your browser to log in and get your 10-character code. Copy and paste the code into the command line (no typing indicators will show), and enter it.
+
+## Target your "sandbox"
+
+If you have a federal email address, when you log in for the first time, cloud.gov will start automatically creating a [sandbox space]({{< relref "overview/pricing/free-limited-sandbox.md" >}}) for you. You might need to wait up to 5 minutes before it becomes available.
+
+Here's how to deploy a test app in your sandbox using the CLI.
 
 Enter the following `cf target` command:
 
