@@ -16,7 +16,7 @@ Log in:
 
   1. Enter **`cf login -a api.fr.cloud.gov --sso`**
   1. It'll say `One Time Code ( Get one at `[`https://login.fr.cloud.gov/passcode`](https://login.fr.cloud.gov/passcode)` )` -- visit this login link in your browser.
-  1. If you use a cloud.gov account, you may need to log in using your email address, password, and multi-factor authentication token. (EPA, FDIC, and GSA: use your agency SSO button.)
+  1. If you use a cloud.gov account, you may need to log in using your email address, password, and multi-factor authentication token. (EPA, FDIC, and GSA: use your agency button.)
   1. After you log in, the page will display your 10-character Temporary Authentication Code.
   1. Copy and paste that 10-character code into the command line (no typing indicators will show), and enter it.
 
