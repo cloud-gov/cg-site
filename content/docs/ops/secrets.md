@@ -8,32 +8,53 @@ title: Secret key management
 
 ### Sharing secret keys
 
-For sharing the following types of [sensitive information](https://github.com/18F/open-source-policy/blob/master/practice.md#protecting-sensitive-information) related to cloud.gov, cloud.gov team members must use [Fugacious](https://fugacious.18f.gov/) links, shared over a GSA application (such as GSA Gmail or TTS Slack). The team member must share the Fugacious link only with intended recipient(s) who need to know the sensitive information.
+For sharing the following types of [sensitive information](https://github.com/18F/open-source-policy/blob/master/practice.md#protecting-sensitive-information) related to cloud.gov, cloud.gov team members must use GSA Google Hangouts. The team member must share the information only with intended recipient(s) who need to know the sensitive information. Team members can use the Hangouts screen-sharing feature or verbally share the information.
 
 * Passwords
 * Secret keys
 * Sensitive environment variables
 * Other secret authentication information
 
-The cloud.gov team must comply with 18F's [policies in the Handbook](https://handbook.18f.gov/sensitive-information/#fugacious), with the following additional restrictions (for security and compliance reasons):
-
-* Expiry must be set to 12 hours or less
-* Number of opens must be set to two views, per person who needs to open it
-
 ### Maintenance of system secret keys
 
 To meet NIST security control [SC-12 (1)](https://web.nvd.nist.gov/view/800-53/Rev4/control?controlName=SC-12), we maintain the availability of all information on the platform in the event a cryptographic access key is lost or compromised.
 
-Authorized federal staff rotate, encrypt, and backup keys monthly. Privileged users can access the keys only with two-factor authentication and a decryption passphrase. In the rare case that both the keys and the decryption passphrase for the backup are lost or compromised, new keys can be rotated in by authorized federal staff, while maintaining availability of information.
+Authorized federal staff rotate, encrypt, and backup keys yearly. Privileged users can access the keys only with two-factor authentication and a decryption passphrase. In the rare case that both the keys and the decryption passphrase for the backup are lost or compromised, new keys can be rotated in by authorized federal staff, while maintaining availability of information.
 
 #### AWS credentials
 
 If you need to view/update secrets:
 
 1. Ask in [#cg-platform](https://gsa-tts.slack.com/messages/cg-platform/) for an account to read/write from the S3 buckets.
-1. Set up a [named profile](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-multiple-profiles) for [the AWS CLI](https://aws.amazon.com/cli/).
+1. Setup aws-vault
 
-The examples below use `--profile govcloud`, but replace with the name of your profile.
+#### Install aws-vault for AWS credentials
+`aws-vault` secures credentials locally and generates temporary credentials to provide an additional layer of security.  To install `aws-vault` use the brew command:
+```sh
+brew cask install aws-vault
+aws-vault add cloud-gov-govcloud
+```
+
+#### Configure MFA for aws-vault
+All operators should have MFA enabled, which can be viewed under `Services -> IAM -> Users -> firstname.lastname -> Security Credentials`.  This MFA device needs to be added to the Amazon configuration to enable short lived tokens:
+
+```sh
+echo '[profile cloud-gov-govcloud]' >> ~/.aws/config
+echo 'region = us-gov-west-1' >> ~/.aws/config
+echo 'mfa_serial = arn:aws-us-gov:iam::1234567890:mfa/firstname.lastname' >> ~/.aws/config
+```
+
+#### Executing a command with short lived credentials
+You can execute any system command with short lived credentials using the `aws-vault exec` command:
+
+```sh
+aws-vault exec cloud-gov-govcloud bash
+```
+
+Running `env | grep AWS` will show you a new set of credentials which are different from the primary IAM role credentials, as they are short lived and issued at runtime.  This means that if a malicious script or program attempts to read `~/.aws/credentials` or `~/.aws/config` all they will be unable to retrieve the primary credentials.
+
+## Next Steps
+Once this is complete, operators can provision profiles which use only specific resources, or specific permissions such as read only.  This scopes the role of the temporary credentials to further reduce the attack surface.
 
 #### Generate and upload keys
 
@@ -66,8 +87,9 @@ All UAA clients and users and associated credentials should be created via the C
 1. Download the credentials file.
 
     ```sh
+    aws-vault exec cloud-gov-govcloud bash
     mkdir -p tmp
-    aws s3 cp s3://cloud-gov-varz/cf.main.yml tmp/cf.main.yml.enc --profile govcloud
+    aws s3 cp s3://cloud-gov-varz/cf.main.yml tmp/cf.main.yml.enc
     ```
 
 1. Get the encryption passphrase.
@@ -126,7 +148,8 @@ All UAA clients and users and associated credentials should be created via the C
 1. Copy the new file up to S3.
 
     ```sh
-    aws s3 cp tmp/cf.main.yml.enc-new s3://cloud-gov-varz/cf.main.yml --profile govcloud --sse AES256
+    aws-vault exec cloud-gov-govcloud bash
+    aws s3 cp tmp/cf.main.yml.enc-new s3://cloud-gov-varz/cf.main.yml --sse AES256
     ```
 
 1. Clean up the secrets.

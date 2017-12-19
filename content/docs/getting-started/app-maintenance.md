@@ -11,10 +11,14 @@ One of the benefits of hosting your application or website on cloud.gov is that 
 
 Restaging is [a process that recreates your app](https://docs.cloudfoundry.org/devguide/deploy-apps/start-restart-restage.html#restage) on cloud.gov using the most recent environment. When the platform updates the filesystem (rootfs) and buildpacks, your apps need to be restaged in order to use them. cloud.gov doesn’t restage your apps for you because doing so may have unintended consequences for your app. Make restaging a part of your development process. You may choose to restage your development and staging environment apps before restaging your production apps.
 
-Run `cf restage <app-name>` every two weeks to get any updates we may have pushed that affect your app, especially if you don’t update your own code very often. Changes like these are announced in the platform release notes so you can know when we’ve mitigated a critical security issue or fixed a bug that affects your app’s stability. Without a restage, your app will miss out on these updates.
+Run `cf restage <app-name>` periodically (for example, every two weeks) to get any updates we may have pushed that affect your app, especially if you don’t update your own code very often. Changes like these are announced in the platform release notes so you can know when we’ve mitigated a critical security issue or fixed a bug that affects your app’s stability. Without a restage, your app will miss out on these updates.
 
 ## Keeping your app up to date
 
-You’re responsible for keeping your own app up to date. `cf restage` restarts your app with updates from the platform but not any updates to the software you use. If you’re running Drupal, Rails, Django, etc., you’re responsible for patching and updating those components and anything built on top of them. Only you should control when and how your apps are maintained. We encourage you to keep your apps, any associated libraries, and custom buildpacks up to date and make a plan for testing those changes in a [staging or development environment](https://cloud.gov/docs/getting-started/concepts/#spaces).
+You’re responsible for keeping your own app up to date. `cf restage` rebuilds and restarts your app with updates from the platform, but not any updates to the software you use. If you’re running Drupal, Rails, Django, etc., you’re responsible for patching and updating those components and anything built on top of them. Only you should control when and how your apps are maintained. We encourage you to keep your apps, any associated libraries, and custom buildpacks up to date and make a plan for testing those changes in a [staging or development environment](https://cloud.gov/docs/getting-started/concepts/#spaces).
 
-Whenever you push an update with `cf push`, your app will automatically restage to update your buildpack (if you’re using one the platform provides) and filesystem.
+Whenever you deploy an app update with `cf push`, your app will use the latest buildpack (if you’re using one provided by the platform) and filesystem.
+
+## Avoiding downtime during buildpack or app updates
+**Note that your app may be unavailable while a `cf restage` or `cf push` is in progress.** Avoid this by [setting up zero-downtime deployments for your app](https://cloud.gov/docs/apps/production-ready/#zero-downtime-deploy), so that every new version of your app picks up the latest buildpack without impacting your app's availability.
+

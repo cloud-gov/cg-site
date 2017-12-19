@@ -21,7 +21,7 @@ One team’s platform needs aren’t necessarily the same as another’s, so we 
 All packages are priced based on three components:
 
 - [**Access package:**](#cloud-gov-access-packages) The basic unit of purchase. What package you choose depends on what kinds of applications you want to host.
-- [**Resource usage quota:**]({{< relref "overview/pricing/quotas.md" >}}): The memory, in MB of RAM, you reserve for your applications. Assessed monthly and doesn’t roll over month-to-month.
+- [**Resource usage quota:**]({{< relref "overview/pricing/quotas.md" >}}) The memory, in MB of RAM, you reserve for your applications. Assessed monthly and doesn’t roll over month-to-month.
 - [**Managed services:**]({{< relref "overview/pricing/managed-services-cost.md" >}}) Services that cloud.gov can spin up quickly and run on your behalf. Currently free. See the services and plans offered for each service by [running `cf marketplace`]({{< relref "docs/apps/managed-services.md" >}}).
 
 You can email [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov) to work with the cloud.gov team on estimating your costs, or to start your purchase.
@@ -34,14 +34,6 @@ The [prototyping package]({{< relref "overview/pricing/prototyping.md" >}}) lets
 
 **Annual fee:** $15K<br>
 **Resource usage quota:** ~$100 per GB per month[*](#quota-pricing), up to any limit set by user<br>
-**Managed services:** Full access
-
-### Open data
-
-Host one public-facing system with no confidentiality risk assessed. Open data packages include all the spaces you need and DNS support. This is the lightest production-level package.
-
-**Annual fee:** $10K<br>
-**Resource usage quota:** ~$100 per GB per month[*](#quota-pricing), up to 2GB<br>
 **Managed services:** Full access
 
 ### FISMA Low
@@ -88,11 +80,13 @@ This spreadsheet can help you estimate the total cost of cloud.gov across all ac
 **cloud.gov cost estimator**
 
 Formats: [.xlsx](/resources/cloudgov_cost_estimator.xlsx) | [.ods](/resources/cloudgov_cost_estimator.ods) <br />
-*last updated: August 16, 2017*
+*last updated: October 31, 2017*
 
 <!-- The full URLs for the spreadsheet calculators are, respectively:
 .xls format: https://cloud.gov/resources/cloudgov_cost_estimator.xlsx
 .ods format: https://cloud.gov/resources/cloudgov_cost_estimator.ods
+
+Internal URL: https://docs.google.com/spreadsheets/d/1CBPxEJpRea_V09AxPEcX4EXKwTnHRD7LQx72nATO_V8/edit#gid=930760737
  -->
 
 ## What’s included
@@ -135,7 +129,6 @@ All three pricing components are factored into every access package. Use this ta
 | --- | --- | --- | --- | --- |
 | **[Sandbox]({{< relref "overview/pricing/free-limited-sandbox.md" >}})** | Anyone with a U.S. federal government email address can try a limited free cloud.gov space. | Free | Free, **capped at 1GB/month** | Only free services |
 | **[Prototyping]({{< relref "overview/pricing/prototyping.md" >}})** | Suitable for many teams to deploy apps, though limited to the `*.app.cloud.gov` domain. Access control can be delegated to teams. No production data allowed. Usually purchased per agency/department. | $15K |  ~$100/GB/month | All\** |
-| **Open Data** | One Open Data (no confidentiality risk assessed) [system]({{< relref "overview/pricing/pricing-terminology.md#system" >}}), including all the spaces needed. | $10K | ~$100/GB/month, **capped at 2GB/month** | All\** |
 | **FISMA Low** | One FISMA Low [system]({{< relref "overview/pricing/pricing-terminology.md#system" >}}), including all the spaces needed. | $20K | ~$100/GB/month | All\** |
 | **FISMA Moderate** | One FISMA Moderate [system]({{< relref "overview/pricing/pricing-terminology.md#system" >}}), including all the spaces needed. | $90K | ~$100/GB/month | All\** |
 

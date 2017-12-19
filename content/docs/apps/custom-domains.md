@@ -17,6 +17,38 @@ To make your app accessible via your custom domain name, use the [CDN service]({
 
 *Additional details are available in the [cloud.gov FedRAMP P-ATO documentation package]({{< relref "overview/security/fedramp-tracker.md#how-you-can-use-this-p-ato" >}}), including in System Security Plan controls SC-20, SC-21, SC-22, and SC-23.*
 
+### Comparison of default domains and custom domains
+
+Here's an example of the difference between a default *.app.cloud.gov domain and a custom domain. In this example, an agency's application `App A` is using a default domain, and their application `App B` is using a custom domain.
+
+{{< diagrams id-prefix="Figure-1.-Domain-comparison" >}}
+graph TD
+
+subgraph Amazon Web Services
+  subgraph cloud.gov
+    CDN
+    CG-DNS
+    Router[App router]
+    subgraph Org: agency-org
+    subgraph App A space
+        AppA[App A]
+      end
+      subgraph App B space
+        AppB[App B]
+      end
+    end     
+  end
+end
+
+Public((Public user)) -->|HTTPS| A-DNS(Agency DNS: appB.agency.gov)
+Public((Public user)) -->|HTTPS| CG-DNS(DNS: appA_agency.app.cloud.gov)
+A-DNS -->|HTTPS| CDN(CDN)
+CG-DNS -->Router
+CDN -->Router
+Router -->AppA
+Router -->AppB
+{{< /diagrams >}}
+
 ## How domains and routes work in cloud.gov
 
 A "route" is a domain with an optional subdomain and path that maps client requests to a particular application, such as:

@@ -1,7 +1,7 @@
 ---
 menu:
-  overview:
-    parent: technology
+  docs:
+    parent: compliance
 title: Overview for assessors
 weight: 50
 aliases:

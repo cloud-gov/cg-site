@@ -15,16 +15,16 @@ If your application uses relational databases for storage, you can use the AWS R
 Plan Name | Description | Software Version | Price
 --------- | ----------- | ------- | -----
 `shared-psql`            | Shared PostgreSQL database for prototyping (no sensitive or production data) | 9.4.7 | Free
-`medium-psql`            | Dedicated medium RDS PostgreSQL DB instance                                  | 9.6.2 |  Will be paid per hour + storage
-`medium-psql-redundant`  | Dedicated redundant medium RDS PostgreSQL DB instance                        | 9.6.2 | Will be paid per hour + storage
-`large-psql`             | Dedicated large RDS PostgreSQL DB instance                                   | 9.6.2 | Will be paid per hour + storage
-`large-psql-redundant`   | Dedicated redundant large RDS PostgreSQL DB instance                         | 9.6.2 | Will be paid per hour + storage
+`medium-psql`            | Dedicated medium RDS PostgreSQL DB instance                                  | 9.6.3 |  Will be paid per hour + storage
+`medium-psql-redundant`  | Dedicated redundant medium RDS PostgreSQL DB instance                        | 9.6.3 | Will be paid per hour + storage
+`large-psql`             | Dedicated large RDS PostgreSQL DB instance                                   | 9.6.3 | Will be paid per hour + storage
+`large-psql-redundant`   | Dedicated redundant large RDS PostgreSQL DB instance                         | 9.6.3 | Will be paid per hour + storage
 `shared-mysql`           | Shared MySQL database for prototyping (no sensitive or production data)      | 5.6.27 | Free
 `medium-mysql`           | Dedicated medium RDS MySQL DB instance                                       | 5.6.35 | Will be paid per hour + storage
 `medium-mysql-redundant` | Dedicated redundant medium RDS MySQL DB instance                             | 5.6.35 | Will be paid per hour + storage
 `large-mysql`            | Dedicated large RDS MySQL DB instance                                        | 5.6.35 | Will be paid per hour + storage
 `large-mysql-redundant`  | Dedicated redundant large RDS MySQL DB instance                              | 5.6.35 | Will be paid per hour + storage
-`medium-oracle-se2`      | Dedicated medium RDS Oracle SE2 DB | 12.0.1.2.v8 | Will be paid per hour + storage
+`medium-oracle-se2`      | Dedicated medium RDS Oracle SE2 DB | 12.0.1.2.v9 | Will be paid per hour + storage
 
 ### Pricing
 Shared instances are free. Simple and redundant instances will have pricing per hour and per GB per month. [Learn more about managed service pricing.]({{< relref "overview/pricing/managed-services-cost.md" >}})
@@ -160,9 +160,13 @@ You can rotate credentials by creating a new instance and [deleting the existing
 
 ## Version information
 
-Dedicated RDS plans use the latest database version available from AWS RDS GovCloud (US) at the time. Shared plans may use older database versions.
+The software versions listed in the table above are for new instances of those plans.
 
-All RDS plans are configured to automatically upgrade to the most recent compatible [minor version](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html) available via AWS RDS GovCloud (US).
+New instances of dedicated RDS plans use the latest database version available from AWS RDS GovCloud (US) at the time. New instances of shared plans may use older database versions.
+
+The PostgreSQL and MySQL plans are configured to automatically upgrade currently-running dedicated instances to the most recent compatible [minor version](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html) available via AWS RDS GovCloud (US).
+
+For Oracle plans, minor upgrades are not automatic. To upgrade an existing Oracle database instance, contact [support](mailto:cloud-gov-support@gsa.gov) and schedule a maintenance window for the upgrade to take place.
 
 ## The broker in GitHub
 

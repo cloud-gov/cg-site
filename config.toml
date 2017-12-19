@@ -1,4 +1,6 @@
 baseurl = "https://cloud.gov"
+canonifyurls = "true"
+relativeurls = "true"
 languageCode = "en-us"
 title = "cloud.gov"
 pluralizelisttitles = "false"
@@ -57,6 +59,11 @@ publishdir = "public"
     identifier = "advanced"
     pre = "<i class='fa fa-rocket fa-fw'></i>"
     weight = -100
+[[menu.docs]]
+    name = "Compliance"
+    identifier = "compliance"
+    pre = "<i class='fa fa-check-square-o fa-fw'></i>"
+    weight = -95
 [[menu.docs]]
     name = "Experimental features"
     identifier = "experimental"

@@ -21,16 +21,15 @@ You can interact directly with the services bound to your application via [port 
 
 ### Error messages
 
-* `cf ssh` uses port 2222. If your network blocks port 2222, you may receive an error message such as `Error opening SSH connection`.
+* `cf ssh` uses port 2222. If your network blocks port 2222, you may receive an error message such as `Error opening SSH connection` or `psql: could not connect to server: Connection refused`.
 * Running `python` within an SSH session results in `ImportError: No module named site`.  
   * To resolve this, configure your SSH session environment with these commands:
 
 ```bash
+export DEPS_DIR=/home/vcap/deps
 for f in /home/vcap/app/.profile.d/*.sh;
   do source "$f";
 done
-export LD_LIBRARY_PATH=/home/vcap/deps/0/python/lib/
-export PYTHONHOME=/home/vcap/deps/0/python
 ```
 
 ## How to disable SSH access
