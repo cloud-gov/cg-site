@@ -62,6 +62,7 @@ All UAA clients and users and associated credentials should be created via the C
 ### Updating Secrets
 
 System secrets fall into one of three categories.
+
 1. [Shared](#updating-shared-secrets) - centrally managed secrets used across multiple deployments
 1. [Deployment](#updating-deployment-secrets) - secrets managed and stored per bosh deployment and environment
 1. [Concourse](#updating-concourse-secrets) - secrets consumed as credentials in Concourse CI pipelines
