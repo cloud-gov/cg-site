@@ -51,7 +51,7 @@
   text-decoration: none;
   color: #28517b;
 }
-#home a:not(.usa-button):hover {
+#home section a:not(.usa-button):hover {
   border-bottom: 1px dotted #02699b;
 }
 #home section {
@@ -142,6 +142,10 @@
 }
 #home section .editorial-grid:first-of-type {
   padding-bottom: 120px;
+}
+#home section .editorial-grid .editorial-width-one-sixth object[type="image/svg+xml"] {
+  width: 75px;
+  height: 75px;
 }
 #home section .editorial-grid .agency-ATF {
   padding-top: 75px;
