@@ -27,3 +27,7 @@ Once you push your code using a custom buildpack, cloud.gov cannot update it for
 ### apt-buildpack
 
 cloud.gov does not allow the use of `sudo` inside of buildpacks. If your app depends on a library that is `apt-get` installable, you can use the CF flavor of [`apt-buildpack`](https://github.com/cloudfoundry/apt-buildpack), which is a custom buildpack.
+
+## Experimental multi-buildpack support
+
+Cloud Foundry also offers experimental support for [using multiple buildpacks](https://docs.cloudfoundry.org/buildpacks/use-multiple-buildpacks.html) for an application.
