@@ -24,7 +24,7 @@ We notify you when your [application needs restaging]({{< relref "docs/getting-s
 ### Platform releases
 We upgraded the Cloud Foundry deployment to [v283](https://github.com/cloudfoundry/cf-release/releases/tag/v283).
 
-#### Additional upgrades (pull this list from the slide in the weekly sprint review)
+#### Additional upgrades
 * [Diego v1.32.0](https://github.com/cloudfoundry/diego-release/releases/tag/v1.32.0)
 * [Stemcell v3468.15](https://bosh.io/stemcells/bosh-aws-xen-hvm-ubuntu-trusty-go_agent)
 * [RootFS cflinuxfs2 v 1.176.0](https://github.com/cloudfoundry/stacks/releases/tag/1.176.0)
