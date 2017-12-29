@@ -30,4 +30,4 @@ cloud.gov does not allow the use of `sudo` inside of buildpacks. If your app dep
 
 ## Experimental multi-buildpack support
 
-Cloud Foundry also offers experimental support for [using multiple buildpacks](https://docs.cloudfoundry.org/buildpacks/use-multiple-buildpacks.html) for an application.
+If your application involves multiple languages, and it's not practical to split it into smaller applications (or the other options [under "Multiple languages" here]({{< relref "/docs/getting-started/concepts.md#buildpacks">}})), Cloud Foundry offers experimental support for [using multiple buildpacks](https://docs.cloudfoundry.org/buildpacks/use-multiple-buildpacks.html) for an application.
