@@ -21,6 +21,8 @@ Here are some examples that should be in configuration management:
 - Software configuration (BOSH)
 - 18F-developed code
 
+*Special cases:* For changing settings that we currently cannot manage as configuration files in version control, such as GitHub repository settings and Nessus scan settings, you must first get agreement from another cloud.gov team member that the change should be made (such as over Slack or Hangouts).
+
 ## Where should all this configuration go?
 All configuration must be stored in GitHub using the following "Change Workflow" unless it is a _secret_.
 
@@ -78,6 +80,19 @@ Before we put a new repository into production:
 
 ## What if a configuration changed and it is not in Configuration Management?
 If possible, Configuration Management tools need to be set up to always roll back to a known state. Other than that, these tools need to be able to "recreate" all settings from the known configurations.
+
+## Roles and responsibilities
+
+* **All team members**
+  * Follow the configuration management plan.
+  * Make suggestions (such as in PRs) if you have ideas for improving the plan.
+* **Cloud Ops** (Platform squad)
+  * Ensure Concourse, Terraform, BOSH, GitHub, AWS, and other resources are correctly set up to implement the technical aspects of the plan.
+* **Program Manager**
+  * Ensure the team follows the Feature Lifecycle, Story Lifecycle, and other operational aspects of configuration management.
+* **System Owner**
+  * Ensure that team members uphold their responsibilities.
+  * Approve any major changes to the configuration management plan, and coordinate with JAB representatives as necessary.
 
 ## GitHub contribution guidelines
 
