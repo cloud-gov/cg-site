@@ -102,10 +102,10 @@ The cloud.gov team has implemented a suite of automated components to provide co
 	* Job / program health:
 		* **BOSH Health Monitor (health-monitor)**
 	* Malicious code detection:
-		* **ClamAV:** detects trojans, viruses, malware and other malicious threats. This runs continuously; files are scanned when they are written/accessed.
+		* **ClamAV:** detects trojans, viruses, malware, and other malicious threats. This runs continuously; files are scanned when they are written/accessed.
 		* **Code Climate:** scans all 18F or GSA-originated code for test coverage, complexity, duplication, and security, before being introduced into the production environment. When anyone proposes a change to an 18F-developed component that cloud.gov depends on (in the form of a GitHub pull request), the Code Climate service automatically runs its static analysis tool on the change.
 	* Network intrusion detection:
-		* **Snort:** continuously monitors network traffic, signatures and behaviors, and raises alerts based on defined rules.
+		* **Snort:** continuously monitors network traffic, signatures, and behaviors, and raises alerts based on defined rules.
 	* Intruder detection / file integrity:
 		* **Tripwire:** Performs file alteration checks on all cloud.gov virtual machines on initial deploy and a daily basis thereafter, and records all data to CloudWatch logs.
 	* Patch / vulnerability scanning:
