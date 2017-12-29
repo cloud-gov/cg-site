@@ -105,12 +105,12 @@ The cloud.gov team has implemented a suite of automated components to provide co
 		* **ClamAV:** detects trojans, viruses, malware and other malicious threats. This runs continuously; files are scanned when they are written/accessed.
 		* **Code Climate:** scans all 18F or GSA-originated code for test coverage, complexity, duplication, and security, before being introduced into the production environment. When anyone proposes a change to an 18F-developed component that cloud.gov depends on (in the form of a GitHub pull request), the Code Climate service automatically runs its static analysis tool on the change.
 	* Network intrusion detection:
-		* **Snort:** continuously monitors network traffic, signatures and behaviors and raises alerts based on defined rules.
+		* **Snort:** continuously monitors network traffic, signatures and behaviors, and raises alerts based on defined rules.
 	* Intruder detection / file integrity:
 		* **Tripwire:** Performs file alteration checks on all cloud.gov virtual machines on initial deploy and a daily basis thereafter, and records all data to CloudWatch logs.
 	* Patch / vulnerability scanning:
-		* **Nessus:** runs nightly to scan for OS vulnerabilities, application vulnerabilities, malware, and backdoors.
-		* **OWASP ZAP:** runs nightly to scan for vulnerabilities.
+		* **Nessus:** runs nightly to scan for OS and database vulnerabilities.
+		* **OWASP ZAP:** runs monthly to scan for web application vulnerabilities.
 * **Monitoring of the monitoring components:** The cloud.gov team uses BOSH as an automated way to continuously monitor the six monitoring components. (BOSH is an open source tool for release engineering, deployment, lifecycle management, and monitoring of distributed systems. BOSH allows individual developers and teams to easily version, package and deploy software in a reproducible manner.)
 * **Continuous deployment of the monitoring components:** The cloud.gov team uses Concourse to provide automated continuous deployment of the components, to ensure the components stay up to date. In addition, one component, Nessus, has self-updating capabilities.
 * **Static code analysis:** The cloud.gov team uses Code Climate to automate code scanning on all original projects that cloud.gov builds. Code Climate results are published on every pull request (code change).
