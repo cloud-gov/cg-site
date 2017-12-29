@@ -3,26 +3,36 @@
 
   {{ partial "head.html" . }}
 
-  <body>
+  <body id="home">
 
     {{ partial "header.html" . }}
 
-    <section class="section section-blue section-chevron_alt section-first" id="main">
-      <div class="usa-grid section-bg-parent">
-        <div class="usa-width-whole billboard section-bg">
-          <h1 class="billboard-display_text lh-hed">404 Page not found</h1>
+    <!-- <section class="section section-blue section-chevron_alt section-first" id="main"> -->
+    <section id="main">
+      <!-- <div class="usa-grid section-bg-parent"> -->
+      <div class="usa-grid">
+        <div class="usa-width-whole">
+        <!-- <div class="usa-width-whole billboard section-bg"> -->
+          <!-- <div class="usa-width-whole billboard section-bg"> -->
+          <!-- <h1 class="billboard-display_text lh-hed">404 Page not found</h1> -->
+          <h1>404 / Page not found.</h1>
+          <p>
+            Looks like that page doesn&rsquo;t exist! <br />
+            If you think it should, send us a <a href="https://github.com/18F/cg-site/pulls", target="_blank">pull request</a>, or
+            <a href="https://cloud.gov/docs/help/">contact us</a>.
+          </p>
         </div>
-      </div>
+      <!-- </div> -->
     </section>
 
-    <section class="usa-content section-middle section-light">
+    <!-- <section class="usa-content section-middle section-light">
       <div class="usa-grid">
         <h2 class="section-content usa-content">
           Looks like that page doesn't exist! If you think it should, send us a <a href="https://github.com/18F/cg-site/pulls", target="_blank">pull request</a>, or
           <a href="https://cloud.gov/docs/help/">contact us</a>.
         </h2>
       </div>
-    </section>
+    </section> -->
 
     {{ partial "footer.html" . }}
     {{ partial "javascript.html" . }}

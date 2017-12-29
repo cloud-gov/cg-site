@@ -394,6 +394,12 @@
   padding-right: 23px;
   background: url(/img/link-icons/icon-external.svg) right center no-repeat;
 }
+#home #main a[href*=".com"],
+#home #main a[href*=".io"] {
+  /*padding-right: 23px;
+  background: url(/img/link-icons/icon-external.svg) right center no-repeat;*/
+  background-size: 22px 22px;
+}
 #home .editorial-grid h4 + p a[href],
 #home .editorial-grid h5 a[href] {
   padding-right: 20px;
