@@ -126,7 +126,7 @@ sed -i -- 's/old_passphrase/new_passphrase/' credentials.yml;
 fly --target fr \
 set-pipeline \
 --pipeline ${deploy_pipeline_name} \
---config=pipeline.yml;
+--config=pipeline.yml \
 --load-vars-from=credentials.yml;
 
 # Upload the secrets file.

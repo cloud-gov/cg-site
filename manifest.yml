@@ -1,7 +1,12 @@
+# A custom start command needed until #103 is fixed in Staticfile buildpack
+# https://github.com/cloudfoundry/staticfile-buildpack/issues/103
 ---
 applications:
 - name: landing
   host: landing
+  command: erb < $HOME/nginx/conf/includes/cg_redir.conf.erb > $HOME/nginx/conf/includes/cg_redir.conf && $HOME/boot.sh
+  env:
+    CG_REDIR_HOST: cloud.gov
 memory: 64M
 instances: 2
 buildpack: staticfile_buildpack

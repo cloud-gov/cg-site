@@ -1,6 +1,4 @@
 baseurl = "https://cloud.gov"
-canonifyurls = "true"
-relativeurls = "true"
 languageCode = "en-us"
 title = "cloud.gov"
 pluralizelisttitles = "false"
