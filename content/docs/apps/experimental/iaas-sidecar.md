@@ -6,7 +6,15 @@ menu:
 title: IaaS Sidecar
 ---
 
-[**This is an experimental feature.**]({{< relref "docs/apps/experimental/experimental.md" >}}) Sometimes you need to do a hybrid deployment, where some components of your system are more appropriate to run in cloud.gov, while others are more appropriate to run directly in a companion Infrastructure-as-a-Service (IaaS) account. The IaaS Sidecar service makes it easy to get access to a dedicated IaaS account tied closely to your cloud.gov spaces and generate credentials in a controlled fashion. See below for caveats and notes about the availability and tradeoffs of using this service.
+[**This is an experimental feature.**]({{< relref "docs/apps/experimental/experimental.md" >}}) The IaaS Sidecar service makes it easy to get access to a dedicated IaaS account tied closely to your cloud.gov spaces and generate credentials in a controlled fashion. See below for caveats and notes about the availability and tradeoffs of using this service.
+
+## Use cases
+
+Sometimes you need to make a hybrid deployment, where some components of your system are more appropriate to run in cloud.gov, while others are more appropriate to run directly in a companion Infrastructure-as-a-Service (IaaS) account. For example:
+
+- You need to run a stateful service that cloud.gov does not offer as a brokered service, and [volume services]({{< relref "docs/apps/experimental/volume-services.md" >}}) are not sufficient.
+- You want to make use of a service that cloud.gov does not offer as a brokered service, which is available at the IaaS level.
+- You want to run a machine image from a vendor as a component of your system.
 
 ## Caveats for using this service
 We're making this service available in a limited fashion so that customers can explore hybrid deployments with cloud.gov. We'll need to address the following issues before we make the IaaS Sidecar service available in a fully self-service manner for use by all customers. **For this reason, the IaaS Sidecar service is currently only available for customers in the Technology Transformation Service (TTS) in the General Services Administration.**
