@@ -2,7 +2,6 @@
 menu:
   docs:
     parent: experimental
-
 title: IaaS Sidecar
 ---
 
