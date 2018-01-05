@@ -31,7 +31,7 @@ How this works:
 1. The operating system team releases an update.
 1. The [Cloud Foundry BOSH](http://bosh.cloudfoundry.org/) team packages the OS update into a ["stemcell" image](https://bosh.cloudfoundry.org/docs/stemcell.html) and releases the stemcell update, typically within 24-48 hours.
 1. The cloud.gov system deploys the stemcell to our staging environment, verifies that all components are operating as expected, then deploys the stemcell to production.
-1. When the production deployment is complete (typically within 24-48 hours), the platform automatically restarts your applications.
+1. As part of the production deployment (typically within 24-48 hours), the platform automatically restarts your application instances on a host running the updated operating system.
 
 This means that when patches become available for security issues in the operating system, your applications receive the updates typically within 2-4 days of the patch release.
 
