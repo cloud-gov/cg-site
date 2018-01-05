@@ -1,6 +1,6 @@
 +++
 date = "2018-01-05"
-title = "Meltdown mitigation statement"
+title = "cloud.gov Updates for the  Meltdown/Spectre Vulnerabilities"
 +++
 
 cloud.gov is tracking the recent public disclosure of vulnerabilities in modern CPUs, dubbed the [Meltdown](https://meltdownattack.com) 
@@ -17,9 +17,9 @@ At this point we expect to have cloud.gov updates complete before the public rel
 
 There is no immediate remedy for the Spectre class of attacks, neither for cloud.gov or any cloud service provider. End users must [upgrade their OS and browsers](https://www.kb.cert.org/vuls/id/584653) to protect from all websites on the entire internet.
 
-If you have questions, you can email us at [cloud-gov-support@gsa.gov](mailto:cloud-gov-support@gsa.gov).
+We will add updates to this statement as the release process progresses. If you have questions, you can email us at [cloud-gov-support@gsa.gov](mailto:cloud-gov-support@gsa.gov).
 
-
-
+Released: 2017-01-05
+Updates: 
 
 
