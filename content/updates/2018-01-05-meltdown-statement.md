@@ -20,6 +20,7 @@ There is no immediate remedy for the Spectre class of attacks, neither for cloud
 We will add updates to this statement as the release process progresses. If you have questions, you can email us at [cloud-gov-support@gsa.gov](mailto:cloud-gov-support@gsa.gov).
 
 Released: 2017-01-05
+
 Updates: 
 
 
