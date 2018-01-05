@@ -33,7 +33,7 @@ How this works:
 1. The cloud.gov system deploys the stemcell to our staging environment, verifies that all components are operating as expected, then deploys the stemcell to production.
 1. When the production deployment is complete (typically within 24-48 hours), the platform automatically restarts your applications.
 
-This means that if there are patches available for security issues in the operating system, your applications receive the updates typically within 2-4 days of the patch becoming available.
+This means that when patches become available for security issues in the operating system, your applications receive the updates typically within 2-4 days of the patch release.
 
 For details, see the [cloud.gov SSP]({{< relref "overview/security/fedramp-tracker.md#how-you-can-use-this-p-ato" >}}) control descriptions in the SI and CM families, including SI-2, CM-2, CM-2 (2), and CM-6 (1).
 
