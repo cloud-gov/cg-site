@@ -24,14 +24,14 @@ Whenever you deploy an app update with `cf push`, your app will use the latest b
 
 ## Operating system patching
 
-The cloud.gov platform team is responsible for maintenance and patching of the operating system (Ubuntu) and other platform components. Your applications benefit from these updates automatically.
+The cloud.gov platform team is responsible for maintenance and patching of the operating system and other platform components. Your applications benefit from these updates automatically.
 
 How this works:
 
-1. The Ubuntu team releases an update.
-1. The [Cloud Foundry BOSH](http://bosh.cloudfoundry.org/) team packages the Ubuntu update into a [“stemcell” image](https://bosh.cloudfoundry.org/docs/stemcell.html) and releases the stemcell update, typically within 24-48 hours.
-1. The cloud.gov system picks up the stemcell update, checks it with tests, and deploys the update to production.
-1. When that deployment is complete (typically within 24-48 hours), the platform automatically restarts your applications.
+1. The operating system team releases an update.
+1. The [Cloud Foundry BOSH](http://bosh.cloudfoundry.org/) team packages the OS update into a ["stemcell" image](https://bosh.cloudfoundry.org/docs/stemcell.html) and releases the stemcell update, typically within 24-48 hours.
+1. The cloud.gov system deploys the stemcell to our staging environment, verifies that all components are operating as expected, then deploys the stemcell to production.
+1. When the production deployment is complete (typically within 24-48 hours), the platform automatically restarts your applications.
 
 This means that if there are patches available for security issues in the operating system, your applications receive the updates typically within 2-4 days of the patch becoming available.
 
