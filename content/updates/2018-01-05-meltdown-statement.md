@@ -17,3 +17,5 @@ There is no immediate remedy for Spectre attacks for any cloud service provider.
 We will update this note as the release process progresses. If you have questions, email us at [cloud-gov-support@gsa.gov](mailto:cloud-gov-support@gsa.gov).
 
 **Update** (January 9, 2018, 11 pm ET): Ubuntu has released an update with the relevant patches. We expect Cloud Foundry to released a CF-customized version in the next day, and we will apply the update when available.
+
+**Update** (January 10, 2018, 11 am ET): Cloud Foundry released their version of Ubuntu with the Meltdown patches at 12:33 a.m. ET this morning. We are updating the development and staging environments of cloud.gov and testing this release, then we will proceed with our production update later today. This will be [routine maintenance]({{< relref "docs/getting-started/app-maintenance.md#operating-system-patching" >}}) with no expected downtime.
