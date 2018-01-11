@@ -20,4 +20,4 @@ We will update this note as the release process progresses. If you have question
 
 **Update** (January 10, 2018, 11 am ET): Cloud Foundry released their version of Ubuntu with the Meltdown patches at 12:33 a.m. ET this morning. We are updating the development and staging environments of cloud.gov and testing this release, then we will proceed with our production update later today. This will be [routine maintenance]({{< relref "docs/getting-started/app-maintenance.md#operating-system-patching" >}}) with no expected downtime.
 
-**Update** (January 11, 5 pm ET): We've completed production deployment of the Cloud Foundry version of Ubuntu with initial Meltdown patches. Ubuntu and Cloud Foundry continue to release updates with additional patches, and we're following our standard deployment process as they become available.
+**Update** (January 11, 2018, 5 pm ET): We've completed production deployment of the Cloud Foundry version of Ubuntu with initial Meltdown patches. Ubuntu and Cloud Foundry continue to release updates with additional patches, and we're following our standard deployment process as they become available.
