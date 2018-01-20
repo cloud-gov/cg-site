@@ -389,8 +389,8 @@
   padding-right: 30px;
   background: url(/img/link-icons/icon-pdf.svg) right center no-repeat;
 }
-#home a[href*=".com"],
-#home a[href*=".io"] {
+#home:not(.announcement) a[href*=".com"],
+#home:not(.announcement) a[href*=".io"] {
   padding-right: 23px;
   background: url(/img/link-icons/icon-external.svg) right center no-repeat;
 }
@@ -407,6 +407,18 @@
 #home .editorial-grid h5 a[href] {
   background-size: 20px 20px;
 }
+#home.announcement #main ol {
+  padding-left: 40px;
+  margin-left: -32px;
+}
+#home.announcement #main ol li {
+  margin-bottom: 2em;
+}
+/*#home.announcement #main p code,
+#home.announcement #main ol li code,
+#home.announcement #main pre {
+  font-size: 90%;
+}*/
 @media screen and (min-width: 600px) {
   #home #main h1 {
     font-size: 64px;
@@ -422,10 +434,23 @@
     padding-right: 60px;
     background-size: 45px 45px;
   }
+  #home.announcement code,
+  #home.announcement pre {
+    font-size: 90%;
+    color: #000;
+  }
   #home #main p {
     font-size: 1.6875em;
     max-width: 800px;
     margin-bottom: 50px;
+  }
+  #home.announcement #main p,
+  #home.announcement #main ol {
+    max-width: 800px;
+  }
+  #home.announcement p {
+    margin-top: 30px;
+    margin-bottom: 20px;
   }
   #home .usa-width-one-third {
     width: 100%;
@@ -443,6 +468,10 @@
   }
   #home section:nth-of-type(2) h2 {
     max-width: 200px;
+  }
+  #home.announcement section:nth-of-type(2) h2 {
+    width: 640px;
+    max-width: 640px;
   }
   #home section:nth-of-type(4) p {
     min-height: 150px;
