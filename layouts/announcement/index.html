@@ -52,8 +52,8 @@ cf map-route (your_app) app.cloud.gov --hostname (custom-route)
     <div class="usa-grid">
       <h2>Example: Replace app with static content</h2>
       <p>
-        In this example, we’re replacing a Java app, <code>spring-music</code>, at the hostname
-        <code>spring-music.app.cloud.gov</code> with the static site from
+        In this example, we’re replacing a Java app, <code>spring-music-ex</code>, at the hostname
+        <code>spring-music-ex.app.cloud.gov</code> with the static site from
         <code>cf-ex-staticfile</code>. It assumes you’ve already done <code>cf login --sso</code>.
       </p>
       <p>
@@ -66,11 +66,11 @@ OK
 
 name               requested state   instances   memory   disk   urls
 landing-test       stopped           0/2         64M      1G
-spring-music       started           1/1         1G       1G     spring-music.app.cloud.gov
+spring-music-ex    started           1/1         1G       1G spring-music-ex.app.cloud.gov
 
 
-$ cf stop spring-music
-Stopping app spring-music in org test-org / space dev as first.last@email.gov...
+$ cf stop spring-music-ex
+Stopping app spring-music-ex in org test-org / space dev as first.last@email.gov...
 OK
 </pre>
       <p>
@@ -79,14 +79,14 @@ OK
 <pre>
 $ cd ~/path/to/cf-ex-staticfile
 
-$ cf push spring-music
-Updating app spring-music in org test-org / space dev as peter.burkholder@gsa.gov...
+$ cf push spring-music-ex
+Updating app spring-music-ex in org test-org / space dev as peter.burkholder@gsa.gov...
 OK
 ...[snip]...
 requested state: started
 instances: 1/1
 usage: 1G x 1 instances
-urls: spring-music.app.cloud.gov
+urls: spring-music-ex.app.cloud.gov
 last uploaded: Fri Jan 19 20:10:44 UTC 2018
 stack: cflinuxfs2
 buildpack: staticfile
@@ -95,7 +95,7 @@ buildpack: staticfile
 
 </pre>
     <p>
-      Now test at your target URL: <code>https://spring-music.app.cloud.gov</code>.
+      Now test at your target URL: <code>https://spring-music-ex.app.cloud.gov</code>.
     </p>
     </div>
   </section>
@@ -108,11 +108,11 @@ buildpack: staticfile
       static site in the example above.
     </p>
 <pre>
-$ cf map-route spring-music app.cloud.gov --hostname landing-preview
+$ cf map-route spring-music-ex app.cloud.gov --hostname landing-preview
 Creating route landing-preview.app.cloud.gov for org test-org / space dev as first.last@email.gov...
 OK
 Route landing-preview.app.cloud.gov already exists
-Adding route landing-preview.app.cloud.gov to app spring-music in org test-org / space dev as first.last@email.gov...
+Adding route landing-preview.app.cloud.gov to app spring-music-ex in org test-org / space dev as first.last@email.gov...
 OK
 </pre>
     <p>
