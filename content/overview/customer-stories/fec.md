@@ -2,12 +2,15 @@
 menu:
   overview:
     parent: customer-stories
-title: "Case study: Federal Election Commission"
+title: Federal Election Commission
+kicker: Case study
 aliases:
   - /overview/customer-stories/federal-election-commission/
   - /case-studies/fec/
 ---
 The Federal Election Commission (FEC) recently worked with 18F to redesign its website. By hosting [FEC.gov](https://www.fec.gov/) on cloud.gov and moving its data to the cloud, the FEC anticipates saving 85% in hosting costs and is better prepared for peak traffic events.
+
+![FEC case study illustration](/img/illustrations/fec-case-study-illo.svg)
 
 ## $1.2 million annual savings
 
@@ -24,3 +27,5 @@ The dates of FEC’s traffic spikes may be predictable, but it’s hard to prepa
 FEC’s cloud experience has been so positive that they’re looking to migrate more of their IT systems to the cloud. [Up next is the e-filing system](https://www.fec.gov/about/reports-about-fec/agency-operations/e-filing-study-2016/) candidates and committees use to submit their campaign finance reports. Like FEC.gov, this system also spikes around filing deadlines, and in this case the traffic is even harder to predict because it depends on the number and behavior of donors. For example, if we compare the presidential election seasons 2000 and 2008, we see not only more money raised but also far more individual donors. On their existing system, the FEC has no way to prepare for a dramatic shift like this other than to buy and provision more servers. If the demand is higher than predicted and they don’t have the servers to handle it, they must patchwork together a solution and risk downtime during a critical time for their constituents. If the demand is lower than predicted, then the money they spent on extra servers was wasted. By moving this system to the cloud, they can immediately ramp up or down their capacity to meet whatever the actual demand turns out to be, with dramatic improvements in both cost and reliability. cloud.gov makes it easier to move systems to the cloud.
 
 To learn how cloud.gov could help your agency, contact us at [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov).
+
+[Download this FEC case study (PDF)](/resources/casestudy-fec.pdf)

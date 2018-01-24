@@ -159,6 +159,17 @@ ul.ui-widget-header {
   display: none;
 }
 
+#main-content .eyebrow {
+  font-family: '18Franklin-webfont', system, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; /* $font-sans */
+  text-transform: uppercase;
+  font-size: .75em;
+  font-weight: 600;
+  letter-spacing: .1em;
+}
+#main-content .eyebrow ~ h1 {
+  margin-top: 10px;
+}
+
 /* Disclaimer */
 /*
 #gov-banner {
