@@ -22,4 +22,4 @@ We will update this note as the release process progresses. If you have question
 
 **Update** (January 11, 2018, 5 pm ET): We've completed production deployment of the Cloud Foundry version of Ubuntu with initial Meltdown patches. Ubuntu and Cloud Foundry continue to release updates with additional patches, and we're following our standard deployment process as they become available.
 
-**Update** (January 23, 2018, TIME): Ubuntu and Cloud Foundry released operating system updates including [mitigations for the Spectre class of vulnerabilities](https://usn.ubuntu.com/usn/usn-3540-2/) early this morning. We've completed deploying these updates in the cloud.gov production environment.
+**Update** (January 23, 2018, 8 pm ET): Ubuntu and Cloud Foundry released operating system updates including [mitigations for the Spectre class of vulnerabilities](https://usn.ubuntu.com/usn/usn-3540-2/) early this morning. We've completed deploying these updates in the cloud.gov production environment.
