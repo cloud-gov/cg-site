@@ -85,7 +85,7 @@ resource "aws_route53_record" "cloud_gov_<DOMAIN_NAME_UNDERSCORED>_txt" {
   name = "<DOMAIN_NAME>."
   type = "TXT"
   ttl = 300
-  record = ["<key=VALUE>"]
+  records = ["<key=VALUE>"]
 }
 ```
 

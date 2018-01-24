@@ -22,3 +22,21 @@ Whenever you deploy an app update with `cf push`, your app will use the latest b
 ## Avoiding downtime during buildpack or app updates
 **Note that your app may be unavailable while a `cf restage` or `cf push` is in progress.** Avoid this by [setting up zero-downtime deployments for your app](https://cloud.gov/docs/apps/production-ready/#zero-downtime-deploy), so that every new version of your app picks up the latest buildpack without impacting your app's availability.
 
+## Operating system patching
+
+The cloud.gov platform team is responsible for maintenance and patching of the operating system and other platform components. Your applications benefit from these updates automatically.
+
+How this works:
+
+1. The operating system team releases an update.
+1. The [Cloud Foundry BOSH](http://bosh.cloudfoundry.org/) team packages the OS update into a ["stemcell" image](https://bosh.cloudfoundry.org/docs/stemcell.html) and releases the stemcell update, typically within 24-48 hours.
+1. The cloud.gov system deploys the stemcell to our staging environment, verifies that all components are operating as expected, then deploys the stemcell to production.
+1. As part of the production deployment (typically within 24-48 hours), the platform automatically restarts your application instances on a host running the updated operating system.
+
+This means that when patches become available for security issues in the operating system, your applications receive the updates typically within 2-4 days of the patch release.
+
+For details, see the [cloud.gov SSP]({{< relref "overview/security/fedramp-tracker.md#how-you-can-use-this-p-ato" >}}) control descriptions in the SI and CM families, including SI-2, CM-2, CM-2 (2), and CM-6 (1).
+
+## Physical infrastructure
+
+Our Infrastructure as a Service provider is responsible for maintenance of physical infrastructure.
