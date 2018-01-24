@@ -153,6 +153,7 @@
   background-size: 75px 75px;
 }
 #home section .editorial-grid .agency-DOE {
+  padding-top: 75px;
   background: url(/img/logos/Dept-of-Education-logo.svg) 0 0 no-repeat;
   background-size: 75px 75px;
 }
@@ -456,6 +457,20 @@
   }
   #home .usa-grid.editorial-grid .editorial-width-one-sixth {
     width: 168px;
+  }
+  #home .usa-grid.editorial-grid .editorial-width-one-sixth p a[href$='.pdf'] {
+    display: block;
+    font-size: 80%;
+    font-weight: 500;
+    margin-top: 10px;
+    padding: 10px 20px 10px 0;
+    width: calc(100% - 40px);
+    background: url(/img/link-icons/icon-pdf.svg) right 10px no-repeat;
+    background-size: 17px 20px;
+    border-top: 1px solid #ccc;
+  }
+  #home .usa-grid.editorial-grid .editorial-width-one-sixth p a[href$='.pdf']:hover {
+    border-bottom: none;
   }
   #home section .editorial-grid h5 {
     margin-top: 30px;
