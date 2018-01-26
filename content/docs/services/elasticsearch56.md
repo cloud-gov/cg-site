@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: services
-title: Elasticsearch
+title: "Elasticsearch 5.6"
 name: "elasticsearch56"
 description: "Elasticsearch version 5.6: a distributed, RESTful search and analytics engine"
 status: "Beta"
