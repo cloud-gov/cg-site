@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: services
-title: Elasticsearch
+title: "Elasticsearch 2.4"
 name: "elasticsearch24"
 description: "Elasticsearch version 2.4: a distributed, RESTful search and analytics engine"
 status: "Beta"
@@ -50,7 +50,7 @@ Note: The Elasticsearch service does not currently have the ability to back up a
 
 The Elasticsearch service includes the [AWS Cloud Plugin](https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/cloud-aws.html), which supports snapshot and restore with AWS S3. For detailed instructions, see the [Snapshot and Restore](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-snapshots.html) [Cloud AWS Repository](https://www.elastic.co/guide/en/elasticsearch/plugins/2.2/cloud-aws-repository.html) documentation.
 
-You can also use this example. The example assumes you already have an Elasticsearch service called `my-elasticsearch` and an app called `my-app`, and that you have [curl](https://curl.haxx.se/), [jq](https://stedolan.github.io/jq/), and the [AWS command line interface](https://aws.amazon.com/cli/) available.
+You can also use this example. The example assumes you already have an Elasticsearch service called `my-elastic-service` and an app called `my-app`, and that you have [curl](https://curl.haxx.se/), [jq](https://stedolan.github.io/jq/), and the [AWS command line interface](https://aws.amazon.com/cli/) available.
 
 * Create an instance of the [S3 service]({{< relref "docs/services/s3.md" >}}):
 
@@ -58,16 +58,22 @@ You can also use this example. The example assumes you already have an Elasticse
     cf create-service s3 basic my-s3-bucket
     ```
 
+* Create a [service key](https://docs.cloudfoundry.org/devguide/services/service-keys.html) to access S3 credentials:
+
+    ```sh
+    cf create-service-key my-s3-bucket my-key
+    ```
+
 * Create a [service key](https://docs.cloudfoundry.org/devguide/services/service-keys.html) to access Elasticsearch credentials:
 
     ```sh
-    cf create-service-key my-elasticsearch-backup my-key
+    cf create-service-key my-elastic-service my-key
     ```
 
-* Connect to your Elasticsearch service using port forwarding. Note: You'll need to leave the [`cf ssh`]({{< relref "docs/apps/using-ssh.md" >}}) command running and follow the next steps in a different terminal so that you can access the remote Elasticsearch instance from your local environment:
+* Connect to your Elasticsearch service using port forwarding. **Note**: You'll need to leave the [`cf ssh`]({{< relref "docs/apps/using-ssh.md" >}}) command running and follow the next steps in a different terminal so that you can access the remote Elasticsearch instance from your local environment:
 
     ```sh
-    es_credentials=$(cf service-key my-elasticsearch my-key | tail -n +3)
+    es_credentials=$(cf service-key my-elastic-service my-key | tail -n +3)
 
     es_hostname=$(echo "${es_credentials}" | jq -r '.hostname')
     es_port=$(echo "${es_credentials}" | jq -r '.port')
@@ -107,7 +113,7 @@ You can also use this example. The example assumes you already have an Elasticse
     curl -X PUT -u "${es_username}:${es_password}" "localhost:9200/_snapshot/my_s3_repository/my_s3_snapshot"
     ```
 
-* Restore from a snapshot. Note: to restore to a new Elasticsearch instance, you'll need to connect to your new instance (see "Connect to your Elasticsearch service using port forwarding" above) and add the existing S3 repository (see "Create a snapshot repository" above).
+* Restore from a snapshot. **Note**: to restore to a new Elasticsearch instance, you'll need to connect to your new instance (see "Connect to your Elasticsearch service using port forwarding" above) and add the existing S3 repository (see "Create a snapshot repository" above).
 
     ```sh
     curl -X POST -u "${es_username}:${es_password}" "localhost:9200/_snapshot/my_s3_repository/my_s3_snapshot/_restore"
