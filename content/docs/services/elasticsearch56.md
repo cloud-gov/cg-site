@@ -2,55 +2,44 @@
 menu:
   docs:
     parent: services
-title: "Elasticsearch 2.4"
-name: "elasticsearch24"
-description: "Elasticsearch version 2.4: a distributed, RESTful search and analytics engine"
+title: "Elasticsearch 5.6"
+name: "elasticsearch56"
+description: "Elasticsearch version 5.6: a distributed, RESTful search and analytics engine"
 status: "Beta"
 ---
 
-cloud.gov offers [Elasticsearch](https://www.elastic.co/) 2.4 as a service.
+cloud.gov offers [Elasticsearch](https://www.elastic.co/) 5.6 as a service.
 
 ## Plans
 
 Plan Name | Description | Price
 --------- | ----------- | -----
-`1x`  | Elasticsearch instance with 1GB of RAM and 1 slice of CPU   | Will be paid per hour + storage
-`3x`  | Elasticsearch instance with 3GB of RAM and 1 slice of CPU   | Will be paid per hour + storage
-`6x`  | Elasticsearch instance with 6GB of RAM and 1 slice of CPU   | Will be paid per hour + storage
-`12x` | Elasticsearch instance with 12GB of RAM and 2 slices of CPU | Will be paid per hour + storage
+`medium`  | Elasticsearch instance with 3GB of RAM and 1 slice of CPU   | Will be paid per hour + storage
 `medium-ha` | Elasticsearch cluster with three master nodes (3584M memory limit, 1792M heap) and three data nodes (3584M memory limit, 1792M heap, 10G disk) | Will be paid per hour + storage
 
 *These instances are available in [sandbox spaces]({{< relref "overview/pricing/free-limited-sandbox.md#sandbox-limitations" >}}).*
 
-Note: The `medium-ha` plan runs multiple Elasticsearch master and data nodes on different machines, so that service is not interrupted by routine platform maintenance. The `1x`, `3x`, `6x`, and `12x` plans all run on a single instance and will be briefly unavailable during platform maintenance; these plans should not be used for production applications.
+Note: The `medium-ha` plan runs multiple Elasticsearch master and data nodes on different machines, so that service is not interrupted by routine platform maintenance. The `medium` plan runs on a single instance and will be briefly unavailable during platform maintenance; this plan should not be used for production applications.
 
 ## How to create an instance
 
 To create a service instance run the following command:
 
 ```sh
-cf create-service elasticsearch24 1x my-elastic-service
+cf create-service elasticsearch56 medium my-elastic-service
 ```
-
-### Additional notes
-
-Elasticsearch 2.4 allows for dots in field names. This is a feature that existed
-pre-ElasticSearch 2.0 but was disabled in versions 2.0 to 2.3. Learn more about
-that [here](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/dots-in-names.html).
 
 ### Shard/replica configuration for high availability
 
-When using a high availability (HA) plan, indexes must be configured with a proper number of [shards and replicas](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/_basic_concepts.html#_shards_amp_replicas) or it is still possible for your instance to experience downtime during platform maintenance.
-
-All HA instances default to 3 shards and 2 replicas per index which is the recommended configuration.
+When using a high availability (HA) plan, indexes must be configured with a proper number of [shards and replicas](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/_basic_concepts.html#getting-started-shards-and-replicas) or it is still possible for your instance to experience downtime during platform maintenance. You can configure the number of shards and replicas when [creating an index](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/indices-create-index.html) or using [index templates](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/indices-templates.html).
 
 ## Managing backups
 
 Note: The Elasticsearch service does not currently have the ability to back up and restore your data. Data loss is possible in the event of a catastrophic failure at the infrastructure layer or user error (e.g., accidentally deleting your data).
 
-The Elasticsearch service includes the [AWS Cloud Plugin](https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/cloud-aws.html), which supports snapshot and restore with AWS S3. For detailed instructions, see the [Snapshot and Restore](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-snapshots.html) [Cloud AWS Repository](https://www.elastic.co/guide/en/elasticsearch/plugins/2.2/cloud-aws-repository.html) documentation.
+The Elasticsearch service includes the [AWS S3 Repository Plugin](https://www.elastic.co/guide/en/elasticsearch/plugins/5.6/repository-s3.html), which supports snapshot and restore with AWS S3. For detailed instructions, see the [Snapshot and Restore](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/modules-snapshots.html), [S3 Repository](https://www.elastic.co/guide/en/elasticsearch/plugins/5.6/repository-s3-repository.html) documentation.
 
-You can also use this example. The example assumes you already have an Elasticsearch service called `my-elastic-service` and an app called `my-app`, and that you have [curl](https://curl.haxx.se/), [jq](https://stedolan.github.io/jq/), and the [AWS command line interface](https://aws.amazon.com/cli/) available.
+You can also use this example. The example assumes you already have an Elasticsearch service called `my-elastic-service`, an app called `my-app`, and that you have [curl](https://curl.haxx.se/), [jq](https://stedolan.github.io/jq/), and the [AWS command line interface](https://aws.amazon.com/cli/) available.
 
 * Create an instance of the [S3 service]({{< relref "docs/services/s3.md" >}}):
 
