@@ -159,7 +159,6 @@ ul.ui-widget-header {
   display: none;
 }
 
-<<<<<<< HEAD
 .alert-notification {
   margin-top: -2px;
   margin-right: 8px;
@@ -175,8 +174,6 @@ ul.ui-widget-header {
   text-transform: uppercase;
   font-weight: 700;
 }
-
-=======
 #main-content .eyebrow {
   font-family: '18Franklin-webfont', system, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; /* $font-sans */
   text-transform: uppercase;
@@ -200,12 +197,11 @@ ul.ui-widget-header {
   background: url(/img/link-icons/icon-pdf.svg) right -1px no-repeat;
   background-size: 34px 40px;
 }
->>>>>>> 20e39d6d26ff37445e72406b924af00157020efa
 /* Disclaimer */
-/*
+
 #gov-banner {
   padding: 2rem 0 2rem 0;
-}*/
+}
 img.right-arrow {
   float: right;
   width: 0.7rem;
