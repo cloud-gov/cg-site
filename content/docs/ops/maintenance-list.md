@@ -66,7 +66,7 @@ Verify the monitoring system is functioning correctly and confirm that alerts
 are reaching their expected destinations.
 
 ### Investigate open alerts
-- Use our guides for reviewing cloud.gov alerts ([prometheus](https://github.com/18F/cg-deploy-prometheus/tree/master/bosh/alerts), [elastalert](https://github.com/18F/cg-deploy-logsearch/tree/master/elastalert)) for alert descriptions, links to the relevant rules, and starting points for reviewing each type of alert.
+- Use our guides for reviewing cloud.gov alerts ([prometheus](https://github.com/18F/cg-deploy-prometheus/tree/master/bosh), [elastalert](https://github.com/18F/cg-deploy-logsearch/tree/master/elastalert)) for alert descriptions, links to the relevant rules, and starting points for reviewing each type of alert.
 - Was the alert caused by known maintenance or testing in dev environments? Check with other members of the cloud.gov team if you can't determine the source.
 - Is this a recurring alert? Search alert history to determine how frequently it is occuring and what event may have started its firing.
 - Should the underlying condition have caused an alert? Alerts should only be raised when they're something we need to remediate.
