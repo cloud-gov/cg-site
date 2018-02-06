@@ -36,12 +36,14 @@ aws-vault add cloud-gov-govcloud
 ```
 
 #### Configure MFA for aws-vault
-All operators should have MFA enabled, which can be viewed under `Services -> IAM -> Users -> firstname.lastname -> Security Credentials`.  This MFA device needs to be added to the Amazon configuration to enable short lived tokens:
+All operators should have MFA enabled, which can be viewed in the AWS console under `Services -> IAM -> Users -> firstname.lastname -> Security Credentials`, or from the command line with `aws iam list-virtual-mfa-devices`.  The ARN of this MFA device needs to be added to the local Amazon configuration to enable short lived tokens:
 
 ```sh
+me=$(aws iam get-user | jq -r '.User.UserName')
+mfa_serial=$(aws iam list-virtual-mfa-devices | jq --arg me "$me" -r '.VirtualMFADevices[]|select(.User.UserName==$me) | .SerialNumber')
 echo '[profile cloud-gov-govcloud]' >> ~/.aws/config
 echo 'region = us-gov-west-1' >> ~/.aws/config
-echo 'mfa_serial = arn:aws-us-gov:iam::1234567890:mfa/firstname.lastname' >> ~/.aws/config
+echo "mfa_serial = $mfa_serial" >> ~/.aws/config
 ```
 
 #### Executing a command with short lived credentials
