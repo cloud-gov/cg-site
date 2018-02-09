@@ -75,7 +75,8 @@ If the user requesting a reset has any apps, routes, or services in their sandbo
         uaadb=>
 
 
-4. Let the user know the reset process is complete, so they can set up a new authentication application and request access from Space Managers and Org Managers again.
+4. Let the user know the reset process is complete, e.g.:
+  > I've reset your one-time password. To regain cloud.gov access, login to cloud.gov again. After entering your username/password combination, you should be prompted to set up a new one-time password with your authenticator app (Google Authenticator, Microsoft Authenticator or Authy).  Since this reset removed your authorizations, you may need request access additional access from your Space Managers and Org Managers again. If you had a sandbox space, that has been reset and is available to you again.
 
 ## Managing Admins
 Make sure you have a copy of the [cg-scripts repository](https://github.com/18F/cg-scripts) so you have access to several utility scripts.
