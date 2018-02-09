@@ -27,7 +27,7 @@ For more information, consult the [CloudWatch agent reference](http://docs.aws.a
 
 To keep system clock time accurate, the cloud.gov operations BOSH deployment installs a `cron` job on each host for the root user, which runs `ntpdate` every 15 minutes.
 
-From the `cg-deploy-bosh` repository, the global NTP configuration is defined in the `agent` section of the BOSH deployment manifests and ends up on each host in `/var/vcap/bosh/etc/ntpserver`. This configuration is used in turn by the `ntpdate` script from the [bosh_ntpdate](https://github.com/cloudfoundry/bosh/tree/master/stemcell_builder/stages/bosh_ntpdate) stage of the BOSH stemcell builder.
+From the `cg-deploy-bosh` repository, the global NTP configuration is defined in the `agent` section of the BOSH deployment manifests and ends up on each host in `/var/vcap/bosh/etc/ntpserver`. This configuration is used in turn by the `sync-time` script from the [bosh_ntp](https://github.com/cloudfoundry/bosh-linux-stemcell-builder/tree/master/stemcell_builder/stages/bosh_ntp) stage of the BOSH stemcell builder.
 
 This configuration is kept geographically diverse by using [NIST Internet Time
 Servers](http://tf.nist.gov/tf-cgi/servers.cgi) and leveraging the global
