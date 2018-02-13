@@ -1,6 +1,6 @@
 +++
 date = "2018-02-14"
-title = "FEC case study, upcoming Cloud Foundry Summit, and platform updates"
+title = "Elasticsearch 5.6, upcoming Cloud Foundry Summit, and platform updates"
 +++
 
 ![FEC case study illustration](/img/illustrations/fec-case-study-illo.svg)
