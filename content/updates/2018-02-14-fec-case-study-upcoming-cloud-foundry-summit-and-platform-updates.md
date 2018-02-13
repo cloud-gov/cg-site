@@ -13,19 +13,13 @@ title = "FEC case study, upcoming Cloud Foundry Summit, and platform updates"
 ### Added
 
 - [Elasticsearch version 5.6 is now available](https://cloud.gov/docs/services/elasticsearch56/). This includes [performance improvements and new features](https://www.elastic.co/blog/elasticsearch-5-0-0-released). We recommend upgrading from version 2.4 to 5.6, but we don’t have near-term plans to end support for 2.4.  
-- If your application involves multiple languages, and it’s not practical to split it into smaller applications, cloud.gov now has [improved support for multiple buildpacks](https://cloud.gov/docs/apps/experimental/custom-buildpacks/#experimental-multi-buildpack-support)
+- If your application involves multiple languages, and it’s not practical to split it into smaller applications, cloud.gov now has [improved support for multiple buildpacks](https://cloud.gov/docs/apps/experimental/custom-buildpacks/#experimental-multi-buildpack-support)  
 
 ### Fixed
 
-- [Upgrade to the latest version of the CF CLI tool](https://github.com/cloudfoundry/cli/releases) for improvements and bug fixes.  
+- [Upgrade to the latest version of the CF CLI tool v6.34.1](https://github.com/cloudfoundry/cli/releases/tag/v6.34.1) for improvements and bug fixes.  
 - [If you deploy Docker containers](https://cloud.gov/docs/apps/experimental/docker/), it’s now possible to push Docker images from an Azure container registry.  
 
-### Platform updates
-
-- [Stemcell v3468.15 &rarr; 3468.21](https://bosh.io/stemcells/bosh-aws-xen-hvm-ubuntu-trusty-go_agent)
-- CloudFoundry v283 &rarr; [Cloud Foundry Deployment cf-deployment v1.9.0]( https://github.com/cloudfoundry/cf-deployment/releases/tag/v1.9.0)
-- [Diego v1.32.0 &rarr; 1.34.0](https://github.com/cloudfoundry/diego-release/releases/tag/v1.34.0)
-- [RootFS cflinuxfs2 v1.176.0 &rarr; 1.187.0](https://github.com/cloudfoundry/stacks/releases/tag/1.187.0)
 
 ### Buildpack updates
 
@@ -44,3 +38,11 @@ title = "FEC case study, upcoming Cloud Foundry Summit, and platform updates"
   - This resolves a bug with Rails `asset:precompile`.
   - Default Ruby is now 2.4
   - Removed Ruby 2.1
+
+
+### Platform updates
+
+  - [Stemcell v3468.15 &rarr; 3468.21](https://bosh.io/stemcells/bosh-aws-xen-hvm-ubuntu-trusty-go_agent)
+  - CloudFoundry v283 &rarr; [Cloud Foundry Deployment cf-deployment v1.9.0]( https://github.com/cloudfoundry/cf-deployment/releases/tag/v1.9.0)
+  - [Diego v1.32.0 &rarr; 1.34.0](https://github.com/cloudfoundry/diego-release/releases/tag/v1.34.0)
+  - [RootFS cflinuxfs2 v1.176.0 &rarr; 1.187.0](https://github.com/cloudfoundry/stacks/releases/tag/1.187.0)
