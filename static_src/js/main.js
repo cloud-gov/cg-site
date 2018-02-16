@@ -4,9 +4,7 @@ var jQuery = window.jQuery = $;
 window.$ = $;
 require('cloudgov-style');
 
-mermaid.initialize( {
-  startOnLoad: false,
-} );
+mermaid.initialize({startOnLoad: false});
 
 var anchorJS = require('anchor-js');
 require('jquery.scrollto');
