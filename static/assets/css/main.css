@@ -207,6 +207,7 @@ ul.ui-widget-header {
   cursor: pointer;
 }
 #mc_embed_signup_research .form-container {
+  display: none;
   border: 1px solid #eee;
   background-color: #fff;
   padding: 30px 20px;
