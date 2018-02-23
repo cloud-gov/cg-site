@@ -92,6 +92,7 @@ blockquote::before {
 .tabs {
   margin-top: 20px;
   padding-top: 15px;
+  max-width: 36em;
 }
 .tabs.ui-tabs {
   border: 1px solid #ccc;
