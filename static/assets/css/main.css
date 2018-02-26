@@ -194,10 +194,10 @@ ul.ui-widget-header {
   max-width: 300px;
 }
 #mc_embed_signup_research .handle-button {
-  background: #eee;
+  background: #444;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
-  color: #000;
+  color: #fff;
   font-family: '18Franklin-webfont', system, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; /* $font-sans */
   font-size: 16px;
   font-weight: 600;
