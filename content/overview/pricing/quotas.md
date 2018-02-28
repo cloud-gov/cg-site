@@ -7,6 +7,8 @@ weight: 5
 aliases:
   - /docs/intro/pricing/quotas
   - /intro/pricing/quotas
+recruiter: true
+
 ---
 
 cloud.gov usage is billed by org memory quota.
