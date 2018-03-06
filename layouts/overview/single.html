@@ -3,3 +3,7 @@
 {{ partial "overview-footer.html" . }}
 {{ partial "footer.html" . }}
 {{ partial "javascript.html" . }}
+
+{{ if .Params.recruiter }}
+  {{ partial "recruiter.html" . }}
+{{ end }}
