@@ -5,7 +5,7 @@ menu:
 title: Events
 ---
 
-All operations performed on organizations and spaces are logged as `events`.  This includes over 75 distinct events which describe the action taken and the user who authorized the action.  Event logs are useful for continuous security, compliance and monitoring actions taken on the system.
+All operations performed on organizations and spaces are logged as `events`.  This includes over 75 distinct events which describe the action taken and the user who authorized the action.  Event logs are useful for continuous security, compliance and monitoring actions taken on the system.  For example, you can use event logs from cloud.gov to help meet [the Audit and Accountability (AU) requirements](https://nvd.nist.gov/800-53/Rev4/family/Audit%20and%20Accountability) of the NIST 800-53 family of controls.
 
 This guide uses the `cf curl` command to issue commands against the `/v2/events` API.  For users who wish to build this into their systems, the API can be accessed using the [API Documentation](https://apidocs.cloudfoundry.org/280/events/list_all_events.html).
 
@@ -21,7 +21,7 @@ cf curl "/v2/events?q=type+IN+audit.user.space_developer_add,audit.user.space_de
 ```
 
 ## List All User Access Changes as CSV
-JSON is useful, but might not be a format the compliance team is familiar with.  To print the events as a CSV file instead, add this to the end:
+JSON is useful, but might not be a format the compliance team is familiar with.  To print the events as a CSV file instead, first download the [jq](https://stedolan.github.io/jq/) tool which will transform JSON into CSV.  Next add the following command to the end of the first command:
 ```
  | jq -c -r '.resources[].entity | [ .timestamp, .actor, .type, .metadata.request.name ] | @csv' | sed -e s/\"//g
 ```
