@@ -200,7 +200,7 @@ Updating Concourse secrets combines the shared secrets above with local config t
     If the repository includes a `ci/concourse-defaults.yml` file, you'll need to load variables from there as well:
 
     ```sh
-    fly -t cloud-gov-govcloud set-pipeline -p deploy-bosh -c ~/cg-deploy-bosh/ci/ipipeline.yml -l concourse-environment.yml -l ~/cg-deploy-bosh/ci/concourse-defaults.yml`
+    fly -t cloud-gov-govcloud set-pipeline -p deploy-bosh -c ~/cg-deploy-bosh/ci/pipeline.yml -l concourse-environment.yml -l ~/cg-deploy-bosh/ci/concourse-defaults.yml`
     ```
 
 1. Don't leave the secrets lying around (for security reasons, and because they get stale).
