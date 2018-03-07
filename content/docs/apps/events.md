@@ -32,6 +32,7 @@ cf curl "/v2/events?q=type+IN+audit.user.space_developer_add,audit.user.space_de
 ```
 
 Which will provide a table that can be imported into Excel:
+
 | Timestamp | User Performing Action | Action Type | User |
 | --------- | ---------------------- | ----------- | ---- |
 | 2018-02-05T19:36:19Z | sandbox-bot | audit.user.space_manager_add | user.name@example.gov |
@@ -44,7 +45,7 @@ cf curl "/v2/events?q=type+IN+audit.route.create,audit.route.delete-request,audi
 ```
 
 | Timestamp | User Performing Action | Action Type | Route | App GUID |
-| --------- | ---------------------- | ----------- | ----- | --- |
+| --------- | ---------------------- | ----------- | ----- | -------- |
 | 2018-02-05T19:36:19Z | user.name@example.gov | audit.route.update | myapproute | 7950afc2-dd7b-4a70-80a0-8f7207fd1382 |
 
 ## List All Service Instance Create and Delete Events as CSV
