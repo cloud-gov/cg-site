@@ -2,12 +2,19 @@
   background-color: #ffffff;
   color: #43403c;
 }
-#home h1 {
+#home h1,
+#pricing h1 {
   font-size: 54px;
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -.0325em;
   max-width: 670px;
+}
+#pricing h2 {
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -.0325em;
+  margin-bottom: 16px;
 }
 #home section:not(:first-of-type) h1{
   margin-bottom: 80px;
@@ -408,6 +415,132 @@
 #home .editorial-grid h5 a[href] {
   background-size: 20px 20px;
 }
+
+/** Pricing Styles ***************************/
+
+#pricing #main {
+  padding: 60px 0;
+}
+#pricing #main h1 + p {
+  font-family: '18Franklin-webfont', system, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 18px;
+  /* margin-top: 20px; */
+}
+#pricing table {
+  width: 100%;
+  max-width: none;
+}
+#pricing table th,
+#pricing table td {
+  text-align: left;
+  width: calc(25%);
+  background-color: transparent;
+  vertical-align: top;
+}
+#pricing table td {
+  border-color: #ccc;
+}
+#pricing table td:first-child {
+  font-weight: 600;
+  color: #000;
+}
+#pricing #package-rates {
+  display: block;
+  width: 100%;
+  max-width: none;
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+#pricing #package-rates li {
+  /* flex-flow: column; */
+  width: calc(100% - 20px);
+  margin-bottom: 120px;
+  margin-right: 20px;
+}
+
+#pricing #package-rates li h2 {
+  font-size: 1.5em; /* 24px */
+  line-height: 1.325;
+  font-weight: 700;
+  padding-top: 120px;
+  /* font-weight: 600; */
+}
+#pricing #package-rates li h2.prototyping {
+  background: url(/img/illustrations/pricing-prototype.svg) no-repeat;
+  background-size: 100px 100px;
+}
+#pricing #package-rates li h2.fisma-low {
+  background: url(/img/illustrations/pricing-fisma-low.svg) no-repeat;
+  background-size: 100px 100px;
+}
+#pricing #package-rates li h2.fisma-moderate {
+  background: url(/img/illustrations/pricing-fisma-moderate.svg) no-repeat;
+  background-size: 100px 100px;
+}
+#pricing #package-rates li h2 + p {
+  padding: 16px 0 16px 0;
+  border-top: 2px solid #111;
+}
+#pricing #package-rates li p {
+  font-family: '18Franklin-webfont', system, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; /* $font-sans */
+  font-size: 13px;
+  padding-right: 20px;
+  min-height: 50px;
+  line-height: 1.325;
+  border-bottom: 1px dotted #ccc;
+}
+#pricing #package-rates li p span {
+  display: block;
+}
+#pricing #package-rates li p span strong {
+  font-size: 24px;
+}
+#pricing #package-rates li p .button {
+  display: inline-flex;
+  margin-top: 10px;
+  padding: 12px 40px;
+  font-weight: 500;
+  /* background-color: #446586; */
+  /* background-color: #056dd4; */
+  background-color: #02699b; /* navy blue */
+  border-radius: 3px;
+  color: #fff;
+}
+#pricing #package-rates li p .button:hover {
+  background-color: #3498db;
+}
+#pricing .rule {
+  border-top: 1px solid #999;
+}
+#pricing #package-rates .small-link {
+  display: block;
+  font-size: 12px;
+  padding: 12px 0 24px 0;
+}
+#pricing .column {
+  margin: 60px 0;
+  max-width: none;
+  column-count: 2;
+  column-gap: 60px;
+  list-style: none;
+}
+#pricing .column li {
+  font-size: 14px;
+  padding-right: 30px;
+  /* padding-left: 24px; */
+}
+#pricing .column li:before {
+  content: "\f14a"; /* FontAwesome Unicode */
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-left: -28px; /* same as padding-left set on li */
+  width: 24px; /* same as padding-left set on li */
+  color: #02699b;
+}
+/** Media queries ****************************/
+
 @media screen and (min-width: 600px) {
   #home #main h1 {
     font-size: 64px;
@@ -432,7 +565,19 @@
     width: 100%;
   }
 }
+@media screen and (min-width: 800px) {
+  #pricing #package-rates {
+    display: flex;
+  }
+  #pricing #package-rates li {
+    flex-flow: column;
+    width: calc(33%);
+  }
+  #pricing #package-rates li p {
+    /* font-size: 14px; */
+  }
 
+}
 @media screen and (min-width: 960px) {
   #home .usa-width-one-third {
     width: calc(33%);
