@@ -10,6 +10,7 @@ aliases:
   - /overview/terminology/pricing-terminology/
   - /overview/pricing/pricing-terminology/
   - /overview/pricing/system-stuffing/
+recruiter: true
 
 ---
 
