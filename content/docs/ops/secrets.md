@@ -194,7 +194,7 @@ Updating Concourse secrets combines the shared secrets above with local config t
 1. Update the Concourse pipeline with `fly`.
 
     ```sh
-    fly -t cloud-gov-govcloud set-pipeline -p deploy-bosh -c ~/cg-deploy-bosh/ci/ipipeline.yml -l concourse-environment.yml
+    fly -t cloud-gov-govcloud set-pipeline -p deploy-bosh -c ~/cg-deploy-bosh/ci/pipeline.yml -l concourse-environment.yml
     ```
 
     If the repository includes a `ci/concourse-defaults.yml` file, you'll need to load variables from there as well:
