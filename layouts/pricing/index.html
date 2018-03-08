@@ -8,8 +8,8 @@
     {{ partial "gtm-body" . }}
     {{ partial "header.html" . }}
 
-    <section class="usa-content" id="main">
-      <div class="usa-grid">
+    <div class="usa-content">
+      <section class="usa-grid" id="main">
         <h1>Pricing</h1>
         <p>
           Placeholder copy. Pay for apps, not infrastructure. Let the platform provide everything your app needs to run. Scale out with additional app instances as your needs grow. Expand your app with popular 3rd party services in a single click.
@@ -51,7 +51,7 @@
                Starts at <span><strong><sup>$</sup>1250</strong> &#47; month</span>
              </p>
              <p>
-               Memory (RAM) quota: Up to any limit set by user, ~$100 &#47; GB per month
+               Memory (RAM) quota: Up to any MB limit set by user, ~$100 &#47; GB per month
              </p>
              <p>
                Can NOT host production data
@@ -60,7 +60,7 @@
                No custom DNS. All apps are limited to the *.app.cloud.gov domain.
              </p>
              <p>
-               Full access to add-on Premium Services
+               Full access to Add-on (<i class="fa fa-fw fa-plus-square" aria-hidden="true"></i>) Services
              </p>
              <p>
                <a href="mailto:cloud-gov-inquiries@gsa.gov?subject=Purchasing%20Prototyping%20Package" class="button">Contact us</a><br/>
@@ -73,16 +73,15 @@
                Starts at <span><strong><sup>$</sup>1667</strong> &#47; month per system</span>
              </p>
              <p>
-               Memory (RAM) quota: Up to any limit set by user, ~$100 &#47; GB per month
+               Memory (RAM) quota: Up to any MB limit set by user, ~$100 &#47; GB per month
              </p>
              <p>
-               Can host production data at the FISMA Low risk assessment level.
+               Can host production data at the FISMA Low risk assessment level
              </p>
              <p>
-               Includes custom domain support.
-             </p>
+                Support for custom domains including IPv6, CDN caching, and automatic TLS certificates             </p>
              <p>
-               Full access to add-on Premium Services
+               Full access to Add-on (<i class="fa fa-fw fa-plus-square" aria-hidden="true"></i>) Services
              </p>
              <p>
                <a href="mailto:cloud-gov-inquiries@gsa.gov?subject=Purchasing%20FISMA%20Low%20Package" class="button">Contact us</a><br/>
@@ -95,30 +94,31 @@
                Starts at <span><strong><sup>$</sup>7500</strong> &#47; month per system</span>
              </p>
              <p>
-               Memory (RAM) quota: Up to any limit set by user, ~$100 &#47; GB per month
+               Memory (RAM) quota: Up to any MB limit set by user, ~$100 &#47; GB per month
              </p>
              <p>
-               Can host production data at the FISMA Moderate risk assessment level.
+               Can host production data at the FISMA Moderate risk assessment level
              </p>
              <p>
-               Includes custom domain support.
-             </p>
+              Support for custom domains including IPv6, CDN caching, and automatic TLS certificates             </p>
              <p>
-               Full access to add-on Premium Services
+               Full access to Add-on (<i class="fa fa-fw fa-plus-square" aria-hidden="true"></i>) Services
              </p>
              <p>
                <a href="mailto:cloud-gov-inquiries@gsa.gov?subject=Purchasing%20FISMA%20Moderate%20Package" class="button">Contact us</a><br/>
                <a href="/overview/pricing/rates/#fisma-moderate" class="small-link">About FISMA Moderate packages &rarr;</a>
              </p>
-
            </li>
          </ul>
-      </div>
+      </section>
 
-      <div class="usa-grid">
+      <section class="usa-grid">
         <h2>All paid plans include:</h2>
-
-          <ul class="column">
+        <p>
+          Placeholder text.
+        </p>
+        <div class="usa-width-one-half">
+          <ul class="column-single">
             <li>
               API access, CLI access, Web UI access
             </li>
@@ -150,20 +150,254 @@
               All system buildpacks receive regular security updates.
             </li>
             <li>
-              Custom buildpacks can also be used for other languages/frameworks, but cloud.gov will have limited ability to assist with their usage, and there may be compliance implications.
-            </li>
-            <li>
-              Self-service management of spaces and users within an organization
-            </li>
-            <li>
               Platform maintenance and managed service expansion overhead
             </li>
           </ul>
+        </div>
 
+        <div class="usa-width-one-half">
+          <p>
+            Self-service provisioning of brokered Add-on Services for use by your applications:
+          </p>
 
-      </div>
+          <div>
+            <ul class="column-single add-on">
+              <li>
+                <strong>AWS-RDS</strong>: Persistent, relational databases backed by Amazon RDS
+              </li>
+              <li>
+                <strong>Elasticsearch24</strong>: Elasticsearch 2.4 RESTful search and analytics engine
+              </li>
+              <li>
+                <strong>Elasticsearch56</strong>: Elasticsearch 5.6 RESTful search and analytics engine
+              </li>
+              <li>
+                <strong>Identity-Provider</strong>: Manage client credentials for authenticating cloud.gov users in your app
+              </li>
+              <li>
+                <strong>MongoDB36</strong>: MongoDB 3.6 service for application development and testing
+              </li>
+              <li>
+                <strong>Redis28</strong>: An open source in-memory data structure store
+              </li>
+              <li>
+                <strong>Redis32</strong>: An open source in-memory database
+              </li>
+              <li>
+                <strong>S3</strong>: Amazon S3 provides developers with secure, durable, highly-scalable object storage
+              </li>
+              <li>
+                <strong>Service-Account</strong>: Manage service accounts with access to your cloud.gov organization
+              </li>
+            </ul>
+          </div>
 
-    </section>
+        </div>
+      </section>
+
+      <section class="usa-grid">
+        <h2>
+          Add-on services:<br />
+          <span>Choose a la carte services you need</span>
+        </h2>
+
+        <h3>Premium service plans</h3>
+        <p>
+          Self-service, on-demand. Currently free for a limited time.
+        </p>
+
+        <ul class="add-on">
+          <li>
+            <strong>Postgres database options</strong>: Dedicated RDS PostgreSQL DB instances
+            <ul class="horizontal-list">
+              <li>
+                Medium-PSQL
+              </li>
+              <li>
+                Medium-PSQL-redundant
+              </li>
+              <li>
+                Large-PSQL
+              </li>
+              <li>
+                Large-PSQL-redundant
+              </li>
+              <li>
+                Xlarge-PSQL
+              </li>
+              <li>
+                Xlarge-PSQL-redundant
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>MySQL database options</strong>
+            <ul class="horizontal-list">
+              <li>
+                Medium-MySQL
+              </li>
+              <li>
+                Medium-MySQL-redundant
+              </li>
+              <li>
+                Large-MySQL
+              </li>
+              <li>
+                Large-MySQL-redundant
+              </li>
+              <li>
+                Xlarge-MySQL
+              </li>
+              <li>
+                Xlarge-MySQL-redundant
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Oracle database options</strong>
+            <ul class="horizontal-list">
+              <li>
+                Medium-oracle-SE2: Dedicated medium RDS Oracle SE2 DB instance
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Elasticsearch options</strong>
+            <ul class="horizontal-list">
+              <li>
+                Medium-HA: Elasticsearch cluster with three master nodes (3584MB memory limit, 1792M heap) and three data nodes (3584MB memory limit, 1792MB heap, 10GB disk)
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Redis options</strong>
+            <ul class="horizontal-list">
+              <li>
+                Standard-HA: Redis 3.2 with Redis Sentinel, persistent storage, 512MB memory limit
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3>Help from our team</h3>
+        <p>
+          Expert assistance tuned for your situation
+        </p>
+        <ul class="add-on">
+            <li>
+              On-site training
+            </li>
+            <li>
+              Portfolio analysis
+            </li>
+            <li>
+              Replatforming assistance
+            </li>
+            <li>
+              Priority support
+            </li>
+        </ul>
+
+        <h3>Agency-wide enablers</h3>
+        <p>
+          Transform your agency
+        </p>
+        <ul class="add-on">
+          <li>
+            Isolated and dedicated capacity with VPN backhaul
+          </li>
+          <li>
+            Manage apps in your data center using cloud.gov
+          </li>
+          <li>
+            Co-development of custom services
+          </li>
+
+        </ul>
+
+      </section>
+<!--
+      <section class="usa-grid">
+        <h2>Add-on services</h2>
+        <p>
+          Placeholder text.
+        </p>
+
+        <ul class="column add-on">
+          <li>
+            aws-rds: Persistent, relational databases using Amazon RDS
+          </li>
+          <li>
+            cdn-route: Custom domains, CDN caching, and TLS certificates with automatic renewal
+          </li>
+          <li>
+            mongodb32: MongoDB 3.2 service for application development and testing
+          </li>
+          <li>
+            redis28: An open source in-memory data structure store.
+          </li>
+          <li>
+            cloud-gov-service-account: Manage cloud.gov service accounts with access to your organization
+          </li>
+          <li>
+            elasticsearch24: Elasticsearch 2.4 RESTful search and analytics engine
+          </li>
+          <li>
+            s3: Amazon S3 provides developers with secure, durable, highly-scalable object storage
+          </li>
+          <li>
+            cloud-gov-identity-provider: Manage client credentials for authenticating cloud.gov users in your app
+          </li>
+          <li>
+            redis32: An open source in-memory database.
+          </li>
+          <li>
+            elasticsearch56: Elasticsearch 5.6 RESTful search and analytics engine
+          </li>
+          <li>
+            mongodb36: MongoDB 3.6 service for application development and testing
+          </li>
+        </ul>
+      </section>
+       -->
+
+      <section class="usa-grid estimator">
+        <h2>Estimating cost</h2>
+        <p>
+          Placeholder text.
+        </p>
+        <p>
+          All packages are priced based on three components:
+        </p>
+        <ul>
+          <li>
+            <h4>Access package</h4>
+            <p>
+              What package you choose &mdash; Prototyping (<sup>$</sup>1250/month), FISMA Low (<sup>$</sup>1667/month per system), or FISMA Moderate (<sup>$</sup>7500/month per system) &mdash; depends on what kinds of applications you want to host.
+            </p>
+          </li>
+          <li>
+            <h4>Resource usage</h4>
+            <p>
+              The memory, in MB of RAM, you reserve for your applications. Assessed monthly (approximately $100/GB per month) and doesn’t roll over month-to-month.
+            </p>
+          </li>
+          <li>
+            <h4>Add-on services</h4>
+            <p>
+              A la carte services that cloud.gov can spin up quickly and run on your behalf. See the Add-on services (<i class="fa fa-fw fa-plus-square" aria-hidden="true"></i>) and plans offered for each service by running <code>cf marketplace</code>.
+            </p>
+          </li>
+        </ul>
+        <p>
+          Download cloud.gov cost estimator: <a href="/resources/cloudgov_cost_estimator.xlsx">.xlsx</a> | <a href="/resources/cloudgov_cost_estimator.ods">.ods</a>
+        </p>
+        <p class="footnote">
+          last updated: October 31, 2017
+        </p>
+      </section>
+
+    </div>
 
 
     {{ partial "footer.html" . }}

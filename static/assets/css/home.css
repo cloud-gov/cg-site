@@ -10,12 +10,6 @@
   letter-spacing: -.0325em;
   max-width: 670px;
 }
-#pricing h2 {
-  font-size: 40px;
-  font-weight: 600;
-  letter-spacing: -.0325em;
-  margin-bottom: 16px;
-}
 #home section:not(:first-of-type) h1{
   margin-bottom: 80px;
 }
@@ -417,14 +411,53 @@
 }
 
 /** Pricing Styles ***************************/
-
+#pricing h2 {
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -.0325em;
+  margin-bottom: 30px;
+}
+#pricing h3 {
+  font-size: 24px;
+  position: relative;
+  margin-top: 60px;
+  padding-top: 30px;
+}
+#pricing h3:before {
+  background-color: #b5b6c3;
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 45px;
+}
+#pricing .usa-content {
+  padding-left: 20px;
+  padding-right: 20px;
+}
 #pricing #main {
   padding: 60px 0;
 }
-#pricing #main h1 + p {
+#pricing #main h1 + p,
+#pricing .usa-grid > h2 + p,
+#pricing h3 + p {
   font-family: '18Franklin-webfont', system, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-size: 18px;
   /* margin-top: 20px; */
+}
+#pricing h3 + p {
+  margin-bottom: 40px;
+}
+#pricing .usa-grid > h2 span {
+  font-weight: 400;
+}
+#pricing .usa-grid {
+
+}
+#pricing .usa-grid > h2 + p {
+  /* margin-top: 60px; */
+  margin-bottom: 60px;
 }
 #pricing table {
   width: 100%;
@@ -453,19 +486,20 @@
   margin-top: 40px;
   margin-bottom: 60px;
 }
+#pricing ul {
+  font-size: 14px;
+}
 #pricing #package-rates li {
   /* flex-flow: column; */
   width: calc(100% - 20px);
-  margin-bottom: 120px;
+  margin-bottom: 60px;
   margin-right: 20px;
 }
-
 #pricing #package-rates li h2 {
   font-size: 1.5em; /* 24px */
   line-height: 1.325;
   font-weight: 700;
   padding-top: 120px;
-  /* font-weight: 600; */
 }
 #pricing #package-rates li h2.prototyping {
   background: url(/img/illustrations/pricing-prototype.svg) no-repeat;
@@ -489,10 +523,16 @@
   padding-right: 20px;
   min-height: 50px;
   line-height: 1.325;
+}
+#pricing #package-rates li p:not(:last-of-type) {
   border-bottom: 1px dotted #ccc;
 }
+/* #pricing #package-rates li p:last-of-type {
+  border-bottom: 2px solid #111;
+} */
 #pricing #package-rates li p span {
   display: block;
+  margin-top: 6px;
 }
 #pricing #package-rates li p span strong {
   font-size: 24px;
@@ -504,6 +544,7 @@
   font-weight: 500;
   /* background-color: #446586; */
   /* background-color: #056dd4; */
+  /* background-color: #ff5235; */
   background-color: #02699b; /* navy blue */
   border-radius: 3px;
   color: #fff;
@@ -511,33 +552,110 @@
 #pricing #package-rates li p .button:hover {
   background-color: #3498db;
 }
-#pricing .rule {
-  border-top: 1px solid #999;
-}
 #pricing #package-rates .small-link {
   display: block;
   font-size: 12px;
   padding: 12px 0 24px 0;
 }
+#pricing .column-single {
+  list-style: none;
+  margin-bottom: 120px;
+}
 #pricing .column {
-  margin: 60px 0;
-  max-width: none;
-  column-count: 2;
-  column-gap: 60px;
+  margin: 60px 0 120px 0;
+  max-width: 540px;
+  column-count: 1;
   list-style: none;
 }
-#pricing .column li {
-  font-size: 14px;
-  padding-right: 30px;
-  /* padding-left: 24px; */
+#pricing .column:first-of-type {
+  margin-bottom: 160px;
 }
-#pricing .column li:before {
+#pricing .column li,
+#pricing .column-single li {
+  padding-right: 30px;
+}
+#pricing .column-single li:before {
   content: "\f14a"; /* FontAwesome Unicode */
   font-family: FontAwesome;
   display: inline-block;
   margin-left: -28px; /* same as padding-left set on li */
+  width: 24px;
+  color: #3498db;
+}
+#pricing .add-on {
+  list-style: none;
+}
+#pricing .horizontal-list {
+  padding-bottom: 12px;
+}
+#pricing .horizontal-list li {
+  font-size: 13px;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.5;
+}
+#pricing .add-on > li:before,
+#pricing .column-single.add-on > li:before {
+  content: "\f0fe"; /* FontAwesome Unicode */
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-left: -28px; /* same as padding-left set on li */
   width: 24px; /* same as padding-left set on li */
-  color: #02699b;
+  color: #3498db;
+}
+#pricing .usa-width-one-half > p {
+  font-family: '18Franklin-webfont', system, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; /* $font-sans */
+  margin-bottom: 30px;
+  padding-right: 60px;
+  font-size: 14px;
+  font-weight: 600;
+}
+#pricing .horizontal-list {
+  padding-left: 0;
+  margin-left: 0;
+}
+#pricing .horizontal-list li {
+  display: inline-block;
+}
+#pricing .horizontal-list li:not(:last-of-type)::after {
+  background-color: #bbb;
+  content: '';
+  display: inline-block;
+  height: 1px;
+  margin-bottom: 3px;
+  width: 24px;
+}
+#pricing i.fa-plus-square {
+  font-size: 16px;
+  color: #3498db;
+}
+#pricing .estimator {
+  padding: 200px 20px;
+}
+#pricing .estimator p {
+  font-family: '18Franklin-webfont', system, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; /* $font-sans */
+}
+#pricing .estimator ul {
+  list-style: none;
+  max-width: 100%;
+  display: flex;
+  padding: 240px 0 30px 0;
+}
+#pricing .estimator ul li {
+  width: calc(33%);
+  flex-direction: column;
+}
+#pricing .estimator ul li p {
+  font-size: 13px;
+  line-height: 1.5;
+  padding-right: 30px;
+}
+#pricing .estimator ul li p code {
+  font-size: 12px;
+  background-color: #fff;
+}
+#pricing .footnote {
+  font-size: 12px;
 }
 /** Media queries ****************************/
 
@@ -576,7 +694,13 @@
   #pricing #package-rates li p {
     /* font-size: 14px; */
   }
-
+  #pricing .column {
+    /* margin: 60px 0; */
+    max-width: none;
+    column-count: 2;
+    column-gap: 60px;
+    /* list-style: none; */
+  }
 }
 @media screen and (min-width: 960px) {
   #home .usa-width-one-third {
