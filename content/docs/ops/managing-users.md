@@ -2,6 +2,7 @@
 menu:
   docs:
     parent: tenants
+layout: ops
 title: Managing users
 ---
 
@@ -27,30 +28,55 @@ If the user requesting a reset has any apps, routes, or services in their sandbo
 
 1. Remove all apps, routes, and services from the user's sandbox. E.g.:
 
-```
-cf target -o sandbox-agency -s some.user
-cf apps
-cf delete app
-cf services
-cf delete-service service
-```
+    ```sh
+    cf target -o sandbox-agency -s some.user
+    cf apps
+    cf delete app
+    cf services
+    cf delete-service service
+    ```
 
 2. Remove user's permissions to all [spaces and orgs](https://docs.cloudfoundry.org/adminguide/cli-user-management.html#orgs-spaces) other than their sandbox. Search for the user in the Admin interface to locate the relevant orgs and spaces. 
 
     For those spaces and orgs, notify the Space Managers and Org Managers that we've removed the user's access because of their request to reset their account's authentication application. 
     
-3. Reset the user's totp_seed in cloudfoundry's uaa database.
+3. Reset the user's totp_seed in cloudfoundry's uaa database. 
 
-    Login to a **[concourse jumpbox]({{< relref "docs/ops/runbook/troubleshooting-bosh.md#creating-and-intercepting-ephemeral-jumpboxes" >}})**.
+    Login to a **[concourse jumpbox]({{< relref "docs/ops/runbook/troubleshooting-bosh.md#creating-and-intercepting-ephemeral-jumpboxes" >}})**, connect to the appropriate DB, and remove the user, as in this example:
 
-    ```sh
-    $ psql postgres://{db_user}:{db_pass}@{db_address:port}/uaadb
-    => begin;
-    => delete from totp_seed where "username" = '{email.address}';
-    => commit;
-    ```
 
-4. Let the user know the reset process is complete, so they can set up a new authentication application and request access from Space Managers and Org Managers again.
+        root@PRODUCTION:/tmp/build/8e72821d$ bosh -d cf-production manifest | grep -A7 uaadb
+              uaadb:
+          address: production.dns.name.aws.gov
+          databases:
+          - name: uaadb
+            tag: uaa
+          db_scheme: postgresql
+          port: 5432
+          roles:
+          - name: cfdb
+            password: secret_password
+            tag: admin
+              
+        root@PRODUCTION:/tmp/build/8e72821d$ psql postgres://cfdb:secret_password@production.dns.name.aws.gov/uaadb
+
+        uaadb=> select * from totp_seed where username='pat.jones@agency.gov';
+          username              |       seed         | backup_code
+          ----------------------+--------------------+-------------
+          pat.jones@agency.gov | EAAS9HANFSD90ENADF |
+          (1 row)
+
+        uaadb=> begin;
+          BEGIN
+        uaadb=> delete from totp_seed where username='pat.jones@agency.gov';
+          DELETE 1
+        uaadb=> commit;
+          COMMIT
+        uaadb=>
+
+
+4. Let the user know the reset process is complete, e.g.:
+  > I've reset your one-time password. To regain cloud.gov access, log in to cloud.gov again. After entering your username/password combination, you should be prompted to set up a new one-time password with your authenticator app (for example, Google Authenticator, Microsoft Authenticator, or Authy).  Since this reset removed your roles on orgs and spaces, you may need to request additional access from your Space Managers and Org Managers again. If you had a sandbox space, that has been reset and is available to you again.
 
 ## Managing Admins
 Make sure you have a copy of the [cg-scripts repository](https://github.com/18F/cg-scripts) so you have access to several utility scripts.

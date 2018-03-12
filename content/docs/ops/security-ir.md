@@ -2,6 +2,7 @@
 menu:
   docs:
     parent: policies
+layout: ops
 title: Security Incident Response Guide
 linktitle: Security IR Guide
 ---
@@ -115,7 +116,9 @@ Severity: high
 IC: Farmer Jane
 Responders: Spot the Dog, Farmer Dave
 
-We've confirmed reports of escaped chickens. Looks like a fox may have tunneled into the run. Dave is working to fix the fence, Spot is tracking the fox.
+We've confirmed reports of escaped chickens. 
+Looks like a fox may have tunneled into the run. 
+Dave is working to fix the fence, Spot is tracking the fox.
 ```
 
 This sitrep should be:

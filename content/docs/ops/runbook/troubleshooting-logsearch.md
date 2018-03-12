@@ -2,6 +2,7 @@
 menu:
   docs:
     parent: runbook
+layout: ops
 
 title: Troubleshooting Logsearch
 ---
@@ -48,15 +49,19 @@ cp /var/vcap/jobs/ingestor_syslog/config/logstash.conf /tmp/logstash-restore.con
 
 Edit the `/tmp/logstash-restore.conf` and make the following changes:
 
-#### Remove the `redis` input and replace it with an `s3` input
+#### Update the "input" block to only contain s3
 ```
+input {
   s3 {
     bucket => ":bucket:"
     region => ":region:"
+    access_key_id => ":access_key_id:"
+    secret_access_key => ":secret_access_key:"
 
     type => "syslog"
     sincedb_path => "/tmp/s3_import.sincedb"
   }
+}
 ```
 
 The values for `:bucket:` and `:region:` can be found in [cg-provision](https://github.com/18F/cg-provision/blob/master/terraform/modules/cloudfoundry/buckets.tf#L25-L30) or retrieved from the bosh manifest:
@@ -66,7 +71,7 @@ spruce merge --cherry-pick properties.logstash_ingestor.outputs <(bosh -d logsea
 
 When run with default configuration the S3 input plugin will reindex ALL data in the bucket. To reindex a specific subset of data pass [additional options to the s3 input plugin](https://www.elastic.co/guide/en/logstash/current/plugins-inputs-s3.html).
 
-For example, to reindex only data from November 15th, 1968 use an `exclude_pattern` to exclude all files EXCEPT those that match that date: `exclude_pattern => "^((?!1968-11-15).)*$"`.
+For example, to reindex only data from November 15th, 1968 use a `prefix` to limit to files that match that date: `prefix => "1968/11/15"`.
 
 #### Disable the timecop filter
 
@@ -109,18 +114,16 @@ Add this stanza to the end of the `filters` section in `/tmp/logstash-restore.co
 
 ```
 mutate {
-        add_field => {"index-date" => "%{@timestamp}"}
+  add_field => {"index-date" => "%{@timestamp}"}
 }
 date {
-    match => [ "index-date", "ISO8601" ]
-    timezone => "UTC"
-    add_field => { "[@metadata][index-date]" => "%{+YYYY.MM.dd}" }
-
+  match => [ "index-date", "ISO8601" ]
+  timezone => "UTC"
+  add_field => { "[@metadata][index-date]" => "%{+YYYY.MM.dd}" }
 }
 mutate {
   remove_field => "index-date"
 }
-
 ```
 
 Edit the `output` section in `/tmp/logstash-restore.conf` and change `index` to:
@@ -132,7 +135,9 @@ index => "logs-%{@index_type}-%{[@metadata][index-date]}"
 Run logstash passing in your edited configuration file:
 
 ```sh
-/var/vcap/packages/logstash/bin/logstash agent -f /tmp/logstash-restore.config
+export JAVA_HOME=/var/vcap/packages/java8
+rm /tmp/s3_import.sincedb
+/var/vcap/packages/logstash/bin/logstash --path.config /tmp/logstash-restore.config
 ```
 
 ### Monitor progress
@@ -141,6 +146,14 @@ Logstash will run forever once started. Monitor the progress of the reindex, and
 
 ```sh
 tail -f /tmp/s3_import.sincedb
+```
+
+### Recreate ingestor
+
+To restore the ingestor to known good configuration after the restore, recreate the VM:
+
+```sh
+bosh -d logsearch recreate ingestor/0
 ```
 
 ## Other Useful ElasticSearch commands

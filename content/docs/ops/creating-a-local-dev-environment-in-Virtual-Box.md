@@ -2,6 +2,7 @@
 menu:
   docs:
     parent: deployment
+layout: ops
 title: Creating a Local Dev Environment With VirtualBox
 linktitle: Local
 ---

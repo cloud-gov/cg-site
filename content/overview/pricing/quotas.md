@@ -7,20 +7,19 @@ weight: 5
 aliases:
   - /docs/intro/pricing/quotas
   - /intro/pricing/quotas
+recruiter: true
+
 ---
 
-cloud.gov capacity is billed by quota. Quotas provide a not-to-exceed reservation of memory, compute, application routes and service instances.
+cloud.gov usage is billed by org memory quota.
 
 ## Costs
 
-Most packages are $0.0033 per MB reserved per day, with no limit except the quota you set.
+The cost is $0.0033 per MB of memory reserved per day, with no limit except the quota you set.
 
-There are two exceptions:
+You set your usage quota **in advance**. This helps you control the maximum amount that your team will spend, and helps us avoid over-provisioning resources that won’t be used.
 
-- Open data packages have a 2 GB of RAM per month limit.
-- Sandboxes offer resource usage for free, but it is capped at 1 GB of RAM per month.
-
-Usage quotas are **set in advance**. This helps you control the maximum amount that your team will spend, and helps us avoid over-provisioning resources that won’t be used.
+([Sandboxes]({{< relref "overview/pricing/free-limited-sandbox.md" >}}) offer resource usage for free, but it is capped at 1 GB of RAM.)
 
 ## Billing
 
@@ -28,12 +27,13 @@ Quotas are associated with and billed to a project IAA number or equivalent bill
 
 ## What quotas limit
 
+Quotas provide a not-to-exceed reservation of memory, which you set at the amount appropriate to your usage. In the underlying technical system, quotas also limit number of application routes and service instances, but you can request an expansion of those limits at any time.
+
 Quotas limit the following resources:  
 
 - Number of [application routes]({{< relref "docs/apps/custom-domains.md" >}})
 - Amount of application memory
 - Number of [service instances]({{< relref "docs/apps/managed-services.md" >}})
-- Access to paid service plans
 
 If a new application `push` would exceed your organization's quota, the request will fail with status code `400` and a message that describes the limit that would be exceeded.
 

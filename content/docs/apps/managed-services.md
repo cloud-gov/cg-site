@@ -37,9 +37,9 @@ The note `* These service plans have an associated cost` indicates paid services
 
 ### Bind the service instance
 
-A service instance must be bound to the application which will access it. This can be done in a single step by adding a binding to the application's `manifest.yml`.
+For services that apply to an application ([Elasticsearch]({{< relref "docs/services/elasticsearch56.md" >}}), [Redis]({{< relref "docs/services/redis.md" >}}), [relational databases (RDS)]({{< relref "docs/services/relational-database.md" >}}), and [S3]({{< relref "docs/services/s3.md" >}})), the service instance must be bound to the application which will access it. (The [CDN service]({{< relref "docs/services/cdn-route.md" >}}), [identity provider]({{< relref "docs/services/cloud-gov-identity-provider.md" >}}), and [service account]({{< relref "docs/services/cloud-gov-service-account.md" >}}) have different instructions, available in their service documentation.) 
 
-**manifest.yml**
+Binding to an application can be done in a single step by adding a binding to the application's `manifest.yml`, for example:
 
 ```yaml
 ---
@@ -52,15 +52,13 @@ applications:
 
 A service binding will be created with the next `cf push`.
 
-Alternatively, a service instance can also bound to an existing application via the `cf` cli.
+Alternatively, a service instance can also bound to an existing application via the `cf` CLI:
 
 ```
 % cf bind-service APPLICATION INSTANCE_NAME
 ```
 
-Use `cf env APPLICATION` to display the application environment variables, including `VCAP_SERVICES` which holds information for each bound service.
-
-**Output:**
+Use `cf env APPLICATION` to display the application environment variables, including `VCAP_SERVICES` which holds information for each bound service. Output:
 
 ```javascript
 // ...

@@ -10,8 +10,8 @@ status: "Production Ready"
 
 This service provides three key elements to support production applications:
 
-1. Custom domain support, so that your application can have your domain instead of the default `*.app.cloud.gov` domain.
-2. Content Distribution Network (CDN) caching (using [AWS CloudFront](https://aws.amazon.com/cloudfront/)), for fast delivery of content to your users.
+1. [Custom domain]({{< relref "docs/apps/custom-domains.md" >}}) support, so that your application can have your domain instead of the default `*.app.cloud.gov` domain.
+2. Content Distribution Network (CDN) caching (using [AWS CloudFront](https://aws.amazon.com/cloudfront/)), for fast delivery of content to your users. Before setting up this service, review [how the CDN works](#more-about-how-the-cdn-works).
 3. HTTPS support via free TLS certificates with auto-renewal (using [Let's Encrypt](https://letsencrypt.org/)), so that user traffic is encrypted.
 
 ## Plans
@@ -19,6 +19,8 @@ This service provides three key elements to support production applications:
 Plan Name | Description | Price
 --------- | ----------- | -----
 `cdn-route` | Custom domains, CDN caching, and TLS certificates with automatic renewal | Free
+
+*Not available in [sandbox spaces]({{< relref "overview/pricing/free-limited-sandbox.md#sandbox-limitations" >}}) or [prototyping orgs]({{< relref "overview/pricing/prototyping.md#limitations" >}}).*
 
 ## Options
 
@@ -34,7 +36,7 @@ Name | Required | Description | Default
 
 *Use these instructions for cloud.gov tenant applications. If you're creating a custom domain for something else (such as a public S3 bucket), see [external services and applications](#external-services-and-applications).*
 
-Before you begin, note that once you create a CDN service instance, you can't update or delete it until it has been successfully configured (so if you make a mistake that prevents it from being successfully configured, you'll need to ask support to manually delete the service instance). We consider this a bug and plan to make mistakes easier to fix, but for now, consider checking your commands with a teammate to help you avoid typos and mistakes.
+Before you begin, note that once you initiate creation of a CDN service instance, you can't update or delete it until it has been created successfully. Typos in the service creation parameters can cause creation to get stuck in a pending state. If you're using DNSSEC, [verify your DNSSEC configuration](https://www.icann.org/resources/pages/tools-2012-02-25-en) because invalid DNSSEC configuration will also cause creation to get stuck.
 
 First, target the space your application is running in:
 
@@ -105,24 +107,38 @@ Message: Service instance provisioned [my.example.gov => cdn-broker-origin.fr.cl
 
 The output will include the CDN domain the broker has created for you. In this case, you need to create a CNAME record in your DNS server pointing `my.example.gov` to `d3nrs0916m1mk2.cloudfront.net.`.
 
-After the record is created, wait up to 1 hour for the CloudFront distribution to be provisioned and the DNS changes to propagate. Then visit your custom domain and see whether you have a valid certificate (in other words, that visiting your site in a modern browser doesn't give you a certificate warning).
+After the record is created, wait up to one hour for the CloudFront distribution to be provisioned and the DNS changes to propagate. Then visit your custom domain and see whether you have a valid certificate (in other words, that visiting your site in a modern browser doesn't give you a certificate warning).
 
-### CDN Configuration Options
+If you've waited more than two hours without a valid certificate appearing, [contact support](/help) to check for problems.
 
-[Forwarding cookies to your origin](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html) can be disabled by setting the `cookies` parameter to `false`.
+#### Step 3: Map the route to your application
+
+You need to map [the domain you created](#how-to-create-an-instance-of-this-service) to your application.
+
+You can do that by adding the domain(s) to your application [`manifest.yml` file](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) under the
+[`routes`](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#routes) section:
+
+```yaml
+...
+routes:
+- route: my.example.gov
+```
+
+Then deploy your application with your updated manifest.
+
+*Alternate option:* If you don't want to put this in your manifest, you can manually add the route to your application:
 
 ```sh
-cf create-service cdn-route cdn-route my-cdn-route \
-    -c '{"domain": "my.example.gov", "cookies": false}'
+cf map-route APPNAME my.example.gov
 ```
 
 ### Troubleshooting
 
 If nothing has changed when you visit your custom domain:
 
-* If you're setting up a domain for a cloud.gov tenant application, make sure you're using the [instructions above](#how-to-create-an-instance-of-this-service), updated in February 2017.
 * Make sure you've waited at least 30 minutes.
 * Check your DNS setup to make sure you completed the CNAME record creation.
+* If your custom domain uses DNSSEC, [verify your DNSSEC configuration](https://www.icann.org/resources/pages/tools-2012-02-25-en).
 
 If you get the following error message when you try to update or delete a service instance: `"Server error, status code: 409, error code: 60016, message: An operation for service instance [name] is in progress.` -- this happens because you can't do anything to a service instance while it's in a pending state. A CDN service instance stays pending until it detects the CNAME or ALIAS record. If this causes a problem for you, you can ask support to manually delete the pending instance.
 
@@ -175,17 +191,25 @@ particularly confusing as different requests might be routed to different
 CloudFront Edge endpoints.
 
 While there is no mechanism for cloud.gov users to trigger a cache clear, 
-[cloud.gov support](/help/) can. Note however, that cache invalidation is not
+[cloud.gov support](/help/) can. Cache invalidation is not
 instantaneous; Amazon recommends expecting a lag time of 10-15 minutes (more if there are
 many distinct endpoints).
 
 ### Authentication
 
-As noted above, cookies are passed through the CDN by default, meaning that
-cookie-based authentication will work as expected. Other headers, such as HTTP
-auth, are stripped by default. If you need a different configuration, contact [cloud.gov support](/help/).
+Cookies are passed through the CDN by default, meaning that
+cookie-based authentication will work as expected. If you don't want to [forward cookies to your origin](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html), you can disable this by setting the `cookies` parameter to `false`:
 
-### Certificate validity and renewal
+```sh
+cf create-service cdn-route cdn-route my-cdn-route \
+    -c '{"domain": "my.example.gov", "cookies": false}'
+```
+
+Other headers, such as HTTP auth, are stripped by default.
+
+If you need a different configuration, contact [cloud.gov support](/help/).
+
+## Certificate validity and renewal
 
 Let's Encrypt TLS certificates are valid for 90 days.  The broker will automatically renew your certificate every 60 days.  This process is usually immedate but can take several days to complete.  If your certificate is expiring within the next 21 days and has not been renewed automatically, contact [cloud.gov support](/help/).
 

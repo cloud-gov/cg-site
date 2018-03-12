@@ -2,56 +2,85 @@
 menu:
   docs:
     parent: operations
+layout: ops
 title: Secret key management
 ---
 
-### Sharing secret keys
+## Sharing secret keys
 
-For sharing the following types of [sensitive information](https://github.com/18F/open-source-policy/blob/master/practice.md#protecting-sensitive-information) related to cloud.gov, cloud.gov team members must use [Fugacious](https://fugacious.18f.gov/) links, shared over a GSA application (such as GSA Gmail or TTS Slack). The team member must share the Fugacious link only with intended recipient(s) who need to know the sensitive information.
+For sharing the following types of [sensitive information](https://github.com/18F/open-source-policy/blob/master/practice.md#protecting-sensitive-information) related to cloud.gov, cloud.gov team members must use GSA Google Hangouts. The team member must share the information only with intended recipient(s) who need to know the sensitive information. Team members can use the Hangouts screen-sharing feature or verbally share the information.
 
 * Passwords
 * Secret keys
 * Sensitive environment variables
 * Other secret authentication information
 
-The cloud.gov team must comply with 18F's [policies in the Handbook](https://handbook.18f.gov/sensitive-information/#fugacious), with the following additional restrictions (for security and compliance reasons):
-
-* Expiry must be set to 12 hours or fewer
-* Number of opens must be set to two views, per person who needs to open it
-
-### Maintenance of system secret keys
+## Maintenance of system secret keys
 
 To meet NIST security control [SC-12 (1)](https://web.nvd.nist.gov/view/800-53/Rev4/control?controlName=SC-12), we maintain the availability of all information on the platform in the event a cryptographic access key is lost or compromised.
 
-Authorized federal staff rotate, encrypt, and backup keys monthly. Privileged users can access the keys only with two-factor authentication and a decryption passphrase. In the rare case that both the keys and the decryption passphrase for the backup are lost or compromised, new keys can be rotated in by authorized federal staff, while maintaining availability of information.
+Authorized federal staff rotate, encrypt, and backup keys yearly. Privileged users can access the keys only with two-factor authentication and a decryption passphrase. In the rare case that both the keys and the decryption passphrase for the backup are lost or compromised, new keys can be rotated in by authorized federal staff, while maintaining availability of information.
 
-#### AWS credentials
+### AWS credentials
 
 If you need to view/update secrets:
 
 1. Ask in [#cg-platform](https://gsa-tts.slack.com/messages/cg-platform/) for an account to read/write from the S3 buckets.
-1. Set up a [named profile](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-multiple-profiles) for [the AWS CLI](https://aws.amazon.com/cli/).
+1. Setup aws-vault
 
-The examples below use `--profile govcloud`, but replace with the name of your profile.
-
-#### Generate and upload keys
-
-Use [this script](https://github.com/18F/cg-pipeline-tasks/blob/master/generate_key.sh) to generate keys and upload them as access keys to AWS EC2 and an encrypted backup to AWS S3. You just need to provide a `BUCKET` destination for the backup and a decryption `PASSPHRASE`. In your terminal:
-
+#### Install aws-vault for AWS credentials
+`aws-vault` secures credentials locally and generates temporary credentials to provide an additional layer of security.  To install `aws-vault` use the brew command:
 ```sh
-BUCKET=my-bucket PASSPHRASE=somethingorother ./generate_key.sh
+brew cask install aws-vault
+aws-vault add cloud-gov-govcloud
 ```
 
-Once the key is uploaded to AWS, the [cf-secrets.yml](https://github.com/18F/cg-deploy-cf/blob/staging/cf-secrets-example.yml) file you use for deployment needs to be updated. Modify `key_name` to use the new key, then start a new production deployment.
+#### Configure MFA for aws-vault
+All operators should have MFA enabled, which can be viewed in the AWS console under `Services -> IAM -> Users -> firstname.lastname -> Security Credentials`, or from the command line with `aws iam list-virtual-mfa-devices`.  The ARN of this MFA device needs to be added to the local Amazon configuration to enable short lived tokens:
 
-#### Dealing with secrets
+```sh
+me=$(aws iam get-user | jq -r '.User.UserName')
+mfa_serial=$(aws iam list-virtual-mfa-devices | jq --arg me "$me" -r '.VirtualMFADevices[]|select(.User.UserName==$me) | .SerialNumber')
+echo '[profile cloud-gov-govcloud]' >> ~/.aws/config
+echo 'region = us-gov-west-1' >> ~/.aws/config
+echo "mfa_serial = $mfa_serial" >> ~/.aws/config
+```
 
-Substitute `cf.main.yml` in the following steps for the relevant file.
+#### Executing a command with short lived credentials
+You can execute any system command with short lived credentials using the `aws-vault exec` command:
 
+```sh
+aws-vault exec cloud-gov-govcloud bash
+```
 
-#### UAA credentials
+Running `env | grep AWS` will show you a new set of credentials which are different from the primary IAM role credentials, as they are short lived and issued at runtime.  This means that if a malicious script or program attempts to read `~/.aws/credentials` or `~/.aws/config` all they will be unable to retrieve the primary credentials.
 
+### Next Steps
+Once this is complete, operators can provision profiles which use only specific resources, or specific permissions such as read only.  This scopes the role of the temporary credentials to further reduce the attack surface.
+
+### UAA credentials
 All UAA clients and users and associated credentials should be created via the Cloud Foundry secrets or the [service account]({{< relref "docs/services/cloud-gov-service-account.md" >}}) or [identity provider]({{< relref "docs/services/cloud-gov-identity-provider.md" >}}) services. UAA accounts should not be created manually; we reserve the right to drop permissions for or deprovision hand-propped accounts.
+
+### Updating Secrets
+
+System secrets fall into one of three categories.
+
+1. [Shared](#updating-shared-secrets) - centrally managed secrets used across multiple deployments
+1. [Deployment](#updating-deployment-secrets) - secrets managed and stored per bosh deployment and environment
+1. [Concourse](#updating-concourse-secrets) - secrets consumed as credentials in Concourse CI pipelines
+
+Updating Deployment and Concourse secrets requires first configuring [AWS credentials (above)](#aws-credentials).
+
+#### Updating Shared Secrets
+
+Centrally managed secrets are generated by a Concourse pipeline.
+
+1. Trigger the relevent build in [secrets-rotation](https://ci.fr.cloud.gov/teams/main/pipelines/secret-rotation). This creates new secrets and stores them in a common file.
+2. Trigger the relevent deployment(s).
+
+#### Updating Deployment Secrets
+
+Secrets which are not centrally managed must be updated per deployment and environment. Substitute `cf.main.yml` in the following steps for the relevant file.
 
 ##### View secrets
 
@@ -65,8 +94,9 @@ All UAA clients and users and associated credentials should be created via the C
 1. Download the credentials file.
 
     ```sh
+    aws-vault exec cloud-gov-govcloud bash
     mkdir -p tmp
-    aws s3 cp s3://cloud-gov-varz/cf.main.yml tmp/cf.main.yml.enc --profile govcloud
+    aws s3 cp s3://cloud-gov-varz/cf.main.yml tmp/cf.main.yml.enc
     ```
 
 1. Get the encryption passphrase.
@@ -125,7 +155,8 @@ All UAA clients and users and associated credentials should be created via the C
 1. Copy the new file up to S3.
 
     ```sh
-    aws s3 cp tmp/cf.main.yml.enc-new s3://cloud-gov-varz/cf.main.yml --profile govcloud --sse AES256
+    aws-vault exec cloud-gov-govcloud bash
+    aws s3 cp tmp/cf.main.yml.enc-new s3://cloud-gov-varz/cf.main.yml --sse AES256
     ```
 
 1. Clean up the secrets.
@@ -133,3 +164,48 @@ All UAA clients and users and associated credentials should be created via the C
     ```sh
     rm -rf tmp
     ```
+
+#### Updating Concourse Secrets
+
+Updating Concourse secrets combines the shared secrets above with local config to change a Concourse pipeline.
+
+1. Clone the [cg-scripts](https://github.com/18F/cg-scripts) repository.
+
+    ```sh
+    git clone https://github.com/18F/cg-scripts.git
+    ```
+
+1. If you don't already have the AWS CLI set up with credentials, see [the steps above](#aws-credentials).
+
+1. `cd` to the local clone of the Concourse pipeline you are updating
+
+1. Create a `concourse-environment` file.
+
+    ```sh
+    aws-vault exec cloud-gov-govcloud bash
+    cd $(mktemp -d)
+    CI_ENV=cloud-gov-govcloud SECRETS_BUCKET=cloud-gov-varz CG_PIPELINE=~/cg-pipeline-tasks ~/cg-scripts/generate-concourse-environment.sh ~/cg-deploy-bosh/cg-deploy-bosh.yml
+    ```
+
+    Where `CI_ENV` is the environment configured for local Concourse `fly` CLI, `SECRETS_BUCKET` is the encrypted S3 bucket where credentials are stored, and `CG_PIPELINE` is the path to a local clone of the `cg-pipeline-tasks` git repository.
+
+    Any number of local yml files (`cg-deploy-bosh.yml`) can also be merged to create the final `concourse-environment.yml`.
+
+1. Update the Concourse pipeline with `fly`.
+
+    ```sh
+    fly -t cloud-gov-govcloud set-pipeline -p deploy-bosh -c ~/cg-deploy-bosh/ci/pipeline.yml -l concourse-environment.yml
+    ```
+
+    If the repository includes a `ci/concourse-defaults.yml` file, you'll need to load variables from there as well:
+
+    ```sh
+    fly -t cloud-gov-govcloud set-pipeline -p deploy-bosh -c ~/cg-deploy-bosh/ci/pipeline.yml -l concourse-environment.yml -l ~/cg-deploy-bosh/ci/concourse-defaults.yml`
+    ```
+
+1. Don't leave the secrets lying around (for security reasons, and because they get stale).
+
+    ```sh
+    rm -rf concourse-environment.yml
+    ```
+

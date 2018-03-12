@@ -6,24 +6,22 @@ title: Get access to cloud.gov
 weight: -100
 ---
 
-## To get access to cloud.gov
+## Get access to cloud.gov
 
 * **If you're in GSA or EPA:** You automatically have access and can log in using your agency credentials.
 * **If you're in FDIC:** Some FDIC staff automatically have access and can log in using agency credentials. If you try to log in and receive a "status message is null" error, contact the FDIC identity team to be added to the cloud.gov access group.
-* **If you're in another agency:** If you have a U.S. federal government email address, you can [invite yourself](https://account.fr.cloud.gov/signup). This automatically gives you [a sandbox space]({{< relref "overview/pricing/free-limited-sandbox.md" >}}).
+* **If you're in another agency:** If you have a U.S. federal government email address, you can [sign up for access](https://account.fr.cloud.gov/signup).
 * **Otherwise:** If your team uses cloud.gov and you don't have a federal government email address (such as if you're a contractor), ask a teammate to [invite you]({{< relref "managing-teammates.md" >}}).
 
-## To log into cloud.gov
+## Log into cloud.gov
 
 ### Agency single sign-on accounts
 
-If you have a GSA, EPA, or FDIC email address, sign into cloud.gov using your agency credentials. Follow [these instructions to log in on the command line (CLI) and web UI (dashboard)]({{< relref "setup.md" >}}).
+If you have a GSA, EPA, or FDIC email address, sign in using your agency credentials. Follow [these instructions to log in]({{< relref "setup.md" >}}).
 
 ### cloud.gov accounts
 
-If you were invited with an email address that isn't part of an agency with single sign-on authentication to cloud.gov, you have a cloud.gov account.
-
-Follow [these instructions to log in on the command line (CLI) and web UI (dashboard)]({{< relref "setup.md" >}}). When you log in to cloud.gov via a web browser, select the **cloud.gov** option.
+If you were invited with an email address that isn't part of an agency with single sign-on authentication to cloud.gov, you have a cloud.gov account. Follow [these instructions to log in]({{< relref "setup.md" >}}). When you log in via a web browser, select the **cloud.gov** option.
 
 <!--<img src="/img/cloud-gov-idp-button-cropped.png" alt="cloud.gov provider button to login page is highlighted in blue" width="373" height="187" />-->
 
@@ -44,12 +42,6 @@ If you lose access to your authentication application (such as if you lose your 
 3. For those spaces and orgs, notify the Space Managers and Org Managers that we've removed your access because of your request to reset your account's authentication application.
 4. Reset your account's authentication application.
 5. Let you know this is complete, so that you can set up a new authentication application and request access from your Space Managers and Org Managers again. It is their responsibility to verify that this is a legitimate request from you.
-
-In order to perform multi-factor authentication, you need an authentication application that generates time-based one-time passcodes, such as [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) or [Authy](https://www.authy.com/app/mobile). Download the app on your mobile device. When you log into cloud.gov for the first time, follow the instructions to store the `cloud.gov` key in your application.
-
-### Deployer accounts
-
-If you're using the [deployer account broker]({{< relref "docs/apps/continuous-deployment.md" >}}), you can delete and recreate that account to reset the credentials.
 
 ## Use your account responsibly
 

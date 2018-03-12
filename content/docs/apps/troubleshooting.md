@@ -7,7 +7,7 @@ linktitle: Troubleshooting
 weight: 100
 ---
 
-Here are some common problems and recommended practices for solving them. Make sure to [look at the logs]({{< relref "logs.md" >}}) to help troubleshoot.
+Seeing problems with your applications? Take a look at [your app logs]({{< relref "logs.md" >}}) and [review these common issues and solutions](https://docs.cloudfoundry.org/devguide/deploy-apps/troubleshoot-app-health.html).
 
 ## Application restarts and crash messages
 
@@ -17,9 +17,9 @@ If you see recent messages such as `The app crashed because of an unknown reason
 
 If your application only has one instance, you may see brief interruptions in service during restarts due to routine platform updates. You can fix this by setting up [multiple application instances]({{< relref "docs/apps/multiple-instances.md" >}}).
 
-## [STG] Staging Phase
+## Potential causes of issues during staging phase ([STG])
 
-If you see problems in your logs in lines that include the label `[STG]`, these recommendations may help you resolve them.
+If you see problems in your logs in lines that include the label `[STG]`, these explanations may help you resolve them.
 
 ### App dependency specification
 
@@ -42,9 +42,9 @@ Cloud Foundry will attempt to detect the buildpack to use with your app by exami
 
 If you're seeing errors installing any Python dependencies, check whether you have a `vendor/` directory in your app's root. The Python buildpack won't use PyPI if you have a `vendor/` directory, so you'll need to rename that directory to something else.
 
-## [DEA] Droplet Execution Phase
+## Potential causes of issues during app starting/stopping [CELL]
 
-If you see problems in your logs in lines that include the label `[DEA]`, these recommendations may help you resolve them.
+If you see problems in your logs in lines that include the label `[CELL]`, these explanations may help you resolve them.
 
 ### App manifest contents
 
@@ -54,7 +54,7 @@ When starting multiple apps via a single manifest tree, apps will start in the o
 
 By default, an application will start with a command specified by its buildpack. The `command:` in an application manifest will override the buildpack start command. The `-c` switch used with `cf push` overrides both the buildpack and manifest start commands.
 
-Application start commands are cached during staging. Specifying a start command via `-c` does not update the staged command. Check the staged command with `cf files APPNAME app_staging.yml`. Specifying `-c 'null'` forces the buildpack start command to be used.
+Application start commands are cached during staging. Specifying a start command via `-c` does not update the staged command. Check the staged command with `cf ssh APPNAME -c "cat staging_info.yml"`. Specifying `-c 'null'` forces the buildpack start command to be used.
 
 ### Environment variables and service bindings
 

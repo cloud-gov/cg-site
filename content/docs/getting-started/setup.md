@@ -6,64 +6,27 @@ title: Set up cloud.gov and log in
 weight: -50
 ---
 
-If you have set up your [access to cloud.gov]({{< relref "accounts.md" >}}), you can log into cloud.gov in the following ways -- dashboard (web interface) and command line.
+If you have [access to cloud.gov]({{< relref "accounts.md" >}}), here's how to log in.
 
 ## Log into the dashboard (web interface)
 
-cloud.gov has a dashboard that gives you easy web-based access to common tasks.
+The dashboard gives you web-based access to common tasks: [**https://dashboard.fr.cloud.gov/**](https://dashboard.fr.cloud.gov/)
 
-Your dashboard is probably empty right now since you probably haven't deployed any applications yet, but it's good to try logging in and looking at it as your first step, since you'll use it in the future.
-
-Two notes before you log in:
-
-* When you log in for the first time, cloud.gov will create a [sandbox space]({{< relref "overview/pricing/free-limited-sandbox.md" >}}) for you, but it may take up to **5 minutes** for cloud.gov to complete its automatic creation of your sandbox space. If you get stuck, ask a teammate or [support]({{< relref "docs/help.md" >}}).
-
-Now try logging in: [`https://dashboard.fr.cloud.gov/`](https://dashboard.fr.cloud.gov/)
-
-**Tip:** The `fr.` in this URL (and other cloud.gov URLs) is short for FedRAMP.
 
 ## Set up the command line
 
-cloud.gov is based on the Cloud Foundry open source project, so cloud.gov uses the Cloud Foundry command line interface (CLI) to give you full access to cloud.gov.
+cloud.gov is based on the Cloud Foundry open source project, so cloud.gov uses the Cloud Foundry command line interface (CLI) to give you full access.
 
-1. Install the Cloud Foundry CLI using the installer for your system: [Windows](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#windows), [Mac OS X](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#mac), or [Linux](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#linux).
-  - If your organization restricts the use of the installer, you can [download the CLI binary and install it manually](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#bin).
-1. Confirm the installation by running `cf -v` -- this should return a version number.
+1. Install the Cloud Foundry CLI: [Windows](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#windows), [Mac OS X](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#mac), or [Linux](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#linux). If you can't use the installer, you can [download the CLI binary and install it manually](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#bin).
+1. Log in:
+  1. Enter **`cf login -a api.fr.cloud.gov --sso`**
+  1. It'll say `One Time Code ( Get one at `[`https://login.fr.cloud.gov/passcode`](https://login.fr.cloud.gov/passcode)` )` -- visit this login link in your browser.
+  1. If you use a cloud.gov account, you may need to log in using your email address, password, and multi-factor authentication token. (EPA, FDIC, and GSA: use your agency button.)
+  1. After you log in, the page will display your 10-character Temporary Authentication Code.
+  1. Copy and paste that 10-character code into the command line (no typing indicators will show), and enter it.
 
-1. Log in with this command: `cf login -a api.fr.cloud.gov --sso`
-  - Then it'll say `One Time Code ( Get one at `[`https://login.fr.cloud.gov/passcode`](https://login.fr.cloud.gov/passcode)` )` -- visit that link in your browser to get your code, copy and paste the code into the command line (no typing indicators will show), and enter it.
+<!--**Tip:** The `fr.` in this URL (and other cloud.gov URLs) is short for FedRAMP.-->
 
-## Play around in your "sandbox"
+## Take the next step
 
-Here's how to deploy a test app in your sandbox for practice, using the CLI.
-
-Start with the following `cf target` command:
-
-```sh
-cf target -o <ORG> -s <SPACE>
-```
-
-Your `<ORG>` is a Cloud Foundry _organization_ named "sandbox-&lt;agencypart&gt;", where &lt;agencypart&gt; is whatever comes right before `.gov` or `.mil` in your
-e-mail address. For example, this may be `sandbox-gsa` or `sandbox-epa`. In most cases, your `<SPACE>` is the part of your email before the `@`, e.g. `firstname.lastname`. Cloud Foundry _spaces_ let applications run independently within an organization.  
-
-For example:
-
-```sh
-cf target -o sandbox-gsa -s harry.truman
-```
-
-Run your version of that command, and then follow [your first deploy]({{< relref "your-first-deploy.md" >}}).
-
-## Quick reference
-
-<!-- If you change this section title, update /layouts/header.html as well, since this anchor is linked from the cloud.gov header -->
-
-Here's a summary of how to log into cloud.gov. (See above for details.)
-
-Command line interface:
-
-`cf login -a api.fr.cloud.gov --sso`
-
-Dashboard (web interface):
-
-[`https://dashboard.fr.cloud.gov/`](https://dashboard.fr.cloud.gov/)
+Now [try your first deploy of a test application]({{< relref "your-first-deploy.md" >}}).

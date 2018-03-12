@@ -2,6 +2,7 @@
 menu:
   docs:
     parent: runbook
+layout: ops
 
 title: Rotating Secrets V - Cloud Foundry and Diego
 ---
@@ -76,27 +77,8 @@ certificate generation is consolidated in the `cg-deploy-cf` repository.
 
 #### Mind the Security Configuration for Consul schedule
 
-These properties need to be rotated on the same schedule mentioned in the
-_Security Configuration for Consul_ documentation for Cloud Foundry. The
-`consul` VMs need to be updated for both Cloud Foundry and Diego.
-
-- `consul.ca_cert`
-    - Deploy the new CA certificate after the old one for the first deployment.
-      And remove the old CA certificate for the last deployment.
-- `consul.agent_cert`
-    - Deploy this only after a successful deployment of `consul.ca_cert`.
-- `consul.agent_key`
-    - Deploy this only after a successful deployment of `consul.ca_cert`.
-- `consul.server_cert`
-    - Deploy this only after a successful deployment of `consul.ca_cert`.
-- `consul.server_key`
-    - Deploy this only after a successful deployment of `consul.ca_cert`.
-- `consul.encrypt_keys`
-    - Deploy the new encrypt key before the old one for the first deployment.
-      And remove the old encrypt key for the last deployment.
-
-Make sure that Diego deploys after each rotation step for the certificate
-updates from _Security Configuration for Consul_ in order to prevent downtime.
+Please see the documentation for [_Rotating certificates_]({{< relref
+"rotating-secrets.md#rotating-certificates" >}}).
 
 #### Updating certificates in secrets
 
@@ -121,6 +103,8 @@ without data loss_ on the other.
 #### Properties used in other deployments
 
 1. `uaa.clients.*.secrets` properties need to be coordinated across various Bosh
+   deployments and cloud.gov apps or service brokers.
+1. `uaa.users.*.password` properties need to be coordinated across various Bosh
    deployments and cloud.gov apps or service brokers.
 1. `login.smtp.*` properties for Mandrill.
 1. `uaa.scim.users.broker-deployer` secret needs to be coordinated across our

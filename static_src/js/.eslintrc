@@ -1,0 +1,18 @@
+{
+  "rules": {
+    "indent": [ 0, 2 ],
+    "quotes": [ 0, "single" ],
+    "linebreak-style": [ 2, "unix" ],
+    "no-multi-spaces": [ 0 ],
+    "no-mixed-requires": [ 2, true ]
+  },
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "sourceType": "module"
+  }
+}

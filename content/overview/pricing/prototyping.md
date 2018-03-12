@@ -5,6 +5,8 @@ menu:
 title: Prototyping package details
 weight: 3
 aliases:
+recruiter: true
+
 ---
 
 The prototyping package enables teams to build and deploy many experimental applications in the secure, compliant, and standardized cloud.gov environment.
@@ -21,7 +23,7 @@ A prototyping package can have an unlimited number of users (such as developers 
 
 ### Limitations
 
-Prototyping packages cannot host production data. All prototyping package applications are limited to using the `*.app.cloud.gov` domain. Applications that are ready for production should move to a production package ([open data]({{< relref "overview/pricing/rates.md#open-data" >}}), [FISMA Low]({{< relref "overview/pricing/rates.md#fisma-low" >}}), or [FISMA Moderate]({{< relref "overview/pricing/rates.md#fisma-moderate" >}})).
+Prototyping packages cannot host production data. All prototyping package applications are limited to using the `*.app.cloud.gov` domain. Applications that are ready for production should move to a production package ([FISMA Low]({{< relref "overview/pricing/rates.md#fisma-low" >}}) or [FISMA Moderate]({{< relref "overview/pricing/rates.md#fisma-moderate" >}})).
 
 ## Full oversight and configuration for administrators
 

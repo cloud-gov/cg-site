@@ -2,6 +2,7 @@
 menu:
   docs:
     parent: runbook
+layout: ops
 
 title: Troubleshooting Kubernetes
 ---
@@ -104,6 +105,51 @@ Sometimes you need to connect inside a pod:
 ```sh
 kubectl exec -it :pod-name /bin/bash
 ```
+
+#### Rotating secrets for a single service
+
+If a secret shared for a deployment or stateful-set needs to be rotated, you
+should be able to follow the current steps using the `kubectl` binary on the
+`master` and `minion` VMs in the Kubernetes BOSH deployment. Please refer to the
+[official Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/secret/)
+around **Secrets** for more information.
+
+You will need to rotate the Secret resource. You can get the ID for the secret
+by describing the statefulset or deployment of any of the pods in a particular
+service. You can use `kubectl get all | grep ${service_id}` to determine all
+the pods, deployments, services, stateful-sets, etc for a given service. All
+cloud.gov services are prefixed with the `${service_id}`.
+
+The following examples gets the ID of the Secret resource from a StatefulSet.
+
+```
+kubectl describe statefulset ${name_of_stateful_set} | grep -i secret
+```
+
+look for output which talks about the key being set from a secret named with the
+Service ID and the Service Name.
+
+```sh
+# possibly something along these lines...
+<set to the key ${secret_name_from_k8s_manifest} in secret ${service_id}-${service_name}-credentials>
+```
+
+With that Secret ID, you can edit the secret with the following command.
+
+```sh
+kubectl edit secret ${service_id}-${service_name}-credentials
+```
+
+From this point forward, follow the Kubernetes documentation around updating
+Secrets.
+
+- https://kubernetes.io/docs/concepts/configuration/secret/#creating-a-secret-manually
+- https://kubernetes.io/docs/concepts/configuration/secret/#decoding-a-secret
+- https://kubernetes.io/docs/concepts/configuration/secret/#secret-and-pod-lifetime-interaction
+
+Once the password has been changed and the pods have come up in a healthy state, you'll need the application to use the updated VCAP service. To do so: unbind the service from the application (`cf unbind-service`), bind it again (`cf bind-service`), then restage the application (`cf restage`)
+
+**You should expect application failure from the time you've reset the Kubernetes pods until you've restaged the application.** During this window the application will be using outdated credentials.
 
 #### Deleting a pod
 Sometimes a pod gets scheduled, and the EBS volume

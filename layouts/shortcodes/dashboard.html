@@ -1,6 +1,12 @@
-<div class="env-block env-dashboard">
-  <p class="env-specifier">
-    <strong>Using the dashboard</strong> (<a href="/docs/getting-started/setup/#log-into-the-dashboard-web-interface">what's this?</a>)
-  </p>
+{{ if .Parent.IsNamedParams }}
+<div id='{{ .Parent.Get "dashboard" }}'>
+{{ end }}
+  <div class="env-block env-dashboard">
+  {{ if not (.Parent.IsNamedParams) }}
+    <p class="env-specifier"><strong>Using the dashboard</strong> (<a href="/docs/getting-started/setup/#log-into-the-dashboard-web-interface">what's this?</a>)</p>
+  {{ end }}
   {{ .Inner }}
 </div>
+{{ if .Parent.IsNamedParams }}
+</div>
+{{ end }}

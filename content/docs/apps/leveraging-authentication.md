@@ -96,6 +96,12 @@ access token. Here is where things get fun.
     so you might want to securely save the `refresh_token` associated with the
     authenticated user.
 
+## Managing UAA access
+
+If you (or a user of your app) ever need to modify or revoke the permissions of
+third-party applications that you've granted access through the cloud.gov UAA, 
+visit [https://login.fr.cloud.gov/profile](https://login.fr.cloud.gov/profile).
+
 ## Using the fake UAA server
 
 During development, you may want to authenticate against a local server

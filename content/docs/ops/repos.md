@@ -2,6 +2,7 @@
 menu:
   docs:
     parent: ops
+layout: ops
 title: Code repositories
 weight: -100
 aliases:
@@ -42,14 +43,9 @@ BOSH releases:
 
 - [awslogs](https://github.com/18F/cg-awslogs-boshrelease)
 - [ClamAV](https://github.com/18F/cg-clamav-boshrelease)
-- [collectd](https://github.com/18F/cg-collectd-boshrelease)
-- [Grafana](https://github.com/18F/cg-grafana-boshrelease)
-- [InfluxDB](https://github.com/18F/cg-influxdb-boshrelease)
 - [Nessus Agent](https://github.com/18F/cg-nessus-agent-boshrelease)
 - [Nessus Manager](https://github.com/18F/cg-nessus-manager-boshrelease)
 - [New Relic](https://github.com/cloudfoundry-community/newrelic-boshrelease)
-- [Riemann](https://github.com/18F/cg-riemann-boshrelease)
-- [riemannc](https://github.com/18F/cg-riemannc-boshrelease)
 - [SecureProxy](https://github.com/18F/cg-secureproxy-boshrelease)
 - [Snort](https://github.com/18F/cg-snort-boshrelease)
 - [Ubuntu hardening](https://github.com/18F/cg-harden-boshrelease)
@@ -68,7 +64,6 @@ Configuration/deployment support:
 - [Infrastructure provisioning and deployment](https://github.com/18F/cg-provision)
 - [Common Concourse pipeline tasks](https://github.com/18F/cg-pipeline-tasks)
 - [Common Concourse resource](https://github.com/18F/cg-common-resource)
-- [Bootstrap Concourse AMI](https://github.com/18F/cg-bootstrap-concourse-ami)
 
 Deployment pipelines:
 
@@ -77,13 +72,10 @@ Deployment pipelines:
 - [Cloud Foundry](https://github.com/18F/cg-deploy-cf)
 - [Concourse](https://github.com/18F/cg-deploy-concourse)
 - [Concourse task Docker image](https://github.com/18F/cg-deploy-concourse-docker-image)
-- [Discourse](https://github.com/18F/cg-deploy-discourse)
 - [ELK/logsearch](https://github.com/18F/cg-deploy-logsearch)
-- [Fugacious](https://github.com/18F/cg-deploy-fugacious)
 - [Kubernetes](https://github.com/18F/cg-deploy-kubernetes)
-- [Monitoring](https://github.com/18F/cg-deploy-monitoring)
+- [Monitoring](https://github.com/18F/cg-deploy-prometheus)
 - [Nessus Manager](https://github.com/18F/cg-deploy-nessus-manager)
-- [Riemann firehose nozzle](https://github.com/18F/cg-deploy-riemann-firehose-nozzle)
 - [RDS broker](https://github.com/18F/cg-deploy-rds-broker)
 - [S3 broker](https://github.com/18F/cg-deploy-s3-broker)
 - [Shibboleth](https://github.com/18F/cg-deploy-shibboleth)
@@ -101,7 +93,6 @@ Optional code offered to our team and customers:
 
 - [Hello world apps](https://github.com/18F/cf-hello-worlds)
 - [Redirect app](https://github.com/18F/cf-redirect)
-- [Fake UAA for testing](https://github.com/18F/cg-fake-uaa)
 
 Optional Cloud Foundry CLI plugins offered to our team and customers:
 
