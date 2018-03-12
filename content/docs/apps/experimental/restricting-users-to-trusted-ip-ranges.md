@@ -5,7 +5,7 @@ menu:
 title: Restricting users to trusted IP ranges
 ---
 
-You can configure cloud.gov to restrict users in a particular domain (e.g., `agency.gov`) from using cloud.gov services unless their requests originate from a trusted network location. You can use this feature to help your agency comply with the [Trusted Internet Connections (TIC) Initiative](https://www.dhs.gov/trusted-internet-connections) while using cloud.gov. 
+You can configure cloud.gov to restrict users in a particular domain (e.g., `agency.gov`) from using cloud.gov services unless their requests originate from a trusted network location. You can use this feature to help your agency comply with the [Trusted Internet Connections (TIC) Initiative](https://www.dhs.gov/trusted-internet-connections) while using cloud.gov. For more context, see [Meeting TIC requirements]({{< relref "docs/compliance/meeting-tic-requirements.md" >}}).
 
 This feature only limits requests to cloud.gov services, such as the cloud.gov API accessed via the command line and the [cloud.gov dashboard](https://dashboard.fr.cloud.gov). This feature does not restrict requests directly to applications that you run on cloud.gov, though [you can do that](#restricting-access-to-your-own-applications) on your own.
 
@@ -20,4 +20,4 @@ To fully limit access to your apps and services, you must ensure that all users 
 
 ## Restricting access to your own applications
 
-To limit requests to your own applications, you can modify your application logic directly. Alternatively, you can [create a route service](https://docs.cloudfoundry.org/services/route-services.html#introduction) to act as a gatekeeper, then bind the gatekeeper to the routes bound to your application. The route service itself can be an appliation in cloud.gov that proxies according to your needs. For example, you can create a simple route service by [deploying the Staticfile buildpack configured with a custom `nginx.conf` file](https://docs.cloudfoundry.org/buildpacks/staticfile/index.html#config-process).
+To limit requests to your own applications, you can modify your application logic directly. Alternatively, you can [create a route service](https://docs.cloudfoundry.org/services/route-services.html#introduction) to act as a gatekeeper, then bind the gatekeeper to the routes bound to your application. The route service itself can be an application in cloud.gov that proxies according to your needs. For example, you can create a simple route service by [deploying the Staticfile buildpack configured with a custom `nginx.conf` file](https://docs.cloudfoundry.org/buildpacks/staticfile/index.html#config-process).

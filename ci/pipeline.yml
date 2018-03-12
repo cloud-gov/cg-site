@@ -79,18 +79,18 @@ resources:
   type: cf
   source:
     api: {{cf-api-url-production}}
-    username: {{cf-deploy-username-production}}
-    password: {{cf-deploy-password-production}}
+    username: {{cf-deploy-site-username-production}}
+    password: {{cf-deploy-site-password-production}}
     organization: {{cf-organization}}
-    space: {{cf-space}}
+    space: {{cf-space-site}}
     skip_cert_check: false
 
 - name: old-docs-redirect
   type: cf
   source:
     api: {{cf-api-url-production}}
-    username: {{cf-deploy-username-production}}
-    password: {{cf-deploy-password-production}}
+    username: {{cf-deploy-olddocs-username-production}}
+    password: {{cf-deploy-olddocs-password-production}}
     organization: {{cf-organization}}
     space: {{cf-space-olddocs}}
     skip_cert_check: false

@@ -1,0 +1,3 @@
+# We welcome vulnerability reports according to our vulnerability disclosure
+# policy, which includes how to best contact us for this kind of information.
+Policy: https://18f.gsa.gov/vulnerability-disclosure-policy/
