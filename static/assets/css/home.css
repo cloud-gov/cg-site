@@ -618,7 +618,8 @@
 }
 #pricing .column-single {
   list-style: none;
-  margin-bottom: 120px;
+  /* margin-bottom: 120px; */
+  margin-bottom: 40px;
 }
 #pricing .column {
   margin: 60px 0 120px 0;
