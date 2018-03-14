@@ -10,7 +10,7 @@ title = "TLS 1.0 and 1.1 support removal, Drupal 8 made easy, and platform updat
 
 - **Join us at the [Cloud Foundry Summit](https://www.cloudfoundry.org/event/nasummit2018/)** on April 18-20 in Boston. Members of the cloud.gov team will present at this gathering of people who use and run platforms—like cloud.gov—that are based on the Cloud Foundry open source project. It includes [government-focused sessions](https://cfna18.sched.com/overview/type/Government+%26+Wild+Card) and training opportunities that may be useful to you and your team.
 
-- **We invite research volunteers to help us improve cloud.gov. To participate, click on the embedded sign-up form at the bottom of the [home page](https://cloud.gov).
+- **We invite research volunteers** to help us improve cloud.gov. To participate, click on the embedded sign-up form at the bottom of the [home page](https://cloud.gov).
 
 
 ### Added
