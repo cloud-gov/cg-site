@@ -1,8 +1,10 @@
 ---
 menu:
   docs:
-    parent: apps
-title: Events
+    parent: compliance
+title: Auditing activity
+aliases:
+  - /docs/apps/events
 ---
 
 All operations performed on organizations and spaces are logged as `events`.  This includes over 75 distinct events which describe the action taken and the user who authorized the action.  Event logs are useful for continuous security, compliance and monitoring actions taken on the system.  For example, you can use event logs from cloud.gov to help meet [the Audit and Accountability (AU) requirements](https://nvd.nist.gov/800-53/Rev4/family/Audit%20and%20Accountability) of the NIST 800-53 family of controls.
