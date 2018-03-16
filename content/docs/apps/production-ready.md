@@ -45,6 +45,12 @@ When running an application for development or testing, it is best to have a sep
 #### How
 * As an Org Manager for your organization, use the `cf create-space` command to create new spaces for each environment.
 
+### Prevent manual alteration of production apps
+Production spaces and apps should be considered "hands-off" for both security and compliance, and all changes made in to running applications should happen in an auditable way. Only allow manual access to the interior of a running application in the event of serious problems.
+
+#### How
+* Use `cf disallow-space-ssh PRODUCTION-SPACE-NAME` or `cf disable-ssh PRODUCTION-APP-NAME` to [disable SSH access]({{< relref "/docs/apps/using-ssh.md" >}}) for your running application instances. Then use [event auditing]({{< relref "/docs/compliance/auditing-activity.md" >}}) to audit deployments and further access.
+
 ### Health monitoring
 You want to receive alerts about application errors, downtime, and throughput issues.
 
