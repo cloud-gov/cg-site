@@ -49,7 +49,7 @@ When running an application for development or testing, it is best to have a sep
 Production spaces and apps should be considered "hands-off" for both security and compliance, and all changes made in to running applications should happen in an auditable way. Only allow manual access to the interior of a running application in the event of serious problems. Disabling access to production applications will help you meet your customer responsibilities for control AC-17 of NIST 800-53 requirements in order to receive an Authority to Operate (ATO) from your agency's Authorizing Official (AO).
 
 #### How
-* Use `cf disallow-space-ssh PRODUCTION-SPACE-NAME` for your production space or `cf disable-ssh PRODUCTION-APP-NAME` to [disable SSH access]({{< relref "/docs/apps/using-ssh.md" >}}) for individual running application instances. Then use [event auditing]({{< relref "/docs/compliance/auditing-activity.md" >}}) to audit deployments and further access.
+* Use `cf disallow-space-ssh PRODUCTION-SPACE-NAME` for your production space or `cf disable-ssh PRODUCTION-APP-NAME` to [disable SSH access]({{< relref "docs/apps/using-ssh.md" >}}) for individual running application instances. Then use [event auditing]({{< relref "docs/compliance/auditing-activity.md" >}}) to audit deployments and further access.
 
 ### Health monitoring
 You want to receive alerts about application errors, downtime, and throughput issues.
