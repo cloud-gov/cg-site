@@ -32,7 +32,7 @@ for f in /home/vcap/profile.d/*.sh; do source "$f"; done
 
 ## How to disable SSH access
 
-SSH access is enabled by default. Space Developers can disable SSH access to individual applications, and Space Managers can disable SSH access to all apps running within a space. See [Enabling and Disabling SSH Access](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#enable-disable-ssh) for the commands. Disabling SSH for production spaces will probably be necessary for you to meet your customer responsibilities for AC-17 under NIST 800-53 requirements.
+SSH access is enabled by default. Space Developers can disable SSH access to individual applications, and Space Managers can disable SSH access to all apps running within a space. See [Enabling and Disabling SSH Access](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#enable-disable-ssh) for the commands.
 
 ## SSH version information 
 
