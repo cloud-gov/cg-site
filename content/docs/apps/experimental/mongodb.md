@@ -1,7 +1,7 @@
 ---
 menu:
   docs:
-    parent: services
+    parent: experimental
 title: MongoDB
 description: "MongoDB"
 aliases:
@@ -9,7 +9,7 @@ aliases:
 - /docs/services/mongodb36
 ---
 
-cloud.gov offers [MongoDB](https://www.mongodb.com/) 3.2 and 3.6 as a service.
+[**This is an experimental feature.**]({{< relref "docs/apps/experimental/experimental.md" >}}) This is not yet generally available, but cloud.gov plans to offer  [MongoDB](https://www.mongodb.com/) 3.2 and 3.6 as a service after we complete the process of FedRAMP approval for this service.
 
 ## Plans
 
@@ -17,8 +17,6 @@ Service Name | Plan Name | Description | Price
 ------------ | --------- | ----------- | -----
 `mongodb32` | `standard` | MongoDB instance with 10 GB storage | Free in Alpha
 `mongodb36` | `standard` | MongoDB instance with 10 GB storage | Free in Alpha
-
-*These instances are available by request.*
 
 Note: MongoDB plans run a single instance and will be briefly unavailable during platform maintenance; this service should not be used for production applications.
 
