@@ -9,7 +9,7 @@ aliases:
 - /docs/services/mongodb36
 ---
 
-[**This is an experimental feature.**]({{< relref "docs/apps/experimental/experimental.md" >}}) This is not yet generally available, but cloud.gov plans to offer  [MongoDB](https://www.mongodb.com/) 3.2 and 3.6 as a service after we complete the process of FedRAMP approval for this service.
+[**This is an experimental feature.**]({{< relref "docs/apps/experimental/experimental.md" >}}) This service cannot be made generally available until FedRAMP has approved this service. Please email [cloud.gov support](mailto:cloud-gov-support@gsa.gov) to register your interest in this feature so we can let you know when it is generally available.
 
 ## Plans
 
