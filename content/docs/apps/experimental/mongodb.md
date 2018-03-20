@@ -9,7 +9,7 @@ aliases:
 - /docs/services/mongodb36
 ---
 
-[**This is an experimental feature.**]({{< relref "docs/apps/experimental/experimental.md" >}}) This service cannot be made generally available until FedRAMP has approved this service. Please email [cloud.gov support](mailto:cloud-gov-support@gsa.gov) to register your interest in this feature so we can let you know when it is generally available.
+[**This is an experimental feature.**]({{< relref "docs/apps/experimental/experimental.md" >}}) This service cannot be made generally available until FedRAMP has approved this service. Please email [cloud.gov support](mailto:cloud-gov-support@gsa.gov) to register your interest in this feature so we can let you know when the service is available.
 
 ## Plans
 
