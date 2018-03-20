@@ -21,7 +21,7 @@ Garden uses the [Open Container
 Initiative](https://www.opencontainers.org/)'s standard [runC](https://github.com/opencontainers/runc) implementation,
 and applies [safeguards](https://docs.cloudfoundry.org/concepts/architecture/garden.html#garden-runc) above and beyond normal Docker or Kubernetes environments that fit the multi-tenant PaaS context. 
 Cloud Foundry provides [additional details about various aspects of container security](https://docs.cloudfoundry.org/concepts/container-security.html). 
-[Docker images are further restricted](https://docs.cloudfoundry.org/adminguide/docker.html#multi-tenant) when running in Cloud Foundry to protect customers from each others. As a result, containers on cloud.gov are highly secure by default. 
+[Docker images are further restricted](https://docs.cloudfoundry.org/adminguide/docker.html#multi-tenant) when running in Cloud Foundry to protect customers from each other. As a result, containers on cloud.gov are highly secure by default. 
 
 The only "moving piece" the cloud.gov team controls in our deployment is [whether privileged containers are used for applications or for buildpack staging processes](https://docs.cloudfoundry.org/concepts/container-security.html#types). 
 Both of these options are set to `false` in cloud.gov. Please contact us if you need to verify this setting in our system, or have further questions about how customer separation works in cloud.gov.
