@@ -23,8 +23,7 @@ Plan Name | Description | Price
 To create a service instance that can provision identity provider credentials, run the following command:
 
 ```sh
-cf create-service cloud-gov-identity-provider oauth-client my-uaa-client \
-  -c '{"redirect_uri": ["https://my.app.cloud.gov"]}'
+cf create-service cloud-gov-identity-provider oauth-client my-uaa-client
 ```
 
 By default, identity provider service instances use the `openid` scope. You can request custom scopes using the `scopes` option:
