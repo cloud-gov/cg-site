@@ -11,6 +11,7 @@ aliases:
   - /intro/pricing/whats-included
   - /overview/pricing/rates
   - /overview/pricing/whats-included
+recruiter: true
 
 ---
 
@@ -137,4 +138,3 @@ All three pricing components are factored into every access package. Use this ta
 \*\*We aren’t yet charging for paid services. See [managed services]({{< relref "overview/pricing/managed-services-cost.md" >}}) for details.
 
 Find out [more about this pricing model]({{< relref "overview/pricing/pricing-model.md" >}}) and [how we define these terms]({{< relref "overview/pricing/pricing-terminology.md" >}}).
-
