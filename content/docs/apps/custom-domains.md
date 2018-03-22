@@ -9,6 +9,8 @@ By default, your application will be accessible via a subdomain of `app.cloud.go
 ## How to set up a custom domain
 To make your app accessible via your custom domain name, use the [CDN service]({{< relref "docs/services/cdn-route.md" >}}). That page provides instructions for the DNS entries you need to create in your DNS system.
 
+See [IPv6, HTTPS, and DNSSEC](/docs/compliance/domain-standards/) for guidance on complying with relevant federal standards and recommendations.
+
 ### Comparison of default domains and custom domains
 
 Here's an example of the difference between a default *.app.cloud.gov domain and a custom domain. In this example, an agency's application `App A` is using a default domain, and their application `App B` is using a custom domain.

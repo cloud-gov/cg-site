@@ -36,7 +36,7 @@ Name | Required | Description | Default
 
 *Use these instructions for cloud.gov tenant applications. If you're creating a custom domain for something else (such as a public S3 bucket), see [external services and applications](#external-services-and-applications).*
 
-Before you begin, note that once you initiate creation of a CDN service instance, you can't update or delete it until it has been created successfully. Typos in the service creation parameters can cause creation to get stuck in a pending state. If you're using DNSSEC, [verify your DNSSEC configuration](https://www.icann.org/resources/pages/tools-2012-02-25-en) because invalid DNSSEC configuration will also cause creation to get stuck.
+Before you begin, note that once you initiate creation of a CDN service instance, you can't update or delete it until it has been created successfully. Typos in the service creation parameters can cause creation to get stuck in a pending state. If you need to implement DNSSEC, see [DNSSEC support](#dnssec-support).
 
 First, target the space your application is running in:
 
@@ -213,11 +213,15 @@ Other headers, such as HTTP auth, are stripped by default.
 
 If you need a different configuration, contact [cloud.gov support](/help/).
 
-### DNSSEC Support
+### DNSSEC support
 
-Custom domains using the CDN broker will not fully validate DNSSEC (between your CNAME record and cloudfront.net). This is because the AWS CloudFront service does not currently support DNSSEC. For a complete implementation of DNSSEC, we recommend instead running a proxy server within your boundary that forwards to your application in cloud.gov, or using an alternative CDN that supports DNSSEC.
+If you plan to use a domain with DNSSEC, you need to [verify your DNSSEC configuration](https://www.icann.org/resources/pages/tools-2012-02-25-en) before starting the steps above, because invalid DNSSEC configuration will cause creation to get stuck.
 
-Alternatively, you may be able to make the case for an alternative implementation without DNSSEC. As described in the [HTTPS-Only Standard](https://https.cio.gov/faq/#how-does-https-protect-against-dns-spoofing), a properly implemented solution using HTTPS-only and HSTS can meet the same requirements around preventing DNS spoofing that DNSSEC is intended to implement. cloud.gov enforces HTTPS for all applications and enables HSTS by default; we recommend configuring HSTS preload as well. See our [compliance guide for federal requirements and recommendations]({{< relref "docs/compliance/federal-requirements-recommendations.md" >}}) for more details.
+However, custom domains using the CDN broker will not fully validate DNSSEC (between your CNAME record and cloudfront.net). This is because the AWS CloudFront service does not currently support DNSSEC. For a complete implementation of DNSSEC, we recommend instead running a proxy server within your boundary that forwards to your application in cloud.gov, or using an alternative CDN that supports DNSSEC. For implementation advice to help you meet your compliance needs, contact [cloud.gov support](/help/).
+
+Alternatively, you may be able to make the case for an alternative implementation without DNSSEC. As described in the [HTTPS-Only Standard](https://https.cio.gov/faq/#how-does-https-protect-against-dns-spoofing), a properly implemented solution using HTTPS-only and HSTS can meet the same requirements around preventing DNS spoofing that DNSSEC is intended to implement. cloud.gov enforces HTTPS for all applications and enables HSTS by default; we recommend configuring HSTS preload as well.
+
+See our [compliance guide for federal standards and recommendations for domain names]({{< relref "docs/compliance/domain-standards.md" >}}) for more details.
 
 ## Certificate validity and renewal
 
