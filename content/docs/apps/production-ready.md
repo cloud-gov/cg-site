@@ -45,6 +45,15 @@ When running an application for development or testing, it is best to have a sep
 #### How
 * As an Org Manager for your organization, use the `cf create-space` command to create new spaces for each environment.
 
+### Prevent non-auditable changes to production apps
+
+All changes made to running production applications should be logged for auditing, which means that those changes should be made using commands in the cloud.gov dashboard, command line interface, or CF API (or automated commands in deployment scripts). By default, cloud.gov also allows [SSH access]({{< relref "docs/apps/using-ssh.md" >}}), which allows making changes that are harder to audit. This means you should disable SSH access to production applications.
+
+You may need to document your restrictions for remote access to your applications for control AC-17 in your System Security Plan, and this is a restriction that you can document.
+
+#### How
+* Use `cf disallow-space-ssh PRODUCTION-SPACE-NAME` for your production space or `cf disable-ssh PRODUCTION-APP-NAME` to [disable SSH access]({{< relref "docs/apps/using-ssh.md" >}}) for individual running application instances. Use [event auditing]({{< relref "docs/compliance/auditing-activity.md" >}}) to audit deployments and further access.
+
 ### Health monitoring
 You want to receive alerts about application errors, downtime, and throughput issues.
 
