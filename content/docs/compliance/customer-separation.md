@@ -26,5 +26,5 @@ Cloud Foundry provides [additional details about various aspects of container se
 The only "moving piece" the cloud.gov team controls in our deployment is [whether privileged containers are used for applications or for buildpack staging processes](https://docs.cloudfoundry.org/concepts/container-security.html#types). 
 Both of these options are set to `false` in cloud.gov. Please contact us if you need to verify this setting in our system, or have further questions about how customer separation works in cloud.gov.
 
-For more details, see the cloud.gov SSP control descriptions in the SI and CM families, including SI-2, CM-2, CM-2 (2), and CM-6 (1).
+For more details, see the [cloud.gov SSP]({{< relref "overview/security/fedramp-tracker.md#how-you-can-use-this-p-ato" >}}) control descriptions in the SI and CM families, including SI-2, CM-2, CM-2 (2), and CM-6 (1).
 
