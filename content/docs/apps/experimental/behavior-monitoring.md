@@ -9,7 +9,7 @@ title: Dynamic behavior monitoring
 
 _Note: As of March 2018, this feature is not yet available, pending FedRAMP approval. If you want to use this feature, create a ticket and our team will let you know our estimated timeline for approval._
 
-cloud.gov uses a range of [security features](https://docs.cloudfoundry.org/concepts/container-security.html) to prevent application containers from interfering with other containers or with the hosts they run on. As an additional security measure, cloud.gov also monitors application containers for suspicous behavior using [Sysdig Falco](https://sysdig.com/opensource/falco/). If an application container exhibits unexpected behavior, cloud.gov will take action.
+cloud.gov uses a range of [security features](https://docs.cloudfoundry.org/concepts/container-security.html) to prevent application containers from interfering with other containers or with the hosts they run on. As an additional security measure, cloud.gov also monitors application containers for suspicous behavior using [Sysdig Falco](https://sysdig.com/opensource/falco/).
 
 ## What counts as suspicous behavior?
 
