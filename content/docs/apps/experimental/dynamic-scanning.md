@@ -9,13 +9,13 @@ title: Dynamic behavior monitoring
 
 _Note: As of March 2018, this feature is not yet available, pending FedRAMP approval. If you want to use this feature, create a ticket and our team will let you know our estimated timeline for approval._
 
-cloud.gov includes a range of [security features](https://docs.cloudfoundry.org/concepts/container-security.html) to prevent application containers from interfering with other containers or with the hosts they run on. As an additional security measure, cloud.gov also monitors application containers for suspicous behavior using [Sysdig Falco](https://sysdig.com/opensource/falco/). If an application container exhibits unexpected behavior, cloud.gov will take action.
+cloud.gov uses a range of [security features](https://docs.cloudfoundry.org/concepts/container-security.html) to prevent application containers from interfering with other containers or with the hosts they run on. As an additional security measure, cloud.gov also monitors application containers for suspicous behavior using [Sysdig Falco](https://sysdig.com/opensource/falco/). If an application container exhibits unexpected behavior, cloud.gov will take action.
 
 ## What counts as suspicous behavior?
 
 We are using [the default Falco ruleset](https://github.com/draios/falco/blob/dev/rules/falco_rules.yaml). We will add to our ruleset over time, particularly to flag [behavior which is not compatible with the existing container security restrictions](https://docs.cloudfoundry.org/concepts/container-security.html#hardening).
 
-## What happens when suspicious behavior is detected?
+## What action will be taken when suspicious behavior is observed?
 
 cloud.gov will append a log entry associated with the application that describes what was observed. For example, an attempt to create a directory within a protected path like `/bin` will result in a log entry like this:
 
