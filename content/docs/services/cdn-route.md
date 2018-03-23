@@ -36,7 +36,7 @@ Name | Required | Description | Default
 
 *Use these instructions for cloud.gov tenant applications. If you're creating a custom domain for something else (such as a public S3 bucket), see [external services and applications](#external-services-and-applications).*
 
-Before you begin, note that once you initiate creation of a CDN service instance, you can't update or delete it until it has been created successfully. Typos in the service creation parameters can cause creation to get stuck in a pending state. If you're using DNSSEC, [verify your DNSSEC configuration](https://www.icann.org/resources/pages/tools-2012-02-25-en) because invalid DNSSEC configuration will also cause creation to get stuck.
+Before you begin, note that once you initiate creation of a CDN service instance, you can't update or delete it until it has been created successfully. Typos in the service creation parameters can cause creation to get stuck in a pending state. If you need to implement DNSSEC, see [DNSSEC support](#dnssec-support).
 
 First, target the space your application is running in:
 
@@ -126,7 +126,7 @@ routes:
 
 Then deploy your application with your updated manifest.
 
-*Alternate option:* If you don't want to put this in your manifest, you can manually add the route to your application:
+*Alternate option:* If you don't want to put the route in your manifest, you can manually add it to your application:
 
 ```sh
 cf map-route APPNAME my.example.gov
@@ -140,9 +140,13 @@ If nothing has changed when you visit your custom domain:
 * Check your DNS setup to make sure you completed the CNAME record creation.
 * If your custom domain uses DNSSEC, [verify your DNSSEC configuration](https://www.icann.org/resources/pages/tools-2012-02-25-en).
 
-If you get the following error message when you try to update or delete a service instance: `"Server error, status code: 409, error code: 60016, message: An operation for service instance [name] is in progress.` -- this happens because you can't do anything to a service instance while it's in a pending state. A CDN service instance stays pending until it detects the CNAME or ALIAS record. If this causes a problem for you, you can ask support to manually delete the pending instance.
+If you get the following error message when you try to update or delete a service instance: `"Server error, status code: 409, error code: 60016, message: An operation for service instance [name] is in progress.`
+* This happens because you can't do anything to a service instance while it's in a pending state. A CDN service instance stays pending until it detects the CNAME or ALIAS record.
+* If this causes a problem for you, you can ask support to manually delete the pending instance.
 
-If you're working with many subdomains for the same domain name, Let's Encrypt has a [rate limit of 20 certificates per registered domain per week](https://letsencrypt.org/docs/rate-limits/). If a `cf create-service` command times out due to certificate rate limiting, and shows in a `failed` state, you can use `cf update-service` to restart the certificate attempts.
+If a `cf create-service` command times out due to certificate rate limiting, and shows in a `failed` state:
+* Use `cf update-service` to restart the certificate attempts.
+* Let's Encrypt has a [rate limit of 20 certificates per registered domain per week](https://letsencrypt.org/docs/rate-limits/). This can happen if you're working with many subdomains for the same domain name.
 
 ## How to update a service instance
 
@@ -157,7 +161,7 @@ Similarly to instance creation, after the record is updated, wait up to
 to propagate. In addition, you may have to clear your browser's cache if it
 shows the old content after the DNS changes propagate.
 
-### When to update the DNS
+### When to update DNS records
 
 You only need to add a CNAME entry when you update the `domain`
 field. If you do, follow ["How to set up DNS"](#how-to-set-up-dns) again.
@@ -190,7 +194,7 @@ CloudFront will use a default timeout of **24 hours**. This can be
 particularly confusing as different requests might be routed to different
 CloudFront Edge endpoints.
 
-While there is no mechanism for cloud.gov users to trigger a cache clear, 
+While there is no mechanism for cloud.gov users to trigger a cache clear,
 [cloud.gov support](/help/) can. Cache invalidation is not
 instantaneous; Amazon recommends expecting a lag time of 10-15 minutes (more if there are
 many distinct endpoints).
@@ -208,6 +212,16 @@ cf create-service cdn-route cdn-route my-cdn-route \
 Other headers, such as HTTP auth, are stripped by default.
 
 If you need a different configuration, contact [cloud.gov support](/help/).
+
+### DNSSEC support
+
+If you plan to use a domain with DNSSEC, you need to [verify your DNSSEC configuration](https://www.icann.org/resources/pages/tools-2012-02-25-en) before starting the steps above, because invalid DNSSEC configuration will cause creation to get stuck.
+
+However, custom domains using the CDN broker will not fully validate DNSSEC (between your CNAME record and cloudfront.net). This is because the AWS CloudFront service does not currently support DNSSEC. For a complete implementation of DNSSEC, we recommend instead running a proxy server within your boundary that forwards to your application in cloud.gov, or using an alternative CDN that supports DNSSEC. For implementation advice to help you meet your compliance needs, contact [cloud.gov support](/help/).
+
+Alternatively, you may be able to make the case for an alternative implementation without DNSSEC. As described in the [HTTPS-Only Standard](https://https.cio.gov/faq/#how-does-https-protect-against-dns-spoofing), a properly implemented solution using HTTPS-only and HSTS can meet the same requirements around preventing DNS spoofing that DNSSEC is intended to implement. cloud.gov enforces HTTPS for all applications and enables HSTS by default; we recommend configuring HSTS preload as well.
+
+See our [compliance guide for federal standards and recommendations for domain names]({{< relref "docs/compliance/domain-standards.md" >}}) for more details.
 
 ## Certificate validity and renewal
 
