@@ -50,7 +50,7 @@ cloud.gov currently permits the following roles:
 
 ### Security updates
 
-When a new security update is available for one of cloud.gov's underlying technologies, we update the relevant buildpacks. These changes don't take effect on individual apps until the apps are restaged, though. Customers know their apps best, and we prefer to minimize surprises, so the customer's dev team is responsible for restaging their own app(s). For more information, see the [app maintenance documentation](https://cloud.gov/docs/getting-started/app-maintenance/).
+When a new security update is available for one of cloud.gov's underlying technologies, we update the relevant buildpacks. These changes don't take effect on individual apps until the apps are restaged. Customers know their apps best, and we prefer to minimize surprises, so the customer's dev team is responsible for restaging their own app(s). We notify everyone running an app on an outdated version of a buildpack when we have new versions, so they can decide on an appropriate time to restage and pick up the update. For more information, see the [app maintenance documentation](https://cloud.gov/docs/getting-started/app-maintenance/).
 
 ### Encryption
 
