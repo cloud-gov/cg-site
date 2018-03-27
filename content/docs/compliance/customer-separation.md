@@ -9,7 +9,7 @@ title: Customer separation
 cloud.gov runs customer applications in containers (a combination of kernel facilities 
 including namespaces for network, memory, and filesystem), which keep applications from interacting with each other or the host system.
 
-Customers can deploy applications to cloud.gov [using a buildpack](https://docs.cloudfoundry.org/buildpacks/) or by [referring to a Docker image](/docs/apps/experimental/docker/)
+Customers can deploy applications to cloud.gov [using a buildpack](https://docs.cloudfoundry.org/buildpacks/) or by [referring to a Docker image]({{< relref "docs/apps/docker.md" >}})
 in an accessible Docker registry. Buildpack deployments are native to the underlying Cloud Foundry 
 system and have benefits over Docker images in that the cloud.gov team can supply updates to the root filesystem 
 as well as the language stack that the application uses. We recommend customers deploy using buildpacks whenever possible.

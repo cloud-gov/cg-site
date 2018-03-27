@@ -1,18 +1,15 @@
 ---
 menu:
   docs:
-    parent: experimental
+    parent: apps
 title: Deploying Docker images
 aliases:
   - /docs/intro/technology/containers
   - /overview/technology/containers
+  - /docs/apps/experimental/docker
 ---
 
-[**This is an experimental feature.**]({{< relref "docs/apps/experimental/experimental.md" >}})
-
-#### Docker as apps
-
-We've enabled an experimental feature to allow Docker image pushes.
+As an alternative to using buildpacks, you can push applications based on Docker.
 
 The only way to push Docker applications right now is through a public Docker registry. We will enable a private registry in the future.
 
