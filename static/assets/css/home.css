@@ -335,39 +335,6 @@
 #home section.section-resources a:hover {
   border-bottom: 1px dotted #02699b;
 }
-#home section.section-resources .newsletter-form label {
-  font-weight: 600;
-  line-height: 1;
-  padding: 20px 20px 10px 0;
-}
-#home section.section-resources .newsletter-form input[type="email"] {
-  padding: 18px 0 5px 10px;
-  margin: 0;
-}
-#home section.section-resources .newsletter-form label,
-#home section.section-resources .newsletter-form input {
-  float: left;
-}
-#home section.section-resources input[type="email"] {
-  border: none;
-  border-radius: 0;
-  width: calc(100% - 10px);
-  max-width: 400px;
-}
-#home section.section-resources .newsletter-form #mce-EMAIL:active,
-#home section.section-resources .newsletter-form #mce-EMAIL:focus {
-  /*background-color: #cef6ee;*/
-  outline: none;
-  background-color: rgba(153, 255, 255, .25);
-}
-#home section.section-resources .input-wrapper {
-  border-bottom: 1px solid #43403c;
-  display: block;
-  overflow: hidden;
-  height: auto;
-  width: calc(100% - 10px);
-  max-width: 490px;
-}
 #home a .fa.fa-fw {
   color: #fb613c;
 }

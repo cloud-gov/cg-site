@@ -7,8 +7,6 @@ weight: 30
 aliases:
   - /docs/intro/pricing/pricing-model
   - /intro/pricing/pricing-model
-recruiter: true
-
 ---
 
 cloud.gov is available to teams working on behalf of federal agencies. The pricing model is based on full cost recovery.

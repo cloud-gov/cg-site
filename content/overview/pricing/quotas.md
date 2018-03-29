@@ -7,7 +7,6 @@ weight: 5
 aliases:
   - /docs/intro/pricing/quotas
   - /intro/pricing/quotas
-recruiter: true
 
 ---
 
