@@ -183,57 +183,6 @@ ul.ui-widget-header {
   background: url(/img/link-icons/icon-pdf.svg) right -1px no-repeat;
   background-size: 34px 40px;
 }
-/** Recruiter form **************/
-#mc_embed_signup_research {
-  position: fixed;
-  bottom: 0;
-  right: 20px;
-  display: block;
-  z-index: 999999999;
-  width: 100%;
-  max-width: 300px;
-}
-#mc_embed_signup_research .handle-button {
-  /* background: rgba(0,174,227,1); */
-  background-color: #056dd4;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  color: #fff;
-  font-family: '18Franklin-webfont', system, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; /* $font-sans */
-  font-size: 16px;
-  /* font-weight: 600; */
-  padding: 12px 20px;
-  display: block;
-  text-decoration: none;
-  cursor: pointer;
-}
-/* #home #mc_embed_signup_research .handle-button {
-  background-color: #eee;
-  color: #000;
-} */
-#mc_embed_signup_research .form-container {
-  display: none;
-  border: 1px solid #eee;
-  background-color: #fff;
-  padding: 30px 20px;
-}
-#mc_embed_signup_research .form-container p {
-  font-family: '18Franklin-webfont', system, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; /* $font-sans */
-  font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: 30px;
-}
-#mc_embed_signup_research .form-container p.footnote {
-  margin-top: 30px;
-  font-size: 12px;
-}
-#mc_embed_signup_research #mc-embedded-submit.button {
-  width: 100%;
-  color: #fff;
-  /* background-color: rgba(0,174,227,1); */
-  background-color: #056dd4;
-}
-
 /** Disclaimer ******************/
 img.right-arrow {
   float: right;

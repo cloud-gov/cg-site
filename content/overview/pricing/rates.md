@@ -11,7 +11,6 @@ aliases:
   - /intro/pricing/whats-included
   - /overview/pricing/rates
   - /overview/pricing/whats-included
-recruiter: true
 
 ---
 

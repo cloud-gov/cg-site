@@ -5,7 +5,6 @@ menu:
 title: Prototyping package details
 weight: 3
 aliases:
-recruiter: true
 
 ---
 

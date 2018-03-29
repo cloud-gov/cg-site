@@ -7,8 +7,6 @@ weight: 10
 aliases:
   - /overview/pricing/managed-services
   - /overview/pricing/other-services/
-recruiter: true
-
 ---
 
 Currently, we don’t charge individually for [managed services]({{< relref "docs/apps/managed-services.md" >}}) (services provided by cloud.gov that you can create on-demand for your application, such as databases, storage, and caching).
