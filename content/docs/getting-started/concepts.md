@@ -86,6 +86,6 @@ Or a URL:
 * Can you initiate long-running processes or schedule periodic jobs from outside your application [using the Tasks capability](https://docs.cloudfoundry.org/devguide/using-tasks.html)?
 * Can you [build your static assets using CI]({{< relref "assets.md#build-assets-on-ci" >}}) prior to pushing your application, so that only the final built assets are deployed on cloud.gov?
 
-If none of these strategies will help you deploy single-language applications, then you can [explicitly specify a set of buildpacks to run in sequence](https://docs.cloudfoundry.org/buildpacks/use-multiple-buildpacks.html).
+If none of these strategies will help you deploy single-language applications, you can [explicitly specify a set of buildpacks to run in sequence](https://docs.cloudfoundry.org/buildpacks/use-multiple-buildpacks.html), one for each language.
 
 **Custom buildpacks:** If your application can't use a standard buildpack, you can use a [custom buildpack]({{< relref "docs/apps/custom-buildpacks.md">}}). When you use a custom buildpack, you're responsible for keeping your buildpack up-to-date and patching vulnerabilities in it. See [this chart illustrating your responsibilities]({{< relref "overview/technology/responsibilities.md">}}) for more detail.
