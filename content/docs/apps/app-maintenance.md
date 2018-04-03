@@ -5,6 +5,7 @@ menu:
 
 aliases: 
     - /getting-started/app-maintenance/
+    - /docs/getting-started/app-maintenance/
 title: App maintenance
 weight: -90
 ---
