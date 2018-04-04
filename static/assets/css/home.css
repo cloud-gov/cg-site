@@ -624,6 +624,7 @@
 #pricing .horizontal-list.medium li {
   font-size: 18px;
   font-weight: 600;
+  word-break: keep-all;
 }
 #pricing p + ul.horizontal-list.medium {
   margin-top: -20px;
