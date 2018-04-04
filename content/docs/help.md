@@ -7,7 +7,7 @@ aliases:
 
 ### Want to use cloud.gov?
 
-If you're interested in using cloud.gov, email [**cloud-gov-inquiries@gsa.gov**](mailto:cloud-gov-inquiries@gsa.gov?body=What%27s%20your%20name%3F%0A%0AWhat%20agency%20or%20office%20do%20you%20work%20for%3F%0A%0AWhat%27s%20your%20job%20title%20or%20role%3F%0A%0ATell%20us%20a%20little%20about%20your%20project%20or%20your%20questions%20about%20cloud.gov:%0A%0AIf%20you%27d%20like%20us%20to%20call%20you%2C%20what%27s%20your%20phone%20number%20and%20when%20might%20be%20a%20good%20time%3F%0A). We’ll schedule a call to answer your questions and help you [get started]({{< relref "overview/pricing/start-using-cloudgov.md" >}}).
+If you're interested in using cloud.gov, email [**cloud-gov-inquiries@gsa.gov**](mailto:cloud-gov-inquiries@gsa.gov?body=What%27s%20your%20name%3F%0A%0AWhat%20agency%20or%20office%20do%20you%20work%20for%3F%0A%0AWhat%27s%20your%20job%20title%20or%20role%3F%0A%0ATell%20us%20a%20little%20about%20your%20project%20or%20your%20questions%20about%20cloud.gov%3A%0A%0AIf%20you%27d%20like%20us%20to%20call%20you%2C%20what%27s%20your%20phone%20number%20and%20when%20might%20be%20a%20good%20time%3F%0A%0AHow%20did%20you%20first%20hear%20about%20cloud.gov%3F). We’ll schedule a call to answer your questions and help you [get started]({{< relref "overview/pricing/start-using-cloudgov.md" >}}).
 
 If you have a U.S. federal government email address, you can [get access to a free sandbox space]({{< relref "overview/pricing/free-limited-sandbox.md" >}}). To get news about cloud.gov, [sign up for email updates](/#updates).
 
