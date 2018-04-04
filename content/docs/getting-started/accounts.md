@@ -17,7 +17,7 @@ weight: -100
 
 ### Agency single sign-on accounts
 
-If you have a GSA, EPA, or FDIC email address, sign in using your agency credentials. Follow [these instructions to log in]({{< relref "setup.md" >}}).
+If you have a EPA, FDIC, GSA, or NSF email address, sign in using your agency credentials. Follow [these instructions to log in]({{< relref "setup.md" >}}).
 
 ### cloud.gov accounts
 
