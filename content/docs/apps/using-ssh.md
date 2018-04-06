@@ -34,6 +34,8 @@ for f in /home/vcap/profile.d/*.sh; do source "$f"; done
 
 SSH access is enabled by default. Space Developers can disable SSH access to individual applications, and Space Managers can disable SSH access to all apps running within a space. See [Enabling and Disabling SSH Access](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#enable-disable-ssh) for the commands.
 
+You should [disable SSH access for production applications]({{< relref "docs/apps/production-ready.md#prevent-non-auditable-changes-to-production-apps" >}}) to ensure you can audit changes to those applications.
+
 ## SSH version information 
 
 Application containers use the SSH-2.0 protocol. The SSH service uses the [Cloud Foundry SSH implementation](https://github.com/cloudfoundry/diego-ssh). For more on how Cloud Foundry implements SSH, refer to Cloud Foundry's documentation on [Understanding Application SSH](https://docs.cloudfoundry.org/concepts/diego/ssh-conceptual.html).

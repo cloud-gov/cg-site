@@ -92,6 +92,7 @@ blockquote::before {
 .tabs {
   margin-top: 20px;
   padding-top: 15px;
+  max-width: 36em;
 }
 .tabs.ui-tabs {
   border: 1px solid #ccc;
@@ -182,11 +183,7 @@ ul.ui-widget-header {
   background: url(/img/link-icons/icon-pdf.svg) right -1px no-repeat;
   background-size: 34px 40px;
 }
-/* Disclaimer */
-/*
-#gov-banner {
-  padding: 2rem 0 2rem 0;
-}*/
+/** Disclaimer ******************/
 img.right-arrow {
   float: right;
   width: 0.7rem;

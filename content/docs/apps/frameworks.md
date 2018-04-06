@@ -3,6 +3,7 @@ menu:
   docs:
     parent: apps
 title: Languages and frameworks
+weight: 29
 aliases:
 - /docs/apps/django
 - /docs/apps/flask
@@ -36,7 +37,7 @@ Several cloud.gov customers have their code available as open-source, including:
 
 ## Other languages
 
-You can use a custom buildpack to support other languages. See [custom buildpacks]({{< relref "docs/apps/experimental/custom-buildpacks.md" >}}) for more information about this experimental feature.
+You can use a custom buildpack to support other languages. See [custom buildpacks]({{< relref "docs/apps/custom-buildpacks.md" >}}) for more information about this feature.
 
 Cloud Foundry has a list of [community buildpacks](http://docs.cloudfoundry.org/buildpacks/#community-buildpacks) that you can use as custom buildpacks, along with [documentation for building your own custom buildpacks](http://docs.cloudfoundry.org/buildpacks/developing-buildpacks.html).
 

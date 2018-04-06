@@ -6,64 +6,85 @@ layout: ops
 title: Contingency plan
 ---
 
-This Contingency Plan provides guidance for our team in the case of trouble delivering our essential mission and business functions because of disruption, compromise, or failure of any component of cloud.gov. As a general guideline, we consider "disruption" to mean more than 30 minutes of unexpected downtime or significantly reduced service.
+This Contingency Plan provides guidance for our team in the case of trouble delivering our essential mission and business functions because of disruption, compromise, or failure of any component of cloud.gov. As a general guideline, we consider "disruption" to mean more than 30 minutes of unexpected downtime or significantly reduced service for customer applications.
 
 Scenarios where that could happen include unexpected downtime of key external services, data loss, or [high-severity security incidents]({{< relref "security-ir.md#1-high-severity" >}}). In the case of a security incident, the team uses the [Security Incident Response Guide]({{< relref "security-ir.md" >}}) as well.
 
 ## Recovery objective
 
-Short-term disruptions lasting less than 30 minutes are outside the scope of this plan.
+Short-term disruptions lasting less than 30 minutes are outside the scope of this plan. (See [Service Disruption Guide](/docs/ops/service-disruption-guide/) instead.)
 
 More than 3 hours of cloud.gov being offline would be unacceptable. Our objective is to recover from any significant problem (disruption, compromise, or failure) within that span of time.
 
-## Team information
-
-### Contact information
-
-Team contact information is available in GSA Google Drive:
-
-* [cloud.gov team roster sheet](https://docs.google.com/spreadsheets/d/1mW3tphZ98ExmMxLHPogSpTq8DzYr5Oh8_SHnOTvjRWM/edit) with names and roles for cloud.gov team members.
-* [18F contact info sheet](https://docs.google.com/spreadsheets/d/1QqqS_-V44MHyVqRIyHj6Eojg1Oz5EC3fS3j1e3mDrkg/edit#gid=3) with phone numbers, email addresses, and additional contact information for 18F team members (including cloud.gov members).
-
 ## Contingency plan outline
 
-### Activation and notification
+### Activation
 
-The first cloud.gov team member who notices or reports a potential contingency-plan-level problem becomes the **Incident Commander** (communications coordinator) until recovery efforts are complete or the Incident Commander role is explicitly reassigned.
+When any cloud.gov team member identifies a potential contingency-plan-level problem, they should begin following this plan. That first person becomes the **Incident Commander** (communications coordinator) until recovery efforts are complete or they explicitly reassign the Incident Commander role to another team member.
 
-If the problem is identified as part of a [security incident response situation]({{< relref "security-ir.md" >}}) (or becomes a security incident response situation), the same Incident Commander (IC) should handle the overall situation, since these response processes must be coordinated.
+* Security note: If the problem is identified as part of a [security incident response situation]({{< relref "security-ir.md" >}}) (or becomes a security incident response situation), the same Incident Commander (IC) should handle the overall situation, since these response processes must be coordinated.
 
-The IC first notifies and coordinates with the people who are authorized to decide that cloud.gov is in a contingency plan situation:
+The IC's first priority is to notify the following people. They are each authorized to decide that cloud.gov needs to activate the contingency plan. To contact them, use Slack chat, a Slack call, or call and text the phone numbers in their Slack profiles.
 
-* From cloud.gov:
-    * Program Managers
-    * System Owner
-    * Authorizing Official
-* 18F Products and Platforms Director
-* TTS Infrastructure Staff
+* cloud.gov Director (System Owner)
+* cloud.gov Deputy Director
+* cloud.gov Program Manager
+* Cloud Operations team (@cg-operators) -- any two members can together authorize the activation of the contingency plan.
 
-The IC notifies and coordinates with the following people as well:
+If the IC receives confirmation that cloud.gov is in a contingency plan situation, the plan is activated, and the IC should continue following the rest of this plan.
 
-* Cloud Operations
-* GSA Information Security, including ISSO
-* Designated FedRAMP personnel (when applicable)
-* cloud.gov users ([through StatusPage]({{< relref "making-announcements.md" >}}), when applicable)
+The IC should:
 
-The IC keeps a log of the situation in a [GSA Google Drive document](https://drive.google.com/drive/folders/0B58iDAWKmw_BSEtqcUFFQ041MHc); if this is also a security incident, the IC also follows the [security incident communications process]({{< relref "security-ir.md#initiate" >}}) (which includes updating a GitHub issue, updating the 18F #incident-response channel, and sending sitreps by email to GSA Information Security). The IC should delegate assistant ICs for aspects of the situation as necessary.
+* Start a team videocall for coordination.
+* Start a notes doc with timestamps [in Google Drive](https://drive.google.com/drive/folders/0B58iDAWKmw_BSEtqcUFFQ041MHc).
+
+If this is also a security incident: also follow the [security incident communications process]({{< relref "security-ir.md#initiate" >}}). As necessary, delegate assistant ICs.
+
+### Notification
+
+The IC should notify the following people within 15 minutes of identifying the service disruption:
+
+* cloud.gov users ([through StatusPage](https://manage.statuspage.io/pages/swcbylb1c30f)) -- can be a brief note summarizing the observable symptoms and saying that we're working on it.
+
+The IC must notify the following people within 1 hour of activating the plan:
+
+* 18F leadership -- give a brief description of the situation in Slack or email to the 18F Director of Operations and 18F Director.
+* GSA Information Security -- email a link to the StatusPage and a technical description of the situation (including whether there are any known security aspects) to itservicedesk@gsa.gov, gsa-ir@gsa.gov, devops@gsa.gov (even if there is no security impact).
+* FedRAMP JAB representatives -- email a link to the StatusPage and a technical description of the situation (including whether there are any known security aspects) to our JAB representatives (contact information [at the top of this doc](https://docs.google.com/document/d/1jGddQkjkQ6e9B0UTq9hfQqHe0btAbTeBGL_DxkozAcg/edit#)).
+
+The IC should also:
+
+* Monitor #cg-support and cloud-gov-support email for questions from customers, and respond as needed.
+* Coordinate with Director or Deputy Director to identify any key customer System Owners who we should proactively email.
+* Coordinate with Director or Deputy Director to identify any additional people to notify, such as TTS leadership, depending on the situation.
 
 ### Recovery
 
 The Cloud Operations team assesses the situation and works to recover the system. See the list of [external dependencies](#external-dependencies) for procedures for recovery from problems with external services.
 
-If this is also a security incident, the IC also follows the security incident [assessment]({{< relref "security-ir.md#initiate" >}}) and [remediation]({{< relref "security-ir.md#remediation" >}}) processes.
+If this is also a security incident, the IC and Cloud Operations also follow the security incident [assessment]({{< relref "security-ir.md#initiate" >}}) and [remediation]({{< relref "security-ir.md#remediation" >}}) processes.
 
 If the IC assesses that the overall response process is likely to last longer than 3 hours, the IC should organize shifts so that each responder works on response for no longer than 3 hours at a time, including handing off their own responsibility to a new IC after 3 hours.
+
+IC communications:
+
+* At least once an hour: 
+ * Post a brief update to StatusPage for cloud.gov users.
+ * Send email updates to GSA Information Security and FedRAMP JAB representatives.
+* Monitor #cg-support and cloud-gov-support email.
 
 ### Reconstitution
 
 The Cloud Operations team tests and validates the system as operational.
 
-The Incident Commander declares that recovery efforts are complete and notifies all relevant people. The last step is to [schedule a postmortem](https://github.com/18F/cg-postmortems) to discuss the event. This is the same as the [security incident retrospective process]({{< relref "security-ir.md#initiate" >}}).
+The Incident Commander declares that recovery efforts are complete and notifies all relevant people, which typically includes:
+
+* Post to StatusPage for cloud.gov users.
+* Email GSA Information Security and FedRAMP JAB representatives.
+* Notify 18F leadership.
+* As needed, email customers who contacted support with concerns.
+
+Next, the team schedules an internal postmortem to discuss the event. This is the same as the [security incident retrospective process]({{< relref "security-ir.md#initiate" >}}). Then we write a public postmortem and post it on StatusPage for users. We should also discuss with our JAB representatives whether they need additional information.
 
 ## External dependencies
 

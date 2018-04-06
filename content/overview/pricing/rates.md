@@ -103,7 +103,7 @@ All paid cloud.gov access packages include the following:
 - Regular scanning for infrastructure-level vulnerabilities/misconfiguration
 - Support for [these technologies](http://docs.cloudfoundry.org/buildpacks/#system-buildpacks), through system buildpacks (which we also call standard buildpacks).
     - All system buildpacks receive regular security updates.
-    - [Custom buildpacks]({{< relref "docs/apps/experimental/custom-buildpacks.md" >}}) can also be used for other languages/frameworks, but cloud.gov will have limited ability to assist with their usage, and there may be compliance implications.
+    - [Custom buildpacks]({{< relref "docs/apps/custom-buildpacks.md" >}}) can also be used for other languages/frameworks, but cloud.gov will have limited ability to assist with their usage, and there may be compliance implications.
 - Self-service management of spaces and users within an organization
 - Platform maintenance and managed service expansion overhead
 - Support for customer-provided DNS for applications (including support for IPv6)
@@ -137,4 +137,3 @@ All three pricing components are factored into every access package. Use this ta
 \*\*We aren’t yet charging for paid services. See [managed services]({{< relref "overview/pricing/managed-services-cost.md" >}}) for details.
 
 Find out [more about this pricing model]({{< relref "overview/pricing/pricing-model.md" >}}) and [how we define these terms]({{< relref "overview/pricing/pricing-terminology.md" >}}).
-
