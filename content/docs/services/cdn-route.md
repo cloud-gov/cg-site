@@ -209,9 +209,23 @@ cf create-service cdn-route cdn-route my-cdn-route \
     -c '{"domain": "my.example.gov", "cookies": false}'
 ```
 
-Other headers, such as HTTP auth, are stripped by default.
+#### Header forwarding
 
-If you need a different configuration, contact [cloud.gov support](/help/).
+CloudFront forwards a [limited set of headers](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior) by default. If you want extra headers forwarded to your origin, you'll want to add another parameter. Here we forward both the `User-Agent` and `Referer` headers:
+
+```bash
+$ cf create-service cdn-route cdn-route my-cdn-route \
+    -c '{"domain": "my.domain.gov", "headers": ["User-Agent", "Referer"]}'
+```
+
+CloudFront can forward up to 10 custom headers. Because this broker automatically forwards the `Host` header when not using a [custom origin](#custom-origins), you can whitelist up to nin headers by default; if using a custom origin, you can whitelist up to 10 headers. If you want to exceed this limit or forward all headers, you can use a wildcard:
+
+```bash
+$ cf create-service cdn-route cdn-route my-cdn-route \
+    -c '{"domain": "my.domain.gov", "headers": ["*"]}'
+```
+
+When making requests to the origin, CloudFront's caching mechanism associates HTTP requests with their response. The more variation within the forwarded request, the fewer cache hits and the less effective the cache. Limiting the headers forwarded is therefore key to cache performance. Caching is disabled altogether when using a wildcard.
 
 ### DNSSEC support
 
