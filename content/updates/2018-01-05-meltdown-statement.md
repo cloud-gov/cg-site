@@ -8,7 +8,7 @@ We are taking all available steps to mitigate the impact of these vulnerabilitie
 
 Our cloud infrastructure provider [has already updated their systems](https://aws.amazon.com/security/security-bulletins/AWS-2018-013/) so that cloud.gov customer applications are not vulnerable to Meltdown attacks from other tenants in AWS GovCloud.
 
-When an update for the platform operating system is released, we will apply it. This will prevent Meltdown attacks between customer applications within cloud.gov. We use Ubuntu, which [plans to release an update very soon](https://insights.ubuntu.com/2018/01/04/ubuntu-updates-for-the-meltdown-spectre-vulnerabilities/). Then the [Cloud Foundry team will release a CF-customized version](https://www.cloudfoundry.org/meltdown-spectre-attacks/), and we will apply the update to cloud.gov. This will be [routine maintenance]({{< relref "docs/getting-started/app-maintenance.md#operating-system-patching" >}}) with no expected downtime.
+When an update for the platform operating system is released, we will apply it. This will prevent Meltdown attacks between customer applications within cloud.gov. We use Ubuntu, which [plans to release an update very soon](https://insights.ubuntu.com/2018/01/04/ubuntu-updates-for-the-meltdown-spectre-vulnerabilities/). Then the [Cloud Foundry team will release a CF-customized version](https://www.cloudfoundry.org/meltdown-spectre-attacks/), and we will apply the update to cloud.gov. This will be [routine maintenance]({{< relref "docs/apps/app-maintenance.md#operating-system-patching" >}}) with no expected downtime.
 
 We expect to have this update complete on or before the public release of proof-of-concept Meltdown exploit code on January 9.
 

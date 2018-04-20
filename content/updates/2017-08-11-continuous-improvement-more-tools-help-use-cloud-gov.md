@@ -15,7 +15,7 @@ Managing users in your organization and granting them the permissions they need 
 
 #### Continuous improvement
 
-Staying compliant with federal laws is crucial to us and to you, but compliant simply isn’t good enough, or fast enough, for us. That’s why [cloud.gov is designed and operated to routinely provide apps the latest security updates](https://cloud.gov/overview/overview/cloudgov-benefits/) within a day of their release. When there’s a major vulnerability in a component managed by cloud.gov, our team makes these updates across the entire platform, so you don’t have to spend time doing it. For updates to the buildpack, operating system, or [any other component we manage](https://cloud.gov/overview/technology/responsibilities/), all that’s typically required is a [restage of your apps](https://cloud.gov/docs/getting-started/app-maintenance/#restaging-your-app), even as they scale and grow.
+Staying compliant with federal laws is crucial to us and to you, but compliant simply isn’t good enough, or fast enough, for us. That’s why [cloud.gov is designed and operated to routinely provide apps the latest security updates](https://cloud.gov/overview/overview/cloudgov-benefits/) within a day of their release. When there’s a major vulnerability in a component managed by cloud.gov, our team makes these updates across the entire platform, so you don’t have to spend time doing it. For updates to the buildpack, operating system, or [any other component we manage](https://cloud.gov/overview/technology/responsibilities/), all that’s typically required is a [restage of your apps](https://cloud.gov/docs/apps/app-maintenance/#restaging-your-app), even as they scale and grow.
 
 #### Improved support and documentation to help you use cloud.gov
 
