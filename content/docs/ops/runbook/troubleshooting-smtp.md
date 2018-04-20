@@ -12,8 +12,7 @@ general root cause for this is the mail service silently rejecting mail, or
 sometimes a firewall change.
 
 #### Mail Relay
-All outgoing mail should be sent via [Mandrill](https://mandrillapp.com).  #infrastructure on Slack can
-help with account credentials if needed.
+All outgoing mail should be sent via the internal mail relay listed in Terraform outputs.
 
 #### Authentication
 SMTP Authentication should be used to send mail.  In order to communicate,
@@ -21,18 +20,17 @@ the username and password need to be sent base64 encoded:
 
 ```sh
 # Get the username in base64
-perl -MMIME::Base64 -e 'print encode_base64("noreply\@cloud.gov")'
+echo -n "username" | base64
 
 # Get the password in base64
-perl -MMIME::Base64 -e 'print encode_base64("secretpassword")'
+echo -n "password" | base64
 ```
 
 #### Sending a test email
 "VXNlcm5hbWU6" is base64 for "Username:".  "UGFzc3dvcmQ6" is base64 for "Password:".
 ```sh
 # Connect to the server
-nc smtp.mandrillapp.com 25
-220 smtp.mandrillapp.com ESMTP
+openssl s_client -starttls smtp -connect RELAYIP:25
 AUTH LOGIN
 334 VXNlcm5hbWU6
 PASTE-YOUR-BASE64-USERNAME-HERE
