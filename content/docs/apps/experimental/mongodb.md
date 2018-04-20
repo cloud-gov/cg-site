@@ -15,7 +15,6 @@ aliases:
 
 Service Name | Plan Name | Description | Price
 ------------ | --------- | ----------- | -----
-`mongodb32` | `standard` | MongoDB instance with 10 GB storage | Free in Alpha
 `mongodb36` | `standard` | MongoDB instance with 10 GB storage | Free in Alpha
 
 Note: MongoDB plans run a single instance and will be briefly unavailable during platform maintenance; this service should not be used for production applications.

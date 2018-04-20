@@ -7,7 +7,6 @@ layout: ops
 title: Troubleshooting Nessus Manager
 ---
 
-
 To clear up the `fetch --register` error in the nessus manager
 deployment, you will [create a jumpbox]({{< relref "docs/ops/runbook/troubleshooting-bosh.md" >}}) to [ssh into the Nessus Manager VM]({{< relref "docs/ops/runbook/troubleshooting-bosh.md#troubleshooting-individual-vms" >}}).
 
@@ -28,3 +27,16 @@ monit restart nessus-service; watch -n 1 "monit summary"
 
 Once the job is reporting as `running`, you will be able to login again via the
 Web UI.
+
+## NessusScandeleteFailing
+
+For some reason, `https://github.com/18F/cg-nessus-manager-boshrelease/blob/master/jobs/nessus-manager/templates/bin/emit-scans.sh`
+is having problems deleting scans and exiting prematurely.  This may cause scans to build up and eventually run the system out of
+disk, which can cause problems.
+
+You will need to [create a jumpbox]({{< relref "docs/ops/runbook/troubleshooting-bosh.md" >}})
+to [ssh into the Nessus Manager VM]({{< relref "docs/ops/runbook/troubleshooting-bosh.md#troubleshooting-individual-vms" >}})
+and try running the script by hand and debugging it from there. 
+
+This script runs from cron: https://github.com/18F/cg-nessus-manager-boshrelease/blob/master/jobs/nessus-manager/templates/config/crontab
+
