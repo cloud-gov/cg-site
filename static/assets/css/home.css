@@ -399,6 +399,12 @@
 #pricing h2 {
   margin: 60px 0;
 }
+#pricing h2 a {
+  text-decoration: none;
+}
+#pricing h2 a:hover {
+  color: #444;
+}
 #pricing h3 {
   font-size: 24px;
   position: relative;

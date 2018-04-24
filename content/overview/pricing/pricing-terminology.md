@@ -25,12 +25,6 @@ A system maps to an [“org” in cloud.gov and Cloud Foundry](http://docs.cloud
 
 “Support” is support to use the platform as intended, on a best-effort basis. We have no existing service-level agreement (SLA). We [publish metrics](https://cloudgov.statuspage.io/) that give agencies the ability to make an informed choice about whether to use cloud.gov or an alternative PaaS solution based on our actual track record.
 
-[Download cloud.gov availability/SLA](/assets/files/cloud.gov availability SLA.pdf) for more information.
-
-<!-- cloud.gov availability/SLA [one-sheet] source file: https://docs.google.com/document/d/1YbYWlwSvrfXlvxBY-IxsGPdR_17u0_2vLzaBZn181t8/edit#  -->
-
-
-
 
 ### Consulting
 
