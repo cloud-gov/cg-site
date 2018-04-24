@@ -22,6 +22,7 @@ cloud.gov services are sold through 18F, a federal digital consultancy housed wi
 To learn more about the IAA process and the information that you need to begin the process, please visit [18F's primer on IAAs] (https://pages.18f.gov/iaa-forms/primer.html).
 
 ### Additional resources
-* For further reading, download our [Answers to customer questions about IAAs and MOUs (PDF)](/assets/files/Answers to customer questions about IAAs and MOUs.pdf).
-* Sample Statement of Work (SOW)
+* For further reading, download our [Answers to customer questions about IAAs and MOUs](/assets/files/Answers to customer questions about IAAs and MOUs.pdf).
 <!-- Answers to customer questions about IAAs and MOUs source file: https://docs.google.com/document/d/1g5sug5p_Q7nqrLp90nkDnmLbUt5X62af9-XPyBvWMSM/edit -->
+* [Sample Statement of Work (SOW)](/assets/files/cloud.gov example SOW.pdf)
+<!-- SOW source file: https://drive.google.com/file/d/0B1cewEqKcWCbYjNRUl9xQTBKRk0/view -->
