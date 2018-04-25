@@ -37,3 +37,8 @@ cloud.gov is always responsible for the following components at its platform lev
 * Scaling
 * Logging
 * Alerting
+
+## Customer responsibilities
+Download the [cloud.gov customer guide](/assets/files/cloud.gov customer guide.pdf) for details.
+
+<!-- customer guide source file: https://docs.google.com/document/d/1-x0DcaQ7sqM1QOtw6mQJdNSKEx5kdSofaN1kOhTMZuU/edit  -->
