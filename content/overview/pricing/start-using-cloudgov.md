@@ -12,7 +12,7 @@ aliases:
   - /overview/overview/how-to-purchase
 ---
 
-Lorem ipsum dolor sit amet. This is placeholder copy. cloud.gov services can only be [purchased by federal government agencies through an Interagency Agreement (IAA)]({{< relref "overview/pricing/purchasing.md" >}}). We hope to provide services to state and local agencies in the future. ~~There are a number of different ways to start using cloud.gov.~~
+Lorem ipsum dolor sit amet. This is placeholder copy. cloud.gov services can only be [purchased by federal government agencies through an Interagency Agreement (IAA)]({{< relref "overview/pricing/purchasing.md" >}}). We hope to provide services to state and local agencies in the future. ~~There are a number of different ways to start using cloud.gov.
 
 
 ## Try a limited-use sandbox account for free

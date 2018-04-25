@@ -5,7 +5,6 @@ menu:
 title: Purchasing cloud.gov
 weight: 100
 aliases:
-
   - /overview/pricing/how-to-purchase
   - /overview/overview/how-to-purchase
 ---
@@ -22,7 +21,12 @@ cloud.gov services are sold through 18F, a federal digital consultancy housed wi
 To learn more about the IAA process and the information that you need to begin the process, please visit [18F's primer on IAAs] (https://pages.18f.gov/iaa-forms/primer.html).
 
 ### Additional resources
-* For further reading, download our [Answers to customer questions about IAAs and MOUs](/assets/files/Answers to customer questions about IAAs and MOUs.pdf).
-<!-- Answers to customer questions about IAAs and MOUs source file: https://docs.google.com/document/d/1g5sug5p_Q7nqrLp90nkDnmLbUt5X62af9-XPyBvWMSM/edit -->
 * [Sample Statement of Work (SOW)](/assets/files/cloud.gov example SOW.pdf)
 <!-- SOW source file: https://drive.google.com/file/d/0B1cewEqKcWCbYjNRUl9xQTBKRk0/view -->
+* [Sample monthly invoice](/assets/files/Example invoice for one month.pdf) 
+<!-- Sample invoice source file: https://drive.google.com/file/d/1hLYVkN589brfvxAHBcIVoTwaqHln-mw2/view -->
+
+## (expose common questions from the doc)
+
+~~For further reading, download our [Answers to customer questions about IAAs and MOUs](/assets/files/Answers to customer questions about IAAs and MOUs.pdf).~~
+<!-- Answers to customer questions about IAAs and MOUs source file: https://docs.google.com/document/d/1g5sug5p_Q7nqrLp90nkDnmLbUt5X62af9-XPyBvWMSM/edit -->
