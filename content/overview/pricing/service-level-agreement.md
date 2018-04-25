@@ -16,7 +16,4 @@ Lorem ipsum dolor sit amet.
 
 <!-- cloud.gov availability/SLA [one-sheet] source file: https://docs.google.com/document/d/1YbYWlwSvrfXlvxBY-IxsGPdR_17u0_2vLzaBZn181t8/edit#  -->
 
-## Customer responsibilities
-Download the [cloud.gov customer guide](/assets/files/cloud.gov customer guide.pdf) for details.
-
-<!-- customer guide source file: https://docs.google.com/document/d/1-x0DcaQ7sqM1QOtw6mQJdNSKEx5kdSofaN1kOhTMZuU/edit  -->
+For more information about customer responsibilities, see [What the cloud.gov PaaS offers]({{< relref "overview/technology/responsibilities.md" >}}).
