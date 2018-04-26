@@ -39,7 +39,8 @@ cloud.gov is suitable for a wide range of applications, including websites and n
 ## Not a good fit
 
 - Your application requires proprietary databases not listed in our [database service documentation]({{< relref "docs/services/relational-database.md" >}}).
-- Your team is unable to use the [federal Interagency Agreement process]({{< relref "overview/pricing/start-using-cloudgov.md" >}}) for payment. For example, this may apply for teams working for U.S. local, state, tribal, or territory government organizations. If this applies to your team, [sign up for updates](/#updates) so that we can notify you if we add other options.
+- Your team is unable to use the [federal Interagency Agreement process]({{< relref "overview/pricing/start-using-cloudgov.md" >}}) for payment. For example, this may apply for teams working for U.S. local, state, tribal, or territory government organizations.
+<!-- If this applies to your team, [sign up for updates](/#updates) so that we can notify you if we add other options. -->
 
 ## Cannot use cloud.gov
 
