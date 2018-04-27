@@ -25,6 +25,7 @@ A system maps to an [“org” in cloud.gov and Cloud Foundry](http://docs.cloud
 
 “Support” is support to use the platform as intended, on a best-effort basis. We have no existing service-level agreement (SLA). We [publish metrics](https://cloudgov.statuspage.io/) that give agencies the ability to make an informed choice about whether to use cloud.gov or an alternative PaaS solution based on our actual track record.
 
+
 ### Consulting
 
 “Consulting” is providing advice, development, documentation, and other resources that are custom or specific to the context of your application, system, or organization. If the outcome of the activity would not be reusable for our entire community of users, it’s consulting. Base platform fees for cloud.gov do not include consulting, and our team does not offer cloud-focused consulting outside of projects directly undertaken on behalf of a partner agency. This includes, for example, general information about migrating your products to the cloud. (All cloud.gov documentation and deployment are open source, so you may use this information to your benefit at any time.)

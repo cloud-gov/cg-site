@@ -353,10 +353,7 @@
 #home a.button-link:hover {
   color: #02699b;
 }
-#home a[href^=".pdf"] {
-  padding-right: 30px;
-  background: url(/img/link-icons/icon-pdf.svg) right center no-repeat;
-}
+
 #home a[href*=".com"],
 #home a[href*=".io"] {
   padding-right: 23px;
@@ -401,6 +398,12 @@
 } */
 #pricing h2 {
   margin: 60px 0;
+}
+#pricing h2 a {
+  text-decoration: none;
+}
+#pricing h2 a:hover {
+  color: #444;
 }
 #pricing h3 {
   font-size: 24px;
@@ -704,11 +707,16 @@
 #pricing .vspace-60:last-of-type {
   padding-bottom: 120px;
 }
+#pricing a[href$=".pdf"] {
+  padding-right: 22px;
+  background: url(/img/link-icons/icon-pdf.svg) right center no-repeat;
+}
 /* #pricing a[href^="mailto"]:not(.button) {
   padding-right: 20px;
   background: url(/img/link-icons/icon-email.svg) right center no-repeat;
   background-size: 16px 16px;
 } */
+
 /** Media queries ****************************/
 
 @media screen and (min-width: 600px) {
