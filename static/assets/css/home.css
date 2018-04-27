@@ -353,10 +353,7 @@
 #home a.button-link:hover {
   color: #02699b;
 }
-#home a[href^=".pdf"] {
-  padding-right: 30px;
-  background: url(/img/link-icons/icon-pdf.svg) right center no-repeat;
-}
+
 #home a[href*=".com"],
 #home a[href*=".io"] {
   padding-right: 23px;
@@ -399,8 +396,19 @@
   letter-spacing: -.02em;
   margin-bottom: 30px;
 } */
-#pricing h2 {
-  margin: 60px 0;
+#pricing h2 a{
+  display: block;
+  margin-bottom: 60px;
+  text-decoration: none;
+}
+#pricing h2:not(#estimate-your-monthly-cost) a {
+  margin-top: 240px;
+}
+#pricing h2#estimate-your-monthly-cost a {
+  margin-top: 90px;
+}
+#pricing h2 a:hover {
+  color: #444;
 }
 #pricing h3 {
   font-size: 24px;
@@ -416,6 +424,9 @@
   position: absolute;
   top: 0;
   width: 45px;
+}
+#pricing h4 {
+  margin-top: 30px;
 }
 #pricing .usa-content {
   padding-left: 20px;
@@ -434,6 +445,10 @@
 #pricing #main h1 + p a {
   font-weight: 600;
   color: #02699b;
+}
+#pricing .usa-grid {
+  padding-left: 0;
+  padding-right: 0;
 }
 #pricing .usa-grid > h2 + p,
 #pricing h3 + p {
@@ -696,6 +711,7 @@
 }
 #pricing .footnote {
   font-size: 12px;
+  max-width: 500px;
 }
 #pricing .vspace-60 {
   padding-top: 60px;
@@ -704,11 +720,40 @@
 #pricing .vspace-60:last-of-type {
   padding-bottom: 120px;
 }
-/* #pricing a[href^="mailto"]:not(.button) {
-  padding-right: 20px;
-  background: url(/img/link-icons/icon-email.svg) right center no-repeat;
-  background-size: 16px 16px;
-} */
+#pricing a[href$=".pdf"] {
+  padding-right: 18px;
+  background: url(/img/link-icons/icon-pdf.svg) right center no-repeat;
+}
+#pricing .diagram {
+  background: url(/img/illustrations/pricing-example.svg) center top no-repeat;
+  background-size: contain;
+  min-height: 200px;
+  /* width: 90%; */
+}
+#pricing .usa-grid p.pricing-line-item {
+  border-bottom: 1px dotted #444;
+  /* font-family: "Roboto Mono","Bitstream Vera Sans Mono",Consolas,Courier,monospace; */
+}
+#pricing .pricing-line-item code {
+  background-color: #fff;
+  font-size: 80%;
+}
+#pricing .pricing-total {
+  font-weight: 700;
+  display: block;
+  margin-top: 40px;
+}
+#pricing .pricing-total::before {
+  clear: both;
+}
+#pricing .pricing-line-item span {
+  font-family: "Roboto Mono","Bitstream Vera Sans Mono",Consolas,Courier,monospace;
+}
+#pricing .pricing-line-item span,
+#pricing .pricing-total span {
+  padding: 0 10px;
+  float: right;
+}
 /** Media queries ****************************/
 
 @media screen and (min-width: 600px) {
@@ -739,6 +784,9 @@
   }
   #pricing .estimator ul li {
     width: calc(33%);
+  }
+  #pricing .diagram {
+    min-height: 420px;
   }
 }
 @media screen and (min-width: 800px) {
