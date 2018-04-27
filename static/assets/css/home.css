@@ -375,7 +375,7 @@
 
 /** Pricing Styles ***************************/
 #pricing h1,
-#pricing h2 {
+#pricing h2:not(.header-title) {
   font-size: 48px;
   font-weight: 800;
   line-height: 1.15;
@@ -406,6 +406,9 @@
 }
 #pricing h2#estimate-your-monthly-cost a {
   margin-top: 90px;
+}
+#pricing h2.header-title a {
+  margin-top: 0 !important;
 }
 #pricing h2 a:hover {
   color: #444;
@@ -446,10 +449,10 @@
   font-weight: 600;
   color: #02699b;
 }
-#pricing .usa-grid {
+/* #pricing .usa-grid {
   padding-left: 0;
   padding-right: 0;
-}
+} */
 #pricing .usa-grid > h2 + p,
 #pricing h3 + p {
   font-size: 18px;
