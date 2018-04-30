@@ -402,10 +402,7 @@
   text-decoration: none;
 }
 #pricing h2:not(#estimate-your-monthly-cost) a {
-  margin-top: 240px;
-}
-#pricing h2#estimate-your-monthly-cost a {
-  margin-top: 90px;
+  margin-top: 120px;
 }
 #pricing h2.header-title a {
   margin-top: 0 !important;
