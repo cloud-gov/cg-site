@@ -8,6 +8,8 @@ description: "Custom domains and TLS certificates with automatic renewal"
 status: "Production Ready"
 ---
 
+<!-- If you're improving this page, try to port the improvements to the CDN route service page too, since most of the text is the same -->
+
 This service provides:
 
 1. [Custom domain]({{< relref "docs/apps/custom-domains.md" >}}) support, so that your application can have your domain instead of the default `*.app.cloud.gov` domain.
