@@ -8,11 +8,13 @@ description: "Custom domains, CDN caching, and TLS certificates with automatic r
 status: "Production Ready"
 ---
 
-This service provides three key elements to support production applications:
+This service provides:
 
 1. [Custom domain]({{< relref "docs/apps/custom-domains.md" >}}) support, so that your application can have your domain instead of the default `*.app.cloud.gov` domain.
-1. Content Distribution Network (CDN) caching (using [AWS CloudFront](https://aws.amazon.com/cloudfront/)), for fast delivery of content to your users. Before setting up this service, review [how the CDN works](#more-about-how-the-cdn-works).
 1. HTTPS support via free TLS certificates with auto-renewal (using [Let's Encrypt](https://letsencrypt.org/)), so that user traffic is encrypted.
+1. Content Distribution Network (CDN) caching (using [AWS CloudFront](https://aws.amazon.com/cloudfront/)), for fast delivery of content to your users. Before setting up this service, review [how the CDN works](#more-about-how-the-cdn-works).
+
+If you don't need CDN caching, use the [custom domain service]({{< relref "docs/services/custom-domains.md" >}}) instead.
 
 ## Plans
 

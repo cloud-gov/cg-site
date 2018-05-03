@@ -8,10 +8,12 @@ description: "Custom domains and TLS certificates with automatic renewal"
 status: "Production Ready"
 ---
 
-This service provides three key elements to support production applications:
+This service provides:
 
 1. [Custom domain]({{< relref "docs/apps/custom-domains.md" >}}) support, so that your application can have your domain instead of the default `*.app.cloud.gov` domain.
 1. HTTPS support via free TLS certificates with auto-renewal (using [Let's Encrypt](https://letsencrypt.org/)), so that user traffic is encrypted.
+
+If you need CDN caching for your applications, use the [CDN service]({{< relref "docs/services/cdn-route.md" >}}) instead.
 
 ## Plans
 
@@ -28,8 +30,6 @@ Name | Required | Description | Default
 `domains` | *Required* | Your custom domain or domains |
 
 ## How to create an instance of this service
-
-*Use these instructions for cloud.gov tenant applications. If you're creating a custom domain for something else (such as a public S3 bucket), see [external services and applications](#external-services-and-applications).*
 
 Before you begin, note that once you initiate creation of a custom domain service instance, you can't update or delete it until it has been created successfully. Typos in the service creation parameters can cause creation to get stuck in a pending state. If you need to implement DNSSEC, see [DNSSEC support](#dnssec-support).
 
