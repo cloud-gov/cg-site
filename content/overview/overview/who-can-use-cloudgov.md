@@ -33,7 +33,7 @@ cloud.gov is suitable for a wide range of applications, including websites and n
 
 - Your organization can integrate your identity system with cloud.gov over SAML.
 - Your application doesn't rely on the filesystem for storing its state.
-    - An [experimental service]({{< relref "docs/apps/experimental/volume-services.md" >}}) supports filesystem-dependent applications.
+    - An [experimental service]({{< relref "docs/services/volume-services.md" >}}) supports filesystem-dependent applications.
 - Your application can follow the [12-Factor App guidelines](https://12factor.net/).
 
 ## Not a good fit
