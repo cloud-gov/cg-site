@@ -1,9 +1,13 @@
 ---
 menu:
   docs:
-    parent: experimental
-
+    parent: services
 title: Volume services
+name: "volume-services"
+description: "Provision persistent filesystem volumes"
+status: "Experimental"
+aliases: 
+    - /docs/apps/experimental/volume-services/
 ---
 
 [**This is an experimental feature.**]({{< relref "docs/apps/experimental/experimental.md" >}}) cloud.gov has enabled experimental support for provisioning persistent filesystem volumes for use by customer applications. This experimental service is provided to help test whether cloud.gov is suitable for hosting applications that depend on a durable filesystem to store their state. See below for caveats and notes about production use.
