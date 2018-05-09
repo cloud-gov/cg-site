@@ -3,8 +3,7 @@ menu:
   docs:
     parent: services
 title: Volume services
-name: "volume-services"
-description: "Provision persistent filesystem volumes"
+description: "Existing NFSv3 volumes (see: https://code.cloudfoundry.org/nfs-volume-release/)"
 status: "Experimental"
 aliases: 
     - /docs/apps/experimental/volume-services/
