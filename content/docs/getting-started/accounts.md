@@ -35,13 +35,17 @@ Your cloud.gov account requires setting up both a password and an authentication
 
 #### If you can't access your token codes
 
-If you lose access to your authentication application (such as if you lose your phone), email [cloud.gov support](/help/) so that we can allow you to set up a new one. We'll follow this process to mitigate the risk of requests from compromised email addresses:
+If you need to set up a new authentication application, such as if you lose your phone, [email cloud.gov support](mailto:cloud-gov-support@gsa.gov?subject=MFA%20reset&body=I%20need%20to%20set%20up%20a%20new%20authentication%20application.%20I%20understand%20this%20means%20the%20contents%20of%20my%20sandbox%20space%20will%20be%20deleted%20if%20I%20have%20one,%20and%20that%20you%20will%20remove%20my%20permissions%20to%20other%20spaces%20and%20orgs.) so that we can allow you to set up a new one. We'll follow this process to mitigate the risk of requests from compromised email addresses:
 
 1. Delete the contents of your sandbox space (if you have one).
 2. Remove your permissions to any other spaces and orgs.
 3. For those spaces and orgs, notify the Space Managers and Org Managers that we've removed your access because of your request to reset your account's authentication application.
 4. Reset your account's authentication application.
 5. Let you know this is complete, so that you can set up a new authentication application and request access from your Space Managers and Org Managers again. It is their responsibility to verify that this is a legitimate request from you.
+
+You can copy this into your email (or write something similar), so that we know to go ahead with that process right away: 
+
+> I need to set up a new authentication application. I understand this means the contents of my sandbox space will be deleted if I have one, and that you will remove my permissions to other spaces and orgs.
 
 ## Use your account responsibly
 
