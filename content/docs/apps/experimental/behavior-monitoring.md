@@ -15,6 +15,8 @@ cloud.gov uses a range of [security features](https://docs.cloudfoundry.org/conc
 
 cloud.gov uses [the default Falco ruleset](https://github.com/draios/falco/blob/dev/rules/falco_rules.yaml). We will add to our ruleset over time, particularly to flag [behavior which is not compatible with the existing container security restrictions](https://docs.cloudfoundry.org/concepts/container-security.html#hardening).
 
+For example, we plan to also implement a rule that monitors whether the application filesystem is modified after deployment, and if it is, to restart the app instance. This would help customers fulfill [SI-7 ("Software, Firmware and Information Integrity")](https://nvd.nist.gov/800-53/Rev4/control/SI-7) responsibilities.
+
 ## Action taken when Falco observes suspicious behavior
 
 When Falco observes suspicious behavior in an application container, cloud.gov adds a log entry to the application logs. For example, an attempt to create a directory within a protected path (such as `/bin`) will result in a log entry like this:
