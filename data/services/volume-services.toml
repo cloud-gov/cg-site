@@ -1,0 +1,6 @@
+# Service metadata lives
+# https://github.com/cloudfoundry/nfsbroker/blob/master/nfsbroker/nfsbroker.go#L91-L125 (We only expose the first service and plan.)
+# https://github.com/18F/cg-deploy-volume-services/blob/master/ci/manifest.yml#L6 (name)
+name = "volume-services"
+description = "Existing NFSv3 volumes (see: https://code.cloudfoundry.org/nfs-volume-release/)"
+status = "Experimental"
