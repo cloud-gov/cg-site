@@ -15,7 +15,7 @@ layout: ops
         * Secrets are duplicated to multiple locations and have to be kept in sync
 * Goals
     * Single source of truth for each secret
-    * BOSH and Concourse can read from samae secret store
+    * BOSH and Concourse can read from same secret store
     * Secrets are programmatically generated where possible
     * Secrets are programmatically rotated where possible
 * Approach: Credhub
@@ -46,3 +46,23 @@ layout: ops
 * Links
     * https://docs.cloudfoundry.org/credhub/
     * https://concourse-ci.org/creds.html#credhub
+
+---
+We had a meeting on 5/21/2018. Some decisions we made:
+* We agreed that deploying a CredHub per environment was not a bad thing to do first. 
+* We think if there's a CredHub per environment, it may not make sense to expose prefix/suffix/location/path differences as something pipelines and manifests have to concern themselves with. But whatever we do, we want it to be consistent so that onboarding is easier and everyone has confidence where to find stuff.
+
+Generally everything else felt too big and scary and there are too many unknowns and tangled dependencies and tech debt to jump right on CredHub. So, we're going to do some smaller, more tractable stuff to detangle things first.
+
+* Proto-backlog:
+  * In order to have confidence that we've enumerated all BOSH creds, we want to convert all BOSH manifests to ops-file/var-file format (deploy-bosh is gross, many others are already done). 
+  * In order to reduce the operator burden of manipulating BOSH secrets, we want to remove redundant encryption of BOSH secrets stemming from when we didn't have dedicated AWS accounts.
+
+We'll groom these ASAP:
+  * Detangle shared secrets between environments
+  * Improve promotion strategy (eg separate blob store per environment)
+  * Detangle shared secrets between BOSH and Concourse (eg replace Concourse cred-handling pipelines with Bosh errands?)
+  * Put a CredHub in each environment
+  * (For all X) get secrets for X in CredHub <-- These stories already exists
+  * Put a Concourse in each environment
+  * Deprecate our clever+cool but bespoke jumpbox in favor of the stock one
