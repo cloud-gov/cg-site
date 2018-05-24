@@ -26,14 +26,7 @@ To create a service instance that can provision identity provider credentials, r
 cf create-service cloud-gov-identity-provider oauth-client my-uaa-client
 ```
 
-By default, identity provider service instances use the `openid` scope. You can request custom scopes using the `scopes` option:
-
-```sh
-cf create-service cloud-gov-identity-provider oauth-client my-uaa-client \
-  -c '{"redirect_uri": ["https://my.app.cloud.gov"], "scopes": ["openid", "cloud_controller.read"]}'
-```
-
-Note: The user will be prompted to grant any permissions required by custom scopes the first time they login to your application. You can only request the `openid` and `cloud_controller.read` scopes at present. (The `cloud_controller.read` scope enables your application to make read-only queries to [the cloud.gov API](https://apidocs.cloudfoundry.org) on behalf of the user.)
+Note: By default, identity provider service instances use the `openid` scope. The user will be prompted to grant any permissions required by scopes the first time they login to your application.
 
 ## Obtaining credentials
 
@@ -45,12 +38,6 @@ cf service-key my-uaa-client my-service-key
 ```
 
 This will create a cloud.gov identity provider and make the credentials available to you via a service key. Keep these credentials secure. If they’re compromised, the way to invalidate the credentials is to [delete the service key](https://docs.cloudfoundry.org/devguide/services/service-keys.html#delete) (you can create another, and it will have a fresh set of credentials). Each service key that you bind to your instance creates a separate identity provider with different credentials; you can create as many service keys per instance as you like. <!-- this advice should match on /docs/services/cloud-gov-service-account/ + /docs/services/cloud-gov-identity-provider/ -->
-
-By default, identity provider service instances use the `openid` scope. You can request custom scopes using the `scopes` option:
-
-```bash
-cf create-service-key my-uaa-client my-service-key -c '{"redirect_uri": ["https://my.app.cloud.gov"], "scopes": ["openid", "cloud_controller.read"]}'
-```
 
 ### If you can't find your service keys
 
