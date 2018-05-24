@@ -3,6 +3,8 @@ menu:
   docs:
     parent: design
 layout: ops
+
+title: Secrets Management
 ---
 
 * Problems with the status quo
