@@ -9,11 +9,11 @@ title: Restoring RDS
 
 ## Introduction
 
-Many of the major services for the Cloud platform are backed by Postgres databases provided by RDS.  In the case of outages or corruption, it is imperative an operator be able to quickly find the affected database and restore it from a snapshot if possible.  These instructions are adapted from the official RDS documentation for our specific platform.
+Many of the major services for the Cloud platform are backed by Postgres databases provided by RDS.  In the case of outages or corruption, it is imperative an operator be able to quickly find the affected database and restore it from a snapshot if possible.  These instructions are augment the documenation from the official RDS documentation.
 
 ### Find database identifier
 
-If the database is a tenant application or any other CloudFoundry hosted application, coordinate with tenant to learn the applications Organization and Space.  Then perform the following:
+If the database is a tenant application or any other CloudFoundry hosted application, coordinate with the tenant to acquire the applications Organization and Space.  Then perform the following:
 
 ```sh
 cf target -s SPACE -o ORGANIZATION
@@ -25,7 +25,7 @@ Then we just need to print to console environment variables for the affected app
 cf env APP
 ```
 
-Within the resulting JSON find the "host" name within the credentials map.  This wil be the database identifier needed below for restoration
+Within the resulting JSON find the "host" name within the credentials map.  This will be the database identifier needed below for restoration.
 
 
 If the restore is a Concourse application, we need to glean the database information from the Terraform state file.  This can be found in S3:
@@ -47,3 +47,9 @@ This process is exactly the same for BOSH, but just grep for `bosh_rds_host_curr
 NOTE: These values can also be found via perusing the AWS RDS console.  This hastens that process.
 
 #### Restore the database
+
+Refer to the [RDS documentation] (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RestoreFromSnapshot.html) for restoring a database.
+
+For the step that specifies choosing the database to restore, this database will be the respective database we found in the steps above.
+
+Once these steps are complete, notify the tenant if this was a tenant request.  If this was a core service database, verify that the database updated for that service.  

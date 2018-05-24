@@ -131,7 +131,7 @@ In case of a **significant** disruption, after receiving approval from our Autho
 If all AWS regions are disrupted, Cloud Operations will deploy the system to another BOSH-supported IaaS provider (such as Microsoft Azure).
 
 ### RDS
-The Cloud platforms major services (CloudFoundry, BOSH, Concourse, and UAA) rely on databases provided by RDS.  In case of corruption or an outage, follow the steps outlined 
+The Cloud platforms major services (CloudFoundry, BOSH, Concourse, and UAA) rely on databases provided by RDS.  In case of corruption or an outage, follow the steps outlined [here]({{< ref "docs/ops/runbook/restoring-rds.md" >}})
 
 
 ## How this document works
