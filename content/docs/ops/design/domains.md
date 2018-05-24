@@ -3,6 +3,8 @@ menu:
   docs:
     parent: design
 layout: ops
+
+title: Custom Domains Support
 ---
 
 Production applications typically require custom domains, so that they can be reached at my-app.my-agency.gov rather than my-app.app.cloud.gov. We've used several different approaches for this problem, and considered even more approaches. For historical context, this document outlines a range of approaches, along with pros and cons.

@@ -92,3 +92,7 @@ publishdir = "public"
     name = "Plans and policies"
     identifier = "policies"
     parent = "ops"
+[[menu.docs]]
+    name = "Design considerations"
+    identifier = "design"
+    parent = "ops"
