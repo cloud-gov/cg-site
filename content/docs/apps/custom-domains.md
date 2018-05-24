@@ -7,7 +7,7 @@ title: Custom domains
 By default, your application will be accessible via a subdomain of `app.cloud.gov`. To make your application accessible via your own domain, you need to create entries in your DNS system and configure cloud.gov.
 
 ## How to set up a custom domain
-To make your app accessible via your custom domain name, use the [CDN service]({{< relref "docs/services/cdn-route.md" >}}). That page provides instructions for the DNS entries you need to create in your DNS system.
+To make your app accessible via your custom domain name, use the [custom domain service]({{< relref "docs/services/custom-domains.md" >}}) or the [CDN service]({{< relref "docs/services/cdn-route.md" >}}) (which provides both custom domain support and caching for your application). Those pages provide instructions for the DNS entries you need to create in your DNS system.
 
 See [IPv6, HTTPS, and DNSSEC]({{< relref "docs/compliance/domain-standards.md" >}}) for guidance on complying with relevant federal standards and recommendations.
 
