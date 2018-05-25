@@ -18,23 +18,14 @@ and restarted.
 The secrets are all located in the `production-postfix.yml` file.  All operations
 described here are to be done on the data in that file.
 
-## Rotate TLS Certificates
+## Rotate TLS Certificates and SASL credential
 The TLS certs from the
 [Postfix Deployment Pipeline](https://github.com/18F/cg-deploy-postfix/blob/master/bosh/secrets.example.yml)
 can be rotated using the `bosh int` command.
 
-1. Delete the `postfix_ca` and `postfix_ssl` sections in the `production-postfix.yml` file.
+1. Delete the `postfix_ca`, `postfix_ssl`, and `cloudgov_pw` sections in the `production-postfix.yml` file.
 1. `bosh int bosh/manifest.yml --vars-store /tmp/production-postfix.yml > /dev/null`
-1. Make sure the `postfix_ca` and `postfix_ssl` sections were regenerated.
-
-## Rotate SASL Credentials
-Rotate the SASL credentials from the
-[Postfix Deployment Pipeline](https://github.com/18F/cg-deploy-postfix/blob/master/secrets.example.yml)
-by generating a new password as needed and place under `postfix_sasl_users`:
-
-```sh
-openssl rand 48 -base64
-```
+1. Make sure the `postfix_ca` and `postfix_ssl` sections, as well as `cloudgov_pw` were regenerated.
 
 ## Rotate DKIM key
 This procedure is based on this document:  https://wiki.debian.org/opendkim
