@@ -73,6 +73,7 @@ resources:
   source:
     repo: {{cg-site-git-repo}}
     access_token: {{status-access-token}}
+    disable_forks: true
     every: true
 
 - name: cloud-gov-production
