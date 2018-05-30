@@ -88,7 +88,7 @@ Then you'll need to delete the existing service key, recreate it, and update the
 ```
 cf delete-service-key my-service-account my-service-key
 cf create-service-key my-service-account my-service-key
-cf service-key my-service-account my-service-account
+cf service-key my-service-account my-service-key
 ```
 
 The last command will return the service account username/password pair. These steps can be used at any time to update/rotate credentials for service accounts.
