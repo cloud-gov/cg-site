@@ -48,7 +48,7 @@ NOTE: These values can also be found in the AWS RDS console.  This can be faster
 
 #### Restore the database
 
-Refer to the [RDS documentation] (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RestoreFromSnapshot.html) for restoring a database.
+Refer to the [RDS documentation](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RestoreFromSnapshot.html) for restoring a database.
 
 For the step that specifies choosing the database to restore, this database will be the respective database we found in the steps above.
 
