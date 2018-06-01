@@ -20,11 +20,11 @@ Plan Name | Description | Software Version | Price
 `large-psql`             | Dedicated large RDS PostgreSQL DB instance                                   | 9.6.3 | Will be paid per hour + storage
 `large-psql-redundant`   | Dedicated redundant large RDS PostgreSQL DB instance                         | 9.6.3 | Will be paid per hour + storage
 `shared-mysql`           | Shared MySQL database for prototyping (no sensitive or production data)      | 5.6.27 | Free
-`medium-mysql`           | Dedicated medium RDS MySQL DB instance                                       | 5.6.35 | Will be paid per hour + storage
-`medium-mysql-redundant` | Dedicated redundant medium RDS MySQL DB instance                             | 5.6.35 | Will be paid per hour + storage
-`large-mysql`            | Dedicated large RDS MySQL DB instance                                        | 5.6.35 | Will be paid per hour + storage
-`large-mysql-redundant`  | Dedicated redundant large RDS MySQL DB instance                              | 5.6.35 | Will be paid per hour + storage
-`medium-oracle-se2`      | Dedicated medium RDS Oracle SE2 DB | 12.0.1.2.v9 | Will be paid per hour + storage
+`medium-mysql`           | Dedicated medium RDS MySQL DB instance                                       | 5.7.21 | Will be paid per hour + storage
+`medium-mysql-redundant` | Dedicated redundant medium RDS MySQL DB instance                             | 5.7.21 | Will be paid per hour + storage
+`large-mysql`            | Dedicated large RDS MySQL DB instance                                        | 5.7.21 | Will be paid per hour + storage
+`large-mysql-redundant`  | Dedicated redundant large RDS MySQL DB instance                              | 5.7.21 | Will be paid per hour + storage
+`medium-oracle-se2`      | Dedicated medium RDS Oracle SE2 DB | 12.0.1.2.v11 | Will be paid per hour + storage
 
 ### Pricing
 Shared instances are free. Simple and redundant instances will have pricing per hour and per GB per month. [Learn more about managed service pricing.]({{< relref "overview/pricing/managed-services-cost.md" >}})
@@ -148,7 +148,7 @@ $ pg_restore --clean --no-owner --no-acl --dbname={database name} backup.pg
 
 ## Backups
 
-For shared plans (`shared-psql` and `shared-mysql`), RDS does not back up your data. For dedicated plans, RDS automatically retains backups for one day, and you can [email support](mailto:cloud-gov-support@gsa.gov) to access that backup if you need to. You can also create manual backups using the [export process](#export) described above. In general, you are responsible for making sure that your backup procedures are adequate for your needs; see CP-9 in the cloud.gov SSP.
+For shared plans (`shared-psql` and `shared-mysql`), RDS does not back up your data. For dedicated plans, RDS automatically retains backups for 14 days, and you can [email support](mailto:cloud-gov-support@gsa.gov) to access that backup if you need to. You can also create manual backups using the [export process](#export) described above. In general, you are responsible for making sure that your backup procedures are adequate for your needs; see CP-9 in the cloud.gov SSP.
 
 ## Encryption
 
