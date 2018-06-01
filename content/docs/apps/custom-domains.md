@@ -36,7 +36,7 @@ end
 
 Public((Public user)) -->|HTTPS| A-DNS(Agency DNS: appB.agency.gov)
 Public((Public user)) -->|HTTPS| CG-DNS(cloud.gov DNS: appA_agency.app.cloud.gov)
-A-DNS -->|HTTPS| CDN(CDN)
+A-DNS -->|HTTPS| CDN("Custom domain service")
 CG-DNS -->Router
 CDN -->Router
 Router -->AppA
