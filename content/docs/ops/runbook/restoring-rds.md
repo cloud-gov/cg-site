@@ -8,7 +8,7 @@ title: Restoring RDS
 ---
 
 ## Introduction
-Many of the major services for the cloud.gov platform are backed by Postgres databases provided by RDS.  In the case of outages or corruption, it is imperative an operator be able to quickly find the affected database and restore it from a snapshot if possible.  These instructions are augment the documenation from the official RDS documentation.
+Many of the major services for the cloud.gov platform are backed by Postgres databases provided by RDS.  In the case of outages or corruption, it is imperative an operator be able to quickly find the affected database and restore it from a snapshot if possible.  These instructions augment the official RDS documentation.
 
 ## Find database identifier
 
@@ -42,7 +42,7 @@ To retrieve the RDS instance provisioned for `staging concourse`:
 cat tmp/sample.file | grep staging_concourse_rds_host | less
 ```
 
-The value displayed is the database to restore.  To restore the BOSH instnace grep for `bosh_rds_host_curr`.
+The value displayed is the database to restore.  To restore the BOSH instance grep for `bosh_rds_host_curr`.
 
 NOTE: These values can also be found in the AWS RDS console.  This can be faster.
 
@@ -60,7 +60,7 @@ cf create-user-provided-service database-restore -p '{"db_name": "DATABASE_NAME"
 The methods described at [Relational Databases](https://cloud.gov/docs/services/relational-database/) can be used to connect to the restoration copy and restore data as needed.
 
 ### Bosh + Concourse Database Restore Procedure
-For these deployments we must performa a Terraform import to restore the database.  First follow the steps above to restore the database in question.
+For these deployments we must perform a Terraform import to restore the database.  First follow the steps above to restore the database in question.
 
 Now run `terraform init` and `terraform import` in the directory for the respective Terraform module.  For development Bosh, eg run these commands:
 
