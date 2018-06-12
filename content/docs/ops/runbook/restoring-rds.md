@@ -73,7 +73,7 @@ terraform import module.stack.module.base.module.rds.aws_db_instance.rds_databas
 
 where my-restored-db-id is the database instance defined during the restore procedure.
 
-Now run the plan job pipeline in concourse for the respective database. If Concourse is not available (due to the DB being unavailable) you will need to run `terraform plan` from the command line.
+Now run the plan job pipeline in concourse for the respective database. If Concourse is not available you will need to run `terraform plan` and `terraform apply` from the command-line (use the `terraform-apply.sh` script in the cg-pipeline-tasks [repository](https://github.com/18F/cg-pipeline-tasks.git) for these commands).
 
 If the diff from Terraform shows no changes for the plan, you are now safe to apply the changes.
 
