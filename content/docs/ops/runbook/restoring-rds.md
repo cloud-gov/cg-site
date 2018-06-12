@@ -68,12 +68,13 @@ Now run `terraform init` and `terraform import` in the directory for the respect
 cd terraform/stacks/main
 terraform init -backend=true -backend-config=encrypt=true -backend-config=bucket=terraform-state -backend-config=key=development/terraform.tfstate
 terraform state rm module.stack.module.base.module.rds.aws_db_instance.rds_database
- terraform import module.stack.module.base.module.rds.aws_db_instance.rds_database my-restored-db-id
+terraform import module.stack.module.base.module.rds.aws_db_instance.rds_database my-restored-db-id
 ```
+
 where my-restored-db-id is the database instance defined during the restore procedure.
 
-Now run the plan job pipeline in concourse for the respective database,if Concourse is not available (due to DB being unavailable) you will have to run `terraform plan` from the command line.
+Now run the plan job pipeline in concourse for the respective database. If Concourse is not available (due to the DB being unavailable) you will need to run `terraform plan` from the command line.
 
-If the diff from Terraform shows know changes for the plan, you are now safe to apply the changes.
+If the diff from Terraform shows no changes for the plan, you are now safe to apply the changes.
 
 Now redeploy the respective application and verify proper operation.
