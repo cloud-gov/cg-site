@@ -58,3 +58,22 @@ cf create-user-provided-service database-restore -p '{"db_name": "DATABASE_NAME"
 ```
 
 The methods described at [Relational Databases](https://cloud.gov/docs/services/relational-database/) can be used to connect to the restoration copy and restore data as needed.
+
+### Bosh + Concourse Database Restore Procedure
+For these deployments we must performa a Terraform import to restore the database.  First follow the steps above to restore the database in question.
+
+Now run `terraform init` and `terraform import` in the directory for the respective Terraform module.  For development Bosh, eg run these commands:
+
+```sh
+cd terraform/stacks/main
+terraform init -backend=true -backend-config=encrypt=true -backend-config=bucket=terraform-state -backend-config=key=development/terraform.tfstate
+terraform state rm module.stack.module.base.module.rds.aws_db_instance.rds_database
+ terraform import module.stack.module.base.module.rds.aws_db_instance.rds_database my-restored-db-id
+```
+where my-restored-db-id is the database instance defined during the restore procedure.
+
+Now run the plan job pipeline in concourse for the respective database,if Concourse is not available (due to DB being unavailable) you will have to run `terraform plan` from the command line.
+
+If the diff from Terraform shows know changes for the plan, you are now safe to apply the changes.
+
+Now redeploy the respective application and verify proper operation.
