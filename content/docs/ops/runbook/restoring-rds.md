@@ -59,7 +59,7 @@ cf create-user-provided-service database-restore -p '{"db_name": "DATABASE_NAME"
 
 The methods described at [Relational Databases](https://cloud.gov/docs/services/relational-database/) can be used to connect to the restoration copy and restore data as needed.
 
-### Bosh + Concourse Database Restore Procedure
+### Platform Applications Database Restore Procedure
 For these deployments we must perform a Terraform import to restore the database.  First follow the steps above to restore the database in question.
 
 Now run `terraform init` and `terraform import` in the directory for the respective Terraform module.  For development Bosh, eg run these commands:
