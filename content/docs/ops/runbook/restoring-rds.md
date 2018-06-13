@@ -14,10 +14,11 @@ Many of the major services for the cloud.gov platform are backed by Postgres dat
 
 ### CloudFoundry Applications
 Coordinate with the tenant, informing them that a restore is going to take place:
+
 1. Shared database plans do not include backups and restores
-2. Dedicated RDS plans include 1 day of backups
-3. The restore will result in data lost after the point of the most recent snapshot
-4. This restore needs to be initiated before the day passes, otherwise new snapshots will be written
+1. Dedicated RDS plans include 1 day of backups
+1. The restore will result in data lost after the point of the most recent snapshot
+1. This restore needs to be initiated before the day passes, otherwise new snapshots will be written
 
 Once the tenant consents, identify their Organization and Space.  Then perform the following:
 ```sh
@@ -53,10 +54,10 @@ For the step that specifies choosing the database to restore, this database will
 
 Take note to carefully set options matching the configuration of the target database.  Specifically pay attention to these options:
 
-1) Database publicly accessible from the internet (yes/no)
-2) Instance size (m4_large, etc.)
-3) Multi-zone (yes/no)
-4) VPC (dev, staging, etc.)
+1. Database publicly accessible from the internet (yes/no)
+1. Instance size (m4_large, etc.)
+1. Multi-zone (yes/no)
+1. VPC (dev, staging, etc.)
 
 After the database is finished restoring you can then set the VPC security group, ensure it matches the group of the previous configuration.  To do do this click 'Modify' for the database and find the entry in the form to set the security group (there will be a drop down of all groups to choose from).
 
