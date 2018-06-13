@@ -56,6 +56,7 @@ Take note to carefully set options matching the configuration of the target data
 1) Database publicly accessible from the internet (yes/no)
 2) Instance size (m4_large, etc.)
 3) Multi-zone (yes/no)
+4) VPC (dev, staging, etc.)
 
 After the database is finished restoring you can then set the VPC security group, ensure it matches the group of the previous configuration.  To do do this click 'Modify' for the database and find the entry in the form to set the security group (there will be a drop down of all groups to choose from).
 
