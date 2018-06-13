@@ -51,6 +51,15 @@ Refer to the [RDS documentation](https://docs.aws.amazon.com/AmazonRDS/latest/Us
 
 For the step that specifies choosing the database to restore, this database will be the respective database we found in the steps above.
 
+Take note to carefully set options matching the configuration of the target database.  Specifically pay attention to these options:
+
+1) Database publicly accessible from the internet (yes/no)
+2) Instance size (m4_large, etc.)
+3) Multi-zone (yes/no)
+
+After the database is finished restoring you can then set the security group, ensure it matches the group of the previous configuration.  To do do this click 'Modify' for the database and find the entry in the form to set the security group (there will be a drop down of all groups to choose from).
+
+
 ### CloudFoundry Applications
 The database restore process will create a new instance with the same credentials.  Create a user provided service with the credentials:
 ```sh
@@ -71,10 +80,10 @@ terraform state rm module.stack.module.base.module.rds.aws_db_instance.rds_datab
 terraform import module.stack.module.base.module.rds.aws_db_instance.rds_database my-restored-db-id
 ```
 
-where my-restored-db-id is the database instance defined during the restore procedure.
+where `my-restored-db-id` is the database instance defined during the restore procedure.
 
 Now run the plan job pipeline in concourse for the respective database. If Concourse is not available you will need to run `terraform plan` and `terraform apply` from the command-line (use the `terraform-apply.sh` script in the cg-pipeline-tasks [repository](https://github.com/18F/cg-pipeline-tasks.git) for these commands).
 
-If the diff from Terraform shows no changes for the plan, you are now safe to apply the changes.
+If the diff from Terraform shows no changes for the plan, you are now safe to apply the changes by running the bootstrap pipeline for the proper environment.  The diff will likely show that some options are changed (parameter groups, password, etc.), terraform makes a best effort to approximate the effect of the plan.  Once apply is ran, these options will be set properly, verify this in the output in the `create-update-ENVIRONMENT` job within the bootstrap pipeline.
 
 Now redeploy the respective application and verify proper operation.
