@@ -57,16 +57,7 @@ Take note to carefully set options matching the configuration of the target data
 2) Instance size (m4_large, etc.)
 3) Multi-zone (yes/no)
 
-After the database is finished restoring you can then set the security group, ensure it matches the group of the previous configuration.  To do do this click 'Modify' for the database and find the entry in the form to set the security group (there will be a drop down of all groups to choose from).
-
-
-### CloudFoundry Applications
-The database restore process will create a new instance with the same credentials.  Create a user provided service with the credentials:
-```sh
-cf create-user-provided-service database-restore -p '{"db_name": "DATABASE_NAME", "host": "DATABASE_HOST", "password":"DATABASE_PASSWORD", "port": "5432", "uri": "postgres://DATABASE_USERNAME:DATABASE_PASSWORD@DATABASE_HOST:5432/DATABASE_NAME", "username": "DATABASE_USERNAME"}'
-```
-
-The methods described at [Relational Databases](https://cloud.gov/docs/services/relational-database/) can be used to connect to the restoration copy and restore data as needed.
+After the database is finished restoring you can then set the VPC security group, ensure it matches the group of the previous configuration.  To do do this click 'Modify' for the database and find the entry in the form to set the security group (there will be a drop down of all groups to choose from).
 
 ### Platform Applications Database Restore Procedure
 For these deployments we must perform a Terraform import to restore the database.  First follow the steps above to restore the database in question.
