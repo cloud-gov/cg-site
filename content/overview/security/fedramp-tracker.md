@@ -33,6 +33,8 @@ Here's how it works: Every "moderate" impact federal system is required to accou
 
 *By reducing the overhead of the approval process, cloud.gov allows you to focus on reviewing the parts of your system specific to your agency's mission.*
 
+## Documents for the ATO process
+
 If you want to use cloud.gov, [**request the P-ATO documentation package from FedRAMP**](https://s3.amazonaws.com/sitesusa/wp-content/uploads/sites/482/2015/03/FedRAMP-Package-Request-Form_V4_06192014.pdf) (the Package ID for that form is F1607067912). You can also view the [FedRAMP Marketplace page for cloud.gov](https://marketplace.fedramp.gov/#/product/18f-cloudgov?sort=productName).
 
 The [**Control Implementation Summary + Customer Responsibility Matrix (.xlsx)**](/resources/cloud.gov-CIS-Worksheet.xlsx) is a quick summary of each Low and Moderate security control and whether it is handled by cloud.gov, shared responsibility, or customer responsibility.
