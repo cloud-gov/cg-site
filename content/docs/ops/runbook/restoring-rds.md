@@ -15,7 +15,7 @@ Many of the major services for the cloud.gov platform are backed by Postgres dat
 Coordinate with the tenant, informing them that a restore is going to take place:
 
 1. Shared database plans do not include backups and restores.
-1. Dedicated RDS plans include one day of backups.
+1. Dedicated RDS plans include backups as described in the [user documentation]({{< relref "docs/services/relational-database.md#backups" >}}).
 1. The restore will result in data lost after the point of the most recent snapshot.
 1. This restore needs to be initiated before the day passes, otherwise new snapshots will be written.
 
