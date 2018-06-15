@@ -148,7 +148,7 @@ $ pg_restore --clean --no-owner --no-acl --dbname={database name} backup.pg
 
 ## Backups
 
-For shared plans (`shared-psql` and `shared-mysql`), RDS does not back up your data. For dedicated plans, RDS automatically retains backups for 14 days, and you can [email support](mailto:cloud-gov-support@gsa.gov) to access that backup if you need to. You can also create manual backups using the [export process](#export) described above. In general, you are responsible for making sure that your backup procedures are adequate for your needs; see CP-9 in the cloud.gov SSP.
+For shared plans (`shared-psql` and `shared-mysql`), RDS does not back up your data. For dedicated plans, RDS automatically retains daily backups for 14 days, and you can [email support](mailto:cloud-gov-support@gsa.gov) to access that backup if you need to. You can also create manual backups using the [export process](#export) described above. In general, you are responsible for making sure that your backup procedures are adequate for your needs; see CP-9 in the cloud.gov SSP.
 
 ## Encryption
 
