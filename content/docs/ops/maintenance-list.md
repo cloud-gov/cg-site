@@ -101,13 +101,22 @@ Be prepared to represent support needs at the next grooming meeting to ensure
 that cards to fix alerts are prioritized properly.
 
 ## Review AWS CloudTrail events
+### Automatic Process
+
+Use the [cloudtrail-check.sh](https://raw.githubusercontent.com/18F/cg-scripts/cloudtrail-check.sh)
+script to check for anomalies.  You will need to make sure that you have
+[AWS Vault](https://cloud.gov/docs/ops/secrets/#install-aws-vault-for-aws-credentials) working
+for this script to work.
+
+### Manual Process
 
 > [Get familiar with the documentation for CloudTrail logs](http://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html).
 
 Use the [AWS Console](http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-console.html)
 to [review API activity history](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html)
 for the _EventNames_ listed below.
-Or, use the AWS CLI with the appropriate `$event_name`, and parse the emitted JSON:
+
+You could also try 
 ```sh
 aws cloudtrail lookup-events --lookup-attributes AttributeKey=EventName,AttributeValue=$event_name
 ```
