@@ -115,8 +115,7 @@ for this script to work.
 Use the [AWS Console](http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-console.html)
 to [review API activity history](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html)
 for the _EventNames_ listed below.
-
-You could also try 
+Or, use the AWS CLI with the appropriate `$event_name`, and parse the emitted JSON:
 ```sh
 aws cloudtrail lookup-events --lookup-attributes AttributeKey=EventName,AttributeValue=$event_name
 ```
