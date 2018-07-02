@@ -132,10 +132,10 @@ To remove teammates from your organization, run the following:
     ```sh
     cf unset-space-role <email> <org> <space> <role>
     ```
-5. Find the org GUID, by running:
+5. Find the ORG_GUID, by running:
 
     ```sh
-    cf org --guid
+    cf org <org> --guid
     ```
 6. Use the API to remove the user from the org, by running:
 
