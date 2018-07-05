@@ -99,20 +99,20 @@ access token. Here is where things get fun.
 #### Logging users out of UAA and your application
 
 cloud.gov's UAA server provides a logout endpoint to terminate the user session.
-The steps for performing this logout are provided below.
+To implement this logout:
 
 - Provide a local logout feature specific to your application and use that to
-  clear state in your application
-- On success for that logout, redirect to the UAA server logout endpoint
+  clear state in your application.
+- On success for that logout, redirect to the UAA server logout endpoint.
 - Provide a `redirect` link and the `client_id` for your application so that
-  user's come back to a familiar place when logged out.
+  users come back to a familiar place when logged out.
 
-Please include the `redirect` link when you register your [cloud.gov identity
+Include the `redirect` link when you register your [cloud.gov identity
 provider]({{< relref "docs/services/cloud-gov-identity-provider.md" >}})
 service. It's common for this redirect link to be your application's URL with a
 path of `/logout`.
 
-The full URL parameters and constraints can be found at the [latest UAA API
+The full URL parameters and constraints are in the [latest UAA API
 documentation](https://docs.cloudfoundry.org/api/uaa/) under **Session
 Management** > **Logout.do**.
 
