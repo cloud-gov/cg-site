@@ -45,7 +45,7 @@ To link to another page within cg-site, use `relref` to create [relative links](
 To add a diagram to a documentation page, use the `{{< diagrams
 id-prefix="title-for-diagram" >}}` shortcode to create them inline for the
 documentation pages. Use the [Mermaid language syntax](https://github.com/knsv/mermaid)
-to create diagrams in the same way diagrams are made for [cg-diagrams](https://github.com/18F/cg-diagrams). 
+to create diagrams in the same way diagrams are made for [cg-diagrams](https://github.com/18F/cg-diagrams).
 Try the [Mermaid live editor](https://mermaidjs.github.io/mermaid-live-editor/)!
 
 > If you find you have a need to create these diagrams on pages outside of the
@@ -104,11 +104,11 @@ We use [its default Bing indexing](http://search.digitalgov.gov/manual/content-o
 This site uses a shared cloud.gov style, [cg-style](https://github.com/18F/cg-style). This means any styling code has to be developed in *cg-style*.
 
 1. Download or clone the *cg-style* repository, `git clone git@github.com:18F/cg-style.git`
-2. Run `npm link` in *cg-style*.
-3. Run the watching build task in the *cg-style* repository: `npm run watch`
-4. Run `npm link cloudgov-style` in *cg-site*.
+2. Open a new terminal window or tab pointing to *cg-style*. Run `npm link` in *cg-style*.
+3. Run the watching build task in the *cg-style* repository: `npm run watch`. The task will not "finish"
+4. Open a new terminal window or tab pointing to *cg-site*. Run `npm link cloudgov-style` in *cg-site*.
 5. Run `npm install` in the *cg-site* repository.
-6. Run the watching build task in *cg-site* repository: `npm run watch`
+6. Run the watching build task in *cg-site* repository: `npm run watch` The task will not "finish"
 7. Edit code in the *cg-style* directory and they will propagate down to *cg-site*
 
 ## Acknowledgment

@@ -26,13 +26,13 @@ Examples:
 * AWS or another service we depend on is causing problems for our users.
 * Something unexpected went wrong during scheduled maintenance, and it impacts users.
 
-## How soon to post to Status Page
+## How soon to post to [Status Page](http://cloudgov.statuspage.io/)
 
 As soon as possible. Goal: at most 15 minutes after the first cloud.gov team member notices the problem.
 
 ## Who is responsible for posting and updating
 
-* First person on the cloud.gov team who notices a problem is responsible for finding the right people to address it (can include themself), including finding a person with Status Page access to post about it (can include themself).
+* First person on the cloud.gov team who notices a problem is responsible for finding the right people to address it (can include themself), including finding a person with [Status Page](http://cloudgov.statuspage.io/) access to post about it (can include themself).
 * Platform squad person on support rotation should be the first person to begin addressing the technical issue (and the first person for non-platform squad people to ping for help with this). See the platform squad channel topic for the current person.
 * A person should explicitly say “I'm taking care of Status Page for this” and continue being responsible for updates until they explicitly hand off that responsibility.
 
