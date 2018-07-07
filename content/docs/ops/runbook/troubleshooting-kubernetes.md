@@ -47,6 +47,17 @@ For pods that are part of persistent set, like a `statefulset`, `deployment`, `d
 kubectl --namespace :namespace delete pod :pod-name
 ```
 
+##### Pod is in a CrashLoopBackoff state
+
+If you find that the pod logs are saying that it is out of disk space, follow
+this course of action:
+
+1. Search in the AWS console for the first part of the pod-name, e.g.
+   `xc956b1d94dd64`.
+1. Go to console, search under EC2 > Volumes and select the volume and manually increase size
+1. Find the `minion` instance, run `lsblk` and then `resize2fs /that/volume`
+1. Delete pods
+
 #### Manually pulling an image from Docker
 
 By default, Kubernetes does not pull docker images that already exist on the
