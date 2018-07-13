@@ -3,7 +3,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ if .Params.title }}{{ .Params.title }} {{ else }}{{ .Title }}{{ end }}</title>
-  <meta name="description" content="{{ .Description }}">
+  <meta name="description" content="{{.Description | default .Site.Params.description}}">
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ if .Title }}{{ .Title }}{{ else }}{{ .Params.title }}{{ end }}" />
   <meta name="twitter:title" content="{{ if .Title }}{{ .Title }}{{ else }}{{ .Params.title }}{{ end }}">
@@ -11,8 +11,8 @@
   <meta name="twitter:card" content="summary_large_image">
   {{ if .Params.feature_image }}<meta property="og:image" content="{{ .Params.feature_image}}">{{end}}
   {{ if .Params.feature_image }}<meta name="twitter:image" content="{{ .Params.feature_image}}">{{ end }}
-  <meta property="og:description" content="{{ .Description }}">
-  <meta name="twitter:description" content="{{ .Description }}">
+  <meta property="og:description" content="{{.Description | default .Site.Params.description}}">
+  <meta name="twitter:description" content="{{.Description | default .Site.Params.description}}">
 
   <link rel="stylesheet" href="/assets/css/cloudgov-style-min.css">
   <link rel="stylesheet" href="/assets/css/main.css" >

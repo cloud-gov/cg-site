@@ -6,7 +6,7 @@ publishdir = "public"
 
 [params]
   email = "cloud-gov-inquiries@gsa.gov"
-  description = "cloud.gov documentation"
+  description = "Expedite your agency’s path to a secure and compliant cloud. cloud.gov provides an application environment that enables rapid deployment and ATO assessment for modern web applications."
   author = "18f"
 
   [params.analytics]
