@@ -158,6 +158,56 @@ Every RDS instance configured through cloud.gov is [encrypted at rest](https://d
 
 You can rotate credentials by creating a new instance and [deleting the existing instance](https://cli.cloudfoundry.org/en-US/cf/delete-service.html). If this is not an option, email [cloud.gov support](mailto:cloud-gov-support@gsa.gov) to request rotating the credentials manually.
 
+## Working with OracleDB
+
+Since Oracle is not open-source there are fewer resources available online to get started working with OracleDB and Cloud Foundry. We provide a few tips here.
+
+
+### Demo with Spring Music and Oracle
+
+To demonstrate the core Cloud Foundry / OracleDB functionality, we'll start by deploying the 
+[Spring Music app](https://github.com/cloudfoundry-samples/spring-music). 
+
+First, though, one needs the proprietary Oracle database drivers.
+Visit the Oracle drivers' site at http://www.oracle.com/technetwork/database/application-development/jdbc/downloads/index.html and download the `ojdbc8.jar` from the latest available release. You will need to have a valid Oracle profile account for the download. 
+
+Then, clone the repository and make a `libs/` directory:
+
+```bash
+git clone https://github.com/cloudfoundry-samples/spring-music
+cd spring-music
+mkdir libs/
+```
+
+Copy the downloaded `ojdbc8.jar` to the `libs/` directory of `spring-music`. 
+
+Edit `build.grade` to uncomment the OJDBC compilation, as with either of the following commands:
+
+Powershell:
+
+```powershell
+(Get-Content ./build.gradle).replace("// compile files('libs/ojdbc8.jar')","compile files('libs/ojdbc8.jar')") | Set-Content ./build.gradle
+```
+
+*nix Shells:
+
+```bash
+sed -i -e "s|// compile files('libs/ojdbc8.jar')|compile files('libs/ojdbc8.jar')|" build.gradle
+```
+
+After installing the 'cf' [command-line interface for Cloud Foundry](http://docs.cloudfoundry.org/cf-cli/), and logging in to cloud.gov, `cf login --sso -a https://api.fr.cloud.gov`, the application can be built and pushed using these commands:
+
+```bash
+cf create-service aws-rds medium-oracle-se2 spring-oracle
+./gradlew clean assemble
+cf push --no-start
+cf bind-service spring-music spring-oracle
+cf restart spring-music
+```
+
+When the restart completes, you can visit the app and view in the upper-right-hand `i` button that it's now using an OracleDB, or view the `/appinfo` path, as in: `curl https://spring-music-ADJECTIVE-ANIMAL.app.cloud.gov/appinfo`
+
+
 ## Version information
 
 The software versions listed in the table above are for new instances of those plans.
