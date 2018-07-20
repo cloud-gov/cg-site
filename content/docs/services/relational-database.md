@@ -245,6 +245,48 @@ cf restart spring-music
 
 When the restart completes, you can visit the app and view in the upper-right-hand `i` button that it's now using an OracleDB, or view the `/appinfo` path, as in: `curl https://spring-music-ADJECTIVE-ANIMAL.app.cloud.gov/appinfo`
 
+### Connecting to Oracle
+
+Install `instantclient-basiclite` and `instantclient-sqlplus` for your operating system.
+
+Use `cf env spring-music` to find database connection information under `System-Provided -> VCAP_SERVICES -> aws-rds`. E.g.:
+
+```
+> cf env spring-music
+Getting env variables for app spring-music in org test-org / space pdb-noaa as peter.burkholder@gsa.gov...
+OK
+
+System-Provided:
+{
+ "VCAP_SERVICES": {
+  "aws-rds": [
+   {
+    "binding_name": null,
+    "credentials": {
+     "db_name": "ORCL",
+     "host": "cg-aws-broker-prod.RANDOMSTRING.us-gov-west-1.rds.amazonaws.com",
+     "password": "secretpassword",
+     "port": "1521",
+     "uri": "oracle://random-username:secretpassword@cg-aws-broker-prodRANDOMSTRING.us-gov-west-1.rds.amazonaws.com:1521/ORCL",
+     "username": "random-username"
+    },
+...
+```
+
+Make an SSH tunnel from your workstation to Cloud Foundry to the OracleDB using the `host:` value, e.g. using port `15210` on the localhost:
+
+```
+cf ssh -N -L 15210:cg-aws-broker-prod.RANDOMSTRING.us-gov-west-1.rds.amazonaws.com:1521 spring-music
+```
+
+Now connect using `sqlplus username/password@host:port/ORCL`, where host is `localhost` and `port` is the first part of the `-L` connection string above. e.g.:
+
+```
+./sqlplus random-username/password@localhost:15210/ORCL
+```
+
+Then you can use SQLPLUS commands like `SELECT table_name FROM user_tables;`
+
 
 ## Version information
 
