@@ -7,19 +7,73 @@ layout: ops
 title: Secrets Management
 ---
 
-* Problems with the status quo:
-    * Generation:
-        * We don't have an up-to-date list of secrets and how to generate them.
-        * Some secrets are generated via [scripts](https://github.com/18F/cg-secret-rotation), others by hand.
-    * Storage:
-        * We store secrets differently for BOSH and Concourse.
-        * We have to pull down secrets locally to update Concourse pipelines.
-        * Secrets are duplicated to multiple locations and have to be kept in-sync.
-* Goals:
-    * Single source of truth for each secret.
-    * BOSH and Concourse can read from same secret store.
-    * Secrets are programmatically generated where possible.
-    * Secrets are programmatically rotated where possible.
+## Problems with the status quo
+
+Some secrets are currently generated via [scripts][cg-secrets], others by hand.
+Operators also don't have an up-to-date list of secrets and how to generate
+them.
+
+For storage, operators store secrets for BOSH and Concourse as variable files.
+Operators pull down secrets from S3 locally to update Concourse pipelines.
+Operators also have Concourse pull down secrets as [pipeline tasks][cg-pipeline]
+to use with BOSH interpolate. Because of these manual processes, secrets are
+duplicated to multiple locations, e.g.  Concourse credential files and BOSH
+secrets, and have to be kept in-sync.
+
+[cg-pipeline]: https://github.com/18F/cg-pipeline-tasks
+[cg-secrets]: https://github.com/18F/cg-secret-rotation
+
+## Goals for secrets management
+
+Goals the cloud.gov team wants in a secrets management solution:
+
+* Single source of truth for each secret.
+* BOSH and Concourse can read from same secret store.
+* Secrets are programmatically generated where possible.
+* Secrets are programmatically rotated where possible.
+
+## Proposed Approach
+
+The proposed approach is it to use [CredHub][gh-credhub]. The cloud.gov team has
+several reasons to choose CredHub over other secrets management services.
+
+* Integrates with BOSH (via config server API) and Concourse.
+* Supports credential generation and rotation.
+* De-facto standard for Pivotal products.
+
+[gh-credhub]: https://github.com/cloudfoundry-incubator/credhub
+
+### Proposed Architecture
+
+There are three major architecture proposals that the cloud.gov operations team
+is considering. These architecture decisions are outlined below with pros and
+cons for each type of CredHub deployment strategy.
+
+#### BOSH and CredHub co-location
+
+This strategy co-locates a CredHub within the BOSH virtual machine per
+environment. This solution means that CredHub would have a single database
+that it would leverage to store its data.
+
+##### Pros
+
+* Co-located BOSH and CredHub
+* BOSH deployments within this director can read from CredHub.
+
+##### Cons
+
+* Co-location with BOSH would require maintenance of multiple CredHub
+  deployments and databases for each BOSH director the cloud.gov operations team
+  deploys
+
+#### CredHub high-availability deployment per VPC
+
+
+#### CredHub high-availability single deployment
+
+
+#### Concourse and CredHub co-location
+
 * Approach: CredHub
     * Integrates with BOSH (via config server API) and Concourse.
     * Supports credential generation and rotation.
