@@ -7,73 +7,19 @@ layout: ops
 title: Secrets Management
 ---
 
-## Problems with the status quo
-
-Some secrets are currently generated via [scripts][cg-secrets], others by hand.
-Operators also don't have an up-to-date list of secrets and how to generate
-them.
-
-For storage, operators store secrets for BOSH and Concourse as variable files.
-Operators pull down secrets from S3 locally to update Concourse pipelines.
-Operators also have Concourse pull down secrets as [pipeline tasks][cg-pipeline]
-to use with BOSH interpolate. Because of these manual processes, secrets are
-duplicated to multiple locations, e.g.  Concourse credential files and BOSH
-secrets, and have to be kept in-sync.
-
-[cg-pipeline]: https://github.com/18F/cg-pipeline-tasks
-[cg-secrets]: https://github.com/18F/cg-secret-rotation
-
-## Goals for secrets management
-
-Goals the cloud.gov team wants in a secrets management solution:
-
-* Single source of truth for each secret.
-* BOSH and Concourse can read from same secret store.
-* Secrets are programmatically generated where possible.
-* Secrets are programmatically rotated where possible.
-
-## Proposed Approach
-
-The proposed approach is it to use [CredHub][gh-credhub]. The cloud.gov team has
-several reasons to choose CredHub over other secrets management services.
-
-* Integrates with BOSH (via config server API) and Concourse.
-* Supports credential generation and rotation.
-* De-facto standard for Pivotal products.
-
-[gh-credhub]: https://github.com/cloudfoundry-incubator/credhub
-
-### Proposed Architecture
-
-There are three major architecture proposals that the cloud.gov operations team
-is considering. These architecture decisions are outlined below with pros and
-cons for each type of CredHub deployment strategy.
-
-#### BOSH and CredHub co-location
-
-This strategy co-locates a CredHub within the BOSH virtual machine per
-environment. This solution means that CredHub would have a single database
-that it would leverage to store its data.
-
-##### Pros
-
-* Co-located BOSH and CredHub
-* BOSH deployments within this director can read from CredHub.
-
-##### Cons
-
-* Co-location with BOSH would require maintenance of multiple CredHub
-  deployments and databases for each BOSH director the cloud.gov operations team
-  deploys
-
-#### CredHub high-availability deployment per VPC
-
-
-#### CredHub high-availability single deployment
-
-
-#### Concourse and CredHub co-location
-
+* Problems with the status quo:
+    * Generation:
+        * We don't have an up-to-date list of secrets and how to generate them.
+        * Some secrets are generated via [scripts](https://github.com/18F/cg-secret-rotation), others by hand.
+    * Storage:
+        * We store secrets differently for BOSH and Concourse.
+        * We have to pull down secrets locally to update Concourse pipelines.
+        * Secrets are duplicated to multiple locations and have to be kept in-sync.
+* Goals:
+    * Single source of truth for each secret.
+    * BOSH and Concourse can read from same secret store.
+    * Secrets are programmatically generated where possible.
+    * Secrets are programmatically rotated where possible.
 * Approach: CredHub
     * Integrates with BOSH (via config server API) and Concourse.
     * Supports credential generation and rotation.
@@ -100,10 +46,25 @@ that it would leverage to store its data.
                 would be secrets used to deploy CredHub during the first
                 deployment.
             * How to deploy services before CredHub exists?
-              * I'm (jcc) not sure what this question is asking.  But  if it's asking how do you do deploy something before its credentials exist in credhub -- if there is a variables block defined, Credhub will generate them.
+              
             * Copy creds from master-CredHub?
-    * Architecture:
-      * DEFINE IT HERE
+    * Architecture (Pros and Cons):
+      * Credhub per BOSH deployment (5 Credhubs--dev, stage, prod, tooling, master):
+            * Pros:
+                - Namespacing is simpler, less state to encode into Bosh deployments
+                - Risk of failure or comprise is distributed.
+                - It's a common pattern (especially in the exemplar of BUCC)
+                - If we ever choose to adopt BUCC (since many use it locally for development), this will offer the path of least resistance
+            * Cons:
+                - Maintenance heavy, five different servers to update/fail.
+                - Propogating common secrets
+                - Will require copying common creds across multiple environments
+      * Single HA Credhub for all deployments:
+            * Pros:
+                - One source of truth
+                - Easier to maintain
+            * Cons:
+                - It could be a single point of failure.
 
 
 * Links
@@ -120,8 +81,8 @@ We had a meeting on 5/21/2018. Some decisions we made:
 Generally everything else felt too big and scary and there are too many unknowns and tangled dependencies and tech debt to jump right on CredHub. So, we're going to do some smaller, more tractable stuff to detangle things first.
 
 * Proto-backlog:
-  * In order to have confidence that we've enumerated all BOSH creds, we want to convert all BOSH manifests to ops-file/var-file format (deploy-bosh is gross, many others are already done).
-  * In order to reduce the operator burden of manipulating BOSH secrets, we want to remove redundant encryption of BOSH secrets stemming from when we didn't have dedicated AWS accounts.
+  * In order to have confidence that we've enumerated all BOSH creds, we want to convert all BOSH manifests to ops-file/var-file format (deploy-bosh is gross, many others are already done). (mostly done)
+  * In order to reduce the operator burden of manipulating BOSH secrets, we want to remove redundant encryption of BOSH secrets stemming from when we didn't have dedicated AWS accounts. (done)
 
 We'll groom these ASAP:
   * Detangle shared secrets between environments
