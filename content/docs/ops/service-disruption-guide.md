@@ -66,7 +66,7 @@ A postmortem is not necessary to close, and it does not have to happen immediate
 
 ## Ensure a postmortem happens
 
-The person who closes the event should then put a card on the component-owning squad’s board in the urgent lane about holding a retrospective discussion and writing the public postmortem.
+The person who closes the event should then put a card on the component-owning squad’s board in the urgent lane about holding a retrospective discussion and writing the public postmortem.  The card's acceptance criteria should be that the retrospective discussion has happened, and that the public postmortem that resulted has been posted.
 
 For non-security-sensitive work, work to resolve root causes does not have to be completely done before we post the postmortem.
 
