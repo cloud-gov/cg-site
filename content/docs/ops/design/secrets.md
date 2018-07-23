@@ -58,7 +58,7 @@ title: Secrets Management
             * Cons:
                 - Maintenance heavy, five different servers to update/fail.
                 - Propogating common secrets
-                - Will require copying common creds across multiple environments (eg Bosh creds)
+                - Will require copying common creds across multiple environments (eg `bosh_ca_cert` for every deployment)
       * Single HA Credhub for all deployments:
             * Pros:
                 - One source of truth
