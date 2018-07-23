@@ -46,6 +46,7 @@ title: Secrets Management
                 would be secrets used to deploy CredHub during the first
                 deployment.
             * How to deploy services before CredHub exists?
+              * I'm (jcc) not sure what this question is asking.  But  if it's asking how do you do deploy something before its credentials exist in credhub -- if there is a variables block defined, Credhub will generate them.
             * Copy creds from master-CredHub?
     * Architecture:
       * DEFINE IT HERE
