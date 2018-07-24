@@ -210,6 +210,51 @@ graph LR;
 The following strategy is a single CredHub deployment in the `tooling` VPC which
 would be used by BOSH directors spread across all the other VPCs.
 
+{{< diagrams id-prefix="ha-single-diagram" >}}
+graph LR;
+  master[Master BOSH]
+  tooling[Tooling BOSH]
+  development[BOSH]
+  staging[BOSH]
+  production[BOSH]
+  credhub[CredHub Deployment]
+  tooling-d[Deployments]
+  production-d[Deployments]
+  staging-d[Deployments]
+  development-d[Deployments]
+
+  subgraph Tooling VPC
+    master-->|Interpolates from CredHub|tooling
+    master-->credhub
+    tooling-->|Interpolates from CredHub|tooling-d
+    credhub-->tooling
+  end
+  subgraph Production VPC
+    tooling-->production
+    subgraph Production BOSH
+      production
+      credhub-->production
+    end
+    production-->|Interpolates from CredHub|production-d
+  end
+  subgraph Staging VPC
+    tooling-->staging
+    subgraph Staging BOSH
+      staging
+      credhub-->staging
+    end
+    staging-->|Interpolates from CredHub|staging-d
+  end
+  subgraph Development VPC
+    tooling-->development
+    subgraph Development BOSH
+      development
+      credhub-->development
+    end
+    development-->|Interpolates from CredHub|development-d
+  end
+{{< /diagrams >}}
+
 ##### Pros
 
 * BOSH deployments within all VPCs can read from CredHub.
