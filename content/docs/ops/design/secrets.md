@@ -277,6 +277,8 @@ graph LR;
 
 #### General CredHub, Concourse, BOSH
 
+
+
 The following pros and cons aren't based on any particular deployment strategy.
 
 ##### Pros
@@ -292,9 +294,9 @@ The following pros and cons aren't based on any particular deployment strategy.
 
 * Concourse uses paths that are different from BOSH paths, or arbitrary paths
   cloud.gov operators can define, with no desire to change this functionality.
-  * BOSH paths: `/$director/$deployment/$secret` or absolute path.
-  * Concourse paths: `/$team/$pipeline/$secret`; `$team/$secret`; no absolute path.
-    * https://github.com/concourse/atc/pull/273
+    * BOSH paths: `/$director/$deployment/$secret` or absolute path.
+    * Concourse paths: `/$team/$pipeline/$secret`; `$team/$secret`; no absolute path.
+        * Closed pull-request: https://github.com/concourse/atc/pull/273
 
 ## Bootstrapping CredHub
 
@@ -312,7 +314,24 @@ would need to be set in CredHub ahead of time before BOSH deploys the service.
 
 ## Next Steps
 
-Whichever path is decided one thing reamins true: Credhub will likely be installed on Tooling BOSH.  Some exploratory steps can be made to deploy CredHub to that environment, and will enable us to learn potential pitfalls/advantages of using Concourse with Credhub in the context of cloud.gov.
+[The strategy suggested by the CredHub maintainers][cf-slack] is to leverage
+co-located CredHub deployments with BOSH and to not allow BOSH directors to
+communicate with a shared CredHub instance. This means that cloud.gov operators
+will be moving forward with a [CredHub co-located deployment][bosh-colo] within
+each BOSH director.
+
+### cloud.gov Operator Tooling
+
+CredHub operations will require particular tooling around importing and
+exporting credentials with CredHub. Some of our common secrets shared across
+deployments will need to be manually synchronized across various CredHub
+deployments.
+
+https://github.com/18f/cg-scripts/tree/master/credhub/import.sh
+https://github.com/18f/cg-scripts/tree/master/credhub/export.sh
+
+[cf-slack]: https://cloudfoundry.slack.com/archives/C3EN0BFC0/p1532382357000186?thread_ts=1532358425.000099&cid=C3EN0BFC0
+[bosh-colo]: #bosh-and-credhub-co-location
 
 ## Pertinent Links
 
