@@ -55,6 +55,54 @@ This strategy co-locates a CredHub within the BOSH virtual machine per
 environment. This solution means that CredHub would have a single database
 that it would leverage to store its data for its specific BOSH director.
 
+{{< diagrams id-prefix="colocated-bosh-diagram" >}}
+graph TD;
+  tooling[Tooling BOSH]
+  development[Development BOSH]
+  staging[Staging BOSH]
+  production[Production BOSH]
+  tooling-ch[Tooling CredHub]
+  development-ch[Documentation CredHub]
+  staging-ch[Staging CredHub]
+  production-ch[Production CredHub]
+  tooling-d[Tooling Deployments]
+  production-d[Production Deployments]
+  staging-d[Staging Deployments]
+  development-d[Development Deployments]
+
+  subgraph Tooling VPC
+    tooling---tooling-ch
+    tooling-ch---production
+    tooling-ch---staging
+    tooling-ch---development
+    tooling-ch---tooling-d
+    subgraph Production VPC
+      subgraph Production BOSH
+        production-->production-ch
+      end
+      production-d-->production-ch
+      production-ch-->production
+      production-ch-->production-d
+    end
+    subgraph Staging VPC
+      subgraph Staging BOSH
+        staging-->staging-ch
+      end
+      staging-d-->staging-ch
+      staging-ch-->staging
+      staging-ch-->staging-d
+    end
+    subgraph Development VPC
+      subgraph Development BOSH
+        development-->development-ch
+      end
+      development-d-->development-ch
+      development-ch-->development
+      development-ch-->development-d
+    end
+  end
+{{< /diagrams >}}
+
 ##### Pros
 
 * Co-located BOSH and CredHub
