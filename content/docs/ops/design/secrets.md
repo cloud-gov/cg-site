@@ -43,13 +43,25 @@ several reasons to choose CredHub over other secrets management services.
 
 [gh-credhub]: https://github.com/cloudfoundry-incubator/credhub
 
-### Proposed Architecture
+## Proposed Architecture
 
-There are three major architecture proposals that the cloud.gov operations team
-is considering. These architecture decisions are outlined below with pros and
-cons for each type of CredHub deployment strategy.
+The cloud.gov operations team is proposing to leverage BOSH + CredHub
+co-location.
 
-#### BOSH and CredHub co-location
+[The strategy suggested by the CredHub maintainers][cf-slack] is to leverage
+co-located CredHub deployments with BOSH and to not allow BOSH directors to
+communicate with a shared CredHub instance. This means that cloud.gov operators
+will be moving forward with a [CredHub co-located deployment][bosh-colo] within
+each BOSH director.
+
+[cf-slack]: https://cloudfoundry.slack.com/archives/C3EN0BFC0/p1532382357000186?thread_ts=1532358425.000099&cid=C3EN0BFC0
+[bosh-colo]: #bosh-and-credhub-co-location
+
+The cloud.gov operations team will begin importing existing secrets into CredHub
+and removing BOSH `vars` files from the interpolate commands in the current BOSH
+deployment pipelines.
+
+### BOSH and CredHub co-location
 
 This strategy co-locates a CredHub within the BOSH virtual machine per
 environment. This solution means that CredHub would have a single database
@@ -94,7 +106,7 @@ graph LR;
   end
 {{< /diagrams >}}
 
-##### Pros
+#### Pros
 
 * Co-located BOSH and CredHub
 * BOSH deployments within this director can read from CredHub.
@@ -104,193 +116,39 @@ graph LR;
 * Risk of failure or comprise is distributed.
 * It's a common pattern (especially in the exemplar of BUCC)
 
-##### Cons
+#### Cons
 
 * Co-location with BOSH would require maintenance of multiple CredHub
   deployments and databases for each BOSH director the cloud.gov operations team
   deploys
-  * This includes backup strategies for each of these CredHub deployments.
+    * This includes backup strategies for each of these CredHub deployments.
 * Maintenance heavy, multiple deployments to update/fail.
 * Propagating common secrets across deployments would still be a manual process
-  * e.g. The root `bosh_ca_cert` for every deployment of CredHub.
+    * e.g. The root `bosh_ca_cert` for every deployment of CredHub.
 * Doesn't solve for Concourse being in the Tooling VPC but deploying to
   other VPCs and needing credentials from each environment's VPC.
-  * e.g. Concourse deploys to `tooling`, `development`, `staging`, `production`
-    VPC
+    * e.g. Concourse deploys to `tooling`, `development`, `staging`, `production`
+      VPC
 * [Concourse can only speak to a single API endpoint of
   CredHub][con-ch-api-url].
 
 [con-ch-api-url]: https://concourse-ci.org/creds.html#credhub
 
-#### CredHub high-availability deployment per VPC
+### General CredHub, Concourse, BOSH concerns
 
-In this strategy, CredHub would be deployed with high-availability as a separate
-deployment using BOSH. It would only be able to communicate with BOSH within
-its own VPC. e.g. `bosh-staging` using `credhub-staging` for credential
-management for `bosh-staging` deployments. This is already very similar to
-co-locating CredHub within the BOSH deployment.
+The following pros and cons are based on general concerns related to BOSH,
+Concourse, and CredHub.
 
-{{< diagrams id-prefix="ha-vpc-diagram" >}}
-graph LR;
-  master[Master BOSH]
-  tooling[Tooling BOSH]
-  development[BOSH]
-  staging[BOSH]
-  production[BOSH]
-  master-ch[Master CredHub Deployment]
-  tooling-ch[Tooling CredHub Deployment]
-  development-ch[CredHub Deployment]
-  staging-ch[CredHub Deployment]
-  production-ch[CredHub Deployment]
-  tooling-d[Deployments]
-  production-d[Deployments]
-  staging-d[Deployments]
-  development-d[Deployments]
+#### Pros
 
-  subgraph Tooling VPC
-    master-->|Interpolates from Master CredHub|tooling
-    master-->master-ch
-    tooling-->tooling-ch
-    tooling-->|Interpolates from Tooling CredHub|tooling-d
-  end
-  subgraph Production VPC
-    tooling-->production
-    subgraph Production BOSH
-      production
-    end
-    production-->production-ch
-    production-->|Interpolates from Production CredHub|production-d
-  end
-  subgraph Staging VPC
-    tooling-->staging
-    subgraph Staging BOSH
-      staging
-    end
-    staging-->staging-ch
-    staging-->|Interpolates from Staging CredHub|staging-d
-  end
-  subgraph Development VPC
-    tooling-->development
-    subgraph Development BOSH
-      development
-    end
-    development-->development-ch
-    development-->|Interpolates from Development CredHub|development-d
-  end
-{{< /diagrams >}}
-
-##### Pros
-
-* BOSH deployments within this director can read from CredHub.
-* Name-spacing is simpler, less state to encode into BOSH deployments
-  * For example, you don't need to name the BOSH deployment and credentials
-    would exist only for their own environment.
-* Risk of failure or comprise is distributed.
-
-##### Cons
-
-* Co-location with BOSH would require maintenance of multiple CredHub
-  deployments and databases for each BOSH director the cloud.gov operations team
-  deploys
-  * This includes backup strategies for each of these CredHub deployments.
-* Maintenance heavy, multiple deployments to update/fail.
-* Propagating common secrets across deployments would still be a manual process.
-  * e.g. The root `bosh_ca_cert` for every deployment of CredHub.
-* Doesn't solve for Concourse being in the Tooling VPC but deploying to
-  other VPCs and needing credentials from each environment's VPC.
-  * e.g. Concourse deploys to `tooling`, `development`, `staging`, `production`
-    VPC
-* [Concourse can only speak to a single API endpoint of
-  CredHub][con-ch-api-url].
-
-[con-ch-api-url]: https://concourse-ci.org/creds.html#credhub
-
-#### CredHub high-availability single deployment
-
-The following strategy is a single CredHub deployment in the `tooling` VPC which
-would be used by BOSH directors spread across all the other VPCs.
-
-{{< diagrams id-prefix="ha-single-diagram" >}}
-graph LR;
-  master[Master BOSH]
-  tooling[Tooling BOSH]
-  development[BOSH]
-  staging[BOSH]
-  production[BOSH]
-  credhub[CredHub Deployment]
-  tooling-d[Deployments]
-  production-d[Deployments]
-  staging-d[Deployments]
-  development-d[Deployments]
-
-  subgraph Tooling VPC
-    master-->|Interpolates from CredHub|tooling
-    master-->credhub
-    tooling-->|Interpolates from CredHub|tooling-d
-    credhub-->tooling
-  end
-  subgraph Production VPC
-    tooling-->production
-    subgraph Production BOSH
-      production
-      credhub-->production
-    end
-    production-->|Interpolates from CredHub|production-d
-  end
-  subgraph Staging VPC
-    tooling-->staging
-    subgraph Staging BOSH
-      staging
-      credhub-->staging
-    end
-    staging-->|Interpolates from CredHub|staging-d
-  end
-  subgraph Development VPC
-    tooling-->development
-    subgraph Development BOSH
-      development
-      credhub-->development
-    end
-    development-->|Interpolates from CredHub|development-d
-  end
-{{< /diagrams >}}
-
-##### Pros
-
-* BOSH deployments within all VPCs can read from CredHub.
-* A single CredHub deployment means that we could share certificates across
-  various VPC deployments. e.g. The root CA cert cloud.gov uses to generate
-  additional certificates.
-* A single database to backup.
-* The root `bosh_ca_cert` would exist in a single CredHub.
-* Single deployment to maintain/update/operate.
-
-##### Cons
-
-* Single point of failure
-  * cloud.gov operators have no way to test credentials outside of the single
-    CredHub deployment.
-* It would require a connection from `development`, `staging`, and `production`
-  VPCs to communicate with the `tooling` VPC.
-* Name-spacing of credentials would need to exist in order to prevent collisions
-  with similar credentials across various deployments.
-
-#### General CredHub, Concourse, BOSH
-
-
-
-The following pros and cons aren't based on any particular deployment strategy.
-
-##### Pros
-
-* CredHub managing secrets would alleviate developer headaches around secrets
+* CredHub managing secrets alleviates developer headaches around secrets
   generate, rotation, and storage.
 * There would be a single interface for secrets management for BOSH deployments
   using the `credhub-cli`.
 * cloud.gov operators can create documented process, automation, and tooling
   around importing, setting, generating, and rotating credentials.
 
-##### Cons
+#### Cons
 
 * Concourse uses paths that are different from BOSH paths, or arbitrary paths
   cloud.gov operators can define, with no desire to change this functionality.
@@ -300,44 +158,28 @@ The following pros and cons aren't based on any particular deployment strategy.
 
 ## Bootstrapping CredHub
 
-Today bootstrapping CredHub would require a manual deployment of CredHub into
-our environment. Whichever strategy cloud.gov operators use, they would rely on
-BOSH interpolate and ops/vars files stored in S3. These files would also be
-leveraged to store the credentials required to maintain CredHub such as the
-encryption key to decrypt the data in CredHub.
+> To Be Decided
 
 ### Deploying services before CredHub credentials exist
 
-This is an issue when deploying credentials that cannot be automatically
-generated by CredHub, such as URLs or arbitrary JSON or values. These values
-would need to be set in CredHub ahead of time before BOSH deploys the service.
+> To Be Decided
 
-## Next Steps
+## Rotating secrets
 
-[The strategy suggested by the CredHub maintainers][cf-slack] is to leverage
-co-located CredHub deployments with BOSH and to not allow BOSH directors to
-communicate with a shared CredHub instance. This means that cloud.gov operators
-will be moving forward with a [CredHub co-located deployment][bosh-colo] within
-each BOSH director.
+> To Be Decided
 
 ### cloud.gov Operator Tooling
 
-CredHub operations will require particular tooling around importing and
-exporting credentials with CredHub. Some of our common secrets shared across
-deployments will need to be manually synchronized across various CredHub
-deployments.
-
-https://github.com/18f/cg-scripts/tree/master/credhub/import.sh
-https://github.com/18f/cg-scripts/tree/master/credhub/export.sh
-
-[cf-slack]: https://cloudfoundry.slack.com/archives/C3EN0BFC0/p1532382357000186?thread_ts=1532358425.000099&cid=C3EN0BFC0
-[bosh-colo]: #bosh-and-credhub-co-location
+> To Be Decided
 
 ## Pertinent Links
 
 * https://docs.cloudfoundry.org/credhub/
 * https://concourse-ci.org/creds.html#credhub
+
+<!--
 * https://cloud.gov/docs/ops/runbook/credhub-import
+-->
 
 <!---
 We had a meeting on 5/21/2018. Some decisions we made:
