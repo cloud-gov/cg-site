@@ -112,7 +112,6 @@ graph LR;
   * This includes backup strategies for each of these CredHub deployments.
 * Maintenance heavy, multiple deployments to update/fail.
 * Propagating common secrets across deployments would still be a manual process
-  even if it is maintained by Concourse.
   * e.g. The root `bosh_ca_cert` for every deployment of CredHub.
 * Doesn't solve for Concourse being in the Tooling VPC but deploying to
   other VPCs and needing credentials from each environment's VPC.
@@ -126,9 +125,59 @@ graph LR;
 #### CredHub high-availability deployment per VPC
 
 In this strategy, CredHub would be deployed with high-availability as a separate
-deployment using the BOSH. It would only be able to communicate with BOSH within
+deployment using BOSH. It would only be able to communicate with BOSH within
 its own VPC. e.g. `bosh-staging` using `credhub-staging` for credential
-management for `bosh-staging` deployments.
+management for `bosh-staging` deployments. This is already very similar to
+co-locating CredHub within the BOSH deployment.
+
+{{< diagrams id-prefix="ha-vpc-diagram" >}}
+graph LR;
+  master[Master BOSH]
+  tooling[Tooling BOSH]
+  development[BOSH]
+  staging[BOSH]
+  production[BOSH]
+  master-ch[Master CredHub Deployment]
+  tooling-ch[Tooling CredHub Deployment]
+  development-ch[CredHub Deployment]
+  staging-ch[CredHub Deployment]
+  production-ch[CredHub Deployment]
+  tooling-d[Deployments]
+  production-d[Deployments]
+  staging-d[Deployments]
+  development-d[Deployments]
+
+  subgraph Tooling VPC
+    master-->|Interpolates from Master CredHub|tooling
+    master-->master-ch
+    tooling-->tooling-ch
+    tooling-->|Interpolates from Tooling CredHub|tooling-d
+  end
+  subgraph Production VPC
+    tooling-->production
+    subgraph Production BOSH
+      production
+    end
+    production-->production-ch
+    production-->|Interpolates from Production CredHub|production-d
+  end
+  subgraph Staging VPC
+    tooling-->staging
+    subgraph Staging BOSH
+      staging
+    end
+    staging-->staging-ch
+    staging-->|Interpolates from Staging CredHub|staging-d
+  end
+  subgraph Development VPC
+    tooling-->development
+    subgraph Development BOSH
+      development
+    end
+    development-->development-ch
+    development-->|Interpolates from Development CredHub|development-d
+  end
+{{< /diagrams >}}
 
 ##### Pros
 
@@ -145,6 +194,16 @@ management for `bosh-staging` deployments.
   deploys
   * This includes backup strategies for each of these CredHub deployments.
 * Maintenance heavy, multiple deployments to update/fail.
+* Propagating common secrets across deployments would still be a manual process.
+  * e.g. The root `bosh_ca_cert` for every deployment of CredHub.
+* Doesn't solve for Concourse being in the Tooling VPC but deploying to
+  other VPCs and needing credentials from each environment's VPC.
+  * e.g. Concourse deploys to `tooling`, `development`, `staging`, `production`
+    VPC
+* [Concourse can only speak to a single API endpoint of
+  CredHub][con-ch-api-url].
+
+[con-ch-api-url]: https://concourse-ci.org/creds.html#credhub
 
 #### CredHub high-availability single deployment
 
