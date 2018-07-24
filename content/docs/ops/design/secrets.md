@@ -55,51 +55,42 @@ This strategy co-locates a CredHub within the BOSH virtual machine per
 environment. This solution means that CredHub would have a single database
 that it would leverage to store its data for its specific BOSH director.
 
-{{< diagrams id-prefix="colocated-bosh-diagram" >}}
-graph TD;
-  tooling[Tooling BOSH]
-  development[Development BOSH]
-  staging[Staging BOSH]
-  production[Production BOSH]
-  tooling-ch[Tooling CredHub]
-  development-ch[Documentation CredHub]
-  staging-ch[Staging CredHub]
-  production-ch[Production CredHub]
-  tooling-d[Tooling Deployments]
-  production-d[Production Deployments]
-  staging-d[Staging Deployments]
-  development-d[Development Deployments]
+{{< diagrams id-prefix="colocated-diagram" >}}
+graph LR;
+  master[Master BOSH + CredHub]
+  tooling[Tooling BOSH + CredHub]
+  development[BOSH + CredHub]
+  staging[BOSH + CredHub]
+  production[BOSH + CredHub]
+  tooling-d[Deployments]
+  production-d[Deployments]
+  staging-d[Deployments]
+  development-d[Deployments]
 
   subgraph Tooling VPC
-    tooling---tooling-ch
-    tooling-ch---production
-    tooling-ch---staging
-    tooling-ch---development
-    tooling-ch---tooling-d
-    subgraph Production VPC
-      subgraph Production BOSH
-        production-->production-ch
-      end
-      production-d-->production-ch
-      production-ch-->production
-      production-ch-->production-d
+    master-->|Interpolates from Master CredHub|tooling
+    tooling-->|Interpolates from Tooling CredHub|tooling-d
+  end
+  subgraph Production VPC
+    tooling-->production
+    subgraph Production BOSH
+      production
     end
-    subgraph Staging VPC
-      subgraph Staging BOSH
-        staging-->staging-ch
-      end
-      staging-d-->staging-ch
-      staging-ch-->staging
-      staging-ch-->staging-d
+    production-->|Interpolates from Production CredHub|production-d
+  end
+  subgraph Staging VPC
+    tooling-->staging
+    subgraph Staging BOSH
+      staging
     end
-    subgraph Development VPC
-      subgraph Development BOSH
-        development-->development-ch
-      end
-      development-d-->development-ch
-      development-ch-->development
-      development-ch-->development-d
+    staging-->|Interpolates from Staging CredHub|staging-d
+  end
+  subgraph Development VPC
+    tooling-->development
+    subgraph Development BOSH
+      development
     end
+    development-->|Interpolates from Development CredHub|development-d
   end
 {{< /diagrams >}}
 
