@@ -15,39 +15,40 @@ the mail clients.
 Rotation requires a small amount of downtime while the service is deployed
 and restarted.
 
-## Rotate TLS Certificates
-The following keys from the
-[Postfix Deployment Pipeline](https://github.com/18F/cg-deploy-postfix/blob/master/secrets.example.yml)
-can be rotated using the `openssl` command line:
+The secrets are all located in the `production-postfix.yml` file.  All operations
+described here are to be done on the data in that file.
 
-1. `postfix_tls_cert`: `smtp.fr.cloud.gov.crt`
-2. `postfix_tls_key`: `smtp.fr.cloud.gov.key`
+## Rotate TLS Certificates and SASL credential
+The TLS certs from the
+[Postfix Deployment Pipeline](https://github.com/18F/cg-deploy-postfix/blob/master/bosh/secrets.example.yml)
+can be rotated using the `bosh int` command.
 
-```sh
-# Generate CA
-openssl genrsa -out smtp.fr.cloud.gov.ca.key 2048
-openssl req -x509 -new -nodes -key smtp.fr.cloud.gov.ca.key -days 365 -out smtp.fr.cloud.gov.ca.pem \
--subj "/C=US/ST=DC/L=Washington/O=GSA/OU=TTS-18F/CN=smtp.fr.cloud.gov/emailAddress=cloud-gov-operations@gsa.gov"
+1. Delete the `postfix_ca`, `postfix_ssl`, and `cloudgov_pw` sections in the `production-postfix.yml` file.
+1. `bosh int bosh/manifest.yml --vars-store /tmp/production-postfix.yml > /dev/null`
+1. Make sure the `postfix_ca` and `postfix_ssl` sections, as well as `cloudgov_pw` were regenerated.
 
-# Generate Certificate Private Key
-openssl genrsa -out smtp.fr.cloud.gov.key 2048
+## Rotate DKIM key
+This procedure is based on this document:  https://wiki.debian.org/opendkim
 
-# Generate Certificate Signing Request
-openssl req -new -key smtp.fr.cloud.gov.key -out smtp.fr.cloud.gov.csr \
--subj "/C=US/ST=DC/L=Washington/O=GSA/OU=TTS-18F/CN=smtp.fr.cloud.gov/emailAddress=cloud-gov-operations@gsa.gov"
+Log into a host that has opendkim installed on it.  You can `apt-get install opendkim opendkim-tools`
+to get this going, or just log into something with the postfix release installed on it.
 
-openssl x509 -req -in smtp.fr.cloud.gov.csr -CA smtp.fr.cloud.gov.ca.pem -CAkey smtp.fr.cloud.gov.ca.key \
--CAcreateserial -out smtp.fr.cloud.gov.crt -days 365
 ```
-
-## Rotate SASL Credentials
-Rotate the SASL credentials from the
-[Postfix Deployment Pipeline](https://github.com/18F/cg-deploy-postfix/blob/master/secrets.example.yml)
-by generating a new password as needed and place under `postfix_sasl_users`:
-
-```sh
-openssl rand 48 -base64
+opendkim-genkey -D /tmp/ -d cloud.gov -s mail
 ```
+This should generate `/tmp/mail.txt` and `/tmp/mail.private`.
+
+Update DNS to have the TXT record in it.  The file is currently https://github.com/18F/cg-provision/blob/master/terraform/stacks/dns/stack.tf
+and here is an example of how to do this: https://github.com/18F/cg-provision/pull/404/files
+
+Update the encrypted `production-postfix.yml` file with the private key and the TXT record.
+
+## Push changes out there
+
+Run all planning and production pipelines:
+
+* `terraform-provision`:  to put DNS changes out there
+* `deploy-postfix`: plan and deploy this to get the certs/keys updated.
 
 ## Verification
 Use the [Troubleshooting SMTP](https://cloud.gov/docs/ops/runbook/troubleshooting-smtp/)

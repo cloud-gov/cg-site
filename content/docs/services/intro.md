@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: services
+aliases: 
+    - /docs/services/
 title: Introduction
 layout: services
 weight: -1

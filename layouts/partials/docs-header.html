@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+    <meta name="description" content="{{.Description | default .Site.Params.description}}">
     {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
     {{ .Hugo.Generator }}
 

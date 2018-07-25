@@ -176,18 +176,16 @@ Once the incident is no longer active — i.e. the breach has been contained, th
 
 The final step in handling a security incident is figuring out what we learned. The IC (or one of the ICs if there were multiple, or a designated other party) should lead a retrospective and develop an incident report.
 
-Conducting retrospectives is out of the scope of this document, but as a crash course, here's an [introduction to blameless postmortems](https://codeascraft.com/2012/05/22/blameless-postmortems/). We follow the [basic steps listed at cg-postmortems](https://github.com/18F/cg-postmortems).
+We follow [the postmortem steps in the service disruption guide]({{< relref "service-disruption-guide.md#ensure-a-postmortem-happens" >}}), including writing an internal report. If appropriate, we also write a public postmortem to post on [Updates](/updates/) or [StatusPage](https://cloudgov.statuspage.io/) (depending on the type of problem).
 
-The report should contain a timeline of the incident, details about how the incident progressed, and information about the vulnerabilities that led to the incident. A cause analysis is an important part of this report; the team should use tools such as [Infinite Hows](http://www.kitchensoap.com/2014/11/14/the-infinite-hows-or-the-dangers-of-the-five-whys/) or [Five Whys](https://en.wikipedia.org/wiki/5_Whys) to try to dig into causes, how future incidents could be prevented, how responses could be better in the future, etc.
+The internal report should contain a timeline of the incident, details about how the incident progressed, and information about the vulnerabilities that led to the incident. A cause analysis is an important part of this report; the team should use tools such as [Infinite Hows](http://www.kitchensoap.com/2014/11/14/the-infinite-hows-or-the-dangers-of-the-five-whys/) or [Five Whys](https://en.wikipedia.org/wiki/5_Whys) to try to dig into causes, how future incidents could be prevented, how responses could be better in the future, etc.
 
-The report should also contain some basic response metrics:
+The internal report should also contain some basic response metrics:
 
 - Discovery method (how did we become aware of the issue?)
 - Time to discovery (how long did it take from when the incident started until we became aware of it?)
 - Time to containment (how long did it take from when we became aware until the issue was contained?)
 - Threat actions (which specific actions -- e.g. phishing, password attacks, etc) -- were taken by the actor)?
-
-This report should be posted as a final comment on the GitHub issue, which can then be closed. If appropriate, this should also be posted publicly at [cg-postmortems](https://github.com/18F/cg-postmortems) (omitting any sensitive information).
 
 ## Incident Severities
 

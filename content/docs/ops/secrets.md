@@ -167,7 +167,7 @@ Secrets which are not centrally managed must be updated per deployment and envir
 
 #### Updating Concourse Secrets
 
-Updating Concourse secrets combines the shared secrets above with local config to change a Concourse pipeline.
+Updating Concourse secrets combines the shared secrets above with local config to change a Concourse pipeline.  Note: The steps below are for updating the `deploy-bosh` pipeline, the same steps can also be applied to the `deploy-concourse` pipeline.
 
 1. Clone the [cg-scripts](https://github.com/18F/cg-scripts) repository.
 

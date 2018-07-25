@@ -47,6 +47,29 @@ For pods that are part of persistent set, like a `statefulset`, `deployment`, `d
 kubectl --namespace :namespace delete pod :pod-name
 ```
 
+##### Pod is in a CrashLoopBackoff state
+
+Check the logs for the pod (in this case, we are looking at the elasticsearch container on the pod):
+```
+kubectl logs <podname> elasticsearch
+```
+
+If you find that the pod logs are saying that it is out of disk space, follow
+this course of action:
+
+1. Search in the AWS console for the first part of the pod-name, e.g.
+   `xc926b2d94dd54`.
+1. Go to console, search under EC2 > Volumes for the first part of
+   the pod name, select the volume, and manually increase the size.
+1. Find the `minion` instance that it is attached to in the AWS console,
+   as well as the volume name: `(minion/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX):/dev/xvdbX (attached)`
+1. bosh ssh into `minion/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX`
+1. Do a `df | grep /dev/xvdbX` to make sure that the volume is there and is full.
+1. Resize the filesystem with `resize2fs /dev/xvdbX`.
+1. Delete the pod(s) with `kubectl delete pod <podname>`.
+1. The pod(s) should be recreated without disk space problems, which should
+   result in them not getting into the CrashLoopBackoff state.
+
 #### Manually pulling an image from Docker
 
 By default, Kubernetes does not pull docker images that already exist on the

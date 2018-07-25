@@ -96,6 +96,26 @@ access token. Here is where things get fun.
     so you might want to securely save the `refresh_token` associated with the
     authenticated user.
 
+#### Logging users out of UAA and your application
+
+cloud.gov's UAA server provides a logout endpoint to terminate the user session.
+To implement this logout:
+
+- Provide a local logout feature specific to your application and use that to
+  clear state in your application.
+- On success for that logout, redirect to the UAA server logout endpoint.
+- Provide a `redirect` link and the `client_id` for your application so that
+  users come back to a familiar place when logged out.
+
+Include the `redirect` link when you register your [cloud.gov identity
+provider]({{< relref "docs/services/cloud-gov-identity-provider.md" >}})
+service. It's common for this redirect link to be your application's URL with a
+path of `/logout`.
+
+The full URL parameters and constraints are in the [latest UAA API
+documentation](https://docs.cloudfoundry.org/api/uaa/) under **Session
+Management** > **Logout.do**.
+
 ## Managing UAA access
 
 If you (or a user of your app) ever need to modify or revoke the permissions of

@@ -8,11 +8,15 @@ description: "Custom domains, CDN caching, and TLS certificates with automatic r
 status: "Production Ready"
 ---
 
-This service provides three key elements to support production applications:
+<!-- If you're improving this page, try to port the improvements to the custom domain service page too, since most of the text is the same -->
+
+This service provides:
 
 1. [Custom domain]({{< relref "docs/apps/custom-domains.md" >}}) support, so that your application can have your domain instead of the default `*.app.cloud.gov` domain.
-2. Content Distribution Network (CDN) caching (using [AWS CloudFront](https://aws.amazon.com/cloudfront/)), for fast delivery of content to your users. Before setting up this service, review [how the CDN works](#more-about-how-the-cdn-works).
-3. HTTPS support via free TLS certificates with auto-renewal (using [Let's Encrypt](https://letsencrypt.org/)), so that user traffic is encrypted.
+1. HTTPS support via free TLS certificates with auto-renewal (using [Let's Encrypt](https://letsencrypt.org/)), so that user traffic is encrypted.
+1. Content Distribution Network (CDN) caching (using [AWS CloudFront](https://aws.amazon.com/cloudfront/)), for fast delivery of content to your users.
+
+If you don't need CDN caching, use the [custom domain service]({{< relref "docs/services/custom-domains.md" >}}) instead.
 
 ## Plans
 
@@ -31,6 +35,20 @@ Name | Required | Description | Default
 `path` | *Optional* | The path for the application within the main domain supplied | `""`
 `insecure_origin` | *Optional* | Read the application over HTTP instead of HTTPS | `false`
 `cookies` | *Optional* | Forward cookies to the origin | `true`
+
+## Before you use this service
+
+This service is similar to the [custom domain service]({{< relref "docs/services/custom-domains.md" >}}), but with an additional feature: CDN caching support using [AWS CloudFront](https://aws.amazon.com/cloudfront/).
+
+### Compliance impact
+
+When you use cloud.gov in general, your application inherits the compliance of the cloud.gov FedRAMP P-ATO, which inherits compliance from the AWS GovCloud FedRAMP P-ATO. This service is a little different. When you use this service, you opt into using an AWS service (CloudFront) that is not in an AWS FedRAMP P-ATO boundary (see [Services in Scope](https://aws.amazon.com/compliance/services-in-scope/)).
+
+You are responsible for obtaining appropriate authorization from your agency to use CloudFront for your system. The appropriate steps depend on your agency; they may include discussing this with your Authorizing Official and documenting it as part of your ATO (for example as part of [SC-12](https://nvd.nist.gov/800-53/Rev4/control/SC-12) or [SA-9](https://nvd.nist.gov/800-53/Rev4/control/SA-9)).
+
+### Technical considerations
+
+Before setting up this service, review [how the CDN works](#more-about-how-the-cdn-works).
 
 ## How to create an instance of this service
 
@@ -239,7 +257,7 @@ See our [compliance guide for federal standards and recommendations for domain n
 
 ## Certificate validity and renewal
 
-Let's Encrypt TLS certificates are valid for 90 days.  The broker will automatically renew your certificate every 60 days.  This process is usually immedate but can take several days to complete.  If your certificate is expiring within the next 21 days and has not been renewed automatically, contact [cloud.gov support](/help/).
+Let's Encrypt TLS certificates are valid for 90 days.  The broker will automatically renew your certificate every 60 days.  This process is usually immediate but can take several days to complete.  If your certificate is expiring within the next 21 days and has not been renewed automatically, contact [cloud.gov support](/help/).
 
 ## The broker in GitHub
 

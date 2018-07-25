@@ -6,8 +6,8 @@ We’ve been hard at work shipping out new features to help you make your apps b
 
 ### Added
 
-* Part of keeping your app on cloud.gov secure is [using the latest version of your app’s buildpack]({{< relref "docs/getting-started/app-maintenance.md" >}}). In addition to keeping you updated in these release notes, we’ll now send you an email notification when a new version of your buildpack is available.
-* We have experimental support for [volume services]({{< relref "docs/apps/experimental/volume-services.md" >}}). Since a cloud.gov app normally has a short-lived file system, this enables you to build an app that requires persistent file storage. [Contact us if you’d like to try this]({{< relref "docs/apps/experimental/volume-services.md#how-to-use-this-service" >}}).
+* Part of keeping your app on cloud.gov secure is [using the latest version of your app’s buildpack]({{< relref "docs/apps/app-maintenance.md" >}}). In addition to keeping you updated in these release notes, we’ll now send you an email notification when a new version of your buildpack is available.
+* We have experimental support for [volume services]({{< relref "docs/services/volume-services.md" >}}). Since a cloud.gov app normally has a short-lived file system, this enables you to build an app that requires persistent file storage. [Contact us if you’d like to try this]({{< relref "docs/services/volume-services.md#how-to-use-this-service" >}}).
 * One of our engineers gave us the ability to make [Mermaid diagrams](https://mermaidjs.github.io/) on the cloud.gov website, and we almost got carried away creating visualizations of different parts of the platform. Here are a couple we think will help you out:
   * [A comparison of how apps with custom domains and those with the default \*.app.cloud.gov domain are served to users]({{< relref "docs/apps/custom-domains.md#comparison-of-default-domains-and-custom-domains" >}}).
   * [How to incorporate a CI/CD workflow into your app]({{< relref "docs/apps/continuous-deployment.md#configure-your-service" >}}).
@@ -40,7 +40,7 @@ To support agency implementations of Trusted Internet Connection (TIC) requireme
 
 We upgraded the Cloud Foundry deployment to [v278](https://github.com/cloudfoundry/cf-release/releases/tag/v278).
 
-You should [restage your application](https://cloud.gov/docs/getting-started/app-maintenance/) to [incorporate fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) and ensure you’re running the most recent language version supported by your [buildpack](https://docs.cloudfoundry.org/buildpacks/).
+You should [restage your application]({{< relref "docs/apps/app-maintenance.md" >}}) to [incorporate fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) and ensure you’re running the most recent language version supported by your [buildpack](https://docs.cloudfoundry.org/buildpacks/).
 
 #### Additional upgrades
 * [Diego v1.29.2](https://github.com/cloudfoundry/diego-release/releases/tag/v1.29.2)
