@@ -5,7 +5,7 @@ menu:
 title: Communicating with private external services
 ---
 
-You can set up all, or just a subset, of your applications to be able communicate privately and securely with external services in your agency infrastructure or with other cloud providers.
+You can set up all, or just a subset, of your applications to be able to communicate privately and securely with external services in your agency infrastructure or with other cloud providers.
 
 ## How it works
 
@@ -14,7 +14,7 @@ Normally, any application deployed to cloud.gov gets placed onto one, or in the 
 cloud.gov has the ability to work with you to establish an isolated set of servers, or cells, where only your Organization can place applications that need access to services that you control on other networks. Your applications will still be accessible from the Internet and can still connect to any of our offered internal services, just like any other applications on the platform, but they will have additional access to services on your networks. These networks will be connected with a Virtual Private Network (VPN) using industry standard Internet Protocol Security (IPSec) protocol. We can work with you to establish the number of required isolated servers to handle your workload of applications that would need this type of access to your networks and services.
 
 {{< diagrams id-prefix="colocated-diagram" >}}
-graph LR;
+graph TB;
   internet[Internet]
 
   subgraph cloud.gov
@@ -44,11 +44,11 @@ graph LR;
   internet--Web-->router
   router-->isolated-app
   router-->normal-app
-  isolated-app-->database
-  normal-app-->database
-  isolated-app-->cg-vpn-endpoint
-  cg-vpn-endpoint-->customer-vpn-endpoint
-  customer-vpn-endpoint-->private-service
+  isolated-app--Shared Security Group-->database
+  normal-app--Shared Security Group-->database
+  isolated-app--Isolation Security Group---cg-vpn-endpoint
+  cg-vpn-endpoint---customer-vpn-endpoint
+  customer-vpn-endpoint---private-service
 {{< /diagrams >}}
 
 **NOTE**: At this time, only IKEv1 key exchance is supported, so make sure that your endpoint supports this.
