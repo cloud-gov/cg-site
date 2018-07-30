@@ -8,13 +8,13 @@ aliases:
   - /overview/pricing/free-limited-sandbox
 ---
 
-A sandbox is a free space that you can use to see if cloud.gov might suit your team’s needs. From the [setup process]({{< relref "docs/getting-started/setup.md" >}}) through [deploying an app]({{< relref "docs/getting-started/your-first-deploy.md" >}}), it works similarly to other spaces that are included in [paid access packages]({{< relref "overview/pricing/rates.md" >}}), with [some limitations](#sandbox-limitations).
+A sandbox is a free space that you can use to see if cloud.gov might suit your team’s needs. From the [setup process]({{< relref "docs/getting-started/setup.md" >}}) through [deploying an app]({{< relref "docs/getting-started/your-first-deploy.md" >}}), it works similarly to other spaces that are included in [paid access packages](/pricing/), with [some limitations](#sandbox-limitations).
 
 ## Get a sandbox
 
 Anyone with a U.S. federal government email address (ending in `.gov`, `.mil`, or `.fed.us`) can [**sign up for a free sandbox space**](https://account.fr.cloud.gov/signup). No paperwork is required from us. (It’s up to you to determine whether you may need permission from your agency.) If you have other questions or comments, see [Contact]({{< relref "docs/help.md" >}}).
 
-If you’re interested in [purchasing full access]({{< relref "overview/pricing/rates.md" >}}) (whether for **Prototyping** or for production systems at the **FISMA Low** or **FISMA Moderate** levels), email [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov) and we'll help you get started.
+If you’re interested in [purchasing full access](/pricing/) (whether for **Prototyping** or for production systems at the **FISMA Low** or **FISMA Moderate** levels), email [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov) and we'll help you get started.
 
 ## Keep in mind before you try your sandbox
 
