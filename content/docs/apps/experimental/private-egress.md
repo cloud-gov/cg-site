@@ -51,8 +51,26 @@ graph LR;
   customer-vpn-endpoint-->private-service
 {{< /diagrams >}}
 
+**NOTE**: At this time, only IKEv1 key exchance is supported, so make sure that your endpoint supports this.
+
+To use this service, you must have an internet-routable IP address to use as the endpoint for the connection. If you have a firewall in place between the Internet and your endpoint, then you will have to open both ingress and egress on UDP 500, and Protocol 50, to make use of this service. If you are also using NAT behind your firewall, you will also have to enable UDP 4500.
+
 ### Contact support to configure private service access
 
 _Note: As of July 2018, this feature is not yet available, pending FedRAMP approval. If you want to configure this feature, create a ticket and our team will let you know our estimated timeline for approval._
 
-Create a [support ticket](mailto:cloud-gov-support@gsa.gov?body=CHANGEME) requesting more information about how to proceed.
+Create a [support ticket](mailto:cloud-gov-support@gsa.gov?subject=Private%20Egress%20Request) requesting that we proceed. In your request, please provide the following:
+
+ - Public IP address of your endpoint
+ - The CIDR(s) of the private network(s) you would like connectivity
+ - The type of endpoint you are using. E.g. OpenSwan or Palo Alto PANOS Firewall
+ - Approximate number of applications that will be making use of this service
+
+We will provide you with details for the connection that includes:
+
+ - Egress IPs from cloud.gov to expect all traffic
+ - A Pre-Shared Key (PSK) used for encryption
+ - In some cases, a configuration file for your endpoint
+ - More information on how to deploy your applications to your specific segment of the platform
+
+The connection will be initiated and maintained from your end. This might require that you monitor and healthcheck the connection from your side. If at any point the connection is closed, your applications will not be able to access your private network(s).
