@@ -158,7 +158,25 @@ Concourse, and CredHub.
 
 ## Bootstrapping CredHub
 
-> To Be Decided
+Deploying anything  before there is a CredHub available on the BOSH director
+you're deploying to requires you to deploy CredHub manually using established
+`operations` and `variables` files that leverage BOSH interpolate.
+
+Require TLS
+
+Get the CA certificate for the database you're connecting to
+
+### Troubleshooting CredHub deployment
+
+Below are some scenarios that were encountered during the bootstrapping of
+CredHub.
+
+#### Database
+
+When deploying CredHub, ensure that the database is not modified in any way
+before the initial migration that CredHub performs on the first deployment. If
+the database is modified, the initial migration will fail and you must recreate
+the database using `cg-provision`.
 
 ### Deploying services before CredHub credentials exist
 
