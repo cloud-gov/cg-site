@@ -181,7 +181,7 @@ credhub-import-${bosh-director-name}-${bosh-deployment-name}.yml
 
 Inspect this file for types and names that will need to be updated in the BOSH
 operation and variable files. Once this has been verified by a cloud.gov
-operator. Upload this file into CredHub using the import command.
+operator.  Then upload this file to the s3 vars bucket.  Then using the aws client in the respective bosh deployment, download the credential import file to the jumpbox environment.  Upload this file into CredHub using the Credhub CLI import command.
 
 ```sh
 credhub import \
