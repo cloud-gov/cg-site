@@ -162,21 +162,36 @@ Deploying anything  before there is a CredHub available on the BOSH director
 you're deploying to requires you to deploy CredHub manually using established
 `operations` and `variables` files that leverage BOSH interpolate.
 
-Require TLS
+Ensure that you are creating a database with `rds.force_ssl` in its parameter
+group and that you are deploying CredHub with `datastorage.require_tls` set to
+`true` and `datastorage.tls_ca` set to the RDS certificates used for TLS.
 
-Get the CA certificate for the database you're connecting to
+### Generating import file
 
-### Troubleshooting CredHub deployment
+To ease the import of secrets into a fresh deployment of CredHub, take the
+`common/secrets.yml` file run it through Pivotal's `vars-to-credhub` tool.
 
-Below are some scenarios that were encountered during the bootstrapping of
-CredHub.
+```sh
+prefix="/${bosh-director-name}/${bosh-deployment-name}";
+vars-to-credhub \
+  --prefix "${prefix}" \
+  --vars-file tmp/path-to/common-secrets-file.yml > \
+credhub-import-${bosh-director-name}-${bosh-deployment-name}.yml
+```
 
-#### Database
+Inspect this file for types and names that will need to be updated in the BOSH
+operation and variable files. Once this has been verified by a cloud.gov
+operator. Upload this file into CredHub using the import command.
 
-When deploying CredHub, ensure that the database is not modified in any way
-before the initial migration that CredHub performs on the first deployment. If
-the database is modified, the initial migration will fail and you must recreate
-the database using `cg-provision`.
+```sh
+credhub import \
+  -f credhub-import-${bosh-director-name}-${bosh-deployment-name}.yml
+```
+
+Once this file is successfully imported into CredHub, kick off the deployment
+with updated operation and variable files to pick up the values in CredHub and
+remove the `common-secrets.yml` file from the pipeline and BOSH interpolation
+commands.
 
 ### Deploying services before CredHub credentials exist
 
