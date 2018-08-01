@@ -2,14 +2,16 @@
 menu:
   docs:
     parent: experimental
-title: Communicating with private external services
+title: Connect to your private network
 ---
 
-You can set up all or a subset of your applications to communicate privately and securely with external services, including services hosted in your agency infrastructure or with other cloud providers.
+You can set up all or a subset of your applications to communicate securely with an external network. This enables your cloud.gov applications to access to services hosted in your agency infrastructure or with other cloud providers. 
 
 By default, cloud.gov runs your application instances on a pool of hosts shared by all cloud.gov customers. Application instances run in containers that isolate them from each other, but the hosts are all running in the same network segment. If you open your private external service network for access by cloud.gov applications, you will also permit network access by other cloud.gov customers.
 
-You can request that cloud.gov establish a dedicated set of hosts for your organization. Applications run by other cloud.gov customers will not run on these hosts. Your applications will still be accessible from the internet and can still connect to any of our offered internal services. cloud.gov will work with you to give these dedicated hosts additional access to your private networks. 
+To prevent network access by other cloud.gov customers, you can request that cloud.gov establish a dedicated set of hosts for your organization. Applications run by other cloud.gov customers will not run on these hosts. Your applications will still be accessible from the internet and can still connect to any of our offered internal services. cloud.gov will work with you to give these dedicated hosts additional access to your private networks. 
+
+*You can alternatively [secure communication for a single application and service at a time]({{< relref "docs/apps/static-egress" >}}).*
 
 ## How it works
 
