@@ -232,6 +232,47 @@ delete the `credhub-import-*` file from the `s3://cloud-gov-varz/` bucket.
 aws s3 rm s3://cloud-gov-varz/credhub-import-file.yml
 ```
 
+#### CredHub credential types
+
+CredHub only [supports specific
+types](https://docs.cloudfoundry.org/credhub/credential-types.html#cred-types).
+If a cloud.gov operator needs to store a different type of credential, such as
+an array. It's required to modify the structure of the manifest using an opsfile
+and storing the key of the array in the CredHub database. An generic example is
+described below:
+
+```yaml
+  - name: nfstestserver
+    release: nfs-volume
+    properties:
+      nfstestserver:
+        # value stored in secrets file as an array
+        export_volumes: ((nfstestserver-volumes))
+```
+
+Modify the manifest using an opsfile so that the secret included the
+`export_volumes` property in the value.
+
+```yaml
+  - name: nfstestserver
+    release: nfs-volume
+    properties:
+      nfstestserver: ((nfstestserver-volumes))
+
+```
+
+This credential will then be stored in CredHub as a JSON type.
+
+```sh
+credhub set \
+  -n /bosh/deploy/nfstestserver-volumes \
+  -t json \
+  -v '{ "export_volumes": [ "val1", "val2" ] }'
+```
+
+When it is retrieved from CredHub it will be a YAML array with a key of
+`export_volumes`.
+
 ### Deploying services before CredHub credentials exist
 
 > To Be Decided
