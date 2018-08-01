@@ -171,6 +171,17 @@ group and that you are deploying CredHub with `datastorage.require_tls` set to
 To ease the import of secrets into a fresh deployment of CredHub, take the
 `common/secrets.yml` file run it through Pivotal's `vars-to-credhub` tool.
 
+Get the name from the BOSH director using `bosh environment`.
+
+```sh
+$ bosh environment --tty | grep Name | awk '{ print $2 }'
+```
+Get the name of the deployments available in BOSH by using `bosh deployments`.
+
+```sh
+bosh deployments --column=Name
+```
+
 ```sh
 prefix="/${bosh-director-name}/${bosh-deployment-name}";
 vars-to-credhub \
@@ -179,19 +190,47 @@ vars-to-credhub \
 credhub-import-${bosh-director-name}-${bosh-deployment-name}.yml
 ```
 
-Inspect this file for types and names that will need to be updated in the BOSH
-operation and variable files. Once this has been verified by a cloud.gov
-operator.  Then upload this file to the s3 vars bucket.  Then using the aws client in the respective bosh deployment, download the credential import file to the jumpbox environment.  Upload this file into CredHub using the Credhub CLI import command.
+cloud.gov operators inspect the `credhub-import-*` file for types and names that
+are referenced in BOSH operation files, BOSH variable files, or upstream
+manifest partials. Keep in mind names that are not prefixed by a forward-slash
+`/` will be converted by BOSH before being looked up in CredHub with a prefix of
+`/${bosh-director-name}/${bosh-deployment-name}/`.
+
+To transfer the file from a cloud.gov operator's local machine to a jumpbox,
+cloud.gov operators leverage the `s3://cloud-gov-varz` bucket to temporary
+upload `credhub-import-*` files to be downloaded from within a jumpbox using
+the cloud.gov operator's AWS credentials using ephemeral environmental variables
+using the `aws-cli`.
+
+```sh
+aws s3 cp tmp/credhub-import-file.yml s3://cloud-gov-varz/credhub-import-file.yml --sse AES256
+```
+
+cloud.gov operators ensure that these credentials are not saved on the jumpbox
+nor in the shell's `history` by preceding the commands with a single space ` `
+to prevent it being saved in `history`.
+
+```sh
+ AWS_DEFAULT_REGION=us-gov-west-1 \
+AWS_ACCESS_KEY_ID=${operator-access-key-id} \
+AWS_SECRET_ACCESS_KEY= ${operator-secret-access-key} \
+aws s3 cp s3://cloud-gov-varz/credhub-import-file.yml tmp/credhub-import-file.yml
+```
+
+With the file locally in the jumpbox, you can then import it using the
+`credhub-cli`.
 
 ```sh
 credhub import \
   -f credhub-import-${bosh-director-name}-${bosh-deployment-name}.yml
 ```
 
-Once this file is successfully imported into CredHub, kick off the deployment
-with updated operation and variable files to pick up the values in CredHub and
-remove the `common-secrets.yml` file from the pipeline and BOSH interpolation
-commands.
+Once this file is successfully imported into CredHub, cloud.gov operators will
+delete the `credhub-import-*` file from the `s3://cloud-gov-varz/` bucket.
+
+```sh
+aws s3 rm s3://cloud-gov-varz/credhub-import-file.yml
+```
 
 ### Deploying services before CredHub credentials exist
 
