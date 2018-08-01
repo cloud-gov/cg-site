@@ -158,7 +158,7 @@ Concourse, and CredHub.
 
 ## Bootstrapping CredHub
 
-Deploying anything  before there is a CredHub available on the BOSH director
+Deploying anything before there is a CredHub available on the BOSH director
 you're deploying to requires you to deploy CredHub manually using established
 `operations` and `variables` files that leverage BOSH interpolate.
 
