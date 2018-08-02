@@ -5,11 +5,11 @@ menu:
 title: Connect to your private network
 ---
 
-You can set up all or a subset of your applications to communicate securely with an external network. This enables your cloud.gov applications to access to services hosted in your agency infrastructure or with other cloud providers. 
+You can set up all or a subset of your applications to communicate securely with an external network. This enables your cloud.gov applications to access to services hosted in your agency infrastructure or with other cloud providers.
 
 By default, cloud.gov runs your application instances on a pool of hosts shared by all cloud.gov customers. Application instances run in containers that isolate them from each other, but the hosts are all running in the same network segment. If you open your private external service network for access by cloud.gov applications, you will also permit network access by other cloud.gov customers.
 
-To prevent network access by other cloud.gov customers, you can request that cloud.gov establish a dedicated set of hosts for your organization. Applications run by other cloud.gov customers will not run on these hosts. Your applications will still be accessible from the internet and can still connect to any of our offered internal services. cloud.gov will work with you to give these dedicated hosts additional access to your private networks. 
+To prevent network access by other cloud.gov customers, you can request that cloud.gov establish a dedicated set of hosts for your organization. Applications run by other cloud.gov customers will not run on these hosts. Your applications will still be accessible from the internet and can still connect to any of our offered internal services. cloud.gov will work with you to give these dedicated hosts additional access to your private networks.
 
 *You can alternatively [secure communication for a single application and service at a time]({{< relref "docs/apps/static-egress" >}}).*
 
@@ -17,7 +17,7 @@ To prevent network access by other cloud.gov customers, you can request that clo
 
 cloud.gov will establish a dedicated pool of hosts for your cloud.gov applications sufficient to handle the workload you anticipate running there. This dedicated pool of hosts will be in a dedicated network segment.
 
-cloud.gov support will work with you to establish a Virtual Private Network (VPN) between the dedicated network segment and your network using the industry-standard Internet Protocol Security (IPSec) protocol. 
+cloud.gov support will work with you to establish a Virtual Private Network (VPN) between the dedicated network segment and your network using the industry-standard Internet Protocol Security (IPSec) protocol.
 
 {{< diagrams id-prefix="network-diagram" >}}
 graph TB;
@@ -59,7 +59,7 @@ graph TB;
 
 **Note**: At this time, only IKEv1 key exchange is supported, so make sure that your VPN endpoint supports this.
 
-To use this service, you must have an internet-routable IP address to use as the endpoint for the connection. If you have a firewall in place between the internet and your endpoint, then you will have to open both ingress and egress on UDP port 500 and TCP/IP port 50 to enable the connection. If you are also using NAT behind your firewall, you will also have to enable UDP 4500.
+To use this service, you must have an internet-routable IP address to use as the endpoint for the connection. If you have a firewall in place between the internet and your endpoint, then you will have to open both ingress and egress on UDP port 500 and ESP (IP Protocol 50) to enable the connection. If you are also using NAT behind your firewall, you will also have to enable UDP port 4500.
 
 ### How to set up a dedicated pool of hosts connected to your organization
 
