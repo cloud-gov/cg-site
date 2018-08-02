@@ -53,7 +53,7 @@ graph TB;
   isolated-app--shared network rules-->database
   normal-app--shared network rules-->database
   isolated-app--dedicated network rules---cg-vpn-endpoint
-  cg-vpn-endpoint-- internet ---customer-vpn-endpoint
+  cg-vpn-endpoint-- IPsec (via internet) ---customer-vpn-endpoint
   customer-vpn-endpoint---private-service
 {{< /diagrams >}}
 
