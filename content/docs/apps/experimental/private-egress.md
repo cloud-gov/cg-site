@@ -27,13 +27,13 @@ graph TB;
     router[Router]
     subgraph Dedicated Segment
       cg-vpn-endpoint[cloud.gov VPN Endpoint]
-      subgraph Dedicated Host
-        isolated-app[Isolated Application]
+      subgraph Dedicated Hosts
+        isolated-app[Isolated Applications]
       end
     end
     subgraph Shared Segment
-      subgraph Shared Host
-        normal-app[Default Application]
+      subgraph Shared Hosts
+        normal-app[Default Applications]
       end
     end
     subgraph cloud.gov Services
