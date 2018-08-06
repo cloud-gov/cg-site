@@ -130,6 +130,12 @@ running [cg-fake-uaa](https://github.com/18F/cg-fake-uaa), a minimal
 and allowing for offline development, it also makes the OAuth handshake
 easier to debug.
 
+The project includes a very simple (and not-for-production) NodeJS client that you
+can use for testing your cloud.gov authentication. You can follow
+the steps for [running the example client on cloud.gov with the cloud.gov
+UAA](https://github.com/18F/cg-fake-uaa#running-the-example-client-on-cloudgov-with-the-cloudgov-uaa) 
+to see the how the pieces fit together.
+
 ## Resources
 
 - [Full UAA API documentation](https://github.com/cloudfoundry/uaa/blob/master/docs/UAA-APIs.rst)
