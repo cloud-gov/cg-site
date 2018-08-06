@@ -322,6 +322,13 @@ This custom absolute path is best described as:
 - `${original-secret-name}` would be the original name of the secret being moved
   over to this custom absolute path.
 
+The `${generalized-deployment-name}` should be named after the producer of the
+secret, e.g. where the secret is set or configured. In the case of Cloud Foundry
+UAA client secrets, it's the `cf` deployment name. Consumers of the credential
+should never be considered for the `${generalized-deployment-name}`. In order to
+create a custom absolute path for a credential, cloud.gov operators must
+understand the consumer/producer relationship of the dependencies of the
+software they're deploying.
 
 ### Deploying services before CredHub credentials exist
 
