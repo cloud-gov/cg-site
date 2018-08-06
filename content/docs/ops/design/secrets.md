@@ -169,7 +169,12 @@ group and that you are deploying CredHub with `datastorage.require_tls` set to
 ### Generating import file
 
 To ease the import of secrets into a fresh deployment of CredHub, take the
-`common/secrets.yml` file run it through Pivotal's `vars-to-credhub` tool.
+`common/secrets.yml` file run [it through Pivotal's `vars-to-credhub`
+tool](https://github.com/pivotalservices/vars-to-credhub).
+
+> Note that `vars-to-credhub` only supports valid CredHub variable types. If the
+> tool errors on the YAML structure of the secrets file, refer to the
+> documentation below on [CredHub variable types](#credhub-variable-types)
 
 Get the name from the BOSH director using `bosh environment`.
 
@@ -232,7 +237,7 @@ delete the `credhub-import-*` file from the `s3://cloud-gov-varz/` bucket.
 aws s3 rm s3://cloud-gov-varz/credhub-import-file.yml
 ```
 
-#### CredHub credential types
+#### CredHub variable types
 
 CredHub only [supports specific
 types](https://docs.cloudfoundry.org/credhub/credential-types.html#cred-types).
