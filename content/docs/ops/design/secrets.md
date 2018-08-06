@@ -162,10 +162,6 @@ Deploying anything before there is a CredHub available on the BOSH director
 you're deploying to requires you to deploy CredHub manually using established
 `operations` and `variables` files that leverage BOSH interpolate.
 
-Ensure that you are creating a database with `rds.force_ssl` in its parameter
-group and that you are deploying CredHub with `datastorage.require_tls` set to
-`true` and `datastorage.tls_ca` set to the RDS certificates used for TLS.
-
 ### Generating import file
 
 To ease the import of secrets into a fresh deployment of CredHub, take the
@@ -277,6 +273,55 @@ credhub set \
 
 When it is retrieved from CredHub it will be a YAML array with a key of
 `export_volumes`.
+
+#### Handling dependencies among deployments with CredHub
+
+With a co-located CredHub for every BOSH director, different deployments within
+the same BOSH director may not run into namespacing issues requiring different
+variable files to update manifests across environments. It is possible though
+that there will be issues with credentials that flow through various
+deployments.
+
+A prime example of a dependency across deployments are Cloud Foundry UAA clients
+defined in the deployment of Cloud Foundry in each environment. These
+deployments normally do not have a prefix `/` slash in their name. This means
+that they would be looked up in CredHub by the BOSH director adding a prefix of
+`/${director}/${deployment}/${variable-name}`. [See the documentation here](https://github.com/cloudfoundry-incubator/credhub/blob/master/docs/bosh-config-server.md#namespacing).
+
+This means for the cloud.gov Cloud Foundry deployments, there would be three
+different variable look ups in each respective CredHub deployment for
+variables without a prefix which requires different variable files for each
+environment cloud.gov operators deploy:
+
+```sh
+/bosh/cf-development/cdn-broker-client-secret
+/bosh/cf-staging/cdn-broker-client-secret
+/bosh/cf-production/cdn-broker-client-secret
+```
+
+In order to avoid the need to create variable files for deployments in different
+environments, the cloud.gov operations team will leverage custom absolute paths
+for dependencies across different deployments. This requires manifests to be
+modified from their previous variable names without a prefix `/` slash to the
+new customer absolute path.
+
+```sh
+/cf/clients/cdn-broker-client-secret
+```
+
+This custom absolute path is best described as:
+
+```sh
+/${generalized-deployment-name}/${type}/${original-secret-name}`
+```
+
+- `${generalized-deployment-name}` would be the name of the BOSH deployment
+  without an environment.
+- `${type}` would be the type of credential respective of the
+  deployment name, e.g. `clients` for a Cloud Foundry deployment.
+- `${original-secret-name}` would be the original name of the secret being moved
+  over to this custom absolute path.
+
 
 ### Deploying services before CredHub credentials exist
 
