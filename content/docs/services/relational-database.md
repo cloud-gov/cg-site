@@ -51,6 +51,11 @@ If you want to specify the storage available to the instance:
 cf create-service aws-rds medium-psql my-db-service -c '{"storage": 50}'
 ```
 
+### Instance creation time
+
+Dedicated RDS database creation can take anywhere between 5 minutes and 60
+minutes,
+
 ### Bind to an application
 
 To use the service instance from your application, bind the service instance to the application. For an overview of this process and how to retrieve the credentials for the service instance from environment variables, see [Bind a Service Instance](https://docs.cloudfoundry.org/devguide/services/managing-services.html#bind) and the linked details at [Delivering Service Credentials to an Application](https://docs.cloudfoundry.org/devguide/services/application-binding.html).
