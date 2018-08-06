@@ -122,6 +122,14 @@ If you (or a user of your app) ever need to modify or revoke the permissions of
 third-party applications that you've granted access through the cloud.gov UAA,
 visit [https://login.fr.cloud.gov/profile](https://login.fr.cloud.gov/profile).
 
+## Using a development UAA server
+
+During development, you may want to authenticate against a local UAA server
+so you can test as multiple users, skip 2-factor authentication,
+and view UAA logs. Running UAA in [Docker](https://www.docker.com) can simplify this,
+and you can see an example of this in 
+
+and allowing for offline development, it also makes the OAuth handshake
 ## Using the fake UAA server
 
 During development, you may want to authenticate against a local server
