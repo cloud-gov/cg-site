@@ -219,24 +219,20 @@ mkdir libs/
 
 Copy the downloaded `ojdbc8.jar` to the `libs/` directory of `spring-music`. 
 
-Edit `build.grade` to uncomment the OJDBC compilation, as with either of the following commands:
+Edit `build.grade`, look for the following near line 60:
 
-Powershell:
-
-```powershell
-(Get-Content ./build.gradle).replace("// compile files('libs/ojdbc8.jar')","compile files('libs/ojdbc8.jar')") | Set-Content ./build.gradle
 ```
-
-*nix Shells:
-
-```bash
-sed -i -e "s|// compile files('libs/ojdbc8.jar')|compile files('libs/ojdbc8.jar')|" build.gradle
+    // Oracle - uncomment one of the following after placing driver in ./libs
+    // compile files('libs/ojdbc8.jar')
+    // compile files('libs/ojdbc7.jar')
 ```
+and remove the `//` comment from the line for `libs/ojdbc8.jar`. Save the `build.gradle` file.
 
 After installing the 'cf' [command-line interface for Cloud Foundry](http://docs.cloudfoundry.org/cf-cli/), and logging in to cloud.gov, `cf login --sso -a https://api.fr.cloud.gov`, the application can be built and pushed using these commands:
 
 ```bash
 cf create-service aws-rds medium-oracle-se2 spring-oracle
+# Wait 20 minutes: get coffee, make a sandwich, ...
 ./gradlew clean assemble
 cf push --no-start
 cf bind-service spring-music spring-oracle
@@ -286,7 +282,6 @@ Now connect using `sqlplus username/password@host:port/ORCL`, where host is `loc
 ```
 
 Then you can use SQLPLUS commands like `SELECT table_name FROM user_tables;`
-
 
 ## Version information
 
