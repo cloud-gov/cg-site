@@ -73,7 +73,7 @@ Server error, status code: 502, error code: 10001, message: Service broker error
 
 If the response is `OK` instead of `FAILED` then your database is ready to use.
 
-The cloud.gov team is aims to provide clearer status indicators in a future release of our service broker.
+The cloud.gov team aims to provide clearer status indicators in a future release of our service broker.
 
 ### Bind to an application
 
