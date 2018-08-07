@@ -158,7 +158,177 @@ Concourse, and CredHub.
 
 ## Bootstrapping CredHub
 
-> To Be Decided
+Deploying anything before there is a CredHub available on the BOSH director
+you're deploying to requires you to deploy CredHub manually using established
+`operations` and `variables` files that leverage BOSH interpolate.
+
+### Generating import file
+
+To ease the import of secrets into a fresh deployment of CredHub, take the
+`common/secrets.yml` file run [it through Pivotal's `vars-to-credhub`
+tool](https://github.com/pivotalservices/vars-to-credhub).
+
+> Note that `vars-to-credhub` only supports valid CredHub variable types. If the
+> tool errors on the YAML structure of the secrets file, refer to the
+> documentation below on [CredHub variable types](#credhub-variable-types)
+
+Get the name from the BOSH director using `bosh environment`.
+
+```sh
+$ bosh environment --tty | grep Name | awk '{ print $2 }'
+```
+Get the name of the deployments available in BOSH by using `bosh deployments`.
+
+```sh
+bosh deployments --column=Name
+```
+
+```sh
+prefix="/${bosh-director-name}/${bosh-deployment-name}";
+vars-to-credhub \
+  --prefix "${prefix}" \
+  --vars-file tmp/path-to/common-secrets-file.yml > \
+credhub-import-${bosh-director-name}-${bosh-deployment-name}.yml
+```
+
+cloud.gov operators inspect the `credhub-import-*` file for types and names that
+are referenced in BOSH operation files, BOSH variable files, or upstream
+manifest partials. Keep in mind names that are not prefixed by a forward-slash
+`/` will be converted by BOSH before being looked up in CredHub with a prefix of
+`/${bosh-director-name}/${bosh-deployment-name}/`.
+
+To transfer the file from a cloud.gov operator's local machine to a jumpbox,
+cloud.gov operators leverage the `s3://cloud-gov-varz` bucket to temporary
+upload `credhub-import-*` files to be downloaded from within a jumpbox using
+the cloud.gov operator's AWS credentials using ephemeral environmental variables
+using the `aws-cli`.
+
+```sh
+aws s3 cp tmp/credhub-import-file.yml s3://cloud-gov-varz/credhub-import-file.yml --sse AES256
+```
+
+cloud.gov operators ensure that these credentials are not saved on the jumpbox
+nor in the shell's `history` by preceding the commands with a single space ` `
+to prevent it being saved in `history`.
+
+```sh
+ AWS_DEFAULT_REGION=us-gov-west-1 \
+AWS_ACCESS_KEY_ID=${operator-access-key-id} \
+AWS_SECRET_ACCESS_KEY= ${operator-secret-access-key} \
+aws s3 cp s3://cloud-gov-varz/credhub-import-file.yml tmp/credhub-import-file.yml
+```
+
+With the file locally in the jumpbox, you can then import it using the
+`credhub-cli`.
+
+```sh
+credhub import \
+  -f credhub-import-${bosh-director-name}-${bosh-deployment-name}.yml
+```
+
+Once this file is successfully imported into CredHub, cloud.gov operators will
+delete the `credhub-import-*` file from the `s3://cloud-gov-varz/` bucket.
+
+```sh
+aws s3 rm s3://cloud-gov-varz/credhub-import-file.yml
+```
+
+#### CredHub variable types
+
+CredHub only [supports specific
+types](https://docs.cloudfoundry.org/credhub/credential-types.html#cred-types).
+If a cloud.gov operator needs to store a different type of credential, such as
+an array. It's required to modify the structure of the manifest using an opsfile
+and storing the key of the array in the CredHub database. An generic example is
+described below:
+
+```yaml
+  - name: nfstestserver
+    release: nfs-volume
+    properties:
+      nfstestserver:
+        # value stored in secrets file as an array
+        export_volumes: ((nfstestserver-volumes))
+```
+
+Modify the manifest using an opsfile so that the secret included the
+`export_volumes` property in the value.
+
+```yaml
+  - name: nfstestserver
+    release: nfs-volume
+    properties:
+      nfstestserver: ((nfstestserver-volumes))
+
+```
+
+This credential will then be stored in CredHub as a JSON type.
+
+```sh
+credhub set \
+  -n /bosh/deploy/nfstestserver-volumes \
+  -t json \
+  -v '{ "export_volumes": [ "val1", "val2" ] }'
+```
+
+When it is retrieved from CredHub it will be a YAML array with a key of
+`export_volumes`.
+
+#### Handling dependencies among deployments with CredHub
+
+With a co-located CredHub for every BOSH director, different deployments within
+the same BOSH director may not run into namespacing issues requiring different
+variable files to update manifests across environments. It is possible though
+that there will be issues with credentials that flow through various
+deployments.
+
+A prime example of a dependency across deployments are Cloud Foundry UAA clients
+defined in the deployment of Cloud Foundry in each environment. These
+deployments normally do not have a prefix `/` slash in their name. This means
+that they would be looked up in CredHub by the BOSH director adding a prefix of
+`/${director}/${deployment}/${variable-name}`. [See the documentation here](https://github.com/cloudfoundry-incubator/credhub/blob/master/docs/bosh-config-server.md#namespacing).
+
+This means for the cloud.gov Cloud Foundry deployments, there would be three
+different variable look ups in each respective CredHub deployment for
+variables without a prefix which requires different variable files for each
+environment cloud.gov operators deploy:
+
+```sh
+/bosh/cf-development/cdn-broker-client-secret
+/bosh/cf-staging/cdn-broker-client-secret
+/bosh/cf-production/cdn-broker-client-secret
+```
+
+In order to avoid the need to create variable files for deployments in different
+environments, the cloud.gov operations team will leverage custom absolute paths
+for dependencies across different deployments. This requires manifests to be
+modified from their previous variable names without a prefix `/` slash to the
+new customer absolute path.
+
+```sh
+/cf/clients/cdn-broker-client-secret
+```
+
+This custom absolute path is best described as:
+
+```sh
+/${generalized-deployment-name}/${type}/${original-secret-name}`
+```
+
+- `${generalized-deployment-name}` would be the name of the BOSH deployment
+  without an environment.
+- `${type}` would be the type of credential respective of the
+  deployment name, e.g. `clients` for a Cloud Foundry deployment.
+- `${original-secret-name}` would be the original name of the secret being moved
+  over to this custom absolute path.
+
+The `${generalized-deployment-name}` should be named after the producer of the
+secret, e.g. where the secret is set or configured. In the case of Cloud Foundry
+UAA client secrets, it's the `cf` deployment name. Consumers of the credential
+should never be considered for the `${generalized-deployment-name}`. In order to
+create a custom absolute path for a credential, cloud.gov operators must
+understand the consumer/producer relationship of the dependencies of the
+software they're deploying.
 
 ### Deploying services before CredHub credentials exist
 
