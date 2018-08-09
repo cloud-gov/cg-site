@@ -122,13 +122,16 @@ If you (or a user of your app) ever need to modify or revoke the permissions of
 third-party applications that you've granted access through the cloud.gov UAA,
 visit [https://login.fr.cloud.gov/profile](https://login.fr.cloud.gov/profile).
 
-## Using the fake UAA server
+## Using a development UAA server
 
-During development, you may want to authenticate against a local server
-running [cg-fake-uaa](https://github.com/18F/cg-fake-uaa), a minimal
-"fake" version of the cloud.gov UAA server. Aside from making login easier
-and allowing for offline development, it also makes the OAuth handshake
-easier to debug.
+During development, you may want to authenticate against a local UAA server
+so you can test as multiple users, skip 2-factor authentication,
+and view UAA logs. Running UAA in [Docker](https://www.docker.com) can simplify this,
+and you can follow an example of this in the [cloud.gov demonstrations repository](https://github.com/18F/cg-demos/blob/master/cg-identity/README.md#2-run-a-local-uaa-server-for-local-development).
+
+## Demonstrating the cloud.gov identity provider
+
+You can go through the process of setting up a simple application, written in Node.js, to use the cloud.gov identity provider in the [cloud.gov demonstrations repository](https://github.com/18F/cg-demos/blob/master/cg-identity/README.md#1-run-an-application-in-cloudgov-that-uses-the-identity-provider).
 
 ## Resources
 
