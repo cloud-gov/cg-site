@@ -15,7 +15,24 @@ To set up private egress for an organization:
 * Create a new instance group of diego cells with the appropriate placement tag in https://github.com/18F/cg-deploy-cf
     * See https://github.com/18F/cg-deploy-cf/pull/366 for an example
 * Create an isolation segment in Cloud Foundry and associate with customer organization
+
+        cf create-isolation-segment $segment_name
+        cf enable-org-isolation $org_name $segment_name
+        cf set-org-default-isolation-segment $org_name $segment_name
+
 * Create an application security group to allow egress to customer network and associate with customer organization
+
+    ```json
+    [
+      {
+        "protocol": "all",
+        "destination": "$private_egress_cidr"
+      }
+    ]
+    ```
+
+        cf create-security-group $asg_name /path/to/asg.json
+        cf bind-security-group $asg_name $org_name
 
 Remaining technical work:
 * Update and merge https://github.com/18F/cg-provision/pull/468
