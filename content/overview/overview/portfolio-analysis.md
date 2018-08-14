@@ -11,6 +11,8 @@ cloud.gov is suitable for a wide range of applications, including websites and n
 Here's a process you can follow to identify the applications in your portfolio ready to move to cloud.gov.
 <!--more-->
 
+For help interpreting this list or evaluating specific cases, please email the cloud.gov team for help with your evaluation at cloud-gov-inquiries@gsa.gov. The cloud.gov team can help you evaluate whether you application is easy to migrate to cloud.gov, as well as how to approach more complex applications that require more modification. 
+
 ## Identify applications with a compatible security impact level
 - FISMA Low
 - FISMA Moderate
@@ -77,5 +79,3 @@ Ideal applications follow as many of the [12-Factor App](https://12factor.net/) 
 
 ## What now?
 Now that you have a sense of which applications are compatible with cloud.gov, and which will require more effort or are more complex, identify those which have the highest cost-of-delay... That is, the systems which will deliver the most benefit and which will reduce operational and security overhead the most by being in the cloud. You may need to work with your agency leadership to come to a consensus about where there's the most pain to be relieved or the most gain to be received, from the mission and financial rather than (technical) side.
-
-The cloud.gov team can help you evaluate which of your applications are easier to migrate to cloud.gov, as well as how to approach more complex applications that require more modification. For help interpreting this list or evaluating specific cases, please email the cloud.gov team for help with your evaluation at cloud-gov-inquiries@gsa.gov.
