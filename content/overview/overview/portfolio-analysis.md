@@ -52,7 +52,7 @@ Here's a process you can follow to identify the applications in your portfolio r
 ## Evaluate applications for cloud operations readiness
 Once you have a list of applications with a compatible impact level and technology stack, use these criteria to sort that list from those applications already ideally suited to running in a PaaS environment to those which are likely to require modification.
 
-Ideal applications follow as many of the [12-Factor App](https://12factor.net/) guidelines as possible. The more of the following questions you can answer with "yes", the better. (Note these criteria aren't cloud.gov-specific! Applications that follow these guidelines are easier to migrate between modern hosting environments.)
+Ideal applications follow as many of the [12-Factor App](https://12factor.net/) guidelines as possible. The more of the following questions you can answer with "yes", the better. Applications that follow these guidelines are easier to migrate between modern hosting environments; the guidelines aren't cloud.gov-specific except as noted!
 
 1. **Codebase**: Is the codebase tracked in version control?
 1. **Dependencies**: Are dependencies explicitly listed (such as package manager manifest)?
