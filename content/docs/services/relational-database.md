@@ -51,6 +51,30 @@ If you want to specify the storage available to the instance:
 cf create-service aws-rds medium-psql my-db-service -c '{"storage": 50}'
 ```
 
+### Instance creation time
+
+Dedicated RDS instance provisioning can take anywhere between 5 minutes and 60
+minutes. During instance provisioning, the results of `cf services` or `cf service SERVICE_NAME` will show status as `created`, as in the following example:
+
+```
+> cf services
+name                 service   plan                bound apps   last operation
+test-oracle          aws-rds   medium-oracle-se2                create succeeded
+```
+
+**The `last operation` value of `create succeeed` may lead you to think the database is ready to use. This is misleading.** Instead, the _last operation_ indicates the API call to create the database has succeeded, not that provisioning has completed. To determine if a database is ready to use, test if you can create a `service key`. For example, `test-oracle` is not yet ready in this case:
+
+```
+cf create-service-key test-oracle test-oracle-ok
+Creating service key test-oracle-oke for service instance test-oracle as peter.burkholder@gsa.gov...
+FAILED
+Server error, status code: 502, error code: 10001, message: Service broker error: There was an error binding the database instance to the application. Error: Instance not available yet. Please wait and try again..
+```
+
+If the response is `OK` instead of `FAILED` then your database is ready to use.
+
+The cloud.gov team aims to provide clearer status indicators in a future release of our service broker.
+
 ### Bind to an application
 
 To use the service instance from your application, bind the service instance to the application. For an overview of this process and how to retrieve the credentials for the service instance from environment variables, see [Bind a Service Instance](https://docs.cloudfoundry.org/devguide/services/managing-services.html#bind) and the linked details at [Delivering Service Credentials to an Application](https://docs.cloudfoundry.org/devguide/services/application-binding.html).
