@@ -27,4 +27,4 @@ fly -t $FLY_TARGET unpause-pipeline -p $PIPELINE
 fly -t $FLY_TARGET trigger-job -j $PIPELINE/deploy-production
 ```
 
-The cloud.gov team uses our internal Concourse server, as opposed to a cloud-based service, to simplify our compliance work. When there's a suitable JAB-Authorized FedRAMP offering for continous integration and continuous delivery service, we'll consider migrating so we can publish build results..
+The cloud.gov team uses our internal Concourse server, as opposed to a cloud-based service, to simplify our compliance work. When there's a suitable JAB-Authorized FedRAMP offering for continous integration and continuous delivery service, we'll consider migrating so we can publish build results.
