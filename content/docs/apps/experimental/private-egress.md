@@ -5,7 +5,7 @@ menu:
 title: Connect to your private network
 ---
 
-You can set up all or a subset of your applications to communicate securely with an external network. This enables your cloud.gov applications to access to services hosted in your agency infrastructure or with other cloud providers.
+You can set up all or a subset of your applications to communicate securely with an external network. This enables your cloud.gov applications to access services hosted in your agency infrastructure or with other cloud providers.
 
 By default, cloud.gov runs your application instances on a pool of hosts shared by all cloud.gov customers. Application instances run in containers that isolate them from each other, but the hosts are all running in the same network segment. If you open your private external service network for access by cloud.gov applications, you will also permit network access by other cloud.gov customers.
 
