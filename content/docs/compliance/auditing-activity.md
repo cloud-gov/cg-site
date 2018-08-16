@@ -50,10 +50,10 @@ cf curl "/v2/events?q=type+IN+audit.route.create,audit.route.delete-request,audi
 | --------- | ---------------------- | ----------- | ----- | -------- |
 | 2018-02-05T19:36:19Z | user.name@example.gov | audit.route.update | myapproute | 7950afc2-dd7b-4a70-80a0-8f7207fd1382 |
 
-## List All Service Instance Create and Delete Events as CSV
-To list all events where a service is created or deleted:
+## List All Service Instance Events as CSV
+To list all events where a service is created, updated, unbound or deleted:
 ```
-cf curl "/v2/events?q=type+IN+audit.service_instance.create,audit.service_instance.delete&q=organization_guid:$GUID" | jq -c -r '.resources[].entity | [ .timestamp, .actor_username, .type, .actee_name ] | @csv' | sed -e s/\"//g
+cf curl "/v2/events?q=type+IN+audit.service_instance.create,audit.service_instance.bind_route,audit.service_instance.update,audit.service_instance.unbind_route,audit.service_instance.delete&q=organization_guid:$GUID" | jq -c -r '.resources[].entity | [ .timestamp, .actor_username, .type, .actee_name ] | @csv' | sed -e s/\"//g
 ```
 | Timestamp | User Performing Action | Action Type | Service Name |
 | --------- | ---------------------- | ----------- | ------------ |

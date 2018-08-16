@@ -5,7 +5,7 @@ menu:
 title: Connect to your private network
 ---
 
-You can set up all or a subset of your applications to communicate securely with an external network. This enables your cloud.gov applications to access to services hosted in your agency infrastructure or with other cloud providers.
+You can set up all or a subset of your applications to communicate securely with an external network. This enables your cloud.gov applications to access services hosted in your agency infrastructure or with other cloud providers.
 
 [**This is an experimental feature.**]({{< relref "docs/apps/experimental/experimental.md" >}})
 
