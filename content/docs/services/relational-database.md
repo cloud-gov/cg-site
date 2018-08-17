@@ -245,6 +245,29 @@ Now connect using `sqlplus username/password@host:port/ORCL`, where host is `loc
 
 Then you can use SQLPLUS commands like `SELECT table_name FROM user_tables;`
 
+## Connect to databases without use of `connect-to-service`
+
+Example for app name `hello-doe`
+
+
+```
+myapp_guid=$(cf app --guid hello-doe)
+
+tunnel=$(cf curl /v2/apps/$myapp_guid/env | jq -r '[.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials | .host, .port] | join(":")')
+cf ssh -N -L 5432:$tunnel hello-doe
+```
+
+Another window:
+
+```
+myapp_guid=$(cf app --guid hello-doe)
+creds=$(cf curl /v2/apps/$myapp_guid/env | jq -r '[.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials | .username, .password] | join(":")')
+dbname=$(cf curl /v2/apps/$myapp_guid/env | jq -r '.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials | .db_name')
+
+psql postgres://$creds@localhost:3306/$dbname
+
+```
+
 ## Version information
 
 The software versions listed in the table above are for new instances of those plans.
