@@ -254,6 +254,7 @@ Example for app name `hello-doe`
 myapp_guid=$(cf app --guid hello-doe)
 
 tunnel=$(cf curl /v2/apps/$myapp_guid/env | jq -r '[.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials | .host, .port] | join(":")')
+
 cf ssh -N -L 5432:$tunnel hello-doe
 ```
 
@@ -261,7 +262,9 @@ Another window:
 
 ```
 myapp_guid=$(cf app --guid hello-doe)
+
 creds=$(cf curl /v2/apps/$myapp_guid/env | jq -r '[.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials | .username, .password] | join(":")')
+
 dbname=$(cf curl /v2/apps/$myapp_guid/env | jq -r '.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials | .db_name')
 
 psql postgres://$creds@localhost:3306/$dbname
