@@ -5,7 +5,11 @@ menu:
 title: Connect to your private network
 ---
 
-You can set up all or a subset of your applications to communicate securely with an external network. This enables your cloud.gov applications to access to services hosted in your agency infrastructure or with other cloud providers.
+You can set up all or a subset of your applications to communicate securely with an external network. This enables your cloud.gov applications to access services hosted in your agency infrastructure or with other cloud providers.
+
+[**This is an experimental feature.**]({{< relref "docs/apps/experimental/experimental.md" >}})
+
+_Note: As of August 2018, this feature is not yet available, pending FedRAMP approval. If you want to use this feature, [contact support]({{< relref "docs/help.md" >}}) and our team will let you know our estimated timeline for approval._
 
 By default, cloud.gov runs your application instances on a pool of hosts shared by all cloud.gov customers. Application instances run in containers that isolate them from each other, but the hosts are all running in the same network segment. If you open your private external service network for access by cloud.gov applications, you will also permit network access by other cloud.gov customers.
 
@@ -57,11 +61,29 @@ graph TB;
   customer-vpn-endpoint---private-service
 {{< /diagrams >}}
 
-**Note**: At this time, only IKEv1 key exchange is supported, so make sure that your VPN endpoint supports this.
+To use this service, you must have an internet-routable IP address to use as the IPsec endpoint for the connection. If you have a firewall in place between the internet and your endpoint, then you will have to open both ingress and egress on UDP port 500 and ESP (IP Protocol 50) to enable the connection. If you are also using NAT behind your firewall, you will also have to enable UDP port 4500.
 
-To use this service, you must have an internet-routable IP address to use as the endpoint for the connection. If you have a firewall in place between the internet and your endpoint, then you will have to open both ingress and egress on UDP port 500 and ESP (IP Protocol 50) to enable the connection. If you are also using NAT behind your firewall, you will also have to enable UDP port 4500.
+To be compatible with this feature, your IPsec endpoint must support IKEv1 key exchange along with AES128 encryption, SHA256 hashing, and Diffie Hellman Group 14 (MODP 2048) for Perfect Forward Secrecy (PFS). Your IPsec endpoint can be either a software or hardware device. Here is a list of compatible options we are prepared to support (in addition to open source IPsec endpoints such as strongSWAN and OpenSwan):
 
-### How to set up a dedicated pool of hosts connected to your organization
+<!-- List from https://docs.aws.amazon.com/AmazonVPC/latest/NetworkAdminGuide/Introduction.html#DevicesTested -->
+
+- Check Point Security Gateway running R77.10 (or later) software
+- Cisco ASA running Cisco ASA 8.2 (or later) software
+- Cisco IOS running Cisco IOS 12.4 (or later) software
+- Dell SonicWALL running SonicOS 5.9 (or later) software
+- Fortinet Fortigate 40+ Series running FortiOS 4.0 (or later) software
+- Juniper J-Series running JunOS 9.5 (or later) software
+- Juniper SRX running JunOS 11.0 (or later) software
+- Juniper SSG running ScreenOS 6.1, or 6.2 (or later) software
+- Juniper ISG running ScreenOS 6.1, or 6.2 (or later) software
+- Netgate pfSense running OS 2.2.5 (or later) software.
+- Palo Alto Networks PANOS 4.1.2 (or later) software
+- Yamaha RT107e, RTX1200, RTX1210, RTX1500, RTX3000 and SRT100 routers
+- Microsoft Windows Server 2008 R2 (or later) software
+- Microsoft Windows Server 2012 R2 (or later) software
+- Zyxel Zywall Series 4.20 (or later) software for statically routed VPN connections, or 4.30 (or later) software for dynamically routed VPN connections
+
+### How to get a dedicated pool of cloud.gov hosts connected to your organization
 
 Your Org Admin should request a dedicated pool of hosts for your applications  by creating a [support ticket](mailto:cloud-gov-support@gsa.gov?subject=Private%20Egress%20Request). In your request, please provide the following:
 
