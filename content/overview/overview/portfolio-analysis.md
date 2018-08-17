@@ -65,7 +65,7 @@ Ideal applications follow as many of the [12-Factor App](https://12factor.net/) 
   - Applications that rely on a durable filesystem to share state between requests will be supported in FY19. An [experimental service]({{< relref "volume-services" >}}) supports evaluating these applications on cloud.gov now.
 1. **Port binding**: Does the application listen for requests over HTTP on a single port?
   - Applications that only accept requests over straight TCP are also possible, but may require additional work on the cloud.gov side to get going.
-1. **Concurrency**: Does the application scale horizontally without special configuration?
+1. **Concurrency**: Does the application scale correctly without modification when you run additional instances of it behind a load-balancer?
   - Applications that require instances to be aware of each other are also possible, but may require additional work to configure correctly.
 1. **Disposability**: Can the application start quickly and shutdown gracefully?
 1. **Dev/prod parity**: Does the application exclude environment-sensitive code?
