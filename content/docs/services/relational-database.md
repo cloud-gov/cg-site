@@ -267,7 +267,7 @@ creds=$(cf curl /v2/apps/$myapp_guid/env | jq -r '[.system_env_json.VCAP_SERVICE
 
 dbname=$(cf curl /v2/apps/$myapp_guid/env | jq -r '.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials | .db_name')
 
-psql postgres://$creds@localhost:3306/$dbname
+psql postgres://$creds@localhost:5432/$dbname
 
 ```
 
