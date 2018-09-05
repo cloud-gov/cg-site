@@ -191,7 +191,7 @@ curl -XGET http://localhost:9200/_cat/shards | grep UNASSIGNED | tee unassigned-
 ```sh
 curl -XGET http://localhost:9200/_cat/shards | grep UNASSIGNED > unassigned-shards
 for line in `cat unassigned-shards | awk '{print $1 ":" $2}'`; do index=`echo $line | awk -F: '{print $1}'`; \
-    shard=`echo $line | awk -F: '{print $2}'`; curl -XPOST 'localhost:9200/_cluster/reroute' -d "{
+    shard=`echo $line | awk -F: '{print $2}'`; curl -H 'Content-Type: application/json' -XPOST 'localhost:9200/_cluster/reroute' -d "{
         \"commands\" : [ {
               \"allocate\" : {
                   \"index\" : \"$index\",
