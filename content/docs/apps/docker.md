@@ -35,3 +35,13 @@ Here are some considerations to keep in mind when deciding to use Docker images 
 #### Docker as tasks
 
 There is [a Cloud Foundry API for tasks creation](http://v3-apidocs.cloudfoundry.org/version/3.31.0/index.html#tasks). This allows single, one-off tasks to be triggered through the API.
+
+## Docker example walk through
+
+1. launch an app
+1. use cups (user-provided service) to get to secrets
+1. use env vars and bindings to control connection to db
+1. use env vars and binding to connect to S3
+
+
+
