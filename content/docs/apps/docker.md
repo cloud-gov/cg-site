@@ -13,7 +13,7 @@ As an alternative to using buildpacks, you can push applications based on Docker
 
 To push a Docker image, use the `--docker-image` flag when pushing your app, for example:
 
-`cf push lattice-app --docker-image cloudfoundry/lattice-app`
+`cf push test-app --docker-image cloudfoundry/test-app`
 
 You can also push an image from a private Docker registry by providing the host and authentication information, as in this example:
 
