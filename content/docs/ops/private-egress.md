@@ -9,6 +9,7 @@ title: Private egress
 To provide customers access to services running on their private network, we provision dedicated isolation segments in separate networks that connect to customer networks over VPN.
 
 To set up private egress for an organization:
+
 * Create a new instance of the `isolation-segment` stack in https://github.com/18F/cg-provision
 * Update cloud config for the new isolation segment in https://github.com/18F/cg-deploy-bosh
     * See https://github.com/18F/cg-deploy-bosh/pull/290 for an example
@@ -35,6 +36,7 @@ To set up private egress for an organization:
         cf bind-security-group $asg_name $org_name
 
 Remaining technical work:
+
 * Update and merge https://github.com/18F/cg-provision/pull/468
     * Decide whether isolation segments should be scoped to VPCs or subnets
     * Allow ingress to isolation segment from Cloud Foundry control plane
