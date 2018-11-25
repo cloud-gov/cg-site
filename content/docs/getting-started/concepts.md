@@ -73,15 +73,18 @@ cf target -o ORGNAME -s SPACENAME
 
 All apps need to use a "buildpack" specific to their language, which sets up dependencies for their language stack. There are [standard buildpacks for most languages](https://docs.cloudfoundry.org/buildpacks/), and Cloud Foundry usually auto-detects and auto-applies the appropriate one when you deploy an app (one exception is that it doesn't auto-apply the special [binary buildpack](https://docs.cloudfoundry.org/buildpacks/binary/index.html)). We strongly encourage you to use the standard buildpacks. cloud.gov supports these standard buildpacks and provides security updates for them. (You'll need to redeploy or restage your application to pick up buildpack updates. You're also responsible for supporting and security-patching the application itself.)
 
-In the rare case where Cloud Foundry doesn't correctly auto-detect the buildpack, or if you want to use a binary buildpack or [custom buildpack]({{< relref "docs/apps/custom-buildpacks.md">}}), you can specify a buildpack in the [application manifest](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) (as below) or with the `-b` flag. To reference it, use either the buildpack name:
+In the rare case where Cloud Foundry doesn't correctly auto-detect the buildpack, or if you want to use a binary buildpack or [custom buildpack]({{< relref "docs/apps/custom-buildpacks.md">}}), you can specify a buildpack in the [application manifest](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) (as below) or with the `-b` flag.
 
-    buildpack: python_buildpack
+    buildpacks:
+      - python_buildpack
 
 Or a URL:
 
-    buildpack: https://github.com/cloudfoundry/ruby-buildpack.git
+    buildpacks:
+      - https://github.com/cloudfoundry/ruby-buildpack.git
 
 **Multiple languages:** If your application requires multiple languages, we recommend evaluating these strategies to simplify your application:
+
 * Can you split your project into smaller applications that work together, so that you can use one language for each application and deploy each one separately?
 * Can you initiate long-running processes or schedule periodic jobs from outside your application [using the Tasks capability](https://docs.cloudfoundry.org/devguide/using-tasks.html)?
 * Can you [build your static assets using CI]({{< relref "assets.md#build-assets-on-ci" >}}) prior to pushing your application, so that only the final built assets are deployed on cloud.gov?
