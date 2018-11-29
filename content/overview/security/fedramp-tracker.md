@@ -37,6 +37,6 @@ Here's how it works: Every "moderate" impact federal system is required to accou
 
 If you want to use cloud.gov, [**request the P-ATO documentation package from FedRAMP**](https://s3.amazonaws.com/sitesusa/wp-content/uploads/sites/482/2015/03/FedRAMP-Package-Request-Form_V4_06192014.pdf) (the Package ID for that form is F1607067912). You can also view the [FedRAMP Marketplace page for cloud.gov](https://marketplace.fedramp.gov/#/product/18f-cloudgov?sort=productName).
 
-The [**Control Implementation Summary + Customer Responsibility Matrix (.xlsx)**](/resources/cloud.gov-CIS-Worksheet.xlsx) is a quick summary of each Low and Moderate security control and whether it is handled by cloud.gov, shared responsibility, or customer responsibility.
+The [**Control Implementation Summary + Customer Responsibility Matrix (.xlsx)**](/resources/cloud.gov-CIS-Worksheet.xlsx) (last updated November 7, 2018) is a quick summary of each Low and Moderate security control and whether it is handled by cloud.gov, shared responsibility, or customer responsibility.
 
 When you're ready to start the P-ATO review process for cloud.gov, see [ATO process]({{< relref "docs/compliance/ato-process.md" >}}) for an overview of the typical workflow.
