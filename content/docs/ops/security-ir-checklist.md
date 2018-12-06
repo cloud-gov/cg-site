@@ -51,7 +51,7 @@ Once the incident is resolved:
 - Schedule a retrospective.
 - Thank everyone involved for their service!
 
-## Special situations
+## Special Situations
 
 Extra checklists for special situations that don't always occur during incidents:
 
@@ -73,3 +73,15 @@ Follow this checklist if you need to hand over IC duties:
 - New IC: update GitHub issue, noting that you're now the IC.
 - New IC: send out a sitrep, noting that you're taking over IC.
 - Old IC: stick around for 15-20 minutes to ensure a smooth handoff, then log off!
+
+### Network Interconnect
+
+If unauthorized access or traffic is detected across a secure VPN / interconnect:
+
+- Invite partner network operations team contacts to the call
+- Confirm if traffic should be terminated or captured
+- If terminated: from the Amazon AWS console select `Services -> VPC -> Virtual Private Gateways -> VPN ID -> Detach from VPC`
+- If captured:
+  - VPC Flow Logs: from the Amazon AWS console select `Services -> VPC -> VPC ID -> Flow Logs`
+  - Live capture: from the Isolation Segment Diego Cell run `tcpdump -i $INTERFACE -s 65535 -w /tmp/incident-$(date +%s).pcap`
+  - Partner: the connected network will have control of all systems on the customer side of the VPN

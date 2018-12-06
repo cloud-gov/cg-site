@@ -201,6 +201,7 @@ High-sev incidents successfully compromise the confidentiality/integrity of Pers
 - Successful root-level compromise of production systems
 - Financial malware (ie. CryptoLocker) targeting 18F staff
 - Denial of Service attacks resulting in severe outages
+- Unauthorized access or traffic across network interconnect
 
 Guidelines for addressing High-sev issues:
 
