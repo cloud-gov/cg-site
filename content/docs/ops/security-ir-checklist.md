@@ -76,12 +76,12 @@ Follow this checklist if you need to hand over IC duties:
 
 ### Network Interconnect
 
-If unauthorized access or traffic is detected across a secure VPN / interconnect:
+If a cloud.gov team member or automated scanning system detects unauthorized access or traffic across a secure VPN / interconnection with a customer:
 
-- Invite partner network operations team contacts to the call
-- Confirm if traffic should be terminated or captured
-- If terminated: from the Amazon AWS console select `Services -> VPC -> Virtual Private Gateways -> VPN ID -> Detach from VPC`
-- If captured:
+- Invite customer team contacts (such as Org Managers and System Owner) to the call
+- Confirm whether traffic should be terminated or captured
+- If traffic should be terminated: from the Amazon AWS console select `Services -> VPC -> Virtual Private Gateways -> VPN ID -> Detach from VPC`
+- If traffic should be captured:
   - VPC Flow Logs: from the Amazon AWS console select `Services -> VPC -> VPC ID -> Flow Logs`
   - Live capture: from the Isolation Segment Diego Cell run `tcpdump -i $INTERFACE -s 65535 -w /tmp/incident-$(date +%s).pcap`
-  - Partner: the connected network will have control of all systems on the customer side of the VPN
+  - Customer: the customer has control of all systems on the customer side of the VPN, so the customer needs to capture that traffic
