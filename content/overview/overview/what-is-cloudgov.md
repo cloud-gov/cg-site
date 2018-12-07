@@ -9,7 +9,7 @@ aliases:
   - /intro/overview/what-is-cloudgov
 ---
 
-cloud.gov is a secure, fully compliant Platform as a Service (PaaS). cloud.gov helps federal agencies deliver the services the public deserves in a faster, more user-centered way.
+cloud.gov is a secure and compliant Platform as a Service (PaaS). cloud.gov helps federal agencies deliver the services the public deserves in a faster, more user-centered way.
 
 cloud.gov allows your development team to focus on products that serve your agency’s mission, without needing to manage the underlying server infrastructure. And cloud.gov’s built-in compliance support helps customers create the documentation and continuing assurance necessary for federal services to comply with FISMA regulations and agency-specific “Authority to Operate” (ATO) requirements.
 
