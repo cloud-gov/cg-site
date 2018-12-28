@@ -42,8 +42,6 @@ For help interpreting this list or evaluating specific cases, please email the c
   - Oracle
   - Postgresql
   - SQL Server (available FY19)
-- **NoSQL databases**:
-  - Mongo (available FY19)
 - **Search engines**:
   - Elasticsearch
 - **Cache/queues**:

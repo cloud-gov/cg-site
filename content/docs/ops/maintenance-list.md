@@ -75,7 +75,6 @@ deploying an update that will upgrade the stemcell. You should also read the
 
 Review all recent alerts and notifications delivered to [`cg-notifications`](https://groups.google.com/a/gsa.gov/forum/#!forum/cloud-gov-notifications)
 , [`#cg-platform-news`](https://gsa-tts.slack.com/messages/cg-platform-news/)
-, and [PagerDuty](https://18fi.pagerduty.com/incidents).
 
 ### Are there no alerts or notifications?
 Verify the monitoring system is functioning correctly and confirm that alerts
