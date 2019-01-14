@@ -47,6 +47,7 @@ If the user requesting a reset has any apps, routes, or services in their sandbo
         cg-scripts/reset-totp.sh cf-production ${username}
 
 4. Let the user know the reset process is complete, e.g.:
+  
   > I've reset your one-time password. To regain cloud.gov access, log in to cloud.gov again. After entering your username/password combination, you should be prompted to set up a new one-time password with your authenticator app (for example, Google Authenticator, Microsoft Authenticator, or Authy).  Since this reset removed your roles on orgs and spaces, you may need to request additional access from your Space Managers and Org Managers again. If you had a sandbox space, that has been reset and is available to you again.
 
 ## Managing Admins
