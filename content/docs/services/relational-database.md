@@ -2,33 +2,34 @@
 menu:
   docs:
     parent: services
-title: Relational Databases (aws-rds)
+title: Relational databases (RDS)
+description: "Persistent, relational databases using Amazon RDS"
 aliases:
   - /docs/apps/databases
 ---
 
-If your application uses relational databases for storage, you can use the cloud.gov AWS RDS service to create a database instance.
+If your application uses relational databases for storage, you can use the AWS RDS service to create a database instance.
 
 ## Plans
 
-Plan Name | Description | Price
---------- | ----------- | -----
-`shared-psql`            | Shared infrastructure for Postgres DB               | Free
-`medium-psql`            | Dedicated Medium RDS Postgres DB Instance           | $0.115 / hr + storage
-`medium-psql-redundant`  | Dedicated Redundant Medium RDS Postgres DB Instance | $0.230 / hr + storage
-`large-psql`             | Dedicated Large RDS Postgres DB Instance            | $0.230 / hr + storage
-`large-psql-redundant`   | Dedicated Redundant Large RDS Postgres DB Instance  | $0.470 / hr + storage
-`shared-mysql`           | Shared infrastructure for MySQL DB                  | Free
-`medium-mysql`           | Dedicated Medium RDS MySQL DB Instance              | $0.110 / hr + storage
-`medium-mysql-redundant` | Dedicated Redundant Medium RDS MySQL DB Instance    | $0.220 / hr + storage
-`large-mysql`            | Dedicated Large RDS MySQL DB Instance               | $0.220 / hr + storage
-`large-mysql-redundant`  | Dedicated Redundant Large RDS MySQL DB Instance     | $0.440 / hr + storage
+Plan Name | Description | Software Version | Price
+--------- | ----------- | ------- | -----
+`shared-psql`            | Shared PostgreSQL database for prototyping (no sensitive or production data) | 9.4.7 | Free
+`medium-psql`            | Dedicated medium RDS PostgreSQL DB instance                                  | 9.6.10 |  Will be paid per hour + storage
+`medium-psql-redundant`  | Dedicated redundant medium RDS PostgreSQL DB instance                        | 9.6.10 | Will be paid per hour + storage
+`large-psql`             | Dedicated large RDS PostgreSQL DB instance                                   | 9.6.10 | Will be paid per hour + storage
+`large-psql-redundant`   | Dedicated redundant large RDS PostgreSQL DB instance                         | 9.6.10 | Will be paid per hour + storage
+`shared-mysql`           | Shared MySQL database for prototyping (no sensitive or production data)      | 5.6.27 | Free
+`medium-mysql`           | Dedicated medium RDS MySQL DB instance                                       | 5.7.21 | Will be paid per hour + storage
+`medium-mysql-redundant` | Dedicated redundant medium RDS MySQL DB instance                             | 5.7.21 | Will be paid per hour + storage
+`large-mysql`            | Dedicated large RDS MySQL DB instance                                        | 5.7.21 | Will be paid per hour + storage
+`large-mysql-redundant`  | Dedicated redundant large RDS MySQL DB instance                              | 5.7.21 | Will be paid per hour + storage
+`medium-oracle-se2`      | Dedicated medium RDS Oracle SE2 DB | 12.0.1.2.v11 | Will be paid per hour + storage
 
-### Storage Pricing:
+### Pricing
+Shared instances are free. Simple and redundant instances will have pricing per hour and per GB per month. [Learn more about managed service pricing.]({{< relref "overview/pricing/managed-services-cost.md" >}})
 
-- Shared Instance: Free
-- Simple Instance: $0.138 per GB per month
-- Redundant Instance: $0.276 per GB per month
+Shared instances are available in [sandbox spaces]({{< relref "overview/pricing/free-limited-sandbox.md#sandbox-limitations" >}}).
 
 ## Options
 
@@ -40,148 +41,96 @@ Name | Required | Description | Default
 
 To create a service instance run the following command:
 
-```bash
+```sh
 cf create-service aws-rds medium-psql my-db-service
 ```
 
 If you want to specify the storage available to the instance:
 
-```bash
+```sh
 cf create-service aws-rds medium-psql my-db-service -c '{"storage": 50}'
 ```
 
+### Instance creation time
+
+Dedicated RDS instance provisioning can take anywhere between 5 minutes and 60
+minutes. During instance provisioning, the results of `cf services` or `cf service SERVICE_NAME` will show status as `created`, as in the following example:
+
+```
+> cf services
+name                 service   plan                bound apps   last operation
+test-oracle          aws-rds   medium-oracle-se2                create succeeded
+```
+
+**The `last operation` value of `create succeeed` may lead you to think the database is ready to use. This is misleading.** Instead, the _last operation_ indicates the API call to create the database has succeeded, not that provisioning has completed. To determine if a database is ready to use, test if you can create a `service key`. For example, `test-oracle` is not yet ready in this case:
+
+```
+cf create-service-key test-oracle test-oracle-ok
+Creating service key test-oracle-oke for service instance test-oracle as peter.burkholder@gsa.gov...
+FAILED
+Server error, status code: 502, error code: 10001, message: Service broker error: There was an error binding the database instance to the application. Error: Instance not available yet. Please wait and try again..
+```
+
+If the response is `OK` instead of `FAILED` then your database is ready to use.
+
+The cloud.gov team aims to provide clearer status indicators in a future release of our service broker.
+
 ### Bind to an application
 
-`cf bind-service` will provide a `DATABASE_URL` environment variable for your app, which is then picked up by the `restage`. Note that for a Rails app, `bind-service` will [overwrite your `database.yml`](http://docs.cloudfoundry.org/buildpacks/ruby/ruby-service-bindings.html#rails-applications-have-autoconfigured-database-yml). The full documentation for managing service instances is [here](https://docs.cloudfoundry.org/devguide/services/managing-services.html).
+To use the service instance from your application, bind the service instance to the application. For an overview of this process and how to retrieve the credentials for the service instance from environment variables, see [Bind a Service Instance](https://docs.cloudfoundry.org/devguide/services/managing-services.html#bind) and the linked details at [Delivering Service Credentials to an Application](https://docs.cloudfoundry.org/devguide/services/application-binding.html).
+
+In short, `cf bind-service` will provide a `DATABASE_URL` environment variable for your app, which is then picked up by the `restage`.
 
 The contents of the `DATABASE_URL` environment variable contain the credentials to access your database. Treat the contents of this and all other environment variables as sensitive.
 
 ## Access the data in the database
 
-There are currently two ways to access the database.
+There are currently two ways to access the database directly.
 
 1. [The `cg-migrate-db` plugin](#cg-migrate-db-plugin). It is a self contained
 executable which will interactively assist with accessing the data in the
 database. It supports accessing data from different types of databases.
 1. [Manually accessing the database](#manually-access-a-database). This way
-requires manually downloading the tool(s) needed to access the database. The
-only type of database supported via this method is Postgres.
+requires manually downloading the tool(s) needed to access the database.
 
 ### cg-migrate-db plugin
-The easiest way to access the data in your database is via the `cg-migrate-db`
-plugin.
-
-Please check out the [repository](https://github.com/18F/cg-migrate-db)
+You can access the data in your database via the `cg-migrate-db`
+plugin. See the [repository](https://github.com/18F/cg-migrate-db)
 for instructions on how to install the plugin, backup data, import data,
 download a local copy of the data, and upload a local copy of the data.
 
-It also includes a [how-to](https://github.com/18F/cg-migrate-db#1-migrating-from-ew-to-govcloud-in-4-steps)
-for migrating data from one environment to another. (e.g. from East-West to
-GovCloud)
-
 ### Manually access a database
 
-The instructions below are for PostgreSQL, but should be similar for MySQL or others.
-
-{{% eastwest %}}
-### Using cf-ssh
-
-To access a service database, use the [cf-ssh]({{< relref "docs/getting-started/one-off-tasks.md#cf-ssh" >}}) CLI to start an instance that is bound to the service and download the `psql` binary to that instance:
-
-```sh
-cf-ssh APP_NAME
-curl https://s3.amazonaws.com/18f-cf-cli/psql-9.4.4-ubuntu-14.04.tar.gz | tar xvz
-./psql/bin/psql $DATABASE_URL
-```
-
-You should now have an open `psql` terminal connected to the service database.
-{{% /eastwest %}}
-
-{{% govcloud %}}
 #### Using cf ssh
 
-To access a service database, use the [cf ssh]({{< relref "docs/getting-started/one-off-tasks.md#cf-ssh" >}}) CLI command to login to an instance that is bound to the service and download the `psql` binary to that instance:
-
-```sh
-cf ssh APP_NAME
-curl https://s3.amazonaws.com/18f-cf-cli/psql-9.4.4-ubuntu-14.04.tar.gz | tar xvz
-./psql/bin/psql $DATABASE_URL
-```
-
-You should now have an open `psql` terminal connected to the service database.
-{{% /govcloud %}}
+To access a service database, use the [cf-service-connect plugin](https://github.com/18F/cf-service-connect#readme).
 
 ### Export
 
 #### Create backup
 
-{{% eastwest %}}
-#### Using cf-ssh
+The instructions below are for PostgreSQL, but should be similar for MySQL or others.
 
-First, spin up a host to connect to the database:
-
-```sh
-$ cf-ssh {app name}
-```
-
-When it finishes, you'll be in a tmux connection and you must install the Postgresql tools:
+First, connect to an instance using the [cf-service-connect plugin](https://github.com/18F/cf-service-connect#readme):
 
 ```sh
-$ curl https://s3.amazonaws.com/18f-cf-cli/psql-9.4.4-ubuntu-14.04.tar.gz > psql.tgz
-$ tar xzvf psql.tgz
+$ cf connect-to-service --no-client ${APP_NAME} ${SERVICE_NAME}
+...
+Host: localhost
+Port: ...
+Username: ...
+Password: ...
+Name: ...
 ```
 
-Now you can create the export file:
+Without closing the SSH session managed by the cf-service-connect plugin, create the backup file using the parameters provided by the plugin:
 
 ```sh
-$ psql/bin/pg_dump --format=custom $DATABASE_URL > backup.pg
+$ pg_dump postgresql://${USERNAME}:${PASSWORD}@${HOST}:${PORT}/${NAME} -f backup.pg
 ```
-
-Leave the ssh connection open.
-{{% /eastwest %}}
-
-{{% govcloud %}}
-#### Using cf ssh
-
-First, connect to an instance:
-
-```sh
-$ cf ssh {app name}
-```
-
-Next, install the Postgresql tools:
-
-```sh
-$ curl https://s3.amazonaws.com/18f-cf-cli/psql-9.4.4-ubuntu-14.04.tar.gz > psql.tgz
-$ tar xzvf psql.tgz
-```
-
-Now you can create the export file:
-
-```sh
-$ psql/bin/pg_dump --format=custom $DATABASE_URL > backup.pg
-```
-{{% /govcloud %}}
 
 ### Download
 
-{{% eastwest %}}
-On your local host:
-
-```sh
-$ cf files {app name} app/backup.pg | tail -n +4 > backup.pg
-```
-
-> [Documentation for `cf files`](http://cli.cloudfoundry.org/en-US/cf/files.html)
-
-Now you may close the ssh connection to cloud.gov, back in tmux:
-
-```sh
-$ exit
-```
-{{% /eastwest %}}
-
-{{% govcloud %}}
 > [Documentation for using scp and sftp](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#other-ssh-access)
 
 On your local host:
@@ -202,25 +151,56 @@ Run `sftp` or `scp` to transfer files to/from an application instance.  You must
 
 For example, to connect to instance 0 of the application with GUID 0745e60b-c7f3-49a7-a6c2-878516a34796:
 
-```
+```sh
 $ sftp -P 2222 cf:0745e60b-c7f3-49a7-a6c2-878516a34796/0@ssh.fr.cloud.gov
 cf:0745e60b-c7f3-49a7-a6c2-878516a34796/0@ssh.fr.cloud.gov's password: ******
 Connected to ssh.fr.cloud.gov.
 sftp> get backup.pg
 sftp> quit
 ```
-{{% /govcloud %}}
 
 ### Restore to local database
 
 Load the dump into your local database using the [pg_restore](https://www.postgresql.org/docs/current/static/app-pgrestore.html) tool. If objects exist in a
 local copy of the database already, you might run into inconsistencies when doing a
-`pg_restore`. This Pg_restore invocation does not drop all of the objects in the database when loading the
+`pg_restore`. This pg_restore invocation does not drop all of the objects in the database when loading the
 dump.
 
 ```sh
 $ pg_restore --clean --no-owner --no-acl --dbname={database name} backup.pg
 ```
+
+## Backups
+
+For shared plans (`shared-psql` and `shared-mysql`), RDS does not back up your
+data. For dedicated plans, RDS automatically retains daily backups for 14 days.
+These backups are AWS RDS storage volume snapshot, backing up the entire DB
+instance and not just individual databases. You can [email
+support](mailto:cloud-gov-support@gsa.gov) to access that backup if you need to
+as a separate RDS instance. You will be responsible for exporting and importing
+the data from this snapshot into your existing database.
+You can also create manual backups using the [export process](#export) described
+above. In general, you are responsible for making sure that your backup
+procedures are adequate for your needs; see CP-9 in the
+cloud.gov SSP.
+
+## Encryption
+
+Every RDS instance configured through cloud.gov is [encrypted at rest](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html). We use the industry standard AES-256 encryption algorithm to encrypt your data on the server that hosts your RDS instance. The RDS then handles authenticating access and decrypting your data, with minimal performance impact and without requiring you to modify your applications.
+
+## Rotating credentials
+
+You can rotate credentials by creating a new instance and [deleting the existing instance](https://cli.cloudfoundry.org/en-US/cf/delete-service.html). If this is not an option, email [cloud.gov support](mailto:cloud-gov-support@gsa.gov) to request rotating the credentials manually.
+
+## Version information
+
+The software versions listed in the table above are for new instances of those plans.
+
+New instances of dedicated RDS plans use the latest database version available from AWS RDS GovCloud (US) at the time. New instances of shared plans may use older database versions.
+
+The PostgreSQL and MySQL plans are configured to automatically upgrade currently-running dedicated instances to the most recent compatible [minor version](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html) available via AWS RDS GovCloud (US).
+
+For Oracle plans, minor upgrades are not automatic. To upgrade an existing Oracle database instance, contact [support](mailto:cloud-gov-support@gsa.gov) and schedule a maintenance window for the upgrade to take place.
 
 ## The broker in GitHub
 

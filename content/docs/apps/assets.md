@@ -19,7 +19,7 @@ deploy:
   script: ./deploy.sh
 ```
 
-```bash
+```sh
 # ./deploy.sh
 npm run dist
 cf push -f manifest.yml

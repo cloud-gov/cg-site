@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+
+  {{ partial "head-gtm.html" . }}
+
+  <body id="pricing">
+
+    {{ partial "gtm-body" . }}
+    {{ partial "header.html" . }}
+
+    <div class="usa-content">
+      <section class="usa-grid" id="main">
+        <h1>
+          <span class="eyebrow">Pricing</span>
+          Deliver great services with compliance and infrastructure automated behind the scenes.
+        </h1>
+        <p>
+          <a href="mailto:cloud-gov-inquiries@gsa.gov">Contact us</a> for answers to your questions and help with an estimate, or to start an Interagency Agreement purchase.
+        </p>
+
+         <ul id="package-rates">
+           <li>
+             <h2 class="sandbox">Sandbox</h2>
+             <p>
+               Try experiments to see if cloud.gov works for you today!
+             </p>
+             <p>
+               Fee:
+               <span><strong>Free</strong></span>
+             </p>
+             <p>
+                Limited to 1GB memory
+             </p>
+             <p>
+                Non-production systems; <br />
+                systems cleared every 90 days
+             </p>
+             <p>
+                Single environment
+             </p>
+             <p>
+               Non-production domain names
+             </p>
+             <!-- <p>
+               Full access to Add-on (<i class="fa fa-fw fa-plus-square" aria-hidden="true"></i>) Services
+             </p> -->
+             <p>
+               <a href="/quickstart/" class="button">Get started</a><br/>
+               <a href="/overview/pricing/free-limited-sandbox/" class="small-link">About Sandbox packages &rarr;</a>
+             </p>
+           </li>
+           <li>
+             <h2 class="prototyping">Prototyping</h2>
+             <p>
+               Provide self-service workspaces for everyone in your organization.
+             </p>
+             <p>
+               Starts at: <span><strong><sup>$</sup>1250</strong> &#47; month for entire organization</span>
+             </p>
+             <p>
+               <sup>$</sup>105 &#47; GB memory per month
+             </p>
+             <p>
+               Non-production systems
+             </p>
+             <p>
+                An environment for each of your teams
+             </p>
+             <p>
+               Non-production domain names
+             </p>
+             <!-- <p>
+               Full access to Add-on (<i class="fa fa-fw fa-plus-square" aria-hidden="true"></i>) Services
+             </p> -->
+             <p>
+               <a href="mailto:cloud-gov-inquiries@gsa.gov?subject=Purchasing%20Prototyping%20Package" class="button" id="Prototyping-cta">Contact us</a><br/>
+               <a href="/overview/pricing/prototyping/" class="small-link">About Prototyping packages &rarr;</a>
+             </p>
+           </li>
+           <li>
+             <h2 class="production">Production</h2>
+             <p>
+               Go to production with an accelerated path to ATO.
+             </p>
+             <p>
+               Monthly fee starts at:
+               <span><strong><sup>$</sup>1667</strong> &#47; FISMA Low system</span><br />
+               <span><strong><sup>$</sup>7500</strong> &#47; FISMA Moderate system</span>
+             </p>
+             <p>
+               <sup>$</sup>105 &#47; GB memory per month
+             </p>
+             <p>
+               One system
+             </p>
+             <p>
+               Multiple environments (e.g. dev, stage, prod) supporting one system
+             </p>
+             <p>
+               Support for your agency domain name
+             </p>
+             <!-- <p>
+               Full access to Add-on (<i class="fa fa-fw fa-plus-square" aria-hidden="true"></i>) Services
+             </p> -->
+             <p>
+               <a href="mailto:cloud-gov-inquiries@gsa.gov?subject=Purchasing%20FISMA%20Package" class="button" id="FISMA-cta">Contact us</a><br/>
+             </p>
+           </li>
+         </ul>
+      </section>
+
+
+      <section class="usa-grid">
+        <h2 id="all-packages-include"><a href="#all-packages-include">All use of cloud.gov includes:</a></h2>
+
+        <div class="usa-width-one-half">
+          <ul class="column-single">
+            <li>
+              FedRAMP JAB-authorized hosting
+            </li>
+            <li>
+              Self-service provisioning of services
+            </li>
+            <li>
+              Self-service deployment of apps
+            </li>
+            <li>
+              Basic technical and compliance support (during business hours)
+            </li>
+            <li>
+              Documentation/tutorial material
+            </li>
+            <li>
+              Continuous platform-level scanning and security updates
+            </li>
+          </ul>
+
+
+            <!-- <p>
+              Free services
+            </p>
+
+            <ul class="column-single">
+              <li>
+                Postgres database
+              </li>
+              <li>
+                MySQL database
+              </li>
+              <li>
+                Elasticsearch RESTful search and analytics
+              </li>
+              <li>
+                Redis in-memory data store
+              </li>
+              <li>
+                S3 object store
+              </li>
+            </ul> -->
+        </div>
+
+        <div class="usa-width-one-half">
+          <p>
+            Free services
+          </p>
+
+          <ul class="column-single">
+            <li>
+              Postgres database
+            </li>
+            <li>
+              MySQL database
+            </li>
+            <li>
+              Elasticsearch RESTful search and analytics
+            </li>
+            <li>
+              Redis in-memory data store
+            </li>
+            <li>
+              S3 object store
+            </li>
+          </ul>
+        </div>
+
+      </section>
+
+      <section class="usa-grid">
+
+        <h2 id="paid-packages-include"><a href="#paid-packages-include">Paid packages also include:</a></h2>
+
+        <div class="usa-width-one-half">
+          <ul class="column-single">
+              <li>
+                Self-service management of spaces and user access
+              </li>
+              <li>
+                Single-sign-on with your SAML identity provider
+              </li>
+              <li>
+                Access to premium add-on services
+              </li>
+          </ul>
+          <!--
+          <p>
+            Premium services &mdash; free for a limited time
+          </p>
+          <ul class="column-single add-on">
+            <li>
+              High-performance Postgres database options
+            </li>
+            <li>
+              High-performance MySQL database options
+            </li>
+            <li>
+              High-performance Elasticsearch options
+            </li>
+            <li>
+              High-performance Redis options
+            </li>
+            <li>
+              Oracle database
+            </li>
+            <li>
+              CDN route service (supporting caching, custom domains, and auto-renewing TLS certificates)
+            </li>
+          </ul> -->
+
+        </div>
+
+        <div class="usa-width-one-half">
+
+          <p>
+            Premium services &mdash; free for a limited time
+          </p>
+
+            <ul class="column-single add-on">
+              <li>
+                High-performance Postgres database options
+              </li>
+              <li>
+                High-performance MySQL database options
+              </li>
+              <li>
+                High-performance Elasticsearch options
+              </li>
+              <li>
+                High-performance Redis options
+              </li>
+              <li>
+                Oracle database
+              </li>
+              <li>
+                CDN route service (supporting caching, custom domains, and auto-renewing TLS certificates)
+              </li>
+            </ul>
+
+        </div>
+
+        <!-- <div class="usa-width-one-half">
+        </div> -->
+      </section>
+
+      <section class="usa-grid">
+
+        <h2 id="not-included"><a href="#not-included">Not included</a></h2>
+        <p>
+          You’re responsible for operating and securing your own code. You’re responsible for complying with your agency’s requirements, which typically includes getting an ATO for your system.
+        </p>
+
+      </section>
+
+
+      <section class="usa-grid">
+        <h2 id="estimate-your-monthly-cost"><a href="#estimate-your-monthly-cost">Estimate your monthly cost</a></h2>
+        <p>
+          Monthly costs are based on the package fee (i.e., Prototyping, FISMA Low, FISMA Moderate) plus memory usage. Usage costs are based on the amount of memory (RAM) that you reserve for your system (<sup>$</sup>105/GB RAM per month).
+        </p>
+        <p class="footnote">
+          Most cloud.gov customers typically reserve 2–8 GB of memory to cover multiple applications across development, staging, and production environments.
+        </p>
+        <h3>Example</h3>
+        <p>
+          Suppose you have 2 apps that each need 512 MB (0.5 GB) memory. Each app needs 1 instance in dev, 1 instance in staging, and 2 in production. The apps require data — nothing sensitive — so a FISMA Low production package will be adequate for hosting.
+        </p>
+        <div class="diagram"></div>
+        <h4>
+          Access Fee
+        </h4>
+        <p class="pricing-line-item">
+          FISMA Low <span><sup>$</sup>1667</span>
+        </p>
+        <h4>
+          Memory Usage Cost
+        </h4>
+        <p class="pricing-line-item">
+          [ (2 x 0.5 GB) + (4 x 0.5 GB) + (2 x 0.5 GB) ] x <sup>$</sup>105 <span><sup>$</sup>420</span>
+        </p>
+        <p class="pricing-total">
+          Total monthly cost <span><sup>$</sup>2087</span>
+        </p>
+      </section>
+
+
+      <section class="usa-grid vspace-60">
+
+        <h2 id="professional-services"><a href="#professional-services">Professional services</a></h2>
+        <p>
+          Basic support is included if you need occasional help. If you need more help, we’re here for you.
+        </p>
+        <!-- <ul class="horizontal-list medium"> -->
+        <ul class="column-single">
+          <li>
+            <strong>On-site training</strong>
+          </li>
+          <li>
+            <strong>Portfolio analysis</strong><br/>
+            Download our <a href="../assets/files/Cloud adoption consulting one-sheet.pdf">cloud adoption consulting one-sheet</a>
+            <!-- Cloud adoption consulting one-sheet source file: https://docs.google.com/document/d/1OhjUbQamMenecODChyckcJ-kw7NNoPFvVzM473JufnM/edit#heading=h.bwg5mnhco9hf -->
+
+          </li>
+          <li>
+            <strong>Replatforming assistance</strong>
+          </li>
+          <li>
+            <strong>Priority support</strong>
+          </li>
+          <li>
+            <strong>Co-development of custom services</strong>
+          </li>
+          <!-- <li>
+            <a href="mailto:cloud-gov-inquiries@gsa.gov?subject=Professional%20Services%20Pricing">Contact us to discuss professional services pricing!</a>
+          </li> -->
+
+        </ul>
+        <p>
+          <a href="mailto:cloud-gov-inquiries@gsa.gov?subject=Professional%20Services%20Pricing">Contact us to discuss professional services pricing &rarr;</a>
+        </p>
+
+      </section>
+
+      <section class="usa-grid vspace-60">
+        <h2 id="agency-wide-enablers"><a href="#agency-wide-enablers">Agency-wide enablers</a></h2>
+        <p>
+          Customize how cloud.gov connects to your agency so more of your applications can work with cloud.gov.
+        </p>
+        <!-- <ul class="horizontal-list medium"> -->
+        <ul class="column-single">
+          <li>
+            <strong><a href="/docs/apps/experimental/private-egress/">Isolated and dedicated capacity with VPN backhaul</a></strong>
+          </li>
+          <li>
+            <strong>Manage apps in your data center using cloud.gov</strong>
+          </li>
+          <!-- <li>
+            <a href="mailto:cloud-gov-inquiries@gsa.gov?subject=Agency%20Wide%20Enablers%20Pricing">Contact us to discuss agency-wide enablers pricing!</a>
+          </li> -->
+        </ul>
+        <p>
+          <a href="mailto:cloud-gov-inquiries@gsa.gov?subject=Agency%20Wide%20Enablers%20Pricing">Contact us to discuss agency-wide enablers pricing &rarr;</a>
+        </p>
+
+      </section>
+
+      <section class="usa-grid vspace-60">
+        <p class="footnote">
+          Your fees enable us to provide and improve this shared service of the General Services Administration. Payment is arranged via the Inter Agency Agreement process.
+        </p>
+      </section>
+
+<!--
+      <section class="usa-grid">
+        <h2>
+          Add-on services:<br />
+          <span>Choose a la carte services you need</span>
+        </h2>
+
+        <h3>Premium service plans</h3>
+        <p>
+          Self-service, on-demand. Currently free for a limited time.
+        </p>
+
+        <ul class="add-on">
+          <li>
+            <strong>Postgres database options</strong>: Dedicated RDS PostgreSQL DB instances
+            <ul class="horizontal-list">
+              <li>
+                Medium-PSQL
+              </li>
+              <li>
+                Medium-PSQL-redundant
+              </li>
+              <li>
+                Large-PSQL
+              </li>
+              <li>
+                Large-PSQL-redundant
+              </li>
+              <li>
+                Xlarge-PSQL
+              </li>
+              <li>
+                Xlarge-PSQL-redundant
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>MySQL database options</strong>
+            <ul class="horizontal-list">
+              <li>
+                Medium-MySQL
+              </li>
+              <li>
+                Medium-MySQL-redundant
+              </li>
+              <li>
+                Large-MySQL
+              </li>
+              <li>
+                Large-MySQL-redundant
+              </li>
+              <li>
+                Xlarge-MySQL
+              </li>
+              <li>
+                Xlarge-MySQL-redundant
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Oracle database options</strong>
+            <ul class="horizontal-list">
+              <li>
+                Medium-oracle-SE2: Dedicated medium RDS Oracle SE2 DB instance
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Elasticsearch options</strong>
+            <ul class="horizontal-list">
+              <li>
+                Medium-HA: Elasticsearch cluster with three master nodes (3584MB memory limit, 1792M heap) and three data nodes (3584MB memory limit, 1792MB heap, 10GB disk)
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Redis options</strong>
+            <ul class="horizontal-list">
+              <li>
+                Standard-HA: Redis 3.2 with Redis Sentinel, persistent storage, 512MB memory limit
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3>Help from our team</h3>
+        <p>
+          Expert assistance tuned for your situation
+        </p>
+        <ul class="add-on">
+            <li>
+              On-site training
+            </li>
+            <li>
+              Portfolio analysis
+            </li>
+            <li>
+              Replatforming assistance
+            </li>
+            <li>
+              Priority support
+            </li>
+        </ul>
+
+        <h3>Agency-wide enablers</h3>
+        <p>
+          Transform your agency
+        </p>
+        <ul class="add-on">
+          <li>
+            Isolated and dedicated capacity with VPN backhaul
+          </li>
+          <li>
+            Manage apps in your data center using cloud.gov
+          </li>
+          <li>
+            Co-development of custom services
+          </li>
+
+        </ul>
+
+      </section> -->
+
+<!--
+      <section class="usa-grid estimator">
+        <h2>Estimating cost</h2>
+        <p>
+          Placeholder text.
+        </p>
+        <p>
+          All packages are priced based on three components:
+        </p>
+        <ul>
+          <li>
+            <h4>Access package</h4>
+            <p>
+              What package you choose &mdash; Prototyping (<sup>$</sup>1250/month), FISMA Low (<sup>$</sup>1667/month per system), or FISMA Moderate (<sup>$</sup>7500/month per system) &mdash; depends on what kinds of applications you want to host.
+            </p>
+          </li>
+          <li>
+            <h4>Resource usage</h4>
+            <p>
+              The memory, in MB of RAM, you reserve for your applications. Assessed monthly (approximately $100/GB per month) and doesn’t roll over month-to-month.
+            </p>
+          </li>
+          <li>
+            <h4>Add-on services</h4>
+            <p>
+              A la carte services that cloud.gov can spin up quickly and run on your behalf. See the Add-ons (<i class="fa fa-fw fa-plus-square" aria-hidden="true"></i>) and plans offered for each service by running <code>cf marketplace</code>.
+            </p>
+          </li>
+        </ul>
+        <p>
+          Download cloud.gov cost estimator: <a href="/resources/cloudgov_cost_estimator.xlsx">.xlsx</a> | <a href="/resources/cloudgov_cost_estimator.ods">.ods</a>
+        </p>
+        <p class="footnote">
+          last updated: October 31, 2017
+        </p>
+      </section>
+       -->
+
+    </div>
+
+
+    {{ partial "footer.html" . }}
+    {{ partial "javascript.html" . }}
+
+  </body>
+</html>

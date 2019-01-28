@@ -2,56 +2,50 @@
 menu:
   docs:
     parent: getting-started
-title: Accounts
+title: Get access to cloud.gov
 weight: -100
 ---
 
-## To get a cloud.gov account
+## Get access to cloud.gov
 
-* **If you're in GSA or EPA:** You automatically have access to cloud.gov; you don't need to take any account creation steps before you start using cloud.gov.
-* **If you're in FDIC:** Some FDIC staff automatically have access to cloud.gov and can log in without taking any account creation steps. If you're in FDIC and you don't have access, contact your agency's identity team to be added to the cloud.gov access group.
-* **If you're outside GSA/EPA/FDIC and your organization/project is registered with cloud.gov:** Ask a teammate to follow [these instructions for inviting teammates]({{< relref "managing-teammates.md" >}}), and you'll get a cloud.gov account.
-* **Otherwise:** If you're in the U.S. federal government and you'd like to try cloud.gov, [email us](/help/).
+* **If you're in EPA, GSA, or NSF:** You automatically have access and can log in using your agency credentials.
+* **If you're in FDIC:** Some FDIC staff automatically have access and can log in using agency credentials. If you try to log in and receive a "status message is null" error, contact the FDIC identity team to be added to the cloud.gov access group.
+* **If you're in another agency:** If you have a U.S. federal government email address, you can [sign up for access](https://account.fr.cloud.gov/signup).
+* **Otherwise:** If your team uses cloud.gov and you don't have a federal government email address (such as if you're a contractor), ask a teammate to [invite you]({{< relref "managing-teammates.md" >}}).
 
-## To log into cloud.gov
+## Log into cloud.gov
 
-### Agency single-sign-on accounts
+### Agency single sign-on accounts
 
-If you have a GSA, EPA, or FDIC email address, you'll sign into cloud.gov using your agency credentials. When you log in using the web UI (dashboard), click the button labeled with your agency name.
-
-Follow [these instructions to log in on the command line (CLI) and web UI (dashboard)]({{< relref "setup.md" >}}).
+If you have an EPA, FDIC, GSA, or NSF email address, sign in using your agency credentials. Follow [these instructions to log in]({{< relref "setup.md" >}}).
 
 ### cloud.gov accounts
 
-If you were invited with an email address that isn't part of an agency with single-sign-on authentication to cloud.gov, you have a cloud.gov account.
+If you were invited with an email address that isn't part of an agency with single sign-on authentication to cloud.gov, you have a cloud.gov account. Follow [these instructions to log in]({{< relref "setup.md" >}}). When you log in via a web browser, select the **cloud.gov** option.
 
-{{% govcloud %}}
-Your cloud.gov account requires multi-factor authentication. To log into the system, you need two "factors" -- something you know (your password) and something you have on your person (your smartphone).
+<!--<img src="/img/cloud-gov-idp-button-cropped.png" alt="cloud.gov provider button to login page is highlighted in blue" width="373" height="187" />-->
 
-Follow [these instructions to log in on the command line (CLI) and web UI (dashboard)]({{< relref "setup.md" >}}). When you log in to cloud.gov via a web browser, select the `cloud.gov` provider as shown here:
+Your cloud.gov account requires setting up both a password and an authentication application that generates token codes, such as [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) or [Authy](https://www.authy.com/app/mobile). (You can use any authentication application that supports the standard [Time-based One-Time Password algorithm](https://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm).) When you log into cloud.gov for the first time, follow the instructions to set this up.
 
-![cloud.gov provider button on login page highlighted in blue](/img/cloud-gov-idp-button-cropped.png "cloud.gov provider button to login page is highlighted in blue")
+#### To change your password
 
-##### Managing MFA / TOTP with authentication applications
+* **If you know your current password:** You can [log in](https://login.fr.cloud.gov/login) and then [change your password here](https://account.fr.cloud.gov/change-password).
+* **If you're logged out and forgot your password:** You can [reset your password](https://account.fr.cloud.gov/forgot-password) to log in with a temporary password, then [change your password](https://account.fr.cloud.gov/change-password).
+* **If you're logged out and your password has expired:** You still [reset your password](https://account.fr.cloud.gov/forgot-password) to log in with a temporary password, then [change your password](https://account.fr.cloud.gov/change-password).
 
-In order to perform multi-factor authentication with the `cloud.gov` provider, you need an authentication application that generates time-based one-time passwords. We recommend [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) or [Authy](https://www.authy.com/app/mobile). Download the app on your mobile device. When you log into cloud.gov for the first time, follow the instructions to store the `cloud.gov` key in your application.
-{{% /govcloud %}}
+#### If you can't access your token codes
 
-{{% eastwest %}}
-Your cloud.gov account has a username and password. Follow [these instructions to log in on the command line (CLI) and web UI (dashboard)]({{< relref "setup.md" >}}).
+If you need to set up a new authentication application, such as if you lose your phone, [email cloud.gov support](mailto:cloud-gov-support@gsa.gov?subject=MFA%20reset&body=I%20need%20to%20set%20up%20a%20new%20authentication%20application.%20I%20understand%20this%20means%20the%20contents%20of%20my%20sandbox%20space%20will%20be%20deleted%20if%20I%20have%20one,%20and%20that%20you%20will%20remove%20my%20permissions%20to%20other%20spaces%20and%20orgs.) so that we can allow you to set up a new one. We'll follow this process to mitigate the risk of requests from compromised email addresses:
 
-You can [reset your own password](https://login.cloud.gov/forgot_password).
-{{% /eastwest %}}
+1. Delete the contents of your sandbox space (if you have one).
+2. Remove your permissions to any other spaces and orgs.
+3. For those spaces and orgs, notify the Space Managers and Org Managers that we've removed your access because of your request to reset your account's authentication application.
+4. Reset your account's authentication application.
+5. Let you know this is complete, so that you can set up a new authentication application and request access from your Space Managers and Org Managers again. It is their responsibility to verify that this is a legitimate request from you.
 
-### Deployer accounts
+You can copy this into your email (or write something similar), so that we know to go ahead with that process right away: 
 
-{{% govcloud %}}
-If you're using our [deployer account broker]({{< relref "docs/apps/continuous-deployment.md" >}}), you can delete and recreate that account to reset the credentials.
-{{% /govcloud %}}
-
-{{% eastwest %}}
-For `ORGNAME_deployer` accounts, if you need the password reset, please contact [cloud.gov support](/help/), providing the account name with your request, and a member of the cloud.gov team will provide you with a new password.
-{{% /eastwest %}}
+> I need to set up a new authentication application. I understand this means the contents of my sandbox space will be deleted if I have one, and that you will remove my permissions to other spaces and orgs.
 
 ## Use your account responsibly
 
@@ -75,7 +69,7 @@ In order to help us keep cloud.gov secure, we require that you use your account 
 - Don't configure your browser to ignore security warnings which may involve your connection with cloud.gov; report warnings that you can't explain to [cloud.gov support](/help/).
 - If you believe you've been granted more access than necessary to perform your legitimate tasks or assigned duties, immediately notify [cloud.gov support](/help/).
 
-If you use a cloud.gov account (instead of using an agency single-sign-on account), you have an additional rule of behavior:
+If you use a cloud.gov account (instead of using an agency single sign-on account), you have an additional rule of behavior:
 
 - Don't share your account with another person or create anonymous or group accounts. Your account is just for you.
 

@@ -2,67 +2,31 @@
 menu:
   docs:
     parent: getting-started
-title: Setup
+title: Set up cloud.gov and log in
 weight: -50
 ---
 
-You can work with cloud.gov in two ways: the command line (CLI) with full features, and the web user interface (dashboard) with quick access to common tasks.
+If you have [access to cloud.gov]({{< relref "accounts.md" >}}), here's how to log in.
 
-You need [an account]({{< relref "accounts.md" >}}) before you can get started with this.
+## Log into the dashboard (web interface)
+
+The dashboard gives you web-based access to common tasks: [**https://dashboard.fr.cloud.gov/**](https://dashboard.fr.cloud.gov/)
+
 
 ## Set up the command line
 
-1. [Install the Cloud Foundry CLI](https://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html). (cloud.gov is based on Cloud Foundry.)
-1. Confirm the installation by running
+cloud.gov is based on the Cloud Foundry open source project, so cloud.gov uses the Cloud Foundry command line interface (CLI) to give you full access.
 
-    ```bash
-    cf -v
-    ```
-    
-    This should return a version number.
+1. Install the Cloud Foundry CLI: [Windows](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#windows), [Mac OS X](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#mac), or [Linux](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#linux). If you can't use the installer, you can [download the CLI binary and install it manually](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#bin).
+1. Log in:
+  1. Enter **`cf login -a api.fr.cloud.gov --sso`**
+  1. It'll say `One Time Code ( Get one at `[`https://login.fr.cloud.gov/passcode`](https://login.fr.cloud.gov/passcode)` )` -- visit this login link in your browser.
+  1. If you use a cloud.gov account, you may need to log in using your email address, password, and multi-factor authentication token. (EPA, FDIC, GSA, and NSF: use your agency button.)
+  1. After you log in, the page will display your 10-character Temporary Authentication Code.
+  1. Copy and paste that 10-character code into the command line (no typing indicators will show), and enter it.
 
-1. Log in with a command as explained below:
+<!--**Tip:** The `fr.` in this URL (and other cloud.gov URLs) is short for FedRAMP.-->
 
-{{% eastwest %}}
-**If you log in using your agency's account system:** run `cf login -a api.cloud.gov --sso` -- then follow the link to get your one-time authentication code and enter it to log in.
-    
-**If you log in with a cloud.gov account that has its own password** (including `ORGNAME_deployer` accounts): run `cf login -a api.cloud.gov`
-{{% /eastwest %}}
+## Take the next step
 
-{{% govcloud %}}
-**All accounts:** run `cf login -a api.fr.cloud.gov --sso` -- then follow the link to get your one-time authentication code and enter it to log in.
-{{% /govcloud %}}
-
-
-## Check out the dashboard
-
-Visit your dashboard! It's probably a little empty since you probably haven't deployed any applications yet, but it's good to know it exists:
-
-{{% eastwest %}}
-[`https://dashboard.cloud.gov/`](https://dashboard.cloud.gov/)
-{{% /eastwest %}}
-
-{{% govcloud %}}
-[`https://dashboard.fr.cloud.gov/`](https://dashboard.fr.cloud.gov/)
-{{% /govcloud %}}
-
-## Play around in your "sandbox"
-
-Here's how to deploy a test app in your sandbox for practice. (Note that **if you log in immediately after your account or organization was created,** you may not see any orgs or spaces to which you have access. Your sandbox space may take up to **5 minutes** to provision.)
-
-Start with the following `cf target` command:
-
-```bash
-cf target -o <ORG> -s <SPACE>
-```
-
-Your `<ORG>` is a Cloud Foundry _organization_ named "sandbox-&lt;agencypart&gt;", where &lt;agencypart&gt; is whatever comes right before `.gov` or `.mil` in your
-e-mail address. For example, this may be `sandbox-gsa` or `sandbox-epa`. In most cases, your `<SPACE>` is the part of your email before the `@`, e.g. `firstname.lastname`. Cloud Foundry _spaces_ let applications run independently within an organization.  
-
-For example:
-
-```bash
-cf target -o sandbox-gsa -s harry.truman
-```
-
-Run your version of that command, and then follow [your first deploy]({{< relref "your-first-deploy.md" >}}).
+Now [try your first deploy of a test application]({{< relref "your-first-deploy.md" >}}).

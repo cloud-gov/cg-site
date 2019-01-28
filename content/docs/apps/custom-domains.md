@@ -4,112 +4,68 @@ menu:
     parent: advanced
 title: Custom domains
 ---
+By default, your application will be accessible via a subdomain of `app.cloud.gov`. To make your application accessible via your own domain, you need to create entries in your DNS system and configure cloud.gov.
 
-Here's how to put your app on your project's custom domain name. For context, [Cloud Foundry's Routes and Domains documentation](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html) explains the overall model and terminology that cloud.gov uses.
+## How to set up a custom domain
+To make your app accessible via your custom domain name, use the [custom domain service]({{< relref "docs/services/custom-domains.md" >}}) or the [CDN service]({{< relref "docs/services/cdn-route.md" >}}) (which provides both custom domain support and caching for your application). Those pages provide instructions for the DNS entries you need to create in your DNS system.
 
-The [Manual Method](#manual-method) is available to all users.
+See [IPv6, HTTPS, and DNSSEC]({{< relref "docs/compliance/domain-standards.md" >}}) for guidance on complying with relevant federal standards and recommendations.
 
-{{% govcloud %}}
-We've also developed a [Managed Service Method](#managed-service-method).
-{{% /govcloud %}}
+### Comparison of default domains and custom domains
 
-Both options support IPv6.
+Here's an example of the difference between a default *.app.cloud.gov domain and a custom domain. In this example, an agency's application `App A` is using a default domain, and their application `App B` is using a custom domain.
 
-For all custom domains, we recommend incorporating [HTTPS-Only Standard guidance](https://https.cio.gov/), including [HSTS](https://https.cio.gov/hsts/) and [preloading](https://https.cio.gov/guide/#options-for-hsts-compliance).
+{{< diagrams id-prefix="Figure-1.-Domain-comparison" >}}
+graph TD
 
-If your application requires DNSSEC, you are responsible for ensuring your custom domain is DNSSEC-enabled before following these instructions.
+subgraph Amazon Web Services
+  subgraph cloud.gov
+    CDN
+    CG-DNS
+    Router[App router]
+    subgraph Org: agency-org
+    subgraph App A space
+        AppA[App A]
+      end
+      subgraph App B space
+        AppB[App B]
+      end
+    end
+  end
+end
 
-If you need to set up an app on a domain managed by GSA TTS, you may also be interested in [18F/dns](https://github.com/18F/dns).
+Public((Public user)) -->|HTTPS| A-DNS(Agency DNS: appB.agency.gov)
+Public((Public user)) -->|HTTPS| CG-DNS(cloud.gov DNS: appA_agency.app.cloud.gov)
+A-DNS -->|HTTPS| CDN("Custom domain service")
+CG-DNS -->Router
+CDN -->Router
+Router -->AppA
+Router -->AppB
+{{< /diagrams >}}
 
-## Manual Method
+## How domains and routes work in cloud.gov
 
-Send a request to cloud.gov support (cloud-gov-support@gsa.gov for any customer, or [#cloud-gov-support](https://18f.slack.com/messages/cloud-gov-support) for 18F staff) to tell us you want to set up a custom domain. Include your domain and org name.
+A "route" is a domain with an optional subdomain and path that maps client requests to a particular application, such as:
 
-We'll configure your org to make your domain available for use with that org, and we'll tell you the entry to put in your DNS. Next you'll set up your application route, as explained in the next section.
+* `myapp.app.cloud.gov`
+* `myapp.app.cloud.gov/test`
+* `app.example.gov`
+* `example.gov`
 
-### Application Routes
+[Cloud Foundry's Routes and Domains documentation](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html) explains the overall model and terminology that cloud.gov uses.
 
-Use `cf domains` to list the domains that are available to you, to confirm that we configured your org correctly.
+## Find the org, space, and app for a route
 
-Use your application manifest.yml to identify the domain where the application route should be created.
+If you know a route is mapped to an application on cloud.gov, but you're not sure which application it is, you can install and use [cf-route-lookup](https://github.com/18F/cf-route-lookup). This is a [CF CLI plugin]({{< relref "docs/apps/plugins.md" >}}).
 
-For example, if you want to make your app available as a subdomain of your domain:
+You need to log into the CF CLI to use this tool, and it will only show you information from orgs and spaces that you have permission to view.
 
-	---
-	...
-	- name: myapp
-	  domain: domain.tld
+```sh
+> cf lookup-route example.gov
+Bound to:
+example-org/example-space/example-app
+```
 
-That will create the route `myapp.domain.tld` for your application. Alternatively, you can specify a specific hostname for your app separate from the application name within CF. For example:
+If you look up a route mapped to an application in an org or space that you can't access, you'll see `Error retrieving apps: Route not found.`
 
-	---
-	...
-	- name: myapp
-	  host: frontend
-	  domain: domain.tld
-
-That will create the route `frontend.domain.tld` for your application.
-
-If you want to make your app available simply as a domain (without a subdomain), for example as `domain.tld`, put `.` under `host`.
-
-#### Hostless Routes
-
-Here's how to route a delegated domain (or subdomain) to a CF app, for example if you've been delegated `domain.tld` or `app.parent.tld`.
-
-First send us a support request to ask us to make the domain available in your org.
-
-Then, you can create the route and map it to your application, for example:
-
-	cf map-route myapp domain.tld
-
-Or:
-
-	cf map-route myapp app.parent.tld
-
-[API](http://apidocs.cloudfoundry.org/206/routes/associate_app_with_the_route.html)
-
-{{% govcloud %}}
-## Managed Service Method
-
-See the [CDN Route service page]({{< relref "docs/services/cdn-route.md" >}}) for more information.
-
-cloud.gov offers a managed service that allows you to forward a domain you control to a cloud.gov application using [AWS CloudFront](https://aws.amazon.com/cloudfront/). Traffic is encrypted using an SSL certificate generated by [Let's Encrypt](https://letsencrypt.org/).
-
-1. Target the space your application is running in.
-
-    ```bash
-    $ cf target -o <org> -s <space>
-    ```
-
-1. Create a service instance. Replace *my-app.apps.cloud.gov* with the  domain that has been automatically assigned to your app by cloud.gov.
-
-    ```
-    $ cf create-service cdn-route cdn-route my-cdn-route \
-        -c '{"domain": "my.domain.gov", "origin": "my-app.fr.cloud.gov"}'
-
-    Create in progress. Use 'cf services' or 'cf service my-cdn-route' to check operation status.
-    ```
-
-    If you have more than one domain you can pass a comma-delimited list to the `domain` parameter, just keep in mind that the broker will wait until all domains are CNAME'd:
-
-    ```
-    $ cf create-service cdn-route cdn-route my-cdn-route \
-        -c '{"domain": "my.domain.gov,www.my.domain.gov", "origin": "my-app.fr.cloud.gov"}'
-
-    Create in progress. Use 'cf services' or 'cf service my-cdn-route' to check operation status.
-    ```
-
-1. Get the DNS instructions.
-
-    ```
-    $ cf service my-cdn-route
-
-    Last Operation
-    Status: create in progress
-    Message: Provisioning in progress; CNAME domain "my.domain.gov" to "d3kajwa62y9xrp.cloudfront.net."
-    ```
-
-1. Create/update your DNS configuration.
-1. Wait up to 30 minutes for the CloudFront distribution to be provisioned and the DNS changes to propagate.
-1. Visit `my.domain.gov`, and see that you have a valid certificate (i.e. that visiting your site in a modern browser doesn't give you a certificate warning).
-{{% /govcloud %}}
+If you look up a route that isn't mapped to any application on cloud.gov, you'll see `Error retrieving apps: Could not find matching domain.`

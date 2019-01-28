@@ -3,21 +3,21 @@ menu:
   docs:
     parent: getting-started
 title: Concepts
+aliases:
+  - /docs/intro/terminology/system-terminology
+  - /intro/terminology/system-terminology
+  - /overview/terminology/system-terminology
 ---
 
 Here's an overview of key cloud.gov terms and concepts. cloud.gov uses Cloud Foundry terms, so the [Cloud Foundry glossary](http://docs.cloudfoundry.org/concepts/glossary.html) is a helpful reference too.
 
 ## Organizations
 
-Cloud Foundry groups its users by [organizations](http://docs.cloudfoundry.org/concepts/roles.html#orgs), or "orgs" for short. Orgs group together users for management and present a shared perimeter for services, domains and quotas. When your account is created, it gets permissions to an org and a personal space.
-
-### Naming convention
-
-Within 18F, the `ORGNAME` corresponds to a project/client, e.g. `cap` for GSA's [Common Acquisition Platform](http://www.gsa.gov/portal/category/106839), or `devops` for internal apps such as [Hubot](https://github.com/18F/18f-bot).
+Your work inside cloud.gov takes place within [organizations](http://docs.cloudfoundry.org/concepts/roles.html#orgs), or "orgs" for short. Orgs group together users for management and present a shared perimeter for services, domains and quotas. When your account is created, it may already have permissions in an existing org.
 
 ### List available orgs
 
-```bash
+```sh
 cf orgs
 ```
 
@@ -27,7 +27,7 @@ This only displays orgs where you've been assigned an org role, or those which c
 
 ...including quotas, routing domains and which spaces it includes:
 
-```bash
+```sh
 cf org ORGNAME
 ```
 
@@ -35,64 +35,60 @@ cf org ORGNAME
 
 In order to work with spaces, you'll need to do this first:
 
-```bash
+```sh
 cf target -o ORGNAME
 ```
 
 ## Spaces
 
-Every application is scoped to a [space](http://docs.cloudfoundry.org/concepts/roles.html#spaces). Applications in the same space share a location for app development, deployment, and maintenance.
+Each org contains [spaces](http://docs.cloudfoundry.org/concepts/roles.html#spaces), which can contain applications. Applications in the same space share a location for app development, deployment, and maintenance.
 
 ### Naming convention
 
-Within 18F, the `SPACENAME` corresponds to an environment, e.g. `dev` or `prod`. If the org is more general (e.g. `devops`), the space may correspond to the name of the project (e.g. `hubot`).
+For orgs that contain production systems (or systems under development before release), we recommend setting up spaces to correspond to each environment, such as `development`, `staging`, and `production`. If you have a prototyping org that contains many prototypes, each space may correspond to a project (such as `test-bot` and `blog-experiment`).
 
-### Management
+### Space management
 
-To create a space:
+To [create a space](http://cli.cloudfoundry.org/en-US/cf/create-space.html):
 
-```bash
+```sh
 cf create-space SPACENAME
 ```
 
 **Note:**  To create a space within a given org, you must have the `OrgManager` role. You can see which users are managers for your org with:
 
-```bash
+```sh
 cf org-users ORGNAME
 ```
 
 ## Target
 
-The Cloud Foundry CLI keeps a global state of whatever [organization]({{< relref "#organizations" >}})+[space]({{< relref "#spaces" >}}) you're interacting with. This is known as the "target", and you can set it with:
+The Cloud Foundry CLI keeps a global state of the [organization]({{< relref "#organizations" >}})+[space]({{< relref "#spaces" >}}) you're interacting with. This is known as the "target", and you can set it with:
 
-```bash
+```sh
 cf target -o ORGNAME -s SPACENAME
 ```
 
 ## Buildpacks
 
-All apps need to use a "buildpack" specific to their language, which sets up dependencies for their language stack. There are [standard buildpacks for most languages](https://docs.cloudfoundry.org/buildpacks/), and they will usually be auto-detected and auto-applied by Cloud Foundry when you deploy an app. We strongly encourage you to use the standard buildpacks. cloud.gov supports these standard buildpacks and provides security updates for them.
+All apps need to use a "buildpack" specific to their language, which sets up dependencies for their language stack. There are [standard buildpacks for most languages](https://docs.cloudfoundry.org/buildpacks/), and Cloud Foundry usually auto-detects and auto-applies the appropriate one when you deploy an app (one exception is that it doesn't auto-apply the special [binary buildpack](https://docs.cloudfoundry.org/buildpacks/binary/index.html)). We strongly encourage you to use the standard buildpacks. cloud.gov supports these standard buildpacks and provides security updates for them. (You'll need to redeploy or restage your application to pick up buildpack updates. You're also responsible for supporting and security-patching the application itself.)
 
-In the rare case where the buildpack does not get auto-detected correctly, or to use a [custom buildpack]({{< relref "docs/apps/experimental/custom-buildpacks.md">}}), you can specify a buildpack in the manifest (as below) or with the `-b` flag. To reference it, use either the buildpack name:
+In the rare case where Cloud Foundry doesn't correctly auto-detect the buildpack, or if you want to use a binary buildpack or [custom buildpack]({{< relref "docs/apps/custom-buildpacks.md">}}), you can specify a buildpack in the [application manifest](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) (as below) or with the `-b` flag. To reference a buildpack in a manifest, you may specifying using a name:
 
-    buildpack: python_buildpack
+    buildpacks:
+      - python_buildpack
 
-Or a URL:
+Or with a URL:
 
-    buildpack: https://github.com/cloudfoundry/ruby-buildpack.git
+    buildpacks:
+      - https://github.com/cloudfoundry/ruby-buildpack.git
 
-**Multiple languages:** If your application involves multiple languages and seems to need multiple buildpacks, we recommend the following strategies:
+**Multiple languages:** If your application requires multiple languages, we recommend evaluating these strategies to simplify your application:
 
-* Split your project into smaller applications that work together, so that you can use one standard buildpack for each application.
-* To run multiple long-running processes, run them as separate applications.
-* To build static assets on cloud.gov, [build assets on CI]({{< relref "assets.md#build-assets-on-ci" >}}).
+* Can you split your project into smaller applications that work together, so that you can use one language for each application and deploy each one separately?
+* Can you initiate long-running processes or schedule periodic jobs from outside your application [using the Tasks capability](https://docs.cloudfoundry.org/devguide/using-tasks.html)?
+* Can you [build your static assets using CI]({{< relref "assets.md#build-assets-on-ci" >}}) prior to pushing your application, so that only the final built assets are deployed on cloud.gov?
 
-**Custom buildpacks:** If your application can't use a standard buildpack, you can use a [custom buildpack]({{< relref "docs/apps/experimental/custom-buildpacks.md">}}), which is an experimental feature. If you use a custom buildpack, ensure you understand [your responsibilities]({{< relref "overview/technology/responsibilities.md">}}), which include keeping your buildpack up-to-date and patching known vulnerabilities.
+If none of these strategies will help you deploy single-language applications, you can [explicitly specify a set of buildpacks to run in sequence](https://docs.cloudfoundry.org/buildpacks/use-multiple-buildpacks.html), one for each language.
 
-### Buildpack Release Schedule
-
-18F's selection of buildpacks may occasionally lag behind CF's by a month or more (except for security patches), in which case you may need to specify the URL in order to get a more up-to-date version. The buildpack release schedule looks like the following:
-
-- The CF buildpack team develops on a branch and cuts buildpack releases.
-- The CF release team cuts a release for CF with new buildpacks every ~2 weeks.
-- 18F grabs those releases and deploys them as soon as we can.
+**Custom buildpacks:** If your application can't use a standard buildpack, you can use a [custom buildpack]({{< relref "docs/apps/custom-buildpacks.md">}}). When you use a custom buildpack, you're responsible for keeping your buildpack up-to-date and patching vulnerabilities in it. See [this chart illustrating your responsibilities]({{< relref "overview/technology/responsibilities.md">}}) for more detail.

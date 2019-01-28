@@ -1,23 +1,26 @@
 ---
 menu:
   docs:
-    parent: operations
+    parent: policies
+layout: ops
 title: Security Incident Response checklist
 linktitle: Security IR checklist
 ---
 
 *This is a short, actionable checklist for the Incident Commander (IC) to follow during incident response. It's a companion to the [IR guide]({{< relref "security-ir.md" >}}), where you can find the full details of each step.*
 
-## Initiate
-
 You're the first cloud.gov team member to notice a non-team-member's report of a possible security incident regarding cloud.gov, or you've noticed an unreported possible security incident yourself. Congratulations, you're now the Incident Commander (IC)! Follow these steps:
 
-First, **follow the the [18F security incident response process](https://handbook.18f.gov/security-incidents/)**. At step 6 ("If the incident involves cloud.gov"), notify the rest of the cloud.gov team in [`#cloud-gov`](https://gsa-tts.slack.com/messages/cloud-gov/) using `@cloud-gov-team`.
+## Initiate
+
+- **follow the the [18F security incident response process](https://handbook.18f.gov/security-incidents/)**.
+  - At step 6 ("If the incident involves cloud.gov"), notify the rest of the cloud.gov team in [`#cloud-gov`](https://gsa-tts.slack.com/messages/cloud-gov/) using `@cg-team`.
 
 ## Assess
 
 - Confirm the incident — was it a real incident?
-    - If it's not a real incident, go to [False Alarm](#false-alarm).
+    - If it's expected behavior, go to [False Alarm](#false-alarm).
+    - If it's unexpected behavior, it is a real incident even if it may not be cloud.gov's responsibility.
 - Assess the severity, using [the rubric in the IR guide]({{< relref "security-ir.md#incident-severities" >}}).
 - Update the GitHub issue:
     - Status → "confirmed"
@@ -31,6 +34,9 @@ First, **follow the the [18F security incident response process](https://handboo
 
 ## Remediate
 
+- You may not be able to "walk backwards" from the observed behavior to the root cause.
+  - Consider the things that must be true for the behavior to occur, and test those hypotheses against the information that
+  is available to you.
 - Keep the ticket/docs updated as people work, tracking:
     - Leads, and who's following them
     - Remediation items, and who's working on them, including customer notification (if appropriate to the situation)
@@ -45,7 +51,7 @@ Once the incident is resolved:
 - Schedule a retrospective.
 - Thank everyone involved for their service!
 
-## Special situations
+## Special Situations
 
 Extra checklists for special situations that don't always occur during incidents:
 
@@ -67,3 +73,15 @@ Follow this checklist if you need to hand over IC duties:
 - New IC: update GitHub issue, noting that you're now the IC.
 - New IC: send out a sitrep, noting that you're taking over IC.
 - Old IC: stick around for 15-20 minutes to ensure a smooth handoff, then log off!
+
+### Network Interconnect
+
+If a cloud.gov team member or automated scanning system detects unauthorized access or traffic across a secure VPN / interconnection with a customer:
+
+- Invite customer team contacts (such as Org Managers and System Owner) to the call
+- Confirm whether traffic should be terminated or captured
+- If traffic should be terminated: from the Amazon AWS console select `Services -> VPC -> Virtual Private Gateways -> VPN ID -> Detach from VPC`
+- If traffic should be captured:
+  - VPC Flow Logs: from the Amazon AWS console select `Services -> VPC -> VPC ID -> Flow Logs`
+  - Live capture: from the Isolation Segment Diego Cell run `tcpdump -i $INTERFACE -s 65535 -w /tmp/incident-$(date +%s).pcap`
+  - Customer: the customer has control of all systems on the customer side of the VPN, so the customer needs to capture that traffic

@@ -2,6 +2,7 @@
 menu:
   docs:
     parent: deployment
+layout: ops
 title: Creating a Dev Environment on AWS
 linktitle: AWS
 ---

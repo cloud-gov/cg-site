@@ -1,3 +1,6 @@
+# Service metadata lives
+# https://github.com/18F/aws-broker/blob/59f949b/catalog-template.yml#L8
 name = "aws-rds"
-description = "Persistent databases using Amazon Relational Database System"
+page_name = "relational-database"
+description = "Persistent, relational databases using Amazon RDS"
 status = "Production Ready"

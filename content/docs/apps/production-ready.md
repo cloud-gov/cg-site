@@ -1,9 +1,9 @@
 ---
-date: 2015-08-28T10:32:59-04:00
 menu:
   docs:
     parent: apps
-title: Production Ready guide
+title: Production-ready guide
+weight: -90
 ---
 
 This is your guide to building production-ready apps on cloud.gov. Read this early and often, especially when you’re starting to consider a future project. It explains things you can do for reliable and responsive applications deployed on cloud.gov.
@@ -12,20 +12,20 @@ This is your guide to building production-ready apps on cloud.gov. Read this ear
 To build consistent, healthy, production-ready applications on cloud.gov, incorporate the following practices into your development workflow from the beginning.
 
 ### Configuration as code
-To ensure consistency and reproducibility, you should capture your application configuration in version control.
+To ensure consistency and reproducibility, capture your application configuration in version control.
 
 #### How
-* Write an [application manifest](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) that defines your application configuration, such as the application name, or what previously created services to use.
+* Write an [application manifest](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) that defines your application configuration, such as the application name and the previously-created services to use.
 
 ### More than one instance
 It is critical that your production application has more than one instance. Then if
-there are any issues with one of the platform runners where your app instances are assigned, your app will continue to function correctly.
+there are any issues with one of the platform runners where your app instances are assigned, or we upgrade platform components underneath an instance, your app will continue to function correctly (with less risk of downtime).
 
 #### How
-* See the [multiple instances]({{< relref "multiple-instances.md" >}}) page.
+* See [multiple instances]({{< relref "multiple-instances.md" >}}).
 
 ### Protect access to sensitive credentials
-Environment variables defined with `cf set-env` are ephemeral to the specific deployment of each application. You should use user-provided services to store sensitive information such as credentials or API keys, and use your `manifest.yml` for non-sensitive variables.
+Environment variables defined with `cf set-env` are ephemeral to the specific deployment of each application. Use user-provided services to store sensitive information such as credentials or API keys, and use your `manifest.yml` for non-sensitive variables.
 
 #### How
 * Create [user-provided services](https://docs.cloudfoundry.org/devguide/services/user-provided.html) with `cf cups` and bind them with `cf bs`. Once you have updated your application to read your stored credentials from the service, [update your `manifest.yml`](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#services-block) to make it part of your configuration. For non-sensitive information, use [an env: block](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block) in your `manifest.yml`.
@@ -45,11 +45,20 @@ When running an application for development or testing, it is best to have a sep
 #### How
 * As an Org Manager for your organization, use the `cf create-space` command to create new spaces for each environment.
 
+### Prevent non-auditable changes to production apps
+
+All changes made to running production applications should be logged for auditing, which means that those changes should be made using commands in the cloud.gov dashboard, command line interface, or CF API (or automated commands in deployment scripts). By default, cloud.gov also allows [SSH access]({{< relref "docs/apps/using-ssh.md" >}}), which allows making changes that are harder to audit. This means you should disable SSH access to production applications.
+
+You may need to document your restrictions for remote access to your applications for control AC-17 in your System Security Plan, and this is a restriction that you can document.
+
+#### How
+* Use `cf disallow-space-ssh PRODUCTION-SPACE-NAME` for your production space or `cf disable-ssh PRODUCTION-APP-NAME` to [disable SSH access]({{< relref "docs/apps/using-ssh.md" >}}) for individual running application instances. Use [event auditing]({{< relref "docs/compliance/auditing-activity.md" >}}) to audit deployments and further access.
+
 ### Health monitoring
 You want to receive alerts about application errors, downtime, and throughput issues.
 
 #### How
-* New Relic provides extensive application performance and availability monitoring with "Insights". You can set up and receive alerts on a variety of metrics.
+* There are many external services that provide alerting. For example, New Relic provides application availability monitoring with "Synthetics".
 
 ## Additional practices
 The following practices are very helpful to incorporate into most cloud.gov apps. Evaluate which ones you need for your team and users.
@@ -70,9 +79,9 @@ To reduce the risk associated with manual deployments, consider automating the p
 The best way to prevent performance issues is to enable caching on your application.
 
 #### How
-* cloud.gov has a memcached service, but you can also use [S3 file storage]({{< relref "s3.md" >}}) for caches.
+* You can use [S3 file storage]({{< relref "s3.md" >}}) for caches.
 
-### Asset Serving
+### Asset serving
 It's best not to serve static files from cloud.gov directly.
 
 #### How
@@ -83,3 +92,13 @@ When you need a domain name dedicated for your application, DNS delegation for t
 
 #### How
 * See [custom domains]({{< relref "custom-domains.md" >}}).
+
+### Graceful shutdown
+Your application should respond to [shutdown
+events](http://docs.cloudfoundry.org/devguide/deploy-apps/app-lifecycle.html#shutdown)
+by closing connections and cleaning up resources.
+
+#### How
+- Listen to `SIGTERM` and complete the shutdown within 10 seconds.
+- Refuse any new connections and complete any in-flight requests.
+- Flush and close any open connections.

@@ -2,14 +2,24 @@
 menu:
   docs:
     parent: apps
-title: Deployment troubleshooting
+title: Troubleshooting
 linktitle: Troubleshooting
 weight: 100
 ---
 
-Here are some common problems and recommended practices for solving them. Make sure to [look at the logs]({{< relref "logs.md" >}}) to help troubleshoot.
+Seeing problems with your applications? Take a look at [your app logs]({{< relref "logs.md" >}}) and [review these common issues and solutions](https://docs.cloudfoundry.org/devguide/deploy-apps/troubleshoot-app-health.html).
 
-## [STG] Staging Phase
+## Application restarts and crash messages
+
+The platform [automatically restarts application instances]({{< relref "docs/apps/deployment.md#application-architecture-principles" >}}) due to routine platform updates, which can be several times a week. If you review logs for an app that is functioning normally and you see recent messages about a series of instance restarts for no apparent reason, platform updates are probably the reason. This is normal and ok!
+
+If you see recent messages such as `The app crashed because of an unknown reason.` and `audit.app.process.crash isn't handled`, this may be because your application didn't stop on request. The platform sends a request to apps to stop nicely so the platform can move them while this happens, but when they don't stop on request, the platform force-kills them, reports them as crashed, and moves them anyway. Usually this doesn't cause interruptions in service, just a few crash messages. To prevent the error messages, you can change your application to [stop gracefully]({{< relref "docs/apps/production-ready.md#graceful-shutdown" >}}). In the recommended [12-factor app architecture](https://12factor.net/), see the [disposability factor](https://12factor.net/disposability).
+
+If your application only has one instance, you may see brief interruptions in service during restarts due to routine platform updates. You can fix this by setting up [multiple application instances]({{< relref "docs/apps/multiple-instances.md" >}}).
+
+## Potential causes of issues during staging phase ([STG])
+
+If you see problems in your logs in lines that include the label `[STG]`, these explanations may help you resolve them.
 
 ### App dependency specification
 
@@ -32,7 +42,9 @@ Cloud Foundry will attempt to detect the buildpack to use with your app by exami
 
 If you're seeing errors installing any Python dependencies, check whether you have a `vendor/` directory in your app's root. The Python buildpack won't use PyPI if you have a `vendor/` directory, so you'll need to rename that directory to something else.
 
-## [DEA] Droplet Execution Phase
+## Potential causes of issues during app starting/stopping [CELL]
+
+If you see problems in your logs in lines that include the label `[CELL]`, these explanations may help you resolve them.
 
 ### App manifest contents
 
@@ -42,7 +54,7 @@ When starting multiple apps via a single manifest tree, apps will start in the o
 
 By default, an application will start with a command specified by its buildpack. The `command:` in an application manifest will override the buildpack start command. The `-c` switch used with `cf push` overrides both the buildpack and manifest start commands.
 
-Application start commands are cached during staging. Specifying a start command via `-c` does not update the staged command. Check the staged command with `cf files APPNAME app_staging.yml`. Specifying `-c 'null'` forces the buildpack start command to be used.
+Application start commands are cached during staging. Specifying a start command via `-c` does not update the staged command. Check the staged command with `cf ssh APPNAME -c "cat staging_info.yml"`. Specifying `-c 'null'` forces the buildpack start command to be used.
 
 ### Environment variables and service bindings
 

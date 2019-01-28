@@ -1,10 +1,15 @@
 var $ = require( 'jquery' );
-window.jQuery = $;
+var mermaid = require( 'mermaid' );
+var jQuery = window.jQuery = $;
 window.$ = $;
 require('cloudgov-style');
 
+mermaid.initialize({startOnLoad: false});
+
 var anchorJS = require('anchor-js');
 require('jquery.scrollto');
+
+var hljs = require('highlight.js');
 
 function hideSidenav() {
   $('#container').addClass('sidebar-close');
@@ -76,6 +81,9 @@ function initializeJS() {
   var anchors = new anchorJS();
   anchors.options.visible = 'touch';
   anchors.add('.content h2,.content h3,.content h4,.content h5');
+
+  // Highlight JS
+  hljs.initHighlightingOnLoad();
 }
 
 (function(){
@@ -262,7 +270,37 @@ function initializeJS() {
 	})();
 })(jQuery);
 
+// Right now this only supports a single Mermaid diagram on the page.
+var renderDiagrams = function() {
+  // Are there any diagrams here?
+  if ( 1 > $( '.js-diagrams' ).length ) {
+    return undefined;
+  }
+
+  var diagrams = $( '.js-diagrams' );
+  var padding = 30;
+
+  diagrams.each( function ( idx, el ) {
+    var $el = $( el );
+    var diagramText = $( el ).find( '.js-diagrams__raw' ).text()
+    mermaid.render(
+      $el.find( '.js-diagrams__stage' ).attr( 'id' ),
+      diagramText,
+      function callbackMermaidRender( c ) {
+        $el.find( '.js-diagrams__stage' ).html( c );
+      }
+    );
+    $el.find( '.js-diagrams__stage' ).find( 'style' ).remove();
+    var updatedHeight = Math.ceil( $el.find( '.js-diagrams__stage svg .output' )[0].getBBox().height ) + padding
+    var updatedWidth = Math.ceil( $el.find( '.js-diagrams__stage svg .output' )[0].getBBox().width ) + padding
+    $el.find( '.js-diagrams__stage svg' ).height( updatedHeight );
+    $el.find( '.js-diagrams__stage' ).width( updatedWidth );
+  } );
+
+}
+
 jQuery(document).ready(function(){
     initializeJS();
     $('[rel=show-github]').showGithub();
+    renderDiagrams();
 });

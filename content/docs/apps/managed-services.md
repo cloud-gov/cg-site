@@ -5,23 +5,19 @@ menu:
 title: Managed services
 ---
 
-Cloud Foundry managed services provide applications with on-demand access to services outside of the stateless application environment. Typical managed services include databases, queues, and key-value stores.
+Managed services provide applications with on-demand access to services outside of the stateless application environment. Typical managed services include databases, queues, and key-value stores.
 
-### Prerequisites
-
-Verify your [setup is complete]({{< relref "docs/getting-started/setup.md" >}}).
-
-### Procedure
+### List services
 
 To create a service instance and binding for use with an application, you first need to identify the available services and their respective plans.
-
-#### List services
 
 ```
 % cf marketplace
 ```
 
-#### Create a service instance
+See [the services guide]({{< relref "docs/services/intro.md" >}}) as well.
+
+### Create a service instance
 
 Target the org and space which will hold the app to which the service instance will be bound.
 
@@ -29,38 +25,21 @@ Target the org and space which will hold the app to which the service instance w
 % cf target -o ORG -s SPACE
 ```
 
-Create a new service instance by specifying a service, plan, and a name of your choice for the service instance. Note that service instance names must be unique and can be renamed.
+Create a new service instance by specifying a service, plan, and a name of your choice for the service instance. Note that service instance names must be unique and can be renamed. For some services, you'll need to include additional parameters in your create-service command -- refer to [the services guide]({{< relref "docs/services/intro.md" >}}) for details.
 
 ```
 % cf create-service SERVICE_NAME PLAN_NAME INSTANCE_NAME
 ```
 
-For example, to create an instance of the elasticsearch service using the free plan with name `myapp-elasticsearch`:
+#### Paid services
 
-```
-% cf create-service elasticsearch-swarm-1.7.1 1x myapp-elasticsearch
-```
+The note `* These service plans have an associated cost` indicates paid services. [Learn about managed service pricing.]({{< relref "overview/pricing/managed-services-cost.md" >}})
 
-##### Paid services
+### Bind the service instance
 
-The note `* These service plans have an associated cost` indicates paid services. [Learn about managed service pricing.]({{< relref "overview/pricing/rates.md#managed-services" >}})
+For services that apply to an application ([Elasticsearch]({{< relref "docs/services/elasticsearch56.md" >}}), [Redis]({{< relref "docs/services/redis.md" >}}), [relational databases (RDS)]({{< relref "docs/services/relational-database.md" >}}), and [S3]({{< relref "docs/services/s3.md" >}})), the service instance must be bound to the application which will access it. (The [CDN service]({{< relref "docs/services/cdn-route.md" >}}), [identity provider]({{< relref "docs/services/cloud-gov-identity-provider.md" >}}), and [service account]({{< relref "docs/services/cloud-gov-service-account.md" >}}) have different instructions, available in their service documentation.) 
 
-Sandbox accounts (free accounts) can't use paid services. If you have a sandbox account, you'll get an error like this if you try to use them:
-
-```
-% cf create-service <service> <plan> <service_instance>
-Creating service instance <service_instance> in org <org> / space <space> as <user>...
-FAILED
-Server error, status code: 400, error code: 60007, message: The service instance cannot be created because paid service plans are not allowed.
-```
-
-If you get that error and you have a non-sandbox account, [ask support](/help/) to enable paid services.
-
-#### Bind the service instance
-
-A service instance must be bound to the application which will access it. This can be done in a single step by adding a binding to the application's `manifest.yml`.
-
-**manifest.yml**
+Binding to an application can be done in a single step by adding a binding to the application's `manifest.yml`, for example:
 
 ```yaml
 ---
@@ -73,15 +52,13 @@ applications:
 
 A service binding will be created with the next `cf push`.
 
-Alternatively, a service instance can also bound to an existing application via the `cf` cli.
+Alternatively, a service instance can also bound to an existing application via the `cf` CLI:
 
 ```
 % cf bind-service APPLICATION INSTANCE_NAME
 ```
 
-Use `cf env APPLICATION` to display the application environment variables, including `VCAP_SERVICES` which holds information for each bound service.
-
-**Output:**
+Use `cf env APPLICATION` to display the application environment variables, including `VCAP_SERVICES` which holds information for each bound service. Output:
 
 ```javascript
 // ...
@@ -114,7 +91,7 @@ In this case, `url` alone could be sufficient for establishing a connection from
 
 The contents of the `VCAP_SERVICES` environment variable contain the credentials to access your service. Treat the contents of this and all other environment variables as sensitive.
 
-#### Access the service configuration
+### Access the service configuration
 
 Configuration and credentials for the bound service can be accessed in several ways:
 
@@ -122,7 +99,7 @@ Configuration and credentials for the bound service can be accessed in several w
 * Through a language-specific module such as [cfenv](https://www.npmjs.org/package/cfenv) for node.js.
 * Through buildpack-populated environment variables as in the [Ruby buildpack](http://docs.cloudfoundry.org/buildpacks/ruby/ruby-service-bindings.html#vcap-services-defines-database-url).
 
-##### Node.js example
+#### Node.js example
 
 To access the elasticsearch service described above with a node app:
 
@@ -153,7 +130,7 @@ var client = new elasticsearch.Client({
 // ...
 ```
 
-##### Ruby on Rails example
+#### Ruby on Rails example
 
 **config/initializers/elasticsearch.rb**
 

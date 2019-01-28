@@ -2,18 +2,19 @@
 menu:
   docs:
     parent: operations
+layout: ops
 title: DNS settings for cloud.gov
 ---
 
-The [`18F/dns` repository][repo-18f/dns] contains the [`cloud.gov.tf` Terraform
-configuration][repo-18f/dns#cloud.gov.tf] which automatically updates AWS. The
+The [`18F/cg-provision` repository][repo-18f/cg-provision] contains the [`cloud.gov.tf` Terraform
+configuration][repo-18f/cg-provision#stack.tf] which automatically updates AWS. The
 configuration file leverages resources of type `aws_route53_record`. To learn
 more about Terraform configuration continue on below, or [read the documentation
 on Terraform's documentation site][docs-terraform#resources].
 
 [docs-terraform#resources]: https://www.terraform.io/docs/configuration/resources.html "Terraform - Docs - Configuration - Resources"
-[repo-18f/dns]: https://www.github.com/18F/dns "Github 18F/dns"
-[repo-18f/dns#cloud.gov.tf]: https://github.com/18F/dns/blob/master/terraform/cloud.gov.tf "Terraform configuration file for cloud.gov"
+[repo-18f/cg-provision]: https://www.github.com/18F/cg-provision "Github 18F/cg-provision"
+[repo-18f/cg-provision#stack.tf]: https://github.com/18F/cg-provision/blob/master/terraform/stacks/dns/stack.tf "Terraform configuration file for cloud.gov"
 
 ## Examples of records
 
@@ -84,7 +85,7 @@ resource "aws_route53_record" "cloud_gov_<DOMAIN_NAME_UNDERSCORED>_txt" {
   name = "<DOMAIN_NAME>."
   type = "TXT"
   ttl = 300
-  record = ["<key=VALUE>"]
+  records = ["<key=VALUE>"]
 }
 ```
 
@@ -97,7 +98,7 @@ syntax, [please read the documentation on Terraform's documentation site][docs-t
 
 ## Submit a Pull Request
 
-To update a DNS record, submit a pull request to the `18F/dns` repository with
+To update a DNS record, submit a pull request to the `18F/cg-provision` repository with
 your changes. Either branches or forks are okay.
 
 Pull requests will be reviewed and merged by a member of the infrastructure team

@@ -9,15 +9,7 @@ title: Managing teammates
 
 If you're part of a team using cloud.gov, you can invite teammates to get cloud.gov accounts. You can invite anyone you need to work with, including federal employees and federal contractors.
 
-First, send them an invite from the following link. (This may prompt you to log into your cloud.gov account first.)
-
-{{% eastwest %}}
-https://invite.cloud.gov/
-{{% /eastwest %}}
-
-{{% govcloud %}}
-https://account.fr.cloud.gov/invite
-{{% /govcloud %}}
+First, [send them an invite](https://account.fr.cloud.gov/invite). (This may prompt you to log into your cloud.gov account first.)
 
 Then, confirm with them that they have received and accepted the invite. Now they have a cloud.gov account!
 
@@ -25,35 +17,156 @@ If you invited them with an agency email address and they're part of an agency t
 
 ## Give roles to a teammate
 
-After a teammate gets a cloud.gov account, an Org Manager or Space Manager will need to give them roles in your orgs and spaces so they can collaborate with you.
+After a teammate gets a cloud.gov account, an Org Manager or Space Manager will need to give them roles in your orgs and spaces so they can collaborate with you. For details about how org and space roles and permissions work, see [Cloud Foundry's documentation](http://docs.cloudfoundry.org/concepts/roles.html#roles).
 
-If you're an Org Manager or Space Manager, here's how to give roles to your teammates to give them permissions for your orgs and spaces. For details about how cloud.gov org and space roles and permissions work, see [Cloud Foundry roles and permissions](http://docs.cloudfoundry.org/concepts/roles.html#roles).
+Org Managers can assign roles using the [dashboard](https://dashboard.fr.cloud.gov/) or command line. Space Managers can assign roles using the command line.
 
-First check whether you're running version >= [6.14.0](https://github.com/cloudfoundry/cli/releases/tag/v6.14.0) of the CLI:
 
-```bash
-cf -v
-```
 
-(If not, you'll need to [upgrade](https://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html).)
+{{% alternatives dashboard="dashboard-org-give-role" cli="cli-org-give-role" %}}
+{{% dashboard %}}
 
-Then decide which roles to give them, such as:
+### Organization users
 
-* To give them read-only permissions to the organization, run
+If you're an Org Manager, go to your [dashboard](https://dashboard.fr.cloud.gov/) and click on the name of your org.
 
-    ```bash
-    cf set-org-role <email> <org> OrgAuditor
-    ```
+![User roles](/img/user-role-management.png)
 
-* If you want to make them an admin for your organization, run
+On the org page, scroll down to "Organization users". This lists the org users and their org roles. Change the roles by clicking the checkboxes beside their names. (If you're the only person in the org, you'll just see "You are the only user in this organization".)
 
-    ```bash
+### Space users
+
+If you're a Space Manager, go to your [dashboard](https://dashboard.fr.cloud.gov/) and click on the name of your org, then click on the name of your space.
+
+![Space roles](/img/space-user-role-management.png)
+
+On the space page, scroll down to "Space users". This lists the space users and their space roles. Change the roles by clicking the checkboxes beside their names. (If you're the only person in the space, you'll just see "You are the only user in this space".)
+
+To give an existing organization user access to a space, go to your space page, click a space name, and scroll down to "Space users". You can add a person, and then you can give them roles with the checkboxes.
+
+{{% /dashboard %}}
+{{% commandline %}}
+
+If you're an Org Manager or Space Manager, here's how to give your teammates roles for your orgs and spaces. You can check whether you're an Org Manager using `cf org-users <org>` and whether you're a Space Manager using `cf space-users <org> <space>`.
+
+Check what version of the CLI you're running: `cf -v`. If that's older than the [latest version listed here](https://github.com/cloudfoundry/cli/releases), you should [upgrade it](https://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html) to avoid unexpected errors.
+
+Decide which roles to give them. For a complete list of roles, see [the Cloud Foundry guide to Org and Space Roles](https://docs.cloudfoundry.org/adminguide/cli-user-management.html#orgs-spaces). Examples:
+
+* If you want to make them an admin for your organization, run:
+
+    ```sh
     cf set-org-role <email> <org> OrgManager
     ```
-* If you want to give them permission to deploy, add them to each space:
+* If you want to give them admin access for a space, run:
 
-    ```bash
+    ```sh
+    cf set-space-role <email> <org> <space> SpaceManager
+    ```
+* If you want to give them permission to deploy applications in a space, run:
+
+    ```sh
     cf set-space-role <email> <org> <space> SpaceDeveloper
     ```
+* To give them read-only permissions to the organization, run:
 
-For a complete list of cloud.gov roles and permissions that Org and Space Managers can give and remove, see [the Cloud Foundry guide to Org and Space Roles](https://docs.cloudfoundry.org/adminguide/cli-user-management.html#orgs-spaces).
+    ```sh
+    cf set-org-role <email> <org> OrgAuditor
+    ```
+{{% /commandline %}}
+{{% /alternatives %}}
+
+## Removing a teammate
+
+If you are an Org Manager or Space Manager, you can remove teammates from orgs and spaces respectively.
+
+{{% alternatives dashboard="dashboard-org-remove-role" cli="cli-org-remove-role" %}}
+{{% dashboard %}}
+
+### Organization Users
+
+If you're an Org Manager, go to the org with the teammate you want to remove.
+
+On the Organization page, scroll down to the “Organization users” section. This has a list of all the organization users. Click the "Remove User From Org" button.
+
+To remove a teammate from an organization, you must first remove them from any of the organization's spaces first.
+
+![App Overview dashboard](/img/remove-organization.png)
+
+### Space users
+
+If you're an Org Manager or Space Manager, go to the space with the teammate you want to remove.
+
+On the Space page, scroll down to the “Space users” section. This has a list of all the space users. Click the "Remove All Space Roles" button.
+
+You can also remove a user from a Space by unchecking all of their space roles.
+
+{{% /dashboard %}}
+{{% commandline %}}
+
+If you're an Org Manager or Space Manager, here's how to remove teammates from your orgs and spaces. You can check whether you're an Org Manager using `cf org-users <org>` and whether you're a Space Manager using `cf space-users <org> <space>`.
+
+Check what version of the CLI you're running: `cf -v`. If that's older than the [latest version listed here](https://github.com/cloudfoundry/cli/releases), you should [upgrade it](https://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html) to avoid unexpected errors.
+
+### Organization users
+
+To remove teammates from your organization, run the following:
+
+1. Show your org info, by running:
+
+    ```sh
+    cf org <org>
+    ```
+2. List the spaces belonging to the org, by running:
+
+    ```sh
+    cf spaces
+    ```
+3. List the users and roles for each space, by running:
+
+    ```sh
+    cf space-users <org> <space>
+    ```
+4. Remove the user for each combination of space and role, by running:
+
+    ```sh
+    cf unset-space-role <email> <org> <space> <role>
+    ```
+5. Find the ORG_GUID, by running:
+
+    ```sh
+    cf org <org> --guid
+    ```
+6. Use the API to remove the user from the org, by running:
+
+    ```sh
+    cf curl -X DELETE '/v2/organizations/<ORG_GUID>/users' -d '{"username": "<email>"}'
+    ```
+
+### Space users
+
+To remove teammates from your space, run the following:
+
+1. Show your org info, by running:
+
+    ```sh
+    cf org <org>
+    ```
+2. List the spaces belonging to the org, by running:
+
+    ```sh
+    cf spaces
+    ```
+3. List the users and roles for each space, by running:
+
+    ```sh
+    cf space-users <org> <space>
+    ```
+4. Remove the user for each combination of space and role, by running:
+
+    ```sh
+    cf unset-space-role <email> <org> <space> <role>
+    ```
+
+{{% /commandline %}}
+{{% /alternatives %}}

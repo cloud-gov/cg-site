@@ -3,38 +3,19 @@ menu:
   overview:
     parent: overview
 title: Who can use it?
-weight: 20
+weight: 15
 aliases:
   - /docs/intro/overview/who-can-use-cloudgov
   - /intro/overview/who-can-use-cloudgov
+  - /docs/intro/technology/appropriate-deployments
+  - /intro/technology/appropriate-deployments
+  - /overview/overview/who-can-use-cloudgov/
 ---
 
-## Good fit for cloud.gov
+cloud.gov is suitable for hosting applications built on behalf of a U.S. government organization.
 
-- You have a technical team (internal or contracted) that can push applications to cloud.gov. (See technical requirements below.)
-- You work for a United States federal government organization.
-- You understand that cloud.gov is a product under active development and will see changes in the future.
-- Your application is FISMA Moderate or lower.
-- You have to be able to pay for cloud.gov through the IAA/MOU process (see [pricing]({{< relref "overview/pricing/rates.md" >}})).
+Customers pay for cloud.gov through the federal Interagency Agreement (IAA/MOU) process (see [how to purchase]({{< relref "start-using-cloudgov" >}})). *U.S. local, state, tribal, or territory government organizations are not able to use cloud.gov at this time.*
+<!-- If this describes your team, [sign up for updates](/#updates) so that we can notify you if we add other options. -->
+ 
+You should have a technical person or people (employees and/or contractors) available who will manage your applications on cloud.gov. They should be capable of [evaluating your application for suitability to cloud.gov]({{< relref "portfolio-analysis" >}}). They will need to be able to install the [cloud.gov command line interface]({{< relref "setup" >}}) (compatible with Windows, Mac, and Linux) on their client workstation to interact with cloud.gov.
 
-### Technical requirements
-
-- Your team has access to the cloud.gov API through the cloud.gov command line interface (compatible with Windows, Mac, and Linux).
-- Your application stores configuration in the environment.
-- Your application uses one stateless process at a time (that can be horizontally scaled).
-- Your application listens to a single port.
-- Your dependencies are explicitly declared (such as `requirements.txt` for Python).
-- You don't rely on local storage for long-term data stores.
-
-### Optional but recommended
-- Your organization can integrate your identity system with cloud.gov over SAML.
-- Your application can follow the [12-Factor App guidelines](https://12factor.net/).
-
-## Not a good fit
-
-- Your application requires Oracle, SQL Server, or proprietary databases.
-- You work for a local or state government organization.
-
-## Cannot use cloud.gov
-
-- You work for a non-government organization.
