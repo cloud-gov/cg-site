@@ -139,6 +139,9 @@ If you get the following error message when you try to update or delete a servic
 * This happens because you can't do anything to a service instance while it's in a pending state. A custom domain service instance stays pending until it detects the CNAME or ALIAS record.
 * If this causes a problem for you, you can ask support to manually delete the pending instance.
 
+See the [TLS/SSL certificate troubleshooting guide]({{< relref "docs/apps/troubleshooting/certificates.md" >}}) for more tips.
+
+
 ### DNSSEC support
 
 If you plan to use a domain with DNSSEC, you need to [verify your DNSSEC configuration](https://www.icann.org/resources/pages/tools-2012-02-25-en) before starting the steps above, because invalid DNSSEC configuration will cause creation to get stuck.

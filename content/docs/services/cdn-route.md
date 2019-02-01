@@ -166,6 +166,9 @@ If a `cf create-service` command times out due to certificate rate limiting, and
 * Use `cf update-service` to restart the certificate attempts.
 * Let's Encrypt has a [rate limit of 20 certificates per registered domain per week](https://letsencrypt.org/docs/rate-limits/). This can happen if you're working with many subdomains for the same domain name.
 
+See the [TLS/SSL certificate troubleshooting guide]({{< relref "docs/apps/troubleshooting/certificates.md" >}}) for more tips.
+
+
 ## How to update a service instance
 
 To update a service instance, run the following command (replace `my-cdn-route` with your service instance name, and replace `my.example.gov` with your domain):

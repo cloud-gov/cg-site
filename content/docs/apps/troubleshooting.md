@@ -69,3 +69,7 @@ Application start commands are cached during staging. Specifying a start command
 By default, applications must start within 60 seconds. This timeout can be extended to a maximum of 180 second via the `-t` command line switch or `timeout:` manifest key.
 
 Avoid placing long-running or multi-step tasks in the application start command. Consider using worker apps as part of a multi-application manifest instead.
+
+## Troubleshooting TLS/SSL certificate issues
+
+See our [TLS/SSL troubleshooting guide]({{< relref "docs/apps/troubleshooting/certificates.md" >}}).
