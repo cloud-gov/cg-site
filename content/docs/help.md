@@ -11,13 +11,23 @@ If you're interested in using cloud.gov, email [**cloud-gov-inquiries@gsa.gov**]
 
 If you have a U.S. federal government email address, you can [get access to a free sandbox space]({{< relref "overview/pricing/free-limited-sandbox.md" >}}).
 
+
 ### Support for people who use cloud.gov
 
-Email [**cloud-gov-support@gsa.gov**](mailto:cloud-gov-support@gsa.gov?body=What%20are%20you%20trying%20to%20do%3F%0A%0AWhat%20do%20you%20expect%20to%20happen%3F%0A%0AWhat%20actually%20happened%3F%0A%0AAttach%20relevant%20logs%20or%20screenshots%20%28remove%20sensitive%20information%29%3A). We provide support during business hours for U.S. East and West Coasts. We don't guarantee support outside those hours, though we're always monitoring for issues that might affect customers.
+Please email [**cloud-gov-support@gsa.gov**](mailto:cloud-gov-support@gsa.gov?body=What%20is%20your%20cloud.gov%20organization%2C%20space%2C%20and%20application%20name%3F%0A%0AWhat%20are%20you%20trying%20to%20do%3F%0A%0AWhat%20do%20you%20expect%20to%20happen%3F%0A%0AWhat%20actually%20happened%3F%0A%0AAttach%20relevant%20error%20messages%2C%20logs%2C%20or%20screenshots%20%28please%20remove%20sensitive%20information%29%3A%0A%0A) and provide:
+
+- Your cloud.gov org, space, and app name.
+- What are you trying to do?
+- What do you expect to happen?
+- What actually happened?
+- Attach relevant error messages, logs, or screenshots (please remove sensitive information).
+
+We provide support during business hours for U.S. East and West Coasts. We don't guarantee support outside those hours, though we're always monitoring for issues that might affect customers.
 
 If you need help with an application security incident, the request should come from the System Owner or Org Manager, to help us validate the request.
 
 You should not include any passwords or sensitive environment variables in your email (we don't need them to help you, and you should keep them protected).
+
 
 ### Report a vulnerability
 
