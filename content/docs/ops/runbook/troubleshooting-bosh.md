@@ -30,14 +30,14 @@ documentation](https://github.com/concourse/fly#installing-from-the-concourse-ui
 
 1. Go to [Concourse web](https://ci.fr.cloud.gov/login) and login if necessary
 1. Select the [jumpbox pipeline](https://ci.fr.cloud.gov/pipelines/jumpbox)
-1. Select the job that corresponds to whichever BOSH you want to work with, e.g. `container-bosh-staging`
+1. Select the job that corresponds to whichever BOSH you want to work with, e.g. `container-bosh-staging` (we'll call this `JOB_NAME` below)
 1. Click the plus button to start your own build of your selected job. Remember
    the build number as you'll be referencing it in the `builds` command.
 
-If you haven't already, set a target to your concourse using the following command
+If you haven't already, name a target for interactions with this concourse using the following command
 
 ```sh
-$ fly --target <YOUR_CONCOURSE_TARGET_NAME> login --concourse-url <CONCOURSE_URL> (e.g. https://ci.example.com)
+$ fly --target <YOUR_TARGET_NAME> login --concourse-url https://ci.fr.cloud.gov
 ```
 You should now see that target when you issue the following command.
 ```sh
@@ -48,7 +48,7 @@ displayed in reverse chronological order, so more recent builds will be
 visible towards the top.
 
 ```sh
-$ fly -t <YOUR_CONCOURSE_TARGET_NAME> builds
+$ fly -t <YOUR_TARGET_NAME> builds
 targeting https://ci.fr.cloud.gov
 
 id   pipeline/job                                                    build  status     start                     end                       duration
@@ -58,11 +58,11 @@ X    jumpbox/<JOB_NAME>                                              Y      succ
 
 ```
 
-Using the `fly` CLI, select the final build jumpbox step, of type 'task', for
+Using the `fly` CLI, get an interactive shell inside the final build jumpbox step, of type 'task', for
 your unique build number.
 
 ```sh
-$ fly -t <YOUR_CONCOURSE_TARGET_NAME> intercept -j jumpbox/<JOB_NAME>
+$ fly -t <YOUR_TARGET_NAME> intercept -j jumpbox/<JOB_NAME>
 
 # ... output shortened for brevity
 
