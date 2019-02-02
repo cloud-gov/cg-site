@@ -21,7 +21,9 @@ For help interpreting this list or evaluating specific cases, please email the c
 
 ## Identify applications with a supported technology stack
 
-**Operating systems**: Linux (64-bit ABI)
+**Operating systems**: 
+- Application hosting: Linux (64-bit ABI)
+- Client workstation: Any
 
 **Application runtime options**:
 
