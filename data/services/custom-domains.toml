@@ -1,5 +1,5 @@
 # Service metadata lives
 # https://github.com/18F/cf-domain-broker-alb/blob/master/catalog.json
-name = "custom-domain"
+name = "custom-domains"
 description = "Custom domains and TLS certificates with automatic renewal"
 status = "Production Ready"
