@@ -34,7 +34,12 @@ query parameters:
 
 * `client_id=<YOUR APP'S REGISTERED NAME>`
 * `response_type=code`
-* (optional) `state=<ANYTHING>`
+* `redirect_uri=<A REGISTERED CALLBACK URL>` (required if you have multiple registered callback URLs)
+* `state=<ANYTHING>` (optional)
+
+You only need to provide `redirect_uri` if you have multiple registered callback URLs for a single
+UAA registration (for instance, if you have both an "app.cloud.gov" URL and a production URL).
+The value of `redirect_uri` must match one of the registered callback URLs.
 
 You can set a `state` parameter with any value you'd like.
 It will be returned to you in a later step. While optional, we *strongly*
@@ -68,10 +73,11 @@ access token. Here is where things get fun.
     parameters:
 
     - `code=<CODE FROM QUERY PARAM IN CALLBACK REQUEST>`
-    - `grant_type='authorization_code'`
-    - `response_type='token'`
+    - `grant_type=authorization_code`
+    - `response_type=token`
     - `client_id=<YOUR APP'S REGISTERED NAME>`
     - `client_secret=<THE SECRET KEY YOU RECEIVED WHEN REGISTERING YOUR APP>`
+    - `redirect_uri=<A REGISTERED CALLBACK URL>` (required if you have multiple registered callback URLs)
 
 2.  If everything works and UAA is able to verify your request, the response
     from that `POST` request will be JSON encoded and will contain these
