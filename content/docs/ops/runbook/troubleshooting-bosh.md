@@ -82,7 +82,7 @@ the Troubleshooting Bosh Managed VMS section below.
 ## Troubleshooting Bosh Managed VMS
 
 In order to troubleshoot a Bosh-managed VMS, you will need to first access a
-jumpbox, outlined previously.
+jumpbox, outlined previously. All of the commands below assume that you're operating in the `/tmp/build/<buildid>` directory. 
 
 ### Finding the deployment
 
