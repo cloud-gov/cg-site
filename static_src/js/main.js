@@ -9,8 +9,6 @@ mermaid.initialize({startOnLoad: false});
 var anchorJS = require('anchor-js');
 require('jquery.scrollto');
 
-var hljs = require('highlight.js');
-
 function hideSidenav() {
   $('#container').addClass('sidebar-close');
   $('#sidebar > ul').hide();
@@ -81,9 +79,6 @@ function initializeJS() {
   var anchors = new anchorJS();
   anchors.options.visible = 'touch';
   anchors.add('.content h2,.content h3,.content h4,.content h5');
-
-  // Highlight JS
-  hljs.initHighlightingOnLoad();
 }
 
 (function(){
