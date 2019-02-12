@@ -63,7 +63,7 @@ graph TB;
 
 To use this service, you must have an internet-routable IP address to use as the IPsec endpoint for the connection. If you have a firewall in place between the internet and your endpoint, then you will have to open both ingress and egress on UDP port 500 and ESP (IP Protocol 50) to enable the connection. If you are also using NAT behind your firewall, you will also have to enable UDP port 4500.
 
-To be compatible with this feature, your IPsec endpoint must support IKEv1 key exchange along with AES128 encryption, SHA256 hashing, and Diffie Hellman Group 14 (MODP 2048) for Perfect Forward Secrecy (PFS). Your IPsec endpoint can be either a software or hardware device. Here is a list of compatible options we are prepared to support (in addition to open source IPsec endpoints such as strongSWAN and OpenSwan):
+To be compatible with this feature, your IPsec endpoint must support IKEv1 key exchange along with AES128 encryption, SHA256 hashing, and Diffie Hellman Group 14 (MODP 2048) for Perfect Forward Secrecy (PFS). You should opt for AES256 encryption whenver possible. Your IPsec endpoint can be either a software or hardware device. Here is a list of compatible options we are prepared to support (in addition to open source IPsec endpoints such as strongSWAN and OpenSwan):
 
 <!-- List from https://docs.aws.amazon.com/AmazonVPC/latest/NetworkAdminGuide/Introduction.html#DevicesTested -->
 
