@@ -3,29 +3,29 @@ date = "2019-02-30"
 title = "Quarterly update" 
 +++
 
-# An OS upgrade, cross-IaaS services, R Shiny apps, VPN backhaul, and more! 2019/02/20
+# An OS upgrade, cross-IaaS services, R Shiny apps, and more!
 
-It’s a new year, cloud.gov users! We know it’s been a while since we last checked in, and we’ve got a pile of changes and highlights to tell you about.
+It’s a new year, cloud.gov users! We’ve got a pile of changes and highlights to tell you about since we last checked in.
 
 ## Announcements
 
 ### **Ubuntu 18.04 is coming and 14.04 is going: Test your apps now!**
 
-The base OS image used by your cloud.gov applications is called a "stack". The stack we’ve provided to date is called “cflinuxfs2”, and it’s based on Ubuntu 14.04 LTS, [released originally in early 2014](https://www.ubuntu.com/about/release-cycle) with continuous security updates since then. “cflinuxfs3” is a new OS image based on Ubuntu 18.04 LTS, and it’s already available for your use. **We’ll be making cflinuxfs3 the default stack in cloud.gov on March 15th**. In addition, Ubuntu 14.04 will no longer receive security updates in April, so **we will stop supporting cflinuxfs2 in cloud.gov April 30th.**
+The base OS image used by your cloud.gov applications is called a "stack". The stack we’ve provided to date is called `cflinuxfs2`, and it’s based on Ubuntu 14.04 LTS, [released originally in early 2014](https://www.ubuntu.com/about/release-cycle) with continuous security updates since then. `cflinuxfs3` is a new OS image based on Ubuntu 18.04 LTS, and it’s already available for your use. **We’ll be making `cflinuxfs3` the default stack in cloud.gov on March 15th**. In addition, Ubuntu 14.04 will no longer receive security updates in April, so **we will stop supporting `cflinuxfs2` in cloud.gov April 30th.**
 
 **What this means to you:** Most cloud.gov customers deploy their applications using buildpacks, and their apps don’t have any dependency on the particular OS version that runs them. If that describes you, this upgrade will probably be a miraculous non-event… You can request the new stack at your next `cf push` or `cf restage` and carry on as you always have. 
 
 However, there may be exceptions! For example, you may have used the apt-buildpack to ensure that a particular library or utility is installed when your app is deployed. In that case, you might run into problems if the location or name of that dependency has changed between Ubuntu 14.04 and Ubuntu 18.04.
 
-**What do you need to do:** You should try out the new cflinuxfs3 stack before we make it the default on March 15th. Check out [the Cloud Foundry stack docs](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html) to see how. If you find problems, you can continue using the deprecated cflinuxfs2 stack until you’ve resolved any issues and are ready to transition your apps. However, this is only a temporary solution because cflinuxfs2 will be removed as an option at the end of April. Plan to make the switch soon so you’re not up against the deadline! 
+**What you should do:** You should try out the new `cflinuxfs3` stack before we make it the default on March 15th. Check out [the Cloud Foundry stack docs](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html) to see how. If you find problems, you can continue using the deprecated `cflinuxfs2` stack until you’ve resolved any issues and are ready to transition your apps. However, this is only a temporary solution because `cflinuxfs2` will be removed as an option at the end of April. Plan to make the switch soon so you’re not up against the deadline! 
 
 **Timeline**
 
-**Now - March 15th**		Test your apps using cflinuxfs3
-
-**March 15th - April 29th** 	Explicitly opt to use cflinuxfs2 if you need more time
-
-**April 30th** 			Only cflinuxfs3 will be available
+| When | What|
+|----|----|
+| **Now - March 15th**	| Test your apps using `cflinuxfs3` |
+| **March 15th - April 29th** |	Explicitly opt to use `cflinuxfs2` if you need more time |
+| **April 30th onward** | Only `cflinuxfs3` will be available |
 
 If you have any questions or concerns, please [contact support](mailto:cloud-gov-support@gsa.gov) so we can help you out.
 
@@ -43,7 +43,7 @@ Cloud.gov wouldn’t be possible without the robust collaboration in the bustlin
 
 ### Extend your cloud.gov app across CSPs using your existing access
 
-Can you imagine your team automatically provisioning a [Big Query](https://cloud.google.com/bigquery/) instance in Google Cloud Platform (GCP) a [Service Bus](https://azure.microsoft.com/en-us/services/service-bus/?&OCID=AID719825_SEM_LJ3lfjer&lnkd=Google_Azure_Brand&gclid=Cj0KCQiA14TjBRD_ARIsAOCmO9aITbtidlOvck-j-xut77bF04XcPAj8hzoOTTPQlIKs7k4QvgoMfw8aAmfQEALw_wcB) instance in Microsoft Azure, and a [Kinesis](https://aws.amazon.com/kinesis/) instance in Amazon Web Services (AWS) East, then using those instances in your cloud.gov app (running in AWS GovCloud)? If your agency or organization has your own access to Amazon Web Services (AWS), Google Cloud Platform (GCP), or Microsoft Azure, you can use existing cloud.gov extension points to make additional services accessible to your cloud.gov teams. We’ve published [a tutorial](https://github.com/18F/cf-byo-broker) to help you understand how these brokers work and walk you through deploying and using the GCP broker, and we’ll be extending this tutorial with instructions for additional brokers in the future.
+Can you imagine your team automatically provisioning a [Big Query](https://cloud.google.com/bigquery/) instance in Google Cloud Platform (GCP) a [Service Bus](https://azure.microsoft.com/en-us/services/service-bus/?&OCID=AID719825_SEM_LJ3lfjer&lnkd=Google_Azure_Brand&gclid=Cj0KCQiA14TjBRD_ARIsAOCmO9aITbtidlOvck-j-xut77bF04XcPAj8hzoOTTPQlIKs7k4QvgoMfw8aAmfQEALw_wcB) instance in Microsoft Azure, and a [Kinesis](https://aws.amazon.com/kinesis/) instance in Amazon Web Services (AWS) East, then using those instances in your cloud.gov app (running in AWS GovCloud)? If your agency or organization has your own access to AWS, GCP, or Azure, you can use existing cloud.gov extension points to make additional services accessible to your cloud.gov teams. We’ve published [a tutorial](https://github.com/18F/cf-byo-broker) to help you understand how these brokers work and walk you through deploying and using the GCP broker, and we’ll be extending this tutorial with instructions for additional brokers in the future.
 
 **How this is possible:** "Brokers" are the invisible integrators that enable you to set up services in cloud.gov in a consistent and self-service fashion. The [Open Service Broker API](https://www.openservicebrokerapi.org/) (OSBAPI) standardizes the way brokers work, and [AWS](https://github.com/awslabs/aws-servicebroker), [GCP](https://github.com/GoogleCloudPlatform/gcp-service-broker), and[ Azure](https://osba.sh/) publish their own OSBAPI-compliant brokers.
 
