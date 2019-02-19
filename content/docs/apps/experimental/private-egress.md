@@ -1,15 +1,13 @@
 ---
 menu:
   docs:
-    parent: experimental
+    parent: advanced
+aliases:
+  - /docs/apps/experimental/private-egress/
 title: Connect to your private network
 ---
 
 You can set up all or a subset of your applications to communicate securely with an external network. This enables your cloud.gov applications to access services hosted in your agency infrastructure or with other cloud providers.
-
-[**This is an experimental feature.**]({{< relref "docs/apps/experimental/experimental.md" >}})
-
-_Note: As of August 2018, this feature is not yet available, pending FedRAMP approval. If you want to use this feature, [contact support]({{< relref "docs/help.md" >}}) and our team will let you know our estimated timeline for approval._
 
 By default, cloud.gov runs your application instances on a pool of hosts shared by all cloud.gov customers. Application instances run in containers that isolate them from each other, but the hosts are all running in the same network segment. If you open your private external service network for access by cloud.gov applications, you will also permit network access by other cloud.gov customers.
 
