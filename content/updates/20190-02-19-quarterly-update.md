@@ -33,7 +33,7 @@ If you have any questions or concerns, please [contact support](mailto:cloud-gov
 
 Last October, we announced our team was working on a way for all of your cloud.gov applications to interact securely with your external applications through a VPN. This capability can make it easier to migrate applications from legacy infrastructure to cloud.gov, one application at a time. Good news: The FedRAMP assessment of this feature is wrapping up, and we’ll soon be ready to configure this capability for customers who need it.
 
-Contact us if you’d like this to use this feature and we’ll work with the appropriate security and procurement team in your organization to get you set up. For more detail on how this will work, as well as benefits of adding this to your system, check out [our docs](https://cloud.gov/docs/apps/experimental/private-egress/). 
+Contact us if you’d like this to use this feature and we’ll work with the appropriate security and procurement team in your organization to get you set up. For more detail on how this will work, as well as benefits of adding this to your system, check out [our docs]({{< relref "/docs/apps/private-egress.md" >}}). 
 
 ### The 2019 North America Cloud Foundry Summit: See you there!
 
@@ -52,7 +52,7 @@ Can you imagine your team automatically provisioning a [Big Query](https://cloud
 There’s no denying the deep and abiding love that data analytics folks have for [R](https://www.r-project.org/about.html) and [Shiny](https://shiny.rstudio.com/). If you’ve ever browsed through an interactive presentation by the New York Times, [you’ve probably experienced this powerful, free, open source combination](https://blog.revolutionanalytics.com/2011/03/how-the-new-york-times-uses-r-for-data-visualization.html). For those late to the party: R is a programming language for statistical computing and graphics, while Shiny helps turn R analyses into interactive web applications without requiring HTML, CSS, or JavaScript knowledge. A free, open source desktop IDE called [RStudio](https://www.rstudio.com/) aimed at data scientists facilitates developing apps using R and Shiny.
 
 Many customers have told us they want to deploy apps built using R and Shiny on cloud.gov, and now it’s possible! Check out the [new R buildpack](https://docs.cloudfoundry.org/buildpacks/r/index.html). We’ve also published [a demonstration](https://github.com/18f/cf-rshiny-demo) showing how to run the the movie explorer application from the official [Shiny examples](https://github.com/rstudio/shiny-examples), pictured below.
-![image alt text](image_0.png)
+![R Shiny movie explorer application screenshot](r-shiny-demo.png)
 
 ### Build edge-facing web engineering apps using the NGINX buildpack
 

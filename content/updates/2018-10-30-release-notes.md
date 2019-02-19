@@ -38,7 +38,7 @@ You can also use these routes across language stacks — because it's DNS-based,
 
 #### VPN backhaul to other networks
 
-If you have applications on cloud.gov and you want them to be able to interact with other applications over a VPN connection — in your data center, in an IaaS, with your hosting provider, anywhere — [we’re working on making this available to you]({{< relref "/docs/apps/experimental/private-egress.md" >}}). We're able to dedicate a specific area for these types of applications, along with a VPN backhaul that enables direct connections to the applications you have on other networks.
+If you have applications on cloud.gov and you want them to be able to interact with other applications over a VPN connection — in your data center, in an IaaS, with your hosting provider, anywhere — [we’re working on making this available to you]({{< relref "/docs/apps/private-egress.md" >}}). We're able to dedicate a specific area for these types of applications, along with a VPN backhaul that enables direct connections to the applications you have on other networks.
 
 Having this in place will make it easier to migrate applications from legacy infrastructure to the cloud. If your services are nested together and you can't move everything at once, you’ll be able to migrate one application at a time without interrupting service or exposing information to the open internet.
 
