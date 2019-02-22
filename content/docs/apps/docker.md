@@ -51,7 +51,7 @@ Then create a database service, bind it, and restage the app to use the database
 ```
 cf create-service aws-rds shared-psql my-spring-db
 cf bind-service my-spring my-spring-db
-cf restage my-spring-db
+cf restage my-spring
 ```
 
 #### Docker task with S3 and CF CLI Variable
