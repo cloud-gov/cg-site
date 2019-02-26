@@ -31,7 +31,7 @@ To list all the managed services and plans available to a given space, you run `
 
 "Brokers" are the invisible integrators that enable you to set up managed service instances in cloud.gov in a consistent and self-service fashion. A broker offers a simple API that manages the service instance lifecycle. You can run your own broker to make a service from outside cloud.gov available through cloud.gov's marketplace. 
 
-*Note that when you extend the cloud.gov marketplace with your own broker, the cloud.gov team cannot vouch for the security or compliace of the brokered services. You should consider the security and compliance impact of the services you broker yourself.*
+*Note that when you extend the cloud.gov marketplace with your own broker, the cloud.gov team cannot vouch for the security or compliace of the brokered services. You will need to document and authorize your own brokered services in accordance with  your agency's compliance requirements.*
 
 We've supplied a [tutorial to help you understand how to operate your own broker](https://github.com/18F/cf-byo-broker), including instructions for deploying some sample brokers into cloud.gov. Once you've reviewed this tutorial, you may want to investigate some of the [community-supported broker add-ons for Cloud Foundry](https://github.com/cloudfoundry-community?q=broker) such as the [app-autoscaler](https://github.com/cloudfoundry-incubator/app-autoscaler).
 
