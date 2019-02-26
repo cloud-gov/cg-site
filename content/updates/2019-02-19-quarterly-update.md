@@ -1,11 +1,11 @@
 +++
-date = "2019-02-30"
+date = "2019-02-26"
 title = "Quarterly update" 
 +++
 
 # An OS upgrade, cross-IaaS services, R Shiny apps, and more!
 
-It’s a new year, cloud.gov users! We’ve got a pile of changes and highlights to tell you about since we last checked in.
+It’s a new year, and we’ve got a pile of changes and highlights to tell you about since we last checked in.
 
 ## Announcements
 
@@ -43,9 +43,7 @@ Cloud.gov wouldn’t be possible without the robust collaboration in the bustlin
 
 ### Extend your cloud.gov app across CSPs using your existing access
 
-Can you imagine your team automatically provisioning a [Big Query](https://cloud.google.com/bigquery/) instance in Google Cloud Platform (GCP) a [Service Bus](https://azure.microsoft.com/en-us/services/service-bus/?&OCID=AID719825_SEM_LJ3lfjer&lnkd=Google_Azure_Brand&gclid=Cj0KCQiA14TjBRD_ARIsAOCmO9aITbtidlOvck-j-xut77bF04XcPAj8hzoOTTPQlIKs7k4QvgoMfw8aAmfQEALw_wcB) instance in Microsoft Azure, and a [Kinesis](https://aws.amazon.com/kinesis/) instance in Amazon Web Services (AWS) East, then using those instances in your cloud.gov app (running in AWS GovCloud)? If your agency or organization has your own access to AWS, GCP, or Azure, you can use existing cloud.gov extension points to make additional services accessible to your cloud.gov teams. We’ve published [a tutorial](https://github.com/18F/cf-byo-broker) to help you understand how these brokers work and walk you through deploying and using the GCP broker, and we’ll be extending this tutorial with instructions for additional brokers in the future.
-
-**How this is possible:** "Brokers" are the invisible integrators that enable you to set up services in cloud.gov in a consistent and self-service fashion. The [Open Service Broker API](https://www.openservicebrokerapi.org/) (OSBAPI) standardizes the way brokers work, and [AWS](https://github.com/awslabs/aws-servicebroker), [GCP](https://github.com/GoogleCloudPlatform/gcp-service-broker), and[ Azure](https://osba.sh/) publish their own OSBAPI-compliant brokers.
+Can you imagine your team automatically provisioning a [Big Query](https://cloud.google.com/bigquery/) instance in Google Cloud Platform (GCP) a [Service Bus](https://azure.microsoft.com/en-us/services/service-bus/?&OCID=AID719825_SEM_LJ3lfjer&lnkd=Google_Azure_Brand&gclid=Cj0KCQiA14TjBRD_ARIsAOCmO9aITbtidlOvck-j-xut77bF04XcPAj8hzoOTTPQlIKs7k4QvgoMfw8aAmfQEALw_wcB) instance in Microsoft Azure, and a [Kinesis](https://aws.amazon.com/kinesis/) instance in Amazon Web Services (AWS) East, then using those instances in your cloud.gov app (running in AWS GovCloud)? If your agency or organization has your own access to AWS, GCP, or Azure, you can use existing cloud.gov extension points to make additional services accessible to your cloud.gov teams. We’ve published [a tutorial](https://github.com/18F/cf-byo-broker) to help you understand how these brokers work and walk you through deploying and using the GCP broker, and we’ll be extending this tutorial with instructions for additional brokers in the future. Read more about [how to extend the cloud.gov service marketplace].({{< relref "/docs/services/intro.md#extending-the-marketplace" >}})
 
 ### Deploy your R data analytics applications on cloud.gov
 
@@ -66,7 +64,7 @@ Using a new CLI plugin, you can now mine a greater range of logs and metrics tha
 
 ### Ensure you have the latest CLI client!
 
-While you’re checking out that new log-cache plugin, now would be a good time to make sure you’ve installed the latest version of the Cloud Foundry CLI, version 6.42.0. While the CLI is generally forward-compatible as we update cloud.gov, you’ll only get new features and bugfixes if you [keep your CLI up to date](https://cloud.gov/docs/getting-started/setup/#set-up-the-command-line). For example, the most recent CLI version enables [space-to-space networking policies](https://github.com/cloudfoundry/cli/releases/tag/v6.42.0), a capability only previously available by working directly with the Cloud Foundry API.
+While you’re checking out that new log-cache plugin, now would be a good time to make sure you’ve installed the latest version of the Cloud Foundry CLI, version 6.43.0. While the CLI is generally forward-compatible as we update cloud.gov, you’ll only get new features and bugfixes if you [keep your CLI up to date](https://cloud.gov/docs/getting-started/setup/#set-up-the-command-line). For example, the most recent CLI version ensures your credentials are not exposed inadvertently when running with the verbose flag, while the [version before that](https://github.com/cloudfoundry/cli/releases/tag/v6.43.0) added the ability to manage [space-to-space networking policies](https://github.com/cloudfoundry/cli/releases/tag/v6.42.0), a capability only previously available by working directly with the Cloud Foundry API.
 
 ## We want to hear from you!
 
