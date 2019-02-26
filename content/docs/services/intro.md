@@ -39,5 +39,5 @@ The [Open Service Broker API](https://www.openservicebrokerapi.org/) (OSBAPI) st
 
 You can also [write your own broker](https://docs.cloudfoundry.org/services/) to manage the lifecycle of a service or automate a process unique to your organization. Check out the [example service brokers](https://docs.cloudfoundry.org/services/examples.html) for some  interesting use-cases such as provisioning GitHub repositories or virtual machines.
 
-*Note: If you write a broker for a FedRAMP-authorized service that you'd like to be made available for all users of cloud.gov, please contact us to discuss whether it can be included in our marketplace.*
+*Note: If you're a vendor with a broker for a FedRAMP-authorized service that you'd like to be made available for all users of cloud.gov, please [contact us](mailto:cloud-gov-inquiries@gsa.gov) to discuss whether it can be included in our marketplace.*
 
