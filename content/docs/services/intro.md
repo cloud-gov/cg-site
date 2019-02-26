@@ -13,7 +13,7 @@ You can expand the functionality of your cloud.gov application by making use of 
 There are two ways to provision services:
 
 - You can provision a service manually outside of cloud.gov, then create a [user-provided service instance](https://docs.cloudfoundry.org/devguide/services/user-provided.html) to hold the credentials.
-- You can provision a [managed service instance](https://docs.cloudfoundry.org/devguide/services/#instances) from the marketplace in cloud.gov on demand.
+- You can provision a [managed service instance](https://docs.cloudfoundry.org/devguide/services/#instances) through the marketplace in cloud.gov on demand.
 
 In both cases, you make the credentials available by [binding the service instance to your application](https://docs.cloudfoundry.org/devguide/services/application-binding.html). 
 
