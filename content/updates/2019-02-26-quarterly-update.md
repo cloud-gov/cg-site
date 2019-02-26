@@ -76,6 +76,3 @@ In October, we gave you a glimpse into our new [web dashboard](https://dashboard
 
 While we are preparing to finalize the new dashboard, we’re still collecting feedback and want to know your thoughts. [Let us know](mailto:cloud-gov-support@gsa.gov) if we are missing any specific workflows, what’s confusing, or what other visualization should be included! 
 
-### How are you finding cloud.gov?
-
-Our team is always looking for ways to improve, whether it’s via our product, our technology, or just checking in with our customers more. We’d love to understand if there are ways we can make cloud.gov more useful for you. Please take just a few moments to complete our [quick survey](https://docs.google.com/forms/d/1UjhmkkmI6_ELCwXK1ukOkgbgWqEujc6KqFkb7Nzv56c/edit), and if you’d like to give us feedback directly and chat more, we are more than happy to speak with you one-on-one.  
