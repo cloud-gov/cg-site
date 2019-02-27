@@ -8,7 +8,7 @@ title: Introduction
 weight: -1
 ---
 
-You can expand the functionality of your cloud.gov application by making use of services. Before your application can use a service, you must provision the service, and supply the credentials for using the service to your application. 
+You can expand the functionality of your cloud.gov application by making use of services. Before your application can use a service, you must provision the service and supply the credentials for using the service to your application. 
 
 There are two ways to provision services:
 
@@ -33,7 +33,7 @@ To list all the managed services and plans available to a given space, you run `
 
 *Note that when you extend the cloud.gov marketplace with your own broker, the cloud.gov team cannot vouch for the security or compliace of the brokered services. You will need to document and authorize your own brokered services in accordance with  your agency's compliance requirements.*
 
-This [tutorial will help you understand how to operate your own broker](https://github.com/18F/cf-byo-broker), and includes instructions for deploying some sample brokers into cloud.gov. Once you've reviewed this tutorial, you may want to investigate some of the [community-supported broker add-ons for Cloud Foundry](https://github.com/cloudfoundry-community?q=broker) such as the [app-autoscaler](https://github.com/cloudfoundry-incubator/app-autoscaler).
+This [tutorial](https://github.com/18F/cf-byo-broker) includes instructions for integrating your own broker, and demonstrates how to deploy sample brokers into cloud.gov. Once you've reviewed this tutorial, you may want to investigate some of the [community-supported broker add-ons for Cloud Foundry](https://github.com/cloudfoundry-community?q=broker) such as the [app-autoscaler](https://github.com/cloudfoundry-incubator/app-autoscaler).
 
 The [Open Service Broker API](https://www.openservicebrokerapi.org/) (OSBAPI) standardizes the way brokers work between Cloud Foundry and Kubernetes. [Amazon Web Services (AWS)](https://github.com/awslabs/aws-servicebroker), [Google Cloud Platform (GCP)](https://github.com/GoogleCloudPlatform/gcp-service-broker), and [Microsoft Azure](https://osba.sh/) maintain open-source OSBAPI-compliant brokers. These brokers enable you to extend the cloud.gov marketplace with services from these providers.
 
