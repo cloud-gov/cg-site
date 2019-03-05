@@ -205,7 +205,7 @@ cd cf-sample-app-spring</pre>
                       <h5>Push the application</h5>
                       <pre>cf push</pre>
                       <p>
-                        The <code>push</code> command will upload your sample app, prepare it for cloud.gov, then after a couple minutes tell you what URL to visit in your browser. Look for the <code>urls: </code> line, as in this example output:
+                        The <code>push</code> command will upload your sample app, prepare it for cloud.gov, then after a couple minutes tell you what URL to visit in your browser. Look for the <code>routes: </code> line, as in this example output:
                       </p>
 <pre class="output">
 cf push
@@ -214,13 +214,11 @@ Using manifest file ...
 Creating app cf-spring in org / space
 OK
 ...[snip]...
-requested state: started
-instances: 1/1
-usage: 768M x 1 instances
-<strong>urls: cf-spring-subpeltate-briner.app.cloud.gov</strong>
-last uploaded: Fri Nov 3 17:50:30 UTC 2017
-stack: cflinuxfs2
-buildpack: client-certificate-mapper.... [snip]
+requested state:   started
+<strong>routes:            flask-example-fluent-okapi.app.cloud.gov</strong>
+last uploaded:     Tue 05 Mar 13:40:39 PST 2019
+stack:             cflinuxfs3
+buildpacks:        python
 
      state     since
 #0   running   2017-12-02 12:53:29 PM
