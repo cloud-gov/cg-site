@@ -194,3 +194,12 @@ At this point, you can watch the output of `monit summary` and if the deployment
 is still running, `monit` will update the states a few times stopping and
 starting the machine. At this point you may be logged out of the Bosh VM and
 dropped back into the Concourse jumpbox.
+
+
+### Troubleshooting Master Bosh
+
+This assumes the only time you'll need to do this is when master bosh fails to deploy.
+
+1. Intercept the Councourse container for the failed build [as described above.](#creating-and-intercepting-ephemeral-jumpboxes)
+1. Get the Director's IP from `terraform-secrets/terraform.yml`
+1. Follow [Bosh's directions](https://bosh.io/docs/jumpbox/) for connecting to the Director.
