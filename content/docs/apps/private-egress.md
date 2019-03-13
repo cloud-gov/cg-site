@@ -1,15 +1,13 @@
 ---
 menu:
   docs:
-    parent: experimental
+    parent: advanced
+aliases:
+  - /docs/apps/experimental/private-egress/
 title: Connect to your private network
 ---
 
 You can set up all or a subset of your applications to communicate securely with an external network. This enables your cloud.gov applications to access services hosted in your agency infrastructure or with other cloud providers.
-
-[**This is an experimental feature.**]({{< relref "docs/apps/experimental/experimental.md" >}})
-
-_Note: As of August 2018, this feature is not yet available, pending FedRAMP approval. If you want to use this feature, [contact support]({{< relref "docs/help.md" >}}) and our team will let you know our estimated timeline for approval._
 
 By default, cloud.gov runs your application instances on a pool of hosts shared by all cloud.gov customers. Application instances run in containers that isolate them from each other, but the hosts are all running in the same network segment. If you open your private external service network for access by cloud.gov applications, you will also permit network access by other cloud.gov customers.
 
@@ -63,7 +61,7 @@ graph TB;
 
 To use this service, you must have an internet-routable IP address to use as the IPsec endpoint for the connection. If you have a firewall in place between the internet and your endpoint, then you will have to open both ingress and egress on UDP port 500 and ESP (IP Protocol 50) to enable the connection. If you are also using NAT behind your firewall, you will also have to enable UDP port 4500.
 
-To be compatible with this feature, your IPsec endpoint must support IKEv1 key exchange along with AES128 encryption, SHA256 hashing, and Diffie Hellman Group 14 (MODP 2048) for Perfect Forward Secrecy (PFS). Your IPsec endpoint can be either a software or hardware device. Here is a list of compatible options we are prepared to support (in addition to open source IPsec endpoints such as strongSWAN and OpenSwan):
+To be compatible with this feature, your IPsec endpoint must support IKEv1 key exchange along with AES128 encryption, SHA256 hashing, and Diffie Hellman Group 14 (MODP 2048) for Perfect Forward Secrecy (PFS). You should opt for AES256 encryption whenever possible. Your IPsec endpoint can be either a software or hardware device. Here is a list of compatible options we are prepared to support (in addition to open source IPsec endpoints such as strongSWAN and OpenSwan):
 
 <!-- List from https://docs.aws.amazon.com/AmazonVPC/latest/NetworkAdminGuide/Introduction.html#DevicesTested -->
 
