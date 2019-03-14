@@ -19,12 +19,6 @@ Once you push your code using a custom buildpack, cloud.gov cannot update it for
 
 ## Example custom buildpacks
 
-### R
-
-For example, if you want to use [this "R" buildpack](https://github.com/virtualstaticvoid/heroku-buildpack-r/tree/heroku-16), you can push your code by typing:
-
-`cf push myapp -b http://github.com/virtualstaticvoid/heroku-buildpack-r.git#heroku-16`
-
 ### apt-buildpack
 
 cloud.gov does not allow the use of `sudo` inside of buildpacks. If your app depends on a library that is `apt-get` installable, you can use the CF flavor of [`apt-buildpack`](https://github.com/cloudfoundry/apt-buildpack), which is a custom buildpack.

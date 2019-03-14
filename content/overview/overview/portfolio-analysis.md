@@ -21,7 +21,9 @@ For help interpreting this list or evaluating specific cases, please email the c
 
 ## Identify applications with a supported technology stack
 
-**Operating systems**: Linux (64-bit ABI)
+**Operating systems**: 
+- Application hosting: Linux (64-bit ABI)
+- Client workstation: Any
 
 **Application runtime options**:
 
@@ -31,6 +33,7 @@ For help interpreting this list or evaluating specific cases, please email the c
 - Node.js
 - PHP
 - Python
+- R
 - Ruby
 - Static HTML+JS+CSS
 - 64-bit Linux binary (including compiled C and C++ applications)
@@ -42,8 +45,6 @@ For help interpreting this list or evaluating specific cases, please email the c
   - Oracle
   - Postgresql
   - SQL Server (available FY19)
-- **NoSQL databases**:
-  - Mongo (available FY19)
 - **Search engines**:
   - Elasticsearch
 - **Cache/queues**:
