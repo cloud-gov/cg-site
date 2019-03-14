@@ -3,6 +3,8 @@ languageCode = "en-us"
 title = "cloud.gov"
 pluralizelisttitles = "false"
 publishdir = "public"
+pygmentsCodeFences = "true"
+pygmentsUseClasses = "true"
 
 [params]
   email = "cloud-gov-inquiries@gsa.gov"

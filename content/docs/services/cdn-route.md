@@ -185,6 +185,9 @@ shows the old content after the DNS changes propagate.
 You only need to add a CNAME entry when you update the `domain`
 field. If you do, follow ["How to set up DNS"](#how-to-set-up-dns) again.
 
+Ensure that you remove previous attempts at updating DNS records when
+creating/recreating the service.
+
 ### Deleting a service instance
 
 After you delete an existing service instance, you may need to wait up to 30 minutes for the changes to complete and propagate.

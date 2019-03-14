@@ -80,7 +80,7 @@ Before or during the meeting, we put together a timeline of the incident in the 
 
 <!-- Discussing remediation steps is important for IR-4 and SI-2 -->
 
-1. The facilitator starts by reading [the retrospective prime directive](http://www.retrospectives.com/pages/retroPrimeDirective.html).
+1. The facilitator starts by reading the retrospective prime directive: _Regardless of what we discover, we understand and truly believe that everyone did the best job they could, given what they knew at the time, their skills and abilities, the resources available, and the situation at hand._
 1. We review the timeline and add anything we have missed.
 1. We analyze the factors that contributed to the incident.
 1. We propose, discuss, and prioritize remediation steps to reduce the likelihood of future incidents, to improve detection and response times for future incidents, to improve our incident handling processes and training, and to validate and test these remediation steps.
