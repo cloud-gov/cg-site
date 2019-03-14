@@ -18,7 +18,7 @@ cloud.gov uses [buildpacks]({{< relref "docs/getting-started/concepts.md#buildpa
 
 ### Fully maintained language support
 
-cloud.gov supports applications written in Go, Java, Node.js, .NET Core, PHP, Python, and Ruby. cloud.gov also supports applications that rely on a static binary that uses the 64-bit Linux kernel ABI, or that consist of static HTML, CSS, and Javascript assets. See the [Cloud Foundry system (supported) buildpacks list](http://docs.cloudfoundry.org/buildpacks/#system-buildpacks) for details.
+cloud.gov supports applications written in Go, Java, Node.js, .NET Core, PHP, Python, R, and Ruby. cloud.gov also supports applications that rely on a static binary that uses the 64-bit Linux kernel ABI, or that consist of static HTML, CSS, and Javascript assets. See the [Cloud Foundry system (supported) buildpacks list](http://docs.cloudfoundry.org/buildpacks/#system-buildpacks) for details.
 
 ### Other languages
 
