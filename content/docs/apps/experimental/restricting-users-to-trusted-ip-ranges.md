@@ -20,4 +20,5 @@ To fully limit access to your apps and services, you must ensure that all users 
 
 ## Restricting access to your own applications
 
-To limit requests to your own applications, you can modify your application logic directly. Alternatively, you can [create a route service](https://docs.cloudfoundry.org/services/route-services.html#introduction) to act as a gatekeeper, then bind the gatekeeper to the routes bound to your application. The route service itself can be an application in cloud.gov that proxies according to your needs. For example, you can create a simple route service by [deploying the Staticfile buildpack configured with a custom `nginx.conf` file](https://docs.cloudfoundry.org/buildpacks/staticfile/index.html#config-process).
+To limit requests to your own applications, you can modify your application logic directly. Alternatively, you can [can follow this example](https://github.com/alphagov/re-paas-ip-safelist-service#quick-demo) within cloud.gov to [create a route service](https://docs.cloudfoundry.org/services/route-services.html#introduction) 
+to block all traffic that does not originate from a trusted IP address range.
