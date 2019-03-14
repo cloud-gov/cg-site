@@ -9,11 +9,11 @@ title: Connect to your private network
 
 You can set up all or a subset of your applications to communicate securely with an external network. This enables your cloud.gov applications to access services hosted in your agency infrastructure or with other cloud providers.
 
-By default, cloud.gov runs your application instances on a pool of hosts shared by all cloud.gov customers. Application instances run in containers that isolate them from each other, but the hosts are all running in the same network segment. If you open your private external service network for access by cloud.gov applications, you will also permit network access by other cloud.gov customers.
+By default, cloud.gov runs your application instances on a pool of hosts shared by all cloud.gov customers. Application instances run in containers that isolate them from each other, but the hosts are all running in the same network segment. If you used that default setup and wanted to open your private external service network for access by cloud.gov applications, you would also permit network access by other cloud.gov customers, so you should not do that.
 
-To prevent network access by other cloud.gov customers, you can request that cloud.gov establish a dedicated set of hosts for your organization. Applications run by other cloud.gov customers will not run on these hosts. Your applications will still be accessible from the internet and can still connect to any of our offered internal services. cloud.gov will work with you to give these dedicated hosts additional access to your private networks.
+cloud.gov provides a way to prevent network access by other cloud.gov customers. To set this up, [email cloud.gov support](/help/) and request cloud.gov to establish a dedicated set of hosts for your organization. Applications run by other cloud.gov customers will not run on these hosts. Your applications will still be accessible from the internet and can still connect to any of our offered internal services. cloud.gov will work with you to give these dedicated hosts additional access to your private networks.
 
-*You can alternatively [secure communication for a single application and service at a time]({{< relref "docs/apps/static-egress" >}}).*
+Alternatively, if you only need to secure communication for a single application and service at a time, you can [set that up using client-specific credentials]({{< relref "docs/apps/static-egress" >}}).
 
 ## How it works
 
@@ -25,38 +25,39 @@ cloud.gov support will work with you to establish a Virtual Private Network (VPN
 graph TB;
   client[Client]
 
-  subgraph cloud.gov
+subgraph AWS GovCloud
+    elb[Elastic Load Balancer]
+    cg-vpn-endpoint["cloud.gov VPN Endpoint <br /> (AWS Site to Site VPN)"]
+  subgraph cloud.gov Responsibility
     router[Router]
     subgraph Dedicated Segment
-      cg-vpn-endpoint[cloud.gov VPN Endpoint]
       subgraph Dedicated Hosts
         isolated-app[Isolated Applications]
       end
     end
-    subgraph Shared Segment
-      subgraph Shared Hosts
-        normal-app[Default Applications]
-      end
-    end
+
     subgraph cloud.gov Services
       database[Shared Database]
     end
   end
-  subgraph Customer Network
+end
+  subgraph Customer Responsibility
     customer-vpn-endpoint[Customer VPN Endpoint]
+    dlp["Data Loss Prevention Solution"]
     subgraph Private Network
       private-service[Private Service]
     end
   end
 
-  client--internet-->router
+  client--internet-->elb
+  elb-->router
   router-->isolated-app
-  router-->normal-app
   isolated-app--shared network rules-->database
-  normal-app--shared network rules-->database
-  isolated-app--dedicated network rules---cg-vpn-endpoint
+  isolated-app--dedicated network rules-->cg-vpn-endpoint
   cg-vpn-endpoint-- "IPsec (via internet)" ---customer-vpn-endpoint
-  customer-vpn-endpoint---private-service
+  customer-vpn-endpoint---dlp
+  dlp-->private-service
+
 {{< /diagrams >}}
 
 To use this service, you must have an internet-routable IP address to use as the IPsec endpoint for the connection. If you have a firewall in place between the internet and your endpoint, then you will have to open both ingress and egress on UDP port 500 and ESP (IP Protocol 50) to enable the connection. If you are also using NAT behind your firewall, you will also have to enable UDP port 4500.
