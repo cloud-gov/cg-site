@@ -25,10 +25,12 @@ cloud.gov support will work with you to establish a Virtual Private Network (VPN
 graph TB;
   client[Client]
 
-  subgraph cloud.gov
+subgraph AWS GovCloud
+    elb[Elastic Load Balancer]
+    cg-vpn-endpoint["cloud.gov VPN Endpoint <br /> (AWS Site to Site VPN)"]
+  subgraph cloud.gov Responsibility
     router[Router]
     subgraph Dedicated Segment
-      cg-vpn-endpoint[cloud.gov VPN Endpoint]
       subgraph Dedicated Hosts
         isolated-app[Isolated Applications]
       end
@@ -42,22 +44,28 @@ graph TB;
       database[Shared Database]
     end
   end
-  subgraph Customer Network
+end
+
+  subgraph Customer Responsibility
     customer-vpn-endpoint[Customer VPN Endpoint]
+    dlp["Data Loss Prevention Solution"]
     subgraph Private Network
       private-service[Private Service]
     end
   end
 
-  client--internet-->router
+
+  client--internet-->elb
+  elb-->router
   router-->isolated-app
   router-->normal-app
   isolated-app--shared network rules-->database
   normal-app--shared network rules-->database
-  isolated-app--dedicated network rules---cg-vpn-endpoint
+  isolated-app--dedicated network rules-->cg-vpn-endpoint
   cg-vpn-endpoint-- "IPsec (via internet)" ---customer-vpn-endpoint
-  customer-vpn-endpoint---private-service
-{{< /diagrams >}}
+  customer-vpn-endpoint---dlp
+  dlp-->private-service
+  {{< /diagrams >}}
 
 To use this service, you must have an internet-routable IP address to use as the IPsec endpoint for the connection. If you have a firewall in place between the internet and your endpoint, then you will have to open both ingress and egress on UDP port 500 and ESP (IP Protocol 50) to enable the connection. If you are also using NAT behind your firewall, you will also have to enable UDP port 4500.
 
