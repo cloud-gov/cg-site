@@ -84,7 +84,7 @@ To be compatible with this feature, your IPsec endpoint must support IKEv1 key e
 
 ### Customer responsibilities
 
-It is customer responsibility to determine the appropriate types of data to transfer over this connection, and to determine any additional security controls you may need to implement in your application on cloud.gov and/or your network. For example, you may need to discuss with your Authorizing Official whether you need a Data Loss Prevention solution in your network to ensure that only appropriate types of data are going over this connection.
+It is customer responsibility to determine the appropriate types of data to transfer over this connection, and to determine any additional security controls you may need to implement in your application on cloud.gov and/or your network. For example, you may need to discuss with your Authorizing Official whether you need a Data Loss Prevention solution or malware protection in your network to ensure that only appropriate types of data are going over this connection.
 
 For additional information on customer responsibilities, see CA-3 and CA-3 (3) in the cloud.gov System Security Plan (available to customers and prospective customers as part of the [cloud.gov FedRAMP P-ATO documentation package]({{< relref "overview/security/fedramp-tracker.md#how-you-can-use-this-p-ato" >}})).
 
