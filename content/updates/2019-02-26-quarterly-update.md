@@ -9,13 +9,13 @@ It’s a new year, and we’ve got a pile of changes and highlights to tell you 
 
 ## Announcements
 
-### **Ubuntu 18.04 is coming and 14.04 is going: Test your apps now!**
+### **Ubuntu 16.04 is coming and 14.04 is going: Test your apps now!**
 
-The base OS image used by your cloud.gov applications is called a "stack". The stack we’ve provided to date is called `cflinuxfs2`, and it’s based on Ubuntu 14.04 LTS, [released originally in early 2014](https://www.ubuntu.com/about/release-cycle) with continuous security updates since then. `cflinuxfs3` is a new OS image based on Ubuntu 18.04 LTS, and it’s already available for your use. **We’ll be making `cflinuxfs3` the default stack in cloud.gov on March 15th**. In addition, Ubuntu 14.04 will no longer receive security updates in April, so **we will stop supporting `cflinuxfs2` in cloud.gov April 30th.**
+The base OS image used by your cloud.gov applications is called a "stack". The stack we’ve provided to date is called `cflinuxfs2`, and it’s based on Ubuntu 14.04 LTS, [released originally in early 2014](https://www.ubuntu.com/about/release-cycle) with continuous security updates since then. `cflinuxfs3` is a new OS image based on Ubuntu 16.04 LTS, and it’s already available for your use. **We’ll be making `cflinuxfs3` the default stack in cloud.gov on March 15th**. In addition, Ubuntu 14.04 will no longer receive security updates in April, so **we will stop supporting `cflinuxfs2` in cloud.gov April 30th.**
 
 **What this means to you:** Most cloud.gov customers deploy their applications using buildpacks, and their apps don’t have any dependency on the particular OS version that runs them. If that describes you, this upgrade will probably be a miraculous non-event… You can request the new stack at your next `cf push` or `cf restage` and carry on as you always have. 
 
-However, there may be exceptions! For example, you may have used the apt-buildpack to ensure that a particular library or utility is installed when your app is deployed. In that case, you might run into problems if the location or name of that dependency has changed between Ubuntu 14.04 and Ubuntu 18.04.
+However, there may be exceptions! For example, you may have used the apt-buildpack to ensure that a particular library or utility is installed when your app is deployed. In that case, you might run into problems if the location or name of that dependency has changed between Ubuntu 14.04 and Ubuntu 16.04.
 
 **What you should do:** You should try out the new `cflinuxfs3` stack before we make it the default on March 15th. Check out [the Cloud Foundry stack docs](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html) to see how. If you find problems, you can continue using the deprecated `cflinuxfs2` stack until you’ve resolved any issues and are ready to transition your apps. However, this is only a temporary solution because `cflinuxfs2` will be removed as an option at the end of April. Plan to make the switch soon so you’re not up against the deadline! 
 
