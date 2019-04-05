@@ -60,6 +60,11 @@ pygmentsUseClasses = "true"
     pre = "<i class='fa fa-rocket fa-fw'></i>"
     weight = -100
 [[menu.docs]]
+    name = "Cloud Native"
+    identifier = "cloud-native"
+    pre = "<i class='fa fa-flask fa-fw'></i>"
+    weight = -100
+[[menu.docs]]
     name = "Compliance"
     identifier = "compliance"
     pre = "<i class='fa fa-check-square-o fa-fw'></i>"
