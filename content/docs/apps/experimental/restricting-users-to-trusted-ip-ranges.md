@@ -20,7 +20,7 @@ To fully limit access to your apps and services, you must ensure that all users 
 
 ## Restricting access to your own applications
 
-Limiting or restricting access for both ingress and egress traffic from your applications is fairly straightforward through a feature called [Application Security Groups](https://docs.cloudfoundry.org/concepts/asg.html), or ASGs. ASGs support white- and black-listing network traffic from given IPv4 ranges. For IPv6 and other more complex restriction cases, you can leverage a proxy application in a sidecar deployment pattern. 
+Limiting or restricting access for both ingress and egress traffic from your applications is fairly straightforward through a feature called [Application Security Groups](https://docs.cloudfoundry.org/concepts/asg.html), or ASGs. ASGs support white- and black-listing network traffic from given IPv4 ranges. For IPv6 and other more complex restriction cases, you can leverage a proxy application in a sidecar deployment pattern. 18F publishes an example proxy application with Nginx, which you can find [here](https://github.com/18f/boardproxy).
 
 ### Scoping
 
