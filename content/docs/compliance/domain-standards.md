@@ -9,7 +9,7 @@ Here's what cloud.gov does to support relevant federal standards and recommendat
 
 ## IPv6
 
-cloud.gov has basic support for IPv6. cloud.gov supports two types of application access, external and internal. External access is when traffic reaches an application from outside the cloud.gov platform, such as from an office, external application, or user. Internal traffic is traffic which leverages the platform's internal DNS to allow applications to communicate without ever leaving the platform's network boundaries. IPv6 is supported for external access, but not for internal access, only IPv4 is supported. When you deploy a new application, for external IPv6 traffic, you do not have to take any action, and most applications will know to use IPv4 internally as cloud.gov's internal DNS provider will leverage IPv4. If you have more questions or security questions, please contact [Support]((mailto:cloud-gov-support@gsa.gov).
+cloud.gov has basic support for IPv6. cloud.gov supports two types of application access, external and internal. External access is when traffic reaches an application from outside the cloud.gov platform, such as from an office, external application, or user. Internal traffic is traffic which leverages the platform's internal DNS to allow applications to communicate without ever leaving the platform's network boundaries. IPv6 is supported for external access. For internal access, only IPv4 is supported. When you deploy a new application, for external IPv6 traffic, you do not have to take any action, and most applications will know to use IPv4 internally as cloud.gov's internal DNS provider will leverage IPv4. If you have more questions or security questions, please contact [Support](mailto:cloud-gov-support@gsa.gov).
 
 ## HTTPS
 
