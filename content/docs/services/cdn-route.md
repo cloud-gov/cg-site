@@ -88,6 +88,10 @@ The maximum number of domains that can be associated with a single cdn-route ser
 
 ### How to set up DNS
 
+**Note:** Due to changes in how CloudFront processes requests, we currently only offer certificate provisioning via DNS challenges. This means that users can no longer skip step 1 below.
+We are investigating ways to bring this feature back. 
+
+
 
 #### Step 1: Create TXT record(s)
 
@@ -98,7 +102,7 @@ $ cf service my-cdn-route
 
 Last Operation
 Status: create in progress
-Message: Provisioning in progress [my.example.gov => cdn-broker-origin.fr.cloud.gov]; Create TXT record(s):
+Message: Provisioning in progress [my.example.gov => cdn-broker-origin.fr.cloud.gov]; CNAME or ALIAS domain my.example.gov to d3nrs0916m1mk2.cloudfront.net or create TXT record(s):
 name: _acme-my.example.gov., value: ngd2suc9gwUnH3btm7N6hSU7sBbNp-qYtSPYyny325E, ttl: 120
 
 ```
