@@ -88,7 +88,6 @@ The maximum number of domains that can be associated with a single cdn-route ser
 
 ### How to set up DNS
 
-**Note:** If you are creating a new site on cloud.gov or you are migrating an existing site to cloud.gov that can tolerate a small amount of downtime during the migration, you can skip the first step and proceed directly to [Create CNAME record(s)](#step-2-create-cname-record-s)
 
 #### Step 1: Create TXT record(s)
 
@@ -99,7 +98,7 @@ $ cf service my-cdn-route
 
 Last Operation
 Status: create in progress
-Message: Provisioning in progress [my.example.gov => cdn-broker-origin.fr.cloud.gov]; CNAME or ALIAS domain my.example.gov to d3nrs0916m1mk2.cloudfront.net or create TXT record(s):
+Message: Provisioning in progress [my.example.gov => cdn-broker-origin.fr.cloud.gov]; Create TXT record(s):
 name: _acme-my.example.gov., value: ngd2suc9gwUnH3btm7N6hSU7sBbNp-qYtSPYyny325E, ttl: 120
 
 ```
@@ -115,7 +114,7 @@ Message: Service instance provisioned [my.example.gov => cdn-broker-origin.fr.cl
 
 #### Step 2: Create CNAME record(s)
 
-Once the TXT records have been validated, or if you've decided to skip that step, you need to point your custom domain at the CDN. Run `cf service my-cdn-route` with the service instance name you choose.
+Once the TXT records have been validated, you need to point your custom domain at the CDN. Run `cf service my-cdn-route` with the service instance name you choose.
 
 ```
 Last Operation
