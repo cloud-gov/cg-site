@@ -29,9 +29,9 @@ Application Security Groups (ASGs) support two types of scoping:
 * Platform
 * Space
 
-These scopes allow both operators and developers to have more fine grained access control. Platform-scoped ASGs are applied at the platform level, and would apply to all tenants of cloud.gov. The cloud.gov team does not apply platform-scoped ASGs as they can interrupt tenant operations unless they are needed to meet platform compliance requirements.
+These scopes allow both operators and developers to have fine-grained access control. Platform-scoped ASGs are applied at the platform level, and would apply to all tenants of cloud.gov. The cloud.gov team does not apply platform-scoped ASGs as they can interrupt tenant operations unless they are needed to meet platform compliance requirements.
 
-Space-scoped ASGs are specific to a given tenant's space within their allotted organization. This allows for tenants to create Space-specific security groups that apply to all applications within a given space. To apply a space-scoped ASG to a single application, create a new space, assign the ASG, and then deploy the application.
+Space-scoped ASGs are specific to a given tenant's space within their own organization. Tenants can create space-specific security groups that apply to all applications within a given space. To apply a space-scoped ASG to a single application, create a new space, assign the ASG, and then deploy the application in that space.
 
 ### Defaults
 
