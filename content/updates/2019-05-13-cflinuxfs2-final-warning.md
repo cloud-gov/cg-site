@@ -20,7 +20,7 @@ Here are three ways to inspect your applications to see if they're running cflin
 1. You can inspect the apps individually using the [beta cloud.gov dashboard](https://dashboard-beta.fr.cloud.gov/applications) and looking for the `Build info:` line in the application details.
 1. You can inspect all your apps at once by installing the [`stack-auditor` CLI plugin](https://github.com/cloudfoundry/stack-auditor) and running `cf audit-stack`.
 
-We are also explicitly mailing people with administrative control over applications that are still using cflinuxfs2.
+We are also explicitly emailing people with administrative control over applications that are still using cflinuxfs2.
 
 **What you should do to prevent downtime:** You should set the stack for these applications to cflinuxfs3 yourself, then redeploy them using your normal process (for example, checking the change in a staging environment before making the same change in your production environment). This will remove the risk of your apps being unavailable after we remove cflinuxfs2.
 
