@@ -1,7 +1,9 @@
 +++
 date = "2019-05-03"
-title = "Final warning: cflinuxfs2 will be removed May 24th" 
+title = "Final warning" 
 +++
+
+# cflinuxfs2 will be removed May 24th
 
 **Background:** [We announced on February 26](https://cloud.gov/updates/2019-02-26-quarterly-update/) that cloud.gov would remove support for the cflinuxfs2 stack (the operating system image for applications). This was the default stack for cloud.gov applications deployed before April 15. On April 15 we set the default stack for new applications to cflinuxfs3.
 
