@@ -27,7 +27,7 @@ We welcome vulnerability reports [according to our vulnerability disclosure poli
 
 If you have a question that isn't on behalf of a U.S. government organization (such as if you're a member of the public or representing a company), we invite you to post your question [publicly as an issue on GitHub](https://github.com/18F/cg-site/issues/new) (requires a free GitHub account), so that we can write an answer available to everyone. If you prefer not to post publicly, you can email [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov).
 
-If you are part of a company asking a question to help prepare a response to a RFI/RFQ/RFP (or a similar process), we will ask you to post your question publicly. We want to answer publicly that our answer is available to all companies competing in that process.
+If you are part of a company asking a question to help prepare a response to a RFI/RFQ/RFP (or a similar proposal process), we will ask you to post your question publicly. We want to answer publicly so that our answer is available to all companies competing in that process.
 
 ### Interested in working on or contributing to cloud.gov?
 
