@@ -12,7 +12,7 @@ aliases:
   - /overview/overview/how-to-purchase
 ---
 
-cloud.gov services can only be purchased by federal government agencies. We hope to provide services to state and local agencies in the future. There are a number of different ways to start using cloud.gov.
+cloud.gov services can only be purchased by federal government agencies. There are a number of different ways to start using cloud.gov.
 
 ## Purchase cloud.gov for your federal team
 
