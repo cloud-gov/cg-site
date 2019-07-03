@@ -89,7 +89,7 @@ The maximum number of domains that can be associated with a single cdn-route ser
 ### How to set up DNS
 
 **Note:** Due to changes in how CloudFront processes requests, we currently only offer certificate provisioning via DNS challenges. This means that users can no longer skip step 1 below.
-We are investigating ways to bring this feature back. If you are unable to use DNS challenges, please reach out to us at support@cloud.gov.
+We are investigating ways to bring this feature back. If you are unable to use DNS challenges, please [reach out to us](/help/).
 
 
 
