@@ -203,3 +203,26 @@ for line in `cat unassigned-shards | awk '{print $1 ":" $2}'`; do index=`echo $l
         ]
     }"; sleep 5; done
 ```
+
+### Get Elasticsearch Document Counts
+
+```bash
+# get into a node, app or platform.
+bosh -d logsearch{-platform} ssh $(bosh -d logsearch vms | grep "elastisearch_data" | head -n1)
+
+# install jq
+sudo su -
+apt update
+apt install -y jq
+
+# set the counter to 0
+counter=0
+
+# for each logging index, get the count of all logs and increase the counter.
+for index in $(curl -s http://localhost:9200/_cat/indices -H "Content-Type: application/json" | awk '{print $3}' | sort | grep "logs");
+  do ((counter+=$(curl -s http://localhost:9200/$index/_count -H "Content-Type: application/json" -d '{"query":{"match_all":{}}}' | jq '.count')))
+done
+
+# print out how many logs we have.
+echo $counter
+```
