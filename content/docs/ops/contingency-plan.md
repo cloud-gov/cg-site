@@ -117,9 +117,6 @@ After these steps are complete, updates will be deployed per usual policy using 
 ### cloud-gov-notifications
 All alerts automatically get delivered to the Cloud Operations team via GSA email.  If GSA email is unavailable, the [Prometheus Alert Manager](https://alertmanager.fr.cloud.gov) provides current alerts.
 
-### New Relic
-There is no direct impact to the platform if a disruption occurs.  When debugging any issues where New Relic would provide insight, the team will use manual investigation to access the same information directly from the affected system(s).
-
 ### GSA SecureAuth
 Cloud Operations will update the `opslogin` UAA instance to allow temporary access via password authentication for any accounts that require access during a disruption in service.
 

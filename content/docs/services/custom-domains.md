@@ -77,7 +77,7 @@ $ cf service my-domain
 Last Operation
 Status: create in progress
 Message: Provisioning in progress; CNAME or ALIAS domain(s) my.example.gov to production-domains-0-792003535.us-gov-west-1.elb.amazonaws.com or create TXT record(s):
-name: _acme-my.example.gov., value: ngd2suc9gwUnH3btm7N6hSU7sBbNp-qYtSPYyny325E, ttl: 120
+name: _acme-challenge.my.example.gov., value: ngd2suc9gwUnH3btm7N6hSU7sBbNp-qYtSPYyny325E, ttl: 120
 
 ```
 Create the TXT record(s) as instructed by the broker. The existence of these records will be validated by [Let's Encrypt](https://letsencrypt.org/) when issuing your certificate and will not affect your site.

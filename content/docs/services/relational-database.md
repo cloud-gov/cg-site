@@ -36,6 +36,7 @@ Shared instances are available in [sandbox spaces]({{< relref "overview/pricing/
 Name | Required | Description | Default
 --- | --- | --- | ---
 `storage` |  | Number of GB available to the database instance | 10
+`enable_functions` | | Boolean to enable functions on supported databases | false
 
 ## Create an instance
 
@@ -49,6 +50,12 @@ If you want to specify the storage available to the instance:
 
 ```sh
 cf create-service aws-rds medium-psql my-db-service -c '{"storage": 50}'
+```
+
+Using functions:
+
+```sh
+cf create-service aws-rds medium-mysql my-db-service -c '{"enable_functions": true}'
 ```
 
 ### Instance creation time
