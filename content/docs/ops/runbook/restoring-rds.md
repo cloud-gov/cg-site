@@ -38,6 +38,8 @@ Prior to restoring, record the configuration settings:
 
 Once the restore has finished, confirm the new instance matches the previous configuration.  To update a configuration setting, click 'Modify' from the RDS console instance view.
 
+Also set the `master password` using the Modify form.  Since Terraform lacks the capability to import rds credentials, please set the password to the old password of the database we are restoring.
+
 ## Platform Databases
 Databases created by Terraform store credentials in the Terraform State S3 Bucket:
 ```sh

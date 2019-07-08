@@ -15,10 +15,10 @@ If your application uses relational databases for storage, you can use the AWS R
 Plan Name | Description | Software Version | Price
 --------- | ----------- | ------- | -----
 `shared-psql`            | Shared PostgreSQL database for prototyping (no sensitive or production data) | 9.4.7 | Free
-`medium-psql`            | Dedicated medium RDS PostgreSQL DB instance                                  | 9.6.3 |  Will be paid per hour + storage
-`medium-psql-redundant`  | Dedicated redundant medium RDS PostgreSQL DB instance                        | 9.6.3 | Will be paid per hour + storage
-`large-psql`             | Dedicated large RDS PostgreSQL DB instance                                   | 9.6.3 | Will be paid per hour + storage
-`large-psql-redundant`   | Dedicated redundant large RDS PostgreSQL DB instance                         | 9.6.3 | Will be paid per hour + storage
+`medium-psql`            | Dedicated medium RDS PostgreSQL DB instance                                  | 9.6.10 |  Will be paid per hour + storage
+`medium-psql-redundant`  | Dedicated redundant medium RDS PostgreSQL DB instance                        | 9.6.10 | Will be paid per hour + storage
+`large-psql`             | Dedicated large RDS PostgreSQL DB instance                                   | 9.6.10 | Will be paid per hour + storage
+`large-psql-redundant`   | Dedicated redundant large RDS PostgreSQL DB instance                         | 9.6.10 | Will be paid per hour + storage
 `shared-mysql`           | Shared MySQL database for prototyping (no sensitive or production data)      | 5.6.27 | Free
 `medium-mysql`           | Dedicated medium RDS MySQL DB instance                                       | 5.7.21 | Will be paid per hour + storage
 `medium-mysql-redundant` | Dedicated redundant medium RDS MySQL DB instance                             | 5.7.21 | Will be paid per hour + storage
@@ -36,6 +36,7 @@ Shared instances are available in [sandbox spaces]({{< relref "overview/pricing/
 Name | Required | Description | Default
 --- | --- | --- | ---
 `storage` |  | Number of GB available to the database instance | 10
+`enable_functions` | | Boolean to enable functions on supported databases | false
 
 ## Create an instance
 
@@ -49,6 +50,12 @@ If you want to specify the storage available to the instance:
 
 ```sh
 cf create-service aws-rds medium-psql my-db-service -c '{"storage": 50}'
+```
+
+Using functions:
+
+```sh
+cf create-service aws-rds medium-mysql my-db-service -c '{"enable_functions": true}'
 ```
 
 ### Instance creation time

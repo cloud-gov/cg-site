@@ -93,7 +93,6 @@ deploying an update that will upgrade the stemcell. You should also read the
 
 Review all recent alerts and notifications delivered to [`cg-notifications`](https://groups.google.com/a/gsa.gov/forum/#!forum/cloud-gov-notifications)
 , [`#cg-platform-news`](https://gsa-tts.slack.com/messages/cg-platform-news/)
-, and [PagerDuty](https://18fi.pagerduty.com/incidents).
 
 ### Are there no alerts or notifications?
 Verify the monitoring system is functioning correctly and confirm that alerts
@@ -183,3 +182,5 @@ Ask for a date when new stemcells will be delivered in #security in the
 Update the bosh release and file a PR for the changes.  Once the PR is merged,
 ensure the updated release is deployed to all required VMs.
 
+## Review potential improvements in CloudCheckr
+Review the [Best Practices report in CloudCheckr](https://app.cloudcheckr.com/#Report/BestPracticesConsolidated) and try to fix something near the top. 

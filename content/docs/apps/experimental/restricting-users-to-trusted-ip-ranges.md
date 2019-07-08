@@ -20,4 +20,26 @@ To fully limit access to your apps and services, you must ensure that all users 
 
 ## Restricting access to your own applications
 
-To limit requests to your own applications, you can modify your application logic directly. Alternatively, you can [create a route service](https://docs.cloudfoundry.org/services/route-services.html#introduction) to act as a gatekeeper, then bind the gatekeeper to the routes bound to your application. The route service itself can be an application in cloud.gov that proxies according to your needs. For example, you can create a simple route service by [deploying the Staticfile buildpack configured with a custom `nginx.conf` file](https://docs.cloudfoundry.org/buildpacks/staticfile/index.html#config-process).
+Limiting or restricting access for both ingress and egress traffic from your applications is fairly straightforward through a feature called [Application Security Groups](https://docs.cloudfoundry.org/concepts/asg.html), or ASGs. ASGs support white- and black-listing network traffic from given IPv4 ranges. For IPv6 and other more complex restriction cases, you can leverage a proxy application in a sidecar deployment pattern. We've published [an example proxy application using the Nginx buildpack](https://github.com/18f/boardproxy).
+
+### Scoping
+
+Application Security Groups (ASGs) support two types of scoping:
+
+* Platform
+* Space
+
+These scopes allow both operators and developers to have fine-grained access control. Platform-scoped ASGs are applied at the platform level, and would apply to all tenants of cloud.gov. The cloud.gov team does not apply platform-scoped ASGs as they can interrupt tenant operations unless they are needed to meet platform compliance requirements.
+
+Space-scoped ASGs are specific to a given tenant's space within their own organization. Tenants can create space-specific security groups that apply to all applications within a given space. To apply a space-scoped ASG to a single application, create a new space, assign the ASG, and then deploy the application in that space.
+
+### Defaults
+
+cloud.gov is preconfigured with two ASGs: `public_networks` and `dns`. These ASGs are applied by default to all containers in your deployment.
+
+* `public_networks`: This group allows access to public networks, and blocks access to private networks and link-local addresses. cloud.gov blocks outgoing traffic to private IP ranges through allowing all other address ranges.
+* `dns`: This group allows access to DNS on port 53 for any IP address.
+
+### More Information
+
+If you need more information about Application Security Groups, the [Cloud Foundry documentation](https://docs.cloudfoundry.org/concepts/asg.html) goes into depth about ASGs and the various features they provide.
