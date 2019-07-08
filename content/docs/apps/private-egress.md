@@ -11,7 +11,7 @@ You can set up all or a subset of your applications to communicate securely with
 
 By default, cloud.gov runs your application instances on a pool of hosts shared by all cloud.gov customers. Application instances run in containers that isolate them from each other, but the hosts are all running in the same network segment. If you used that default setup and wanted to open your private external service network for access by cloud.gov applications, you would also permit network access by other cloud.gov customers, so you should not do that.
 
-cloud.gov provides a way to prevent network access by other cloud.gov customers. To set this up, [email cloud.gov support](/help/) and request cloud.gov to establish a dedicated set of hosts for your organization. Applications run by other cloud.gov customers will not run on these hosts. Your applications will still be accessible from the internet and can still connect to any of our offered internal services. cloud.gov will work with you to give these dedicated hosts additional access to your private networks.
+cloud.gov provides a way to prevent network access by other cloud.gov customers. To set this up, [email cloud.gov support](#how-to-get-a-dedicated-pool-of-cloud-gov-hosts-connected-to-your-organization) and request cloud.gov to establish a dedicated set of hosts for your organization. Applications run by other cloud.gov customers will not run on these hosts. Your applications will still be accessible from the internet and can still connect to any of our offered internal services. cloud.gov will work with you to give these dedicated hosts additional access to your private networks.
 
 Alternatively, if you only need to secure communication for a single application and service at a time, you can [set that up using client-specific credentials]({{< relref "docs/apps/static-egress" >}}).
 
@@ -19,7 +19,7 @@ Alternatively, if you only need to secure communication for a single application
 
 cloud.gov will establish a dedicated pool of hosts for your cloud.gov applications sufficient to handle the workload you anticipate running there. This dedicated pool of hosts will be in a dedicated network segment.
 
-cloud.gov support will work with you to establish a Virtual Private Network (VPN) between the dedicated network segment and your network using the industry-standard Internet Protocol Security (IPSec) protocol.
+The cloud.gov team will work with you to establish a Virtual Private Network (VPN) between the dedicated network segment and your network using the industry-standard Internet Protocol Security (IPSec) protocol.
 
 {{< diagrams id-prefix="network-diagram" >}}
 graph TB;
@@ -81,6 +81,12 @@ To be compatible with this feature, your IPsec endpoint must support IKEv1 key e
 - Microsoft Windows Server 2008 R2 (or later) software
 - Microsoft Windows Server 2012 R2 (or later) software
 - Zyxel Zywall Series 4.20 (or later) software for statically routed VPN connections, or 4.30 (or later) software for dynamically routed VPN connections
+
+### Customer responsibilities
+
+It is customer responsibility to determine the appropriate types of data to transfer over this connection. cloud.gov is FedRAMP Authorized at the Moderate impact level, which typically means that only Low or Moderate impact customer data is appropriate to transfer between cloud.gov and other systems. It is also customer responsibility to determine any additional security controls you may need to implement in your application on cloud.gov and/or your network. For example, you may need to discuss with your Authorizing Official whether you need Data Loss Prevention or malware scanning solutions in your network to ensure that only appropriate types of data are going over this connection.
+
+For additional information on customer responsibilities, see CA-3 and CA-3 (3) in the cloud.gov System Security Plan (available to customers and prospective customers as part of the [cloud.gov FedRAMP P-ATO documentation package]({{< relref "overview/security/fedramp-tracker.md#how-you-can-use-this-p-ato" >}})).
 
 ### How to get a dedicated pool of cloud.gov hosts connected to your organization
 
