@@ -11,7 +11,7 @@ cloud.gov is suitable for a wide range of applications, including websites and n
 Here's a process you can follow to identify the applications in your portfolio ready to move to cloud.gov.
 <!--more-->
 
-For help interpreting this list or evaluating specific cases, please email the cloud.gov at cloud-gov-inquiries@gsa.gov. The cloud.gov team can help you evaluate whether you application is easy to migrate to cloud.gov, as well as how to approach more complex applications that require more modification. 
+For help interpreting this list or evaluating specific cases, please email the cloud.gov team at cloud-gov-inquiries@gsa.gov. The cloud.gov team can help you evaluate whether you application is easy to migrate to cloud.gov, as well as how to approach more complex applications that require more modification. 
 
 ## Identify applications with a compatible security impact level
 - FISMA Low
@@ -21,7 +21,10 @@ For help interpreting this list or evaluating specific cases, please email the c
 
 ## Identify applications with a supported technology stack
 
-**Operating systems**: Linux (64-bit ABI)
+**Operating systems**: 
+
+- Application hosting: Linux (64-bit ABI)
+- Client workstation: Any
 
 **Application runtime options**:
 
@@ -31,6 +34,7 @@ For help interpreting this list or evaluating specific cases, please email the c
 - Node.js
 - PHP
 - Python
+- R
 - Ruby
 - Static HTML+JS+CSS
 - 64-bit Linux binary (including compiled C and C++ applications)
@@ -42,8 +46,6 @@ For help interpreting this list or evaluating specific cases, please email the c
   - Oracle
   - Postgresql
   - SQL Server (available FY19)
-- **NoSQL databases**:
-  - Mongo (available FY19)
 - **Search engines**:
   - Elasticsearch
 - **Cache/queues**:
@@ -62,7 +64,7 @@ Ideal applications follow as many of the [12-Factor App](https://12factor.net/) 
 1. **Backing services**: Does the application retry or fail gracefully if a service it connects to is unavailable?
 1. **Build, release, run**: Can you build the deployment artifacts outside of the deployment environment, for example in a continuous deployment system?
 1. **Processes**: Does the application keep its state in a backing service, rather than shared memory or filesystem?
-  - Applications that rely on a durable filesystem to share state between requests will be supported in FY19. An [experimental service]({{< relref "volume-services" >}}) supports evaluating these applications on cloud.gov now.
+  - Applications that rely on a durable filesystem to share state between requests will be supported in FY19.
 1. **Port binding**: Does the application listen for requests over HTTP on a single port?
   - Applications that only accept requests over straight TCP are also possible, but may require additional work on the cloud.gov side to get going.
 1. **Concurrency**: Does the application scale correctly without modification when you run additional instances of it behind a load-balancer?
@@ -78,4 +80,4 @@ Ideal applications follow as many of the [12-Factor App](https://12factor.net/) 
     - This is supported, but adds complexity because you may need to coordinate with your agency's network security staff and cloud.gov staff.
 
 ## What now?
-Now that you have a sense of which applications are compatible with cloud.gov, and which will require more effort or are more complex, identify those which have the highest cost-of-delay... That is, the systems which will deliver the most benefit and which will reduce operational and security overhead the most by being in the cloud. You may need to work with your agency leadership to come to a consensus about where there's the most pain to be relieved or the most gain to be received, from the mission and financial rather than (technical) side.
+Now that you have a sense of which applications are compatible with cloud.gov, and which will require more effort or are more complex, identify those which have the highest cost-of-delay... That is, the systems which will deliver the most benefit and which will reduce operational and security overhead the most by being in the cloud. You may need to work with your agency leadership to come to a consensus about where there's the most pain to be relieved or the most gain to be received, from the mission and financial (rather than technical) side.
