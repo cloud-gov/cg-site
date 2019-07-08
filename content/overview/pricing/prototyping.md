@@ -22,7 +22,7 @@ A prototyping package can have an unlimited number of users (such as developers 
 
 ### Limitations
 
-Prototyping packages cannot host production data. All prototyping package applications are limited to using the `*.app.cloud.gov` domain. Applications that are ready for production should move to a production package ([FISMA Low]({{< relref "overview/pricing/rates.md#fisma-low" >}}) or [FISMA Moderate]({{< relref "overview/pricing/rates.md#fisma-moderate" >}})).
+Prototyping packages cannot host production data. All prototyping package applications are limited to using the `*.app.cloud.gov` domain. Applications that are ready for production should move to a [production package](/pricing/), FISMA Low or FISMA Moderate.
 
 ## Full oversight and configuration for administrators
 
@@ -34,4 +34,4 @@ Prototyping packages cannot host production data. All prototyping package applic
 
 ## Price
 
-The annual access fee is $15K, with additional resource usage costs. See [packages and rates]({{< relref "overview/pricing/rates.md" >}}) for more information.
+The annual access fee is $15K, with additional resource usage costs. See the [pricing page](/pricing/) for more information.

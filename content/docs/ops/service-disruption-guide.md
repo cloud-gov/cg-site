@@ -66,7 +66,7 @@ A postmortem is not necessary to close, and it does not have to happen immediate
 
 ## Ensure a postmortem happens
 
-The person who closes the event should then put a card on the component-owning squad’s board in the urgent lane about holding a retrospective discussion and writing the public postmortem.
+The person who closes the event should then put a card on the component-owning squad’s board in the urgent lane about holding a retrospective discussion and writing the public postmortem.  The card's acceptance criteria should be that the retrospective discussion has happened, and that the public postmortem that resulted has been posted.
 
 For non-security-sensitive work, work to resolve root causes does not have to be completely done before we post the postmortem.
 
@@ -80,7 +80,7 @@ Before or during the meeting, we put together a timeline of the incident in the 
 
 <!-- Discussing remediation steps is important for IR-4 and SI-2 -->
 
-1. The facilitator starts by reading [the retrospective prime directive](http://www.retrospectives.com/pages/retroPrimeDirective.html).
+1. The facilitator starts by reading the retrospective prime directive: _Regardless of what we discover, we understand and truly believe that everyone did the best job they could, given what they knew at the time, their skills and abilities, the resources available, and the situation at hand._
 1. We review the timeline and add anything we have missed.
 1. We analyze the factors that contributed to the incident.
 1. We propose, discuss, and prioritize remediation steps to reduce the likelihood of future incidents, to improve detection and response times for future incidents, to improve our incident handling processes and training, and to validate and test these remediation steps.

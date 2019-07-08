@@ -29,6 +29,7 @@ that week.
 ## At least once during your week of support
 
 - In [logs.fr.cloud.gov](https://logs.fr.cloud.gov/), go under "Management" -> "Advanced Settings" and check the Kibana [timezone setting](https://www.elastic.co/guide/en/kibana/current/advanced-options.html) (`dateFormat:tz`) - it should be set to `Browser`. If anyone has changed it, change it back to `Browser`.
+- Check for any new CVEs in [MongoDB](https://www.cvedetails.com/vulnerability-list/vendor_id-12752/product_id-25450/Mongodb-Mongodb.html), [Elasticsearch](https://www.cvedetails.com/vulnerability-list/vendor_id-13554/Elasticsearch.html), and [Redis](https://www.cvedetails.com/vulnerability-list/vendor_id-15183/product_id-31837/Pivotal-Software-Redis.html).
 
 # Daily maintenance checklist
 
@@ -74,7 +75,6 @@ deploying an update that will upgrade the stemcell. You should also read the
 
 Review all recent alerts and notifications delivered to [`cg-notifications`](https://groups.google.com/a/gsa.gov/forum/#!forum/cloud-gov-notifications)
 , [`#cg-platform-news`](https://gsa-tts.slack.com/messages/cg-platform-news/)
-, and [PagerDuty](https://18fi.pagerduty.com/incidents).
 
 ### Are there no alerts or notifications?
 Verify the monitoring system is functioning correctly and confirm that alerts
@@ -101,7 +101,6 @@ Be prepared to represent support needs at the next grooming meeting to ensure
 that cards to fix alerts are prioritized properly.
 
 ## Review AWS CloudTrail events
-
 > [Get familiar with the documentation for CloudTrail logs](http://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html).
 
 Use the [AWS Console](http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-console.html)
@@ -182,3 +181,7 @@ together.
 email them via the [cloud-gov-support Google Group instead](https://groups.google.com/a/gsa.gov/forum/#!forum/cloud-gov-support).
 
 See also: [Detailed guidance on working with our support tools](https://docs.google.com/document/d/1QXZvcUl-6gtI7jEQObXV9FyiIpJC-Fx1R7RzB0C6PHM/edit#heading=h.80zn694rriw3).
+
+## Review potential improvements in CloudCheckr
+
+Review the [Best Practices report in CloudCheckr](https://app.cloudcheckr.com/#Report/BestPracticesConsolidated) and try to fix something near the top. 
