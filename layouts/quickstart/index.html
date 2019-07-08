@@ -205,7 +205,7 @@ cd cf-sample-app-spring</pre>
                       <h5>Push the application</h5>
                       <pre>cf push</pre>
                       <p>
-                        The <code>push</code> command will upload your sample app, prepare it for cloud.gov, then after a couple minutes tell you what URL to visit in your browser. Look for the <code>urls: </code> line, as in this example output:
+                        The <code>push</code> command will upload your sample app, prepare it for cloud.gov, then after a couple minutes tell you what URL to visit in your browser. Look for the <code>routes: </code> line, as in this example output:
                       </p>
 <pre class="output">
 cf push
@@ -214,13 +214,11 @@ Using manifest file ...
 Creating app cf-spring in org / space
 OK
 ...[snip]...
-requested state: started
-instances: 1/1
-usage: 768M x 1 instances
-<strong>urls: cf-spring-subpeltate-briner.app.cloud.gov</strong>
-last uploaded: Fri Nov 3 17:50:30 UTC 2017
-stack: cflinuxfs2
-buildpack: client-certificate-mapper.... [snip]
+requested state:   started
+<strong>routes:            flask-example-fluent-okapi.app.cloud.gov</strong>
+last uploaded:     Tue 05 Mar 13:40:39 PST 2019
+stack:             cflinuxfs3
+buildpacks:        python
 
      state     since
 #0   running   2017-12-02 12:53:29 PM
@@ -228,8 +226,8 @@ buildpack: client-certificate-mapper.... [snip]
 
                       <h5>View your application</h5>
                       <p>
-                        Use your browser to visit the <code>urls:</code> from the push command
-                        (in the above example, https://cf-spring-subpeltate-briner.app.cloud.gov). Your browser should display something like this:
+                        Use your browser to visit the <code>routes:</code> from the push command
+                        (in the above example, https://flask-example-fluent-okapi.app.cloud.gov). Your browser should display something like this:
                       </p>
                       <img src="/img/cf-spring-sample-app.png"\>
                       <p>Congratulations! You now have a running webapp built on the <a href="https://spring.io">Java Spring framework.</a></p>
@@ -253,7 +251,7 @@ buildpack: client-certificate-mapper.... [snip]
                           Other languages
                         </span>
                         <span>
-                          Try a simple "Hello world" app in .Net Core, PHP, Python, Ruby, NodeJS or Clojure in your sandbox.
+                          Try a simple "Hello world" app in .Net Core, PHP, Python, R, Ruby, NodeJS or Clojure in your sandbox.
                         </span>
                       </label>
                     </h3>
@@ -319,7 +317,7 @@ cd cf-hello-worlds
                       <h5>Push the application</h5>
                       <pre>cf push</pre>
                       <p>
-                        The <code>push</code> command will upload your sample app, prepare it for cloud.gov, then after a couple minutes tell you what URL to visit in your browser. Look for the <code>urls: </code> line, as in this example output:
+                        The <code>push</code> command will upload your sample app, prepare it for cloud.gov, then after a couple minutes tell you what URL to visit in your browser. Look for the <code>routes: </code> line, as in this example output:
                       </p>
 <pre class="output">
 cf push
@@ -328,20 +326,18 @@ Using manifest file ...
 Creating app dotnet-core in org / space
 OK
 ...[snip]...
-requested state: started
-instances: 1/1
-usage: 512M x 1 instances
-<strong>urls: dotnet-core-nongraphical-logogram.app.cloud.gov</strong>
-last uploaded: Sat Dec 2 17:51:57 UTC 2017
-stack: cflinuxfs2
-buildpack: dotnet-core
+requested state:   started
+<strong>routes:            flask-example-fluent-okapi.app.cloud.gov</strong>
+last uploaded:     Tue 05 Mar 13:40:39 PST 2019
+stack:             cflinuxfs3
+buildpacks:        python
 
      state     since
 #0   running   2017-12-02 12:53:29 PM
 </pre>
                       <h5>View your application</h5>
                       <p>
-                        Use your browser to visit the <code>urls:</code> from the push command (in the above example, https:/dotnet-core-nongraphical-logogram.app.cloud.gov). It should just display <code>Hello World from</code> and the name of your programming language example.
+                        Use your browser to visit the <code>routes:</code> from the push command (in the above example, https://flask-example-fluent-okapi.app.cloud.gov). It should just display <code>Hello World from</code> and the name of your programming language example.
                       </p>
                       <p>Congratulations! You now have a running web app built on the language and framework of your choice.</p>
 
