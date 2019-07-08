@@ -34,7 +34,12 @@ query parameters:
 
 * `client_id=<YOUR APP'S REGISTERED NAME>`
 * `response_type=code`
-* (optional) `state=<ANYTHING>`
+* `redirect_uri=<A REGISTERED CALLBACK URL>` (required if you have multiple registered callback URLs)
+* `state=<ANYTHING>` (optional)
+
+You only need to provide `redirect_uri` if you have multiple registered callback URLs for a single
+UAA registration (for instance, if you have both an "app.cloud.gov" URL and a production URL).
+The value of `redirect_uri` must match one of the registered callback URLs.
 
 You can set a `state` parameter with any value you'd like.
 It will be returned to you in a later step. While optional, we *strongly*
@@ -68,10 +73,11 @@ access token. Here is where things get fun.
     parameters:
 
     - `code=<CODE FROM QUERY PARAM IN CALLBACK REQUEST>`
-    - `grant_type='authorization_code'`
-    - `response_type='token'`
+    - `grant_type=authorization_code`
+    - `response_type=token`
     - `client_id=<YOUR APP'S REGISTERED NAME>`
     - `client_secret=<THE SECRET KEY YOU RECEIVED WHEN REGISTERING YOUR APP>`
+    - `redirect_uri=<A REGISTERED CALLBACK URL>` (required if you have multiple registered callback URLs)
 
 2.  If everything works and UAA is able to verify your request, the response
     from that `POST` request will be JSON encoded and will contain these
@@ -122,13 +128,16 @@ If you (or a user of your app) ever need to modify or revoke the permissions of
 third-party applications that you've granted access through the cloud.gov UAA,
 visit [https://login.fr.cloud.gov/profile](https://login.fr.cloud.gov/profile).
 
-## Using the fake UAA server
+## Using a development UAA server
 
-During development, you may want to authenticate against a local server
-running [cg-fake-uaa](https://github.com/18F/cg-fake-uaa), a minimal
-"fake" version of the cloud.gov UAA server. Aside from making login easier
-and allowing for offline development, it also makes the OAuth handshake
-easier to debug.
+During development, you may want to authenticate against a local UAA server
+so you can test as multiple users, skip 2-factor authentication,
+and view UAA logs. Running UAA in [Docker](https://www.docker.com) can simplify this,
+and you can follow an example of this in the [cloud.gov demonstrations repository](https://github.com/18F/cg-demos/blob/master/cg-identity/README.md#2-run-a-local-uaa-server-for-local-development).
+
+## Demonstrating the cloud.gov identity provider
+
+You can go through the process of setting up a simple application, written in Node.js, to use the cloud.gov identity provider in the [cloud.gov demonstrations repository](https://github.com/18F/cg-demos/blob/master/cg-identity/README.md#1-run-an-application-in-cloudgov-that-uses-the-identity-provider).
 
 ## Resources
 

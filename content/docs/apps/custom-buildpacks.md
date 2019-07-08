@@ -13,17 +13,11 @@ title: More languages (custom buildpacks)
 weight: 30
 ---
 
-Cloud Foundry (the underlying open source project behind cloud.gov) uses [buildpacks]({{< relref "docs/getting-started/concepts.md">}}#buildpacks) to allow your applications to be deployed. cloud.gov [officially supports]({{< relref "overview/pricing/rates.md">}}#what-s-included) a set of buildpacks, and it also allows you to provide your own.
+Cloud Foundry (the underlying open source project behind cloud.gov) uses [buildpacks]({{< relref "docs/getting-started/concepts.md">}}#buildpacks) to allow your applications to be deployed. cloud.gov [officially supports](/pricing/) a set of buildpacks, and it also allows you to provide your own.
 
 Once you push your code using a custom buildpack, cloud.gov cannot update it for you. You are responsible for keeping it up to date. Please see [this description of responsibilities]({{< relref "overview/technology/responsibilities.md">}}).
 
 ## Example custom buildpacks
-
-### R
-
-For example, if you want to use [this "R" buildpack](https://github.com/virtualstaticvoid/heroku-buildpack-r/tree/heroku-16), you can push your code by typing:
-
-`cf push myapp -b http://github.com/virtualstaticvoid/heroku-buildpack-r.git#heroku-16`
 
 ### apt-buildpack
 

@@ -191,15 +191,38 @@ curl -XGET http://localhost:9200/_cat/shards | grep UNASSIGNED | tee unassigned-
 ```sh
 curl -XGET http://localhost:9200/_cat/shards | grep UNASSIGNED > unassigned-shards
 for line in `cat unassigned-shards | awk '{print $1 ":" $2}'`; do index=`echo $line | awk -F: '{print $1}'`; \
-    shard=`echo $line | awk -F: '{print $2}'`; curl -XPOST 'localhost:9200/_cluster/reroute' -d "{
+    shard=`echo $line | awk -F: '{print $2}'`; curl -H 'Content-Type: application/json' -XPOST 'localhost:9200/_cluster/reroute' -d "{
         \"commands\" : [ {
-              \"allocate\" : {
+              \"allocate_empty_primary\" : {
                   \"index\" : \"$index\",
                   \"shard\" : \"$shard\",
                   \"node\" : \"elasticsearch_data/7\",
-                  \"allow_primary\" : true
+                  \"accept_data_loss\" : true,
               }
             }
         ]
     }"; sleep 5; done
+```
+
+### Get Elasticsearch Document Counts
+
+```bash
+# get into a node, app or platform.
+bosh -d logsearch{-platform} ssh $(bosh -d logsearch vms | grep "elastisearch_data" | head -n1)
+
+# install jq
+sudo su -
+apt update
+apt install -y jq
+
+# set the counter to 0
+counter=0
+
+# for each logging index, get the count of all logs and increase the counter.
+for index in $(curl -s http://localhost:9200/_cat/indices -H "Content-Type: application/json" | awk '{print $3}' | sort | grep "logs");
+  do ((counter+=$(curl -s http://localhost:9200/$index/_count -H "Content-Type: application/json" -d '{"query":{"match_all":{}}}' | jq '.count')))
+done
+
+# print out how many logs we have.
+echo $counter
 ```
