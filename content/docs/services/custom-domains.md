@@ -77,7 +77,7 @@ $ cf service my-domain
 Last Operation
 Status: create in progress
 Message: Provisioning in progress; CNAME or ALIAS domain(s) my.example.gov to production-domains-0-792003535.us-gov-west-1.elb.amazonaws.com or create TXT record(s):
-name: _acme-my.example.gov., value: ngd2suc9gwUnH3btm7N6hSU7sBbNp-qYtSPYyny325E, ttl: 120
+name: _acme-challenge.my.example.gov., value: ngd2suc9gwUnH3btm7N6hSU7sBbNp-qYtSPYyny325E, ttl: 120
 
 ```
 Create the TXT record(s) as instructed by the broker. The existence of these records will be validated by [Let's Encrypt](https://letsencrypt.org/) when issuing your certificate and will not affect your site.
@@ -136,8 +136,18 @@ If nothing has changed when you visit your custom domain:
 * If your custom domain uses DNSSEC, [verify your DNSSEC configuration](https://www.icann.org/resources/pages/tools-2012-02-25-en).
 
 If you get the following error message when you try to update or delete a service instance: `"Server error, status code: 409, error code: 60016, message: An operation for service instance [name] is in progress.`
+
 * This happens because you can't do anything to a service instance while it's in a pending state. A custom domain service instance stays pending until it detects the CNAME or ALIAS record.
 * If this causes a problem for you, you can ask support to manually delete the pending instance.
+
+#### When to update DNS records
+
+You only need to add a CNAME entry when you update the `domain`
+field. If you do, follow ["How to set up DNS"](#how-to-set-up-dns) again.
+
+Ensure that you remove previous attempts at updating DNS records when
+creating/recreating the service.
+
 
 ### DNSSEC support
 

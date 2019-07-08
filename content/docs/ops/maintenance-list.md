@@ -75,7 +75,6 @@ deploying an update that will upgrade the stemcell. You should also read the
 
 Review all recent alerts and notifications delivered to [`cg-notifications`](https://groups.google.com/a/gsa.gov/forum/#!forum/cloud-gov-notifications)
 , [`#cg-platform-news`](https://gsa-tts.slack.com/messages/cg-platform-news/)
-, and [PagerDuty](https://18fi.pagerduty.com/incidents).
 
 ### Are there no alerts or notifications?
 Verify the monitoring system is functioning correctly and confirm that alerts
@@ -182,3 +181,7 @@ together.
 email them via the [cloud-gov-support Google Group instead](https://groups.google.com/a/gsa.gov/forum/#!forum/cloud-gov-support).
 
 See also: [Detailed guidance on working with our support tools](https://docs.google.com/document/d/1QXZvcUl-6gtI7jEQObXV9FyiIpJC-Fx1R7RzB0C6PHM/edit#heading=h.80zn694rriw3).
+
+## Review potential improvements in CloudCheckr
+
+Review the [Best Practices report in CloudCheckr](https://app.cloudcheckr.com/#Report/BestPracticesConsolidated) and try to fix something near the top. 
