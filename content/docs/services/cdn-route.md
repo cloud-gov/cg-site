@@ -89,7 +89,7 @@ The maximum number of domains that can be associated with a single cdn-route ser
 ### How to set up DNS
 
 **Note:** Due to changes in how CloudFront processes requests, we currently only offer certificate provisioning via DNS challenges. This means that users can no longer skip step 1 below.
-We are investigating ways to bring this feature back. If you are unable to use DNS challenges, please reach out to us at support@cloud.gov.
+We are investigating ways to bring this feature back. If you are unable to use DNS challenges, please [reach out to us](/help/).
 
 
 
@@ -234,9 +234,23 @@ cf create-service cdn-route cdn-route my-cdn-route \
     -c '{"domain": "my.example.gov", "cookies": false}'
 ```
 
-Other headers, such as HTTP auth, are stripped by default.
+#### Header forwarding
 
-If you need a different configuration, contact [cloud.gov support](/help/).
+CloudFront forwards a [limited set of headers](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior) by default. If you want extra headers forwarded to your origin, you should add another parameter. This example forwards both the `User-Agent` and `Referer` headers:
+
+```bash
+$ cf create-service cdn-route cdn-route my-cdn-route \
+    -c '{"domain": "my.domain.gov", "headers": ["User-Agent", "Referer"]}'
+```
+
+CloudFront can forward up to 10 custom headers. Because this broker automatically forwards the `Host` header when not using a [custom origin](#custom-origins), you can whitelist up to nine headers by default; if using a custom origin, you can whitelist up to 10 headers. If you want to exceed this limit or forward all headers, you can use a wildcard:
+
+```bash
+$ cf create-service cdn-route cdn-route my-cdn-route \
+    -c '{"domain": "my.domain.gov", "headers": ["*"]}'
+```
+
+When making requests to the origin, CloudFront's caching mechanism associates HTTP requests with their response. The more variation within the forwarded request, the fewer cache hits and the less effective the cache. Limiting the headers forwarded is therefore key to cache performance. Caching is completely disabled when using a wildcard.
 
 ### DNSSEC support
 
