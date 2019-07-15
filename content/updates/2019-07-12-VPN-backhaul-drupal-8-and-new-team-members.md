@@ -66,9 +66,7 @@ In 2012, he served as a Code for America Fellow and worked with the city of New 
 
 ### Hillary Jeffrey, cloud.gov Cloud Operations Site Reliability Engineer
 
-Hillary grew up in Minnesota, Britain, and Washington state, thanks to her parents doing a work exchange with IBM. She lived the longest just east of Seattle before she went to college in Indiana at Rose-Hulman Institute of Technology. She is an electrical engineer by degree, but she has spent her career in software and firmware development from assembly to Python (her favorite) and has worked for the Navy, the CFPB, and now 18F. 
-
-Hillary currently lives in northeastern North Carolina with her dog and her husband in a hundred-year-old Craftsman Foursquare that they’re gradually renovating. She’s an avid gardener and beekeeper, although she’s currently between hives.
+Hillary is an electrical engineer who has spent her career in software and firmware development from assembly to Python (and languages in between). She has previously worked for the US Navy, the Consumer Financial Protection Bureau (CFPB), and now brings her systems engineering and maintainability-focused background to cloud.gov. She is an avid gardener and is currently a lapsed beekeeper in northeast North Carolina.
 
 ### Alex Smith, cloud.gov Compliance and Security Lead
 
