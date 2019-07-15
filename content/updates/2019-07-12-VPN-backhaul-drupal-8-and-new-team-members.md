@@ -52,7 +52,7 @@ When using the [CDN service](https://cloud.gov/docs/services/cdn-route/) to set 
 
 ### Removed: Experimental NFS (Network File System) volume service
 
-We are no longer offering our experimental Network File System (NFS) volume service. We are exploring alternatives to persistent filesystem volumes to support persistant storage.
+We are no longer offering our experimental Network File System (NFS) volume service. We are exploring alternatives to persistent filesystem.
 
 ## New faces in the cloud.gov team
 
