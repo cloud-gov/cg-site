@@ -9,7 +9,7 @@ Here's what cloud.gov does to support relevant federal standards and recommendat
 
 ## IPv6
 
-cloud.gov ensures all applications are accessible over IPv6. You don't have to take any action.
+cloud.gov has basic support for IPv6. cloud.gov supports two types of application access, external and internal. External access is when traffic reaches an application from outside the cloud.gov platform, such as from an office, external application, or user. Internal traffic is traffic which leverages the platform's internal DNS to allow applications to communicate without ever leaving the platform's network boundaries. IPv6 is supported for external access. For internal access, only IPv4 is supported. When you deploy a new application, for external IPv6 traffic, you do not have to take any action, and most applications will know to use IPv4 internally as cloud.gov's internal DNS provider will leverage IPv4. If you have more questions or security questions, please contact [Support](mailto:cloud-gov-support@gsa.gov).
 
 ## HTTPS
 
@@ -27,7 +27,9 @@ You are responsible for setting up HSTS preloading for your [custom domain]({{< 
 
 cloud.gov does not currently support DNSSEC on `cloud.gov` domains. For example, an application at `*.app.cloud.gov` would not support DNSSEC.
 
-If you need DNSSEC for your custom domain, you are responsible for configuring DNSSEC in your DNS system. cloud.gov can't configure DNSSEC for you because cloud.gov does not have access to your DNS system. 
+[OMB memo M-18-230](https://www.whitehouse.gov/wp-content/uploads/2018/08/M-18-23.pdf) rescinds M-08-23, the OMB memo that originally mandated DNSSEC for federal systems. You should consider carefully whether DNSSEC is still a requirement for your system.
+
+If you do need DNSSEC for your custom domain, you are responsible for configuring DNSSEC in your DNS system. cloud.gov can't configure DNSSEC for you because cloud.gov does not have access to your DNS system. 
 
 cloud.gov supports mapping your DNSSEC-enabled custom domain to your applications hosted on cloud.gov -- see [DNSSEC support for the CDN service]({{< relref "docs/services/cdn-route.md#dnssec-support" >}}) and [DNSSEC support for the custom domain service]({{< relref "docs/services/custom-domains.md#dnssec-support" >}}).
 

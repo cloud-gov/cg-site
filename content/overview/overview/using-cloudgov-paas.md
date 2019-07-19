@@ -3,7 +3,7 @@ menu:
   overview:
     parent: overview
 title: What you can do with the cloud.gov platform
-weight: 20
+weight: 13
 aliases:
   - /docs/intro/overview/using-cloudgov-paas
   - /intro/overview/using-cloudgov-paas

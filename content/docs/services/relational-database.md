@@ -15,10 +15,10 @@ If your application uses relational databases for storage, you can use the AWS R
 Plan Name | Description | Software Version | Price
 --------- | ----------- | ------- | -----
 `shared-psql`            | Shared PostgreSQL database for prototyping (no sensitive or production data) | 9.4.7 | Free
-`medium-psql`            | Dedicated medium RDS PostgreSQL DB instance                                  | 9.6.3 |  Will be paid per hour + storage
-`medium-psql-redundant`  | Dedicated redundant medium RDS PostgreSQL DB instance                        | 9.6.3 | Will be paid per hour + storage
-`large-psql`             | Dedicated large RDS PostgreSQL DB instance                                   | 9.6.3 | Will be paid per hour + storage
-`large-psql-redundant`   | Dedicated redundant large RDS PostgreSQL DB instance                         | 9.6.3 | Will be paid per hour + storage
+`medium-psql`            | Dedicated medium RDS PostgreSQL DB instance                                  | 9.6.10 |  Will be paid per hour + storage
+`medium-psql-redundant`  | Dedicated redundant medium RDS PostgreSQL DB instance                        | 9.6.10 | Will be paid per hour + storage
+`large-psql`             | Dedicated large RDS PostgreSQL DB instance                                   | 9.6.10 | Will be paid per hour + storage
+`large-psql-redundant`   | Dedicated redundant large RDS PostgreSQL DB instance                         | 9.6.10 | Will be paid per hour + storage
 `shared-mysql`           | Shared MySQL database for prototyping (no sensitive or production data)      | 5.6.27 | Free
 `medium-mysql`           | Dedicated medium RDS MySQL DB instance                                       | 5.7.21 | Will be paid per hour + storage
 `medium-mysql-redundant` | Dedicated redundant medium RDS MySQL DB instance                             | 5.7.21 | Will be paid per hour + storage
@@ -36,6 +36,7 @@ Shared instances are available in [sandbox spaces]({{< relref "overview/pricing/
 Name | Required | Description | Default
 --- | --- | --- | ---
 `storage` |  | Number of GB available to the database instance | 10
+`enable_functions` | | Boolean to enable functions on supported databases | false
 
 ## Create an instance
 
@@ -50,6 +51,36 @@ If you want to specify the storage available to the instance:
 ```sh
 cf create-service aws-rds medium-psql my-db-service -c '{"storage": 50}'
 ```
+
+Using functions:
+
+```sh
+cf create-service aws-rds medium-mysql my-db-service -c '{"enable_functions": true}'
+```
+
+### Instance creation time
+
+Dedicated RDS instance provisioning can take anywhere between 5 minutes and 60
+minutes. During instance provisioning, the results of `cf services` or `cf service SERVICE_NAME` will show status as `created`, as in the following example:
+
+```
+> cf services
+name                 service   plan                bound apps   last operation
+test-oracle          aws-rds   medium-oracle-se2                create succeeded
+```
+
+**The `last operation` value of `create succeeed` may lead you to think the database is ready to use. This is misleading.** Instead, the _last operation_ indicates the API call to create the database has succeeded, not that provisioning has completed. To determine if a database is ready to use, test if you can create a `service key`. For example, `test-oracle` is not yet ready in this case:
+
+```
+cf create-service-key test-oracle test-oracle-ok
+Creating service key test-oracle-oke for service instance test-oracle as peter.burkholder@gsa.gov...
+FAILED
+Server error, status code: 502, error code: 10001, message: Service broker error: There was an error binding the database instance to the application. Error: Instance not available yet. Please wait and try again..
+```
+
+If the response is `OK` instead of `FAILED` then your database is ready to use.
+
+The cloud.gov team aims to provide clearer status indicators in a future release of our service broker.
 
 ### Bind to an application
 
@@ -148,7 +179,17 @@ $ pg_restore --clean --no-owner --no-acl --dbname={database name} backup.pg
 
 ## Backups
 
-For shared plans (`shared-psql` and `shared-mysql`), RDS does not back up your data. For dedicated plans, RDS automatically retains daily backups for 14 days, and you can [email support](mailto:cloud-gov-support@gsa.gov) to access that backup if you need to. You can also create manual backups using the [export process](#export) described above. In general, you are responsible for making sure that your backup procedures are adequate for your needs; see CP-9 in the cloud.gov SSP.
+For shared plans (`shared-psql` and `shared-mysql`), RDS does not back up your
+data. For dedicated plans, RDS automatically retains daily backups for 14 days.
+These backups are AWS RDS storage volume snapshot, backing up the entire DB
+instance and not just individual databases. You can [email
+support](mailto:cloud-gov-support@gsa.gov) to access that backup if you need to
+as a separate RDS instance. You will be responsible for exporting and importing
+the data from this snapshot into your existing database.
+You can also create manual backups using the [export process](#export) described
+above. In general, you are responsible for making sure that your backup
+procedures are adequate for your needs; see CP-9 in the
+cloud.gov SSP.
 
 ## Encryption
 

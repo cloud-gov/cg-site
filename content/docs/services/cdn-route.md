@@ -88,7 +88,10 @@ The maximum number of domains that can be associated with a single cdn-route ser
 
 ### How to set up DNS
 
-**Note:** If you are creating a new site on cloud.gov or you are migrating an existing site to cloud.gov that can tolerate a small amount of downtime during the migration, you can skip the first step and proceed directly to [Create CNAME record(s)](#step-2-create-cname-record-s)
+**Note:** Due to changes in how CloudFront processes requests, we currently only offer certificate provisioning via DNS challenges. This means that users can no longer skip step 1 below.
+We are investigating ways to bring this feature back. If you are unable to use DNS challenges, please [reach out to us](/help/).
+
+
 
 #### Step 1: Create TXT record(s)
 
@@ -115,7 +118,7 @@ Message: Service instance provisioned [my.example.gov => cdn-broker-origin.fr.cl
 
 #### Step 2: Create CNAME record(s)
 
-Once the TXT records have been validated, or if you've decided to skip that step, you need to point your custom domain at the CDN. Run `cf service my-cdn-route` with the service instance name you choose.
+Once the TXT records have been validated, you need to point your custom domain at the CDN. Run `cf service my-cdn-route` with the service instance name you choose.
 
 ```
 Last Operation
@@ -134,7 +137,7 @@ If you've waited more than two hours without a valid certificate appearing, [con
 You need to map [the domain you created](#how-to-create-an-instance-of-this-service) to your application.
 
 You can do that by adding the domain(s) to your application [`manifest.yml` file](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) under the
-[`routes`](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#routes) section:
+[`routes`](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest-attributes.html#routes) section:
 
 ```yaml
 ...
@@ -159,6 +162,7 @@ If nothing has changed when you visit your custom domain:
 * If your custom domain uses DNSSEC, [verify your DNSSEC configuration](https://www.icann.org/resources/pages/tools-2012-02-25-en).
 
 If you get the following error message when you try to update or delete a service instance: `"Server error, status code: 409, error code: 60016, message: An operation for service instance [name] is in progress.`
+
 * This happens because you can't do anything to a service instance while it's in a pending state. A CDN service instance stays pending until it detects the CNAME or ALIAS record.
 * If this causes a problem for you, you can ask support to manually delete the pending instance.
 
@@ -183,6 +187,9 @@ shows the old content after the DNS changes propagate.
 
 You only need to add a CNAME entry when you update the `domain`
 field. If you do, follow ["How to set up DNS"](#how-to-set-up-dns) again.
+
+Ensure that you remove previous attempts at updating DNS records when
+creating/recreating the service.
 
 ### Deleting a service instance
 
@@ -227,9 +234,23 @@ cf create-service cdn-route cdn-route my-cdn-route \
     -c '{"domain": "my.example.gov", "cookies": false}'
 ```
 
-Other headers, such as HTTP auth, are stripped by default.
+#### Header forwarding
 
-If you need a different configuration, contact [cloud.gov support](/help/).
+CloudFront forwards a [limited set of headers](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior) by default. If you want extra headers forwarded to your origin, you should add another parameter. This example forwards both the `User-Agent` and `Referer` headers:
+
+```bash
+$ cf create-service cdn-route cdn-route my-cdn-route \
+    -c '{"domain": "my.domain.gov", "headers": ["User-Agent", "Referer"]}'
+```
+
+CloudFront can forward up to 10 custom headers. Because this broker automatically forwards the `Host` header when not using a [custom origin](#custom-origins), you can whitelist up to nine headers by default; if using a custom origin, you can whitelist up to 10 headers. If you want to exceed this limit or forward all headers, you can use a wildcard:
+
+```bash
+$ cf create-service cdn-route cdn-route my-cdn-route \
+    -c '{"domain": "my.domain.gov", "headers": ["*"]}'
+```
+
+When making requests to the origin, CloudFront's caching mechanism associates HTTP requests with their response. The more variation within the forwarded request, the fewer cache hits and the less effective the cache. Limiting the headers forwarded is therefore key to cache performance. Caching is completely disabled when using a wildcard.
 
 ### DNSSEC support
 

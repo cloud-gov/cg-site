@@ -40,6 +40,24 @@ The tasks on this checklist should be performed each day.
 If you see a way to make this checklist better, just submit a PR to the
 [cg-site](https://github.com/18F/cg-site) repo for `content/docs/ops/maintenance-list.md`
 
+## Review open support requests
+
+Review the "new" (yellow) and "open" (red) Zendesk tickets. First-tier support
+(customer squad) has primary responsibility to do the work of answering these, and
+you serve as second-tier support providing technical expertise. You're welcome
+to reply to the customer with answers if you like (choose "pending" when you
+submit the answer)*, but your main responsibility is to provide technical
+diagnoses/advice/details. The easiest way to do that is to write comments on the
+associated posts in
+[`#cg-supportstream`](https://gsa-tts.slack.com/messages/cg-supportstream).
+First-tier support may also ask you for pairing time to work out responses
+together.
+
+`*` People with @gsa.gov emails can't receive email via Zendesk, so we have to
+email them via the [cloud-gov-support Google Group instead](https://groups.google.com/a/gsa.gov/forum/#!forum/cloud-gov-support).
+
+See also: [Detailed guidance on working with our support tools](https://docs.google.com/document/d/1QXZvcUl-6gtI7jEQObXV9FyiIpJC-Fx1R7RzB0C6PHM/edit#heading=h.80zn694rriw3).
+
 ## Ensure all VMs are running the current stemcell
 
 - Check the latest stemcell version for AWS Xen-HVM Light at http://bosh.cloudfoundry.org/stemcells/
@@ -75,7 +93,6 @@ deploying an update that will upgrade the stemcell. You should also read the
 
 Review all recent alerts and notifications delivered to [`cg-notifications`](https://groups.google.com/a/gsa.gov/forum/#!forum/cloud-gov-notifications)
 , [`#cg-platform-news`](https://gsa-tts.slack.com/messages/cg-platform-news/)
-, and [PagerDuty](https://18fi.pagerduty.com/incidents).
 
 ### Are there no alerts or notifications?
 Verify the monitoring system is functioning correctly and confirm that alerts
@@ -102,15 +119,6 @@ Be prepared to represent support needs at the next grooming meeting to ensure
 that cards to fix alerts are prioritized properly.
 
 ## Review AWS CloudTrail events
-### Automatic Process
-
-Use the [cloudtrail-check.sh](https://raw.githubusercontent.com/18F/cg-scripts/cloudtrail-check.sh)
-script to check for anomalies.  You will need to make sure that you have
-[AWS Vault](https://cloud.gov/docs/ops/secrets/#install-aws-vault-for-aws-credentials) working
-for this script to work.
-
-### Manual Process
-
 > [Get familiar with the documentation for CloudTrail logs](http://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html).
 
 Use the [AWS Console](http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-console.html)
@@ -174,20 +182,5 @@ Ask for a date when new stemcells will be delivered in #security in the
 Update the bosh release and file a PR for the changes.  Once the PR is merged,
 ensure the updated release is deployed to all required VMs.
 
-## Review open support requests
-
-Review the "new" (yellow) and "open" (red) Zendesk tickets. First-tier support
-(customer squad) has primary responsibility to do the work of answering these, and
-you serve as second-tier support providing technical expertise. You're welcome
-to reply to the customer with answers if you like (choose "pending" when you
-submit the answer)*, but your main responsibility is to provide technical
-diagnoses/advice/details. The easiest way to do that is to write comments on the
-associated posts in
-[`#cg-supportstream`](https://gsa-tts.slack.com/messages/cg-supportstream).
-First-tier support may also ask you for pairing time to work out responses
-together.
-
-`*` People with @gsa.gov emails can't receive email via Zendesk, so we have to
-email them via the [cloud-gov-support Google Group instead](https://groups.google.com/a/gsa.gov/forum/#!forum/cloud-gov-support).
-
-See also: [Detailed guidance on working with our support tools](https://docs.google.com/document/d/1QXZvcUl-6gtI7jEQObXV9FyiIpJC-Fx1R7RzB0C6PHM/edit#heading=h.80zn694rriw3).
+## Review potential improvements in CloudCheckr
+Review the [Best Practices report in CloudCheckr](https://app.cloudcheckr.com/#Report/BestPracticesConsolidated) and try to fix something near the top. 
