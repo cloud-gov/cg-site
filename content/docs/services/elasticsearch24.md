@@ -5,20 +5,20 @@ menu:
 title: "Elasticsearch 2.4"
 name: "elasticsearch24"
 description: "Elasticsearch version 2.4: a distributed, RESTful search and analytics engine"
-status: "Beta"
+status: "Deprecated"
 ---
 
 cloud.gov offers [Elasticsearch](https://www.elastic.co/) 2.4 as a service.
 
 ## Plans
 
-Plan Name | Description | Price
+Plan Name | Description | 
 --------- | ----------- | -----
-`1x`  | Elasticsearch instance with 1GB of RAM and 1 slice of CPU   | Will be paid per hour + storage
-`3x`  | Elasticsearch instance with 3GB of RAM and 1 slice of CPU   | Will be paid per hour + storage
-`6x`  | Elasticsearch instance with 6GB of RAM and 1 slice of CPU   | Will be paid per hour + storage
-`12x` | Elasticsearch instance with 12GB of RAM and 2 slices of CPU | Will be paid per hour + storage
-`medium-ha` | Elasticsearch cluster with three master nodes (3584M memory limit, 1792M heap) and three data nodes (3584M memory limit, 1792M heap, 10G disk) | Will be paid per hour + storage
+`1x`  | Elasticsearch instance with 1GB of RAM and 1 slice of CPU   | 
+`3x`  | Elasticsearch instance with 3GB of RAM and 1 slice of CPU   | 
+`6x`  | Elasticsearch instance with 6GB of RAM and 1 slice of CPU   | 
+`12x` | Elasticsearch instance with 12GB of RAM and 2 slices of CPU | 
+`medium-ha` | Elasticsearch cluster with three master nodes (3584M memory limit, 1792M heap) and three data nodes (3584M memory limit, 1792M heap, 10G disk) | 
 
 *These instances are available in [sandbox spaces]({{< relref "overview/pricing/free-limited-sandbox.md#sandbox-limitations" >}}).*
 

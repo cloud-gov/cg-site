@@ -12,9 +12,9 @@ You can leverage cloud.gov's identity hub to reduce the burden of authenticating
 
 ## Plans
 
-Plan Name | Description | Price
+Plan Name | Description | 
 --------- | ----------- | -----
-`oauth-client` | OAuth2 client credentials for authenticating cloud.gov users in your app | Free
+`oauth-client` | OAuth2 client credentials for authenticating cloud.gov users in your app | 
 
 *These instances are available in [sandbox spaces]({{< relref "overview/pricing/free-limited-sandbox.md#sandbox-limitations" >}}).*
 

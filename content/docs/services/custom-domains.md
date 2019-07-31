@@ -19,9 +19,9 @@ If you need CDN caching for your applications, use the [CDN service]({{< relref 
 
 ## Plans
 
-Plan Name | Description | Price
+Plan Name | Description | 
 --------- | ----------- | -----
-`custom-domain` | Custom domains and TLS certificates with automatic renewal | Free
+`custom-domain` | Custom domains and TLS certificates with automatic renewal | 
 
 *Not available in [sandbox spaces]({{< relref "overview/pricing/free-limited-sandbox.md#sandbox-limitations" >}}) or [prototyping orgs]({{< relref "overview/pricing/prototyping.md#limitations" >}}).*
 
