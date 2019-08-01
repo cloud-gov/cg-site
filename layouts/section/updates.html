@@ -3,22 +3,34 @@
 
   {{ partial "head.html" . }}
 
-  <body>
+  <body id="updates">
+
 
     {{ partial "header.html" . }}
 
-  <div class="header-view">
-    <div class="usa-grid">
-      <h1>Updates</h1>
-      <p>For blog posts, see <a href="https://18f.gsa.gov/tags/cloud-gov/">cloud.gov on the 18F blog</a>.</p>
-      <p>To receive these updates via email, <a href="https://public.govdelivery.com/accounts/USGSATTS/subscriber/new">subscribe here</a>.</p>
-    </div>
-  </div>
+  
   <div class="usa-grid">
-    <div>
-      {{ range .Data.Pages }}
-      {{ .Render "li" }}
-      {{ end }}
+    
+    <div class="sidenav-parent">
+      <div class="usa-width-one-third">
+      </div>
+      <div class="usa-width-two-thirds usa-end-row panel content-text">
+
+        <div class="usa-grid">
+          <h1>Updates</h1>
+          <p>
+          <div>For blog posts, see <a href="https://18f.gsa.gov/tags/cloud-gov/">cloud.gov on the 18F blog</a>.</div>
+           
+          <div>To receive these updates via email, <a   href="https://public.govdelivery.com/accounts/USGSATTS/subscriber/new">subscribe here</a>.</div>
+          </p>
+        </div>
+
+        {{ range .Data.Pages }}
+        {{ .Render "li" }}
+        {{ end }}
+      </div>
+      <div class="usa-width-one-third">
+      </div>
     </div>
   </div>
 
