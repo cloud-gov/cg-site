@@ -40,7 +40,7 @@ Do you want to track which version of your code is running in each of your deplo
 
 ## Updated
 
-We encourage staying up to date with the latest Cloud Foundry Command-Line Interface (CLI) versions. The latest version [You can download the CF CLI update here.](https://github.com/cloudfoundry/cli/releases)
+We encourage staying up to date with the latest Cloud Foundry Command-Line Interface (CLI) versions. The latest version is v6.46.0. [You can download the CF CLI update here.](https://github.com/cloudfoundry/cli/releases)
 
 We routinely update the operating system underneath your applications to ensure your applications are using the latest patched versions. For example, there was a high-severity Ubuntu Linux security vulnerability nicknamed [SACKPanic](https://wiki.ubuntu.com/SecurityTeam/KnowledgeBase/SACKPanic) that was announced on June 18, and we mitigated it by the evening of June 19.
 
@@ -52,7 +52,7 @@ When using the [CDN service](https://cloud.gov/docs/services/cdn-route/) to set 
 
 ### Removed: Experimental NFS (Network File System) volume service
 
-We are no longer offering our experimental Network File System (NFS) volume service. We are exploring alternatives to persistent filesystems.
+We are no longer offering our experimental Network File System (NFS) volume service. We are still intending to offer a persistent filesystem option in the future.
 
 ## New faces in the cloud.gov team
 
