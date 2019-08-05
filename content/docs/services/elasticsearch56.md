@@ -12,10 +12,10 @@ cloud.gov offers [Elasticsearch](https://www.elastic.co/) 5.6 as a service.
 
 ## Plans
 
-Plan Name | Description | Price
+Plan Name | Description | 
 --------- | ----------- | -----
-`medium`  | Elasticsearch instance with 3GB of RAM and 1 slice of CPU   | Will be paid per hour + storage
-`medium-ha` | Elasticsearch cluster with three master nodes (3584M memory limit, 1792M heap) and three data nodes (3584M memory limit, 1792M heap, 10G disk) | Will be paid per hour + storage
+`medium`  | Elasticsearch instance with 3GB of RAM and 1 slice of CPU   | 
+`medium-ha` | Elasticsearch cluster with three master nodes (3584M memory limit, 1792M heap) and three data nodes (3584M memory limit, 1792M heap, 10G disk) | 
 
 *These instances are available in [sandbox spaces]({{< relref "overview/pricing/free-limited-sandbox.md#sandbox-limitations" >}}).*
 

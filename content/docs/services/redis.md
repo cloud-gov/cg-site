@@ -12,11 +12,11 @@ cloud.gov offers [Redis](http://www.redis.io/) 2.8 and 3.2 as a service.
 
 ## Plans
 
-Service Name | Plan Name | Description | Price
+Service Name | Plan Name | Description | 
 ------------ | --------- | ----------- | -----
-`redis28` | `standard` | Redis instance with 10 GB storage | Free in Beta
-`redis32` | `standard` | Redis instance with 10 GB storage | Free in Beta
-`redis32` | `standard-ha` | Redis instance with 10 GB storage | Free in Beta
+`redis28` | `standard` | Redis instance with 10 GB storage | 
+`redis32` | `standard` | Redis instance with 10 GB storage | 
+`redis32` | `standard-ha` | Redis instance with 10 GB storage | 
 
 *These instances are available in [sandbox spaces]({{< relref "overview/pricing/free-limited-sandbox.md#sandbox-limitations" >}}).*
 

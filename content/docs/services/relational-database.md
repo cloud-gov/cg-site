@@ -12,18 +12,18 @@ If your application uses relational databases for storage, you can use the AWS R
 
 ## Plans
 
-Plan Name | Description | Software Version | Price
+Plan Name | Description | Software Version | 
 --------- | ----------- | ------- | -----
-`shared-psql`            | Shared PostgreSQL database for prototyping (no sensitive or production data) | 9.4.7 | Free
-`medium-psql`            | Dedicated medium RDS PostgreSQL DB instance                                  | 9.6.10 |  Will be paid per hour + storage
-`medium-psql-redundant`  | Dedicated redundant medium RDS PostgreSQL DB instance                        | 9.6.10 | Will be paid per hour + storage
-`large-psql`             | Dedicated large RDS PostgreSQL DB instance                                   | 9.6.10 | Will be paid per hour + storage
-`large-psql-redundant`   | Dedicated redundant large RDS PostgreSQL DB instance                         | 9.6.10 | Will be paid per hour + storage
-`shared-mysql`           | Shared MySQL database for prototyping (no sensitive or production data)      | 5.6.27 | Free
-`medium-mysql`           | Dedicated medium RDS MySQL DB instance                                       | 5.7.21 | Will be paid per hour + storage
-`medium-mysql-redundant` | Dedicated redundant medium RDS MySQL DB instance                             | 5.7.21 | Will be paid per hour + storage
-`large-mysql`            | Dedicated large RDS MySQL DB instance                                        | 5.7.21 | Will be paid per hour + storage
-`large-mysql-redundant`  | Dedicated redundant large RDS MySQL DB instance                              | 5.7.21 | Will be paid per hour + storage
+`shared-psql`            | Shared PostgreSQL database for prototyping (no sensitive or production data) | 9.4.7 | 
+`medium-psql`            | Dedicated medium RDS PostgreSQL DB instance                                  | 9.6.10 | 
+`medium-psql-redundant`  | Dedicated redundant medium RDS PostgreSQL DB instance                        | 9.6.10 | 
+`large-psql`             | Dedicated large RDS PostgreSQL DB instance                                   | 9.6.10 | 
+`large-psql-redundant`   | Dedicated redundant large RDS PostgreSQL DB instance                         | 9.6.10 | 
+`shared-mysql`           | Shared MySQL database for prototyping (no sensitive or production data)      | 5.6.27 | 
+`medium-mysql`           | Dedicated medium RDS MySQL DB instance                                       | 5.7.21 | 
+`medium-mysql-redundant` | Dedicated redundant medium RDS MySQL DB instance                             | 5.7.21 | 
+`large-mysql`            | Dedicated large RDS MySQL DB instance                                        | 5.7.21 | 
+`large-mysql-redundant`  | Dedicated redundant large RDS MySQL DB instance                              | 5.7.21 | 
 `medium-oracle-se2`      | Dedicated medium RDS Oracle SE2 DB | 12.0.1.2.v11 | Will be paid per hour + storage
 
 ### Pricing
