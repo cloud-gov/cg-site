@@ -3,19 +3,17 @@
 
   {{ partial "head.html" . }}
 
-  <body>
+  <body id="updates">
+
 
     {{ partial "header.html" . }}
 
-    <div class="header-view">
-      <div class="usa-grid">
-        <h1><a class="link-textblack" href="/updates/">Updates</a></h1>
-      </div>
-    </div>
-
-    <main class="usa-content">
-      <div class="usa-grid">
-        <div class="usa-width-two-thirds panel content-text">
+  
+  <div class="usa-grid">
+    
+    <div class="sidenav-parent">
+      <div class="usa-width-two-thirds usa-end-row panel content-text">
+        
           <header class="post-header">
             <span class="panel-new-date">{{ .Date.Format "Jan 2, 2006" }}{{ if .Params.author }} • {{ .Params.author }}{{ end }}{{ if .Params.meta }} • {{ .Params.meta }}{{ end }}</span>
           </header>
@@ -26,9 +24,12 @@
           {{ end }}
 
           {{ .Content }}
-       </div>
+          
       </div>
-    </main>
+      <div class="usa- -one-third">
+      </div>
+    </div>
+  </div>
 
     {{ partial "footer.html" . }}
     {{ partial "javascript.html" . }}
