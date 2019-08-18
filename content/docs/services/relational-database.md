@@ -24,10 +24,10 @@ Plan Name | Description | Software Version |
 `medium-mysql-redundant` | Dedicated redundant medium RDS MySQL DB instance                             | 5.7.21 | 
 `large-mysql`            | Dedicated large RDS MySQL DB instance                                        | 5.7.21 | 
 `large-mysql-redundant`  | Dedicated redundant large RDS MySQL DB instance                              | 5.7.21 | 
-`medium-oracle-se2`      | Dedicated medium RDS Oracle SE2 DB | 12.0.1.2.v11 | Will be paid per hour + storage
+`medium-oracle-se2`      | Dedicated medium RDS Oracle SE2 DB                                           | 12.0.1.2.v11 |
 
 ### Pricing
-Shared instances are free. Simple and redundant instances will have pricing per hour and per GB per month. [Learn more about managed service pricing.]({{< relref "overview/pricing/managed-services-cost.md" >}})
+[Learn more about managed service pricing.]({{< relref "overview/pricing/managed-services-cost.md" >}})
 
 Shared instances are available in [sandbox spaces]({{< relref "overview/pricing/free-limited-sandbox.md#sandbox-limitations" >}}).
 
