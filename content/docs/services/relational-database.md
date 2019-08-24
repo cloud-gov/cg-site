@@ -26,10 +26,7 @@ Plan Name | Description | Software Version |
 `large-mysql-redundant`  | Dedicated redundant large RDS MySQL DB instance                              | 5.7.21 | 
 `medium-oracle-se2`      | Dedicated medium RDS Oracle SE2 DB                                           | 12.0.1.2.v11 |
 
-### Pricing
-[Learn more about managed service pricing.]({{< relref "overview/pricing/managed-services-cost.md" >}})
-
-Shared instances are available in [sandbox spaces]({{< relref "overview/pricing/free-limited-sandbox.md#sandbox-limitations" >}}).
+*Note* All buckets have a limit of 1 TB in storage. If you need larger amounts of storage, contact cloud-gov-inquiries@gsa.gov
 
 ## Options
 

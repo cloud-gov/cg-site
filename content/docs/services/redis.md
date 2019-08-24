@@ -17,6 +17,7 @@ Service Name | Plan Name | Description |
 ------------ | --------- | ----------- | -----
 `redis32` | `standard-ha` | Redis instance with 10 GB storage | 
 
+*Note* If you need larger amounts of storage, contact cloud-gov-inquiries@gsa.gov
 
 #### How to create an instance
 

@@ -17,6 +17,8 @@ Plan Name | Description |
 `medium-ha` | Elasticsearch cluster with three master nodes (3584M memory limit, 1792M heap) and three data nodes (3584M memory limit, 1792M heap, 10G disk) | 
 
 
+*Note* If you need larger amounts of storage, contact cloud-gov-inquiries@gsa.gov
+
 ## How to create an instance
 
 To create a service instance run the following command:
