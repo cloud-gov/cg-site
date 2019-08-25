@@ -30,7 +30,7 @@ Make sure to use the latest version of the Cloud Foundry CLI. The most recent up
 
 #### Sandbox apps will expire after 90 days
 
-We plan to automatically delete apps in [sandbox spaces]({{< relref "overview/pricing/free-limited-sandbox.md#sandbox-limitations" >}}) after 90 days. We’ll send email notifications before this happens. If you’re developing something you need to keep long-term, we recommend moving it to a prototyping space. If you’d like to [start the process of purchasing a prototyping package]({{< relref "overview/pricing/prototyping.md" >}}), get in touch with us.
+We plan to automatically delete apps in [sandbox spaces]({{< relref "docs/pricing/free-limited-sandbox.md#sandbox-limitations" >}}) after 90 days. We’ll send email notifications before this happens. If you’re developing something you need to keep long-term, we recommend moving it to a prototyping space. If you’d like to [start the process of purchasing a prototyping package]({{< relref "docs/pricing/prototyping.md" >}}), get in touch with us.
 
 #### Additional TIC compliance support
 

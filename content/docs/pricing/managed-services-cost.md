@@ -1,6 +1,6 @@
 ---
 menu:
-  overview:
+  docs:
     parent: pricing
 title: The cost of managed services
 weight: 10

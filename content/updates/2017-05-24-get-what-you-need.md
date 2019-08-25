@@ -30,7 +30,7 @@ Email us at [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov) an
 
 #### You can also try a free sandbox space.
 
-Anyone with a federal government email address can now create [a free, limited sandbox space]({{< relref "overview/pricing/free-limited-sandbox.md" >}}) for themselves. Instead of getting an invite from the cloud.gov team or someone else at your organization, you can now go to [https://account.fr.cloud.gov/signup](https://account.fr.cloud.gov/signup) and send yourself an invite. You don’t need paperwork with us; you don’t even need to know what sort of app you want to build. Sandboxes are for experimenting, not for production or information with security requirements. But if you’re considering cloud.gov, or you’re already a user and want to explore doing something new, a sandbox is a great place to get started.
+Anyone with a federal government email address can now create [a free, limited sandbox space]({{< relref "docs/pricing/free-limited-sandbox.md" >}}) for themselves. Instead of getting an invite from the cloud.gov team or someone else at your organization, you can now go to [https://account.fr.cloud.gov/signup](https://account.fr.cloud.gov/signup) and send yourself an invite. You don’t need paperwork with us; you don’t even need to know what sort of app you want to build. Sandboxes are for experimenting, not for production or information with security requirements. But if you’re considering cloud.gov, or you’re already a user and want to explore doing something new, a sandbox is a great place to get started.
 
 
 ### Help us make cloud.gov better

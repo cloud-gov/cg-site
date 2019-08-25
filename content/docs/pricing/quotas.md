@@ -1,12 +1,13 @@
 ---
 menu:
-  overview:
+  docs:
     parent: pricing
 title: Quota costs, billing, and limits
 weight: 5
 aliases:
   - /docs/intro/pricing/quotas
   - /intro/pricing/quotas
+  - /overview/pricing/quotas
 
 ---
 
@@ -18,7 +19,7 @@ The cost is $130 per GB of memory reserved per month, with no limit except the q
 
 You set your usage quota **in advance**. This helps you control the maximum amount that your team will spend, and helps us avoid over-provisioning resources that won’t be used.
 
-([Sandboxes]({{< relref "overview/pricing/free-limited-sandbox.md" >}}) offer resource usage for free, but it is capped at 1 GB of RAM.)
+([Sandboxes]({{< relref "docs/pricing/free-limited-sandbox.md" >}}) offer resource usage for free, but it is capped at 1 GB of RAM.)
 
 ## Billing
 

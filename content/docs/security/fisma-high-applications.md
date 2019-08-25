@@ -1,6 +1,6 @@
 ---
 menu:
-  overview:
+  docs:
     parent: technology
 title: FISMA High impact PaaS options
 weight: 30
@@ -16,7 +16,7 @@ At this time, cloud.gov is not appropriate for the highest-risk systems defined 
 
 ## Options
 
-For now, an agency that wants a PaaS for FISMA High systems has two options. First, they can work with [commercial PaaS vendors]({{< relref "overview/technology/paas-options.md" >}}) who offer that capability. Second, agencies can stand up OpenStack somewhere in their own trusted infrastructure as an IaaS product. They can then adapt what we’ve done to deliver cloud.gov.
+For now, an agency that wants a PaaS for FISMA High systems has two options. First, they can work with [commercial PaaS vendors]({{< relref "docs/technology/paas-options.md" >}}) who offer that capability. Second, agencies can stand up OpenStack somewhere in their own trusted infrastructure as an IaaS product. They can then adapt what we’ve done to deliver cloud.gov.
 
 ## Adapting cloud.gov on your own for FISMA High
 

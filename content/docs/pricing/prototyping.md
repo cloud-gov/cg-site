@@ -1,6 +1,6 @@
 ---
 menu:
-  overview:
+  docs:
     parent: pricing
 title: Prototyping package details
 weight: 3

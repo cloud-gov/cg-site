@@ -1,6 +1,6 @@
 ---
 menu:
-  overview:
+  docs:
     parent: pricing
 title: How the pricing model is managed
 weight: 30

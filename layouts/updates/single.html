@@ -1,38 +1,20 @@
-<!doctype html>
-<html lang="en">
-
-  {{ partial "head.html" . }}
-
-  <body id="updates">
-
-
-    {{ partial "header.html" . }}
+{{ partial "docs-header.html" . }}
 
   
-  <div class="usa-grid">
-    
-    <div class="sidenav-parent">
-      <div class="usa-width-two-thirds usa-end-row panel content-text">
-        
-          <header class="post-header">
-            <span class="panel-new-date">{{ .Date.Format "Jan 2, 2006" }}{{ if .Params.author }} • {{ .Params.author }}{{ end }}{{ if .Params.meta }} • {{ .Params.meta }}{{ end }}</span>
-          </header>
-          <h1>{{ .Title }}</h1>
+<header class="post-header">
+  <span class="panel-new-date">{{ .Date.Format "Jan 2, 2006" }}{{ if .Params.author }} • {{ .Params.author }}{{ end }}{{ if .Params.meta }} • {{ .Params.meta }}{{ end }}</span>
+</header>
 
-          {{ if .Params.image }}
-          <div class="page--banner" style="background-image: url({{ .Params.image}});"></div>
-          {{ end }}
+{{ if .Params.image }}
+<div class="page--banner" style="background-image: url({{ .Params.image}});"></div>
+{{ end }}
 
-          {{ .Content }}
-          
-      </div>
-      <div class="usa- -one-third">
-      </div>
-    </div>
-  </div>
+{{ .Content }}
 
-    {{ partial "footer.html" . }}
-    {{ partial "javascript.html" . }}
 
-  </body>
-</html>
+
+{{ partial "docs-footer.html" . }}
+{{ partial "footer.html" . }}
+{{ partial "javascript.html" . }}
+
+

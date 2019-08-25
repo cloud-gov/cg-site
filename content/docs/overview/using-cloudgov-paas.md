@@ -1,6 +1,6 @@
 ---
 menu:
-  overview:
+  docs:
     parent: overview
 title: What you can do with the cloud.gov platform
 weight: 13
@@ -10,7 +10,7 @@ aliases:
 ---
 
 
-[There are a few ways to get started using cloud.gov.]({{< relref "overview/pricing/start-using-cloudgov.md" >}}) Once your [system]({{< relref "overview/pricing/pricing-terminology.md" >}}#system) is set up, the cloud.gov team will make sure someone from your team is designated as an Organization Manager. After that, everything is self-service. We support the platform, infrastructure, and compliance. The rest of these capabilities belong to your team.
+[There are a few ways to get started using cloud.gov.]({{< relref "docs/pricing/start-using-cloudgov.md" >}}) Once your [system]({{< relref "docs/pricing/pricing-terminology.md" >}}#system) is set up, the cloud.gov team will make sure someone from your team is designated as an Organization Manager. After that, everything is self-service. We support the platform, infrastructure, and compliance. The rest of these capabilities belong to your team.
 
 - You can instantly set up environments ("spaces") as needed for your team (for example: blue-green production spaces, testing, development).
 - You can manage access for individual team members at either the organization or space level.

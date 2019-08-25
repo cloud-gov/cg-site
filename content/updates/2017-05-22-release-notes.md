@@ -11,7 +11,7 @@ The cloud.gov team is looking to make the cloud.gov platform easier to evaluate 
 
 ### Added
 - We’ve published a cost estimator spreadsheet (in [XLSX](/resources/cloudgov_cost_estimator.xlsx) and [ODS](/resources/cloudgov_cost_estimator.ods) formats) that your team can use to get a sense of how much cloud.gov will cost for your organization. If you’re interested in switching from a sandbox to a paid cloud.gov package, or if you want to expand your use of the platform to additional applications, use the estimator to get a sense of what the access package and usage quota fees will be across all your cloud.gov systems.
-- The Defense Information Systems Agency (DISA) has issued a [provisional authorization for Department of Defense teams]({{< relref "overview/security/fedramp-tracker.md#how-this-p-ato-helps-your-team" >}}) to use cloud.gov’s FedRAMP P-ATO for systems at the DISA level 2 impact level. This is a followup to the P-ATO; Level 2 is equivalent to FedRAMP Moderate.
+- The Defense Information Systems Agency (DISA) has issued a [provisional authorization for Department of Defense teams]({{< relref "docs/security/fedramp-tracker.md#how-this-p-ato-helps-your-team" >}}) to use cloud.gov’s FedRAMP P-ATO for systems at the DISA level 2 impact level. This is a followup to the P-ATO; Level 2 is equivalent to FedRAMP Moderate.
 - The latest version of the PHP buildpack supports PHP 7.1.4 and 7.0.18.
 
 ### Fixed

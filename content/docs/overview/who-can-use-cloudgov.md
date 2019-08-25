@@ -1,6 +1,6 @@
 ---
 menu:
-  overview:
+  docs:
     parent: overview
 title: Who can use it?
 weight: 15

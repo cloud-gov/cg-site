@@ -1,6 +1,6 @@
 ---
 menu:
-  overview:
+  docs:
     parent: overview
 title: The cloud.gov team
 weight: 80
@@ -29,7 +29,7 @@ To solve the bottleneck problem, 18F focused on technical operations that could 
 
 One of our goals for cloud.gov is to give other agencies access to the same gains in productivity that 18F has seen from using cloud.gov. By making the model available for other agencies, as well as making it replicable as an open source project, we hope to increase the efficiency with which any agency can deliver digital services. The potential economy of scale is huge.
 
-Our experience with this project suggests an open source PaaS is the right choice for many government teams. However, vendor PaaS options offer features which may be attractive to [agencies that have different requirements]({{< relref "overview/overview/who-can-use-cloudgov.md" >}}).
+Our experience with this project suggests an open source PaaS is the right choice for many government teams. However, vendor PaaS options offer features which may be attractive to [agencies that have different requirements]({{< relref "docs/overview/who-can-use-cloudgov.md" >}}).
 
 ## The process of building it
 

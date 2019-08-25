@@ -1,6 +1,6 @@
 ---
 menu:
-  overview:
+  docs:
     parent: overview
 title: The benefits of cloud.gov
 weight: -50
@@ -26,7 +26,7 @@ cloud.gov enforces an immutable infrastructure. Instead of logging into a live s
 
 ## 2. Compliance with federal requirements
 
-cloud.gov has a [Provisional Authority to Operate (P-ATO) at the Moderate impact level from the FedRAMP Joint Authorization Board (JAB)]({{< relref "overview/security/fedramp-tracker.md" >}}). When you deploy a system on cloud.gov, you can [leverage this P-ATO](https://www.fedramp.gov/resources/faqs/how-does-an-agency-leverage-a-fedramp-authorization/) as part of your agency ATO.
+cloud.gov has a [Provisional Authority to Operate (P-ATO) at the Moderate impact level from the FedRAMP Joint Authorization Board (JAB)]({{< relref "docs/security/fedramp-tracker.md" >}}). When you deploy a system on cloud.gov, you can [leverage this P-ATO](https://www.fedramp.gov/resources/faqs/how-does-an-agency-leverage-a-fedramp-authorization/) as part of your agency ATO.
 
 Out of the 325 security controls required for Moderate-impact systems, cloud.gov handles 269 controls, and 41 controls are a shared responsibility (where cloud.gov provides part of the requirement, and your applications provide the rest). You only need to provide full implementations for the remaining 15 controls, such as ensuring you make data backups and using reliable DNS (Domain Name System) name servers for your websites.
 

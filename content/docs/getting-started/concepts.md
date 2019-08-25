@@ -91,4 +91,4 @@ Or with a URL:
 
 If none of these strategies will help you deploy single-language applications, you can [explicitly specify a set of buildpacks to run in sequence](https://docs.cloudfoundry.org/buildpacks/use-multiple-buildpacks.html), one for each language.
 
-**Custom buildpacks:** If your application can't use a standard buildpack, you can use a [custom buildpack]({{< relref "docs/apps/custom-buildpacks.md">}}). When you use a custom buildpack, you're responsible for keeping your buildpack up-to-date and patching vulnerabilities in it. See [this chart illustrating your responsibilities]({{< relref "overview/technology/responsibilities.md">}}) for more detail.
+**Custom buildpacks:** If your application can't use a standard buildpack, you can use a [custom buildpack]({{< relref "docs/apps/custom-buildpacks.md">}}). When you use a custom buildpack, you're responsible for keeping your buildpack up-to-date and patching vulnerabilities in it. See [this chart illustrating your responsibilities]({{< relref "docs/technology/responsibilities.md">}}) for more detail.

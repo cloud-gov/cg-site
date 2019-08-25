@@ -58,7 +58,7 @@ Every database service configured through cloud.gov is [encrypted at rest](http:
 
 All logs are encrypted while in transit and at rest for [logs.fr.cloud.gov](https://logs.fr.cloud.gov) and [Amazon CloudWatch Logs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html).
 
-For details, see SC-28 in the cloud.gov SSP in our [P-ATO documentation package](https://cloud.gov/overview/security/fedramp-tracker/#how-you-can-use-this-p-ato).
+For details, see SC-28 in the cloud.gov SSP in our [P-ATO documentation package](https://cloud.gov/docs/security/fedramp-tracker/#how-you-can-use-this-p-ato).
 
 ### Auditing login attempts
 

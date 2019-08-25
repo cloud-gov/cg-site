@@ -1,6 +1,6 @@
 ---
 menu:
-  overview:
+  docs:
     parent: overview
 title: What applications are supported?
 weight: 16
