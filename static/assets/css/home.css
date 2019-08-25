@@ -354,11 +354,7 @@
   color: #02699b;
 }
 
-#home a[href*=".com"],
-#home a[href*=".io"] {
-  padding-right: 23px;
-  background: url(/img/link-icons/icon-external.svg) right center no-repeat;
-}
+
 #home .editorial-grid h4 + p a[href],
 #home .editorial-grid h5 a[href] {
   padding-right: 20px;
