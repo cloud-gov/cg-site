@@ -5,7 +5,7 @@ menu:
 title: Prototyping package details
 weight: 3
 aliases:
-
+  - /overview/pricing/prototyping/
 ---
 
 The prototyping package enables teams to build and deploy many experimental applications in the secure, compliant, and standardized cloud.gov environment.
