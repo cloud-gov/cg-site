@@ -22,7 +22,7 @@ Log in:
 
 ## Target your "sandbox"
 
-If you have a federal email address, when you log in for the first time, cloud.gov will start automatically creating a [sandbox space]({{< relref "overview/pricing/free-limited-sandbox.md" >}}) for you. You might need to wait up to 5 minutes before it becomes available.
+If you have a federal email address, when you log in for the first time, cloud.gov will start automatically creating a [sandbox space]({{< relref "docs/pricing/free-limited-sandbox.md" >}}) for you. You might need to wait up to 5 minutes before it becomes available.
 
 Here's how to deploy a test app in your sandbox using the CLI.
 

@@ -1,6 +1,6 @@
 ---
 menu:
-  overview:
+  docs:
     parent: pricing
 title: Get started using cloud.gov
 weight: -20
@@ -22,7 +22,7 @@ cloud.gov services are sold through 18F, a federal digital consultancy housed wi
 
 ## Try a limited-use sandbox account for free
 
-A sandbox is a free, limited way to try cloud.gov so you can get a sense of how cloud.gov would work for the applications your team builds. Anyone with a U.S. federal government email address can sign up for a sandbox space on their own. [Learn more about sandboxes.]({{< relref "overview/pricing/free-limited-sandbox.md" >}})
+A sandbox is a free, limited way to try cloud.gov so you can get a sense of how cloud.gov would work for the applications your team builds. Anyone with a U.S. federal government email address can sign up for a sandbox space on their own. [Learn more about sandboxes.]({{< relref "docs/pricing/free-limited-sandbox.md" >}})
 
 ## Work with an 18F team
 

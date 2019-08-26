@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: services
-title: "Elasticsearch 5.6"
+title: "Elasticsearch"
 name: "elasticsearch56"
 description: "Elasticsearch version 5.6: a distributed, RESTful search and analytics engine"
 status: "Beta"
@@ -14,12 +14,10 @@ cloud.gov offers [Elasticsearch](https://www.elastic.co/) 5.6 as a service.
 
 Plan Name | Description | 
 --------- | ----------- | -----
-`medium`  | Elasticsearch instance with 3GB of RAM and 1 slice of CPU   | 
 `medium-ha` | Elasticsearch cluster with three master nodes (3584M memory limit, 1792M heap) and three data nodes (3584M memory limit, 1792M heap, 10G disk) | 
 
-*These instances are available in [sandbox spaces]({{< relref "overview/pricing/free-limited-sandbox.md#sandbox-limitations" >}}).*
 
-Note: The `medium-ha` plan runs multiple Elasticsearch master and data nodes on different machines, so that service is not interrupted by routine platform maintenance. The `medium` plan runs on a single instance and will be briefly unavailable during platform maintenance; this plan should not be used for production applications.
+*Note* If you need larger amounts of storage, contact cloud-gov-inquiries@gsa.gov
 
 ## How to create an instance
 

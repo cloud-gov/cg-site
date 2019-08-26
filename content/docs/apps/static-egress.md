@@ -24,7 +24,7 @@ Authentication options:
 
 Some service providers filter clients based on IP ranges to minimize the surface area of their service on the open internet. If your service provider requires this, you can provide the [cloud.gov egress addresses](#cloud-gov-egress-ranges) to the people who handle network security for the service. 
 
-**Note:** Filtering by IP address **alone** will only ensure that traffic is originating from an application on cloud.gov. It provides no guarantee that the traffic is from _your_ application. Applications from other agencies and [sandbox accounts]({{< relref "overview/pricing/free-limited-sandbox.md" >}}) will also originate from the same addresses.
+**Note:** Filtering by IP address **alone** will only ensure that traffic is originating from an application on cloud.gov. It provides no guarantee that the traffic is from _your_ application. Applications from other agencies and [sandbox accounts]({{< relref "docs/pricing/free-limited-sandbox.md" >}}) will also originate from the same addresses.
 
 
 ### cloud.gov egress ranges

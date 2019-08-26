@@ -5,11 +5,11 @@ menu:
 title: Set org, space, and app limits
 ---
 
-Org Managers are free to configure your org's [quota]({{< relref "overview/pricing/quotas.md" >}}) capacity among your spaces and applications as you see fit. This enables Org Managers to limit usage and corresponding costs.
+Org Managers are free to configure your org's [quota]({{< relref "docs/pricing/quotas.md" >}}) capacity among your spaces and applications as you see fit. This enables Org Managers to limit usage and corresponding costs.
 
 ## Org
 
-To view your [org quota]({{< relref "overview/pricing/quotas.md" >}}):
+To view your [org quota]({{< relref "docs/pricing/quotas.md" >}}):
 
 1. List the details about your org: `cf org <org>`
 2. Find your quota name from the `quota:` property.

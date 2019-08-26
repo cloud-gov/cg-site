@@ -21,7 +21,7 @@ You can also push an image from a private Docker registry by providing the host 
 
 Details are in the Cloud Foundry documentation for [deploying an app with Docker](https://docs.cloudfoundry.org/devguide/deploy-apps/push-docker.html#private-repo). If you want to build your own Docker image, or if you want to read more about the implementation, check out the [Docker documentation](http://docs.cloudfoundry.org/adminguide/docker.html) in the Cloud Foundry project.
 
-Once you push a Docker image as your application, cloud.gov cannot update the baseline for your application, so you are responsible for keeping it up to date. **You are responsible** for maintaining the operating system, libraries, application code, and all of the associated configuration (losing some of the benefits of a PaaS environment). See [this chart of responsibilities]({{< relref "overview/technology/responsibilities.md">}}).
+Once you push a Docker image as your application, cloud.gov cannot update the baseline for your application, so you are responsible for keeping it up to date. **You are responsible** for maintaining the operating system, libraries, application code, and all of the associated configuration. See [this chart of responsibilities]({{< relref "docs/technology/responsibilities.md">}}). This is not a recommended path and is only viable in some use cases; be aware that you lose a large set of features and some of the benefits of a PaaS system by leveraging this functionality.
 
 Here are some considerations to keep in mind when deciding to use Docker images instead of supported buildpacks in your application's deployment:
 

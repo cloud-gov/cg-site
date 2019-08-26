@@ -17,6 +17,16 @@ blockquote::before,
   position: absolute;
 }
 
+.header-wrap a[href*=".com"],
+.header-wrap a[href*=".io"] {
+  padding: 6px 26px 7px 0px;
+  background: url(/img/link-icons/icon-external.svg) right center no-repeat;
+}
+
+.usa-search{
+  max-width: 45em !important;
+}
+
 blockquote p,
 blockquote li,
 /* specificity for override */

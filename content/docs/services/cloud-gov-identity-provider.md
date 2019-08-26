@@ -16,7 +16,7 @@ Plan Name | Description |
 --------- | ----------- | -----
 `oauth-client` | OAuth2 client credentials for authenticating cloud.gov users in your app | 
 
-*These instances are available in [sandbox spaces]({{< relref "overview/pricing/free-limited-sandbox.md#sandbox-limitations" >}}).*
+*These instances are available in [sandbox spaces]({{< relref "docs/pricing/free-limited-sandbox.md#sandbox-limitations" >}}).*
 
 ## How to create an instance
 

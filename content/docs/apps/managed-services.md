@@ -33,7 +33,7 @@ Create a new service instance by specifying a service, plan, and a name of your 
 
 #### Paid services
 
-The note `* These service plans have an associated cost` indicates paid services. [Learn about managed service pricing.]({{< relref "overview/pricing/managed-services-cost.md" >}})
+The note `* These service plans have an associated cost` indicates paid services. [Learn about managed service pricing.]({{< relref "docs/pricing/managed-services-cost.md" >}})
 
 ### Bind the service instance
 

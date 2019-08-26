@@ -1,6 +1,6 @@
 ---
 menu:
-  overview:
+  docs:
     parent: pricing
 title: How the pricing model is managed
 weight: 30
@@ -11,13 +11,7 @@ aliases:
 
 cloud.gov is available to teams working on behalf of federal agencies. The pricing model is based on full cost recovery.
 
-The current cloud.gov pricing model has three components: **access package**, **resource usage**, and **managed services**. Find the current costs of a package that suits your needs on our [pricing page](/pricing/).
-
-## The commitment of the cloud.gov pricing model
-
-cloud.gov’s pricing model is an ongoing experiment. Whether it fits the needs of federal agencies is still being validated. The cloud.gov promise to partner agencies is that prices will not change on them mid-fiscal year, and the price of any particular part of the platform will *not go up*.
-
-The model _itself_ may change between fiscal years, but those changes will not apply to existing paid users. cloud.gov honors the pricing model for access _during_ the IAA’s period of performance, and will not change the model for any particular partner until their IAA’s period of performance is over.
+The current cloud.gov pricing model has two components: **access package** and **resource usage**. Find the current costs of a package that suits your needs on our [pricing page](/pricing/).
 
 ## Comparison with private sector pricing
 

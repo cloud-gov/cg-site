@@ -1,6 +1,6 @@
 ---
 menu:
-  overview:
+  docs:
     parent: pricing
 title: Prototyping package details
 weight: 3
@@ -31,7 +31,3 @@ Prototyping packages cannot host production data. All prototyping package applic
 - Set and adjust the resource usage limit for entire package, as well as setting and adjusting resource usage limits for each environment within the package.
 - Integrate your agency identity provider with cloud.gov so that employees and contractors log in with agency credentials.
 - Use the cloud.gov API to build tools for managing the prototyping package.
-
-## Price
-
-The annual access fee is $15K, with additional resource usage costs. See the [pricing page](/pricing/) for more information.

@@ -1,6 +1,6 @@
 ---
 menu:
-  overview:
+  docs:
     parent: customer-stories
 title: Federal Election Commission
 kicker: Case study

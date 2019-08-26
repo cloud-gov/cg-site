@@ -1,5 +1,11 @@
 ---
-type: index
+menu:
+  docs:
+    parent: getting-started
+title: Reference
+aliases:
+  - /docs
+weight: -50
 ---
 
 Learn how to deploy and manage your applications, so you can deliver your digital services to the people who need them.

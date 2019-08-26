@@ -1,11 +1,12 @@
 ---
 menu:
-  overview:
+  docs:
     parent: pricing
 title: Try a free sandbox space
 weight: -10
 aliases:
   - /overview/pricing/free-limited-sandbox
+  - /docs/pricing/free-limited-sandbox
 ---
 
 A sandbox is a free space that you can use to see if cloud.gov might suit your team’s needs. From the [setup process]({{< relref "docs/getting-started/setup.md" >}}) through [deploying an app]({{< relref "docs/getting-started/your-first-deploy.md" >}}), it works similarly to other spaces that are included in [paid access packages](/pricing/), with [some limitations](#sandbox-limitations).
@@ -43,8 +44,8 @@ Sandboxes are for testing; they’re suitable for information and applications t
 Limitations include:
 
 * Resource usage is capped at 1 GB of memory total, for all the applications in your space combined.
-* You're [capped at using a maximum]({{< relref "overview/pricing/quotas.md#what-quotas-limit" >}}) of 10 [service instances]({{< relref "docs/apps/managed-services.md" >}}), 10 [service keys](https://docs.cloudfoundry.org/devguide/services/service-keys.html), and 10 [application routes]({{< relref "docs/apps/custom-domains.md" >}}), for all the applications in your space combined.
+* You're [capped at using a maximum]({{< relref "docs/pricing/quotas.md#what-quotas-limit" >}}) of 10 [service instances]({{< relref "docs/apps/managed-services.md" >}}), 10 [service keys](https://docs.cloudfoundry.org/devguide/services/service-keys.html), and 10 [application routes]({{< relref "docs/apps/custom-domains.md" >}}), for all the applications in your space combined.
 * You can only create certain managed service instances. (See each [service documentation page]({{< relref "docs/services/intro.md" >}}) for details about which service instances are available in sandboxes.)
 * You can only use the default `*.app.cloud.gov` domain, not [custom domains]({{< relref "docs/apps/custom-domains.md" >}}).
-* Sandboxes do not have an "org manager" role available. (You can control access and permissions for your own sandbox space.) If you want to manage an org of prototyping spaces for people at your agency, consider purchasing a [prototyping package]({{< relref "overview/pricing/prototyping.md" >}}).
+* Sandboxes do not have an "org manager" role available. (You can control access and permissions for your own sandbox space.) If you want to manage an org of prototyping spaces for people at your agency, consider purchasing a [prototyping package]({{< relref "docs/pricing/prototyping.md" >}}).
 * We periodically delete sandbox contents to ensure that users don't run production applications in sandboxes. Specifically, we clear all sandbox contents 90 days after the first application or service is created. We'll warn you via email five days before clearing out your sandbox.

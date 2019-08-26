@@ -25,4 +25,4 @@ Cloud Foundry provides [additional details about various aspects of container se
 The cloud.gov team configures in our Cloud Foundry deployment [whether privileged containers are used for applications and buildpack staging processes](https://docs.cloudfoundry.org/concepts/container-security.html#types). 
 Both of these options are set to `false` in cloud.gov: we use unprivileged containers, which increases security. Please contact us if you need to verify this setting in our system, or if you have further questions about how customer separation works in cloud.gov.
 
-*For more details, see the [cloud.gov SSP]({{< relref "overview/security/fedramp-tracker.md#how-you-can-use-this-p-ato" >}}), including section 9.7 (Application Isolation), 10 (System Environment), 10.2.3 (Buildpacks), CM-7 (2), SC-7 (12), and SC-39.*
+*For more details, see the [cloud.gov SSP]({{< relref "docs/security/fedramp-tracker.md#how-you-can-use-this-p-ato" >}}), including section 9.7 (Application Isolation), 10 (System Environment), 10.2.3 (Buildpacks), CM-7 (2), SC-7 (12), and SC-39.*
