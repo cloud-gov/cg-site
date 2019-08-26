@@ -1,12 +1,12 @@
 +++
 date = "2019-08-26"
-title = "Updates to cloud.gov services and prices" 
+title = "Changes to cloud.gov services and prices" 
 +++
 
 
 **Summary**
 
-Cloud.gov’s funding source (the Acquisition Services Fund) requires us to review our costs and adjust rates to cover the cost of running the service. Starting on October 1, 2019, new interagency agreements (including renewals) will use the following prices. Agreements already in place will not change and any modification or amendment to an existing agreement in FY20 will retain the original rate until FY21.
+Cloud.gov’s funding source (the Acquisition Services Fund) requires us to review our expenditures and adjust rates to cover the cost of running the service. Starting on October 1, 2019, new interagency agreements (including renewals) will use the following prices. Agreements already in place will not change, and any modification or amendment to an existing agreement in FY20 will retain the original rate until FY21.
 
 **Access fees**
 
