@@ -24,7 +24,7 @@ Plan Name | Description |
 To create a service instance run the following command:
 
 ```sh
-cf create-service elasticsearch56 medium my-elastic-service
+cf create-service elasticsearch56 medium-ha my-elastic-service
 ```
 
 ### Shard/replica configuration for high availability
