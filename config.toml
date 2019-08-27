@@ -100,8 +100,3 @@ pygmentsUseClasses = "true"
     name = "Design considerations"
     identifier = "design"
     parent = "ops"
-[[menu.docs]]
-    name = "Latest Updates"
-    parent = "overview"  
-    url = "/updates/"
-    weight = 200
