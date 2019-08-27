@@ -73,7 +73,7 @@ pygmentsUseClasses = "true"
     pre = "<i class='fa fa-flask fa-fw'></i>"
     weight = -90
 [[menu.docs]]
-    name = "Team Documentation"
+    name = "Team documentation"
     identifier = "ops"
     pre = "<i class='fa fa-fw fa-wrench'></i>"
 [[menu.docs]]
