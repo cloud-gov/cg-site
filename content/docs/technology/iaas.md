@@ -1,12 +1,13 @@
 ---
 menu:
-  overview:
+  docs:
     parent: technology
 title: Infrastructure under cloud.gov
 weight: 20
 aliases:
   - /docs/intro/technology/iaas
   - /intro/technology/iaas
+  - /overview/technology/iaas
 ---
 
 ## The infrastructure underlying cloud.gov
