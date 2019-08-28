@@ -1,6 +1,6 @@
 ---
 menu:
-  overview:
+  docs:
     parent: technology
 title: Other PaaS choices
 weight: 30

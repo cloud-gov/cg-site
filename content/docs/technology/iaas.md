@@ -1,6 +1,6 @@
 ---
 menu:
-  overview:
+  docs:
     parent: technology
 title: Infrastructure under cloud.gov
 weight: 20

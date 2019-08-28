@@ -1,6 +1,6 @@
 ---
 menu:
-  overview:
+  docs:
     parent: technology
 title: What the cloud.gov PaaS offers
 weight: 5
