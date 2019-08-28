@@ -198,7 +198,7 @@ You can rotate credentials by creating a new instance and [deleting the existing
 
 ## Working with OracleDB
 
-Since Oracle is not open-source there are fewer resources available online to get started working with OracleDB and Cloud Foundry. We provide a few tips here.
+Since Oracle is not open-source there are fewer resources available online to get started working with OracleDB and Cloud Foundry. We provide a few tips here.  This example worked with `ojdbc8.jar`, and will likely needs some tweaks for `ojdbc10.jar`.
 
 
 ### Demo with Spring Music and Oracle
@@ -219,7 +219,7 @@ mkdir libs/
 
 Copy the downloaded `ojdbc8.jar` to the `libs/` directory of `spring-music`. 
 
-Edit `build.grade`, look for the following near line 60:
+Edit `build.gradle`, look for the following near line 60:
 
 ```
     // Oracle - uncomment one of the following after placing driver in ./libs
@@ -275,10 +275,10 @@ Make an SSH tunnel from your workstation to Cloud Foundry to the OracleDB using 
 cf ssh -N -L 15210:cg-aws-broker-prod.RANDOMSTRING.us-gov-west-1.rds.amazonaws.com:1521 spring-music
 ```
 
-Now connect using `sqlplus username/password@host:port/ORCL`, where host is `localhost` and `port` is the first part of the `-L` connection string above. e.g.:
+Now connect using `sqlplus random-username/secretpassword@host:port/ORCL`, where host is `localhost` and `port` is the first part of the `-L` connection string above. e.g.:
 
 ```
-./sqlplus random-username/password@localhost:15210/ORCL
+./sqlplus random-username/secretpassword@localhost:15210/ORCL
 ```
 
 Then you can use SQLPLUS commands like `SELECT table_name FROM user_tables;`
