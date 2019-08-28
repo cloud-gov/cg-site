@@ -7,6 +7,7 @@ weight: 30
 aliases:
   - /docs/intro/technology/paas-options
   - /intro/technology/paas-options
+  - /overview/technology/paas-options
 ---
 
 ## Open source

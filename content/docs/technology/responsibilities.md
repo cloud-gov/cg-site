@@ -7,6 +7,7 @@ weight: 5
 aliases:
   - /docs/intro/technology/responsibilities
   - /intro/technology/responsibilities
+  - /overview/technology/responsibilities
 ---
 
 As a Platform as a Service, cloud.gov is responsible for maintenance and security of the cloud.gov platform. Customers are responsible for maintenance and security of their custom code running on the platform.

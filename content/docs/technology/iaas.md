@@ -7,6 +7,7 @@ weight: 20
 aliases:
   - /docs/intro/technology/iaas
   - /intro/technology/iaas
+  - /overview/technology/iaas
 ---
 
 ## The infrastructure underlying cloud.gov
