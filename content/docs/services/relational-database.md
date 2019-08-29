@@ -243,35 +243,33 @@ When the restart completes, you can visit the app and view in the upper-right-ha
 
 ### Connecting to Oracle
 
-Install `instantclient-basiclite` and `instantclient-sqlplus` for your operating system.
+Install Oracle's `instantclient-basiclite` and `instantclient-sqlplus` for your operating system.
 
-Use `cf env spring-music` to find database connection information under `System-Provided -> VCAP_SERVICES -> aws-rds`. E.g.:
+To get the database connection information, we'll use 
+[Cloud Foundry service keys](https://docs.cloudfoundry.org/devguide/services/service-keys.html) as follows, for the
+case of an Oracle database called `spring-oracle`:
 
-```
-> cf env spring-music
-Getting env variables for app spring-music in org test-org / space pdb-noaa as peter.burkholder@gsa.gov...
+``` sh
+$ cf create-service-key spring-oracle-key
+Creating service key spring-oracle-key for service instance spring-oracle ...
 OK
 
-System-Provided:
+$ cf service-key spring-oracle spring-oracle-key
+Getting key spring-oracle-key for service instance spring-oracle ...
+
 {
- "VCAP_SERVICES": {
-  "aws-rds": [
-   {
-    "binding_name": null,
-    "credentials": {
-     "db_name": "ORCL",
-     "host": "cg-aws-broker-prod.RANDOMSTRING.us-gov-west-1.rds.amazonaws.com",
-     "password": "secretpassword",
-     "port": "1521",
-     "uri": "oracle://random-username:secretpassword@cg-aws-broker-prodRANDOMSTRING.us-gov-west-1.rds.amazonaws.com:1521/ORCL",
-     "username": "random-username"
-    },
-...
+  "db_name": "ORCL",
+  "host": "cg-aws-broker-prod.RANDOMSTRING.us-gov-west-1.rds.amazonaws.com",
+  "password": "secretpassword",
+  "port": "1521",
+  "uri": "oracle://random-username:secretpassword@cg-aws-broker-prodRANDOMSTRING.us-gov-west-1.rds.amazonaws.com:1521/ORCL",
+  "username": "random-username"
+}
 ```
 
 Make an SSH tunnel from your workstation to Cloud Foundry to the OracleDB using the `host:` value, e.g. using port `15210` on the localhost:
 
-```
+``` sh
 cf ssh -N -L 15210:cg-aws-broker-prod.RANDOMSTRING.us-gov-west-1.rds.amazonaws.com:1521 spring-music
 ```
 
