@@ -17,7 +17,7 @@ Plan  | Previous monthly price | New monthly price  |
 `FISMA Moderate` | $7,500.00/month |  $9,300.00/month |
 
 
-**Usage fees**
+**Memory quota cost**
 
 Resource  | Previous monthly price | New monthly price  |
 --------- | ----------- | -----
@@ -30,7 +30,7 @@ Resource  | Previous monthly price | New monthly price  |
 
 - RDS, S3, Elasticsearch, and Redis will now run on “high-availability” servers, providing you with additional stability and redundancy.
 
-- Previously, cloud.gov provided RDS, S3, Elasticsearch, and Redis at no additional cost for a “limited time.” We will continue to provide these services at no additional cost as long as your usage remains below the following limits. If you expect to need larger amounts of storage, contact cloud-gov-inquiries@gsa.gov. At higher amounts, we will charge you for the additional IaaS costs. 
+- Previously, cloud.gov provided RDS, S3, Elasticsearch, and Redis at no additional cost for a “limited time.” We will continue to provide these services at no additional cost as long as your memory quota remains below the following limits. If you expect to need larger amounts of storage, contact cloud-gov-inquiries@gsa.gov. At higher amounts, we will charge you for the additional IaaS costs. 
 
 
      | Previous storage limit | New storage limit
