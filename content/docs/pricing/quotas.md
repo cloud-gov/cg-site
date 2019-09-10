@@ -17,7 +17,7 @@ cloud.gov usage is billed by org memory quota.
 
 The cost is $130 per GB of memory reserved per month, with no limit except the quota you set.
 
-You set your usage quota **in advance**. This helps you control the maximum amount that your team will spend, and helps us avoid over-provisioning resources that won’t be used.
+You set your memory quota **in advance**. This helps you control the maximum amount that your team will spend, and helps us avoid over-provisioning resources that won’t be used.
 
 ([Sandboxes]({{< relref "docs/pricing/free-limited-sandbox.md" >}}) offer resource usage for free, but it is capped at 1 GB of RAM.)
 
