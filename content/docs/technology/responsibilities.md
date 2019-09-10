@@ -46,19 +46,23 @@ refers to a service, feature, API, etc.
 
 In cases where a replacement service will be provided, we'll make the replacement service available before beginning the deprecation process.
 Deprecations happen in steps:
+
 1. We send an email to all customers letting them know the service is being deprecated.
 1. At least 30 days after the initial email, we stop allowing new instances of the deprecated service, but continue allowing existing instances to work.
 1. Every two weeks after we stop allowing new instances of the deprecated service, we email customers who are still using the deprecated service.
 1. At least 150 days after the initial email, we shut down existing instances of deprecated service.
+
 
 Here's an example:
 
 First, cloud.gov determines that the coffee service is not serving customers as well as a new espresso service might, and we decide 
 to replace the coffee service entirely with the espresso service. 
 First, we make the espresso service generally available. Next, we send out the general announcement to all of our users. This announcement goes out on April 3rd and states:
+
 - the coffee service is being deprecated
 - the replacement is the espresso service
 - as of May 3rd (30 days after April 3rd), no new instances of the coffee service will be created
 - as of August 31st (150 days after April 3rd), existing instances of the coffee service will be shut down
+
 After May 3rd, we begin sending emails to users still using the coffee service, at least one message every other week.
 Finally, on August 31st, we shut down the last instances of the coffee service.
