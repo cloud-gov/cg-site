@@ -8,7 +8,7 @@ aliases:
   - /docs/apps/databases
 ---
 
-If your application uses relational databases for storage, you can use the AWS RDS service to create a database instance.
+If your application uses relational databases for storage, you can use the AWS RDS service to create a database instance. The `redundant` label in an RDS plan name indicates it is a [Multi-AZ (Availability Zone)](https://aws.amazon.com/rds/details/multi-az/) deployment.
 
 ## Plans
 
