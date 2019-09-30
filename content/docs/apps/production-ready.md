@@ -67,7 +67,7 @@ The following practices are very helpful to incorporate into most cloud.gov apps
 Your application should be able to be deployed without any downtime. Be aware there are known issues if your application automatically does database migrations when deploying.
 
 #### How
-* Use the [autopilot](https://github.com/concourse/autopilot) Cloud Foundry CLI plugin. You can also use the native [v3-zdt](https://docs.cloudfoundry.org/devguide/deploy-apps/rolling-deploy.html) commands, but note that these are in Beta and the commands may change in future.
+* Use the native [Rolling App Deployments](https://docs.cloudfoundry.org/devguide/deploy-apps/rolling-deploy.html). This is preferable to the unmaintained [autopilot](https://github.com/contraband/autopilot) Cloud Foundry CLI plugin.
 
 ### Automated deployments
 To reduce the risk associated with manual deployments, consider automating the process to make it repeatable.
