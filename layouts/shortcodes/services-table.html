@@ -9,7 +9,7 @@
     <tbody>
     {{ range $.Site.Data.services }}
       <tr>
-        <td><a href="{{ "/docs/services/" }}{{ .page_name | default .name | urlize }}/">{{ .name }}</a></td>
+        <td><a href="{{ "{{ .Site.BaseURL }}/docs/services/" }}{{ .page_name | default .name | urlize }}/">{{ .name }}</a></td>
         <td>{{ .description | markdownify }}</td>
         <td>{{ .status }}</td>
       </tr>
