@@ -15,7 +15,9 @@
     "make-dirs": "mkdir -p ./public/assets/css && mkdir -p ./public/assets/js && mkdir -p ./public/assets/img && mkdir -p ./public/assets/fonts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "onchange './node_modules/cloudgov-style/css/*.scss' './node_modules/cloudgov-style/img/*' -v -- npm run build",
-    "start": "npm run build && hugo server --renderToDisk"
+    "start": "npm run build && hugo server --renderToDisk",
+    "federalist": "npm run build"
+    
   },
   "repository": {
     "type": "git",
