@@ -3,13 +3,15 @@ menu:
   docs:
     parent: deployment
 layout: ops
-title: Creating a Local Dev Environment With VirtualBox
-linktitle: Local
+title: Creating a Local BOSH Dev Environment With VirtualBox
+linktitle: Local VirtualBox
 ---
 
-BOSH Lite is designed to provide a local development environment for BOSH and by extension Cloud Foundry. BOSH Lite will be used run locally via Virtualbox. This guide is primarily concerned with bringing up a single-instance environment VB.
+Note: This process is no longer used by the cloud.gov platform operations team but are left in place for reference.
 
-To create a local environment you need to follow the instructions from the Cloud Foundry documentation: https://github.com/cloudfoundry/cf-deployment/blob/master/deployment-guide.md.
+[BOSH Lite](https://bosh.io/docs/bosh-lite/) is designed to provide a local development environment for BOSH and by extension Cloud Foundry. BOSH Lite will be used run locally via Virtualbox. This guide is primarily concerned with bringing up a single-instance environment VB.
+
+To create a local environment you need to follow the instructions from the Cloud Foundry documentation: https://github.com/cloudfoundry/cf-deployment/.
 
 
 If you need the spiff utility, install it by running:
