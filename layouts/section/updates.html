@@ -1,29 +1,10 @@
-<!doctype html>
-<html lang="en">
+{{ partial "docs-header.html" . }}
 
-  {{ partial "head.html" . }}
 
-  <body>
+{{ range .Data.Pages }}
+  {{ .Render "index" }}
+{{ end }}
 
-    {{ partial "header.html" . }}
-
-  <div class="header-view">
-    <div class="usa-grid">
-      <h1>Updates</h1>
-      <p>For blog posts, see <a href="https://18f.gsa.gov/tags/cloud-gov/">cloud.gov on the 18F blog</a>.</p>
-      <p>To receive these updates via email, <a href="https://public.govdelivery.com/accounts/USGSATTS/subscriber/new">subscribe here</a>.</p>
-    </div>
-  </div>
-  <div class="usa-grid">
-    <div>
-      {{ range .Data.Pages }}
-      {{ .Render "li" }}
-      {{ end }}
-    </div>
-  </div>
-
-    {{ partial "footer.html" . }}
-    {{ partial "javascript.html" . }}
-
-  </body>
-</html>
+{{ partial "docs-footer.html" . }}
+{{ partial "footer.html" . }}
+{{ partial "javascript.html" . }}

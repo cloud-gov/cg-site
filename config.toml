@@ -22,28 +22,31 @@ pygmentsUseClasses = "true"
   plainIDAnchors = true
 
 
-[[menu.overview]]
-    name = "cloud.gov overview"
+[[menu.docs]]
+    name = "Overview"
     identifier = "overview"
-    weight = -120
-[[menu.overview]]
+    pre = "<i class='fa fa-home fa-fw'></i>"
+    weight = -150
+[[menu.docs]]
     name = "Purchase and pricing"
     identifier = "pricing"
-    weight = -115
-[[menu.overview]]
+    pre = "<i class='fa fa-shopping-cart fa-fw'></i>"
+    weight = -140
+[[menu.docs]]
     name = "Technology and security"
     identifier = "technology"
-    weight = -105
-[[menu.overview]]
+    pre = "<i class='fa fa-lock fa-fw'></i>"
+    weight = -130
+[[menu.docs]]
     name = "Customer stories"
     identifier = "customer-stories"
-    weight = -100
-
+    pre = "<i class='fa fa-users fa-fw'></i>"
+    weight = -120
 [[menu.docs]]
     name = "Getting started"
     identifier = "getting-started"
     pre = "<i class='fa fa-road fa-fw'></i>"
-    weight = -120
+    weight = -115
 [[menu.docs]]
     name = "Deploying apps"
     identifier = "apps"
@@ -69,9 +72,8 @@ pygmentsUseClasses = "true"
     identifier = "experimental"
     pre = "<i class='fa fa-flask fa-fw'></i>"
     weight = -90
-
 [[menu.docs]]
-    name = "cloud.gov team docs"
+    name = "Team documentation"
     identifier = "ops"
     pre = "<i class='fa fa-fw fa-wrench'></i>"
 [[menu.docs]]

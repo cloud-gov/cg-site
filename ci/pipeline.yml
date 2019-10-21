@@ -48,58 +48,58 @@ jobs:
       text: |
         :x: FAILED to deploy cg-site to Production
         <$ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME|View build details>
-      channel: {{slack-channel}}
-      username: {{slack-username}}
-      icon_url: {{slack-icon-url}}
+      channel: ((slack-channel))
+      username: ((slack-username))
+      icon_url: ((slack-icon-url))
   on_success:
     put: slack
     params:
       text: |
         :white_check_mark: Successfully deployed cg-site to Production
         <$ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME|View build details>
-      channel: {{slack-channel}}
-      username: {{slack-username}}
-      icon_url: {{slack-icon-url}}
+      channel: ((slack-channel))
+      username: ((slack-username))
+      icon_url: ((slack-icon-url))
 
 resources:
 - name: cg-site-source
   type: git
   source:
-    uri: {{cg-site-git-url}}
-    branch: {{cg-site-branch}}
+    uri: ((cg-site-git-url))
+    branch: ((cg-site-branch))
 
 - name: pull-request
   type: pull-request
   source:
-    repo: {{cg-site-git-repo}}
-    access_token: {{status-access-token}}
+    repo: ((cg-site-git-repo))
+    access_token: ((status-access-token))
     disable_forks: true
     every: true
 
 - name: cloud-gov-production
   type: cf
   source:
-    api: {{cf-api-url-production}}
-    username: {{cf-deploy-site-username-production}}
-    password: {{cf-deploy-site-password-production}}
-    organization: {{cf-organization}}
-    space: {{cf-space-site}}
+    api: ((cf-api-url-production))
+    username: ((cf-deploy-site-username-production))
+    password: ((cf-deploy-site-password-production))
+    organization: ((cf-organization))
+    space: ((cf-space-site))
     skip_cert_check: false
 
 - name: old-docs-redirect
   type: cf
   source:
-    api: {{cf-api-url-production}}
-    username: {{cf-deploy-olddocs-username-production}}
-    password: {{cf-deploy-olddocs-password-production}}
-    organization: {{cf-organization}}
-    space: {{cf-space-olddocs}}
+    api: ((cf-api-url-production))
+    username: ((cf-deploy-olddocs-username-production))
+    password: ((cf-deploy-olddocs-password-production))
+    organization: ((cf-organization))
+    space: ((cf-space-olddocs))
     skip_cert_check: false
 
 - name: slack
   type: slack-notification
   source:
-    url: {{slack-webhook-url}}
+    url: ((slack-webhook-url))
 
 resource_types:
 - name: pull-request

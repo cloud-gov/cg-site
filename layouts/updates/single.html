@@ -1,37 +1,20 @@
-<!doctype html>
-<html lang="en">
+{{ partial "docs-header.html" . }}
 
-  {{ partial "head.html" . }}
+  
+<header class="post-header">
+  <span class="panel-new-date">{{ .Date.Format "Jan 2, 2006" }}{{ if .Params.author }} • {{ .Params.author }}{{ end }}{{ if .Params.meta }} • {{ .Params.meta }}{{ end }}</span>
+</header>
 
-  <body>
+{{ if .Params.image }}
+<div class="page--banner" style="background-image: url({{ .Params.image}});"></div>
+{{ end }}
 
-    {{ partial "header.html" . }}
+{{ .Content }}
 
-    <div class="header-view">
-      <div class="usa-grid">
-        <h1><a class="link-textblack" href="/updates/">Updates</a></h1>
-      </div>
-    </div>
 
-    <main class="usa-content">
-      <div class="usa-grid">
-        <div class="usa-width-two-thirds panel content-text">
-          <header class="post-header">
-            <span class="panel-new-date">{{ .Date.Format "Jan 2, 2006" }}{{ if .Params.author }} • {{ .Params.author }}{{ end }}{{ if .Params.meta }} • {{ .Params.meta }}{{ end }}</span>
-          </header>
-          <h1>{{ .Title }}</h1>
 
-          {{ if .Params.image }}
-          <div class="page--banner" style="background-image: url({{ .Params.image}});"></div>
-          {{ end }}
+{{ partial "docs-footer.html" . }}
+{{ partial "footer.html" . }}
+{{ partial "javascript.html" . }}
 
-          {{ .Content }}
-       </div>
-      </div>
-    </main>
 
-    {{ partial "footer.html" . }}
-    {{ partial "javascript.html" . }}
-
-  </body>
-</html>

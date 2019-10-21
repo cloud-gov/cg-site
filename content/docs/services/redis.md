@@ -6,21 +6,18 @@ title: Redis
 description: "Redis: an in-memory data structure store"
 aliases:
 - /docs/services/redis28
+- /docs/services/redis32
 ---
 
-cloud.gov offers [Redis](http://www.redis.io/) 2.8 and 3.2 as a service.
+cloud.gov offers [Redis](http://www.redis.io/) 3.2 as a service.
 
 ## Plans
 
-Service Name | Plan Name | Description | Price
+Service Name | Plan Name | Description | 
 ------------ | --------- | ----------- | -----
-`redis28` | `standard` | Redis instance with 10 GB storage | Free in Beta
-`redis32` | `standard` | Redis instance with 10 GB storage | Free in Beta
-`redis32` | `standard-ha` | Redis instance with 10 GB storage | Free in Beta
+`redis32` | `standard-ha` | Redis instance with 10 GB storage | 
 
-*These instances are available in [sandbox spaces]({{< relref "overview/pricing/free-limited-sandbox.md#sandbox-limitations" >}}).*
-
-Note: The `standard-ha` plan runs multiple Redis instances on different machines, so that service is not interrupted by routine platform maintenance. The `standard` plan runs a single instance and will be briefly unavailable during platform maintenance; this plan should not be used for production applications.
+*Note* If you need larger amounts of storage, contact cloud-gov-inquiries@gsa.gov
 
 #### How to create an instance
 

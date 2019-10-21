@@ -14,12 +14,12 @@ To set up your application to be deployed with an automated system, you need a d
 
 ## Plans
 
-Plan Name | Description | Price
+Plan Name | Description | 
 --------- | ----------- | -----
-`space-deployer` | A service account for continuous deployment, limited to a single space | Free
-`space-auditor` | A service account for auditing configuration and monitoring events limited to a single space | Free
+`space-deployer` | A service account for continuous deployment, limited to a single space | 
+`space-auditor` | A service account for auditing configuration and monitoring events limited to a single space | 
 
-*These instances are available in [sandbox spaces]({{< relref "overview/pricing/free-limited-sandbox.md#sandbox-limitations" >}}).*
+*These instances are available in [sandbox spaces]({{< relref "docs/pricing/free-limited-sandbox.md#sandbox-limitations" >}}).*
 
 ## How to create an instance
 

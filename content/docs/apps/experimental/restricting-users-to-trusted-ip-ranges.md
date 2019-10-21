@@ -11,7 +11,7 @@ This feature only limits requests to cloud.gov services, such as the cloud.gov A
 
 ### Contact support to configure restrictions for your domain
 
-_Note: As of October 2017, this feature is not yet available, pending FedRAMP approval. If you want to configure this feature, create a ticket and our team will let you know our estimated timeline for approval._
+_Note: This feature is not yet available and pending FedRAMP approval. If you want to configure this feature, create a ticket and our team will let you know our estimated timeline for approval._
 
 Create a [support ticket](mailto:cloud-gov-support@gsa.gov?body=Email%20domain%3A%0A%0AEgress%20IP%20ranges%3A%0A%0AAgency%20CIO%3A%0A) specifying the IP address ranges that are valid for your domain. Because address restriction applies to all cloud.gov users from your email domain, we will request confirmation from your agency CIO before changing the configuration.
 

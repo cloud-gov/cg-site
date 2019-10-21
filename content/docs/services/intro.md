@@ -4,6 +4,7 @@ menu:
     parent: services
 aliases: 
     - /docs/services/
+    - /docs/pricing/managed-services-cost/
 title: Introduction
 weight: -1
 ---

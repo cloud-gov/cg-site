@@ -8,28 +8,25 @@ aliases:
   - /docs/apps/databases
 ---
 
-If your application uses relational databases for storage, you can use the AWS RDS service to create a database instance.
+If your application uses relational databases for storage, you can use the AWS RDS service to create a database instance. The `redundant` label in an RDS plan name indicates it is a [Multi-AZ (Availability Zone)](https://aws.amazon.com/rds/details/multi-az/) deployment.
 
 ## Plans
 
-Plan Name | Description | Software Version | Price
+Plan Name | Description | Software Version | 
 --------- | ----------- | ------- | -----
-`shared-psql`            | Shared PostgreSQL database for prototyping (no sensitive or production data) | 9.4.7 | Free
-`medium-psql`            | Dedicated medium RDS PostgreSQL DB instance                                  | 9.6.10 |  Will be paid per hour + storage
-`medium-psql-redundant`  | Dedicated redundant medium RDS PostgreSQL DB instance                        | 9.6.10 | Will be paid per hour + storage
-`large-psql`             | Dedicated large RDS PostgreSQL DB instance                                   | 9.6.10 | Will be paid per hour + storage
-`large-psql-redundant`   | Dedicated redundant large RDS PostgreSQL DB instance                         | 9.6.10 | Will be paid per hour + storage
-`shared-mysql`           | Shared MySQL database for prototyping (no sensitive or production data)      | 5.6.27 | Free
-`medium-mysql`           | Dedicated medium RDS MySQL DB instance                                       | 5.7.21 | Will be paid per hour + storage
-`medium-mysql-redundant` | Dedicated redundant medium RDS MySQL DB instance                             | 5.7.21 | Will be paid per hour + storage
-`large-mysql`            | Dedicated large RDS MySQL DB instance                                        | 5.7.21 | Will be paid per hour + storage
-`large-mysql-redundant`  | Dedicated redundant large RDS MySQL DB instance                              | 5.7.21 | Will be paid per hour + storage
-`medium-oracle-se2`      | Dedicated medium RDS Oracle SE2 DB | 12.0.1.2.v11 | Will be paid per hour + storage
+`shared-psql`            | Shared PostgreSQL database for prototyping (no sensitive or production data) | 9.4.7 | 
+`medium-psql`            | Dedicated medium RDS PostgreSQL DB instance                                  | 9.6.10 | 
+`medium-psql-redundant`  | Dedicated redundant medium RDS PostgreSQL DB instance                        | 9.6.10 | 
+`large-psql`             | Dedicated large RDS PostgreSQL DB instance                                   | 9.6.10 | 
+`large-psql-redundant`   | Dedicated redundant large RDS PostgreSQL DB instance                         | 9.6.10 | 
+`shared-mysql`           | Shared MySQL database for prototyping (no sensitive or production data)      | 5.6.27 | 
+`medium-mysql`           | Dedicated medium RDS MySQL DB instance                                       | 5.7.21 | 
+`medium-mysql-redundant` | Dedicated redundant medium RDS MySQL DB instance                             | 5.7.21 | 
+`large-mysql`            | Dedicated large RDS MySQL DB instance                                        | 5.7.21 | 
+`large-mysql-redundant`  | Dedicated redundant large RDS MySQL DB instance                              | 5.7.21 | 
+`medium-oracle-se2`      | Dedicated medium RDS Oracle SE2 DB                                           | 12.0.1.2.v11 |
 
-### Pricing
-Shared instances are free. Simple and redundant instances will have pricing per hour and per GB per month. [Learn more about managed service pricing.]({{< relref "overview/pricing/managed-services-cost.md" >}})
-
-Shared instances are available in [sandbox spaces]({{< relref "overview/pricing/free-limited-sandbox.md#sandbox-limitations" >}}).
+*Note* All buckets have a limit of 1 TB in storage. If you need larger amounts of storage, contact cloud-gov-inquiries@gsa.gov
 
 ## Options
 
@@ -198,6 +195,117 @@ Every RDS instance configured through cloud.gov is [encrypted at rest](https://d
 ## Rotating credentials
 
 You can rotate credentials by creating a new instance and [deleting the existing instance](https://cli.cloudfoundry.org/en-US/cf/delete-service.html). If this is not an option, email [cloud.gov support](mailto:cloud-gov-support@gsa.gov) to request rotating the credentials manually.
+
+## Working with OracleDB
+
+Since Oracle is not open-source there are fewer resources available online to get started working with OracleDB and Cloud Foundry. We provide a few tips here.  This example worked with `ojdbc8.jar`, and will likely needs some tweaks for `ojdbc10.jar`.
+
+
+### Demo with Spring Music and Oracle
+
+To demonstrate the core Cloud Foundry / OracleDB functionality, we'll start by deploying the 
+[Spring Music app](https://github.com/cloudfoundry-samples/spring-music). 
+
+First, though, one needs the proprietary Oracle database drivers.
+Visit the Oracle drivers' site at http://www.oracle.com/technetwork/database/application-development/jdbc/downloads/index.html and download the `ojdbc8.jar` from the latest available release. You will need to have a valid Oracle profile account for the download. 
+
+Then, clone the repository and make a `libs/` directory:
+
+```bash
+git clone https://github.com/cloudfoundry-samples/spring-music
+cd spring-music
+mkdir libs/
+```
+
+Copy the downloaded `ojdbc8.jar` to the `libs/` directory of `spring-music`. 
+
+Edit `build.gradle`, look for the following near line 60:
+
+```
+    // Oracle - uncomment one of the following after placing driver in ./libs
+    // compile files('libs/ojdbc8.jar')
+    // compile files('libs/ojdbc7.jar')
+```
+and remove the `//` comment from the line for `libs/ojdbc8.jar`. Save the `build.gradle` file.
+
+After installing the 'cf' [command-line interface for Cloud Foundry](http://docs.cloudfoundry.org/cf-cli/), and logging in to cloud.gov, `cf login --sso -a https://api.fr.cloud.gov`, the application can be built and pushed using these commands:
+
+```bash
+cf create-service aws-rds medium-oracle-se2 spring-oracle
+# Wait 20 minutes: get coffee, make a sandwich, ...
+./gradlew clean assemble
+cf push --no-start
+cf bind-service spring-music spring-oracle
+cf restart spring-music
+```
+
+When the restart completes, you can visit the app and view in the upper-right-hand `i` button that it's now using an OracleDB, or view the `/appinfo` path, as in: `curl https://spring-music-ADJECTIVE-ANIMAL.app.cloud.gov/appinfo`
+
+### Connecting to Oracle
+
+Install Oracle's `instantclient-basiclite` and `instantclient-sqlplus` for your operating system.
+
+To get the database connection information, we'll use 
+[Cloud Foundry service keys](https://docs.cloudfoundry.org/devguide/services/service-keys.html) as follows, for the
+case of an Oracle database called `spring-oracle`:
+
+``` sh
+$ cf create-service-key spring-oracle-key
+Creating service key spring-oracle-key for service instance spring-oracle ...
+OK
+
+$ cf service-key spring-oracle spring-oracle-key
+Getting key spring-oracle-key for service instance spring-oracle ...
+
+{
+  "db_name": "ORCL",
+  "host": "cg-aws-broker-prod.RANDOMSTRING.us-gov-west-1.rds.amazonaws.com",
+  "password": "secretpassword",
+  "port": "1521",
+  "uri": "oracle://random-username:secretpassword@cg-aws-broker-prodRANDOMSTRING.us-gov-west-1.rds.amazonaws.com:1521/ORCL",
+  "username": "random-username"
+}
+```
+
+Make an SSH tunnel from your workstation to Cloud Foundry to the OracleDB using the `host:` value, e.g. using port `15210` on the localhost:
+
+``` sh
+cf ssh -N -L 15210:cg-aws-broker-prod.RANDOMSTRING.us-gov-west-1.rds.amazonaws.com:1521 spring-music
+```
+
+Now connect using `sqlplus random-username/secretpassword@host:port/ORCL`, where host is `localhost` and `port` is the first part of the `-L` connection string above. e.g.:
+
+```
+./sqlplus random-username/secretpassword@localhost:15210/ORCL
+```
+
+Then you can use SQLPLUS commands like `SELECT table_name FROM user_tables;`
+
+## Connect to databases without use of `connect-to-service`
+
+Example for app name `hello-doe`
+
+
+```
+myapp_guid=$(cf app --guid hello-doe)
+
+tunnel=$(cf curl /v2/apps/$myapp_guid/env | jq -r '[.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials | .host, .port] | join(":")')
+
+cf ssh -N -L 5432:$tunnel hello-doe
+```
+
+Another window:
+
+```
+myapp_guid=$(cf app --guid hello-doe)
+
+creds=$(cf curl /v2/apps/$myapp_guid/env | jq -r '[.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials | .username, .password] | join(":")')
+
+dbname=$(cf curl /v2/apps/$myapp_guid/env | jq -r '.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials | .db_name')
+
+psql postgres://$creds@localhost:5432/$dbname
+
+```
 
 ## Version information
 
