@@ -48,8 +48,9 @@ name: _acme-challenge.www.example.gov., value: THISISASAMPLEVALUE, ttl: 120
 
 To accomplish this without downtime, follow the intructions using TXT records rather than CNAME/ALIAS records. **Using CNAME/ALIAS records will result in some downtime for your domain.**
 
-Work with your DNS provider to create the TXT record. In this case, we need to create a TXT record for _acme-challenge.www.example.gov. with value THISISASAMPLEVALUE and TTL of 120. 
-Once you've created the record, first confirm that you can resolve the record yourself:
+Work with your DNS provider to create the TXT record. In this case, we need to create a TXT record for `_acme-challenge.www.example.gov.` with value `THISISASAMPLEVALUE` and TTL of 120. 
+
+Once you've created the record, confirm that you can resolve the record yourself:
 
 ```
 $ nslookup -query=TXT _acme-challenge.www.example.gov 1.1.1.1  # we're using 1.1.1.1 to be sure we aren't querying internal records. Use any public DNS server here.
@@ -200,7 +201,8 @@ name: _acme-challenge.www.example.gov., value: THISISASAMPLEVALUE, ttl: 120
 
 Update your DNS as explained in the command output. To accomplish this without downtime, follow the intructions using TXT records rather than CNAME/ALIAS records. **Using CNAME/ALIAS records will result in some downtime for your domain.**
 
-Work with your DNS provider to create the TXT record. In this case, we need to create a TXT record for _acme-challenge.www.example.gov. with value THISISASAMPLEVALUE and TTL of 120. 
+Work with your DNS provider to create the TXT record. In this case, we need to create a TXT record for `_acme-challenge.www.example.gov.` with value `THISISASAMPLEVALUE` and TTL of 120. 
+
 Once you've created the record, first confirm that you can resolve the record yourself:
 
 ```
@@ -316,7 +318,8 @@ name: _acme-challenge.www.example.gov., value: THISISASAMPLEVALUE, ttl: 120
 
 Update your DNS records as indicated above. Again, use the TXT record instructions to eliminate downtime. Using the CNAME instructions will result in downtime for your application.
 
-Work with your DNS provider to create the TXT record. In this case, we need to create a TXT record for _acme-challenge.www.example.gov. with value THISISASAMPLEVALUE and TTL of 120. 
+Work with your DNS provider to create the TXT record. In this case, we need to create a TXT record for `_acme-challenge.www.example.gov.` with value `THISISASAMPLEVALUE` and TTL of 120. 
+
 Once you've created the record, first confirm that you can resolve the record yourself:
 
 ```
