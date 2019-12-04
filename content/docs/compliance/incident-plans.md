@@ -5,7 +5,7 @@ menu:
 title: Contingency/incident plans
 ---
 
-You are responsible for contingency planning (disaster recovery planning) and security incident response planning for your customer system. Here are suggestions for developing your plans.
+You, as the customer, are responsible for contingency planning (disaster recovery planning) and security incident response planning for your customer system. To help, this page has suggestions for developing your plans.
 
 Here's the cloud.gov division of responsibility, as described in our [System Security Plan and Control-by-Control Inheritance matrix](/docs/security/fedramp-tracker/#how-you-can-use-this-p-ato):
 
@@ -18,7 +18,7 @@ From our Control-by-Control Inheritance matrix:
 * CP-2: "The application owner is responsible for developing a contingency plan that addresses the listed items for the application."
 * CP-4: "The application owner is responsible for testing the contingency plan for the application."
 
-You can build a brief contingency plan that focuses on communications around the application and management of your application code and data. 
+You can build a brief contingency plan that focuses on communications around the application and management of your application code and data.
 
 For example, consider writing down which roles on your team are subscribed to [cloud.gov status updates](https://cloudgov.statuspage.io) (such as Application System Owner and Product Manager), and link to parts of the cloud.gov documentation that give instructions for re-deploying your application or restoring data backups. If your agency doesn't provide a template, NIST provides templates, and feel free to adapt [the cloud.gov contingency plan](/docs/ops/contingency-plan/).
 
@@ -43,7 +43,7 @@ If your agency doesn't provide a template, here's a template that you can use, b
 
 Along the same lines as the contingency plan, you can build a brief security incident response plan that focuses on communications for your application.
 
-For example, consider writing down who you need to notify at your agency if you have a security incident in your application, and write down which role on your team is responsible for [notifying cloud.gov of the incident and asking cloud.gov for support](/help/). If your agency doesn’t provide a template, NIST provides templates, and feel free to adapt the [cloud.gov incident response plan](/docs/ops/security-ir/).
+For example, consider writing down who you need to notify at your agency if you have a security incident in your application, as well as which role on your team is responsible for [notifying cloud.gov of the incident and asking cloud.gov for support](/help/). If your agency doesn’t provide a template, NIST provides templates, and feel free to adapt the [cloud.gov incident response plan](/docs/ops/security-ir/).
 
 Example scenarios for your security incident response plan test/exercise:
 
