@@ -1,3 +1,4 @@
+baseurl = "https://cloud.gov"
 languageCode = "en-us"
 title = "cloud.gov"
 pluralizelisttitles = "false"
