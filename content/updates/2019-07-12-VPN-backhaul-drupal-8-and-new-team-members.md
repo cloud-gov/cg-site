@@ -7,11 +7,9 @@ Curious what’s new that you might find helpful as a cloud.gov user? Here are h
 
 ## Announcements
 
-### Now available: Connect your cloud.gov apps to your private network
 
-Last October, we announced our team was working on a way for cloud.gov applications to interact securely with your applications on other networks through a VPN, such as systems in an agency data center. This VPN connection can make it easier to run cloud-native applications that need to communicate with legacy systems.
+*Update*: Due to changes in customer needs, private network rollout was halted.
 
-We are so excited to announce [our VPN backhaul](https://cloud.gov/docs/apps/private-egress/) is officially available, and we can configure it for customers who need it! [Contact us if you’d like this to use this feature](https://cloud.gov/docs/apps/private-egress/#how-to-get-a-dedicated-pool-of-cloud-gov-hosts-connected-to-your-organization), and we’ll work with the appropriate teams in your agency to get you set up.
 
 ### 2019 FedRAMP annual assessment completed, cloud.gov granted re-authorization
 
