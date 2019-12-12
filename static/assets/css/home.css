@@ -24,7 +24,7 @@
   display: inline-block;
   padding-right: 40px;
   text-decoration: none;
-  background: url(/img/angle-arrow-right-orange.svg) right 20px no-repeat;
+  background: url(../../img/angle-arrow-right-orange.svg) right 20px no-repeat;
   background-size: 30px 30px;
 }
 #home h3,
@@ -149,37 +149,37 @@
 }
 #home section .editorial-grid .agency-ATF {
   padding-top: 75px;
-  background: url(/img/logos/ATF-logo.svg) left top no-repeat;
+  background: url(../../img/logos/ATF-logo.svg) left top no-repeat;
   background-size: 75px 75px;
 }
 #home section .editorial-grid .agency-DOE {
   padding-top: 75px;
-  background: url(/img/logos/Dept-of-Education-logo.svg) 0 0 no-repeat;
+  background: url(../../img/logos/Dept-of-Education-logo.svg) 0 0 no-repeat;
   background-size: 75px 75px;
 }
 #home section .editorial-grid .agency-DOI {
   padding-top: 75px;
-  background: url(/img/logos/DOI-logo.svg) 0 0 no-repeat;
+  background: url(../../img/logos/DOI-logo.svg) 0 0 no-repeat;
   background-size: 75px 75px;
 }
 #home section .editorial-grid .agency-FBI {
   padding-top: 75px;
-  background: url(/img/logos/FBI-logo.svg) 0 0 no-repeat;
+  background: url(../../img/logos/FBI-logo.svg) 0 0 no-repeat;
   background-size: 75px 75px;
 }
 #home section .editorial-grid .agency-FEC {
   padding-top: 75px;
-  background: url(/img/logos/FEC-logo.svg) 0 0 no-repeat;
+  background: url(../../img/logos/FEC-logo.svg) 0 0 no-repeat;
   background-size: 75px 75px;
 }
 #home section .editorial-grid .agency-GSA {
   padding-top: 75px;
-  background: url(/img/logos/GSA-logo.svg) 0 0 no-repeat;
+  background: url(../../img/logos/GSA-logo.svg) 0 0 no-repeat;
   background-size: 75px 75px;
 }
 #home section .editorial-grid .agency-IRS {
   padding-top: 75px;
-  background: url(/img/logos/IRS-logo.svg) 0 0 no-repeat;
+  background: url(../../img/logos/IRS-logo.svg) 0 0 no-repeat;
   background-size: 75px 75px;
 }
 #home section .editorial-content p {
@@ -343,7 +343,7 @@
 }
 #home #main h1 a:hover {
   color: #02699b;
-  background-image: url(/img/angle-arrow-right-blue.svg);
+  background-image: url(../../img/angle-arrow-right-blue.svg);
   background-size: 30px 30px;
   padding-right: 40px;
   border-bottom: none;
@@ -358,11 +358,11 @@
 #home .editorial-grid h4 + p a[href],
 #home .editorial-grid h5 a[href] {
   padding-right: 20px;
-  background: url(/img/link-icons/icon-external.svg) right center no-repeat;
+  background: url(../../img/link-icons/icon-external.svg) right center no-repeat;
 }
 #home .editorial-grid h4 + p a[href] {
   padding-right: 24px;
-  background: url(/img/link-icons/icon-external.svg) right center no-repeat;
+  background: url(../../img/link-icons/icon-external.svg) right center no-repeat;
   background-size: 24px 24px;
 }
 #home .editorial-grid h5 a[href] {
@@ -514,15 +514,15 @@
   color: #223e51;
 }
 #pricing #package-rates li h2.sandbox {
-  background: url(/img/illustrations/pricing-sandbox.svg) no-repeat;
+  background: url(../../img/illustrations/pricing-sandbox.svg) no-repeat;
   background-size: 100px 100px;
 }
 #pricing #package-rates li h2.prototyping {
-  background: url(/img/illustrations/pricing-prototype.svg) no-repeat;
+  background: url(../../img/illustrations/pricing-prototype.svg) no-repeat;
   background-size: 100px 100px;
 }
 #pricing #package-rates li h2.production {
-  background: url(/img/illustrations/pricing-fisma-moderate.svg) no-repeat;
+  background: url(../../img/illustrations/pricing-fisma-moderate.svg) no-repeat;
   background-size: 100px 100px;
 }
 #pricing #package-rates li h2 + p {
@@ -722,10 +722,10 @@
 }
 #pricing a[href$=".pdf"] {
   padding-right: 18px;
-  background: url(/img/link-icons/icon-pdf.svg) right center no-repeat;
+  background: url(../../img/link-icons/icon-pdf.svg) right center no-repeat;
 }
 #pricing .diagram {
-  background: url(/img/illustrations/pricing-example-FY20.png) center top no-repeat;
+  background: url(../../img/illustrations/pricing-example-FY20.png) center top no-repeat;
   background-size: contain;
   min-height: 200px;
   /* width: 90%; */
@@ -763,7 +763,7 @@
   #home #main h1 a {
     display: inline-block;
     text-decoration: none;
-    background: url(/img/angle-arrow-right-orange.svg) right 20px no-repeat;
+    background: url(../../img/angle-arrow-right-orange.svg) right 20px no-repeat;
     padding-right: 60px;
     background-size: 45px 45px;
   }

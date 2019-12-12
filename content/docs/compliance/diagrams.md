@@ -11,8 +11,8 @@ These diagrams can help you build a System Security Plan for an application, or 
 
 You can use these realistic sample diagrams as inspiration for your own diagrams for your customer system.
 
-* [Example #1 PDF](/img/example-diagram-1.pdf) ([SVG](/img/example-diagram-1.svg)) - A frontend website application and a backend API application, connected to a database.
-* [Example #2 PDF](/img/example-diagram-2.pdf) ([SVG](/img/example-diagram-2.svg)) - An application connected to a database and a Redis queue, with authentication, and with a connection to an external email service (not provided by cloud.gov).
+* [Example #1 PDF]({{ .Site.BaseURL }}/img/example-diagram-1.pdf) ([SVG]({{ .Site.BaseURL }}/img/example-diagram-1.svg)) - A frontend website application and a backend API application, connected to a database.
+* [Example #2 PDF]({{ .Site.BaseURL }}/img/example-diagram-2.pdf) ([SVG]({{ .Site.BaseURL }}/img/example-diagram-2.svg)) - An application connected to a database and a Redis queue, with authentication, and with a connection to an external email service (not provided by cloud.gov).
 
 ## Customer systems
 

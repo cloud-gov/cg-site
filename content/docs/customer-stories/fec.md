@@ -10,9 +10,9 @@ aliases:
 ---
 The Federal Election Commission (FEC) recently worked with 18F to redesign its website. By hosting [FEC.gov](https://www.fec.gov/) on cloud.gov and moving its data to the cloud, the FEC anticipates saving 85% in hosting costs and is better prepared for peak traffic events.
 
-![FEC case study illustration](/img/illustrations/fec-case-study-illo.svg)
+![FEC case study illustration]({{ .Site.BaseURL }}/img/illustrations/fec-case-study-illo.svg)
 
->[Download this case study (PDF)](/resources/casestudy-fec.pdf)
+>[Download this case study (PDF)]({{ .Site.BaseURL }}/resources/casestudy-fec.pdf)
 
 
 ## $1.2 million annual savings
