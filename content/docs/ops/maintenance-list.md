@@ -12,24 +12,16 @@ personally, you are responsible for ensuring that an appropriate person does it.
 If you haven't already reached out on Slack, reach out during standup to get
 visibility with the people who might best help.
 
-# Is it your first day of support?
+# Are you new to platform support?
 
-- Update the [`#cg-platform`](https://gsa-tts.slack.com/messages/cg-platform/)
-topic to include your name as the support contact.
-- Update the support schedule by moving yourself to the end of the list in the
-[slackbot auto response](https://gsa-tts.slack.com/customize/slackbot) for
-`atlas support schedule`.
 - Join/unmute [`#cg-support`](https://gsa-tts.slack.com/messages/cg-support/)
-and [`#cg-platform-news`](https://gsa-tts.slack.com/messages/cg-platform-news/)
-- Meet with the previous support person and take responsibility for any open
-support items they are still working on. There is a standing support sync meeting
-(Tuesday 4:30-5 pm ET) that you should join if you are rolling on or off support
-that week.
 
-## At least once during your week of support
 
+## Weekly support tasks
+
+- Update the #cg-support topic to include your name as the support contact.
 - In [logs.fr.cloud.gov](https://logs.fr.cloud.gov/), go under "Management" -> "Advanced Settings" and check the Kibana [timezone setting](https://www.elastic.co/guide/en/kibana/current/advanced-options.html) (`dateFormat:tz`) - it should be set to `Browser`. If anyone has changed it, change it back to `Browser`.
-- Check for any new CVEs in [MongoDB](https://www.cvedetails.com/vulnerability-list/vendor_id-12752/product_id-25450/Mongodb-Mongodb.html), [Elasticsearch](https://www.cvedetails.com/vulnerability-list/vendor_id-13554/Elasticsearch.html), and [Redis](https://www.cvedetails.com/vulnerability-list/vendor_id-15183/product_id-31837/Pivotal-Software-Redis.html).
+- Check for any new CVEs in [Elasticsearch](https://www.cvedetails.com/vulnerability-list/vendor_id-13554/Elasticsearch.html), and [Redis](https://www.cvedetails.com/vulnerability-list/vendor_id-15183/product_id-31837/Pivotal-Software-Redis.html).
 
 # Daily maintenance checklist
 
@@ -91,12 +83,7 @@ deploying an update that will upgrade the stemcell. You should also read the
 
 ## Review and respond to open alerts
 
-Review all recent alerts and notifications delivered to [`cg-notifications`](https://groups.google.com/a/gsa.gov/forum/#!forum/cloud-gov-notifications)
-, [`#cg-platform-news`](https://gsa-tts.slack.com/messages/cg-platform-news/)
-
-### Are there no alerts or notifications?
-Verify the monitoring system is functioning correctly and confirm that alerts
-are reaching their expected destinations.
+Review active alerts at https://prometheus.fr.cloud.gov/alerts and review all production smoke tests to ensure they are passing.
 
 ### Investigate open alerts
 - Use our guides for reviewing cloud.gov alerts ([prometheus](https://github.com/18F/cg-deploy-prometheus/tree/master/bosh), [elastalert](https://github.com/18F/cg-deploy-logsearch/tree/master/elastalert)) for alert descriptions, links to the relevant rules, and starting points for reviewing each type of alert.
@@ -111,7 +98,7 @@ If the alert may indicate a security issue follow the
 
 #### Is the alert a false-positive?
 If the alert can be tuned to reduce the number of false-positives with less than
-one day's work, do it.  If more work is required to tune the alert, add a card
+two hours of work, do it.  If more work is required to tune the alert, add a card
 to capture the work that needs to be done or +1 an existing card if one already
 exists for tuning the alert.
 
