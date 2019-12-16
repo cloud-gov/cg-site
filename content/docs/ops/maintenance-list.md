@@ -19,7 +19,7 @@ visibility with the people who might best help.
 
 ## Weekly support tasks
 
-- Update the #cg-support topic to include your name as the support contact.
+- Update the [`#cg-support`](https://gsa-tts.slack.com/messages/cg-support/) topic to include your name as the support contact.
 - In [logs.fr.cloud.gov](https://logs.fr.cloud.gov/), go under "Management" -> "Advanced Settings" and check the Kibana [timezone setting](https://www.elastic.co/guide/en/kibana/current/advanced-options.html) (`dateFormat:tz`) - it should be set to `Browser`. If anyone has changed it, change it back to `Browser`.
 - Check for any new CVEs in [Elasticsearch](https://www.cvedetails.com/vulnerability-list/vendor_id-13554/Elasticsearch.html), and [Redis](https://www.cvedetails.com/vulnerability-list/vendor_id-15183/product_id-31837/Pivotal-Software-Redis.html).
 
@@ -83,7 +83,8 @@ deploying an update that will upgrade the stemcell. You should also read the
 
 ## Review and respond to open alerts
 
-Review active alerts at https://prometheus.fr.cloud.gov/alerts and review all production smoke tests to ensure they are passing.
+- Review active alerts at https://prometheus.fr.cloud.gov/alerts. 
+- Review all production smoke tests to ensure they are passing.
 
 ### Investigate open alerts
 - Use our guides for reviewing cloud.gov alerts ([prometheus](https://github.com/18F/cg-deploy-prometheus/tree/master/bosh), [elastalert](https://github.com/18F/cg-deploy-logsearch/tree/master/elastalert)) for alert descriptions, links to the relevant rules, and starting points for reviewing each type of alert.
