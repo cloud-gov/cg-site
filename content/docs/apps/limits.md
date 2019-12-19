@@ -9,23 +9,7 @@ Org Managers are free to configure your org's [quota]({{< relref "docs/pricing/q
 
 ## Org
 
-To view your [org quota]({{< relref "docs/pricing/quotas.md" >}}):
-
-1. List the details about your org: `cf org <org>`
-2. Find your quota name from the `quota:` property.
-3. View your quota: `cf quota <quota>`
-
-To change your org quota, [ask support](/help/). You can request an increase in number of [application routes]({{< relref "docs/apps/custom-domains.md" >}}) or [service instances]({{< relref "docs/apps/managed-services.md" >}}) with no cost impact. Increasing or decreasing org memory quota changes your usage costs.
-
-### Tracking quota usage
-
-You can use the following `cf` CLI plugins to help identify the right quota to set for your org. They are available from the _CF-Community_ plugin site: `cf add-plugin-repo CF-Community https://plugins.cloudfoundry.org/`
-
-- The [Usage Report plugin](https://github.com/krujos/usagereport-plugin) gives you a report of how your quota is used across visible organizations and spaces. To install: `cf install-plugin 'Usage Report' -r CF-Community`
-
-- The [Statistics plugin](https://github.com/swisscom/cf-statistics-plugin) gives you real-time visibility of the actual memory usage for each application instance compared to the memory limit. To install: `cf install-plugin Statistics -r CF-Community`
-
-You can use these two in combination to get a good sense of where you can lower instance memory limits to make room for more instances elsewhere in your org or just reduce your quota to reduce costs. 
+See more about how to [manage your orgs' quotas]({{< relref "docs/orgs-spaces/limits.md" >}}).
 
 ## Space
 
@@ -64,11 +48,11 @@ The application cannot access more than the specified amount of memory.
 		urls:
 		last uploaded: Wed Jul 22 20:09:56 UTC 2015
 
-		     state     since                    cpu    memory          disk          
-		#0   running   2015-07-30 05:58:11 PM   0.0%   94.6M of 128M   80.4M of 128M      
+		     state     since                    cpu    memory          disk
+		#0   running   2015-07-30 05:58:11 PM   0.0%   94.6M of 128M   80.4M of 128M
 
 
 - Any application which exceeds its memory limit will be automatically restarted. Use `cf events APPNAME` to look for 'out of memory' crashes.
 
-		... description   
+		... description
 		... index: 0, reason: CRASHED, exit_description: out of memory, exit_status: 255
