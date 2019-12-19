@@ -2,16 +2,16 @@
 menu:
   docs:
     parent: orgs-spaces
-title: Create a new org as an existing customer
+title: Create a new org
 ---
 
 ## Request a new organization as an existing customer
 
-Existing cloud.gov customers can request an org creation by sending a [new org request email](mailto:cloud-gov-inquiries@gsa.gov,cloud-gov-support@gsa.gov?subject=New%20Org%20Request&body=System%20name%20(e.g.%20org-system)%3A%20%0ASystem%20type%3A%20Prototyping%2C%20FISMA%20Low%2C%20FISMA%20Moderate%0AQuota%3A%20%23GB%0AOrg%20manager%20email%20(project%20manager%20or%20technical%20POC)%3A%20%0ASystem%20owner%20email%20(security%2Fcompliance%20POC)%3A). This email link will pre-populate the required information.
+To request a new org be created, please [send a new org request email](mailto:cloud-gov-inquiries@gsa.gov,cloud-gov-support@gsa.gov?subject=New%20Org%20Request&body=System%20name%20(e.g.%20org-system)%3A%20%0ASystem%20type%3A%20Prototyping%2C%20FISMA%20Low%2C%20FISMA%20Moderate%0AQuota%3A%20%23GB%0AOrg%20manager%20email%20(project%20manager%20or%20technical%20POC)%3A%20%0ASystem%20owner%20email%20(security%2Fcompliance%20POC)%3A). This email link will pre-populate the required information described below.
 
 ## Required information
 
-To create a new organization through this process, you must be an existing customer and have a current agreement in place. If you'd like to learn more about <>
+To create a new organization through this process, you must be an existing customer and have a current agreement in place.
 
 ### Org name
 
