@@ -2,7 +2,7 @@
 menu:
   docs:
     parent: compliance
-title: IPv6, HTTPS, and DNSSEC
+title: IPv6, HTTPS, DNSSEC, and Certificates
 ---
 
 Here's what cloud.gov does to support relevant federal standards and recommendations, for applications on `*.app.cloud.gov` and [custom domains]({{< relref "docs/apps/custom-domains.md" >}}).
@@ -34,3 +34,11 @@ If you do need DNSSEC for your custom domain, you are responsible for configurin
 cloud.gov supports mapping your DNSSEC-enabled custom domain to your applications hosted on cloud.gov -- see [DNSSEC support for the CDN service]({{< relref "docs/services/cdn-route.md#dnssec-support" >}}) and [DNSSEC support for the custom domain service]({{< relref "docs/services/custom-domains.md#dnssec-support" >}}).
 
 *Additional details are available the cloud.gov System Security Plan, including controls SC-20, SC-21, SC-22, and SC-23.*
+
+## Certificates
+
+cloud.gov's global TLS certificate is issued by a 3rd party, open source vendor known as [Let's Encrypt](https://letsencrypt.org/). Let's Encrypt allows for individuals, companies, or agencies to request free TLS certificates in an automated fashion for easy HTTPS functionality. As part of that, the cloud.gov platform does not control any aspect of the certificate provisioning process other than the common name and alternative name. We do not control the ciphers, certificate validity, or other algorithms used in modern TLS certificate creation.
+
+The benefit of using Let's Encrypt, even though the cloud.gov platform doesn't control much of the provisioning process, is how it allows the cloud.gov team to bring a full HTTPS/TLS experience (along with all the compliance requirements) to customers at both no-cost and with full certificate authority validity. Let's Encrypt has partnered with IdenTrust to have their intermediate certificates cross-signed by IdenTrust, who has partnered with nearly all major vendors which ship their products with root certificates. Due to the strategic partnership Let's Encrypt has, nearly every programming language and operating system automatically trusts Let's Encrypt certificates automatically. This is a major benefit to the cloud.gov team, as cross-signed intermediate certificates can be cost-prohibitive to acquire, which is why a lot of vendors just make their root certificate authority certificate available, requiring customers to download them and making the overall user experience much more difficult.
+
+Let's Encrypt is a complicated yet powerful TLS certificate vendor. While the cloud.gov team cannot change the way the certificates are provisioned, any support requests or questions regarding our TLS configuration are welcome at [cloud-gov-support@gsa.gov](mailto:cloud-gov-support@gsa.gov?subject=TLS%20Certificate%20Questions). You can also find more about how Let's Encrypt works via their [public documentation](https://letsencrypt.org/docs/).
