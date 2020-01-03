@@ -77,6 +77,7 @@ Before we put a new repository into production:
      * `Admin` for [cloud-gov-ops](https://github.com/orgs/18F/teams/cloud-gov-ops/members).
 * Set up CI/CD for changes (CM-3).
 * Open a PR to add it to the [repos list]({{< relref "docs/ops/repos.md#repositories" >}}) (to help us keep track of our repos and support open source reuse of our work).
+* Open a PR to add it to the [repos list for pre-merge checks](https://github.com/18F/cg-pipeline-tasks/blob/master/security-considerations/repos.txt)
 
 ## What if a configuration changed and it is not in Configuration Management?
 If possible, Configuration Management tools need to be set up to always roll back to a known state. Other than that, these tools need to be able to "recreate" all settings from the known configurations.
