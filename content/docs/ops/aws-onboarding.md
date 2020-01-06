@@ -37,12 +37,7 @@ To set up multi-factor authentication (MFA):
 
 1. Click your account name in the upper right corner.
 1. Click 'Security Credentials'.
-1. You might think this would be where you'd be able to add MFA. Sadly, no.
-1. Click 'Users' in the left-side menu.
-1. Search for your own username.
-1. Click your username.
-1. Click the resulting 'Security credentials' tab.
-1. Look for the words 'Assigned MFA device'. If the words 'No' appear next to them, click the pencil icon and proceed from there.
+1. Scroll to the 'Multi-factor authentication (MFA)' section and configure your MFA application.
 
 ### Changing AWS configuration
 
