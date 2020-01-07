@@ -21,7 +21,7 @@ The **[Federal Risk and Authorization Management Program (FedRAMP)](https://www.
 
 Once that P-ATO is granted, FedRAMP requires cloud.gov to undergo re-assessment every year and maintain continuous monitoring. This gives your agency ongoing assurance that cloud.gov is compliant.
 
-For DoD teams: the Defense Information Systems Agency (DISA) categorizes [FedRAMP Moderate as equivalent to DISA impact level two](http://iasecontent.disa.mil/cloud/SRG/#3INFORMATIONSECURITYOBJECTIVES/IMPACTLEVELS), and they have issued a DoD Provisional Authorization for cloud.gov at DISA impact level two.
+For DoD teams: the Defense Information Systems Agency (DISA) categorizes [FedRAMP Moderate as equivalent to DISA impact level two](https://dl.dod.cyber.mil/wp-content/uploads/cloud/pdf/Cloud_Computing_SRG_v1r3.pdf) and they have issued a DoD Provisional Authorization for cloud.gov at DISA impact level two.
 
 ## How you can use this P-ATO
 
@@ -37,4 +37,4 @@ The [**Control Implementation Summary + Customer Responsibility Matrix + Control
 
 ## Start the ATO process
 
-If you want to use cloud.gov, [**request the P-ATO documentation package from FedRAMP**](https://s3.amazonaws.com/sitesusa/wp-content/uploads/sites/482/2015/03/FedRAMP-Package-Request-Form_V4_06192014.pdf) (the Package ID for that form is F1607067912). You can also view the [FedRAMP Marketplace page for cloud.gov](https://marketplace.fedramp.gov/#/product/18f-cloudgov?sort=productName).
+If you want to authorize cloud.gov, [**request the P-ATO documentation package from FedRAMP**](https://s3.amazonaws.com/sitesusa/wp-content/uploads/sites/482/2015/03/FedRAMP-Package-Request-Form_V4_06192014.pdf) (the Package ID for that form is F1607067912). You can also view the [FedRAMP Marketplace page for cloud.gov](https://marketplace.fedramp.gov/#/product/18f-cloudgov?sort=productName).
