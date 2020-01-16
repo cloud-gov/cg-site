@@ -89,3 +89,10 @@ uaac target <OPS_UAA_FQDN>
 uaac token client get admin -s <OPS_UAA_ADMINCLIENT_PASSPHRASE>
 ./make-ops-admin.sh -r <EMAIL_ADDRESS>
 ```
+
+Verify their permissions have been removed using `validate_admins.sh` and making sure their email address no longer appears in the lists.
+
+```sh
+cd /path/to/cg-scripts
+./validate_admins.sh
+```
