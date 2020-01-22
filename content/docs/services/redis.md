@@ -17,7 +17,10 @@ Service Name | Plan Name | Description |
 ------------ | --------- | ----------- | -----
 `redis32` | `standard-ha` | Redis instance with 10 GB storage | 
 
-*Note* If you need larger amounts of storage, contact cloud-gov-inquiries@gsa.gov
+*Additional Cost:* Redis has a limit of 10GB in storage. After 10G, each additional gigabyte will cost $100 per month.
+
+
+
 
 #### How to create an instance
 

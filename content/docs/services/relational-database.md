@@ -26,9 +26,11 @@ Plan Name | Description | Software Version |
 `large-mysql-redundant`  | Dedicated redundant large RDS MySQL DB instance                              | 5.7.21 | 
 `medium-oracle-se2`      | Dedicated medium RDS Oracle SE2 DB                                           | 12.0.1.2.v11 |
 
-*Note* All buckets have a limit of 1 TB in storage. If you need larger amounts of storage, contact cloud-gov-inquiries@gsa.gov
 
-## Options
+*Additional Cost:* All databases have a limit of 1TB in storage. After 1TB, each additional terabyte will cost $200 per month.
+
+
+## Optione
 
 Name | Required | Description | Default
 --- | --- | --- | ---

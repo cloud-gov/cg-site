@@ -30,14 +30,14 @@ Resource  | Previous monthly price | New monthly price  |
 
 - RDS, S3, Elasticsearch, and Redis will now run on “high-availability” servers, providing you with additional stability and redundancy.
 
-- Previously, cloud.gov provided RDS, S3, Elasticsearch, and Redis at no additional cost for a “limited time.” We will continue to provide these services at no additional cost as long as your memory quota remains below the following limits. If you expect to need larger amounts of storage, contact cloud-gov-inquiries@gsa.gov. At higher amounts, we will charge you for the additional IaaS costs. 
+- Previously, cloud.gov provided RDS, S3, Elasticsearch, and Redis at no additional cost for a “limited time.” We will continue to provide these services at no additional cost as long as your memory quota remains below the following limits. 
 
 
-     | Previous storage limit | New storage limit
-  --------- | ----------- | -----
-  `RDS` | unspecified |  1 TB
-  `S3` | unspecified |  5 TB
-  `Redis` | 10 GB |  10 GB
-  `ElasticSearch` | 10 GB |  10 GB
+     | Previous storage cap | New storage cap | Additional Storage
+  --------- | ----------- | ----- | -----
+  `RDS` | unspecified |  1 TB | $200 per terabyte/month
+  `S3` | unspecified |  5 TB | $100 per terabyte/month
+  `Redis` | 10 GB |  10 GB | $100 per gigabyte/month
+  `ElasticSearch` | 10 GB | 10 GB |  $100 per gigabyte/month
 
 If you have questions or want a customized cost projection for your agreement, email us at cloud-gov-inquiries@gsa.gov and we’ll be happy to help.
