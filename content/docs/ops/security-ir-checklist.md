@@ -30,6 +30,7 @@ You're the first cloud.gov team member to notice a non-team-member's report of a
 - Send an initial situation report (“sitrep”) ([example sitrep]({{< relref "security-ir.md#assess" >}})) to:
     - Post in [`#incident-response`](https://gsa-tts.slack.com/messages/incident-response/)
     - Email to `gsa-ir@gsa.gov` and `devops@gsa.gov`
+    - Email to `info@fedramp.gov` or other contact for cloud.gov FedRAMP ISSO
     - Email/Slack other stakeholders, if applicable
 
 ## Remediate
