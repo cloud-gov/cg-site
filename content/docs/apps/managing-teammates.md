@@ -5,6 +5,10 @@ menu:
 title: Managing teammates
 ---
 
+## Beta dashboard migration
+
+NOTE: We now recommend using the [beta dashboard](https://dashboard-beta.fr.cloud.gov/) to manage user roles and [have instructions available here]({{< relref "docs/orgs-spaces/roles.md" >}}).
+
 ## Invite a teammate
 
 If you're part of a team using cloud.gov, you can invite teammates to get cloud.gov accounts. You can invite anyone you need to work with, including federal employees and federal contractors.
@@ -20,7 +24,6 @@ If you invited them with an agency email address and they're part of an agency t
 After a teammate gets a cloud.gov account, an Org Manager or Space Manager will need to give them roles in your orgs and spaces so they can collaborate with you. For details about how org and space roles and permissions work, see [Cloud Foundry's documentation](http://docs.cloudfoundry.org/concepts/roles.html#roles).
 
 Org Managers can assign roles using the [dashboard](https://dashboard.fr.cloud.gov/) or command line. Space Managers can assign roles using the command line.
-
 
 
 {{% alternatives dashboard="dashboard-org-give-role" cli="cli-org-give-role" %}}
