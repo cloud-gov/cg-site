@@ -27,7 +27,7 @@ Plan Name | Description | Software Version |
 `medium-oracle-se2`      | Dedicated medium RDS Oracle SE2 DB                                           | 12.0.1.2.v11 |
 
 
-*Additional Cost:* All databases have a limit of 1TB in storage. After 1TB, each additional terabyte will cost $200 per month.
+*Additional Cost:* All databases have a limit of 1TB in storage. After 1TB, each additional terabyte will cost $300 per month.
 
 
 ## Optione
