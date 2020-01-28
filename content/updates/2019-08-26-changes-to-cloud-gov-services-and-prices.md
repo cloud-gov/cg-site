@@ -35,7 +35,7 @@ Resource  | Previous monthly price | New monthly price  |
 
      | Previous storage cap | New storage cap | Additional Storage
   --------- | ----------- | ----- | -----
-  `RDS` | unspecified |  1 TB | $200 per terabyte/month
+  `RDS` | unspecified |  1 TB | $300 per terabyte/month
   `S3` | unspecified |  5 TB | $100 per terabyte/month
   `Redis` | 10 GB |  10 GB | $100 per gigabyte/month
   `ElasticSearch` | 10 GB | 10 GB |  $100 per gigabyte/month
