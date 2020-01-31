@@ -16,7 +16,7 @@ The process for integrating with cloud.gov using your SSO solution is fairly sim
     * Public SAML 2.0 Endpoint (preferred) or Federation Metadata
     * 100x100 transparent PNG of your agency's seal
     * List of email domains to authenticate users against
-1. Once cloud.gov Support has the information, we'll schedule and then deploy the configuration to our staging environment. This aspect can take several weeks.
+1. Once cloud.gov Support has the information, we'll schedule and then deploy the configuration to our staging environment. This aspect can take a few weeks as it requires manual steps from the cloud.gov Operations team.
 1. cloud.gov will notify you of when the IDP configuration is available in our staging environment.
 1. You can try to log into our staging environment's user portal to ensure the login process works as intended and verify with cloud.gov Support you can log in successfully.
 1. Once the previous step has been completed, the cloud.gov Operations team will schedule and deploy the configuration to our production environment, at which point your SSO configuration will be ready to go!
@@ -30,13 +30,16 @@ By default, your SSO integration will appear on our default login page for all c
 This is the environment where we test the configuration first. It matches our production configuration minus the hostnames and endpoints.
 
 *Endpoints* 
+
 * https://uaa.fr-stage.cloud.gov
 * https://login.fr-stage.cloud.gov
 
 *Entity ID*
+
 * login.fr-stage.cloud.gov
 
 *OIDC Configuration*
+
 * https://login.fr-stage.cloud.gov/.well-known/openid-configuration
 
 ### Production
@@ -44,13 +47,16 @@ This is the environment where we test the configuration first. It matches our pr
 The same configuration as our staging environment, just with production hostnames and endpoints.
 
 *Endpoints* 
+
 * https://uaa.fr.cloud.gov
 * https://login.fr.cloud.gov
 
 *Entity ID*
+
 * login.fr.cloud.gov
 
 *OIDC Configuration*
+
 * https://login.fr.cloud.gov/.well-known/openid-configuration
 
 ### Root Certificate
