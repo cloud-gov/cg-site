@@ -102,3 +102,83 @@ xY5KVL5IjegnPTy+
 ### Upstream Documentation
 
 If you would like to understand how the integration works, please see the [open source documentation](https://docs.cloudfoundry.org/uaa/identity-providers.html). LDAP integration is not supported, only SAML. In the existing configuration, cloud.gov acts as the Service Provider (SP) in the SAML assertion workflow, and any authentication requests coming from cloud.gov will be SP initiated. IDP initiated authentication is not supported.
+
+## Active Directory Federation Services Integration Reference
+
+This is a basic reference of steps used to configure Active Directory Federation Services (ADFS) as a SAML IDP for your agency in cloud.gov. These steps listed are intended to be used as a reference, not a source of truth, as every agency will likely have a different configuration. These steps were kindly donated to cloud.gov by the folks from the Office of Management and Budget (OMB).
+
+### Add Relying Party Trust
+
+*Add a new Relying Party Trust*
+
+You can find the Microsoft documentation for configuring a Relying Party Trust [here](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/create-a-relying-party-trust). You will need to select the _Claims-aware Trust_ radio button.
+
+*Select a Data Source*
+
+Select the *Import data about the relying party published online or on a local network* radio button. While you can download the cloud.gov SAML SP metadata, by referencing our metadata endpoint, you can receive any updates as we push them out. Enter the staging or production metadata URL referenced in the System Information section.
+
+*Specify Display Name*
+
+This value can be whatever you want it to be, we recommend attaching an environment reference so it's easily distinguishable between the cloud.gov environments at a glance. Notes are optional and at your discretion.
+
+*Choose Access Control Policy*
+
+Apply whichever policy is relevant to your agency, however it's recommended to allow _Permit Everyone_ as cloud.gov manages user authorization within the platform.
+
+*Ready to Add Trust*
+
+Verify the initial configuration is valid and then save it.
+
+*Secure Hash Algorithm*
+
+In order to properly ensure all data is encrypted and decrypted in the same format, the relying party trust needs to use the same algorithm cloud.gov uses.
+
+1. Double-click the new relying party trust.
+1. In the Advanced tab, select SHA1 for the Secure hash algorithm.
+
+*Configure Certificate*
+
+You can find our root certificate referenced above if you need to explicitly trust our system. Our referenced root certificate is PEM encoded, so you will need to convert it to a format supported by Windows. You can use whichever tools you are most comfortable with for the conversion, if you would like to use open source tooling, Stack Overflow user evergreen has a great guide about using OpenSSL to convert certificates between various encodings, you can find that guide [here](https://stackoverflow.com/a/38408666/4949938). 
+
+To import the encoded certificate into ADFS, you will need to execute these steps on all servers configured to respond to SAML requests.
+
+1. On the ADFS server, start MMC (`mmc.exe`).
+1. Add the Certificates snap-in for the computer account and manage certificates for the local computer.
+1. Import the root CA certificate into Trusted Root Certification Authorities > Certificates.
+
+ADFS will refresh it's certificate store the next time an authentication request comes in, no need to take manual steps.
+
+*Disable Revocation Checking*
+
+cloud.gov does not support certificate revocation checking, so the certificate revocation check will need to be disabled. This is specific to the cloud.gov relying party trust and will not impact other configurations.
+
+Run this command in Powershell:
+
+```powershell
+Set-AdfsRelyingPartyTrust -TargetName "<display-name>" `
+  -EncryptionCertificateRevocationCheck None `
+  -SigningCertificateRevocationCheck None
+```
+
+*Create a Claim Mapping*
+
+In order to properly map users in your SSO system to the cloud.gov SAML identifier, you may need to create a claim policy. If this is the case, you will need to take these steps for each of the cloud.gov environments.
+
+1. Select the cloud.gov relying party trust.
+1. Right-click > Edit Claim Issuance Policy
+1. Add Rule
+1. You can name the rule whatever is easiest to understand, we recommend something similar to _Transform NameID to Email_ so it's clear.
+1. Here are the field values to set
+    1. Incoming claim type: _E-Mail Address_
+    1. Outgoing claim type: _Name ID_
+    1. Outgoing name ID format: _Email_
+1. Select the _Pass through all claim values_ radio button.
+1. Save the policy.
+
+*Test*
+
+This is the end of the reference kindly donated by OMB, please ensure you try to log into cloud.gov.
+
+## Help
+
+We are committed to improving the user experience of government. If you have questions, please don't hesitate to reach out at cloud-gov-support@gsa.gov. We recommend that you subscribe to service updates at the [cloud.gov StatusPage](https://cloudgov.statuspage.io/).
