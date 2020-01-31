@@ -23,7 +23,7 @@ The process for integrating with cloud.gov using your SSO solution is fairly sim
 
 ## System Information
 
-By default, your SSO integration will appear on our default login page for all customers with your agency seal and base email domain for an easy user experience. Below is a list of things that you may find useful for integrating with us, depending on your IDP's configuration. 
+By default, your SSO integration will appear on our default login page for all customers with your agency seal and base email domain for an easy user experience. Below is a list of things that you may find useful for integrating with us, depending on your IDP's configuration.  The only attribute cloud.gov needs to authenticate a user is the email attribute as we manage group membership independently of the downstream IDP.
 
 ### Staging
 
@@ -33,6 +33,7 @@ This is the environment where we test the configuration first. It matches our pr
 
 * https://uaa.fr-stage.cloud.gov
 * https://login.fr-stage.cloud.gov
+* https://login.fr-stage.cloud.gov/saml/metadata
 
 *Entity ID*
 
@@ -50,6 +51,7 @@ The same configuration as our staging environment, just with production hostname
 
 * https://uaa.fr.cloud.gov
 * https://login.fr.cloud.gov
+* https://login.fr.cloud.gov/saml/metadata
 
 *Entity ID*
 
@@ -61,7 +63,7 @@ The same configuration as our staging environment, just with production hostname
 
 ### Root Certificate
 
-Here is the public key of our root certificate. Use this if you need to trust our SAML provider.
+Here is the public key of our root certificate. Use this if you need to trust our SAML provider and you can't properly get it from our SAML endpoints.
 
 ```
 -----BEGIN CERTIFICATE-----
