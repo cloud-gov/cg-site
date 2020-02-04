@@ -1,6 +1,14 @@
 // Import the US Web Design System SASS.
 
+@import 'theme/uswds-theme-general';
+@import 'theme/uswds-theme-typography';
+@import 'theme/uswds-theme-spacing';
+@import 'theme/uswds-theme-color';
+@import 'theme/uswds-theme-utilities';
+
 @import "uswds";
+
+@import 'theme/uswds-theme-custom-styles';
 
 // Add your SASS/CSS here
 
