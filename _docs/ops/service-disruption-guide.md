@@ -1,7 +1,5 @@
 ---
-menu:
-  docs:
-    parent: policies
+parent: policies
 layout: ops
 layout: docs
 sidenav: true

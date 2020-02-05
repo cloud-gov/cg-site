@@ -1,7 +1,5 @@
 ---
-menu:
-  docs:
-    parent: customer-stories
+parent: customer-stories
 layout: docs
 sidenav: true
 title: Federal Election Commission

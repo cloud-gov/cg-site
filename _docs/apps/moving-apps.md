@@ -1,7 +1,5 @@
 ---
-menu:
-  docs:
-    parent: advanced
+parent: advanced
 layout: docs
 sidenav: true
 title: Moving apps between spaces

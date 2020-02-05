@@ -1,7 +1,5 @@
 ---
-menu:
-  docs:
-    parent: orgs-spaces
+parent: orgs-spaces
 layout: docs
 sidenav: true
 title: Managing user access to orgs and spaces

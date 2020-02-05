@@ -1,7 +1,5 @@
 ---
-menu:
-  docs:
-    parent: advanced
+parent: advanced
 aliases:
   - /docs/apps/experimental/private-egress/
 layout: docs

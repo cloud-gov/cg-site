@@ -39,20 +39,26 @@ dap_agency: GSA
 primary_navigation:
   - name: Home
     url: /
-  - name: Blog
-    url: /blog/
-  - name: Document
-    url: /document/
-  - name: Document with sidenav
-    url: /document-with-sidenav/
-  - name: Document submenu
+  - name: Sign up
+    url: /sign-up/
+  - name: Pricing
+    url: /pricng/
+  - name: Documentations
     children:
-      - name: Navigation link
-        url: "#main-content"
-      - name: Navigation link
-        url: "#main-content"
-      - name: Navigation link
-        url: "#main-content"
+    - name: Overview
+      url: "#main-content"
+    - name: Getting Started
+      url: "#main-content"
+    - name: Purchase and pricing
+      url: "#main-content"
+    url: /docs/
+  - name: Contact
+    url: /docs/help/
+  - name: Log in
+    url: https://login.fr.cloud.gov/login
+  - name: Platform Status
+    url: https://cloudgov.statuspage.io/
+
 
 secondary_navigation:
   - name: Secondary link

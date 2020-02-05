@@ -1,7 +1,5 @@
 ---
-menu:
-  docs:
-    parent: design
+parent: design
 layout: ops
 
 layout: docs

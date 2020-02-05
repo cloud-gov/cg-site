@@ -1,7 +1,5 @@
 ---
-menu:
-  docs:
-    parent: apps
+parent: apps
 layout: docs
 sidenav: true
 title: Deploying static sites

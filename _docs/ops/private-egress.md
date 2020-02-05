@@ -1,7 +1,5 @@
 ---
-menu:
-  docs:
-    parent: operations
+parent: operations
 layout: ops
 layout: docs
 sidenav: true

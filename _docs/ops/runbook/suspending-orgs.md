@@ -1,7 +1,5 @@
 ---
-menu:
-  docs:
-    parent: runbook
+parent: runbook
 layout: ops
 
 layout: docs

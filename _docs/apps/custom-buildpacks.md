@@ -1,7 +1,5 @@
 ---
-menu:
-  docs:
-    parent: apps
+parent: apps
 
 aliases:
     - /apps/multi-buildpack-deploys/

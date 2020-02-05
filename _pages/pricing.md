@@ -1,5 +1,5 @@
 ---
-title: Document
+title: Sign up
 layout: page
 sidenav: false
 ---

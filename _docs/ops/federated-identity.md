@@ -1,7 +1,5 @@
 ---
-menu:
-  docs:
-    parent: tenants
+parent: tenants
 layout: ops
 layout: docs
 sidenav: true

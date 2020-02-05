@@ -1,7 +1,5 @@
 ---
-menu:
-  docs:
-    parent: services
+parent: services
 layout: docs
 sidenav: true
 title: Custom domain service

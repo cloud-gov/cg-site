@@ -1,7 +1,5 @@
 ---
-menu:
-  docs:
-    parent: experimental
+parent: experimental
 layout: docs
 sidenav: true
 title: Dynamic behavior monitoring

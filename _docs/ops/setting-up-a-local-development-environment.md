@@ -1,7 +1,5 @@
 ---
-menu:
-  docs:
-    parent: deployment
+parent: deployment
 layout: ops
 layout: docs
 sidenav: true

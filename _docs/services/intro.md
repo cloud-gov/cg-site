@@ -1,7 +1,5 @@
 ---
-menu:
-  docs:
-    parent: services
+parent: services
 aliases: 
     - /docs/services/
     - /docs/pricing/managed-services-cost/

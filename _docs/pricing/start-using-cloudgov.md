@@ -1,7 +1,5 @@
 ---
-menu:
-  docs:
-    parent: pricing
+parent: pricing
 layout: docs
 sidenav: true
 title: Get started using cloud.gov

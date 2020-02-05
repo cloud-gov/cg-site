@@ -1,7 +1,5 @@
 ---
-menu:
-  docs:
-    parent: advanced
+parent: advanced
 layout: docs
 sidenav: true
 title: Connect to external services

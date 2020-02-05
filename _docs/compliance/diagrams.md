@@ -1,7 +1,5 @@
 ---
-menu:
-  docs:
-    parent: compliance
+parent: compliance
 layout: docs
 sidenav: true
 title: Data flow diagrams

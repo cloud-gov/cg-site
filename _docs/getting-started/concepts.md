@@ -1,7 +1,5 @@
 ---
-menu:
-  docs:
-    parent: getting-started
+parent: getting-started
 layout: docs
 sidenav: true
 title: Concepts

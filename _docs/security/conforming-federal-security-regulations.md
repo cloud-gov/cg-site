@@ -1,7 +1,5 @@
 ---
-menu:
-  docs:
-    parent: technology
+parent: technology
 layout: docs
 sidenav: true
 title: How cloud.gov helps teams comply with requirements

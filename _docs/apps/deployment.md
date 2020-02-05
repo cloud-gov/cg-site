@@ -1,7 +1,5 @@
 ---
-menu:
-  docs:
-    parent: apps
+parent: apps
 layout: docs
 layout: docs
 sidenav: true

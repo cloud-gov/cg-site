@@ -1,7 +1,5 @@
 ---
-menu:
-  docs:
-    parent: overview
+parent: overview
 layout: docs
 sidenav: true
 title: The cloud.gov team
