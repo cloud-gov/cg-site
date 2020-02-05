@@ -18,7 +18,7 @@
 # Be sure to edit the values below
 ##########################################################################################
 
-title: Agency Name
+title: Cloud.gov
 email: contact@example.gov
 description: >- # this means to ignore newlines until "baseurl:"
   Agency Name (EAC) Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -80,6 +80,10 @@ collections:
   pages:
     output: true
     permalink: /:path/
+  docs:
+    output: true
+    permalink: /:collection/:path/
+
 
 permalink: pretty
 
