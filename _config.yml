@@ -42,11 +42,11 @@ primary_navigation:
   - name: Sign up
     url: /sign-up/
   - name: Pricing
-    url: /pricng/
-  - name: Documentations
+    url: /pricing/
+  - name: Documentation
     children:
     - name: Overview
-      url: "#main-content"
+      url: /docs/overview/what-is-cloudgov/
     - name: Getting Started
       url: "#main-content"
     - name: Purchase and pricing
