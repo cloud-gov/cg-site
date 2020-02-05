@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: pricing
+layout: docs
+sidenav: true
 title: Prototyping package details
 weight: 3
 aliases:

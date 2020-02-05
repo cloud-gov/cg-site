@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: compliance
+layout: docs
+sidenav: true
 title: IPv6, HTTPS, DNSSEC, and Certificates
 ---
 

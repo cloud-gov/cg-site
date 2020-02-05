@@ -3,6 +3,8 @@ menu:
   docs:
     parent: policies
 layout: ops
+layout: docs
+sidenav: true
 title: Security Incident Response Guide
 linktitle: Security IR Guide
 ---

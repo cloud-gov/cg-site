@@ -3,6 +3,8 @@ menu:
   docs:
     parent: tenants
 layout: ops
+layout: docs
+sidenav: true
 title: Managing services
 ---
 

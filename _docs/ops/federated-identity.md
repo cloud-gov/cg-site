@@ -3,6 +3,8 @@ menu:
   docs:
     parent: tenants
 layout: ops
+layout: docs
+sidenav: true
 title: Federated identity
 weight: 10
 ---

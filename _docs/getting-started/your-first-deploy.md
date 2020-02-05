@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: getting-started
+layout: docs
+sidenav: true
 title: Your first deploy
 weight: -30
 ---

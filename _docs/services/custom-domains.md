@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: services
+layout: docs
+sidenav: true
 title: Custom domain service
 name: "custom-domain"
 description: "Custom domains and TLS certificates with automatic renewal"

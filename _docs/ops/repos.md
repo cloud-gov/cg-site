@@ -3,6 +3,8 @@ menu:
   docs:
     parent: ops
 layout: ops
+layout: docs
+sidenav: true
 title: Code repositories
 weight: -100
 aliases:

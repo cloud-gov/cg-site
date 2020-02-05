@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: getting-started
+layout: docs
+sidenav: true
 title: Concepts
 aliases:
   - /docs/intro/terminology/system-terminology

@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: advanced
+layout: docs
+sidenav: true
 title: Moving apps between spaces
 ---
 

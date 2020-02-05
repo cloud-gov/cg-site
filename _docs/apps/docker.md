@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: apps
+layout: docs
+sidenav: true
 title: Deploying Docker images
 aliases:
   - /docs/intro/technology/containers

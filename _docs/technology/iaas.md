@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: technology
+layout: docs
+sidenav: true
 title: Infrastructure under cloud.gov
 weight: 20
 aliases:

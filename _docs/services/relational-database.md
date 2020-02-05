@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: services
+layout: docs
+sidenav: true
 title: Relational databases (RDS)
 description: "Persistent, relational databases using Amazon RDS"
 aliases:

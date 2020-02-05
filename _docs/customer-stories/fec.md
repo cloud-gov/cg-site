@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: customer-stories
+layout: docs
+sidenav: true
 title: Federal Election Commission
 kicker: Case study
 aliases:

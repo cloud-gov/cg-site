@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: apps
+layout: docs
+sidenav: true
 title: Languages and frameworks
 weight: 29
 aliases:

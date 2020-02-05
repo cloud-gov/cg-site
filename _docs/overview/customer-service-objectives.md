@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: overview
+layout: docs
+sidenav: true
 title: Customer service objectives
 weight: 15
 aliases:

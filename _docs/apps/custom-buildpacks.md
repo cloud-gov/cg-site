@@ -8,6 +8,8 @@ aliases:
     - /apps/apt-get/
     - /apps/experimental/custom-buildpacks/
 
+layout: docs
+sidenav: true
 title: More languages (custom buildpacks)
 
 weight: 30

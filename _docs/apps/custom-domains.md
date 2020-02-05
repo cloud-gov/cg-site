@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: advanced
+layout: docs
+sidenav: true
 title: Custom domains
 ---
 By default, your application will be accessible via a subdomain of `app.cloud.gov`. To make your application accessible via your own domain, you need to create entries in your DNS system and configure cloud.gov.

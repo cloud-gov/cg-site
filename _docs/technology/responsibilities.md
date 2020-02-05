@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: technology
+layout: docs
+sidenav: true
 title: What the cloud.gov PaaS offers
 weight: 5
 aliases:

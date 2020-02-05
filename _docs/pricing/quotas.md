@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: pricing
+layout: docs
+sidenav: true
 title: Quota costs, billing, and limits
 weight: 5
 aliases:

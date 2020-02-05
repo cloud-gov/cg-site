@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: technology
+layout: docs
+sidenav: true
 title: Other PaaS choices
 weight: 30
 aliases:

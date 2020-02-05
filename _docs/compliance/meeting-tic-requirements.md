@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: compliance
+layout: docs
+sidenav: true
 title: Meeting TIC requirements
 aliases:
   - /docs/orgs/meeting-tic-requirements

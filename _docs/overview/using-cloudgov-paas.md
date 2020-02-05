@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: overview
+layout: docs
+sidenav: true
 title: What you can do with the cloud.gov platform
 weight: 13
 aliases:

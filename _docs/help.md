@@ -1,4 +1,6 @@
 ---
+layout: docs
+sidenav: true
 title: Contact
 aliases:
   - /help

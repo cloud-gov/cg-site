@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: orgs-spaces
+layout: docs
+sidenav: true
 title: Dashboard
 weight: -100
 ---

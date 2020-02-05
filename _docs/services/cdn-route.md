@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: services
+layout: docs
+sidenav: true
 title: CDN service
 name: "cdn-route"
 description: "Custom domains, CDN caching, and TLS certificates with automatic renewal"

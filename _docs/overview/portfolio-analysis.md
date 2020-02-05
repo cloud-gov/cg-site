@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: overview
+layout: docs
+sidenav: true
 title: What applications are supported?
 weight: 16
 ---

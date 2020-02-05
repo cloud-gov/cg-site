@@ -3,6 +3,8 @@ date: 2015-05-27T13:32:00-04:00
 menu:
   docs:
     parent: advanced
+layout: docs
+sidenav: true
 title: Running multiple instances
 ---
 

@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: advanced
+layout: docs
+sidenav: true
 title: Managing teammates
 ---
 

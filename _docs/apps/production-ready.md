@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: apps
+layout: docs
+sidenav: true
 title: Production-ready guide
 weight: -90
 ---

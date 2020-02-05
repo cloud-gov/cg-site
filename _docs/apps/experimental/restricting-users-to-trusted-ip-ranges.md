@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: experimental
+layout: docs
+sidenav: true
 title: Restricting users to trusted IP ranges
 ---
 

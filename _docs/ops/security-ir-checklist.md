@@ -3,6 +3,8 @@ menu:
   docs:
     parent: policies
 layout: ops
+layout: docs
+sidenav: true
 title: Security Incident Response checklist
 linktitle: Security IR checklist
 ---

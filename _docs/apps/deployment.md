@@ -2,6 +2,9 @@
 menu:
   docs:
     parent: apps
+layout: docs
+layout: docs
+sidenav: true
 title: Basic deployment instructions
 weight: -100
 ---

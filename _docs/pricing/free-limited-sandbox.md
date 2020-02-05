@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: pricing
+layout: docs
+sidenav: true
 title: Try a free sandbox space
 weight: -10
 aliases:

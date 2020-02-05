@@ -4,6 +4,8 @@ menu:
     parent: advanced
 aliases:
   - /docs/apps/experimental/private-egress/
+layout: docs
+sidenav: true
 title: Connect to your private network
 ---
 

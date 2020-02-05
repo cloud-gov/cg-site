@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: experimental
+layout: docs
+sidenav: true
 title: Dynamic behavior monitoring
 ---
 

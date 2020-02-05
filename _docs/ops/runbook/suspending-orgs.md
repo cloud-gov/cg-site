@@ -4,6 +4,8 @@ menu:
     parent: runbook
 layout: ops
 
+layout: docs
+sidenav: true
 title: Suspending and Removing Orgs
 ---
 

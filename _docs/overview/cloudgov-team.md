@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: overview
+layout: docs
+sidenav: true
 title: The cloud.gov team
 weight: 80
 aliases:

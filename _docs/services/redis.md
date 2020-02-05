@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: services
+layout: docs
+sidenav: true
 title: Redis
 description: "Redis: an in-memory data structure store"
 aliases:

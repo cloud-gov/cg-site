@@ -4,6 +4,8 @@ menu:
     parent: design
 layout: ops
 
+layout: docs
+sidenav: true
 title: Secrets Management
 ---
 

@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: overview
+layout: docs
+sidenav: true
 title: What is cloud.gov?
 weight: -99
 aliases:

@@ -3,6 +3,8 @@ menu:
   docs:
     parent: operations
 layout: ops
+layout: docs
+sidenav: true
 title: DNS settings for cloud.gov
 ---
 

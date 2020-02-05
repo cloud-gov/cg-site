@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: services
+layout: docs
+sidenav: true
 title: "Elasticsearch"
 name: "elasticsearch56"
 description: "Elasticsearch version 5.6: a distributed, RESTful search and analytics engine"

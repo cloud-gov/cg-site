@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: apps
+layout: docs
+sidenav: true
 title: Troubleshooting
 linktitle: Troubleshooting
 weight: 100

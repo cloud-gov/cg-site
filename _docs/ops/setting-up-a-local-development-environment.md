@@ -3,6 +3,8 @@ menu:
   docs:
     parent: deployment
 layout: ops
+layout: docs
+sidenav: true
 title: Setting up a local development environment
 linktitle: Local Development
 ---

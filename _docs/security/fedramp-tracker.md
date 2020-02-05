@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: overview
+layout: docs
+sidenav: true
 title: FedRAMP Authorized
 weight: 0
 aliases:

@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: experimental
+layout: docs
+sidenav: true
 title: About experimental features
 weight: -1
 slug: features

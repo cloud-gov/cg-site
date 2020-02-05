@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: technology
+layout: docs
+sidenav: true
 title: FISMA High impact PaaS options
 weight: 30
 aliases:

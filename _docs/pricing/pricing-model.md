@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: pricing
+layout: docs
+sidenav: true
 title: How the pricing model is managed
 weight: 30
 aliases:

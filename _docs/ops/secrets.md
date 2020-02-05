@@ -3,6 +3,8 @@ menu:
   docs:
     parent: operations
 layout: ops
+layout: docs
+sidenav: true
 title: Secret key management
 ---
 

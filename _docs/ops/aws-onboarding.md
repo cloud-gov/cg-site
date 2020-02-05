@@ -3,6 +3,8 @@ menu:
   docs:
     parent: operations
 layout: ops
+layout: docs
+sidenav: true
 title: AWS onboarding
 aliases:
   - /docs/ops/aws-accounts/

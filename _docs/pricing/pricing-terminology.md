@@ -2,6 +2,8 @@
 menu:
   docs:
     parent: pricing
+layout: docs
+sidenav: true
 title: Terms we use in pricing
 weight: 90
 aliases:

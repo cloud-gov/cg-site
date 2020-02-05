@@ -5,6 +5,8 @@ menu:
 
 aliases: 
     - /docs/getting-started/app-maintenance/
+layout: docs
+sidenav: true
 title: App maintenance
 weight: -90
 ---

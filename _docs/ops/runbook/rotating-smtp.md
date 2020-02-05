@@ -4,6 +4,8 @@ menu:
     parent: runbook
 layout: ops
 
+layout: docs
+sidenav: true
 title: Rotating Secrets VII - SMTP
 ---
 

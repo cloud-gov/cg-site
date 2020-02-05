@@ -5,6 +5,8 @@ menu:
 aliases: 
     - /docs/services/
     - /docs/pricing/managed-services-cost/
+layout: docs
+sidenav: true
 title: Introduction
 weight: -1
 ---
