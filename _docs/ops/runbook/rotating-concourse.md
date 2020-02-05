@@ -25,8 +25,8 @@ Concourse Jumpboxes used to access the system.
 ### Dependencies
 
 Rotating Concourse secrets has some external dependencies with [Bosh
-secrets]({{< relref "docs/ops/runbook/rotating-bosh.md" >}}) and [IAM
-roles]({{< relref "docs/ops/runbook/rotating-iam-users.md" >}}). Please complete
+secrets]({{ site.baseurl }}{% link _docs/ops/runbook/rotating-bosh.md %}) and [IAM
+roles]({{ site.baseurl }}{% link _docs/ops/runbook/rotating-iam-users.md %}). Please complete
 these rotations first, or reference them at the same time to properly rotate
 Concourse credentials.
 
@@ -44,5 +44,5 @@ fly --target ${ci_env} \
 ```
 
 Pull down the secrets files for each Concourse. Reference the [secret key
-management documentation]({{< relref "docs/ops/secrets.md" >}}) for downloading
+management documentation]({{ site.baseurl }}{% link _docs/ops/secrets.md %}) for downloading
 and uploading those secrets.

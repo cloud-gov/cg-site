@@ -138,7 +138,7 @@ In order to maintain operational visibility, the cloud.gov continuous monitoring
 
 ### Change control
 
-cloud.gov is a dynamic system in a constant state of change. Configuration management and change control processes help maintain the secure baseline configuration of the cloud.gov architecture.  Routine day-to-day changes are managed through the cloud.gov change management process described in the [configuration management plan]({{< relref "docs/ops/configuration-management.md" >}}).
+cloud.gov is a dynamic system in a constant state of change. Configuration management and change control processes help maintain the secure baseline configuration of the cloud.gov architecture.  Routine day-to-day changes are managed through the cloud.gov change management process described in the [configuration management plan]({{ site.baseurl }}{% link _docs/ops/configuration-management.md %}).
 
 cloud.gov notifies the AO with a minimum of 30 days before implementing any planned major significant changes, including an analysis of the potential security impact.
 
@@ -146,7 +146,7 @@ See the [significant change rubric](#appendix-significant-change-rubric) for how
 
 ### Incident response
 
-All cloud.gov incident response must be handled according to the [incident response guide]({{< relref "docs/ops/security-ir.md" >}}).
+All cloud.gov incident response must be handled according to the [incident response guide]({{ site.baseurl }}{% link _docs/ops/security-ir.md %}).
 
 ## Monthly reporting summary
 
@@ -170,7 +170,7 @@ We follow this rubric for changes before they are deployed to production. This i
 
 The change:
 
-* Fits our existing SSP control descriptions, diagrams, and attachments, as well as our policies and procedures (including our [configuration management plan]({{< relref "docs/ops/configuration-management.md" >}})). No updates to the SSP would be necessary to reflect the change.
+* Fits our existing SSP control descriptions, diagrams, and attachments, as well as our policies and procedures (including our [configuration management plan]({{ site.baseurl }}{% link _docs/ops/configuration-management.md %})). No updates to the SSP would be necessary to reflect the change.
 
 This includes:
 

@@ -8,7 +8,7 @@ title: Set up cloud.gov and log in
 weight: -50
 ---
 
-If you have [access to cloud.gov]({{< relref "accounts.md" >}}), here's how to log in.
+If you have [access to cloud.gov]({{ site.baseurl }}{% link _docs/getting-started/accounts.md %}), here's how to log in.
 
 ## Log into the dashboard (web interface)
 
@@ -31,4 +31,4 @@ cloud.gov is based on the Cloud Foundry open source project, so cloud.gov uses t
 
 ## Take the next step
 
-Now [try your first deploy of a test application]({{< relref "your-first-deploy.md" >}}).
+Now [try your first deploy of a test application]({{ site.baseurl }}{% link _docs/getting-started/your-first-deploy.md %}).

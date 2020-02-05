@@ -61,7 +61,7 @@ Running `env | grep AWS` will show you a new set of credentials which are differ
 Once this is complete, operators can provision profiles which use only specific resources, or specific permissions such as read only.  This scopes the role of the temporary credentials to further reduce the attack surface.
 
 ### UAA credentials
-All UAA clients and users and associated credentials should be created via the Cloud Foundry secrets or the [service account]({{< relref "docs/services/cloud-gov-service-account.md" >}}) or [identity provider]({{< relref "docs/services/cloud-gov-identity-provider.md" >}}) services. UAA accounts should not be created manually; we reserve the right to drop permissions for or deprovision hand-propped accounts.
+All UAA clients and users and associated credentials should be created via the Cloud Foundry secrets or the [service account]({{ site.baseurl }}{% link _docs/services/cloud-gov-service-account.md %}) or [identity provider]({{ site.baseurl }}{% link _docs/services/cloud-gov-identity-provider.md %}) services. UAA accounts should not be created manually; we reserve the right to drop permissions for or deprovision hand-propped accounts.
 
 ### Updating Secrets
 

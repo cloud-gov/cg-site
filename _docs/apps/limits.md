@@ -7,11 +7,11 @@ sidenav: true
 title: Set org, space, and app limits
 ---
 
-Org Managers are free to configure your org's [quota]({{< relref "docs/pricing/quotas.md" >}}) capacity among your spaces and applications as you see fit. This enables Org Managers to limit usage and corresponding costs.
+Org Managers are free to configure your org's [quota]({{ site.baseurl }}{% link _docs/pricing/quotas.md %}) capacity among your spaces and applications as you see fit. This enables Org Managers to limit usage and corresponding costs.
 
 ## Org
 
-See more about how to [manage your orgs' quotas]({{< relref "docs/orgs-spaces/limits.md" >}}).
+See more about how to [manage your orgs' quotas]({{ site.baseurl }}{% link _docs/orgs-spaces/limits.md %}).
 
 ## Space
 

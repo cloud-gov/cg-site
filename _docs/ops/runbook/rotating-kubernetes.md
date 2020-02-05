@@ -20,14 +20,12 @@ When rotating Kubernetes, you must open a scheduled maintenance window. Use the
 template. Schedule the window to last at least three hours in order to complete
 all the steps below when rotating secrets in Kubernetes.
 
-Lastly, get familiar with the [Troubleshooting Kubernetes]({{< relref
-"docs/ops/runbook/troubleshooting-kubernetes.md" >}}) runbook in case
+Lastly, get familiar with the [Troubleshooting Kubernetes]({{ site.baseurl }}{% link _docs/ops/runbook/troubleshooting-kubernetes.md %}) runbook in case
 anything goes wrong during the deployment.
 
 ## Rotating certificates
 
-Please see the documentation for [_Rotating certificates_]({{< relref
-"rotating-secrets.md#rotating-certificates" >}}).
+Please see the documentation for [_Rotating certificates_]({{ site.baseurl }}{% link _docs/ops/runbook/rotating-secrets.md %}#rotating-certificates).
 
 Generate all certificates using https://github.com/18F/cg-deploy-kubernetes/blob/master/generate-consul-certs.sh.
 Generate kubernetes certificates using the master bosh CA certificate and the IP SANs in https://github.com/18F/kubernetes-release/blob/master/generate-certificates.sh. Note: we should automate this step next time we rotate secrets.

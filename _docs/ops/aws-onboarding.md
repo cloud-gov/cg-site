@@ -30,7 +30,7 @@ reset their password, verify their identity and coordinate or pair with them.
 1. Delete any AWS access keys they may have in their account.
 1. Remove their MFA device.
 1. Reset their password and download the CSV from Amazon.
-1. Use [the sharing secret keys process]({{< relref "docs/ops/secrets.md#sharing-secret-keys" >}}) to send them their credentials.
+1. Use [the sharing secret keys process]({{ site.baseurl }}{% link _docs/ops/secrets.md %}#sharing-secret-keys) to send them their credentials.
 1. Remind them to set their two-factor authentication via MFA device.
 
 #### Setting up two-factor authentication (required)

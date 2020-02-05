@@ -18,11 +18,11 @@ New here? Start with the top of the sidebar and work your way down. The docs inc
 
 Shortcuts to common tasks:
 
-* [Set up the command line]({{< relref "docs/getting-started/setup.md#set-up-the-command-line" >}})
-* [Basic deployment tips]({{< relref "docs/apps/deployment.md" >}})
-* [Custom domains]({{< relref "docs/apps/custom-domains.md" >}})
-* [Managing teammates]({{< relref "docs/apps/managing-teammates.md" >}})
+* [Set up the command line]({{ site.baseurl }}{% link _docs/getting-started/setup.md %}#set-up-the-command-line)
+* [Basic deployment tips]({{ site.baseurl }}{% link _docs/apps/deployment.md %})
+* [Custom domains]({{ site.baseurl }}{% link _docs/apps/custom-domains.md %})
+* [Managing teammates]({{ site.baseurl }}{% link _docs/apps/managing-teammates.md %})
 
 ### cloud.gov team docs
 
-cloud.gov is an open source project based on [Cloud Foundry](https://www.cloudfoundry.org/) with additional components built by our team and other community members. We maintain our code and team documentation publicly here, and we invite you to read it, contribute to it, and adapt it for other projects. See [our list of repositories]({{< relref "docs/ops/repos.md" >}}).
+cloud.gov is an open source project based on [Cloud Foundry](https://www.cloudfoundry.org/) with additional components built by our team and other community members. We maintain our code and team documentation publicly here, and we invite you to read it, contribute to it, and adapt it for other projects. See [our list of repositories]({{ site.baseurl }}{% link _docs/ops/repos.md %}).

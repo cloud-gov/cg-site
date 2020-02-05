@@ -11,7 +11,7 @@ title: Customer separation
 cloud.gov runs customer applications in containers (a combination of kernel facilities 
 including namespaces for network, memory, and filesystem), which keep applications from interacting with each other or the host system.
 
-Customers can deploy applications to cloud.gov [using a buildpack](https://docs.cloudfoundry.org/buildpacks/) or by [referring to a Docker image]({{< relref "docs/apps/docker.md" >}})
+Customers can deploy applications to cloud.gov [using a buildpack](https://docs.cloudfoundry.org/buildpacks/) or by [referring to a Docker image]({{ site.baseurl }}{% link _docs/apps/docker.md %})
 in an accessible Docker registry. Buildpack deployments are native to the underlying Cloud Foundry 
 system and have benefits over Docker images in that the cloud.gov team can supply updates to the root filesystem 
 as well as the language stack that the application uses. We recommend customers deploy using buildpacks whenever possible.
@@ -27,4 +27,4 @@ Cloud Foundry provides [additional details about various aspects of container se
 The cloud.gov team configures in our Cloud Foundry deployment [whether privileged containers are used for applications and buildpack staging processes](https://docs.cloudfoundry.org/concepts/container-security.html#types). 
 Both of these options are set to `false` in cloud.gov: we use unprivileged containers, which increases security. Please contact us if you need to verify this setting in our system, or if you have further questions about how customer separation works in cloud.gov.
 
-*For more details, see the [cloud.gov SSP]({{< relref "docs/security/fedramp-tracker.md#how-you-can-use-this-p-ato" >}}), including section 9.7 (Application Isolation), 10 (System Environment), 10.2.3 (Buildpacks), CM-7 (2), SC-7 (12), and SC-39.*
+*For more details, see the [cloud.gov SSP]({{ site.baseurl }}{% link _docs/security/fedramp-tracker.md %}#how-you-can-use-this-p-ato), including section 9.7 (Application Isolation), 10 (System Environment), 10.2.3 (Buildpacks), CM-7 (2), SC-7 (12), and SC-39.*

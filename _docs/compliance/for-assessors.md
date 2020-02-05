@@ -66,4 +66,4 @@ For details, see SC-28 in the cloud.gov System Security Plan in our [P-ATO docum
 
 Through multi-factor authentication and other means, the cloud.gov team verifies that people logging into cloud.gov legitimately own their accounts. But users don't log in to orgs and spaces, they log into cloud.gov itself. Accordingly, customers don't have direct access to logs of login attempts, but you can ask us to perform specific log searches on your behalf. 
 
-You can use [event auditing]({{< relref "docs/compliance/auditing-activity.md" >}}) to audit access control changes on orgs and spaces, as well as many other events of interest.
+You can use [event auditing]({{ site.baseurl }}{% link _docs/compliance/auditing-activity.md %}) to audit access control changes on orgs and spaces, as well as many other events of interest.

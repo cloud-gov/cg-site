@@ -15,7 +15,7 @@ By default, cloud.gov runs your application instances on a pool of hosts shared 
 
 cloud.gov provides a way to prevent network access by other cloud.gov customers. To set this up, [email cloud.gov support](#how-to-get-a-dedicated-pool-of-cloud-gov-hosts-connected-to-your-organization) and request cloud.gov to establish a dedicated set of hosts for your organization. Applications run by other cloud.gov customers will not run on these hosts. Your applications will still be accessible from the internet and can still connect to any of our offered internal services. cloud.gov will work with you to give these dedicated hosts additional access to your private networks.
 
-Alternatively, if you only need to secure communication for a single application and service at a time, you can [set that up using client-specific credentials]({{< relref "docs/apps/static-egress" >}}).
+Alternatively, if you only need to secure communication for a single application and service at a time, you can [set that up using client-specific credentials]({{ site.baseurl }}{% link _docs/apps/static-egress.md %}).
 
 ## How it works
 
@@ -88,7 +88,7 @@ To be compatible with this feature, your IPsec endpoint must support IKEv1 key e
 
 It is customer responsibility to determine the appropriate types of data to transfer over this connection. cloud.gov is FedRAMP Authorized at the Moderate impact level, which typically means that only Low or Moderate impact customer data is appropriate to transfer between cloud.gov and other systems. It is also customer responsibility to determine any additional security controls you may need to implement in your application on cloud.gov and/or your network. For example, you may need to discuss with your Authorizing Official whether you need Data Loss Prevention or malware scanning solutions in your network to ensure that only appropriate types of data are going over this connection.
 
-For additional information on customer responsibilities, see CA-3 and CA-3 (3) in the cloud.gov System Security Plan (available to customers and prospective customers as part of the [cloud.gov FedRAMP P-ATO documentation package]({{< relref "docs/security/fedramp-tracker.md#how-you-can-use-this-p-ato" >}})).
+For additional information on customer responsibilities, see CA-3 and CA-3 (3) in the cloud.gov System Security Plan (available to customers and prospective customers as part of the [cloud.gov FedRAMP P-ATO documentation package]({{ site.baseurl }}{% link _docs/security/fedramp-tracker.md %}#how-you-can-use-this-p-ato)).
 
 ### How to get a dedicated pool of cloud.gov hosts connected to your organization
 

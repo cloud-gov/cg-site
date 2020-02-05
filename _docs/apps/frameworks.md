@@ -14,7 +14,7 @@ aliases:
 - /docs/apps/meteor
 ---
 
-cloud.gov uses [buildpacks]({{< relref "docs/getting-started/concepts.md#buildpacks" >}}) to support a variety of programming languages and frameworks.
+cloud.gov uses [buildpacks]({{ site.baseurl }}{% link _docs/getting-started/concepts.md %}#buildpacks) to support a variety of programming languages and frameworks.
 
 ## Supported languages and frameworks
 
@@ -24,7 +24,7 @@ cloud.gov supports applications written in Go, Java, Node.js, .NET Core, PHP, Py
 
 ### Other languages
 
-You can use a custom buildpack to use other languages. See [custom buildpacks]({{< relref "docs/apps/custom-buildpacks.md" >}}) for more information about this feature. Cloud Foundry has a list of [community buildpacks](http://docs.cloudfoundry.org/buildpacks/#community-buildpacks) that you can use as custom buildpacks, along with [documentation for building your own custom buildpacks](http://docs.cloudfoundry.org/buildpacks/developing-buildpacks.html).
+You can use a custom buildpack to use other languages. See [custom buildpacks]({{ site.baseurl }}{% link _docs/apps/custom-buildpacks.md %}) for more information about this feature. Cloud Foundry has a list of [community buildpacks](http://docs.cloudfoundry.org/buildpacks/#community-buildpacks) that you can use as custom buildpacks, along with [documentation for building your own custom buildpacks](http://docs.cloudfoundry.org/buildpacks/developing-buildpacks.html).
 
 ### Not supported
 

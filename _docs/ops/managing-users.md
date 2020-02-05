@@ -14,11 +14,11 @@ No local accounts to UAA shall be created for user access.
 
 ## Creating users
 
-Add new users by [inviting them]({{< relref "docs/apps/managing-teammates.md#invite-a-teammate" >}}).
+Add new users by [inviting them]({{ site.baseurl }}{% link _docs/apps/managing-teammates.md %}#invite-a-teammate).
 
 ## Changing passwords
 
-Users should **[reset their own password]({{< relref "docs/getting-started/accounts.md#to-change-your-password" >}})**.
+Users should **[reset their own password]({{ site.baseurl }}{% link _docs/getting-started/accounts.md %}#to-change-your-password)**.
 
 If a user logs in using their agency's account system, the only way to reset that password is for them to use their agency's normal password reset process.
 
@@ -26,7 +26,7 @@ If a user logs in using their agency's account system, the only way to reset tha
 
 Follow the process below for users logging in with a cloud.gov account.
 
-If the user requesting a reset has any apps, routes, or services in their sandbox or access to any other spaces or orgs, tell them that **[these will be removed]({{< relref "docs/getting-started/accounts.md#if-you-can-t-access-your-token-codes" >}})** and ask them if we should proceed. If they agree:
+If the user requesting a reset has any apps, routes, or services in their sandbox or access to any other spaces or orgs, tell them that **[these will be removed]({{ site.baseurl }}{% link _docs/getting-started/accounts.md %}#if-you-can-t-access-your-token-codes)** and ask them if we should proceed. If they agree:
 
 1. Remove all apps, routes, and services from the user's sandbox. E.g.:
 
@@ -44,7 +44,7 @@ If the user requesting a reset has any apps, routes, or services in their sandbo
     
 3. Reset the user's totp_seed in cloudfoundry's uaa database. 
 
-    Login to a **[concourse jumpbox]({{< relref "docs/ops/runbook/troubleshooting-bosh.md#creating-and-intercepting-ephemeral-jumpboxes" >}})** and run the `reset-totp.sh` script:
+    Login to a **[concourse jumpbox]({{ site.baseurl }}{% link _docs/ops/runbook/troubleshooting-bosh.md %}#creating-and-intercepting-ephemeral-jumpboxes)** and run the `reset-totp.sh` script:
 
         cg-scripts/reset-totp.sh cf-production ${username}
 

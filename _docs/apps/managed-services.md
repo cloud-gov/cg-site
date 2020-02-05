@@ -17,7 +17,7 @@ To create a service instance and binding for use with an application, you first 
 % cf marketplace
 ```
 
-See [the services guide]({{< relref "docs/services/intro.md" >}}) as well.
+See [the services guide]({{ site.baseurl }}{% link _docs/services/intro.md %}) as well.
 
 ### Create a service instance
 
@@ -27,7 +27,7 @@ Target the org and space which will hold the app to which the service instance w
 % cf target -o ORG -s SPACE
 ```
 
-Create a new service instance by specifying a service, plan, and a name of your choice for the service instance. Note that service instance names must be unique and can be renamed. For some services, you'll need to include additional parameters in your create-service command -- refer to [the services guide]({{< relref "docs/services/intro.md" >}}) for details.
+Create a new service instance by specifying a service, plan, and a name of your choice for the service instance. Note that service instance names must be unique and can be renamed. For some services, you'll need to include additional parameters in your create-service command -- refer to [the services guide]({{ site.baseurl }}{% link _docs/services/intro.md %}) for details.
 
 ```
 % cf create-service SERVICE_NAME PLAN_NAME INSTANCE_NAME
@@ -35,11 +35,11 @@ Create a new service instance by specifying a service, plan, and a name of your 
 
 #### Paid services
 
-The note `* These service plans have an associated cost` indicates paid services. [Learn about managed service pricing.]({{< relref "docs/pricing/managed-services-cost.md" >}})
+The note `* These service plans have an associated cost` indicates paid services. [Learn about managed service pricing.]({{ site.baseurl }}{% link _docs/pricing/managed-services-cost.md %})
 
 ### Bind the service instance
 
-For services that apply to an application ([Elasticsearch]({{< relref "docs/services/elasticsearch56.md" >}}), [Redis]({{< relref "docs/services/redis.md" >}}), [relational databases (RDS)]({{< relref "docs/services/relational-database.md" >}}), and [S3]({{< relref "docs/services/s3.md" >}})), the service instance must be bound to the application which will access it. (The [CDN service]({{< relref "docs/services/cdn-route.md" >}}), [identity provider]({{< relref "docs/services/cloud-gov-identity-provider.md" >}}), and [service account]({{< relref "docs/services/cloud-gov-service-account.md" >}}) have different instructions, available in their service documentation.) 
+For services that apply to an application ([Elasticsearch]({{ site.baseurl }}{% link _docs/services/elasticsearch56.md %}), [Redis]({{ site.baseurl }}{% link _docs/services/redis.md %}), [relational databases (RDS)]({{ site.baseurl }}{% link _docs/services/relational-database.md %}), and [S3]({{ site.baseurl }}{% link _docs/services/s3.md %})), the service instance must be bound to the application which will access it. (The [CDN service]({{ site.baseurl }}{% link _docs/services/cdn-route.md %}), [identity provider]({{ site.baseurl }}{% link _docs/services/cloud-gov-identity-provider.md %}), and [service account]({{ site.baseurl }}{% link _docs/services/cloud-gov-service-account.md %}) have different instructions, available in their service documentation.) 
 
 Binding to an application can be done in a single step by adding a binding to the application's `manifest.yml`, for example:
 

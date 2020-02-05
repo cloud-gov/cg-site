@@ -31,7 +31,7 @@ The system type is one of the [available packages](/pricing/):
 - FISMA Low system
 - FISMA High system
 
-The package and system type reflects the org's intended use and determines price, features, allowable usage, available services, and level of support. For details, see [quota and pricing rates]({{<relref "docs/pricing/quotas.md">}}).
+The package and system type reflects the org's intended use and determines price, features, allowable usage, available services, and level of support. For details, see [quota and pricing rates]({{ site.baseurl }}{% link _docs/pricing/quotas.md %}).
 
 ### Quota GB
 
@@ -41,7 +41,7 @@ Note: Whole numbers only
 
 ### Org Manager email
 
-The Org Manager manages access control for teammates and creates any needed spaces via the [dashboard]({{<relref "dashboard.md">}}).
+The Org Manager manages access control for teammates and creates any needed spaces via the [dashboard]({{{{ site.baseurl }}{% link _docs/orgs-spaces/dashboard.md %}).
 
 This should be a person who is responsible for the system and the people who work on it, eg a project manager or technical team lead. An Org Manager should be a person who directly knows who should have access and is willing to maintain those permissions.
 

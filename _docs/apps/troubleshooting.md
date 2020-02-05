@@ -9,15 +9,15 @@ linktitle: Troubleshooting
 weight: 100
 ---
 
-Seeing problems with your applications? Take a look at [your app logs]({{< relref "logs.md" >}}) and [review these common issues and solutions](https://docs.cloudfoundry.org/devguide/deploy-apps/troubleshoot-app-health.html).
+Seeing problems with your applications? Take a look at [your app logs]({{ site.baseurl }}{% link _docs/apps/logs.md %}) and [review these common issues and solutions](https://docs.cloudfoundry.org/devguide/deploy-apps/troubleshoot-app-health.html).
 
 ## Application restarts and crash messages
 
-The platform [automatically restarts application instances]({{< relref "docs/apps/deployment.md#application-architecture-principles" >}}) due to routine platform updates, which can be several times a week. If you review logs for an app that is functioning normally and you see recent messages about a series of instance restarts for no apparent reason, platform updates are probably the reason. This is normal and ok!
+The platform [automatically restarts application instances]({{ site.baseurl }}{% link _docs/apps/deployment.md %}#application-architecture-principles) due to routine platform updates, which can be several times a week. If you review logs for an app that is functioning normally and you see recent messages about a series of instance restarts for no apparent reason, platform updates are probably the reason. This is normal and ok!
 
-If you see recent messages such as `The app crashed because of an unknown reason.` and `audit.app.process.crash isn't handled`, this may be because your application didn't stop on request. The platform sends a request to apps to stop nicely so the platform can move them while this happens, but when they don't stop on request, the platform force-kills them, reports them as crashed, and moves them anyway. Usually this doesn't cause interruptions in service, just a few crash messages. To prevent the error messages, you can change your application to [stop gracefully]({{< relref "docs/apps/production-ready.md#graceful-shutdown" >}}). In the recommended [12-factor app architecture](https://12factor.net/), see the [disposability factor](https://12factor.net/disposability).
+If you see recent messages such as `The app crashed because of an unknown reason.` and `audit.app.process.crash isn't handled`, this may be because your application didn't stop on request. The platform sends a request to apps to stop nicely so the platform can move them while this happens, but when they don't stop on request, the platform force-kills them, reports them as crashed, and moves them anyway. Usually this doesn't cause interruptions in service, just a few crash messages. To prevent the error messages, you can change your application to [stop gracefully]({{ site.baseurl }}{% link _docs/apps/production-ready.md %}#graceful-shutdown). In the recommended [12-factor app architecture](https://12factor.net/), see the [disposability factor](https://12factor.net/disposability).
 
-If your application only has one instance, you may see brief interruptions in service during restarts due to routine platform updates. You can fix this by setting up [multiple application instances]({{< relref "docs/apps/multiple-instances.md" >}}).
+If your application only has one instance, you may see brief interruptions in service during restarts due to routine platform updates. You can fix this by setting up [multiple application instances]({{ site.baseurl }}{% link _docs/apps/multiple-instances.md %}).
 
 ## Potential causes of issues during staging phase ([STG])
 

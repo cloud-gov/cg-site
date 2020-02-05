@@ -11,7 +11,7 @@ Applications with non-trivial static assets (Javascript and CSS files) often inc
 
 ### Build assets on CI
 
-For applications [deployed from a continuous integration service]({{< relref "continuous-deployment.md" >}}), building assets on CI is a natural fit. Before deploying to cloud.gov, the CI service runs the asset build process. Then the compiled assets are pushed to cloud.gov along with the application code. Here's a minimal example for Travis CI:
+For applications [deployed from a continuous integration service]({{ site.baseurl }}{% link _docs/apps/continuous-deployment.md %}), building assets on CI is a natural fit. Before deploying to cloud.gov, the CI service runs the asset build process. Then the compiled assets are pushed to cloud.gov along with the application code. Here's a minimal example for Travis CI:
 
 ```yaml
 # .travis.yml

@@ -10,7 +10,7 @@ title: Contingency plan
 
 This Contingency Plan provides guidance for our team in the case of trouble delivering our essential mission and business functions because of disruption, compromise, or failure of any component of cloud.gov. As a general guideline, we consider "disruption" to mean more than 30 minutes of unexpected downtime or significantly reduced service for customer applications.
 
-Scenarios where that could happen include unexpected downtime of key external services, data loss, or [high-severity security incidents]({{< relref "security-ir.md#1-high-severity" >}}). In the case of a security incident, the team uses the [Security Incident Response Guide]({{< relref "security-ir.md" >}}) as well.
+Scenarios where that could happen include unexpected downtime of key external services, data loss, or [high-severity security incidents]({{ site.baseurl }}{% link _docs/ops/security-ir.md %}#1-high-severity). In the case of a security incident, the team uses the [Security Incident Response Guide]({{ site.baseurl }}{% link _docs/ops/security-ir.md %}) as well.
 
 ## Recovery objective
 
@@ -24,7 +24,7 @@ More than 3 hours of cloud.gov being offline would be unacceptable. Our objectiv
 
 When any cloud.gov team member identifies a potential contingency-plan-level problem, they should begin following this plan. That first person becomes the **Incident Commander** (communications coordinator) until recovery efforts are complete or they explicitly reassign the Incident Commander role to another team member.
 
-* Security note: If the problem is identified as part of a [security incident response situation]({{< relref "security-ir.md" >}}) (or becomes a security incident response situation), the same Incident Commander (IC) should handle the overall situation, since these response processes must be coordinated.
+* Security note: If the problem is identified as part of a [security incident response situation]({{ site.baseurl }}{% link _docs/ops/security-ir.md %}) (or becomes a security incident response situation), the same Incident Commander (IC) should handle the overall situation, since these response processes must be coordinated.
 
 The IC's first priority is to notify the following people. They are each authorized to decide that cloud.gov needs to activate the contingency plan. To contact them, use Slack chat, a Slack call, or call and text the phone numbers in their Slack profiles.
 
@@ -40,7 +40,7 @@ The IC should:
 * Start a team videocall for coordination.
 * Start a notes doc with timestamps [in Google Drive](https://drive.google.com/drive/folders/0B58iDAWKmw_BSEtqcUFFQ041MHc).
 
-If this is also a security incident: also follow the [security incident communications process]({{< relref "security-ir.md#initiate" >}}). As necessary, delegate assistant ICs.
+If this is also a security incident: also follow the [security incident communications process]({{ site.baseurl }}{% link _docs/ops/security-ir.md %}#initiate). As necessary, delegate assistant ICs.
 
 ### Notification
 
@@ -64,7 +64,7 @@ The IC should also:
 
 The Cloud Operations team assesses the situation and works to recover the system. See the list of [external dependencies](#external-dependencies) for procedures for recovery from problems with external services.
 
-If this is also a security incident, the IC and Cloud Operations also follow the security incident [assessment]({{< relref "security-ir.md#initiate" >}}) and [remediation]({{< relref "security-ir.md#remediation" >}}) processes.
+If this is also a security incident, the IC and Cloud Operations also follow the security incident [assessment]({{ site.baseurl }}{% link _docs/ops/security-ir.md %}#initiate) and [remediation]({{ site.baseurl }}{% link _docs/ops/security-ir.md %}#remediation) processes.
 
 If the IC assesses that the overall response process is likely to last longer than 3 hours, the IC should organize shifts so that each responder works on response for no longer than 3 hours at a time, including handing off their own responsibility to a new IC after 3 hours.
 
@@ -86,7 +86,7 @@ The Incident Commander declares that recovery efforts are complete and notifies 
 * Notify TTS and 18F leadership.
 * As needed, email customers who contacted support with concerns.
 
-Next, the team schedules an internal postmortem to discuss the event. This is the same as the [security incident retrospective process]({{< relref "security-ir.md#initiate" >}}). Then we write a public postmortem and post it on StatusPage for users. We should also discuss with our JAB representatives whether they need additional information.
+Next, the team schedules an internal postmortem to discuss the event. This is the same as the [security incident retrospective process]({{ site.baseurl }}{% link _docs/ops/security-ir.md %}#initiate). Then we write a public postmortem and post it on StatusPage for users. We should also discuss with our JAB representatives whether they need additional information.
 
 ## External dependencies
 
@@ -130,7 +130,7 @@ In case of a **significant** disruption, after receiving approval from our Autho
 If all AWS regions are disrupted, Cloud Operations will deploy the system to another BOSH-supported IaaS provider (such as Microsoft Azure).
 
 #### AWS RDS
-Major services (Cloud Foundry, BOSH, Concourse, and UAA) rely on databases provided by RDS. To restore a database from backup, see [restoring RDS]({{< ref "docs/ops/runbook/restoring-rds.md" >}}).
+Major services (Cloud Foundry, BOSH, Concourse, and UAA) rely on databases provided by RDS. To restore a database from backup, see [restoring RDS]({{ site.baseurl }}{% link _docs/ops/runbook/restoring-rds.md %}).
 
 
 ## How this document works

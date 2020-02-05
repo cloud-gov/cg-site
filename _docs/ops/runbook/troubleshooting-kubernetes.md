@@ -76,7 +76,7 @@ this course of action:
 
 By default, Kubernetes does not pull docker images that already exist on the
 node. When updating an existing image and tag, force Kubernetes to pull the
-latest version from a [jumpbox]({{< relref "docs/ops/runbook/troubleshooting-bosh.md" >}})
+latest version from a [jumpbox]({{ site.baseurl }}{% link _docs/ops/runbook/troubleshooting-bosh.md %})
 with the following command.
 
 ```shell

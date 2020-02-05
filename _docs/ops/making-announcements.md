@@ -32,4 +32,4 @@ To announce maintenance on the status page:
 
 ## <a name="announcing-incidents"></a>Announcing Incidents/Outages
 
-See the [service disruption guide]({{< relref "service-disruption-guide.md" >}}).
+See the [service disruption guide]({{ site.baseurl }}{% link _docs/ops/service-disruption-guide.md %}).

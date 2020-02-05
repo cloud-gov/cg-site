@@ -13,12 +13,12 @@ BOSH Lite is designed to provide a local development environment for BOSH and by
 
 ### Prerequisites:
 
-1. [Vagrant]({{< relref "#vagrant" >}})
-1. [AWS CLI]({{< relref "#aws-cli" >}})
-1. [Git]({{< relref "#git" >}})
-1. [Cloud Foundry CLI]({{< relref "#cloud-foundry-cli" >}})
-1. [Bosh IAM User]({{< relref "#bosh-iam-user" >}})
-1. [Bosh EC2 Security Group]({{< relref "#bosh-ec2-security-group" >}})
+1. [Vagrant](#vagrant)
+1. [AWS CLI](#aws-cli)
+1. [Git](#git)
+1. [Cloud Foundry CLI](#cloud-foundry-cli)
+1. [Bosh IAM User](#bosh-iam-user)
+1. [Bosh EC2 Security Group](#bosh-ec2-security-group)
 
 ##### Vagrant
 
@@ -118,7 +118,7 @@ Bring the vagrant machine up.
 
 	vagrant up
 
-The initial `vagrant up` includes provisioning scripts which set up port forwarding rules via iptables to expose Cloud Foundry service VMs running as warden containers on the instance.  If the machine is restarted or halted for any reason we’ll need to follow the steps in [reprovisioning]({{< relref "#reprovisioning" >}}) below.
+The initial `vagrant up` includes provisioning scripts which set up port forwarding rules via iptables to expose Cloud Foundry service VMs running as warden containers on the instance.  If the machine is restarted or halted for any reason we’ll need to follow the steps in [reprovisioning](#reprovisioning %}) below.
 
 Grab the public IP of the resulting instance and keep it handy. We’ll need it later in the deployment and when accessing the resulting environment with the Cloud Foundry CLI.
 

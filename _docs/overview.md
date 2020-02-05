@@ -10,14 +10,14 @@ cloud.gov is developed **by a government team, for government work**. 18F, house
 
 cloud.gov’s mission is to support agency efforts to improve the way they manage information technology. cloud.gov helps government teams gain expertise in cloud technology, and it supports partnerships with vendors and contractors that prefer to build using cloud platforms.
 
-[Learn more about cloud.gov.]({{< relref "docs/overview/what-is-cloudgov.md" >}})
+[Learn more about cloud.gov.]({{ site.baseurl }}{% link _docs/overview/what-is-cloudgov.md %})
 
 ### Compliance
 
-cloud.gov was designed with **FISMA compliance** in mind. cloud.gov has a [FedRAMP Joint Authorization Board (JAB) Provisional Authority to Operate (P-ATO)]({{< relref "docs/security/fedramp-tracker.md" >}}) at the Moderate impact level.  The vast majority of Low and Moderate controls are managed for you.
+cloud.gov was designed with **FISMA compliance** in mind. cloud.gov has a [FedRAMP Joint Authorization Board (JAB) Provisional Authority to Operate (P-ATO)]({{ site.baseurl }}{% link _docs/security/fedramp-tracker.md %}) at the Moderate impact level.  The vast majority of Low and Moderate controls are managed for you.
 
 ### Free sandboxes
 
-Anyone with a U.S. federal government email address can get access to a [free sandbox space]({{< relref "docs/pricing/free-limited-sandbox.md" >}}) and try cloud.gov immediately. **No paperwork required**.
+Anyone with a U.S. federal government email address can get access to a [free sandbox space]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}) and try cloud.gov immediately. **No paperwork required**.
 
 

@@ -10,10 +10,10 @@ title: Configuration management
 
 <!-- This page is important for FedRAMP compliance. See the CM family of controls, including CM-9. Code Climate is part of SA-11 (1), SI-3, and RA-5. -->
 
-This document describes how the cloud.gov team approaches configuration management of the core platform. Before configuration changes go into production, they need to pass our [significant change rubric]({{< relref "docs/ops/continuous-monitoring.md#appendix-significant-change-rubric" >}}), as described in our [Feature Lifecycle](https://github.com/18F/cg-product/blob/master/FeatureLifecycle.md) and [Story Lifecycle](https://github.com/18F/cg-product/blob/master/StoryLifecycle.md).
+This document describes how the cloud.gov team approaches configuration management of the core platform. Before configuration changes go into production, they need to pass our [significant change rubric]({{ site.baseurl }}{% link _docs/ops/continuous-monitoring.md %}#appendix-significant-change-rubric), as described in our [Feature Lifecycle](https://github.com/18F/cg-product/blob/master/FeatureLifecycle.md) and [Story Lifecycle](https://github.com/18F/cg-product/blob/master/StoryLifecycle.md).
 
 ## What goes into configuration management?
-In short, everything needed to run and operate the platform that is not a _secret_. (See [Secret Key Management]({{< relref "docs/ops/secrets.md" >}}) for that.)
+In short, everything needed to run and operate the platform that is not a _secret_. (See [Secret Key Management]({{ site.baseurl }}{% link _docs/ops/secrets.md %}) for that.)
 
 Here are some examples that should be in configuration management:
 
@@ -78,7 +78,7 @@ Before we put a new repository into production:
      * `Admin` for [cloud-gov](https://github.com/orgs/18F/teams/cloud-gov/members).
      * `Admin` for [cloud-gov-ops](https://github.com/orgs/18F/teams/cloud-gov-ops/members).
 * Set up CI/CD for changes (CM-3).
-* Open a PR to add it to the [repos list]({{< relref "docs/ops/repos.md#repositories" >}}) (to help us keep track of our repos and support open source reuse of our work).
+* Open a PR to add it to the [repos list]({{ site.baseurl }}{% link _docs/ops/repos.md %}#repositories) (to help us keep track of our repos and support open source reuse of our work).
 * Open a PR to add it to the [repos list for pre-merge checks](https://github.com/18F/cg-pipeline-tasks/blob/master/security-considerations/repos.txt)
 
 ## What if a configuration changed and it is not in Configuration Management?

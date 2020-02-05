@@ -28,7 +28,7 @@ cloud.gov enforces an immutable infrastructure. Instead of logging into a live s
 
 ## 2. Compliance with federal requirements
 
-cloud.gov has a [Provisional Authority to Operate (P-ATO) at the Moderate impact level from the FedRAMP Joint Authorization Board (JAB)]({{< relref "docs/security/fedramp-tracker.md" >}}). When you deploy a system on cloud.gov, you can [leverage this P-ATO](https://www.fedramp.gov/resources/faqs/how-does-an-agency-leverage-a-fedramp-authorization/) as part of your agency ATO.
+cloud.gov has a [Provisional Authority to Operate (P-ATO) at the Moderate impact level from the FedRAMP Joint Authorization Board (JAB)]({{ site.baseurl }}{% link _docs/security/fedramp-tracker.md %}). When you deploy a system on cloud.gov, you can [leverage this P-ATO](https://www.fedramp.gov/resources/faqs/how-does-an-agency-leverage-a-fedramp-authorization/) as part of your agency ATO.
 
 Out of the 325 security controls required for Moderate-impact systems, cloud.gov handles 269 controls, and 41 controls are a shared responsibility (where cloud.gov provides part of the requirement, and your applications provide the rest). You only need to provide full implementations for the remaining 15 controls, such as ensuring you make data backups and using reliable DNS (Domain Name System) name servers for your websites.
 
@@ -38,4 +38,4 @@ A Platform as a Service (PaaS) like cloud.gov can save you the resources of mana
 
 The cloud.gov UI delivers the main concepts of the Cloud Foundry project in a straightforward form. Cloud Foundry provides a good API and tools for teams to manage all the environments, services, and applications necessary to deliver an app to production with minimal hassle. Cloud Foundry also provides well-designed tenancy controls. They make it easy to manage both who can access what, and how usage will be billed back to specific projects or agencies.
 
-The cloud.gov deployment is [publicly documented in GitHub]({{< relref "docs/ops/repos.md" >}}). We encourage other agencies and the general public to contribute. Anyone is also free to take our work to deploy their own Platform as a Service.
+The cloud.gov deployment is [publicly documented in GitHub]({{ site.baseurl }}{% link _docs/ops/repos.md %}). We encourage other agencies and the general public to contribute. Anyone is also free to take our work to deploy their own Platform as a Service.

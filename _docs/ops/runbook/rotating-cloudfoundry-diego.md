@@ -35,7 +35,7 @@ The Cloud Foundry secrets are split into two parts, a `main.yml` and
 `external.yml`. Internal secrets can be rotated either all at once or on a
 rolling schedule of deployments. You can pull the information needed to decrypt
 these from the `cg-deploy-cf` pipeline. You can easily grab the information
-needed to [decrypt and encrypt secrets]({{< relref "docs/ops/secrets.md" >}}) from
+needed to [decrypt and encrypt secrets]({{ site.baseurl }}{% link _docs/ops/secrets.md %}) from
 Concourse using the `fly-cli`.
 
 ```sh
@@ -79,8 +79,7 @@ certificate generation is consolidated in the `cg-deploy-cf` repository.
 
 #### Mind the Security Configuration for Consul schedule
 
-Please see the documentation for [_Rotating certificates_]({{< relref
-"rotating-secrets.md#rotating-certificates" >}}).
+Please see the documentation for [_Rotating certificates_]({{ site.baseurl }}{% link _docs/ops/runbook/rotating-secrets.md %}#rotating-certificates).
 
 #### Updating certificates in secrets
 

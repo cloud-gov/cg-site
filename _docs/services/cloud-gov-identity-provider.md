@@ -18,7 +18,7 @@ Plan Name | Description |
 --------- | ----------- | -----
 `oauth-client` | OAuth2 client credentials for authenticating cloud.gov users in your app | 
 
-*These instances are available in [sandbox spaces]({{< relref "docs/pricing/free-limited-sandbox.md#sandbox-limitations" >}}).*
+*These instances are available in [sandbox spaces]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}#sandbox-limitations).*
 
 ## How to create an instance
 
@@ -45,11 +45,11 @@ This will create a cloud.gov identity provider and make the credentials availabl
 
 <!-- this description matches on cloud-gov-identity-provider.md and cloud-gov-service-account.md -->
 
-If you're trying to retrieve credentials for a service instance created before July 7, 2017, those old service instances had a different way of retrieving credentials. You can check this by running `cf services` to get your service instance name and then running `cf service service-instance-name` -- if the service information includes a link to `fugacious.18f.gov`, it's an old service instance. See [this post for changes]({{< relref "updates/2017-07-07-changes-to-credentials-broker.md" >}}) -- your best next step is to delete the old service instance and create a new one.
+If you're trying to retrieve credentials for a service instance created before July 7, 2017, those old service instances had a different way of retrieving credentials. You can check this by running `cf services` to get your service instance name and then running `cf service service-instance-name` -- if the service information includes a link to `fugacious.18f.gov`, it's an old service instance. See [this post for changes](updates/2017-07-07-changes-to-credentials-broker.md) -- your best next step is to delete the old service instance and create a new one.
 
 ## More information
 
-See [leveraging authentication]({{< relref "docs/apps/leveraging-authentication.md" >}}) for details.
+See [leveraging authentication]({{ site.baseurl }}{% link _docs/apps/leveraging-authentication.md %}) for details.
 
 ### Rotating credentials
 

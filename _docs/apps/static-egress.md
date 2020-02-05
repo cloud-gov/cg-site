@@ -11,7 +11,7 @@ You can set up your application to communicate with any external service that is
 
 All traffic from applications on cloud.gov will transit the internet. You can secure the communication with authentication and with encryption in transit, and you can limit access to specific IP ranges.
 
-You can work with us to establish a dedicated connection to your network for a range of applications and external services, or you can secure the communication for each application and service on your own. To establish a dedicated connection to your network, review the [network diagram and instructions for setting up the connection]({{< relref "docs/apps/private-egress" >}}).
+You can work with us to establish a dedicated connection to your network for a range of applications and external services, or you can secure the communication for each application and service on your own. To establish a dedicated connection to your network, review the [network diagram and instructions for setting up the connection]({{ site.baseurl }}{% link _docs/apps/private-egress.md %}).
 
 ## Securing communication for a single application and service
 
@@ -26,7 +26,7 @@ Authentication options:
 
 Some service providers filter clients based on IP ranges to minimize the surface area of their service on the open internet. If your service provider requires this, you can provide the [cloud.gov egress addresses](#cloud-gov-egress-ranges) to the people who handle network security for the service. 
 
-**Note:** Filtering by IP address **alone** will only ensure that traffic is originating from an application on cloud.gov. It provides no guarantee that the traffic is from _your_ application. Applications from other agencies and [sandbox accounts]({{< relref "docs/pricing/free-limited-sandbox.md" >}}) will also originate from the same addresses.
+**Note:** Filtering by IP address **alone** will only ensure that traffic is originating from an application on cloud.gov. It provides no guarantee that the traffic is from _your_ application. Applications from other agencies and [sandbox accounts]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}) will also originate from the same addresses.
 
 
 ### cloud.gov egress ranges

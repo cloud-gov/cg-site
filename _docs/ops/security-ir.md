@@ -11,7 +11,7 @@ linktitle: Security IR Guide
 
 This document outlines cloud.gov's internal process for responding to security incidents. It outlines roles and responsibilities during and after incidents, and it lays out the steps we'll take to resolve them.
 
-*If you're responding to an incident, [here's our IR checklist]({{< relref "security-ir-checklist.md" >}}) as a short, actionable companion to this guide.*
+*If you're responding to an incident, [here's our IR checklist]({{ site.baseurl }}{% link _docs/ops/security-ir-checklist.md %}) as a short, actionable companion to this guide.*
 
 (If you're a member of the public who has noticed something in cloud.gov that may be a security problem, please see [our vulnerability disclosure policy and reporting process](https://18f.gsa.gov/vulnerability-disclosure-policy/). As it explains, we want security researchers to feel comfortable reporting vulnerabilities they’ve discovered, as set out in that policy, so that we can fix them and keep our information safe.)
 
@@ -28,7 +28,7 @@ At a high level, incident response follows this process:
 [Assess](#assess):
 
 - The IC forms a team (*responders*) to determine if the event is actually a confirmed incident, and if so [assesses the severity](#incident-severities).
-- The IC assesses whether to also activate the [contingency plan]({{< relref "contingency-plan.md" >}}).
+- The IC assesses whether to also activate the [contingency plan]({{ site.baseurl }}{% link _docs/ops/contingency-plan.md %}).
 - The IC sends out an initial situation report (sitrep), or a false-alarm notification.
 
 [Remediate](#remediate):
@@ -105,7 +105,7 @@ Once this is done, the IC should update the ticket, noting:
 - Severity: High/Med/Low
 - Any new/changed responders
 
-The IC should assess whether to also activate the [contingency plan]({{< relref "contingency-plan.md" >}}).
+The IC should assess whether to also activate the [contingency plan]({{ site.baseurl }}{% link _docs/ops/contingency-plan.md %}).
 
 At this point, the IC should write an initial situation report ("sitrep") confirming the incident, summarizing what's going on, identifying the IC, and linking to the issue. Here's an example sitrep:
 
@@ -178,7 +178,7 @@ Once the incident is no longer active — i.e. the breach has been contained, th
 
 The final step in handling a security incident is figuring out what we learned. The IC (or one of the ICs if there were multiple, or a designated other party) should lead a retrospective and develop an incident report.
 
-We follow [the postmortem steps in the service disruption guide]({{< relref "service-disruption-guide.md#ensure-a-postmortem-happens" >}}), including writing an internal report. If appropriate, we also write a public postmortem to post on [Updates](/updates/) or [StatusPage](https://cloudgov.statuspage.io/) (depending on the type of problem).
+We follow [the postmortem steps in the service disruption guide]({{ site.baseurl }}{% link _docs/ops/service-disruption-guide.md %}#ensure-a-postmortem-happens), including writing an internal report. If appropriate, we also write a public postmortem to post on [Updates](/updates/) or [StatusPage](https://cloudgov.statuspage.io/) (depending on the type of problem).
 
 The internal report should contain a timeline of the incident, details about how the incident progressed, and information about the vulnerabilities that led to the incident. A cause analysis is an important part of this report; the team should use tools such as [Infinite Hows](http://www.kitchensoap.com/2014/11/14/the-infinite-hows-or-the-dangers-of-the-five-whys/) or [Five Whys](https://en.wikipedia.org/wiki/5_Whys) to try to dig into causes, how future incidents could be prevented, how responses could be better in the future, etc.
 

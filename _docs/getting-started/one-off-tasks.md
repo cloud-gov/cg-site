@@ -11,8 +11,8 @@ This table shows a handful of common operations, with the recommended way to per
 
 What are you trying to do? | Documentation
 --- | ---
-Inspect an app instance to figure out what's wrong | [`cf ssh`]({{< relref "docs/apps/using-ssh.md" >}})
-Work with one of your service instances | [`cf ssh` with port forwarding]({{< relref "docs/apps/using-ssh.md" >}})
+Inspect an app instance to figure out what's wrong | [`cf ssh`]({{ site.baseurl }}{% link _docs/apps/using-ssh.md %})
+Work with one of your service instances | [`cf ssh` with port forwarding]({{ site.baseurl }}{% link _docs/apps/using-ssh.md %})
 Run a non-interactive process that does a task (such as generating a report, cleaning up garbage, mailing people, processing some data, etc.) | [Cloud Foundry Tasks](https://docs.cloudfoundry.org/devguide/using-tasks.html)
 Alternative way to run a non-interactive process that does a task (may be suitable if you want full control over the task app lifecycle) | [Deploy an app that performs a task](#deploy-an-app-that-performs-a-task)
 
@@ -20,7 +20,7 @@ Alternative way to run a non-interactive process that does a task (may be suitab
 
 If you'd like to run a periodic scheduled task (similar to a cron job), you should find a cron-like library in the programming language that you're working with, and implement the task using that library. You can run this as part of an existing application or as a separate application.
 
-If you use [continuous deployment]({{< relref "docs/apps/continuous-deployment.md" >}}), you can use a timer as an input to a task or pipeline that runs a [Cloud Foundry Task](https://docs.cloudfoundry.org/devguide/using-tasks.html).
+If you use [continuous deployment]({{ site.baseurl }}{% link _docs/apps/continuous-deployment.md %}), you can use a timer as an input to a task or pipeline that runs a [Cloud Foundry Task](https://docs.cloudfoundry.org/devguide/using-tasks.html).
 
 ## Deploy an app that performs a task
 
@@ -74,7 +74,7 @@ Note that this will not work for any command that is interactive.
 cf push -f task_manifest.yml --health-check-type none --no-route
 cf logs --recent task-runner
 ```
-1. If needed, use [`cf ssh`]({{< relref "docs/apps/using-ssh.md" >}}) to collect any artifacts.
+1. If needed, use [`cf ssh`]({{ site.baseurl }}{% link _docs/apps/using-ssh.md %}) to collect any artifacts.
 1. Run `cf delete task-runner` to clean it up. **If you don't do this, your app may automatically run itself again in the future.** cloud.gov sometimes automatically restarts apps as part of routine operations (such as platform updates), which can include restarting this kind of app if it hasn't been deleted.
 
 [cf-no-route]: https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#no-route "CloudFoundry Documentation about --no-route"

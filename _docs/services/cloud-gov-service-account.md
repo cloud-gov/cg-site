@@ -21,7 +21,7 @@ Plan Name | Description |
 `space-deployer` | A service account for continuous deployment, limited to a single space | 
 `space-auditor` | A service account for auditing configuration and monitoring events limited to a single space | 
 
-*These instances are available in [sandbox spaces]({{< relref "docs/pricing/free-limited-sandbox.md#sandbox-limitations" >}}).*
+*These instances are available in [sandbox spaces]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}sandbox-limitations).*
 
 ## How to create an instance
 
@@ -66,11 +66,11 @@ You can use these credentials with the [`cf auth`](http://cli.cloudfoundry.org/e
 
 <!-- this description matches on cloud-gov-identity-provider.md and cloud-gov-service-account.md -->
 
-If you're trying to retrieve credentials for a service instance created before July 7, 2017, those old service instances had a different way of retrieving credentials. You can check this by running `cf services` to get your service instance name and then running `cf service service-instance-name` -- if the service information includes a link to `fugacious.18f.gov`, it's an old service instance. See [this post for changes]({{< relref "updates/2017-07-07-changes-to-credentials-broker.md" >}}) -- your best next step is to delete the old service instance and create a new one.
+If you're trying to retrieve credentials for a service instance created before July 7, 2017, those old service instances had a different way of retrieving credentials. You can check this by running `cf services` to get your service instance name and then running `cf service service-instance-name` -- if the service information includes a link to `fugacious.18f.gov`, it's an old service instance. See [this post for changes](updates/2017-07-07-changes-to-credentials-broker.md) -- your best next step is to delete the old service instance and create a new one.
 
 ## More information
 
-To use this service, see [continuous deployment]({{< relref "docs/apps/continuous-deployment.md" >}}).
+To use this service, see [continuous deployment]({{ site.baseurl }}{% link _docs/apps/continuous-deployment.md %}).
 
 ### Rotating credentials
 

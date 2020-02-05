@@ -15,9 +15,9 @@ title: More languages (custom buildpacks)
 weight: 30
 ---
 
-Cloud Foundry (the underlying open source project behind cloud.gov) uses [buildpacks]({{< relref "docs/getting-started/concepts.md">}}#buildpacks) to allow your applications to be deployed. cloud.gov [officially supports](/pricing/) a set of buildpacks, and it also allows you to provide your own.
+Cloud Foundry (the underlying open source project behind cloud.gov) uses [buildpacks]({ site.baseurl }}{% link _docs/getting-started/concepts.md %}#buildpacks) to allow your applications to be deployed. cloud.gov [officially supports](/pricing/) a set of buildpacks, and it also allows you to provide your own.
 
-Once you push your code using a custom buildpack, cloud.gov cannot update it for you. You are responsible for keeping it up to date. Please see [this description of responsibilities]({{< relref "docs/technology/responsibilities.md">}}).
+Once you push your code using a custom buildpack, cloud.gov cannot update it for you. You are responsible for keeping it up to date. Please see [this description of responsibilities]({ site.baseurl }}{% link _docs/technology/responsibilities.md %}).
 
 ## Example custom buildpacks
 
@@ -27,4 +27,4 @@ cloud.gov does not allow the use of `sudo` inside of buildpacks. If your app dep
 
 ## Multi-buildpack support
 
-If your application involves multiple languages, and it's not practical to split it into smaller applications (or the other options [under "Multiple languages" here]({{< relref "docs/getting-started/concepts.md#buildpacks">}})), Cloud Foundry offers support for [using multiple buildpacks](https://docs.cloudfoundry.org/buildpacks/use-multiple-buildpacks.html) for an application.
+If your application involves multiple languages, and it's not practical to split it into smaller applications (or the other options [under "Multiple languages" here]({ site.baseurl }}{% link _docs/getting-started/concepts.md %}#buildpacks), Cloud Foundry offers support for [using multiple buildpacks](https://docs.cloudfoundry.org/buildpacks/use-multiple-buildpacks.html) for an application.

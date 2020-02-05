@@ -9,15 +9,15 @@ title: Leveraging cloud.gov authentication
 
 cloud.gov uses Cloud Foundry's [User Account and Authentication (UAA) server](https://docs.cloudfoundry.org/concepts/architecture/uaa.html) to provide identity management capabilities for the cloud.gov platform.
 
-App developers can leverage cloud.gov's UAA instance as a backend that brokers authentication with [supported identity providers]({{< relref "accounts.md#to-get-access-to-cloud-gov" >}}) (currently EPA, FDIC, GSA, NSF, and a cloud.gov provider that supports other agencies). You can use cloud.gov's authentication brokering if the users that you need to authenticate in your application are federal employees and contractors who can use those authentication methods.
+App developers can leverage cloud.gov's UAA instance as a backend that brokers authentication with [supported identity providers]({{ site.baseurl }}{% link _docs/getting-started/accounts.md %}#to-get-access-to-cloud-gov) (currently EPA, FDIC, GSA, NSF, and a cloud.gov provider that supports other agencies). You can use cloud.gov's authentication brokering if the users that you need to authenticate in your application are federal employees and contractors who can use those authentication methods.
 
-This service handles only authentication, not authorization -- it's up to your application to manage what they can access within the application. Once you set it up, you can direct your users to the [list of ways to get cloud.gov access]({{< relref "accounts.md#to-get-access-to-cloud-gov" >}}); they don't need any org or space roles, they just need to be able to log into cloud.gov.
+This service handles only authentication, not authorization -- it's up to your application to manage what they can access within the application. Once you set it up, you can direct your users to the [list of ways to get cloud.gov access]({{ site.baseurl }}{% link _docs/getting-started/accounts.md %}#to-get-access-to-cloud-gov); they don't need any org or space roles, they just need to be able to log into cloud.gov.
 
 ## Using cloud.gov authentication
 
 ### Register your application instances
 
-You will first need to register all instances (such as dev, staging, and production) with cloud.gov's UAA. To register your instance, use the [cloud.gov identity provider]({{< relref "docs/services/cloud-gov-identity-provider.md" >}}) service.
+You will first need to register all instances (such as dev, staging, and production) with cloud.gov's UAA. To register your instance, use the [cloud.gov identity provider]({{ site.baseurl }}{% link _docs/services/cloud-gov-identity-provider.md %}) service.
 
 ### Integrate with your application
 
@@ -116,7 +116,7 @@ To implement this logout:
   users come back to a familiar place when logged out.
 
 Include the `redirect` link when you register your [cloud.gov identity
-provider]({{< relref "docs/services/cloud-gov-identity-provider.md" >}})
+provider]({{ site.baseurl }}{% link _docs/services/cloud-gov-identity-provider.md %})
 service. It's common for this redirect link to be your application's URL with a
 path of `/logout`.
 

@@ -9,7 +9,7 @@ title: Managing teammates
 
 ## Beta dashboard migration
 
-NOTE: We now recommend using the [beta dashboard](https://dashboard-beta.fr.cloud.gov/) to manage user roles and [have instructions available here]({{< relref "docs/orgs-spaces/roles.md" >}}).
+NOTE: We now recommend using the [beta dashboard](https://dashboard-beta.fr.cloud.gov/) to manage user roles and [have instructions available here]({{ site.baseurl }}{% link _docs/orgs-spaces/roles.md %}).
 
 ## Invite a teammate
 

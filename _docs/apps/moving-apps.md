@@ -9,7 +9,7 @@ title: Moving apps between spaces
 
 If you have an app that exists in one org/space but you need to move it to another:
 
-1. Deploy the new application instance using the appropriate steps on the [cloning]({{< relref "docs/apps/cloning.md" >}}) page.
+1. Deploy the new application instance using the appropriate steps on the [cloning]({{ site.baseurl }}{% link _docs/apps/cloning.md %}) page.
     * Make sure to run `cf target -o <NEW_ORG> -s <NEW_SPACE>` before running `cf push`.
     * If you keep the app name the same, you may need to use a different `host` to avoid route conflicts.
 1. Go back to the old space.
@@ -32,7 +32,7 @@ If you have an app that exists in one org/space but you need to move it to anoth
     cf target -o <NEW_ORG> -s <NEW_SPACE>
     ```
 
-1. If you changed orgs and are using a Domain, [re-create it]({{< relref "docs/apps/custom-domains.md" >}}).
+1. If you changed orgs and are using a Domain, [re-create it]({{ site.baseurl }}{% link _docs/apps/custom-domains.md %}).
 
     ```sh
     cf create-domain <DOMAIN>

@@ -32,7 +32,7 @@ to update VMs is denied with an error.
 
 #### Recreating and cloud checking BOSH VMs
 
-Create a [jumpbox]({{< relref "docs/ops/runbook/troubleshooting-bosh.md#creating-and-intercepting-ephemeral-jumpboxes" >}})
+Create a [jumpbox]({{ site.baseurl }}{% link _docs/ops/runbook/troubleshooting-bosh.md %}#creating-and-intercepting-ephemeral-jumpboxes)
 for the BOSH director you'd like to target. Once in the jumpbox, view the status
 of the currently deployed VMs.
 
@@ -115,7 +115,7 @@ Verify that these external deployments have been paused before proceeding with
 these steps.
 
 Besides certificates, all secrets in each BOSH deployment can be generated and
-replaced or can be updated from [rotated IAM users]({{< relref "docs/ops/runbook/rotating-iam-users.md" >}}).
+replaced or can be updated from [rotated IAM users]({{ site.baseurl }}{% link _docs/ops/runbook/rotating-iam-users.md %}).
 
 #### Deploying Master BOSH
 
@@ -134,7 +134,7 @@ can be found in the Terraform output for the Tooling environment as `master_bosh
 ```
 
 Once the certificates have been generated, update the values in the Master BOSH
-secrets. See the [secret key management]({{< relref "docs/ops/secrets.md" >}})
+secrets. See the [secret key management]({{ site.baseurl }}{% link _docs/ops/secrets.md %})
 and substitute the file you're downloading for the Master BOSH file found in the
 `deploy-bosh` pipeline.
 
@@ -144,7 +144,7 @@ The script will also upload a new [key pair](http://docs.aws.amazon.com/AWSEC2/l
 
 Use the same secrets passphrase you generated for the encrypting both the
 secrets file and the private key. Encrypt and upload the private key using the
-same technique for [secret key management]({{< relref "docs/ops/secrets.md" >}}).
+same technique for [secret key management]({{ site.baseurl }}{% link _docs/ops/secrets.md %}).
 
 ```sh
 INPUT_FILE=master-bosh.key \

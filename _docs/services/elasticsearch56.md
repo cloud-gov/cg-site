@@ -41,7 +41,7 @@ The Elasticsearch service includes the [AWS S3 Repository Plugin](https://www.el
 
 You can also use this example. The example assumes you already have an Elasticsearch service called `my-elastic-service`, an app called `my-app`, and that you have [curl](https://curl.haxx.se/), [jq](https://stedolan.github.io/jq/), and the [AWS command line interface](https://aws.amazon.com/cli/) available.
 
-* Create an instance of the [S3 service]({{< relref "docs/services/s3.md" >}}):
+* Create an instance of the [S3 service]({{ site.baseurl }}{% link _docs/services/s3.md %}):
 
     ```sh
     cf create-service s3 basic my-s3-bucket
@@ -59,7 +59,7 @@ You can also use this example. The example assumes you already have an Elasticse
     cf create-service-key my-elastic-service my-key
     ```
 
-* Connect to your Elasticsearch service using port forwarding. **Note**: You'll need to leave the [`cf ssh`]({{< relref "docs/apps/using-ssh.md" >}}) command running and follow the next steps in a different terminal so that you can access the remote Elasticsearch instance from your local environment:
+* Connect to your Elasticsearch service using port forwarding. **Note**: You'll need to leave the [`cf ssh`]({{ site.baseurl }}{% link _docs/apps/using-ssh.md %}) command running and follow the next steps in a different terminal so that you can access the remote Elasticsearch instance from your local environment:
 
     ```sh
     es_credentials=$(cf service-key my-elastic-service my-key | tail -n +3)

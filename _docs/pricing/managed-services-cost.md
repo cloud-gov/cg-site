@@ -11,4 +11,4 @@ aliases:
   - /overview/pricing/other-services/
 ---
 
-[Managed services]({{< relref "docs/apps/managed-services.md" >}}) are on-demand services for your application, such as databases, storage, and caching.
+[Managed services]({{ site.baseurl }}{% link _docs/apps/managed-services.md %}) are on-demand services for your application, such as databases, storage, and caching.

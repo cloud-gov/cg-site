@@ -13,7 +13,7 @@ To set up a "hello world" demo or a more complex static site, see the [Cloud Fou
 
 ### Builds
 
-If you are using a static site generator (e.g. [Jekyll]({{< relref "#jekyll" >}}) or [Hugo](http://gohugo.io/)) and/or it requires dependencies to be installed at deploy-time, you should set up [continuous deployment]({{< relref "continuous-deployment.md" >}}). This way, the build happens in your Continuous Integration (CI) system rather than during the deploy itself within Cloud Foundry. This helps to make your deployments more reliable, have a smaller footprint, and reduce downtime.
+If you are using a static site generator (e.g. [Jekyll](#jekyll) or [Hugo](http://gohugo.io/)) and/or it requires dependencies to be installed at deploy-time, you should set up [continuous deployment]({{ site.baseurl }}{% link _docs/apps/continuous-deployment.md %}). This way, the build happens in your Continuous Integration (CI) system rather than during the deploy itself within Cloud Foundry. This helps to make your deployments more reliable, have a smaller footprint, and reduce downtime.
 
 ### Jekyll
 

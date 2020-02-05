@@ -55,7 +55,7 @@ to access Redis credentials:
 cf create-service-key my-redis my-key
 ```
 
-Connect to your Redis service using port forwarding (see [Using SSH]({{< relref "docs/apps/using-ssh.md" >}})). You'll need to
+Connect to your Redis service using port forwarding (see [Using SSH]({{ site.baseurl }}{% link _docs/apps/using-ssh.md %})). You'll need to
 leave the `cf ssh` command running
 and follow the next steps in a different terminal so that you can access the
 remote Redis instance from your local environment. These steps assume you have [jq](https://stedolan.github.io/jq/) installed locally.

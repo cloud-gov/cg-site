@@ -13,17 +13,17 @@ weight: -100
 * **If you're in EPA, GSA, or NSF:** You automatically have access and can log in using your agency credentials.
 * **If you're in FDIC:** Some FDIC staff automatically have access and can log in using agency credentials. If you try to log in and receive a "status message is null" error, contact the FDIC identity team to be added to the cloud.gov access group.
 * **If you're in another agency:** If you have a U.S. federal government email address, you can [sign up for access](https://account.fr.cloud.gov/signup).
-* **Otherwise:** If your team uses cloud.gov and you don't have a federal government email address (such as if you're a contractor), ask a teammate to [invite you]({{< relref "managing-teammates.md" >}}).
+* **Otherwise:** If your team uses cloud.gov and you don't have a federal government email address (such as if you're a contractor), ask a teammate to [invite you]({{ site.baseurl }}{% link _docs/apps/managing-teammates.md %}).
 
 ## Log into cloud.gov
 
 ### Agency single sign-on accounts
 
-If you have an EPA, FDIC, GSA, or NSF email address, sign in using your agency credentials. Follow [these instructions to log in]({{< relref "setup.md" >}}).
+If you have an EPA, FDIC, GSA, or NSF email address, sign in using your agency credentials. Follow [these instructions to log in]({{ site.baseurl }}{% link _docs/getting-started/setup.md %}).
 
 ### cloud.gov accounts
 
-If you were invited with an email address that isn't part of an agency with single sign-on authentication to cloud.gov, you have a cloud.gov account. Follow [these instructions to log in]({{< relref "setup.md" >}}). When you log in via a web browser, select the **cloud.gov** option.
+If you were invited with an email address that isn't part of an agency with single sign-on authentication to cloud.gov, you have a cloud.gov account. Follow [these instructions to log in]({{ site.baseurl }}{% link _docs/getting-started/setup.md %}). When you log in via a web browser, select the **cloud.gov** option.
 
 <!--<img src="/img/cloud-gov-idp-button-cropped.png" alt="cloud.gov provider button to login page is highlighted in blue" width="373" height="187" />-->
 

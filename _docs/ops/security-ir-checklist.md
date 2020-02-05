@@ -9,7 +9,7 @@ title: Security Incident Response checklist
 linktitle: Security IR checklist
 ---
 
-*This is a short, actionable checklist for the Incident Commander (IC) to follow during incident response. It's a companion to the [IR guide]({{< relref "security-ir.md" >}}), where you can find the full details of each step.*
+*This is a short, actionable checklist for the Incident Commander (IC) to follow during incident response. It's a companion to the [IR guide]({{ site.baseurl }}{% link _docs/ops/security-ir.md %}), where you can find the full details of each step.*
 
 You're the first cloud.gov team member to notice a non-team-member's report of a possible security incident regarding cloud.gov, or you've noticed an unreported possible security incident yourself. Congratulations, you're now the Incident Commander (IC)! Follow these steps:
 
@@ -23,13 +23,13 @@ You're the first cloud.gov team member to notice a non-team-member's report of a
 - Confirm the incident — was it a real incident?
     - If it's expected behavior, go to [False Alarm](#false-alarm).
     - If it's unexpected behavior, it is a real incident even if it may not be cloud.gov's responsibility.
-- Assess the severity, using [the rubric in the IR guide]({{< relref "security-ir.md#incident-severities" >}}).
+- Assess the severity, using [the rubric in the IR guide]({{ site.baseurl }}{% link _docs/ops/security-ir.md %}#incident-severities).
 - Update the GitHub issue:
     - Status → "confirmed"
     - Severity → high/medium/low
     - List of responders
-- Assess whether to also activate the [contingency plan]({{< relref "contingency-plan.md" >}}).
-- Send an initial situation report (“sitrep”) ([example sitrep]({{< relref "security-ir.md#assess" >}})) to:
+- Assess whether to also activate the [contingency plan]({{ site.baseurl }}{% link _docs/ops/contingency-plan.md %}).
+- Send an initial situation report (“sitrep”) ([example sitrep]({{ site.baseurl }}{% link _docs/ops/security-ir.md %}#assess %)) to:
     - Post in [`#incident-response`](https://gsa-tts.slack.com/messages/incident-response/)
     - Email to `gsa-ir@gsa.gov` and `devops@gsa.gov`
     - Email/Slack other stakeholders, if applicable

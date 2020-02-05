@@ -33,7 +33,7 @@ A system maps to an [“org” in cloud.gov and Cloud Foundry](http://docs.cloud
 
 ### Access package
 
-The “access package” component covers access to the cloud.gov Platform as a Service (PaaS) and [support]({{< relref "#support" >}}) for it to stay up and available in its current form, as well as expanded over time. The access package component is invoiced monthly, and scales along with the number of systems being hosted and the impact level of the systems being launched on the platform, as defined by [Federal Information Processing Standard (FIPS) 199](http://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.199.pdf).
+The “access package” component covers access to the cloud.gov Platform as a Service (PaaS) and [support](#support) for it to stay up and available in its current form, as well as expanded over time. The access package component is invoiced monthly, and scales along with the number of systems being hosted and the impact level of the systems being launched on the platform, as defined by [Federal Information Processing Standard (FIPS) 199](http://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.199.pdf).
 
 ### Resource usage quota
 
@@ -43,4 +43,4 @@ Agencies can purchase reserved capacity via 18F as well, which is understood to 
 
 ### Managed services
 
-[Managed services]({{< relref "docs/apps/managed-services.md" >}}) are services that cloud.gov can spin up quickly and run on your behalf (databases, storage, caching, etc.).
+[Managed services]({{ site.baseurl }}{% link _docs/apps/managed-services.md %}) are services that cloud.gov can spin up quickly and run on your behalf (databases, storage, caching, etc.).

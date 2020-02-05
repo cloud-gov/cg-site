@@ -16,7 +16,7 @@ here](https://github.com/18F/cg-product/blob/master/OffboardingChecklist.md) and
 removed direct access to cloud.gov AWS accounts. The following guide walks a
 cloud.gov operator through rotating all sensitive information (secrets).
 
-Please familiarize yourself with [secret key management]({{< relref "docs/ops/secrets.md" >}}).
+Please familiarize yourself with [secret key management]({{ site.baseurl }}{% link _docs/ops/secrets.md %}).
 You will be touching various parts of the platform from soup to nuts. Remember
 you have support from the entire team and it is helpful to coordinate with
 cloud.gov operators in case they are working on a particular piece of software
@@ -27,14 +27,14 @@ that will requires a secrets rotation.
 It's important that you rotate access to the platform first. This can be
 categorized with three different types of secrets.
 
-1. [Remove access to Ops UAA]({{< relref "docs/ops/managing-users.md#removing-admins" >}})
+1. [Remove access to Ops UAA]({{ site.baseurl }}{% link _docs/ops/managing-users.md %}#removing-admins)
 1. [Rotate `cg-common` passphrases](#rotate-secrets-passphrases)
 1. [Rotate CF deployment users](#rotate-cf-deployment-users)
-1. [Rotate all IAM Users]({{< relref "docs/ops/runbook/rotating-iam-users.md" >}})
-1. [Rotating Bosh]({{< relref "docs/ops/runbook/rotating-bosh.md" >}})
-1. [Rotating Concourse]({{< relref "docs/ops/runbook/rotating-concourse.md" >}})
-1. [Rotating Cloud Foundry / Diego]({{< relref "docs/ops/runbook/rotating-cloudfoundry-diego.md" >}})
-1. [Rotating Kubernetes]({{< relref "docs/ops/runbook/rotating-kubernetes.md" >}})
+1. [Rotate all IAM Users]({{ site.baseurl }}{% link _docs/ops/runbook/rotating-iam-users.md %})
+1. [Rotating Bosh]({{ site.baseurl }}{% link _docs/ops/runbook/rotating-bosh.md %})
+1. [Rotating Concourse]({{ site.baseurl }}{% link _docs/ops/runbook/rotating-concourse.md %})
+1. [Rotating Cloud Foundry / Diego]({{ site.baseurl }}{% link _docs/ops/runbook/rotating-cloudfoundry-diego.md %})
+1. [Rotating Kubernetes]({{ site.baseurl }}{% link _docs/ops/runbook/rotating-kubernetes.md %})
 
 ## Rotate secrets passphrases
 
@@ -99,7 +99,7 @@ aws s3 cp s3://concourse-credentials/${PWD##*/}.yml .
 
 ### Rotating Passphrases
 
-Please reference [secret key management]({{< relref "docs/ops/secrets.md" >}})
+Please reference [secret key management]({{ site.baseurl }}{% link _docs/ops/secrets.md %})
 for more information on what `$CG_PIPELINE/decrypt.sh` and `$CG_PIPELINE/encrypt.sh`
 are doing in the example below.
 
