@@ -19,7 +19,7 @@ The [TIC reference architecture](https://s3.amazonaws.com/sitesusa/wp-content/up
 
 You can ensure that developer and operator access to cloud.gov services traverses your agency's TIC so that you can monitor all changes to your organizations, spaces, applications and services. The diagram below shows how the traffic flows.
 
-{{< diagrams id-prefix="Figure-1.-Restricting-changes-to-agency-origin" >}}
+{% mermaid_diagram id-prefix="Figure-1.-Restricting-changes-to-agency-origin" %}
 graph TB
 
 subgraph Agency network
@@ -45,7 +45,7 @@ B -.->|"TLS (encrypted tunnel)"|IPFilter
 IPFilter --> APIRouter[cloud.gov API]
 APIRouter -->|Change app| App
 
-{{< /diagrams >}}
+{% endmermaid_diagram %}
 
 Any traffic from an agency-authorized boundary (eg physical network of an agency building, or collective virtual boundary for all networked agency buildings) to one that it is not under your agency’s control (e.g. the open internet, or cloud.gov) is likely already routed over a TIC connection.
 
@@ -59,7 +59,7 @@ Your agency can accomplish this by establishing an operational requirement that 
 
 You may also need to restrict access through the "front door" of your deployed applications, such as administrator access to a Wordpress site, or public access to an internal-only service. The diagram below shows where you can implement this restriction.
 
-{{< diagrams id-prefix="Figure-2.-Restricting-client-access-to-your-application" >}}
+{% mermaid_diagram id-prefix="Figure-2.-Restricting-client-access-to-your-application" %}
 graph TB
 
 subgraph Internet
@@ -89,7 +89,7 @@ TIC -->|"TLS (encrypted tunnel)"| PRouter[App router]
 PRouter -->|Access app| RouteService
 RouteService[App logic or route service] --> App
 
-{{< /diagrams >}}
+{% endmermaid_diagram %}
 
 For remote workers or partners outside the normal agency network boundary, you can require use of a VPN to ensure that cloud.gov-bound traffic is routed over the agency network and TIC (shown in Figure 15 of the [TIC Reference architecture](https://s3.amazonaws.com/sitesusa/wp-content/uploads/sites/482/2015/04/TIC_Ref_Arch_v2-0_2013.pdf)).
 

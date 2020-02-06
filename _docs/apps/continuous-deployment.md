@@ -32,7 +32,7 @@ The core concept is to set up a script that triggers when you update the materia
 
 To illustrate how a CI/CD workflow could be incorporated with cloud.gov:
 
-{{< diagrams id-prefix="Figure-1.-Continuous-deployment-workflow" >}}
+{% mermaid_diagram id-prefix="Figure-1.-Continuous-deployment-workflow" %}
 graph TD
 
 subgraph cloud.gov
@@ -54,11 +54,11 @@ Repo -->|Automatically notify that a commit happened|CD(Continuous Deployment se
 CD -->|If dev branch, deploy| Dev
 CD -->|If staging branch, deploy| Staging
 CD -->|If prod branch, deploy| Prod
-{{< /diagrams >}}
+{% endmermaid_diagram %}
 
 Another example of a CI/CD workflow (this illustration omits the org/space boundaries):
 
-{{< diagrams id-prefix="Figure-2.-Alternate-continuous-deployment-workflow" >}}
+{% mermaid_diagram id-prefix="Figure-2.-Alternate-continuous-deployment-workflow" %}
 graph TD
 
 Developer((Developer)) -->|Commit code| Repo(Code repository)
@@ -68,7 +68,7 @@ CD -->|If prod branch, deploy, run tests | Preprod(Preprod app on cloud.gov)
 Preprod --> | Test results | CD
 CD -->|If preprod tests OK, deploy prod branch| Prod(Prod app on cloud.gov)
 
-{{< /diagrams >}}
+{% endmermaid_diagram %}
 
 ## Service examples
 

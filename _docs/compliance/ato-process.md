@@ -23,7 +23,7 @@ First, a quick definition: a customer "system" is typically an [org](http://docs
 
 Here's what this can look like for the first system to use cloud.gov at an agency. In this diagram, AOs stands for Authorizing Officials -- people who can ATO a system.
 
-{{< diagrams id-prefix="Figure-1." >}}
+{% mermaid_diagram  id-prefix="Figure-1." %}
 graph TD
 CONCEPT(Concept for the first system on cloud.gov at your agency) --> START(1. Talk to AOs about plan to establish system on cloud.gov)
 START -.1.5. If allowed, start work on system.-> DEV
@@ -34,7 +34,7 @@ CATO --> DEV(4. Work on your system and compliance materials inheriting from clo
 DEV -->REQUESTATO(5. Ask AOs to start your ATO review)
 REQUESTATO --AOs review system and compliance materials--> APPATO(6. AOs issue system ATO )
 APPATO -->PROD(Put your system in production)
-{{< /diagrams >}}
+{% endmermaid_diagram %}
 
 Steps in more detail:
 
@@ -52,7 +52,7 @@ Then if somebody else at your agency wants to run a system on cloud.gov, the clo
 
 Here's what the second system ATO process can look like:
 
-{{< diagrams id-prefix="Figure-2." >}}
+{% mermaid_diagram id-prefix="Figure-2." %}
 
 graph TD
 CONCEPT(Concept for second system on cloud.gov at your agency) -->START(Talk to AOs about plan to establish system on cloud.gov)
@@ -61,7 +61,7 @@ DEV -->REQUESTATO(Ask AOs to start your ATO review)
 REQUESTATO --AOs review system and compliance materials--> APPATO(AOs issue system ATO )
 APPATO -->PROD(Put system in production)
 
-{{< /diagrams >}}
+{% endmermaid_diagram %}
 
 ### Consolidated ATO
 

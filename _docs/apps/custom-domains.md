@@ -15,7 +15,7 @@ See [IPv6, HTTPS, and DNSSEC]({{ site.baseurl }}{% link _docs/compliance/domain-
 
 Here's an example of the difference between a default *.app.cloud.gov domain and a custom domain. In this example, an agency's application `App A` is using a default domain, and their application `App B` is using a custom domain.
 
-{{< diagrams id-prefix="Figure-1.-Domain-comparison" >}}
+{% mermaid_diagram id-prefix="Figure-1.-Domain-comparison" %}
 graph TD
 
 subgraph Amazon Web Services
@@ -41,7 +41,7 @@ CG-DNS -->Router
 CDN -->Router
 Router -->AppA
 Router -->AppB
-{{< /diagrams >}}
+{% endmermaid_diagram %}
 
 ## How domains and routes work in cloud.gov
 

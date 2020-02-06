@@ -67,7 +67,7 @@ This strategy co-locates a CredHub within the BOSH virtual machine per
 environment. This solution means that CredHub would have a single database
 that it would leverage to store its data for its specific BOSH director.
 
-{{< diagrams id-prefix="colocated-diagram" >}}
+{% mermaid_diagram id-prefix="colocated-diagram" %}
 graph LR;
   master[Master BOSH + CredHub]
   tooling[Tooling BOSH + CredHub]
@@ -104,7 +104,7 @@ graph LR;
     end
     development-->|Interpolates from Development CredHub|development-d
   end
-{{< /diagrams >}}
+{% endmermaid_diagram %}
 
 #### Pros
 

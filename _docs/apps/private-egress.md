@@ -21,7 +21,7 @@ cloud.gov will establish a dedicated pool of hosts for your cloud.gov applicatio
 
 The cloud.gov team will work with you to establish a Virtual Private Network (VPN) between the dedicated network segment and your network using the industry-standard Internet Protocol Security (IPSec) protocol.
 
-{{< diagrams id-prefix="network-diagram" >}}
+{% mermaid_diagram id-prefix="network-diagram" %}
 graph TB;
   client[Client]
 
@@ -58,7 +58,7 @@ end
   customer-vpn-endpoint---dlp
   dlp-->private-service
 
-{{< /diagrams >}}
+{% endmermaid_diagram %}
 
 To use this service, you must have an internet-routable IP address to use as the IPsec endpoint for the connection. If you have a firewall in place between the internet and your endpoint, then you will have to open both ingress and egress on UDP port 500 and ESP (IP Protocol 50) to enable the connection. If you are also using NAT behind your firewall, you will also have to enable UDP port 4500.
 

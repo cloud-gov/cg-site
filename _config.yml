@@ -162,3 +162,11 @@ assets:
     - node_modules/uswds/dist/img
     - node_modules/uswds/dist/js
     - node_modules/uswds/dist/scss
+    - node_modules/mermaid/dist/
+    - node_modules/uswds/dist/js/uswds.min.js.map
+
+
+    
+# Custom plugin to render the diagrams as mermaid
+mermaid:
+  src: 'mermaid.min.js'

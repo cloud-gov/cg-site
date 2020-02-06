@@ -20,6 +20,11 @@ i.e.
 ----------------------------------------
 */
 
+
+.usa-table th  {
+    background-color:transparent;
+}
+
 //Responsive tables from USWDS SITE
 $theme-table-responsive-expand-at: "tablet";
 $theme-table-responsive-title-width: 15;
