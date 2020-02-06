@@ -39,7 +39,7 @@ Note: Whole numbers only
 
 ### Org Manager email
 
-The Org Manager manages access control for teammates and creates any needed spaces via the [dashboard]({{{{ site.baseurl }}{% link _docs/orgs-spaces/dashboard.md %}).
+The Org Manager manages access control for teammates and creates any needed spaces via the [dashboard]({{ site.baseurl }}{% link _docs/orgs-spaces/dashboard.md %}).
 
 This should be a person who is responsible for the system and the people who work on it, eg a project manager or technical team lead. An Org Manager should be a person who directly knows who should have access and is willing to maintain those permissions.
 

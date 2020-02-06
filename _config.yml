@@ -158,6 +158,7 @@ exclude:
 
 assets:
   sources:
+    - _assets/images/logos
     - node_modules/uswds/dist/img
     - node_modules/uswds/dist/js
     - node_modules/uswds/dist/scss
