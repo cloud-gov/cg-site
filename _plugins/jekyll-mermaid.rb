@@ -10,7 +10,7 @@ module Jekyll
       end
   
       def render(context)
-        "<div class=\"mermaid\">#{super}</div>"
+        "<div class=\"mermaid cg-diagrams\">#{super}</div>"
       end
     end
   end
