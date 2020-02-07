@@ -20,7 +20,7 @@ blockquote::before,
 .header-wrap a[href*=".com"],
 .header-wrap a[href*=".io"] {
   padding: 6px 26px 7px 0px;
-  background: url(/img/link-icons/icon-external.svg) right center no-repeat;
+  background: url(../../img/link-icons/icon-external.svg) right center no-repeat;
 }
 
 .usa-search{
@@ -190,7 +190,7 @@ ul.ui-widget-header {
   padding-right: 42px;
   margin-top: -10px;
   margin-bottom: 60px;
-  background: url(/img/link-icons/icon-pdf.svg) right -1px no-repeat;
+  background: url(../../img/link-icons/icon-pdf.svg) right -1px no-repeat;
   background-size: 34px 40px;
 }
 /** Disclaimer ******************/

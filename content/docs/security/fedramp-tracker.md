@@ -31,7 +31,9 @@ Here's how it works: Every "moderate" impact federal system is required to accou
 
 Here's an example of a control breakdown for a simple moderate-impact system hosted on cloud.gov:
 
-![Graph showing the breakdown of how many controls are fully covered by cloud.gov.](/img/fedramp-moderate-controls.png)
+{{< image src="img/fedramp-moderate-controls.png" title="Graph showing the breakdown of how many controls are fully covered by cloud.gov." >}}
+
+
 
 The [**Control Implementation Summary + Customer Responsibility Matrix + Control-by-Control Inheritance (.xlsx)**](/resources/cloud.gov-CIS-Worksheet.xlsx) (last updated November 7, 2018) is a summary of each Low and Moderate security control and whether it is handled by cloud.gov, shared responsibility, or customer responsibility. It includes guidance on which controls a customer system can fully or partially inherit from cloud.gov.
 
