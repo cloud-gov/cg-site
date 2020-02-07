@@ -26,7 +26,34 @@ cloud.gov offers a marketplace of FedRAMP-authorized [managed services]({{ site.
 
 To list all the managed services and plans available to a given space, you run `cf marketplace` from your command line. Here is a list of the managed services that are generally available: 
 
-{{% services-table %}}
+{% assign cgservices = site.data.services  %}
+ <table class="usa-table usa-table--borderless site-table-responsive site-table-simple">
+    <thead>
+    <tr>
+        <th scope="col">Service Name<th>
+        <th scope="col">Description</th>
+        <th scope="col">Support Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for service in cgservices %}
+    <tr>
+        <td>{{ service.name }}</td>
+        <td>{{ service.description | markdownify }}</td>
+        <td>{{ service.status }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<h3><a id="support_status"></a>Support Status</h3>
+<ul>
+    <li><strong>Production Ready</strong>: The service has been tested to ensure it has the resiliency required for a production system.</li>
+    <li><strong>Beta</strong>: The service is stable but still requires further development to ensure it can be deployed to production systems.</li>
+    <li><strong>Alpha</strong>: The service is under development and some downtime or data loss can occur.</li>
+    <li><strong>Deprecated</strong>: The service is deprecated and will be removed in a future release - please update.</li>
+
+</ul>
 
 ### Extending the marketplace
 

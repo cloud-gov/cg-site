@@ -77,7 +77,7 @@ Relative font file path
 ----------------------------------------
 */
 
-$theme-font-path:   '../fonts';
+$theme-font-path:   './fonts';
 
 /*
 ----------------------------------------
@@ -124,43 +124,6 @@ names to something more descriptive.
 $font-stack-helvetica: "Helvetica Neue", "Helvetica", "Roboto", "Arial",
   sans-serif;
 
-$theme-typeface-tokens: (
-  "18f-franklin": (
-    display-name: "18F Franklin",
-    cap-height: 364px,
-    stack: $font-stack-helvetica,
-    src: (
-      dir: "18f-franklin",
-      roman: (
-        100: false,
-        200: "18Franklin-ExtraLight",
-        300: "18Franklin-Light",
-        400: "18Franklin-Regular",
-        500: false,
-        600: "18Franklin-Semibold",
-        700: "18Franklin-Bold",
-        800: false,
-        900: "18Franklin-Black"
-      ),
-      italic: (
-        100: false,
-        200: "18Franklin-ExtraLightItalic",
-        300: "18Franklin-LightItalic",
-        400: "18Franklin-Italic",
-        500: false,
-        600: "18Franklin-SemiBoldItalic",
-        700: "18Franklin-BoldItalic",
-        800: false,
-        900: "18Franklin-BlackItalic"
-      )
-    )
-  ),
-  example-sans-token: (
-    display-name: 'Example Sans Display Name',
-    cap-height: 364px,
-  ),
-);
-
 /*
 ----------------------------------------
 Type-based font settings
@@ -196,7 +159,6 @@ $theme-font-type-lang:  false;
 $theme-font-type-mono:  'roboto-mono';
 
 // sans-serif
-// $theme-font-type-sans:  '18f-franklin';
 $theme-font-type-sans:  'public-sans';
 
 // serif
@@ -293,33 +255,7 @@ $theme-font-cond-custom-src:   false;
 $theme-font-icon-custom-src:   false;
 $theme-font-lang-custom-src:   false;
 $theme-font-mono-custom-src:   false;
-$theme-font-sans-custom-src:  (
-  dir: "18f-franklin",
-  roman: (
-    100: false,
-    200: "18Franklin-ExtraLight",
-    300: "18Franklin-Light",
-    400: "18Franklin-Regular",
-    500: false,
-    600: "18Franklin-Semibold",
-    700: "18Franklin-Bold",
-    800: false,
-    900: "18Franklin-Black"
-  ),
-  italic: (
-    100: false,
-    200: "18Franklin-ExtraLightItalic",
-    300: "18Franklin-LightItalic",
-    400: "18Franklin-Italic",
-    500: false,
-    600: "18Franklin-SemiBoldItalic",
-    700: "18Franklin-BoldItalic",
-    800: false,
-    900: "18Franklin-BlackItalic"
-  )
-); 
-
-;
+$theme-font-sans-custom-src:   false;
 $theme-font-serif-custom-src:  false;
 
 /*
@@ -476,3 +412,39 @@ $theme-lead-font-family:           'heading';
 $theme-lead-font-size:             'lg';
 $theme-lead-line-height:           6;
 $theme-lead-measure:               6;
+
+
+$theme-typeface-tokens: (
+  eighteenf-franklin: (
+    display-name: "One8F Franklin",
+    cap-height: 345px
+  ),
+);
+//Testing
+$theme-font-type-sans: "eighteenf-franklin";
+$theme-font-sans-custom-stack: "Helvetica", sans;
+$theme-font-sans-custom-src: (
+  dir: "18f-franklin",
+  roman: (
+    100: "18Franklin-Thin",
+    200: "18Franklin-ExtraLight",
+    300: "18Franklin-Light",
+    400: "18Franklin-Regular",
+    500: "18Franklin-Medium",
+    600: "18Franklin-SemiBold",
+    700: "18Franklin-Bold",
+    800: "18Franklin-Black",
+    900: false
+  ),
+  italic: (
+    100: "18Franklin-ThinItalic",
+    200: "18Franklin-ExtraLightItalic",
+    300: "18Franklin-LightItalic",
+    400: "18Franklin-Italic",
+    500: "18Franklin-MediumItalic",
+    600: "18Franklin-SemiBoldItalic",
+    700: "18Franklin-BoldItalic",
+    800: "18Franklin-BlackItalic",
+    900: false
+  )
+);
