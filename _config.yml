@@ -159,6 +159,7 @@ exclude:
 assets:
   sources:
     - _assets/images/logos
+    - _assets/images/illustrations
     - node_modules/uswds/dist/img
     - node_modules/uswds/dist/js
     - node_modules/uswds/dist/scss

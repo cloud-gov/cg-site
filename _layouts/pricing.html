@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="usa-content bg-accent-warm-light">
-    <section class="grid-container usa-section usa-prose">
+    <section class="grid-container usa-section">
         <div class="grid-row grid-gap">
             <div class="tablet:grid-col-8">
           <h1>
@@ -17,126 +17,41 @@ layout: default
         </div>
         <div class="grid-row grid-gap">
             <table class="usa-table usa-table--borderless site-table-responsive site-table-simple">
-                <caption>Package rates</caption>
-                <thead>
-                  <tr>
-                    <th scope="col">Package<th>
-                    <th scope="col">Sandbox</th>
-                    <th scope="col">Prototyping</th>
-                    <th scope="col">FISMA Low</th>
-                    <th scope="col">FISMA Moderate</th>
-                  </tr>
-                </thead>
                 <tbody>
-                  <tr>
-                    {% tablerow package in site.data.pricing %}
-                    {{ package.package }}
+                    {% tablerow product in site.data.pricing %}
+                        {% asset "{{ product.image }}" class="square-10" %}
                     {% endtablerow %}
-<!--                     
-                    <td scope="row">Descriptions</td>
-                    <td>A sandbox environment to run experiments to see if cloud.gov works for your team.</td>
-                    <td>Self-service workspaces for your organization to build non-production systems.</td>
-                    <td>Production environment ideal for hosting public information.</td>
-                    <td>Production environment for systems that need assurances in confidentiality, integrity, and availability.</td> -->
-                  </tr>
+                    {% tablerow product in site.data.pricing %}
+                        {{ product.package_name }}
+                    {% endtablerow %}
+                    {% tablerow product in site.data.pricing %}
+                        {{ product.description }}
+                    {% endtablerow %}
+                    {% tablerow product in site.data.pricing %}
+                        {{ product.price }}
+                    {% endtablerow %}
+                    {% tablerow product in site.data.pricing %}
+                        {{ product.memory }}
+                    {% endtablerow %}
+                    {% tablerow product in site.data.pricing %}
+                        {{ product.production }}
+                    {% endtablerow %}
+                    {% tablerow product in site.data.pricing %}
+                        {{ product.number_of_systems }}
+                    {% endtablerow %}
+                    {% tablerow product in site.data.pricing %}
+                        {{ product.domain_names }}
+                    {% endtablerow %}
+                    {% tablerow product in site.data.pricing %}
+                        {{ product.sign_up }}
+                    {% endtablerow %}
                 </tbody>
             </table>
-            <!-- <table class="usa-table usa-table--borderless site-table-responsive site-table-simple">
-                  <caption>Package rates</caption>
-                  <thead>
-                    <tr>
-                      <th scope="col">Package<th>
-                      <th scope="col">Sandbox</th>
-                      <th scope="col">Prototyping</th>
-                      <th scope="col">FISMA Low</th>
-                      <th scope="col">FISMA Moderate</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">Descriptions</th>
-                      <td>A sandbox environment to run experiments to see if cloud.gov works for your team.</th>
-                      <td>Self-service workspaces for your organization to build non-production systems.</td>
-                      <td>Production environment ideal for hosting public information.</td>
-                      <td>Production environment for systems that need assurances in confidentiality, integrity, and availability.</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Price</th>
-                      <td>Free</td>
-                      <td>
-                          <span><strong><sup>$</sup>1550</strong> &#47; month</span> 
-                          <span>for entire organization</span>
-                      </td>
-                      <td>
-                          <span><strong><sup>$</sup>2070</strong> &#47; month</span>
-                          <span>FISMA Low system</span>
-                      </td>
-                      <td>
-                          <span><strong><sup>$</sup>9300</strong> &#47; month</span>
-                          <span>FISMA Moderate </span> 
-                          <span>DoD Impact Level 2 system</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Memory</th>
-                      <td>Limited to 1GB memory</td>
-                      <td>
-                          <sup>$</sup>130 &#47; GB memory per month
-                      </td>
-                      <td>
-                          <sup>$</sup>130 &#47; GB memory per month
-                      </td>
-                      <td>
-                          <sup>$</sup>130 &#47; GB memory per month
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Production</th>
-                      <td>Non-production systems; <br />
-                          systems cleared every 90 days</th>
-                      <td>
-                          Non-production systems
-                      </td>
-                      <td>One System</td>
-                      <td>One System</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Number of systems</th>
-                      <td>Single environment</th>
-                      <td>An environment for each of your teams</td>
-                      <td>
-                          Multiple environments (e.g. dev, stage, prod) supporting one system
-                      </td>
-                      <td>Multiple environments (e.g. dev, stage, prod) supporting one system</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Custom domains</th>
-                      <td>Non-production domain names</th>
-                      <td>Non-production domain names</td>
-                      <td>Support for your agency domain name</td>
-                      <td>Support for your agency domain name</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Sign up</th>
-                      <td>
-                          <a href="/signup/" class="button">Get started</a><br/>
-                          <a href="/docs/pricing/free-limited-sandbox/" class="small-link">About Sandbox packages &rarr;</a>
-                      </td>
-                      <td>
-                          <a href="mailto:cloud-gov-inquiries@gsa.gov?subject=Purchasing%20Prototyping%20Package" class="button" id="Prototyping-cta">Contact us</a><br/>
-                          <a href="/docs/pricing/prototyping/" class="small-link">About Prototyping packages &rarr;</a>
-                      </td>
-                      <td>
-                          <a href="mailto:cloud-gov-inquiries@gsa.gov?subject=Purchasing%20FISMA%20Low%20Package" class="button" id="FISMA-cta">Contact us</a><br/>
-                      </td>
-                      <td><a href="mailto:cloud-gov-inquiries@gsa.gov?subject=Purchasing%20FISMA%20Package" class="button" id="FISMA-cta">Contact us</a><br/></td>
-                    </tr>
-                  </tbody>
-            </table> -->
         </div>
         <div class="grid-row grid-gap">
-            <div class="tablet:grid-col-8">
-                <h2 id="estimate-your-monthly-cost"><a href="#estimate-your-monthly-cost">Estimate your monthly cost</a></h2>
+            <div class="tablet:grid-col pricing-calculations">
+                <a href="#estimate-your-monthly-cost"></a>
+                <h2 id="estimate-your-monthly-cost">Estimate your monthly cost</h2>
                 <p>
                     Monthly costs are based on the package fee (i.e., Prototyping, FISMA Low, FISMA Moderate) plus memory usage. Memory quota cost are based on the amount of memory (RAM) that you reserve for your system (<sup>$</sup>130/GB RAM per month).
                 </p>
@@ -147,7 +62,9 @@ layout: default
                 <p>
                     Suppose you have a FISMA Low app that requires 1 GB of memory. You will need 1 instance in dev, 1 instance in staging, and 2 in production. 
                 </p>
-                <div class="diagram"></div>
+                <div class="diagram">
+                    {% asset pricing-example-FY20 %}
+                </div>
                 <h4>
                     Access Fee
                 </h4>

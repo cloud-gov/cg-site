@@ -294,9 +294,10 @@ $theme-table-column-gap: 4;
 
 .usa-prose  {
     h1 {
-        @include u-text('semibold')
+        @include u-text('semibold');
     }
     h2, h3, h4, h5, h6 {
-        @include u-text('medium')
+        @include u-text('medium');
     }
-  }
+}
+

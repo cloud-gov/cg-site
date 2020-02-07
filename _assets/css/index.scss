@@ -42,7 +42,65 @@
   }
 }
 
-// // Ensure that nav is san-serif
-// .usa-nav .usa-accordion {
-//   @include typeset($theme-font-role-ui, $theme-body-font-size, 1);
-// }
+
+
+// Pricing Page
+.pricing-calculations {
+  .pricing-line-item {
+      border-bottom: 1px dotted #444;
+    }
+  
+  .pricing-total {
+      @include u-text('semibold');
+      display: block;
+      @include u-margin-top(5);
+  }
+
+  span {
+      @include u-float('right')
+  }
+}
+
+
+// Home
+.site-welcome {
+  @include u-margin-top(8);
+
+  h1 {
+    font-size: 64px;
+  }
+  ul {
+    padding: 0;
+    margin: 30px 0 0 0;
+    list-style: none;
+    max-width: 500px;
+
+    li {
+      font-size: 27px;
+      
+      a {
+        @include u-text('no-underline');
+
+
+        display: block;
+        padding: 5px 0 15px 0;
+        border-bottom: 1px solid 'base-light';
+
+        &:before {
+          content: '\02192';
+          display: inline-block;
+          width: 40px;
+          @include u-text('secondary-vivid');
+          font-family: 'Times New Roman', Arial, sans-serif;
+        }
+      }
+
+      &first-of-type {
+        border-top: 1px solid 'base-light';
+        padding-top: 20px
+      }
+    }
+  }
+}
+
+
