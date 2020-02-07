@@ -121,10 +121,39 @@ names to something more descriptive.
 ----------------------------------------
 */
 
+$font-stack-helvetica: "Helvetica Neue", "Helvetica", "Roboto", "Arial",
+  sans-serif;
+
 $theme-typeface-tokens: (
-  example-serif-token: (
-    display-name: 'Example Serif Display Name',
+  "18f-franklin": (
+    display-name: "18F Franklin",
     cap-height: 364px,
+    stack: $font-stack-helvetica,
+    src: (
+      dir: "18f-franklin",
+      roman: (
+        100: false,
+        200: "18Franklin-ExtraLight",
+        300: "18Franklin-Light",
+        400: "18Franklin-Regular",
+        500: false,
+        600: "18Franklin-Semibold",
+        700: "18Franklin-Bold",
+        800: false,
+        900: "18Franklin-Black"
+      ),
+      italic: (
+        100: false,
+        200: "18Franklin-ExtraLightItalic",
+        300: "18Franklin-LightItalic",
+        400: "18Franklin-Italic",
+        500: false,
+        600: "18Franklin-SemiBoldItalic",
+        700: "18Franklin-BoldItalic",
+        800: false,
+        900: "18Franklin-BlackItalic"
+      )
+    )
   ),
   example-sans-token: (
     display-name: 'Example Sans Display Name',
@@ -167,7 +196,8 @@ $theme-font-type-lang:  false;
 $theme-font-type-mono:  'roboto-mono';
 
 // sans-serif
-$theme-font-type-sans:  'source-sans-pro';
+// $theme-font-type-sans:  '18f-franklin';
+$theme-font-type-sans:  'public-sans';
 
 // serif
 $theme-font-type-serif: 'georgia';
@@ -263,7 +293,33 @@ $theme-font-cond-custom-src:   false;
 $theme-font-icon-custom-src:   false;
 $theme-font-lang-custom-src:   false;
 $theme-font-mono-custom-src:   false;
-$theme-font-sans-custom-src:   false;
+$theme-font-sans-custom-src:  (
+  dir: "18f-franklin",
+  roman: (
+    100: false,
+    200: "18Franklin-ExtraLight",
+    300: "18Franklin-Light",
+    400: "18Franklin-Regular",
+    500: false,
+    600: "18Franklin-Semibold",
+    700: "18Franklin-Bold",
+    800: false,
+    900: "18Franklin-Black"
+  ),
+  italic: (
+    100: false,
+    200: "18Franklin-ExtraLightItalic",
+    300: "18Franklin-LightItalic",
+    400: "18Franklin-Italic",
+    500: false,
+    600: "18Franklin-SemiBoldItalic",
+    700: "18Franklin-BoldItalic",
+    800: false,
+    900: "18Franklin-BlackItalic"
+  )
+); 
+
+;
 $theme-font-serif-custom-src:  false;
 
 /*
