@@ -26,24 +26,21 @@ cloud.gov offers a marketplace of FedRAMP-authorized [managed services]({{ site.
 
 To list all the managed services and plans available to a given space, you run `cf marketplace` from your command line. Here is a list of the managed services that are generally available: 
 
-{% assign cgservices = site.data.services  %}
- <table class="usa-table usa-table--borderless site-table-responsive site-table-simple">
-    <thead>
-    <tr>
-        <th scope="col">Service Name<th>
-        <th scope="col">Description</th>
-        <th scope="col">Support Status</th>
-    </tr>
-    </thead>
-    <tbody>
-    {% for service in cgservices %}
-    <tr>
-        <td>{{ service.name }}</td>
-        <td>{{ service.description | markdownify }}</td>
-        <td>{{ service.status }}</td>
-    </tr>
-    {% endfor %}
-    </tbody>
+{% assign cgservices = site.data.services %}
+<table class="usa-table usa-table--borderless">
+<thead>
+<tr><th>Service Name</th><th>Description</th><th>Support Status</th></tr>
+</thead>
+<tbody>
+{% for item in cgservices %}
+{% if item.page-name != null %}
+{% assign itemurl = item.page-name %}
+{% else %}
+{% assign itemurl = item.name %}
+{% endif %}
+<tr><td><a href="{{ site.baseurl }}/docs/services/{{ itemurl }}">{{ item.name }}</a></td><td>{{ item.description | markdownify }}</td><td>{{ item.status }}</td></tr>
+{% endfor %}
+</tbody>
 </table>
 
 <h3><a id="support_status"></a>Support Status</h3>
