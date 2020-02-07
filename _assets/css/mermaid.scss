@@ -20,7 +20,7 @@
   
   .cluster rect {
     fill: #f1f1f1 !important;
-    stroke: #0071bc !important;
+    stroke: 'primary-vivid' !important;
     stroke-width: 2px !important; }
   
   .cluster text {
@@ -33,8 +33,8 @@
   .node circle,
   .node ellipse,
   .node polygon {
-    fill: #0071bc;
-    stroke: #112e51;
+    fill: 'primary';
+    stroke: 'primary-dark';
     stroke-width: 2px; }
   
   .node .label {
@@ -42,11 +42,11 @@
     color: white; }
   
   .edgePath .path {
-    stroke: #112e51 !important;
-    stroke-width: 2px !important; }
+    stroke: 'primary-dark';
+    stroke-width: 2px ; }
   
   .edgePath marker path {
-    fill: #112e51 !important; }
+    fill: 'primary-dark' !important; }
   
   .edgeLabel {
     background-color: #ffffff;
@@ -58,38 +58,38 @@
       border: none; }
   
   rect {
-    fill: #0071bc;
-    stroke: #112e51;
+    fill: 'primary-vivid';
+    stroke: 'primary-dark';
     stroke-width: 2px; }
     rect.note {
       fill: #e1f3f8;
-      stroke: #9bdaf1;
+      stroke: 'primary-light';
       stroke-width: 2px; }
     rect.labelBox {
-      fill: #205493;
-      stroke: #0071bc; }
+      fill: 'primary-vivid';
+      stroke: 'primary'; }
     rect.actor {
-      fill: #0071bc;
-      stroke: #112e51; }
+      fill: 'priamry-vivid';
+      stroke: 'primary-dark'; }
   
   #crosshead path,
   #arrowhead path {
-    fill: #112e51; }
+    fill: 'primary-dark'; }
   
   line[class^=messageLine], line.actor-line {
-    fill: #112e51;
-    stroke: #112e51;
+    fill: 'primary-dark';
+    stroke: 'primary-dark';
     stroke-width: 2px; }
   
   line.loopLine {
-    fill: #112e51;
-    stroke: #0071bc;
+    fill: 'primary-dark';
+    stroke: 'primary';
     stroke-width: 2px; }
   
   text.messageText {
     font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
     text-shadow: 2px 2px 0 #ffffff, 1px 1px 0 #5b616b;
-    fill: #046b99;
+    fill: 'primary-vivid';
     font-size: 1rem; }
   
   text.actor {

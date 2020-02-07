@@ -170,7 +170,7 @@ $theme-font-type-mono:  'roboto-mono';
 $theme-font-type-sans:  'source-sans-pro';
 
 // serif
-$theme-font-type-serif: 'merriweather';
+$theme-font-type-serif: 'georgia';
 
 /*
 ----------------------------------------
@@ -284,7 +284,7 @@ tokens.
 */
 
 $theme-font-role-ui:        'sans';
-$theme-font-role-heading:   'serif';
+$theme-font-role-heading:   'sans';
 $theme-font-role-body:      'sans';
 $theme-font-role-code:      'mono';
 $theme-font-role-alt:       'serif';
@@ -413,7 +413,7 @@ $theme-display-font-size:          '3xl';
 $theme-text-measure-narrow:        1;
 $theme-text-measure:               4;
 $theme-text-measure-wide:          6;
-$theme-prose-font-family:          'body';
+$theme-prose-font-family:          'serif';
 
 // Lead text
 $theme-lead-font-family:           'heading';
