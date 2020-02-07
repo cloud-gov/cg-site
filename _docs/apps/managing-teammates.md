@@ -26,14 +26,21 @@ After a teammate gets a cloud.gov account, an Org Manager or Space Manager will 
 Org Managers can assign roles using the [dashboard](https://dashboard.fr.cloud.gov/) or command line. Space Managers can assign roles using the command line.
 
 
-{{% alternatives dashboard="dashboard-org-give-role" cli="cli-org-give-role" %}}
-{{% dashboard %}}
-
+<div class="usa-accordion usa-accordion--bordered">
+<!-- Use the accurate heading level to maintain the document outline -->
+<h2 class="usa-accordion__heading">
+<button class="usa-accordion__button"
+    aria-expanded="true"
+    aria-controls="b-a1">
+    Dashboard
+</button>
+</h2>
+<div id="b-a1" class="usa-accordion__content usa-prose" markdown="1">
 ### Organization users
 
 If you're an Org Manager, go to your [dashboard](https://dashboard.fr.cloud.gov/) and click on the name of your org.
 
-![User roles](/img/user-role-management.png)
+{% asset user-role-management.png alt="User Roles" %}
 
 On the org page, scroll down to "Organization users". This lists the org users and their org roles. Change the roles by clicking the checkboxes beside their names. (If you're the only person in the org, you'll just see "You are the only user in this organization".)
 
@@ -41,15 +48,22 @@ On the org page, scroll down to "Organization users". This lists the org users a
 
 If you're a Space Manager, go to your [dashboard](https://dashboard.fr.cloud.gov/) and click on the name of your org, then click on the name of your space.
 
-![Space roles](/img/space-user-role-management.png)
+{% asset space-user-role-management.png alt="Adding users to the space" %}
 
 On the space page, scroll down to "Space users". This lists the space users and their space roles. Change the roles by clicking the checkboxes beside their names. (If you're the only person in the space, you'll just see "You are the only user in this space".)
 
 To give an existing organization user access to a space, go to your space page, click a space name, and scroll down to "Space users". You can add a person, and then you can give them roles with the checkboxes.
+</div>
 
-{{% /dashboard %}}
-{{% commandline %}}
-
+<!-- Use the accurate heading level to maintain the document outline -->
+<h2 class="usa-accordion__heading">
+<button class="usa-accordion__button"
+    aria-expanded="false"
+    aria-controls="b-a2">
+    Commandline
+</button>
+</h2>
+<div id="b-a2" class="usa-accordion__content usa-prose" markdown="1">
 If you're an Org Manager or Space Manager, here's how to give your teammates roles for your orgs and spaces. You can check whether you're an Org Manager using `cf org-users <org>` and whether you're a Space Manager using `cf space-users <org> <space>`.
 
 Check what version of the CLI you're running: `cf -v`. If that's older than the [latest version listed here](https://github.com/cloudfoundry/cli/releases), you should [upgrade it](https://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html) to avoid unexpected errors.
@@ -76,16 +90,25 @@ Decide which roles to give them. For a complete list of roles, see [the Cloud Fo
     ```sh
     cf set-org-role <email> <org> OrgAuditor
     ```
-{{% /commandline %}}
-{{% /alternatives %}}
+</div>
 
+<div markdown="1">
 ## Removing a teammate
 
 If you are an Org Manager or Space Manager, you can remove teammates from orgs and spaces respectively.
 
-{{% alternatives dashboard="dashboard-org-remove-role" cli="cli-org-remove-role" %}}
-{{% dashboard %}}
+<div >
 
+<div class="usa-accordion usa-accordion--bordered">
+<!-- Use the accurate heading level to maintain the document outline -->
+<h2 class="usa-accordion__heading">
+<button class="usa-accordion__button"
+    aria-expanded="true"
+    aria-controls="b-a1">
+    Dashboard
+</button>
+</h2>
+<div id="b-a1" class="usa-accordion__content usa-prose" markdown="1">
 ### Organization Users
 
 If you're an Org Manager, go to the org with the teammate you want to remove.
@@ -95,6 +118,7 @@ On the Organization page, scroll down to the “Organization users” section. T
 To remove a teammate from an organization, you must first remove them from any of the organization's spaces first.
 
 ![App Overview dashboard](/img/remove-organization.png)
+{% asset remove-organization.png alt="Removing users" %}
 
 ### Space users
 
@@ -103,10 +127,17 @@ If you're an Org Manager or Space Manager, go to the space with the teammate you
 On the Space page, scroll down to the “Space users” section. This has a list of all the space users. Click the "Remove All Space Roles" button.
 
 You can also remove a user from a Space by unchecking all of their space roles.
+</div>
 
-{{% /dashboard %}}
-{{% commandline %}}
-
+<!-- Use the accurate heading level to maintain the document outline -->
+<h2 class="usa-accordion__heading">
+<button class="usa-accordion__button"
+    aria-expanded="false"
+    aria-controls="b-a2">
+    Commandline
+</button>
+</h2>
+<div id="b-a2" class="usa-accordion__content usa-prose" markdown="1">
 If you're an Org Manager or Space Manager, here's how to remove teammates from your orgs and spaces. You can check whether you're an Org Manager using `cf org-users <org>` and whether you're a Space Manager using `cf space-users <org> <space>`.
 
 Check what version of the CLI you're running: `cf -v`. If that's older than the [latest version listed here](https://github.com/cloudfoundry/cli/releases), you should [upgrade it](https://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html) to avoid unexpected errors.
@@ -171,5 +202,4 @@ To remove teammates from your space, run the following:
     cf unset-space-role <email> <org> <space> <role>
     ```
 
-{{% /commandline %}}
-{{% /alternatives %}}
+</div>
