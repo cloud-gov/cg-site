@@ -33,7 +33,7 @@ Org Managers can assign roles using the [dashboard](https://dashboard.fr.cloud.g
 
 If you're an Org Manager, go to your [dashboard](https://dashboard.fr.cloud.gov/) and click on the name of your org.
 
-![User roles](/img/user-role-management.png)
+{{< image title="User roles" src="img/user-role-management.png" >}}
 
 On the org page, scroll down to "Organization users". This lists the org users and their org roles. Change the roles by clicking the checkboxes beside their names. (If you're the only person in the org, you'll just see "You are the only user in this organization".)
 
@@ -41,7 +41,7 @@ On the org page, scroll down to "Organization users". This lists the org users a
 
 If you're a Space Manager, go to your [dashboard](https://dashboard.fr.cloud.gov/) and click on the name of your org, then click on the name of your space.
 
-![Space roles](/img/space-user-role-management.png)
+{{< image title="Space roles" src="img/space-user-role-management.png" >}}
 
 On the space page, scroll down to "Space users". This lists the space users and their space roles. Change the roles by clicking the checkboxes beside their names. (If you're the only person in the space, you'll just see "You are the only user in this space".)
 
@@ -94,7 +94,7 @@ On the Organization page, scroll down to the “Organization users” section. T
 
 To remove a teammate from an organization, you must first remove them from any of the organization's spaces first.
 
-![App Overview dashboard](/img/remove-organization.png)
+![App Overview dashboard]({{ .Site.BaseURL }}/img/remove-organization.png)
 
 ### Space users
 

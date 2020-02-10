@@ -20,7 +20,7 @@
   padding-bottom: 150px;
   padding-left: 16px;
   padding-right: 16px;
-  background: url(/img/peaks.svg) right bottom no-repeat;
+  background: url(../../img/peaks.svg) right bottom no-repeat;
   background-size: 1040px 148px;
 }
 .hero h1 {
@@ -157,7 +157,7 @@
   display: block;
   padding: 13px 30px 14px 0;
   border-bottom: 1px solid #ccc;
-  background: url(/img/angle-arrow-right.svg) right center no-repeat;
+  background: url(../../img/angle-arrow-right.svg) right center no-repeat;
   background-size: 7px 12px;
 }
 .content-resources section article.usa-width-one-third ul li:first-of-type a,
@@ -175,8 +175,8 @@
   font-size: 16px;
   padding: 22px 60px 23px 20px;
   text-align: left;
-  /*background: #1c304a url(/img/angle-arrow-right-white.svg) right center no-repeat;*/
-  background: #FB613C url(/img/angle-arrow-right-white.svg) right center no-repeat;
+  /*background: #1c304a url(../../img/angle-arrow-right-white.svg) right center no-repeat;*/
+  background: #FB613C url(../../img/angle-arrow-right-white.svg) right center no-repeat;
   background-size: 21px 12px;
   max-width: 480px;
 }
@@ -371,7 +371,7 @@
     border-bottom: 1px solid #fff;
   }
   .accordion-container h3 .option-input:not(:checked) + label > span:not(.option__label)  {
-    background: url(/img/southeast-arrow-white.svg) 2px 130px no-repeat;
+    background: url(../../img/southeast-arrow-white.svg) 2px 130px no-repeat;
     background-size: 25px 25px;
   }
   .accordion-container .option {

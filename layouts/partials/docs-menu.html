@@ -51,11 +51,11 @@
             {{end}}
 
             <li>
-              <a href="/updates/"><i class='fa fa-fw fa-bullhorn'></i> <span>Latest Updates</span></a>
+              <a href="{{ .Site.BaseURL }}/updates/"><i class='fa fa-fw fa-bullhorn'></i> <span>Latest Updates</span></a>
             </li>
 
             <li>
-              <a href="/docs/help/"><i class='fa fa-fw fa-life-ring'></i> <span>Help</span></a>
+              <a href="{{ .Site.BaseURL }}/docs/help/"><i class='fa fa-fw fa-life-ring'></i> <span>Help</span></a>
             </li>
             {{ if .IsPage }}
             {{ $File := .File }}  {{with $File.Path }}<li><a href="https://github.com/18f/cg-site/edit/master/content/{{ $File.Dir }}{{ $File.LogicalName }}" target="blank"><i class='fa fa-edit fa-fw'></i> Suggest edits to this page</a> </li>{{end}}
