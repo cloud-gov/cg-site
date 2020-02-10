@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+{% comment %}
+This template is for a single page that does not have a date associated with it. For example, an about page.
+{% endcomment %}
+
+<div class="usa-layout-docs usa-section bg-accent-warm-light">
+  <div class="grid-container">
+    <div class="grid-row grid-gap">
+      {% if page.sidenav == true %}
+      {% include sidenav.html documentation_navigation=site.documentation_navigation %}
+      {% endif %}
+
+      <div class="usa-layout-docs__main desktop:grid-col-9 usa-prose bg-white padding-7">
+        <h1>{{ page.title }}</h1>
+        {{ content }}
+      </div>
+    </div>
+  </div>
+</div>
