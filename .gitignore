@@ -8,3 +8,4 @@ credentials.fr.yml
 npm-debug.log
 _site/
 bin/
+.DS_Store
