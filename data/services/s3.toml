@@ -1,5 +1,0 @@
-# Service metadata lives
-# https://github.com/18F/cg-deploy-s3-broker/blob/4fcf51430a2026529ff17dc8f5c817803165b312/config-template.json#L17
-name = "s3"
-description = "Amazon S3 provides developers with secure, durable, highly-scalable object storage"
-status = "Production Ready"
