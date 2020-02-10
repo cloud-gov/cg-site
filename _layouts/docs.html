@@ -10,7 +10,7 @@ This template is for a single page that does not have a date associated with it.
   <div class="grid-container">
     <div class="grid-row grid-gap">
       {% if page.sidenav == true %}
-      {% include sidenav.html %}
+      {% include sidenav.html documentation_navigation=site.documentation_navigation %}
       {% endif %}
 
       <div class="usa-layout-docs__main desktop:grid-col-9 usa-prose bg-white padding-7">

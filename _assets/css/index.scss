@@ -12,7 +12,29 @@
 @import 'mermaid';
 
 // Add your SASS/CSS here
+.site-banner {
+  background-color: color("base-darkest");
 
+  .usa-banner__content {
+    color: color("white");
+  }
+
+  .usa-banner__button {
+    color: color("base-light");
+
+    &:hover {
+      color: color("white");
+    }
+  }
+
+  .usa-banner__header-text {
+    color: color("white");
+  }
+
+  .usa-banner__header-action {
+    color: color("gray-30");
+  }
+}
 
 
 @media screen and (min-width: 640px) {

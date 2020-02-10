@@ -54,17 +54,81 @@ primary_navigation:
     url: /docs/
   - name: Contact
     url: /docs/help/
-  - name: Log in
-    url: https://login.fr.cloud.gov/login
-  - name: Platform Status
-    url: https://cloudgov.statuspage.io/
-
 
 secondary_navigation:
-  - name: Secondary link
-    url: "#main-content"
-  - name: Another secondary link
-    url: "#main-content"
+  - name: Platform Status
+    url: https://cloudgov.statuspage.io/
+  - name: Log in
+    url: https://login.fr.cloud.gov/login
+
+
+documentation_navigation:
+  - name: "Overview"
+    identifier: "overview"
+    icon: fa-home
+    weight: -150
+  - name: "Purchase and pricing"
+    identifier: "pricing"
+    icon: fa-shopping-cart
+    weight: -140
+  - name: "Technology and security"
+    identifier: "technology"
+    icon: fa-lock
+    weight: -130
+  - name: "Customer stories"
+    identifier: "customer-stories"
+    icon: fa-users
+    weight: -120
+  - name: "Getting started"
+    identifier: "getting-started"
+    icon: fa-road
+    weight: -115
+  - name: "Deploying apps"
+    identifier: "apps"
+    icon: fa-file-text
+    weight: -110
+  - name: "Services"
+    identifier: "services"
+    icon: fa-database
+    weight: -100
+  - name: "Managing apps"
+    identifier: "advanced"
+    icon: fa-rocket
+    weight: -100
+  - name: "Managing orgs"
+    identifier: "orgs-spaces"
+    icon: fa-rocket
+    weight: -100
+  - name: "Compliance"
+    identifier: "compliance"
+    icon: fa-check-square-o
+    weight: -95
+  - name: "Experimental features"
+    identifier: "experimental"
+    icon: fa-flask
+    weight: -90
+  - name: "Team documentation"
+    identifier: "ops"
+    icon: fa-wrench
+  - name: "Deployment"
+    identifier: "deployment"
+    parent: "ops"
+  - name: "Tenant support"
+    identifier: "tenants"
+    parent: "ops"
+  - name: "Operations"
+    identifier: "operations"
+    parent: "ops"
+  - name: "Runbook"
+    identifier: "runbook"
+    parent: "ops"
+  - name: "Plans and policies"
+    identifier: "policies"
+    parent: "ops"
+  - name: "Design considerations"
+    identifier: "design"
+    parent: "ops"
+
 
 # Search.gov configuration
 #

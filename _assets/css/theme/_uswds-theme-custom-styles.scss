@@ -301,3 +301,10 @@ $theme-table-column-gap: 4;
     }
 }
 
+.usa-header--extended .usa-nav {
+  border: none;
+}
+
+.usa-search .usa-button {
+  @include u-bg('primary-vivid')
+}
