@@ -3,7 +3,7 @@
 {{ end }}
   <div class="env-block env-dashboard">
   {{ if not (.Parent.IsNamedParams) }}
-    <p class="env-specifier"><strong>Using the dashboard</strong> (<a href="/docs/getting-started/setup/#log-into-the-dashboard-web-interface">what's this?</a>)</p>
+    <p class="env-specifier"><strong>Using the dashboard</strong> (<a href="{{ .Site.BaseURL }}/docs/getting-started/setup/#log-into-the-dashboard-web-interface">what's this?</a>)</p>
   {{ end }}
   {{ .Inner }}
 </div>

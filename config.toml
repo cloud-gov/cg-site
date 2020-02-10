@@ -1,8 +1,7 @@
-baseurl = "https://cloud.gov"
 languageCode = "en-us"
 title = "cloud.gov"
 pluralizelisttitles = "false"
-publishdir = "public"
+publishdir = "_site"
 pygmentsCodeFences = "true"
 pygmentsUseClasses = "true"
 
