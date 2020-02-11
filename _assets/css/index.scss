@@ -38,7 +38,7 @@
 
 .site-footer {
   @include u-bg('accent-warm');
-  @include u-font('body', '2xs');
+  @include u-font('body', '3xs');
   @include u-color('ink');
 
   a {
