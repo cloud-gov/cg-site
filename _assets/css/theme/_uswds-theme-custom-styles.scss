@@ -344,8 +344,16 @@ $theme-table-column-gap: 4;
   .usa-nav__secondary-links a {
     @include u-color('ink');
   }
+
+  input.usagov-search-autocomplete {
+    @include u-width('card-lg');
+  }
 }
 
 .usa-search .usa-button {
   @include u-bg('primary-vivid');
+}
+
+.usa-header [role=search] {
+  width: min-content;
 }
