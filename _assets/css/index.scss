@@ -36,6 +36,20 @@
   }
 }
 
+.site-footer {
+  @include u-bg('accent-warm');
+  @include u-font('body', '2xs');
+  @include u-color('ink');
+
+  a {
+    @include u-color('ink');
+
+    &:visited {
+      @include u-color('ink');
+    }
+  }
+}
+
 
 @media screen and (min-width: 640px) {
   .tablet\:width-1\/3 {
@@ -96,17 +110,20 @@
     margin: 30px 0 0 0;
     list-style: none;
     max-width: 500px;
+    @include u-border-bottom(1px);
+    @include u-border-bottom('base-light');
 
     li {
       font-size: 27px;
+      @include u-border-top(1px);
+      @include u-border-top('base-light');
       
       a {
         @include u-text('no-underline');
 
 
         display: block;
-        padding: 5px 0 15px 0;
-        border-bottom: 1px solid 'base-light';
+        padding: 15px 0;
 
         &:before {
           content: '\02192';
@@ -125,4 +142,6 @@
   }
 }
 
-
+a {
+  @include u-color('primary-darker');
+}

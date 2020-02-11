@@ -4,24 +4,56 @@ layout: page
 sidenav: false
 ---
 
-# Section heading (h1)
+# Try Cloud.gov for free
 
-The page heading communicates the main focus of the page. Make your page heading descriptive and keep it succinct.
+<p class="usa-intro">Follow this guide to create an account and deploy a sample app in your own free sandbox.</p>
 
-We can also use variables in our pages. For example, this is the title variable: **{{page.title}}**
 
-## Section heading (h2)
+## Get trial access and a free sandbox space
 
-These headings introduce, respectively, sections and subsections within your body copy. As you create these headings, follow the same guidelines that you use when writing section headings: Be succinct, descriptive, and precise.
+Federal employees and contractors with an email ending in .mil, .gov, or .fed.us can obtain a free sandbox space. To register, you’ll need access to your email and a smartphone with Google Authenticator installed.
 
-### Subsection heading (h3)
+<a href="https://account.fr.cloud.gov/signup" class="usa-button">Get access</a>
 
-The particulars of your body copy will be determined by the topic of your page. Regardless of topic, it’s a good practice to follow the inverted pyramid structure when writing copy: Begin with the information that’s most important to your users and then present information of less importance.
+## Go build in your sandbox
 
-Keep each section and subsection focused — a good approach is to include one theme (topic) per section.
+Follow any of the tutorials to launch your own web application from your sandbox. You’ll need your cloud.gov account and some familiarity with Windows Powershell or Mac/Linux terminal. Learn more about [sandbox spaces](https://cloud.gov/overview/pricing/free-limited-sandbox/) and [sandbox limitations](https://cloud.gov/overview/pricing/free-limited-sandbox/#sandbox-limitations).
 
-#### Subsection heading (h4)
+## Additional resources
 
-Use the side navigation menu to help your users quickly skip to different sections of your page. The menu is best suited to displaying a hierarchy with one to three levels and, as we mentioned, to display the sub-navigation of a given page.
+If you've run into any issues with these tutorials, please <a href="mailto:cloud-gov-support@gsa.gov">Contact support at cloud.gov</a>. We're happy to help.
 
-Read the full documentation on our side navigation on the component page.
+Did we miss a tip or useful resource that you think we should add? <a href="https://github.com/18F/cg-site/issues/new">Submit a suggestion on GitHub</a> or <a href="mailto:cloud-gov-inquiries@gsa.gov?subject=%5BSuggestion%5D%20&body=%0A%0A%0A%0ARefcode:%20quickstart">send us an email</a>.
+
+<div class="grid-container">
+  <div class="grid-row">
+    <div class="tablet:grid-col">
+        <ul>
+        <li>
+        <a href="https://github.com/18F/cf-ex-drupal">Drupal example</a>
+        </li>
+        <li>
+        <a href="https://github.com/18F/cf-ex-wordpress">WordPress example</a>
+        </li>
+        <li>
+        <a href="https://github.com/cloudfoundry-samples">Cloud Foundry community collection of sample applications</a>
+        </li>
+        <li>
+        <a href="https://github.com/cloudfoundry-samples/spring-music">SpringMusic: Java + any of MySQL, Oracle, Postgres or Redis</a>
+        </li>
+    </ul>
+    </div>
+    <div class="tablet:grid-col">                        
+        <h4>Join the communities</h4>
+        <ul>
+            <li>
+            <a href="https://chat.18f.gov/">The public DevOps channel on 18F's Slack (sign up at chat.18f.gov).</a>
+            </li>
+            <li>
+            <a href="https://www.cloudfoundry.org/community/">Cloud Foundry communities (Slack, newsletters, mail lists)</a>
+            </li>
+        </ul>
+     </div>
+    <div class="tablet:grid-col"></div>
+  </div>
+</div>
