@@ -106,6 +106,7 @@ $theme-table-column-gap: 4;
       padding-bottom: units(2px);
       position: relative;
 
+
       &::after {
         @include u-pin("y");
         @include u-pin("left");
@@ -135,7 +136,6 @@ $theme-table-column-gap: 4;
       align-items: baseline;
       background-color: transparent;
       display: flex;
-    //   line-height: lh("lang", 4);
 
       &:empty {
         display: none;
@@ -144,7 +144,7 @@ $theme-table-column-gap: 4;
       & + td {
         border-top: units(1px) solid color("base-lighter");
       }
-
+      
       .site-inline-swatch {
         width: 100%;
       }
@@ -246,8 +246,9 @@ $theme-table-column-gap: 4;
           border: none;
           border-top: units(1px) solid color("base-light");
 
-          &:last-child {
-            border-bottom: units(1px) solid color("base-light");
+          
+          &:first-child {
+            border-top: none;
           }
         }
       }

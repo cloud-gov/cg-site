@@ -1,6 +1,6 @@
 - package_name: Sandbox
   description: A sandbox environment to run experiments to see if cloud.gov works for your team.
-  price: Free
+  price: <strong>Free</strong>
   memory: Limited to 1GB memory
   production: Non-production systems<br /> systems cleared every 90 days
   number_of_systems: Single environment

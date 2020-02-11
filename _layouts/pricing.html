@@ -6,8 +6,8 @@ layout: default
     <section class="grid-container usa-section">
         <div class="grid-row grid-gap">
             <div class="tablet:grid-col-8">
-          <h1>
-                <span class="eyebrow uppertext">Pricing</span>
+            <p class="text-uppercase margin-bottom-0">Pricing</p>
+            <h1 class="margin-top-1">
                 Deliver great services with compliance and infrastructure automated behind the scenes.
             </h1>
             <p class="usa-intro">
@@ -19,10 +19,10 @@ layout: default
             <table class="usa-table usa-table--borderless site-table-responsive site-table-simple">
                 <tbody>
                     {% tablerow product in site.data.pricing %}
-                        {% asset "{{ product.image }}" class="square-10" %}
+                        {% asset "{{ product.image }}" class="square-15" %}
                     {% endtablerow %}
                     {% tablerow product in site.data.pricing %}
-                        {{ product.package_name }}
+                        <h2>{{ product.package_name }}</h2>
                     {% endtablerow %}
                     {% tablerow product in site.data.pricing %}
                         {{ product.description }}
