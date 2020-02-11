@@ -320,21 +320,6 @@ $theme-table-column-gap: 4;
         @include u-bg('primary-darker');
       }
     }
-
-    &:active {
-      @include u-color('primary-vivid');
-      &::after {
-        @include u-bg('primary-vivid');
-      }
-    }
-
-    &.usa-current {
-      @include u-color('primary-vivid');
-
-    }
-    &.usa-current::after {
-      @include u-bg('primary-vivid');
-    }
   }
 
   li.usa-nav__primary-item li.usa-nav__submenu-item a {
@@ -350,8 +335,8 @@ $theme-table-column-gap: 4;
   }
 }
 
-.usa-search .usa-button {
-  @include u-bg('primary-vivid');
+main .usa-button {
+  @include u-radius(0);
 }
 
 .usa-header [role=search] {
