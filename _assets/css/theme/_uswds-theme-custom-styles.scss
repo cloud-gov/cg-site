@@ -107,6 +107,8 @@ $theme-table-column-gap: 4;
       position: relative;
 
 
+
+
       &::after {
         @include u-pin("y");
         @include u-pin("left");
@@ -202,6 +204,14 @@ $theme-table-column-gap: 4;
 
         & + tr {
           border-top: units(1px) solid color("base-lighter");
+
+          h3 {
+            @include u-margin-bottom(0);
+          }
+
+          a.usa-button {
+            @include u-margin-bottom(2);
+          }
         }
       }
     }
@@ -245,9 +255,16 @@ $theme-table-column-gap: 4;
         tr {
           border: none;
           border-top: units(1px) solid color("base-light");
+          @include u-padding-y(3);
 
           
+          
           &:first-child {
+            border-top: none;
+            padding-bottom: 0;
+          }
+
+          &:nth-child(2){ 
             border-top: none;
           }
         }

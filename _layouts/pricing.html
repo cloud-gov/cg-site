@@ -7,7 +7,7 @@ layout: default
         <div class="grid-row grid-gap">
             <div class="tablet:grid-col-8">
             <p class="text-uppercase margin-bottom-0">Pricing</p>
-            <h1 class="margin-top-1">
+            <h1 class="margin-top-1 font-sans-3xl">
                 Deliver great services with compliance and infrastructure automated behind the scenes.
             </h1>
             <p class="usa-intro">
@@ -21,7 +21,7 @@ layout: default
                     {% tablerow product in site.data.pricing %}
                         {% asset "{{ product.image }}" class="square-15" %}
                     {% endtablerow %}
-                    {% tablerow product in site.data.pricing %}
+                    {% tablerow product in site.data.pricing class="border-0" %}
                         <h2>{{ product.package_name }}</h2>
                     {% endtablerow %}
                     {% tablerow product in site.data.pricing %}
@@ -31,19 +31,19 @@ layout: default
                         {{ product.price }}
                     {% endtablerow %}
                     {% tablerow product in site.data.pricing %}
-                        {{ product.memory }}
+                        <span class="font-sans-2xs">{{ product.memory }}</span>
                     {% endtablerow %}
                     {% tablerow product in site.data.pricing %}
-                        {{ product.production }}
+                        <span class="font-sans-2xs">{{ product.production }}</span>
                     {% endtablerow %}
                     {% tablerow product in site.data.pricing %}
-                        {{ product.number_of_systems }}
+                        <span class="font-sans-2xs">{{ product.number_of_systems }}</span>
                     {% endtablerow %}
                     {% tablerow product in site.data.pricing %}
-                        {{ product.domain_names }}
+                        <span class="font-sans-2xs">{{ product.domain_names }}</span>
                     {% endtablerow %}
                     {% tablerow product in site.data.pricing %}
-                        {{ product.sign_up }}
+                        <span class="font-sans-2xs">{{ product.sign_up }}
                     {% endtablerow %}
                 </tbody>
             </table>

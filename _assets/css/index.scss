@@ -139,7 +139,7 @@
         }
       }
 
-      &first-of-type {
+      &:first-of-type {
         border-top: 1px solid 'base-light';
         padding-top: 20px
       }
