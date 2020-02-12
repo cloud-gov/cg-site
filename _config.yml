@@ -77,7 +77,7 @@ documentation_navigation:
     weight: -130
   - name: "Customer stories"
     identifier: "customer-stories"
-    icon: fa-users
+    icon: fa-star
     weight: -120
   - name: "Getting started"
     identifier: "getting-started"
@@ -97,7 +97,7 @@ documentation_navigation:
     weight: -100
   - name: "Managing orgs"
     identifier: "orgs-spaces"
-    icon: fa-rocket
+    icon: fa-users
     weight: -100
   - name: "Compliance"
     identifier: "compliance"
@@ -110,24 +110,25 @@ documentation_navigation:
   - name: "Team documentation"
     identifier: "ops"
     icon: fa-wrench
-  - name: "Deployment"
-    identifier: "deployment"
-    parent: "ops"
-  - name: "Tenant support"
-    identifier: "tenants"
-    parent: "ops"
-  - name: "Operations"
-    identifier: "operations"
-    parent: "ops"
-  - name: "Runbook"
-    identifier: "runbook"
-    parent: "ops"
-  - name: "Plans and policies"
-    identifier: "policies"
-    parent: "ops"
-  - name: "Design considerations"
-    identifier: "design"
-    parent: "ops"
+    children:
+    - name: "Deployment"
+      identifier: "deployment"
+      parent: "ops"
+    - name: "Tenant support"
+      identifier: "tenants"
+      parent: "ops"
+    - name: "Operations"
+      identifier: "operations"
+      parent: "ops"
+    - name: "Runbook"
+      identifier: "runbook"
+      parent: "ops"
+    - name: "Plans and policies"
+      identifier: "policies"
+      parent: "ops"
+    - name: "Design considerations"
+      identifier: "design"
+      parent: "ops"
 
 
 # Search.gov configuration
@@ -224,6 +225,8 @@ assets:
   sources:
     - _assets/images/logos
     - _assets/images/illustrations
+    - assets/font-awesome/css
+    - assets/font-awesome/fonts
     - node_modules/uswds/dist/img
     - node_modules/uswds/dist/js
     - node_modules/uswds/dist/scss

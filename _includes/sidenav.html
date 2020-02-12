@@ -37,10 +37,32 @@ _layouts/page.html layout template, or you can add "sidenav: true" in the front-
       {% unless nav_item.children %}
       {% assign basedir = page.url | remove_first: '/' | split: '/' | first | lstrip %}
       {% assign linkdir = nav_item.url |  replace: "/", ""  | lstrip %}
-      <li class="usa-sidenav__item">
-        <a href="" class="{% if basedir == linkdir %}usa-current{% endif %}">{{ nav_item.name | escape }}</a>
+      <li class="usa-sidenav__item parent-item">
+        <a href="" class="{% if basedir == linkdir %}usa-current{% endif %}">
+          {% if nav_item.icon %}
+          <i class='fa fa-fw {{ nav_item.icon }}'></i>
+          {% endif %}
+          {{ nav_item.name | escape }}
+        </a>
+      </li>
+      {% else %}
+      {% assign nav_id = 'side-nav-' | append: forloop.index %}
+      <li class="usa-sidenav__item"  {% if basedir == linkdir %}aria-expanded=true{% else %}aria-expanded=false{% endif %}>
+        <a href="">
+          {% if nav_item.icon %}
+          <i class='fa fa-fw {{ nav_item.icon }}'></i>
+          {% endif %}
+          {{ nav_item.name | escape }}</a>
+        <ul class="usa-sidenav__sublist {% if basedir != linkdir %}display-none{% endif %}">
+          {% for subnav_item in nav_item.children %}
+          <li class="usa-sidenav__item">
+            <a href="{{ subnav_item.url | prepend: site.baseurl }}">{{ subnav_item.name | escape }}</a>
+          </li>
+          {% endfor %}
+        </ul>
       </li>
       {% endunless %}
+      
       {% endfor %}
       <!-- <li class="usa-sidenav__item">
         <a href="" class="usa-current">Current page</a>

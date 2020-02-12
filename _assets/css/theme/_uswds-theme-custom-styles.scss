@@ -337,8 +337,18 @@ $theme-table-column-gap: 4;
 
 main .usa-button {
   @include u-radius(0);
+  @include u-text('medium');
 }
 
 .usa-header [role=search] {
   width: min-content;
 }
+
+//To Dop add in dropdown arrows
+// .usa-sidenav__item[aria-expanded=false] a {
+//   @include add-icon("angle-arrow-down-primary", "after", 2, 1, 2px, "hover");
+// }
+
+// .usa-sidenav__item[aria-expanded=true] a {
+//   @include add-icon("angle-arrow-up-primary", "after", 2, 1, 2px, "hover");
+// }
