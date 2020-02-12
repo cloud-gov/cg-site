@@ -57,6 +57,12 @@
   .tablet\:float-left {
     float: left;
   }
+
+  //force grid-row wide gutter docs well
+  .grid-row.grid-gap .usa-prose.padding-x-4 {
+    padding-left: 2rem;
+    padding-right: 2rem; 
+  }
 }
 
 @media screen and (min-width: 640px) {
