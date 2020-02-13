@@ -43,7 +43,7 @@ layout: default
       </div>
     </div>
     <div class="grid-row">
-      <div class="tablet:grid-col bg-warm-accent-light">
+      <div class="tablet:grid-col padding-4 bg-accent-warm-light">
         <p class="bar-top">
             Follow our <a href="/signup">quickstart guide</a> to start a free trial account and watch <a href="/signup/#tutorials">video tutorials</a> that walk through creating apps in your sandbox.</p>
             <p> <a href="/signup" class="usa-button usa-button--big">Try cloud.gov for free</a>
@@ -147,16 +147,24 @@ layout: default
   </div>
 </section>
 
-<section class="usa-section">
-  <a name="Customers"></a>
-  <div class="grid-container">
-    <div class="grid-row">
-      <h2>Who we work with</h2>
-    </div><div class="grid-row">
+<section class="usa-section grid-container ">
+  <div class="grid-row">
+    <h2>Who we work with</h2>
+    <a name="Customers"></a>
+  </div>
+  <div class="bg-accent-warm-light padding-y-4">
+    <div class="grid-row grid-gap">
+      <div class="tablet:grid-col-2"></div>
       <div class="tablet:grid-col-2">{% asset FEC-logo.svg class="square-10" %}</div>
       <div class="tablet:grid-col-8">
         <h3>Federal Election Commission</h3>
         <h4>FEC website</h4>
+      </div>
+      <div class="tablet:grid-col-2"></div>
+    </div>
+    <div class="grid-row usa-prose">
+      <div class="tablet:grid-col-2"></div>
+        <div class="tablet:grid-col">
         <p>
           By hosting <a href="https://www.fec.gov/">FEC.gov</a> on cloud.gov and moving its data to the cloud, the FEC anticipates saving 85% in hosting costs and is better prepared for peak traffic events.
         </p>
@@ -171,6 +179,7 @@ layout: default
           Federal Election Commission
         </p>
       </div>
+      <div class="tablet:grid-col-2"></div>
     </div>
   </div>
 </section>
