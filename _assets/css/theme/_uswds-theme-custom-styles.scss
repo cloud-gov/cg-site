@@ -317,16 +317,25 @@ h3, h4, h5, h6 {
     @include u-text('medium');
 }
 
+
 h1, h2, h3, h4, h5, h6 {
   @include u-text('ls-neg-3');
 }
+//Set the heading styles outside of usa-prose
+.usa-section h2 {
+  @include u-font-size('sans', $theme-h2-font-size)
+}
 
-h3 {
+.usa-section h3 {
   @include u-font-size('sans', $theme-h3-font-size)
 }
 
-h4 {
+.usa-section h4 {
   @include u-font-size('sans', $theme-h4-font-size)
+}
+
+.usa-section h5 {
+  @include u-font-size('sans', $theme-h5-font-size)
 }
 
 .usa-header--extended .usa-nav {
