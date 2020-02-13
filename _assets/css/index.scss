@@ -150,3 +150,9 @@
 a {
   @include u-color('primary-darker');
 }
+
+.sign-up-intro {
+  @include u-bg('primary-darker');
+  background: asset_url("peaks.svg") right bottom no-repeat;
+  background-size: 1040px 148px;
+}

@@ -311,10 +311,10 @@ $theme-table-column-gap: 4;
 }
 
 .usa-prose  {
-    h1 {
+    h1, h2{
         @include u-text('semibold');
     }
-    h2, h3, h4, h5, h6 {
+    h3, h4, h5, h6 {
         @include u-text('medium');
     }
 }
@@ -349,6 +349,7 @@ $theme-table-column-gap: 4;
  
   li.usa-nav__primary-item li.usa-nav__submenu-item a {
     @include u-color('white');
+    @include u-text('normal');
   }
 
   .usa-nav__secondary-links a {
@@ -367,6 +368,14 @@ main .usa-button {
 
 .usa-header [role=search] {
   width: min-content;
+}
+
+.usa-section--dark {
+
+
+  h1 {
+    @include u-color('white');
+  }
 }
 
 //To Dop add in dropdown arrows
