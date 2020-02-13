@@ -2,8 +2,8 @@
 title: Sign up
 layout: wide
 ---
-<section class="usa-graphic-list usa-section usa-section--dark">
-<div class="grid-container sign-up-intro">
+<section class="usa-graphic-list usa-section usa-section--dark sign-up-intro">
+<div class="grid-container">
 <div class="tablet:grid-col-7"  markdown="1">
 # Try Cloud.gov for free
 
