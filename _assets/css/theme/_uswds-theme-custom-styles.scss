@@ -310,13 +310,23 @@ $theme-table-column-gap: 4;
   }
 }
 
-.usa-prose  {
-    h1, h2{
-        @include u-text('semibold');
-    }
-    h3, h4, h5, h6 {
-        @include u-text('medium');
-    }
+h1, h2{
+    @include u-text('semibold');
+}
+h3, h4, h5, h6 {
+    @include u-text('medium');
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include u-text('ls-neg-3');
+}
+
+h3 {
+  @include u-font-size('sans', $theme-h3-font-size)
+}
+
+h4 {
+  @include u-font-size('sans', $theme-h4-font-size)
 }
 
 .usa-header--extended .usa-nav {
@@ -362,8 +372,29 @@ $theme-table-column-gap: 4;
 }
 
 main .usa-button {
-  @include u-radius(0);
+  @include u-radius(1px);
   @include u-text('medium');
+  @include u-font-size('sans', 'sm');
+
+  &:hover {
+    @include u-bg('primary-darker');
+  }
+
+}
+
+.usa-button--secondary {
+  @include u-color('ink');
+
+  &:hover {
+    @include u-color('ink');
+    @include u-color('secondary-light');
+  }
+}
+
+.usa-button--big {
+  @include u-width('card-lg');
+  text-align: left;
+  @include u-font-size('sans', 'sm');
 }
 
 .usa-header [role=search] {
@@ -371,10 +402,11 @@ main .usa-button {
 }
 
 .usa-section--dark {
-
+    @include u-bg('primary-darkest');
 
   h1 {
     @include u-color('white');
+    @include u-font-size('sans', $theme-h1-font-size);
   }
 }
 

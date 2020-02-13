@@ -108,7 +108,7 @@
   @include u-margin-top(8);
 
   h1 {
-    font-size: 64px;
+    @include u-font-size('sans', 16);
   }
   ul {
     padding: 0;
@@ -124,7 +124,7 @@
       @include u-border-top('base-light');
       
       a {
-        @include u-text('no-underline');
+        @include u-color('ink');
 
 
         display: block;
@@ -148,11 +148,16 @@
 }
 
 a {
-  @include u-color('primary-darker');
+  @include u-color('primary-dark');
+
+  &:hover {
+    @include u-color('primary-darker');
+  }
 }
 
 .sign-up-intro {
-  @include u-bg('primary-darker');
-  background: asset_url("peaks.svg") right bottom no-repeat;
+  background-image: asset_url("peaks.svg");
+  background-repeat: no-repeat;
+  background-position: right bottom;
   background-size: 1040px 148px;
 }

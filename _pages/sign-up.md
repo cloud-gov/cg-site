@@ -3,49 +3,42 @@ title: Sign up
 layout: wide
 ---
 <section class="usa-graphic-list usa-section usa-section--dark">
-<div class="grid-container" markdown="1">
+<div class="grid-container sign-up-intro">
+<div class="tablet:grid-col-7"  markdown="1">
 # Try Cloud.gov for free
 
 <p class="usa-intro">Follow this guide to create an account and deploy a sample app in your own free sandbox.</p>
 </div>
+<div class="tablet:grid-col">
+</div>
+</div>
 </section>
 
 <section class="usa-section">
-<div class="grid-container" markdown="1">
-## Get trial access and a free sandbox space
+<div class="grid-container">
+<div class="tablet:grid-col-7 usa-prose"  markdown="1">
+## 1. <br />Get trial access and a free sandbox space
 
 Federal employees and contractors with an email ending in .mil, .gov, or .fed.us can obtain a free sandbox space. To register, you’ll need access to your email and a smartphone with Google Authenticator installed.
 
-<a href="https://account.fr.cloud.gov/signup" class="usa-button">Get access</a>
+<a href="https://account.fr.cloud.gov/signup" class="usa-button usa-button--big">Get access</a>
+</div>
 </div>
 </section>
 
 <section class="bg-accent-warm-light usa-section">
-<div class="grid-container" markdown="1">
-## Go build in your sandbox
+<div class="grid-container grid-row">
+<div class="tablet:grid-col-7 usa-prose"  markdown="1">
+## 2.<br />Go build in your sandbox
 
 Follow any of the tutorials to launch your own web application from your sandbox. You’ll need your cloud.gov account and some familiarity with Windows Powershell or Mac/Linux terminal. Learn more about [sandbox spaces](https://cloud.gov/overview/pricing/free-limited-sandbox/) and [sandbox limitations](https://cloud.gov/overview/pricing/free-limited-sandbox/#sandbox-limitations).
 
-<a href="https://account.fr.cloud.gov/signup" class="usa-button">Set up cloud.gov</a>
+<a href="https://account.fr.cloud.gov/signup" class="usa-button usa-button--big">Set up cloud.gov</a>
 </div>
-</section>
-
-<section class="usa-section">
-<div class="grid-container" markdown="1">
-## Want more?
-
-If you've run into any issues with these tutorials, please <a href="mailto:cloud-gov-support@gsa.gov">Contact support at cloud.gov</a>. We're happy to help.
-
-Did we miss a tip or useful resource that you think we should add? 
-
-<a href="https://github.com/18F/cg-site/issues/new" class="usa-button usa-button--secondary">Submit a suggestion on GitHub</a>
-
-or <a href="mailto:cloud-gov-inquiries@gsa.gov?subject=%5BSuggestion%5D%20&body=%0A%0A%0A%0ARefcode:%20quickstart">send us an email</a>.
-
-<div class="grid-container">
-  <div class="grid-row">
-    <div class="tablet:grid-col">
-        <ul>
+<div class="tablet:grid-col-1"></div>
+<div class="tablet:grid-col usa-prose">
+<h4>Sample applications</h4>
+<ul>
         <li>
         <a href="https://github.com/18F/cf-ex-drupal">Drupal example</a>
         </li>
@@ -59,9 +52,25 @@ or <a href="mailto:cloud-gov-inquiries@gsa.gov?subject=%5BSuggestion%5D%20&body=
         <a href="https://github.com/cloudfoundry-samples/spring-music">SpringMusic: Java + any of MySQL, Oracle, Postgres or Redis</a>
         </li>
     </ul>
-    </div>
-    <div class="tablet:grid-col">                        
-        <h4>Join the communities</h4>
+</div>
+</div>
+</section>
+
+<section class="usa-section">
+<div class="grid-container grid-row">
+<div class="tablet:grid-col-7 usa-prose"  markdown="1">
+## 3. <br />Want more?
+
+Upgrade to a paid package to get full access to the platform and permanent
+spaces for hosting longer term demos and web applications in production.
+Email us at cloud-gov-inquiries@gsa.gov to learn more about what cloud.gov
+can do.
+
+<a href="mailto:cloud-gov-inquiries@gsa.gov?subject=%5BSuggestion%5D%20&body=%0A%0A%0A%0ARefcode:%20quickstart" class="usa-button usa-button--secondary usa-button--big">Contact us</a>
+</div>
+<div class="tablet:grid-col-1"></div>
+<div class="tablet:grid-col usa-prose">
+<h4>Join the communities</h4>
         <ul>
             <li>
             <a href="https://chat.18f.gov/">The public DevOps channel on 18F's Slack (sign up at chat.18f.gov).</a>
@@ -70,9 +79,6 @@ or <a href="mailto:cloud-gov-inquiries@gsa.gov?subject=%5BSuggestion%5D%20&body=
             <a href="https://www.cloudfoundry.org/community/">Cloud Foundry communities (Slack, newsletters, mail lists)</a>
             </li>
         </ul>
-     </div>
-    <div class="tablet:grid-col"></div>
-  </div>
 </div>
 </div>
 </section>

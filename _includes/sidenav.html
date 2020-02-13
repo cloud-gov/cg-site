@@ -33,6 +33,7 @@ _layouts/page.html layout template, or you can add "sidenav: true" in the front-
 
   <nav>
     <ul class="usa-sidenav">
+      
       {% for nav_item in include.documentation_navigation %}
       {% unless nav_item.children %}
       {% assign basedir = page.url | remove_first: '/' | split: '/' | first | lstrip %}
@@ -44,6 +45,15 @@ _layouts/page.html layout template, or you can add "sidenav: true" in the front-
           {% endif %}
           {{ nav_item.name | escape }}
         </a>
+        <ul class="usa-sidenav__sublist {% if basedir != linkdir %}display-none{% endif %}">
+          {% for docpage in site.docs %}
+          {% if nav_item.identifier == docpage.parent %}
+          <li class="usa-sidenav__item">
+            <a href="{{ docpage.url }}">{{ docpage.title }}</a>
+          </li>
+          {% endif %}
+          {% endfor %}
+        </ul>
       </li>
       {% else %}
       {% assign nav_id = 'side-nav-' | append: forloop.index %}
@@ -57,6 +67,15 @@ _layouts/page.html layout template, or you can add "sidenav: true" in the front-
           {% for subnav_item in nav_item.children %}
           <li class="usa-sidenav__item">
             <a href="{{ subnav_item.url | prepend: site.baseurl }}">{{ subnav_item.name | escape }}</a>
+            <ul class="usa-sidenav__sublist">
+              {% for docpage in site.docs %}
+                  {% if sub_child.identifier == docpage.parent %}
+                  <li class="usa-sidenav__item">
+                    <a href="{{ docpage.url }}">{{ docpage.title }}</a>
+                  </li>
+                  {% endif %}
+                {% endfor %}
+            </ul>
           </li>
           {% endfor %}
         </ul>
@@ -64,43 +83,6 @@ _layouts/page.html layout template, or you can add "sidenav: true" in the front-
       {% endunless %}
       
       {% endfor %}
-      <!-- <li class="usa-sidenav__item">
-        <a href="" class="usa-current">Current page</a>
-        <ul class="usa-sidenav__sublist">
-          <li class="usa-sidenav__item">
-            <a href="">Child link</a>
-          </li>
-          <li class="usa-sidenav__item">
-            <a href="" class="usa-current">Child link</a>
-            <ul class="usa-sidenav__sublist">
-              <li class="usa-sidenav__item">
-                <a href="">Grandchild link</a>
-              </li>
-              <li class="usa-sidenav__item">
-                <a href="">Grandchild link</a>
-              </li>
-              <li class="usa-sidenav__item">
-                <a href="" class="usa-current">Grandchild link</a>
-              </li>
-              <li class="usa-sidenav__item">
-                <a href="">Grandchild link</a>
-              </li>
-            </ul>
-          </li>
-          <li class="usa-sidenav__item">
-            <a href="">Child link</a>
-          </li>
-          <li class="usa-sidenav__item">
-            <a href="">Child link</a>
-          </li>
-          <li class="usa-sidenav__item">
-            <a href="">Child link</a>
-          </li>
-        </ul>
-      </li>
-      <li class="usa-sidenav__item">
-        <a href="">Parent link</a>
-      </li> -->
     </ul>
   </nav>
 </aside>

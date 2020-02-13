@@ -21,8 +21,7 @@
 title: Cloud.gov
 email: contact@example.gov
 description: >- # this means to ignore newlines until "baseurl:"
-  Agency Name (EAC) Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  Aenean et sapien a leo auctor scelerisque quis nec magna. Sed dictum ante a risus vehicula facilisis.
+  Expedite your agency’s path to a secure and compliant cloud. cloud.gov provides an application environment that enables rapid deployment and ATO assessment for modern web applications.
 baseurl: "" # the subpath of your site, e.g. /blog
 # url: "https://example.gov" # the base hostname & protocol for your site, e.g. http://example.com
 
