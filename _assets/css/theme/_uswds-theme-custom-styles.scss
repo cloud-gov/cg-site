@@ -395,6 +395,11 @@ main .usa-button {
   @include u-width('card-lg');
   text-align: left;
   @include u-font-size('sans', 'sm');
+
+  &::after {
+    content:"\003e";
+    float: right;
+  }
 }
 
 .usa-header [role=search] {
