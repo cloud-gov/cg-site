@@ -39,20 +39,33 @@ dap_agency: GSA
 primary_navigation:
   - name: Home
     url: /
-  - name: Sign up
+  - name: Why cloud.gov?
+    children:
+      - name: Overview
+        url: /docs/overview/what-is-cloudgov/
+      - name: We’re FedRAMP authorized
+        url: /docs/security/fedramp-tracker/
+      - name: Applications we support
+        url: docs/overview/portfolio-analysis/
+      - name: Benefits of PaaS
+        url: /docs/technology/responsibilities/
+      - name: Our team
+        urlL: /docs/overview/cloudgov-team/
+  - name: Get started
     url: /sign-up/
   - name: Pricing
     url: /pricing/
   - name: Documentation
     children:
-    - name: Overview
-      url: /docs/overview/what-is-cloudgov/
-    - name: Getting Started
-      url: "#main-content"
-    - name: Purchase and pricing
-      url: "#main-content"
-    url: /docs/
-  - name: Contact
+    - name: Deploying apps
+      url: /docs/apps/deployment/
+    - name: Managing apps
+      url: /docs/apps/plugins/
+    - name: Managing orgs
+      url: /docs/orgs-spaces/dashboard/
+    - name: cloud.gov team documentation
+      url: /docs/ops/repos/
+  - name: Contact us
     url: /docs/help/
 
 secondary_navigation:

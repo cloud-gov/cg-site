@@ -326,10 +326,6 @@ $theme-table-column-gap: 4;
     @include u-text('medium');
     @include u-color('ink');
 
-    &[aria-expanded=true] {
-      @include u-color('white');
-    }
-
     &:hover {
       @include u-color('primary-darker');
 
@@ -337,8 +333,20 @@ $theme-table-column-gap: 4;
         @include u-bg('primary-darker');
       }
     }
-  }
 
+    &[aria-expanded=true] {
+      @include u-color('white');
+      &:hover {
+        @include u-color('white');
+        
+        &::after {
+          @include u-bg('primary');
+        }
+      }
+    
+    }
+  }
+ 
   li.usa-nav__primary-item li.usa-nav__submenu-item a {
     @include u-color('white');
   }
