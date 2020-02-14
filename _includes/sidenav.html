@@ -4,66 +4,37 @@ _layouts/page.html layout template, or you can add "sidenav: true" in the front-
 {% endcomment %}
 
 <aside class="usa-layout-docs-sidenav desktop:grid-col-4 padding-bottom-4">
-  <!-- <ul class="usa-nav__primary usa-accordion">
-    {% for nav_item in include.primary_navigation %}
-    {% unless nav_item.children %}
-    {% assign basedir = page.url | remove_first: '/' | split: '/' | first | lstrip %}
-    {% assign linkdir = nav_item.url |  replace: "/", ""  | lstrip %}
-    <li class="usa-nav__primary-item">
-      <a class="usa-nav__link{% if basedir == linkdir %} usa-current{% endif %}"
-        href="{{ nav_item.url | prepend: site.baseurl}}"><span>{{ nav_item.name | escape }}</span></a>
-    </li>
-    {% else %}
-    {% assign nav_id = 'primary-nav-' | append: forloop.index %}
-    <li class="usa-nav__primary-item">
-      <button class="usa-accordion__button usa-nav__link" aria-expanded="false"
-        aria-controls="{{ nav_id }}"><span>{{ nav_item.name | escape }}</span></button>
-      <ul id="{{ nav_id }}" class="usa-nav__submenu">
-        {% for subnav_item in nav_item.children %}
-        <li class="usa-nav__submenu-item">
-          <a href="{{ subnav_item.url | prepend: site.baseurl }}">{{ subnav_item.name | escape }}</a>
-        </li>
-        {% endfor %}
-      </ul>
-
-    </li>
-    {% endunless %}
-    {% endfor %}
-  </ul> -->
-
   <nav>
     <ul class="usa-sidenav">
       
       {% for nav_item in include.documentation_navigation %}
-      {% unless nav_item.children %}
-      {% assign basedir = page.url | remove_first: '/' | split: '/' | first | lstrip %}
-      {% assign linkdir = nav_item.url |  replace: "/", ""  | lstrip %}
-      <li class="usa-sidenav__item parent-item">
-        <a href="" class="{% if basedir == linkdir %}usa-current{% endif %}">
+      {% assign nav_id = 'side-nav-' | append: forloop.index %}
+
+      {% assign url_dirs = page.url | remove_first: '/' | split: '/' %}
+      {% assign relevant_parent = url_dirs[1] %}
+      <li class="usa-sidenav__item">
+        <a class="usa-sidenav__item--parent-item {% if relevant_parent == nav_item.identifier %}usa-current{% endif %}"
+        {% if relevant_parent == nav_item.identifier %}aria-expanded=true{% else %}aria-expanded=false{% endif %}
+      aria-controls="{{ nav_id }}" >
           {% if nav_item.icon %}
           <i class='fa fa-fw {{ nav_item.icon }}'></i>
           {% endif %}
           {{ nav_item.name | escape }}
         </a>
-        <ul class="usa-sidenav__sublist {% if basedir != linkdir %}display-none{% endif %}">
+        {% unless nav_item.children %}
+        <ul class="usa-sidenav__sublist {% if relevant_parent != nav_item.identifier %}display-none{% endif %}"
+         id="{{ nav_id }}" aria-hidden="true">
           {% for docpage in site.docs %}
           {% if nav_item.identifier == docpage.parent %}
           <li class="usa-sidenav__item">
-            <a href="{{ docpage.url }}">{{ docpage.title }}</a>
+            <a href="{{ docpage.url }}" class="{% if docpage.url == page.url %}usa-current{% endif %}">{{ docpage.title }}</a>
           </li>
           {% endif %}
           {% endfor %}
         </ul>
       </li>
       {% else %}
-      {% assign nav_id = 'side-nav-' | append: forloop.index %}
-      <li class="usa-sidenav__item"  {% if basedir == linkdir %}aria-expanded=true{% else %}aria-expanded=false{% endif %}>
-        <a href="">
-          {% if nav_item.icon %}
-          <i class='fa fa-fw {{ nav_item.icon }}'></i>
-          {% endif %}
-          {{ nav_item.name | escape }}</a>
-        <ul class="usa-sidenav__sublist {% if basedir != linkdir %}display-none{% endif %}">
+        <ul class="usa-sidenav__sublist {% if relevant_parent != nav_item.identifier %}display-none{% endif %}" aria-hidden="true">
           {% for subnav_item in nav_item.children %}
           <li class="usa-sidenav__item">
             <a href="{{ subnav_item.url | prepend: site.baseurl }}">{{ subnav_item.name | escape }}</a>
