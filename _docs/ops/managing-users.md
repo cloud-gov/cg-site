@@ -12,7 +12,7 @@ No local accounts to UAA shall be created for user access.
 
 ## Creating users
 
-Add new users by [inviting them]({{ site.baseurl }}{% link _docs/apps/managing-teammates.md %}#invite-a-teammate).
+Add new users by [inviting them]({{ site.baseurl }}{% link _docs/management/managing-teammates.md %}#invite-a-teammate).
 
 ## Changing passwords
 

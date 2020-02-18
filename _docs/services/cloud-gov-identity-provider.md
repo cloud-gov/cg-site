@@ -47,7 +47,7 @@ If you're trying to retrieve credentials for a service instance created before J
 
 ## More information
 
-See [leveraging authentication]({{ site.baseurl }}{% link _docs/apps/leveraging-authentication.md %}) for details.
+See [leveraging authentication]({{ site.baseurl }}{% link _docs/management/leveraging-authentication.md %}) for details.
 
 ### Rotating credentials
 

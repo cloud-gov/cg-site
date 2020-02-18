@@ -54,7 +54,7 @@ cf target -o sandbox-gsa -s harry.truman
     cf push APPNAME
     ```
 1. You'll see a series of messages noting the stages of creating the app. When complete, it'll say "App started" and give information about your app. Use the `urls` line (`urls: [ROUTENAME].app.cloud.gov`) to visit your app on the web.
-1. Try editing the app locally (without committing) and run `cf push <APPNAME>` again to see your changes. The changes will be reflected even without being committed to Git. cloud.gov is not Git-aware – it simply deploys whatever is contained in the directory that you `push` from. You can set up [continuous deployment]({{ site.baseurl }}{% link _docs/apps/continuous-deployment.md %}) from a Git repository.
+1. Try editing the app locally (without committing) and run `cf push <APPNAME>` again to see your changes. The changes will be reflected even without being committed to Git. cloud.gov is not Git-aware – it simply deploys whatever is contained in the directory that you `push` from. You can set up [continuous deployment]({{ site.baseurl }}{% link _docs/management/continuous-deployment.md %}) from a Git repository.
 1. Visit the dashboard ([`https://dashboard.fr.cloud.gov/`](https://dashboard.fr.cloud.gov/)) to see your options for managing your application via your browser.
 1. If you're done, you can delete your app by running `cf delete <APPNAME>` (it's up to you whether to keep it running for more experiments or delete it).
 
@@ -62,7 +62,7 @@ cf target -o sandbox-gsa -s harry.truman
 
 Next, check out [Concepts]({{ site.baseurl }}{% link _docs/getting-started/concepts.md %}) for an overview of cloud.gov terms and architecture.
 
-Then, head over to [**deployment instructions and architecture principles**]({{ site.baseurl }}{% link _docs/apps/deployment.md %}) for an introduction to deploying your own applications on cloud.gov.
+Then, head over to [**deployment instructions and architecture principles**]({{ site.baseurl }}{% link _docs/deployment/deployment.md %}) for an introduction to deploying your own applications on cloud.gov.
 
 ## Good to know
 

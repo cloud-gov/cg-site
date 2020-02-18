@@ -12,7 +12,7 @@ status: "Production Ready"
 
 This service provides:
 
-1. [Custom domain]({{ site.baseurl }}{% link _docs/apps/custom-domains.md %}) support, so that your application can have your domain instead of the default `*.app.cloud.gov` domain.
+1. [Custom domain]({{ site.baseurl }}{% link _docs/management/custom-domains.md %}) support, so that your application can have your domain instead of the default `*.app.cloud.gov` domain.
 1. HTTPS support via free TLS certificates with auto-renewal (using [Let's Encrypt](https://letsencrypt.org/)), so that user traffic is encrypted.
 1. Content Distribution Network (CDN) caching (using [AWS CloudFront](https://aws.amazon.com/cloudfront/)), for fast delivery of content to your users.
 

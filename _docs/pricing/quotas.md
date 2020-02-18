@@ -30,9 +30,9 @@ Quotas provide a not-to-exceed reservation of memory, which you set at the amoun
 
 Quotas limit the following resources:  
 
-- Number of [application routes]({{ site.baseurl }}{% link _docs/apps/custom-domains.md %})
+- Number of [application routes]({{ site.baseurl }}{% link _docs/management/custom-domains.md %})
 - Amount of application memory
-- Number of [service instances]({{ site.baseurl }}{% link _docs/apps/managed-services.md %})
+- Number of [service instances]({{ site.baseurl }}{% link _docs/deployment/managed-services.md %})
 
 If a new application `push` would exceed your organization's quota, the request will fail with status code `400` and a message that describes the limit that would be exceeded.
 
@@ -45,5 +45,5 @@ If a new application `push` would exceed your organization's quota, the request 
 In this situation you have three options:
 
 1. Delete existing resources with `cf delete`, `delete-service`, `delete-route` or similar.
-2. Reconfigure individual existing [application quotas]({{ site.baseurl }}{% link _docs/apps/limits.md %}#app) and redeploy.
+2. Reconfigure individual existing [application quotas]({{ site.baseurl }}{% link _docs/management/limits.md %}#app) and redeploy.
 3. Request a quota change by [asking support](/help/). You can request an increase in number of routes or service instances with no cost impact. Increasing memory quota changes your costs (as described above).

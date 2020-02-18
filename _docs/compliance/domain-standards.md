@@ -5,7 +5,7 @@ sidenav: true
 title: IPv6, HTTPS, DNSSEC, and Certificates
 ---
 
-Here's what cloud.gov does to support relevant federal standards and recommendations, for applications on `*.app.cloud.gov` and [custom domains]({{ site.baseurl }}{% link _docs/apps/custom-domains.md %}).
+Here's what cloud.gov does to support relevant federal standards and recommendations, for applications on `*.app.cloud.gov` and [custom domains]({{ site.baseurl }}{% link _docs/management/custom-domains.md %}).
 
 ## IPv6
 
@@ -17,9 +17,9 @@ cloud.gov ensures all applications are accessible only over HTTPS with [HTTP Str
 
 ### [HSTS preloading](https://https.cio.gov/guide/#options-for-hsts-compliance)
 
-cloud.gov sets [`Strict-Transport-Security`]({{ site.baseurl }}{% link _docs/apps/headers.md %}) headers for all applications by default, and has added the `cloud.gov` domain/subdomains to the HSTS preload list for most major browsers.
+cloud.gov sets [`Strict-Transport-Security`]({{ site.baseurl }}{% link _docs/management/headers.md %}) headers for all applications by default, and has added the `cloud.gov` domain/subdomains to the HSTS preload list for most major browsers.
 
-You are responsible for setting up HSTS preloading for your [custom domain]({{ site.baseurl }}{% link _docs/apps/custom-domains.md %}). cloud.gov doesn't set this up for you. If you need HSTS preloading, follow [the guidance from the maintainers of the HSTS preload list](https://hstspreload.org/#opt-in). The HTTPS-Only Standard encourages HSTS preloading.
+You are responsible for setting up HSTS preloading for your [custom domain]({{ site.baseurl }}{% link _docs/management/custom-domains.md %}). cloud.gov doesn't set this up for you. If you need HSTS preloading, follow [the guidance from the maintainers of the HSTS preload list](https://hstspreload.org/#opt-in). The HTTPS-Only Standard encourages HSTS preloading.
 
 *Additional details are available in the [cloud.gov FedRAMP P-ATO documentation package]({{ site.baseurl }}{% link _docs/security/fedramp-tracker.md %}#how-you-can-use-this-p-ato), including in System Security Plan controls SC-8, SC-12, and SC-20.*
 

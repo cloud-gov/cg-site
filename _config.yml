@@ -57,9 +57,9 @@ primary_navigation:
   - name: Documentation
     children:
     - name: Deploying apps
-      url: /docs/apps/deployment/
+      url: /docs/deployment/deployment/
     - name: Managing apps
-      url: /docs/apps/plugins/
+      url: /docs/management/plugins/
     - name: Managing orgs
       url: /docs/orgs-spaces/dashboard/
     - name: cloud.gov team documentation
@@ -96,7 +96,7 @@ documentation_navigation:
     icon: fa-road
     weight: -115
   - name: "Deploying apps"
-    identifier: "apps"
+    identifier: "deployment"
     icon: fa-file-text
     weight: -110
   - name: "Services"
@@ -104,7 +104,7 @@ documentation_navigation:
     icon: fa-database
     weight: -100
   - name: "Managing apps"
-    identifier: "advanced"
+    identifier: "management"
     icon: fa-rocket
     weight: -100
   - name: "Managing orgs"

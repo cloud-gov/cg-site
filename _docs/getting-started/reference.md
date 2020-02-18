@@ -17,9 +17,9 @@ New here? Start with the top of the sidebar and work your way down. The docs inc
 Shortcuts to common tasks:
 
 * [Set up the command line]({{ site.baseurl }}{% link _docs/getting-started/setup.md %}#set-up-the-command-line)
-* [Basic deployment tips]({{ site.baseurl }}{% link _docs/apps/deployment.md %})
-* [Custom domains]({{ site.baseurl }}{% link _docs/apps/custom-domains.md %})
-* [Managing teammates]({{ site.baseurl }}{% link _docs/apps/managing-teammates.md %})
+* [Basic deployment tips]({{ site.baseurl }}{% link _docs/deployment/deployment.md %})
+* [Custom domains]({{ site.baseurl }}{% link _docs/management/custom-domains.md %})
+* [Managing teammates]({{ site.baseurl }}{% link _docs/management/managing-teammates.md %})
 
 ### cloud.gov team docs
 

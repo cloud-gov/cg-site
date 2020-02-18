@@ -16,8 +16,8 @@ You can use these realistic sample diagrams as inspiration for your own diagrams
 
 ## Customer systems
 
-* [Data flow from the public to a public application]({{ site.baseurl }}{% link _docs/apps/custom-domains.md %}#comparison-of-default-domains-and-custom-domains)
-* [Continuous deployment]({{ site.baseurl }}{% link _docs/apps/continuous-deployment.md %}#configure-your-service)
+* [Data flow from the public to a public application]({{ site.baseurl }}{% link _docs/management/custom-domains.md %}#comparison-of-default-domains-and-custom-domains)
+* [Continuous deployment]({{ site.baseurl }}{% link _docs/management/continuous-deployment.md %}#configure-your-service)
 * [Administrative access to customer systems]({{ site.baseurl }}{% link _docs/compliance/meeting-tic-requirements.md %}#use-cases-for-accessing-cloud-gov)
 
 ## Platform

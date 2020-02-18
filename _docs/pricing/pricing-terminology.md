@@ -41,4 +41,4 @@ Agencies can purchase reserved capacity via 18F as well, which is understood to 
 
 ### Managed services
 
-[Managed services]({{ site.baseurl }}{% link _docs/apps/managed-services.md %}) are services that cloud.gov can spin up quickly and run on your behalf (databases, storage, caching, etc.).
+[Managed services]({{ site.baseurl }}{% link _docs/deployment/managed-services.md %}) are services that cloud.gov can spin up quickly and run on your behalf (databases, storage, caching, etc.).

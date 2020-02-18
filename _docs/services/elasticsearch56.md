@@ -57,7 +57,7 @@ You can also use this example. The example assumes you already have an Elasticse
     cf create-service-key my-elastic-service my-key
     ```
 
-* Connect to your Elasticsearch service using port forwarding. **Note**: You'll need to leave the [`cf ssh`]({{ site.baseurl }}{% link _docs/apps/using-ssh.md %}) command running and follow the next steps in a different terminal so that you can access the remote Elasticsearch instance from your local environment:
+* Connect to your Elasticsearch service using port forwarding. **Note**: You'll need to leave the [`cf ssh`]({{ site.baseurl }}{% link _docs/management/using-ssh.md %}) command running and follow the next steps in a different terminal so that you can access the remote Elasticsearch instance from your local environment:
 
     ```sh
     es_credentials=$(cf service-key my-elastic-service my-key | tail -n +3)

@@ -68,7 +68,7 @@ If you're trying to retrieve credentials for a service instance created before J
 
 ## More information
 
-To use this service, see [continuous deployment]({{ site.baseurl }}{% link _docs/apps/continuous-deployment.md %}).
+To use this service, see [continuous deployment]({{ site.baseurl }}{% link _docs/management/continuous-deployment.md %}).
 
 ### Rotating credentials
 
