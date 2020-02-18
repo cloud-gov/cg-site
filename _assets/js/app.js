@@ -4,7 +4,9 @@ console.log("Hi from Federalist");
 mermaid.initialize({startOnLoad:true, theme: 'null'}, ".someOtherClass");
 
 var sideNavParents = document.querySelectorAll(".usa-sidenav__item--parent-item");
+var sideNavChild = document.querySelectorAll(".usa-sidenav__sublist--middle-generation");
 var subLists = document.querySelectorAll("ul.usa-sidenav__sublist");
+var middleSubList = document.querySelectorAll(".usa-sidenav__sublist ul");
 
 
 function openCurrentSubNav(self){
@@ -32,12 +34,15 @@ function removeAllUSACurrent (listArrary){
     });
 }
 
-var sideNavExpansion = function(event){
+var sideNavExpansion = function(event) {
     event.preventDefault();
     //Close all subnavs
     if (!this.classList.contains('usa-sidenav__sublist--middle-generation')){
         closeAllLists(subLists);
         removeAllUSACurrent(sideNavParents);
+    } else {
+        closeAllLists(middleSubList);
+        removeAllUSACurrent(sideNavChild);
     }
 
 
