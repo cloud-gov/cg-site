@@ -35,8 +35,11 @@ function removeAllUSACurrent (listArrary){
 var sideNavExpansion = function(event){
     event.preventDefault();
     //Close all subnavs
-    closeAllLists(subLists);
-    removeAllUSACurrent(sideNavParents);
+    if (!this.classList.contains('usa-sidenav__sublist--middle-generation')){
+        closeAllLists(subLists);
+        removeAllUSACurrent(sideNavParents);
+    }
+
 
     openCurrentSubNav(this);
 };
