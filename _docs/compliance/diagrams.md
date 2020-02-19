@@ -22,7 +22,7 @@ You can use these realistic sample diagrams as inspiration for your own diagrams
 
 ## Platform
 
-Platform architecture diagrams from the [cloud.gov P-ATO documentation package]({{ site.baseurl }}{% link _docs/security/fedramp-tracker.md %}#how-you-can-use-this-p-ato):
+Platform architecture diagrams from the [cloud.gov P-ATO documentation package]({{ site.baseurl }}{% link _docs/overview/fedramp-tracker.md %}#how-you-can-use-this-p-ato):
 
 * [Network](https://diagrams.fr.cloud.gov/10-1-network.html)
 * [Customer data flow](https://diagrams.fr.cloud.gov/10-4.1-customer-data-flow.html)

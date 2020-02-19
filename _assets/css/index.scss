@@ -86,6 +86,18 @@
   }
 }
 
+.usa-layout-docs-sidenav {
+
+  @include at-media('mobile') {
+    @include u-flex('fill');
+    @include u-order('last');
+  }
+  @include at-media('desktop') {
+    order: 0;
+    flex: none;
+  }
+}
+
 
 
 // Pricing Page

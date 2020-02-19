@@ -1,5 +1,5 @@
 ---
-parent: deployment
+parent: deploying-cloudgov
 layout: ops
 layout: docs
 sidenav: true

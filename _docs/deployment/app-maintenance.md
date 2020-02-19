@@ -38,7 +38,7 @@ How this works:
 
 This means that when patches become available for security issues in the operating system, your applications receive the updates typically within 2-4 days of the patch release.
 
-For details, see the [cloud.gov System Security Plan (SSP)]({{ site.baseurl }}{% link _docs/security/fedramp-tracker.md %}#how-you-can-use-this-p-ato) control descriptions in the SI and CM families, including SI-2, CM-2, CM-2 (2), and CM-6 (1).
+For details, see the [cloud.gov System Security Plan (SSP)]({{ site.baseurl }}{% link _docs/overview/fedramp-tracker.md %}#how-you-can-use-this-p-ato) control descriptions in the SI and CM families, including SI-2, CM-2, CM-2 (2), and CM-6 (1).
 
 ## Physical infrastructure
 

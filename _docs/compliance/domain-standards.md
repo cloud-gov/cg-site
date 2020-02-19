@@ -21,7 +21,7 @@ cloud.gov sets [`Strict-Transport-Security`]({{ site.baseurl }}{% link _docs/man
 
 You are responsible for setting up HSTS preloading for your [custom domain]({{ site.baseurl }}{% link _docs/management/custom-domains.md %}). cloud.gov doesn't set this up for you. If you need HSTS preloading, follow [the guidance from the maintainers of the HSTS preload list](https://hstspreload.org/#opt-in). The HTTPS-Only Standard encourages HSTS preloading.
 
-*Additional details are available in the [cloud.gov FedRAMP P-ATO documentation package]({{ site.baseurl }}{% link _docs/security/fedramp-tracker.md %}#how-you-can-use-this-p-ato), including in System Security Plan controls SC-8, SC-12, and SC-20.*
+*Additional details are available in the [cloud.gov FedRAMP P-ATO documentation package]({{ site.baseurl }}{% link _docs/overview/fedramp-tracker.md %}#how-you-can-use-this-p-ato), including in System Security Plan controls SC-8, SC-12, and SC-20.*
 
 ## DNSSEC
 

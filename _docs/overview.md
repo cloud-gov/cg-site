@@ -14,7 +14,7 @@ cloud.gov’s mission is to support agency efforts to improve the way they manag
 
 ### Compliance
 
-cloud.gov was designed with **FISMA compliance** in mind. cloud.gov has a [FedRAMP Joint Authorization Board (JAB) Provisional Authority to Operate (P-ATO)]({{ site.baseurl }}{% link _docs/security/fedramp-tracker.md %}) at the Moderate impact level.  The vast majority of Low and Moderate controls are managed for you.
+cloud.gov was designed with **FISMA compliance** in mind. cloud.gov has a [FedRAMP Joint Authorization Board (JAB) Provisional Authority to Operate (P-ATO)]({{ site.baseurl }}{% link _docs/overview/fedramp-tracker.md %}) at the Moderate impact level.  The vast majority of Low and Moderate controls are managed for you.
 
 ### Free sandboxes
 

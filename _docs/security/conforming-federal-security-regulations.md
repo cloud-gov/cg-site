@@ -18,7 +18,7 @@ The cloud.gov PaaS provides fundamental technological assurances that each new s
 
 ## Helping system developers reduce effort needed to gain ATO
 
-cloud.gov has received a [FedRAMP JAB P-ATO at the Moderate impact level]({{ site.baseurl }}{% link _docs/security/fedramp-tracker.md %}). Federal systems are categorized as Low, Moderate, or High impact, so this means agencies can easily use cloud.gov to host Low and Moderate systems, which are the majority of federal systems. When an agency accepts this P-ATO, teams at that agency can leverage the P-ATO for the systems they build.
+cloud.gov has received a [FedRAMP JAB P-ATO at the Moderate impact level]({{ site.baseurl }}{% link _docs/overview/fedramp-tracker.md %}). Federal systems are categorized as Low, Moderate, or High impact, so this means agencies can easily use cloud.gov to host Low and Moderate systems, which are the majority of federal systems. When an agency accepts this P-ATO, teams at that agency can leverage the P-ATO for the systems they build.
 
 Because cloud.gov takes care of a substantial number of compliance requirements for federal systems, each new system built on cloud.gov has a radically shortened path to achieving Authority to Operate from their agency.
 

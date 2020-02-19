@@ -383,6 +383,7 @@ h1, h2, h3, h4, h5, h6 {
 
   input.usagov-search-autocomplete {
     @include u-width('card-lg');
+    @include u-border('base-light');
   }
 }
 

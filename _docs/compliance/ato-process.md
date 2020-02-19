@@ -13,7 +13,7 @@ This is an outline of a typical ATO process for a cloud.gov customer [system]({{
 
 It's normal and expected that this is a **"Provisional"** ATO. The JAB does not have the authority to issue an ATO for a system at your agency. Only your own agency has the authority to issue ATOs for systems that your agency uses or operates.
 
-So instead, the JAB issues a *pre-authorization* that your agency can review, including [an audited documentation package]({{ site.baseurl }}{% link _docs/security/fedramp-tracker.md %}). Any federal employee or contractor can access the package using [this FedRAMP form](https://s3.amazonaws.com/sitesusa/wp-content/uploads/sites/482/2017/02/FedRAMP-Package-Request-Form_V5_03012017.pdf) (Package ID F1607067912). If your agency finds that the cloud.gov P-ATO meets their requirements, they can issue an ATO for cloud.gov. [Here's a template agency ATO letter (.docx).](https://s3.amazonaws.com/sitesusa/wp-content/uploads/sites/482/2017/03/FedRAMP-ATO-Letter-Template-v1.0.docx)
+So instead, the JAB issues a *pre-authorization* that your agency can review, including [an audited documentation package]({{ site.baseurl }}{% link _docs/overview/fedramp-tracker.md %}). Any federal employee or contractor can access the package using [this FedRAMP form](https://s3.amazonaws.com/sitesusa/wp-content/uploads/sites/482/2017/02/FedRAMP-Package-Request-Form_V5_03012017.pdf) (Package ID F1607067912). If your agency finds that the cloud.gov P-ATO meets their requirements, they can issue an ATO for cloud.gov. [Here's a template agency ATO letter (.docx).](https://s3.amazonaws.com/sitesusa/wp-content/uploads/sites/482/2017/03/FedRAMP-ATO-Letter-Template-v1.0.docx)
 
 ## How customer system ATOs work
 

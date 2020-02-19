@@ -42,7 +42,7 @@ primary_navigation:
       - name: Overview
         url: /docs/overview/what-is-cloudgov/
       - name: We’re FedRAMP authorized
-        url: /docs/security/fedramp-tracker/
+        url: /docs/overview/fedramp-tracker/
       - name: Applications we support
         url: /docs/overview/portfolio-analysis/
       - name: Benefits of PaaS
@@ -124,7 +124,7 @@ documentation_navigation:
     icon: fa-wrench
     children:
     - name: "Deployment"
-      identifier: "deployment"
+      identifier: "deploying-cloudgov"
       parent: "ops"
     - name: "Tenant support"
       identifier: "tenants"
