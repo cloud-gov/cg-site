@@ -359,7 +359,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     &[aria-expanded=true] {
-      @include at-media(tablet) {
+      @include at-media('desktop') {
         @include u-color('white');
         &:hover {
           @include u-color('white');
@@ -373,7 +373,9 @@ h1, h2, h3, h4, h5, h6 {
   }
  
   li.usa-nav__primary-item li.usa-nav__submenu-item a {
-    @include u-color('white');
+    @include at-media('desktop') {
+      @include u-color('white');
+    }
     @include u-text('normal');
   }
 
@@ -382,7 +384,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   input.usagov-search-autocomplete {
-    @include u-width('card-lg');
+    @include at-media('desktop') {
+      @include u-width('card-lg');
+    }
+    @include at-media('mobile') {
+      @include u-width('card');
+    }
     @include u-border('base-light');
   }
 }

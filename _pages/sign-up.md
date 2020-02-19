@@ -5,7 +5,7 @@ layout: wide
 <section class="usa-graphic-list usa-section usa-section--dark sign-up-intro">
 <div class="grid-container">
 <div class="tablet:grid-col-7"  markdown="1">
-# Try Cloud.gov for free
+# Try cloud.gov for free
 
 <p class="usa-intro">Follow this guide to create an account and deploy a sample app in your own free sandbox.</p>
 </div>
