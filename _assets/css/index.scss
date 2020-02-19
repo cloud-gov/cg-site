@@ -70,7 +70,7 @@
   //force grid-row wide gutter docs well
   .grid-row.grid-gap .usa-prose.padding-x-4 {
     padding-left: 2rem;
-    padding-right: 2rem; 
+    padding-right: 2rem;
   }
 }
 
@@ -111,7 +111,7 @@
   .pricing-line-item {
       border-bottom: 1px dotted #444;
     }
-  
+
   .pricing-total {
       @include u-text('semibold');
       display: block;
@@ -143,7 +143,7 @@
       font-size: 27px;
       @include u-border-top(1px);
       @include u-border-top('base-light');
-      
+
       a {
         @include u-color('ink');
 
@@ -182,4 +182,44 @@ a {
   background-repeat: no-repeat;
   background-position: right bottom;
   background-size: 1040px 148px;
+}
+
+// typography
+
+h1,
+.usa-prose h1,
+h2,
+.usa-prose h2,
+h3,
+.usa-prose h3 {
+  font-weight: 600;
+}
+
+
+// Documentation Page
+
+// Sidenav
+.usa-sidenav {
+  border-bottom: 0;
+}
+
+.usa-sidenav__item {
+  border-top: 0;
+}
+
+.usa-sidenav .usa-current {
+  font-weight: 500;
+}
+
+.usa-sidenav i {
+  @include u-color('accent-warm-dark');
+}
+
+.usa-sidenav a:hover {
+  background-color: transparent;
+}
+
+.usa-sidenav .usa-current i,
+.usa-sidenav a:hover i {
+  @include u-color('primary-vivid');
 }
