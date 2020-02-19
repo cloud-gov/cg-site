@@ -47,6 +47,9 @@
     &:visited {
       @include u-color('ink');
     }
+    &:hover {
+      @include u-color('primary-darker');
+    }
   }
 }
 

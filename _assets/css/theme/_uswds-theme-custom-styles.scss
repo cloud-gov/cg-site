@@ -437,6 +437,14 @@ main .usa-button {
   }
 }
 
+// Mobile settings
+.usa-footer [class*='grid-col'] {
+  @include at-media(mobile) {
+    @include u-margin-y(2);
+  }
+  
+}
+
 
 //To Dop add in dropdown arrows
 // .usa-sidenav__item[aria-expanded=false] a {
