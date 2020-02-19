@@ -26,7 +26,7 @@ where we provide an easy way to manage your navigation system
         {% if page.overview and nav_item.key == 'overview' %}
           {% assign is_current = page.overview %}
         {% elsif basedir == nav_item.key and page.overview == nil %}
-        {% assign is_current = true %}
+          {% assign is_current = true %}
         {% else %}
           {% assign is_current = false %}
         {% endif %}
