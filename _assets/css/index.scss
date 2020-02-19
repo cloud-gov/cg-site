@@ -125,8 +125,53 @@
 
 
 // Home
+ul.home-list {
+  list-style: none;
+  @include u-border-bottom(1px);
+  @include u-border-bottom('base-light');
+
+  li {
+    @include u-border-top(1px);
+    @include u-border-top('base-light');
+    @include u-padding-y('105');
+
+    &:first-of-type {
+      border-top: 1px solid 'base-light';
+    }
+  }
+}
+
+a.cg-arrow {
+  @include u-color('ink');
+  @include u-font-family('ui');
+
+
+  display: block;
+
+  &:before {
+    content: '\02192';
+    display: inline-block;
+    @include u-padding-right('105');
+    @include u-text('secondary-vivid');
+    font-family: 'Times New Roman', Arial, sans-serif;
+  }
+}
+
+.bar-top {
+  @include u-padding-top(4);
+  &:before {
+    @include u-bg('base-light');
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 45px;
+  }
+}
+
 .site-welcome {
-  @include u-margin-top(8);
+  @include u-margin-top(4);
 
   h1 {
     @include u-font-size('sans', 16);
@@ -134,37 +179,22 @@
   ul {
     padding: 0;
     margin: 30px 0 0 0;
-    list-style: none;
     max-width: 500px;
-    @include u-border-bottom(1px);
-    @include u-border-bottom('base-light');
 
     li {
       font-size: 27px;
-      @include u-border-top(1px);
-      @include u-border-top('base-light');
       
       a {
-        @include u-color('ink');
-
-
-        display: block;
-        padding: 15px 0;
+        @include u-padding-y(3);
 
         &:before {
-          content: '\02192';
-          display: inline-block;
           width: 40px;
-          @include u-text('secondary-vivid');
-          font-family: 'Times New Roman', Arial, sans-serif;
         }
       }
-
-      &:first-of-type {
-        border-top: 1px solid 'base-light';
-        padding-top: 20px
-      }
     }
+  }
+  p.usa-intro {
+    @include u-font-family('serif');
   }
 }
 
@@ -182,4 +212,38 @@ a {
   background-repeat: no-repeat;
   background-position: right bottom;
   background-size: 1040px 148px;
+}
+
+.usa-section.why-cloud {
+  h2 {
+    @include u-margin-top(0);
+  }
+  h3 {
+    @include u-margin-y(1);
+  }
+  .usa-prose {
+    @include u-margin-bottom(3);
+  }
+}
+
+.partner-card {
+    @include u-margin(1);
+    @include u-padding-y(1);
+    @include u-border(1px);
+    @include u-border('base-light');
+
+    h5 {
+      @include u-margin-y(1);
+    }
+
+    a {
+      @include u-color('ink');
+    }
+
+    img {
+      @include u-square(9);
+      @include u-float('left');
+      @include u-padding-right(2);
+
+    }
 }
