@@ -33,7 +33,7 @@ As part of that, you can:
 * Deploy a demo app or two! You can use [one of these sample apps]({{ site.baseurl }}{% link _docs/getting-started/your-first-deploy.md %}) or your own code. You can also try [an app from the Cloud Foundry community](https://github.com/cloudfoundry-samples) (we don't maintain or vouch for these).
 * Create a free service instance, such as a [PostgreSQL or MySQL database instance]({{ site.baseurl }}{% link _docs/services/relational-database.md %}), and bind it to your application.
 * Look at [your application logs]({{ site.baseurl }}{% link _docs/deployment/logs.md %}).
-* [Give a teammate permission to deploy]({{ site.baseurl }}{% link _docs/management/managing-teammates.md %}#give-roles-to-a-teammate) by assigning them the “space developer” role.
+* [Give a teammate permission to deploy]({{ site.baseurl }}{% link _docs/orgs-spaces/roles.md %}#give-roles-to-a-teammate) by assigning them the “space developer” role.
 
 ## Sandbox limitations
 

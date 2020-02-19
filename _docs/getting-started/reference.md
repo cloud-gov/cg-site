@@ -19,7 +19,7 @@ Shortcuts to common tasks:
 * [Set up the command line]({{ site.baseurl }}{% link _docs/getting-started/setup.md %}#set-up-the-command-line)
 * [Basic deployment tips]({{ site.baseurl }}{% link _docs/deployment/deployment.md %})
 * [Custom domains]({{ site.baseurl }}{% link _docs/management/custom-domains.md %})
-* [Managing teammates]({{ site.baseurl }}{% link _docs/management/managing-teammates.md %})
+* [Managing teammates]({{ site.baseurl }}{% link _docs/orgs-spaces/roles.md %})
 
 ### cloud.gov team docs
 

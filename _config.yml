@@ -36,9 +36,8 @@ dap_agency: GSA
 
 # Site Navigation
 primary_navigation:
-  - name: Home
-    url: /
   - name: Why cloud.gov?
+    key: overview
     children:
       - name: Overview
         url: /docs/overview/what-is-cloudgov/
@@ -49,12 +48,13 @@ primary_navigation:
       - name: Benefits of PaaS
         url: /docs/technology/responsibilities/
       - name: Our team
-        urlL: /docs/overview/cloudgov-team/
+        url: /docs/overview/cloudgov-team/
   - name: Get started
     url: /sign-up/
   - name: Pricing
     url: /pricing/
   - name: Documentation
+    key: docs
     children:
     - name: Deploying apps
       url: /docs/deployment/deployment/

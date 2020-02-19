@@ -3,6 +3,7 @@ parent: overview
 layout: docs
 sidenav: true
 title: Customer service objectives
+overview: true
 weight: 15
 aliases:
   - /service-objectives

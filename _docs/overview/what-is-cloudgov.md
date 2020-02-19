@@ -4,6 +4,7 @@ layout: docs
 sidenav: true
 title: What is cloud.gov?
 weight: -99
+overview: true
 aliases:
   - /overview/overview/what-is-cloudgov/
   - /docs/intro/overview/what-is-cloudgov

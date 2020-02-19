@@ -3,6 +3,7 @@ parent: overview
 layout: docs
 sidenav: true
 title: What applications are supported?
+overview: true
 weight: 16
 ---
 

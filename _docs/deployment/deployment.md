@@ -1,7 +1,6 @@
 ---
 parent: deployment
 layout: docs
-layout: docs
 sidenav: true
 title: Basic deployment instructions
 aliases: 

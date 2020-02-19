@@ -351,23 +351,24 @@ h1, h2, h3, h4, h5, h6 {
     @include u-color('ink');
 
     &:hover {
-      @include u-color('primary-darker');
+      @include u-color('primary-dark');
 
       &::after {
-        @include u-bg('primary-darker');
+        @include u-bg('primary-dark');
       }
     }
 
     &[aria-expanded=true] {
-      @include u-color('white');
-      &:hover {
+      @include at-media(tablet) {
         @include u-color('white');
-        
-        &::after {
-          @include u-bg('primary');
+        &:hover {
+          @include u-color('white');
+          
+          &::after {
+            @include u-bg('primary');
+          }
         }
       }
-    
     }
   }
  

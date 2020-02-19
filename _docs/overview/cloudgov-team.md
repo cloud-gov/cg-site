@@ -3,6 +3,7 @@ parent: overview
 layout: docs
 sidenav: true
 title: The cloud.gov team
+overview: true
 weight: 80
 aliases:
   - /docs/intro/overview/why-build-cloudgov

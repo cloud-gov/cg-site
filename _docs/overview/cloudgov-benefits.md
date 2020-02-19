@@ -2,6 +2,7 @@
 parent: overview
 layout: docs
 sidenav: true
+overview: true
 title: The benefits of cloud.gov
 weight: -50
 aliases:
