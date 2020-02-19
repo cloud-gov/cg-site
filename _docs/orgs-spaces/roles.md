@@ -24,15 +24,15 @@ Log into the [Beta Dashboard (https://dashboard-beta.fr.cloud.gov)](https://dash
 
 1. In the left menu, click the “Cloud Foundry” entry
 1. In the top blue bar, click on the “Organizations” tab or the box at the bottom, then click on the organization you would like to manage
-![Open the organization to manage roles in the Cloud Foundry menu option](/img/roles-1-open-orgs-list.png)
+{% asset roles-1-open-orgs-list.png alt="Open the organization to manage roles in the Cloud Foundry menu option" %}
 1. Click on the “Users” box in the top blue bar or at the bottom
-![Open the Users list](/img/roles-2-open-users-list.png)
+{% asset roles-2-open-users-list.png alt="Open the Users list" %}
 1. To add a new user, set the left dropdown to “Users without roles” or “All users”, then in the right “Search by username” text entry, click and start typing their email address or some common keyword, like the domain name of a contractor
 1. To the right of the user you want to manage, click the three-dot menu and select “Manage roles”
-![Find a user and open the Manage Roles menu](/img/roles-3-open-manage-menu.png)
+{% asset roles-3-open-manage-menu.png alt="Find a user and open the Manage Roles menu" %}
 1. You’ll then be able to use checkboxes to set roles for that user within the org and its spaces
-![Set user roles via checkboxes](/img/roles-4-select-role-changes.png)
+{% asset roles-4-select-role-changes.png alt="Set user roles via checkboxes" %}
 1. Click "Apply" and check the resulting role changes, then "Apply" again to confirm
-![Confirm and apply changes](/img/roles-5-apply-role-changes.png)
+{% asset roles-5-apply-role-changes.png alt="Confirm and apply changes" %}
 
 The user will immediately be granted access to the orgs and spaces you have set. Repeat the process to add or modify additional users and their roles and permissions.

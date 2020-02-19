@@ -51,15 +51,15 @@ Logs are currently retained for 180 days, and you will only see data for applica
 
 After logging in, you'll see the App Overview dashboard.
 
-![App Overview dashboard](/img/app-overview.png)
+{% asset app-overview.png alt="App Overview dashboard" %}
 
 The default time period is "Last 15 minutes". To change the time period of data that you are viewing, or to turn on auto-refresh, click on the time period in the top right menu.
 
-![Time period selection](/img/time-period.png)
+{% asset time-period.png alt="Time period selection" %}
 
 You can also view several dashboards that present different visualizations of your log data. You can select these by going to "Dashboard" at left and clicking "Open" in the top toolbar.
 
-![Select dashboards](/img/select-dashboard.png)
+{% asset select-dashboard.png alt="Select dashboards" %}
 
 These visualizations are provided via Kibana, which has a [user guide](https://www.elastic.co/guide/en/kibana/current/index.html) that explains more about how to use it and customize your views.
 

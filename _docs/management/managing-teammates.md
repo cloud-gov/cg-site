@@ -119,7 +119,6 @@ On the Organization page, scroll down to the “Organization users” section. T
 
 To remove a teammate from an organization, you must first remove them from any of the organization's spaces first.
 
-![App Overview dashboard](/img/remove-organization.png)
 {% asset remove-organization.png alt="Removing users" %}
 
 ### Space users

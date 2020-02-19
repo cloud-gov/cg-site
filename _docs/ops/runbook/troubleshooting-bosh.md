@@ -17,7 +17,7 @@ This section explains how to use Concourse with the `fly` CLI tool. For more
 information, [please refer to the official concourse/fly
 documentation](https://github.com/concourse/fly#installing-from-the-concourse-ui-for-project-development).
 
-![Concourse fly Downloads](/img/concourse-fly-download-icons.png "Download icons for Concourse fly binary")
+{% asset concourse-fly-download-icons.png alt="Download icons for Concourse fly binary" %}
 
 1. Need to have access to Concourse for cloud.gov (e.g., https://ci.fr.cloud.gov)
 1. Need to have `fly` installed locally, the icons for supported platforms are
