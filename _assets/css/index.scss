@@ -110,7 +110,9 @@
 .products-pricing {
   @include at-media('tablet') {
     .intro {
-      min-height: 260px;
+      h2 {
+        @include u-font-size('sans', 11);
+      }
     }
   }
   
