@@ -5,7 +5,7 @@ menu:
 title: "Elasticsearch"
 name: "elasticsearch56"
 description: "Elasticsearch version 5.6: a distributed, RESTful search and analytics engine"
-status: "Beta"
+status: "Production"
 ---
 
 cloud.gov offers [Elasticsearch](https://www.elastic.co/) 5.6 as a service.

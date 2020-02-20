@@ -5,7 +5,7 @@ menu:
 title: Custom domain service
 name: "custom-domain"
 description: "Custom domains and TLS certificates with automatic renewal"
-status: "Production Ready"
+status: "Production"
 ---
 
 <!-- If you're improving this page, try to port the improvements to the CDN route service page too, since most of the text is the same -->

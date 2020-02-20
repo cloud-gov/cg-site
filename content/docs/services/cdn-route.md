@@ -5,7 +5,7 @@ menu:
 title: CDN service
 name: "cdn-route"
 description: "Custom domains, CDN caching, and TLS certificates with automatic renewal"
-status: "Production Ready"
+status: "Production"
 ---
 
 <!-- If you're improving this page, try to port the improvements to the custom domain service page too, since most of the text is the same -->

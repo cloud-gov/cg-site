@@ -4,6 +4,7 @@ menu:
     parent: services
 title: Redis
 description: "Redis: an in-memory data structure store"
+status: "Production"
 aliases:
 - /docs/services/redis28
 - /docs/services/redis32
