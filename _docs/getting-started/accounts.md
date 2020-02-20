@@ -23,8 +23,6 @@ If you have an EPA, FDIC, GSA, or NSF email address, sign in using your agency c
 
 If you were invited with an email address that isn't part of an agency with single sign-on authentication to cloud.gov, you have a cloud.gov account. Follow [these instructions to log in]({{ site.baseurl }}{% link _docs/getting-started/setup.md %}). When you log in via a web browser, select the **cloud.gov** option.
 
-<!--<img src="/img/cloud-gov-idp-button-cropped.png" alt="cloud.gov provider button to login page is highlighted in blue" width="373" height="187" />-->
-
 Your cloud.gov account requires setting up both a password and an authentication application that generates token codes, such as [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) or [Authy](https://www.authy.com/app/mobile). (You can use any authentication application that supports the standard [Time-based One-Time Password algorithm](https://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm).) When you log into cloud.gov for the first time, follow the instructions to set this up.
 
 #### To change your password

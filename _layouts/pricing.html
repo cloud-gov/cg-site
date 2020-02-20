@@ -17,6 +17,51 @@ layout: default
         </div>
     </section>
     <section class="grid-container usa-section">
+        <div class="grid-row products-pricing">
+            {% for product in site.data.pricing%}
+            <div class="tablet:grid-col">
+                <div class="intro">
+                {% asset "{{ product.image }}" class="square-15" %}
+                <h2>{{ product.package_name }}</h2>
+                </div>
+                <table class="usa-table usa-table--borderless">
+                    <tbody>
+                        <tr>
+                            <td>
+                                {{ product.description }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                {{ product.price }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="font-sans-2xs">{{ product.memory }}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="font-sans-2xs">{{ product.production }}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="font-sans-2xs">{{ product.domain_names }}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="font-sans-2xs">{{ product.sign_up }}</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            {% endfor %}
+        </div>
         
         <div class="grid-row grid-gap">
             <table class="usa-table usa-table--borderless site-table-responsive site-table-simple">

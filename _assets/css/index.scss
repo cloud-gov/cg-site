@@ -107,6 +107,34 @@
 
 
 // Pricing Page
+.products-pricing {
+  @include at-media('tablet') {
+    .intro {
+      min-height: 260px;
+    }
+    
+  }
+  .usa-table tr {
+    @include u-padding-y(3);
+    border-top: units(1px) solid color("base-lighter");
+    display: flex;
+  }
+
+  .usa-table td {
+    background-color: transparent;
+    border: none;
+    @include u-padding-x($theme-table-column-gap / 2);
+    @include u-padding-y(0.5);
+
+
+    h3 {
+      @include u-margin-bottom(0);
+    }
+  }
+
+
+}
+
 .pricing-calculations {
   .pricing-line-item {
       border-bottom: 1px dotted #444;
