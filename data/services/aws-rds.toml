@@ -3,4 +3,4 @@
 name = "aws-rds"
 page_name = "relational-database"
 description = "Persistent, relational databases using Amazon RDS"
-status = "Production Ready"
+status = "Production"
