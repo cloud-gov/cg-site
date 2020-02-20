@@ -146,7 +146,7 @@ $theme-table-column-gap: 4;
       & + td {
         border-top: units(1px) solid color("base-lighter");
       }
-      
+
       .site-inline-swatch {
         width: 100%;
       }
@@ -257,14 +257,14 @@ $theme-table-column-gap: 4;
           border-top: units(1px) solid color("base-light");
           @include u-padding-y(3);
 
-          
-          
+
+
           &:first-child {
             border-top: none;
             padding-bottom: 0;
           }
 
-          &:nth-child(2){ 
+          &:nth-child(2){
             border-top: none;
             @include u-padding(0);
           }
@@ -313,10 +313,10 @@ $theme-table-column-gap: 4;
 
 
 //Custom headings
-h1, h2{
+h1, .usa-prose h1, h2, .usa-prose h2, h3, .usa-prose h3{
     @include u-text('semibold');
 }
-h3, h4, h5, h6 {
+h4, h5, h6 {
     @include u-text('medium');
 }
 
@@ -363,7 +363,7 @@ h1, h2, h3, h4, h5, h6 {
         @include u-color('white');
         &:hover {
           @include u-color('white');
-          
+
           &::after {
             @include u-bg('primary');
           }
@@ -371,7 +371,7 @@ h1, h2, h3, h4, h5, h6 {
       }
     }
   }
- 
+
   li.usa-nav__primary-item li.usa-nav__submenu-item a {
     @include at-media('desktop') {
       @include u-color('white');
@@ -451,9 +451,34 @@ main .usa-button {
   @include at-media(mobile) {
     @include u-margin-y(2);
   }
-  
+
 }
 
+// Sidenav
+.usa-sidenav {
+  border-bottom: 0;
+}
+
+.usa-sidenav__item {
+  border-top: 0;
+}
+
+.usa-sidenav .usa-current {
+  font-weight: 500;
+}
+
+.usa-sidenav i {
+  @include u-color('accent-warm-dark');
+}
+
+.usa-sidenav a:hover {
+  background-color: transparent;
+}
+
+.usa-sidenav .usa-current i,
+.usa-sidenav a:hover i {
+  @include u-color('primary-vivid');
+}
 
 //To Dop add in dropdown arrows
 // .usa-sidenav__item[aria-expanded=false] a {
