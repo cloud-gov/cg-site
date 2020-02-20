@@ -5,9 +5,12 @@
 
   https://circleci.com/
 -->
-[![CircleCI](https://circleci.com/gh/18F/federalist-uswds-jekyll.svg?style=svg)](https://circleci.com/gh/18F/federalist-uswds-jekyll)
+[![CircleCI](https://circleci.com/gh/18F/federalist-uswds-jekyll.svg?style=svg)](https://circleci.com/gh/18F/cg-site-federality)
 
-# Federalist + U.S. Web Design System + Jekyll
+# cloud.gov + Federalist + U.S. Web Design System + Jekyll
+
+This site is built using the Federalist USWDS Jekyll template. Federalist runs on cloud.gov and supports the development of this template. By leveraging this template cloud.gov get the benefits  of a maintained template as well as a way to test out new functionality in the template.
+
 
 This [Jekyll theme](https://jekyllrb.com/docs/themes/) is developed using the [U.S. Web Design System v 2.0](https://v2.designsystem.digital.gov) and is focused on providing developers a starter kit and reference implementation for Federalist websites.
 
@@ -15,7 +18,7 @@ This code uses the [Jekyll](https://jekyllrb.com) site engine and built with Rub
 
 This project assumes that you are comfortable editing source code. If you prefer to launch a website without editing any source code, checkout [uswds-jekyll](https://github.com/18F/uswds-jekyll), which allows you to change the layout and content with configuration files.
 
-This project strives to be compliant with requirements set by [21st Century IDEA Act](https://www.meritalk.com/articles/senate-passes-idea-act/). The standards require that a website or digital service:
+This project strives to be compliant with requirements set by [21st Century IDEA Act](https://designsystem.digital.gov/website-standards/). The standards require that a website or digital service:
 
 - is accessible to individuals with disabilities;
 - has a consistent appearance;
@@ -71,12 +74,14 @@ searchgov:
 ```
 
 
-## How to edit
-- Non-developers should focus on editing markdown content in the `_posts` and `_pages` folder
+## How to edit cloud.gov content
+- Non-developers should focus on editing markdown content in the `_posts`, `_docs`, and `_pages` folder. Generally most of the cloud.gov content will be in the _docs file. 
+
+- Pricing updates can go directly into `_data/pricing.yml` file and if any of the aws services need to be updated that can occur in the `_data/services.yml` file.
 
 - We try to keep configuration options to a minimum so you can easily change functionality. You should review `_config.yml` to see the options that are available to you. There are a few values on top that you **need** to change. They refer to the agency name and contact information. The rest of `_config.yml` has a range of more advanced options.
 
-- The contents inside `assets/` folder store your Javascript, SCSS/CSS, images, and other media assets are managed by  [jekyll-assets](https://github.com/envygeeks/jekyll-assets).  Assets are combined, compressed, and automatically available in your theme
+- The contents inside `_assets/` folder store your Javascript, SCSS/CSS, images, and other media assets are managed by  [jekyll-assets](https://github.com/envygeeks/jekyll-assets).  Assets are combined, compressed, and automatically available in your theme
 
 - If you look at `package.json` you will see that the `npm run federalist` command that will run when running on the Federalist platform.
 
@@ -84,35 +89,23 @@ searchgov:
 
 - To edit the look and feel of the site, you need to edit files in `_includes/` folder, which render key components, like the menu, side navigation, and logos.
 
-- `index.html` may not require much editing, depending on how you customize `hero.html` and `highlights.html`.
+- Some pages are styled to be `.html` rather than markdown you can find these in the `_layouts` folder.
+    - The `homepage` can be editted more directly by manipulating the `.html` in `home.html`
+    - The `pricing` page is mostly edited with the `pricing.html`
+    - The `getting-started` page is in the `_pages/sign-up.md` folder.
+
+
+
 
 - `_layouts/` may require the least amount of editing of all the files since they are primarily responsible for printing the content.
 
-- `blog/index.html` can be edited, but be careful. It will impact the pagination system for the posts. If you do edit the file, be prepared to edit `_config.yml`.  For example, you may need go change configurations for [jekyll-paginate-v2](https://github.com/sverrirs/jekyll-paginate-v2)
-
 - `search/index.html` is used by search.gov.
 
-## Getting Started
+## Updating content on your own computer
 
-### Installation as a starter
 
-#### With `npx`
-The simplest way to create your own repository based on this starter is to use `npx` (included with `node`) with `degit`.
-
-    $ npx degit https://github.com/18F/federalist-uswds-jekyll <destination-folder>
-    $ cd <destination-folder>
-    $ git init
-
-#### With `git`
-    $ git clone --depth 1 https://github.com/18F/federalist-uswds-jekyll <destination-folder>
-    $ cd <destination-folder>
-    $ npm run reset
-    $ git init
-
-### Installation for development
-
-    $ git clone https://github.com/18F/federalist-uswds-jekyll
-    $ cd federalist-uswds-jekyll
+    $ git clone https://github.com/18F/cg-site-federalist
+    $ cd cg-site-federalist
 
 Note that when built by Federalist, `npm run federalist` is used instead of the
 `build` script.
@@ -136,6 +129,20 @@ site.
 
 
 ## Contributing
+
+See [CONTRIBUTING](CONTRIBUTING.md) for additional information.
+
+## Public domain
+
+This project is in the worldwide [public domain](LICENSE.md). As stated in [CONTRIBUTING](CONTRIBUTING.md):
+
+> This project is in the public domain within the United States, and copyright
+> and related rights in the work worldwide are waived through the [CC0 1.0
+> Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/).
+>
+> All contributions to this project will be released under the CC0 dedication.
+> By submitting a pull request, you are agreeing to comply with this waiver of
+> copyright interest.
 
 See [CONTRIBUTING](CONTRIBUTING.md) for additional information.
 
