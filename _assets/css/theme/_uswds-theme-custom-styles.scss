@@ -313,10 +313,11 @@ $theme-table-column-gap: 4;
 
 
 //Custom headings
-h1, .usa-prose h1, h2, .usa-prose h2, h3, .usa-prose h3{
+h1,.usa-prose h1 {
     @include u-text('semibold');
 }
-h4, .usa-prose h4, h5, .usa-prose h5, h6 .usa-prose h6 {
+
+h2, .usa-prose h2, h3, .usa-prose h3, h4, .usa-prose h4, h5, .usa-prose h5, h6 .usa-prose h6 {
     @include u-text('medium');
 }
 
@@ -393,7 +394,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-main .usa-button {
+.usa-button {
   @include u-radius(1px);
   @include u-text('medium');
   @include u-font-size('sans', 'sm');
@@ -409,7 +410,7 @@ main .usa-button {
 
   &:hover {
     @include u-color('ink');
-    @include u-color('secondary-light');
+    @include u-bg('secondary-light');
   }
 }
 
@@ -451,6 +452,13 @@ main .usa-button {
     @include u-margin-y(2);
   }
 
+}
+
+// Documentation page
+
+// intro styling
+.usa-prose > h1 + p {
+  @extend .usa-intro;
 }
 
 // Sidenav
@@ -503,4 +511,8 @@ main .usa-button {
 // Get started / Sign up
 .usa-section--signup {
   @include u-padding-y(8);
+}
+
+.usa-section--sidebar-links {
+  @include u-padding-top(5);
 }

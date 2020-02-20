@@ -41,7 +41,7 @@ If you've run into any issues, please [contact support at cloud.gov](mailto:clou
 
 </div>
 <div class="tablet:grid-col-1"></div>
-<div class="tablet:grid-col usa-prose">
+<div class="tablet:grid-col usa-prose usa-section--sidebar-links">
 <h4>Sample applications</h4>
 <ul>
         <li>
@@ -74,7 +74,7 @@ can do.
 <a href="mailto:cloud-gov-inquiries@gsa.gov?subject=%5BSuggestion%5D%20&body=%0A%0A%0A%0ARefcode:%20quickstart" class="usa-button usa-button--secondary usa-button--big">Contact us</a>
 </div>
 <div class="tablet:grid-col-1"></div>
-<div class="tablet:grid-col usa-prose">
+<div class="tablet:grid-col usa-prose usa-section--sidebar-links">
 <h4>Join the communities</h4>
         <ul>
             <li>
