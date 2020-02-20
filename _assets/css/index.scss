@@ -112,8 +112,8 @@
     .intro {
       min-height: 260px;
     }
-    
   }
+  
   .usa-table tr {
     @include u-padding-y(3);
     border-top: units(1px) solid color("base-lighter");
@@ -123,15 +123,33 @@
   .usa-table td {
     background-color: transparent;
     border: none;
-    @include u-padding-x($theme-table-column-gap / 2);
+    @include u-padding-left(0);
+    @include u-padding-right($theme-table-column-gap / 2);
     @include u-padding-y(0.5);
 
 
     h3 {
-      @include u-margin-bottom(0);
+      @include u-margin-y(0);
+    }
+
+    &.small-info {
+      @include u-font-size('sans', '2xs');
+      @include at-media('desktop') {
+        min-height: 83px;
+      }
+      
+    }
+
+    &.intro-info {
+      @include at-media('desktop') {
+        min-height: 133px;
+      }
+    }
+
+    a.usa-button {
+      @include u-margin-bottom(2);
     }
   }
-
 
 }
 
