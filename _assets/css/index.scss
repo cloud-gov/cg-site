@@ -250,3 +250,12 @@ a {
 
     }
 }
+
+// code blocks
+
+.highlighter-rouge {
+  @include u-bg('accent-warm-light');
+  @include u-padding-x('05');
+  @include u-padding-y(1px);
+  border-radius: radius('sm');
+}
