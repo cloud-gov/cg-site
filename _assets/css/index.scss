@@ -70,7 +70,7 @@
   //force grid-row wide gutter docs well
   .grid-row.grid-gap .usa-prose.padding-x-4 {
     padding-left: 2rem;
-    padding-right: 2rem; 
+    padding-right: 2rem;
   }
 }
 
@@ -111,7 +111,7 @@
   .pricing-line-item {
       border-bottom: 1px dotted #444;
     }
-  
+
   .pricing-total {
       @include u-text('semibold');
       display: block;
@@ -183,7 +183,7 @@ a.cg-arrow {
 
     li {
       font-size: 27px;
-      
+
       a {
         @include u-padding-y(3);
 
