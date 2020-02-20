@@ -394,7 +394,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.usa-button {
+main .usa-button {
   @include u-radius(1px);
   @include u-text('medium');
   @include u-font-size('sans', 'sm');
@@ -405,7 +405,7 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
-.usa-button--secondary {
+main .usa-button--secondary {
   @include u-color('ink');
 
   &:hover {
@@ -509,9 +509,6 @@ h1, h2, h3, h4, h5, h6 {
 // }
 
 // Get started / Sign up
-.usa-section--signup {
-  @include u-padding-y(8);
-}
 
 .usa-section--sidebar-links {
   @include u-padding-top(5);

@@ -253,7 +253,7 @@ a {
 
 // code blocks
 
-.highlighter-rouge {
+code {
   @include u-bg('accent-warm-light');
   @include u-padding-x('05');
   @include u-padding-y(1px);

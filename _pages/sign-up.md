@@ -14,7 +14,7 @@ layout: wide
 </div>
 </section>
 
-<section class="usa-section usa-section--signup">
+<section class="usa-section padding-y-8">
 <div class="grid-container">
 <div class="tablet:grid-col-7 usa-prose"  markdown="1">
 ## 1. <br />Get trial access and a free sandbox space
@@ -26,7 +26,7 @@ Federal employees and contractors with an email ending in .mil, .gov, or .fed.us
 </div>
 </section>
 
-<section class="bg-accent-warm-light usa-section usa-section--signup">
+<section class="bg-accent-warm-light usa-section padding-y-8">
 <div class="grid-container grid-row">
 <div class="tablet:grid-col-7 usa-prose"  markdown="1">
 ## 2.<br />Go build in your sandbox
@@ -61,7 +61,7 @@ If you've run into any issues, please [contact support at cloud.gov](mailto:clou
 </div>
 </section>
 
-<section class="usa-section usa-section--signup">
+<section class="usa-section padding-y-8">
 <div class="grid-container grid-row">
 <div class="tablet:grid-col-7 usa-prose"  markdown="1">
 ## 3. <br />Want more?
