@@ -93,6 +93,13 @@
   }
 }
 
+//Docs
+.usa-section.bg-accent-warm-light {
+  @include at-media('tablet'){
+    @include u-padding-y(8);
+  }
+}
+
 .usa-layout-docs-sidenav {
 
   @include at-media('mobile') {
@@ -108,6 +115,13 @@
 
 
 // Pricing Page
+.usa-content.bg-accent-warm-light {
+  @include at-media('tablet'){
+    @include u-padding-top(4);
+    @include u-padding-bottom(8);
+  }
+}
+
 .products-pricing {
   @include at-media('tablet') {
     .intro {
@@ -316,7 +330,16 @@ code {
   border-radius: radius('sm');
 }
 
+.usa-section.want-more {
+  @include at-media('tablet') {
+    @include u-padding-bottom(8);
+  }
+}
+
+
+// *******
 //Mermaid styles
+// *******
 .cg-diagrams-hidden {
   position: absolute;
   top: -9999px;

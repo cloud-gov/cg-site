@@ -61,7 +61,7 @@ If you've run into any issues, please [contact support at cloud.gov](mailto:clou
 </div>
 </section>
 
-<section class="usa-section padding-y-8">
+<section class="usa-section want-more">
 <div class="grid-container grid-row">
 <div class="tablet:grid-col-7 usa-prose"  markdown="1">
 ## 3. <br />Want more?
