@@ -1,6 +1,6 @@
 ---
 parent: services
-aliases: 
+redirect_from: 
     - /docs/services/
     - /docs/pricing/managed-services-cost/
 layout: docs

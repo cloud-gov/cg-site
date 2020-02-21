@@ -4,7 +4,7 @@ layout: docs
 sidenav: true
 title: Try a free sandbox space
 weight: -10
-aliases:
+redirect_from:
   - /overview/pricing/free-limited-sandbox
   - /docs/pricing/free-limited-sandbox
 ---

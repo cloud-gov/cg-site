@@ -8,9 +8,9 @@ Curious what’s new that you might find helpful as a cloud.gov user? Here are h
 <!--more-->
 
 ### Added
-* If you need to access multiple S3 buckets using the same credentials — for example to copy files between buckets — you can use the `additional_instances` option when binding. Read the docs to [learn more about how this works]({{< relref "docs/services/s3.md#using-s3-from-your-application" >}}).
-* cloud.gov supports Oracle SE1 for relational databases. This is by request only until AWS GovCloud eventually supports SE2. You can read more about [relational database plans and how to request access to the Oracle service plan]({{< relref "docs/services/relational-database.md" >}}).
-* We created [a page explaining prototyping packages]({{< relref "docs/pricing/prototyping.md" >}}), how you might use them, and what they cost.
+* If you need to access multiple S3 buckets using the same credentials — for example to copy files between buckets — you can use the `additional_instances` option when binding. Read the docs to [learn more about how this works]({{ site.baseurl }}/docs/services/s3.md#using-s3-from-your-application).
+* cloud.gov supports Oracle SE1 for relational databases. This is by request only until AWS GovCloud eventually supports SE2. You can read more about [relational database plans and how to request access to the Oracle service plan]({{ site.baseurl }}/docs/services/relational-database.md).
+* We created [a page explaining prototyping packages]({{ site.baseurl }}/docs/pricing/prototyping.md), how you might use them, and what they cost.
 
 ### Changed
 * If you have .NET applications you’re interested in running on cloud.gov, the updated [.NET Core buildpack](https://docs.cloudfoundry.org/buildpacks/dotnet-core/index.html) supports [.NET Core 2 Preview (currently in alpha)](https://blogs.msdn.microsoft.com/dotnet/2017/06/28/announcing-net-core-2-0-preview-2/). It’s ready for you to prototype with your .NET applications.

@@ -4,7 +4,7 @@ layout: docs
 sidenav: true
 title: Redis
 description: "Redis: an in-memory data structure store"
-aliases:
+redirect_from:
 - /docs/services/redis28
 - /docs/services/redis32
 ---

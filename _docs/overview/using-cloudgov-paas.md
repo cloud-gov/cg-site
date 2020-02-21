@@ -5,7 +5,7 @@ sidenav: true
 title: What you can do with the cloud.gov platform
 weight: 13
 overview: true
-aliases:
+redirect_from:
   - /docs/intro/overview/using-cloudgov-paas
   - /intro/overview/using-cloudgov-paas
 ---

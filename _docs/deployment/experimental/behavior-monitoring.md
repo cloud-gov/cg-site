@@ -2,7 +2,7 @@
 parent: experimental
 layout: docs
 sidenav: true
-aliases: 
+redirect_from: 
     - /docs/apps/experimental/behavior-monitoring/
 title: Dynamic behavior monitoring
 ---

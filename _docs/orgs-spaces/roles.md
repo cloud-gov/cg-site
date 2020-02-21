@@ -2,7 +2,7 @@
 parent: orgs-spaces
 layout: docs
 sidenav: true
-aliases: 
+redirect_from: 
     - /docs/apps/managing-teammates/
     - /docs/management/managing-teammates/
 title: Managing user access to orgs and spaces

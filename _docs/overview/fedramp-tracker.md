@@ -4,7 +4,7 @@ layout: docs
 sidenav: true
 title: FedRAMP Authorized
 weight: 0
-aliases:
+redirect_from:
   - /docs/intro/security/fedramp-tracker
   - /docs/security/fedramp-tracker
   - /intro/security/fedramp-tracker

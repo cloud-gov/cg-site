@@ -5,7 +5,7 @@ sidenav: true
 title: Who can use it?
 weight: 15
 overview: true
-aliases:
+redirect_from:
   - /docs/intro/overview/who-can-use-cloudgov
   - /intro/overview/who-can-use-cloudgov
   - /docs/intro/technology/appropriate-deployments

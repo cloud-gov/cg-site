@@ -4,7 +4,7 @@ layout: docs
 sidenav: true
 title: How the pricing model is managed
 weight: 30
-aliases:
+redirect_from:
   - /docs/intro/pricing/pricing-model
   - /intro/pricing/pricing-model
 ---

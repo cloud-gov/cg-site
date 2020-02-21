@@ -3,7 +3,7 @@ parent: deployment
 layout: docs
 sidenav: true
 title: Deploying Docker images
-aliases:
+redirect_from:
   - /docs/intro/technology/containers
   - /overview/technology/containers
   - /docs/apps/experimental/docker

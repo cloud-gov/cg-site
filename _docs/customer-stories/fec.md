@@ -4,7 +4,7 @@ layout: docs
 sidenav: true
 title: Federal Election Commission
 kicker: Case study
-aliases:
+redirect_from:
   - /overview/customer-stories/federal-election-commission/
   - /case-studies/fec/
 ---

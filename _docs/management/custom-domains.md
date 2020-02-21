@@ -2,7 +2,7 @@
 parent: management
 layout: docs
 sidenav: true
-aliases: 
+redirect_from: 
     - /docs/apps/custom-domains/
 title: Custom domains
 ---

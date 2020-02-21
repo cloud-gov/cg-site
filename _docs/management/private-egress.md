@@ -1,6 +1,6 @@
 ---
 parent: management
-aliases:
+redirect_from:
   - /docs/apps/experimental/private-egress/
   - /docs/apps/private-egress /
 layout: docs

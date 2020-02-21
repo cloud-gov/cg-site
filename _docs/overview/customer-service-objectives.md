@@ -5,7 +5,7 @@ sidenav: true
 title: Customer service objectives
 overview: true
 weight: 15
-aliases:
+redirect_from:
   - /service-objectives
 ---
 

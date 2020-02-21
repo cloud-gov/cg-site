@@ -4,7 +4,7 @@ layout: docs
 sidenav: true
 title: Other PaaS choices
 weight: 30
-aliases:
+redirect_from:
   - /docs/intro/technology/paas-options
   - /intro/technology/paas-options
   - /overview/technology/paas-options

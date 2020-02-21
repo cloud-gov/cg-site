@@ -3,7 +3,7 @@ parent: deployment
 layout: docs
 sidenav: true
 title: Basic deployment instructions
-aliases: 
+redirect_from: 
     - /docs/apps/deployment/
 weight: -100
 ---

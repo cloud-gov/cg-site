@@ -5,7 +5,7 @@ sidenav: true
 title: The cloud.gov team
 overview: true
 weight: 80
-aliases:
+redirect_from:
   - /docs/intro/overview/why-build-cloudgov
   - /intro/overview/why-build-cloudgov
   - /overview/overview/why-build-cloudgov

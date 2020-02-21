@@ -3,7 +3,7 @@ parent: getting-started
 layout: docs
 sidenav: true
 title: Reference
-aliases:
+redirect_from:
   - /docs
 weight: -50
 ---

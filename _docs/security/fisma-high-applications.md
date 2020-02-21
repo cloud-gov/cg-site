@@ -4,7 +4,7 @@ layout: docs
 sidenav: true
 title: FISMA High impact PaaS options
 weight: 30
-aliases:
+redirect_from:
   - /docs/intro/security/fisma-high-applications
   - /intro/security/fisma-high-applications
   - /overview/security/fisma-high-applications/

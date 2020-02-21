@@ -3,7 +3,7 @@ parent: experimental
 layout: docs
 sidenav: true
 title: About experimental features
-aliases: 
+redirect_from: 
     - /docs/apps/experimental/
 weight: -1
 slug: features

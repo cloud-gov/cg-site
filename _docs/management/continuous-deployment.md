@@ -2,7 +2,7 @@
 parent: management
 layout: docs
 sidenav: true
-aliases: 
+redirect_from: 
     - /docs/apps/continuous-deployment/
 title: Continuous deployment
 ---

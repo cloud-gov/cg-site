@@ -3,7 +3,7 @@ parent: apps
 layout: docs
 sidenav: true
 title: Troubleshooting
-aliases: 
+redirect_from: 
     - /docs/apps/troubleshooting/
 linktitle: Troubleshooting
 weight: 100

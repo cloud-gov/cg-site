@@ -1,6 +1,6 @@
 ---
 parent: deployment
-aliases:
+redirect_from:
     - /apps/multi-buildpack-deploys/
     - /apps/apt-get/
     - /apps/experimental/custom-buildpacks/

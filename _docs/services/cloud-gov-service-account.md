@@ -6,7 +6,7 @@ title: cloud.gov service account
 name: "cloud-gov-service-account"
 description: "cloud.gov service accounts for automated access by programs"
 status: "Beta"
-aliases:
+redirect_from:
 - /docs/services/deployer-account/
 ---
 

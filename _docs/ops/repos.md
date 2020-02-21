@@ -5,7 +5,7 @@ layout: docs
 sidenav: true
 title: Code repositories
 weight: -100
-aliases:
+redirect_from:
   - /docs/intro/security/auditing-contributing-security
   - /intro/security/auditing-contributing-security
 ---

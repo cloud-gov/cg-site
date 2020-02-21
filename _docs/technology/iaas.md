@@ -4,7 +4,7 @@ layout: docs
 sidenav: true
 title: Infrastructure under cloud.gov
 weight: 20
-aliases:
+redirect_from:
   - /docs/intro/technology/iaas
   - /intro/technology/iaas
   - /overview/technology/iaas

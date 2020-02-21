@@ -3,7 +3,7 @@ parent: compliance
 layout: docs
 sidenav: true
 title: Auditing activity
-aliases:
+redirect_from:
   - /docs/apps/events
 ---
 

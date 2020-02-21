@@ -5,7 +5,7 @@ sidenav: true
 overview: true
 title: The benefits of cloud.gov
 weight: -50
-aliases:
+redirect_from:
   - /docs/intro/overview/why-use-cloudgov
   - /intro/overview/why-use-cloudgov
   - /overview/overview/why-use-cloudgov

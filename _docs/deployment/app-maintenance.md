@@ -1,6 +1,6 @@
 ---
 parent: deployment
-aliases: 
+redirect_from: 
     - /docs/getting-started/app-maintenance/
     - /docs/apps/app-maintenance/
 layout: docs

@@ -2,7 +2,7 @@
 parent: experimental
 layout: docs
 sidenav: true
-aliases: 
+redirect_from: 
     - /docs/apps/experimental/restricting-users-to-trusted-ip-ranges/
 title: Restricting users to trusted IP ranges
 ---

@@ -4,7 +4,7 @@ layout: ops
 layout: docs
 sidenav: true
 title: AWS onboarding
-aliases:
+redirect_from:
   - /docs/ops/aws-accounts/
 ---
 

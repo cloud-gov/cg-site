@@ -4,7 +4,7 @@ layout: docs
 sidenav: true
 title: Terms we use in pricing
 weight: 90
-aliases:
+redirect_from:
   - /docs/intro/terminology/pricing-terminology
   - /intro/terminology/pricing-terminology
   - /overview/terminology/pricing-terminology/

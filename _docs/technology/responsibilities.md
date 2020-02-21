@@ -4,7 +4,7 @@ layout: docs
 sidenav: true
 title: What the cloud.gov PaaS offers
 weight: 5
-aliases:
+redirect_from:
   - /docs/intro/technology/responsibilities
   - /intro/technology/responsibilities
   - /overview/technology/responsibilities

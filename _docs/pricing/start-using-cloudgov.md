@@ -4,7 +4,7 @@ layout: docs
 sidenav: true
 title: Get started using cloud.gov
 weight: -20
-aliases:
+redirect_from:
   - /docs/intro/pricing/payment-process
   - /intro/pricing/payment-process
   - /overview/pricing/payment-process

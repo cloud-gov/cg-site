@@ -4,7 +4,7 @@ layout: docs
 sidenav: true
 title: Prototyping package details
 weight: 3
-aliases:
+redirect_from:
   - /overview/pricing/prototyping/
 ---
 

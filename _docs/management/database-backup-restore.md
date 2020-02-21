@@ -2,7 +2,7 @@
 parent: management
 layout: docs
 sidenav: true
-aliases: 
+redirect_from: 
     - /docs/apps/database-backup-restore/
 title: Perform a database backup or restore
 ---

@@ -28,7 +28,7 @@ Curious what’s new that you might find helpful as a cloud.gov user? Here are h
 ### Platform releases
 We upgraded the Cloud Foundry deployment to [v271](https://github.com/cloudfoundry/cf-release/releases/tag/v271).
 
-You should [restage your application]({{< relref "docs/apps/app-maintenance.md" >}}) to [incorporate fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) included with this release and ensure you’re running the most recent language version supported by your [buildpack](https://docs.cloudfoundry.org/buildpacks/).
+You should [restage your application]({{ site.baseurl }}/docs/apps/app-maintenance.md) to [incorporate fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) included with this release and ensure you’re running the most recent language version supported by your [buildpack](https://docs.cloudfoundry.org/buildpacks/).
 
 #### Additional upgrades
 

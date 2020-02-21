@@ -4,7 +4,7 @@ layout: docs
 sidenav: true
 title: Quota costs, billing, and limits
 weight: 5
-aliases:
+redirect_from:
   - /docs/intro/pricing/quotas
   - /intro/pricing/quotas
   - /overview/pricing/quotas

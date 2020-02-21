@@ -2,7 +2,7 @@
 parent: management
 layout: docs
 sidenav: true
-aliases: 
+redirect_from: 
     - /docs/apps/one-off-tasks/
 title: Running one-off tasks
 ---

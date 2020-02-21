@@ -4,7 +4,7 @@ layout: docs
 sidenav: true
 title: The cost of managed services
 weight: 10
-aliases:
+redirect_from:
   - /overview/pricing/managed-services
   - /overview/pricing/other-services/
 ---

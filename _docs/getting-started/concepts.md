@@ -3,7 +3,7 @@ parent: getting-started
 layout: docs
 sidenav: true
 title: Concepts
-aliases:
+redirect_from:
   - /docs/intro/terminology/system-terminology
   - /intro/terminology/system-terminology
   - /overview/terminology/system-terminology

@@ -4,7 +4,7 @@ layout: docs
 sidenav: true
 title: Overview for assessors
 weight: 50
-aliases:
+redirect_from:
   - /docs/intro/security/for-assessors
   - /intro/security/for-assessors
   - /overview/security/for-assessors/

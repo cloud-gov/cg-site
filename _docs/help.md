@@ -2,7 +2,7 @@
 layout: docs
 sidenav: true
 title: Contact
-aliases:
+redirect_from:
   - /help
   - /contact
 ---

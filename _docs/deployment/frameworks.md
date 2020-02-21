@@ -4,7 +4,7 @@ layout: docs
 sidenav: true
 title: Languages and frameworks
 weight: 29
-aliases:
+redirect_from:
 - /docs/apps/django
 - /docs/apps/flask
 - /docs/apps/rails

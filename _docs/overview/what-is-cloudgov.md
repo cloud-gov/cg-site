@@ -5,7 +5,7 @@ sidenav: true
 title: What is cloud.gov?
 weight: -99
 overview: true
-aliases:
+redirect_from:
   - /overview/overview/what-is-cloudgov/
   - /docs/intro/overview/what-is-cloudgov
   - /intro/overview/what-is-cloudgov
