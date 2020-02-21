@@ -14,7 +14,7 @@ layout: wide
 </div>
 </section>
 
-<section class="usa-section">
+<section class="usa-section padding-y-8">
 <div class="grid-container">
 <div class="tablet:grid-col-7 usa-prose"  markdown="1">
 ## 1. <br />Get trial access and a free sandbox space
@@ -26,7 +26,7 @@ Federal employees and contractors with an email ending in .mil, .gov, or .fed.us
 </div>
 </section>
 
-<section class="bg-accent-warm-light usa-section">
+<section class="bg-accent-warm-light usa-section padding-y-8">
 <div class="grid-container grid-row">
 <div class="tablet:grid-col-7 usa-prose"  markdown="1">
 ## 2.<br />Go build in your sandbox
@@ -34,9 +34,14 @@ Federal employees and contractors with an email ending in .mil, .gov, or .fed.us
 Follow any of the tutorials to launch your own web application from your sandbox. You’ll need your cloud.gov account and some familiarity with Windows Powershell or Mac/Linux terminal. Learn more about [sandbox spaces](https://cloud.gov/overview/pricing/free-limited-sandbox/) and [sandbox limitations](https://cloud.gov/overview/pricing/free-limited-sandbox/#sandbox-limitations).
 
 <a href="https://account.fr.cloud.gov/signup" class="usa-button usa-button--big">Set up cloud.gov</a>
+
+We also have video tutorials on [an overview of the cloud.gov platform](https://www.youtube.com/watch?v=LKb0liZyepA&feature=emb_logo), [a walk through of the initial registration process](https://www.youtube.com/watch?v=ip8G_Rafb_c&feature=emb_logo), and [a hands-on workshop on how to start running applications](https://www.youtube.com/watch?v=G2J8dxSF0-I&feature=emb_logo).
+
+If you've run into any issues, please [contact support at cloud.gov](mailto:cloud-gov-support@gsa.gov). We're happy to help. You can also send us suggestions on [GitHub](https://github.com/18F/cg-site/issues/new) or [via email]("mailto:cloud-gov-inquiries@gsa.gov?subject=%5BSuggestion%5D%20&body=%0A%0A%0A%0ARefcode:%20quickstart).
+
 </div>
 <div class="tablet:grid-col-1"></div>
-<div class="tablet:grid-col usa-prose">
+<div class="tablet:grid-col usa-prose usa-section--sidebar-links">
 <h4>Sample applications</h4>
 <ul>
         <li>
@@ -56,7 +61,7 @@ Follow any of the tutorials to launch your own web application from your sandbox
 </div>
 </section>
 
-<section class="usa-section">
+<section class="usa-section padding-y-8">
 <div class="grid-container grid-row">
 <div class="tablet:grid-col-7 usa-prose"  markdown="1">
 ## 3. <br />Want more?
@@ -69,7 +74,7 @@ can do.
 <a href="mailto:cloud-gov-inquiries@gsa.gov?subject=%5BSuggestion%5D%20&body=%0A%0A%0A%0ARefcode:%20quickstart" class="usa-button usa-button--secondary usa-button--big">Contact us</a>
 </div>
 <div class="tablet:grid-col-1"></div>
-<div class="tablet:grid-col usa-prose">
+<div class="tablet:grid-col usa-prose usa-section--sidebar-links">
 <h4>Join the communities</h4>
         <ul>
             <li>

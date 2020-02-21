@@ -29,10 +29,10 @@ $theme-color-base-lightest:         'gray-cool-3';
 $theme-color-base-lighter:          'gray-cool-10';
 $theme-color-base-light:            'gray-cool-20';
 $theme-color-base:                  'gray-cool-40';
-$theme-color-base-dark:             'gray-cool-60';
-$theme-color-base-darker:           'gray-cool-70';
-$theme-color-base-darkest:          'gray-warm-80';
-$theme-color-base-ink:              'gray-warm-80';
+$theme-color-base-dark:             'gray-cool-50';
+$theme-color-base-darker:           'gray-cool-60';
+$theme-color-base-darkest:          'gray-warm-90';
+$theme-color-base-ink:              'gray-warm-90';
 
 // Primary colors
 $theme-color-primary-family:        'blue-warm';
@@ -127,7 +127,7 @@ General colors
 */
 
 // Links
-$theme-link-color:             'primary-darker';
+$theme-link-color:             'primary-dark';
 $theme-link-visited-color:     'violet-70v';
-$theme-link-hover-color:       'primary-dark';
+$theme-link-hover-color:       'primary-darker';
 $theme-link-active-color:      'primary-darker';

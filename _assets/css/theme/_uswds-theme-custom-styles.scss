@@ -313,10 +313,11 @@ $theme-table-column-gap: 4;
 
 
 //Custom headings
-h1, .usa-prose h1, h2, .usa-prose h2, h3, .usa-prose h3{
+h1,.usa-prose h1 {
     @include u-text('semibold');
 }
-h4, h5, h6 {
+
+h2, .usa-prose h2, h3, .usa-prose h3, h4, .usa-prose h4, h5, .usa-prose h5, h6 .usa-prose h6 {
     @include u-text('medium');
 }
 
@@ -340,7 +341,6 @@ h1, h2, h3, h4, h5, h6 {
 .usa-section h5 {
   @include u-font-size('sans', $theme-h5-font-size)
 }
-
 
 //Header styles
 .usa-header--extended .usa-nav {
@@ -405,12 +405,12 @@ main .usa-button {
 
 }
 
-.usa-button--secondary {
+main .usa-button--secondary {
   @include u-color('ink');
 
   &:hover {
     @include u-color('ink');
-    @include u-color('secondary-light');
+    @include u-bg('secondary-light');
   }
 }
 
@@ -420,7 +420,7 @@ main .usa-button {
   @include u-font-size('sans', 'sm');
 
   &::after {
-    content:"\003e";
+    content:"→";
     float: right;
   }
 }
@@ -454,6 +454,13 @@ main .usa-button {
 
 }
 
+// Documentation page
+
+// intro styling
+.usa-prose > h1 + p {
+  @extend .usa-intro;
+}
+
 // Sidenav
 .usa-sidenav {
   border-bottom: 0;
@@ -472,15 +479,31 @@ main .usa-button {
   i {
     @include u-color('accent-warm-dark');
   }
+}
 
-  .usa-current {
-    font-weight: 500;
-  }
+.usa-sidenav a {
+  @include u-color('ink');
+}
+
+.usa-sidenav .usa-current {
+  @include u-text('medium');
+}
+
+.usa-sidenav a:hover {
+  background-color: transparent;
 }
 
 .usa-sidenav .usa-current i,
 .usa-sidenav a:hover i {
   @include u-color('primary-vivid');
+}
+
+.usa-sidenav__sublist a {
+  padding-left: 2.75rem;
+}
+
+.usa-sidenav__sublist .usa-sidenav__sublist a {
+  @include u-padding-left(8);
 }
 
 //To Dop add in dropdown arrows
@@ -491,3 +514,9 @@ main .usa-button {
 // .usa-sidenav__item[aria-expanded=true] a {
 //   @include add-icon("angle-arrow-up-primary", "after", 2, 1, 2px, "hover");
 // }
+
+// Get started / Sign up
+
+.usa-section--sidebar-links {
+  @include u-padding-top(5);
+}
