@@ -9,16 +9,15 @@
 
 # cloud.gov + Federalist + U.S. Web Design System + Jekyll
 
-This site is built using the Federalist USWDS Jekyll template. Federalist runs on cloud.gov and supports the development of this template. By leveraging this template cloud.gov get the benefits  of a maintained template as well as a way to test out new functionality in the template.
+This site uses the [Federalist USWDS Jekyll template](https://github.com/18F/federalist-uswds-jekyll). [Federalist](https://federalist.18f.gov/) runs on cloud.gov and supports the development of this template. By leveraging this template cloud.gov get the benefits  of a maintained template as well as a way to test out new functionality in the template.
 
-
-This [Jekyll theme](https://jekyllrb.com/docs/themes/) is developed using the [U.S. Web Design System v 2.0](https://v2.designsystem.digital.gov) and is focused on providing developers a starter kit and reference implementation for Federalist websites.
+This [Jekyll theme](https://jekyllrb.com/docs/themes/) uses the [U.S. Web Design System v 2.0](https://v2.designsystem.digital.gov) and provides developers a starter kit and reference implementation for Federalist websites.
 
 This code uses the [Jekyll](https://jekyllrb.com) site engine and built with Ruby. If you prefer to use Javascript, check out [federalist-uswds-gatsby](https://github.com/18F/federalist-uswds-gatsby), which uses [Gatsby](https://gatsbyjs.org) site engine.
 
 This project assumes that you are comfortable editing source code. If you prefer to launch a website without editing any source code, checkout [uswds-jekyll](https://github.com/18F/uswds-jekyll), which allows you to change the layout and content with configuration files.
 
-This project strives to be compliant with requirements set by [21st Century IDEA Act](https://designsystem.digital.gov/website-standards/). The standards require that a website or digital service:
+This site uses a customized [U.S. Web Design System](https://v2.designsystem.digital.gov) theme and strives to be compliant with requirements set by [21st Century IDEA Act](https://designsystem.digital.gov/website-standards/). The standards require that a website or digital service:
 
 - is accessible to individuals with disabilities;
 - has a consistent appearance;
@@ -145,15 +144,3 @@ This project is in the worldwide [public domain](LICENSE.md). As stated in [CONT
 > copyright interest.
 
 See [CONTRIBUTING](CONTRIBUTING.md) for additional information.
-
-## Public domain
-
-This project is in the worldwide [public domain](LICENSE.md). As stated in [CONTRIBUTING](CONTRIBUTING.md):
-
-> This project is in the public domain within the United States, and copyright
-> and related rights in the work worldwide are waived through the [CC0 1.0
-> Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/).
->
-> All contributions to this project will be released under the CC0 dedication.
-> By submitting a pull request, you are agreeing to comply with this waiver of
-> copyright interest.
