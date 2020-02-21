@@ -3,9 +3,9 @@ layout: default
 ---
 
 <div class="usa-content bg-accent-warm-light">
-    <section class="grid-container usa-section">
+    <section class="grid-container usa-section margin-top-5">
         <div class="grid-row grid-gap">
-            <div class="tablet:grid-col-7">
+            <div class="tablet:grid-col-9">
             <p class="text-uppercase margin-bottom-0">Pricing</p>
             <h1 class="margin-top-1 font-sans-3xl">
                 Deliver great services with compliance and infrastructure automated behind the scenes.
@@ -17,39 +17,50 @@ layout: default
         </div>
     </section>
     <section class="grid-container usa-section">
-        
-        <div class="grid-row grid-gap">
-            <table class="usa-table usa-table--borderless site-table-responsive site-table-simple">
-                <tbody>
-                    {% tablerow product in site.data.pricing %}
-                        {% asset "{{ product.image }}" class="square-15" %}
-                    {% endtablerow %}
-                    {% tablerow product in site.data.pricing class="border-0" %}
-                        <h2>{{ product.package_name }}</h2>
-                    {% endtablerow %}
-                    {% tablerow product in site.data.pricing %}
-                        {{ product.description }}
-                    {% endtablerow %}
-                    {% tablerow product in site.data.pricing %}
-                        {{ product.price }}
-                    {% endtablerow %}
-                    {% tablerow product in site.data.pricing %}
-                        <span class="font-sans-2xs">{{ product.memory }}</span>
-                    {% endtablerow %}
-                    {% tablerow product in site.data.pricing %}
-                        <span class="font-sans-2xs">{{ product.production }}</span>
-                    {% endtablerow %}
-                    {% tablerow product in site.data.pricing %}
-                        <span class="font-sans-2xs">{{ product.number_of_systems }}</span>
-                    {% endtablerow %}
-                    {% tablerow product in site.data.pricing %}
-                        <span class="font-sans-2xs">{{ product.domain_names }}</span>
-                    {% endtablerow %}
-                    {% tablerow product in site.data.pricing %}
-                        <span class="font-sans-2xs">{{ product.sign_up }}
-                    {% endtablerow %}
-                </tbody>
-            </table>
+        <div class="grid-row products-pricing">
+            {% for product in site.data.pricing%}
+            <div class="desktop:grid-col">
+                <div class="intro">
+                {% asset "{{ product.image }}" class="square-15" %}
+                <h2>{{ product.package_name }}</h2>
+                </div>
+                <table class="usa-table usa-table--borderless">
+                    <tbody>
+                        <tr>
+                            <td class="intro-info">
+                                {{ product.description }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="intro-info">
+                                {{ product.price }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="small-info">
+                                {{ product.memory }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="small-info">
+                                {{ product.production }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="small-info">
+                                {{ product.domain_names }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="font-sans-2xs">{{ product.sign_up }}</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            {% endfor %}
         </div>
     </section>
     <section class="grid-container usa-section">
@@ -103,7 +114,7 @@ layout: default
             </div>
         </div>
         <div class="grid-row grid-gap">
-            <div class="tablet:grid-col-4 usa-prose">
+            <div class="tablet:grid-col-6 usa-prose">
                 <ul class="column-single">
                     <li>
                       FedRAMP JAB-authorized hosting
@@ -137,7 +148,7 @@ layout: default
                     </li>
                   </ul>
             </div>
-            <div class="tablet:grid-col-4 usa-prose">
+            <div class="tablet:grid-col-6 usa-prose">
                 <ul class="column-single">
                     <li>
                       S3 object store -  5TB included<br><i>  $100/month per additional terabyte</i>
@@ -154,7 +165,7 @@ layout: default
             </div>
         </div>
 </section>
-<section class="usa-section">
+<section class="usa-section margin-bottom-5">
     <div class="grid-container">        
         <div class="grid-row grid-gap">
             <div class="tablet:grid-col-7 usa-prose">

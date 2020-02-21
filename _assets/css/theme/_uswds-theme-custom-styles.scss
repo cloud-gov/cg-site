@@ -464,19 +464,21 @@ main .usa-button--secondary {
 // Sidenav
 .usa-sidenav {
   border-bottom: 0;
-}
 
-.usa-sidenav__item {
-  border-top: 0;
-}
+  .usa-sidenav__item {
+    border-top: 0;
 
-.usa-sidenav .usa-current {
-  font-weight: 500;
-}
+    a {
+      cursor: pointer;
 
-.usa-sidenav i {
-  @include u-color('accent-warm-dark');
-}
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+  i {
+    @include u-color('accent-warm-dark');
+  }
 
 .usa-sidenav a {
   @include u-color('ink');
@@ -484,6 +486,9 @@ main .usa-button--secondary {
 
 .usa-sidenav a:hover {
   background-color: transparent;
+  .usa-current {
+    font-weight: 500;
+  }
 }
 
 .usa-sidenav .usa-current i,
