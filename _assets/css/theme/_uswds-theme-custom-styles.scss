@@ -485,11 +485,12 @@ main .usa-button--secondary {
   @include u-color('ink');
 }
 
+.usa-sidenav .usa-current {
+  font-weight: 500;
+}
+
 .usa-sidenav a:hover {
   background-color: transparent;
-  .usa-current {
-    font-weight: 500;
-  }
 }
 
 .usa-sidenav .usa-current i,
