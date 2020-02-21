@@ -230,7 +230,7 @@ a.cg-arrow {
     max-width: 500px;
 
     li {
-      font-size: 27px;
+      font-size: 22px;
 
       a {
         @include u-padding-y(3);
@@ -242,7 +242,7 @@ a.cg-arrow {
     }
   }
   p.usa-intro {
-    @include u-font-size('serif', 'sm');
+    @include u-font-size('serif', 'lg');
   }
 }
 
