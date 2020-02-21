@@ -66,6 +66,8 @@ primary_navigation:
       url: /docs/ops/repos/
   - name: Contact us
     url: /docs/help/
+  - name: Updates
+    url: posts
 
 secondary_navigation:
   - name: Platform Status
@@ -166,6 +168,9 @@ collections:
   docs:
     output: true
     permalink: /:collection/:path/
+  posts:
+    output: true
+    permalink: /updates/:path
 
 
 permalink: pretty
