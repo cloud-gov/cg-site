@@ -2,14 +2,15 @@
 layout: post
 date: "2019-08-26"
 title: "Changes to cloud.gov services and prices" 
+excerpt: Cloud.gov’s funding source (the Acquisition Services Fund) requires us to review our expenditures and adjust rates to cover the cost of running the service. Starting on October 1, 2019, new interagency agreements (including renewals) will use the following prices. Agreements already in place will not change, and any modification or amendment to an existing agreement in FY20 will retain the original rate until FY21.
 ---
 
 
-**Summary**
+## Summary
 
 Cloud.gov’s funding source (the Acquisition Services Fund) requires us to review our expenditures and adjust rates to cover the cost of running the service. Starting on October 1, 2019, new interagency agreements (including renewals) will use the following prices. Agreements already in place will not change, and any modification or amendment to an existing agreement in FY20 will retain the original rate until FY21.
 
-**Access fees**
+## Access fees
 
 Plan  | Previous monthly price | New monthly price  |
 --------- | ----------- | -----
@@ -18,14 +19,14 @@ Plan  | Previous monthly price | New monthly price  |
 `FISMA Moderate` | $7,500.00/month |  $9,300.00/month |
 
 
-**Memory quota cost**
+## Memory quota cost
 
 Resource  | Previous monthly price | New monthly price  |
 --------- | ----------- | -----
 `Memory` | Approximately $105 per gigabyte/month |  $130 per gigabyte/month |
 
 
-**Additional details**
+## Additional details
 
 - To simplify billing, we will calculate memory costs monthly instead of daily. We will prorate the billing for modifications in the middle of the month, such as memory quota changes or agreements that start in the middle of the month.
 

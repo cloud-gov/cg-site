@@ -371,6 +371,10 @@ h1, h2, h3, h4, h5, h6 {
         }
       }
     }
+
+    .usa-nav__submenu {
+      display: hidden;
+    }
   }
 
   li.usa-nav__primary-item li.usa-nav__submenu-item a {
@@ -509,12 +513,12 @@ main .usa-button--secondary {
   @include u-padding-left(8);
 }
 
-//To Dop add in dropdown arrows
+// To Dop add in dropdown arrows
 // .usa-sidenav__item[aria-expanded=false] a {
 //   @include add-icon("angle-arrow-down-primary", "after", 2, 1, 2px, "hover");
 // }
 
-// .usa-sidenav__item[aria-expanded=true] a {
+// .usa-sidenav__item a[aria-expanded=true] {
 //   @include add-icon("angle-arrow-up-primary", "after", 2, 1, 2px, "hover");
 // }
 

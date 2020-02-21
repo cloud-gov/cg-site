@@ -7,8 +7,7 @@ title: "For Humans and Agencies: The cloud.gov Deprecation Policy"
 We want to talk about two crucial aspects of being a cloud provider: consistency and predictability. Consistency is the ability to do something the same way every time, and predictability means that you can count on it happening. When it comes to communicating changes about our platform, we believe we have been neither consistent nor predictable, and we'd like to talk about how we intend to change that.
 
 
-As our first step, we are publishing a deprecation policy that outlines the steps we will take when we make important changes to the platform. You read it [here]
-(https://cloud.gov/docs/technology/responsibilities/#deprecation-policy). We recommend you take the time to read the specifics and understand how it impacts your business.
+As our first step, we are publishing a deprecation policy that outlines the steps we will take when we make important changes to the platform. You read it [here](https://cloud.gov/docs/technology/responsibilities/#deprecation-policy). We recommend you take the time to read the specifics and understand how it impacts your business.
 
 ## Consistency & Predictability
 
