@@ -479,18 +479,19 @@ main .usa-button--secondary {
   i {
     @include u-color('accent-warm-dark');
   }
-}
 
-.usa-sidenav a {
-  @include u-color('ink');
-}
+  a {
+    @include u-color('ink');
 
-.usa-sidenav .usa-current {
-  @include u-text('medium');
-}
+    &:hover {
+      background-color: transparent;
+    }
+  }
 
-.usa-sidenav a:hover {
-  background-color: transparent;
+  .usa-current {
+    @include u-text('medium');
+  }
+  
 }
 
 .usa-sidenav .usa-current i,
@@ -502,6 +503,7 @@ main .usa-button--secondary {
   padding-left: 2.75rem;
 }
 
+//Grandchild link
 .usa-sidenav__sublist .usa-sidenav__sublist a {
   @include u-padding-left(8);
 }

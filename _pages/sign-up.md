@@ -35,7 +35,7 @@ Follow any of the tutorials to launch your own web application from your sandbox
 
 <a href="https://account.fr.cloud.gov/signup" class="usa-button usa-button--big">Set up cloud.gov</a>
 
-We also have video tutorials on [an overview of the cloud.gov platform](https://www.youtube.com/watch?v=LKb0liZyepA&feature=emb_logo), [a walk through of the initial registration process](https://www.youtube.com/watch?v=ip8G_Rafb_c&feature=emb_logo), and [a hands-on workshop on how to start running applications](https://www.youtube.com/watch?v=G2J8dxSF0-I&feature=emb_logo).
+We also have video tutorials on <a href="https://www.youtube.com/watch?v=LKb0liZyepA&feature=emb_logo" target="_blank">an overview of the cloud.gov platform</a>, <a href="https://www.youtube.com/watch?v=ip8G_Rafb_c&feature=emb_logo" target="_blank">a walk through of the initial registration process</a>, and <a href="https://www.youtube.com/watch?v=G2J8dxSF0-I&feature=emb_logo" target="_blank">a hands-on workshop on how to start running applications</a>.
 
 If you've run into any issues, please [contact support at cloud.gov](mailto:cloud-gov-support@gsa.gov). We're happy to help. You can also send us suggestions on [GitHub](https://github.com/18F/cg-site/issues/new) or [via email]("mailto:cloud-gov-inquiries@gsa.gov?subject=%5BSuggestion%5D%20&body=%0A%0A%0A%0ARefcode:%20quickstart).
 
