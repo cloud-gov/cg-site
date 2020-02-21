@@ -1,4 +1,5 @@
 ---
+layout: post
 date: "2016-07-19"
 title: "Full steam ahead on FedRAMP assessment"
 ---

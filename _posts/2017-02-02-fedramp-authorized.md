@@ -1,4 +1,5 @@
 ---
+layout: post
 date: "2017-02-02"
 title: "cloud.gov is now FedRAMP Authorized."
 ---

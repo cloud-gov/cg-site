@@ -1,4 +1,5 @@
 ---
+layout: post
 date: "2016-07-07"
 title: "Today’s Dashboard update (formerly the “Deck”)"
 ---

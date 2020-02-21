@@ -1,4 +1,5 @@
 ---
+layout: post
 date: "2017-05-05"
 title: "Platform Release Notes: May 5, 2017"
 ---

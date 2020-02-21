@@ -1,4 +1,5 @@
 ---
+layout: post
 date: "2017-08-22"
 title: "Announcement: cloud.gov accounts will migrate to OMB MAX"
 ---

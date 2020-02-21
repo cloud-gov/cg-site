@@ -1,4 +1,5 @@
 ---
+layout: post
 date: "2017-11-20"
 title: "cloud.gov monthly update: Buildpack notifications, volume services, and other new features"
 ---

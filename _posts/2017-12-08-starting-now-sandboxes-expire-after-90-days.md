@@ -1,4 +1,5 @@
 ---
+layout: post
 date: "2017-12-08"
 title: "Starting now, sandboxes expire after 90 days"
 ---

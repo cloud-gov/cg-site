@@ -1,4 +1,5 @@
 ---
+layout: post
 date: "2019-09-16"
 title: "For Humans and Agencies: The cloud.gov Deprecation Policy" 
 ---

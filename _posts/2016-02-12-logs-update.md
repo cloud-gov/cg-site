@@ -1,4 +1,5 @@
 ---
+layout: post
 date: "2016-02-12"
 title: "Logging service"
 ---

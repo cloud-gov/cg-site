@@ -1,4 +1,5 @@
 ---
+layout: post
 date: "2015-09-01"
 title: "Status page and console additions"
 ---

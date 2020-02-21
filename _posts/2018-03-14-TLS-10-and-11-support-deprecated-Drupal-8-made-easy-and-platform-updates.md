@@ -1,4 +1,5 @@
 ---
+layout: post
 date: "2018-03-14"
 title: "TLS 1.0 and 1.1 support removal, Drupal 8 made easy, and platform updates"
 ---

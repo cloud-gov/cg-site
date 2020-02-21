@@ -1,4 +1,5 @@
 ---
+layout: post
 date: "2019-08-26"
 title: "Changes to cloud.gov services and prices" 
 ---

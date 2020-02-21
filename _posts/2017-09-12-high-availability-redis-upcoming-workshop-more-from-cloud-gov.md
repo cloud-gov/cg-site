@@ -1,4 +1,5 @@
 ---
+layout: post
 date: "2017-09-12"
 title: "High availability Redis, our upcoming workshop, and more from cloud.gov"
 ---

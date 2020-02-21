@@ -1,4 +1,5 @@
 ---
+layout: post
 date: "2018-01-11"
 title: "Major outage postmortem"
 ---

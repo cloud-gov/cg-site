@@ -1,4 +1,5 @@
 ---
+layout: post
 date: "2019-02-26"
 title: "Quarterly update - An OS upgrade, cross-IaaS services, R Shiny apps, and more!" 
 ---

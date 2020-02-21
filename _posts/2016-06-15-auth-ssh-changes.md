@@ -1,4 +1,5 @@
 ---
+layout: post
 date: "2016-06-15"
 title: "Changes to login and cf-ssh"
 ---

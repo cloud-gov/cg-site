@@ -1,4 +1,5 @@
 --- 
+layout: post
 date: "2018-10-22" 
 title: "New S3 plan for sandboxes" 
 ---

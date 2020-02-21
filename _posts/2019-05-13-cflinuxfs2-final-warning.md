@@ -1,4 +1,5 @@
 ---
+layout: post
 date: "2019-05-13"
 title: "Final warning: cflinuxfs2 will be removed May 21st" 
 ---

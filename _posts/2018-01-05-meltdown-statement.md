@@ -1,4 +1,5 @@
 ---
+layout: post
 date: "2018-01-05"
 title: "Note about Meltdown/Spectre vulnerabilities"
 ---

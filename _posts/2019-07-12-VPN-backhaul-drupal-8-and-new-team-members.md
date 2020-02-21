@@ -1,4 +1,5 @@
 ---
+layout: post
 date: "2019-07-12"
 title: "VPN backhaul, Drupal 8 example, and new team members" 
 ---

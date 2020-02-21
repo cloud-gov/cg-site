@@ -1,4 +1,5 @@
 ---
+layout: post
 date: "2017-12-27"
 title: "A new homepage, quickstart guide, and more"
 ---

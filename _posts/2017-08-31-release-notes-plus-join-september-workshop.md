@@ -1,4 +1,5 @@
 ---
+layout: post
 date: "2017-08-31"
 title: "cloud.gov platform release notes, plus join our workshop on September 28"
 ---

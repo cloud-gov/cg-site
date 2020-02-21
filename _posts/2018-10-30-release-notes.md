@@ -1,4 +1,5 @@
 ---
+layout: post
 date: "2018-10-30"
 title: "Release notes" 
 ---

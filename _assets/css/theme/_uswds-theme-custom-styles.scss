@@ -319,6 +319,7 @@ h1,.usa-prose h1 {
 
 h2, .usa-prose h2, h3, .usa-prose h3, h4, .usa-prose h4, h5, .usa-prose h5, h6 .usa-prose h6 {
     @include u-text('medium');
+    @include u-font-family('sans');
 }
 
 

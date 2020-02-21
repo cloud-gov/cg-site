@@ -64,10 +64,12 @@ primary_navigation:
       url: /docs/orgs-spaces/dashboard/
     - name: cloud.gov team documentation
       url: /docs/ops/repos/
+  - name: Updates
+    url: /updates/
   - name: Contact us
     url: /docs/help/
-  - name: Updates
-    url: posts
+
+  
 
 secondary_navigation:
   - name: Platform Status
@@ -168,9 +170,6 @@ collections:
   docs:
     output: true
     permalink: /:collection/:path/
-  posts:
-    output: true
-    permalink: /updates/:path
 
 
 permalink: pretty

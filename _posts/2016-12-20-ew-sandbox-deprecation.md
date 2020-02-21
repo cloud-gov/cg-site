@@ -1,4 +1,5 @@
 ---
+layout: post
 date: "2016-12-21"
 title: "East/West Sandbox Deprecation Notice"
 ---

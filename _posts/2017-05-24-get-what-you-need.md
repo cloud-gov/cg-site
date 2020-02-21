@@ -1,4 +1,5 @@
 ---
+layout: post
 date: "2017-05-24"
 title: "Get what you need from cloud.gov"
 ---

@@ -1,4 +1,5 @@
 ---
+layout: post
 date: "2018-02-13"
 title: "Elasticsearch 5.6, upcoming Cloud Foundry Summit, and platform updates"
 ---

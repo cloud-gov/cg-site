@@ -1,4 +1,5 @@
 --- 
+layout: post
 date: "2018-05-21" 
 title: "New custom domain service" 
 ---

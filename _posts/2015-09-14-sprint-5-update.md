@@ -1,4 +1,5 @@
 ---
+layout: post
 date: "2015-09-14"
 title: "Even more console features and a new home for updates"
 ---
