@@ -479,6 +479,7 @@ main .usa-button--secondary {
   i {
     @include u-color('accent-warm-dark');
   }
+}
 
 .usa-sidenav a {
   @include u-color('ink');
