@@ -9,6 +9,7 @@
     "test": "bundle exec htmlproofer _site; npx a11y '_site/**/*.html'"
   },
   "dependencies": {
+    "anchor-js": "^4.2.2",
     "mermaid": "^8.4.6",
     "uswds": "~2.1.0"
   },
