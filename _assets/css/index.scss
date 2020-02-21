@@ -9,7 +9,7 @@
 @import "uswds";
 
 @import 'theme/uswds-theme-custom-styles';
-@import 'mermaid';
+
 
 // Add your SASS/CSS here
 
@@ -242,7 +242,7 @@ a.cg-arrow {
     }
   }
   p.usa-intro {
-    @include u-font-family('serif');
+    @include u-font-size('serif', 'sm');
   }
 }
 
@@ -298,3 +298,117 @@ a {
 
     }
 }
+
+
+//Mermaid styles
+.cg-diagrams-hidden {
+  position: absolute;
+  top: -9999px;
+  left: -99999px;
+}
+
+.cg-diagrams-stage {
+  background: #f1f1f1;
+  font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif; }
+  .cg-diagrams-stage .label {
+    color: #ffffff;
+    overflow-wrap: break-word;
+    word-break: break-word; }
+
+.cg-diagrams,
+.cg-diagrams-stage {
+  overflow: scroll;
+  width: 100%;
+}
+
+.cluster rect {
+  fill: #f1f1f1 !important;
+  stroke: color('primary-vivid') !important;
+  stroke-width: 2px !important; }
+
+.cluster text {
+  font-size: 1.7rem;
+  font-weight: 700;
+  font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 17px; }
+
+.node rect,
+.node circle,
+.node ellipse,
+.node polygon {
+  fill: color('primary');
+  stroke: color('primary-dark');
+  stroke-width: 2px; }
+
+.node .label {
+  font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  color: white; }
+
+.edgePath .path {
+  stroke: color('primary-dark');
+  stroke-width: 2px ; }
+
+.edgePath marker path {
+  fill: color('primary-dark') !important; }
+
+.edgeLabel {
+  background-color: #ffffff;
+  border: #ffffff 5px solid;
+  color: #000000;
+  font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-family: 17px; }
+  .edgeLabel:empty {
+    border: none; }
+
+rect {
+  fill: color('primary-vivid');
+  stroke: color('primary-dark');
+  stroke-width: 2px; }
+  rect.note {
+    fill: #e1f3f8;
+    stroke: color('primary')-light;
+    stroke-width: 2px; }
+  rect.labelBox {
+    fill: color('primary-vivid');
+    stroke: color('primary'); }
+  rect.actor {
+    fill: 'priamry-vivid';
+    stroke: color('primary-dark'); }
+
+#crosshead path,
+#arrowhead path {
+  fill: color('primary-dark'); }
+
+line[class^=messageLine], line.actor-line {
+  fill: color('primary-dark');
+  stroke: color('primary-dark');
+  stroke-width: 2px; }
+
+line.loopLine {
+  fill: color('primary-dark');
+  stroke: color('primary');
+  stroke-width: 2px; }
+
+text.messageText {
+  font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
+  text-shadow: 2px 2px 0 #ffffff, 1px 1px 0 #5b616b;
+  fill: color('primary-vivid');
+  font-size: 1rem; }
+
+text.actor {
+  fill: #ffffff; }
+
+text.noteText {
+  fill: #212121;
+  font-size: 1.25rem; }
+
+text.labelText {
+  font-family: "Merriweather", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  fill: #dce4ef;
+  font-size: 1.25rem;
+  text-transform: uppercase; }
+
+text.loopText {
+  font-family: "Merriweather", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  font-size: 1rem;
+  font-style: oblique; }
