@@ -4,7 +4,7 @@ date: "2018-02-13"
 title: "Elasticsearch 5.6, upcoming Cloud Foundry Summit, and platform updates"
 ---
 
-{{< image src="img/illustrations/fec-case-study-illo.svg" title="FEC case study illustration" >}}
+{% asset "fec-case-study-illo.svg" alt="FEC case study illustration" %}
 ### Announcements
 
 - **In this featured [FEC Case Study](https://cloud.gov/overview/customer-stories/fec/)**, find out how cloud.gov helps the agency ensure their applications are available, secure, and resilient. Want us to feature your agency? Drop us a line at [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov?subject="Case%20Study").  

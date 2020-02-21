@@ -16,7 +16,7 @@ We’ve been hard at work shipping out new features to help you make your apps b
   
   Thanks to our antipodal compatriots with the [Australian Government Digital Transformation Agency](https://www.dta.gov.au/what-we-do/platforms/cloud/) for this code contribution.
 
-{{< image src="/img/dashboard-envs.png" title="Screenshot of the environment variable editing view on the dashboard" style="border:1px solid grey;" >}}
+{% asset dashboard-envs.png alte="Screenshot of the environment variable editing view on the dashboard" %}
 
 ### Updates
 
