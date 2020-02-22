@@ -1,10 +1,7 @@
-.DS_Store
-public
-out
-tmp
+_site
+.sass-cache
+.jekyll-metadata
 node_modules
-credentials.yml
-credentials.fr.yml
-npm-debug.log
-_site/
-bin/
+.bundle
+.jekyll-cache/
+.DS_Store
