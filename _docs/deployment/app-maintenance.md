@@ -8,6 +8,7 @@ sidenav: true
 title: App maintenance
 weight: -90
 ---
+
 One of the benefits of hosting your application or website on cloud.gov is that the platform takes care of a lot of the maintenance and security details for you. There’s still work for you to do, though; you remain responsible for the security and maintenance of your apps and ensuring your apps are using the latest buildpacks. Restaging your app and pushing updates to your code are key to your app’s security.
 
 ## Restaging your app
