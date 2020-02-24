@@ -45,16 +45,19 @@ If you've run into any issues, please [contact support at cloud.gov](mailto:clou
 <h4>Sample applications</h4>
 <ul>
         <li>
-        <a href="https://github.com/18F/cf-ex-drupal">Drupal example</a>
-        </li>
-        <li>
-        <a href="https://github.com/18F/cf-ex-wordpress">WordPress example</a>
-        </li>
+        <a href="{{ site.baseurl }}/docs/getting-started/code-samples/">Sample applications in .Net Core, PHP, Python, R, Ruby, NodeJS and Clojure</a>
+        </li>  
         <li>
         <a href="https://github.com/cloudfoundry-samples">Cloud Foundry community collection of sample applications</a>
         </li>
         <li>
         <a href="https://github.com/cloudfoundry-samples/spring-music">SpringMusic: Java + any of MySQL, Oracle, Postgres or Redis</a>
+        </li>
+        <li>
+        <a href="https://github.com/18F/cf-ex-drupal">Drupal example</a>
+        </li>
+        <li>
+        <a href="https://github.com/18F/cf-ex-wordpress">WordPress example</a>
         </li>
     </ul>
 </div>

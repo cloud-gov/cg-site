@@ -7,13 +7,13 @@ title: "Elasticsearch 5.6, upcoming Cloud Foundry Summit, and platform updates"
 {% asset "fec-case-study-illo.svg" alt="FEC case study illustration" %}
 ### Announcements
 
-- **In this featured [FEC Case Study](https://cloud.gov/overview/customer-stories/fec/)**, find out how cloud.gov helps the agency ensure their applications are available, secure, and resilient. Want us to feature your agency? Drop us a line at [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov?subject="Case%20Study").  
+- **In this featured [FEC Case Study]({{ site.baseurl }}/overview/customer-stories/fec/)**, find out how cloud.gov helps the agency ensure their applications are available, secure, and resilient. Want us to feature your agency? Drop us a line at [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov?subject="Case%20Study").  
 - **Join us at the [Cloud Foundry Summit](https://www.cloudfoundry.org/event/nasummit2018/)** on April 18-20 in Boston, MA. Members of the cloud.gov team will present at this gathering of people who use and run platforms—like cloud.gov—that are based on the Cloud Foundry open source project. It includes [government-focused sessions](https://cfna18.sched.com/overview/type/Government+%26+Wild+Card) and training opportunities that may be useful to you and your team.
 
 ### Added
 
-- [Elasticsearch version 5.6 is now available](https://cloud.gov/docs/services/elasticsearch56/). This includes [performance improvements and new features](https://www.elastic.co/blog/elasticsearch-5-0-0-released). We recommend upgrading from version 2.4 to 5.6, but we don’t have near-term plans to end support for 2.4.  
-- If your application involves multiple languages, and it’s not practical to split it into smaller applications, cloud.gov now has [improved support for multiple buildpacks](https://cloud.gov/docs/apps/experimental/custom-buildpacks/#experimental-multi-buildpack-support)  
+- [Elasticsearch version 5.6 is now available]({{ site.baseurl }}/docs/services/elasticsearch56/). This includes [performance improvements and new features](https://www.elastic.co/blog/elasticsearch-5-0-0-released). We recommend upgrading from version 2.4 to 5.6, but we don’t have near-term plans to end support for 2.4.  
+- If your application involves multiple languages, and it’s not practical to split it into smaller applications, cloud.gov now has [improved support for multiple buildpacks]({{ site.baseurl }}/docs/apps/experimental/custom-buildpacks/#experimental-multi-buildpack-support)  
 
 ### Fixed
 

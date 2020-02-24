@@ -58,14 +58,14 @@ In order to help us keep cloud.gov secure, we require that you use your account 
 - Conduct only authorized business on the system.
 - Maintain the confidentiality of your authentication credentials; a cloud.gov operator should never ask you to reveal them. We recommend using a password manager and strong credentials.
 - Log out when you no longer need session access. Never leave your computer unattended while logged into cloud.gov.
-- Report all security incidents or suspected incidents (such as improper or suspicious acts) related to cloud.gov systems and networks to [cloud.gov support](/help/).
+- Report all security incidents or suspected incidents (such as improper or suspicious acts) related to cloud.gov systems and networks to [cloud.gov support]({{ site.baseurl }}/help/).
 - Safeguard system resources against waste, loss, abuse, unauthorized use or disclosure, and misappropriation.
 - Don't process U.S. classified national security information on the system.
 - Don't browse, search or reveal information hosted by cloud.gov except as required to perform your legitimate tasks or assigned duties.
 - Don't retrieve information, or in any other way disclose information, for someone who does not have authority to access that information.
 - Don't intentionally use a client that makes use of obsolete or insecure encryption algorithms.
-- Don't configure your browser to ignore security warnings which may involve your connection with cloud.gov; report warnings that you can't explain to [cloud.gov support](/help/).
-- If you believe you've been granted more access than necessary to perform your legitimate tasks or assigned duties, immediately notify [cloud.gov support](/help/).
+- Don't configure your browser to ignore security warnings which may involve your connection with cloud.gov; report warnings that you can't explain to [cloud.gov support]({{ site.baseurl }}/help/).
+- If you believe you've been granted more access than necessary to perform your legitimate tasks or assigned duties, immediately notify [cloud.gov support]({{ site.baseurl }}/help/).
 
 If you use a cloud.gov account (instead of using an agency single sign-on account), you have an additional rule of behavior:
 
@@ -73,4 +73,4 @@ If you use a cloud.gov account (instead of using an agency single sign-on accoun
 
 Access to systems and networks owned by cloud.gov is governed by, and subject to, all federal laws, including, but not limited to, the Privacy Act, 5 U.S.C. 552a, if the applicable cloud.gov system maintains individual Privacy Act information. Access to cloud.gov systems constitutes consent to the retrieval and disclosure of the information within the scope of your authorized access, subject to the Privacy Act, and applicable state and federal laws.
 
-Please contact [cloud.gov support](/help/) if you have questions about these rules or don't understand them.
+Please contact [cloud.gov support]({{ site.baseurl }}/help/) if you have questions about these rules or don't understand them.

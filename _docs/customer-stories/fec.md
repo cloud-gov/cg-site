@@ -12,7 +12,7 @@ The Federal Election Commission (FEC) recently worked with 18F to redesign its w
 
  {% asset illustrations/fec-case-study-illo.svg alt="FEC case study illustration" %}
 
->[Download this case study (PDF)](/resources/casestudy-fec.pdf)
+>[Download this case study (PDF)]({{ site.baseurl }}/resources/casestudy-fec.pdf)
 
 
 ## $1.2 million annual savings

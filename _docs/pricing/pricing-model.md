@@ -11,7 +11,7 @@ redirect_from:
 
 cloud.gov is available to teams working on behalf of federal agencies. The pricing model is based on full cost recovery.
 
-The current cloud.gov pricing model has two components: **access package** and **memory quota**. Find the current costs of a package that suits your needs on our [pricing page](/pricing/).
+The current cloud.gov pricing model has two components: **access package** and **memory quota**. Find the current costs of a package that suits your needs on our [pricing page]({{ site.baseurl }}/pricing/).
 
 ## Comparison with private sector pricing
 

@@ -12,7 +12,7 @@ Scenarios where that could happen include unexpected downtime of key external se
 
 ## Recovery objective
 
-Short-term disruptions lasting less than 30 minutes are outside the scope of this plan. (See [Service Disruption Guide](/docs/ops/service-disruption-guide/) instead.)
+Short-term disruptions lasting less than 30 minutes are outside the scope of this plan. (See [Service Disruption Guide]({{ site.baseurl }}/docs/ops/service-disruption-guide/) instead.)
 
 More than 3 hours of cloud.gov being offline would be unacceptable. Our objective is to recover from any significant problem (disruption, compromise, or failure) within that span of time.
 

@@ -21,7 +21,7 @@ We’ve been making changes to the cloud.gov website in order to make our [prici
 #### A more functional dashboard for using cloud.gov without using the command line
 Our web-based [dashboard](https://dashboard.fr.cloud.gov/) gives people an easy web-based way to manage their applications. You can see an overview of your apps, spaces, and their current state. The dashboard now offers more visual clarity between activities. And now you can edit limits on your applications with a few clicks.
 
-![Demonstration of edit mode on the cloud.gov dashboard app panel. User clicks “Modify allocation and scale” to change their application’s allocated memory and disk space.](/img/cloud-gov_editapplimits.gif "Editing app limits in the dashboard")
+![Demonstration of edit mode on the cloud.gov dashboard app panel. User clicks “Modify allocation and scale” to change their application’s allocated memory and disk space.]({{ site.baseurl }}/img/cloud-gov_editapplimits.gif "Editing app limits in the dashboard")
 
 ### Interested in using cloud.gov?
 

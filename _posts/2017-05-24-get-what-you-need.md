@@ -10,7 +10,7 @@ title: "Get what you need from cloud.gov"
 
 The dashboard is the web-based interface for managing apps and services on cloud.gov. With the dashboard, you don’t need to use the command line to handle some of the basic tasks of managing applications on the platform. You can orient yourself more easily now with information we’ve added to some of the dashboard’s core tools. Meaningful error messages (for example, alerts about data retrieval issues) can help you troubleshoot. Prompts in empty fields (for example, an empty list of applications or users) help you figure out how to get started. If you have a cloud.gov account, [log in to get started](https://dashboard.fr.cloud.gov/). If you don’t but you have a federal government email address, you can [create a free sandbox](https://account.fr.cloud.gov/signup) to explore.  
 
-![Example of the text prompt that appears to someone who is the only user in their organization. It describes the user's ability to invite other users and then offers a link to more information about how to do so.](/img/only_org_user.png)
+![Example of the text prompt that appears to someone who is the only user in their organization. It describes the user's ability to invite other users and then offers a link to more information about how to do so.]({{ site.baseurl }}/img/only_org_user.png)
 _If you’re the only user in your organization, this prompt helps you figure out how to add more users. cloud.gov now has more information like this to help you orient yourself._
 
 #### Strengthen your cloud.gov know-how with Cloud Foundry

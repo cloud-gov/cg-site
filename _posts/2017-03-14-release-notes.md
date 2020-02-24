@@ -13,7 +13,7 @@ The [cloud.gov dashboard](https://dashboard.fr.cloud.gov) now alerts you when it
 
 ### Changed
 
-[`cf logs`](https://cloud.gov/docs/apps/logs/) now accesses logs over port 443 instead of the previous port 4443, to increase the number of people who can use `cf logs` without errors. In many workplaces port 4443 is blocked, which leads `cf logs` to return an error.
+[`cf logs`]({{ site.baseurl }}/docs/apps/logs/) now accesses logs over port 443 instead of the previous port 4443, to increase the number of people who can use `cf logs` without errors. In many workplaces port 4443 is blocked, which leads `cf logs` to return an error.
 
 ### Security
 

@@ -12,7 +12,7 @@ We'll keep the [old Deck](https://console.cloud.gov/) around for about a week an
 ### What's new and different
 
 * **Name:** We took this opportunity to rename it from the “Deck” to the “Dashboard”, since that’s what people usually call it.
-* **Style:** It fits into the overall cloud.gov style and navigation! So for example, when you’re in the Dashboard troubleshooting something, you can easily go look at [documentation](https://docs.cloud.gov/) and [status](https://cloudgov.statuspage.io/).
+* **Style:** It fits into the overall cloud.gov style and navigation! So for example, when you’re in the Dashboard troubleshooting something, you can easily go look at [documentation]({{ site.baseurl }}/docs/) and [status](https://cloudgov.statuspage.io/).
 * **Navigation:** Navigating to your orgs, spaces, and apps is simpler: the sidebar displays a straightforward list of the orgs and spaces in your account, along with the marketplaces available for your orgs. You won’t have to click as many menus to do common tasks.
 * **Labels:** Data about your apps has unit labels to identify whether numbers are in GB or MB.
 * **Code:** The Dashboard's refactored codebase has better tests and less repetition.

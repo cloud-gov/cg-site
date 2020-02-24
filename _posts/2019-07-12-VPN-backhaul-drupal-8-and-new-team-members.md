@@ -27,7 +27,7 @@ It’s often a challenge to build a process for deploying new versions of your a
 
 ### Functions support for MySQL databases
 
-If you need to set up a MySQL schema that includes functions, procedures, and triggers, you can now create new databases that have that feature enabled. [To do this, see the “Options” documentation for RDS databases.](https://cloud.gov/docs/services/relational-database/#options) This allows you to build a wider range of applications on cloud.gov.
+If you need to set up a MySQL schema that includes functions, procedures, and triggers, you can now create new databases that have that feature enabled. [To do this, see the “Options” documentation for RDS databases.]({{ site.baseurl }}/docs/services/relational-database/#options) This allows you to build a wider range of applications on cloud.gov.
 
 ### Improved instructions for running Drupal 8 for managing content
 

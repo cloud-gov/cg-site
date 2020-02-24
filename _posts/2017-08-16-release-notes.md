@@ -15,7 +15,7 @@ Curious what’s new that you might find helpful as a cloud.gov user? Here are h
 ### Changed
 
 * On the dashboard, new error messages alert you when you try to remove someone from your organization who still has roles in your spaces.
-<br/>![remove space user dashboard screen](/img/remove-space-user.png)
+<br/>![remove space user dashboard screen]({{ site.baseurl }}/img/remove-space-user.png)
 * Visualization of platform uptime available from the [cloud.gov status page](https://cloudgov.statuspage.io/). You can see current and the previous 90 days uptime for customer applications, API, dashboard, and many other components of the cloud.gov platform.
 
 ### Platform releases

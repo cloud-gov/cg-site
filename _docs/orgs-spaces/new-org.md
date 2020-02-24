@@ -23,7 +23,7 @@ Note: Names cannot contain spaces and should instead use dashes (-).
 
 ### System type
 
-The system type is one of the [available packages](/pricing/):
+The system type is one of the [available packages]({{ site.baseurl }}/pricing/):
 
 - Prototyping space
 - FISMA Low system

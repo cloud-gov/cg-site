@@ -176,7 +176,7 @@ Once the incident is no longer active — i.e. the breach has been contained, th
 
 The final step in handling a security incident is figuring out what we learned. The IC (or one of the ICs if there were multiple, or a designated other party) should lead a retrospective and develop an incident report.
 
-We follow [the postmortem steps in the service disruption guide]({{ site.baseurl }}{% link _docs/ops/service-disruption-guide.md %}#ensure-a-postmortem-happens), including writing an internal report. If appropriate, we also write a public postmortem to post on [Updates](/updates/) or [StatusPage](https://cloudgov.statuspage.io/) (depending on the type of problem).
+We follow [the postmortem steps in the service disruption guide]({{ site.baseurl }}{% link _docs/ops/service-disruption-guide.md %}#ensure-a-postmortem-happens), including writing an internal report. If appropriate, we also write a public postmortem to post on [Updates]({{ site.baseurl }}/updates/) or [StatusPage](https://cloudgov.statuspage.io/) (depending on the type of problem).
 
 The internal report should contain a timeline of the incident, details about how the incident progressed, and information about the vulnerabilities that led to the incident. A cause analysis is an important part of this report; the team should use tools such as [Infinite Hows](http://www.kitchensoap.com/2014/11/14/the-infinite-hows-or-the-dangers-of-the-five-whys/) or [Five Whys](https://en.wikipedia.org/wiki/5_Whys) to try to dig into causes, how future incidents could be prevented, how responses could be better in the future, etc.
 

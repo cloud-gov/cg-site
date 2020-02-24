@@ -22,7 +22,7 @@ A prototyping package can have an unlimited number of users (such as developers 
 
 ### Limitations
 
-Prototyping packages cannot host production data. All prototyping package applications are limited to using the `*.app.cloud.gov` domain. Applications that are ready for production should move to a [production package](/pricing/), FISMA Low or FISMA Moderate.
+Prototyping packages cannot host production data. All prototyping package applications are limited to using the `*.app.cloud.gov` domain. Applications that are ready for production should move to a [production package]({{ site.baseurl }}/pricing/), FISMA Low or FISMA Moderate.
 
 ## Full oversight and configuration for administrators
 

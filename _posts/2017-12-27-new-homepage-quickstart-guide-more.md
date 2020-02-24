@@ -10,8 +10,8 @@ Here are some highlights from our platform updates in the last month.
 
 ### Added
 
-* We updated our homepage! Now you can find more helpful resources and links to customer testimonials from the homepage. [Check it out](/) and let us know what you think.
-* If you’re new to cloud.gov and haven’t launched an app yet, [check out our new quickstart guide](/quickstart/). There, you’ll learn the basics of launching an app on cloud.gov and can even watch video from a recent workshop to help you get started.
+* We updated our homepage! Now you can find more helpful resources and links to customer testimonials from the homepage. [Check it out]({{ site.baseurl }}/) and let us know what you think.
+* If you’re new to cloud.gov and haven’t launched an app yet, [check out our new quickstart guide]({{ site.baseurl }}/quickstart/). There, you’ll learn the basics of launching an app on cloud.gov and can even watch video from a recent workshop to help you get started.
 * We have documentation about the security-related HTTP headers cloud.gov sets by default. [Learn about these headers and how to change them]({{ site.baseurl }}/docs/apps/headers.md) for your app in the docs.
 * If you need to get an ATO for a system on cloud.gov, [we have a page]({{ site.baseurl }}/docs/compliance/ato-process.md) explaining terms and showing how your ATO can inherit from cloud.gov’s.
 

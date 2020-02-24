@@ -13,7 +13,7 @@ title: More languages (custom buildpacks)
 weight: 30
 ---
 
-Cloud Foundry (the underlying open source project behind cloud.gov) uses [buildpacks]({ site.baseurl }}{% link _docs/getting-started/concepts.md %}#buildpacks) to allow your applications to be deployed. cloud.gov [officially supports](/pricing/) a set of buildpacks, and it also allows you to provide your own.
+Cloud Foundry (the underlying open source project behind cloud.gov) uses [buildpacks]({ site.baseurl }}{% link _docs/getting-started/concepts.md %}#buildpacks) to allow your applications to be deployed. cloud.gov [officially supports]({{ site.baseurl }}/pricing/) a set of buildpacks, and it also allows you to provide your own.
 
 Once you push your code using a custom buildpack, cloud.gov cannot update it for you. You are responsible for keeping it up to date. Please see [this description of responsibilities]({ site.baseurl }}{% link _docs/technology/responsibilities.md %}).
 

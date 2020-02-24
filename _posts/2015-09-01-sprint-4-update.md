@@ -18,7 +18,7 @@ We're now providing this visibility via the [cloud.gov Status Page](https://clou
 We've proactively subscribed existing users to that page, so there's no need for any action on your part... You'll be notified via e-mail whenever problems are identified, or when planned maintenance is expected to impact your application's availability. However, you can also use the subscription control at the upper-right of the page to subscribe to updates via texts or Atom/RSS feed if you so choose.
 
 ### Console Improvements
-In addition to the command-line client, the [cloud.gov web-based console](https://console.cloud.gov/) has now entered an alpha state. You can use the console to **review your organizations and spaces**, and **manage the state of your applications, services, and routes**. Creation of accounts, orgs, and spaces is still managed [via GitHub request](https://docs.cloud.gov/getting-started/setup/).
+In addition to the command-line client, the [cloud.gov web-based console](https://console.cloud.gov/) has now entered an alpha state. You can use the console to **review your organizations and spaces**, and **manage the state of your applications, services, and routes**. Creation of accounts, orgs, and spaces is still managed [via GitHub request]({{ site.baseurl }}/getting-started/setup/).
 
 Here are examples of actions now possible via the magic of your Interweb-capable browsing apparatus:
 

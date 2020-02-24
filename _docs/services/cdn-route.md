@@ -89,7 +89,7 @@ The maximum number of domains that can be associated with a single cdn-route ser
 ### How to set up DNS
 
 **Note:** Due to changes in how CloudFront processes requests, we currently only offer certificate provisioning via DNS challenges. This means that users can no longer skip step 1 below.
-We are investigating ways to bring this feature back. If you are unable to use DNS challenges, please [reach out to us](/help/).
+We are investigating ways to bring this feature back. If you are unable to use DNS challenges, please [reach out to us]({{ site.baseurl }}/help/).
 
 
 
@@ -130,7 +130,9 @@ The output will include the CDN domain the broker has created for you. In this c
 
 After the record is created, wait up to one hour for the CloudFront distribution to be provisioned and the DNS changes to propagate. Then visit your custom domain and see whether you have a valid certificate (in other words, that visiting your site in a modern browser doesn't give you a certificate warning).
 
-If you've waited more than two hours without a valid certificate appearing, [contact support](/help) to check for problems.
+If you've waited more than two hours without a valid certificate appearing, [contact support]({{ site.baseurl }}/help) to check for problems.
+
+
 
 #### Step 3: Map the route to your application
 
@@ -220,7 +222,7 @@ particularly confusing as different requests might be routed to different
 CloudFront Edge endpoints.
 
 While there is no mechanism for cloud.gov users to trigger a cache clear,
-[cloud.gov support](/help/) can. Cache invalidation is not
+[cloud.gov support]({{ site.baseurl }}/help/) can. Cache invalidation is not
 instantaneous; Amazon recommends expecting a lag time of 10-15 minutes (more if there are
 many distinct endpoints).
 
@@ -256,7 +258,7 @@ When making requests to the origin, CloudFront's caching mechanism associates HT
 
 If you plan to use a domain with DNSSEC, you need to [verify your DNSSEC configuration](https://www.icann.org/resources/pages/tools-2012-02-25-en) before starting the steps above, because invalid DNSSEC configuration will cause creation to get stuck.
 
-However, custom domains using the CDN broker will not fully validate DNSSEC (between your CNAME record and cloudfront.net). This is because the AWS CloudFront service does not currently support DNSSEC. For a complete implementation of DNSSEC, we recommend instead running a proxy server within your boundary that forwards to your application in cloud.gov, or using an alternative CDN that supports DNSSEC. For implementation advice to help you meet your compliance needs, contact [cloud.gov support](/help/).
+However, custom domains using the CDN broker will not fully validate DNSSEC (between your CNAME record and cloudfront.net). This is because the AWS CloudFront service does not currently support DNSSEC. For a complete implementation of DNSSEC, we recommend instead running a proxy server within your boundary that forwards to your application in cloud.gov, or using an alternative CDN that supports DNSSEC. For implementation advice to help you meet your compliance needs, contact [cloud.gov support]({{ site.baseurl }}/help/).
 
 Alternatively, you may be able to make the case for an alternative implementation without DNSSEC. As described in the [HTTPS-Only Standard](https://https.cio.gov/faq/#how-does-https-protect-against-dns-spoofing), a properly implemented solution using HTTPS-only and HSTS can meet the same requirements around preventing DNS spoofing that DNSSEC is intended to implement. cloud.gov enforces HTTPS for all applications and enables HSTS by default; we recommend configuring HSTS preload as well.
 
@@ -264,7 +266,7 @@ See our [compliance guide for federal standards and recommendations for domain n
 
 ## Certificate validity and renewal
 
-Let's Encrypt TLS certificates are valid for 90 days.  The broker will automatically renew your certificate every 60 days.  This process is usually immediate but can take several days to complete.  If your certificate is expiring within the next 21 days and has not been renewed automatically, contact [cloud.gov support](/help/).
+Let's Encrypt TLS certificates are valid for 90 days.  The broker will automatically renew your certificate every 60 days.  This process is usually immediate but can take several days to complete.  If your certificate is expiring within the next 21 days and has not been renewed automatically, contact [cloud.gov support]({{ site.baseurl }}/help/).
 
 ## The broker in GitHub
 

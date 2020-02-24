@@ -9,7 +9,7 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
 <!--more-->
 
 ### Added
-When you create a [cloud.gov identity provider service instance](https://cloud.gov/docs/services/cloud-gov-identity-provider/), you can now add scopes from a whitelist of approved scopes. This makes it easier to enable specific permissions and access for additional types of users in your applications.
+When you create a [cloud.gov identity provider service instance]({{ site.baseurl }}/docs/services/cloud-gov-identity-provider/), you can now add scopes from a whitelist of approved scopes. This makes it easier to enable specific permissions and access for additional types of users in your applications.
 
 ### Changed
 We recommend updating to the [latest version (6.25)](https://github.com/cloudfoundry/cli/releases/tag/v6.25.0) of the Cloud Foundry command line interface (CLI). This can prevent errors when using the cf CLI. You can check your currently-installed version using `cf -v`
