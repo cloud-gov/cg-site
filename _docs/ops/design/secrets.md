@@ -348,7 +348,7 @@ software they're deploying.
 * https://concourse-ci.org/creds.html#credhub
 
 <!--
-* https://cloud.gov/docs/ops/runbook/credhub-import
+* {{ site.baseurl }}/docs/ops/runbook/credhub-import
 -->
 
 <!---

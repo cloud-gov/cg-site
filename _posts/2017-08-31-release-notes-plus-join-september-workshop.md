@@ -10,7 +10,7 @@ Curious what’s new that you might find helpful as a cloud.gov user? Here are h
 
 **cloud.gov Workshop:** [You’re invited to our free cloud.gov workshop on September 28th](https://www.digitalgov.gov/event/hands-on-workshop-with-cloud-gov/). If you’re evaluating cloud.gov or getting started with it, you will learn how to use cloud.gov to launch applications and get the power and advantages that come from using a Platform as a Service. Bring a laptop if you're coming in-person or join us online to learn how cloud.gov can work for you.
 
-**cloud.gov authentication moving to OMB MAX:** If you use a cloud.gov account (not if you use EPA, FDIC, or GSA single sign-on login), [read our August 22 update about our plan to migrate your account’s authentication to OMB MAX](https://cloud.gov/updates/2017-08-21-max-gov-migration-instructions/). We’ll notify you at least three weeks before we make the switch. You can create your MAX account any time. We encourage you to do it soon so you’re set well in advance.
+**cloud.gov authentication moving to OMB MAX:** If you use a cloud.gov account (not if you use EPA, FDIC, or GSA single sign-on login), [read our August 22 update about our plan to migrate your account’s authentication to OMB MAX]({{ site.baseurl }}/updates/2017-08-21-max-gov-migration-instructions/). We’ll notify you at least three weeks before we make the switch. You can create your MAX account any time. We encourage you to do it soon so you’re set well in advance.
 
 ### Added
 
@@ -23,7 +23,7 @@ Curious what’s new that you might find helpful as a cloud.gov user? Here are h
 
 ### In case you missed it
 
-[Our latest quarterly newsletter is out](https://cloud.gov/updates/2017-08-11-continuous-improvement-more-tools-help-use-cloud-gov/) and features stories about how two of our customers, FEC and FBI, used the platform. Do you know of an app on cloud.gov more people should be aware of? [Let us know](mailto:cloud-gov-inquiries@gsa.gov) what the app is and we’ll reach out to learn more about it.
+[Our latest quarterly newsletter is out]({{ site.baseurl }}/updates/2017-08-11-continuous-improvement-more-tools-help-use-cloud-gov/) and features stories about how two of our customers, FEC and FBI, used the platform. Do you know of an app on cloud.gov more people should be aware of? [Let us know](mailto:cloud-gov-inquiries@gsa.gov) what the app is and we’ll reach out to learn more about it.
 
 ### Platform releases
 We upgraded the Cloud Foundry deployment to [v271](https://github.com/cloudfoundry/cf-release/releases/tag/v271).

@@ -26,7 +26,7 @@ This guide assumes you are using a standard GSA-provided Mac OS development asse
   - `brew install cf-cli`
   - `brew install cloudfoundry/tap/bosh-cli`
   - `brew install openssl`
-- An existing cloud.gov teammate will [make your cloud.gov admin account](https://cloud.gov/docs/ops/managing-users/#creating-admins)
+- An existing cloud.gov teammate will [make your cloud.gov admin account]({{ site.baseurl }}/docs/ops/managing-users/#creating-admins)
   - They will use the `create-cf-admin` script from `cg-scripts` with your GSA email address
 - Verify cloud.gov account setup and CloudFoundry installation via the CLI
   - `cf login -a api.fr.cloud.gov --sso`

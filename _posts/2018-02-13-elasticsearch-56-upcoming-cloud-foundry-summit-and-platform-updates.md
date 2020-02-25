@@ -18,7 +18,7 @@ title: "Elasticsearch 5.6, upcoming Cloud Foundry Summit, and platform updates"
 ### Fixed
 
 - [Upgrade to the latest version of the CF CLI tool v6.34.1](https://github.com/cloudfoundry/cli/releases/tag/v6.34.1) for improvements and bug fixes.  
-- [If you deploy Docker containers](https://cloud.gov/docs/apps/experimental/docker/), it’s now possible to push Docker images from an Azure container registry.  
+- [If you deploy Docker containers]({{ site.baseurl }}/docs/apps/experimental/docker/), it’s now possible to push Docker images from an Azure container registry.  
 
 
 ### Buildpack updates

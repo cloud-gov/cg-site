@@ -51,5 +51,5 @@ Run all planning and production pipelines:
 * `deploy-postfix`: plan and deploy this to get the certs/keys updated.
 
 ## Verification
-Use the [Troubleshooting SMTP](https://cloud.gov/docs/ops/runbook/troubleshooting-smtp/)
+Use the [Troubleshooting SMTP]({{ site.baseurl }}/docs/ops/runbook/troubleshooting-smtp/)
 guide to verify the new username, password and certificates work as expected.

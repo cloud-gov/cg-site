@@ -69,7 +69,7 @@ Using a new CLI plugin, you can now mine a greater range of logs and metrics tha
 
 ### Ensure you have the latest CLI client!
 
-While you’re checking out that new log-cache plugin, now would be a good time to make sure you’ve installed the latest version of the Cloud Foundry CLI, version 6.43.0. While the CLI is generally compatible with updates to cloud.gov, you’ll only get some features and bugfixes if you [keep your CLI up to date](https://cloud.gov/docs/getting-started/setup/#set-up-the-command-line). For example, the most recent CLI version hides your credentials when running with the verbose flag, so it's easier to copy-and-paste transcripts to other people securely. The previous version added the ability to manage [space-to-space networking policies](https://github.com/cloudfoundry/cli/releases/tag/v6.42.0), a capability only previously available by working directly with the Cloud Foundry API.
+While you’re checking out that new log-cache plugin, now would be a good time to make sure you’ve installed the latest version of the Cloud Foundry CLI, version 6.43.0. While the CLI is generally compatible with updates to cloud.gov, you’ll only get some features and bugfixes if you [keep your CLI up to date]({{ site.baseurl }}/docs/getting-started/setup/#set-up-the-command-line). For example, the most recent CLI version hides your credentials when running with the verbose flag, so it's easier to copy-and-paste transcripts to other people securely. The previous version added the ability to manage [space-to-space networking policies](https://github.com/cloudfoundry/cli/releases/tag/v6.42.0), a capability only previously available by working directly with the Cloud Foundry API.
 
 ## We want to hear from you!
 

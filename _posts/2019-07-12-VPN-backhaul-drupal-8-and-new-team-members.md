@@ -14,9 +14,9 @@ Curious what’s new that you might find helpful as a cloud.gov user? Here are h
 
 ### 2019 FedRAMP annual assessment completed, cloud.gov granted re-authorization
 
-Every year, to maintain [our FedRAMP Authorization](https://cloud.gov/overview/security/fedramp-tracker/), cloud.gov goes through a robust security compliance audit to ensure our security measures are up to date with current federal standards. This enables our customer systems to inherit a significant amount of compliance from the cloud.gov platform, supporting faster ATOs and less work for their teams.
+Every year, to maintain [our FedRAMP Authorization]({{ site.baseurl }}/overview/security/fedramp-tracker/), cloud.gov goes through a robust security compliance audit to ensure our security measures are up to date with current federal standards. This enables our customer systems to inherit a significant amount of compliance from the cloud.gov platform, supporting faster ATOs and less work for their teams.
 
-Our team has successfully completed this year’s re-authorization. Current and prospective customers can view our audit materials in the FedRAMP document repository on MAX.gov by [requesting access from FedRAMP](https://cloud.gov/overview/security/fedramp-tracker/#start-the-ato-process).
+Our team has successfully completed this year’s re-authorization. Current and prospective customers can view our audit materials in the FedRAMP document repository on MAX.gov by [requesting access from FedRAMP]({{ site.baseurl }}/overview/security/fedramp-tracker/#start-the-ato-process).
 
 ## New additions
 
@@ -47,7 +47,7 @@ We routinely update the operating system underneath your applications to ensure 
 
 ### Removed: CNAME ALIAS method for verifying DNS ownership
 
-When using the [CDN service](https://cloud.gov/docs/services/cdn-route/) to set up a custom domain name for an application, cloud.gov now only offers certificate provisioning via DNS challenges. We stopped supporting the CNAME ALIAS method. See the [updated steps for setting up DNS](https://cloud.gov/docs/services/cdn-route/#how-to-set-up-dns).
+When using the [CDN service]({{ site.baseurl }}/docs/services/cdn-route/) to set up a custom domain name for an application, cloud.gov now only offers certificate provisioning via DNS challenges. We stopped supporting the CNAME ALIAS method. See the [updated steps for setting up DNS]({{ site.baseurl }}/docs/services/cdn-route/#how-to-set-up-dns).
 
 ### Removed: Experimental NFS (Network File System) volume service
 

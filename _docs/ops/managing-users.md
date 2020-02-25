@@ -6,7 +6,7 @@ sidenav: true
 title: Managing users
 ---
 
-Only single sign-on user accounts and cloud.gov IDP accounts are allowed. Service accounts, such as deployer credentials, are to be generated only via the [service account](https://cloud.gov/docs/services/cloud-gov-service-account/) managed service to ensure that they are scoped to a particular space with limited access.
+Only single sign-on user accounts and cloud.gov IDP accounts are allowed. Service accounts, such as deployer credentials, are to be generated only via the [service account]({{ site.baseurl }}/docs/services/cloud-gov-service-account/) managed service to ensure that they are scoped to a particular space with limited access.
 
 No local accounts to UAA shall be created for user access.
 

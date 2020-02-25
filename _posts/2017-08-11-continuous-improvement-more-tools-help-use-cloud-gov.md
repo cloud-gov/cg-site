@@ -15,7 +15,7 @@ Managing users in your organization and granting them the permissions they need 
 
 #### Continuous improvement
 
-Staying compliant with federal laws is crucial to us and to you, but compliant simply isn’t good enough, or fast enough, for us. That’s why [cloud.gov is designed and operated to routinely provide apps the latest security updates](https://cloud.gov/overview/overview/cloudgov-benefits/) within a day of their release. When there’s a major vulnerability in a component managed by cloud.gov, our team makes these updates across the entire platform, so you don’t have to spend time doing it. For updates to the buildpack, operating system, or [any other component we manage]({{ site.baseurl }}/overview/technology/responsibilities/), all that’s typically required is a [restage of your apps]({{ site.baseurl }}/docs/apps/app-maintenance/#restaging-your-app), even as they scale and grow.
+Staying compliant with federal laws is crucial to us and to you, but compliant simply isn’t good enough, or fast enough, for us. That’s why [cloud.gov is designed and operated to routinely provide apps the latest security updates]({{ site.baseurl }}/overview/overview/cloudgov-benefits/) within a day of their release. When there’s a major vulnerability in a component managed by cloud.gov, our team makes these updates across the entire platform, so you don’t have to spend time doing it. For updates to the buildpack, operating system, or [any other component we manage]({{ site.baseurl }}/overview/technology/responsibilities/), all that’s typically required is a [restage of your apps]({{ site.baseurl }}/docs/apps/app-maintenance/#restaging-your-app), even as they scale and grow.
 
 #### Improved support and documentation to help you use cloud.gov
 
@@ -35,7 +35,7 @@ Whether a legacy system or new development, we’d love to learn about your apps
 
 #### Prototyping accounts benefit multiple teams
 
-[Prototyping packages are a great way to get started on cloud.gov with real applications](https://cloud.gov/overview/pricing/prototyping/). If you’re thinking about launching a new product, migrating an existing system to the cloud, or want to benefit from the convenience of a platform as a service, you can test your applications and fully evaluate cloud.gov with a prototyping package. $15,000 gets your development team unlimited access to a FedRAMP authorized environment to try experiments, launch new demos, and test as many applications as you need. cloud.gov prototyping packages can’t host production data but once you’re ready, you’ll be able to easily transfer it to a production-ready system.
+[Prototyping packages are a great way to get started on cloud.gov with real applications]({{ site.baseurl }}/overview/pricing/prototyping/). If you’re thinking about launching a new product, migrating an existing system to the cloud, or want to benefit from the convenience of a platform as a service, you can test your applications and fully evaluate cloud.gov with a prototyping package. $15,000 gets your development team unlimited access to a FedRAMP authorized environment to try experiments, launch new demos, and test as many applications as you need. cloud.gov prototyping packages can’t host production data but once you’re ready, you’ll be able to easily transfer it to a production-ready system.
 
 If you have leftover funds at the end of the fiscal year and need a prototyping account, you can buy one now, start right away and continue to use it for the next 12 months. Contact us right away at [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov) to get started.
 
@@ -49,6 +49,6 @@ The Federal Bureau of Investigation (FBI) recently launched their new Crime Data
 
 #### Federal Election Commission
 
-The Federal Election Commission (FEC) recently relaunched their flagship website, fec.gov, with cloud.gov. The FEC collects financial reports for all federal elections and discloses fundraising figures to the public. By hosting FEC.gov on cloud.gov and moving its data to the cloud, the FEC anticipates saving 85% in hosting costs and is better prepared for peak traffic events. Read a case study about the FEC here: [https://cloud.gov/overview/customer-stories/fec/](https://cloud.gov/overview/customer-stories/fec/) and check out their new, cloud.gov-hosted website at [https://fec.gov](https://fec.gov)
+The Federal Election Commission (FEC) recently relaunched their flagship website, fec.gov, with cloud.gov. The FEC collects financial reports for all federal elections and discloses fundraising figures to the public. By hosting FEC.gov on cloud.gov and moving its data to the cloud, the FEC anticipates saving 85% in hosting costs and is better prepared for peak traffic events. Read a case study about the FEC here: [{{ site.baseurl }}/overview/customer-stories/fec/]({{ site.baseurl }}/overview/customer-stories/fec/) and check out their new, cloud.gov-hosted website at [https://fec.gov](https://fec.gov)
 
 <img src="/img/fec-screen.png" alt="the new cloud.gov hosted fec homepage" width="624" height="320" />

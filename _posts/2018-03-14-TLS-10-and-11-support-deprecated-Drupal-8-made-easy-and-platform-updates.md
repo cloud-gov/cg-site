@@ -18,11 +18,11 @@ title: "TLS 1.0 and 1.1 support removal, Drupal 8 made easy, and platform update
 
 - **We’ve made a demo showing how easy it is to [deploy Drupal 8 to cloud.gov](https://github.com/18F/cf-ex-drupal)**. 
 
-- **We’ve provided [a guide](https://cloud.gov/docs/compliance/auditing-activity/)** explaining how to generate audit logs for events such as role changes, service bindings, and 75+ other events.  
+- **We’ve provided [a guide]({{ site.baseurl }}/docs/compliance/auditing-activity/)** explaining how to generate audit logs for events such as role changes, service bindings, and 75+ other events.  
 
 ### Fixed
 
-- **We’ve updated the [Overview for assessors](https://cloud.gov/docs/compliance/for-assessors/) page** to clarify that logs are encrypted during transit and at rest.  
+- **We’ve updated the [Overview for assessors]({{ site.baseurl }}/docs/compliance/for-assessors/) page** to clarify that logs are encrypted during transit and at rest.  
 
 
 ### Buildpack updates
