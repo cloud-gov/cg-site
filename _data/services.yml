@@ -1,19 +1,19 @@
 - name: aws-rds
   page-name: relational-database
   description: "Persistent, relational databases using Amazon RDS" 
-  status: "Production Ready"
+  status: "Production"
 - name: cdn-route
   description: "Custom domains, CDN caching, and TLS certificates with automatic renewal"
-  status: "Production Ready"
+  status: "Production"
 - name: cloud-gov-identity-provider
   description: "Authenticate cloud.gov users in your app"
   status:  "Beta"
 - name: cloud-gov-service-account
   description: "cloud.gov service accounts for automated access by programs"
-  status: "Production Ready"
+  status: "Production"
 - name: custom-domains
   description: "Custom domains and TLS certificates with automatic renewal"
-  status: "Production Ready"
+  status: "Production"
 - name: elasticsearch24
   page-name: 
   description: "[Elasticsearch](https://www.elastic.co/products/elasticsearch) version 2.4: a distributed, RESTful search and analytics engine"
@@ -28,4 +28,4 @@
   status: "Beta"
 - name: s3
   description: "Amazon S3 provides developers with secure, durable, highly-scalable object storage"
-  status: "Production Ready"
+  status: "Production"

@@ -125,6 +125,7 @@ This sitrep should be:
 
 - Posted in [`#incident-response`](https://gsa-tts.slack.com/messages/incident-response/)
 - Emailed to `gsa-ir@gsa.gov` and `devops@gsa.gov`
+- Emailed to FedRAMP ISSO (JAB TR reps), cc: info@fedramp.gov and cloud-gov-compliance@gsa.gov. They require daily updates on open incidents.
 - Sent (email or Slack) to external stakeholders, if applicable and relevant
 
 #### Comms at the Assess phase

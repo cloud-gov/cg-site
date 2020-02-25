@@ -6,7 +6,7 @@ title: "Quarterly update - An OS upgrade, cross-IaaS services, R Shiny apps, and
 
 
 
-# An OS upgrade, cross-IaaS services, R Shiny apps, and more!
+## An OS upgrade, cross-IaaS services, R Shiny apps, and more!
 
 It’s a new year, and we’ve got a pile of changes and highlights to tell you about since we last checked in.
 
@@ -55,7 +55,8 @@ If your agency or organization has your own access to AWS, GCP, or Azure, you ca
 There’s no denying the deep and abiding love that data analytics folks have for [R](https://www.r-project.org/about.html) and [Shiny](https://shiny.rstudio.com/). If you’ve ever browsed through an interactive presentation by the New York Times, [you’ve probably experienced this powerful, free, open source combination](https://blog.revolutionanalytics.com/2011/03/how-the-new-york-times-uses-r-for-data-visualization.html). For those late to the party: R is a programming language for statistical computing and graphics, while Shiny helps turn R analyses into interactive web applications without requiring HTML, CSS, or JavaScript knowledge. A free, open source desktop IDE called [RStudio](https://www.rstudio.com/) aimed at data scientists facilitates developing apps using R and Shiny.
 
 Many customers have told us they want to deploy apps built using R and Shiny on cloud.gov, and now it’s possible! Check out the [new R buildpack](https://docs.cloudfoundry.org/buildpacks/r/index.html). We’ve also published [a demonstration](https://github.com/18f/cf-rshiny-demo) showing how to run the the movie explorer application from the official [Shiny examples](https://github.com/rstudio/shiny-examples), pictured below.
-<img src="/img/r-shiny-demo.png" alt="R Shiny movie explorer application screenshot" style="border:1px solid grey;" />
+
+{% asset "r-shiny-demo.png" alt="R Shiny movie explorer application screenshot" style="border:1px solid grey;" %}
 
 ### Build edge-facing web engineering apps using the NGINX buildpack
 
