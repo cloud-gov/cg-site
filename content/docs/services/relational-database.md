@@ -12,30 +12,57 @@ If your application uses relational databases for storage, you can use the AWS R
 
 ## Plans
 
-Plan Name | Description | Software Version | 
---------- | ----------- | ------- | -----
-`shared-psql`            | Shared PostgreSQL database for prototyping (no sensitive or production data) | 9.4.7 | 
-`medium-psql`            | Dedicated medium RDS PostgreSQL DB instance                                  | 9.6.10 | 
-`medium-psql-redundant`  | Dedicated redundant medium RDS PostgreSQL DB instance                        | 9.6.10 | 
-`large-psql`             | Dedicated large RDS PostgreSQL DB instance                                   | 9.6.10 | 
-`large-psql-redundant`   | Dedicated redundant large RDS PostgreSQL DB instance                         | 9.6.10 | 
-`shared-mysql`           | Shared MySQL database for prototyping (no sensitive or production data)      | 5.6.27 | 
-`medium-mysql`           | Dedicated medium RDS MySQL DB instance                                       | 5.7.21 | 
-`medium-mysql-redundant` | Dedicated redundant medium RDS MySQL DB instance                             | 5.7.21 | 
-`large-mysql`            | Dedicated large RDS MySQL DB instance                                        | 5.7.21 | 
-`large-mysql-redundant`  | Dedicated redundant large RDS MySQL DB instance                              | 5.7.21 | 
-`medium-oracle-se2`      | Dedicated medium RDS Oracle SE2 DB                                           | 12.0.1.2.v11 |
+Plan Name                | Description                                                                  | Software Version |
+---------                | -----------                                                                  | -------          |
+`shared-psql`            | Shared PostgreSQL database for prototyping (no sensitive or production data) | 9.5.15           |
+`medium-psql`            | Dedicated medium RDS PostgreSQL DB instance                                  | AWS RDS Latest   |
+`medium-psql-redundant`  | Dedicated redundant medium RDS PostgreSQL DB instance                        | AWS RDS Latest   |
+`large-psql`             | Dedicated large RDS PostgreSQL DB instance                                   | AWS RDS Latest   |
+`large-psql-redundant`   | Dedicated redundant large RDS PostgreSQL DB instance                         | AWS RDS Latest   |
+`shared-mysql`           | Shared MySQL database for prototyping (no sensitive or production data)      | 5.6.27           |
+`medium-mysql`           | Dedicated medium RDS MySQL DB instance                                       | 5.7.21           |
+`medium-mysql-redundant` | Dedicated redundant medium RDS MySQL DB instance                             | 5.7.21           |
+`large-mysql`            | Dedicated large RDS MySQL DB instance                                        | 5.7.21           |
+`large-mysql-redundant`  | Dedicated redundant large RDS MySQL DB instance                              | 5.7.21           |
+`medium-oracle-se2`      | Dedicated medium RDS Oracle SE2 DB                                           | 12.0.1.2.v11     |
 
+The dedicated PostgreSQL plans (marked "AWS RDS Latest") deploy the default version as advertised by AWS.  To determine this version ahead of time, run the following awscli command and observe the `EngineVersion` field in the resulting JSON:
+
+``` console
+$ aws rds describe-db-engine-versions --engine=postgres --default
+{
+  "DBEngineVersions": [
+    {
+      "Engine": "postgres",
+      "EngineVersion": "11.5",
+      "DBParameterGroupFamily": "postgres11",
+      "DBEngineDescription": "PostgreSQL",
+      "DBEngineVersionDescription": "PostgreSQL 11.5-R1",
+      "ValidUpgradeTarget": [],
+      "ExportableLogTypes": [
+          "postgresql",
+          "upgrade"
+      ],
+      "SupportsLogExportsToCloudwatchLogs": true,
+      "SupportsReadReplica": true,
+      "SupportedFeatureNames": [],
+      "Status": "available"
+    }
+  ]
+}
+```
+
+Note that you can also look at the [AWS RDS PostgreSQL User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html), but it often lists versions that are not yet available on AWS GovCloud.
 
 *Additional Cost:* All databases have a limit of 1TB in storage. After 1TB, each additional terabyte will cost $300 per month.
 
 
-## Optione
+## Options
 
-Name | Required | Description | Default
---- | --- | --- | ---
-`storage` |  | Number of GB available to the database instance | 10
-`enable_functions` | | Boolean to enable functions on supported databases | false
+Name               | Required | Description                                        | Default
+---                | ---      | ---                                                | ---
+`storage`          |          | Number of GB available to the database instance    | 10
+`enable_functions` |          | Boolean to enable functions on supported databases | false
 
 ## Create an instance
 
