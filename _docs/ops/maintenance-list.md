@@ -6,6 +6,7 @@ sidenav: true
 title: Ongoing platform maintenance
 ---
 
+
 The platform requires regular support and maintenance activities to remain in a
 compliant state. If you are on support and you can’t complete any of the items
 personally, you are responsible for ensuring that an appropriate person does it.
@@ -16,6 +17,18 @@ visibility with the people who might best help.
 
 - Join/unmute [`#cg-support`](https://gsa-tts.slack.com/messages/cg-support/)
 
+## Support Rotations
+
+The cloud.gov team utilizes a staggered pair rotation for support. Support assignments last two weeks. One team member exits support duty each week, with a new member starting their two-week rotation. With the other support team member in the middle of their two-week rotation, we ensure continuity of situational awareness, task handoffs, and work in progress.
+
+The support team is not required to "pair" in the traditional sense unless the task as hand necessitates doing so. Having a pair rather than a single person on support allows us to better serve our customers by:
+
+- Improving  situational awareness and communication through necessary, regular check-ins
+- Increasing debugging capabilities and problem-solving capacity (cloud.gov is a vast system to reason over, and two minds are better than one)
+- Providing a higher likelihood of coverage during planned or unplanned absences
+- Allowing for multiple tasks to be worked at once
+
+As the support team has free cycles, they can pick up tasks from the backlog designated with the `support-team` label. These tasks aim to improve our ability to support the platform by paying down technical debt, adding automation, improving monitoring and alerting, or adding to system documentation such as run-books. Because support team members inevitably face interruptions that cause context switching, the `support-team` backlog is groomed by the team with this in mind. These stories are not mission-critical, easy to pick up, and easy to hand off to another team member.
 
 ## Weekly support tasks
 
@@ -44,9 +57,6 @@ associated posts in
 [`#cg-supportstream`](https://gsa-tts.slack.com/messages/cg-supportstream).
 First-tier support may also ask you for pairing time to work out responses
 together.
-
-`*` People with @gsa.gov emails can't receive email via Zendesk, so we have to
-email them via the [cloud-gov-support Google Group instead](https://groups.google.com/a/gsa.gov/forum/#!forum/cloud-gov-support).
 
 See also: [Detailed guidance on working with our support tools](https://docs.google.com/document/d/1QXZvcUl-6gtI7jEQObXV9FyiIpJC-Fx1R7RzB0C6PHM/edit#heading=h.80zn694rriw3).
 
@@ -78,7 +88,8 @@ shibboleth-production	clamav/9                           	bosh-aws-xen-hvm-ubunt
 requires that the System Owner reset the license key after a stemcell upgrade, and the license key can only be reset every [10 days](https://docs.tenable.com/nessus/Content/ResetActivationCode.htm).
 Coordinate with the System Owner to ensure the key is ready to be reset before
 deploying an update that will upgrade the stemcell. You should also read the
-[Troubleshooting Nessus runbook]({{ site.baseurl }}{% link _docs/ops/runbook/troubleshooting-nessus.md %}).
+[Troubleshooting Nessus runbook]({{< relref
+"docs/ops/runbook/troubleshooting-nessus.md">}}).
 
 ## Review and respond to open alerts
 
@@ -93,7 +104,7 @@ deploying an update that will upgrade the stemcell. You should also read the
 
 #### Is the alert a real issue?
 If the alert may indicate a security issue follow the
-[Security Incident Response Guide]({{ site.baseurl }}{% link _docs/ops/security-ir.md %})
+[Security Incident Response Guide]({{< relref "docs/ops/security-ir.md" >}})
 , otherwise work to remediate its cause.
 
 #### Is the alert a false-positive?
@@ -147,7 +158,7 @@ If you observe any non-Terraform activity, discuss the event(s) with the
 indicated cloud.gov operator(s) (see above)
 
 If you're unable to ascertain an event was authorized, follow the
-[Security Incident Response Guide]({{ site.baseurl }}{% link _docs/ops/security-ir.md %}).
+[Security Incident Response Guide]({{< relref "docs/ops/security-ir.md" >}}).
 
 ## Review vulnerability and compliance reports
 - [Nessus Vulnerability Reports](https://nessus.fr.cloud.gov/)
