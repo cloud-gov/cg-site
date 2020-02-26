@@ -165,13 +165,14 @@ Once the incident is no longer active — i.e. the breach has been contained, th
 
 - Set the status of the incident to "resolved".
 - Send a final sitrep to stakeholders.
+- Email after-action to FedRAMP ISSO (JAB TR reps), cc: info@fedramp.gov and cloud-gov-compliance@gsa.gov
 - Thank everyone involved for their service!
 
 #### Comms at the Remediate phase
 
 - Updates and real-time chat should continue as above (updates on the GitHub issue, chat in Slack or Google Hangouts).
 
-- The IC should continue to post updated sitreps on a regular cadence (the section on severities, below, suggests cadences for each level). These sitreps should be sent to Slack, to GSA-IT and US-CERT via email, and to any other stakeholders identified throughout the process (e.g. clients).
+- The IC should continue to post updated sitreps on a regular cadence (the section on severities, below, suggests cadences for each level). These sitreps should be sent to Slack, to GSA-IT, US-CERT, and [FedRAMP ISSO (JAB Technical Reviewers)](https://docs.google.com/document/d/1jGddQkjkQ6e9B0UTq9hfQqHe0btAbTeBGL_DxkozAcg/edit) via email, and to any other stakeholders identified throughout the process (e.g. clients).
 
 ### Retrospective
 
