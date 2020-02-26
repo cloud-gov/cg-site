@@ -16,6 +16,18 @@ visibility with the people who might best help.
 
 - Join/unmute [`#cg-support`](https://gsa-tts.slack.com/messages/cg-support/)
 
+## Support Rotations
+
+The cloud.gov team utilizes a staggered pair rotation for support. Support assignments last two weeks. One team member exits support duty each week, with a new member starting their two-week rotation. With the other support team member in the middle of their two-week rotation, we ensure continuity of situational awareness, task handoffs, and work in progress.
+
+The support team is not required to "pair" in the traditional sense unless the task as hand necessitates doing so. Having a pair rather than a single person on support allows us to better serve our customers by:
+
+- improving  situational awareness and communication through necessary, regular check-ins
+- increasing debugging capabilities and problem-solving capacity (cloud.gov is a vast system to reason over, and two minds are better than one)
+- providing a higher likelihood of coverage during planned or unplanned absences
+- allowing for multiple tasks to be worked at once
+
+As the support team has free cycles, they can pick up tasks from the backlog designated with the `support-team` label. These tasks aim to improve our ability to support the platform by paying down technical debt, adding automation, improving monitoring and alerting, or adding to system documentation such as run-books. Because support team members inevitably face interruptions that cause context switching, the `support-team` backlog is groomed by the team with this in mind. These stories are not mission-critical, easy to pick up, and easy to hand off to another team member.
 
 ## Weekly support tasks
 
