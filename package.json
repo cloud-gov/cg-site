@@ -1,46 +1,20 @@
 {
-  "name": "cg-site",
-  "version": "2019.5.1",
-  "description": "The informational website for the cloud.gov PaaS service",
-  "license": "CC0-1.0",
-  "main": "index.js",
+  "name": "federalist-uswds-jekyll",
+  "version": "1.3.0",
   "scripts": {
-    "build": "npm run make-dirs && npm run build-css && npm run build-js && npm run copy",
-    "build-css": "cp ./node_modules/cloudgov-style/css/*.css ./_site/assets/css",
-    "build-js": "browserify ./static_src/js/main.js -o ./_site/assets/js/main.js",
-    "clean": "rm -rf ./_site",
-    "copy": "npm run copy-img && npm run copy-font",
-    "copy-img": "cp -r node_modules/cloudgov-style/img/* ./_site/assets/img/",
-    "copy-font": "cp node_modules/cloudgov-style/fonts/* ./_site/assets/fonts/",
-    "make-dirs": "mkdir -p ./_site/assets/css && mkdir -p ./_site/assets/js && mkdir -p ./_site/assets/img && mkdir -p ./_site/assets/fonts",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "onchange './node_modules/cloudgov-style/css/*.scss' './node_modules/cloudgov-style/img/*' -v -- npm run build",
-    "start": "npm run build && hugo server --renderToDisk",
-    "federalist": "npm run build"
+    "build": "bundle exec jekyll build",
+    "clean": "bundle exec jekyll clean",
+    "reset": "npx rimraf Gemfile.lock package-lock.json LICENSE.md CONTRIBUTING.md degit.json .git",
+    "start": "bundle exec jekyll serve",
+    "test": "bundle exec htmlproofer _site; npx a11y '_site/**/*.html'"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/18F/cg-site.git"
-  },
-  "bugs": {
-    "url": "https://github.com/18F/cg-site/issues"
-  },
-  "homepage": "https://github.com/18F/cg-site#readme",
   "dependencies": {
-    "acorn": "^6.0.0",
-    "anchor-js": "^3.2.1",
-    "browserify": "^16.5.0",
-    "cloudgov-style": "2.11.0",
-    "jquery": ">=3.4.0",
-    "jquery.scrollto": "^2.1.2",
-    "mermaid": "^8.4.3",
-    "moment": "^2.19.3",
-    "node-sass": "^4.12.0",
-    "onchange": ">=5.2.0",
-    "postcss-import": "^12.0.1"
+    "anchor-js": "^4.2.2",
+    "mermaid": "^8.4.6",
+    "uswds": "~2.1.0"
   },
-  "engines": {
-    "node": ">=10.15.0",
-    "npm": ">=6.9.0"
+  "devDependencies": {
+    "a11y": "^0.5.1",
+    "rimraf": "^3.0.0"
   }
 }

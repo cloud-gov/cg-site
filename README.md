@@ -1,116 +1,146 @@
-# 18F cloud.gov website
+<!--
+  Federalist recommends you use Continuous Integration to automatically test
+  and validate any new changes to your site. CircleCI is free for open source
+  projcets. You should replace this badge with your own.
 
-This repository contains the code and content for the [cloud.gov website](https://cloud.gov/).
+  https://circleci.com/
+-->
+[![CircleCI](https://circleci.com/gh/18F/federalist-uswds-jekyll.svg?style=svg)](https://circleci.com/gh/18F/cg-site-federality)
 
-cloud.gov is a Platform as a Service based on the Cloud Foundry project, which provides its own [Cloud Foundry documentation](http://docs.cloudfoundry.org/).
+# cloud.gov + Federalist + U.S. Web Design System + Jekyll
+
+This site uses the [Federalist USWDS Jekyll template](https://github.com/18F/federalist-uswds-jekyll). [Federalist](https://federalist.18f.gov/) runs on cloud.gov and supports the development of this template. By leveraging this template cloud.gov get the benefits  of a maintained template as well as a way to test out new functionality in the template.
+
+This [Jekyll theme](https://jekyllrb.com/docs/themes/) uses the [U.S. Web Design System v 2.0](https://v2.designsystem.digital.gov) and provides developers a starter kit and reference implementation for Federalist websites.
+
+This code uses the [Jekyll](https://jekyllrb.com) site engine and built with Ruby. If you prefer to use Javascript, check out [federalist-uswds-gatsby](https://github.com/18F/federalist-uswds-gatsby), which uses [Gatsby](https://gatsbyjs.org) site engine.
+
+This project assumes that you are comfortable editing source code. If you prefer to launch a website without editing any source code, checkout [uswds-jekyll](https://github.com/18F/uswds-jekyll), which allows you to change the layout and content with configuration files.
+
+This site uses a customized [U.S. Web Design System](https://v2.designsystem.digital.gov) theme and strives to be compliant with requirements set by [21st Century IDEA Act](https://designsystem.digital.gov/website-standards/). The standards require that a website or digital service:
+
+- is accessible to individuals with disabilities;
+- has a consistent appearance;
+- does not duplicate any legacy websites (the legislation also requires agencies to ensure that legacy websites are regularly reviewed, removed, and consolidated);
+- has a search function;
+- uses an industry standard secure connection;
+- is designed around user needs with data-driven analysis influencing management and development decisions, using qualitative and quantitative data to determine user goals, needs, and behaviors, and continually test the website, web-based form, web-based application, or digital service to ensure that user needs are addressed;
+- allows for user customization; and
+- is mobile-friendly.
+
+## Key Functionality
+This repository contains the following examples and functionality:
+ 
+✅  Publish blog posts, press releases, announcements, etc. To modify this code, check out `blog/index.html`, which manages how the posts are listed. You should then check out `_layouts/post.html` to see how individual posts are structured.
+
+✅ Publish single one-off pages. Instead of creating lots of folders throughout the root directory, you should put single pages in `_pages` folder and change the `permalink` at the top of each page. Use sub-folders only when you really need to.
+
+✅  Publish data (for example: job listings, links, references), you can use the template `_layouts/data.html`. Just create a file in you `_pages` folder with the following options:
+
+```
+---
+title: Collections Page
+layout: data
+permalink: /collections
+datafile: collections
+---
+```
+
+The reference to `datafile` referers to the name of the file in `_data/collections.yml` and loops through the values. Feel free to modify this as needed.
+
+✅  There are two different kinds of `pages`, one does not have a side bar navigation, and the other uses `_includes/sidenav.html`. You can enable this option by adding `sidenav: true` to your page front matter.
+
+```
+---
+title: Document with Sidenav
+layout: page
+sidenav: true
+permalink: /document-with-sidenav
+---
+```
+
+✅ Enable search with [Search.gov](https://search.gov) by adding option to `_config.yml`. 
+
+
+```
+---
+searchgov:
+  endpoint: https://search.usa.gov  # You should not change this.
+  affiliate: federalist-uswds-example # replace this with your search.gov account 
+  access_key: your-access-key # This is placeholder. Not private.
+  inline: true #this renders the results on the same domain. Otherwise, it will render the results in the search.gov domain
+---
+```
+
+
+## How to edit cloud.gov content
+- Non-developers should focus on editing markdown content in the `_posts`, `_docs`, and `_pages` folder. Generally most of the cloud.gov content will be in the _docs file. 
+
+- Pricing updates can go directly into `_data/pricing.yml` file and if any of the aws services need to be updated that can occur in the `_data/services.yml` file.
+
+- We try to keep configuration options to a minimum so you can easily change functionality. You should review `_config.yml` to see the options that are available to you. There are a few values on top that you **need** to change. They refer to the agency name and contact information. The rest of `_config.yml` has a range of more advanced options.
+
+- The contents inside `_assets/` folder store your Javascript, SCSS/CSS, images, and other media assets are managed by  [jekyll-assets](https://github.com/envygeeks/jekyll-assets).  Assets are combined, compressed, and automatically available in your theme
+
+- If you look at `package.json` you will see that the `npm run federalist` command that will run when running on the Federalist platform.
+
+- Do not edit files in the `_site/` folder. These files are auto-generated, and any change you make in the folder will be overwritten.
+
+- To edit the look and feel of the site, you need to edit files in `_includes/` folder, which render key components, like the menu, side navigation, and logos.
+
+- Some pages are styled to be `.html` rather than markdown you can find these in the `_layouts` folder.
+    - The `homepage` can be editted more directly by manipulating the `.html` in `home.html`
+    - The `pricing` page is mostly edited with the `pricing.html`
+    - The `getting-started` page is in the `_pages/sign-up.md` folder.
+
+
+
+
+- `_layouts/` may require the least amount of editing of all the files since they are primarily responsible for printing the content.
+
+- `search/index.html` is used by search.gov.
+
+## Updating content on your own computer
+
+
+    $ git clone https://github.com/18F/cg-site-federalist
+    $ cd cg-site-federalist
+
+Note that when built by Federalist, `npm run federalist` is used instead of the
+`build` script.
+
+### Install dependencies and run app
+    $ npm install
+    $ bundle install
+    $ npm start
+
+Open your web browser to [localhost:4000](http://localhost:4000/) to view your
+site.
+
+### Testing
+    $ npm test
+
+## Technologies you should be familiarize yourself with
+
+- [Jekyll](https://jekyllrb.com/docs/) - The primary site engine that builds your code and content.
+- [Front Matter](https://jekyllrb.com/docs/frontmatter) - The top of each page/post includes keywords within `--` tags. This is meta data that helps Jekyll build the site, but you can also use it to pass custom variables.
+- [U.S. Web Design System v 2.0](https://v2.designsystem.digital.gov) 
+
 
 ## Contributing
 
-Hugo uses Markdown to build the pages. Add your page to the section you want inside the content folder.
+See [CONTRIBUTING](CONTRIBUTING.md) for additional information.
 
-### Basic install
+## Public domain
 
-1. Install [Python](https://www.python.org/) 2, if it's not on your system already. (Required for [node-sass](https://github.com/sass/node-sass)->[node-gyp](https://github.com/nodejs/node-gyp#installation).)
-1. Install [Hugo](https://gohugo.io).
+This project is in the worldwide [public domain](LICENSE.md). As stated in [CONTRIBUTING](CONTRIBUTING.md):
 
-### Running the site locally
+> This project is in the public domain within the United States, and copyright
+> and related rights in the work worldwide are waived through the [CC0 1.0
+> Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/).
+>
+> All contributions to this project will be released under the CC0 dedication.
+> By submitting a pull request, you are agreeing to comply with this waiver of
+> copyright interest.
 
-1. Run `npm install` to download all the dependencies.
-1. Run `npm start` and browse to [http://localhost:1313](http://localhost:1313).
-
-
-### Testing the site on cloud.gov within a personal space
-
-1. Run: `npm install && npm run build && hugo`
-1. Push: `cf push -n landing-unique` (where 'unique' is your own unique name)
-1. Browse to your unique https://landing-unique.app.cloud.gov
-1. Make updates with `npm run build && hugo && cf push -n landing-unique`
-
-This test site will redirect 301s to cloud.gov unless you comment out `CG_REDIR_HOST` in `manifest.yml`, or run: `cf unset-env CG_REDIR_HOST; cf restage`
-
-### Process tips for cloud.gov team members
-
-We usually use branches to write updates. After you merge a PR, click GitHub's button to delete that branch. (We don't need it anymore.)
-
-### Links
-
-To link to another page within cg-site, use `relref` to create [relative links](https://gohugo.io/extras/crossreferences/). Examples:
-
-* `[Example text]({{< relref "directory/filename.md" >}})`
-* `[What is cloud.gov?]({{< relref "overview/overview/what-is-cloudgov.md" >}})`
-* `[Sharing secret keys]({{< relref "docs/ops/secrets.md#sharing-secret-keys" >}})`
-
-### Add Diagrams to Documentation pages
-
-To add a diagram to a documentation page, use the `{{< diagrams
-id-prefix="title-for-diagram" >}}` shortcode to create them inline for the
-documentation pages. Use the [Mermaid language syntax](https://github.com/knsv/mermaid)
-to create diagrams in the same way diagrams are made for [cg-diagrams](https://github.com/18F/cg-diagrams).
-Try the [Mermaid live editor](https://mermaidjs.github.io/mermaid-live-editor/)!
-
-> If you find you have a need to create these diagrams on pages outside of the
-> documentation pages, please open a PR to discuss what other pages it should
-> apply to.
-
-Example:
-
-```
-{{< diagrams id-prefix="sample-diagram" >}}
-graph LR;
-    A[Square Rect] -- Link text --> B((Circle));
-    A --> C(Round Rect);
-    B --> D{Rhombus};
-    C --> D;
-{{< /diagrams >}}
-
-```
-
-<details>
-<summary>Image preview of the above command :eyes: :camera:</summary>
-
-<img width="726" alt="screen shot 2017-09-28 at 8 51 50 am" src="https://user-images.githubusercontent.com/706004/30970271-541e1b92-a42a-11e7-9586-2673603f7aad.png">
-</details>
-
-The `id-prefix` is used to create a custom #id for the Mermaid API to attach to.
-Please make sure that this value is syntactically correct for [HTML #ids](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id). It is also reused to give a title to your diagram.
-It appears above the diagram inside a `<p>` block and uses Hugo's `humanize`
-function to convert it from it's dashed value.
-
-> Note: Using characters except ASCII letters, digits, '_', '-' and '.' may
-> cause compatibility problems, as they weren't allowed in HTML 4. Though this
-> restriction has been lifted in HTML 5, an ID should start with a letter for
-> compatibility.
-> [source](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id)
-
-### Redirects
-
-If you delete or rename a page, make a redirect to avoid breaking links from other sites: [make an alias](https://gohugo.io/extras/aliases/) (use the "YAML frontmatter" style).
-
-### Images and static assets
-
-If you want to include an image in a page on the site, put it in `/static/img/`. Images there will show up at `https://cloud.gov/img/example.png`. When you're editing a page, embed them as `
-![alt text](/img/example.png)`
-
-If you want to link to a file, such as a PDF or spreadsheet, put it in `/static/resources/`. Resources there will show up at `https://cloud.gov/resources/example.pdf`. When you're editing a page, link to them as `[link text](/resources/example.pdf)`.
-
-### Search
-
-Our search feature is powered by [DigitalGov Search](http://search.digitalgov.gov/), which has a [Help Manual](http://search.digitalgov.gov/manual/index.html) with documentation about configuring it. [DigitalGov Search for Power Users](http://search.digitalgov.gov/blog/power-users-recap.html) is also useful.
-
-We use [its default Bing indexing](http://search.digitalgov.gov/manual/content-overview.html), so our search may show outdated results if Bing hasn't recently reindexed our docs site.
-
-### Style development
-
-This site uses a shared cloud.gov style, [cg-style](https://github.com/18F/cg-style). This means any styling code has to be developed in *cg-style*.
-
-1. Download or clone the *cg-style* repository, `git clone git@github.com:18F/cg-style.git`
-2. Open a new terminal window or tab pointing to *cg-style*. Run `npm link` in *cg-style*.
-3. Run the watching build task in the *cg-style* repository: `npm run watch`. The task will not "finish"
-4. Open a new terminal window or tab pointing to *cg-site*. Run `npm link cloudgov-style` in *cg-site*.
-5. Run `npm install` in the *cg-site* repository.
-6. Run the watching build task in *cg-site* repository: `npm run watch` The task will not "finish"
-7. Edit code in the *cg-style* directory and they will propagate down to *cg-site*
-
-## Acknowledgment
-
-The theme for the site has been "forked" from the [Hugo documentation](https://gohugo.io/overview/introduction/).
+See [CONTRIBUTING](CONTRIBUTING.md) for additional information.
