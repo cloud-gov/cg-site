@@ -1,5 +1,0 @@
-# Service metadata lives
-# https://github.com/18F/cf-cdn-service-broker/blob/master/catalog.json
-name = "cdn-route"
-description = "Custom domains, CDN caching, and TLS certificates with automatic renewal"
-status = "Production"
