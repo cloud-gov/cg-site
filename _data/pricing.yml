@@ -1,0 +1,36 @@
+- package_name: Sandbox
+  description: A sandbox environment to run experiments to see if cloud.gov works for your team.
+  price: <h3>Free</h3>
+  memory: Limited to 1GB memory
+  production: Non-production systems<br /> systems cleared every 90 days
+  number_of_systems: Single environment
+  domain_names: Non-production domain names
+  sign_up: <a href="https://www.cloud.gov/signup/" class="usa-button">Get started</a><br/><a href="/docs/pricing/free-limited-sandbox/" class="small-link">About Sandbox packages &rarr;</a>
+  image: pricing-sandbox.svg
+- package_name: Prototyping
+  description: Self-service workspaces for your organization to build non-production systems.
+  price: <h3><sup>$</sup>1550&#47; month</h3>for entire organization</span>
+  memory: <sup>$</sup>130 &#47; GB memory per month
+  image: pricing-prototype.svg
+  production: Non-production systems
+  number_of_systems: An environment for each of your teams
+  domain_names: Non-production domain names
+  sign_up: <a href="mailto:cloud-gov-inquiries@gsa.gov?subject=Purchasing%20Prototyping%20Package" class="usa-button" id="Prototyping-cta">Contact us</a><br/><a href="/docs/pricing/prototyping/" class="small-link">About Prototyping packages &rarr;</a>
+- package_name: FISMA Low
+  description: Production environment ideal for hosting public information.
+  price: <h3><sup>$</sup>2070 &#47; month</h3>FISMA Low system</span>
+  memory: <sup>$</sup>130 &#47; GB memory per month
+  production: One system
+  number_of_systems: Multiple environments (e.g. dev, stage, prod) supporting one system
+  domain_names: Support for your agency domain name
+  sign_up: <a href="mailto:cloud-gov-inquiries@gsa.gov?subject=Purchasing%20FISMA%20Low%20Package" class="usa-button" id="FISMA-cta">Contact us</a><br/>
+  image: pricing-fisma-moderate.svg
+- package_name: FISMA Moderate
+  description: Production environment for systems that need assurances in confidentiality, integrity, and availability.
+  price: <h3><sup>$</sup>9300 &#47; month</h3>FISMA Moderate <br /><span>DoD Impact Level 2 system</span>
+  memory: <sup>$</sup>130 &#47; GB memory per month
+  production: One system
+  number_of_systems: Multiple environments (e.g. dev, stage, prod) supporting one system
+  domain_names: Support for your agency domain name
+  sign_up:  <a href="mailto:cloud-gov-inquiries@gsa.gov?subject=Purchasing%20FISMA%20Package" class="usa-button" id="FISMA-cta">Contact us</a><br/>
+  image: pricing-fisma-moderate.svg
