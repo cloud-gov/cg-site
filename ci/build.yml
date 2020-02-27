@@ -4,10 +4,6 @@ image_resource:
   source:	
     repository: node	
     tag: "10.1"	
-inputs:	
-- name: cg-site-source	
-outputs:	
-- name: cg-site-compiled	
 run:	
-  dir: cg-site-source	
+  dir: pull-request
   path: ci/build.sh

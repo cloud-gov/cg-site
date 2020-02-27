@@ -24,11 +24,6 @@ jobs:
         status: failure	
 
 resources:	
-- name: cg-site-source	
-  type: git	
-  source:	
-    uri: ((cg-site-git-url))	
-    branch: ((cg-site-branch))	
 
 - name: pull-request	
   type: pull-request	
@@ -48,8 +43,3 @@ resource_types:
   type: docker-image	
   source:	
     repository: jtarchie/pr	
-
-- name: slack-notification	
-  type: docker-image	
-  source:	
-    repository: cfcommunity/slack-notification-resource
