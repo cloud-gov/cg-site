@@ -20,7 +20,7 @@ cloud.gov is built on the open source Cloud Foundry project, which means Cloud F
 
 #### Build tools for managing and auditing cloud.gov usage
 
-cloud.gov was built with compliance in mind. We want the tools your agency uses to meet your management and compliance needs to work as seamlessly as they can with your cloud.gov applications and spaces. Now you can share specific information about your cloud.gov usage [with a cloud.gov identity provider service instance]({{ site.baseurl }}/docs/services/cloud-gov-identity-provider.md). When you create that instance, you can configure it to ask people who use your tools to surface information about their cloud.gov accounts to those tools. This is just one option for building tools that work with cloud.gov data; you can also use [the Cloud Foundry API](https://apidocs.cloudfoundry.org/258/).
+cloud.gov was built with compliance in mind. We want the tools your agency uses to meet your management and compliance needs to work as seamlessly as they can with your cloud.gov applications and spaces. Now you can share specific information about your cloud.gov usage [with a cloud.gov identity provider service instance]({{ site.baseurl }}/docs/services/cloud-gov-identity-provider). When you create that instance, you can configure it to ask people who use your tools to surface information about their cloud.gov accounts to those tools. This is just one option for building tools that work with cloud.gov data; you can also use [the Cloud Foundry API](https://apidocs.cloudfoundry.org/258/).
 
 
 ### Interested in using cloud.gov?
@@ -31,7 +31,7 @@ Email us at [inquiries@cloud.gov](mailto:inquiries@cloud.gov) and we will contac
 
 #### You can also try a free sandbox space.
 
-Anyone with a federal government email address can now create [a free, limited sandbox space]({{ site.baseurl }}/docs/pricing/free-limited-sandbox.md) for themselves. Instead of getting an invite from the cloud.gov team or someone else at your organization, you can now go to [https://account.fr.cloud.gov/signup](https://account.fr.cloud.gov/signup) and send yourself an invite. You don’t need paperwork with us; you don’t even need to know what sort of app you want to build. Sandboxes are for experimenting, not for production or information with security requirements. But if you’re considering cloud.gov, or you’re already a user and want to explore doing something new, a sandbox is a great place to get started.
+Anyone with a federal government email address can now create [a free, limited sandbox space]({{ site.baseurl }}/docs/pricing/free-limited-sandbox) for themselves. Instead of getting an invite from the cloud.gov team or someone else at your organization, you can now go to [https://account.fr.cloud.gov/signup](https://account.fr.cloud.gov/signup) and send yourself an invite. You don’t need paperwork with us; you don’t even need to know what sort of app you want to build. Sandboxes are for experimenting, not for production or information with security requirements. But if you’re considering cloud.gov, or you’re already a user and want to explore doing something new, a sandbox is a great place to get started.
 
 
 ### Help us make cloud.gov better

@@ -1,7 +1,6 @@
 ---
 parent: runbook
 layout: ops
-
 layout: docs
 sidenav: true
 title: Troubleshooting Nessus Manager
