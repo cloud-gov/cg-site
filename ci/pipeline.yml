@@ -3,6 +3,8 @@ jobs:
   plan:	
   - get: pull-request	
     version: every	
+    params:
+      git.depth: 1
     trigger: true	
   - put: pull-request	
     params:	
