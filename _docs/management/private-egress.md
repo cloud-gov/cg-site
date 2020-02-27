@@ -91,7 +91,7 @@ For additional information on customer responsibilities, see CA-3 and CA-3 (3) i
 
 ### How to get a dedicated pool of cloud.gov hosts connected to your organization
 
-Your Org Admin should request a dedicated pool of hosts for your applications  by creating a [support ticket](mailto:cloud-gov-support@gsa.gov?subject=Private%20Egress%20Request). In your request, please provide the following:
+Your Org Admin should request a dedicated pool of hosts for your applications  by creating a [support ticket](mailto:support@cloud.gov?subject=Private%20Egress%20Request). In your request, please provide the following:
 
  - Public IP address of your endpoint
  - The CIDR(s) of the private network(s) you would like to connect

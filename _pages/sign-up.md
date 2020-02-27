@@ -37,7 +37,7 @@ Follow any of the tutorials to launch your own web application from your sandbox
 
 We also have video tutorials on <a href="https://www.youtube.com/watch?v=LKb0liZyepA&feature=emb_logo" target="_blank">an overview of the cloud.gov platform</a>, <a href="https://www.youtube.com/watch?v=ip8G_Rafb_c&feature=emb_logo" target="_blank">a walk through of the initial registration process</a>, and <a href="https://www.youtube.com/watch?v=G2J8dxSF0-I&feature=emb_logo" target="_blank">a hands-on workshop on how to start running applications</a>.
 
-If you've run into any issues, please [contact support at cloud.gov](mailto:cloud-gov-support@gsa.gov). We're happy to help. You can also send us suggestions on [GitHub](https://github.com/18F/cg-site/issues/new) or [via email]("mailto:cloud-gov-inquiries@gsa.gov?subject=%5BSuggestion%5D%20&body=%0A%0A%0A%0ARefcode:%20quickstart).
+If you've run into any issues, please [contact support at cloud.gov](mailto:support@cloud.gov). We're happy to help. You can also send us suggestions on [GitHub](https://github.com/18F/cg-site/issues/new) or [via email]("mailto:inquiries@cloud.gov?subject=%5BSuggestion%5D%20&body=%0A%0A%0A%0ARefcode:%20quickstart).
 
 </div>
 <div class="tablet:grid-col-1"></div>
@@ -71,10 +71,10 @@ If you've run into any issues, please [contact support at cloud.gov](mailto:clou
 
 Upgrade to a paid package to get full access to the platform and permanent
 spaces for hosting longer term demos and web applications in production.
-Email us at cloud-gov-inquiries@gsa.gov to learn more about what cloud.gov
+Email us at inquiries@cloud.gov to learn more about what cloud.gov
 can do.
 
-<a href="mailto:cloud-gov-inquiries@gsa.gov?subject=%5BSuggestion%5D%20&body=%0A%0A%0A%0ARefcode:%20quickstart" class="usa-button usa-button--secondary usa-button--big">Contact us</a>
+<a href="mailto:inquiries@cloud.gov?subject=%5BSuggestion%5D%20&body=%0A%0A%0A%0ARefcode:%20quickstart" class="usa-button usa-button--secondary usa-button--big">Contact us</a>
 </div>
 <div class="tablet:grid-col-1"></div>
 <div class="tablet:grid-col usa-prose usa-section--sidebar-links">

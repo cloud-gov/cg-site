@@ -27,7 +27,7 @@ cloud.gov was built with compliance in mind. We want the tools your agency uses 
 
 #### We can help you figure out whether the platform meets your needs.
 
-Email us at [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov) and we will contact you with next steps shortly.
+Email us at [inquiries@cloud.gov](mailto:inquiries@cloud.gov) and we will contact you with next steps shortly.
 
 #### You can also try a free sandbox space.
 
@@ -36,4 +36,4 @@ Anyone with a federal government email address can now create [a free, limited s
 
 ### Help us make cloud.gov better
 
-The cloud.gov team is looking to make the cloud.gov platform easier to evaluate and use, and we’re recruiting volunteers to help us do that. Usually this takes the form of walking through a few aspects of the platform or changes we’re working on and sharing your feedback with us. If you’d be interested in talking with us, let us know at [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov).
+The cloud.gov team is looking to make the cloud.gov platform easier to evaluate and use, and we’re recruiting volunteers to help us do that. Usually this takes the form of walking through a few aspects of the platform or changes we’re working on and sharing your feedback with us. If you’d be interested in talking with us, let us know at [inquiries@cloud.gov](mailto:inquiries@cloud.gov).

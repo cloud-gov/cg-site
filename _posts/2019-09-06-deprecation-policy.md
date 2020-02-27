@@ -21,7 +21,7 @@ Technologies will inevitably change, and that is why we want to provide transpar
 
 ## We're Here for You
 
-We are committed to improving the user experience of government. If you have questions, please don't hesitate to reach out at cloud-gov-support@gsa.gov. 
+We are committed to improving the user experience of government. If you have questions, please don't hesitate to reach out at [support@cloud.gov](mailto:support@cloud.gov). 
 
 With regards,
 

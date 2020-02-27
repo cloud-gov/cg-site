@@ -15,4 +15,4 @@ Here's what to expect:
 
 We're putting in place this clean-up process to ensure that any unmaintained test applications won't become increasingly vulnerable to new security exploits. This process also ensures that any forgotten test applications won't indefinitely consume resources.
 
-For long-term prototyping, consider purchasing a paid cloud.gov plan. [Any prototyping or production package]({{ site.baseurl }}/pricing/) will allow you to host apps without time limitations. Contact us at [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov) with any questions or to start purchasing a paid plan.
+For long-term prototyping, consider purchasing a paid cloud.gov plan. [Any prototyping or production package]({{ site.baseurl }}/pricing/) will allow you to host apps without time limitations. Contact us at [inquiries@cloud.gov](mailto:inquiries@cloud.gov) with any questions or to start purchasing a paid plan.

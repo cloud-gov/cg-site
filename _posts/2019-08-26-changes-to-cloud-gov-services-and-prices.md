@@ -42,4 +42,4 @@ Resource  | Previous monthly price | New monthly price  |
   `Redis` | 10 GB |  10 GB | $100 per gigabyte/month
   `ElasticSearch` | 10 GB | 10 GB |  $100 per gigabyte/month
 
-If you have questions or want a customized cost projection for your agreement, email us at cloud-gov-inquiries@gsa.gov and we’ll be happy to help.
+If you have questions or want a customized cost projection for your agreement, email us at [inquiries@cloud.gov](mailto:inquiries@cloud.gov) and we’ll be happy to help.

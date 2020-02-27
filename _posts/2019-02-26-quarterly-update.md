@@ -30,7 +30,7 @@ However, there may be exceptions! For example, you may have used the apt-buildpa
 | **March 15th - April 29th** |	Explicitly opt to use `cflinuxfs2` if you need more time |
 | **April 30th onward** | Only `cflinuxfs3` will be available |
 
-If you have any questions or concerns, please [contact support](mailto:cloud-gov-support@gsa.gov) so we can help you out.
+If you have any questions or concerns, please [contact support](mailto:support@cloud.gov) so we can help you out.
 
 ### Connect your cloud.gov apps to other apps securely through a VPN
 
@@ -78,5 +78,5 @@ While you’re checking out that new log-cache plugin, now would be a good time 
 
 In October, we gave you a glimpse into our new [web dashboard](https://dashboard-beta.fr.cloud.gov/login). Like the existing dashboard, the new dashboard gives you web-based access to an overview of your applications and a way to perform common tasks, but it also brings many more command-line tasks to the web. For example, you can deploy an app directly from a web-hosted Git repository, and SSH into an application instance via the browser.
 
-While we are preparing to finalize the new dashboard, we’re still collecting feedback and want to know your thoughts. [Let us know](mailto:cloud-gov-support@gsa.gov) if we are missing any specific workflows, what’s confusing, or what other visualization should be included! 
+While we are preparing to finalize the new dashboard, we’re still collecting feedback and want to know your thoughts. [Let us know](mailto:support@cloud.gov) if we are missing any specific workflows, what’s confusing, or what other visualization should be included! 
 
