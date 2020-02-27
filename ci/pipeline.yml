@@ -17,11 +17,13 @@ jobs:
       params:	
         path: pull-request	
         status: success	
+        context: smoke-tests
     on_failure:	
       put: pull-request	
       params:	
         path: pull-request	
         status: failure	
+        context: smoke-tests
 
 resources:	
 
