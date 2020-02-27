@@ -39,7 +39,7 @@ You can also use these routes across language stacks — because it's DNS-based,
 
 #### VPN backhaul to other networks
 
-If you have applications on cloud.gov and you want them to be able to interact with other applications over a VPN connection — in your data center, in an IaaS, with your hosting provider, anywhere — [we’re working on making this available to you]({{ site.baseurl }}/docs/apps/private-egress.md). We're able to dedicate a specific area for these types of applications, along with a VPN backhaul that enables direct connections to the applications you have on other networks.
+If you have applications on cloud.gov and you want them to be able to interact with other applications over a VPN connection — in your data center, in an IaaS, with your hosting provider, anywhere — [we’re working on making this available to you]({{ site.baseurl }}/docs/apps/private-egress). We're able to dedicate a specific area for these types of applications, along with a VPN backhaul that enables direct connections to the applications you have on other networks.
 
 Having this in place will make it easier to migrate applications from legacy infrastructure to the cloud. If your services are nested together and you can't move everything at once, you’ll be able to migrate one application at a time without interrupting service or exposing information to the open internet.
 
@@ -49,7 +49,7 @@ We’re working through FedRAMP testing and approval for this feature so it isn�
 
 * [logs.fr.cloud.gov](https://logs.fr.cloud.gov) has been upgraded to [Elasticsearch/Kibana 6.x](https://www.elastic.co/guide/en/kibana/current/release-notes.html)
 * Our network architecture has been improved, and our outgoing internet traffic capacity has increased 75x
-* We have a new [S3 plan for sandboxes]({{ site.baseurl }}/updates/2018-10-22-s3-sandbox-plan.md) that automatically clears your S3 contents whenever your sandbox is cleared
-* We offer a [custom domain service]({{ site.baseurl }}/updates/2018-05-21-new-custom-domain-service.md) that doesn't use CloudFront, since CloudFront is currently outside the AWS FedRAMP P-ATO boundary
+* We have a new [S3 plan for sandboxes]({{ site.baseurl }}/updates/2018-10-22-s3-sandbox-plan) that automatically clears your S3 contents whenever your sandbox is cleared
+* We offer a [custom domain service]({{ site.baseurl }}/updates/2018-05-21-new-custom-domain-service) that doesn't use CloudFront, since CloudFront is currently outside the AWS FedRAMP P-ATO boundary
 
 Thanks for using cloud.gov. If there's more we can do to make your work easier, [let us know]({{ site.baseurl }}/help).  

@@ -12,15 +12,15 @@ Here are some highlights from our platform updates in the last month.
 
 * We updated our homepage! Now you can find more helpful resources and links to customer testimonials from the homepage. [Check it out]({{ site.baseurl }}/) and let us know what you think.
 * If you’re new to cloud.gov and haven’t launched an app yet, [check out our new quickstart guide]({{ site.baseurl }}/quickstart/). There, you’ll learn the basics of launching an app on cloud.gov and can even watch video from a recent workshop to help you get started.
-* We have documentation about the security-related HTTP headers cloud.gov sets by default. [Learn about these headers and how to change them]({{ site.baseurl }}/docs/apps/headers.md) for your app in the docs.
-* If you need to get an ATO for a system on cloud.gov, [we have a page]({{ site.baseurl }}/docs/compliance/ato-process.md) explaining terms and showing how your ATO can inherit from cloud.gov’s.
+* We have documentation about the security-related HTTP headers cloud.gov sets by default. [Learn about these headers and how to change them]({{ site.baseurl }}/docs/apps/headers) for your app in the docs.
+* If you need to get an ATO for a system on cloud.gov, [we have a page]({{ site.baseurl }}/docs/compliance/ato-process) explaining terms and showing how your ATO can inherit from cloud.gov’s.
 
 ### Announcements!
 
-* As we announced earlier this month, we are going to start clearing the content of sandboxes 90 days after they were created. See [our previous update about this]({{ site.baseurl }}/updates/2017-12-08-starting-now-sandboxes-expire-after-90-days.md) for more information about what to expect. You can always contact us about upgrading to a prototyping or production plan.
+* As we announced earlier this month, we are going to start clearing the content of sandboxes 90 days after they were created. See [our previous update about this]({{ site.baseurl }}/updates/2017-12-08-starting-now-sandboxes-expire-after-90-days) for more information about what to expect. You can always contact us about upgrading to a prototyping or production plan.
 * We’re looking for cloud.gov customers to help us make the platform better by sharing their experiences with us. [Contact us if you’d like to participate](mailto:inquiries@cloud.gov).
 
-We notify you when your [application needs restaging]({{ site.baseurl }}/docs/apps/app-maintenance.md). This process [incorporates fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) and ensures your applications are running the most recent language version supported by your [buildpack](https://docs.cloudfoundry.org/buildpacks/).
+We notify you when your [application needs restaging]({{ site.baseurl }}/docs/apps/app-maintenance). This process [incorporates fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) and ensures your applications are running the most recent language version supported by your [buildpack](https://docs.cloudfoundry.org/buildpacks/).
 
 ### Platform releases
 We upgraded the Cloud Foundry deployment to [v283](https://github.com/cloudfoundry/cf-release/releases/tag/v283).

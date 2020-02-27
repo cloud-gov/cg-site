@@ -88,8 +88,7 @@ shibboleth-production	clamav/9                           	bosh-aws-xen-hvm-ubunt
 requires that the System Owner reset the license key after a stemcell upgrade, and the license key can only be reset every [10 days](https://docs.tenable.com/nessus/Content/ResetActivationCode.htm).
 Coordinate with the System Owner to ensure the key is ready to be reset before
 deploying an update that will upgrade the stemcell. You should also read the
-[Troubleshooting Nessus runbook]({{< relref
-"docs/ops/runbook/troubleshooting-nessus.md">}}).
+[Troubleshooting Nessus runbook]({{ site.baseurl }}/docs/ops/runbook/troubleshooting-nessus).
 
 ## Review and respond to open alerts
 
@@ -104,7 +103,7 @@ deploying an update that will upgrade the stemcell. You should also read the
 
 #### Is the alert a real issue?
 If the alert may indicate a security issue follow the
-[Security Incident Response Guide]({{< relref "docs/ops/security-ir.md" >}})
+[Security Incident Response Guide]({{ site.baseurl }}/docs/ops/security-ir)
 , otherwise work to remediate its cause.
 
 #### Is the alert a false-positive?
@@ -158,7 +157,7 @@ If you observe any non-Terraform activity, discuss the event(s) with the
 indicated cloud.gov operator(s) (see above)
 
 If you're unable to ascertain an event was authorized, follow the
-[Security Incident Response Guide]({{< relref "docs/ops/security-ir.md" >}}).
+[Security Incident Response Guide]({{site.baseurl}}/docs/ops/security-ir).
 
 ## Review vulnerability and compliance reports
 - [Nessus Vulnerability Reports](https://nessus.fr.cloud.gov/)

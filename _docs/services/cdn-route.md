@@ -12,11 +12,11 @@ status: "Production Ready"
 
 This service provides:
 
-1. [Custom domain]({{ site.baseurl }}{% link _docs/management/custom-domains.md %}) support, so that your application can have your domain instead of the default `*.app.cloud.gov` domain.
+1. [Custom domain]({{ site.baseurl }}/docs/management/custom-domains/) support, so that your application can have your domain instead of the default `*.app.cloud.gov` domain.
 1. HTTPS support via free TLS certificates with auto-renewal (using [Let's Encrypt](https://letsencrypt.org/)), so that user traffic is encrypted.
 1. Content Distribution Network (CDN) caching (using [AWS CloudFront](https://aws.amazon.com/cloudfront/)), for fast delivery of content to your users.
 
-If you don't need CDN caching, use the [custom domain service]({{ site.baseurl }}{% link _docs/services/custom-domains.md %}) instead.
+If you don't need CDN caching, use the [custom domain service]({{ site.baseurl }}/docs/services/custom-domains/) instead.
 
 ## Plans
 
@@ -24,7 +24,7 @@ Plan Name | Description |
 --------- | ----------- | -----
 `cdn-route` | Custom domains, CDN caching, and TLS certificates with automatic renewal | 
 
-*Not available in [sandbox spaces]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}#sandbox-limitations) or [prototyping orgs]({{ site.baseurl }}{% link _docs/pricing/prototyping.md %}#limitations).*
+*Not available in [sandbox spaces]({{ site.baseurl }}/docs/pricing/free-limited-sandbox/#sandbox-limitations) or [prototyping orgs]({{ site.baseurl }}/docs/pricing/prototyping#limitations).*
 
 ## Options
 
@@ -38,7 +38,7 @@ Name | Required | Description | Default
 
 ## Before you use this service
 
-This service is similar to the [custom domain service]({{ site.baseurl }}{% link _docs/services/custom-domains.md %}), but with an additional feature: CDN caching support using [AWS CloudFront](https://aws.amazon.com/cloudfront/).
+This service is similar to the [custom domain service]({{ site.baseurl }}/docs/services/custom-domains), but with an additional feature: CDN caching support using [AWS CloudFront](https://aws.amazon.com/cloudfront/).
 
 ### Compliance impact
 
@@ -262,7 +262,7 @@ However, custom domains using the CDN broker will not fully validate DNSSEC (bet
 
 Alternatively, you may be able to make the case for an alternative implementation without DNSSEC. As described in the [HTTPS-Only Standard](https://https.cio.gov/faq/#how-does-https-protect-against-dns-spoofing), a properly implemented solution using HTTPS-only and HSTS can meet the same requirements around preventing DNS spoofing that DNSSEC is intended to implement. cloud.gov enforces HTTPS for all applications and enables HSTS by default; we recommend configuring HSTS preload as well.
 
-See our [compliance guide for federal standards and recommendations for domain names]({{ site.baseurl }}{% link _docs/compliance/domain-standards.md %}) for more details.
+See our [compliance guide for federal standards and recommendations for domain names]({{ site.baseurl }}/docs/compliance/domain-standards/) for more details.
 
 ## Certificate validity and renewal
 

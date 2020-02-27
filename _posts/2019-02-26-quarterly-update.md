@@ -4,15 +4,13 @@ date: "2019-02-26"
 title: "Quarterly update - An OS upgrade, cross-IaaS services, R Shiny apps, and more!" 
 ---
 
-
-
-## An OS upgrade, cross-IaaS services, R Shiny apps, and more!
+**An OS upgrade, cross-IaaS services, R Shiny apps, and more!**
 
 It’s a new year, and we’ve got a pile of changes and highlights to tell you about since we last checked in.
 
-## Announcements
+**Announcements**
 
-### **Ubuntu 18.04 is coming and 14.04 is going: Test your apps now!**
+#### **Ubuntu 18.04 is coming and 14.04 is going: Test your apps now!**
 
 The base OS image used by your cloud.gov applications is called a "stack". The stack we’ve provided to date is called `cflinuxfs2`, and it’s based on Ubuntu 14.04 LTS, [released originally in early 2014](https://www.ubuntu.com/about/release-cycle) with continuous security updates since then. `cflinuxfs3` is a new OS image based on Ubuntu 18.04 LTS, and it’s already available for your use. **We’ll be making `cflinuxfs3` the default stack in cloud.gov on March 15th**. In addition, Ubuntu 14.04 will no longer receive security updates in April, so **we will stop supporting `cflinuxfs2` in cloud.gov April 30th.**
 
@@ -36,7 +34,7 @@ If you have any questions or concerns, please [contact support](mailto:support@c
 
 Last October, we announced our team was working on a way for all of your cloud.gov applications to interact securely with your external applications through a VPN. This capability can make it easier to migrate applications from legacy infrastructure to cloud.gov, one application at a time. Good news: The FedRAMP assessment of this feature is wrapping up, and we’ll soon be ready to configure this capability for customers who need it.
 
-Contact us if you’d like this to use this feature and we’ll work with the appropriate security and procurement team in your organization to get you set up. For more detail on how this will work, as well as benefits of adding this to your system, check out [our docs]({{ site.baseurl }}/docs/apps/private-egress.md). 
+Contact us if you’d like this to use this feature and we’ll work with the appropriate security and procurement team in your organization to get you set up. For more detail on how this will work, as well as benefits of adding this to your system, check out [our docs]({{ site.baseurl }}/docs/apps/private-egress). 
 
 ### The 2019 North America Cloud Foundry Summit: See you there!
 
@@ -48,7 +46,7 @@ Cloud.gov wouldn’t be possible without the robust collaboration in the bustlin
 
 Can you imagine your team automatically provisioning a [Big Query](https://cloud.google.com/bigquery/) instance in Google Cloud Platform (GCP) a [Service Bus](https://azure.microsoft.com/en-us/services/service-bus/) instance in Microsoft Azure, and a [Kinesis](https://aws.amazon.com/kinesis/) instance in Amazon Web Services (AWS) East, then using those instances in your cloud.gov app (running in AWS GovCloud)? 
 
-If your agency or organization has your own access to AWS, GCP, or Azure, you can use existing cloud.gov extension points to make additional services accessible to your cloud.gov teams. We’ve published [a tutorial](https://github.com/18F/cf-byo-broker) to help you understand how these brokers work and walk you through deploying and using the GCP broker, and we’ll be extending this tutorial with instructions for additional brokers in the future. Read more about [how to extend the cloud.gov service marketplace]({{ site.baseurl }}/docs/services/intro.md#extending-the-marketplace).
+If your agency or organization has your own access to AWS, GCP, or Azure, you can use existing cloud.gov extension points to make additional services accessible to your cloud.gov teams. We’ve published [a tutorial](https://github.com/18F/cf-byo-broker) to help you understand how these brokers work and walk you through deploying and using the GCP broker, and we’ll be extending this tutorial with instructions for additional brokers in the future. Read more about [how to extend the cloud.gov service marketplace]({{ site.baseurl }}/docs/services/intro#extending-the-marketplace).
 
 ### Deploy your R data analytics applications on cloud.gov
 
