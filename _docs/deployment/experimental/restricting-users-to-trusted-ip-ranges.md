@@ -15,7 +15,7 @@ This feature only limits requests to cloud.gov services, such as the cloud.gov A
 
 _Note: This feature is not yet available and pending FedRAMP approval. If you want to configure this feature, create a ticket and our team will let you know our estimated timeline for approval._
 
-Create a [support ticket](mailto:cloud-gov-support@gsa.gov?body=Email%20domain%3A%0A%0AEgress%20IP%20ranges%3A%0A%0AAgency%20CIO%3A%0A) specifying the IP address ranges that are valid for your domain. Because address restriction applies to all cloud.gov users from your email domain, we will request confirmation from your agency CIO before changing the configuration.
+Create a [support ticket](mailto:support@cloud.gov?body=Email%20domain%3A%0A%0AEgress%20IP%20ranges%3A%0A%0AAgency%20CIO%3A%0A) specifying the IP address ranges that are valid for your domain. Because address restriction applies to all cloud.gov users from your email domain, we will request confirmation from your agency CIO before changing the configuration.
 
 ### Grant roles only to users from your restricted domain
 To fully limit access to your apps and services, you must ensure that all users with roles in your orgs and spaces are using email addresses within your email domain. For example, if your email domain is `agency.gov` but you grant access to a contractor whose email address is `bob@example.com`, the contractor will not be limited to your configured IP address ranges. We recommend you give contractors an e-mail address within your domain like `contractor-bob@agency.gov`, and grant roles to them using only that address.

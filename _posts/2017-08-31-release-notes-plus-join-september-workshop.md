@@ -23,7 +23,7 @@ Curious what’s new that you might find helpful as a cloud.gov user? Here are h
 
 ### In case you missed it
 
-[Our latest quarterly newsletter is out]({{ site.baseurl }}/updates/2017-08-11-continuous-improvement-more-tools-help-use-cloud-gov/) and features stories about how two of our customers, FEC and FBI, used the platform. Do you know of an app on cloud.gov more people should be aware of? [Let us know](mailto:cloud-gov-inquiries@gsa.gov) what the app is and we’ll reach out to learn more about it.
+[Our latest quarterly newsletter is out]({{ site.baseurl }}/updates/2017-08-11-continuous-improvement-more-tools-help-use-cloud-gov/) and features stories about how two of our customers, FEC and FBI, used the platform. Do you know of an app on cloud.gov more people should be aware of? [Let us know](mailto:inquiries@cloud.gov) what the app is and we’ll reach out to learn more about it.
 
 ### Platform releases
 We upgraded the Cloud Foundry deployment to [v271](https://github.com/cloudfoundry/cf-release/releases/tag/v271).

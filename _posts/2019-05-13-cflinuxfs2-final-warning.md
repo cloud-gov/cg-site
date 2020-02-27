@@ -36,4 +36,4 @@ cf push YOUR-APPNAME-HERE -s cflinuxfs3
 ```
 In either case: after making that update, redeploy the app.
 
-Please email [cloud-gov-support@gsa.gov](mailto:cloud-gov-support@gsa.gov) if you have questions or need help with this process. We’re happy to help.
+Please email [support@cloud.gov](mailto:support@cloud.gov) if you have questions or need help with this process. We’re happy to help.

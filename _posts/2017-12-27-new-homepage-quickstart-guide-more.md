@@ -18,7 +18,7 @@ Here are some highlights from our platform updates in the last month.
 ### Announcements!
 
 * As we announced earlier this month, we are going to start clearing the content of sandboxes 90 days after they were created. See [our previous update about this]({{ site.baseurl }}/updates/2017-12-08-starting-now-sandboxes-expire-after-90-days.md) for more information about what to expect. You can always contact us about upgrading to a prototyping or production plan.
-* We’re looking for cloud.gov customers to help us make the platform better by sharing their experiences with us. [Contact us if you’d like to participate](mailto:cloud-gov-inquiries@gsa.gov).
+* We’re looking for cloud.gov customers to help us make the platform better by sharing their experiences with us. [Contact us if you’d like to participate](mailto:inquiries@cloud.gov).
 
 We notify you when your [application needs restaging]({{ site.baseurl }}/docs/apps/app-maintenance.md). This process [incorporates fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) and ensures your applications are running the most recent language version supported by your [buildpack](https://docs.cloudfoundry.org/buildpacks/).
 
