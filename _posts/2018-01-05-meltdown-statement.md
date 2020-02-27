@@ -15,7 +15,7 @@ We expect to have this update complete on or before the public release of proof-
 
 There is no immediate remedy for Spectre attacks for any cloud service provider. Everyone must [upgrade their operating system and browsers](https://www.kb.cert.org/vuls/id/584653) to protect from all websites on the internet.
 
-We will update this note as the release process progresses. If you have questions, email us at [cloud-gov-support@gsa.gov](mailto:cloud-gov-support@gsa.gov).
+We will update this note as the release process progresses. If you have questions, email us at [support@cloud.gov](mailto:support@cloud.gov).
 
 **Update** (January 9, 2018, 11 pm ET): Ubuntu has released an update with the relevant patches. We expect Cloud Foundry to released a CF-customized version in the next day, and we will apply the update when available.
 

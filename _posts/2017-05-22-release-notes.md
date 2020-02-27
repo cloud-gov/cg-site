@@ -8,7 +8,7 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
 <!--more-->
 
 ### Volunteers needed
-The cloud.gov team is looking to make the cloud.gov platform easier to evaluate and use, and we’re recruiting volunteers to help us do that. If you’re interested, let us know at [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov). We’ll ask you a few questions and ask you to walk us through using some aspect of the platform via screenshare.
+The cloud.gov team is looking to make the cloud.gov platform easier to evaluate and use, and we’re recruiting volunteers to help us do that. If you’re interested, let us know at [inquiries@cloud.gov](mailto:inquiries@cloud.gov). We’ll ask you a few questions and ask you to walk us through using some aspect of the platform via screenshare.
 
 ### Added
 - We’ve published a cost estimator spreadsheet (in [XLSX]({{ site.baseurl }}/resources/cloudgov_cost_estimator.xlsx) and [ODS]({{ site.baseurl }}/resources/cloudgov_cost_estimator.ods) formats) that your team can use to get a sense of how much cloud.gov will cost for your organization. If you’re interested in switching from a sandbox to a paid cloud.gov package, or if you want to expand your use of the platform to additional applications, use the estimator to get a sense of what the access package and usage quota fees will be across all your cloud.gov systems.

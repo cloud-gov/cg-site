@@ -171,9 +171,9 @@ If youâ€™re done, you can delete your app by running `cf delete <APPNAME>` (itâ€
 
 ### Additional resources
 
-If you've run into any issues with these tutorials, please [Contact support at cloud.gov](mailto:cloud-gov-support@gsa.gov). We're happy to help.
+If you've run into any issues with these tutorials, please [Contact support at cloud.gov](mailto:support@cloud.gov). We're happy to help.
 
-Did we miss a tip or useful resource that you think we should add? [Submit a suggestion on GitHub](https://github.com/18F/cg-site/issues/new) or [send us an email](mailto:cloud-gov-inquiries@gsa.gov?subject=%5BSuggestion%5D%20&body=%0A%0A%0A%0ARefcode:%20quickstart).
+Did we miss a tip or useful resource that you think we should add? [Submit a suggestion on GitHub](https://github.com/18F/cg-site/issues/new) or [send us an email](mailto:inquiries@cloud.gov?subject=%5BSuggestion%5D%20&body=%0A%0A%0A%0ARefcode:%20quickstart).
 
 #### Additional sample applications
 
@@ -190,6 +190,6 @@ Did we miss a tip or useful resource that you think we should add? [Submit a sug
 Want more?
 ----------
 
-Upgrade to a paid package to get full access to the platform and permanent spaces for hosting longer term demos and web applications in production. Email us at [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov?body=What%27s%20your%20name%3F%0A%0AWhat%20agency%20or%20office%20do%20you%20work%20for%3F%0A%0AWhat%27s%20your%20job%20title%20or%20role%3F%0A%0ATell%20us%20a%20little%20about%20your%20project%20or%20your%20questions%20about%20cloud.gov:%0A%0AIf%20you%27d%20like%20us%20to%20call%20you%2C%20what%27s%20your%20phone%20number%20and%20when%20might%20be%20a%20good%20time%3F%0A%0A%0A%0A%0ARefcode:%20quickstart) to learn more about what cloud.gov can do.
+Upgrade to a paid package to get full access to the platform and permanent spaces for hosting longer term demos and web applications in production. Email us at [inquiries@cloud.gov](mailto:inquiries@cloud.gov?body=What%27s%20your%20name%3F%0A%0AWhat%20agency%20or%20office%20do%20you%20work%20for%3F%0A%0AWhat%27s%20your%20job%20title%20or%20role%3F%0A%0ATell%20us%20a%20little%20about%20your%20project%20or%20your%20questions%20about%20cloud.gov:%0A%0AIf%20you%27d%20like%20us%20to%20call%20you%2C%20what%27s%20your%20phone%20number%20and%20when%20might%20be%20a%20good%20time%3F%0A%0A%0A%0A%0ARefcode:%20quickstart) to learn more about what cloud.gov can do.
 
-[Contact us](mailto:cloud-gov-inquiries@gsa.gov?body=What%27s%20your%20name%3F%0A%0AWhat%20agency%20or%20office%20do%20you%20work%20for%3F%0A%0AWhat%27s%20your%20job%20title%20or%20role%3F%0A%0ATell%20us%20a%20little%20about%20your%20project%20or%20your%20questions%20about%20cloud.gov:%0A%0AIf%20you%27d%20like%20us%20to%20call%20you%2C%20what%27s%20your%20phone%20number%20and%20when%20might%20be%20a%20good%20time%3F%0A%0A%0A%0A%0ARefcode:%20quickstart)
+[Contact us](mailto:inquiries@cloud.gov?body=What%27s%20your%20name%3F%0A%0AWhat%20agency%20or%20office%20do%20you%20work%20for%3F%0A%0AWhat%27s%20your%20job%20title%20or%20role%3F%0A%0ATell%20us%20a%20little%20about%20your%20project%20or%20your%20questions%20about%20cloud.gov:%0A%0AIf%20you%27d%20like%20us%20to%20call%20you%2C%20what%27s%20your%20phone%20number%20and%20when%20might%20be%20a%20good%20time%3F%0A%0A%0A%0A%0ARefcode:%20quickstart)

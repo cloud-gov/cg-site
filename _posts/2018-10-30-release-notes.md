@@ -43,7 +43,7 @@ If you have applications on cloud.gov and you want them to be able to interact w
 
 Having this in place will make it easier to migrate applications from legacy infrastructure to the cloud. If your services are nested together and you can't move everything at once, you’ll be able to migrate one application at a time without interrupting service or exposing information to the open internet.
 
-We’re working through FedRAMP testing and approval for this feature so it isn’t available yet, but if you're interested in learning more and setting this up in the future, [send us an email](mailto:cloud-gov-inquiries@gsa.gov). We can set up a call with you and your agency network security team to preview how it will work, so that your agency can get on board when this is ready.
+We’re working through FedRAMP testing and approval for this feature so it isn’t available yet, but if you're interested in learning more and setting this up in the future, [send us an email](mailto:inquiries@cloud.gov). We can set up a call with you and your agency network security team to preview how it will work, so that your agency can get on board when this is ready.
 
 ### Updates and upgrades
 

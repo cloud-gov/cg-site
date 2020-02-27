@@ -14,7 +14,7 @@ Sandbox organizations in AWS East/West will be retired as of January 15. We will
 
 1. Create a GovCloud sandbox space.
   - EPA, FDIC and GSA users log into [dashboard.fr.cloud.gov](https://dashboard.fr.cloud.gov).
-  - All others please request an invitation by contacting cloud-gov-inquiries@gsa.gov.
+  - All others please request an invitation by contacting [inquiries@cloud.gov](mailto:inquiries@cloud.gov).
 1. Using the Cloud Foundry command line interface (CLI) `cf` run the command `cf login -a api.fr.cloud.gov --sso` and follow the instructions.
 1. (Optional) Migrate your application.
 

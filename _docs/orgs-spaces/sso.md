@@ -181,4 +181,4 @@ This is the end of the reference kindly donated by OMB, please ensure you try to
 
 ## Help
 
-We are committed to improving the user experience of government. If you have questions, please don't hesitate to reach out at cloud-gov-support@gsa.gov. We recommend that you subscribe to service updates at the [cloud.gov StatusPage](https://cloudgov.statuspage.io/).
+We are committed to improving the user experience of government. If you have questions, please don't hesitate to reach out at [support@cloud.gov](mailto:support@cloud.gov). We recommend that you subscribe to service updates at the [cloud.gov StatusPage](https://cloudgov.statuspage.io/).
