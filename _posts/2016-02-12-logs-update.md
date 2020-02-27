@@ -13,4 +13,4 @@ For more information about this feature, please see [our documentation about log
 
 Now that cloud.gov provides platform-level logging, the ELK service we previously provided will be deprecated. If you are still using it, we recommend you delete the instance whenever is convenient to reduce your resource usage (and hence costs).
 
-If you have feedback about this service, please don't hesitate to [contact us](mailto:cloud-gov-support@gsa.gov).
+If you have feedback about this service, please don't hesitate to [contact us](mailto:support@cloud.gov).

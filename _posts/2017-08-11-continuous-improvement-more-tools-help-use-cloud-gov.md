@@ -31,13 +31,13 @@ cloud.gov recently presented at the AWS Public Sector Summit. We did two session
 
 #### We can help you figure out whether the platform meets your needs.
 
-Whether a legacy system or new development, we’d love to learn about your apps and websites. Email us at [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov) and we will contact you to discuss cloud.gov benefits, pricing, and any questions you might have.
+Whether a legacy system or new development, we’d love to learn about your apps and websites. Email us at [inquiries@cloud.gov](mailto:inquiries@cloud.gov) and we will contact you to discuss cloud.gov benefits, pricing, and any questions you might have.
 
 #### Prototyping accounts benefit multiple teams
 
 [Prototyping packages are a great way to get started on cloud.gov with real applications]({{ site.baseurl }}/overview/pricing/prototyping/). If you’re thinking about launching a new product, migrating an existing system to the cloud, or want to benefit from the convenience of a platform as a service, you can test your applications and fully evaluate cloud.gov with a prototyping package. $15,000 gets your development team unlimited access to a FedRAMP authorized environment to try experiments, launch new demos, and test as many applications as you need. cloud.gov prototyping packages can’t host production data but once you’re ready, you’ll be able to easily transfer it to a production-ready system.
 
-If you have leftover funds at the end of the fiscal year and need a prototyping account, you can buy one now, start right away and continue to use it for the next 12 months. Contact us right away at [cloud-gov-inquiries@gsa.gov](mailto:cloud-gov-inquiries@gsa.gov) to get started.
+If you have leftover funds at the end of the fiscal year and need a prototyping account, you can buy one now, start right away and continue to use it for the next 12 months. Contact us right away at [inquiries@cloud.gov](mailto:inquiries@cloud.gov) to get started.
 
 ### Featured customers:
 
