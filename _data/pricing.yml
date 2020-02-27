@@ -15,7 +15,7 @@
   production: Non-production systems
   number_of_systems: An environment for each of your teams
   domain_names: Non-production domain names
-  sign_up: <a href="mailto:cloud-gov-inquiries@gsa.gov?subject=Purchasing%20Prototyping%20Package" class="usa-button" id="Prototyping-cta">Contact us</a><br/><a href="/docs/pricing/prototyping/" class="small-link">About Prototyping packages &rarr;</a>
+  sign_up: <a href="mailto:inquiries@cloud.gov?subject=Purchasing%20Prototyping%20Package" class="usa-button" id="Prototyping-cta">Contact us</a><br/><a href="/docs/pricing/prototyping/" class="small-link">About Prototyping packages &rarr;</a>
 - package_name: FISMA Low
   description: Production environment ideal for hosting public information.
   price: <h3><sup>$</sup>2070 &#47; month</h3>FISMA Low system</span>
@@ -23,7 +23,7 @@
   production: One system
   number_of_systems: Multiple environments (e.g. dev, stage, prod) supporting one system
   domain_names: Support for your agency domain name
-  sign_up: <a href="mailto:cloud-gov-inquiries@gsa.gov?subject=Purchasing%20FISMA%20Low%20Package" class="usa-button" id="FISMA-cta">Contact us</a><br/>
+  sign_up: <a href="mailto:inquiries@cloud.gov?subject=Purchasing%20FISMA%20Low%20Package" class="usa-button" id="FISMA-cta">Contact us</a><br/>
   image: pricing-fisma-moderate.svg
 - package_name: FISMA Moderate
   description: Production environment for systems that need assurances in confidentiality, integrity, and availability.
@@ -32,5 +32,5 @@
   production: One system
   number_of_systems: Multiple environments (e.g. dev, stage, prod) supporting one system
   domain_names: Support for your agency domain name
-  sign_up:  <a href="mailto:cloud-gov-inquiries@gsa.gov?subject=Purchasing%20FISMA%20Package" class="usa-button" id="FISMA-cta">Contact us</a><br/>
+  sign_up:  <a href="mailto:inquiries@cloud.gov?subject=Purchasing%20FISMA%20Package" class="usa-button" id="FISMA-cta">Contact us</a><br/>
   image: pricing-fisma-moderate.svg

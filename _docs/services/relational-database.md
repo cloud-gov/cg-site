@@ -210,7 +210,7 @@ For shared plans (`shared-psql` and `shared-mysql`), RDS does not back up your
 data. For dedicated plans, RDS automatically retains daily backups for 14 days.
 These backups are AWS RDS storage volume snapshot, backing up the entire DB
 instance and not just individual databases. You can [email
-support](mailto:cloud-gov-support@gsa.gov) to access that backup if you need to
+support](mailto:support@cloud.gov) to access that backup if you need to
 as a separate RDS instance. You will be responsible for exporting and importing
 the data from this snapshot into your existing database.
 You can also create manual backups using the [export process](#export) described
@@ -224,7 +224,7 @@ Every RDS instance configured through cloud.gov is [encrypted at rest](https://d
 
 ## Rotating credentials
 
-You can rotate credentials by creating a new instance and [deleting the existing instance](https://cli.cloudfoundry.org/en-US/cf/delete-service.html). If this is not an option, email [cloud.gov support](mailto:cloud-gov-support@gsa.gov) to request rotating the credentials manually.
+You can rotate credentials by creating a new instance and [deleting the existing instance](https://cli.cloudfoundry.org/en-US/cf/delete-service.html). If this is not an option, email [cloud.gov support](mailto:support@cloud.gov) to request rotating the credentials manually.
 
 ## Working with OracleDB
 
@@ -345,7 +345,7 @@ New instances of dedicated RDS plans use the latest database version available f
 
 The PostgreSQL and MySQL plans are configured to automatically upgrade currently-running dedicated instances to the most recent compatible [minor version](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html) available via AWS RDS GovCloud (US).
 
-For Oracle plans, minor upgrades are not automatic. To upgrade an existing Oracle database instance, contact [support](mailto:cloud-gov-support@gsa.gov) and schedule a maintenance window for the upgrade to take place.
+For Oracle plans, minor upgrades are not automatic. To upgrade an existing Oracle database instance, contact [support](mailto:support@cloud.gov) and schedule a maintenance window for the upgrade to take place.
 
 ## The broker in GitHub
 
