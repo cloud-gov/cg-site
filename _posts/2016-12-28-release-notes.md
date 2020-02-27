@@ -8,7 +8,7 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
 <!--more-->
 
 ### Added
-- You can now create [S3 service keys]({{ site.baseurl }}/docs/services/s3.md#get-s3-bucket-credentials) to get direct access to your cloud.gov S3 buckets.
+- You can now create [S3 service keys]({{ site.baseurl }}/docs/services/s3#get-s3-bucket-credentials) to get direct access to your cloud.gov S3 buckets.
 
 ### Changed
 - We upgraded Cloud Foundry (the underlying open source project that powers cloud.gov) to [Release v250](https://github.com/cloudfoundry/cf-release/releases/tag/v250), which includes updates to buildpacks and improvements for internal components.
