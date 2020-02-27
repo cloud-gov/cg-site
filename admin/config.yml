@@ -1,0 +1,34 @@
+backend:
+  name: github
+  repo: cloud-gov/cg-site
+  base_url: https://federalistapp.18f.gov
+  auth_endpoint: external/auth/github
+  preview_context: federalist/build
+  branch: master
+  use_graphql: true
+
+media_folder: assets/uploads
+public_folder: /images/uploads
+publish_mode: editorial_workflow
+logo_url: https://federalist.18f.gov/assets/images/federalist-logo.png
+
+collections:
+  - label: Posts
+    name: posts
+    folder: _posts/
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'post'}
+      - {label: "Title", name: "title", widget: "string"}
+      - {
+          label: "Publish Date",
+          name: "date",
+          widget: "datetime",
+          format: 'MMMM D, YYYY',
+          dateFormat: 'MMMM D, YYYY',
+          timeFormat: false
+        }
+      - {label: "Body", name: "body", widget: "markdown"}
