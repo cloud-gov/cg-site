@@ -12,7 +12,7 @@ No local accounts to UAA shall be created for user access.
 
 ## Creating users
 
-Add new users by [inviting them]({{ site.baseurl }}{% link _docs/orgs-spaces/roles.md %}#invite-a-teammate).
+Add new users by [inviting them]({{ site.baseurl }}{% link _docs/orgs-spaces/roles.md %}#adding-roles-via-the-dashboard-for-users-to-access-orgs-and-spaces).
 
 ## Changing passwords
 
@@ -24,7 +24,7 @@ If a user logs in using their agency's account system, the only way to reset tha
 
 Follow the process below for users logging in with a cloud.gov account.
 
-If the user requesting a reset has any apps, routes, or services in their sandbox or access to any other spaces or orgs, tell them that **[these will be removed]({{ site.baseurl }}{% link _docs/getting-started/accounts.md %}#if-you-can-t-access-your-token-codes)** and ask them if we should proceed. If they agree:
+If the user requesting a reset has any apps, routes, or services in their sandbox or access to any other spaces or orgs, tell them that **[these will be removed]({{ site.baseurl }}{% link _docs/getting-started/accounts.md %}#cloudgov-accounts)** and ask them if we should proceed. If they agree:
 
 1. Remove all apps, routes, and services from the user's sandbox. E.g.:
 

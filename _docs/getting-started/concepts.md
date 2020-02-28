@@ -63,7 +63,7 @@ cf org-users ORGNAME
 
 ## Target
 
-The Cloud Foundry CLI keeps a global state of the [organization]({{ site.baseurl }}{#organizations)+[space](#spaces) you're interacting with. This is known as the "target", and you can set it with:
+The Cloud Foundry CLI keeps a global state of the [organization]({{ site.baseurl }}#organizations)+[space](#spaces) you're interacting with. This is known as the "target", and you can set it with:
 
 ```sh
 cf target -o ORGNAME -s SPACENAME

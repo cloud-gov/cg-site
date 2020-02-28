@@ -24,7 +24,7 @@ You’re responsible for keeping your own app up to date. `cf restage` rebuilds 
 Whenever you deploy an app update with `cf push`, your app will use the latest buildpack (if you’re using one provided by the platform) and filesystem.
 
 ## Avoiding downtime during buildpack or app updates
-**Note that your app may be unavailable while a `cf restage` or `cf push` is in progress.** Avoid this by [setting up zero-downtime deployments for your app]({{ site.baseurl }}/docs/apps/production-ready/#zero-downtime-deploy), so that every new version of your app picks up the latest buildpack without impacting your app's availability.
+**Note that your app may be unavailable while a `cf restage` or `cf push` is in progress.** Avoid this by [setting up zero-downtime deployments for your app]({{ site.baseurl }}/docs/deployment/production-ready/#zero-downtime-deploy), so that every new version of your app picks up the latest buildpack without impacting your app's availability.
 
 ## Operating system patching
 

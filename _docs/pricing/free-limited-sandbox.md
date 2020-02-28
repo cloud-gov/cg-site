@@ -19,7 +19,7 @@ If you’re interested in [purchasing full access]({{ site.baseurl }}/pricing/) 
 
 ## Keep in mind before you try your sandbox
 
-* If your agency has not already integrated its single-sign on authentication provider with cloud.gov (only EPA, FDIC, GSA, and NSF have done this so far), you will access your sandbox through a [cloud.gov account]({{ site.baseurl }}{% link _docs/getting-started/accounts.md %}#cloud-gov-accounts). This account requires multi-factor authentication using a mobile app such as [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) or [Authy](https://www.authy.com/app/mobile/). If you cannot install or use these apps, such as if your workplace prohibits mobile phones or mobile phone cameras, you might not be able to set up access. (Paid access packages support integration with your agency single sign-on authentication provider.)
+* If your agency has not already integrated its single-sign on authentication provider with cloud.gov (only EPA, FDIC, GSA, and NSF have done this so far), you will access your sandbox through a [cloud.gov account]({{ site.baseurl }}{% link _docs/getting-started/accounts.md %}#cloudgov-accounts). This account requires multi-factor authentication using a mobile app such as [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) or [Authy](https://www.authy.com/app/mobile/). If you cannot install or use these apps, such as if your workplace prohibits mobile phones or mobile phone cameras, you might not be able to set up access. (Paid access packages support integration with your agency single sign-on authentication provider.)
 * If your agency prohibits installing the [cloud.gov command line interface]({{ site.baseurl }}{% link _docs/getting-started/setup.md %}#set-up-the-command-line) on your computer, you won’t be able to deploy applications in your sandbox. (For paid access packages, we can coordinate with your agency to help them approve this tool.)
 * If your agency blocks many network ports, you might receive errors when you try [`cf logs`]({{ site.baseurl }}{% link _docs/deployment/logs.md %}) or [`cf ssh`]({{ site.baseurl }}{% link _docs/management/using-ssh.md %}). (For paid access packages, we can coordinate with your agency to ask for unblocking those ports.)
 
@@ -29,11 +29,11 @@ On a technical level, a sandbox is a specially-limited ["space"]({{ site.baseurl
 
 As part of that, you can:
 
-* Try the [web interface (dashboard)]({{ site.baseurl }}{% link _docs/getting-started/setup.md %}#check-out-the-dashboard) and the command line options.
+* Try the [web interface (dashboard)]({{ site.baseurl }}{% link _docs/getting-started/setup.md %}#log-into-the-dashboard-web-interface) and the command line options.
 * Deploy a demo app or two! You can use [one of these sample apps]({{ site.baseurl }}{% link _docs/getting-started/your-first-deploy.md %}) or your own code. You can also try [an app from the Cloud Foundry community](https://github.com/cloudfoundry-samples) (we don't maintain or vouch for these).
 * Create a free service instance, such as a [PostgreSQL or MySQL database instance]({{ site.baseurl }}{% link _docs/services/relational-database.md %}), and bind it to your application.
 * Look at [your application logs]({{ site.baseurl }}{% link _docs/deployment/logs.md %}).
-* [Give a teammate permission to deploy]({{ site.baseurl }}{% link _docs/orgs-spaces/roles.md %}#give-roles-to-a-teammate) by assigning them the “space developer” role.
+* [Give a teammate permission to deploy]({{ site.baseurl }}{% link _docs/orgs-spaces/roles.md %}#adding-roles-via-the-dashboard-for-users-to-access-orgs-and-spaces) by assigning them the “space developer” role.
 
 ## Sandbox limitations
 

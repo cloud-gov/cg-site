@@ -5,7 +5,7 @@
   production: Non-production systems<br /> systems cleared every 90 days
   number_of_systems: Single environment
   domain_names: Non-production domain names
-  sign_up: <a href="https://www.cloud.gov/signup/" class="usa-button">Get started</a><br/><a href="/docs/pricing/free-limited-sandbox/" class="small-link">About Sandbox packages &rarr;</a>
+  sign_up: <a href="https://www.cloud.gov/sign-up/" class="usa-button">Get started</a><br/><a href="/docs/pricing/free-limited-sandbox/" class="small-link">About Sandbox packages &rarr;</a>
   image: pricing-sandbox.svg
 - package_name: Prototyping
   description: Self-service workspaces for your organization to build non-production systems.
