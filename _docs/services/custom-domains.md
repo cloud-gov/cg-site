@@ -90,7 +90,7 @@ Status: create succeeded
 Message: Service instance provisioned; domain(s) my.example.gov
 ```
 
-#### Step 2: Create CNAME record(s) <a name="step-2-create-cname-records"></a>
+#### Step 2: Create CNAME record(s) <a name="step-2-create-cname-record-s"></a>
 
 Once the TXT records have been validated, or if you've decided to skip that step, you need to point your custom domain at the origin. Run `cf service my-domain` with the service instance name you choose.
 
