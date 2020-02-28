@@ -36,7 +36,8 @@ If you're interested in running applications that require .NET Framework or Wind
 You can deploy example applications in many languages and frameworks:
 
 * [Hello worlds](https://github.com/18F/cf-hello-worlds): Code for simple apps in several frameworks. Try deploying them and using them to build your own. Included: Java, Clojure, .NET Core, NodeJS, PHP, Flask (Python), Padrino (Ruby), Sinatra (Ruby).
-* [Drupal](https://github.com/18F/cf-ex-drupal): Running Drupal on cloud.gov is fully supported. We provide the backend databases (MySQL or Postgres) and asset storage (AWS S3 buckets) so Drupal is _cloud-ready_. This repository includes examples in Drupal 7 and Drupal 8. The [Drupal 8 example](https://github.com/18F/cf-ex-drupal/tree/master/drupal-8) demonstrates use of [Composer](https://getcomposer.org/) for development, and includes S3 integration.
+* [Drupal 7](https://github.com/18F/cf-ex-drupal): Running Drupal on cloud.gov is fully supported. We provide the backend databases (MySQL or Postgres) and asset storage (AWS S3 buckets) so Drupal is _cloud-ready_.
+* [Drupal 8](https://github.com/18F/cf-ex-drupal8) demonstrates use of [Composer](https://getcomposer.org/) for development, and includes S3 integration.
 * [Cloud Foundry community sample applications](https://github.com/cloudfoundry-samples): This GitHub organization has seventy examples (and counting) of languages, frameworks and tools that can be adapted to run on cloud.gov.
 
 ## Customer example applications
