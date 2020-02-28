@@ -7,7 +7,7 @@ title: Contingency/incident plans
 
 You, as the customer, are responsible for contingency planning (disaster recovery planning) and security incident response planning for your customer system. To help, this page has suggestions for developing your plans.
 
-Here's the cloud.gov division of responsibility, as described in our [System Security Plan and Control-by-Control Inheritance matrix]({{ site.baseurl }}/docs/security/fedramp-tracker/#how-you-can-use-this-p-ato):
+Here's the cloud.gov division of responsibility, as described in our [System Security Plan and Control-by-Control Inheritance matrix]({{ site.baseurl }}/docs/overview/fedramp-tracker/#how-you-can-use-this-p-ato):
 
 * cloud.gov is responsible for its own contingency plan and security incident response plan for platform resources, such as issues at the operating system level.
 * Each customer Application System Owner is responsible for plans at your customer application level (your code that your team deploys on cloud.gov). Your agency should determine your specific requirements as part of your ATO process.
