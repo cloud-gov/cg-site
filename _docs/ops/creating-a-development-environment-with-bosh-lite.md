@@ -116,7 +116,7 @@ Bring the vagrant machine up.
 
 	vagrant up
 
-The initial `vagrant up` includes provisioning scripts which set up port forwarding rules via iptables to expose Cloud Foundry service VMs running as warden containers on the instance.  If the machine is restarted or halted for any reason we’ll need to follow the steps in [reprovisioning](#reprovisioning %}) below.
+The initial `vagrant up` includes provisioning scripts which set up port forwarding rules via iptables to expose Cloud Foundry service VMs running as warden containers on the instance.  If the machine is restarted or halted for any reason we’ll need to follow the steps in [reprovisioning](#reprovisioning) below.
 
 Grab the public IP of the resulting instance and keep it handy. We’ll need it later in the deployment and when accessing the resulting environment with the Cloud Foundry CLI.
 
