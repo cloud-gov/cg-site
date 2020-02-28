@@ -188,20 +188,21 @@ curl -XGET http://localhost:9200/_cat/shards | grep UNASSIGNED | tee unassigned-
 ```
 
 ### Force Reallocation
+
+This command tells each index to forcefully reassign it's shards somewhere else in the cluster.
+
+It:
+
+1. Fetches the shard list.
+1. Filters unassigned shards.
+1. Pipelines only the index and it's unassigned shard.
+1. Where it's rendered as a JSON payload and then pipelined.
+1. To curl where it forces the reallocation.
+
+A bit complicated but it's copy & paste, that's the important part.
+
 ```sh
-curl -XGET http://localhost:9200/_cat/shards | grep UNASSIGNED > unassigned-shards
-for line in `cat unassigned-shards | awk '{print $1 ":" $2}'`; do index=`echo $line | awk -F: '{print $1}'`; \
-    shard=`echo $line | awk -F: '{print $2}'`; curl -H 'Content-Type: application/json' -XPOST 'localhost:9200/_cluster/reroute' -d "{
-        \"commands\" : [ {
-              \"allocate_empty_primary\" : {
-                  \"index\" : \"$index\",
-                  \"shard\" : \"$shard\",
-                  \"node\" : \"elasticsearch_data/7\",
-                  \"accept_data_loss\" : true,
-              }
-            }
-        ]
-    }"; sleep 5; done
+curl -XGET http://localhost:9200/_cat/shards | grep -i unassigned | awk '{print $1 " " $2}' | xargs -l bash -c 'echo -e "{\"commands\" : [ {\"allocate_empty_primary\":{\"index\" : \""$0\"",\"shard\" : "$1",\"node\" : \"elasticsearch_data/0\",\"accept_data_loss\" : true}}]}"' | xargs -i -0 -d"\n" curl http://localhost:9200/_cluster/reroute -H "Content-Type: application/json" -d {}
 ```
 
 ### Get Elasticsearch Document Counts
