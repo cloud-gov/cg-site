@@ -37,11 +37,6 @@ resources:
     disable_forks: true	
     every: true	
 
-- name: slack	
-  type: slack-notification	
-  source:	
-    url: ((slack-webhook-url))	
-
 resource_types:	
 - name: pull-request	
   type: docker-image	
