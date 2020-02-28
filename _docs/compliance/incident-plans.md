@@ -35,4 +35,4 @@ If your agency doesn't provide a template, here's a template that you can use, b
 
 Along the same lines as the contingency plan, you can build a brief security incident response plan that focuses on communications for your application.
 
-For example, consider writing down who you need to notify at your agency if you have a security incident in your application, as well as which role on your team is responsible for [notifying cloud.gov of the incident and asking cloud.gov for support]({{ site.baseurl }}/help/). If your agency doesn’t provide a template, NIST provides templates, and feel free to adapt the [cloud.gov incident response plan]({{ site.baseurl }}/docs/ops/security-ir/).
+For example, consider writing down who you need to notify at your agency if you have a security incident in your application, as well as which role on your team is responsible for [notifying cloud.gov of the incident and asking cloud.gov for support]({{ site.baseurl }}/docs/help/). If your agency doesn’t provide a template, NIST provides templates, and feel free to adapt the [cloud.gov incident response plan]({{ site.baseurl }}/docs/ops/security-ir/).

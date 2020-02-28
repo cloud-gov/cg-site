@@ -27,7 +27,7 @@ You're the first cloud.gov team member to notice a non-team-member's report of a
     - Severity → high/medium/low
     - List of responders
 - Assess whether to also activate the [contingency plan]({{ site.baseurl }}{% link _docs/ops/contingency-plan.md %}).
-- Send an initial situation report (“sitrep”) ([example sitrep]({{ site.baseurl }}{% link _docs/ops/security-ir.md %}#assess %)) to:
+- Send an initial situation report (“sitrep”) ([example sitrep]({{ site.baseurl }}{% link _docs/ops/security-ir.md %}#assess)) to:
     - Post in [`#incident-response`](https://gsa-tts.slack.com/messages/incident-response/)
     - Email to `gsa-ir@gsa.gov` and `devops@gsa.gov`
     - Email/Slack other stakeholders, if applicable

@@ -31,7 +31,7 @@ Federal employees and contractors with an email ending in .mil, .gov, or .fed.us
 <div class="tablet:grid-col-7 usa-prose"  markdown="1">
 ## 2.<br />Go build in your sandbox
 
-Follow any of the tutorials to launch your own web application from your sandbox. You’ll need your cloud.gov account and some familiarity with Windows Powershell or Mac/Linux terminal. Learn more about [sandbox spaces]({{ site.baseurl }}/overview/pricing/free-limited-sandbox/) and [sandbox limitations]({{ site.baseurl }}/overview/pricing/free-limited-sandbox/#sandbox-limitations).
+Follow any of the tutorials to launch your own web application from your sandbox. You’ll need your cloud.gov account and some familiarity with Windows Powershell or Mac/Linux terminal. Learn more about [sandbox spaces]({{ site.baseurl }}/docs/pricing/free-limited-sandbox/) and [sandbox limitations]({{ site.baseurl }}/docs/pricing/free-limited-sandbox/#sandbox-limitations).
 
 <a href="https://account.fr.cloud.gov/signup" class="usa-button usa-button--big">Set up cloud.gov</a>
 
