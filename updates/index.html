@@ -5,7 +5,7 @@ pagination:
   enabled: true
 ---
 
-<div id="blog" class="bg-accent-warm usa-content padding-y-6">
+<div id="blog" class="usa-graphic-list usa-section usa-section--dark sign-up-intro">
   <div class="grid-container">
     <h1 class="margin-0">cloud.gov updates</h1>
     
@@ -19,13 +19,13 @@ pagination:
       <div
         class="padding-bottom-5 margin-top-4 usa-prose border-bottom-05 border-base-lightest usa-content"
       >
-        <h2 class="title">
+        <h3 class="title">
           <a
             class="usa-link text-no-underline"
             href="{{ site.baseurl }}{{ post.url }}"
             >{{post.title}}</a
           >
-        </h2>
+        </h3>
         <div class="margin-bottom-2">
           <div class="margin-top-neg-105 font-family-ui">
             {{ post.date | date: '%B %d, %Y' }}
