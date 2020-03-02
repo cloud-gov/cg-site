@@ -175,6 +175,7 @@ collections:
 permalink: pretty
 
 markdown: kramdown
+url: "https://cloud.gov"
 plugins:
   - jekyll-feed
   - jekyll-paginate-v2
