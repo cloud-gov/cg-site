@@ -98,6 +98,8 @@ searchgov:
 
 - `search/index.html` is used by search.gov.
 
+- If you make major changes to content, let the [#search](https://gsa-tts.slack.com/archives/C33CZQG2D) team know and they can reindex the site. More information on the search.gov account here: https://search.usa.gov/sites/6217
+
 ## Updating content on your own computer
 
 

@@ -38,4 +38,4 @@ The [**Control Implementation Summary + Customer Responsibility Matrix + Control
 
 ## Start the ATO process
 
-If you want to authorize cloud.gov, [**request the P-ATO documentation package from FedRAMP**](https://s3.amazonaws.com/sitesusa/wp-content/uploads/sites/482/2015/03/FedRAMP-Package-Request-Form_V4_06192014.pdf) (the Package ID for that form is F1607067912). You can also view the [FedRAMP Marketplace page for cloud.gov](https://marketplace.fedramp.gov/#/product/18f-cloudgov?sort=productName).
+If you want to authorize cloud.gov, [**request the P-ATO documentation package from FedRAMP**](https://www.fedramp.gov/assets/resources/documents/Agency_Package_Request_Form.pdf) (the Package ID for that form is F1607067912). You can also view the [FedRAMP Marketplace page for cloud.gov](https://marketplace.fedramp.gov/#/product/18f-cloudgov?sort=productName).
