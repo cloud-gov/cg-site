@@ -118,7 +118,7 @@ deploy:
   # ...
 ```
 
-For details, see [Jekyll's Continuous Integration guide](http://jekyllrb.com/docs/continuous-integration/).
+For details, see [Jekyll's Continuous Integration guide](http://jekyllrb.com/docs/continuous-integration/travis-ci/).
 
 
 ### CircleCI

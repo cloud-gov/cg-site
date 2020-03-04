@@ -4,8 +4,8 @@ date: "2017-07-07"
 title: "New instructions for service account and identity provider services"
 ---
 
-If you use the [cloud.gov identity provider]({{ site.baseurl }}/docs/services/cloud-gov-identity-provider.md)
-or [cloud.gov service account]({{ site.baseurl }}/docs/services/cloud-gov-service-account.md) services, check out their new instructions for obtaining credentials from new instances of these services.
+If you use the [cloud.gov identity provider]({{ site.baseurl }}/docs/services/cloud-gov-identity-provider)
+or [cloud.gov service account]({{ site.baseurl }}/docs/services/cloud-gov-service-account) services, check out their new instructions for obtaining credentials from new instances of these services.
 
 We've updated these services to give you credentials directly (using "service keys"), without needing to use temporary links from [Toaster (formerly Fugacious)](https://fugacious.18f.gov/). This simplifies how you set up these services, and it enables you to access the service credentials any time you need to.
 

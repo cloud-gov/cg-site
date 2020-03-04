@@ -88,8 +88,7 @@ shibboleth-production	clamav/9                           	bosh-aws-xen-hvm-ubunt
 requires that the System Owner reset the license key after a stemcell upgrade, and the license key can only be reset every [10 days](https://docs.tenable.com/nessus/Content/ResetActivationCode.htm).
 Coordinate with the System Owner to ensure the key is ready to be reset before
 deploying an update that will upgrade the stemcell. You should also read the
-[Troubleshooting Nessus runbook]({{< relref
-"docs/ops/runbook/troubleshooting-nessus.md">}}).
+[Troubleshooting Nessus runbook]({{ site.baseurl }}/docs/ops/runbook/troubleshooting-nessus).
 
 ## Review and respond to open alerts
 
@@ -97,14 +96,14 @@ deploying an update that will upgrade the stemcell. You should also read the
 - Review all production smoke tests to ensure they are passing.
 
 ### Investigate open alerts
-- Use our guides for reviewing cloud.gov alerts ([prometheus](https://github.com/18F/cg-deploy-prometheus/tree/master/bosh), [elastalert](https://github.com/18F/cg-deploy-logsearch/tree/master/elastalert)) for alert descriptions, links to the relevant rules, and starting points for reviewing each type of alert.
+- Use our guides for reviewing cloud.gov alerts ([prometheus](https://github.com/18F/cg-deploy-prometheus/tree/master/bosh) for alert descriptions, links to the relevant rules, and starting points for reviewing each type of alert.
 - Was the alert caused by known maintenance or testing in dev environments? Check with other members of the cloud.gov team if you can't determine the source.
 - Is this a recurring alert? Search alert history to determine how frequently it is occuring and what event may have started its firing.
 - Should the underlying condition have caused an alert? Alerts should only be raised when they're something we need to remediate.
 
 #### Is the alert a real issue?
 If the alert may indicate a security issue follow the
-[Security Incident Response Guide]({{< relref "docs/ops/security-ir.md" >}})
+[Security Incident Response Guide]({{ site.baseurl }}/docs/ops/security-ir)
 , otherwise work to remediate its cause.
 
 #### Is the alert a false-positive?
@@ -158,7 +157,7 @@ If you observe any non-Terraform activity, discuss the event(s) with the
 indicated cloud.gov operator(s) (see above)
 
 If you're unable to ascertain an event was authorized, follow the
-[Security Incident Response Guide]({{< relref "docs/ops/security-ir.md" >}}).
+[Security Incident Response Guide]({{site.baseurl}}/docs/ops/security-ir).
 
 ## Review vulnerability and compliance reports
 - [Nessus Vulnerability Reports](https://nessus.fr.cloud.gov/)

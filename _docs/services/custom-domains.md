@@ -90,7 +90,7 @@ Status: create succeeded
 Message: Service instance provisioned; domain(s) my.example.gov
 ```
 
-#### Step 2: Create CNAME record(s)
+#### Step 2: Create CNAME record(s) <a name="step-2-create-cname-record-s"></a>
 
 Once the TXT records have been validated, or if you've decided to skip that step, you need to point your custom domain at the origin. Run `cf service my-domain` with the service instance name you choose.
 
@@ -104,7 +104,7 @@ The output will include the domain the broker has created for you. In this case,
 
 After the record is created, wait up to one hour for the DNS changes to propagate. Then visit your custom domain and see whether you have a valid certificate (in other words, that visiting your site in a modern browser doesn't give you a certificate warning).
 
-If you've waited more than two hours without a valid certificate appearing, [contact support]({{ site.baseurl }}/help) to check for problems.
+If you've waited more than two hours without a valid certificate appearing, [contact support]({{ site.baseurl }}/docs/help) to check for problems.
 
 #### Step 3: Map the route to your application
 
@@ -153,7 +153,7 @@ creating/recreating the service.
 
 If you plan to use a domain with DNSSEC, you need to [verify your DNSSEC configuration](https://www.icann.org/resources/pages/tools-2012-02-25-en) before starting the steps above, because invalid DNSSEC configuration will cause creation to get stuck.
 
-However, custom domains using the custom domain broker will not fully validate DNSSEC (between your CNAME record and the cloud.gov origin). This is because the AWS load balancer service does not currently support DNSSEC. For a complete implementation of DNSSEC, we recommend instead running a proxy server within your boundary that forwards to your application in cloud.gov, or using an alternative service that supports DNSSEC. For implementation advice to help you meet your compliance needs, contact [cloud.gov support]({{ site.baseurl }}/help/).
+However, custom domains using the custom domain broker will not fully validate DNSSEC (between your CNAME record and the cloud.gov origin). This is because the AWS load balancer service does not currently support DNSSEC. For a complete implementation of DNSSEC, we recommend instead running a proxy server within your boundary that forwards to your application in cloud.gov, or using an alternative service that supports DNSSEC. For implementation advice to help you meet your compliance needs, contact [cloud.gov support]({{ site.baseurl }}/docs/help/).
 
 Alternatively, you may be able to make the case for an alternative implementation without DNSSEC. As described in the [HTTPS-Only Standard](https://https.cio.gov/faq/#how-does-https-protect-against-dns-spoofing), a properly implemented solution using HTTPS-only and HSTS can meet the same requirements around preventing DNS spoofing that DNSSEC is intended to implement. cloud.gov enforces HTTPS for all applications and enables HSTS by default; we recommend configuring HSTS preload as well.
 
@@ -161,7 +161,7 @@ See our [compliance guide for federal standards and recommendations for domain n
 
 ## Certificate validity and renewal
 
-Let's Encrypt TLS certificates are valid for 90 days.  The broker will automatically renew your certificate every 60 days.  This process is usually immedate but can take several days to complete.  If your certificate is expiring within the next 21 days and has not been renewed automatically, contact [cloud.gov support]({{ site.baseurl }}/help/).
+Let's Encrypt TLS certificates are valid for 90 days.  The broker will automatically renew your certificate every 60 days.  This process is usually immedate but can take several days to complete.  If your certificate is expiring within the next 21 days and has not been renewed automatically, contact [cloud.gov support]({{ site.baseurl }}/docs/help/).
 
 ## The broker in GitHub
 

@@ -1,0 +1,9 @@
+platform: linux	
+image_resource:	
+  type: docker-image	
+  source:	
+    repository: node	
+    tag: "10.1"	
+run:	
+  dir: pull-request
+  path: ci/build.sh

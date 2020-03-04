@@ -10,7 +10,7 @@ title: Managing user access to orgs and spaces
 
 ## Make sure the user has a cloud.gov account
 
-Anyone with a .mil or .gov account can [sign up for their own cloud.gov account]({{ site.baseurl }}/signup/) with a sandbox space in their agency's cloud.gov sandbox org.
+Anyone with a .mil or .gov account can [sign up for their own cloud.gov account]({{ site.baseurl }}/sign-up/) with a sandbox space in their agency's cloud.gov sandbox org.
 
 To invite someone to a non-sandbox org, including federal employees and federal contractors without .gov or .mil email addresses, [send them an invite](https://account.fr.cloud.gov/invite). This may prompt you to log into your cloud.gov account first.
 

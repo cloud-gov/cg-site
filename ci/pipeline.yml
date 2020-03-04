@@ -1,0 +1,44 @@
+jobs:	
+- name: pull-status-check	
+  plan:	
+  - get: pull-request	
+    version: every	
+    params:
+      git.depth: 1
+    trigger: true	
+  - put: pull-request	
+    params:	
+      path: pull-request	
+      status: pending	
+  - task: build	
+    input_mapping:	
+      cg-site-source: pull-request	
+    file: pull-request/ci/build.yml	
+    on_success:	
+      put: pull-request	
+      params:	
+        path: pull-request	
+        status: success	
+        context: smoke-tests
+    on_failure:	
+      put: pull-request	
+      params:	
+        path: pull-request	
+        status: failure	
+        context: smoke-tests
+
+resources:	
+
+- name: pull-request	
+  type: pull-request	
+  source:	
+    repo: ((cg-site-git-repo))	
+    access_token: ((status-access-token))	
+    disable_forks: true	
+    every: true	
+
+resource_types:	
+- name: pull-request	
+  type: docker-image	
+  source:	
+    repository: jtarchie/pr	

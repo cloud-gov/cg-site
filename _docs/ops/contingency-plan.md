@@ -8,7 +8,7 @@ title: Contingency plan
 
 This Contingency Plan provides guidance for our team in the case of trouble delivering our essential mission and business functions because of disruption, compromise, or failure of any component of cloud.gov. As a general guideline, we consider "disruption" to mean more than 30 minutes of unexpected downtime or significantly reduced service for customer applications.
 
-Scenarios where that could happen include unexpected downtime of key external services, data loss, or [high-severity security incidents]({{ site.baseurl }}{% link _docs/ops/security-ir.md %}#1-high-severity). In the case of a security incident, the team uses the [Security Incident Response Guide]({{ site.baseurl }}{% link _docs/ops/security-ir.md %}) as well.
+Scenarios where that could happen include unexpected downtime of key external services, data loss, or [high-severity security incidents]({{ site.baseurl }}{% link _docs/ops/security-ir.md %}#1---high-severity). In the case of a security incident, the team uses the [Security Incident Response Guide]({{ site.baseurl }}{% link _docs/ops/security-ir.md %}) as well.
 
 ## Recovery objective
 
@@ -62,7 +62,7 @@ The IC should also:
 
 The Cloud Operations team assesses the situation and works to recover the system. See the list of [external dependencies](#external-dependencies) for procedures for recovery from problems with external services.
 
-If this is also a security incident, the IC and Cloud Operations also follow the security incident [assessment]({{ site.baseurl }}{% link _docs/ops/security-ir.md %}#initiate) and [remediation]({{ site.baseurl }}{% link _docs/ops/security-ir.md %}#remediation) processes.
+If this is also a security incident, the IC and Cloud Operations also follow the security incident [assessment]({{ site.baseurl }}{% link _docs/ops/security-ir.md %}#initiate) and [remediation]({{ site.baseurl }}{% link _docs/ops/security-ir.md %}#remediate) processes.
 
 If the IC assesses that the overall response process is likely to last longer than 3 hours, the IC should organize shifts so that each responder works on response for no longer than 3 hours at a time, including handing off their own responsibility to a new IC after 3 hours.
 
