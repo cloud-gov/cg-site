@@ -3,7 +3,7 @@ layout: post
 date: "2017-07-07"
 title: "New instructions for service account and identity provider services"
 redirect_from:
-  - /updates/2017-07-07-changes-to-credentials-broker
+  - /updates/2017-07-07-changes-to-credentials-broker/
 ---
 
 If you use the [cloud.gov identity provider]({{ site.baseurl }}/docs/services/cloud-gov-identity-provider)

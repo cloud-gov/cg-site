@@ -3,7 +3,7 @@ layout: post
 date: "2017-05-24"
 title: "Get what you need from cloud.gov"
 redirect_from:
-  - /updates/2017-05-24-get-what-you-need
+  - /updates/2017-05-24-get-what-you-need/
 ---
 
 ### What’s new

@@ -3,7 +3,7 @@ layout: post
 date: "2017-11-20"
 title: "cloud.gov monthly update: Buildpack notifications, volume services, and other new features"
 redirect_from:
-  - /updates/2017-11-20-release-notes-buildpacks-volume-services-other-new-features
+  - /updates/2017-11-20-release-notes-buildpacks-volume-services-other-new-features/
 ---
 
 
