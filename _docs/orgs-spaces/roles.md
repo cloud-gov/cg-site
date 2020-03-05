@@ -18,9 +18,9 @@ Then, confirm with them that they have received and accepted the invite. Now the
 
 ## Adding roles via the dashboard for users to access orgs and spaces
 
-After a user has a cloud.gov account, an Org Manager can assign roles using the [dashboard](https://dashboard-beta.fr.cloud.gov/) as follows:
+After a user has a cloud.gov account, an Org Manager can assign roles using the [dashboard](https://dashboard.fr.cloud.gov/) as follows:
 
-Log into the [Beta Dashboard (https://dashboard-beta.fr.cloud.gov)](https://dashboard-beta.fr.cloud.gov)
+Log into the [Dashboard (https://dashboard.fr.cloud.gov)](https://dashboard.fr.cloud.gov)
 
 1. In the left menu, click the “Cloud Foundry” entry
 1. In the top blue bar, click on the “Organizations” tab or the box at the bottom, then click on the organization you would like to manage
