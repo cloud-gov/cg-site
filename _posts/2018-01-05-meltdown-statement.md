@@ -3,7 +3,7 @@ layout: post
 date: "2018-01-05"
 title: "Note about Meltdown/Spectre vulnerabilities"
 redirect_from:
-  - /updates/2018-01-05-meltdown-statement
+  - /updates/2018-01-05-meltdown-statement/
 ---
 
 cloud.gov is tracking the recent public disclosure of vulnerabilities in modern CPUs, named the [Meltdown and Spectre](https://meltdownattack.com/) attacks. 

@@ -3,7 +3,7 @@ layout: post
 date: "2016-02-12"
 title: "Logging service"
 redirect_from:
-  - /updates/2016-02-12-logs-update
+  - /updates/2016-02-12-logs-update/
 ---
 
 New feature: Zero-setup persistent logs.

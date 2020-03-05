@@ -3,7 +3,7 @@ layout: post
 date: "2015-05-29"
 title: "Updates for the week of 5/29/2015"
 redirect_from:
-  - /updates/2015-05-29-week-update
+  - /updates/2015-05-29-week-update/
 ---
 
 Platform:
