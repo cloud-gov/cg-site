@@ -18,7 +18,7 @@ Then, confirm with them that they have received and accepted the invite. Now the
 
 ## Adding roles via the dashboard for users to access orgs and spaces
 
-After a user has a cloud.gov account, an Org Manager can assign roles using the [dashboard](https://dashboard.fr.cloud.gov/) as follows.
+After a user has a cloud.gov account and has logged in, an Org Manager can assign roles using the [dashboard](https://dashboard.fr.cloud.gov/) as follows.
 
 ### Adding users outside of your organization
 
