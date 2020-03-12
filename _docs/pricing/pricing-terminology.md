@@ -23,7 +23,7 @@ A system maps to an [“org” in cloud.gov and Cloud Foundry](http://docs.cloud
 
 ### Support {#support}
 
-“Support” is support to use the platform as intended, on a best-effort basis. We have no existing service-level agreement (SLA). We [publish metrics](https://cloudgov.statuspage.io/) that give agencies the ability to make an informed choice about whether to use cloud.gov or an alternative PaaS solution based on our actual track record.
+“Support” is support to use the platform as intended, on a best-effort basis. We have no existing service-level agreement (SLA). We hold ourselves to [customer service objectives]({{ site.baseurl }}{% link _docs/overview/customer-service-objectives.md %}) and [publish metrics](https://cloudgov.statuspage.io/) that give agencies the ability to make an informed choice about whether to use cloud.gov or an alternative PaaS solution based on our actual track record.
 
 ### Consulting
 
