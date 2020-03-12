@@ -2,6 +2,8 @@
 layout: post
 date: "2018-03-14"
 title: "TLS 1.0 and 1.1 support removal, Drupal 8 made easy, and platform updates"
+redirect_from:
+  - /updates/2018-03-14-TLS-10-and-11-support-deprecated-Drupal-8-made-easy-and-platform-updates/
 ---
 
 ### Upcoming breaking change

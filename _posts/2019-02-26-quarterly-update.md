@@ -2,6 +2,8 @@
 layout: post
 date: "2019-02-26"
 title: "Quarterly update - An OS upgrade, cross-IaaS services, R Shiny apps, and more!" 
+redirect_from:
+  - /updates/2019-02-26-quarterly-update/
 ---
 
 **An OS upgrade, cross-IaaS services, R Shiny apps, and more!**
@@ -24,8 +26,8 @@ However, there may be exceptions! For example, you may have used the apt-buildpa
 
 | When | What|
 |----|----|
-| **Now - March 15th**	| Test your apps using `cflinuxfs3` |
-| **March 15th - April 29th** |	Explicitly opt to use `cflinuxfs2` if you need more time |
+| **Now - March 15th**  | Test your apps using `cflinuxfs3` |
+| **March 15th - April 29th** |  Explicitly opt to use `cflinuxfs2` if you need more time |
 | **April 30th onward** | Only `cflinuxfs3` will be available |
 
 If you have any questions or concerns, please [contact support](mailto:support@cloud.gov) so we can help you out.

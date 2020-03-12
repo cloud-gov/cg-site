@@ -2,6 +2,8 @@
 layout: post
 date: "2018-10-30"
 title: "Release notes" 
+redirect_from:
+  - /updates/2018-10-30-release-notes/
 ---
 
 Here's the latest on how we've been trying to make cloud.gov simpler and more secure. (If you find yourself needing to explain cloud.gov to coworkers or leadership, take a look at our [new two-pager]({{ site.baseurl }}/resources/cloudgov-overview-2018.pdf)!)

@@ -2,6 +2,8 @@
 layout: post
 date: "2018-01-11"
 title: "Major outage postmortem"
+redirect_from:
+  - /updates/2018-01-11-outage-postmortem/
 ---
 
 On Tuesday January 9 from 17:09 EST to approximately 23:42 EST (6 hours and 33 minutes), the cloud.gov platform and customer applications were unavailable. This was the longest and most significant outage in the history of our platform. No data was lost.

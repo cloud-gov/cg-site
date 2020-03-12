@@ -3,6 +3,8 @@ layout: post
 date: "2020-02-27"
 title: "Introducing the new cloud.gov dashboard" 
 excerpt: "The new beta dashboard is here, making it easier for you to manage orgs and spaces."
+redirect_from:
+  - /updates/2020-02-27-new-dashboard/
 ---
 
 You ask, we deliver! We are excited to introduce our adoption of [Stratos](https://github.com/cloudfoundry/stratos) as the new cloud.gov web-based dashboard.

@@ -2,6 +2,8 @@
 layout: post
 date: "2017-08-22"
 title: "Announcement: cloud.gov accounts will migrate to OMB MAX"
+redirect_from:
+  - /updates/2017-08-21-max-gov-migration-instructions/
 ---
 
 ## Note: This page is out of date as of Nov. 2017. cloud.gov is no longer migrating any users to OMB MAX.

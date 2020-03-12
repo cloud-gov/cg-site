@@ -2,6 +2,8 @@
 layout: post
 date: "2017-02-02"
 title: "cloud.gov is now FedRAMP Authorized."
+redirect_from:
+  - /updates/2017-02-02-fedramp-authorized/
 ---
 
 ### Now it’s easier than ever to get started with cloud.gov.

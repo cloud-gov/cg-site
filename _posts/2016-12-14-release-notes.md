@@ -2,6 +2,8 @@
 layout: post
 date: "2016-12-14"
 title: "Platform Release Notes"
+redirect_from:
+  - /updates/2016-12-14-release-notes/
 ---
 
 Curious what’s new that you might find helpful as a cloud.gov application developer? Here are highlights from our platform updates over the past two weeks.

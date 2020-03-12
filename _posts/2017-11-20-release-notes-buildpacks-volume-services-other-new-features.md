@@ -2,7 +2,11 @@
 layout: post
 date: "2017-11-20"
 title: "cloud.gov monthly update: Buildpack notifications, volume services, and other new features"
+redirect_from:
+  - /updates/2017-11-20-release-notes-buildpacks-volume-services-other-new-features/
 ---
+
+
 We’ve been hard at work shipping out new features to help you make your apps better, more secure, and improve your experience developing and deploying them. There’s a lot more in here than usual. We hope you see some features and additions in here that you’ve been waiting for. As always, get in touch with us if you have any questions or feedback about these features. See you next month.
 
 ### Added

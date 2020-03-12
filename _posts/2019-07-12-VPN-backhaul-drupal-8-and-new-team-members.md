@@ -2,6 +2,8 @@
 layout: post
 date: "2019-07-12"
 title: "VPN backhaul, Drupal 8 example, and new team members" 
+redirect_from:
+  - /updates/2019-07-12-VPN-backhaul-drupal-8-and-new-team-members/
 ---
 
 Curious what’s new that you might find helpful as a cloud.gov user? Here are highlights from our recent changes.

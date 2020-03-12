@@ -2,6 +2,8 @@
 layout: post
 date: "2016-06-15"
 title: "Changes to login and cf-ssh"
+redirect_from:
+  - /updates/2016-06-15-auth-ssh-changes/
 ---
 
 Earlier this month we updated **cloud.gov login** and **`cf-ssh`** in ways that mean most cloud.gov users need to change how they use them. You've probably already made these changes if you need to (we sent email notifications to people who should log in using the new system), but here are the details as a handy reference.

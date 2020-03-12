@@ -2,6 +2,8 @@
 layout: post
 date: "2017-12-08"
 title: "Starting now, sandboxes expire after 90 days"
+redirect_from:
+  - /updates/2017-12-08-starting-now-sandboxes-expire-after-90-days/
 ---
 
 Starting today, [sandbox spaces]({{ site.baseurl }}/docs/pricing/free-limited-sandbox) will expire automatically every 90 days, as planned in our [monthly update from November]({{ site.baseurl }}/updates/2017-11-20-release-notes-buildpacks-volume-services-other-new-features).
