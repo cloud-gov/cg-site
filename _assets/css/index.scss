@@ -124,7 +124,7 @@
   @include at-media('tablet') {
     .intro {
       h2 {
-        @include u-font-size('sans', 11);
+        @include u-font-size('sans', 10);
       }
     }
   }
