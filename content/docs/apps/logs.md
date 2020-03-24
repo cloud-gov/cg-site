@@ -75,7 +75,7 @@ If you want to set up your own storage for your application logs, you can set up
 
 Create the user provided service and point it toward the endpoint where you want to send your logs: 
 
-  cf cups log-drain -l syslog://<your-log-drain-service-endpont>
+  cf cups log-drain -l syslog-tls://<your-log-drain-service-endpont>
   
 Then, bind the service you created to the app that you want connect:
 
