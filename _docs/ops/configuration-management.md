@@ -79,6 +79,13 @@ Before we put a new repository into production:
 * Open a PR to add it to the [repos list]({{ site.baseurl }}{% link _docs/ops/repos.md %}#repositories) (to help us keep track of our repos and support open source reuse of our work).
 * Open a PR to add it to the [repos list for pre-merge checks](https://github.com/18F/cg-pipeline-tasks/blob/master/security-considerations/repos.txt)
 
+**Regarding organization-wide GitHub configuration**:
+
+* [Enforce MFA for all](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/requiring-two-factor-authentication-in-your-organization)
+* [Restrict Third-party access](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/enabling-oauth-app-access-restrictions-for-your-organization) to only the following:
+  * TBD
+
+
 ## What if a configuration changed and it is not in Configuration Management?
 If possible, Configuration Management tools need to be set up to always roll back to a known state. Other than that, these tools need to be able to "recreate" all settings from the known configurations.
 
