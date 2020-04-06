@@ -35,10 +35,6 @@ Create a new service instance by specifying a service, plan, and a name of your 
 % cf create-service SERVICE_NAME PLAN_NAME INSTANCE_NAME
 ```
 
-#### Paid services
-
-The note `* These service plans have an associated cost` indicates paid services. [Learn about managed service pricing.]({{ site.baseurl }}{% link _docs/pricing/managed-services-cost.md %})
-
 ### Bind the service instance
 
 For services that apply to an application ([Elasticsearch]({{ site.baseurl }}{% link _docs/services/elasticsearch56.md %}), [Redis]({{ site.baseurl }}{% link _docs/services/redis.md %}), [relational databases (RDS)]({{ site.baseurl }}{% link _docs/services/relational-database.md %}), and [S3]({{ site.baseurl }}{% link _docs/services/s3.md %})), the service instance must be bound to the application which will access it. (The [CDN service]({{ site.baseurl }}{% link _docs/services/cdn-route.md %}), [identity provider]({{ site.baseurl }}{% link _docs/services/cloud-gov-identity-provider.md %}), and [service account]({{ site.baseurl }}{% link _docs/services/cloud-gov-service-account.md %}) have different instructions, available in their service documentation.) 
