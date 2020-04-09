@@ -10,6 +10,8 @@ status: "Production Ready"
 
 <!-- If you're improving this page, try to port the improvements to the custom domain service page too, since most of the text is the same -->
 
+Note: This cloud.gov feature has unique [compliance impact](#compliance-impact) considerations. 
+
 This service provides:
 
 1. [Custom domain]({{ site.baseurl }}/docs/management/custom-domains/) support, so that your application can have your domain instead of the default `*.app.cloud.gov` domain.
@@ -17,6 +19,7 @@ This service provides:
 1. Content Distribution Network (CDN) caching (using [AWS CloudFront](https://aws.amazon.com/cloudfront/)), for fast delivery of content to your users.
 
 If you don't need CDN caching, use the [custom domain service]({{ site.baseurl }}/docs/services/custom-domains/) instead.
+
 
 ## Plans
 
