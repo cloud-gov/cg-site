@@ -86,14 +86,50 @@ The Incident Commander declares that recovery efforts are complete and notifies 
 
 Next, the team schedules an internal postmortem to discuss the event. This is the same as the [security incident retrospective process]({{ site.baseurl }}{% link _docs/ops/security-ir.md %}#initiate). Then we write a public postmortem and post it on StatusPage for users. We should also discuss with our JAB representatives whether they need additional information.
 
+## Internal dependencies
+
+Continued operation of cloud.gov relies on our people, but also on access to internal diagnostics/repair through our `jumpbox`.
+
+### Leadership
+
+The director and deputy director have access to administrative credentials in our infrastructure and support services that are important to long-term 
+platform operation and customer support. The 
+[recovery process for accessing those credentials](https://github.com/cloud-gov/internal-docs/blob/pdb-contingency/runbooks/contingency.md#credentials). 
+ are non-public (to avoid potential social engineering)
+
+Note: The cloud.gov team members have local copies of the `internal-docs` repository.
+
+### Engineer staffing
+
+The cloud.gov platform is sufficiently complex that multiple team members are needed to troubleshoot issues and validate remediation. If the number of available platform engineers is 
+**four or fewer**, we are at risk of not having enough team members to rectify issues, and need to follow procedures for platform **stabilization**:
+
+* Update StatusPage to notify customers/stakeholders of our situation
+  * Notify all customers to adopt a minimal change/update stance
+* Change our `support@cloud.gov` auto-response to set expectations
+  * Notify all customers to adopt a minimal change/update stance
+* Pin upstream all CI/CD pipelines to current version to prevent rolling out “upgrades”
+* Cease all feature work and focus on support and stability
+* Update cloud.gov site and cloud.gov dashboard with a banner on current status
+* Escalate to TTS leadership the need for staff augmentation
+
+Details are in our [Contingency Runbook](https://github.com/cloud-gov/internal-docs/blob/pdb-contingency/runbooks/contingency.md#stabilization).
+
+### Jumpbox
+
+Internal [BOSH troubleshooting]({{ site.baseurl }}{% _docs/ops/runbook/troubleshooting-bosh.md %}) relies on ephemeral Concourse jumpboxes. If concourse itself is unavailable, 
+we need to create [emergency jumpboxes](https://github.com/cloud-gov/internal-docs/blob/pdb-contingency/runbooks/contingency.md#jumpboxes).
+
 ## External dependencies
 
 cloud.gov depends on several external services.  In the event one or more of these services has a long-term disruption, the team will mitigate impact by following this plan.
 
 ### GitHub
+
 If GitHub becomes unavailable, the live cloud.gov will continue to operate in its current state. The disruption would only impact the team's ability to update cloud.gov.
 
 #### Disruption lasting less than 7 days
+
 Cloud Operations will postpone any non-critical updates to the platform until the disruption is resolved.  If a critical update **must** be deployed, Cloud Operations will:
 
 * Locate a copy of the current version of the required [git](https://git-scm.com/) repository by comparing last commit times of all checked out versions on Cloud Operations local systems and any copies held by cloud.gov systems (Concourse, BOSH director, etc.) 
