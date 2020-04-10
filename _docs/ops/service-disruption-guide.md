@@ -40,10 +40,7 @@ As soon as possible. Goal: at most 15 minutes after the first cloud.gov team mem
 
 Log into the [status page management console](https://manage.statuspage.io/pages/swcbylb1c30f) and create an incident post.
 
-To draft the post: summarize the observable symptoms and the state of the incident; don't try to explain the detailed internal state/cause in detail! Use active voice as much as you can (*"we discovered x"* rather than *"x was discovered"*).
-
-* **If you're platform squad:** Draft and ping a relevant team member for comms help, but if they aren’t available within 5 minutes, post it.
-* **If you're not platform squad:** Draft and ask platform squad for technical check before posting.
+To draft the post: summarize the *observable symptoms* and the state of the incident; don't try to explain the detailed internal state/cause in detail! Use active voice as much as you can (*"we discovered x"* rather than *"x was discovered"*).
 
 If there are user-visible problems, set the status of appropriate components.
 
