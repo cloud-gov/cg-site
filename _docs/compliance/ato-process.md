@@ -5,7 +5,7 @@ sidenav: true
 title: ATO process
 ---
 
-This is an outline of a typical ATO process for a cloud.gov customer [system]({{ site.baseurl }}{% link _docs/pricing/pricing-terminology.md %}#system). All agencies handle the ATO process in their own way, so you should talk with your agency's security compliance specialists, but this can give you a broad overview.
+This is an outline of a typical ATO process for a cloud.gov customer system. All agencies handle the ATO process in their own way, so you should talk with your agency's security compliance specialists, but this can give you a broad overview.
 
 ## What's a FedRAMP Provisional ATO?
 
