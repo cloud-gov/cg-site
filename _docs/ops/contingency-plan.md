@@ -117,7 +117,7 @@ Details are in our [Contingency Runbook](https://github.com/cloud-gov/internal-d
 
 ### Jumpbox
 
-Internal [BOSH troubleshooting]({{ site.baseurl }}{% _docs/ops/runbook/troubleshooting-bosh.md %}) relies on ephemeral Concourse jumpboxes. If concourse itself is unavailable, 
+Internal [BOSH troubleshooting]({{ site.baseurl }}{% link _docs/ops/runbook/troubleshooting-bosh.md %}) relies on ephemeral Concourse jumpboxes. If concourse itself is unavailable, 
 we need to create [emergency jumpboxes](https://github.com/cloud-gov/internal-docs/blob/master/runbooks/contingency.md#jumpboxes).
 
 ## External dependencies
