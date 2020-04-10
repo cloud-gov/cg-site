@@ -108,7 +108,7 @@ The cloud.gov platform is sufficiently complex that multiple team members are ne
   * Notify all customers to adopt a minimal change/update stance
 * Change our `support@cloud.gov` auto-response to set expectations
   * Notify all customers to adopt a minimal change/update stance
-* Pin upstream all CI/CD pipelines to current version to prevent rolling out “upgrades”
+* Pin upstream all CI/CD pipelines to current version to prevent rolling out "upgrades"
 * Cease all feature work and focus on support and stability
 * Update cloud.gov site and cloud.gov dashboard with a banner on current status
 * Escalate to TTS leadership the need for staff augmentation
