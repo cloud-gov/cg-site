@@ -88,32 +88,36 @@ Next, the team schedules an internal postmortem to discuss the event. This is th
 
 ## Internal dependencies
 
-Continued operation of cloud.gov relies on our people, but also on access to internal diagnostics/repair through our `jumpbox`.
+Continued operation of cloud.gov relies on our people, but also on access to internal diagnostics/repair through our `jumpbox`. We also have
+internal GSA dependencies that may be impacted if a GSA COOP (Continuity of Operations Plan) is in effect. Resources for the GSA/TTS COOP plan include:
+
+* [TTS Devolution of Operations Playbook (Jan 2020)](https://drive.google.com/file/d/1sfSVhVPBteobeqhqnyb152z1PqboOKJI/view)
+* [TTS Google COOP Site](https://sites.google.com/a/gsa.gov/continuity/home/coming-soon---customized-hsso-pages/ocsit)
+* [TTS-wide Emergency Contact Spreadsheet](https://docs.google.com/spreadsheets/d/1-Hhv5S0M03W4JY1k-CM5vxrZildHUdMaxAoqLTWF2Ts/edit#gid=1295161336)
+* [(deprecated) TTS Emergency Personnel Roster](https://docs.google.com/spreadsheets/d/1ITXXOu2IAntV8r6snIYHyXlRt1MgIlxpr-GudDP8tqQ/edit#gid=0)
 
 ### Leadership
 
-The director and deputy director have access to administrative credentials in our infrastructure and support services that are important to long-term 
+The director and deputy director own administrative credentials critical to long-term
 platform operation and customer support. The 
-[recovery process for accessing those credentials](https://github.com/cloud-gov/internal-docs/blob/master/runbooks/contingency.md#credentials). 
- are non-public (to avoid potential social engineering)
-
-Note: The cloud.gov team members have local copies of the `internal-docs` repository.
+[recovery process for accessing those credentials](https://github.com/cloud-gov/internal-docs/blob/master/runbooks/contingency.md#leadership-credentials)
+ are non-public (to avoid potential social engineering). These credentials would be delegated to a GSA interim cloud.gov system owner if leadership is
+ abruptly unavailable for 3 or more working days, or if COOP plan is otherwise in effect.
 
 ### Engineer staffing
 
-The cloud.gov platform is sufficiently complex that multiple team members are needed to troubleshoot issues and validate remediation. If the number of available platform engineers is 
-**four or fewer**, we are at risk of not having enough team members to rectify issues, and need to follow procedures for platform **stabilization**:
+If the number of available platform engineers is 
+**four or fewer**, for three or more working days, or if a GSA COOP is effect, we are at risk of not having enough team members to troubleshoot and remediate issues.
+In that case we need to _stabilize the platform_:
 
+* Escalate to TTS leadership the need for staff augmentation or support
 * Update StatusPage to notify customers/stakeholders of our situation
-  * Notify all customers to adopt a minimal change/update stance
-* Change our `support@cloud.gov` auto-response to set expectations
-  * Notify all customers to adopt a minimal change/update stance
-* Pin upstream all CI/CD pipelines to current version to prevent rolling out "upgrades"
-* Cease all feature work and focus on support and stability
-* Update cloud.gov site and cloud.gov dashboard with a banner on current status
-* Escalate to TTS leadership the need for staff augmentation
+  * Advise all customers to adopt a minimal change/update stance
+* Change our `support@cloud.gov` auto-response (in ZenDesk) to set expectations of reduced support
+* Pause all CI/CD pipelines to prevent rolling out upgrades
+  * `pause-pipeline ` supports the `--all` option
 
-Details are in our [Contingency Runbook](https://github.com/cloud-gov/internal-docs/blob/master/runbooks/contingency.md#stabilization).
+* Cease all feature work and focus on support and stability
 
 ### Jumpbox
 
@@ -127,6 +131,8 @@ cloud.gov depends on several external services.  In the event one or more of the
 ### GitHub
 
 If GitHub becomes unavailable, the live cloud.gov will continue to operate in its current state. The disruption would only impact the team's ability to update cloud.gov.
+
+Note: The cloud.gov team members have local copies of the repositories `internal-docs`, `cg-site`, and many others for reference during a major outage.
 
 #### Disruption lasting less than 7 days
 
