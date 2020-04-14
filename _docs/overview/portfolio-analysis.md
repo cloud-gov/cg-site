@@ -31,7 +31,7 @@ For help interpreting this list or evaluating specific cases, please email the c
 
 - Go
 - Java
-- .NET Core (note not .NET Framework!)
+- .NET Core (note, not .NET Framework!)
 - Node.js
 - PHP
 - Python
@@ -45,8 +45,8 @@ For help interpreting this list or evaluating specific cases, please email the c
 - **Relational databases**:
   - MySQL
   - Oracle
-  - Postgresql
-  - SQL Server (available FY19)
+  - PostgreSQL
+  - SQL Server (potentially available at a future date TBD)
 - **Search engines**:
   - Elasticsearch
 - **Cache/queues**:
