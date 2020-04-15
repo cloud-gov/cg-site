@@ -63,6 +63,11 @@ The person with StatusPage responsibility is responsible for asking “any objec
 
 A postmortem is not necessary to close, and it does not have to happen immediately after closing.
 
+## FedRAMP
+
+Outages that impact agency customers need to be [reported to FedRAMP](https://www.fedramp.gov/assets/resources/documents/CSP_Incident_Communications_Procedures.pdf), but we don't need to notify US-CERT if there was no unauthorized access nor personally identifiable information impact. Send a summary to info@fedramp.gov upon closing the incident, and file the post-mortem in [18F incidents information & forms](https://community.max.gov/pages/viewpage.action?pageId=1034682617).
+
+
 ## Ensure a postmortem happens
 
 The person who closes the event should then put a card on the component-owning squad’s board in the urgent lane about holding a retrospective discussion and writing the public postmortem.  The card's acceptance criteria should be that the retrospective discussion has happened, and that the public postmortem that resulted has been posted.
