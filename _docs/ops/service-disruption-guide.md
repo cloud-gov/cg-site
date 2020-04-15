@@ -65,8 +65,7 @@ A postmortem is not necessary to close, and it does not have to happen immediate
 
 ## FedRAMP
 
-Outages that impact agency customers need to be [reported to FedRAMP](https://www.fedramp.gov/assets/resources/documents/CSP_Incident_Communications_Procedures.pdf), but we don't need to notify US-CERT if there was no unauthorized access nor personally identifiable information impact. Send a summary to info@fedramp.gov upon closing the incident, and file the post-mortem in [18F incidents information & forms](https://community.max.gov/pages/viewpage.action?pageId=1034682617).
-
+Report to FedRAMP non-security outages that impact agency customers (per their [incident communication guide](https://www.fedramp.gov/assets/resources/documents/CSP_Incident_Communications_Procedures.pdf). Don't notify US-CERT.  Send a summary to info@fedramp.gov upon closing the incident, and file the post-mortem in [18F incidents information & forms](https://community.max.gov/pages/viewpage.action?pageId=1034682617).
 
 ## Ensure a postmortem happens
 
