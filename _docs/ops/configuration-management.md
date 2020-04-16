@@ -8,7 +8,7 @@ title: Configuration management
 
 <!-- This page is important for FedRAMP compliance. See the CM family of controls, including CM-9. Code Climate is part of SA-11 (1), SI-3, and RA-5. -->
 
-This document describes how the cloud.gov team approaches configuration management of the core platform. Before configuration changes go into production, they need to pass our [significant change rubric]({{ site.baseurl }}{% link _docs/ops/continuous-monitoring.md %}#appendix-significant-change-rubric), as described in our [Feature Lifecycle](https://github.com/18F/cg-product/blob/master/FeatureLifecycle.md) and [Story Lifecycle](https://github.com/18F/cg-product/blob/master/StoryLifecycle.md).
+This document describes how the cloud.gov team approaches configuration management of the core platform. Before configuration changes go into production, they need to pass our [significant change rubric]({{ site.baseurl }}{% link _docs/ops/continuous-monitoring.md %}#appendix-significant-change-rubric), as described in our [Feature Lifecycle](https://github.com/cloud-gov/cg-product/blob/master/FeatureLifecycle.md) and [Story Lifecycle](https://github.com/cloud-gov/cg-product/blob/master/StoryLifecycle.md).
 
 ## What goes into configuration management?
 In short, everything needed to run and operate the platform that is not a _secret_. (See [Secret Key Management]({{ site.baseurl }}{% link _docs/ops/secrets.md %}) for that.)
@@ -19,7 +19,7 @@ Here are some examples that should be in configuration management:
 - Infrastructure/network configuration (Terraform)
 - VM setup and quantity (BOSH)
 - Software configuration (BOSH)
-- 18F-developed code
+- Cloud.gov-developed code
 
 *Special cases:* For changing settings that we currently cannot manage as configuration files in version control, such as GitHub repository settings and Nessus scan settings, you must first get agreement from another cloud.gov team member that the change should be made (such as over Slack or Hangouts).
 
@@ -33,9 +33,9 @@ Security tests need to be executed in the development environment where changes 
 ## Change workflow
 
 1. All configuration changes must flow through a git repository, centrally managed through GitHub, unless they contain sensitive information. In these cases, sensitive information should be stored in an S3 bucket with a proper security policy and encryption, versioned such that changes can be easily rolled back.
-1. A change is initiated and discussed, following the steps in our [Story Lifecycle](https://github.com/18F/cg-product/blob/master/StoryLifecycle.md).
+1. A change is initiated and discussed, following the steps in our [Story Lifecycle](https://github.com/cloud-gov/cg-product/blob/master/StoryLifecycle.md).
 1. In the appropriate GitHub repository for the component, a pull request (PR) against the `master` branch is created that addresses the change.
-1. If the repository contains 18F-developed code, the PR must have an automated [Code Climate](https://codeclimate.com) check, which must pass before the PR can be merged.
+1. If the repository contains cloud.gov-developed code, the PR must have an automated [Code Climate](https://codeclimate.com) check, which must pass before the PR can be merged.
 1. The PR is reviewed by someone other than the committer. Pairing via screen-sharing
 is encouraged and qualifies as a review. Review should include assessment of architectural design, DRY principles, security and code quality.
     The reviewer approves the PR via GitHub.
@@ -56,7 +56,7 @@ Before we put a new repository into production:
 * [Add `LICENSE`, `CONTRIBUTING`, and `README` files](https://github.com/18F/open-source-policy/blob/master/practice.md#how-to-license-18f-repos) (to support open source reuse of our work).
 * Set up [Code Climate](https://codeclimate.com/) for pull requests (SI-3).
   * Go to Code Climate and log in using your GitHub auth.
-  * Give Code Climate permissions to access your public repositories including the 18F org.
+  * Give Code Climate permissions to access your public repositories including the cloud-gov org.
   * Go to [the open source dashboard](https://codeclimate.com/oss/dashboard) and [add the new repository](https://codeclimate.com/github/repos/new).
   * In Code Climate, go to the repository settings, go to Integrations, and enable Pull Request checking.
   * In the repo, add a [Code Climate configuration file](https://docs.codeclimate.com/docs/advanced-configuration) (`.codeclimate.yml`) to [enable relevant plugins](https://docs.codeclimate.com/docs/list-of-engines).
@@ -68,16 +68,14 @@ Before we put a new repository into production:
   * Enable "Include administrators"
 * Configure permissions (CM-3):
   * If it's a platform configuration repo, restrict permissions to Cloud Ops, as follows:
-     * `Read` for [18F](https://github.com/orgs/18F/teams/18f/members).
-     * `Read` for [cloud-gov](https://github.com/orgs/18F/teams/cloud-gov/members).
-     * `Admin` for [cloud-gov-ops](https://github.com/orgs/18F/teams/cloud-gov-ops/members).
+     * `Read` for [cloud-gov](https://github.com/orgs/cloud-gov/teams/cloud-gov-team).
+     * `Admin` for [cloud-gov-ops](https://github.com/orgs/cloud-gov/teams/platform-ops).
   * If it's not a platform configuration repo, configure as follows:
-     * `Read` for [18F](https://github.com/orgs/18F/teams/18f/members).
-     * `Admin` for [cloud-gov](https://github.com/orgs/18F/teams/cloud-gov/members).
-     * `Admin` for [cloud-gov-ops](https://github.com/orgs/18F/teams/cloud-gov-ops/members).
+     * `Admin` for [cloud-gov](https://github.com/orgs/cloud-gov/teams/cloud-gov-team).
+     * `Admin` for [cloud-gov-ops](https://github.com/orgs/cloud-gov/teams/platform-ops).
 * Set up CI/CD for changes (CM-3).
 * Open a PR to add it to the [repos list]({{ site.baseurl }}{% link _docs/ops/repos.md %}#repositories) (to help us keep track of our repos and support open source reuse of our work).
-* Open a PR to add it to the [repos list for pre-merge checks](https://github.com/18F/cg-pipeline-tasks/blob/master/security-considerations/repos.txt)
+* Open a PR to add it to the [repos list for pre-merge checks](https://github.com/cloud-gov/cg-pipeline-tasks/blob/master/security-considerations/repos.txt)
 
 ## What if a configuration changed and it is not in Configuration Management?
 If possible, Configuration Management tools need to be set up to always roll back to a known state. Other than that, these tools need to be able to "recreate" all settings from the known configurations.
@@ -98,13 +96,13 @@ If possible, Configuration Management tools need to be set up to always roll bac
 
 ## GitHub contribution guidelines
 
-<!-- As long as these GitHub guidelines comply with the FedRAMP-required policies above and our 18F GitHub requirements, we can adjust them at will, according to our team preferences. -->
+<!-- As long as these GitHub guidelines comply with the FedRAMP-required policies above and our TTS GitHub requirements, we can adjust them at will, according to our team preferences. -->
 
-Because cloud.gov is built and maintained by 18F, we follow [the 18F requirements for using GitHub](https://handbook.18f.gov/github/). These are our team practices within those requirements.
+Because cloud.gov was originally built by 18F, and we maintain close operational alignment with other parts of TTS, we follow [the TTS requirements for using GitHub](https://handbook.tts.gsa.gov/github/). These are our team practices within those requirements.
 
 ### Forking vs. branching
 
-Both forking and branching are welcome in our repositories. Contributors inside 18F can use forking or branching according to their personal preferences, and contributors outside 18F can fork repositories.
+Both forking and branching are welcome in our repositories. Contributors inside cloud.gov can use forking or branching according to their personal preferences, and contributors outside cloud.gov can fork repositories.
 
 The team often practices branching. The rationale for branching within a team is
 that paired collaboration on a single branch avoids certain types of friction:

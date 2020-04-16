@@ -26,11 +26,13 @@ Examples:
 * AWS or another service we depend on is causing problems for our users.
 * Something unexpected went wrong during scheduled maintenance, and it impacts users.
 
-## How soon to post to [Status Page](http://cloudgov.statuspage.io/)
+## StatusPage
+
+### How soon to post to [Status Page](http://cloudgov.statuspage.io/)?
 
 As soon as possible. Goal: at most 15 minutes after the first cloud.gov team member notices the problem.
 
-## Who is responsible for posting and updating
+### Who is responsible for posting and updating?
 
 * First person on the cloud.gov team who notices a problem is responsible for finding the right people to address it (can include themself), including finding a person with [Status Page](http://cloudgov.statuspage.io/) access to post about it (can include themself).
 * Platform squad person on support rotation should be the first person to begin addressing the technical issue (and the first person for non-platform squad people to ping for help with this). See the platform squad channel topic for the current person.
@@ -40,10 +42,7 @@ As soon as possible. Goal: at most 15 minutes after the first cloud.gov team mem
 
 Log into the [status page management console](https://manage.statuspage.io/pages/swcbylb1c30f) and create an incident post.
 
-To draft the post: summarize the observable symptoms and the state of the incident; don't try to explain the detailed internal state/cause in detail! Use active voice as much as you can (*"we discovered x"* rather than *"x was discovered"*).
-
-* **If you're platform squad:** Draft and ping a relevant team member for comms help, but if they aren’t available within 5 minutes, post it.
-* **If you're not platform squad:** Draft and ask platform squad for technical check before posting.
+To draft the post: summarize the *observable symptoms* and the state of the incident; don't try to explain the detailed internal state/cause in detail! Use active voice as much as you can (*"we discovered x"* rather than *"x was discovered"*). In a *security incident*, do not reveal any exploits, or information that advantages/encourages malicious actors, without coordinating with compliance and leadership.
 
 If there are user-visible problems, set the status of appropriate components.
 
@@ -53,11 +52,11 @@ If there are user-visible problems, set the status of appropriate components.
 
 * If you're writing an update to a post about a new related problem, also update the post summary (the subject line) to make it summarize the whole event.
 
-## When to close
+### When to close
 
 We close the event when **we believe the disruption is no longer affecting customers**.
 
-The person with Status Page responsibility is responsible for asking “any objections to closing it?” and closing it if none.
+The person with StatusPage responsibility is responsible for asking “any objections to closing it?” and closing it if none.
 
 * It's helpful but not required to write something that’s informative about the resolution as a closing message.
 * Ensure that the component status is set appropriately.

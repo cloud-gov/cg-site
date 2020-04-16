@@ -62,37 +62,50 @@ See also: [Detailed guidance on working with our support tools](https://docs.goo
 
 ## Ensure all VMs are running the current stemcell
 
-- Check the latest stemcell version for AWS Xen-HVM Light at http://bosh.cloudfoundry.org/stemcells/
+- From the jumpbox in each of our four environments, `tooling`, `development`,
+  `staging` and `production`, run `bosh deployments` and verify the stemcell in
+  use for each deployment is current. For example, the 621.61 stemcell is
+  outdated below:
 
-- From the jumpbox in each of our four environments, `tooling`, `development`, `staging` and `production`, run `bosh deployments` and verify the stemcell in use for each deployment is current. For example, the 3431.13 stemcells are outdated below:
-```sh
-root@PRODUCTION:/tmp/build/8e72821d$ bosh deployments | grep go_agent
-admin-ui             	clamav/9                           	bosh-aws-xen-hvm-ubuntu-trusty-go_agent/3445   	-	outdated
-cf-production        	clamav/9                           	bosh-aws-xen-hvm-ubuntu-trusty-go_agent/3431.13	-	none
-                     	awslogs/27                         	bosh-aws-xen-hvm-ubuntu-trusty-go_agent/3445
-cf-production-diego  	clamav/9                           	bosh-aws-xen-hvm-ubuntu-trusty-go_agent/3431.13	-	none
-concourse            	clamav/9                           	bosh-aws-xen-hvm-ubuntu-trusty-go_agent/3445   	-	latest
-kubernetes           	cron/17                            	bosh-aws-xen-hvm-ubuntu-trusty-go_agent/3445   	-	latest
-logsearch            	cron/17                            	bosh-aws-xen-hvm-ubuntu-trusty-go_agent/3445   	-	latest
-shibboleth-production	clamav/9                           	bosh-aws-xen-hvm-ubuntu-trusty-go_agent/3445   	-	latest
-```
+  ```sh
+  root@Tooling:/tmp/build/8e72821d$ bosh deployments | grep go_agent
+  concourse-production    awslogs-xenial/14       bosh-aws-xen-hvm-ubuntu-xenial-go_agent/621.64  -
+  concourse-staging       awslogs-xenial/14       bosh-aws-xen-hvm-ubuntu-xenial-go_agent/621.64  -
+  developmentbosh         awslogs-xenial/14       bosh-aws-xen-hvm-ubuntu-xenial-go_agent/621.64  -
+  doomsday                awslogs-xenial/14       bosh-aws-xen-hvm-ubuntu-xenial-go_agent/621.64  -
+  nessus-manager-prod     awslogs-xenial/14       bosh-aws-xen-hvm-ubuntu-xenial-go_agent/621.64  -
+  opsuaa                  awslogs-xenial/14       bosh-aws-xen-hvm-ubuntu-xenial-go_agent/621.64  -
+  postfix-production      awslogs-xenial/14       bosh-aws-xen-hvm-ubuntu-xenial-go_agent/621.61  -
+                          bosh-dns/1.20.0         bosh-aws-xen-hvm-ubuntu-xenial-go_agent/621.64
+  productionbosh          awslogs-xenial/14       bosh-aws-xen-hvm-ubuntu-xenial-go_agent/621.64  -
+  prometheus-production   awslogs-xenial/14       bosh-aws-xen-hvm-ubuntu-xenial-go_agent/621.64  -
+  prometheus-staging      awslogs-xenial/14       bosh-aws-xen-hvm-ubuntu-xenial-go_agent/621.64  -
+  stagingbosh             awslogs-xenial/14       bosh-aws-xen-hvm-ubuntu-xenial-go_agent/621.64  -
+  ```
 
 - When the stemcells are out-of-date:
-  - Review the release notes at http://bosh.cloudfoundry.org/stemcells/bosh-aws-xen-hvm-ubuntu-trusty-go_agent
   - Trigger the appropriate `deploy-...` jobs in Concourse
-    - Triggering more than X jobs simultaneously is not advised in case any issues arise during the deployment or if you're interrupted. X being a number you're comfortable with monitoring which can vary based on experience or confidence in the deployment.  If you're not sure, '3' is a good starting point.
-
-
-- **Nessus warning:** Before deploying an update that will recreate the Nessus VM, such as updating the stemcell or VM type, be aware that we need to ensure a 10 day waiting period between Nessus VM stemcell upgrades. This is because the
-[Nessus manager deployment](https://github.com/18F/cg-deploy-nessus-manager)
-requires that the System Owner reset the license key after a stemcell upgrade, and the license key can only be reset every [10 days](https://docs.tenable.com/nessus/Content/ResetActivationCode.htm).
-Coordinate with the System Owner to ensure the key is ready to be reset before
-deploying an update that will upgrade the stemcell. You should also read the
-[Troubleshooting Nessus runbook]({{ site.baseurl }}/docs/ops/runbook/troubleshooting-nessus).
+    - Triggering more than X jobs simultaneously is not advised in case any
+      issues arise during the deployment or if you're interrupted. X being a
+      number you're comfortable with monitoring which can vary based on
+      experience or confidence in the deployment.  If you're not sure, '3' is a
+      good starting point.
+    - **Nessus warning:** Before deploying an update that will recreate the
+      Nessus VM, such as updating the stemcell or VM type, be aware that we
+      need to ensure a 10 day waiting period between Nessus VM stemcell
+      upgrades. This is because the
+      [Nessus manager
+      deployment](https://github.com/18F/cg-deploy-nessus-manager) requires
+      that the System Owner reset the license key after a stemcell upgrade, and
+      the license key can only be reset every [10
+      days](https://docs.tenable.com/nessus/Content/ResetActivationCode.htm).
+      Coordinate with the System Owner to ensure the key is ready to be reset
+      before deploying an update that will upgrade the stemcell. You should
+      also read the [Troubleshooting Nessus runbook]({{ site.baseurl }}/docs/ops/runbook/troubleshooting-nessus).
 
 ## Review and respond to open alerts
 
-- Review active alerts at https://prometheus.fr.cloud.gov/alerts. 
+- Review active alerts at https://prometheus.fr.cloud.gov/alerts.
 - Review all production smoke tests to ensure they are passing.
 
 ### Investigate open alerts
@@ -180,4 +193,4 @@ Update the bosh release and file a PR for the changes.  Once the PR is merged,
 ensure the updated release is deployed to all required VMs.
 
 ## Review potential improvements in CloudCheckr
-Review the [Best Practices report in CloudCheckr](https://app.cloudcheckr.com/#Report/BestPracticesConsolidated) and try to fix something near the top. 
+Review the [Best Practices report in CloudCheckr](https://app.cloudcheckr.com/#Report/BestPracticesConsolidated) and try to fix something near the top.

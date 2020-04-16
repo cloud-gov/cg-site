@@ -52,7 +52,14 @@ primary_navigation:
   - name: Get started
     url: /sign-up/
   - name: Pricing
-    url: /pricing/
+    key: pricing
+    children: 
+      - name: Pricing
+        url: /pricing/
+      - name: Try a Free Sandbox
+        url: /docs/pricing/free-limited-sandbox/
+      - name: Quota Costs Billing & Limits
+        url: /docs/pricing/quotas/
   - name: Documentation
     key: docs
     children:
@@ -83,10 +90,6 @@ documentation_navigation:
     identifier: "overview"
     icon: fa-home
     weight: -150
-  - name: "Purchase and pricing"
-    identifier: "pricing"
-    icon: fa-shopping-cart
-    weight: -140
   - name: "Technology and security"
     identifier: "technology"
     icon: fa-lock
