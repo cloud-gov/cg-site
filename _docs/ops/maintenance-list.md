@@ -133,6 +133,13 @@ See also: [Detailed guidance on working with our support tools](https://docs.goo
 =======
 >>>>>>> make more tasks weekly where it makes sense
 ## Review AWS CloudTrail events
+
+### Easy way
+
+Run [cloud-trail-check.sh](https://github.com/cloud-gov/cg-scripts/blob/master/cloudtrail-check.sh) for each AWS account we own,
+and review the output
+
+### Hard way
 > [Get familiar with the documentation for CloudTrail logs](http://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html).
 
 Use the [AWS Console](http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-console.html)
