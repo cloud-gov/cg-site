@@ -33,7 +33,7 @@ where we provide an easy way to manage your navigation system
         <li class="usa-nav__primary-item">
           <button class="usa-accordion__button usa-nav__link{% if is_current %} usa-current{% endif %}" aria-expanded="false"
             aria-controls="{{ nav_id }}"><span>{{ nav_item.name | escape }}<span></button>
-          <ul id="{{ nav_id }}" class="usa-nav__submenu">
+          <ul id="{{ nav_id }}" class="usa-nav__submenu" hidden>
             {% for subnav_item in nav_item.children %}
             <li class="usa-nav__submenu-item">
               <a href="{{ subnav_item.url | prepend: site.baseurl }}">{{ subnav_item.name | escape }}</a>
