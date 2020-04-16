@@ -81,7 +81,7 @@ Before we put a new repository into production:
 
 **Regarding organization-wide GitHub configuration**:
 
-* [Enforce MFA for all](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/requiring-two-factor-authentication-in-your-organization)
+* [Enforce MFA for all users](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/requiring-two-factor-authentication-in-your-organization)
 * [Restrict Third-party access](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/enabling-oauth-app-access-restrictions-for-your-organization) to only the following:
   * TBD
 
