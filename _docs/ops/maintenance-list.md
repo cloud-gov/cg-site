@@ -129,9 +129,6 @@ See also: [Detailed guidance on working with our support tools](https://docs.goo
       before deploying an update that will upgrade the stemcell. You should
       also read the [Troubleshooting Nessus runbook]({{ site.baseurl }}/docs/ops/runbook/troubleshooting-nessus).
 
-<<<<<<< HEAD
-=======
->>>>>>> make more tasks weekly where it makes sense
 ## Review AWS CloudTrail events
 
 ### Easy way
