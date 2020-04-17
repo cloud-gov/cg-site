@@ -13,7 +13,7 @@ A sandbox is a free space that you can use to see if cloud.gov might suit your t
 
 ## Get a sandbox
 
-Anyone with a U.S. federal government email address (ending in `.gov`, `.mil`, or `.fed.us`) can [**sign up for a free sandbox space**](https://account.fr.cloud.gov/signup). No paperwork is required from us. (It’s up to you to determine whether you may need permission from your agency.) If you have other questions or comments, see [Contact]({{ site.baseurl }}{% link _docs/help.md %}).
+Anyone with a U.S. federal government email address (ending in `.gov`, `.mil`, or `.fed.us`) can [**sign up for a free sandbox space**](https://account.fr.cloud.gov/signup). No paperwork is required from us. (It’s up to you to determine whether you may need permission from your agency.) If you have other questions or comments, see [Contact]({{ site.baseurl }}/contact).
 
 If you’re interested in [purchasing full access]({{ site.baseurl }}/pricing/) (whether for **Prototyping** or for production systems at the **FISMA Low** or **FISMA Moderate** levels), email [inquiries@cloud.gov](mailto:inquiries@cloud.gov) and we'll help you get started.
 
