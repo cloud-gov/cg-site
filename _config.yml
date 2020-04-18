@@ -69,7 +69,7 @@ primary_navigation:
   - name: Contact us
     url: /docs/help/
 
-  
+
 
 secondary_navigation:
   - name: Platform Status
@@ -154,8 +154,8 @@ documentation_navigation:
 # 3. Add your site/affiliate name here.
 searchgov:
   endpoint: https://search.usa.gov # You should not change this.
-  affiliate: cloud.gov 
-  access_key: v_vjJAaWUAy1wHDmCPVM7zEvyH7-gbS1WeYhoEA_X9o= 
+  affiliate: cloud.gov
+  access_key: v_vjJAaWUAy1wHDmCPVM7zEvyH7-gbS1WeYhoEA_X9o=
   inline: false #this renders the results on the same domain. Otherwise, it will render the results in the search.gov domain
 
 ##########################################################################################
@@ -249,9 +249,10 @@ assets:
     - node_modules/uswds/dist/scss
     - node_modules/mermaid/dist/
     - node_modules/uswds/dist/js/uswds.min.js.map
+    - node_modules/netlify-cms/dist
 
 
-    
+
 # Custom plugin to render the diagrams as mermaid
 mermaid:
   src: 'mermaid.min.js'
