@@ -37,7 +37,6 @@ Name | Required | Description | Default
 `origin` | *Optional* | *Don't put this in your command for cloud.gov tenant applications.* For services/applications that are not cloud.gov tenant applications ([more info](#external-services-and-applications)): the origin root URL of the application |
 `path` | *Optional* | The path for the application within the main domain supplied | `""`
 `insecure_origin` | *Optional* | Read the application over HTTP instead of HTTPS | `false`
-`cookies` | *Optional* | Forward cookies to the origin | `true`
 
 ## Before you use this service
 
@@ -109,7 +108,7 @@ Message: Provisioning in progress [my.example.gov => cdn-broker-origin.fr.cloud.
 name: _acme-my.example.gov., value: ngd2suc9gwUnH3btm7N6hSU7sBbNp-qYtSPYyny325E, ttl: 120
 
 ```
-Create the TXT record(s) as instructed by the broker. The existence of these records will be validated by [Let's Encrypt](https://letsencrypt.org/) when issuing your certificate and will not affect your site.
+Create the TXT record(s) in your DNS, using the values provided by the broker. The existence of these records will be validated by [Let's Encrypt](https://letsencrypt.org/) when issuing your certificate and will not affect your site.
 
 After the records have been created wait up to 1 hour for the certificate to be provisioned. Your certificate has been provisioned when the `cf service my-cdn-route` command reports the status as `create succeeded`.
 
@@ -174,6 +173,9 @@ If you get the following error message when you try to update or delete a servic
 If a `cf create-service` command times out due to certificate rate limiting, and shows in a `failed` state:
 * Use `cf update-service` to restart the certificate attempts.
 * Let's Encrypt has a [rate limit of 20 certificates per registered domain per week](https://letsencrypt.org/docs/rate-limits/). This can happen if you're working with many subdomains for the same domain name.
+
+After you create your CDN route service, your TXT record must be created within 7 days.
+* If your record was not made within the timeframe, contact cloud.gov, they will change the status of service so that you can delete the old service and make a new service.
 
 ## How to update a service instance
 
