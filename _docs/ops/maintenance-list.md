@@ -30,11 +30,6 @@ The support team is not required to "pair" in the traditional sense unless the t
 
 As the support team has free cycles, they can pick up tasks from the backlog designated with the `support-team` label. These tasks aim to improve our ability to support the platform by paying down technical debt, adding automation, improving monitoring and alerting, or adding to system documentation such as run-books. Because support team members inevitably face interruptions that cause context switching, the `support-team` backlog is groomed by the team with this in mind. These stories are not mission-critical, easy to pick up, and easy to hand off to another team member.
 
-## Weekly support tasks
-
-- Update the [`#cg-support`](https://gsa-tts.slack.com/messages/cg-support/) topic to include your name as the support contact.
-- In [logs.fr.cloud.gov](https://logs.fr.cloud.gov/), go under "Management" -> "Advanced Settings" and check the Kibana [timezone setting](https://www.elastic.co/guide/en/kibana/current/advanced-options.html) (`dateFormat:tz`) - it should be set to `Browser`. If anyone has changed it, change it back to `Browser`.
-- Check for any new CVEs in [Elasticsearch](https://www.cvedetails.com/vulnerability-list/vendor_id-13554/Elasticsearch.html), and [Redis](https://www.cvedetails.com/vulnerability-list/vendor_id-15183/product_id-31837/Pivotal-Software-Redis.html).
 
 # Daily maintenance checklist
 
@@ -45,54 +40,9 @@ The tasks on this checklist should be performed each day.
 If you see a way to make this checklist better, just submit a PR to the
 [cg-site](https://github.com/18F/cg-site) repo for `content/docs/ops/maintenance-list.md`
 
-## Review open support requests
-
-Review the "new" (yellow) and "open" (red) Zendesk tickets. First-tier support
-(customer squad) has primary responsibility to do the work of answering these, and
-you serve as second-tier support providing technical expertise. You're welcome
-to reply to the customer with answers if you like (choose "pending" when you
-submit the answer)*, but your main responsibility is to provide technical
-diagnoses/advice/details. The easiest way to do that is to write comments on the
-associated posts in
-[`#cg-supportstream`](https://gsa-tts.slack.com/messages/cg-supportstream).
-First-tier support may also ask you for pairing time to work out responses
-together.
-
-See also: [Detailed guidance on working with our support tools](https://docs.google.com/document/d/1QXZvcUl-6gtI7jEQObXV9FyiIpJC-Fx1R7RzB0C6PHM/edit#heading=h.80zn694rriw3).
-
-## Ensure all VMs are running the current stemcell
-
-- Check the latest stemcell version for AWS Xen-HVM Light at http://bosh.cloudfoundry.org/stemcells/
-
-- From the jumpbox in each of our four environments, `tooling`, `development`, `staging` and `production`, run `bosh deployments` and verify the stemcell in use for each deployment is current. For example, the 3431.13 stemcells are outdated below:
-```sh
-root@PRODUCTION:/tmp/build/8e72821d$ bosh deployments | grep go_agent
-admin-ui             	clamav/9                           	bosh-aws-xen-hvm-ubuntu-trusty-go_agent/3445   	-	outdated
-cf-production        	clamav/9                           	bosh-aws-xen-hvm-ubuntu-trusty-go_agent/3431.13	-	none
-                     	awslogs/27                         	bosh-aws-xen-hvm-ubuntu-trusty-go_agent/3445
-cf-production-diego  	clamav/9                           	bosh-aws-xen-hvm-ubuntu-trusty-go_agent/3431.13	-	none
-concourse            	clamav/9                           	bosh-aws-xen-hvm-ubuntu-trusty-go_agent/3445   	-	latest
-kubernetes           	cron/17                            	bosh-aws-xen-hvm-ubuntu-trusty-go_agent/3445   	-	latest
-logsearch            	cron/17                            	bosh-aws-xen-hvm-ubuntu-trusty-go_agent/3445   	-	latest
-shibboleth-production	clamav/9                           	bosh-aws-xen-hvm-ubuntu-trusty-go_agent/3445   	-	latest
-```
-
-- When the stemcells are out-of-date:
-  - Review the release notes at http://bosh.cloudfoundry.org/stemcells/bosh-aws-xen-hvm-ubuntu-trusty-go_agent
-  - Trigger the appropriate `deploy-...` jobs in Concourse
-    - Triggering more than X jobs simultaneously is not advised in case any issues arise during the deployment or if you're interrupted. X being a number you're comfortable with monitoring which can vary based on experience or confidence in the deployment.  If you're not sure, '3' is a good starting point.
-
-
-- **Nessus warning:** Before deploying an update that will recreate the Nessus VM, such as updating the stemcell or VM type, be aware that we need to ensure a 10 day waiting period between Nessus VM stemcell upgrades. This is because the
-[Nessus manager deployment](https://github.com/18F/cg-deploy-nessus-manager)
-requires that the System Owner reset the license key after a stemcell upgrade, and the license key can only be reset every [10 days](https://docs.tenable.com/nessus/Content/ResetActivationCode.htm).
-Coordinate with the System Owner to ensure the key is ready to be reset before
-deploying an update that will upgrade the stemcell. You should also read the
-[Troubleshooting Nessus runbook]({{ site.baseurl }}/docs/ops/runbook/troubleshooting-nessus).
-
 ## Review and respond to open alerts
 
-- Review active alerts at https://prometheus.fr.cloud.gov/alerts. 
+- Review active alerts at https://prometheus.fr.cloud.gov/alerts.
 - Review all production smoke tests to ensure they are passing.
 
 ### Investigate open alerts
@@ -115,7 +65,78 @@ exists for tuning the alert.
 Be prepared to represent support needs at the next grooming meeting to ensure
 that cards to fix alerts are prioritized properly.
 
+## Review open support requests
+
+Review the "new" (yellow) and "open" (red) Zendesk tickets. First-tier support
+(customer squad) has primary responsibility to do the work of answering these, and
+you serve as second-tier support providing technical expertise. You're welcome
+to reply to the customer with answers if you like (choose "pending" when you
+submit the answer)*, but your main responsibility is to provide technical
+diagnoses/advice/details. The easiest way to do that is to write comments on the
+associated posts in
+[`#cg-supportstream`](https://gsa-tts.slack.com/messages/cg-supportstream).
+First-tier support may also ask you for pairing time to work out responses
+together.
+
+See also: [Detailed guidance on working with our support tools](https://docs.google.com/document/d/1QXZvcUl-6gtI7jEQObXV9FyiIpJC-Fx1R7RzB0C6PHM/edit#heading=h.80zn694rriw3).
+
+## Weekly support tasks
+
+- Update the [`#cg-support`](https://gsa-tts.slack.com/messages/cg-support/) topic to include your name as the support contact.
+- In [logs.fr.cloud.gov](https://logs.fr.cloud.gov/), go under "Management" -> "Advanced Settings" and check the Kibana [timezone setting](https://www.elastic.co/guide/en/kibana/current/advanced-options.html) (`dateFormat:tz`) - it should be set to `Browser`. If anyone has changed it, change it back to `Browser`.
+- Check for any new CVEs in [Elasticsearch](https://www.cvedetails.com/vulnerability-list/vendor_id-13554/Elasticsearch.html), and [Redis](https://www.cvedetails.com/vulnerability-list/vendor_id-15183/product_id-31837/Pivotal-Software-Redis.html).
+
+## Ensure all VMs are running the current stemcell
+
+- From the jumpbox in each of our four environments, `tooling`, `development`,
+  `staging` and `production`, run `bosh deployments` and verify the stemcell in
+  use for each deployment is current. For example, the 621.61 stemcell is
+  outdated below:
+
+  ```sh
+  root@Tooling:/tmp/build/8e72821d$ bosh deployments | grep go_agent
+  concourse-production    awslogs-xenial/14       bosh-aws-xen-hvm-ubuntu-xenial-go_agent/621.64  -
+  concourse-staging       awslogs-xenial/14       bosh-aws-xen-hvm-ubuntu-xenial-go_agent/621.64  -
+  developmentbosh         awslogs-xenial/14       bosh-aws-xen-hvm-ubuntu-xenial-go_agent/621.64  -
+  doomsday                awslogs-xenial/14       bosh-aws-xen-hvm-ubuntu-xenial-go_agent/621.64  -
+  nessus-manager-prod     awslogs-xenial/14       bosh-aws-xen-hvm-ubuntu-xenial-go_agent/621.64  -
+  opsuaa                  awslogs-xenial/14       bosh-aws-xen-hvm-ubuntu-xenial-go_agent/621.64  -
+  postfix-production      awslogs-xenial/14       bosh-aws-xen-hvm-ubuntu-xenial-go_agent/621.61  -
+                          bosh-dns/1.20.0         bosh-aws-xen-hvm-ubuntu-xenial-go_agent/621.64
+  productionbosh          awslogs-xenial/14       bosh-aws-xen-hvm-ubuntu-xenial-go_agent/621.64  -
+  prometheus-production   awslogs-xenial/14       bosh-aws-xen-hvm-ubuntu-xenial-go_agent/621.64  -
+  prometheus-staging      awslogs-xenial/14       bosh-aws-xen-hvm-ubuntu-xenial-go_agent/621.64  -
+  stagingbosh             awslogs-xenial/14       bosh-aws-xen-hvm-ubuntu-xenial-go_agent/621.64  -
+  ```
+
+- When the stemcells are out-of-date:
+  - Trigger the appropriate `deploy-...` jobs in Concourse
+    - Triggering more than X jobs simultaneously is not advised in case any
+      issues arise during the deployment or if you're interrupted. X being a
+      number you're comfortable with monitoring which can vary based on
+      experience or confidence in the deployment.  If you're not sure, '3' is a
+      good starting point.
+    - **Nessus warning:** Before deploying an update that will recreate the
+      Nessus VM, such as updating the stemcell or VM type, be aware that we
+      need to ensure a 10 day waiting period between Nessus VM stemcell
+      upgrades. This is because the
+      [Nessus manager
+      deployment](https://github.com/18F/cg-deploy-nessus-manager) requires
+      that the System Owner reset the license key after a stemcell upgrade, and
+      the license key can only be reset every [10
+      days](https://docs.tenable.com/nessus/Content/ResetActivationCode.htm).
+      Coordinate with the System Owner to ensure the key is ready to be reset
+      before deploying an update that will upgrade the stemcell. You should
+      also read the [Troubleshooting Nessus runbook]({{ site.baseurl }}/docs/ops/runbook/troubleshooting-nessus).
+
 ## Review AWS CloudTrail events
+
+### Easy way
+
+Run [cloud-trail-check.sh](https://github.com/cloud-gov/cg-scripts/blob/master/cloudtrail-check.sh) for each AWS account we own,
+and review the output
+
+### Hard way
 > [Get familiar with the documentation for CloudTrail logs](http://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html).
 
 Use the [AWS Console](http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-console.html)
@@ -180,4 +201,4 @@ Update the bosh release and file a PR for the changes.  Once the PR is merged,
 ensure the updated release is deployed to all required VMs.
 
 ## Review potential improvements in CloudCheckr
-Review the [Best Practices report in CloudCheckr](https://app.cloudcheckr.com/#Report/BestPracticesConsolidated) and try to fix something near the top. 
+Review the [Best Practices report in CloudCheckr](https://app.cloudcheckr.com/#Report/BestPracticesConsolidated) and try to fix something near the top.

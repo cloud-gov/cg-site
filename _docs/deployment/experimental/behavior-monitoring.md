@@ -9,7 +9,7 @@ title: Dynamic behavior monitoring
 
 [**This is an experimental feature.**]({{ site.baseurl }}{% link _docs/deployment/experimental/experimental.md %})
 
-_Note: This feature is not yet available and pending FedRAMP approval. If you want to use this feature, [contact support]({{ site.baseurl }}{% link _docs/help.md %}) and our team will let you know our estimated timeline for approval._
+_Note: This feature is not yet available and pending FedRAMP approval. If you want to use this feature, [contact support]({{ site.baseurl }}/contact) and our team will let you know our estimated timeline for approval._
 
 cloud.gov uses a range of [security features](https://docs.cloudfoundry.org/concepts/container-security.html) to prevent application containers from interfering with other containers or with the hosts they run on. As an additional security measure, cloud.gov will also automatically monitor application containers for suspicous behavior using [Sysdig Falco](https://sysdig.com/opensource/falco/).
 

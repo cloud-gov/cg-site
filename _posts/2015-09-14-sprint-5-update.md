@@ -2,6 +2,8 @@
 layout: post
 date: "2015-09-14"
 title: "Even more console features and a new home for updates"
+redirect_from:
+  - /updates/2015-09-14-sprint-5-update/
 ---
 
 Now you can view log and event data for your apps and adjust permissions for your org and spaces via the web. We're also publishing these updates via [cloud.gov](http://cloud.gov/updates/).

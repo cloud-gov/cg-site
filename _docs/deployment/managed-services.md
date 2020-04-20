@@ -1,10 +1,12 @@
 ---
+title: Managed services
 parent: deployment
 layout: docs
 sidenav: true
 redirect_from: 
-    - /docs/apps/managed-services/
-title: Managed services
+  - /docs/apps/managed-services/
+  - /overview/pricing/managed-services
+  - /overview/pricing/other-services/
 ---
 
 Managed services provide applications with on-demand access to services outside of the stateless application environment. Typical managed services include databases, queues, and key-value stores.
@@ -32,10 +34,6 @@ Create a new service instance by specifying a service, plan, and a name of your 
 ```
 % cf create-service SERVICE_NAME PLAN_NAME INSTANCE_NAME
 ```
-
-#### Paid services
-
-The note `* These service plans have an associated cost` indicates paid services. [Learn about managed service pricing.]({{ site.baseurl }}{% link _docs/pricing/managed-services-cost.md %})
 
 ### Bind the service instance
 

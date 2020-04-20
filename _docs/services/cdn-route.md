@@ -10,6 +10,8 @@ status: "Production Ready"
 
 <!-- If you're improving this page, try to port the improvements to the custom domain service page too, since most of the text is the same -->
 
+Note: This cloud.gov feature has unique [compliance impact](#compliance-impact) considerations. 
+
 This service provides:
 
 1. [Custom domain]({{ site.baseurl }}/docs/management/custom-domains/) support, so that your application can have your domain instead of the default `*.app.cloud.gov` domain.
@@ -17,6 +19,7 @@ This service provides:
 1. Content Distribution Network (CDN) caching (using [AWS CloudFront](https://aws.amazon.com/cloudfront/)), for fast delivery of content to your users.
 
 If you don't need CDN caching, use the [custom domain service]({{ site.baseurl }}/docs/services/custom-domains/) instead.
+
 
 ## Plans
 
@@ -42,7 +45,7 @@ This service is similar to the [custom domain service]({{ site.baseurl }}/docs/s
 
 ### Compliance impact
 
-When you use cloud.gov in general, your application inherits the compliance of the cloud.gov FedRAMP P-ATO, which inherits compliance from the AWS GovCloud FedRAMP P-ATO. This service is a little different. When you use this service, you opt into using an AWS service (CloudFront) that is not in an AWS FedRAMP P-ATO boundary (see [Services in Scope](https://aws.amazon.com/compliance/services-in-scope/)).
+When you use cloud.gov in general, your application inherits the compliance of the cloud.gov FedRAMP P-ATO, which inherits compliance from the AWS GovCloud FedRAMP P-ATO. This service is a little different. When you use this service, you opt into using an AWS service (CloudFront) that is not in the cloud.gov FedRAMP P-ATO boundary, but is in the AWS Commerical FedRAMP P-ATO boundary (see [Services in Scope](https://aws.amazon.com/compliance/services-in-scope/)).
 
 You are responsible for obtaining appropriate authorization from your agency to use CloudFront for your system. The appropriate steps depend on your agency; they may include discussing this with your Authorizing Official and documenting it as part of your ATO (for example as part of [SC-12](https://nvd.nist.gov/800-53/Rev4/control/SC-12) or [SA-9](https://nvd.nist.gov/800-53/Rev4/control/SA-9)).
 

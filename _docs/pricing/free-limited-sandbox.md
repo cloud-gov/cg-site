@@ -13,7 +13,7 @@ A sandbox is a free space that you can use to see if cloud.gov might suit your t
 
 ## Get a sandbox
 
-Anyone with a U.S. federal government email address (ending in `.gov`, `.mil`, or `.fed.us`) can [**sign up for a free sandbox space**](https://account.fr.cloud.gov/signup). No paperwork is required from us. (It’s up to you to determine whether you may need permission from your agency.) If you have other questions or comments, see [Contact]({{ site.baseurl }}{% link _docs/help.md %}).
+Anyone with a U.S. federal government email address (ending in `.gov`, `.mil`, or `.fed.us`) can [**sign up for a free sandbox space**](https://account.fr.cloud.gov/signup). No paperwork is required from us. (It’s up to you to determine whether you may need permission from your agency.) If you have other questions or comments, see [Contact]({{ site.baseurl }}/contact).
 
 If you’re interested in [purchasing full access]({{ site.baseurl }}/pricing/) (whether for **Prototyping** or for production systems at the **FISMA Low** or **FISMA Moderate** levels), email [inquiries@cloud.gov](mailto:inquiries@cloud.gov) and we'll help you get started.
 
@@ -47,5 +47,5 @@ Limitations include:
 * You're [capped at using a maximum]({{ site.baseurl }}{% link _docs/pricing/quotas.md %}#what-quotas-limit) of 10 [service instances]({{ site.baseurl }}{% link _docs/deployment/managed-services.md %}), 10 [service keys](https://docs.cloudfoundry.org/devguide/services/service-keys.html), and 10 [application routes]({{ site.baseurl }}{% link _docs/management/custom-domains.md %}), for all the applications in your space combined.
 * You can only create certain managed service instances. (See each [service documentation page]({{ site.baseurl }}{% link _docs/services/intro.md %}) for details about which service instances are available in sandboxes.)
 * You can only use the default `*.app.cloud.gov` domain, not [custom domains]({{ site.baseurl }}{% link _docs/management/custom-domains.md %}).
-* Sandboxes do not have an "org manager" role available. (You can control access and permissions for your own sandbox space.) If you want to manage an org of prototyping spaces for people at your agency, consider purchasing a [prototyping package]({{ site.baseurl }}{% link _docs/pricing/prototyping.md %}).
+* Sandboxes do not have an "org manager" role available. (You can control access and permissions for your own sandbox space.) If you want to manage an org of prototyping spaces for people at your agency, consider purchasing a [prototyping package]({{ site.baseurl }}{% link _pages/pricing.md %}).
 * We periodically delete sandbox contents to ensure that users don't run production applications in sandboxes. Specifically, we clear all sandbox contents 90 days after the first application or service is created. We'll warn you via email five days before clearing out your sandbox.

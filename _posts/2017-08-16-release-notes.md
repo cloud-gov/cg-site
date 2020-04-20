@@ -2,6 +2,8 @@
 layout: post
 date: "2017-08-16"
 title: "Platform Release Notes: August 16, 2017"
+redirect_from:
+  - /updates/2017-08-16-release-notes/
 ---
 
 Curious what’s new that you might find helpful as a cloud.gov user? Here are highlights from our platform updates over the past two weeks.

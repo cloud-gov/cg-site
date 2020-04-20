@@ -156,6 +156,36 @@ To restore the ingestor to known good configuration after the restore, recreate 
 bosh -d logsearch recreate ingestor/0
 ```
 
+## Fixing `5 of 900 shards failed`
+
+Kibana sometimes fails any search containing a single day, and displays the error message `5 of 900 shards failed`. This can be caused by dynamic fields changing from a non-string type to a string type,
+causing that day's index mapping to be different from and incompatible with all other days.
+When this happens, the solution is to rename that field for that day.
+
+1. Use your browser's dev tools to figure out what index is failing the search. Using the network tab, look at requests for the `_msearch` endpoint (they'll also have query params). 
+1. In the response, look at `responses[0]['_shards']['failures'][0]['reason']['reason']`, which should have a message like `Fielddata is disabled on text fields by default. Set fielddata=true on [app.some.field]`. In this case `app.some.field` is the field that broke.
+1. run this command, changing the field name and date as appropriate (in two places in script.source, one place in query.boo.filter.exists.field).
+   ```
+   curl -XPOST localhost/$INDEX_WITH_PROBLEM/_update_by_query?refresh -H 'content-type: application/json' -d '{
+     "script": {
+       "source": "ctx._source.app.some.thing$TODAYS_DATE = ctx._source.app.some(\"thing\");",
+       "lang": "painless"
+     },
+     "query": {
+       "bool": {
+         "filter": [
+           {
+             "exists": {
+               "field": "app.some.thing"
+             }
+           }
+         ]
+       }
+     }
+   }
+   ```
+Note: this means this field will not be searchable by its usual name for that day's index.
+
 ## Other Useful ElasticSearch commands
 
 ### Check Disk Space

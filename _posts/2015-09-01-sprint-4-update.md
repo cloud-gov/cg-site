@@ -2,6 +2,8 @@
 layout: post
 date: "2015-09-01"
 title: "Status page and console additions"
+redirect_from:
+  - /updates/2015-09-01-sprint-4-update/
 ---
 
 We've added a new status page to show you the state of the cloud.gov platform, and we've made significant upgrades in your ability to manage your apps via the web.

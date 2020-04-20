@@ -16,7 +16,7 @@ site, this is the place to do it.
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Title and meta description
     ================================================== -->
-  <title>{{site.title}}</title>
+  <title>{{site.title}} - {{ page.title}}</title>
   <meta property="og:title" content="{{site.title}}">
   <meta name="description" content="{{site.description}}">
   <meta property="og:description" content="{{site.description}}">
@@ -27,8 +27,8 @@ site, this is the place to do it.
   <meta name="twitter:description" content="{{site.description}}" />
 
   <meta property="og:type" content="article">
-  <link rel="canonical" href="{{site.baseurl}}/">
-  <meta property="og:url" content="{{site.baseurl}}/">
+  <link rel="canonical" href="{{ page.url | absolute_url }}" />
+  <meta property="og:url" content="{{ page.url | absolute_url }}" />
   <!-- Favicons
     ================================================== -->
   <!-- 128x128 -->

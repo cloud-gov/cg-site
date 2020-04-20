@@ -23,7 +23,14 @@ If you have an EPA, FDIC, GSA, or NSF email address, sign in using your agency c
 
 If you were invited with an email address that isn't part of an agency with single sign-on authentication to cloud.gov, you have a cloud.gov account. Follow [these instructions to log in]({{ site.baseurl }}{% link _docs/getting-started/setup.md %}). When you log in via a web browser, select the **cloud.gov** option.
 
-Your cloud.gov account requires setting up both a password and an authentication application that generates token codes, such as [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) or [Authy](https://www.authy.com/app/mobile). (You can use any authentication application that supports the standard [Time-based One-Time Password algorithm](https://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm).) When you log into cloud.gov for the first time, follow the instructions to set this up.
+Setting up a cloud.gov account requires using a password and Time-based One-Time-Password (TOTP) application. Any application or service which is compatible with RFC [6238](https://tools.ietf.org/html/rfc6238) will work. We recommend leveraging an authenticator application or service which supports cross-device or backup access so you don't need to reach out to cloud.gov support when you need to replace your phone or laptop. Here is a non-exhaustive list of cross-device authenticators which are compatible with cloud.gov:
+
+* [Microsoft Authenticator](https://www.microsoft.com/en-us/account/authenticator)
+* [LastPass Password Manager](https://www.lastpass.com/solutions/business-password-manager)
+* [1password](https://1password.com/)
+* [Authy](https://www.authy.com/app/mobile)
+
+When you log into cloud.gov for the first time, follow the instructions to set this up.
 
 #### To change your password
 

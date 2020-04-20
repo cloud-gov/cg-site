@@ -10,7 +10,7 @@ redirect_from:
 ---
 
 
-The **goal** of Service Objectives (SO) is to publicize our operating procedures and provide transparency about our operation of Cloud.gov.
+The **goal** of Service Objectives (SO) is to publicize our operating procedures and provide transparency about our operation of Cloud.gov. We publish our SOs in lieu of establishing a Service Level Agreement (SLA).
 
 Our **objectives** are: 
 

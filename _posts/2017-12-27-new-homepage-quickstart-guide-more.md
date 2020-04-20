@@ -2,6 +2,8 @@
 layout: post
 date: "2017-12-27"
 title: "A new homepage, quickstart guide, and more"
+redirect_from:
+  - /updates/2017-12-27-new-homepage-quickstart-guide-more/
 ---
 
 We’ve been hard at work making cloud.gov work for you. We’re constantly optimizing the platform so it’s secure and meets your expectations.

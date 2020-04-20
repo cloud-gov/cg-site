@@ -2,6 +2,8 @@
 layout: post
 date: "2017-09-12"
 title: "High availability Redis, our upcoming workshop, and more from cloud.gov"
+redirect_from:
+  - /updates/2017-09-12-high-availability-redis-upcoming-workshop-more-from-cloud-gov/
 ---
 
 Curious what’s new that you might find helpful as a cloud.gov user? Here are highlights from our platform updates over the past two weeks.

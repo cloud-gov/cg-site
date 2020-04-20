@@ -2,6 +2,8 @@
 layout: post
 date: "2016-12-21"
 title: "East/West Sandbox Deprecation Notice"
+redirect_from:
+  - /updates/2016-12-20-ew-sandbox-deprecation/
 ---
 
 Update: since the time of this posting, we have postponed the cutoff date from January 15th to a new date that we expect to confirm and announce soon. 

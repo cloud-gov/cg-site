@@ -22,7 +22,11 @@ The **[Federal Risk and Authorization Management Program (FedRAMP)](https://www.
 
 Once that P-ATO is granted, FedRAMP requires cloud.gov to undergo re-assessment every year and maintain continuous monitoring. This gives your agency ongoing assurance that cloud.gov is compliant.
 
-For DoD teams: the Defense Information Systems Agency (DISA) categorizes [FedRAMP Moderate as equivalent to DISA impact level two](https://dl.dod.cyber.mil/wp-content/uploads/cloud/pdf/Cloud_Computing_SRG_v1r3.pdf) and they have issued a DoD Provisional Authorization for cloud.gov at DISA impact level two.
+*For DoD teams:* the Defense Information Systems Agency (DISA) categorizes [FedRAMP Moderate as equivalent to DISA impact level two](https://dl.dod.cyber.mil/wp-content/uploads/cloud/pdf/Cloud_Computing_SRG_v1r3.pdf) (IL2) and they have issued a DoD Provisional Authorization for cloud.gov at DISA impact level two. Some points to bear in mind:
+
+* The FedRAMP package (see below) includes the DISA Provisional Authorization (PA) letter for your reference.
+* Per the PA and the [DoD Cloud Computing SRG](https://dl.dod.cyber.mil/wp-content/uploads/cloud/SRG/index.html), the artifacts available to an Authorizing Official (AO) are those included in the FedRAMP-approved package. The Cloud Computing SRG has a useful illustration to that effect, [DoD Continuous Monitoring for CSOs with a FedRAMP JAB PA](https://dl.dod.cyber.mil/wp-content/uploads/cloud/SRG/index.html#_Fig4)
+* To meet the intent of OMB and DoD policies that cloud authorization follow a "do once, use many times" framework, cloud.gov will not provide artifacts that are already encompassed by the FedRAMP authorization and continuous monitoring program.  
 
 ## How you can use this P-ATO
 

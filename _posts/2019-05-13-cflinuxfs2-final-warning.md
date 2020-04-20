@@ -2,6 +2,8 @@
 layout: post
 date: "2019-05-13"
 title: "Final warning: cflinuxfs2 will be removed May 21st" 
+redirect_from:
+  - /updates/2019-05-13-cflinuxfs2-final-warning/
 ---
 
 **Background:** [We announced on February 26]({{ site.baseurl }}/updates/2019-02-26-quarterly-update/) that cloud.gov would remove support for the cflinuxfs2 stack (the operating system image for applications). This was the default stack for cloud.gov applications deployed before April 15. On April 15 we set the default stack for new applications to cflinuxfs3.

@@ -23,7 +23,7 @@ Plan Name | Description |
 --------- | ----------- | -----
 `custom-domain` | Custom domains and TLS certificates with automatic renewal | 
 
-*Not available in [sandbox spaces]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}#sandbox-limitations) or [prototyping orgs]({{ site.baseurl }}{% link _docs/pricing/prototyping.md %}#limitations).*
+*Not available in [sandbox spaces]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}#sandbox-limitations) or [prototyping orgs]({{ site.baseurl }}{% link _pages/pricing.md %}#limitations).*
 
 ## Options
 
