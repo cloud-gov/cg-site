@@ -17,7 +17,7 @@ The dashboard gives you web-based access to common tasks: [**https://dashboard.f
 
 cloud.gov is based on the Cloud Foundry open source project, so cloud.gov uses the Cloud Foundry command line interface (CLI) to give you full access.
 
-1. Install the Cloud Foundry CLI: [Windows](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#windows), [Mac OS X](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#mac), or [Linux](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#linux). If you can't use the installer, you can [download the CLI binary and install it manually](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#bin).
+1. Install the Cloud Foundry CLI: [Windows](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html), [Mac OS X](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#-mac-os-x-installation), or [Linux](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#-linux-installation). If you can't use the installer, you can [download the CLI binary and install it manually](-install-the-cf-cli-using-a-compressed-binary).
 1. Log in:
   1. Enter **`cf login -a api.fr.cloud.gov --sso`**
   1. It'll say `One Time Code ( Get one at `[`https://login.fr.cloud.gov/passcode`](https://login.fr.cloud.gov/passcode)` )` -- visit this login link in your browser.
