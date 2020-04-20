@@ -37,6 +37,7 @@ Name | Required | Description | Default
 `origin` | *Optional* | *Don't put this in your command for cloud.gov tenant applications.* For services/applications that are not cloud.gov tenant applications ([more info](#external-services-and-applications)): the origin root URL of the application |
 `path` | *Optional* | The path for the application within the main domain supplied | `""`
 `insecure_origin` | *Optional* | Read the application over HTTP instead of HTTPS | `false`
+`cookies` | *Optional* | Forward cookies to the origin | `true`
 
 ## Before you use this service
 
