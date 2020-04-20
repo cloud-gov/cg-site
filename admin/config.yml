@@ -1,0 +1,243 @@
+backend:
+  name: github
+  repo: cloud-gov/cg-site
+  base_url: https://federalistapp.18f.gov
+  auth_endpoint: external/auth/github
+  preview_context: federalist/build
+  branch: master
+  use_graphql: true
+
+media_folder: assets/uploads
+public_folder: /images/uploads
+publish_mode: editorial_workflow
+logo_url: https://cloud.gov/assets/img/cloud-gov-logo.svg
+
+collections:
+  - label: Posts
+    name: posts
+    folder: _posts/
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'post'}
+      - {label: "Title", name: "title", widget: "string"}
+      - {
+          label: "Publish Date",
+          name: "date",
+          widget: "datetime",
+          format: 'MMMM D, YYYY',
+          dateFormat: 'MMMM D, YYYY',
+          timeFormat: false
+        }
+      - {label: 'Excerpt', name: 'excerpt', widget: 'string', required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - label: Compliance
+    name: compliance
+    folder: _docs/compliance/
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: 'Parent', name: 'parent', widget: 'hidden', default: 'compliance'}
+      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'docs'}
+      - {label: 'Sidenav', name: 'sidenav', widget: 'hidden', default: true}
+      - &redirect_from_anchor {
+        label: 'Redirect from',
+        name: 'redirect_from',
+        widget: 'list',
+        required: false,
+        default: [],
+        field: {
+            label: 'Redirect Path',
+            name: 'redirect_from',
+            widget: 'string',
+            hint: '/my/other/path'
+          }
+        }
+      - {label: "Body", name: "body", widget: "markdown"}
+  - label: Customer Stories
+    name: customer-stories
+    folder: _docs/customer-stories/
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Kicker", name: "kicker", widget: "string", required: false}
+      - {label: 'Parent', name: 'parent', widget: 'hidden', default: 'customer-stories'}
+      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'docs'}
+      - {label: 'Sidenav', name: 'sidenav', widget: 'hidden', default: true}
+      - *redirect_from_anchor
+      - {label: "Body", name: "body", widget: "markdown"}
+  - label: Deployment
+    name: deployment
+    folder: _docs/deployment/
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: 'Parent', name: 'parent', widget: 'hidden', default: 'deployment'}
+      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'docs'}
+      - {label: 'Sidenav', name: 'sidenav', widget: 'hidden', default: true}
+      - {label: 'Weight', name: 'weight', widget: "number", valueType: 'int', required: false}
+      - *redirect_from_anchor
+      - {label: "Body", name: "body", widget: "markdown"}
+  - label: Deployment Experimental
+    name: experimental
+    folder: _docs/deployment/experimental/
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: 'Parent', name: 'parent', widget: 'hidden', default: 'experimental'}
+      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'docs'}
+      - {label: 'Sidenav', name: 'sidenav', widget: 'hidden', default: true}
+      - {label: 'Weight', name: 'weight', widget: "number", valueType: 'int', required: false}
+      - *redirect_from_anchor
+      - {label: "Body", name: "body", widget: "markdown"}
+  - label: Getting Started
+    name: getting-started
+    folder: _docs/getting-started/
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: 'Parent', name: 'parent', widget: 'hidden', default: 'getting-started'}
+      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'docs'}
+      - {label: 'Sidenav', name: 'sidenav', widget: 'hidden', default: true}
+      - {label: 'Weight', name: 'weight', widget: "number", valueType: 'int', required: false}
+      - *redirect_from_anchor
+      - {label: "Body", name: "body", widget: "markdown"}
+  - label: Management
+    name: management
+    folder: _docs/management/
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "date", required: false}
+      - {label: 'Parent', name: 'parent', widget: 'hidden', default: 'management'}
+      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'docs'}
+      - {label: 'Sidenav', name: 'sidenav', widget: 'hidden', default: true}
+      - {label: 'Weight', name: 'weight', widget: "number", valueType: 'int', required: false}
+      - *redirect_from_anchor
+      - {label: "Body", name: "body", widget: "markdown"}
+  - label: Org Spaces
+    name: orgs-spaces
+    folder: _docs/orgs-spaces/
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: 'Parent', name: 'parent', widget: 'hidden', default: 'orgs-spaces'}
+      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'docs'}
+      - {label: 'Sidenav', name: 'sidenav', widget: 'hidden', default: true}
+      - {label: 'Weight', name: 'weight', widget: "number", valueType: 'int', required: false}
+      - *redirect_from_anchor
+      - {label: "Body", name: "body", widget: "markdown"}
+  - label: Overview
+    name: overview
+    folder: _docs/overview/
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: 'Parent', name: 'parent', widget: 'hidden', default: 'overview'}
+      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'docs'}
+      - {label: 'Sidenav', name: 'sidenav', widget: 'hidden', default: true}
+      - {label: 'Weight', name: 'weight', widget: "number", valueType: 'int', required: false}
+      - *redirect_from_anchor
+      - {label: "Body", name: "body", widget: "markdown"}
+  - label: Pricing
+    name: pricing
+    folder: _docs/pricing/
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: 'Parent', name: 'parent', widget: 'hidden', default: 'pricing'}
+      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'docs'}
+      - {label: 'Sidenav', name: 'sidenav', widget: 'hidden', default: true}
+      - {label: 'Weight', name: 'weight', widget: "number", valueType: 'int', required: false}
+      - *redirect_from_anchor
+      - {label: "Body", name: "body", widget: "markdown"}
+  - label: Security
+    name: security
+    folder: _docs/security/
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: 'Parent', name: 'parent', widget: 'hidden', default: 'security'}
+      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'docs'}
+      - {label: 'Sidenav', name: 'sidenav', widget: 'hidden', default: true}
+      - {label: 'Weight', name: 'weight', widget: "number", valueType: 'int', required: false}
+      - *redirect_from_anchor
+      - {label: "Body", name: "body", widget: "markdown"}
+  - label: Services
+    name: services
+    folder: _docs/services/
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: 'Parent', name: 'parent', widget: 'hidden', default: 'services'}
+      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'docs'}
+      - {label: 'Sidenav', name: 'sidenav', widget: 'hidden', default: true}
+      - {label: 'Name', name: 'name', widget: 'string', required: false}
+      - {label: 'Description', name: 'description', widget: 'string', required: false}
+      - {label: 'Status', name: 'status', widget: 'select', required: false, options: ["Production Ready", "Beta"]}
+      - {label: 'Weight', name: 'weight', widget: "number", valueType: 'int', required: false}
+      - *redirect_from_anchor
+      - {label: "Body", name: "body", widget: "markdown"}
+  - label: Technology
+    name: technology
+    folder: _docs/technology/
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: 'Parent', name: 'parent', widget: 'hidden', default: 'technology'}
+      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'docs'}
+      - {label: 'Sidenav', name: 'sidenav', widget: 'hidden', default: true}
+      - {label: 'Weight', name: 'weight', widget: "number", valueType: 'int', required: false}
+      - *redirect_from_anchor
+      - {label: "Body", name: "body", widget: "markdown"}
+  - label: Docs Contact
+    name: docs
+    folder: _docs/
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'docs'}
+      - {label: 'Sidenav', name: 'sidenav', widget: 'hidden', default: true}
+      - *redirect_from_anchor
+      - {label: "Body", name: "body", widget: "markdown"}
