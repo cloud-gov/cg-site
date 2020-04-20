@@ -31,9 +31,9 @@ The support team is not required to "pair" in the traditional sense unless the t
 As the support team has free cycles, they can pick up tasks from the backlog designated with the `support-team` label. These tasks aim to improve our ability to support the platform by paying down technical debt, adding automation, improving monitoring and alerting, or adding to system documentation such as run-books. Because support team members inevitably face interruptions that cause context switching, the `support-team` backlog is groomed by the team with this in mind. These stories are not mission-critical, easy to pick up, and easy to hand off to another team member.
 
 
-# ZenDesk Support Process
+# Zendesk Support Process
 
-1. All support requests should be answered within ZenDesk. Avoid responding via
+1. All support requests should be answered within Zendesk. Avoid responding via
    Google Groups or email, since it will distort our metrics.
 1. There are two people designated to the support team every week. Each week,
    one person is swapped for another to ensure that there is overlapping
