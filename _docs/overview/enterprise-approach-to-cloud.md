@@ -14,7 +14,7 @@ Enterprise approach to cloud.gov
 The cloud.gov enterprise account is designed for IT groups that need to support multiple applications across different offices within an agency.  An enterprise cloud.gov agreement unifies business processes, such as financial management, human resource management, and inventory management, into a single platform; everything is managed through one account rather than many. With this approach, your team can focus on the mission of your agency and get access to key services they need.
 
 
-[Download PDF of this page](/assets/Cloud.gov - Benefits of Enterprise Solution.pdf)
+[Download PDF of this page]({% link assets/docs/cloud-gov-benefits-of-enterprise-solution.pdf %})
 
 ## Benefits of an enterprise account
 
