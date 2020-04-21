@@ -247,7 +247,6 @@ assets:
   sources:
     - _assets/images/logos
     - _assets/images/illustrations
-    - _assets/uploads
     - assets/font-awesome/css
     - assets/font-awesome/fonts
     - node_modules/uswds/dist/img
