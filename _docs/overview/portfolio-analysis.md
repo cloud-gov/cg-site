@@ -46,7 +46,6 @@ For help interpreting this list or evaluating specific cases, please email the c
   - MySQL
   - Oracle
   - PostgreSQL
-  - SQL Server (potentially available at a future date TBD)
 - **Search engines**:
   - Elasticsearch
 - **Cache/queues**:
