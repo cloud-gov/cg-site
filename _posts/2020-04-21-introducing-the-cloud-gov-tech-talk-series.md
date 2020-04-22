@@ -16,3 +16,5 @@ Mark your calendars for upcoming Tech Talks:
 - Wednesday, May 20, 2:00 - 3:00 pm ET - Procuring cloud.gov Services
 - Tuesday, June 16, 2:00 - 3:00 pm ET - Federalist 101
 - Wednesday, July 15, 2:00 - 3:00 pm ET - cloud.gov Under The Hood 
+
+For more information checkout the [Digital.gov events page](https://digital.gov/events/).
