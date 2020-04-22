@@ -2,9 +2,11 @@
 layout: docs
 sidenav: true
 title: Contact
+parent: contact
 redirect_from:
   - /help
-  - /contact
+  - /contact/
+  - /docs/help/
 ---
 
 ### Want to use cloud.gov?

@@ -30,11 +30,51 @@ The support team is not required to "pair" in the traditional sense unless the t
 
 As the support team has free cycles, they can pick up tasks from the backlog designated with the `support-team` label. These tasks aim to improve our ability to support the platform by paying down technical debt, adding automation, improving monitoring and alerting, or adding to system documentation such as run-books. Because support team members inevitably face interruptions that cause context switching, the `support-team` backlog is groomed by the team with this in mind. These stories are not mission-critical, easy to pick up, and easy to hand off to another team member.
 
-## Weekly support tasks
 
-- Update the [`#cg-support`](https://gsa-tts.slack.com/messages/cg-support/) topic to include your name as the support contact.
-- In [logs.fr.cloud.gov](https://logs.fr.cloud.gov/), go under "Management" -> "Advanced Settings" and check the Kibana [timezone setting](https://www.elastic.co/guide/en/kibana/current/advanced-options.html) (`dateFormat:tz`) - it should be set to `Browser`. If anyone has changed it, change it back to `Browser`.
-- Check for any new CVEs in [Elasticsearch](https://www.cvedetails.com/vulnerability-list/vendor_id-13554/Elasticsearch.html), and [Redis](https://www.cvedetails.com/vulnerability-list/vendor_id-15183/product_id-31837/Pivotal-Software-Redis.html).
+# Zendesk Support Process
+
+1. All support requests should be answered within Zendesk. Avoid responding via
+   Google Groups or email, since it will distort our metrics.
+1. There are two people designated to the support team every week. Each week,
+   one person is swapped for another to ensure that there is overlapping
+   context awareness.
+1. At the start of the week, the support team should schedule a 15min meeting
+   to review unresolved issues from the previous week.
+1. Every day, the support team should set up a brief meeting to review and
+   assign New and Open issues. If they like, they can cowork or just assign
+   themselves issues.
+1. For specialized tickets, like security and compliance, the support team can
+   assign tasks to other team members, but they will need to follow up and make
+   sure the status of the ticket is accurate.
+1. Before the day is over, the support team will ensure that all New issues are
+   acknowledged and set to Open or Pending.
+1. Everyone should join #cg-supportstream to get notifications on Slack. This
+   can be useful to alert and coordinate with other team members.
+
+## Support Status
+
+### New
+
+We've not responded. The support leads will respond to the customer before the
+end of day (5pm local time). If we do not know the answer, we let the customer
+know that we’ll get back to them within 24-48hrs.
+
+### Open
+
+We’ve assigned the ticket but we’ve not responded, or the customer has
+responded, and the ticket is waiting on our input. We will use this if, for
+example, we require additional research. Open should not last more than a day
+and we should let the customer know if we need more time.
+
+### Pending
+
+We've responded to the ticket and may get a response. If there is no further
+activity, the issue auto-closes in 5 days. A ticket can move back to Open for a
+day if a response from the customer requires additional research.
+
+### Solved
+
+We've responded in a manner that does not expect a response.
 
 # Daily maintenance checklist
 
@@ -44,6 +84,31 @@ The tasks on this checklist should be performed each day.
 
 If you see a way to make this checklist better, just submit a PR to the
 [cg-site](https://github.com/18F/cg-site) repo for `content/docs/ops/maintenance-list.md`
+
+## Review and respond to open alerts
+
+- Review active alerts at https://prometheus.fr.cloud.gov/alerts.
+- Review all production smoke tests to ensure they are passing.
+
+### Investigate open alerts
+- Use our guides for reviewing cloud.gov alerts ([prometheus](https://github.com/18F/cg-deploy-prometheus/tree/master/bosh) for alert descriptions, links to the relevant rules, and starting points for reviewing each type of alert.
+- Was the alert caused by known maintenance or testing in dev environments? Check with other members of the cloud.gov team if you can't determine the source.
+- Is this a recurring alert? Search alert history to determine how frequently it is occuring and what event may have started its firing.
+- Should the underlying condition have caused an alert? Alerts should only be raised when they're something we need to remediate.
+
+#### Is the alert a real issue?
+If the alert may indicate a security issue follow the
+[Security Incident Response Guide]({{ site.baseurl }}/docs/ops/security-ir)
+, otherwise work to remediate its cause.
+
+#### Is the alert a false-positive?
+If the alert can be tuned to reduce the number of false-positives with less than
+two hours of work, do it.  If more work is required to tune the alert, add a card
+to capture the work that needs to be done or +1 an existing card if one already
+exists for tuning the alert.
+
+Be prepared to represent support needs at the next grooming meeting to ensure
+that cards to fix alerts are prioritized properly.
 
 ## Review open support requests
 
@@ -59,6 +124,12 @@ First-tier support may also ask you for pairing time to work out responses
 together.
 
 See also: [Detailed guidance on working with our support tools](https://docs.google.com/document/d/1QXZvcUl-6gtI7jEQObXV9FyiIpJC-Fx1R7RzB0C6PHM/edit#heading=h.80zn694rriw3).
+
+## Weekly support tasks
+
+- Update the [`#cg-support`](https://gsa-tts.slack.com/messages/cg-support/) topic to include your name as the support contact.
+- In [logs.fr.cloud.gov](https://logs.fr.cloud.gov/), go under "Management" -> "Advanced Settings" and check the Kibana [timezone setting](https://www.elastic.co/guide/en/kibana/current/advanced-options.html) (`dateFormat:tz`) - it should be set to `Browser`. If anyone has changed it, change it back to `Browser`.
+- Check for any new CVEs in [Elasticsearch](https://www.cvedetails.com/vulnerability-list/vendor_id-13554/Elasticsearch.html), and [Redis](https://www.cvedetails.com/vulnerability-list/vendor_id-15183/product_id-31837/Pivotal-Software-Redis.html).
 
 ## Ensure all VMs are running the current stemcell
 
@@ -103,32 +174,14 @@ See also: [Detailed guidance on working with our support tools](https://docs.goo
       before deploying an update that will upgrade the stemcell. You should
       also read the [Troubleshooting Nessus runbook]({{ site.baseurl }}/docs/ops/runbook/troubleshooting-nessus).
 
-## Review and respond to open alerts
-
-- Review active alerts at https://prometheus.fr.cloud.gov/alerts.
-- Review all production smoke tests to ensure they are passing.
-
-### Investigate open alerts
-- Use our guides for reviewing cloud.gov alerts ([prometheus](https://github.com/18F/cg-deploy-prometheus/tree/master/bosh) for alert descriptions, links to the relevant rules, and starting points for reviewing each type of alert.
-- Was the alert caused by known maintenance or testing in dev environments? Check with other members of the cloud.gov team if you can't determine the source.
-- Is this a recurring alert? Search alert history to determine how frequently it is occuring and what event may have started its firing.
-- Should the underlying condition have caused an alert? Alerts should only be raised when they're something we need to remediate.
-
-#### Is the alert a real issue?
-If the alert may indicate a security issue follow the
-[Security Incident Response Guide]({{ site.baseurl }}/docs/ops/security-ir)
-, otherwise work to remediate its cause.
-
-#### Is the alert a false-positive?
-If the alert can be tuned to reduce the number of false-positives with less than
-two hours of work, do it.  If more work is required to tune the alert, add a card
-to capture the work that needs to be done or +1 an existing card if one already
-exists for tuning the alert.
-
-Be prepared to represent support needs at the next grooming meeting to ensure
-that cards to fix alerts are prioritized properly.
-
 ## Review AWS CloudTrail events
+
+### Easy way
+
+Run [cloud-trail-check.sh](https://github.com/cloud-gov/cg-scripts/blob/master/cloudtrail-check.sh) for each AWS account we own,
+and review the output
+
+### Hard way
 > [Get familiar with the documentation for CloudTrail logs](http://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html).
 
 Use the [AWS Console](http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-console.html)
