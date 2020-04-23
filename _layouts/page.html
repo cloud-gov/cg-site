@@ -12,9 +12,13 @@ This template is for a single page that does not have a date associated with it.
       {% if page.sidenav == true %}
       {% include sidenav.html %}
       {% endif %}
-
       <div class="usa-layout-docs__main desktop:grid-col-9 usa-prose">
         {{ content }}
+        
+        <div class="grid-row">
+          <div class="grid-col flex-4"></div>
+          <div class="grid-col flex-1"><p><a href="{{ site.github_url }}/edit/master/{{ page.relative_path }}">Suggest edits</a></p></div>
+        </div>
       </div>
     </div>
   </div>
