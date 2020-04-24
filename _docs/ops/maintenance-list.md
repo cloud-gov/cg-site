@@ -7,43 +7,39 @@ title: Ongoing platform maintenance
 ---
 
 
-The platform requires regular support and maintenance activities to remain in a
-compliant state. If you are on support and you can’t complete any of the items
-personally, you are responsible for ensuring that an appropriate person does it.
-If you haven't already reached out on Slack, reach out during standup to get
-visibility with the people who might best help.
-
-# Are you new to platform support?
-
-- Join/unmute [`#cg-support`](https://gsa-tts.slack.com/messages/cg-support/)
-
-## Support Rotations
-
-The cloud.gov team utilizes a staggered pair rotation for support. Support assignments last two weeks. One team member exits support duty each week, with a new member starting their two-week rotation. With the other support team member in the middle of their two-week rotation, we ensure continuity of situational awareness, task handoffs, and work in progress.
-
-The support team is not required to "pair" in the traditional sense unless the task as hand necessitates doing so. Having a pair rather than a single person on support allows us to better serve our customers by:
-
-- Improving  situational awareness and communication through necessary, regular check-ins
-- Increasing debugging capabilities and problem-solving capacity (cloud.gov is a vast system to reason over, and two minds are better than one)
-- Providing a higher likelihood of coverage during planned or unplanned absences
-- Allowing for multiple tasks to be worked at once
-
-As the support team has free cycles, they can pick up tasks from the backlog designated with the `support-team` label. These tasks aim to improve our ability to support the platform by paying down technical debt, adding automation, improving monitoring and alerting, or adding to system documentation such as run-books. Because support team members inevitably face interruptions that cause context switching, the `support-team` backlog is groomed by the team with this in mind. These stories are not mission-critical, easy to pick up, and easy to hand off to another team member.
-
-## Weekly support tasks
-
-- Update the [`#cg-support`](https://gsa-tts.slack.com/messages/cg-support/) topic to include your name as the support contact.
-- In [logs.fr.cloud.gov](https://logs.fr.cloud.gov/), go under "Management" -> "Advanced Settings" and check the Kibana [timezone setting](https://www.elastic.co/guide/en/kibana/current/advanced-options.html) (`dateFormat:tz`) - it should be set to `Browser`. If anyone has changed it, change it back to `Browser`.
-- Check for any new CVEs in [Elasticsearch](https://www.cvedetails.com/vulnerability-list/vendor_id-13554/Elasticsearch.html), and [Redis](https://www.cvedetails.com/vulnerability-list/vendor_id-15183/product_id-31837/Pivotal-Software-Redis.html).
-
-# Daily maintenance checklist
+## Daily maintenance checklist
 
 The tasks on this checklist should be performed each day.
 
-## PR as you go
+### PR as you go
 
 If you see a way to make this checklist better, just submit a PR to the
 [cg-site](https://github.com/18F/cg-site) repo for `content/docs/ops/maintenance-list.md`
+
+### Review and respond to open alerts
+
+- Review active alerts at https://prometheus.fr.cloud.gov/alerts.
+- Review all production smoke tests to ensure they are passing.
+
+### Investigate open alerts
+- Use our guides for reviewing cloud.gov alerts ([prometheus](https://github.com/18F/cg-deploy-prometheus/tree/master/bosh) for alert descriptions, links to the relevant rules, and starting points for reviewing each type of alert.
+- Was the alert caused by known maintenance or testing in dev environments? Check with other members of the cloud.gov team if you can't determine the source.
+- Is this a recurring alert? Search alert history to determine how frequently it is occuring and what event may have started its firing.
+- Should the underlying condition have caused an alert? Alerts should only be raised when they're something we need to remediate.
+
+#### Is the alert a real issue?
+If the alert may indicate a security issue follow the
+[Security Incident Response Guide]({{ site.baseurl }}/docs/ops/security-ir)
+, otherwise work to remediate its cause.
+
+#### Is the alert a false-positive?
+If the alert can be tuned to reduce the number of false-positives with less than
+two hours of work, do it.  If more work is required to tune the alert, add a card
+to capture the work that needs to be done or +1 an existing card if one already
+exists for tuning the alert.
+
+Be prepared to represent support needs at the next grooming meeting to ensure
+that cards to fix alerts are prioritized properly.
 
 ## Review open support requests
 
@@ -59,6 +55,16 @@ First-tier support may also ask you for pairing time to work out responses
 together.
 
 See also: [Detailed guidance on working with our support tools](https://docs.google.com/document/d/1QXZvcUl-6gtI7jEQObXV9FyiIpJC-Fx1R7RzB0C6PHM/edit#heading=h.80zn694rriw3).
+
+## Support rotation
+
+Review the [detailed guide on customer support]({{site.baseurl}}/docs/ops/customer-support).
+
+## Weekly support tasks
+
+- Update the [`#cg-support`](https://gsa-tts.slack.com/messages/cg-support/) topic to include your name as the support contact.
+- In [logs.fr.cloud.gov](https://logs.fr.cloud.gov/), go under "Management" -> "Advanced Settings" and check the Kibana [timezone setting](https://www.elastic.co/guide/en/kibana/current/advanced-options.html) (`dateFormat:tz`) - it should be set to `Browser`. If anyone has changed it, change it back to `Browser`.
+- Check for any new CVEs in [Elasticsearch](https://www.cvedetails.com/vulnerability-list/vendor_id-13554/Elasticsearch.html), and [Redis](https://www.cvedetails.com/vulnerability-list/vendor_id-15183/product_id-31837/Pivotal-Software-Redis.html).
 
 ## Ensure all VMs are running the current stemcell
 
@@ -103,32 +109,14 @@ See also: [Detailed guidance on working with our support tools](https://docs.goo
       before deploying an update that will upgrade the stemcell. You should
       also read the [Troubleshooting Nessus runbook]({{ site.baseurl }}/docs/ops/runbook/troubleshooting-nessus).
 
-## Review and respond to open alerts
-
-- Review active alerts at https://prometheus.fr.cloud.gov/alerts.
-- Review all production smoke tests to ensure they are passing.
-
-### Investigate open alerts
-- Use our guides for reviewing cloud.gov alerts ([prometheus](https://github.com/18F/cg-deploy-prometheus/tree/master/bosh) for alert descriptions, links to the relevant rules, and starting points for reviewing each type of alert.
-- Was the alert caused by known maintenance or testing in dev environments? Check with other members of the cloud.gov team if you can't determine the source.
-- Is this a recurring alert? Search alert history to determine how frequently it is occuring and what event may have started its firing.
-- Should the underlying condition have caused an alert? Alerts should only be raised when they're something we need to remediate.
-
-#### Is the alert a real issue?
-If the alert may indicate a security issue follow the
-[Security Incident Response Guide]({{ site.baseurl }}/docs/ops/security-ir)
-, otherwise work to remediate its cause.
-
-#### Is the alert a false-positive?
-If the alert can be tuned to reduce the number of false-positives with less than
-two hours of work, do it.  If more work is required to tune the alert, add a card
-to capture the work that needs to be done or +1 an existing card if one already
-exists for tuning the alert.
-
-Be prepared to represent support needs at the next grooming meeting to ensure
-that cards to fix alerts are prioritized properly.
-
 ## Review AWS CloudTrail events
+
+### Easy way
+
+Run [cloud-trail-check.sh](https://github.com/cloud-gov/cg-scripts/blob/master/cloudtrail-check.sh) for each AWS account we own,
+and review the output
+
+### Hard way
 > [Get familiar with the documentation for CloudTrail logs](http://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html).
 
 Use the [AWS Console](http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-console.html)

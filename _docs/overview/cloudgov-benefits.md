@@ -4,7 +4,7 @@ layout: docs
 sidenav: true
 overview: true
 title: The benefits of cloud.gov
-weight: -50
+weight: -51
 redirect_from:
   - /docs/intro/overview/why-use-cloudgov
   - /intro/overview/why-use-cloudgov
@@ -16,7 +16,6 @@ redirect_from:
   - /docs/intro/overview/why-available-other-agencies
   - /intro/overview/why-available-other-agencies
   - /overview/overview/why-available-other-agencies
-
 ---
 
 ## 1. Security
