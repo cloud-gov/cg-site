@@ -76,7 +76,7 @@ primary_navigation:
     - name: cloud.gov team documentation
       url: /docs/ops/repos/
   - name: News
-    url: /updates/
+    url: /news/
   - name: Contact us
     url: /contact/
 
