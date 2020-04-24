@@ -75,6 +75,14 @@ If your application logs are output in JSON, they will be easily searchable in [
 
 If you want to set up your own storage for your application logs, you can set up [a "log drain" service](https://docs.cloudfoundry.org/devguide/services/log-management.html) that sends the logs to S3 or your preferred location.
 
+Create the user provided service and point it toward the endpoint where you want to send your logs: 
+
+  cf cups log-drain -l syslog-tls://<your-log-drain-service-endpont>
+  
+Then, bind the service you created to the app that you want connect:
+
+  cf bind-service YOUR-APP YOUR-LOG-STORE
+
 ## Troubleshooting missing logs
 
 Not seeing the logs you expect? Here are a few questions to ask yourself to help identify the problem.
