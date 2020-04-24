@@ -56,6 +56,10 @@ together.
 
 See also: [Detailed guidance on working with our support tools](https://docs.google.com/document/d/1QXZvcUl-6gtI7jEQObXV9FyiIpJC-Fx1R7RzB0C6PHM/edit#heading=h.80zn694rriw3).
 
+## Support rotation
+
+Review the [detailed guide on customer support]({{site.baseurl}}/docs/ops/customer-support).
+
 ## Weekly support tasks
 
 - Update the [`#cg-support`](https://gsa-tts.slack.com/messages/cg-support/) topic to include your name as the support contact.
