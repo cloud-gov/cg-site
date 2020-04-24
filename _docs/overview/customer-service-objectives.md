@@ -2,7 +2,7 @@
 parent: overview
 layout: docs
 sidenav: true
-title: Customer service objectives
+title: Our customer service objectives
 overview: true
 weight: 15
 redirect_from:
