@@ -89,21 +89,6 @@ collections:
       - {label: 'Weight', name: 'weight', widget: "number", valueType: 'int', required: false}
       - *redirect_from_anchor
       - {label: "Body", name: "body", widget: "markdown"}
-  - label: Deployment Experimental
-    name: experimental
-    folder: _docs/deployment/experimental/
-    create: true
-    slug: "{{slug}}"
-    editor:
-      preview: true
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: 'Parent', name: 'parent', widget: 'hidden', default: 'experimental'}
-      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'docs'}
-      - {label: 'Sidenav', name: 'sidenav', widget: 'hidden', default: true}
-      - {label: 'Weight', name: 'weight', widget: "number", valueType: 'int', required: false}
-      - *redirect_from_anchor
-      - {label: "Body", name: "body", widget: "markdown"}
   - label: Getting Started
     name: getting-started
     folder: _docs/getting-started/
