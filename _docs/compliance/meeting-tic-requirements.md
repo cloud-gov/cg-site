@@ -32,7 +32,7 @@ subgraph cloud.gov boundary
   APIRouter
   subgraph Agency information system
     App
-  end 
+  end
 end
 
 subgraph Internet
@@ -53,7 +53,7 @@ For requests originating from your agency’s TIC egress bound for cloud.gov, ou
 
 cloud.gov's TLS endpoint is not restricted, but rather accessible over the open internet. When an administrator wants to interact with the deployed application through the cloud.gov API, it's your agency’s responsibility to make sure that traffic goes over a TIC connection before it reaches its destination on cloud.gov. For example, you may not want users to be able to manipulate applications on cloud.gov from their home connection or via a wifi access point in the local coffee shop.
 
-Your agency can accomplish this by establishing an operational requirement that all administrative access to cloud.gov services happens via the agency network. You can further enforce this requirement with a technical control: [Prevent users in your domain from using the cloud.gov API except from your agency's TIC egress range]({{ site.baseurl }}{% link _docs/deployment/experimental/restricting-users-to-trusted-ip-ranges.md %}). Requests from an IP origin that does not match the range we have on record for your TIC (the dotted/dashed line in the diagram) will be rejected.
+Your agency can accomplish this by establishing an operational requirement that all administrative access to cloud.gov services happens via the agency network. You can further enforce this requirement with a technical control: Prevent users in your domain from using the cloud.gov API except from your agency's TIC egress range. Requests from an IP origin that does not match the range we have on record for your TIC (the dotted/dashed line in the diagram) will be rejected.
 
 ### Restricting usage of your application
 
@@ -74,11 +74,11 @@ subgraph Agency network
 end
 
 subgraph cloud.gov boundary
-  PRouter[App router] 
+  PRouter[App router]
   subgraph Agency information system
     RouteService
     App
-  end 
+  end
 end
 
 AUser -->TIC
@@ -93,8 +93,4 @@ RouteService[App logic or route service] --> App
 
 For remote workers or partners outside the normal agency network boundary, you can require use of a VPN to ensure that cloud.gov-bound traffic is routed over the agency network and TIC (shown in Figure 15 of the [TIC Reference architecture](https://s3.amazonaws.com/sitesusa/wp-content/uploads/sites/482/2015/04/TIC_Ref_Arch_v2-0_2013.pdf)).
 
-You can then reject requests to your app unless they come from your agency's TIC egress range. You can do this by modifying your application logic or [deploying a user-provided route-service to act as a proxy]({{ site.baseurl }}{% link _docs/deployment/experimental/restricting-users-to-trusted-ip-ranges.md %}#restricting-access-to-your-own-applications).
-
-
-
-
+You can then reject requests to your app unless they come from your agency's TIC egress range. You can do this by modifying your application logic.
