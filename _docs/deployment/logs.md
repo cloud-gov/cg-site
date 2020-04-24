@@ -25,9 +25,11 @@ cf logs APPNAME --recent
 
 ### Example log
 
+```
   	2015-03-16T17:37:47.82-0400 [DEA/1]      OUT Starting app instance (index 0) with guid GUID
   	2015-03-16T17:37:50.85-0400 [DEA/1]      ERR Instance (index 0) failed to start accepting connections
   	2015-03-16T17:37:53.54-0400 [API/0]      OUT App instance exited with guid GUID0 payload: {"cc_partition"=>"default", "droplet"=>"GUID0", "version"=>"GUID1", "instance"=>"GUID2", "index"=>0, "reason"=>"CRASHED", "exit_status"=>127, "exit_description"=>"failed to accept connections within health check timeout", "crash_timestamp"=>1426541870}
+```
 
 ### See also
 
@@ -51,15 +53,21 @@ Logs are currently retained for 180 days, and you will only see data for applica
 
 After logging in, you'll see the App Overview dashboard.
 
-{% asset app-overview.png alt="App Overview dashboard" %}
+```
+    {% asset app-overview.png alt="App Overview dashboard" %}
+```
 
 The default time period is "Last 15 minutes". To change the time period of data that you are viewing, or to turn on auto-refresh, click on the time period in the top right menu.
 
-{% asset time-period.png alt="Time period selection" %}
+```
+    {% asset time-period.png alt="Time period selection" %}
+```
 
 You can also view several dashboards that present different visualizations of your log data. You can select these by going to "Dashboard" at left and clicking "Open" in the top toolbar.
 
-{% asset select-dashboard.png alt="Select dashboards" %}
+```
+    {% asset select-dashboard.png alt="Select dashboards" %}
+```
 
 These visualizations are provided via Kibana, which has a [user guide](https://www.elastic.co/guide/en/kibana/current/index.html) that explains more about how to use it and customize your views.
 
