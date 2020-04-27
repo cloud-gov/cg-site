@@ -177,7 +177,7 @@ Did we miss a tip or useful resource that you think we should add? [Submit a sug
 
 #### Additional sample applications
 
-*   [Drupal example](https://github.com/18F/cf-ex-drupal)
+*   [Drupal example](https://github.com/18F/cf-ex-drupal8/)
 *   [WordPress example](https://github.com/18F/cf-ex-wordpress)
 *   [Cloud Foundry community collection of sample applications](https://github.com/cloudfoundry-samples)
 *   [SpringMusic: Java + any of MySQL, Oracle, Postgres or Redis](https://github.com/cloudfoundry-samples/spring-music)
