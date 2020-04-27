@@ -74,7 +74,7 @@ CD -->|If preprod tests OK, deploy prod branch| Prod(Prod app on cloud.gov)
 
 ## Service examples
 
-Here are examples of how to set up two cloud-based services that have free tiers for open source projects, [Travis](https://docs.travis-ci.com/) and [CircleCI](https://circleci.com/docs/1.0/). (You can also find and adapt instructions for using other CI/CD services with other Cloud Foundry deployments, such as [this explanation of how to use Jenkins](https://docs.cloud.service.gov.uk/#setting-up-the-cloud-foundry-jenkins-plugin).)
+Here are examples of how to set up three cloud-based services that have free tiers for open source projects, [Travis](https://docs.travis-ci.com/), [CircleCI](https://circleci.com/docs/1.0/) and [GitHub](https://github.com/features/actions). (You can also find and adapt instructions for using other CI/CD services with other Cloud Foundry deployments, such as [this explanation of how to use Jenkins](https://docs.cloud.service.gov.uk/using_ci.html#push-an-app-with-jenkins).)
 
 ### Travis
 
@@ -150,3 +150,58 @@ Replace `DEPLOYER_SERVICE_ACCOUNT_USERNAME`, `ORG`, and `SPACE` with your inform
 You can also review their [sample circle.yml file](https://circleci.com/docs/1.0/config-sample/) for more configuration options.
 
 **Note**: If your `manifest.yml` describes more than one app, you might want to specify which app to push in the `cf push` line.
+
+### GitHub Actions
+
+See the [GitHub Actions documentation](https://help.github.com/en/actions) to get started, and this pre-made [GitHub Action](https://github.com/cloud-gov/cg-cli-tools).
+
+#### Usage
+
+After following the instructions for setting up a [cloud.gov service account](https://cloud.gov/docs/services/cloud-gov-service-account/), store you username (CG_USERNAME) and password (CG_PASSWORD) as [encrypted secrets](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets). 
+
+#### Sample workflow
+
+The following is an example of a workflow that uses this action. This example shows how to deploy a [simple .NET Core app](https://github.com/cloud-gov/cf-hello-worlds/tree/master/dotnet-core) to cloud.gov
+
+```yml
+name: .NET Core Deploy
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.101
+
+    - name: Install dependencies
+      run: dotnet restore
+      
+    - name: Build
+      run: dotnet build 
+      
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy to cloud.gov
+        uses: cloud-gov/cg-cli-tools@master
+        with: 
+          cf_api: https://api.fr.cloud.gov
+          cf_username: ${{ secrets.CG_USERNAME }}
+          cf_password: ${{ secrets.CG_PASSWORD }}
+          cf_org: your-org
+          cf_space: your-space
+
+```
+
+Note the reference to `cloud-gov/cg-cli-tools@master` in the workflow file above. You can use another workflow file as part of your deployment process if you desire, or add additional steps to your workflow by referencing other GitHub actions.
