@@ -190,4 +190,4 @@ Did we miss a tip or useful resource that you think we should add? [Submit a sug
 Want more?
 ----------
 
-Upgrade to a paid package to get full access to the platform and permanent spaces for hosting longer term demos and web applications in production. Email us at [inquiries@cloud.gov]({{inquiries_email}}) to learn more about what cloud.gov can do.
+Upgrade to a paid package to get full access to the platform and permanent spaces for hosting longer term demos and web applications in production. Email us at [inquiries@cloud.gov]({{site.inquiries_email}}) to learn more about what cloud.gov can do.
