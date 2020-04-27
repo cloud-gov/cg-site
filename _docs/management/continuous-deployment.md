@@ -201,7 +201,6 @@ jobs:
           cf_password: ${{ secrets.CG_PASSWORD }}
           cf_org: your-org
           cf_space: your-space
-
 ```
 
 Note the reference to `cloud-gov/cg-cli-tools@master` in the workflow file above. You can use another workflow file as part of your deployment process if you desire, or add additional steps to your workflow by referencing other GitHub actions.
