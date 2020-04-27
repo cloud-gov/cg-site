@@ -161,7 +161,7 @@ After following the instructions for setting up a [cloud.gov service account](ht
 
 #### Sample workflow
 
-The following is an example of a workflow that uses this action. This example shows how to deploy a simple [].NET Core app](https://github.com/cloud-gov/cf-hello-worlds/tree/master/dotnet-core) to cloud.gov
+The following is an example of a workflow that uses this action. This example shows how to deploy a simple [.NET Core app](https://github.com/cloud-gov/cf-hello-worlds/tree/master/dotnet-core) to cloud.gov
 
 ```yml
 name: .NET Core Deploy
