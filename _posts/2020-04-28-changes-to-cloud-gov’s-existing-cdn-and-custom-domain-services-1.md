@@ -25,11 +25,11 @@ Service brokers are a fundamental part of the cloud.gov platform. They allow dev
 
 You can see the cdn and domains services in the [Dashboard](https://dashboard.fr.cloud.gov/), or by running cf marketplace from the command line:
 
-`$ cf marketplace`
-
-`cdn-route Custom domains, CDN caching, and TLS certificates with automatic renewal cdn-broker`
-
-`custom-domain Custom domains and TLS certificates with automatic renewal domains-broker`
+```
+$ cf marketplace
+cdn-route Custom domains, CDN caching, and TLS certificates with automatic renewal cdn-broker
+custom-domain Custom domains and TLS certificates with automatic renewal domains-broker
+```
 
 The CDN service provisions and configures AWS CloudFront and Let’s Encrypt TLS certificates to serve traffic from a custom domain provided by your engineering team.
 
