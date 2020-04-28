@@ -38,6 +38,12 @@ When you log into cloud.gov for the first time, follow the instructions to set t
 * **If you're logged out and forgot your password:** You can [reset your password](https://account.fr.cloud.gov/forgot-password) to log in with a temporary password, then [change your password](https://account.fr.cloud.gov/change-password).
 * **If you're logged out and your password has expired:** You still [reset your password](https://account.fr.cloud.gov/forgot-password) to log in with a temporary password, then [change your password](https://account.fr.cloud.gov/change-password).
 
+#### If you need to change MFA to a new device
+
+If you need to register a new MFA device, and still have access to your old device (e.g. you got a new phone, and still have your old phone),
+you can [reset your mfa token here](https://account.fr.cloud.gov/reset-token). Log in with your old device, then reset your token. You'll be
+logged out, and can set up your new device on your next log in. 
+
 #### If you can't access your token codes
 
 If you need to set up a new authentication application, such as if you lose your phone, [email cloud.gov support](mailto:support@cloud.gov?subject=MFA%20reset&body=I%20need%20to%20set%20up%20a%20new%20authentication%20application.%20I%20understand%20this%20means%20the%20contents%20of%20my%20sandbox%20space%20will%20be%20deleted%20if%20I%20have%20one,%20and%20that%20you%20will%20remove%20my%20permissions%20to%20other%20spaces%20and%20orgs.) so that we can allow you to set up a new one. We'll follow this process to mitigate the risk of requests from compromised email addresses:
