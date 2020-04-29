@@ -27,12 +27,10 @@ You can see the cdn and domains services in the [Dashboard](https://dashboard.fr
 
 ```
 $ cf marketplace
-
-cdn-route Custom domains, CDN caching, and TLS certificates
-  with automatic renewal cdn-broker
-
-custom-domain Custom domains and TLS certificates
-  with automatic renewal domains-broker
+  cdn-route Custom domains, CDN caching, and TLS certificates
+    with automatic renewal cdn-broker
+  custom-domain Custom domains and TLS certificates
+    with automatic renewal domains-broker
 ```
 
 The CDN service provisions and configures AWS CloudFront and Let’s Encrypt TLS certificates to serve traffic from a custom domain provided by your engineering team.
