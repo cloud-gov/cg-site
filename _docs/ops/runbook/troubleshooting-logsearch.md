@@ -178,7 +178,7 @@ on the problem field, so it queries Elasticsearch more smartly about this field.
 If that doesn't work, you can use the steps below to rename the field on the documents with a mismatched field type.
 
 1. Use your browser's dev tools to figure out what index is failing the search. Using the network tab, look at requests for the `_msearch` endpoint (they'll also have query params). 
-1. In the response, look at `responses[0]['_shards']['failures'][0]['reason']['reason']`, which should have a message like `Fielddata is disabled on text fields by default. Set fielddata=true on [app.data.cert.Expiration]`. In this case `app.cert.Expiratoin` is the field that broke.
+1. In the response, look at `responses[0]['_shards']['failures'][0]['reason']['reason']`, which should have a message like `Fielddata is disabled on text fields by default. Set fielddata=true on [app.data.cert.Expiration]`. In this case `app.data.cert.Expiration` is the field that broke.
 1. run this command, changing the field name and date as appropriate (in two places in script.source, one place in query.boo.filter.exists.field).
    ```
    curl -XPOST localhost/logs-app-2020.05.04/_update_by_query?refresh -H 'content-type: application/json' -d '{
