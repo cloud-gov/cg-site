@@ -158,17 +158,32 @@ bosh -d logsearch recreate ingestor/0
 
 ## Fixing `5 of 900 shards failed`
 
-Kibana sometimes fails any search containing a single day, and displays the error message `5 of 900 shards failed`. This can be caused by dynamic fields changing from a non-string type to a string type,
-causing that day's index mapping to be different from and incompatible with all other days.
-When this happens, the solution is to rename that field for that day.
+Kibana sometimes fails any search containing a single day, and displays the error message `5 of 900 shards failed`.
+This can be caused by dynamic fields changing from a non-string type to a string type, causing that day's index
+mapping to be different from and incompatible with all other days. For example, if `app.request.time` is a timestamp
+one day and a text field the next, this error can occur.
+
+In some cases, the solution is to refresh the field list in Kibana:
+
+1. log into Kibana
+1. click on the `management` tab
+1. click on `Index Patterns`
+1. make sure you have the `logs-app-*` index pattern selected
+1. click the refresh icon in the top right (it should say `refresh field list` when you hover your mouse over it)
+1. try reloading the `discovery` tab - it should work within a minute or so.
+
+This works by forcing Kibana to reload the list of fields. Doing so makes it realise there's an inconsistent mapping
+on the problem field, so it queries Elasticsearch more smartly about this field.
+
+If that doesn't work, you can use the steps below to rename the field on the documents with a mismatched field type.
 
 1. Use your browser's dev tools to figure out what index is failing the search. Using the network tab, look at requests for the `_msearch` endpoint (they'll also have query params). 
-1. In the response, look at `responses[0]['_shards']['failures'][0]['reason']['reason']`, which should have a message like `Fielddata is disabled on text fields by default. Set fielddata=true on [app.some.field]`. In this case `app.some.field` is the field that broke.
+1. In the response, look at `responses[0]['_shards']['failures'][0]['reason']['reason']`, which should have a message like `Fielddata is disabled on text fields by default. Set fielddata=true on [app.data.cert.Expiration]`. In this case `app.data.cert.Expiration` is the field that broke.
 1. run this command, changing the field name and date as appropriate (in two places in script.source, one place in query.boo.filter.exists.field).
    ```
-   curl -XPOST localhost/$INDEX_WITH_PROBLEM/_update_by_query?refresh -H 'content-type: application/json' -d '{
+   curl -XPOST localhost/logs-app-2020.05.04/_update_by_query?refresh -H 'content-type: application/json' -d '{
      "script": {
-       "source": "ctx._source.app.some.thing$TODAYS_DATE = ctx._source.app.some(\"thing\");",
+       "source": "ctx._source.app.data.cert.Expiration20200504 = ctx._source.app.data.cert.remove(\"Expiration\");",
        "lang": "painless"
      },
      "query": {
@@ -176,7 +191,7 @@ When this happens, the solution is to rename that field for that day.
          "filter": [
            {
              "exists": {
-               "field": "app.some.thing"
+               "field": "app.data.cert.Expiration"
              }
            }
          ]
@@ -184,6 +199,10 @@ When this happens, the solution is to rename that field for that day.
      }
    }
    ```
+In the `script` field, `ctx._source` is basically the document being updated. On the right hand of the statement, we're calling `remove("Expiration")` on 
+`app.data.cert`, which drops that field from the document and returns its value. We then use the value to set the new field `Expiration20200504`.
+The `query` section says to only run this update on fields where `app.data.cert.Expiration` exists.
+
 Note: this means this field will not be searchable by its usual name for that day's index.
 
 ## Other Useful ElasticSearch commands
