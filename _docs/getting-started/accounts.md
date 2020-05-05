@@ -40,9 +40,9 @@ When you log into cloud.gov for the first time, follow the instructions to set t
 
 #### If you need to change MFA to a new device
 
-If you need to register a new MFA device, and still have access to your old device (e.g. you got a new phone, and still have your old phone),
-you can [reset your mfa token here](https://account.fr.cloud.gov/reset-token). Log in with your old device, then reset your token. You'll be
-logged out, and can set up your new device on your next log in. 
+If you need to register a new MFA device and still have access to your old device (e.g. you got a new phone and still have your old phone),
+you can [reset your mfa token here](https://account.fr.cloud.gov/reset-token). Log in with your old device then reset your token. You'll be
+logged out and can set up your new device on your next log in. 
 
 #### If you can't access your token codes
 
