@@ -38,11 +38,11 @@ When you log into cloud.gov for the first time, follow the instructions to set t
 * **If you're logged out and forgot your password:** You can [reset your password](https://account.fr.cloud.gov/forgot-password) to log in with a temporary password, then [change your password](https://account.fr.cloud.gov/change-password).
 * **If you're logged out and your password has expired:** You still [reset your password](https://account.fr.cloud.gov/forgot-password) to log in with a temporary password, then [change your password](https://account.fr.cloud.gov/change-password).
 
-#### If you need to change MFA to a new device
+#### If you need to change TOTP to a new device
 
-If you need to register a new MFA device and still have access to your old device (e.g. you got a new phone and still have your old phone),
-you can [reset your mfa token here](https://account.fr.cloud.gov/reset-token). Log in with your old device then reset your token. You'll be
-logged out and can set up your new device on your next log in. 
+If you need to register a TOTP token on a new device and still have access to your old device (e.g. you got a new phone and still have your old phone),
+you can [reset your TOTP token here](https://account.fr.cloud.gov/reset-totp). Log in with your old device then reset your token. You'll be
+logged out and can set up tokens on your new device on your next log in. 
 
 #### If you can't access your token codes
 
