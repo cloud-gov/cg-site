@@ -8,7 +8,7 @@ title: Secret key management
 
 ## Sharing secret keys
 
-For sharing the following types of [sensitive information](https://github.com/18F/open-source-policy/blob/master/practice.md#protecting-sensitive-information) related to cloud.gov, cloud.gov team members must use GSA Google Hangouts. The team member must share the information only with intended recipient(s) who need to know the sensitive information. Team members can use the Hangouts screen-sharing feature or verbally share the information.
+For sharing the following types of [sensitive information](https://github.com/18F/open-source-policy/blob/master/practice.md#protecting-sensitive-information) related to cloud.gov, cloud.gov team members must use GSA Google Meet. The team member must share the information only with intended recipient(s) who need to know the sensitive information. Team members can use the Meet screen-sharing feature or verbally share the information.
 
 * Passwords
 * Secret keys
@@ -23,20 +23,26 @@ Authorized federal staff rotate, encrypt, and backup keys yearly. Privileged use
 
 ### AWS credentials
 
-If you need to view/update secrets:
+If you need to view/update secrets, you'll need these two things:
 
-1. Ask in [#cg-platform](https://gsa-tts.slack.com/messages/cg-platform/) for an account to read/write from the S3 buckets.
-1. Setup aws-vault
+1. An AWS account(s) to read/write from the S3 buckets - ask in [#cg-platform](https://gsa-tts.slack.com/messages/cg-platform/) if you don't already have one, but you likely do as a part of the platform operator onboarding process.
+1. `aws-vault`, which secures credentials locally and generates temporary credentials to provide an additional layer of security.
 
-#### Install aws-vault for AWS credentials
-`aws-vault` secures credentials locally and generates temporary credentials to provide an additional layer of security.  To install `aws-vault` use the brew command:
+#### Install aws-vault for AWS credentials and create a profile
+Install `aws-vault` with this [Homebrew](https://brew.sh/) command:
+
 ```sh
 brew cask install aws-vault
+```
+
+Now create a profile, e.g., for the AWS GovCloud account:
+
+```sh
 aws-vault add cloud-gov-govcloud
 ```
 
 #### Configure MFA for aws-vault
-All operators should have MFA enabled, which can be viewed in the AWS console under `Services -> IAM -> Users -> firstname.lastname -> Security Credentials`, or from the command line with `aws iam list-virtual-mfa-devices`.  The ARN of this MFA device needs to be added to the local Amazon configuration to enable short lived tokens:
+All operators must have MFA enabled, which is taken care of as a part of the platform operator onboarding process.  This can be confirmed by checking in the AWS console under `Services -> IAM -> Users -> firstname.lastname -> Security Credentials`, or in the command line with `aws iam list-virtual-mfa-devices`.  Confirm that MFA is enabled for your account, then use the following commands to add the ARN of the MFA device to the local Amazon configuration in order to enable short lived tokens:
 
 ```sh
 me=$(aws iam get-user | jq -r '.User.UserName')
@@ -47,16 +53,16 @@ echo "mfa_serial = $mfa_serial" >> ~/.aws/config
 ```
 
 #### Executing a command with short lived credentials
-You can execute any system command with short lived credentials using the `aws-vault exec` command:
+You can execute any system command with short lived credentials using the `aws-vault exec` command.  For example, to open a new shell session with the credentials set in the environment, run the following command:
 
 ```sh
 aws-vault exec cloud-gov-govcloud bash
 ```
 
-Running `env | grep AWS` will show you a new set of credentials which are different from the primary IAM role credentials, as they are short lived and issued at runtime.  This means that if a malicious script or program attempts to read `~/.aws/credentials` or `~/.aws/config` all they will be unable to retrieve the primary credentials.
+If you do this, running `env | grep AWS` will show you a new set of credentials which are different from the primary IAM role credentials because they are short lived and issued at runtime.  This means that if a malicious script or program attempts to read `~/.aws/credentials` or `~/.aws/config` they will be unable to retrieve the primary credentials.
 
-### Next Steps
-Once this is complete, operators can provision profiles which use only specific resources, or specific permissions such as read only.  This scopes the role of the temporary credentials to further reduce the attack surface.
+### Next Steps for aws-vault configuration and usage
+Once this is complete, you can provision additional profiles which use only specific resources, or specific permissions such as read only.  This scopes the role of the temporary credentials to further reduce the attack surface.
 
 ### UAA credentials
 All UAA clients and users and associated credentials should be created via the Cloud Foundry secrets or the [service account]({{ site.baseurl }}{% link _docs/services/cloud-gov-service-account.md %}) or [identity provider]({{ site.baseurl }}{% link _docs/services/cloud-gov-identity-provider.md %}) services. UAA accounts should not be created manually; we reserve the right to drop permissions for or deprovision hand-propped accounts.
