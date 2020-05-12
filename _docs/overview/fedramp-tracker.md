@@ -32,7 +32,7 @@ Once that P-ATO is granted, FedRAMP requires cloud.gov to undergo re-assessment 
 
 Your agency still needs to grant your system an Authority to Operate, but FedRAMP has done the labor-intensive work of reviewing cloud.gov's security posture and endorsed it, which reduces the compliance work you need to do. Your agency's authorizing official can request the P-ATO documentation package from FedRAMP and accept that endorsement for your own system. See [ATO process]({{ site.baseurl }}{% link _docs/compliance/ato-process.md %}) for the typical workflow.
 
-Here's how it works: Every "moderate" impact federal system is required to account for a baseline of about 325 controls before it can be granted an ATO. Once cloud.gov's P-ATO is reviewed and accepted, many of those requirements are already implemented and documented. Of the remaining requirements, responsibility for most of the rest are shared between cloud.gov and your application, and only some of them are fully yours.
+Here's how it works: Every "moderate" impact federal system is required to account for a baseline of about 325 controls before it can be granted an ATO. The cloud.gov platform provides you with 269 inheritable controls (179 implemented by our team, 90 that we inherit from Amazon Web Services). Once cloud.gov's P-ATO is reviewed and accepted, many of those requirements are already implemented and documented. Of the remaining requirements, responsibility for most of the rest are shared between cloud.gov and your application, and only some of them are fully yours.
 
 Here's an example of a control breakdown for a simple moderate-impact system hosted on cloud.gov:
 
