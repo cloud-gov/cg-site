@@ -64,7 +64,6 @@ Ideal applications follow as many of the [12-Factor App](https://12factor.net/) 
 1. **Backing services**: Does the application retry or fail gracefully if a service it connects to is unavailable?
 1. **Build, release, run**: Can you build the deployment artifacts outside of the deployment environment, for example in a continuous deployment system?
 1. **Processes**: Does the application keep its state in a backing service, rather than shared memory or filesystem?
-  - Applications that rely on a durable filesystem to share state between requests will be supported in FY19.
 1. **Port binding**: Does the application listen for requests over HTTP on a single port?
   - Applications that only accept requests over straight TCP are also possible, but may require additional work on the cloud.gov side to get going.
 1. **Concurrency**: Does the application scale correctly without modification when you run additional instances of it behind a load-balancer?
