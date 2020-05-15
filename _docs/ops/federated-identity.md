@@ -37,6 +37,6 @@ After Concourse deploys the updated secrets, the new IdP will be displayed and a
 
 Identity provider metadata removed from the BOSH deployment does not remove it from the UAA DB. Therefore, removing an IDP involves removing the metadata used during deployment (from Credhub) as well as removing the metadata from UAA directly. 
 
-A script to remove IDPs is included at https://github.com/cloud-gov/cg-scripts/blob/master/remove-idp.sh. This script will remove an IDP from both Credhub and UAA, or can remove orphaned elements only in UAA via the `--uaa-only` option. 
+A script to remove IDPs is included [here](https://github.com/cloud-gov/cg-scripts/blob/master/uaa/remove-idp.sh). This script will remove an IDP from both Credhub and UAA, or can remove orphaned elements only in UAA via the `--uaa-only` option. 
 
 Removing an entry for UAA will immediately remove the IDP from the login page. The changes in Credhub will be applied on the next cf deployment.
