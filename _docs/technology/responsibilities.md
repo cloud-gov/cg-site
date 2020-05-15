@@ -18,7 +18,7 @@ Here's a chart to illustrate this in three example use cases:
 
 <!-- Source for this diagram is https://docs.google.com/drawings/d/1UBiOteSPXpA72KE52Kh-j7aYr73zTkzJ_oMuw5F293I/edit -->
 
-App #1 uses a [standard buildpack]({{ site.baseurl }}{% link _docs/getting-started/concepts.md %}/#buildpacks). (A buildpack provides support for a programming language.) The customer is only responsible for the app code and its dependencies.
+App #1 uses a [standard buildpack]({{ site.baseurl }}{% link _docs/getting-started/concepts.md %}#buildpacks). (A buildpack provides support for a programming language.) The customer is only responsible for the app code and its dependencies.
 
 App #2 uses a [custom buildpack]({{ site.baseurl }}{% link _docs/deployment/custom-buildpacks.md %}), so the customer's responsibility expands from the app code to managing the custom buildpack and its dependencies. If you choose to use a custom buildpack, you are responsible for:
 
