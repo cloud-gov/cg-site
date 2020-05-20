@@ -68,6 +68,8 @@ Review the [detailed guide on customer support]({{site.baseurl}}/docs/ops/custom
 
 ## Ensure all VMs are running the current stemcell
 
+- Lookup the most recent published stemcell version at: https://bosh.cloudfoundry.org/stemcells/
+
 - From the jumpbox in each of our four environments, `tooling`, `development`,
   `staging` and `production`, run `bosh deployments` and verify the stemcell in
   use for each deployment is current. For example, the 621.61 stemcell is
