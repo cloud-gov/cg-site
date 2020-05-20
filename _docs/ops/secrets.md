@@ -15,20 +15,43 @@ For sharing the following types of [sensitive information](https://github.com/18
 * Sensitive environment variables
 * Other secret authentication information
 
-## Maintenance of system secret keys
 
-To meet NIST security control [SC-12 (1)](https://web.nvd.nist.gov/view/800-53/Rev4/control?controlName=SC-12), we maintain the availability of all information on the platform in the event a cryptographic access key is lost or compromised.
 
-Authorized federal staff rotate, encrypt, and backup keys yearly. Privileged users can access the keys only with two-factor authentication and a decryption passphrase. In the rare case that both the keys and the decryption passphrase for the backup are lost or compromised, new keys can be rotated in by authorized federal staff, while maintaining availability of information.
+## AWS credentials
 
-### AWS credentials
+### About AWS credential management
 
-If you need to view/update secrets, you'll need these two things:
+Multi-factor authentication is not only important to interactive console logins, but also for command-line interaction. Checking for console MFA is a standard compliance check, e.g. a [Chef Inspec check that all AWS users have MFA enabled](https://github.com/inspec/inspec-aws#ensure-all-aws-users-have-mfa-enabled), but at cloud.gov we go beyond that to ensure we have MFA enabled for _all_ API calls. We do so with the following IAM policy snippet:
 
-1. An AWS account(s) to read/write from the S3 buckets - ask in [#cg-platform](https://gsa-tts.slack.com/messages/cg-platform/) if you don't already have one, but you likely do as a part of the platform operator onboarding process.
-1. `aws-vault`, which secures credentials locally and generates temporary credentials to provide an additional layer of security.
+```javascript
+      {
+          "Sid": "DenyAllExceptListedIfNoMFA",
+          "Effect": "Deny",
+          "NotAction": [
+              "iam:CreateVirtualMFADevice",
+              "iam:EnableMFADevice",
+              "iam:GetUser",
+              "iam:ListMFADevices",
+              "iam:ListVirtualMFADevices",
+              "iam:ResyncMFADevice",
+              "sts:GetSessionToken"
+          ],
+          "Resource": "*",
+          "Condition": {
+              "BoolIfExists": {"aws:MultiFactorAuthPresent": "false"}
+          }
+      }
+```
 
-#### Install aws-vault for AWS credentials and create a profile
+If operators attempt to use their keys without MFA, an API error is thrown such as:
+
+```
+An error occurred (AccessDenied) when calling the ListUsers operation: User: ... is not authorized to perform: iam:ListUsers on resource: with an explicit deny
+```
+To work with AWS credentials on a day-to-day basis, we rely on [`aws-vault`](https://github.com/99designs/aws-vault/).
+
+### Install aws-vault for AWS credentials and create a profile
+
 Install `aws-vault` with this [Homebrew](https://brew.sh/) command:
 
 ```sh
@@ -41,7 +64,8 @@ Now create a profile, e.g., for the AWS GovCloud account:
 aws-vault add cloud-gov-govcloud
 ```
 
-#### Configure MFA for aws-vault
+### Configure MFA for aws-vault
+
 All operators must have MFA enabled, which is taken care of as a part of the platform operator onboarding process.  This can be confirmed by checking in the AWS console under `Services -> IAM -> Users -> firstname.lastname -> Security Credentials`, or in the command line with `aws iam list-virtual-mfa-devices`.  Confirm that MFA is enabled for your account, then use the following commands to add the ARN of the MFA device to the local Amazon configuration in order to enable short lived tokens:
 
 ```sh
@@ -52,7 +76,8 @@ echo 'region = us-gov-west-1' >> ~/.aws/config
 echo "mfa_serial = $mfa_serial" >> ~/.aws/config
 ```
 
-#### Executing a command with short lived credentials
+### Executing a command with short lived credentials
+
 You can execute any system command with short lived credentials using the `aws-vault exec` command.  For example, to open a new shell session with the credentials set in the environment, run the following command:
 
 ```sh
@@ -62,7 +87,19 @@ aws-vault exec cloud-gov-govcloud bash
 If you do this, running `env | grep AWS` will show you a new set of credentials which are different from the primary IAM role credentials because they are short lived and issued at runtime.  This means that if a malicious script or program attempts to read `~/.aws/credentials` or `~/.aws/config` they will be unable to retrieve the primary credentials.
 
 ### Next Steps for aws-vault configuration and usage
+
 Once this is complete, you can provision additional profiles which use only specific resources, or specific permissions such as read only.  This scopes the role of the temporary credentials to further reduce the attack surface.
+
+## Maintenance of system secret keys
+
+To meet NIST security control [SC-12 (1)](https://web.nvd.nist.gov/view/800-53/Rev4/control?controlName=SC-12), we maintain the availability of all information on the platform in the event a cryptographic access key is lost or compromised.
+
+Authorized federal staff rotate, encrypt, and backup keys yearly. Privileged users can access the keys only with two-factor authentication and a decryption passphrase. In the rare case that both the keys and the decryption passphrase for the backup are lost or compromised, new keys can be rotated in by authorized federal staff, while maintaining availability of information.
+
+## Managing legacy cloud.gov credentials
+
+Most credentials are moving to CredHub, but some are still managed in S3. 
+To work with them you'll need your AWS account set up, along with `aws-vault` (see above).
 
 ### UAA credentials
 All UAA clients and users and associated credentials should be created via the Cloud Foundry secrets or the [service account]({{ site.baseurl }}{% link _docs/services/cloud-gov-service-account.md %}) or [identity provider]({{ site.baseurl }}{% link _docs/services/cloud-gov-identity-provider.md %}) services. UAA accounts should not be created manually; we reserve the right to drop permissions for or deprovision hand-propped accounts.
@@ -214,4 +251,3 @@ Updating Concourse secrets combines the shared secrets above with local config t
     ```sh
     rm -rf concourse-environment.yml
     ```
-
