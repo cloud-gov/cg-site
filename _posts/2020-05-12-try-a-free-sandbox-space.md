@@ -6,6 +6,8 @@ excerpt: The capabilities of cloud.gov are vast, and like many initial cloud.gov
   users, you may be unsure what access level best suits your team. In our
   experience, we have seen that users who sign up for a cloud.gov sandbox space
   have the ability to easily scale and adapt their work.
+redirect_from:
+  - /2020/05/12/try_a_free_sandbox_space/
 ---
 <!--StartFragment-->
 

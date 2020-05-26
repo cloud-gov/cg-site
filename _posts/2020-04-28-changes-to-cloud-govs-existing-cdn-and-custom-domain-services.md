@@ -2,6 +2,8 @@
 layout: post
 title: Changes to cloud.gov’s existing CDN and custom domain services
 date: April 28, 2020
+redirect_from:
+  - /2020/04/28/changes-to-cloud-gov-s-existing-cdn-and-custom-domain-services-1/
 ---
 This message is to let you know about upcoming changes to cloud.gov’s CDN and domain services.
 
