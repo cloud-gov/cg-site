@@ -29,12 +29,46 @@ The JSON contains the **database identifier** under the key `host` within the cr
 ## Restoring the Database
 Refer to the [RDS documentation](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RestoreFromSnapshot.html) for restoring a database.
 
+### Restoring from a Snapshot
+
 Prior to restoring, record the configuration settings:
+1. DB identifier
 1. Database publicly accessible from the internet (yes/no)
 1. Instance size (m4.large, etc.)
 1. Multi-zone (yes/no)
 1. VPC (dev, staging, etc.)
+1. Subnet
 1. Security Groups
+
+Launching the snapshot:
+- Log into the AWS Console and navigate to *RDS* > *Snapshots* and filter by <DB identifier>
+- Select the latest snapshot and click *Actions* > *Restore Snapshot*
+- In *Restore DB Instance*
+  - Under *Settings* > *DB Instance Identifier* enter a new DB identifier ie (`<DB identifier>-restore`)
+  - Using the configuration settings recorded prior to restore, fill in the relevant fields with the corresponding values.
+  - Finally, click *Restore DB Instance*
+- Navigate back to *RDS* > *Databases* and filter by the new DB identifier
+- Once *Status* is changed to *Available*, copy the `endpoint` in the database settings we can compare and verify the restored database
+
+Verifying the restored database:
+- Log into the jumpbox
+- Grab the database credentials (`password`, `address`, `dbuser`...) from `bosh`
+- If possible, log into the database
+  - Connect `psql "postgres://${dbuser}:${password}@${address}:${port}/${name}"`
+  - List all the tables in the database: `psql> \dt+`
+  - Grab record counts for key tables
+    - ie *Cloud Controller DB*: `select count(*) from organizations;`
+    - ie *Cloud Controller DB*: `select count(*) from spaces;`
+    - ie *Cloud Controller DB*: `select count(*) from apps;`
+- Log into the new, restored database
+  - *Note:* Change the `address` from bosh to the `endpoint` copied from the database settings
+  - Connect `psql "postgres://${dbuser}:${password}@${endpoint}:${port}/${name}"`
+  - List all the tables in the database: `psql> \dt+`
+  - Grab record counts for key tables
+    - ie *Cloud Controller DB*: `select count(*) from organizations;`
+    - ie *Cloud Controller DB*: `select count(*) from spaces;`
+    - ie *Cloud Controller DB*: `select count(*) from apps;`
+- Compare tables and record counts between the original and restored databases
 
 Once the restore has finished, confirm the new instance matches the previous configuration.  To update a configuration setting, click 'Modify' from the RDS console instance view.
 
