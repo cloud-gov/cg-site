@@ -16,12 +16,12 @@ The tasks on this checklist should be performed each day.
 If you see a way to make this checklist better, just submit a PR to the
 [cg-site](https://github.com/18F/cg-site) repo for `content/docs/ops/maintenance-list.md`
 
-### Review and respond to open alerts
+### Review and respond to alerts
 
-- Review active alerts at https://prometheus.fr.cloud.gov/alerts.
+- Review all alerts on [Prometheus](https://prometheus.fr.cloud.gov/alerts).
 - Review all production smoke tests to ensure they are passing.
 
-### Investigate open alerts
+#### Investigate open alerts
 - Use our guides for reviewing cloud.gov alerts ([prometheus](https://github.com/18F/cg-deploy-prometheus/tree/master/bosh) for alert descriptions, links to the relevant rules, and starting points for reviewing each type of alert.
 - Was the alert caused by known maintenance or testing in dev environments? Check with other members of the cloud.gov team if you can't determine the source.
 - Is this a recurring alert? Search alert history to determine how frequently it is occuring and what event may have started its firing.
@@ -65,6 +65,12 @@ Review the [detailed guide on customer support]({{site.baseurl}}/docs/ops/custom
 - Update the [`#cg-support`](https://gsa-tts.slack.com/messages/cg-support/) topic to include your name as the support contact.
 - In [logs.fr.cloud.gov](https://logs.fr.cloud.gov/), go under "Management" -> "Advanced Settings" and check the Kibana [timezone setting](https://www.elastic.co/guide/en/kibana/current/advanced-options.html) (`dateFormat:tz`) - it should be set to `Browser`. If anyone has changed it, change it back to `Browser`.
 - Check for any new CVEs in [Elasticsearch](https://www.cvedetails.com/vulnerability-list/vendor_id-13554/Elasticsearch.html), and [Redis](https://www.cvedetails.com/vulnerability-list/vendor_id-15183/product_id-31837/Pivotal-Software-Redis.html).
+
+## Review expiring certificates
+
+*Note that this is temporary until alerts for expiring certificates are back in place*
+
+From the jumpbox in each of our four environments, `tooling`, `development`, `staging`, and `production`, run `doomsday dashboard` to review all expiring certificates. Make note of any that are expiring within two weeks and make sure the team is aware.
 
 ## Ensure all VMs are running the current stemcell
 
