@@ -107,6 +107,8 @@ that paired collaboration on a single branch avoids certain types of friction:
 
 When contributing directly on a branch, we're able to modify work-in-progress (WIP) pull requests and encourage collaboration across the Cloud Operations team.
 
+For the cloud.gov team, when forking an upstream repository to add a patch or bugfix, the fork should go to your personal GitHub user account. The `cloud-gov` org is for code maintained by cloud.gov, whether that's original code or a long-lived fork (discouraged, but sometimes necessary) for code we are running in production. 
+
 ### Squashing commits
 
 [Squashing commits](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History#Squashing-Commits) is allowed but discouraged, except in rare instances.
