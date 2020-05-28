@@ -68,8 +68,6 @@ Review the [detailed guide on customer support]({{site.baseurl}}/docs/ops/custom
 
 ## Review expiring certificates
 
-*Note that this is temporary until alerts for expiring certificates are back in place*
-
 From the jumpbox in each of our four environments, `tooling`, `development`, `staging`, and `production`, run `doomsday dashboard` to review all expiring certificates. Make note of any that are expiring within two weeks and make sure the team is aware.
 
 ## Ensure all VMs are running the current stemcell
