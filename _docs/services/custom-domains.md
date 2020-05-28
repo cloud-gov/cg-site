@@ -8,7 +8,7 @@ description: "Custom domains and TLS certificates with automatic renewal"
 status: "Production Ready"
 ---
 
-<!-- If you're improving this page, try to port the improvements to the CDN route service page too, since most of the text is the same -->
+Note - this service is being deprecated in favor of the [external domain service]({{ site.baseurl }}{% link _docs/services/external-domain-service.md %}).
 
 This service provides:
 

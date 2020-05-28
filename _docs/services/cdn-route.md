@@ -8,9 +8,7 @@ description: "Custom domains, CDN caching, and TLS certificates with automatic r
 status: "Production Ready"
 ---
 
-<!-- If you're improving this page, try to port the improvements to the custom domain service page too, since most of the text is the same -->
-
-Note: This cloud.gov feature has unique [compliance impact](#compliance-impact) considerations. 
+Note - this service is being deprecated in favor of the [external domain service]({{ site.baseurl }}{% link _docs/services/external-domain-service.md %}). 
 
 This service provides:
 
@@ -18,8 +16,7 @@ This service provides:
 1. HTTPS support via free TLS certificates with auto-renewal (using [Let's Encrypt](https://letsencrypt.org/)), so that user traffic is encrypted.
 1. Content Distribution Network (CDN) caching (using [AWS CloudFront](https://aws.amazon.com/cloudfront/)), for fast delivery of content to your users.
 
-If you don't need CDN caching, use the [custom domain service]({{ site.baseurl }}/docs/services/custom-domains/) instead.
-
+This cloud.gov feature has unique [compliance impact](#compliance-impact) considerations. If you don't need CDN caching, use the [external domain service]({{ site.baseurl }}{% link _docs/services/external-domain-service.md %}) instead.
 
 ## Plans
 
