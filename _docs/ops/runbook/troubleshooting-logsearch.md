@@ -205,6 +205,114 @@ The `query` section says to only run this update on fields where `app.data.cert.
 
 Note: this means this field will not be searchable by its usual name for that day's index.
 
+## Reindexing
+
+Sometimes, we may need to reindex to fix datatypes. While going through this process, keep in mind the index patterns we use - reindexing will
+necessarily cause either moments of all logs within an index showing up twice or disappearing for some length of time.
+The cases where we've so far needed to do this are usually related to updating mappings, but there may be other cases where it's required.
+
+we'll assume the index you want to operate on is `logs-app-2020.03.04`, and that all commands are being run from one of the elasticsearch hosts
+
+1. export the mapping of your index:
+   ```
+   # jq call here makes the later post work
+   $ curl -XGET localhost:9200/logs-app-2020.03.04/_mappings?pretty | jq '."logs-app-2020.03.04"' > mappings.json
+   ```
+2. _optional, depending on what you're fixing_ edit mappings.json to change mappings
+3. create the new index with the new mapping. Note that by prefixing the name, it violates the index pattern defined in Kibana, so it won't cause duplicate results in people's searches
+   ```
+   $ curl -XPOST localhost:9200/reindex-logs-app-2020.03.04 -H 'Content-type: application/json' --data-binary "@mappings.json"
+   {"acknowledged":true,"shards_acknowledged":true,"index":"reindex-logs-app-2020.03.04"}
+   ```
+4. reindex the old into the new. This will run in the background, and will take some time:
+   ```
+   $ curl -XPOST localhost:9200/_reindex?wait_for_completion=false -H 'Content-type: application/json' -d '
+   {
+     "source": {
+       "index": "logs-app-2020.03.04"
+     },
+     "dest": {
+       "index": "reindex-logs-app-2020.03.04"
+     }  
+   }'
+   {"task":"asdfasdfasdf:1116281"}
+   ```
+5. Watch the reindex task to see when it completes, using the task id from the previous command. It's done when `completed` is `true`:
+   ```
+   $ curl -XGET localhost:9200/_tasks/asdfasdfasdf:1116281?pretty
+   {
+     "completed" : true,
+     "task" : {
+       "node" : "asdfasdfasdf",
+       "id" : 1116281,
+       "type" : "transport",
+       "action" : "indices:data/write/reindex",
+       "status" : {
+         "total" : 14289369,
+         "updated" : 0,
+         "created" : 14289369,
+         "deleted" : 0,
+         "batches" : 14290,
+         "version_conflicts" : 0,
+         "noops" : 0,
+         "retries" : {
+           "bulk" : 0,
+           "search" : 0
+         },
+         "throttled_millis" : 0,
+         "requests_per_second" : -1.0,
+         "throttled_until_millis" : 0
+       },
+       "description" : "reindex from [logs-app-2020.03.04] to [reindex-logs-app-2020.03.04]",
+       "start_time_in_millis" : 1590600000000,
+       "running_time_in_nanos" : 2518237996135,
+       "cancellable" : true,
+       "headers" : { }
+     },
+     "response" : {
+       "took" : 2518237,
+       "timed_out" : false,
+       "total" : 14289369,
+       "updated" : 0,
+       "created" : 14289369,
+       "deleted" : 0,
+       "batches" : 14290,
+       "version_conflicts" : 0,
+    "noops" : 0,
+    "retries" : {
+      "bulk" : 0,
+      "search" : 0
+    },
+    "throttled" : "0s",
+    "throttled_millis" : 0,
+    "requests_per_second" : -1.0,
+    "throttled_until" : "0s",
+    "throttled_until_millis" : 0,
+    "failures" : [ ]
+     }
+   }
+   ```
+6. Validate that the number of docs is the same (note that the size will probably be different, though):
+   ```
+   $ curl -XGET localhost:9200/_cat/indices/*logs-app-2020.03.04?v
+   health status index                       uuid                   pri rep docs.count docs.deleted store.size pri.store.size
+   green  open   logs-app-2020.03.04         ASDFSADFASDFSlsdfasadf   5   1     201997            0    296.3mb        148.3mb
+   green  open   reindex-logs-app-2020.03.04 zxcvzxcvzxcvzxcvzxcvzx   5   1     201997            0    274.3mb        137.1mb
+   ```
+7. Create an alias on the new index so it's included in the Kibana index pattern.
+   Note that doing this before deleting the old index will mean that we will briefly see 2x as many documents for that time in Kibana.
+   ```
+   $ curl -XPOST localhost:9200/reindex-logs-app-2020.03.04/_alias/logs-app-2020.03.04
+   {"acknowledged": true}
+   ```
+8. Drop the old index
+   ```
+   $ curl -XDELETE localhost:9200/logs-app-2020.03.04
+   {"acknowledged": true}
+   ```
+9. refresh the index list in kibana, under Management -> Index Management
+10. refresh the field list in kibana, under Managment -> Index Patterns
+
 ## Other Useful ElasticSearch commands
 
 ### Check Disk Space
