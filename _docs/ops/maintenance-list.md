@@ -18,7 +18,7 @@ If you see a way to make this checklist better, just submit a PR to the
 
 ### Review and respond to alerts
 
-- Review all alerts on [Prometheus](https://prometheus.fr.cloud.gov/alerts).
+- Review all alerts on [Prometheus](https://prometheus.fr.cloud.gov/alerts) (requires the VPN).
 - Review all production smoke tests to ensure they are passing.
 
 #### Investigate open alerts
