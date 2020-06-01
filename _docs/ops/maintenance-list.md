@@ -68,7 +68,10 @@ Review the [detailed guide on customer support]({{site.baseurl}}/docs/ops/custom
 
 ## Review expiring certificates
 
-From the jumpbox in each of our four environments, `tooling`, `development`, `staging`, and `production`, run `doomsday dashboard` to review all expiring certificates. Make note of any that are expiring within two weeks and make sure the team is aware.
+You can view a consolidated list of all expiring certificates on the [Doomsday Dashboard](https://doomsday.fr.cloud.gov/) (requires the VPN). Make note of any that are expiring within two weeks, make sure the team is aware, and plan with the team to
+determine who will renew the expiring certificate(s) and when.
+
+You can also view this information in each of our four environments, `tooling`, `development`, `staging`, and `production`, by running `doomsday dashboard` on the command line.
 
 ## Ensure all VMs are running the current stemcell
 
