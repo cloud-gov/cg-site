@@ -131,7 +131,7 @@ We'll confirm this information and remind you that a restoration may result in a
 
 When the restore process is completely finished, we'll notify you and ask you to confirm that your application(s) is still functioning properly and that the data is properly restored.  We'll also coordinate with you to determine when it would be appropriate to remove the old instance, particularly if it is needed for something such as a security audit or forensic analysis.
 
-You can also create manual backups using the [export process](#export) described below. In general, you are responsible for making sure that your backup procedures are adequate for your needs; see CP-9 in the cloud.gov SSP.
+You can also create manual backups using the [export process](#exporting-a-database) described below. In general, you are responsible for making sure that your backup procedures are adequate for your needs; see CP-9 in the cloud.gov SSP.
 
 ## Access the data in the database
 
