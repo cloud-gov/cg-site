@@ -10,6 +10,7 @@ title: Restoring RDS
 cloud.gov structured data is stored using Amazon's Relational Database Service (RDS).  RDS provides multiple availability zones, automated backups and snapshots allowing operators to restore the database in the event of a failure.
 
 ## Customer Databases
+
 Coordinate with the tenant to determine the point in time to restore the database from, and when the operation will take place:
 
 1. Shared database plans do not include backups and restores.
@@ -17,28 +18,54 @@ Coordinate with the tenant to determine the point in time to restore the databas
 1. The restore will result in the database being restored to a point in time.
 1. Data written after the restore point in time will be lost.
 
+### Obtain information and confirmation from the customer
+
+In order to perform a restore, we need the following information from the customer:
+
+- The organization name
+- The space they are working within
+- The name of the application(s) connected to the database service they need a restoration performed on
+
+Be sure to confirm this information and remind them that a restoration may result in a brief period of downtime with database connectivity.  Ask if they have some way of shutting off access/enabling a maintenance mode of the website and if so, they should do so prior to the restoration process starting.
+
+If the customer agrees to proceed given this information, coordinate with them on the date and time to perform the restore and with which PITR (point in time restore) or snapshot to use.  At the agreed upon date and time, continue with the steps below.
+
 ### Identify RDS Hostname
-Once the tenant agreed to a database restore, identify the RDS instance attached to the application:
+
+Once the tenant agreed to a database restore, identify the RDS instance attached to the application using the information they provided:
+
 ```sh
 cf target -s SPACE -o ORGANIZATION
 cf env APP
 ```
 
-The JSON contains the **database identifier** under the key `host` within the credentials map.
+The JSON containing the environment variables contains the `database identifier` and `password` under the key `host` within the credentials map for the database service (look for `aws-rds`).  The `database identifier` is needed to find the database instance in the AWS RDS instance listing, and the `password` is required for setting the master password in the new instance.
 
-## Restoring the Database
+### Performing the database restore
+
 Refer to the [RDS documentation](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RestoreFromSnapshot.html) for restoring a database.
 
-Prior to restoring, record the configuration settings:
-1. Database publicly accessible from the internet (yes/no)
-1. Instance size (m4.large, etc.)
-1. Multi-zone (yes/no)
-1. VPC (dev, staging, etc.)
-1. Security Groups
+Prior to restoring, record the configuration settings of the existing instance:
+- Database publicly accessible from the internet (yes/no)
+- Instance size (m4.large, etc.)
+- Multi-zone (yes/no)
+- VPC (dev, staging, etc.)
+- Security Groups
+- Master password (this is the `password` you saw above in the application environment variables)
 
-Once the restore has finished, confirm the new instance matches the previous configuration.  To update a configuration setting, click 'Modify' from the RDS console instance view.
+Copy all of these values and configure them in the restore form to mirror the configuration of the existing database instance.  For the `identifier` name, provide a name like `<instance name>-<date>-restore` to make the instance easy to find.
 
-Also set the `master password` using the Modify form.  Since Terraform lacks the capability to import rds credentials, please set the password to the old password of the database we are restoring.
+Once the restore has finished, confirm the new instance matches the previous configuration.  To update a configuration setting, click 'Modify' from the RDS console instance view and make the required modifications.
+
+When the settings and configuration of the new restored instance are confirmed, rename the original instance with a new qualifier, e.g, `<instance name>-<date>-old`.
+
+Finally, rename the new instance to be just `<instance name>` so it matches what the original instance was, and what the application(s) is bound to.  This ensures that the application will still function properly and connect to the new database instance.
+
+### Follow up and confirm with the customer
+
+When the restore is completely finished, notify the customer and ask them to confirm that their application(s) is still functioning properly and that the data is properly restored.  Help them troubleshoot any other issues if there is anything still wrong.
+
+Once we receive confirmation that the restore has been completed successfully, coordinate with the customer when it is appropriate to remove the old instance, particularly if it is needed for a security audit or forensic analysis.  This is important as we do not want old database instances hanging around, which contribute to extraneous overhead costs.
 
 ## Platform Databases
 Databases created by Terraform store credentials in the Terraform State S3 Bucket:
