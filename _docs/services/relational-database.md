@@ -121,7 +121,11 @@ The contents of the `DATABASE_URL` environment variable contain the credentials 
 
 For shared plans (`shared-psql` and `shared-mysql`), RDS does not back up your data.
 
-For dedicated plans, RDS automatically retains daily backups for 14 days. These backups are AWS RDS storage volume snapshots, backing up the entire DB instance and not just individual databases. If you need to have a database restored using one of these backups, you can [email support](mailto:support@cloud.gov) with the following information:
+For dedicated plans, RDS automatically retains daily backups for 14 days. These backups are AWS RDS storage volume snapshots, backing up the entire DB instance and not just individual databases. If you need to have a database restored using one of these backups, you can [email support](mailto:support@cloud.gov).  For non-emergency situations, please provide at least 48 hours advance notice.
+
+If you have an emergency situation, such as data loss or a compromised system, please [email support](mailto:support@cloud.gov) immediately and inform us of the situation.
+
+When you do [contact support](mailto:support@cloud.gov) with a database backup request, please include the following information:
 
 - Your organization name
 - The space you are working within
