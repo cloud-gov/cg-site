@@ -46,15 +46,47 @@ The JSON containing the environment variables contains the `database identifier`
 Refer to the [RDS documentation](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RestoreFromSnapshot.html) for restoring a database.
 
 Prior to restoring, record the configuration settings of the existing instance:
+- DB identifier (instance name)
 - Instance size (m4.large, etc.)
 - Multi-zone (yes/no)
 - VPC (dev, staging, etc.)
+- Subnet
 - Security Groups
 - Master password (this is the `password` you saw above in the application environment variables)
 
 Copy all of these values and configure them in the restore form to mirror the configuration of the existing database instance.  For the `identifier` name, provide a name like `<instance name>-<date>-restore` to make the instance easy to find.  Note that the database should never be set to publicly accessible.
 
+Steps for launching the snapshot:
+- Log into the AWS Console and navigate to *RDS* > *Snapshots* and filter by <DB identifier>
+- Select the latest snapshot and click *Actions* > *Restore Snapshot*
+- In *Restore DB Instance*
+  - Under *Settings* > *DB Instance Identifier* enter a new DB identifier ie (`<instance name>-<date>-restore`)
+  - Using the configuration settings recorded prior to restore, fill in the relevant fields with the corresponding values.
+  - Finally, click *Restore DB Instance*
+- Navigate back to *RDS* > *Databases* and filter by the new DB identifier
+- Once *Status* is changed to *Available*, copy the `endpoint` in the database settings we can compare and verify the restored database
+
 Once the restore has finished, confirm the new instance matches the previous configuration.  To update a configuration setting, click 'Modify' from the RDS console instance view and make the required modifications.
+
+Steps for verifying the finished restore:
+- Log into the jumpbox
+- Grab the database credentials (`password`, `address`, `dbuser`...) from `bosh`
+- If possible, log into the database
+  - Connect `psql "postgres://${dbuser}:${password}@${address}:${port}/${name}"`
+  - List all the tables in the database: `psql> \dt+`
+  - Grab record counts for key tables
+    - ie *Cloud Controller DB*: `select count(*) from organizations;`
+    - ie *Cloud Controller DB*: `select count(*) from spaces;`
+    - ie *Cloud Controller DB*: `select count(*) from apps;`
+- Log into the new, restored database
+  - *Note:* Change the `address` from bosh to the `endpoint` copied from the database settings
+  - Connect `psql "postgres://${dbuser}:${password}@${endpoint}:${port}/${name}"`
+  - List all the tables in the database: `psql> \dt+`
+  - Grab record counts for key tables
+    - ie *Cloud Controller DB*: `select count(*) from organizations;`
+    - ie *Cloud Controller DB*: `select count(*) from spaces;`
+    - ie *Cloud Controller DB*: `select count(*) from apps;`
+- Compare tables and record counts between the original and restored databases
 
 When the settings and configuration of the new restored instance are confirmed, rename the original instance with a new qualifier, e.g, `<instance name>-<date>-old`.
 
