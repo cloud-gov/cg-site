@@ -28,11 +28,11 @@ In order to perform a restore, we need the following information from the custom
 
 Be sure to confirm this information and remind them that a restoration may result in a brief period of downtime with database connectivity.  Ask if they have some way of shutting off access/enabling a maintenance mode of the website and if so, they should do so prior to the restoration process starting.
 
-If the customer agrees to proceed given this information, coordinate with them on the date and time to perform the restore and with which PITR (point in time restore) or snapshot to use.  At the agreed upon date and time, continue with the steps below.
+If the tenant agrees to proceed given this information, coordinate with them on the date and time to perform the restore and with which PITR (point in time restore) or snapshot to use.  At the agreed upon date and time, continue with the steps below.
 
 ### Identify RDS Hostname
 
-Once the tenant agreed to a database restore, identify the RDS instance attached to the application using the information they provided:
+Once the tenant agrees to a database restore, identify the RDS instance attached to the application using the information that they provide:
 
 ```sh
 cf target -s SPACE -o ORGANIZATION
@@ -46,14 +46,13 @@ The JSON containing the environment variables contains the `database identifier`
 Refer to the [RDS documentation](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RestoreFromSnapshot.html) for restoring a database.
 
 Prior to restoring, record the configuration settings of the existing instance:
-- Database publicly accessible from the internet (yes/no)
 - Instance size (m4.large, etc.)
 - Multi-zone (yes/no)
 - VPC (dev, staging, etc.)
 - Security Groups
 - Master password (this is the `password` you saw above in the application environment variables)
 
-Copy all of these values and configure them in the restore form to mirror the configuration of the existing database instance.  For the `identifier` name, provide a name like `<instance name>-<date>-restore` to make the instance easy to find.
+Copy all of these values and configure them in the restore form to mirror the configuration of the existing database instance.  For the `identifier` name, provide a name like `<instance name>-<date>-restore` to make the instance easy to find.  Note that the database should never be set to publicly accessible.
 
 Once the restore has finished, confirm the new instance matches the previous configuration.  To update a configuration setting, click 'Modify' from the RDS console instance view and make the required modifications.
 

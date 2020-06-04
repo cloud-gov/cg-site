@@ -130,6 +130,9 @@ When you do [contact support](mailto:support@cloud.gov) with a database backup r
 - Your organization name
 - The space you are working within
 - The name of the application(s) connected to the database service you need a restoration performed on
+- Phone numbers and contact information if it's an urgent situation
+
+Please do *not* share any passwords or details of any exploit or compromise.  We'll call you if necessary, and we'll never ask you for a password over the phone.
 
 We'll confirm this information and remind you that a restoration may result in a brief period of downtime with database connectivity.  Once we receive confirmation from you to proceed, we'll perform the restore, which results in a new DB instance being created in AWS RDS.  cloud.gov support will take care of renaming the new instance and configuring it with the same VPC and security group as the old instance in AWS so that it can still be found by your bound application(s) once the restoration is complete.
 
