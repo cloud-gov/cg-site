@@ -148,16 +148,6 @@ The instructions below are for PostgreSQL, but should be similar for MySQL or ot
 First, open a terminal and connect to an instance using the [cf-service-connect plugin](https://github.com/cloud-gov/cf-service-connect#usage) to create a SSH tunnel:
 
 ```sh
-# Find the aws-rds service you are targeting in the services list and make note of the service's name
-$ cf services
-
-# Check to see if a SERVICE_CONNECT service key already exists for the service.
-$ cf service-keys ${SERVICE_NAME}
-
-# If a key exists, remove it first before starting.
-$ cf delete-service-key ${SERVICE_NAME} SERVICE_CONNECT
-
-# Now open the SSH tunnel
 $ cf connect-to-service -no-client ${APP_NAME} ${SERVICE_NAME}
 ...
 Host: localhost
@@ -167,7 +157,15 @@ Password: ...
 Name: ...
 ```
 
-Once the SSH tunnel is created keep it running and open a separate terminal session in another window/tab, then create the backup file using the parameters provided by the plugin in the new terminal session, e.g. (be sure to tailor the backup/export command to your specific needs):
+If this fails to open a SSH tunnel, try deleting any existing `connect-to-service` service keys first:
+
+```sh
+$ cf delete-service-key ${SERVICE_NAME} SERVICE_CONNECT
+```
+
+Then try the previous step again.
+
+Once the SSH tunnel is created, keep it running in that terminal window and open a separate terminal session in another window/tab, then create the backup file using the parameters provided by the plugin in the new terminal session, e.g. (be sure to tailor the backup/export command to your specific needs):
 
 ```sh
 $ pg_dump -F c --no-acl --no-owner -f backup.pg postgresql://${USERNAME}:${PASSWORD}@${HOST}:${PORT}/${NAME}
