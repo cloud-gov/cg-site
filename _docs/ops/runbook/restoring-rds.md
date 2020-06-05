@@ -9,7 +9,7 @@ title: Restoring RDS
 
 cloud.gov structured data is stored using Amazon's Relational Database Service (RDS).  RDS provides multiple availability zones, automated backups and snapshots allowing operators to restore the database in the event of a failure.
 
-## Customer Databases
+## Tenant Databases
 
 Coordinate with the tenant to determine the point in time to restore the database from, and when the operation will take place:
 
@@ -18,13 +18,14 @@ Coordinate with the tenant to determine the point in time to restore the databas
 1. The restore will result in the database being restored to a point in time.
 1. Data written after the restore point in time will be lost.
 
-### Obtain information and confirmation from the customer
+### Obtain information and confirmation from the tenant
 
-In order to perform a restore, we need the following information from the customer:
+In order to perform a restore, we need the following information from the tenant:
 
 - The organization name
 - The space they are working within
 - The name of the application(s) connected to the database service they need a restoration performed on
+- Phone numbers and contact information if it's an urgent situation
 
 Be sure to confirm this information and remind them that a restoration may result in a brief period of downtime with database connectivity.  Ask if they have some way of shutting off access/enabling a maintenance mode of the website and if so, they should do so prior to the restoration process starting.
 
@@ -39,7 +40,7 @@ cf target -s SPACE -o ORGANIZATION
 cf env APP
 ```
 
-The JSON containing the environment variables contains the `database identifier` and `password` under the key `host` within the credentials map for the database service (look for `aws-rds`).  The `database identifier` is needed to find the database instance in the AWS RDS instance listing, and the `password` is required for setting the master password in the new instance.
+The JSON containing the environment variables includes the `database identifier` and `password` under the key `host` within the credentials map for the database service (look for `aws-rds`).  The `database identifier` is needed to find the database instance in the AWS RDS instance listing, and the `password` is required for setting the master password in the new instance.
 
 ### Performing the database restore
 
@@ -92,19 +93,22 @@ When the settings and configuration of the new restored instance are confirmed, 
 
 Finally, rename the new instance to be just `<instance name>` so it matches what the original instance was, and what the application(s) is bound to.  This ensures that the application will still function properly and connect to the new database instance.
 
-### Follow up and confirm with the customer
+### Follow up and confirm with the tenant
 
-When the restore is completely finished, notify the customer and ask them to confirm that their application(s) is still functioning properly and that the data is properly restored.  Help them troubleshoot any other issues if there is anything still wrong.
+When the restore is completely finished, notify the tenant and ask them to confirm that their application(s) is still functioning properly and that the data is properly restored.  Help them troubleshoot any other issues if there is anything still wrong.
 
-Once we receive confirmation that the restore has been completed successfully, coordinate with the customer when it is appropriate to remove the old instance, particularly if it is needed for a security audit or forensic analysis.  This is important as we do not want old database instances hanging around, which contribute to extraneous overhead costs.
+Once we receive confirmation that the restore has been completed successfully, coordinate with the tenant when it is appropriate to remove the old instance, particularly if it is needed for a security audit or forensic analysis.  This is important as we do not want old database instances hanging around, which contribute to extraneous overhead costs.
 
 ## Platform Databases
+
 Databases created by Terraform store credentials in the Terraform State S3 Bucket:
+
 ```sh
 aws s3 cp s3://${TF_STATE_BUCKET}/cf-${ENVIRONMENT}/terraform.tfstate tmp/state.file
 ```
 
 To retrieve the RDS instance provisioned for `staging concourse`:
+
 ```sh
 cat tmp/sample.file | grep staging_concourse_rds_host | less
 ```
@@ -112,9 +116,11 @@ cat tmp/sample.file | grep staging_concourse_rds_host | less
 The value displayed is the **database identifier**.  To restore the BOSH instance, grep for `bosh_rds_host_curr`.  Database identifiers can also be found in the AWS RDS console.
 
 ### Updating Terraform
+
 Platform database configuration is stored in Terraform.  After a restore, update Terraform with the new database instance using `terraform init` and `terraform import`.
 
 For example, to update Terraform configuration for development BOSH (`my-restored-db-id` is the restored database identifier):
+
 ```sh
 cd terraform/stacks/main
 terraform init -backend=true -backend-config=encrypt=true -backend-config=bucket=terraform-state -backend-config=key=development/terraform.tfstate
