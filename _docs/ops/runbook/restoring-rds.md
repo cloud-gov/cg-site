@@ -97,7 +97,9 @@ Finally, rename the new instance to be just `<instance name>` so it matches what
 
 When the restore is completely finished, notify the tenant and ask them to confirm that their application(s) is still functioning properly and that the data is properly restored.  Help them troubleshoot any other issues if there is anything still wrong.
 
-Once we receive confirmation that the restore has been completed successfully, coordinate with the tenant when it is appropriate to remove the old instance, particularly if it is needed for a security audit or forensic analysis.  This is important as we do not want old database instances hanging around, which contribute to extraneous overhead costs.
+Once we receive confirmation that the restore has been completed successfully, we must coordinate with the tenant when it is appropriate to remove the old instance and set a specific date and time to do so, particularly if it is needed for a security audit or forensic analysis.  This is important as we do not want old database instances hanging around, which contribute to extraneous overhead costs.
+
+Work with the tenant to come to a firm agreed upon date and time that the old database instance will be removed.  Be sure to also remind them that no backups or snapshots will be saved either unless they are explicitly requested.
 
 ## Platform Databases
 

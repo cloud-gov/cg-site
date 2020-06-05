@@ -121,7 +121,7 @@ The contents of the `DATABASE_URL` environment variable contain the credentials 
 
 *Please note that these instructions will change in the future as we expand our service offerings and provide more options for customers.*
 
-For shared plans (`shared-psql` and `shared-mysql`), RDS does not back up your data.
+For shared plans (`shared-psql` and `shared-mysql`), cloud.gov and RDS does not back up your data. These are only intended for limited use development and testing instances.
 
 For dedicated plans, RDS automatically retains daily backups for 14 days. These backups are AWS RDS storage volume snapshots, backing up the entire DB instance and not just individual databases. If you need to have a database restored using one of these backups, you can [email support](mailto:support@cloud.gov).  For non-emergency situations, please provide at least 48 hours advance notice.
 
@@ -139,6 +139,8 @@ When you do [contact support](mailto:support@cloud.gov) with a database backup r
 We'll confirm this information and remind you that a restoration may result in a brief period of downtime with database connectivity.  Once we receive confirmation from you to proceed, we'll perform the restore, which results in a new DB instance being created in AWS RDS.  cloud.gov support will take care of renaming the new instance and configuring it with the same VPC and security group as the old instance in AWS so that it can still be found by your bound application(s) once the restoration is complete.
 
 When the restore process is completely finished, we'll notify you and ask you to confirm that your application(s) is still functioning properly and that the data is properly restored.  We'll also coordinate with you to determine when it would be appropriate to remove the old instance, particularly if it is needed for something such as a security audit or forensic analysis.
+
+When we remove the old database instance, we will not retain snapshots or backups of it unless we're explicitly asked to do so.  We'll remind you of this when coordinating a specific date and time to remove the old instance.
 
 You can also create manual backups using the [export process](#exporting-a-database) described below. In general, you are responsible for making sure that your backup procedures are adequate for your needs; see CP-9 in the cloud.gov SSP.
 
