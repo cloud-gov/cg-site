@@ -20,7 +20,7 @@ curl localhost:9200/_cluster/settings?pretty
 If necessary, reenable allocation:
 
 ```sh
-curl -X PUT localhost:9200/_cluster/settings -d '{"transient":{"cluster.routing.allocation.enable":"all"}}'
+curl -X PUT localhost:9200/_cluster/settings -H "Content-Type: application/json" -d '{"transient":{"cluster.routing.allocation.enable":"all"}}'
 ```
 
 If reenabling allocation doesn't restore the cluster, [manually reassigning unallocated shards may be necessary]((#force-reallocation %})
