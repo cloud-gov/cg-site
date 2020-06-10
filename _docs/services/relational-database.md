@@ -117,38 +117,45 @@ In short, `cf bind-service` will provide a `DATABASE_URL` environment variable f
 
 The contents of the `DATABASE_URL` environment variable contain the credentials to access your database. Treat the contents of this and all other environment variables as sensitive.
 
+## Backups
+
+*Please note that these instructions will change in the future as we expand our service offerings and provide more options for customers.*
+
+For shared plans (`shared-psql` and `shared-mysql`), cloud.gov and RDS does not back up your data. These are only intended for limited use development and testing instances.
+
+For dedicated plans, RDS automatically retains daily backups for 14 days. These backups are AWS RDS storage volume snapshots, backing up the entire DB instance and not just individual databases. If you need to have a database restored using one of these backups, you can [email support](mailto:support@cloud.gov).  For non-emergency situations, please provide at least 48 hours advance notice.
+
+If you have an emergency situation, such as data loss or a compromised system, please [email support](mailto:support@cloud.gov) immediately and inform us of the situation.
+
+When you do [contact support](mailto:support@cloud.gov) with a database backup request, please include the following information:
+
+- Your organization name
+- The space you are working within
+- The name of the application(s) connected to the database service you need a restoration performed on
+- Phone numbers and contact information if it's an urgent situation
+
+**Please *do not* share any passwords or details of any exploit or compromise.**  We'll call you if necessary, and we'll never ask you for a password over the phone.
+
+We'll confirm this information and remind you that a restoration may result in a brief period of downtime with database connectivity.  Once we receive confirmation from you to proceed, we'll perform the restore, which results in a new DB instance being created in AWS RDS.  cloud.gov support will take care of renaming the new instance and configuring it with the same VPC and security group as the old instance in AWS so that it can still be found by your bound application(s) once the restoration is complete.
+
+When the restore process is completely finished, we'll notify you and ask you to confirm that your application(s) is still functioning properly and that the data is properly restored.  We'll also coordinate with you to determine when it would be appropriate to remove the old instance, particularly if it is needed for something such as a security audit or forensic analysis.
+
+When we remove the old database instance, we will not retain snapshots or backups of it unless we're explicitly asked to do so.  We'll remind you of this when coordinating a specific date and time to remove the old instance.
+
+You can also create manual backups using the [export process](#exporting-a-database) described below. In general, you are responsible for making sure that your backup procedures are adequate for your needs; see CP-9 in the cloud.gov SSP.
+
 ## Access the data in the database
 
-There are currently two ways to access the database directly.
+To access a service database, use the [cf-service-connect plugin](https://github.com/18F/cf-service-connect#readme) and the corresponding CLI (command line interface) tools for the database service you are using.
 
-1. [The `cg-migrate-db` plugin](#cg-migrate-db-plugin). It is a self contained
-executable which will interactively assist with accessing the data in the
-database. It supports accessing data from different types of databases.
-1. [Manually accessing the database](#manually-access-a-database). This way
-requires manually downloading the tool(s) needed to access the database.
-
-### cg-migrate-db plugin
-You can access the data in your database via the `cg-migrate-db`
-plugin. See the [repository](https://github.com/18F/cg-migrate-db)
-for instructions on how to install the plugin, backup data, import data,
-download a local copy of the data, and upload a local copy of the data.
-
-### Manually access a database
-
-#### Using cf ssh
-
-To access a service database, use the [cf-service-connect plugin](https://github.com/18F/cf-service-connect#readme).
-
-### Export
-
-#### Create backup
+### Exporting a database
 
 The instructions below are for PostgreSQL, but should be similar for MySQL or others.
 
-First, connect to an instance using the [cf-service-connect plugin](https://github.com/18F/cf-service-connect#readme):
+First, open a terminal and connect to an instance using the [cf-service-connect plugin](https://github.com/cloud-gov/cf-service-connect#usage) to create a SSH tunnel:
 
 ```sh
-$ cf connect-to-service --no-client ${APP_NAME} ${SERVICE_NAME}
+$ cf connect-to-service -no-client ${APP_NAME} ${SERVICE_NAME}
 ...
 Host: localhost
 Port: ...
@@ -157,66 +164,35 @@ Password: ...
 Name: ...
 ```
 
-Without closing the SSH session managed by the cf-service-connect plugin, create the backup file using the parameters provided by the plugin:
+If this fails to open a SSH tunnel, try deleting any existing `connect-to-service` service keys first:
 
 ```sh
-$ pg_dump postgresql://${USERNAME}:${PASSWORD}@${HOST}:${PORT}/${NAME} -f backup.pg
+$ cf delete-service-key ${SERVICE_NAME} SERVICE_CONNECT
 ```
 
-### Download
+Then try the previous step again.
 
-> [Documentation for using scp and sftp](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#other-ssh-access)
-
-On your local host:
-
-Get your app's GUID:
+Once the SSH tunnel is created, keep it running in that terminal window and open a separate terminal session in another window/tab, then create the backup file using the parameters provided by the plugin in the new terminal session, e.g. (be sure to tailor the backup/export command to your specific needs):
 
 ```sh
-$ cf app {app name} --guid
+$ pg_dump -F c --no-acl --no-owner -f backup.pg postgresql://${USERNAME}:${PASSWORD}@${HOST}:${PORT}/${NAME}
 ```
 
-Obtain a one-time authorization code:
+This will create the `backup.pg` file on your local machine in whatever your current working directory is.
+
+When you are finished, you can terminate the SSH tunnel.  You should also clean up the `SERVICE_KEY` created by the cf-service-connect plugin so that you are able to reconnect in the future:
 
 ```sh
-$ cf ssh-code
+$ cf delete-service-key ${SERVICE_NAME} SERVICE_CONNECT
 ```
 
-Run `sftp` or `scp` to transfer files to/from an application instance.  You must specify port 2222 and supply the app GUID and instance number.  Use the one-time authorization from above as the password.  The username format is `cf:GUID/INSTANCE`.
+### Restoring to a local database
 
-For example, to connect to instance 0 of the application with GUID 0745e60b-c7f3-49a7-a6c2-878516a34796:
-
-```sh
-$ sftp -P 2222 cf:0745e60b-c7f3-49a7-a6c2-878516a34796/0@ssh.fr.cloud.gov
-cf:0745e60b-c7f3-49a7-a6c2-878516a34796/0@ssh.fr.cloud.gov's password: ******
-Connected to ssh.fr.cloud.gov.
-sftp> get backup.pg
-sftp> quit
-```
-
-### Restore to local database
-
-Load the dump into your local database using the [pg_restore](https://www.postgresql.org/docs/current/static/app-pgrestore.html) tool. If objects exist in a
-local copy of the database already, you might run into inconsistencies when doing a
-`pg_restore`. This pg_restore invocation does not drop all of the objects in the database when loading the
-dump.
+Continuing with the PostgreSQL example and the `backup.pg` file, load the dump into your local database using the [pg_restore](https://www.postgresql.org/docs/current/static/app-pgrestore.html) tool. If objects exist in a local copy of the database already, you might run into inconsistencies when doing a `pg_restore`. This pg_restore invocation does not drop all of the objects in the database when loading the dump:
 
 ```sh
 $ pg_restore --clean --no-owner --no-acl --dbname={database name} backup.pg
 ```
-
-## Backups
-
-For shared plans (`shared-psql` and `shared-mysql`), RDS does not back up your
-data. For dedicated plans, RDS automatically retains daily backups for 14 days.
-These backups are AWS RDS storage volume snapshot, backing up the entire DB
-instance and not just individual databases. You can [email
-support](mailto:support@cloud.gov) to access that backup if you need to
-as a separate RDS instance. You will be responsible for exporting and importing
-the data from this snapshot into your existing database.
-You can also create manual backups using the [export process](#export) described
-above. In general, you are responsible for making sure that your backup
-procedures are adequate for your needs; see CP-9 in the
-cloud.gov SSP.
 
 ## Encryption
 
