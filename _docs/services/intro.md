@@ -45,7 +45,7 @@ cf cups <name-of-service> -p '{"username":"admin","password":"pa55woRD"}'
 
 ## Provisioning managed services through the marketplace
 
-cloud.gov offers a marketplace of FedRAMP-authorized \[managed services]({{ site.baseurl }}{% link _docs/deployment/managed-services.md %}) that we operate in a secure and compliant manner on your behalf. You can also [extend the marketplace](#extending-the-marketplace) to include additional services run by other organizations.
+cloud.gov offers a marketplace of FedRAMP-authorized [managed services]({{ site.baseurl }}{% link _docs/deployment/managed-services.md %}) that we operate in a secure and compliant manner on your behalf. You can also [extend the marketplace](#extending-the-marketplace) to include additional services run by other organizations.
 
 To list all the managed services and plans available to a given space, you run `cf marketplace` from your command line. Here is a list of the managed services that are generally available: 
 
