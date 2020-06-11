@@ -26,7 +26,7 @@ curl -X PUT localhost:9200/_cluster/settings -H "Content-Type: application/json"
 If reenabling allocation doesn't restore the cluster, [manually reassigning unallocated shards may be necessary]((#force-reallocation %})
 
 ### Check cluster health
-Log into any `elasticsearch_*` node and check the cluster health:
+Log into any `bosh ssh elasticsearch_*` node and check the cluster health:
 
 ```
 curl localhost:9200/_cluster/health
