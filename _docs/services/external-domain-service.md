@@ -46,11 +46,13 @@ ALIAS records, but not all DNS providers offer ALIAS records. These are limitati
 ## Options
 
 ### `domain` plan
+
 Name      | Required   | Description                   | Default | Example                           |
 ----------|------------|-------------------------------|---------|-----------------------------------|
 `domains` | *Required* | Your custom domain or domains | (None)  | `my-domain.gov,www.my-domain.gov` |
 
 ### `domain-with-cdn` plan
+
 Name      | Required   | Description                   | Default | Example                           |
 ----------|------------|-------------------------------|---------|-----------------------------------|
 `domains` | *Required* | Your custom domain or domains | (None)  | `my-domain.gov,www.my-domain.gov` |
