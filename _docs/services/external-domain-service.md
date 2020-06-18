@@ -45,17 +45,17 @@ ALIAS records, but not all DNS providers offer ALIAS records. These are limitati
 
 ## Options
 
-`domain` plan
+### `domain` plan
 
-Name      | Required   | Description                   | Default | Example                           |
-----------|------------|-------------------------------|---------|-----------------------------------|
-`domains` | *Required* | Your custom domain or domains | (None)  | `my-domain.gov,www.my-domain.gov` |
+Name      | Required   | Description                   | Example                           |
+----------|------------|-------------------------------|-----------------------------------|
+`domains` | *Required* | Your custom domain or domains | `my-domain.gov,www.my-domain.gov` |
 
-`domain-with-cdn` plan
+### `domain-with-cdn` plan
 
-Name      | Required   | Description                   | Default | Example                           |
-----------|------------|-------------------------------|---------|-----------------------------------|
-`domains` | *Required* | Your custom domain or domains | (None)  | `my-domain.gov,www.my-domain.gov` |
+Name      | Required   | Description                   | Example                           |
+----------|------------|-------------------------------|-----------------------------------|
+`domains` | *Required* | Your custom domain or domains | `my-domain.gov,www.my-domain.gov` |
 
 
 ## How to create an instance of this service
@@ -65,10 +65,12 @@ Name      | Required   | Description                   | Default | Example      
    you'd start by creating the CNAME or ALIAS records for `_acme-challenge.www.example.gov` with value `_acme-challenge.www.example.gov.external-domains-production.cloud.gov`
    and a record for `_acme-challenge.example.gov` with value `_acme-challenge.example.gov.external-domains-production.cloud.gov`. These will be validated upon
    service creation, so be sure to set these up ahead of time.
+
 2. Optional: Complete this step now only for sites that have not yet lauched, or for sites that can withstand downtime. For each of the domains you want to add to
    the service, create a DNS CNAME or ALIAS record in the form `${DOMAIN}.external-domains-production.cloud.gov`. For example, if you wanted to set up a service for 
    `www.example.gov` and `example.gov`, you'd create an ALIAS record for `www.example.gov` with value `www.example.gov.external-domains-production.cloud.gov` and an
    ALIAS record for `example.gov` with value `example.gov.external-domains-production.cloud.gov`
+
 3. Create the service. For example, with `example.gov` and `www.example.gov`, run:
    ```
    $ cf create-service external-domain domain-with-cdn my-cdn -c '{"domains": "example.gov,www.example.gov"}'
@@ -77,8 +79,10 @@ Name      | Required   | Description                   | Default | Example      
 
     Create in progress. Use 'cf services' or 'cf service my-cdn' to check operation status.
    ``` 
+
 4. Wait for the service instance to complete provisioning. The `domain-with-cdn` plan may take up to 2 hours to complete provisioning, the `domain` plan should
    complete within an hour. You can check the status by running `cf service <service instance name>`
+   
 5. If you didn't complete step 2 above, do so now.
 
 
