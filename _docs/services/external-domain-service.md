@@ -21,7 +21,7 @@ fast delivery of content to your users.
 
 Plan Name         | Plan Description                                                                      |
 ------------------|---------------------------------------------------------------------------------------|
-`domain`          | (Coming soon) Custom domain with automatically renewing ssl certificate.              |
+`domain`          | Custom domain with automatically renewing ssl certificate.                            |
 `domain-with-cdn` | Caching distributed CDN with custom domain and automatically renewing ssl certificate |
 
 ## Before you use the domain-with-cdn plan
