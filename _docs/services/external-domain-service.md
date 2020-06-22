@@ -61,15 +61,15 @@ Name      | Required   | Description                   | Example                
 ## How to create an instance of this service
 
 1. For each of the domains you want to add to the service, create a DNS CNAME or ALIAS record in the form `_acme-challenge.${DOMAIN}` with a
-   value `_acme-challenge.${DOMAIN}.external-domains-production.cloud.gov`. For example, if you wanted to set up a service for `www.example.gov` and `example.gov`,
-   you'd start by creating the CNAME or ALIAS records for `_acme-challenge.www.example.gov` with value `_acme-challenge.www.example.gov.external-domains-production.cloud.gov`
-   and a record for `_acme-challenge.example.gov` with value `_acme-challenge.example.gov.external-domains-production.cloud.gov`. These will be validated upon
+   value `_acme-challenge.${DOMAIN}.external-domains-production.cloud.gov.`. For example, if you wanted to set up a service for `www.example.gov` and `example.gov`,
+   you'd start by creating the CNAME or ALIAS records for `_acme-challenge.www.example.gov.` with value `_acme-challenge.www.example.gov.external-domains-production.cloud.gov.`
+   and a record for `_acme-challenge.example.gov.` with value `_acme-challenge.example.gov.external-domains-production.cloud.gov.`. These will be validated upon
    service creation, so be sure to set these up ahead of time.
 
 2. Optional: Complete this step now only for sites that have not yet lauched, or for sites that can withstand downtime. For each of the domains you want to add to
    the service, create a DNS CNAME or ALIAS record in the form `${DOMAIN}.external-domains-production.cloud.gov`. For example, if you wanted to set up a service for 
-   `www.example.gov` and `example.gov`, you'd create an ALIAS record for `www.example.gov` with value `www.example.gov.external-domains-production.cloud.gov` and an
-   ALIAS record for `example.gov` with value `example.gov.external-domains-production.cloud.gov`
+   `www.example.gov` and `example.gov`, you'd create an ALIAS record for `www.example.gov.` with value `www.example.gov.external-domains-production.cloud.gov.` and an
+   ALIAS record for `example.gov.` with value `example.gov.external-domains-production.cloud.gov.`
 
 3. Create the service. For example, with `example.gov` and `www.example.gov`, run:
    ```
