@@ -61,7 +61,7 @@ Name              | Required   | Description                   | Example        
 #### forward_cookies option
 
 This option allows you to control what cookies to pass on to your application. By default, all cookies are passed.
-You can specify a list of cookie names (comma-separated) to whitelist. To pass no cookies, pass an empty string, e.g.
+You can specify a list of cookie names (comma-separated) to forward, ignoring others. To pass no cookies, pass an empty string, e.g.
 `cf create-service external-domain domain-with-cdn my-cdn -c '{"domains": "example.gov,www.example.gov", "forward_cookies": ""}'`.
 You can explicitly set the default of forwarding all cookies with the string `"*"` (note that this is a special string, not a glob/regex).
 
