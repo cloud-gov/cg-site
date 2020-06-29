@@ -53,10 +53,17 @@ Name      | Required   | Description                   | Example                
 
 ### `domain-with-cdn` plan
 
-Name      | Required   | Description                   | Example                           |
-----------|------------|-------------------------------|-----------------------------------|
-`domains` | *Required* | Your custom domain or domains | `my-domain.gov,www.my-domain.gov` |
+Name              | Required   | Description                   | Example                           |
+------------------|------------|-------------------------------|-----------------------------------|
+`domains`         | *Required* | Your custom domain or domains | `my-domain.gov,www.my-domain.gov` |
+`forward_cookies` | optional   | List of cookies to forward    | `"JSESSIONID,othercookiename"`    |
 
+#### forward_cookies option
+
+This option allows you to control what cookies to pass on to your application. By default, all cookies are passed.
+You can specify a list of cookie names (comma-separated) to forward, ignoring others. To pass no cookies, pass an empty string, e.g.
+`cf create-service external-domain domain-with-cdn my-cdn -c '{"domains": "example.gov,www.example.gov", "forward_cookies": ""}'`.
+You can explicitly set the default of forwarding all cookies with the string `"*"` (note that this is a special string, not a glob/regex).
 
 ## How to create an instance of this service
 
