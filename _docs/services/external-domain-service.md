@@ -75,7 +75,7 @@ You can explicitly set the default of forwarding all cookies with the string `"*
 This option lets you configure what headers to forward to your application. [CloudFront preconfigures
 some of these](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior), 
 and unless you are using a custom origin, we set the `Host` header. 
-You can add up to nine additional headers or header pattern, but note that CloudFront considers forwarded headers
+You can add up to nine additional headers or header patterns, but note that CloudFront considers forwarded headers
 in its cache calculation, so more unique header combinations will cause more cache misses.
 
 ## How to create an instance of this service
