@@ -53,15 +53,18 @@ Name      | Required   | Description                   | Example                
 
 ### `domain-with-cdn` plan
 
-Name              | Required   | Description                   | Example                           |
-------------------|------------|-------------------------------|-----------------------------------|
-`domains`         | *Required* | Your custom domain or domains | `my-domain.gov,www.my-domain.gov` |
-`origin`          | optional   | A custom origin to serve from | `external-app.example.gov`        |
-`forward_cookies` | optional   | List of cookies to forward    | `"JSESSIONID,othercookiename"`    |
-`forward_headers` | optional   | List of headers to forward    | `"x-my-header,x-another-one"`     |
+Name              | Required   | Description                           | Example                           |
+------------------|------------|---------------------------------------|-----------------------------------|
+`domains`         | *Required* | Your custom domain or domains         | `my-domain.gov,www.my-domain.gov` |
+`origin`          | optional   | A custom origin to serve from         | `external-app.example.gov`        |
+`insecure_origin` | optional   | Is the custom origin HTTP (not HTTPS) | `true`                            |
+`forward_cookies` | optional   | List of cookies to forward            | `"JSESSIONID,othercookiename"`    |
+`forward_headers` | optional   | List of headers to forward            | `"x-my-header,x-another-one"`     |
 
-#### origin
+#### origin and insecure_origin
 You can use this option to send traffic to a custom origin, rather than to your app running on cloud.gov
+If your custom origin is served over HTTP without HTTPS available, set `insecure_origin` to `true`. This flag
+does not apply to apps hosted on cloud.gov.
 
 #### forward_cookies option
 
