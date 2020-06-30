@@ -56,7 +56,12 @@ Name      | Required   | Description                   | Example                
 Name              | Required   | Description                   | Example                           |
 ------------------|------------|-------------------------------|-----------------------------------|
 `domains`         | *Required* | Your custom domain or domains | `my-domain.gov,www.my-domain.gov` |
+`origin`          | optional   | A custom origin to serve from | `external-app.example.gov`        |
 `forward_cookies` | optional   | List of cookies to forward    | `"JSESSIONID,othercookiename"`    |
+`forward_headers` | optional   | List of headers to forward    | `"x-my-header,x-another-one"`     |
+
+#### origin
+You can use this option to send traffic to a custom origin, rather than to your app running on cloud.gov
 
 #### forward_cookies option
 
@@ -64,6 +69,14 @@ This option allows you to control what cookies to pass on to your application. B
 You can specify a list of cookie names (comma-separated) to forward, ignoring others. To pass no cookies, pass an empty string, e.g.
 `cf create-service external-domain domain-with-cdn my-cdn -c '{"domains": "example.gov,www.example.gov", "forward_cookies": ""}'`.
 You can explicitly set the default of forwarding all cookies with the string `"*"` (note that this is a special string, not a glob/regex).
+
+#### forward_headers option
+
+This option lets you configure what headers to forward to your application. [CloudFront preconfigures
+some of these](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior), 
+and unless you are using a custom origin, we set the `Host` header. 
+You can add up to nine additional headers or header patterns, but note that CloudFront considers forwarded headers
+in its cache calculation, so more unique header combinations will cause more cache misses.
 
 ## How to create an instance of this service
 
