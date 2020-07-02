@@ -52,14 +52,8 @@ is encouraged and qualifies as a review. Review should include assessment of arc
 
 Before we put a new repository into production:
 
-* Give it a name starting with `cg-` or `cf-` (to make clear that it's part of our work, unless we have a good reason to name it something else).
+* Give it a name. Historically these started with `cf-` or `cg-` when we shared the 18F repo, but no special prefix is needed. 
 * [Add `LICENSE`, `CONTRIBUTING`, and `README` files](https://github.com/18F/open-source-policy/blob/master/practice.md#how-to-license-18f-repos) (to support open source reuse of our work).
-* Set up [Code Climate](https://codeclimate.com/) for pull requests (SI-3).
-  * Go to Code Climate and log in using your GitHub auth.
-  * Give Code Climate permissions to access your public repositories including the cloud-gov org.
-  * Go to [the open source dashboard](https://codeclimate.com/oss/dashboard) and [add the new repository](https://codeclimate.com/github/repos/new).
-  * In Code Climate, go to the repository settings, go to Integrations, and enable Pull Request checking.
-  * In the repo, add a [Code Climate configuration file](https://docs.codeclimate.com/docs/advanced-configuration) (`.codeclimate.yml`) to [enable relevant plugins](https://docs.codeclimate.com/docs/list-of-engines).
 * Configure a [protected master branch](https://help.github.com/articles/about-protected-branches/) (CM-9).
   * Enable "Require pull request reviews before merging"
   * Enable "Dismiss stale pull request approvals when new commits are pushed"
@@ -73,8 +67,8 @@ Before we put a new repository into production:
   * If it's not a platform configuration repo, configure as follows:
      * `Admin` for [cloud-gov](https://github.com/orgs/cloud-gov/teams/cloud-gov-team).
      * `Admin` for [cloud-gov-ops](https://github.com/orgs/cloud-gov/teams/platform-ops).
-* Set up CI/CD for changes (CM-3).
-* Open a PR to add it to the [repos list]({{ site.baseurl }}{% link _docs/ops/repos.md %}#repositories) (to help us keep track of our repos and support open source reuse of our work).
+* Set up CI/CD for changes (CM-3)
+* Set up for static code analysis if it's a code or configuration repo. This in flux. Asg in the #cg-platform channel for details.
 * Open a PR to add it to the [repos list for pre-merge checks](https://github.com/cloud-gov/cg-pipeline-tasks/blob/master/security-considerations/repos.txt)
 
 ## What if a configuration changed and it is not in Configuration Management?
