@@ -34,15 +34,41 @@ When you log into cloud.gov for the first time, follow the instructions to set t
 
 #### To change your password
 
-* **If you know your current password:** You can [log in](https://login.fr.cloud.gov/login) and then [change your password here](https://account.fr.cloud.gov/change-password).
-* **If you're logged out and forgot your password:** You can [reset your password](https://account.fr.cloud.gov/forgot-password) to log in with a temporary password, then [change your password](https://account.fr.cloud.gov/change-password).
-* **If you're logged out and your password has expired:** You still [reset your password](https://account.fr.cloud.gov/forgot-password) to log in with a temporary password, then [change your password](https://account.fr.cloud.gov/change-password).
+* **If you know your current password**
+
+*Follow these steps:*
+
+1. Login to your cloud.gov account at https://login.fr.cloud.gov/
+1. Go to https://account.fr.cloud.gov/change-password to change the password
+    1. Enter your old password into the `Old Password` input
+    1. Then create and enter the new password into `New Password` input and confirm it in the `Repeat New Password` input
+    1. Finally, click *CHANGE*
+
+
+#### To reset your password
+
+* **If you're logged out and forgot your password**
+* **If you're logged out and your password has expired**
+
+*Follow these steps:*
+
+1. Go to log into your cloud.gov account at https://login.fr.cloud.gov
+1. Click on *Forgot your password?* link to reset your password
+1. Enter your email address into the `Email address` input and click *SEND EMAIL* to receive the reset password confirmation email
+1. Go to you email and click on the verification link in the first step of that email
+1. Enter your email address in the `Email address` again on the reset password verification page and click *VERIFY EMAIL*
+1. Your email is verified and then copy/save the temporary password under the `Your temporary password`.
+1. Login to your cloud.gov account at https://login.fr.cloud.gov/ with the new temporary password
+1. After logging in, go to https://account.fr.cloud.gov/change-password to change the password
+    1. Enter the temporary password into the `Old Password` input
+    1. Then create and enter the new password into `New Password` input and confirm it in the `Repeat New Password` input
+    1. Finally, click *CHANGE*
 
 #### If you need to change TOTP to a new device
 
 If you need to register a TOTP token on a new device and still have access to your old device (e.g. you got a new phone and still have your old phone),
 you can [reset your TOTP token here](https://account.fr.cloud.gov/reset-totp). Log in with your old device then reset your token. You'll be
-logged out and can set up tokens on your new device on your next log in. 
+logged out and can set up tokens on your new device on your next log in.
 
 #### If you can't access your token codes
 
@@ -54,7 +80,7 @@ If you need to set up a new authentication application, such as if you lose your
 4. Reset your account's authentication application.
 5. Let you know this is complete, so that you can set up a new authentication application and request access from your Space Managers and Org Managers again. It is their responsibility to verify that this is a legitimate request from you.
 
-You can copy this into your email (or write something similar), so that we know to go ahead with that process right away: 
+You can copy this into your email (or write something similar), so that we know to go ahead with that process right away:
 
 > I need to set up a new authentication application. I understand this means the contents of my sandbox space will be deleted if I have one, and that you will remove my permissions to other spaces and orgs.
 
