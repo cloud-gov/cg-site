@@ -2,13 +2,15 @@
 parent: services
 layout: docs
 sidenav: true
-title: CDN service
+title: CDN service (deprecated)
 name: "cdn-route"
 description: "Custom domains, CDN caching, and TLS certificates with automatic renewal"
 status: "Production Ready"
 ---
 
-Note - this service is being deprecated in favor of the [external domain service]({{ site.baseurl }}{% link _docs/services/external-domain-service.md %}). 
+## Deprecated
+Note - this service has been deprecated. No new instances can be created on this broker, but existing instances will continue to work.
+For new services, please use the [external domain service]({{ site.baseurl }}{% link _docs/services/external-domain-service.md %}).
 
 This service provides:
 
