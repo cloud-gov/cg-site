@@ -7,26 +7,32 @@ redirect_from:
   - /docs/orgs/meeting-tic-requirements
 ---
 
-Agencies hosting workloads on cloud.gov need to ensure compliance with
-the [DHS CISA Trusted Internet Connections](https://www.cisa.gov/trusted-internet-connections) program.
-In September 2019, OMB released  
-[Memo M-19-26](https://www.whitehouse.gov/wp-content/uploads/2019/09/M-19-26.pdf),
-that specified new standards for TIC 3.0, and DHS CISA is currently developing
-new guidance for workloads hosted in PaaS cloud environments.
+Agencies hosting workloads on cloud.gov need to ensure compliance
+with the [DHS CISA Trusted Internet
+Connections](https://www.cisa.gov/trusted-internet-connections)
+program.  In September 2019, OMB released [Memo
+M-19-26](https://www.whitehouse.gov/wp-content/uploads/2019/09/M-19-26.pdf),
+that specified new standards for TIC 3.0, and DHS CISA is currently
+developing new guidance for workloads hosted in PaaS cloud environments.
 
-We at cloud.gov are working with the TIC program office to ensure our customers
-have a smooth path to cloud adoption. Our recent guidance from them (July 2020)
-is as follows:
+We at cloud.gov are working with the TIC program office to ensure
+our customers have a smooth path to cloud adoption. At this point
+agencies are not expected to wait for the TIC PaaS Use Case before
+hosting workloads in cloud environments.  OMB and CISA have
+acknowledged that agencies are already utilizing PaaS, and they are
+working to embed current best practices, including those already
+in place at cloud.gov, into the forthcoming guidance.
 
-> Agencies are not expected to wait for the TIC PaaS Use Case before hosting workloads in cloud environments. OMB and CISA acknowledges that agencies are already utilizing PaaS, and we recognize that use cases take time to develop between soliciting, running, and distilling pilots into lessons learned. OMB does not expect the development of use cases to inhibit agencies from adopting services.  OMB and CISA expects the eventual PaaS Use Case will capture best practices, which are likely already being followed by cloud.gov. OMB and/or CISA may release guidance explaining how agencies can align the use case to their existing environments, as use case adoption matures.
-
-If you need agency user or developer traffic to traverse
-a TIC point, then some of the architectural guidance related to TIC 2.0 is
-provided below. 
+If you need agency user or developer traffic to traverse a TIC
+point, then some of the architectural guidance related to TIC 2.0
+is provided below.
 
 ### Restricting developer and operator access to cloud.gov services
 
-You can ensure that developer and operator access to cloud.gov services traverses your agency's TIC so that you can monitor all changes to your organizations, spaces, applications and services. The diagram below shows how the traffic flows.
+You can ensure that developer and operator access to cloud.gov
+services traverses your agency's TIC so that you can monitor all
+changes to your organizations, spaces, applications and services.
+The diagram below shows how the traffic flows.
 
 {% mermaid_diagram id-prefix="Figure-1.-Restricting-changes-to-agency-origin" %}
 graph TB
