@@ -96,3 +96,15 @@ Verify their permissions have been removed using `validate_admins.sh` and making
 cd /path/to/cg-scripts
 ./validate_admins.sh
 ```
+
+### Deleting Admins
+
+Before deleting an admin user using `cf delete-user`, be sure to follow the [Removing Admins](#RemovingAdmins) above. If you don't, you will end up with orphaned group membership. The username will be replaced with the user's GUID and will appear in roles in cf (`cf org-users` or `cf space-users`).
+
+In the event you see an orphaned account (denoted by GUID), you need to clean up UAA groups and CF. You can remove the user from cf via:
+
+```
+cf curl /v3/users/${user_guid} -X DELETE
+```
+
+You can clean up UAA groups via [cg-scripts/remove-user-guid-from-all-groups.sh](https://github.com/cloud-gov/cg-scripts/blob/master/uaa/remove-user-guid-from-all-groups.sh) or manually using `uaac member remove`.
