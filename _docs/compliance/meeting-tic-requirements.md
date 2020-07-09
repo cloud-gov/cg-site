@@ -64,7 +64,7 @@ APIRouter -->|Change app| App
 
 Any traffic from an agency-authorized boundary (eg physical network of an agency building, or collective virtual boundary for all networked agency buildings) to one that it is not under your agency’s control (e.g. the open internet, or cloud.gov) is likely already routed over a TIC connection.
 
-For requests originating from your agency’s TIC egress bound for cloud.gov, our TLS implementation plays the role of the orange "encrypted tunnel" in Figure 14 of the [TIC 2.0 reference architecture](https://s3.amazonaws.com/sitesusa/wp-content/uploads/sites/482/2015/04/TIC_Ref_Arch_v2-0_2013.pdf). You will access both api.fr.cloud.gov and yourapp.app.cloud.gov exclusively over TLS because the cloud.gov domain is included in [the HSTS preload list](https://hstspreload.org/) for your browser. (If you try to directly access those domains via HTTP, your request will be 301 redirected over to HTTPS; it's not possible to get any other response without TLS.)
+For requests originating from your agency’s TIC egress bound for cloud.gov, our TLS implementation plays the role of the orange "encrypted tunnel" in Figure 14 of the [TIC 2.0 reference architecture](https://www.doi.gov/sites/doi.gov/files/uploads/tic_ref_arch_v2-0_2013.pdf) [external link]. You will access both api.fr.cloud.gov and yourapp.app.cloud.gov exclusively over TLS because the cloud.gov domain is included in [the HSTS preload list](https://hstspreload.org/) for your browser. (If you try to directly access those domains via HTTP, your request will be 301 redirected over to HTTPS; it's not possible to get any other response without TLS.)
 
 cloud.gov's TLS endpoint is not restricted, but rather accessible over the open internet. When an administrator wants to interact with the deployed application through the cloud.gov API, it's your agency’s responsibility to make sure that traffic goes over a TIC connection before it reaches its destination on cloud.gov. For example, you may not want users to be able to manipulate applications on cloud.gov from their home connection or via a wifi access point in the local coffee shop.
 
@@ -106,6 +106,6 @@ RouteService[App logic or route service] --> App
 
 {% endmermaid_diagram %}
 
-For remote workers or partners outside the normal agency network boundary, you can require use of a VPN to ensure that cloud.gov-bound traffic is routed over the agency network and TIC (shown in Figure 15 of the [TIC 2.0 Reference architecture](https://s3.amazonaws.com/sitesusa/wp-content/uploads/sites/482/2015/04/TIC_Ref_Arch_v2-0_2013.pdf)).
+For remote workers or partners outside the normal agency network boundary, you can require use of a VPN to ensure that cloud.gov-bound traffic is routed over the agency network and TIC (shown in Figure 15 of the [TIC 2.0 Reference architecture](https://www.doi.gov/sites/doi.gov/files/uploads/tic_ref_arch_v2-0_2013.pdf) [external link]).
 
 You can then reject requests to your app unless they come from your agency's TIC egress range. You can do this by modifying your application logic.
