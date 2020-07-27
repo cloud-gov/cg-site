@@ -132,10 +132,11 @@ To update an existing service instance run the following command:
 cf update-service aws-rds ${SERVICE_NAME} -p ${SERVICE_PLAN_NAME}
 ```
 
-There are a couple of caveats to note about this:
+There are several caveats to note about this:
 
 - You can only update dedicated RDS instances; updates to shared instances are not supported.
 - You can only update using plans with the same database engine as your existing service instance. This means that if your original service instance was using a PostgreSQL plan (e.g., `micro-psql`), you can only update to one of the other `psql`-based plans.
+- You can **only** switch service plans at the moment; you cannot do things like update your database size at this time.
 
 You can update to larger or smaller plans depending on your specific needs.
 
