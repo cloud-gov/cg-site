@@ -135,7 +135,9 @@ cf update-service aws-rds ${SERVICE_NAME} -p ${SERVICE_PLAN_NAME}
 There are a couple of caveats to note about this:
 
 - You can only update dedicated RDS instances; updates to shared instances are not supported.
-- You can only update using plans with the same database engine as your existing service instance. This means that if your original service instance was using a PostgreSQL plan (e.g., `micro-psql`), you can only update to one of the other `psql`-based plans.  You can update to larger or smaller plans depending on your specific needs.
+- You can only update using plans with the same database engine as your existing service instance. This means that if your original service instance was using a PostgreSQL plan (e.g., `micro-psql`), you can only update to one of the other `psql`-based plans.
+
+You can update to larger or smaller plans depending on your specific needs.
 
 **NOTE: Performing an update in place like this will result in a brief period of downtime (seconds to minutes) while the service instance restarts as a part of the update.**
 
