@@ -16,16 +16,24 @@ If your application uses relational databases for storage, you can use the AWS R
 Plan Name                | Description                                                                  | Software Version |
 ---------                | -----------                                                                  | -------          |
 `shared-psql`            | Shared PostgreSQL database for prototyping (no sensitive or production data) | 9.5.15           |
+`micro-psql`             | Dedicated micro RDS PostgreSQL DB instance                                   | AWS RDS Latest   |
 `medium-psql`            | Dedicated medium RDS PostgreSQL DB instance                                  | AWS RDS Latest   |
 `medium-psql-redundant`  | Dedicated redundant medium RDS PostgreSQL DB instance                        | AWS RDS Latest   |
 `large-psql`             | Dedicated large RDS PostgreSQL DB instance                                   | AWS RDS Latest   |
 `large-psql-redundant`   | Dedicated redundant large RDS PostgreSQL DB instance                         | AWS RDS Latest   |
 `shared-mysql`           | Shared MySQL database for prototyping (no sensitive or production data)      | 5.6.27           |
+`small-mysql`            | Dedicated small RDS MySQL DB instance                                        | 5.7.21           |
 `medium-mysql`           | Dedicated medium RDS MySQL DB instance                                       | 5.7.21           |
 `medium-mysql-redundant` | Dedicated redundant medium RDS MySQL DB instance                             | 5.7.21           |
 `large-mysql`            | Dedicated large RDS MySQL DB instance                                        | 5.7.21           |
 `large-mysql-redundant`  | Dedicated redundant large RDS MySQL DB instance                              | 5.7.21           |
 `medium-oracle-se2`      | Dedicated medium RDS Oracle SE2 DB                                           | 12.0.1.2.v11     |
+
+You can always view an up-to-date version of this list directly in your command line as well with the following command:
+
+```sh
+cf marketplace -s aws-rds
+```
 
 The dedicated PostgreSQL plans (marked "AWS RDS Latest") deploy the default version as advertised by AWS.  To determine this version ahead of time, run the following awscli command and observe the `EngineVersion` field in the resulting JSON:
 
@@ -65,24 +73,31 @@ Name               | Required | Description                                     
 `storage`          |          | Number of GB available to the database instance    | 10
 `enable_functions` |          | Boolean to enable functions on supported databases | false
 
+
 ## Create an instance
 
 To create a service instance run the following command:
 
 ```sh
-cf create-service aws-rds medium-psql my-db-service
+cf create-service aws-rds ${SERVICE_PLAN_NAME} ${SERVICE_NAME}
 ```
 
-If you want to specify the storage available to the instance:
+For example, if you wanted to create a new micro PostgreSQL instance called `my-service-db`, run the following command:
 
 ```sh
-cf create-service aws-rds medium-psql my-db-service -c '{"storage": 50}'
+cf create-service aws-rds micro-psql my-service-db
 ```
 
-Using functions:
+If you want to specify the storage available (in gigabytes) to the instance:
 
 ```sh
-cf create-service aws-rds medium-mysql my-db-service -c '{"enable_functions": true}'
+cf create-service aws-rds ${SERVICE_PLAN_NAME} ${SERVICE_NAME} -c '{"storage": 50}'
+```
+
+Using functions in MySQL:
+
+```sh
+cf create-service aws-rds ${MYSQL_SERVICE_PLAN_NAME} ${SERVICE_NAME} -c '{"enable_functions": true}'
 ```
 
 ### Instance creation time
@@ -108,6 +123,26 @@ Server error, status code: 502, error code: 10001, message: Service broker error
 If the response is `OK` instead of `FAILED` then your database is ready to use.
 
 The cloud.gov team aims to provide clearer status indicators in a future release of our service broker.
+
+## Update an instance
+
+To update an existing service instance run the following command:
+
+```sh
+cf update-service aws-rds ${SERVICE_NAME} -p ${NEW_SERVICE_PLAN_NAME}
+```
+
+`${NEW_SERVICE_PLAN_NAME}` can be any of the *dedicated* service plans that are listed above.
+
+There are several caveats regarding this command:
+
+- You can only update dedicated RDS instances; updates to shared instances are not supported.
+- You can only update using plans with the same database engine as your existing service instance. This means that if your original service instance was using a PostgreSQL plan (e.g., `micro-psql`), you can only update to one of the other `psql`-based plans.
+- You can **only** switch service plans with this command; you cannot do things like update your database size or set any other custom parameters.
+
+You can update to larger or smaller plans depending on your specific needs, and you can switch between redundant and non-redundant plans.
+
+**NOTE: Performing an update in place like this will result in a brief period of downtime (seconds to minutes) while the service instance restarts as a part of the update.**
 
 ### Bind to an application
 
