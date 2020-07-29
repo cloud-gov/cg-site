@@ -14,7 +14,7 @@ If your application uses relational databases for storage, you can use the AWS R
 ## Plans
 
 Plan Name                | Description                                                                  | Software Version |
----------                | -----------                                                                  | -------          |
+---------                | -----------                                                                  | ---------------- |
 `shared-psql`            | Shared PostgreSQL database for prototyping (no sensitive or production data) | 9.5.15           |
 `micro-psql`             | Dedicated micro RDS PostgreSQL DB instance                                   | AWS RDS Latest   |
 `medium-psql`            | Dedicated medium RDS PostgreSQL DB instance                                  | AWS RDS Latest   |
@@ -28,6 +28,8 @@ Plan Name                | Description                                          
 `large-mysql`            | Dedicated large RDS MySQL DB instance                                        | 5.7.21           |
 `large-mysql-redundant`  | Dedicated redundant large RDS MySQL DB instance                              | 5.7.21           |
 `medium-oracle-se2`      | Dedicated medium RDS Oracle SE2 DB                                           | 12.0.1.2.v11     |
+
+*Only the `shared-psql`, `shared-mysql`, `micro-psql`, and `small-mysql` plans are available in [sandbox spaces]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}#sandbox-limitations).*
 
 You can always view an up-to-date version of this list directly in your command line as well with the following command:
 
