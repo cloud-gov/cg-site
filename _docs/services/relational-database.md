@@ -21,6 +21,7 @@ Plan Name                | Description                                          
 `medium-psql-redundant`  | Dedicated redundant medium RDS PostgreSQL DB instance                        | AWS RDS Latest   |
 `large-psql`             | Dedicated large RDS PostgreSQL DB instance                                   | AWS RDS Latest   |
 `large-psql-redundant`   | Dedicated redundant large RDS PostgreSQL DB instance                         | AWS RDS Latest   |
+`xlarge-psql-redundant`  | Dedicated redundant xlarge RDS PostgreSQL DB instance                        | AWS RDS Latest   |
 `shared-mysql`           | Shared MySQL database for prototyping (no sensitive or production data)      | 5.6.27           |
 `small-mysql`            | Dedicated small RDS MySQL DB instance                                        | 5.7.21           |
 `medium-mysql`           | Dedicated medium RDS MySQL DB instance                                       | 5.7.21           |
@@ -129,7 +130,7 @@ The cloud.gov team aims to provide clearer status indicators in a future release
 To update an existing service instance run the following command:
 
 ```sh
-cf update-service aws-rds ${SERVICE_NAME} -p ${NEW_SERVICE_PLAN_NAME}
+cf update-service ${SERVICE_NAME} -p ${NEW_SERVICE_PLAN_NAME}
 ```
 
 `${NEW_SERVICE_PLAN_NAME}` can be any of the *dedicated* service plans that are listed above.
