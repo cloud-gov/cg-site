@@ -11,8 +11,6 @@ You can set up your application to communicate with any external service that is
 
 All traffic from applications on cloud.gov will transit the internet. You can secure the communication with authentication and with encryption in transit, and you can limit access to specific IP ranges.
 
-You can work with us to establish a dedicated connection to your network for a range of applications and external services, or you can secure the communication for each application and service on your own. To establish a dedicated connection to your network, review the [network diagram and instructions for setting up the connection]({{ site.baseurl }}{% link _docs/management/private-egress.md %}).
-
 ## Securing communication for a single application and service
 
 To ensure only your application can communicate with the external service, the service should be configured to authenticate each client using client-specific credentials.

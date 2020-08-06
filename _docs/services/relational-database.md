@@ -14,20 +14,26 @@ If your application uses relational databases for storage, you can use the AWS R
 ## Plans
 
 Plan Name                | Description                                                                  | Software Version |
----------                | -----------                                                                  | -------          |
+---------                | -----------                                                                  | ---------------- |
 `shared-psql`            | Shared PostgreSQL database for prototyping (no sensitive or production data) | 9.5.15           |
 `micro-psql`             | Dedicated micro RDS PostgreSQL DB instance                                   | AWS RDS Latest   |
 `medium-psql`            | Dedicated medium RDS PostgreSQL DB instance                                  | AWS RDS Latest   |
 `medium-psql-redundant`  | Dedicated redundant medium RDS PostgreSQL DB instance                        | AWS RDS Latest   |
 `large-psql`             | Dedicated large RDS PostgreSQL DB instance                                   | AWS RDS Latest   |
 `large-psql-redundant`   | Dedicated redundant large RDS PostgreSQL DB instance                         | AWS RDS Latest   |
+`xlarge-psql`            | Dedicated x-large RDS PostgreSQL DB instance                                 | AWS RDS Latest   |
+`xlarge-psql-redundant`  | Dedicated redundant xlarge RDS PostgreSQL DB instance                        | AWS RDS Latest   |
 `shared-mysql`           | Shared MySQL database for prototyping (no sensitive or production data)      | 5.6.27           |
 `small-mysql`            | Dedicated small RDS MySQL DB instance                                        | 5.7.21           |
 `medium-mysql`           | Dedicated medium RDS MySQL DB instance                                       | 5.7.21           |
 `medium-mysql-redundant` | Dedicated redundant medium RDS MySQL DB instance                             | 5.7.21           |
 `large-mysql`            | Dedicated large RDS MySQL DB instance                                        | 5.7.21           |
 `large-mysql-redundant`  | Dedicated redundant large RDS MySQL DB instance                              | 5.7.21           |
-`medium-oracle-se2`      | Dedicated medium RDS Oracle SE2 DB                                           | 12.0.1.2.v11     |
+`xlarge-mysql`           | Dedicated x-large RDS MySQL DB instance                                      | 5.7.21           |
+`xlarge-mysql-redundant` | Dedicated redundant x-large RDS MySQL DB instance                            | 5.7.21           |
+`medium-oracle-se2`      | Dedicated medium RDS Oracle SE2 DB                                           | AWS RDS Latest   |
+
+*Only the `shared-psql`, `shared-mysql`, `micro-psql`, and `small-mysql` plans are available in [sandbox spaces]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}#sandbox-limitations).*
 
 You can always view an up-to-date version of this list directly in your command line as well with the following command:
 
@@ -129,7 +135,7 @@ The cloud.gov team aims to provide clearer status indicators in a future release
 To update an existing service instance run the following command:
 
 ```sh
-cf update-service aws-rds ${SERVICE_NAME} -p ${NEW_SERVICE_PLAN_NAME}
+cf update-service ${SERVICE_NAME} -p ${NEW_SERVICE_PLAN_NAME}
 ```
 
 `${NEW_SERVICE_PLAN_NAME}` can be any of the *dedicated* service plans that are listed above.
