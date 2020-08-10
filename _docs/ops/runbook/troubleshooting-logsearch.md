@@ -20,13 +20,19 @@ curl localhost:9200/_cluster/settings?pretty
 If necessary, reenable allocation:
 
 ```sh
-curl -X PUT localhost:9200/_cluster/settings -d '{"transient":{"cluster.routing.allocation.enable":"all"}}'
+curl -X PUT localhost:9200/_cluster/settings -H "Content-Type: application/json" -d '{"transient":{"cluster.routing.allocation.enable":"all"}}'
 ```
 
 If reenabling allocation doesn't restore the cluster, [manually reassigning unallocated shards may be necessary]((#force-reallocation %})
 
 ### Check cluster health
-Log into any `elasticsearch_*` node and [check the cluster health]((#check-cluster-health">}}). If the cluster state is not green or has a high number of pending tasks then ElasticSearch cannot accept data from the ingestors.  Resolve the issues with the ElasticSearch cluster and once its state is green, the ingestor queues should be begin to drain.
+Log into any `bosh ssh elasticsearch_*` node and check the cluster health:
+
+```
+curl localhost:9200/_cluster/health
+```
+
+If the cluster state is not green or has a high number of pending tasks then ElasticSearch cannot accept data from the ingestors.  Resolve the issues with the ElasticSearch cluster and once its state is green, the ingestor queues should be begin to drain.
 
 ### Check ingestor health
 If the cluster state is green, then validate the ingestors are healthly:  Log into each ingestor node and check the system health. Review the logs for the logstash instance running on the ingestor which are stored in `/var/vcap/sys/log/ingestor_syslog/`. Restart the ingestors if needed by running `monit restart ingestor_syslog`.
