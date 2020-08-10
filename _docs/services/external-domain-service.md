@@ -53,13 +53,14 @@ Name      | Required   | Description                   | Example                
 
 ### `domain-with-cdn` plan
 
-Name              | Required   | Description                           | Example                           |
-------------------|------------|---------------------------------------|-----------------------------------|
-`domains`         | *Required* | Your custom domain or domains         | `my-domain.gov,www.my-domain.gov` |
-`origin`          | optional   | A custom origin to serve from         | `external-app.example.gov`        |
-`insecure_origin` | optional   | Is the custom origin HTTP (not HTTPS) | `true`                            |
-`forward_cookies` | optional   | List of cookies to forward            | `"JSESSIONID,othercookiename"`    |
-`forward_headers` | optional   | List of headers to forward            | `"x-my-header,x-another-one"`     |
+Name              | Required   | Description                                   | Example                           |
+------------------|------------|-----------------------------------------------|-----------------------------------|
+`domains`         | *Required* | Your custom domain or domains                 | `my-domain.gov,www.my-domain.gov` |
+`origin`          | optional   | A custom origin to serve from                 | `external-app.example.gov`        |
+`insecure_origin` | optional   | Is the custom origin HTTP (not HTTPS)         | `true`                            |
+`forward_cookies` | optional   | List of cookies to forward                    | `"JSESSIONID,othercookiename"`    |
+`forward_headers` | optional   | List of headers to forward                    | `"x-my-header,x-another-one"`     |
+`error_responses` | optional   | dictionary of code:path to respond for errors | `{"404": "/errors/404.html"}`     |
 
 #### origin and insecure_origin
 You can use this option to send traffic to a custom origin, rather than to your app running on cloud.gov
@@ -80,6 +81,22 @@ some of these](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuid
 and unless you are using a custom origin, we set the `Host` header. 
 You can add up to nine additional headers or header patterns, but note that CloudFront considers forwarded headers
 in its cache calculation, so more unique header combinations will cause more cache misses.
+
+#### error_responses option
+
+This option lets you send custom error pages for specific error codes. Set this with an object, where the keys are the error codes (as strings) and the values
+are the path to the custom error page, for example:
+```
+cf create-service external-domain domain-with-cdn -c '{"domains": "example.gov", "error_responses": {"404": "/errors/404.html", "403": "/login.html"}}
+```
+Be careful when setting this for 5xx responses: 5xx responses indicate a server error, and setting a custom error response will increase the load on a potentially unhealthy application.
+
+The default for this setting is `{}`, so errors are passed to the client exactly as the CDN receives them, and you can use the same setting to reset to the default:
+```
+cf create-service external-domain domain-with-cdn -c '{"domains": "example.gov", "error_responses": {}}
+```
+Note that only these error codes can be customized: 400, 403, 404, 405, 414, 416, 500, 501, 502, 503, 504
+
 
 ## How to create an instance of this service
 
