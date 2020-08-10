@@ -25,9 +25,11 @@ cf logs APPNAME --recent
 
 ### Example log
 
+```
   	2015-03-16T17:37:47.82-0400 [DEA/1]      OUT Starting app instance (index 0) with guid GUID
   	2015-03-16T17:37:50.85-0400 [DEA/1]      ERR Instance (index 0) failed to start accepting connections
   	2015-03-16T17:37:53.54-0400 [API/0]      OUT App instance exited with guid GUID0 payload: {"cc_partition"=>"default", "droplet"=>"GUID0", "version"=>"GUID1", "instance"=>"GUID2", "index"=>0, "reason"=>"CRASHED", "exit_status"=>127, "exit_description"=>"failed to accept connections within health check timeout", "crash_timestamp"=>1426541870}
+```
 
 ### See also
 
@@ -59,6 +61,7 @@ The default time period is "Last 15 minutes". To change the time period of data 
 
 You can also view several dashboards that present different visualizations of your log data. You can select these by going to "Dashboard" at left and clicking "Open" in the top toolbar.
 
+
 {% asset select-dashboard.png alt="Select dashboards" %}
 
 These visualizations are provided via Kibana, which has a [user guide](https://www.elastic.co/guide/en/kibana/current/index.html) that explains more about how to use it and customize your views.
@@ -74,6 +77,14 @@ If your application logs are output in JSON, they will be easily searchable in [
 ## How to automatically copy your logs elsewhere
 
 If you want to set up your own storage for your application logs, you can set up [a "log drain" service](https://docs.cloudfoundry.org/devguide/services/log-management.html) that sends the logs to S3 or your preferred location.
+
+Create the user provided service and point it toward the endpoint where you want to send your logs: 
+
+  cf cups log-drain -l syslog-tls://<your-log-drain-service-endpont>
+  
+Then, bind the service you created to the app that you want connect:
+
+  cf bind-service YOUR-APP YOUR-LOG-STORE
 
 ## Troubleshooting missing logs
 

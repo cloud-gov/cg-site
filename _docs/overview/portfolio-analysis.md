@@ -53,6 +53,12 @@ For help interpreting this list or evaluating specific cases, please email the c
 - **Blob stores**:
   - S3
 
+## Bring your own broker and User-Provided Services
+In addition to above, you can [extend your cloud.gov instance](https://cloud.gov/docs/services/intro/) by setting up your own broker or user-provided service. 
+* [Set up your own user-provided service](https://cloud.gov/docs/services/intro/#setting-up-user-provided-service-instances) on cloud.gov
+* [Set up a Simple Service Broker](https://github.com/cloud-gov/cf-byo-broker/tree/master/simple-service-broker)
+* [Set up a GCP Spanner Service Broker](https://github.com/cloud-gov/cf-byo-broker/tree/master/gcp-service-broker)
+
 ## Evaluate applications for cloud operations readiness
 Once you have a list of applications with a compatible impact level and technology stack, use these criteria to sort that list from those applications already ideally suited to running in a PaaS environment to those which are likely to require modification.
 
@@ -64,7 +70,6 @@ Ideal applications follow as many of the [12-Factor App](https://12factor.net/) 
 1. **Backing services**: Does the application retry or fail gracefully if a service it connects to is unavailable?
 1. **Build, release, run**: Can you build the deployment artifacts outside of the deployment environment, for example in a continuous deployment system?
 1. **Processes**: Does the application keep its state in a backing service, rather than shared memory or filesystem?
-  - Applications that rely on a durable filesystem to share state between requests will be supported in FY19.
 1. **Port binding**: Does the application listen for requests over HTTP on a single port?
   - Applications that only accept requests over straight TCP are also possible, but may require additional work on the cloud.gov side to get going.
 1. **Concurrency**: Does the application scale correctly without modification when you run additional instances of it behind a load-balancer?

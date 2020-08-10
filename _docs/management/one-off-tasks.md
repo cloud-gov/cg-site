@@ -18,9 +18,9 @@ Alternative way to run a non-interactive process that does a task (may be suitab
 
 ## Run periodic scheduled tasks
 
-If you'd like to run a periodic scheduled task (similar to a cron job), you should find a cron-like library in the programming language that you're working with, and implement the task using that library. You can run this as part of an existing application or as a separate application.
+If you'd like to run a periodic scheduled task (similar to a cron job), you should find a cron-like library in the programming language that you're working with, and implement the task using that library. You may run this as part of an existing application or as a separate application. 
 
-If you use [continuous deployment]({{ site.baseurl }}{% link _docs/management/continuous-deployment.md %}), you can use a timer as an input to a task or pipeline that runs a [Cloud Foundry Task](https://docs.cloudfoundry.org/devguide/using-tasks.html).
+If you use [continuous deployment]({{ site.baseurl }}{% link _docs/management/continuous-deployment.md %}), you can use a timer as an input to a task or pipeline that runs a [Cloud Foundry Task](https://docs.cloudfoundry.org/devguide/using-tasks.html). You can see [a demonstration of this approach](https://github.com/cloud-gov/cf-ci-triggered-task) using the Travis CI/CD platform here. Note - this same approach can be easily adapted to other common CI/CD platforms like Jenkins, CircleCI and GitHub Actions.
 
 ## Deploy an app that performs a task
 
@@ -79,3 +79,5 @@ cf logs --recent task-runner
 
 [cf-no-route]: https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#no-route "CloudFoundry Documentation about --no-route"
 [cf-health-check]: https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#health-check-type "CloudFoundry Documentation about --health-check-type"
+
+You can find an example application [demonstrating this approach here](https://github.com/cloud-gov/cg-task-example).

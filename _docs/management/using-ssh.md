@@ -22,6 +22,14 @@ You can interact directly with the services bound to your application via [port 
 
 * `cf ssh` uses port 2222. If your network blocks port 2222, you may receive an error message such as `Error opening SSH connection` or `psql: could not connect to server: Connection refused`.
 
+It is possible your internet service provider or network provider will block traffic on port 2222. You can work around this by using a VPN (like the GSA VPN) or using a native ssh client and following the instructions below.
+
+1. Retrieve the APP_GUID for your app: `cf app APP_NAME --guid`.
+2. Retrive a one-time ssh passcode using `cf ssh-code`. You will be prompted for this code below.
+3. Use `ssh` (not `cf ssh`) to connect to your app container. Substitute the value for your APP_GUID: `ssh -p 22 cf:APP_GUID/0@ssh.fr.cloud.gov`. You will be prompted to enter a password. Use the one-time ssh passcode you generated in step 2.
+
+This will open an ssh connection using port 22 to your app instance with index of 0. If you need to connect to a different instance, replace the `0` in the command above.
+
 ## How to disable SSH access
 
 SSH access is enabled by default. Space Developers can disable SSH access to individual applications, and Space Managers can disable SSH access to all apps running within a space. See [Enabling and Disabling SSH Access](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#enable-disable-ssh) for the commands.

@@ -1,3 +1,4 @@
+## Comment out when doing local development
 backend:
   name: github
   repo: cloud-gov/cg-site
@@ -7,10 +8,29 @@ backend:
   branch: master
   use_graphql: true
 
-media_folder: assets/uploads
-public_folder: /images/uploads
+##
+## Uncomment when doing local development on Netlify CMS
+## Run `npx netlify-cms-proxy-server` to start working locally
+## In another terminal, start the app with `npm start`
+## See https://www.netlifycms.org/docs/beta-features/#working-with-a-local-git-repository
+##
+
+# backend:
+#   name: git-gateway
+# local_backend: true
+
+##
+##
+
+media_folder: assets/img
+public_folder: /assets/img
 publish_mode: editorial_workflow
 logo_url: https://cloud.gov/assets/img/cloud-gov-logo.svg
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "_"
 
 collections:
   - label: Posts
@@ -84,21 +104,6 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: 'Parent', name: 'parent', widget: 'hidden', default: 'deployment'}
-      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'docs'}
-      - {label: 'Sidenav', name: 'sidenav', widget: 'hidden', default: true}
-      - {label: 'Weight', name: 'weight', widget: "number", valueType: 'int', required: false}
-      - *redirect_from_anchor
-      - {label: "Body", name: "body", widget: "markdown"}
-  - label: Deployment Experimental
-    name: experimental
-    folder: _docs/deployment/experimental/
-    create: true
-    slug: "{{slug}}"
-    editor:
-      preview: true
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: 'Parent', name: 'parent', widget: 'hidden', default: 'experimental'}
       - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'docs'}
       - {label: 'Sidenav', name: 'sidenav', widget: 'hidden', default: true}
       - {label: 'Weight', name: 'weight', widget: "number", valueType: 'int', required: false}

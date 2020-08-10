@@ -7,7 +7,7 @@
 -->
 [![CircleCI](https://circleci.com/gh/18F/federalist-uswds-jekyll.svg?style=svg)](https://circleci.com/gh/18F/cg-site-federality)
 
-# cloud.gov + Federalist + U.S. Web Design System + Jekyll
+# cloud.gov
 
 This site uses the [Federalist USWDS Jekyll template](https://github.com/18F/federalist-uswds-jekyll). [Federalist](https://federalist.18f.gov/) runs on cloud.gov and supports the development of this template. By leveraging this template cloud.gov get the benefits  of a maintained template as well as a way to test out new functionality in the template.
 

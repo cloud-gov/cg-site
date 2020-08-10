@@ -5,8 +5,8 @@ sidenav: true
 title: Try a free sandbox space
 weight: -10
 redirect_from:
-  - /overview/pricing/free-limited-sandbox
-  - /docs/pricing/free-limited-sandbox
+  - /overview/pricing/free-limited-sandbox/
+  - /docs/pricing/free-limited-sandbox/
 ---
 
 A sandbox is a free space that you can use to see if cloud.gov might suit your team’s needs. From the [setup process]({{ site.baseurl }}{% link _docs/getting-started/setup.md %}) through [deploying an app]({{ site.baseurl }}{% link _docs/getting-started/your-first-deploy.md %}), it works similarly to other spaces that are included in [paid access packages]({{ site.baseurl }}/pricing/), with [some limitations](#sandbox-limitations).
@@ -19,7 +19,7 @@ If you’re interested in [purchasing full access]({{ site.baseurl }}/pricing/) 
 
 ## Keep in mind before you try your sandbox
 
-* If your agency has not already integrated its single-sign on authentication provider with cloud.gov (only EPA, FDIC, GSA, and NSF have done this so far), you will access your sandbox through a [cloud.gov account]({{ site.baseurl }}{% link _docs/getting-started/accounts.md %}#cloudgov-accounts). This account requires multi-factor authentication using a mobile app such as [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) or [Authy](https://www.authy.com/app/mobile/). If you cannot install or use these apps, such as if your workplace prohibits mobile phones or mobile phone cameras, you might not be able to set up access. (Paid access packages support integration with your agency single sign-on authentication provider.)
+* If your agency has not already integrated its single-sign on authentication provider with cloud.gov (only EPA, FDIC, GSA, and NSF have done this so far), you will access your sandbox through a [cloud.gov account]({{ site.baseurl }}{% link _docs/getting-started/accounts.md %}#cloudgov-accounts). This account requires multi-factor authentication using a mobile app such as 1password, Microsoft Authenticator, or Authy. If you cannot install or use these apps, such as if your workplace prohibits mobile phones or mobile phone cameras, you might not be able to set up access. (Paid access packages support integration with your agency single sign-on authentication provider.)
 * If your agency prohibits installing the [cloud.gov command line interface]({{ site.baseurl }}{% link _docs/getting-started/setup.md %}#set-up-the-command-line) on your computer, you won’t be able to deploy applications in your sandbox. (For paid access packages, we can coordinate with your agency to help them approve this tool.)
 * If your agency blocks many network ports, you might receive errors when you try [`cf logs`]({{ site.baseurl }}{% link _docs/deployment/logs.md %}) or [`cf ssh`]({{ site.baseurl }}{% link _docs/management/using-ssh.md %}). (For paid access packages, we can coordinate with your agency to ask for unblocking those ports.)
 
