@@ -19,7 +19,7 @@ layout: wide
 <div class="tablet:grid-col-7 usa-prose"  markdown="1">
 ## 1. <br />Get trial access and a free sandbox space
 
-Federal employees and contractors with an email ending in .mil, .gov, or .fed.us can obtain a free sandbox space. To register, you’ll need access to your email and a smartphone with Google Authenticator installed.
+Federal employees and contractors with an email ending in .mil, .gov, or .fed.us can obtain a free sandbox space. To register, you’ll need access to your email and a smartphone with an authenticator app installed (for example, 1password, Microsoft Authenticator, or Authy).
 
 <a href="https://account.fr.cloud.gov/signup" class="usa-button usa-button--big">Get access</a>
 </div>
