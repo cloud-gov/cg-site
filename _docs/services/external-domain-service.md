@@ -109,6 +109,21 @@ in its cache calculation, so more unique header combinations will cause more cac
 5. If you didn't complete step 2 above, do so now.
 
 
+## Updating domain-with-cdn instances
+
+When you update a domain-with-cdn instance, any parameter you leave out of the update params will
+remain unchanged. (Exception: if you switch from using a custom origin to using cloud.gov as the
+origin, we'll automatically add `HOST` to the forwarded headers, and automatically set `insecure_origin`
+to false)
+
+To stop using a custom origin and instead route traffic to an app running on cloud.gov, pass either
+`null` or empty string (`""`) to the origin parameter:
+
+```
+$ cf update-service my-cdn -c '{"origin": ""}'  # passing empty string
+$ cf update-service my-cdn -c '{"origin": null}'  # passing null
+```
+
 
 ## More about how the CDN works
 

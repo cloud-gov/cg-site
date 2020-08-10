@@ -5,8 +5,8 @@ sidenav: true
 title: Try a free sandbox space
 weight: -10
 redirect_from:
-  - /overview/pricing/free-limited-sandbox
-  - /docs/pricing/free-limited-sandbox
+  - /overview/pricing/free-limited-sandbox/
+  - /docs/pricing/free-limited-sandbox/
 ---
 
 A sandbox is a free space that you can use to see if cloud.gov might suit your team’s needs. From the [setup process]({{ site.baseurl }}{% link _docs/getting-started/setup.md %}) through [deploying an app]({{ site.baseurl }}{% link _docs/getting-started/your-first-deploy.md %}), it works similarly to other spaces that are included in [paid access packages]({{ site.baseurl }}/pricing/), with [some limitations](#sandbox-limitations).
