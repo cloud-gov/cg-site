@@ -54,7 +54,7 @@ Before we put a new repository into production:
 
 * Give it a name. Historically these started with `cf-` or `cg-` when we shared the 18F repo, but no special prefix is needed. 
 * [Add `LICENSE`, `CONTRIBUTING`, and `README` files](https://github.com/18F/open-source-policy/blob/master/practice.md#how-to-license-18f-repos) (to support open source reuse of our work).
-* Configure a [protected master branch](https://help.github.com/articles/about-protected-branches/) (CM-9).
+* Configure a [protected main branch](https://help.github.com/articles/about-protected-branches/) (CM-9).
   * Enable "Require pull request reviews before merging"
   * Enable "Dismiss stale pull request approvals when new commits are pushed"
   * Enable "Require status checks to pass before merging"
@@ -63,10 +63,10 @@ Before we put a new repository into production:
 * Configure permissions (CM-3):
   * If it's a platform configuration repo, restrict permissions to Cloud Ops, as follows:
      * `Read` for [cloud-gov](https://github.com/orgs/cloud-gov/teams/cloud-gov-team).
-     * `Admin` for [cloud-gov-ops](https://github.com/orgs/cloud-gov/teams/platform-ops).
+     * `Admin` for [platform-ops](https://github.com/orgs/cloud-gov/teams/platform-ops).
   * If it's not a platform configuration repo, configure as follows:
      * `Admin` for [cloud-gov](https://github.com/orgs/cloud-gov/teams/cloud-gov-team).
-     * `Admin` for [cloud-gov-ops](https://github.com/orgs/cloud-gov/teams/platform-ops).
+     * `Admin` for [platform-ops](https://github.com/orgs/cloud-gov/teams/platform-ops).
 * Set up CI/CD for changes (CM-3)
 * Set up for static code analysis if it's a code or configuration repo. This in flux. Asg in the #cg-platform channel for details.
 * Open a PR to add it to the [repos list for pre-merge checks](https://github.com/cloud-gov/cg-pipeline-tasks/blob/master/security-considerations/repos.txt)
