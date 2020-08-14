@@ -305,7 +305,7 @@ $ cf service-key spring-oracle spring-oracle-key
 Getting key spring-oracle-key for service instance spring-oracle ...
 
 {
-  "db_name": "ORCL",
+  "name": "ORCL",
   "host": "cg-aws-broker-prod.RANDOMSTRING.us-gov-west-1.rds.amazonaws.com",
   "password": "secretpassword",
   "port": "1521",
@@ -348,7 +348,7 @@ myapp_guid=$(cf app --guid hello-doe)
 
 creds=$(cf curl /v2/apps/$myapp_guid/env | jq -r '[.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials | .username, .password] | join(":")')
 
-dbname=$(cf curl /v2/apps/$myapp_guid/env | jq -r '.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials | .db_name')
+dbname=$(cf curl /v2/apps/$myapp_guid/env | jq -r '.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials | .name')
 
 psql postgres://$creds@localhost:5432/$dbname
 
