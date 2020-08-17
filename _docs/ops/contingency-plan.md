@@ -132,9 +132,9 @@ Major services (Cloud Foundry, BOSH, Concourse, and UAA) rely on databases provi
 
 #### Brokered AWS services
 
-cloud.gov is not dependent on the following services, but we do broker customer provisioning and access to these service, so our customers could be impacted if they were unavailable.  
+cloud.gov is not dependent on the following services, but we do broker customer provisioning and access to these services, so our customers could be impacted if they were unavailable.  
 
-If the GovCloud service were wholly unavailable, we would broker access to the AWS commercial cloud equivalent, as shown below:
+If a GovCloud service were wholly unavailable, we would broker access to the AWS commercial cloud equivalent, as shown below:
 
 Brokered service | Fallback Services | FedRAMP Fallback Status |
 -- | -- | -- |
