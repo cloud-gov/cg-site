@@ -130,6 +130,17 @@ If all AWS regions are disrupted, Cloud Operations will deploy the system to ano
 #### AWS RDS
 Major services (Cloud Foundry, BOSH, Concourse, and UAA) rely on databases provided by RDS. To restore a database from backup, see [restoring RDS]({{ site.baseurl }}{% link _docs/ops/runbook/restoring-rds.md %}).
 
+#### Brokered AWS services
+
+cloud.gov is not dependent on the following services, but we do broker customer provisioning and access to these service, so our customers could be impacted if they were unavailable.  
+
+If the GovCloud service were wholly unavailable, we would broker access to the AWS commercial cloud equivalent, as shown below:
+
+Brokered service | Fallback Services | FedRAMP Fallback Status |
+-- | -- | -- |
+AWS GovCloud Elasticache for Redis | AWS commercial Elasticache for Redis | Moderate |
+AWS GovCloud Elastisearch | AWS commercial Elastisearch | Moderate |
+
 
 ## How this document works
 
