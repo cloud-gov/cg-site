@@ -2,9 +2,9 @@
 parent: services
 layout: docs
 sidenav: true
-title: "Elasticsearch"
-name: "elasticsearchBETA"
-description: "Elasticsearch version 7.4: a distributed, RESTful search and analytics engine"
+title: "AWS Elasticsearch BETA"
+name: aws-elasticsearchBETA"
+description: "AWS Elasticsearch version 7.4: a distributed, RESTful search and analytics engine"
 status: "BETA"
 ---
 

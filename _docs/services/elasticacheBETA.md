@@ -2,9 +2,9 @@
 parent: services
 layout: docs
 sidenav: true
-title: Elasticache Redis BETA
-name: "elasticacheBETA"
-description: "Elasticache Redis: an in-memory data structure store"
+title: AWS Elasticache Redis BETA
+name: "aws-elasticacheBETA"
+description: "AWS Elasticache Redis: an in-memory data structure store"
 status: "BETA"
 ---
 
