@@ -14,9 +14,9 @@ cloud.gov offers [aws-elasticache](https://aws.amazon.com/elasticache/) 5.0.6 as
 
 Service Name | Plan Name | Description |
 ------------ | --------- | ----------- | -----
-`aws-elasticache` | `BETA-es-dev` | Single EC node for non-prod use only |
-`aws-elasticache` | `BETA-es-3node` | 3 node EC, persistent storage, 512Mb memory limit |
-`aws-elasticache` | `BETA-es-5node` | 5 node EC, persistent storage, 512Mb memory limit |
+`aws-elasticache` | `BETA-ec-dev` | Single EC node for non-prod use only |
+`aws-elasticache` | `BETA-ec-3node` | 3 node EC, persistent storage, 512Mb memory limit |
+`aws-elasticache` | `BETA-ec-5node` | 5 node EC, persistent storage, 512Mb memory limit |
 
 *Additional Cost:* Elasticache has a limit of 10GB in storage. After 10G, each additional gigabyte will cost $100 per month.
 
@@ -27,7 +27,7 @@ Service Name | Plan Name | Description |
 To create a service instance, run the following command (replace `my-ec-service` with a name for the service):
 
 ```sh
-cf create-service aws-elasticache BETA-es-3node my-ec-service
+cf create-service aws-elasticache BETA-ec-3node my-ec-service
 ```
 
 ## Managing backups
