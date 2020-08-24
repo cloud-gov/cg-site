@@ -113,8 +113,8 @@ Note that only these error codes can be customized: 400, 403, 404, 405, 414, 416
 
 3. Create the cf domain for each of the domains you are adding to the service:
    ```
-   $ cf create-domain example.gov
-   $ cf create-domain www.example.gov
+   $ cf create-domain my-org example.gov
+   $ cf create-domain my-org www.example.gov
    ```
 
 4. Map the routes to your app. There are several ways to do this, documented [here](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html#map-route). For example:
