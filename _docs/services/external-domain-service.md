@@ -113,7 +113,7 @@ Note that only these error codes can be customized: 400, 403, 404, 405, 414, 416
 
 3. Create the cf domain for each of the domains you are adding to the service:
    ```
-   $ cf create-domain example.gov
+   $ cf create-domain <org> example.gov
    $ cf create-domain www.example.gov
    ```
 
