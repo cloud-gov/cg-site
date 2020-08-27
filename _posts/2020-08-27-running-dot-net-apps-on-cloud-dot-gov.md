@@ -19,9 +19,9 @@ cloud.gov is an ideal platform for deploying microservices, or for building high
 
 Yes, with one small caveat. You can easily connect your .NET Core application on cloud.gov to an instance of SQL Server using Cloud Foundry’s [user provided service instance approach](https://docs.cloudfoundry.org/devguide/services/user-provided.html). This will let your application connect to a SQL Server instance running on any cloud service provider, or even a legacy instance running on premise inside your network.
 
-However, because cloud.gov does not broker this service to your application directly as part of our marketplace, this falls outside the scope of our current FedRAMP approval, so there may be some additional compliance work required for you to get your application [authorized to operate in production](https://cloud.gov/docs/overview/fedramp-tracker/#how-you-can-use-this-p-ato).
+However, because cloud.gov does not broker this service to your application directly as part of our marketplace, this falls outside the scope of our current FedRAMP approval, so there may be some additional compliance work required for you to get your application [authorized to operate in production](https://cloud.gov/docs/overview/fedramp-tracker/#how-you-can-use-this-p-ato). That said, there are no technical limitations on using SQL Server with your .NET Core application running on cloud.gov, and the set up to bind your application to SQL Server is simple and straightforward.
 
-That said, there are no technical limitations on using SQL Server with your .NET Core application running on cloud.gov, and the set up to bind your application to SQL Server is simple and straightforward.
+It's also possible to use the [PostgreSQL or MySQL RDS services](https://cloud.gov/docs/services/relational-database/#plans) brokered from Amazon GovCloud by cloud.gov in your .NET Core application. So, migrating from SQL Server to one of these options may provide some additional compliance benefits, as they are within the cloud.gov P-ATO boundry. 
 
 **Does cloud.gov provide any CI/CD tools to use in conjunction with my .NET application?**
 
