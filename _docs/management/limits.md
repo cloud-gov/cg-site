@@ -2,7 +2,7 @@
 parent: management
 layout: docs
 sidenav: true
-redirect_from: 
+redirect_from:
     - /docs/apps/limits/
 title: Set org, space, and app limits
 ---
@@ -24,14 +24,23 @@ Space Developers can specify application limits in your [application manifest](h
 ### Application limit options
 
 `memory: / -m`
+- **Default:** `1GB`
+- **Minimum:** `Based on the app's usage and runtime requirements`
+- **Maximum:** `Based on organization's quota and its provisioned apps`
 
 The application memory limit. This setting has a dual-purpose, as your application compute limit is derived from its memory limit. This relationship is explained in detail [here](https://docs.cloudfoundry.org/concepts/container-security.html#cpu).
 
 `disk_quota / -k`
+- **Default:** `1GB`
+- **Minimum:** `Based on the app's source and dependencies disk size`
+- **Maximum:** `6GB`
 
 The maximum amount of disk space available to your app.
 
 `instances: / -i`
+- **Default:** `1`
+- **Minimum:** `0`
+- **Maximum:** `Based on organization's quota and its provisioned apps`
 
 Sets the number of application instances to launch. Each additional instance receives the same memory and disk reservation. An application with a manifest specifying `memory: 256M` and `instances: 4` would reserve 1GB (256M x 4) total.
 
