@@ -64,6 +64,8 @@ primary_navigation:
         url: /docs/pricing/free-limited-sandbox/
       - name: Quota Costs Billing & Limits
         url: /docs/pricing/quotas/
+      - name: Support Packages
+        url: /support-packages/
   - name: Documentation
     key: docs
     children:
