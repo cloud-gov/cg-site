@@ -89,7 +89,7 @@ sidenav: false
                <li class="font-serif-lg">
                   <h3>What boundaries exist that we won't cross?</h3>
                   <p class="font-body-md">
-                    We will not do direct development on the agency's application. We will only help, analyze, and assist.
+                    We will not perform direct development on the agency's application. We will only help, analyze, and assist with improving application performance and stability on the platform.
                   </p>
                </li>
             </ol>
