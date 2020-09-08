@@ -132,7 +132,7 @@ The cloud.gov team aims to provide clearer status indicators in a future release
 
 ## Update an instance
 
-To update an existing service instance run the following command:
+To update an existing service instance to a different plan run the following command:
 
 ```sh
 cf update-service ${SERVICE_NAME} -p ${NEW_SERVICE_PLAN_NAME}
@@ -147,6 +147,16 @@ There are several caveats regarding this command:
 - You can **only** switch service plans with this command; you cannot do things like update your database size or set any other custom parameters.
 
 You can update to larger or smaller plans depending on your specific needs, and you can switch between redundant and non-redundant plans.
+
+To update an existing service instance size, run the following command and replace ${SERVICE_NAME} with your service instance name, and SIZE with your desired larger size (in GB):
+
+```sh
+cf update-service ${SERVICE_NAME} -c '{"storage": SIZE}’
+```
+
+There is one caveat regarding this command:
+
+- You can only update to a larger size. If you want to downgrade to a lesser size, you will need to email support.
 
 **NOTE: Performing an update in place like this will result in a brief period of downtime (seconds to minutes) while the service instance restarts as a part of the update.**
 
