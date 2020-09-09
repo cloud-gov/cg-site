@@ -70,26 +70,29 @@ sidenav: false
          <div class="tablet:grid-col-9 usa-prose">
             <ol class="column-single">
                <li class="font-serif-lg">
-                  <h3>Would unspent monies be deobligated at the end of the FY/PoP?</h3>
-                  <p class="font-body-md">Yes, unspent monies need to be deobligated.</p>
-               </li>
-               <li class="font-serif-lg">
-                  <h3>If agencies have unused hours, would agencies reduce support hours for subsequent years?</h3>
+                  <h3>What happens to the money that is not used within the fiscal year or period of performance?</h3>
                   <p class="font-body-md">
-                     If customers reduce their support needs, that is success from our perspective.
-                     We want to make sure agencies are empowered to solve problems on their own and use us only as needed.
+                     Any money that is not used will be returned to the agency through the "deobligation" process.
                   </p>
                </li>
                <li class="font-serif-lg">
-                  <h3>Is there a way to roll over unused hours to the next FY?</h3>
+                  <h3>
+                     If an agency does not use all the allocated support hours, would they be able to reduce paid support hours for future years?
+                  </h3>
                   <p class="font-body-md">
-                    This depends on the agency and what type of money (“no-year”, “3-year”) the agency is using.
+                     Yes, we see support hours as a good way for an agency to get started with the platform. Once your team is comfortable with the platform, you should reduce the number of paid support hours.
                   </p>
                </li>
                <li class="font-serif-lg">
-                  <h3>What boundaries exist that we won't cross?</h3>
+                  <h3>Is there a way to roll over unused hours to the next fiscal year?</h3>
                   <p class="font-body-md">
-                    We will not perform direct development on the agency's application. We will only help, analyze, and assist with improving application performance and stability on the platform.
+                    Yes, it's possible. But that depends on the agency's authority and funds. For example, some money can cross fiscal year ("no-year money") while other funds must be used within a set time frame ("3-year money").
+                  </p>
+               </li>
+               <li class="font-serif-lg">
+                  <h3>What are the limits of the paid support packages?</h3>
+                  <p class="font-body-md">
+                    We will not do direct development on the agency's application. We will only help, analyze, and assist.
                   </p>
                </li>
             </ol>
