@@ -68,7 +68,7 @@ Before we put a new repository into production:
      * `Admin` for [cloud-gov](https://github.com/orgs/cloud-gov/teams/cloud-gov-team).
      * `Admin` for [platform-ops](https://github.com/orgs/cloud-gov/teams/platform-ops).
 * Set up CI/CD for changes (CM-3)
-* Set up for static code analysis if it's a code or configuration repo. This in flux. Asg in the #cg-platform channel for details.
+* Set up for static code analysis if it's a code or configuration repo. This in flux. Ask in the #cg-platform channel for details.
 * Open a PR to add it to the [repos list for pre-merge checks](https://github.com/cloud-gov/cg-pipeline-tasks/blob/master/security-considerations/repos.txt)
 
 ## What if a configuration changed and it is not in Configuration Management?
