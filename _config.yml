@@ -37,6 +37,7 @@ google_analytics_ua: UA-48605964-34
 
 # Configuration for DAP, add your agency ID here:
 dap_agency: GSA
+dap_subagency: TTS,cloud.gov
 
 # Site Navigation
 primary_navigation:
