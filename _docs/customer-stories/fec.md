@@ -8,7 +8,7 @@ redirect_from:
   - /overview/customer-stories/federal-election-commission/
   - /case-studies/fec/
 ---
-The Federal Election Commission (FEC) recently worked with 18F to redesign its website. By hosting [FEC.gov](https://www.fec.gov/) on cloud.gov and moving its data to the cloud, the FEC anticipates saving 85% in hosting costs and is better prepared for peak traffic events.
+The Federal Election Commission (FEC) partnered with 18F to redesign its website. By hosting [FEC.gov](https://www.fec.gov/) on cloud.gov and moving its data to the cloud, the FEC saves approximately 85% in hosting costs per year and is better prepared for peak traffic events.
 
  {% asset illustrations/fec-case-study-illo.svg alt="FEC case study illustration" %}
 
@@ -17,10 +17,10 @@ The Federal Election Commission (FEC) recently worked with 18F to redesign its w
 
 ## $1.2 million annual savings
 
-Political campaigns and committees across the country periodically submit financial reports to the FEC which are then disclosed to the public on FEC.gov. Around elections and filing deadlines, the website experiences significant spikes in traffic far in excess of normal demand. To ensure the old website was responsive and available enough, the FEC had to predict future spikes and build for them. To that end, FEC spent $1.4 million annually on the data center supporting the old FEC.gov. This included servers and their maintenance, databases, and various software licenses. According to the FEC’s Deputy CIO Wei Luo, maintaining all of this was expensive and “could take up to 3 months.” Since beginning their migration to cloud services, including cloud.gov, Luo says they plan to retire all 14 servers by the end of the fiscal year.
+Political campaigns and committees across the country periodically submit financial reports to the FEC which are then disclosed to the public on FEC.gov. Around elections and filing deadlines, the website experiences significant spikes in traffic far in excess of normal demand. To ensure the old website was responsive and available enough, the FEC had to predict future spikes and build for them. To that end, FEC spent $1.4 million annually on the data center supporting the old FEC.gov. This included servers and their maintenance, databases, and various software licenses. According to the FEC’s Deputy CIO Wei Luo, maintaining all of this was expensive and “could take up to 3 months” to purchase and deploy new servers. Since beginning their migration to cloud services, including cloud.gov, the FEC has been able to retire all 14 servers.
 
 
-While they won’t know exactly how much they’ll spend on cloud.gov until next year, [initial cost estimates show $1.2 million of annual savings](http://www.nextgov.com/cloud-computing/2017/03/fec-and-18f-team-save-agency-12m/136598/). “We plan to reinvest those savings in IT and cloud migrations over the next five years,” said Luo.
+By moving to cloud.gov, [cost estimates show $1.2 million of annual savings](http://www.nextgov.com/cloud-computing/2017/03/fec-and-18f-team-save-agency-12m/136598/). “We plan to reinvest those savings in IT and cloud migrations over the next five years,” said Luo.
 
 ## Better prepared
 
