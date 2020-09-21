@@ -1,0 +1,13 @@
+---
+layout: post
+title: "Security update regarding CISA directive 20-04"
+date: September 21, 2020
+excerpt: All cloud.gov agency customers have zero exposure to this vulnerability
+---
+
+# CISA Directive 20-04 for Netlogon Elevation of Privilege: cloud.gov is fully compliant
+
+On September 18, 2020, the DHS Cybersecurity and Infrastructure Security Agency (CISA) published Emergency Directive 20-04, [Mitigate Netlogon Elevation of Privilege Vulnerability from August 2020 Patch Tuesday](https://cyber.dhs.gov/ed/20-04/).
+
+The FedRAMP PMO requested that cloud.gov (and all CSPs) notify agency customers on our compliance status with the directive, which is that **cloud.gov has zero systems impacted by this vulnerability**.
+
