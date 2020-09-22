@@ -1,7 +1,7 @@
 ## Comment out when doing local development
 backend:
   name: github
-  repo: cloud-gov/cg-site
+  repo: apburnes/cg-site
   base_url: https://federalistapp.18f.gov
   auth_endpoint: external/auth/github
   preview_context: federalist/build
