@@ -18,7 +18,7 @@
 }
 
 .site-banner {
-  background-color: color("base-darkest");
+  background-color: color("accent-warm-light");
 
   .usa-banner__content {
     color: color("white");
@@ -42,7 +42,7 @@
 }
 
 .site-footer {
-  @include u-bg('accent-warm');
+  @include u-bg('primary-vivid');
   @include u-font('body', '3xs');
   @include u-color('ink');
 
