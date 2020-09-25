@@ -82,7 +82,7 @@ For customers that would like to import or export their Elasticsearch data, this
 
     ```sh
     es_arn=$(cf service-key my-elastic-service my-key | tail -n +3)
-    snapshotRoleARN=$es_arn | jq -r '.snapshotRoleARN'
+    snapshotRoleARN=$(echo "${es_arn}" | jq -r '.snapshotRoleARN')
     ```
 
  Once you have your s3 bucket connected and have the `snapshotRoleARN` you can then inside your application connect to the AWS ES host and register your s3 repository endpoint and then perform your snapshot export/import operations using [AWS signed HTTP headers](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-request-signing.html).  Due to the nature of [AWS Signature Calculations](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-header-based-auth.html) there is no direct way with curl to perform these operations and it's best left to client libraries in a programing language your applications are written in.
