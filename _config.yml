@@ -188,6 +188,7 @@ plugins:
   - jekyll-redirect-from
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-last-modified-at
 
 ############################################################
 # Site configuration for the Jekyll 3 Pagination Gem
@@ -257,7 +258,9 @@ assets:
     - node_modules/uswds/dist/js/uswds.min.js.map
     - node_modules/netlify-cms/dist
 
-
+### plugin settings ###
+last-modified-at:
+    date-format: '%d-%b-%y'
 
 # Custom plugin to render the diagrams as mermaid
 mermaid:

@@ -191,3 +191,5 @@ ensure the updated release is deployed to all required VMs.
 
 ## Review potential improvements in CloudCheckr
 Review the [Best Practices report in CloudCheckr](https://app.cloudcheckr.com/#Report/BestPracticesConsolidated) and try to fix something near the top.
+
+Last modified on: {% last_modified_id %}
