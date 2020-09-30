@@ -260,7 +260,7 @@ assets:
 
 ### plugin settings ###
 last-modified-at:
-    date-format: '%d-%b-%y'
+    date-format: '%Y-%m-%d'
 
 # Custom plugin to render the diagrams as mermaid
 mermaid:
