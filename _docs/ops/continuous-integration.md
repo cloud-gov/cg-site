@@ -42,15 +42,9 @@ Staging also runs integration, smoke, and acceptance tests against every incomin
 
 This is where all customer workloads live. All the same rules apply to our production environment: changes must first pass multiple testing steps, a deployment, and then acceptance tests. By the time a change reaches our production environment, changes have been comprehenesively tested in development and staging before being available to customers.
 
-
-
+---
 ### Page information
 
 * Last modified on: {% last_modified_at %}
 * [Recent document history](https://github.com/cloud-gov/cg-site/commits/master/{{ page.path }}) (since 2020-02-05)
-* [Older document history](https://github.com/cloud-gov/cg-site/commits/master/content/docs/ops/{{ page.slug }.md}) (before 2020-02-05)
-
-Pre
-<pre>
-{{ page | inspect }}
-</pre>
+* [Older document history](https://github.com/cloud-gov/cg-site/commits/master/content/docs/ops/{{ page.slug }}.md) (before 2020-02-05)

@@ -256,4 +256,10 @@ Examples:
 * Adding a built-in Continuous Integration / Continuous Deployment service (such as providing brokered Concourse to tenant applications).
 * Giving customer agencies a way to restrict network requests from agency staff to a specific set of IP origins, to support their TIC compliance.
 
-Last modified on: {% last_modified_at %}
+---
+
+### Page information
+
+* Last modified on: {% last_modified_at %}
+* [Recent document history](https://github.com/cloud-gov/cg-site/commits/master/{{ page.path }}) (since 2020-02-05)
+* [Older document history](https://github.com/cloud-gov/cg-site/commits/master/content/docs/ops/{{ page.slug }}.md) (before 2020-02-05)
