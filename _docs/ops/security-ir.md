@@ -239,3 +239,11 @@ Guidelines for addressing Low-sev issues:
 - Response should be business-hours.
 - Responders should avoid service degradation unless stakeholders agree.
 - Sitreps should be sent approximately daily.
+
+---
+
+### Page information
+
+* Last modified on: {% last_modified_at %}
+* [Recent document history](https://github.com/cloud-gov/cg-site/commits/master/{{ page.path }}) (since 2020-02-05)
+* [Older document history](https://github.com/cloud-gov/cg-site/commits/master/content/docs/ops/{{ page.slug }}.md) (before 2020-02-05)

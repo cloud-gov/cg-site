@@ -37,6 +37,16 @@ If the cluster state is not green or has a high number of pending tasks then Ela
 ### Check ingestor health
 If the cluster state is green, then validate the ingestors are healthly:  Log into each ingestor node and check the system health. Review the logs for the logstash instance running on the ingestor which are stored in `/var/vcap/sys/log/ingestor_syslog/`. Restart the ingestors if needed by running `monit restart ingestor_syslog`.
 
+#### Are the ingestors behind?
+
+You can check the ingestor delay by:
+
+- `bosh ssh` to an ingestor node
+- As root, go to `/var/vcap/store/ingestor_syslog/queue/main/`
+- look for the oldest `page.*` file (ie the one with the lowest number). View the timestamps on the logs in this file to see how backed up the ingestor is.
+
+This is a common cause of smoke test failure in logs-platform. We do not currently have guidance on speeding up ingestion to resolve this and therefore you should wait it out.
+
 ### Continue to monitor ingestor queues
 Once the issue has been resolved, continue to monitor the number of messages waiting in the ingestor queues. Once the queue lengths have reached 0 the system has returned to normal operation.
 

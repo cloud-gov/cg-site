@@ -68,7 +68,7 @@ Before we put a new repository into production:
      * `Admin` for [cloud-gov](https://github.com/orgs/cloud-gov/teams/cloud-gov-team).
      * `Admin` for [platform-ops](https://github.com/orgs/cloud-gov/teams/platform-ops).
 * Set up CI/CD for changes (CM-3)
-* Set up for static code analysis if it's a code or configuration repo. This in flux. Asg in the #cg-platform channel for details.
+* Set up for static code analysis if it's a code or configuration repo. This in flux. Ask in the #cg-platform channel for details.
 * Open a PR to add it to the [repos list for pre-merge checks](https://github.com/cloud-gov/cg-pipeline-tasks/blob/master/security-considerations/repos.txt)
 
 ## What if a configuration changed and it is not in Configuration Management?
@@ -131,3 +131,11 @@ You can request a review using GitHub's built-in tools, mention someone in the P
 ### When reviewing a PR, should the change be tested locally?
 
 Whenever possible, the proposed changes should be tested locally. Because of the nature of many of the cloud.gov repositories and deployment environments, local testing is not always possible or practical. Visual code review, however, is always required.
+
+---
+
+### Page information
+
+* Last modified on: {% last_modified_at %}
+* [Recent document history](https://github.com/cloud-gov/cg-site/commits/master/{{ page.path }}) (since 2020-02-05)
+* [Older document history](https://github.com/cloud-gov/cg-site/commits/master/content/docs/ops/{{ page.slug }}.md) (before 2020-02-05)

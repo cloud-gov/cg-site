@@ -49,13 +49,13 @@ ALIAS records, but not all DNS providers offer ALIAS records. These are limitati
 
 Name      | Required   | Description                   | Example                           |
 ----------|------------|-------------------------------|-----------------------------------|
-`domains` | *Required* | Your custom domain or domains | `my-domain.gov,www.my-domain.gov` |
+`domains` | *Required* | Your custom domain or domains | `"my-domain.gov,www.my-domain.gov"` or `["my-domain.gov",  "www.my-domain.gov"]` |
 
 ### `domain-with-cdn` plan
 
 Name              | Required   | Description                                   | Example                           |
 ------------------|------------|-----------------------------------------------|-----------------------------------|
-`domains`         | *Required* | Your custom domain or domains                 | `my-domain.gov,www.my-domain.gov` |
+`domains`         | *Required* | Your custom domain or domains                 |  `"my-domain.gov,www.my-domain.gov"` or `["my-domain.gov",  "www.my-domain.gov"]`|
 `origin`          | optional   | A custom origin to serve from                 | `external-app.example.gov`        |
 `insecure_origin` | optional   | Is the custom origin HTTP (not HTTPS)         | `true`                            |
 `forward_cookies` | optional   | List of cookies to forward                    | `"JSESSIONID,othercookiename"`    |
