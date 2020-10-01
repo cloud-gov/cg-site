@@ -107,3 +107,11 @@ They also have a baseline expectation that we have good answers to the following
 * Do you know why the problem happened?
 * If it happens again, how are you going to notice faster and respond better next time?
 * Was there anything suspicious from a security perspective, or do you have confidence that all of the cause-and-effect steps were caused by ordinary reasons instead of malicious actors?
+
+---
+
+### Page information
+
+* Last modified on: {% last_modified_at %}
+* [Recent document history](https://github.com/cloud-gov/cg-site/commits/master/{{ page.path }}) (since 2020-02-05)
+* [Older document history](https://github.com/cloud-gov/cg-site/commits/master/content/docs/ops/{{ page.slug }}.md) (before 2020-02-05)
