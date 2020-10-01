@@ -32,7 +32,7 @@ Once that P-ATO is granted, FedRAMP requires cloud.gov to undergo re-assessment 
 
 Your agency still needs to grant your system an Authority to Operate, but FedRAMP has done the labor-intensive work of reviewing cloud.gov's security posture and endorsed it, which reduces the compliance work you need to do. Your agency's authorizing official can request the P-ATO documentation package from FedRAMP and accept that endorsement for your own system. See [ATO process]({{ site.baseurl }}{% link _docs/compliance/ato-process.md %}) for the typical workflow.
 
-The [**Control Implementation Summary + Customer Responsibility Matrix + Control-by-Control Inheritance (.xlsx)**]({{ site.baseurl }}/resources/cloud.gov-CIS-Worksheet.xlsx) (last updated November 7, 2018) is a summary of each Low and Moderate security control and whether it is handled by cloud.gov, shared responsibility, or customer responsibility. It includes guidance on which controls a customer system can fully or partially inherit from cloud.gov.
+The [**Control Implementation Summary + Customer Responsibility Matrix + Control-by-Control Inheritance (.xlsx)**]({{ site.baseurl }}/resources/cloud.gov-CIS-Worksheet.xlsx) (last updated June 12, 2019) is a summary of each Low and Moderate security control and whether it is handled by cloud.gov, shared responsibility, or customer responsibility. It includes guidance on which controls a customer system can fully or partially inherit from cloud.gov.
 
 ## Start the ATO process
 
