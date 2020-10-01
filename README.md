@@ -59,7 +59,6 @@ permalink: /document-with-sidenav
 
 ✅ Enable search with [Search.gov](https://search.gov) by adding option to `_config.yml`. 
 
-
 ```
 ---
 searchgov:
@@ -69,7 +68,6 @@ searchgov:
   inline: true #this renders the results on the same domain. Otherwise, it will render the results in the search.gov domain
 ---
 ```
-
 
 ## How to edit cloud.gov content
 - Non-developers should focus on editing markdown content in the `_posts`, `_docs`, and `_pages` folder. Generally most of the cloud.gov content will be in the _docs file. 
@@ -90,10 +88,7 @@ searchgov:
     - The `homepage` can be editted more directly by manipulating the `.html` in `home.html`
     - The `pricing` page is mostly edited with the `pricing.html`
     - The `getting-started` page is in the `_pages/sign-up.md` folder.
-
-
-
-
+    
 - `_layouts/` may require the least amount of editing of all the files since they are primarily responsible for printing the content.
 
 - `search/index.html` is used by search.gov.
@@ -101,7 +96,6 @@ searchgov:
 - If you make major changes to content, let the [#search](https://gsa-tts.slack.com/archives/C33CZQG2D) team know and they can reindex the site. More information on the search.gov account here: https://search.usa.gov/sites/6217
 
 ## Updating content on your own computer
-
 
     $ git clone https://github.com/18F/cg-site-federalist
     $ cd cg-site-federalist
@@ -125,7 +119,6 @@ site.
 - [Jekyll](https://jekyllrb.com/docs/) - The primary site engine that builds your code and content.
 - [Front Matter](https://jekyllrb.com/docs/frontmatter) - The top of each page/post includes keywords within `--` tags. This is meta data that helps Jekyll build the site, but you can also use it to pass custom variables.
 - [U.S. Web Design System v 2.0](https://v2.designsystem.digital.gov) 
-
 
 ## Contributing
 
