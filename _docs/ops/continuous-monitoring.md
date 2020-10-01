@@ -107,7 +107,7 @@ The cloud.gov team has implemented a suite of automated components to provide co
 	* Network intrusion detection:
 		* **Snort:** continuously monitors network traffic, signatures, and behaviors, and raises alerts based on defined rules.
 	* Intruder detection / file integrity:
-		* **Tripwire:** Performs file alteration checks on all cloud.gov virtual machines on initial deploy and a daily basis thereafter, and records all data to CloudWatch logs.
+		* **AIDE:** Performs file alteration checks on all cloud.gov virtual machines on initial deploy and an hourly basis thereafter. Violations are shipped to our central alert system.
 	* Patch / vulnerability scanning:
 		* **Nessus:** runs nightly to scan for OS and database vulnerabilities.
 		* **OWASP ZAP:** runs monthly to scan for web application vulnerabilities.
