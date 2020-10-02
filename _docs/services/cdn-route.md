@@ -73,7 +73,10 @@ cf create-domain <org> my.example.gov
 Then, to create a `cdn-route` service instance, run the following command (replace `my-cdn-route` with a name for your service instance, and replace `my.example.gov` with your domain):
 
 ```sh
-cf create-service cdn-route cdn-route my-cdn-route \
+cf create-service \
+    cdn-route \
+    cdn-route \
+    my-cdn-route \
     -c '{"domain": "my.example.gov"}'
 ```
 
@@ -82,7 +85,10 @@ cf create-service cdn-route cdn-route my-cdn-route \
 If you have more than one domain, you can pass a comma-delimited list to the `domain` parameter (just keep in mind that the broker will wait until all domains are CNAME'd, as explained in the next step):
 
 ```sh
-cf create-service cdn-route cdn-route my-cdn-route \
+cf create-service \
+    cdn-route \
+    cdn-route \
+    my-cdn-route \
     -c '{"domain": "my.example.gov,www.my.example.gov"}'
 ```
 

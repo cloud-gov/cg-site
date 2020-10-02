@@ -33,7 +33,10 @@ Note: By default, identity provider service instances use the `openid` scope. Th
 To create an identity provider, bind a [service key](https://docs.cloudfoundry.org/devguide/services/service-keys.html) to the service instance:
 
 ```bash
-cf create-service-key my-uaa-client my-service-key -c '{"redirect_uri": ["https://my.app.cloud.gov/auth", "https://my.app.cloud.gov/logout"]}'
+cf create-service-key \
+    my-uaa-client \
+    my-service-key \
+    -c '{"redirect_uri": ["https://my.app.cloud.gov/auth", "https://my.app.cloud.gov/logout"]}'
 cf service-key my-uaa-client my-service-key
 ```
 
