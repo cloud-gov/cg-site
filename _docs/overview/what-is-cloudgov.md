@@ -24,7 +24,11 @@ cloud.gov runs on top of industry-provided infrastructure ([currently Amazon Web
 
 ## cloud.gov provides Compliance as a Service
 
-cloud.gov was designed with **FISMA compliance** in mind. cloud.gov has a [FedRAMP Joint Authorization Board (JAB) Provisional Authority to Operate (P-ATO)]({{ site.baseurl }}{% link _docs/overview/fedramp-tracker.md %}) at the Moderate impact level. 
+<<<<<<< HEAD
+cloud.gov was designed with **FISMA compliance** in mind. cloud.gov has a [FedRAMP Joint Authorization Board (JAB) Provisional Authority to Operate (P-ATO)]({{ site.baseurl }}{% link _docs/overview/fedramp-tracker.md %}) at the Moderate impact level. In most cases, the majority of Low and Moderate controls are managed for you. And because our documentation and controls are are updated regularly, you can incorporate them directly into any compliance documentation your systems need.
+=======
+cloud.gov was designed with **FISMA compliance** in mind. cloud.gov has a [FedRAMP Joint Authorization Board (JAB) Provisional Authority to Operate (P-ATO)]({{ site.baseurl }}{% link _docs/overview/fedramp-tracker.md %}) at the Moderate impact level. In most cases, the majority of Low and Moderate controls are managed for you. We also continuously update our documentation and controls with the latest information available so that you can incorporate them directly into any compliance documentation your systems need.
+>>>>>>> 1909962078a26eb970c5ea1d005acc03515e8c6e
 
 ## Why a government Platform as a Service works
 
