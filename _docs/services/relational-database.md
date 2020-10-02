@@ -105,13 +105,19 @@ cf create-service aws-rds micro-psql my-service-db
 If you want to specify the storage available (in gigabytes) to the instance:
 
 ```sh
-cf create-service aws-rds ${SERVICE_PLAN_NAME} ${SERVICE_NAME} -c '{"storage": 50}'
+cf create-service aws-rds \
+    ${SERVICE_PLAN_NAME} \
+    ${SERVICE_NAME} \
+    -c '{"storage": 50}'
 ```
 
 Using functions in MySQL:
 
 ```sh
-cf create-service aws-rds ${MYSQL_SERVICE_PLAN_NAME} ${SERVICE_NAME} -c '{"enable_functions": true}'
+cf create-service aws-rds \
+    ${MYSQL_SERVICE_PLAN_NAME} \
+    ${SERVICE_NAME} \
+    -c '{"enable_functions": true}'
 ```
 
 ### Instance creation time
@@ -234,7 +240,11 @@ Then try the previous step again.
 Once the SSH tunnel is created, keep it running in that terminal window and open a separate terminal session in another window/tab, then create the backup file using the parameters provided by the plugin in the new terminal session, e.g. (be sure to tailor the backup/export command to your specific needs):
 
 ```sh
-$ pg_dump -F c --no-acl --no-owner -f backup.pg postgresql://${USERNAME}:${PASSWORD}@${HOST}:${PORT}/${NAME}
+$ pg_dump -F c \
+    --no-acl \
+    --no-owner \
+    -f backup.pg \
+    postgresql://${USERNAME}:${PASSWORD}@${HOST}:${PORT}/${NAME}
 ```
 
 This will create the `backup.pg` file on your local machine in whatever your current working directory is.
@@ -354,7 +364,10 @@ Example for app name `hello-doe`
 ```
 myapp_guid=$(cf app --guid hello-doe)
 
-tunnel=$(cf curl /v2/apps/$myapp_guid/env | jq -r '[.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials | .host, .port] | join(":")')
+tunnel=$(cf curl /v2/apps/$myapp_guid/env \
+    | jq -r '[.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials \
+    | .host, .port] \
+    | join(":")')
 
 cf ssh -N -L 5432:$tunnel hello-doe
 ```
@@ -364,9 +377,14 @@ Another window:
 ```
 myapp_guid=$(cf app --guid hello-doe)
 
-creds=$(cf curl /v2/apps/$myapp_guid/env | jq -r '[.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials | .username, .password] | join(":")')
+creds=$(cf curl /v2/apps/$myapp_guid/env \
+    | jq -r '[.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials \
+    | .username, .password] \
+    | join(":")')
 
-dbname=$(cf curl /v2/apps/$myapp_guid/env | jq -r '.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials | .name')
+dbname=$(cf curl /v2/apps/$myapp_guid/env \
+    | jq -r '.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials \
+    | .name')
 
 psql postgres://$creds@localhost:5432/$dbname
 
