@@ -327,6 +327,7 @@ code {
   @include u-padding-y(1px);
   border-radius: radius('sm');
   word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 .usa-section.want-more {
