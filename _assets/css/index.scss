@@ -325,9 +325,16 @@ code {
   @include u-bg('accent-warm-light');
   @include u-padding-x('05');
   @include u-padding-y(1px);
+  @include u-font-size("mono", "xs");
+  @include u-display("block");
   border-radius: radius('sm');
   word-wrap: break-word;
   white-space: pre-wrap;
+  line-height: line-height("mono", 1);
+}
+
+code.language-plaintext {
+  @include u-display("inline");
 }
 
 .usa-section.want-more {
