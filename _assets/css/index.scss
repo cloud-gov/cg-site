@@ -24,11 +24,45 @@
     color: color("white");
   }
 
-  .usa-banner__button {
+  .usa-banner__header-action {
     color: color("base-light");
-
+    &::after {
+      -webkit-mask: url('/img/chevron.svg') no-repeat center / 1.3128205128ex 0.8ex;
+      mask: url('/img/chevron.svg') no-repeat center / 1.3128205128ex 0.8ex;
+      background-color: color("base-light");
+    }
     &:hover {
       color: color("white");
+      &::after {
+        background-color: color("white");
+      }
+    }
+  }
+
+  .usa-banner__button[aria-expanded="true"]::before {
+    background: transparent !important;
+  }
+  
+  .usa-banner__button[aria-expanded="true"]::after {
+    @include u-bg('white');
+    -webkit-mask: url(/img/close-alt.svg) no-repeat center/1rem 1rem;
+    mask: url(/img/close-alt.svg) no-repeat center/1rem 1rem;
+  }
+
+  @include at-media('tablet') {
+    .usa-banner__button, .usa-banner__button[aria-expanded="true"] {
+      color: color("base-light");
+      &::after {
+        -webkit-mask: url('/img/chevron.svg') no-repeat center / 1.3128205128ex 0.8ex;
+        mask: url('/img/chevron.svg') no-repeat center / 1.3128205128ex 0.8ex;
+        background-color: color("base-light");
+      }
+      &:hover {
+        color: color("white");
+        &::after {
+          background-color: color("white");
+        }
+      }
     }
   }
 
