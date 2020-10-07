@@ -10,19 +10,19 @@
 - name: external-domain-service
   description: "Custom domains and TLS certificates with automatic renewal"
   status: "Production"
-  code: TBD
+  source-code: https://github.com/cloud-gov/cf-domain-broker-alb
 - name: cloud-gov-identity-provider
   description: "Authenticate cloud.gov users in your app"
   status:  "Beta"
-  code: TBD
+  source-code: https://github.com/cloudfoundry-community/uaa-credentials-broker
 - name: cloud-gov-service-account
   description: "cloud.gov service accounts for automated access by programs"
   status: "Production"
-  code: TBD
+  source-code: https://github.com/cloudfoundry-community/uaa-credentials-broker
 - name: custom-domains
   description: "Custom domains and TLS certificates with automatic renewal"
-  status: "Production"
-  code: TBD
+  status: "Deprecated"
+  source-code: https://github.com/cloud-gov/external-domain-broker
 - name: elasticsearch56
   page-name: 
   description: "[Elasticsearch](https://www.elastic.co/products/elasticsearch) version 5.6: a distributed, RESTful search and analytics engine"
