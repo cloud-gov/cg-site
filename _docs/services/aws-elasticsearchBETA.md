@@ -89,6 +89,105 @@ For customers that would like to import or export their Elasticsearch data, this
 
  cloud.gov does offer a code sample repository on Github - [aws-elasticsearch-example](https://github.com/cloud-gov/aws-elasticsearch-example) that shows an example in Python on how to interact with the new ES service using signed headers.  Our customers are encouraged to submit PRs of other examples to share with fellow customers.
 
+## Migration from Kubernetes Elasticsearch 5.6 to AWS Elasticsearch 7.4
+Migration is not recommended and very expertimental due to the nature of Elasticsearch indexes. This is only available for customers who ask for it. 
+
+The overall process looks this:
+
+1. Ask Cloud.gov Support to access the AWS Elasticsearch plan named `BETA-es-dev-6.8-migration`
+2. Take a snapshot of your ES 5.6 index and store in an s3 bucket.
+3. Create ES 6.8 service instance and create a service key with `s3-bucket` info attached (See Above Section)
+4. Restore ES 5.6 Snapshot into your ES 6.8
+5. Upgrade your ES 6.8 to 7.4
+
+### Prepare for Migration
+* Have a S3 service instance created with service key - [S3 Service Instructions](https://cloud.gov/docs/services/s3/)
+* Have an existing ES 5.6 instance with snapshots to S3 - [ES 5.6 Backups Instructions](https://cloud.gov/docs/services/elasticsearch56/#managing-backups)
+* Ask Cloud.gov Support to have access to migration plan `BETA-es-dev-6.8-migration`
+* Create new AWS Elasticsearch service instance with `BETA-es-dev-6.8-migration` plan
+* Create Service Key with attached S3 - [ES 7.4 Service Key](https://cloud.gov/docs/services/aws-elasticsearchBETA/#managing-backups)
+
+### Backup your ES 5.6 to S3 Bucket
+* Connect to your Elasticsearch service using port forwarding. **Note**: You'll need to leave the [`cf ssh`]({{ site.baseurl }}{% link _docs/management/using-ssh.md %}) command running and follow the next steps in a different terminal so that you can access the remote Elasticsearch instance from your local environment:
+
+    ```sh
+    es_credentials=$(cf service-key my-elastic-service my-key | tail -n +3)
+
+    es_hostname=$(echo "${es_credentials}" | jq -r '.hostname')
+    es_port=$(echo "${es_credentials}" | jq -r '.port')
+    es_username=$(echo "${es_credentials}" | jq -r '.username')
+    es_password=$(echo "${es_credentials}" | jq -r '.password')
+
+    cf ssh my-app -L "9200:${es_hostname}:${es_port}"
+    ```
+
+* Create a snapshot repository:
+
+    ```sh
+    s3_credentials=$(cf service-key my-s3-bucket my-key | tail -n +3)
+
+    s3_bucket=$(echo "${s3_credentials}" | jq -r '.bucket')
+    s3_region=$(echo "${s3_credentials}" | jq -r '.region')
+    s3_access_key=$(echo "${s3_credentials}" | jq -r '.access_key_id')
+    s3_secret_key=$(echo "${s3_credentials}" | jq -r '.secret_access_key')
+
+    curl -X PUT -u "${es_username}:${es_password}" "localhost:9200/_snapshot/my_s3_repository" -d @<(cat <<EOF
+    {
+      "type": "s3",
+      "settings": {
+        "bucket": "${s3_bucket}",
+        "region": "${s3_region}",
+        "access_key": "${s3_access_key}",
+        "secret_key": "${s3_secret_key}"
+      }
+    }
+    EOF
+    )
+    ```
+
+* Create a snapshot:
+
+    ```sh
+    curl -X PUT -u "${es_username}:${es_password}" "localhost:9200/_snapshot/my_s3_repository/my_s3_snapshot"
+    ```
+
+### Restore from S3 to ES 6.8 and reindex
+This part will vary greatly depending on which language your application is written in and which library is used. 
+1. You need to add the following ES repository to your AWS Elasticsearch Domain
+```
+  {
+    "type": "s3",
+    "settings": {
+      "bucket": "${s3_bucket}",
+      "region": "${s3_region}",
+      "role_arn" : "${snapshotRoleARN}"
+    }
+  }
+```
+
+`s3_bucket` and `s3_region` is same as previous step but the `snapshotRoleARN` is given from service-key credentials for the AWS ES 7.4.
+
+2. Restore using above repository and matching snapshot name in previous step. [ES 6.8 Restore](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/modules-snapshots.html#_restore)
+3. Reindex your index - You will need to do this so the index will be the correct version for when upgrading. [ES 6.8 Reindexing API](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/docs-reindex.html)
+Example reindexing body:
+``` 
+{
+  "source": {
+    "index": "your_index"
+  },
+  "dest": {
+    "index": "your_index_in_6.8"
+  }
+}
+```
+4. Once your indexes are at least version `6.8`, you can move on to the final part!
+### Upgrading ES 6.8 to 7.4
+1. Contact Cloud.gov Support to perform a ES 6.8 to ES 7.4 Upgrade Eligbility
+2. Cloud.gov Support will let you know if it eligible or not
+3. If is ready, then support can do the upgrade to ES 7.4
+
+
+
 ## Rotating credentials
 
 You can rotate credentials by creating a new instance and [deleting the existing instance](https://cli.cloudfoundry.org/en-US/cf/delete-service.html). If this is not an option, email [cloud.gov support](mailto:support@cloud.gov) to request rotating the credentials manually.
