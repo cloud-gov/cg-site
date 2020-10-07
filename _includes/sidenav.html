@@ -1,64 +1,64 @@
-{% comment %} 
+{%- comment -%} 
 The sidenav is not loaded by default on the main pages. To include this navigation you can either use the
 _layouts/page.html layout template, or you can add "sidenav: true" in the front-matter of your pages
-{% endcomment %}
+{%- endcomment -%}
 
 <aside class="usa-layout-docs-sidenav desktop:grid-col-4 padding-bottom-4">
   <nav>
     <ul class="usa-sidenav">
       
-      {% for nav_item in include.documentation_navigation %}
-      {% assign nav_id = 'side-nav-' | append: nav_item.identifier %}
+      {%- for nav_item in include.documentation_navigation -%}
+      {%- assign nav_id = 'side-nav-' | append: nav_item.identifier -%}
 
-      {% assign url_dirs = page.url | remove_first: '/' | split: '/' %}
-      {% assign relevant_parent = url_dirs[1] %}
+      {%- assign url_dirs = page.url | remove_first: '/' | split: '/' -%}
+      {%- assign relevant_parent = url_dirs[1] -%}
       <li class="usa-sidenav__item">
-        <a class="usa-sidenav__item--parent-item {% if relevant_parent == nav_item.identifier %}usa-current{% endif %}"
-        {% if relevant_parent == nav_item.identifier %}aria-expanded=true{% else %}aria-expanded=false{% endif %}
+        <a class="usa-sidenav__item--parent-item {%- if relevant_parent == nav_item.identifier -%}usa-current{%- endif -%}"
+        {%- if relevant_parent == nav_item.identifier -%}aria-expanded=true{%- else -%}aria-expanded=false{%- endif -%}
       aria-controls="{{ nav_id }}" >
-          {% if nav_item.icon %}
+          {%- if nav_item.icon -%}
           <i class='fa fa-fw {{ nav_item.icon }}'></i>
-          {% endif %}
+          {%- endif -%}
           {{ nav_item.name | escape }}
         </a>
       
-        <ul class="usa-sidenav__sublist {% if relevant_parent != nav_item.identifier %}display-none{% endif %}"
+        <ul class="usa-sidenav__sublist {%- if relevant_parent != nav_item.identifier -%}display-none{%- endif -%}"
          id="{{ nav_id }}" aria-hidden="true">
-        {% unless nav_item.children %}
-          {% for docpage in site.docs %}
-          {% if nav_item.identifier == docpage.parent %}
+        {%- unless nav_item.children -%}
+          {%- for docpage in site.docs -%}
+          {%- if nav_item.identifier == docpage.parent -%}
           <li class="usa-sidenav__item">
-            <a href="{{ docpage.url | prepend: site.baseurl }}" class="{% if docpage.url == page.url %}usa-current{% endif %}">{{ docpage.title }}</a>
+            <a href="{{ docpage.url | prepend: site.baseurl }}" class="{%- if docpage.url == page.url -%}usa-current{%- endif -%}">{{ docpage.title }}</a>
           </li>
-          {% endif %}
-          {% endfor %}
-      {% else %}
+          {%- endif -%}
+          {%- endfor -%}
+      {%- else -%}
         <!-- If section is a grandparent -->
-          {% for subnav_item in nav_item.children %}
-          {% assign subnav_id = 'side-nav-' | append: subnav_item.identifier %}
-          {% assign relevant_child = url_dirs[2] %}
+          {%- for subnav_item in nav_item.children -%}
+          {%- assign subnav_id = 'side-nav-' | append: subnav_item.identifier -%}
+          {%- assign relevant_child = url_dirs[2] -%}
           <li class="usa-sidenav__item">
-            <a class="usa-sidenav__item--parent-item usa-sidenav__sublist--middle-generation {% if page.parent == subnav_item.identifier %}usa-current{% endif %}"
-        {% if page.parent == subnav_item.identifier %}aria-expanded=true{% else %}aria-expanded=false{% endif %}
+            <a class="usa-sidenav__item--parent-item usa-sidenav__sublist--middle-generation {%- if page.parent == subnav_item.identifier -%}usa-current{%- endif -%}"
+        {%- if page.parent == subnav_item.identifier -%}aria-expanded=true{%- else -%}aria-expanded=false{%- endif -%}
       aria-controls="{{ subnav_id }}" >{{ subnav_item.name | escape }}</a>
-            <ul class="usa-sidenav__sublist  {% if page.parent != subnav_item.identifier %}display-none{% endif %}"
+            <ul class="usa-sidenav__sublist  {%- if page.parent != subnav_item.identifier -%}display-none{%- endif -%}"
             id="{{ subnav_id }}" aria-hidden="true">
-              {% for docpage in site.docs %}
-                  {% if subnav_item.identifier == docpage.parent %}
+              {%- for docpage in site.docs -%}
+                  {%- if subnav_item.identifier == docpage.parent -%}
                   <li class="usa-sidenav__item">
-                    <a href="{{ docpage.url | prepend: site.baseurl }}" class="{% if docpage.url == page.url %}usa-current{% endif %}">{{ docpage.title }}</a>
+                    <a href="{{ docpage.url | prepend: site.baseurl }}" class="{%- if docpage.url == page.url -%}usa-current{%- endif -%}">{{ docpage.title }}</a>
                   </li>
-                  {% endif %}
-              {% endfor %}
+                  {%- endif -%}
+              {%- endfor -%}
               </ul>
           </li>
-          {% endfor %}
-        {% endunless %}
+          {%- endfor -%}
+        {%- endunless -%}
         </ul>
       </li>
 
       
-      {% endfor %}
+      {%- endfor -%}
     </ul>
   </nav>
 </aside>

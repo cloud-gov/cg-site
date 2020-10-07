@@ -1,59 +1,59 @@
-{% comment %}
+{%- comment -%}
 To modify the menu system, you are welcome to edit this HTML directly or you can look inside _config.yml
 where we provide an easy way to manage your navigation system
-{% endcomment %}
+{%- endcomment -%}
 
 <header class="usa-header usa-header--extended" role="banner">
   <div class="usa-navbar">
-    {% include logo.html %}
+    {%- include logo.html -%}
     <button class="usa-menu-btn">Menu</button>
   </div>
   <nav role="navigation" class="usa-nav">
     <div class="usa-nav__inner">
-      <button class="usa-nav__close">{% asset close.svg alt="close" %}</button>
+      <button class="usa-nav__close">{%- asset close.svg alt="close" -%}</button>
       <ul class="usa-nav__primary usa-accordion">
-        {% for nav_item in include.primary_navigation %}
-        {% assign basedir = page.url | remove_first: '/' | split: '/' | first | lstrip %}
-        {% unless nav_item.children %}
-        {% assign linkdir = nav_item.url |  replace: "/", ""  | lstrip %}
+        {%- for nav_item in include.primary_navigation -%}
+        {%- assign basedir = page.url | remove_first: '/' | split: '/' | first | lstrip -%}
+        {%- unless nav_item.children -%}
+        {%- assign linkdir = nav_item.url |  replace: "/", ""  | lstrip -%}
         <li class="usa-nav__primary-item">
-          <a class="usa-nav__link{% if basedir == linkdir %} usa-current{% endif %}"
+          <a class="usa-nav__link{%- if basedir == linkdir -%} usa-current{%- endif -%}"
             href="{{ nav_item.url | prepend: site.baseurl}}"><span>
               {{ nav_item.name | escape }}</span></a>
         </li>
-        {% else %}
-        {% assign nav_id = 'primary-nav-' | append: forloop.index %}
-        {% if page.overview and nav_item.key == 'overview' %}
-          {% assign is_current = page.overview %}
-        {% elsif basedir == nav_item.key and page.overview == nil %}
-          {% assign is_current = true %}
-        {% else %}
-          {% assign is_current = false %}
-        {% endif %}
+        {%- else -%}
+        {%- assign nav_id = 'primary-nav-' | append: forloop.index -%}
+        {%- if page.overview and nav_item.key == 'overview' -%}
+          {%- assign is_current = page.overview -%}
+        {%- elsif basedir == nav_item.key and page.overview == nil -%}
+          {%- assign is_current = true -%}
+        {%- else -%}
+          {%- assign is_current = false -%}
+        {%- endif -%}
         <li class="usa-nav__primary-item">
-          <button class="usa-accordion__button usa-nav__link{% if is_current %} usa-current{% endif %}" aria-expanded="false"
+          <button class="usa-accordion__button usa-nav__link{%- if is_current -%} usa-current{%- endif -%}" aria-expanded="false"
             aria-controls="{{ nav_id }}"><span>{{ nav_item.name | escape }}<span></button>
           <ul id="{{ nav_id }}" class="usa-nav__submenu" hidden>
-            {% for subnav_item in nav_item.children %}
+            {%- for subnav_item in nav_item.children -%}
             <li class="usa-nav__submenu-item">
               <a href="{{ subnav_item.url | prepend: site.baseurl }}">{{ subnav_item.name | escape }}</a>
             </li>
-            {% endfor %}
+            {%- endfor -%}
           </ul>
 
         </li>
-        {% endunless %}
-        {% endfor %}
+        {%- endunless -%}
+        {%- endfor -%}
       </ul>
       <div class="usa-nav__secondary">
         <ul class="usa-nav__secondary-links">
-          {% for nav_item in include.secondary_navigation %}
+          {%- for nav_item in include.secondary_navigation -%}
           <li class="usa-nav__secondary-item">
             <a href="{{ nav_item.url | prepend: site.baseurl }}">{{ nav_item.name | escape }}</a>
           </li>
-          {% endfor %}
+          {%- endfor -%}
         </ul>
-        {% include searchgov/form.html searchgov=site.searchgov %}
+        {%- include searchgov/form.html searchgov=site.searchgov -%}
       </div>
     </div>
   </nav>
