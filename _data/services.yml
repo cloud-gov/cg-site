@@ -10,7 +10,7 @@
 - name: external-domain-service
   description: "Custom domains and TLS certificates with automatic renewal"
   status: "Production"
-  source-code: https://github.com/cloud-gov/cf-domain-broker-alb
+  source-code: https://github.com/cloud-gov/external-domain-broker
 - name: cloud-gov-identity-provider
   description: "Authenticate cloud.gov users in your app"
   status:  "Beta"
@@ -22,7 +22,7 @@
 - name: custom-domains
   description: "Custom domains and TLS certificates with automatic renewal"
   status: "Deprecated"
-  source-code: https://github.com/cloud-gov/external-domain-broker
+  source-code: https://github.com/cloud-gov/cf-domain-broker-alb
 - name: elasticsearch56
   page-name: 
   description: "[Elasticsearch](https://www.elastic.co/products/elasticsearch) version 5.6: a distributed, RESTful search and analytics engine"
