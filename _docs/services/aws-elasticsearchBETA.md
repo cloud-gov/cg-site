@@ -90,15 +90,19 @@ For customers that would like to import or export their Elasticsearch data, this
  cloud.gov does offer a code sample repository on Github - [aws-elasticsearch-example](https://github.com/cloud-gov/aws-elasticsearch-example) that shows an example in Python on how to interact with the new ES service using signed headers.  Our customers are encouraged to submit PRs of other examples to share with fellow customers.
 
 ## Migration from Kubernetes Elasticsearch 5.6 to AWS Elasticsearch 7.4
-Migration is not recommended and very expertimental due to the nature of Elasticsearch indexes. This is only available for customers who ask for it. 
+This content is only applicable to customers using the pre-AWS Elasticsearch service on cloud.gov during the transition period before that service is fully deprecated in 2021.
 
-The overall process looks this:
+We recommend that you build new document indices in AWS Elasticsearch from your source documents instead of migrating the data and indices from the existing service to the new service. The migration is experimental could result in more time and effort than a rebuild would entail.
+
+The overall process looks like this:
 
 1. Ask Cloud.gov Support to access the AWS Elasticsearch plan named `BETA-es-dev-6.8-migration`
 2. Take a snapshot of your ES 5.6 index and store in an s3 bucket.
 3. Create ES 6.8 service instance and create a service key with `s3-bucket` info attached (See Above Section)
 4. Restore ES 5.6 Snapshot into your ES 6.8
 5. Upgrade your ES 6.8 to 7.4
+
+`Note: Steps 2-4 is done by the user`
 
 ### Prepare for Migration
 * Have a S3 service instance created with service key - [S3 Service Instructions](https://cloud.gov/docs/services/s3/)
@@ -182,9 +186,9 @@ Example reindexing body:
 ```
 4. Once your indexes are at least version `6.8`, you can move on to the final part!
 ### Upgrading ES 6.8 to 7.4
-1. Contact Cloud.gov Support to perform a ES 6.8 to ES 7.4 Upgrade Eligbility
-2. Cloud.gov Support will let you know if it eligible or not
-3. If is ready, then support can do the upgrade to ES 7.4
+1. Contact Cloud.gov Support to perform a ES 6.8 to ES 7.4 Upgrade Eligibility
+2. Cloud.gov Support will let you know if your ES 6.8 instance is eligible to upgrade. We will be able to let you know which index is incompatible with ES 7.4. Cloud.gov Support will not have the ability to see why the index is incompatible. 
+3. If is ready, then support can do the upgrade to ES 7.4. This will result in some downtime. 
 
 
 
