@@ -49,13 +49,13 @@ ALIAS records, but not all DNS providers offer ALIAS records. These are limitati
 
 Name      | Required   | Description                   | Example                           |
 ----------|------------|-------------------------------|-----------------------------------|
-`domains` | *Required* | Your custom domain or domains | `my-domain.gov,www.my-domain.gov` |
+`domains` | *Required* | Your custom domain or domains | `"my-domain.gov,www.my-domain.gov"` or `["my-domain.gov",  "www.my-domain.gov"]` |
 
 ### `domain-with-cdn` plan
 
 Name              | Required   | Description                                   | Example                           |
 ------------------|------------|-----------------------------------------------|-----------------------------------|
-`domains`         | *Required* | Your custom domain or domains                 | `my-domain.gov,www.my-domain.gov` |
+`domains`         | *Required* | Your custom domain or domains                 |  `"my-domain.gov,www.my-domain.gov"` or `["my-domain.gov",  "www.my-domain.gov"]`|
 `origin`          | optional   | A custom origin to serve from                 | `external-app.example.gov`        |
 `insecure_origin` | optional   | Is the custom origin HTTP (not HTTPS)         | `true`                            |
 `forward_cookies` | optional   | List of cookies to forward                    | `"JSESSIONID,othercookiename"`    |
@@ -111,7 +111,19 @@ Note that only these error codes can be customized: 400, 403, 404, 405, 414, 416
    `www.example.gov` and `example.gov`, you'd create an ALIAS record for `www.example.gov.` with value `www.example.gov.external-domains-production.cloud.gov.` and an
    ALIAS record for `example.gov.` with value `example.gov.external-domains-production.cloud.gov.`
 
-3. Create the service. For example, with `example.gov` and `www.example.gov`, run:
+3. Create the cf domain for each of the domains you are adding to the service:
+   ```
+   $ cf create-domain my-org example.gov
+   $ cf create-domain my-org www.example.gov
+   ```
+
+4. Map the routes to your app. There are several ways to do this, documented [here](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html#map-route). For example:
+   ```
+   $ cf map-route my-app example.gov
+   $ cf map-route my-app www.example.gov
+   ```
+
+5. Create the service. For example, with `example.gov` and `www.example.gov`, run:
    ```
    $ cf create-service external-domain domain-with-cdn my-cdn -c '{"domains": "example.gov,www.example.gov"}'
     Creating service instance my-cdn in org my-org / space my-service as me...
@@ -120,10 +132,10 @@ Note that only these error codes can be customized: 400, 403, 404, 405, 414, 416
     Create in progress. Use 'cf services' or 'cf service my-cdn' to check operation status.
    ``` 
 
-4. Wait for the service instance to complete provisioning. The `domain-with-cdn` plan may take up to 2 hours to complete provisioning, the `domain` plan should
+6. Wait for the service instance to complete provisioning. The `domain-with-cdn` plan may take up to 2 hours to complete provisioning, the `domain` plan should
    complete within an hour. You can check the status by running `cf service <service instance name>`
    
-5. If you didn't complete step 2 above, do so now.
+7. If you didn't complete step 2 above, do so now.
 
 
 ## Updating domain-with-cdn instances

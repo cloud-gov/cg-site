@@ -130,6 +130,17 @@ If all AWS regions are disrupted, Cloud Operations will deploy the system to ano
 #### AWS RDS
 Major services (Cloud Foundry, BOSH, Concourse, and UAA) rely on databases provided by RDS. To restore a database from backup, see [restoring RDS]({{ site.baseurl }}{% link _docs/ops/runbook/restoring-rds.md %}).
 
+#### Brokered AWS services
+
+cloud.gov is not dependent on the following services, but we do broker customer provisioning and access to these services, so our customers could be impacted if they were unavailable.  
+
+If a GovCloud service were wholly unavailable, Cloud Operations would, after receiving approval from our Authorizing Official, broker access to the AWS commercial cloud equivalent, as shown below:
+
+Brokered service | Fallback Services | FedRAMP Fallback Status |
+-- | -- | -- |
+AWS GovCloud Elasticache for Redis | AWS commercial Elasticache for Redis | Moderate |
+AWS GovCloud Elastisearch | AWS commercial Elastisearch | Moderate |
+
 
 ## How this document works
 
@@ -145,3 +156,11 @@ This plan is most effective if all core cloud.gov team members know about it, re
   * At least once a year, and after major changes to our systems, we review and update the plan.
 * How we protect this plan from unauthorized modification:
   * This plan is stored in a public GitHub repository ([https://github.com/18F/cg-site](https://github.com/18F/cg-site)) with authorization to modify it limited to 18F staff by GitHub access controls. cloud.gov team policy is that 18F staff may not directly make changes to this document; they must propose a change by making a pull request and ask another team member to review and merge the pull request.
+
+---
+
+### Page information
+
+* Last modified on: {% last_modified_at %}
+* [Recent document history](https://github.com/cloud-gov/cg-site/commits/master/{{ page.path }}) (since 2020-02-05)
+* [Older document history](https://github.com/cloud-gov/cg-site/commits/master/content/docs/ops/{{ page.slug }}.md) (before 2020-02-05)

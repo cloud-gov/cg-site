@@ -1,31 +1,31 @@
-{% assign documentation_navigation=site.documentation_navigation %}
-{% for nav_item in documentation_navigation %}
-  <h2> {% if nav_item.icon %}
+{%- assign documentation_navigation=site.documentation_navigation -%}
+{%- for nav_item in documentation_navigation -%}
+  <h2> {%- if nav_item.icon -%}
   <i class='fa fa-fw {{ nav_item.icon }}'></i>
-  {% endif %}
+  {%- endif -%}
   {{ nav_item.name | escape }}
   </h2>
   <ul>
-    {% for docpage in site.docs %}
-      {% if nav_item.identifier == docpage.parent %}
+    {%- for docpage in site.docs -%}
+      {%- if nav_item.identifier == docpage.parent -%}
       <li>
         <a href="{{ docpage.url }}">{{ docpage.title }}</a>
       </li>
-      {% endif %}
-    {% endfor %}
+      {%- endif -%}
+    {%- endfor -%}
   </ul>
-  {% if nav_item.children %}
-  {% for sub_child in nav_item.children %}
+  {%- if nav_item.children -%}
+  {%- for sub_child in nav_item.children -%}
   <h3>{{ sub_child.name }}</h3>
   <ul>
-{% for docpage in site.docs %}
-    {% if sub_child.identifier == docpage.parent %}
+{%- for docpage in site.docs -%}
+    {%- if sub_child.identifier == docpage.parent -%}
     <li>
       <a href="{{ docpage.url }}">{{ docpage.title }}</a>
     </li>
-    {% endif %}
-  {% endfor %}
+    {%- endif -%}
+  {%- endfor -%}
   </ul>
-  {% endfor %}
-  {% endif %}
-{% endfor %}
+  {%- endfor -%}
+  {%- endif -%}
+{%- endfor -%}

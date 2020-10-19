@@ -17,20 +17,28 @@ Plan Name                | Description                                          
 ---------                | -----------                                                                  | ---------------- |
 `shared-psql`            | Shared PostgreSQL database for prototyping (no sensitive or production data) | 9.5.15           |
 `micro-psql`             | Dedicated micro RDS PostgreSQL DB instance                                   | AWS RDS Latest   |
+`micro-psql-redundant`  | Dedicated redundant micro RDS PostgreSQL DB instance                        | AWS RDS Latest   |
+`small-psql`             | Dedicated small RDS PostgreSQL DB instance                                   | AWS RDS Latest   |
+`small-psql-redundant`  | Dedicated redundant small RDS PostgreSQL DB instance                        | AWS RDS Latest   |
 `medium-psql`            | Dedicated medium RDS PostgreSQL DB instance                                  | AWS RDS Latest   |
 `medium-psql-redundant`  | Dedicated redundant medium RDS PostgreSQL DB instance                        | AWS RDS Latest   |
-`large-psql`             | Dedicated large RDS PostgreSQL DB instance                                   | AWS RDS Latest   |
-`large-psql-redundant`   | Dedicated redundant large RDS PostgreSQL DB instance                         | AWS RDS Latest   |
-`xlarge-psql`            | Dedicated x-large RDS PostgreSQL DB instance                                 | AWS RDS Latest   |
-`xlarge-psql-redundant`  | Dedicated redundant xlarge RDS PostgreSQL DB instance                        | AWS RDS Latest   |
+`medium-gp-psql`            | Dedicated higher workload medium RDS PostgreSQL DB instance                                  | AWS RDS Latest   |
+`medium-gp-psql-redundant`  | Dedicated higher workload redundant medium RDS PostgreSQL DB instance                        | AWS RDS Latest   |
+`large-gp-psql`             | Dedicated higher workload large RDS PostgreSQL DB instance                                   | AWS RDS Latest   |
+`large-gp-psql-redundant`   | Dedicated higher workload redundant large RDS PostgreSQL DB instance                         | AWS RDS Latest   |
+`xlarge-gp-psql`            | Dedicated higher workload x-large RDS PostgreSQL DB instance                                 | AWS RDS Latest   |
+`xlarge-gp-psql-redundant`  | Dedicated higher workload redundant xlarge RDS PostgreSQL DB instance                        | AWS RDS Latest   |
 `shared-mysql`           | Shared MySQL database for prototyping (no sensitive or production data)      | 5.6.27           |
 `small-mysql`            | Dedicated small RDS MySQL DB instance                                        | 5.7.21           |
+`small-mysql-redundant` | Dedicated redundant small RDS MySQL DB instance                             | 5.7.21           |
 `medium-mysql`           | Dedicated medium RDS MySQL DB instance                                       | 5.7.21           |
 `medium-mysql-redundant` | Dedicated redundant medium RDS MySQL DB instance                             | 5.7.21           |
-`large-mysql`            | Dedicated large RDS MySQL DB instance                                        | 5.7.21           |
-`large-mysql-redundant`  | Dedicated redundant large RDS MySQL DB instance                              | 5.7.21           |
-`xlarge-mysql`           | Dedicated x-large RDS MySQL DB instance                                      | 5.7.21           |
-`xlarge-mysql-redundant` | Dedicated redundant x-large RDS MySQL DB instance                            | 5.7.21           |
+`medium-gp-mysql`           | Dedicated higher workload medium RDS MySQL DB instance                                       | 5.7.21           |
+`medium-gp-mysql-redundant` | Dedicated higher workload redundant medium RDS MySQL DB instance                             | 5.7.21           |
+`large-gp-mysql`            | Dedicated higher workload large RDS MySQL DB instance                                        | 5.7.21           |
+`large-gp-mysql-redundant`  | Dedicated higher workload redundant large RDS MySQL DB instance                              | 5.7.21           |
+`xlarge-gp-mysql`           | Dedicated higher workload x-large RDS MySQL DB instance                                      | 5.7.21           |
+`xlarge-gp-mysql-redundant` | Dedicated higher workload redundant x-large RDS MySQL DB instance                            | 5.7.21           |
 `medium-oracle-se2`      | Dedicated medium RDS Oracle SE2 DB                                           | AWS RDS Latest   |
 
 *Only the `shared-psql`, `shared-mysql`, `micro-psql`, and `small-mysql` plans are available in [sandbox spaces]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}#sandbox-limitations).*
@@ -97,13 +105,19 @@ cf create-service aws-rds micro-psql my-service-db
 If you want to specify the storage available (in gigabytes) to the instance:
 
 ```sh
-cf create-service aws-rds ${SERVICE_PLAN_NAME} ${SERVICE_NAME} -c '{"storage": 50}'
+cf create-service aws-rds \
+    ${SERVICE_PLAN_NAME} \
+    ${SERVICE_NAME} \
+    -c '{"storage": 50}'
 ```
 
 Using functions in MySQL:
 
 ```sh
-cf create-service aws-rds ${MYSQL_SERVICE_PLAN_NAME} ${SERVICE_NAME} -c '{"enable_functions": true}'
+cf create-service aws-rds \
+    ${MYSQL_SERVICE_PLAN_NAME} \
+    ${SERVICE_NAME} \
+    -c '{"enable_functions": true}'
 ```
 
 ### Instance creation time
@@ -132,7 +146,7 @@ The cloud.gov team aims to provide clearer status indicators in a future release
 
 ## Update an instance
 
-To update an existing service instance run the following command:
+To update an existing service instance to a different plan run the following command:
 
 ```sh
 cf update-service ${SERVICE_NAME} -p ${NEW_SERVICE_PLAN_NAME}
@@ -147,6 +161,16 @@ There are several caveats regarding this command:
 - You can **only** switch service plans with this command; you cannot do things like update your database size or set any other custom parameters.
 
 You can update to larger or smaller plans depending on your specific needs, and you can switch between redundant and non-redundant plans.
+
+To update an existing service instance size, run the following command and replace ${SERVICE_NAME} with your service instance name, and SIZE with your desired larger size (in GB):
+
+```sh
+cf update-service ${SERVICE_NAME} -c '{"storage": SIZE}’
+```
+
+There is one caveat regarding this command:
+
+- You can only update to a larger size. If you want to downgrade to a lesser size, you will need to email support.
 
 **NOTE: Performing an update in place like this will result in a brief period of downtime (seconds to minutes) while the service instance restarts as a part of the update.**
 
@@ -216,7 +240,11 @@ Then try the previous step again.
 Once the SSH tunnel is created, keep it running in that terminal window and open a separate terminal session in another window/tab, then create the backup file using the parameters provided by the plugin in the new terminal session, e.g. (be sure to tailor the backup/export command to your specific needs):
 
 ```sh
-$ pg_dump -F c --no-acl --no-owner -f backup.pg postgresql://${USERNAME}:${PASSWORD}@${HOST}:${PORT}/${NAME}
+$ pg_dump -F c \
+    --no-acl \
+    --no-owner \
+    -f backup.pg \
+    postgresql://${USERNAME}:${PASSWORD}@${HOST}:${PORT}/${NAME}
 ```
 
 This will create the `backup.pg` file on your local machine in whatever your current working directory is.
@@ -336,7 +364,10 @@ Example for app name `hello-doe`
 ```
 myapp_guid=$(cf app --guid hello-doe)
 
-tunnel=$(cf curl /v2/apps/$myapp_guid/env | jq -r '[.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials | .host, .port] | join(":")')
+tunnel=$(cf curl /v2/apps/$myapp_guid/env \
+    | jq -r '[.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials \
+    | .host, .port] \
+    | join(":")')
 
 cf ssh -N -L 5432:$tunnel hello-doe
 ```
@@ -346,9 +377,14 @@ Another window:
 ```
 myapp_guid=$(cf app --guid hello-doe)
 
-creds=$(cf curl /v2/apps/$myapp_guid/env | jq -r '[.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials | .username, .password] | join(":")')
+creds=$(cf curl /v2/apps/$myapp_guid/env \
+    | jq -r '[.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials \
+    | .username, .password] \
+    | join(":")')
 
-dbname=$(cf curl /v2/apps/$myapp_guid/env | jq -r '.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials | .name')
+dbname=$(cf curl /v2/apps/$myapp_guid/env \
+    | jq -r '.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials \
+    | .name')
 
 psql postgres://$creds@localhost:5432/$dbname
 
