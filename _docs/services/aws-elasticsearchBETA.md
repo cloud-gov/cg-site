@@ -112,7 +112,7 @@ The overall process looks like this:
 * Create Service Key with attached S3 - [ES 7.4 Service Key](https://cloud.gov/docs/services/aws-elasticsearchBETA/#managing-backups)
 
 ### Backup your ES 5.6 to S3 Bucket
-* Connect to your Elasticsearch service using port forwarding. **Note**: You'll need to leave the [`cf ssh`]({{ site.baseurl }}{% link _docs/management/using-ssh.md %}) command running and follow the next steps in a different terminal so that you can access the remote Elasticsearch instance from your local environment:
+* Connect to your Elasticsearch service using port forwarding.
 
     ```sh
     es_credentials=$(cf service-key my-elastic-service my-key | tail -n +3)
@@ -124,6 +124,7 @@ The overall process looks like this:
 
     cf ssh my-app -L "9200:${es_hostname}:${es_port}"
     ```
+**Note**: You'll need to leave this [`cf ssh`]({{ site.baseurl }}{% link _docs/management/using-ssh.md %}) command running and perform the following steps a different terminal so that you can access the remote Elasticsearch instance from your local environment.
 
 * Create a snapshot repository:
 
