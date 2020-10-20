@@ -1,13 +1,13 @@
-{% comment %} 
+{%- comment -%} 
   This will redirect the results to /search template which will handle the js loading
-{% endcomment %}
+{%- endcomment -%}
 
-{% if include.searchgov %}
-  {% if include.searchgov.inline == true %}
+{%- if include.searchgov -%}
+  {%- if include.searchgov.inline == true -%}
     <form id="search_form" class="usa-search usa-search--small" action="{{site.baseurl}}/search/" accept-charset="UTF-8" method="get">
-  {% else %}
+  {%- else -%}
     <form id="search_form" class="usa-search usa-search--small" action="{{include.searchgov.endpoint}}/search" accept-charset="UTF-8" method="get">
-  {% endif %}
+  {%- endif -%}
     
   
     <input name="utf8" type="hidden" value="&#x2713;" />
@@ -19,4 +19,4 @@
       <button class="usa-button" type="submit"><span class="usa-sr-only">Search</span></button>
     </div>
   </form>
-{% endif %}
+{%- endif -%}
