@@ -189,7 +189,7 @@ Example reindexing body:
 ### Upgrading ES 6.8 to 7.4
 1. Contact Cloud.gov Support to perform a ES 6.8 to ES 7.4 Upgrade Eligibility
 2. Cloud.gov Support will let you know if your ES 6.8 instance is eligible to upgrade. We will be able to let you know which index is incompatible with ES 7.4. Cloud.gov Support will not have the ability to see why the index is incompatible. 
-3. If is ready, then support can do the upgrade to ES 7.4. This will result in some downtime. 
+3. If the instance is ready to upgrade, then support can do the upgrade to ES 7.4. This will result in some downtime. _Please note that these upgrades and only be done during normal support hours and not schedulable after hours or weekends._
 
 
 
