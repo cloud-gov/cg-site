@@ -15,7 +15,7 @@
   production: Non-production systems
   number_of_systems: An environment for each of your teams
   domain_names: Non-production domain names
-  sign_up: <a href="mailto:inquiries@cloud.gov?subject=Purchasing%20Prototyping%20Package" class="usa-button" id="Prototyping-cta">Contact us</a><br/><a href="/docs/pricing/prototyping/" class="small-link">About Prototyping packages &rarr;</a>
+  sign_up: <a href="mailto:inquiries@cloud.gov?subject=Purchasing%20Prototyping%20Package" class="usa-button" id="Prototyping-cta">Contact us</a><br/>
 - package_name: FISMA Low
   description: Production environment ideal for hosting public information.
   price: <h3><sup>$</sup>2070 &#47; month</h3><span>FISMA Low system</span>

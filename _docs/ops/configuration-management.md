@@ -52,15 +52,9 @@ is encouraged and qualifies as a review. Review should include assessment of arc
 
 Before we put a new repository into production:
 
-* Give it a name starting with `cg-` or `cf-` (to make clear that it's part of our work, unless we have a good reason to name it something else).
+* Give it a name. Historically these started with `cf-` or `cg-` when we shared the 18F repo, but no special prefix is needed. 
 * [Add `LICENSE`, `CONTRIBUTING`, and `README` files](https://github.com/18F/open-source-policy/blob/master/practice.md#how-to-license-18f-repos) (to support open source reuse of our work).
-* Set up [Code Climate](https://codeclimate.com/) for pull requests (SI-3).
-  * Go to Code Climate and log in using your GitHub auth.
-  * Give Code Climate permissions to access your public repositories including the cloud-gov org.
-  * Go to [the open source dashboard](https://codeclimate.com/oss/dashboard) and [add the new repository](https://codeclimate.com/github/repos/new).
-  * In Code Climate, go to the repository settings, go to Integrations, and enable Pull Request checking.
-  * In the repo, add a [Code Climate configuration file](https://docs.codeclimate.com/docs/advanced-configuration) (`.codeclimate.yml`) to [enable relevant plugins](https://docs.codeclimate.com/docs/list-of-engines).
-* Configure a [protected master branch](https://help.github.com/articles/about-protected-branches/) (CM-9).
+* Configure a [protected main branch](https://help.github.com/articles/about-protected-branches/) (CM-9).
   * Enable "Require pull request reviews before merging"
   * Enable "Dismiss stale pull request approvals when new commits are pushed"
   * Enable "Require status checks to pass before merging"
@@ -69,12 +63,12 @@ Before we put a new repository into production:
 * Configure permissions (CM-3):
   * If it's a platform configuration repo, restrict permissions to Cloud Ops, as follows:
      * `Read` for [cloud-gov](https://github.com/orgs/cloud-gov/teams/cloud-gov-team).
-     * `Admin` for [cloud-gov-ops](https://github.com/orgs/cloud-gov/teams/platform-ops).
+     * `Admin` for [platform-ops](https://github.com/orgs/cloud-gov/teams/platform-ops).
   * If it's not a platform configuration repo, configure as follows:
      * `Admin` for [cloud-gov](https://github.com/orgs/cloud-gov/teams/cloud-gov-team).
-     * `Admin` for [cloud-gov-ops](https://github.com/orgs/cloud-gov/teams/platform-ops).
-* Set up CI/CD for changes (CM-3).
-* Open a PR to add it to the [repos list]({{ site.baseurl }}{% link _docs/ops/repos.md %}#repositories) (to help us keep track of our repos and support open source reuse of our work).
+     * `Admin` for [platform-ops](https://github.com/orgs/cloud-gov/teams/platform-ops).
+* Set up CI/CD for changes (CM-3)
+* Set up for static code analysis if it's a code or configuration repo. This in flux. Ask in the #cg-platform channel for details.
 * Open a PR to add it to the [repos list for pre-merge checks](https://github.com/cloud-gov/cg-pipeline-tasks/blob/master/security-considerations/repos.txt)
 
 ## What if a configuration changed and it is not in Configuration Management?
@@ -113,6 +107,8 @@ that paired collaboration on a single branch avoids certain types of friction:
 
 When contributing directly on a branch, we're able to modify work-in-progress (WIP) pull requests and encourage collaboration across the Cloud Operations team.
 
+For the cloud.gov team, when forking an upstream repository to add a patch or bugfix, the fork should go to your personal GitHub user account. The `cloud-gov` org is for code maintained by cloud.gov, whether that's original code or a long-lived fork (discouraged, but sometimes necessary) for code we are running in production. 
+
 ### Squashing commits
 
 [Squashing commits](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History#Squashing-Commits) is allowed but discouraged, except in rare instances.
@@ -135,3 +131,11 @@ You can request a review using GitHub's built-in tools, mention someone in the P
 ### When reviewing a PR, should the change be tested locally?
 
 Whenever possible, the proposed changes should be tested locally. Because of the nature of many of the cloud.gov repositories and deployment environments, local testing is not always possible or practical. Visual code review, however, is always required.
+
+---
+
+### Page information
+
+* Last modified on: {% last_modified_at %}
+* [Recent document history](https://github.com/cloud-gov/cg-site/commits/master/{{ page.path }}) (since 2020-02-05)
+* [Older document history](https://github.com/cloud-gov/cg-site/commits/master/content/docs/ops/{{ page.slug }}.md) (before 2020-02-05)

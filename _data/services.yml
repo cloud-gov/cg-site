@@ -2,26 +2,38 @@
   page-name: relational-database
   description: "Persistent, relational databases using Amazon RDS" 
   status: "Production"
+  source-code: https://github.com/cloud-gov/aws-broker
 - name: cdn-route
   description: "Custom domains, CDN caching, and TLS certificates with automatic renewal"
   status: "Production"
+  source-code: https://github.com/cloud-gov/cf-cdn-service-broker
+- name: external-domain-service
+  description: "Custom domains and TLS certificates with automatic renewal"
+  status: "Production"
+  source-code: https://github.com/cloud-gov/external-domain-broker
 - name: cloud-gov-identity-provider
   description: "Authenticate cloud.gov users in your app"
   status:  "Beta"
+  source-code: https://github.com/cloudfoundry-community/uaa-credentials-broker
 - name: cloud-gov-service-account
   description: "cloud.gov service accounts for automated access by programs"
   status: "Production"
+  source-code: https://github.com/cloudfoundry-community/uaa-credentials-broker
 - name: custom-domains
   description: "Custom domains and TLS certificates with automatic renewal"
-  status: "Production"
+  status: "Deprecated"
+  source-code: https://github.com/cloud-gov/cf-domain-broker-alb
 - name: elasticsearch56
   page-name: 
   description: "[Elasticsearch](https://www.elastic.co/products/elasticsearch) version 5.6: a distributed, RESTful search and analytics engine"
   status: "Beta"
+  source-code: https://github.com/cloud-gov/kubernetes-broker
 - name: redis
   page-name: redis
   description: "[Redis](https://redis.io/): an open source in-memory database."
   status: "Beta"
+  source-code: https://github.com/cloud-gov/kubernetes-broker
 - name: s3
   description: "Amazon S3 provides developers with secure, durable, highly-scalable object storage"
   status: "Production"
+  source-code: https://github.com/cloudfoundry-community/s3-broker

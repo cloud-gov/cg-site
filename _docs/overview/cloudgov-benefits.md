@@ -28,7 +28,7 @@ cloud.gov enforces an immutable infrastructure. Instead of logging into a live s
 
 cloud.gov has a [Provisional Authority to Operate (P-ATO) at the Moderate impact level from the FedRAMP Joint Authorization Board (JAB)]({{ site.baseurl }}{% link _docs/overview/fedramp-tracker.md %}). When you deploy a system on cloud.gov, you can [leverage this P-ATO](https://www.fedramp.gov/faqs/) as part of your agency ATO.
 
-Out of the 325 security controls required for Moderate-impact systems, cloud.gov handles 269 controls, and 41 controls are a shared responsibility (where cloud.gov provides part of the requirement, and your applications provide the rest). You only need to provide full implementations for the remaining 15 controls, such as ensuring you make data backups and using reliable DNS (Domain Name System) name servers for your websites.
+Of the [261 security controls](https://nvd.nist.gov/800-53/Rev4/impact/moderate) required for FISMA Moderate-impact systems, as many as 60 percent of the controls covered as part of the cloud.gov P-ATO can be partially or fully inherited for agency systems deployed on the cloud.gov platform. The decision of which controls apply to an IT system and/or which may be inherited from the underlying platform ultimately rests with your agency's Authorizing Official.  However, this inheritability of controls can dramatically shorten the time and effort required to obtain an ATO for your system.
 
 ## 3. Usability
 

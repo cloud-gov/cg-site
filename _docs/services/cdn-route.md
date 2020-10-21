@@ -2,15 +2,15 @@
 parent: services
 layout: docs
 sidenav: true
-title: CDN service
+title: CDN service (deprecated)
 name: "cdn-route"
 description: "Custom domains, CDN caching, and TLS certificates with automatic renewal"
 status: "Production Ready"
 ---
 
-<!-- If you're improving this page, try to port the improvements to the custom domain service page too, since most of the text is the same -->
-
-Note: This cloud.gov feature has unique [compliance impact](#compliance-impact) considerations. 
+## Deprecated
+Note - this service has been deprecated. No new instances can be created on this broker, but existing instances will continue to work.
+For new services, please use the [external domain service]({{ site.baseurl }}{% link _docs/services/external-domain-service.md %}).
 
 This service provides:
 
@@ -18,8 +18,7 @@ This service provides:
 1. HTTPS support via free TLS certificates with auto-renewal (using [Let's Encrypt](https://letsencrypt.org/)), so that user traffic is encrypted.
 1. Content Distribution Network (CDN) caching (using [AWS CloudFront](https://aws.amazon.com/cloudfront/)), for fast delivery of content to your users.
 
-If you don't need CDN caching, use the [custom domain service]({{ site.baseurl }}/docs/services/custom-domains/) instead.
-
+This cloud.gov feature has unique [compliance impact](#compliance-impact) considerations. If you don't need CDN caching, use the [external domain service]({{ site.baseurl }}{% link _docs/services/external-domain-service.md %}) instead.
 
 ## Plans
 
@@ -74,7 +73,10 @@ cf create-domain <org> my.example.gov
 Then, to create a `cdn-route` service instance, run the following command (replace `my-cdn-route` with a name for your service instance, and replace `my.example.gov` with your domain):
 
 ```sh
-cf create-service cdn-route cdn-route my-cdn-route \
+cf create-service \
+    cdn-route \
+    cdn-route \
+    my-cdn-route \
     -c '{"domain": "my.example.gov"}'
 ```
 
@@ -83,7 +85,10 @@ cf create-service cdn-route cdn-route my-cdn-route \
 If you have more than one domain, you can pass a comma-delimited list to the `domain` parameter (just keep in mind that the broker will wait until all domains are CNAME'd, as explained in the next step):
 
 ```sh
-cf create-service cdn-route cdn-route my-cdn-route \
+cf create-service \
+    cdn-route \
+    cdn-route \
+    my-cdn-route \
     -c '{"domain": "my.example.gov,www.my.example.gov"}'
 ```
 

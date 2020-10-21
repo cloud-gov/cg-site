@@ -3,7 +3,7 @@ title: Sign up
 layout: wide
 ---
 <section class="usa-graphic-list usa-section usa-section--dark sign-up-intro">
-<div class="grid-container">
+<div class="grid-container maxw-desktop">
 <div class="tablet:grid-col-7"  markdown="1">
 # Try cloud.gov for free
 
@@ -15,11 +15,11 @@ layout: wide
 </section>
 
 <section class="usa-section padding-y-8">
-<div class="grid-container">
+<div class="grid-container maxw-desktop">
 <div class="tablet:grid-col-7 usa-prose"  markdown="1">
 ## 1. <br />Get trial access and a free sandbox space
 
-Federal employees and contractors with an email ending in .mil, .gov, or .fed.us can obtain a free sandbox space. To register, you’ll need access to your email and a smartphone with Google Authenticator installed.
+Federal employees and contractors with an email ending in .mil, .gov, or .fed.us can obtain a free sandbox space. To register, you’ll need access to your email and a smartphone with an authenticator app installed (for example, 1password, Microsoft Authenticator, or Authy).
 
 <a href="https://account.fr.cloud.gov/signup" class="usa-button usa-button--big">Get access</a>
 </div>
@@ -27,7 +27,7 @@ Federal employees and contractors with an email ending in .mil, .gov, or .fed.us
 </section>
 
 <section class="bg-accent-warm-light usa-section padding-y-8">
-<div class="grid-container grid-row">
+<div class="grid-container maxw-desktop grid-row">
 <div class="tablet:grid-col-7 usa-prose"  markdown="1">
 ## 2.<br />Go build in your sandbox
 
@@ -46,7 +46,7 @@ If you've run into any issues, please [contact support at cloud.gov](mailto:supp
 <ul>
         <li>
         <a href="{{ site.baseurl }}/docs/getting-started/code-samples/">Sample applications in .Net Core, PHP, Python, R, Ruby, NodeJS and Clojure</a>
-        </li>  
+        </li>
         <li>
         <a href="https://github.com/cloudfoundry-samples">Cloud Foundry community collection of sample applications</a>
         </li>
@@ -65,7 +65,7 @@ If you've run into any issues, please [contact support at cloud.gov](mailto:supp
 </section>
 
 <section class="usa-section want-more">
-<div class="grid-container grid-row">
+<div class="grid-container maxw-desktop grid-row">
 <div class="tablet:grid-col-7 usa-prose"  markdown="1">
 ## 3. <br />Want more?
 

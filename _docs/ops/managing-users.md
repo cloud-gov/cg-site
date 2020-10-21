@@ -48,7 +48,7 @@ If the user requesting a reset has any apps, routes, or services in their sandbo
 
 4. Let the user know the reset process is complete. _Do not include specific account information such as the user's roles or roles/contact info for other people in their organization_
 
-     > I've reset your one-time password. To regain cloud.gov access, log in to cloud.gov again. After entering your username/password combination, you should be prompted to set up a new one-time password with your authenticator app (for example, Google Authenticator, Microsoft Authenticator, or Authy).  Since this reset removed your roles on orgs and spaces, you may need to request additional access from your Space Managers and Org Managers again. If you had a sandbox space, that has been reset and is available to you again.
+     > I've reset your one-time password. To regain cloud.gov access, log in to cloud.gov again. After entering your username/password combination, you should be prompted to set up a new one-time password with your authenticator app (for example, 1password, Microsoft Authenticator, or Authy).  Since this reset removed your roles on orgs and spaces, you may need to request additional access from your Space Managers and Org Managers again. If you had a sandbox space, that has been reset and is available to you again.
 
 ## Managing Admins
 Make sure you have a copy of the [cg-scripts repository](https://github.com/18F/cg-scripts) so you have access to several utility scripts.
@@ -96,3 +96,15 @@ Verify their permissions have been removed using `validate_admins.sh` and making
 cd /path/to/cg-scripts
 ./validate_admins.sh
 ```
+
+### Deleting Admins
+
+Before deleting an admin user using `cf delete-user`, be sure to follow the [Removing Admins](#RemovingAdmins) above. If you don't, you will end up with orphaned group membership. The username will be replaced with the user's GUID and will appear in roles in cf (`cf org-users` or `cf space-users`).
+
+In the event you see an orphaned account (denoted by GUID), you need to clean up UAA groups and CF. You can remove the user from cf via:
+
+```
+cf curl /v3/users/${user_guid} -X DELETE
+```
+
+You can clean up UAA groups via [cg-scripts/remove-user-guid-from-all-groups.sh](https://github.com/cloud-gov/cg-scripts/blob/master/uaa/remove-user-guid-from-all-groups.sh) or manually using `uaac member remove`.

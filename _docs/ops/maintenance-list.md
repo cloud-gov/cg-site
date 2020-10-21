@@ -16,12 +16,12 @@ The tasks on this checklist should be performed each day.
 If you see a way to make this checklist better, just submit a PR to the
 [cg-site](https://github.com/18F/cg-site) repo for `content/docs/ops/maintenance-list.md`
 
-### Review and respond to open alerts
+### Review and respond to alerts
 
-- Review active alerts at https://prometheus.fr.cloud.gov/alerts.
+- Review all alerts on [Prometheus](https://prometheus.fr.cloud.gov/alerts) (requires the VPN).
 - Review all production smoke tests to ensure they are passing.
 
-### Investigate open alerts
+#### Investigate open alerts
 - Use our guides for reviewing cloud.gov alerts ([prometheus](https://github.com/18F/cg-deploy-prometheus/tree/master/bosh) for alert descriptions, links to the relevant rules, and starting points for reviewing each type of alert.
 - Was the alert caused by known maintenance or testing in dev environments? Check with other members of the cloud.gov team if you can't determine the source.
 - Is this a recurring alert? Search alert history to determine how frequently it is occuring and what event may have started its firing.
@@ -66,7 +66,16 @@ Review the [detailed guide on customer support]({{site.baseurl}}/docs/ops/custom
 - In [logs.fr.cloud.gov](https://logs.fr.cloud.gov/), go under "Management" -> "Advanced Settings" and check the Kibana [timezone setting](https://www.elastic.co/guide/en/kibana/current/advanced-options.html) (`dateFormat:tz`) - it should be set to `Browser`. If anyone has changed it, change it back to `Browser`.
 - Check for any new CVEs in [Elasticsearch](https://www.cvedetails.com/vulnerability-list/vendor_id-13554/Elasticsearch.html), and [Redis](https://www.cvedetails.com/vulnerability-list/vendor_id-15183/product_id-31837/Pivotal-Software-Redis.html).
 
+## Review expiring certificates
+
+You can view a consolidated list of all expiring certificates on the [Doomsday Dashboard](https://doomsday.fr.cloud.gov/) (requires the VPN). Make note of any that are expiring within two weeks, make sure the team is aware, and plan with the team to
+determine who will renew the expiring certificate(s) and when.
+
+You can also view this information in each of our four environments, `tooling`, `development`, `staging`, and `production`, by running `doomsday dashboard` on the command line.
+
 ## Ensure all VMs are running the current stemcell
+
+- Lookup the most recent published stemcell version at: https://bosh.cloudfoundry.org/stemcells/
 
 - From the jumpbox in each of our four environments, `tooling`, `development`,
   `staging` and `production`, run `bosh deployments` and verify the stemcell in
@@ -182,3 +191,11 @@ ensure the updated release is deployed to all required VMs.
 
 ## Review potential improvements in CloudCheckr
 Review the [Best Practices report in CloudCheckr](https://app.cloudcheckr.com/#Report/BestPracticesConsolidated) and try to fix something near the top.
+
+---
+
+### Page information
+
+* Last modified on: {% last_modified_at %}
+* [Recent document history](https://github.com/cloud-gov/cg-site/commits/master/{{ page.path }}) (since 2020-02-05)
+* [Older document history](https://github.com/cloud-gov/cg-site/commits/master/content/docs/ops/{{ page.slug }}.md) (before 2020-02-05)
