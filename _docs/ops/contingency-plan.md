@@ -106,9 +106,7 @@ platform operation and customer support. The
 
 ### Engineer staffing
 
-If the number of available platform engineers is 
-**four or fewer**, for three or more working days, or if a GSA COOP is effect, we are at risk of not having enough team members to troubleshoot and remediate issues.
-In that case we need to _stabilize the platform_:
+If the number of available platform engineers is **four or fewer**, for three or more working days, we are at risk of not having enough team members to troubleshoot and remediate issues.  In that case we need to _stabilize the platform_, unless the available engineers are directed otherwise by cloud.gov or GSA leadership. To wit:
 
 * Escalate to TTS leadership the need for staff augmentation or support
 * Update StatusPage to notify customers/stakeholders of our situation
@@ -116,7 +114,6 @@ In that case we need to _stabilize the platform_:
 * Change our `support@cloud.gov` auto-response (in ZenDesk) to set expectations of reduced support
 * Pause all CI/CD pipelines to prevent rolling out upgrades
   * `pause-pipeline ` supports the `--all` option
-
 * Cease all feature work and focus on support and stability
 
 ### Jumpbox
