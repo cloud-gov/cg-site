@@ -86,14 +86,24 @@ The Incident Commander declares that recovery efforts are complete and notifies 
 
 Next, the team schedules an internal postmortem to discuss the event. This is the same as the [security incident retrospective process]({{ site.baseurl }}{% link _docs/ops/security-ir.md %}#initiate). Then we write a public postmortem and post it on StatusPage for users. We should also discuss with our JAB representatives whether they need additional information.
 
+## Internal dependencies
+
+### Jumpbox
+
+Internal [BOSH troubleshooting]({{ site.baseurl }}{% link _docs/ops/runbook/troubleshooting-bosh.md %}) relies on ephemeral Concourse jumpboxes. If concourse itself is unavailable, we need to create [emergency jumpboxes](https://github.com/cloud-gov/internal-docs/blob/master/runbooks/contingency.md#jumpboxes) (internal documentation)
+
 ## External dependencies
 
 cloud.gov depends on several external services.  In the event one or more of these services has a long-term disruption, the team will mitigate impact by following this plan.
 
 ### GitHub
+
 If GitHub becomes unavailable, the live cloud.gov will continue to operate in its current state. The disruption would only impact the team's ability to update cloud.gov.
 
+Note: The cloud.gov team members have local copies of the repositories `internal-docs`, `cg-site`, and many others for reference during a major outage.
+
 #### Disruption lasting less than 7 days
+
 Cloud Operations will postpone any non-critical updates to the platform until the disruption is resolved.  If a critical update **must** be deployed, Cloud Operations will:
 
 * Locate a copy of the current version of the required [git](https://git-scm.com/) repository by comparing last commit times of all checked out versions on Cloud Operations local systems and any copies held by cloud.gov systems (Concourse, BOSH director, etc.) 
@@ -140,6 +150,19 @@ Brokered service | Fallback Services | FedRAMP Fallback Status |
 -- | -- | -- |
 AWS GovCloud Elasticache for Redis | AWS commercial Elasticache for Redis | Moderate |
 AWS GovCloud Elastisearch | AWS commercial Elastisearch | Moderate |
+
+
+
+## Continuity of Operations and Disaster Recovery Plan
+
+The full Continuity of Operations Plan (COOP) and Disaster Recovery Plan (DRP) are out of scope for this Information System Contingency Plan (ICSP), (per [NIST Special Publication 800-34](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-34r1.pdf), p. 11). In the event of a major disaster beyond the scope of this plan we will reference the GSA/TTS COOP plan including the following _internal_ resources:
+
+* [TTS Devolution of Operations Playbook (Jan 2020)](https://drive.google.com/file/d/1sfSVhVPBteobeqhqnyb152z1PqboOKJI/view)
+* [TTS Google COOP Site](https://sites.google.com/a/gsa.gov/continuity/home/coming-soon---customized-hsso-pages/ocsit)
+* [TTS-wide Emergency Contact Spreadsheet](https://docs.google.com/spreadsheets/d/1-Hhv5S0M03W4JY1k-CM5vxrZildHUdMaxAoqLTWF2Ts/edit#gid=1295161336)
+* [cloud.gov COOP/DRP resources](https://github.com/cloud-gov/internal-docs/blob/master/runbooks/contingency.md#coop)
+* [(deprecated) TTS Emergency Personnel Roster](https://docs.google.com/spreadsheets/d/1ITXXOu2IAntV8r6snIYHyXlRt1MgIlxpr-GudDP8tqQ/edit#gid=0)
+
 
 
 ## How this document works
