@@ -88,38 +88,9 @@ Next, the team schedules an internal postmortem to discuss the event. This is th
 
 ## Internal dependencies
 
-Continued operation of cloud.gov relies on our people, but also on access to internal diagnostics/repair through our `jumpbox`. We also have
-internal GSA dependencies that may be impacted if a GSA COOP (Continuity of Operations Plan) is in effect. Resources for the GSA/TTS COOP plan include:
-
-* [TTS Devolution of Operations Playbook (Jan 2020)](https://drive.google.com/file/d/1sfSVhVPBteobeqhqnyb152z1PqboOKJI/view)
-* [TTS Google COOP Site](https://sites.google.com/a/gsa.gov/continuity/home/coming-soon---customized-hsso-pages/ocsit)
-* [TTS-wide Emergency Contact Spreadsheet](https://docs.google.com/spreadsheets/d/1-Hhv5S0M03W4JY1k-CM5vxrZildHUdMaxAoqLTWF2Ts/edit#gid=1295161336)
-* [(deprecated) TTS Emergency Personnel Roster](https://docs.google.com/spreadsheets/d/1ITXXOu2IAntV8r6snIYHyXlRt1MgIlxpr-GudDP8tqQ/edit#gid=0)
-
-### Leadership
-
-The director and deputy director own administrative credentials critical to long-term
-platform operation and customer support. The 
-[recovery process for accessing those credentials](https://github.com/cloud-gov/internal-docs/blob/master/runbooks/contingency.md#leadership-credentials)
- are non-public (to avoid potential social engineering). These credentials would be delegated to a GSA interim cloud.gov system owner if leadership is
- abruptly unavailable for 3 or more working days, or if COOP plan is otherwise in effect.
-
-### Engineer staffing
-
-If the number of available platform engineers is **four or fewer**, for three or more working days, we are at risk of not having enough team members to troubleshoot and remediate issues.  In that case we need to _stabilize the platform_, unless the available engineers are directed otherwise by cloud.gov or GSA leadership. To wit:
-
-* Escalate to TTS leadership the need for staff augmentation or support
-* Update StatusPage to notify customers/stakeholders of our situation
-  * Advise all customers to adopt a minimal change/update stance
-* Change our `support@cloud.gov` auto-response (in ZenDesk) to set expectations of reduced support
-* Pause all CI/CD pipelines to prevent rolling out upgrades
-  * `pause-pipeline ` supports the `--all` option
-* Cease all feature work and focus on support and stability
-
 ### Jumpbox
 
-Internal [BOSH troubleshooting]({{ site.baseurl }}{% link _docs/ops/runbook/troubleshooting-bosh.md %}) relies on ephemeral Concourse jumpboxes. If concourse itself is unavailable, 
-we need to create [emergency jumpboxes](https://github.com/cloud-gov/internal-docs/blob/master/runbooks/contingency.md#jumpboxes).
+Internal [BOSH troubleshooting]({{ site.baseurl }}{% link _docs/ops/runbook/troubleshooting-bosh.md %}) relies on ephemeral Concourse jumpboxes. If concourse itself is unavailable, we need to create [emergency jumpboxes](https://github.com/cloud-gov/internal-docs/blob/master/runbooks/contingency.md#jumpboxes) (internal documentation)
 
 ## External dependencies
 
@@ -179,6 +150,19 @@ Brokered service | Fallback Services | FedRAMP Fallback Status |
 -- | -- | -- |
 AWS GovCloud Elasticache for Redis | AWS commercial Elasticache for Redis | Moderate |
 AWS GovCloud Elastisearch | AWS commercial Elastisearch | Moderate |
+
+
+
+## Continuity of Operations and Disaster Recovery Plan
+
+The full Continuity of Operations Plan (COOP) and Disaster Recovery Plan (DRP) are out of scope for this Information System Contingency Plan (ICSP), (per [NIST Special Publication 800-34](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-34r1.pdf), p. 11). In the event of a major disaster beyond the scope of this plan we will reference the GSA/TTS COOP plan including the following _internal_ resources:
+
+* [TTS Devolution of Operations Playbook (Jan 2020)](https://drive.google.com/file/d/1sfSVhVPBteobeqhqnyb152z1PqboOKJI/view)
+* [TTS Google COOP Site](https://sites.google.com/a/gsa.gov/continuity/home/coming-soon---customized-hsso-pages/ocsit)
+* [TTS-wide Emergency Contact Spreadsheet](https://docs.google.com/spreadsheets/d/1-Hhv5S0M03W4JY1k-CM5vxrZildHUdMaxAoqLTWF2Ts/edit#gid=1295161336)
+* [cloud.gov COOP/DRP resources](https://github.com/cloud-gov/internal-docs/blob/master/runbooks/contingency.md#coop)
+* [(deprecated) TTS Emergency Personnel Roster](https://docs.google.com/spreadsheets/d/1ITXXOu2IAntV8r6snIYHyXlRt1MgIlxpr-GudDP8tqQ/edit#gid=0)
+
 
 
 ## How this document works
