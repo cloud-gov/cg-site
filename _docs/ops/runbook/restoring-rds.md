@@ -58,7 +58,7 @@ Prior to restoring, record the configuration settings of the existing instance:
 Copy all of these values and configure them in the restore form to mirror the configuration of the existing database instance.  For the `identifier` name, provide a name like `<instance name>-<date>-restore` to make the instance easy to find.  Note that the database should never be set to publicly accessible.
 
 Steps for launching the snapshot:
-- Log into the AWS Console and navigate to *RDS* > *Snapshots* and filter by <DB identifier>
+- Log into the AWS Console and navigate to *RDS* > *Snapshots* and filter by `<DB identifier>`
 - Select the latest snapshot and click *Actions* > *Restore Snapshot*
 - In *Restore DB Instance*
   - Under *Settings* > *DB Instance Identifier* enter a new DB identifier ie (`<instance name>-<date>-restore`)
