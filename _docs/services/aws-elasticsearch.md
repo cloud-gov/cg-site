@@ -8,7 +8,7 @@ description: "AWS Elasticsearch version 7.4: a distributed, RESTful search and a
 status: "Production Ready"
 ---
 
-cloud.gov is prod to offer [Elasticsearch](https://www.elastic.co/) 7.4 as a service hosted in AWS Elasticsearch
+cloud.gov is prod to offer [aws-elasticsearch](https://www.elastic.co/) 7.4 as a service hosted in AWS Elasticsearch
 
 ## Changes
 
@@ -20,11 +20,11 @@ This service is currently running Elasticsearch 7.4.  Our prior Elasticsearch se
 
 ## Plans
 
-Plan Name | Description |
---------- | ----------- | -----
-`es-dev` | Single data node for non-prod use only |
-`es-medium` | 3 Master and 2 Data node cluster |
-`es-medium-ha` | 3 Master and 4 Data node cluster |
+Service Name | Plan Name | Description |
+------------ | --------- | ----------- | -----
+`aws-elasticsearch` | `es-dev` | Single data node for non-prod use only |
+`aws-elasticsearch` | `es-medium` | 3 Master and 2 Data node cluster |
+`aws-elasticsearch` | `es-medium-ha` | 3 Master and 4 Data node cluster |
 
 
 
