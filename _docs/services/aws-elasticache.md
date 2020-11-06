@@ -2,10 +2,10 @@
 parent: services
 layout: docs
 sidenav: true
-title: AWS Elasticache Redis BETA
-name: "aws-elasticacheBETA"
+title: AWS Elasticache Redis
+name: "aws-elasticache"
 description: "AWS Elasticache Redis: an in-memory data structure store"
-status: "BETA"
+status: "Production Ready"
 ---
 
 cloud.gov offers [aws-elasticache-redis](https://aws.amazon.com/elasticache/) Redis 5.0.6 as a service.
@@ -14,11 +14,10 @@ cloud.gov offers [aws-elasticache-redis](https://aws.amazon.com/elasticache/) Re
 
 Service Name | Plan Name | Description |
 ------------ | --------- | ----------- | -----
-`aws-elasticache-redis` | `BETA-redis-dev` | Single EC node for non-prod use only |
-`aws-elasticache-redis` | `BETA-redis-3node` | 3 node EC, persistent storage, 512Mb memory limit |
-`aws-elasticache-redis` | `BETA-redis-5node` | 5 node EC, persistent storage, 512Mb memory limit |
+`aws-elasticache-redis` | `redis-dev` | Single EC node for non-prod use only |
+`aws-elasticache-redis` | `redis-3node` | 3 node EC, persistent storage, 512Mb memory limit |
+`aws-elasticache-redis` | `redis-5node` | 5 node EC, persistent storage, 512Mb memory limit |
 
-*Additional Cost:* Elasticache has a limit of 10GB in storage. After 10G, each additional gigabyte will cost $100 per month.
 
 
 
@@ -27,7 +26,7 @@ Service Name | Plan Name | Description |
 To create a service instance, run the following command (replace `my-ec-service` with a name for the service):
 
 ```sh
-cf create-service aws-elasticache-redis BETA-redis-3node my-ec-service
+cf create-service aws-elasticache-redis redis-3node my-ec-service
 ```
 
 ## Managing backups
