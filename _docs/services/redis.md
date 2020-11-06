@@ -9,7 +9,7 @@ redirect_from:
 - /docs/services/redis32
 ---
 
-Note - this service is being deprecated in favor of the [aws-elascticahe]({{ site.baseurl }}{% link _docs/services/eaws-elasticache.md %}).
+Note - this service is being deprecated in favor of the [aws-elascticahe]({{ site.baseurl }}{% link _docs/services/aws-elasticache.md %}).
 
 cloud.gov offers [Redis](http://www.redis.io/) 3.2 as a service.
 

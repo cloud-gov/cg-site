@@ -7,7 +7,7 @@ name: "elasticsearch56"
 description: "Elasticsearch version 5.6: a distributed, RESTful search and analytics engine"
 ---
 
-Note - this service is being deprecated in favor of the [aws-elascticsearch]({{ site.baseurl }}{% link _docs/services/eaws-elasticsearch.md %}).
+Note - this service is being deprecated in favor of the [aws-elascticsearch]({{ site.baseurl }}{% link _docs/services/aws-elasticsearch.md %}).
 
 
 cloud.gov offers [Elasticsearch](https://www.elastic.co/) 5.6 as a service.
