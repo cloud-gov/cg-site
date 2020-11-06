@@ -8,7 +8,7 @@ description: "AWS Elasticsearch version 7.4: a distributed, RESTful search and a
 status: "BETA"
 ---
 
-cloud.gov is prod to offer [Elasticsearch](https://www.elastic.co/) 7.4 as a service hosted in AWS Elasticsearch
+cloud.gov is proud to offer [Elasticsearch](https://www.elastic.co/) 7.4 as a service hosted in AWS Elasticsearch
 
 ## Changes
 
