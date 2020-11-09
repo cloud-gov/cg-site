@@ -159,10 +159,16 @@ redirect_from:
             Postgres, MySQL, Oracle database - 1TB included<br><i>$300/month per additional additional terabyte</i>
           </li>
           <li>
-            Elasticsearch RESTful search and analytics - 10 GB included<br><i>$100/month per additional gigabyte</i>
+            Legacy Elasticsearch RESTful search and analytics - 10 GB included<br><i>$100/month per additional gigabyte</i>
           </li>
           <li>
-            Redis in-memory data store - 10GB included<br><i>$100/month per additional gigabyte</i>
+            Legacy Redis in-memory data store - 10GB included<br><i>$100/month per additional gigabyte</i>
+          </li>
+          <li>
+            Elasticsearch RESTful search and analytics<br><i>$200/month per node, 6 nodes included for FISMA Moderate</i>
+          </li>
+          <li>
+            Elasticache (Redis) in-memory data store - 10 nodes included<br><i>$200/month per 10 nodes block</i>
           </li>
         </ul>
       </div>
