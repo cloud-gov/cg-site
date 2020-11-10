@@ -3,7 +3,7 @@ title: Managed services
 parent: deployment
 layout: docs
 sidenav: true
-redirect_from: 
+redirect_from:
   - /docs/apps/managed-services/
   - /overview/pricing/managed-services
   - /overview/pricing/other-services/
@@ -35,9 +35,17 @@ Create a new service instance by specifying a service, plan, and a name of your 
 % cf create-service SERVICE_NAME PLAN_NAME INSTANCE_NAME
 ```
 
+### Sharing service instances
+
+Sharing of service instances allows users to share service instances between spaces inside their organization as a way to consolidate service instance usage and avoid data duplication in their service instances.  Users need to be aware that sharing service instances between spaces has limitations and can expose data in those service instances across environment boundaries.  Please see [Sharing Service Instances](https://docs.cloudfoundry.org/devguide/services/sharing-instances.html) for more information on limitations and security concerns.
+
+```
+% cf share-service SERVICE-INSTANCE -s OTHER-SPACE [-o OTHER-ORG]
+```
+
 ### Bind the service instance
 
-For services that apply to an application ([Elasticsearch]({{ site.baseurl }}{% link _docs/services/elasticsearch56.md %}), [Redis]({{ site.baseurl }}{% link _docs/services/redis.md %}), [relational databases (RDS)]({{ site.baseurl }}{% link _docs/services/relational-database.md %}), and [S3]({{ site.baseurl }}{% link _docs/services/s3.md %})), the service instance must be bound to the application which will access it. (The [CDN service]({{ site.baseurl }}{% link _docs/services/cdn-route.md %}), [identity provider]({{ site.baseurl }}{% link _docs/services/cloud-gov-identity-provider.md %}), and [service account]({{ site.baseurl }}{% link _docs/services/cloud-gov-service-account.md %}) have different instructions, available in their service documentation.) 
+For services that apply to an application ([Elasticsearch]({{ site.baseurl }}{% link _docs/services/elasticsearch56.md %}), [Redis]({{ site.baseurl }}{% link _docs/services/redis.md %}), [relational databases (RDS)]({{ site.baseurl }}{% link _docs/services/relational-database.md %}), and [S3]({{ site.baseurl }}{% link _docs/services/s3.md %})), the service instance must be bound to the application which will access it. (The [CDN service]({{ site.baseurl }}{% link _docs/services/cdn-route.md %}), [identity provider]({{ site.baseurl }}{% link _docs/services/cloud-gov-identity-provider.md %}), and [service account]({{ site.baseurl }}{% link _docs/services/cloud-gov-service-account.md %}) have different instructions, available in their service documentation.)
 
 Binding to an application can be done in a single step by adding a binding to the application's `manifest.yml`, for example:
 
