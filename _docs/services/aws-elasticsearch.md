@@ -2,17 +2,17 @@
 parent: services
 layout: docs
 sidenav: true
-title: "AWS Elasticsearch BETA"
-name: aws-elasticsearchBETA"
+title: "AWS Elasticsearch"
+name: aws-elasticsearch"
 description: "AWS Elasticsearch version 7.4: a distributed, RESTful search and analytics engine"
-status: "BETA"
+status: "Production Ready"
 ---
 
-cloud.gov is prod to offer [Elasticsearch](https://www.elastic.co/) 7.4 as a service hosted in AWS Elasticsearch
+cloud.gov is proud to offer [aws-elasticsearch](https://www.elastic.co/) 7.4 as a service hosted in AWS Elasticsearch
 
 ## Changes
 
-This new BETA service is currently running Elasticsearch 7.4.  Our prior Elasticsearch service ran version 5.8.  There has been a good deal of changes including breaking changes between the 5.X and 7.X releases.  Customers are encouraged to read the following links for more information on ES API changes:
+This service is currently running Elasticsearch 7.4.  Our prior Elasticsearch service ran version 5.8.  There has been a good deal of changes including breaking changes between the 5.X and 7.X releases.  Customers are encouraged to read the following links for more information on ES API changes:
 
   - [ES Release notes for 6.0](https://www.elastic.co/guide/en/elasticsearch/reference/6.0/release-notes-6.0.0.html)
   - [ES Breaking Changes for 7.0](https://www.elastic.co/guide/en/elasticsearch/reference/7.0/breaking-changes-7.0.html)
@@ -20,21 +20,20 @@ This new BETA service is currently running Elasticsearch 7.4.  Our prior Elastic
 
 ## Plans
 
-Plan Name | Description |
---------- | ----------- | -----
-`BETA-es-dev` | Single data node for non-prod use only |
-`BETA-es-medium` | 3 Master and 2 Data node cluster |
-`BETA-es-medium-ha` | 3 Master and 4 Data node cluster |
+Service Name | Plan Name | Description |
+------------ | --------- | ----------- | -----
+`aws-elasticsearch` | `es-dev` | Single data node for non-prod use only |
+`aws-elasticsearch` | `es-medium` | 3 Master and 2 Data node cluster |
+`aws-elasticsearch` | `es-medium-ha` | 3 Master and 4 Data node cluster |
 
 
-*Additional Cost:* Elasticsearch has a limit of 10GB in storage. After 10G, each additional gigabyte will cost $100 per month.
 
 ## How to create an instance
 
 To create a service instance run the following command:
 
 ```sh
-cf create-service aws-elasticsearch BETA-es-medium my-elastic-service
+cf create-service aws-elasticsearch es-medium my-elastic-service
 ```
 
 ### Shard/replica configuration for high availability
@@ -96,7 +95,7 @@ We recommend that you build new document indices in AWS Elasticsearch from your 
 
 The overall process looks like this:
 
-1. Ask Cloud.gov Support to access the AWS Elasticsearch plan named `BETA-es-dev-6.8-migration`
+1. Ask Cloud.gov Support to access the AWS Elasticsearch plan named `es-dev-6.8-migration`
 2. Take a snapshot of your ES 5.6 index and store in an s3 bucket.
 3. Create ES 6.8 service instance and create a service key with `s3-bucket` info attached (See Above Section)
 4. Restore ES 5.6 Snapshot into your ES 6.8
@@ -107,9 +106,9 @@ The overall process looks like this:
 ### Prepare for Migration
 * Have a S3 service instance created with service key - [S3 Service Instructions](https://cloud.gov/docs/services/s3/)
 * Have an existing ES 5.6 instance with snapshots to S3 - [ES 5.6 Backups Instructions](https://cloud.gov/docs/services/elasticsearch56/#managing-backups)
-* Ask Cloud.gov Support to have access to migration plan `BETA-es-dev-6.8-migration`
-* Create new AWS Elasticsearch service instance with `BETA-es-dev-6.8-migration` plan
-* Create Service Key with attached S3 - [ES 7.4 Service Key](https://cloud.gov/docs/services/aws-elasticsearchBETA/#managing-backups)
+* Ask Cloud.gov Support to have access to migration plan `es-dev-6.8-migration`
+* Create new AWS Elasticsearch service instance with `es-dev-6.8-migration` plan
+* Create Service Key with attached S3 - [ES 7.4 Service Key](https://cloud.gov/docs/services/aws-elasticsearch/#managing-backups)
 
 ### Backup your ES 5.6 to S3 Bucket
 * Connect to your Elasticsearch service using port forwarding.
@@ -157,7 +156,7 @@ The overall process looks like this:
     ```
 
 ### Restore from S3 to ES 6.8 and reindex
-This part will vary greatly depending on which language your application is written in and which library is used. 
+This part will vary greatly depending on which language your application is written in and which library is used.
 1. You need to add the following ES repository to your AWS Elasticsearch Domain
 ```
   {
@@ -175,7 +174,7 @@ This part will vary greatly depending on which language your application is writ
 2. Restore using above repository and matching snapshot name in previous step. [ES 6.8 Restore](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/modules-snapshots.html#_restore)
 3. Reindex your index - You will need to do this so the index will be the correct version for when upgrading. [ES 6.8 Reindexing API](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/docs-reindex.html)
 Example reindexing body:
-``` 
+```
 {
   "source": {
     "index": "your_index"
@@ -188,7 +187,7 @@ Example reindexing body:
 4. Once your indexes are at least version `6.8`, you can move on to the final part!
 ### Upgrading ES 6.8 to 7.4
 1. Contact Cloud.gov Support to perform a ES 6.8 to ES 7.4 Upgrade Eligibility
-2. Cloud.gov Support will let you know if your ES 6.8 instance is eligible to upgrade. We will be able to let you know which index is incompatible with ES 7.4. Cloud.gov Support will not have the ability to see why the index is incompatible. 
+2. Cloud.gov Support will let you know if your ES 6.8 instance is eligible to upgrade. We will be able to let you know which index is incompatible with ES 7.4. Cloud.gov Support will not have the ability to see why the index is incompatible.
 3. If the instance is ready to upgrade, then support can do the upgrade to ES 7.4. This will result in some downtime. _Please note that these upgrades and only be done during normal support hours and not schedulable after hours or weekends._
 
 
