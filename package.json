@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "anchor-js": "^4.3.0",
-    "mermaid": "^8.8.4",
+    "mermaid": "^8.4.6",
     "netlify-cms": "^2.10.74",
     "uswds": "^2.9.0"
   },
