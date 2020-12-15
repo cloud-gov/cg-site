@@ -8,7 +8,7 @@ description: "AWS Elasticsearch version 7.4: a distributed, RESTful search and a
 status: "Production Ready"
 ---
 
-cloud.gov is proud to offer [aws-elasticsearch](https://www.elastic.co/) 7.4 as a service hosted in AWS Elasticsearch
+cloud.gov offers [aws-elasticsearch](https://aws.amazon.com/elasticsearch-service/) 7.4 as a service hosted in AWS Elasticsearch
 
 ## Changes
 
@@ -40,7 +40,7 @@ cf create-service aws-elasticsearch es-medium my-elastic-service
 
 When using the `medium` and `medium-ha` plans, please read [Scalability and resilience: clusters, nodes, and shards](https://www.elastic.co/guide/en/elasticsearch/reference/current/scalability.html) for the elasticsearch basics on clusters as well as the AWS specific [Developer Guide](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/what-is-amazon-elasticsearch-service.html).  The `medium` plan is mainly focused for customers that need a single index and have coverage with 2 data nodes.  For customers wanting more coverage and more indexes, then the `medium-ha` plan scales the cluster to 4 data nodes to offer high availability (HA).
 
-### AWS Singing requests requirement
+### AWS Signing requests requirement
 
 In order to use the Elasticsearch service hosted on AWS you will need to use [AWS signed HTTP headers](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-request-signing.html)
 
