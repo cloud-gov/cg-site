@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Getting to know new features with the cf7 cli: Rolling app deployments"
-date: December 22, 2020
+date: December 16, 2020
 excerpt: We have put together a new video tutorial to focus on new features of
   the cf7 CLI.  This tutorial will get you familiar with the new "rolling" app
   deployment strategy available for zero downtime deployments.
