@@ -14,7 +14,9 @@ To resolve this, an operator can force the service from the `provisioning` state
 
 ## Increasing RDS capacity
 
-On occasion, we receive alerts in Prometheus (`AWSRDSStorage`) that user RDS instances are running low on space. Our protocol for addressing these alerts is as follows:
+On occasion, we receive alerts in Prometheus (`AWSRDSStorage`) that user RDS instances are running low on space. Users have the [ability to increase space in their RDS instance themselves](https://cloud.gov/docs/services/relational-database/#update-an-instance). Reach out to the instance owner and notify them of the alert, and share a link to the docs for updating service instances. Remind them of the billing [thresholds for RDS services](https://cloud.gov/pricing/#all-use-of-cloud-gov-includes), and that some changes might incur billing changes.
+
+If the cloud.gov team should need to do this for any reason using the AWS console (e.g., they want to update to occur at a later time, like during the next service window), our protocol for doing this is as follows:
 
 1. Log into the AWS console and identify the instance using the details from the Prometheus alert.
 2. Use the [org](https://v3-apidocs.cloudfoundry.org/version/3.87.0/index.html#get-an-organization), [space](https://v3-apidocs.cloudfoundry.org/version/3.87.0/index.html#get-a-space) and service GUIDs to identify the details of the instance owner.

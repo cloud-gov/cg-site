@@ -108,3 +108,17 @@ cf curl /v3/users/${user_guid} -X DELETE
 ```
 
 You can clean up UAA groups via [cg-scripts/remove-user-guid-from-all-groups.sh](https://github.com/cloud-gov/cg-scripts/blob/master/uaa/remove-user-guid-from-all-groups.sh) or manually using `uaac member remove`.
+
+
+### Deleting Users
+
+If a user requests deletion of their cloud.gov account, check to make sure that the user is not an org manager, org auditor, or billing manager - if they are, these roles may need to be transferred to someone else prior to deleting their account. If they are a user in a sandbox account, you may also need to manually remove any services or apps from their sandbox account, and remove their space in the sandbox org.
+
+* Remove the user from their org/space in Stratos.
+* Delete the user account with: `cf delete-user {user-name}` (Note - this _might_ not be needed, as Stratos may take care of it.)
+
+If the user is a user in a sandbox account:
+
+* Delete any services and apps in the user's sandbox space.
+* Delete the user's sandbox space with: `cf delete-space {user-name} -o {sandbox-org-name}`
+
