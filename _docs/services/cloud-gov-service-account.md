@@ -16,8 +16,10 @@ To set up your application to be deployed with an automated system, you need a d
 
 Plan Name | Description | 
 --------- | ----------- | -----
-`space-deployer` | A service account for continuous deployment, limited to a single space | 
+`space-deployer` | A service account for continuous deployment, initially limited to a single space | 
 `space-auditor` | A service account for auditing configuration and monitoring events limited to a single space | 
+
+> Note: Service accounts will initially be assigned a role (SpaceDeveloper or SpaceAuditor) in a single space. However, you can add/remove roles for this account in any org and/or space using the `cf` CLI. Please be sure to read the documentation and understand the ramifications of role modifications before proceeding: https://docs.cloudfoundry.org/concepts/roles.html.
 
 *These instances are available in [sandbox spaces]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}#sandbox-limitations).*
 
