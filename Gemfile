@@ -34,3 +34,5 @@ gem "wdm", "~> 0.1.0" if Gem.win_platform?
 
 gem "html-proofer", "~> 3.10"
 gem "kramdown-parser-gfm"
+
+gem "nokogiri", ">= 1.11.0.rc4"
