@@ -39,7 +39,7 @@ Before setting up this service, review [how the CDN works](#more-about-how-the-c
 ## CNAME and ALIAS records
 
 This service requires you to create a CNAME or ALIAS record, and these are slightly different. The exact difference is beyond the scope of this article,
-but what is important to note is that if your domain is an `apex` domain, that is it has only one one dot (e.g. `example.gov`, `my-agency.gov`) you cannot use
+but what is important to note is that if your domain is an `apex` domain, that is it has only one one dot (e.g. `example.gov`, `my-agency.gov`) you must use
 ALIAS records, but not all DNS providers offer ALIAS records. These are limitations in the DNS specification, and not specific to this service. 
 
 
