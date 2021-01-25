@@ -37,6 +37,18 @@ Here are some considerations to keep in mind when deciding to use Docker images 
 
 There is [a Cloud Foundry API for tasks creation](http://v3-apidocs.cloudfoundry.org/version/3.31.0/index.html#tasks). This allows single, one-off tasks to be triggered through the API.
 
+### Using non-standard ports in Docker containers
+
+When you assign a route to an app running on cloud.gov using the `*.app.cloud.gov` domain, external ports 80 and 443 are mapped to a dynamically assigned internal port on the container(s) running your app. You can't change the internal port assigned to your app if it's been assigned an `*.app.cloud.gov` domain, but you can use alternate ports if your app is assigned [an internal route](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html#internal-routes) on cloud.gov. 
+
+When you deploy a Docker image that has a non-standard port exposed (e.g., port 5000) and assign an internal route to this app, this overrides the dynamic assignment of a default port by cloud.gov and exposes that non-standard port to container-to-container traffic. Your app can't be accessed by external traffic coming from outside the cloud.gov platform, but can be reached by traffic from another application running in your cloud.gov org.
+
+In this scenario, if you want to enable external traffic to reach your Docker app running on a non-standard port, you'll need to do the following:
+
+* Deploy a proxy application to route traffic from outside cloud.gov to the internal route you assigned to your Docker app. This can be something as simple as an nginx app that [uses a `proxy_pass` directive](http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass) to route traffic to your Docker app. An example of this approach [can be seen here](https://github.com/cloud-gov/cf-redash).
+
+* Enable container-to-container traffic by [adding a new network policy](https://cli.cloudfoundry.org/en-US/v6/add-network-policy.html) specifying the source app (your nginx proxy) and the destination app (your Docker app) as well as the port and protocol for the traffic.
+
 ### Docker + Cloud Foundry examples
 
 #### Spring Music
