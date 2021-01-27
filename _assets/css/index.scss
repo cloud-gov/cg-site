@@ -363,7 +363,7 @@ code {
   @include u-display("block");
   border-radius: radius('sm');
   word-wrap: break-word;
-  white-space: pre-wrap;
+  overflow: auto;
   line-height: line-height("mono", 1);
 }
 
