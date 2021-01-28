@@ -108,6 +108,8 @@ prefix => "1968/11/15/08"
 
 You're able to go down to the minute; check the S3 bucket to verify the path(s) that you would like to reindex.
 
+Lastly, if you want to run multiple days, hours or minutes, you can declare multiple S3 blocks with the unique prefix paths (e.g., `2021/01/00`, `2021/01/01`, `2021/01/02/00`) to run multiple batches of data without needing to rerun and update the S3 block settings. Each block just needs a unique prefix and unique `.sincedb` file.
+
 #### Configure logstash to index log entries by the date in the file and not the current time.
 
 _follow these steps to index a small portion of a day. This is fairly quick, but a bit fidly at the start and end times. Alternately, reindex the whole day._
@@ -174,7 +176,6 @@ Run logstash passing in your edited configuration file:
 
 ```sh
 export JAVA_HOME=/var/vcap/packages/openjdk-11/jre
-rm /var/vcap/data/ingestor_syslog/tmp/s3_import.sincedb
 /var/vcap/packages/logstash/bin/logstash --path.config /var/vcap/data/ingestor_syslog/tmp/logstash-restore.config
 ```
 
@@ -210,20 +211,11 @@ To restore the ingestor to known good configuration after the restore, recreate 
 bosh -d logsearch recreate ingestor/0
 ```
 
-This will also remove the IAM role policy you added to the VM.  Finally, restore the IAM role policy itself.  Adjust the Allow Actions block to its former state:
+This will also remove the IAM role policy you added to the VM.  Finally, restore the IAM role policy itself.  Refer to the current policy definition in the [logsearch IAM role policy](https://github.com/cloud-gov/cg-provision/blob/master/terraform/modules/iam_role_policy/logsearch_ingestor/policy.json) to revert the changes properly and save the changes.
 
-```
-"s3:PutObject",
-"s3:DeleteObject"
-```
+### If you need to rerun the reindexing
 
-And adjust the Allow Resources block to its former state:
-
-```
-"arn:${aws_partition}:s3:::logsearch-*/*"
-```
-
-Now save the policy, and you're done!
+When running the reindexing, if there is an issue at any point and you need to restart, make whatever adjustments you need to and be sure to remove any of the new `.sincedb` files created before starting again.
 
 ## Reindexing whole days from S3
 
