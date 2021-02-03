@@ -12,8 +12,8 @@ cloud.gov offers [aws-elasticache-redis](https://aws.amazon.com/elasticache/) Re
 
 ## Plans
 
-Service Name | Plan Name | Description | Num of nodes |
------------- | --------- | ----------- | ------------ | -----
+Service Name | Plan Name | Description | Number of nodes |
+------------ | --------- | ----------- | --------------- | -----
 `aws-elasticache-redis` | `redis-dev` | Single EC node for non-prod use only | 1 |
 `aws-elasticache-redis` | `redis-3node` | 3 node EC, persistent storage, 512Mb memory limit | 3 |
 `aws-elasticache-redis` | `redis-5node` | 5 node EC, persistent storage, 512Mb memory limit | 5 |
