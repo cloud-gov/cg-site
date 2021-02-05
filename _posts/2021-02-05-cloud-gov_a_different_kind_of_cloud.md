@@ -14,7 +14,7 @@ Which cloud option is right for your project? Which service model offers the bes
 
 We believe that cloud.gov offers the most favorable blend of these different factors for agencies that are looking to migrate their applications to the cloud. That’s because cloud.gov acts as a sort of concierge for your cloud deployments, removing a lot of the hard work of setting up a scalable and compliant infrastructure, and streamlining the ATO process.
 
-## cloud.gov: At your Service
+### cloud.gov: At your Service
 
 Technically speaking, cloud.gov is a platform-as-a-service - typically referred to as a PaaS offering. It is an implementation of the open source [Cloud Foundry](https://www.cloudfoundry.org/) application platform [on top of Infrastructure as a Service (IaaS) provided by Amazon Web Services](https://cloud.gov/docs/technology/iaas/) (AWS). We often get asked how cloud.gov is different from the underlying IaaS services provided by AWS or other cloud service providers.
 
@@ -28,7 +28,7 @@ The cloud.gov platform is already set up to instantly broker different services 
 
 Best of all, because these services are brokered inside the cloud.gov FedRAMP boundary, security documentation is minimal and often may not be required for [components managed by the cloud.gov team](https://cloud.gov/docs/overview/fedramp-tracker/#how-you-can-use-this-p-ato).
 
-## Deployments Made Simple
+### Deployments Made Simple
 
 The ability to leverage cloud.gov’s baked-in security compliance to streamline the ATO process is an attractive feature. But it isn’t the only reason that cloud.gov is different from other cloud platforms.
 
