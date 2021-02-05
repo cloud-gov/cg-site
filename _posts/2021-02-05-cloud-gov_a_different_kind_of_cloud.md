@@ -32,7 +32,7 @@ Best of all, because these services are brokered inside the cloud.gov FedRAMP bo
 
 The ability to leverage cloud.gov’s baked-in security compliance to streamline the ATO process is an attractive feature. But it isn’t the only reason that cloud.gov is different from other cloud platforms.
 
-One of the defining characteristics of cloud.gov is this - it’s just plain easy. Complex application deployments involving multi-tiered applications, with multiple backing services, running concurrent application instances can be executed with a single command.
+One of the defining characteristics of cloud.gov is this: it’s just plain easy. Complex application deployments involving multi-tiered applications, with multiple backing services, running concurrent application instances can be executed with a single command.
 
 When an app is deployed to cloud.gov, the platform’s concierge qualities really stand out. Simply by pushing an application, a project team gets all of the following courtesy of the cloud.gov platform:
 
