@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Cloud.gov: A Different Kind of Cloud"
+title: "cloud.gov: A Different Kind of Cloud"
 date: February 5, 2021
 excerpt: The cloud.gov platform acts as a concierge for your cloud deployments,
   removing a lot of the hard work of setting up a scalable and compliant
@@ -41,6 +41,6 @@ When an app is deployed to cloud.gov, the platform’s concierge qualities reall
 * The platform automatically scales the application from one to dozens of instances depending on what is needed, and automatically load balances traffic between instances. 
 * The platform will continually monitor the health of an application and recycle app instances that become unhealthy, automatically routing traffic only to healthy app instances.
 
-Because the cloud.gov platform handles all of the hard parts of deploying an application, a project team can focus on building a great app. Instead of worrying about the many details and requirements of setting up a cloud infrastructure, cloud.gov acts as a concierge service for your application, turning complex, risky, multi-step deployments simple and efficient.
+Because the cloud.gov platform handles all of the hard parts of deploying an application, a project team can focus on building a great app. Instead of worrying about the many details and requirements of setting up a cloud infrastructure, cloud.gov acts as a concierge service for your application, making complex, risky, multi-step deployments simple and efficient.
 
 To learn more about cloud.gov, you can reach out to the team at [inquiries@cloud.gov](mailto:inquiries@cloud.gov) for more information, or to set up an introductory call.
