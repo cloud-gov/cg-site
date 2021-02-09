@@ -33,9 +33,9 @@ If you have Git installed:
 
 `cd cf-sample-app-spring`
 
-If you don’t have Git installed, download [`master.zip`](https://github.com/18F/cf-sample-app-spring/archive/master.zip) from the repository, unzip `master.zip`, then:
+If you don’t have Git installed, download [`main.zip`](https://codeload.github.com/cloud-gov/cf-sample-app-spring/zip/main.zip) from the repository, unzip `main.zip`, then:
 
-`cd cf-sample-app-spring-master`
+`cd cf-sample-app-spring-main`
 
 ##### Connect to cloud.gov
 
@@ -111,9 +111,9 @@ git clone https://github.com/18F/cf-hello-worlds
 cd cf-hello-worlds
 ```
 
-If you don’t have Git installed, download [`master.zip`](https://github.com/18F/cf-hello-worlds/archive/master.zip) from the repository, unzip `master.zip`, then:
+If you don’t have Git installed, download [`main.zip`](https://github.com/18F/cf-hello-worlds/archive/main.zip) from the repository, unzip `main.zip`, then:
 
-`cd cf-hello-worlds-master`
+`cd cf-hello-worlds-main`
 
 ##### Choose a framework
 
