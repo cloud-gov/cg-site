@@ -33,7 +33,7 @@ If you have Git installed:
 
 `cd cf-sample-app-spring`
 
-If you don’t have Git installed, download [`main.zip`](https://codeload.github.com/cloud-gov/cf-sample-app-spring/zip/main.zip) from the repository, unzip `main.zip`, then:
+If you don’t have Git installed, download [`main.zip`](https://github.com/cloud-gov/cf-sample-app-spring/archive/main.zip) from the repository, unzip `main.zip`, then:
 
 `cd cf-sample-app-spring-main`
 
@@ -111,7 +111,7 @@ git clone https://github.com/18F/cf-hello-worlds
 cd cf-hello-worlds
 ```
 
-If you don’t have Git installed, download [`main.zip`](https://github.com/18F/cf-hello-worlds/archive/main.zip) from the repository, unzip `main.zip`, then:
+If you don’t have Git installed, download [`main.zip`](https://github.com/cloud-gov/cf-hello-worlds/archive/main.zip) from the repository, unzip `main.zip`, then:
 
 `cd cf-hello-worlds-main`
 
