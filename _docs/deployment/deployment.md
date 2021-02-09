@@ -14,7 +14,7 @@ Learn [how to get your application up](#how-deployment-works) and [important app
 
 The command to create a new app and to push a new version of an existing one are the same: `cf push`. The steps:
 
-1. Set up your local directory with the code you want to deploy. For example, if you use Git, check out the code you want to deploy: `git checkout master`
+1. Set up your local directory with the code you want to deploy. For example, if you use Git, check out the code you want to deploy: `git checkout main`
 
 1. [Target]({{ site.baseurl }}{% link _docs/getting-started/concepts.md %}#target) the appropriate [organization]({{ site.baseurl }}{% link _docs/getting-started/concepts.md %}#organizations)/[space]({{ site.baseurl }}{% link _docs/getting-started/concepts.md %}#spaces): `cf target -o <ORG> -s <SPACE>`
 1. Deploy the application: `cf push <APPNAME>`
