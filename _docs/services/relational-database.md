@@ -43,37 +43,19 @@ Plan Name                | Description                                          
 
 *Only the `shared-psql`, `shared-mysql`, `micro-psql`, and `small-mysql` plans are available in [sandbox spaces]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}#sandbox-limitations).*
 
-You can always view an up-to-date version of this list directly in your command line as well with the following command:
+You can always view an up-to-date version of this list directly in your command line as well with the following command (using cf cli version 6):
 
 ```sh
 cf marketplace -s aws-rds
 ```
 
-The dedicated PostgreSQL plans (marked "AWS RDS Latest") deploy the default version as advertised by AWS.  To determine this version ahead of time, run the following awscli command and observe the `EngineVersion` field in the resulting JSON:
+Or, the following command (using cf cli version 7):
 
-``` console
-$ aws rds describe-db-engine-versions --engine=postgres --default
-{
-  "DBEngineVersions": [
-    {
-      "Engine": "postgres",
-      "EngineVersion": "11.5",
-      "DBParameterGroupFamily": "postgres11",
-      "DBEngineDescription": "PostgreSQL",
-      "DBEngineVersionDescription": "PostgreSQL 11.5-R1",
-      "ValidUpgradeTarget": [],
-      "ExportableLogTypes": [
-          "postgresql",
-          "upgrade"
-      ],
-      "SupportsLogExportsToCloudwatchLogs": true,
-      "SupportsReadReplica": true,
-      "SupportedFeatureNames": [],
-      "Status": "available"
-    }
-  ]
-}
+```sh
+cf marketplace -e aws-rds
 ```
+
+The dedicated PostgreSQL plans (marked "AWS RDS Latest") deploy the default version as advertised by AWS.  Note - there is currently no way to verify ahead of time the version of PostgreSQL that will be deployed to the broker, by you can check the version once an instance has been created by connecting to that instance using the [cf-service-connect](https://github.com/cloud-gov/cf-service-connect#usage) plugin and running `SELECT version();` at the psql prompt.
 
 Note that you can also look at the [AWS RDS PostgreSQL User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html), but it often lists versions that are not yet available on AWS GovCloud.
 
