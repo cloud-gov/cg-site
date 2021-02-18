@@ -74,3 +74,7 @@ Steps:
 1. Your agency issues an ATO for your system running on cloud.gov.
 
 This does not result in an ATO for cloud.gov in general at your agency, so if another team at your agency wants to run a system on cloud.gov, your agency may need to redo some ATO work.
+
+### Additional resources
+
+* Our February 2021 blog post on [writing an SSP system environment description](./2021/02/17/writing_a_cloud-gov_ssp_system_environment/)

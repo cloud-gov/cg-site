@@ -1,15 +1,15 @@
 ---
 layout: post
-title: "Writing a cloud.gov SSP: System Environment"
+title: "Writing an SSP for a cloud.gov system: System Environment"
 date: February 17, 2021
 excerpt: We share a sample "System Environment" SSP response for a Low-impact system
 ---
-As the cloud.gov compliance lead, I see the occasional support request come through on, "How do I complete the System Environment section of the SSP?"
 
-To get you started, here's a redacted System Environment section for a system running on cloud.gov 
+At cloud.gov, we often get requests from partners going through the ATO process for guidance on how to complete the System Environment section of their System Security Plan (SSP). Since this is a common question, here is an example to get you started. Partners with additional questions can also reach out to support@cloud.gov.
+
 
 ---
-# System Environment 
+## System Environment 
 
 As the cloud.gov PaaS is based on Cloud Foundry, our application components are each built and deployed in accordance with their corresponding Cloud Foundry manifest files. Manifest files indicate the required Cloud Foundry buildpack (e.g, language runtime for Node.js, Python, Docker, etc.) and stack (e.g., cflinuxfs3, which is based on Ubuntu 18.04).  Our application components operate on Cloud Foundry containers provided by cloud.gov.  As a result, they rely on security configurations put into place by the cloud.gov team.
 
@@ -32,4 +32,10 @@ IP Address/Hostname | Make | Model and Firmware | Location | Components that Use
  -- | -- | -- | -- | -- 
 cloud.gov org: my-org<br>space: prod<br>app: my-app | nodejs_buildpack | Cloud Foundry cflinuxfs3 | cloud.gov
 cloud.gov org: my-org<br>space: prod<br>RDS my-db | cloud.gov brokered AWS RDS service| PostgreSQL 12.3  | cloud.gov | app: my-app
+
+
+### Other SSP development resources
+
+* [Data flow diagrams](./compliance/diagrams/)
+
 
