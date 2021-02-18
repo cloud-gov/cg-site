@@ -36,6 +36,6 @@ cloud.gov org: my-org<br>space: prod<br>RDS my-db | cloud.gov brokered AWS RDS s
 
 ### Other SSP development resources
 
-* [Data flow diagrams](/docs/compliance/diagrams/)
+* [Data flow diagrams]({{ site.baseurl }}{% link _docs/compliance/diagrams.md %})
 
 
