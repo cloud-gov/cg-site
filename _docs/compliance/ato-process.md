@@ -77,4 +77,4 @@ This does not result in an ATO for cloud.gov in general at your agency, so if an
 
 ### Additional resources
 
-* Our February 2021 blog post on [writing an SSP system environment description](./2021/02/17/writing_a_cloud-gov_ssp_system_environment/)
+* Our February 2021 blog post on [writing an SSP system environment description](/2021/02/17/writing_a_cloud-gov_ssp_system_environment/)
