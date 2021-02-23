@@ -39,7 +39,7 @@ Plan Name                   | Description                                       
 `xlarge-gp-mysql-redundant` | Dedicated higher workload redundant x-large RDS MySQL DB instance            | AWS RDS Latest Default |
 `medium-oracle-se2`         | Dedicated medium RDS Oracle SE2 DB                                           | AWS RDS Latest Default |
 
-*Only the `micro-psql`, and `small-mysql` plans are available in [sandbox spaces]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}#sandbox-limitations).*
+*Only the `micro-psql` and `small-mysql` plans are available in [sandbox spaces]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}#sandbox-limitations).*
 
 You can always view an up-to-date version of this list directly in your command line as well with the following command (using cf cli version 6):
 
