@@ -77,11 +77,11 @@ cf create-service aws-rds micro-psql my-service-db
 
 There are several optional parameters that you can specify when creating a new instance:
 
-Name               | Description                                                    | Default |
----                | ---                                                            | ---     |
-`storage`          | Number of GB available to the database instance                | 10      |
-`enable_functions` | Boolean to enable functions on supported databases             | false   |
-`version`          | Specifies a supported major version in RDS (must be in quotes) | ""      |
+Name               | Description                                                    | Default Value          |
+---                | ---                                                            | ---                    |
+`storage`          | Number of GB available to the database instance                | 10                     |
+`enable_functions` | Boolean to enable functions on supported databases             | false                  |
+`version`          | Specifies a supported major version in RDS (must be in quotes) | AWS RDS Latest Default |
 
 A couple of notes regarding the optional `version` parameter:
 
