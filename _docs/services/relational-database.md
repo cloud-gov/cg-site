@@ -14,7 +14,8 @@ If your application uses relational databases for storage, you can use the AWS R
 ## Plans
 
 Plan Name                   | Description                                                                  | Software Version       |
----------                   | -----------                                                                  | ----------------       |
+---                         | ---                                                                          | ---                    |
+`shared-psql`               | Shared PostgreSQL database for prototyping (no sensitive or production data) | 9.5.23                 |
 `micro-psql`                | Dedicated micro RDS PostgreSQL DB instance                                   | AWS RDS Latest Default |
 `micro-psql-redundant`      | Dedicated redundant micro RDS PostgreSQL DB instance                         | AWS RDS Latest Default |
 `small-psql`                | Dedicated small RDS PostgreSQL DB instance                                   | AWS RDS Latest Default |
@@ -27,6 +28,7 @@ Plan Name                   | Description                                       
 `large-gp-psql-redundant`   | Dedicated higher workload redundant large RDS PostgreSQL DB instance         | AWS RDS Latest Default |
 `xlarge-gp-psql`            | Dedicated higher workload x-large RDS PostgreSQL DB instance                 | AWS RDS Latest Default |
 `xlarge-gp-psql-redundant`  | Dedicated higher workload redundant xlarge RDS PostgreSQL DB instance        | AWS RDS Latest Default |
+`shared-mysql`              | Shared MySQL database for prototyping (no sensitive or production data)      | 5.6.41                 |
 `small-mysql`               | Dedicated small RDS MySQL DB instance                                        | AWS RDS Latest Default |
 `small-mysql-redundant`     | Dedicated redundant small RDS MySQL DB instance                              | AWS RDS Latest Default |
 `medium-mysql`              | Dedicated medium RDS MySQL DB instance                                       | AWS RDS Latest Default |
@@ -39,7 +41,7 @@ Plan Name                   | Description                                       
 `xlarge-gp-mysql-redundant` | Dedicated higher workload redundant x-large RDS MySQL DB instance            | AWS RDS Latest Default |
 `medium-oracle-se2`         | Dedicated medium RDS Oracle SE2 DB                                           | AWS RDS Latest Default |
 
-*Only the `micro-psql` and `small-mysql` plans are available in [sandbox spaces]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}#sandbox-limitations).*
+*Only the `shared-psql`, `shared-mysql`, `micro-psql`, and `small-mysql` plans are available in [sandbox spaces]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}#sandbox-limitations).*
 
 You can always view an up-to-date version of this list directly in your command line as well with the following command (using cf cli version 6):
 
