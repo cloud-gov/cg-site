@@ -194,10 +194,10 @@ Name               | Required | Description                                     
 
 #### Examples of optional parameters
 
-If you want to increase the storage available (in gigabytes) to the instance:
+If you want to increase the storage available to the instance to be 50 GB:
 
 ```sh
-cf update-service  ${SERVICE_NAME} -c '{"storage": 50}'
+cf update-service ${SERVICE_NAME} -c '{"storage": 50}'
 ```
 
 Note that you can only update to a larger size. If you want to downgrade to a lesser size, please email [support](mailto:support@cloud.gov) for assistance.
