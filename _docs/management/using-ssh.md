@@ -24,7 +24,7 @@ perform debugging, environment inspection, and other tasks.
 
 > `cf push -u process -c "sleep 600" ... [your other push options]`
 
-This overrides the port health check with the `process` check, and sets the start comment to just `sleep`. That will give you 10 minutes to `cf ssh` and inspect your container.
+This overrides the port health check with the `process` check, and sets the start command to just `sleep`. That will give you 10 minutes to `cf ssh` and inspect your container.
 
 ### Error messages
 
