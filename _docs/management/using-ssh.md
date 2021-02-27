@@ -14,9 +14,17 @@ ssh`](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#ssh-comma
 command, which lets you securely log in to an application instance where you can
 perform debugging, environment inspection, and other tasks.
 
-If you're trying to debug your app, you'll need to [configure your session to match your application's environment](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#ssh-env) by running `/tmp/lifecycle/shell`.
+### Debugging tips
 
-You can interact directly with the services bound to your application via [port forwarding](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-services.html) (described under ["Configure Your SSH Tunnel"](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-services.html#ssh-tunnel)). This allows you to access those services using native clients on your local machine. The [Service Connect plugin](https://github.com/18F/cf-service-connect#readme) makes this even easier.
+**Configure your shell**: If you're trying to debug your app, you'll need to [configure your session to match your application's environment](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#ssh-env) by running `/tmp/lifecycle/shell`.
+
+**Interact with services**: You can interact directly with the services bound to your application via [port forwarding](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-services.html) (described under ["Configure Your SSH Tunnel"](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-services.html#ssh-tunnel)). This allows you to access those services using native clients on your local machine. The [Service Connect plugin](https://github.com/18F/cf-service-connect#readme) makes this even easier.
+
+**Connect to a crashing app**: You may be trying to determine why your application keeps crashing, but it doesn't stay up long enough for an SSH session. This happens because Cloud Foundry detects when an application fails the "health check" (typically by connecting to a TCP port), then recreates the container and runs the start command again. To determine _why_ your start command is failing, you can override the _start command_ and the _health check_ with:
+
+> `cf push -u process -c "sleep 600" ... [your other push options]`
+
+This overrides the port health check with the `process` check, and sets the start command to just `sleep`. That will give you 10 minutes to `cf ssh` and inspect your container.
 
 ### Error messages
 
