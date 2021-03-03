@@ -98,6 +98,7 @@ Check your draft against the following questions that customers typically have:
 * How long did the problem last, and at what time?
 * What was the effect on my applications and my own users? (This is important.)
 * How are you going to prevent it from happening again?
+* What public issue or ticket can I track to follow your progress?
 * What actions should I take, if any?
 
 They also have a baseline expectation that we have good answers to the following questions. The answers to these questions might be implied in your explanation, instead of being explicitly addressed:
