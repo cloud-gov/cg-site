@@ -32,7 +32,7 @@ Now, you can use **apps.internal** as a route for anything that shouldn't be pub
 
 ### Polyglot service discovery
 
-Along with internal routing, cloud.gov now also offers polyglot service discovery. You can use DNS from within your applications to refer to instances of that application. That means you can have different instances of the app act as master and follower nodes rather than just scaling naively, which enables clustered applications.
+Along with internal routing, cloud.gov now also offers polyglot service discovery. You can use DNS from within your applications to refer to instances of that application. That means you can have different instances of the app act as leader and follower nodes rather than just scaling naively, which enables clustered applications.
 
 You can also use these routes across language stacks — because it's DNS-based, it's not tied to a particular language library. See [this Cloud Foundry blog post](https://www.cloudfoundry.org/blog/polyglot-service-discovery-container-networking-cloud-foundry/) for details.
 

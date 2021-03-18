@@ -23,8 +23,8 @@ This service is currently running Elasticsearch 7.4.  Our prior Elasticsearch se
 Service Name | Plan Name | Description | Number of nodes |
 ------------ | --------- | ----------- | --------------- | -----
 `aws-elasticsearch` | `es-dev` | Single data node for non-prod use only | 1 |
-`aws-elasticsearch` | `es-medium` | 3 Master and 2 Data node cluster | 5 |
-`aws-elasticsearch` | `es-medium-ha` | 3 Master and 4 Data node cluster | 7 |
+`aws-elasticsearch` | `es-medium` | 3 Primary and 2 Data node cluster | 5 |
+`aws-elasticsearch` | `es-medium-ha` | 3 Primary and 4 Data node cluster | 7 |
 
 
 

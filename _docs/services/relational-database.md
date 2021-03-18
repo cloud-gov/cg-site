@@ -13,80 +13,53 @@ If your application uses relational databases for storage, you can use the AWS R
 
 ## Plans
 
-Plan Name                | Description                                                                  | Software Version |
----------                | -----------                                                                  | ---------------- |
-`shared-psql`            | Shared PostgreSQL database for prototyping (no sensitive or production data) | 9.5.15           |
-`micro-psql`             | Dedicated micro RDS PostgreSQL DB instance                                   | AWS RDS Latest   |
-`micro-psql-redundant`  | Dedicated redundant micro RDS PostgreSQL DB instance                        | AWS RDS Latest   |
-`small-psql`             | Dedicated small RDS PostgreSQL DB instance                                   | AWS RDS Latest   |
-`small-psql-redundant`  | Dedicated redundant small RDS PostgreSQL DB instance                        | AWS RDS Latest   |
-`medium-psql`            | Dedicated medium RDS PostgreSQL DB instance                                  | AWS RDS Latest   |
-`medium-psql-redundant`  | Dedicated redundant medium RDS PostgreSQL DB instance                        | AWS RDS Latest   |
-`medium-gp-psql`            | Dedicated higher workload medium RDS PostgreSQL DB instance                                  | AWS RDS Latest   |
-`medium-gp-psql-redundant`  | Dedicated higher workload redundant medium RDS PostgreSQL DB instance                        | AWS RDS Latest   |
-`large-gp-psql`             | Dedicated higher workload large RDS PostgreSQL DB instance                                   | AWS RDS Latest   |
-`large-gp-psql-redundant`   | Dedicated higher workload redundant large RDS PostgreSQL DB instance                         | AWS RDS Latest   |
-`xlarge-gp-psql`            | Dedicated higher workload x-large RDS PostgreSQL DB instance                                 | AWS RDS Latest   |
-`xlarge-gp-psql-redundant`  | Dedicated higher workload redundant xlarge RDS PostgreSQL DB instance                        | AWS RDS Latest   |
-`shared-mysql`           | Shared MySQL database for prototyping (no sensitive or production data)      | 5.6.27           |
-`small-mysql`            | Dedicated small RDS MySQL DB instance                                        | 5.7.21           |
-`small-mysql-redundant` | Dedicated redundant small RDS MySQL DB instance                             | 5.7.21           |
-`medium-mysql`           | Dedicated medium RDS MySQL DB instance                                       | 5.7.21           |
-`medium-mysql-redundant` | Dedicated redundant medium RDS MySQL DB instance                             | 5.7.21           |
-`medium-gp-mysql`           | Dedicated higher workload medium RDS MySQL DB instance                                       | 5.7.21           |
-`medium-gp-mysql-redundant` | Dedicated higher workload redundant medium RDS MySQL DB instance                             | 5.7.21           |
-`large-gp-mysql`            | Dedicated higher workload large RDS MySQL DB instance                                        | 5.7.21           |
-`large-gp-mysql-redundant`  | Dedicated higher workload redundant large RDS MySQL DB instance                              | 5.7.21           |
-`xlarge-gp-mysql`           | Dedicated higher workload x-large RDS MySQL DB instance                                      | 5.7.21           |
-`xlarge-gp-mysql-redundant` | Dedicated higher workload redundant x-large RDS MySQL DB instance                            | 5.7.21           |
-`medium-oracle-se2`      | Dedicated medium RDS Oracle SE2 DB                                           | AWS RDS Latest   |
+Plan Name                   | Description                                                                  | Software Version       |
+---                         | ---                                                                          | ---                    |
+`shared-psql`               | Shared PostgreSQL database for prototyping (no sensitive or production data) | 9.5.23                 |
+`micro-psql`                | Dedicated micro RDS PostgreSQL DB instance                                   | AWS RDS Latest Default |
+`micro-psql-redundant`      | Dedicated redundant micro RDS PostgreSQL DB instance                         | AWS RDS Latest Default |
+`small-psql`                | Dedicated small RDS PostgreSQL DB instance                                   | AWS RDS Latest Default |
+`small-psql-redundant`      | Dedicated redundant small RDS PostgreSQL DB instance                         | AWS RDS Latest Default |
+`medium-psql`               | Dedicated medium RDS PostgreSQL DB instance                                  | AWS RDS Latest Default |
+`medium-psql-redundant`     | Dedicated redundant medium RDS PostgreSQL DB instance                        | AWS RDS Latest Default |
+`medium-gp-psql`            | Dedicated higher workload medium RDS PostgreSQL DB instance                  | AWS RDS Latest Default |
+`medium-gp-psql-redundant`  | Dedicated higher workload redundant medium RDS PostgreSQL DB instance        | AWS RDS Latest Default |
+`large-gp-psql`             | Dedicated higher workload large RDS PostgreSQL DB instance                   | AWS RDS Latest Default |
+`large-gp-psql-redundant`   | Dedicated higher workload redundant large RDS PostgreSQL DB instance         | AWS RDS Latest Default |
+`xlarge-gp-psql`            | Dedicated higher workload x-large RDS PostgreSQL DB instance                 | AWS RDS Latest Default |
+`xlarge-gp-psql-redundant`  | Dedicated higher workload redundant xlarge RDS PostgreSQL DB instance        | AWS RDS Latest Default |
+`shared-mysql`              | Shared MySQL database for prototyping (no sensitive or production data)      | 5.6.41                 |
+`small-mysql`               | Dedicated small RDS MySQL DB instance                                        | AWS RDS Latest Default |
+`small-mysql-redundant`     | Dedicated redundant small RDS MySQL DB instance                              | AWS RDS Latest Default |
+`medium-mysql`              | Dedicated medium RDS MySQL DB instance                                       | AWS RDS Latest Default |
+`medium-mysql-redundant`    | Dedicated redundant medium RDS MySQL DB instance                             | AWS RDS Latest Default |
+`medium-gp-mysql`           | Dedicated higher workload medium RDS MySQL DB instance                       | AWS RDS Latest Default |
+`medium-gp-mysql-redundant` | Dedicated higher workload redundant medium RDS MySQL DB instance             | AWS RDS Latest Default |
+`large-gp-mysql`            | Dedicated higher workload large RDS MySQL DB instance                        | AWS RDS Latest Default |
+`large-gp-mysql-redundant`  | Dedicated higher workload redundant large RDS MySQL DB instance              | AWS RDS Latest Default |
+`xlarge-gp-mysql`           | Dedicated higher workload x-large RDS MySQL DB instance                      | AWS RDS Latest Default |
+`xlarge-gp-mysql-redundant` | Dedicated higher workload redundant x-large RDS MySQL DB instance            | AWS RDS Latest Default |
+`medium-oracle-se2`         | Dedicated medium RDS Oracle SE2 DB                                           | AWS RDS Latest Default |
 
 *Only the `shared-psql`, `shared-mysql`, `micro-psql`, and `small-mysql` plans are available in [sandbox spaces]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}#sandbox-limitations).*
 
-You can always view an up-to-date version of this list directly in your command line as well with the following command:
+You can always view an up-to-date version of this list directly in your command line as well with the following command (using cf cli version 6):
 
 ```sh
 cf marketplace -s aws-rds
 ```
 
-The dedicated PostgreSQL plans (marked "AWS RDS Latest") deploy the default version as advertised by AWS.  To determine this version ahead of time, run the following awscli command and observe the `EngineVersion` field in the resulting JSON:
+Or, the following command (using cf cli version 7):
 
-``` console
-$ aws rds describe-db-engine-versions --engine=postgres --default
-{
-  "DBEngineVersions": [
-    {
-      "Engine": "postgres",
-      "EngineVersion": "11.5",
-      "DBParameterGroupFamily": "postgres11",
-      "DBEngineDescription": "PostgreSQL",
-      "DBEngineVersionDescription": "PostgreSQL 11.5-R1",
-      "ValidUpgradeTarget": [],
-      "ExportableLogTypes": [
-          "postgresql",
-          "upgrade"
-      ],
-      "SupportsLogExportsToCloudwatchLogs": true,
-      "SupportsReadReplica": true,
-      "SupportedFeatureNames": [],
-      "Status": "available"
-    }
-  ]
-}
+```sh
+cf marketplace -e aws-rds
 ```
+
+The dedicated PostgreSQL plans (marked "AWS RDS Latest") deploy the default version as advertised by AWS.  There is currently no way to verify ahead of time the version of PostgreSQL that will be deployed by the cloud.gov broker, but you can check the version once an instance has been created by connecting to that instance using the [cf-service-connect](https://github.com/cloud-gov/cf-service-connect#usage) plugin, and running `SELECT version();` at the psql prompt.
 
 Note that you can also look at the [AWS RDS PostgreSQL User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html), but it often lists versions that are not yet available on AWS GovCloud.
 
 *Additional Cost:* All databases have a limit of 1TB in storage. After 1TB, each additional terabyte will cost $300 per month.
-
-
-## Options
-
-Name               | Required | Description                                        | Default
----                | ---      | ---                                                | ---
-`storage`          |          | Number of GB available to the database instance    | 10
-`enable_functions` |          | Boolean to enable functions on supported databases | false
-
 
 ## Create an instance
 
@@ -102,6 +75,35 @@ For example, if you wanted to create a new micro PostgreSQL instance called `my-
 cf create-service aws-rds micro-psql my-service-db
 ```
 
+### Setting optional parameters
+
+There are several optional parameters that you can specify when creating a new instance:
+
+Name               | Description                                                    | Default Value          |
+---                | ---                                                            | ---                    |
+`storage`          | Number of GB available to the database instance                | 10                     |
+`enable_functions` | Boolean to enable functions on supported databases             | false                  |
+`version`          | Specifies a supported major version in RDS (must be in quotes) | AWS RDS Latest Default |
+
+A couple of notes regarding the optional `version` parameter:
+
+- It is currently only supported for dedicated MySQL and PostgreSQL instances; if you specify it for any other type of instance it is ignored.
+- It only supports major version numbers; if you specify a minor/patch level version, e.g., "11.8" for PostgreSQL or "5.7.22" for MySQL, the command will fail.
+- The version number must be provided in double quotes (`"`); this is because the value is treated as a string to account for different engine types and version schemes.
+
+These are the current supported major versions for PostgreSQL:
+
+- 10
+- 11
+- 12
+
+These are the current supported major versions for MySQL:
+
+- 5.7
+- 8.0
+
+#### Examples of optional parameters
+
 If you want to specify the storage available (in gigabytes) to the instance:
 
 ```sh
@@ -111,13 +113,31 @@ cf create-service aws-rds \
     -c '{"storage": 50}'
 ```
 
-Using functions in MySQL:
+To enable functions in MySQL instances:
 
 ```sh
 cf create-service aws-rds \
     ${MYSQL_SERVICE_PLAN_NAME} \
     ${SERVICE_NAME} \
     -c '{"enable_functions": true}'
+```
+
+To specify a major version of a new instance, e.g., PostgreSQL version 11 (please note the double quotes (`"`) around the version number; they are required):
+
+```sh
+cf create-service aws-rds \
+    micro-psql \
+    my-test-service \
+    -c '{"version": "11"}'
+```
+
+You can combine multiple optional parameters as long as the JSON is well-formed:
+
+```sh
+cf create-service aws-rds \
+    small-mysql \
+    my-test-service \
+    -c '{"version": "8.0", "storage": 35}'
 ```
 
 ### Instance creation time
@@ -154,25 +174,37 @@ cf update-service ${SERVICE_NAME} -p ${NEW_SERVICE_PLAN_NAME}
 
 `${NEW_SERVICE_PLAN_NAME}` can be any of the *dedicated* service plans that are listed above.
 
-There are several caveats regarding this command:
+There are several caveats regarding this command with the `-p` flag:
 
 - You can only update dedicated RDS instances; updates to shared instances are not supported.
 - You can only update using plans with the same database engine as your existing service instance. This means that if your original service instance was using a PostgreSQL plan (e.g., `micro-psql`), you can only update to one of the other `psql`-based plans.
-- You can **only** switch service plans with this command; you cannot do things like update your database size or set any other custom parameters.
+- You can **only** switch service plans with this command; you cannot do things like upgrade your database version.
 
 You can update to larger or smaller plans depending on your specific needs, and you can switch between redundant and non-redundant plans.
 
-To update an existing service instance size, run the following command and replace ${SERVICE_NAME} with your service instance name, and SIZE with your desired larger size (in GB):
+**NOTE: All updates are applied immediately.  Performing an update in place like this will result in a brief period of downtime (seconds to minutes) while the service instance restarts as a part of the update.**
+
+### Setting optional parameters
+
+There are several optional parameters that you can specify when updating an existing instance:
+
+Name               | Required | Description                                     |
+---                | ---      | ---                                             |
+`storage`          |          | Number of GB available to the database instance |
+
+#### Examples of optional parameters
+
+If you want to increase the storage available to the instance to be 50 GB:
 
 ```sh
-cf update-service ${SERVICE_NAME} -c '{"storage": SIZE}’
+cf update-service ${SERVICE_NAME} -c '{"storage": 50}'
 ```
 
-There is one caveat regarding this command:
+Note that you can only update to a larger size. If you want to downgrade to a lesser size, please email [support](mailto:support@cloud.gov) for assistance.
 
-- You can only update to a larger size. If you want to downgrade to a lesser size, you will need to email support.
+#### A note about upgrading major versions
 
-**NOTE: Performing an update in place like this will result in a brief period of downtime (seconds to minutes) while the service instance restarts as a part of the update.**
+**You cannot update an existing instance to a new major version** with the `update-service` command.  If you'd like to update your existing database instance to a new major version, please email [support](mailto:support@cloud.gov) for assistance.
 
 ### Bind to an application
 
@@ -186,7 +218,7 @@ The contents of the `DATABASE_URL` environment variable contain the credentials 
 
 *Please note that these instructions will change in the future as we expand our service offerings and provide more options for customers.*
 
-For shared plans (`shared-psql` and `shared-mysql`), cloud.gov and RDS does not back up your data. These are only intended for limited use development and testing instances.
+For shared plans (`shared-psql` and `shared-mysql`), cloud.gov and RDS does not back up your data. These are only intended for limited use development and testing instances, not for production.
 
 For dedicated plans, RDS automatically retains daily backups for 14 days. These backups are AWS RDS storage volume snapshots, backing up the entire DB instance and not just individual databases. If you need to have a database restored using one of these backups, you can [email support](mailto:support@cloud.gov).  For non-emergency situations, please provide at least 48 hours advance notice.
 
@@ -394,11 +426,11 @@ psql postgres://$creds@localhost:5432/$dbname
 
 The software versions listed in the table above are for new instances of those plans.
 
-New instances of dedicated RDS plans use the latest database version available from AWS RDS GovCloud (US) at the time. New instances of shared plans may use older database versions.
+New instances of dedicated RDS plans use the latest default database version available from AWS RDS GovCloud (US) at the time. New instances of shared plans may use older database versions.
 
 The PostgreSQL and MySQL plans are configured to automatically upgrade currently-running dedicated instances to the most recent compatible [minor version](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html) available via AWS RDS GovCloud (US).
 
-For Oracle plans, minor upgrades are not automatic. To upgrade an existing Oracle database instance, contact [support](mailto:support@cloud.gov) and schedule a maintenance window for the upgrade to take place.
+For Oracle plans, minor upgrades are not automatic. To upgrade an existing Oracle database instance, please contact [support](mailto:support@cloud.gov) and schedule a maintenance window for the upgrade to take place.
 
 ## The broker in GitHub
 
