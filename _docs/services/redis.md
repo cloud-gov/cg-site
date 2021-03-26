@@ -2,7 +2,7 @@
 parent: services
 layout: docs
 sidenav: true
-title: Redis
+title: Redis (deprecated)
 description: "Redis: an in-memory data structure store"
 redirect_from:
 - /docs/services/redis28
