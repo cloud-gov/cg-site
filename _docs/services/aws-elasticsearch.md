@@ -27,6 +27,9 @@ Service Name | Plan Name | Description | Number of nodes |
 `aws-elasticsearch` | `es-medium-ha` | 3 Primary and 4 Data node cluster | 7 |
 
 
+## Pricing
+
+$200/month per node. Six nodes included for customers using the FISMA Moderate plan. More information on the [pricing page]({{ site.baseurl }}{% link _pages/pricing.md %}).
 
 ## How to create an instance
 

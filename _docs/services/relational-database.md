@@ -2,7 +2,7 @@
 parent: services
 layout: docs
 sidenav: true
-title: Relational databases (RDS)
+title: RDS - Relational databases
 description: "Persistent, relational databases using Amazon RDS"
 redirect_from:
   - /docs/apps/databases
