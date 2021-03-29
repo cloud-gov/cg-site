@@ -32,7 +32,6 @@ categorized with three different types of secrets.
 1. [Rotating Bosh]({{ site.baseurl }}{% link _docs/ops/runbook/rotating-bosh.md %})
 1. [Rotating Concourse]({{ site.baseurl }}{% link _docs/ops/runbook/rotating-concourse.md %})
 1. [Rotating Cloud Foundry / Diego]({{ site.baseurl }}{% link _docs/ops/runbook/rotating-cloudfoundry-diego.md %})
-1. [Rotating Kubernetes]({{ site.baseurl }}{% link _docs/ops/runbook/rotating-kubernetes.md %})
 
 ## Rotate secrets passphrases
 
