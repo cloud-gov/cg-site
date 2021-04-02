@@ -14,7 +14,7 @@ redirect_from:
 
 ### Added
 
-- [Elasticsearch version 5.6 is now available]({{ site.baseurl }}/docs/services/elasticsearch56/). This includes [performance improvements and new features](https://www.elastic.co/blog/elasticsearch-5-0-0-released). We recommend upgrading from version 2.4 to 5.6, but we don’t have near-term plans to end support for 2.4.  
+- Elasticsearch version 5.6 is now available. This includes [performance improvements and new features](https://www.elastic.co/blog/elasticsearch-5-0-0-released). We recommend upgrading from version 2.4 to 5.6, but we don’t have near-term plans to end support for 2.4.  
 - If your application involves multiple languages, and it’s not practical to split it into smaller applications, cloud.gov now has [improved support for multiple buildpacks]({{ site.baseurl }}/docs/apps/experimental/custom-buildpacks/#experimental-multi-buildpack-support)  
 
 ### Fixed
