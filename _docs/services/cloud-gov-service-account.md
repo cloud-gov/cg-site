@@ -14,10 +14,14 @@ To set up your application to be deployed with an automated system, you need a d
 
 ## Plans
 
-Plan Name | Description | 
---------- | ----------- | -----
-`space-deployer` | A service account for continuous deployment, limited to a single space | 
-`space-auditor` | A service account for auditing configuration and monitoring events limited to a single space | 
+Plan Name | Description | Cloud Foundry Role
+--------- | ----------- | -------------------|
+`space-deployer` | A service account for continuous deployment, initially limited to a single space | SpaceDeveloper | 
+`space-auditor` | A service account for auditing configuration and monitoring events, initially limited to a single space | SpaceAuditor |
+
+The `space-deployer` service account is assigned the `SpaceDeveloper` role in the space (pushing apps, provisioning services, etc). The `space-auditor` service account is assigned the `SpaceAuditor` role in the space (read-only access). For details on the capabilities associated with the SpaceDeveloper and SpaceAuditor roles, please see the Cloud Foundry documentation: https://docs.cloudfoundry.org/concepts/roles.html. 
+
+> Note: Service accounts will initially be assigned a single role (SpaceDeveloper or SpaceAuditor) in a single space. However, you can add/remove roles for this account in any org and/or space using the `cf` CLI. Please be sure to read the documentation and understand the ramifications of role modifications before proceeding: https://docs.cloudfoundry.org/concepts/roles.html.
 
 *These instances are available in [sandbox spaces]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}#sandbox-limitations).*
 

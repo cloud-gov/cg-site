@@ -8,7 +8,7 @@ description: "AWS Elasticsearch version 7.4: a distributed, RESTful search and a
 status: "Production Ready"
 ---
 
-cloud.gov is proud to offer [aws-elasticsearch](https://www.elastic.co/) 7.4 as a service hosted in AWS Elasticsearch
+cloud.gov offers [aws-elasticsearch](https://aws.amazon.com/elasticsearch-service/) 7.4 as a service hosted in AWS Elasticsearch
 
 ## Changes
 
@@ -20,13 +20,16 @@ This service is currently running Elasticsearch 7.4.  Our prior Elasticsearch se
 
 ## Plans
 
-Service Name | Plan Name | Description |
------------- | --------- | ----------- | -----
-`aws-elasticsearch` | `es-dev` | Single data node for non-prod use only |
-`aws-elasticsearch` | `es-medium` | 3 Master and 2 Data node cluster |
-`aws-elasticsearch` | `es-medium-ha` | 3 Master and 4 Data node cluster |
+Service Name | Plan Name | Description | Number of nodes |
+------------ | --------- | ----------- | --------------- | -----
+`aws-elasticsearch` | `es-dev` | Single data node for non-prod use only | 1 |
+`aws-elasticsearch` | `es-medium` | 3 Primary and 2 Data node cluster | 5 |
+`aws-elasticsearch` | `es-medium-ha` | 3 Primary and 4 Data node cluster | 7 |
 
 
+## Pricing
+
+$200/month per node. Six nodes included for customers using the FISMA Moderate plan. More information on the [pricing page]({{ site.baseurl }}{% link _pages/pricing.md %}).
 
 ## How to create an instance
 
@@ -36,11 +39,13 @@ To create a service instance run the following command:
 cf create-service aws-elasticsearch es-medium my-elastic-service
 ```
 
+Note: AWS Elasticsearch creation times will vary and is outside of Cloud.gov's control. AWS says approximately 15-30 mins per node. 
+
 ### Shard/replica configuration for high availability
 
 When using the `medium` and `medium-ha` plans, please read [Scalability and resilience: clusters, nodes, and shards](https://www.elastic.co/guide/en/elasticsearch/reference/current/scalability.html) for the elasticsearch basics on clusters as well as the AWS specific [Developer Guide](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/what-is-amazon-elasticsearch-service.html).  The `medium` plan is mainly focused for customers that need a single index and have coverage with 2 data nodes.  For customers wanting more coverage and more indexes, then the `medium-ha` plan scales the cluster to 4 data nodes to offer high availability (HA).
 
-### AWS Singing requests requirement
+### AWS Signing requests requirement
 
 In order to use the Elasticsearch service hosted on AWS you will need to use [AWS signed HTTP headers](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-request-signing.html)
 

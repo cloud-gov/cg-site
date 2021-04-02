@@ -40,7 +40,7 @@ cf target -s SPACE -o ORGANIZATION
 cf env APP
 ```
 
-The JSON containing the environment variables includes the `database identifier` and `password` under the key `host` within the credentials map for the database service (look for `aws-rds`).  The `database identifier` is needed to find the database instance in the AWS RDS instance listing, and the `password` is required for setting the master password in the new instance.
+The JSON containing the environment variables includes the `database identifier` and `password` under the key `host` within the credentials map for the database service (look for `aws-rds`).  The `database identifier` is needed to find the database instance in the AWS RDS instance listing, and the `password` is required for setting the primary password in the new instance.
 
 ### Performing the database restore
 
@@ -53,7 +53,7 @@ Prior to restoring, record the configuration settings of the existing instance:
 - VPC (dev, staging, etc.)
 - Subnet
 - Security Groups
-- Master password (this is the `password` you saw above in the application environment variables)
+- Primary password (this is the `password` you saw above in the application environment variables)
 
 Copy all of these values and configure them in the restore form to mirror the configuration of the existing database instance.  For the `identifier` name, provide a name like `<instance name>-<date>-restore` to make the instance easy to find.  Note that the database should never be set to publicly accessible.
 

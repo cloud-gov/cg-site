@@ -88,7 +88,7 @@ For more information about configuring Travis, see [Customizing the Build](https
 
 #### Using Conditional Deployments with Travis
 
-A common pattern for team workflows is to use separate development and master branches, along with using a staging or QA deployment with the development branch, and a production deployment with the master branch. This can be achieved in Travis with [`on:`](https://docs.travis-ci.com/user/deployment#Conditional-Releases-with-on%3A) to specify a branch, and using unique manifests for each deployment.
+A common pattern for team workflows is to use separate development and main branches, along with using a staging or QA deployment with the development branch, and a production deployment with the main branch. This can be achieved in Travis with [`on:`](https://docs.travis-ci.com/user/deployment#Conditional-Releases-with-on%3A) to specify a branch, and using unique manifests for each deployment.
 
 ```yaml
 deploy:
@@ -99,7 +99,7 @@ deploy:
 - manifest: manifest.yml
   # ...
   on:
-    branch: master
+    branch: main
 ```
 
 Each manifest should at the very least define an unique `name`, but can also define an unique `host`. Also, it may be necessary to define unique services for each application to use. See [Cloning Applications]({{ site.baseurl }}{% link _docs/management/cloning.md %}) for more information.
@@ -140,7 +140,7 @@ test:
 
 deployment:
   production:
-    branch: master
+    branch: main
     commands:
       - cf push
 ```
@@ -161,14 +161,14 @@ After following the instructions for setting up a [cloud.gov service account](ht
 
 #### Sample workflow
 
-The following is an example of a workflow that uses this action. This example shows how to deploy a simple [.NET Core app](https://github.com/cloud-gov/cf-hello-worlds/tree/master/dotnet-core) to cloud.gov
+The following is an example of a workflow that uses this action. This example shows how to deploy a simple [.NET Core app](https://github.com/cloud-gov/cf-hello-worlds/tree/main/dotnet-core) to cloud.gov
 
 ```yml
 name: .NET Core Deploy
 
 on:
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -194,7 +194,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Deploy to cloud.gov
-        uses: cloud-gov/cg-cli-tools@master
+        uses: cloud-gov/cg-cli-tools@main
         with: 
           cf_api: https://api.fr.cloud.gov
           cf_username: ${{ secrets.CG_USERNAME }}
@@ -203,4 +203,4 @@ jobs:
           cf_space: your-space
 ```
 
-Note the reference to `cloud-gov/cg-cli-tools@master` in the workflow file above. You can use another workflow file as part of your deployment process if you desire, or add additional steps to your workflow by referencing other GitHub actions.
+Note the reference to `cloud-gov/cg-cli-tools@main` in the workflow file above. You can use another workflow file as part of your deployment process if you desire, or add additional steps to your workflow by referencing other GitHub actions.

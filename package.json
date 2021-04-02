@@ -8,12 +8,12 @@
     "start": "bundle exec jekyll serve"
   },
   "dependencies": {
-    "anchor-js": "^4.2.2",
+    "anchor-js": "^4.3.0",
     "mermaid": "^8.4.6",
-    "netlify-cms": "^2.10.45",
-    "uswds": "^2.8.0"
+    "netlify-cms": "^2.10.74",
+    "uswds": "^2.9.0"
   },
   "devDependencies": {
-    "rimraf": "^3.0.0"
+    "rimraf": "^3.0.2"
   }
 }

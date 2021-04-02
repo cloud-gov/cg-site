@@ -63,7 +63,6 @@ Review the [detailed guide on customer support]({{site.baseurl}}/docs/ops/custom
 ## Weekly support tasks
 
 - Update the [`#cg-support`](https://gsa-tts.slack.com/messages/cg-support/) topic to include your name as the support contact.
-- In [logs.fr.cloud.gov](https://logs.fr.cloud.gov/), go under "Management" -> "Advanced Settings" and check the Kibana [timezone setting](https://www.elastic.co/guide/en/kibana/current/advanced-options.html) (`dateFormat:tz`) - it should be set to `Browser`. If anyone has changed it, change it back to `Browser`.
 - Check for any new CVEs in [Elasticsearch](https://www.cvedetails.com/vulnerability-list/vendor_id-13554/Elasticsearch.html), and [Redis](https://www.cvedetails.com/vulnerability-list/vendor_id-15183/product_id-31837/Pivotal-Software-Redis.html).
 
 ## Review expiring certificates
