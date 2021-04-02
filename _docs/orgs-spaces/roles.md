@@ -16,11 +16,11 @@ To invite someone to a non-sandbox org, including federal employees and federal 
 
 Then, confirm with them that they have received and accepted the invite. Now they have a cloud.gov account!
 
-## Adding roles via the dashboard for users to access orgs and spaces
+You can manage users [using the dashboard](#managing-roles-via-the-dashboard) or the [cf cli](#managing-roles-via-the-cli)
+
+## Managing roles via the dashboard
 
 After a user has a cloud.gov account and has logged in, an Org Manager can assign roles using the [dashboard](https://dashboard.fr.cloud.gov/) as follows.
-
-### Managing users in your organization
 
 Log into the [Dashboard (https://dashboard.fr.cloud.gov)](https://dashboard.fr.cloud.gov)
 
@@ -42,3 +42,45 @@ Log into the [Dashboard (https://dashboard.fr.cloud.gov)](https://dashboard.fr.c
 {% asset roles-08-confirm-changes.png alt="Confirm your changes and selections by clicking on the Apply button on the bottom of the screen." %}
 
 The user will immediately be granted access to (or removed from) the orgs and spaces you have set. Repeat the process to add or modify additional users and their roles and permissions.
+
+## Managing roles via the cli
+
+After a user has a cloud.gov account and has logged in, an Org Manager can assign roles using the [cf cli]({{ site.baseurl }}{% link _docs/getting-started/setup.md %}#set-up-the-command-line).
+
+### Adding and removing org roles
+
+Adding org roles is done using the `cf set-org-role` command, which takes the form:
+
+```
+cf set-org-role USERNAME ORG ROLE
+```
+
+Where ROLE is one of:
+  - `OrgManager` - Invite and manage users, select and change plans, and set spending limits
+  - `BillingManager` - Create and manage the billing account and payment info
+  - `OrgAuditor` - Read-only access to org info and reports
+
+Removing roles uses the command `cf unset-org-role`:
+
+```
+cf unset-org-role USERNAME ORG ROLE
+```
+
+### Adding and removing space roles
+
+Adding space roles is done using the `cf set-space-role` command, which takes the form:
+
+```
+cf set-space-role USERNAME ORG SPACE ROLE
+```
+
+Where ROLE is one of:
+  - `SpaceManager` - Invite and manage users, and enable features for a given space
+  - `SpaceDeveloper` - Create and manage apps and services, and see logs and reports
+  - `SpaceAuditor` - View logs, reports, and settings on this space
+
+Removing space roles uses the command `cf unset-space-role`:
+
+```
+cf unset-space-role USERNAME ORG SPACE ROLE
+```
