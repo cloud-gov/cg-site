@@ -8,7 +8,7 @@ description: "AWS Elasticsearch version 7.4: a distributed, RESTful search and a
 status: "Production Ready"
 ---
 
-cloud.gov is proud to offer [aws-elasticsearch](https://www.elastic.co/) 7.4 as a service hosted in AWS Elasticsearch
+cloud.gov offers [aws-elasticsearch](https://aws.amazon.com/elasticsearch-service/) 7.4 as a service hosted in AWS Elasticsearch
 
 ## Changes
 
@@ -20,13 +20,16 @@ This service is currently running Elasticsearch 7.4.  Our prior Elasticsearch se
 
 ## Plans
 
-Service Name | Plan Name | Description |
------------- | --------- | ----------- | -----
-`aws-elasticsearch` | `es-dev` | Single data node for non-prod use only |
-`aws-elasticsearch` | `es-medium` | 3 Master and 2 Data node cluster |
-`aws-elasticsearch` | `es-medium-ha` | 3 Master and 4 Data node cluster |
+Service Name | Plan Name | Description | Number of nodes |
+------------ | --------- | ----------- | --------------- | -----
+`aws-elasticsearch` | `es-dev` | Single data node for non-prod use only | 1 |
+`aws-elasticsearch` | `es-medium` | 3 Primary and 2 Data node cluster | 5 |
+`aws-elasticsearch` | `es-medium-ha` | 3 Primary and 4 Data node cluster | 7 |
 
 
+## Pricing
+
+$200/month per node. Six nodes included for customers using the FISMA Moderate plan. More information on the [pricing page]({{ site.baseurl }}{% link _pages/pricing.md %}).
 
 ## How to create an instance
 

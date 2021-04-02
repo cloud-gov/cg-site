@@ -2,8 +2,8 @@
 parent: services
 layout: docs
 sidenav: true
-title: "Elasticsearch"
-name: "elasticsearch56"
+title: Elasticsearch (deprecated)
+name: elasticsearch56
 description: "Elasticsearch version 5.6: a distributed, RESTful search and analytics engine"
 ---
 
@@ -16,7 +16,7 @@ cloud.gov offers [Elasticsearch](https://www.elastic.co/) 5.6 as a service.
 
 Plan Name | Description |
 --------- | ----------- | -----
-`medium-ha` | Elasticsearch cluster with three master nodes (3584M memory limit, 1792M heap) and three data nodes (3584M memory limit, 1792M heap, 10G disk) |
+`medium-ha` | Elasticsearch cluster with three primary nodes (3584M memory limit, 1792M heap) and three data nodes (3584M memory limit, 1792M heap, 10G disk) |
 
 
 *Additional Cost:* Elasticsearch has a limit of 10GB in storage. After 10G, each additional gigabyte will cost $100 per month.

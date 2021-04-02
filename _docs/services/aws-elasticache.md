@@ -12,14 +12,17 @@ cloud.gov offers [aws-elasticache-redis](https://aws.amazon.com/elasticache/) Re
 
 ## Plans
 
-Service Name | Plan Name | Description |
------------- | --------- | ----------- | -----
-`aws-elasticache-redis` | `redis-dev` | Single EC node for non-prod use only |
-`aws-elasticache-redis` | `redis-3node` | 3 node EC, persistent storage, 512Mb memory limit |
-`aws-elasticache-redis` | `redis-5node` | 5 node EC, persistent storage, 512Mb memory limit |
+Service Name | Plan Name | Description | Number of nodes |
+------------ | --------- | ----------- | --------------- | -----
+`aws-elasticache-redis` | `redis-dev` | Single EC node for non-prod use only | 1 |
+`aws-elasticache-redis` | `redis-3node` | 3 node EC, persistent storage, 512Mb memory limit | 3 |
+`aws-elasticache-redis` | `redis-5node` | 5 node EC, persistent storage, 512Mb memory limit | 5 |
+`aws-elasticache-redis` | `redis-3node-large` | 3 node EC, persistent storage, 1.3GB memory limit | 3 |
+`aws-elasticache-redis` | `redis-5node-large` | 5 node EC, persistent storage, 1.3GB memory limit | 5 |
 
+## Pricing
 
-
+$200/month per 10 nodes block. First 10 nodes included at no cost. More information on the [pricing page]({{ site.baseurl }}{% link _pages/pricing.md %}).
 
 #### How to create an instance
 
