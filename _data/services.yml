@@ -23,16 +23,6 @@
   description: "Custom domains and TLS certificates with automatic renewal"
   status: "Deprecated"
   source-code: https://github.com/cloud-gov/cf-domain-broker-alb
-- name: elasticsearch56
-  page-name: 
-  description: "[Elasticsearch](https://www.elastic.co/products/elasticsearch) version 5.6: a distributed, RESTful search and analytics engine"
-  status: "Beta"
-  source-code: https://github.com/cloud-gov/kubernetes-broker
-- name: redis
-  page-name: redis
-  description: "[Redis](https://redis.io/): an open source in-memory database."
-  status: "Beta"
-  source-code: https://github.com/cloud-gov/kubernetes-broker
 - name: s3
   description: "Amazon S3 provides developers with secure, durable, highly-scalable object storage"
   status: "Production"

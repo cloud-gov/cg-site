@@ -55,7 +55,6 @@ Service brokers:
 
 - [RDS](https://github.com/18F/aws-broker)
 - [CDN (CloudFront and Let's Encrypt)](https://github.com/18F/cf-cdn-service-broker)
-- [Kubernetes](https://github.com/18F/kubernetes-broker)
 - [UAA credentials](https://github.com/cloudfoundry-community/uaa-credentials-broker)
 - [S3](https://github.com/cloudfoundry-community/s3-broker)
 
@@ -73,7 +72,6 @@ Deployment pipelines:
 - [Concourse](https://github.com/18F/cg-deploy-concourse)
 - [Concourse task Docker image](https://github.com/18F/cg-deploy-concourse-docker-image)
 - [ELK/logsearch](https://github.com/18F/cg-deploy-logsearch)
-- [Kubernetes](https://github.com/18F/cg-deploy-kubernetes)
 - [Monitoring](https://github.com/18F/cg-deploy-prometheus)
 - [Nessus Manager](https://github.com/18F/cg-deploy-nessus-manager)
 - [RDS broker](https://github.com/18F/cg-deploy-rds-broker)
