@@ -191,6 +191,9 @@ ensure the updated release is deployed to all required VMs.
 ## Review potential improvements in CloudCheckr
 Review the [Best Practices report in CloudCheckr](https://app.cloudcheckr.com/#Report/BestPracticesConsolidated) and try to fix something near the top.
 
+Pay extra attention to any notices that indicate we are approaching a limit on resources so that we can reach out to AWS
+to ask for a quota increase before the limit is hit.  This will help prevent future sudden outages.
+
 ---
 
 ### Page information
