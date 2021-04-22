@@ -18,7 +18,7 @@ This assumes cloud.gov is not impacted by the directive. Otherwise cloud.gov pos
 
 # FY2021
 
-## CISA Emergency Directive 21-03 for Pulse Connect Secure
+## CISA Emergency Directive 21-03 for Pulse Connect Secure: Not impacted
 
 Cloud.gov has NO instances of Pulse Connect Secure
 
@@ -28,7 +28,7 @@ On April 20, 2021, the DHS Cybersecurity and Infrastructure Security Agency
 
 Status: The cloud.gov system has no instances of Pulse Connect Secure. We are fully compliant with ED-21-03.
 
-## CISA Emergency Directive 21-02 for Microsoft Exchange
+## CISA Emergency Directive 21-02 for Microsoft Exchange: Not impacted
 
 cloud.gov has NO instances of Microsoft Exchange on-premises.
 
@@ -39,7 +39,7 @@ On March 3, 2021, the DHS Cybersecurity and Infrastructure Security Agency
 
 Status: The cloud.gov system has no instances of Microsoft Exchange on-premises. We are fully compliant with ED-21-02.
 
-## CISA Emergency Directive 21-01: Mitigate SolarWinds Orion Code Compromise
+## CISA Emergency Directive 21-01: Mitigate SolarWinds Orion Code Compromise: Not impacted
 
 On December 13, 2020, the DHS Cybersecurity and Infrastructure Security Agency (CISA) published [Emergency Directive 21-01, “Mitigate SolarWinds Orion Code Compromise”](https://cyber.dhs.gov/ed/21-01/).
 
