@@ -23,7 +23,8 @@ This assumes cloud.gov is not impacted by the directive. Otherwise cloud.gov pos
 Cloud.gov has NO instances of Pulse Connect Secure
 
 On April 20, 2021, the DHS Cybersecurity and Infrastructure Security Agency 
-(CISA) published Emergency Directive 21-03: "Mitigate Pulse Connect Secure Product Vulnerabilities" (https://cyber.dhs.gov/ed/21-03/)
+(CISA) published Emergency Directive 21-03: "Mitigate Pulse Connect Secure Product Vulnerabilities" 
+([https://cyber.dhs.gov/ed/21-03/](https://cyber.dhs.gov/ed/21-03/))
 
 Status: The cloud.gov system has no instances of Pulse Connect Secure. We are fully compliant with ED-21-03.
 
@@ -32,7 +33,9 @@ Status: The cloud.gov system has no instances of Pulse Connect Secure. We are fu
 cloud.gov has NO instances of Microsoft Exchange on-premises.
 
 On March 3, 2021, the DHS Cybersecurity and Infrastructure Security Agency 
-(CISA) published Emergency Directive 21-02: "Mitigate Microsoft Exchange On-Premises Product Vulnerabilities" (https://cyber.dhs.gov/ed/21-02/)
+(CISA) published Emergency Directive 21-02: "Mitigate Microsoft Exchange On-Premises Product Vulnerabilities" 
+([https://cyber.dhs.gov/ed/21-02/](https://cyber.dhs.gov/ed/21-02/))
+
 
 Status: The cloud.gov system has no instances of Microsoft Exchange on-premises. We are fully compliant with ED-21-02.
 
