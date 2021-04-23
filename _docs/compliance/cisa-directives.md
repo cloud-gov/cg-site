@@ -7,14 +7,13 @@ title: CISA Directives
 
 # CISA Emergency Directives
 
-The Cybersecurity and Infrastructure Security Agency (CISA) periodically issues “[Emergency Directives](https://cyber.dhs.gov/directives/),” which require action on the part of federal agencies.
-As a FedRAMP-authorized service, cloud.gov takes the following actions to notify our customers of our response to CISA directives, or other emergency inquires from FedRAMP.
+The Cybersecurity and Infrastructure Security Agency (CISA) periodically issues “[Emergency Directives](https://cyber.dhs.gov/directives/),” which require action by cloud.gov, as a FedRAMP-authorized service.
 
-1. Updates a central directory of Emergency Directive responses (this page)
-2. Notifies customers and stake holders via our public status service: https://cloudgov.statuspage.io
-    * We post as a "Resolved Incident" that impacts "Applications" (operational), ensure "Send Notification"
+In response to CISA Emergency Directives, cloud.gov will:
+* provide required applicability information in our [FedRAMP secure repository: https://community.max.gov/x/mjypgg](https://community.max.gov/x/mjypgg), and
+* notify customers and community of the applicability update via our [public status service: https://cloudgov.statuspage.io](https://cloudgov.statuspage.io).
 
-This assumes cloud.gov is not impacted by the directive. Otherwise cloud.gov posts as an "Open incident", if warranted, and follows our established [incident response plan]({{ site.baseurl }}/docs/ops/security-ir/), as informed by the Emergency Directive and the [FedRAMP Incident Communications Procedures](https://www.fedramp.gov/assets/resources/documents/CSP_Incident_Communications_Procedures.pdf).
+We will no longer be providing public notification of our compliance status. As of April 2021, none of the emergency directives have been applicable to the cloud.gov system. But future directives could impact cloud.gov, which would pose a dilemma in our commitment to transparency.
 
 # FY2021
 
