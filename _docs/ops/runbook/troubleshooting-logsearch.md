@@ -332,7 +332,7 @@ curl -XDELETE localhost:9200/logs-app-2020.12.11
 ```
 
 
-## Fixing `5 of 900 shards failed`
+## Fixing 5 of 900 shards failed
 
 Kibana sometimes fails any search containing a single day, and displays the error message `5 of 900 shards failed`.
 This can be caused by dynamic fields changing from a non-string type to a string type, causing that day's index
@@ -560,3 +560,13 @@ done
 # print out how many logs we have.
 echo $counter
 ```
+## Restarting log archivers
+
+If you are seeing `BOSHJobLowFreeRAM` alerts from Prometheus, it may indicate that the log archivers need to be restarted. Check the **bosh_job_name** field on the alert, and if it indicates the `archiver`, follow these steps to restart the archivers
+
+* From a production jumpbox, run the following to log into the archiver VM instances (replacing `instance` with the index of the VM you want to connect to): `bosh -d logsearch ssh archiver/{instance}`
+* Elevate privledges to root: `sudo su -`
+* Restart all: `monit restart all`
+* Observe that all jobs restart: `watch monit summary`
+
+Repeat these steps for each affected archiver VM instance.
