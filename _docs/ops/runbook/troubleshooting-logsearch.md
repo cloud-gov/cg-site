@@ -562,7 +562,7 @@ echo $counter
 ```
 ## Restarting log archivers
 
-If you are seeing `BOSHJobLowFreeRAM` alerts from Promethius, it may indicate that the log archivers need to be restarted. Check the **bosh_job_name** field on the alert, and if it indicates the `archiver`, follow these steps to restart the archivers
+If you are seeing `BOSHJobLowFreeRAM` alerts from Prometheus, it may indicate that the log archivers need to be restarted. Check the **bosh_job_name** field on the alert, and if it indicates the `archiver`, follow these steps to restart the archivers
 
 * From a production jumpbox, run the following to log into the archiver VM instances (replacing `instance` with the index of the VM you want to connect to): `bosh -d logsearch ssh archiver/{instance}`
 * Elevate privledges to root: `sudo su -`
