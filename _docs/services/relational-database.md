@@ -15,7 +15,6 @@ If your application uses relational databases for storage, you can use the AWS R
 
 Plan Name                   | Description                                                                  | Software Version       |
 ---                         | ---                                                                          | ---                    |
-`shared-psql`               | Shared PostgreSQL database for prototyping (no sensitive or production data) | 9.5.23                 |
 `micro-psql`                | Dedicated micro RDS PostgreSQL DB instance                                   | AWS RDS Latest Default |
 `micro-psql-redundant`      | Dedicated redundant micro RDS PostgreSQL DB instance                         | AWS RDS Latest Default |
 `small-psql`                | Dedicated small RDS PostgreSQL DB instance                                   | AWS RDS Latest Default |
@@ -28,7 +27,6 @@ Plan Name                   | Description                                       
 `large-gp-psql-redundant`   | Dedicated higher workload redundant large RDS PostgreSQL DB instance         | AWS RDS Latest Default |
 `xlarge-gp-psql`            | Dedicated higher workload x-large RDS PostgreSQL DB instance                 | AWS RDS Latest Default |
 `xlarge-gp-psql-redundant`  | Dedicated higher workload redundant xlarge RDS PostgreSQL DB instance        | AWS RDS Latest Default |
-`shared-mysql`              | Shared MySQL database for prototyping (no sensitive or production data)      | 5.6.41                 |
 `small-mysql`               | Dedicated small RDS MySQL DB instance                                        | AWS RDS Latest Default |
 `small-mysql-redundant`     | Dedicated redundant small RDS MySQL DB instance                              | AWS RDS Latest Default |
 `medium-mysql`              | Dedicated medium RDS MySQL DB instance                                       | AWS RDS Latest Default |
@@ -41,7 +39,7 @@ Plan Name                   | Description                                       
 `xlarge-gp-mysql-redundant` | Dedicated higher workload redundant x-large RDS MySQL DB instance            | AWS RDS Latest Default |
 `medium-oracle-se2`         | Dedicated medium RDS Oracle SE2 DB                                           | AWS RDS Latest Default |
 
-*Only the `shared-psql`, `shared-mysql`, `micro-psql`, and `small-mysql` plans are available in [sandbox spaces]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}#sandbox-limitations).*
+*Only the `micro-psql` and `small-mysql` plans are available in [sandbox spaces]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}#sandbox-limitations).*
 
 You can always view an up-to-date version of this list directly in your command line as well with the following command (using cf cli version 6):
 
@@ -169,9 +167,8 @@ cf update-service ${SERVICE_NAME} -p ${NEW_SERVICE_PLAN_NAME}
 
 `${NEW_SERVICE_PLAN_NAME}` can be any of the *dedicated* service plans that are listed above.
 
-There are several caveats regarding this command with the `-p` flag:
+There are a couple of caveats regarding this command with the `-p` flag:
 
-- You can only update dedicated RDS instances; updates to shared instances are not supported.
 - You can only update using plans with the same database engine as your existing service instance. This means that if your original service instance was using a PostgreSQL plan (e.g., `micro-psql`), you can only update to one of the other `psql`-based plans.
 - You can **only** switch service plans with this command; you cannot do things like upgrade your database version.
 
@@ -213,9 +210,7 @@ The contents of the `DATABASE_URL` environment variable contain the credentials 
 
 *Please note that these instructions will change in the future as we expand our service offerings and provide more options for customers.*
 
-For shared plans (`shared-psql` and `shared-mysql`), cloud.gov and RDS does not back up your data. These are only intended for limited use development and testing instances, not for production.
-
-For dedicated plans, RDS automatically retains daily backups for 14 days. These backups are AWS RDS storage volume snapshots, backing up the entire DB instance and not just individual databases. If you need to have a database restored using one of these backups, you can [email support](mailto:support@cloud.gov).  For non-emergency situations, please provide at least 48 hours advance notice.
+RDS automatically retains daily backups for 14 days. These backups are AWS RDS storage volume snapshots, backing up the entire DB instance and not just individual databases. If you need to have a database restored using one of these backups, you can [email support](mailto:support@cloud.gov).  For non-emergency situations, please provide at least 48 hours advance notice.
 
 If you have an emergency situation, such as data loss or a compromised system, please [email support](mailto:support@cloud.gov) immediately and inform us of the situation.
 
@@ -305,11 +300,11 @@ Since Oracle is not open-source there are fewer resources available online to ge
 
 ### Demo with Spring Music and Oracle
 
-To demonstrate the core Cloud Foundry / OracleDB functionality, we'll start by deploying the 
-[Spring Music app](https://github.com/cloudfoundry-samples/spring-music). 
+To demonstrate the core Cloud Foundry / OracleDB functionality, we'll start by deploying the
+[Spring Music app](https://github.com/cloudfoundry-samples/spring-music).
 
 First, though, one needs the proprietary Oracle database drivers.
-Visit the Oracle drivers' site at http://www.oracle.com/technetwork/database/application-development/jdbc/downloads/index.html and download the `ojdbc8.jar` from the latest available release. You will need to have a valid Oracle profile account for the download. 
+Visit the Oracle drivers' site at http://www.oracle.com/technetwork/database/application-development/jdbc/downloads/index.html and download the `ojdbc8.jar` from the latest available release. You will need to have a valid Oracle profile account for the download.
 
 Then, clone the repository and make a `libs/` directory:
 
@@ -319,7 +314,7 @@ cd spring-music
 mkdir libs/
 ```
 
-Copy the downloaded `ojdbc8.jar` to the `libs/` directory of `spring-music`. 
+Copy the downloaded `ojdbc8.jar` to the `libs/` directory of `spring-music`.
 
 Edit `build.gradle`, look for the following near line 60:
 
@@ -347,7 +342,7 @@ When the restart completes, you can visit the app and view in the upper-right-ha
 
 Install Oracle's `instantclient-basiclite` and `instantclient-sqlplus` for your operating system.
 
-To get the database connection information, we'll use 
+To get the database connection information, we'll use
 [Cloud Foundry service keys](https://docs.cloudfoundry.org/devguide/services/service-keys.html) as follows, for the
 case of an Oracle database called `spring-oracle`:
 
@@ -421,7 +416,7 @@ psql postgres://$creds@localhost:5432/$dbname
 
 The software versions listed in the table above are for new instances of those plans.
 
-New instances of dedicated RDS plans use the latest default database version available from AWS RDS GovCloud (US) at the time. New instances of shared plans may use older database versions.
+New instances of dedicated RDS plans use the latest default database version available from AWS RDS GovCloud (US) at the time.
 
 The PostgreSQL and MySQL plans are configured to automatically upgrade currently-running dedicated instances to the most recent compatible [minor version](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html) available via AWS RDS GovCloud (US).
 

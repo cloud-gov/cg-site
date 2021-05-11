@@ -2,7 +2,7 @@
 parent: management
 layout: docs
 sidenav: true
-redirect_from: 
+redirect_from:
     - /docs/apps/database-backup-restore/
 title: Perform a database backup or restore
 ---
@@ -78,7 +78,6 @@ cf ds <service name>
 
 # Recreate the database service
 # To see all available service plans, run cf marketplace
-# Note: Only production should have something other than shared-psql
 cf cs aws-rds <service plan> <service name>
 
 # rebind the service to the app
