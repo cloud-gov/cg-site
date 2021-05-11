@@ -28,7 +28,7 @@ Plan Name         | Plan Description                                            
 
 ### Compliance impact
 
-When you use cloud.gov in general, your application inherits the compliance of the cloud.gov FedRAMP P-ATO, which inherits compliance from the AWS GovCloud FedRAMP P-ATO. This service is a little different. When you use this service, you opt into using an AWS service (CloudFront) that is not in the cloud.gov FedRAMP P-ATO boundary, but is in the AWS Commerical FedRAMP P-ATO boundary (see [Services in Scope](https://aws.amazon.com/compliance/services-in-scope/)).
+When you use cloud.gov in general, your application inherits the compliance of the cloud.gov FedRAMP P-ATO, which inherits compliance from the AWS GovCloud FedRAMP P-ATO. This service is a little different. When you use this service, you opt into using an AWS service (CloudFront) that is not in the cloud.gov FedRAMP P-ATO boundary, but is in the AWS Commercial FedRAMP P-ATO boundary (see [Services in Scope](https://aws.amazon.com/compliance/services-in-scope/)).
 
 You are responsible for obtaining appropriate authorization from your agency to use CloudFront for your system. The appropriate steps depend on your agency; they may include discussing this with your Authorizing Official and documenting it as part of your ATO (for example as part of [SC-12](https://nvd.nist.gov/800-53/Rev4/control/SC-12) or [SA-9](https://nvd.nist.gov/800-53/Rev4/control/SA-9)).
 
@@ -39,7 +39,7 @@ Before setting up this service, review [how the CDN works](#more-about-how-the-c
 ## CNAME and ALIAS records
 
 This service requires you to create a CNAME or ALIAS record, and these are slightly different. The exact difference is beyond the scope of this article,
-but what is important to note is that if your domain is an `apex` domain, that is it has only one one dot (e.g. `example.gov`, `my-agency.gov`) you must use
+but what is important to note is that if your domain is an `apex` domain, that is it has only one dot (e.g. `example.gov`, `my-agency.gov`) you must use
 ALIAS records, but not all DNS providers offer ALIAS records. These are limitations in the DNS specification, and not specific to this service. 
 
 
@@ -79,7 +79,7 @@ You can explicitly set the default of forwarding all cookies with the string `"*
 This option lets you configure what headers to forward to your application. [CloudFront preconfigures
 some of these](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior), 
 and unless you are using a custom origin, we set the `Host` header. 
-You can add up to nine additional headers or header patterns, but note that CloudFront considers forwarded headers
+You can add up to nine additional headers or header patterns but note that CloudFront considers forwarded headers
 in its cache calculation, so more unique header combinations will cause more cache misses.
 
 #### error_responses option
@@ -89,7 +89,7 @@ are the path to the custom error page, for example:
 ```
 cf create-service external-domain domain-with-cdn -c '{"domains": "example.gov", "error_responses": {"404": "/errors/404.html", "403": "/login.html"}}
 ```
-Be careful when setting this for 5xx responses: 5xx responses indicate a server error, and setting a custom error response will increase the load on a potentially unhealthy application.
+Be careful when setting this for 5xx responses: 5xx responses indicate a server error and setting a custom error response will increase the load on a potentially unhealthy application.
 
 The default for this setting is `{}`, so errors are passed to the client exactly as the CDN receives them, and you can use the same setting to reset to the default:
 ```
@@ -106,7 +106,7 @@ Note that only these error codes can be customized: 400, 403, 404, 405, 414, 416
    and a record for `_acme-challenge.example.gov.` with value `_acme-challenge.example.gov.external-domains-production.cloud.gov.`. These will be validated upon
    service creation, so be sure to set these up ahead of time.
 
-2. Optional: Complete this step now only for sites that have not yet lauched, or for sites that can withstand downtime. For each of the domains you want to add to
+2. Optional: Complete this step now only for sites that have not yet launched, or for sites that can withstand downtime. For each of the domains you want to add to
    the service, create a DNS CNAME or ALIAS record in the form `${DOMAIN}.external-domains-production.cloud.gov`. For example, if you wanted to set up a service for 
    `www.example.gov` and `example.gov`, you'd create an ALIAS record for `www.example.gov.` with value `www.example.gov.external-domains-production.cloud.gov.` and an
    ALIAS record for `example.gov.` with value `example.gov.external-domains-production.cloud.gov.`
