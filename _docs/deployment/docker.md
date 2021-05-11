@@ -39,7 +39,7 @@ There is [a Cloud Foundry API for tasks creation](http://v3-apidocs.cloudfoundry
 
 ### Using non-standard ports in Docker containers
 
-When you assign a route to an app running on cloud.gov using the `*.app.cloud.gov` domain, external ports 80 and 443 are mapped to a dynamically assigned internal port on the container(s) running your app. You can't change the internal port assigned to your app if it's been assigned an `*.app.cloud.gov` domain, but you can use alternate ports if your app is assigned [an internal route](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html#internal-routes) on cloud.gov. 
+When you assign a route to an app running on cloud.gov using the `*.app.cloud.gov` domain, external ports 80 and 443 are mapped to a dynamically assigned internal port on the container(s) running your app. You can't change the internal port assigned to your app if it's been assigned an `*.app.cloud.gov` domain, but you can use alternate ports if your app is assigned [an internal route](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html#internal-routes) on cloud.gov.
 
 When you deploy a Docker image that has a non-standard port exposed (e.g., port 5000) and assign an internal route to this app, this overrides the dynamic assignment of a default port by cloud.gov and exposes that non-standard port to container-to-container traffic. Your app can't be accessed by external traffic coming from outside the cloud.gov platform, but can be reached by traffic from another application running in your cloud.gov org.
 
@@ -62,7 +62,7 @@ cf push my-spring --docker-image pburkholder/my-springmusic -m 1016M
 
 Then create a database service, bind it, and restage the app to use the database:
 ```
-cf create-service aws-rds shared-psql my-spring-db
+cf create-service aws-rds micro-psql my-spring-db
 cf bind-service my-spring my-spring-db
 cf restage my-spring
 ```

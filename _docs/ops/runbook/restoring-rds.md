@@ -13,8 +13,7 @@ cloud.gov structured data is stored using Amazon's Relational Database Service (
 
 Coordinate with the tenant to determine the point in time to restore the database from, and when the operation will take place:
 
-1. Shared database plans do not include backups and restores.
-1. Dedicated RDS plans include backups as described in the [user documentation]({{ site.baseurl }}{% link _docs/services/relational-database.md %}#backups).
+1. RDS plans include backups as described in the [user documentation]({{ site.baseurl }}{% link _docs/services/relational-database.md %}#backups).
 1. The restore will result in the database being restored to a point in time.
 1. Data written after the restore point in time will be lost.
 
