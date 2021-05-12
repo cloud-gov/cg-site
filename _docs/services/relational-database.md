@@ -214,7 +214,9 @@ RDS automatically retains daily backups for 14 days. These backups are AWS RDS s
 
 If you have an emergency situation, such as data loss or a compromised system, please [email support](mailto:support@cloud.gov) immediately and inform us of the situation.
 
-When you do [contact support](mailto:support@cloud.gov) with a database backup request, please include the following information:
+If you deleted your database instance and want to recover it, the recovery must be done within 14 days of the instance being deleted.  We can perform a restoration using the automated backups that are retained for that 14 day window after a database is removed.
+
+When you do [contact support](mailto:support@cloud.gov) with a database backup or restoration request, please include the following information:
 
 - Your organization name
 - The space you are working within

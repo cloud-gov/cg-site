@@ -100,6 +100,25 @@ Once we receive confirmation that the restore has been completed successfully, w
 
 Work with the tenant to come to a firm agreed upon date and time that the old database instance will be removed.  Be sure to also remind them that no backups or snapshots will be saved either unless they are explicitly requested.
 
+## Recovering a deleted brokered instance
+
+If a brokered database that was deleted needs to be recovered, the automated backups will persist for up to 14 days after the deletion took place.  If a customer reaches out to us and requests help with a backup of this nature, we can restore the instance from one of the snapshots taken prior to the database deleted as long as it is within this 14 day window.
+
+To perform this restore, you need the following information:
+- The deleted database instance ID - this is used to identify which backup needs to be used
+- VPC security group
+- Subnet group
+- Instance class
+- Storage size
+- Parameter group (usually the default, but it may not be)
+- Multi AZ setting
+
+Once you have this information, go into the RDS console in AWS and select `Automated Backups` from the side menu.  In the Automated Backups dashboard that appears, there are two tabs on the top - click on the `Retained` tab to see all backups that exist for deleted instances.
+
+Find the backups that match the database instance ID and click on the name.  You'll be taken to a screen that lists all of the snapshots available.  Find the one you would like to restore from (most likely the last available) and click its name.  This will take you to the snapshot details page, and from there you can perform a point in time restore.  This will create a new database instance using the backup snapshot.
+
+The remaining restoration steps are the same as above in the [Performing the database restore](#performing-the-database-restore) section.  Note that just like the restoration steps above, this creates a new instance and it will not be tied to the broker.
+
 ## Platform Databases
 
 Databases created by Terraform store credentials in the Terraform State S3 Bucket:
