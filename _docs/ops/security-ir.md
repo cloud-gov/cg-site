@@ -7,7 +7,7 @@ title: Security Incident Response Guide
 linktitle: Security IR Guide
 ---
 
-# Cloud.gov
+## Cloud.gov
 
 This document outlines cloud.gov's internal process for responding to security incidents. It outlines roles and responsibilities during and after incidents, and it lays out the steps we'll take to resolve them.
 
@@ -242,7 +242,7 @@ Guidelines for addressing Low-sev issues:
 - Responders should avoid service degradation unless stakeholders agree.
 - Sitreps should be sent approximately daily.
 
-# Federalist
+## Federalist
 
 The Federalist platform service adheres to the [TTS Handbook's security incidents guide](https://handbook.tts.gsa.gov/security-incidents/).
 

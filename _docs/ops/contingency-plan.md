@@ -6,7 +6,7 @@ sidenav: true
 title: Contingency plan
 ---
 
-# Cloud.gov
+## Cloud.gov
 
 This Contingency Plan provides guidance for our team in the case of trouble delivering our essential mission and business functions because of disruption, compromise, or failure of any component of cloud.gov. As a general guideline, we consider "disruption" to mean more than 30 minutes of unexpected downtime or significantly reduced service for customer applications.
 
@@ -182,7 +182,7 @@ This plan is most effective if all core cloud.gov team members know about it, re
 * How we protect this plan from unauthorized modification:
   * This plan is stored in a public GitHub repository ([https://github.com/18F/cg-site](https://github.com/18F/cg-site)) with authorization to modify it limited to 18F staff by GitHub access controls. cloud.gov team policy is that 18F staff may not directly make changes to this document; they must propose a change by making a pull request and ask another team member to review and merge the pull request.
 
-# Federalist
+## Federalist
 
 [This Contingency Plan doc](https://docs.google.com/document/d/1YG6oucagNO_ZmmlsLPdQeFABCiVcY1BYuhDEEvDwe4Q/edit?usp=sharing) provides guidance for our team in the case of trouble delivering our essential mission and business functions due to disruption, compromise, or failure of any system components or services.
 
