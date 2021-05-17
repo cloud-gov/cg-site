@@ -5,15 +5,19 @@
     "build": "bundle exec jekyll build",
     "clean": "bundle exec jekyll clean",
     "reset": "npx rimraf Gemfile.lock package-lock.json LICENSE.md CONTRIBUTING.md degit.json .git",
-    "start": "bundle exec jekyll serve"
+    "start": "bundle exec jekyll serve",
+    "preinstall": "npx npm-force-resolutions"
   },
   "dependencies": {
-    "anchor-js": "^4.3.0",
-    "mermaid": "^8.4.6",
-    "netlify-cms": "^2.10.112",
-    "uswds": "^2.9.0"
+    "anchor-js": "^4.3.1",
+    "mermaid": "^8.10.1",
+    "netlify-cms": "^2.10.126",
+    "uswds": "^2.11.2"
   },
   "devDependencies": {
     "rimraf": "^3.0.2"
+  },
+  "resolutions": {
+    "trim": ">=0.0.3"
   }
 }
