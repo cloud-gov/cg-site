@@ -53,9 +53,9 @@ Or, the following command (using cf cli version 7):
 cf marketplace -e aws-rds
 ```
 
-The dedicated PostgreSQL plans (marked "AWS RDS Latest") deploy the default version as advertised by AWS.  There is currently no way to verify ahead of time the version of PostgreSQL that will be deployed by the cloud.gov broker, but you can check the version once an instance has been created by connecting to that instance using the [cf-service-connect](https://github.com/cloud-gov/cf-service-connect#usage) plugin, and running `SELECT version();` at the psql prompt.
+The dedicated plans listed above (marked "AWS RDS Latest") deploy the default version as advertised by AWS. There is currently no way to verify ahead of time the version of an RDS service that will be deployed by the cloud.gov broker, but you can check the version once an instance has been created by connecting to that instance using the [cf-service-connect](https://github.com/cloud-gov/cf-service-connect#usage) plugin, and running `SELECT version();` at the psql prompt.
 
-Note that you can also look at the [AWS RDS PostgreSQL User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html), but it often lists versions that are not yet available on AWS GovCloud.
+Note that you can also look at the AWS RDS User Guides for [PostgreSQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions), [MySQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html), and [Oracle](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Oracle.html) for version information, but these documents sometimes lists versions that are not yet available on AWS GovCloud.
 
 *Additional Cost:* All databases have a limit of 1TB in storage. After 1TB, each additional terabyte will cost $300 per month.
 
