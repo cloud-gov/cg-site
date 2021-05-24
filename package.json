@@ -5,8 +5,7 @@
     "build": "bundle exec jekyll build",
     "clean": "bundle exec jekyll clean",
     "reset": "npx rimraf Gemfile.lock package-lock.json LICENSE.md CONTRIBUTING.md degit.json .git",
-    "start": "bundle exec jekyll serve",
-    "preinstall": "npx npm-force-resolutions"
+    "start": "bundle exec jekyll serve"
   },
   "dependencies": {
     "anchor-js": "^4.3.1",
@@ -16,8 +15,5 @@
   },
   "devDependencies": {
     "rimraf": "^3.0.2"
-  },
-  "resolutions": {
-    "trim": ">=0.0.3"
   }
 }
