@@ -113,3 +113,7 @@ If you use a cloud.gov account (instead of using an agency single sign-on accoun
 Access to systems and networks owned by cloud.gov is governed by, and subject to, all federal laws, including, but not limited to, the Privacy Act, 5 U.S.C. 552a, if the applicable cloud.gov system maintains individual Privacy Act information. Access to cloud.gov systems constitutes consent to the retrieval and disclosure of the information within the scope of your authorized access, subject to the Privacy Act, and applicable state and federal laws.
 
 Please contact [cloud.gov support]({{ site.baseurl }}/docs/help/) if you have questions about these rules or don't understand them.
+
+## Trouble logging in
+
+If you are a GSA employee encountering issues logging into cloud.gov, please refer to [this knowledge base article](/knowledge-base/2021-05-24-secureauth-issues/) for more information.
