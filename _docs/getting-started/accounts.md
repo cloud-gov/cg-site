@@ -116,4 +116,4 @@ Please contact [cloud.gov support]({{ site.baseurl }}/docs/help/) if you have qu
 
 ## Trouble logging in
 
-If you are a GSA employee encountering issues logging into cloud.gov, please refer to [this knowledge base article](/knowledge-base/2021-05-24-secureauth-issues/) for more information.
+If you are a GSA employee encountering issues logging into cloud.gov, please refer to [this knowledge base article]({{ site.baseurl }}/knowledge-base/2021-05-24-secureauth-issues/) for more information.

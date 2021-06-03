@@ -47,7 +47,7 @@ When using the `medium` and `medium-ha` plans, please read [Scalability and resi
 
 ### Connecting to your service instance
 
-If you need to directly access your service instance from your local environment, please read [this knowledge base article](/knowledge-base/2021-05-20-connecting-to-brokered-service-instances/) for more information.
+If you need to directly access your service instance from your local environment, please read [this knowledge base article]({{ site.baseurl }}/knowledge-base/2021-05-20-connecting-to-brokered-service-instances/) for more information.
 
 ## Managing backups
 

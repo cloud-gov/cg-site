@@ -57,4 +57,4 @@ By default, `cf push` will deploy the working state of all the files you have in
 
 ## Troubleshooting buildpack issues
 
-If you experience issues with your app that you believe might be buildpack related, please refer to [this knowledge base article](/knowledge-base/2021-05-20-managing-buildpack-changes/) for more information.
+If you experience issues with your app that you believe might be buildpack related, please refer to [this knowledge base article]({{ site.baseurl }}/knowledge-base/2021-05-20-managing-buildpack-changes/) for more information.

@@ -38,4 +38,4 @@ Application containers use the SSH-2.0 protocol. The SSH service uses the [Cloud
 
 ## Troubleshooting SSH issues
 
-If you are having trouble connecting to your application via SSH, [please refer to this knowledge base article](/knowledge-base/2021-05-17-troubleshooting-ssh-connections/).
+If you are having trouble connecting to your application via SSH, [please refer to this knowledge base article]({{ site.baseurl }}/knowledge-base/2021-05-17-troubleshooting-ssh-connections/).
