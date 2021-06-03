@@ -3,9 +3,15 @@
   description: "Persistent, relational databases using Amazon RDS" 
   status: "Production"
   source-code: https://github.com/cloud-gov/aws-broker
+- name: aws-elasticache
+  description: AWS ElastiCache Redis 5.0.6 as a service
+  status: Production
+- name: aws-elasticsearch
+  description: AWS Elasticsearch 7.4 as a service 
+  status: Production
 - name: cdn-route
   description: "Custom domains, CDN caching, and TLS certificates with automatic renewal"
-  status: "Production"
+  status: "Deprecated"
   source-code: https://github.com/cloud-gov/cf-cdn-service-broker
 - name: external-domain-service
   description: "Custom domains and TLS certificates with automatic renewal"
@@ -13,7 +19,7 @@
   source-code: https://github.com/cloud-gov/external-domain-broker
 - name: cloud-gov-identity-provider
   description: "Authenticate cloud.gov users in your app"
-  status:  "Beta"
+  status:  "Production"
   source-code: https://github.com/cloudfoundry-community/uaa-credentials-broker
 - name: cloud-gov-service-account
   description: "cloud.gov service accounts for automated access by programs"
