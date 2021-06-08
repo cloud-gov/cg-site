@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Changes to the Staticfile and NGINX Buildpack"
+title: "Changes to the Staticfile and NGINX Buildpacks"
 date: May 26, 2021
 excerpt: Certain versions of NGINX will be removed in upcoming releases of the Cloud Foundry Staticfile and NGINX buildpacks.
 ---
