@@ -38,7 +38,7 @@ Here's an example of a control breakdown for a simple moderate-impact system hos
 
 {% asset fedramp-moderate-controls-new.png alt="Graphic showing the breakdown of how many controls are fully covered by cloud.gov." %}
 
-The [**Control Implementation Summary + Customer Responsibility Matrix + Control-by-Control Inheritance (.xlsx)**]({{ site.baseurl }}/resources/cloud.gov-CIS-Worksheet.xlsx) (last updated March 14, 2021) is a summary of each Low and Moderate security control and whether it is handled by cloud.gov, shared responsibility, or customer responsibility. It includes guidance on which controls a customer system can fully or partially inherit from cloud.gov.
+The [**Control Implementation Summary (CIS) + Customer Responsibility Matrix (CRM) + Control-by-Control Inheritance (.xlsx)**]({{ site.baseurl }}/resources/cloud.gov-CIS-Worksheet.xlsx) (last updated March 14, 2021) is a summary of each Low and Moderate security control and whether it is handled by cloud.gov, shared responsibility, or customer responsibility. It includes guidance on which controls a customer system can fully or partially inherit from cloud.gov.
 
 ## Start the ATO process
 
