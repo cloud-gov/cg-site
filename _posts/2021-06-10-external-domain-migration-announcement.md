@@ -20,13 +20,20 @@ migrate instances automatically without service interruption, but it does requir
 ## What you need to do
 
 The new external-domain service uses a different method of validation with Let's Encrypt, which relies on specific DNS records being created on
-your part. To begin the migration, we need you to create 2 DNS CNAME records for each domain on your custom-domain or cdn-route instances. The first
-CNAME should created for the record `_acme-challenge.$DOMAIN` and should have the value `_acme-challenge.$DOMAIN.external-domains-production.cloud.gov`.
-In other words, if you have a custom-domain service created for `directorate.agency.gov`, you'd want to create a CNAME record
-`_acme-challenge.directorate.agency.gov` with value `_acme-challenge.directorate.agency.gov.external-domains-production.cloud.gov`. The second CNAME
-should be for `$DOMAIN` and should point to `$DOMAIN.external-domains-production.cloud.gov`. Using the `directorate.agency.gov` example above, this 
-would be `directorate.agency.cloud.gov.external-domains-production.cloud.gov`.
-Note that the second change here changes how users get to your site.  We've made every effort to validate we're prepared for this change, but
-you're encouraged to validate that `$DOMAIN.external-domains-production.cloud.gov` currently resolves before making this change. You can do this
-by directly comparing the outputs of `nslookup $DOMAIN` and `nslookup $DOMAIN.external-domains-production.cloud.gov`, or by modifying your `hosts` file
-to point `$DOMAIN` to one of the IP addresses `$DOMAIN.external-domains-production.cloud.gov` currently resolves to
+your part. To begin the migration, we need you to create 2 DNS CNAME records for each domain on your custom-domain or cdn-route instances.
+
+The first CNAME should created for the record `_acme-challenge.$DOMAIN` and should have the value
+`_acme-challenge.$DOMAIN.external-domains-production.cloud.gov`.  In other words, if you have a custom-domain service created for
+`directorate.agency.gov`, you'd want to create a CNAME record `_acme-challenge.directorate.agency.gov` with value
+`_acme-challenge.directorate.agency.gov.external-domains-production.cloud.gov`.
+
+The second CNAME should be for `$DOMAIN` and should point to `$DOMAIN.external-domains-production.cloud.gov`.  Using the `directorate.agency.gov`
+example above, this would be `directorate.agency.cloud.gov.external-domains-production.cloud.gov`.  Note that the second change here changes how
+users get to your site.  We've made every effort to validate we're prepared for this change, but you're encouraged to validate that
+`$DOMAIN.external-domains-production.cloud.gov` currently resolves before making this change. You can do this by directly comparing the outputs
+of `nslookup $DOMAIN` and `nslookup $DOMAIN.external-domains-production.cloud.gov`, or by modifying your `hosts` file to point `$DOMAIN` to one
+of the IP addresses `$DOMAIN.external-domains-production.cloud.gov` currently resolves to. If either of these tests fail, STOP, do not update
+your DNS, and contact cloud.gov support for assistance.
+
+
+Customers that experience issues, or that have questions about this change, can send a request to support@cloud.gov.
