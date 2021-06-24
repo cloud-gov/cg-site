@@ -3,6 +3,7 @@ layout: wide
 permalink: /knowledge-base/
 pagination:
   enabled: true
+  collection: kbarticles
 ---
 
 <div id="blog" class="usa-graphic-list usa-section usa-section--dark sign-up-intro">
@@ -14,7 +15,7 @@ pagination:
   <div class="grid-row">
     <div class="desktop:grid-col-8 usa-prose padding-right-4">
       <!-- This loops through the paginated posts -->
-      {% for kb in site.kbarticles %}
+      {% for kb in paginator.posts %}
       <div
         class="padding-bottom-5 margin-top-4 usa-prose border-bottom-05 border-base-lightest usa-content"
       >
@@ -38,6 +39,9 @@ pagination:
         </div>
       </div>
       {% endfor %}
+
+      <!-- Pagination links -->
+      {%- include pagination-links.html -%}
     </div>
 
   </div>

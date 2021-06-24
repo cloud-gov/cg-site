@@ -1,0 +1,35 @@
+<div class="grid-row padding-top-2">
+  <div
+    class="tablet:grid-col-4 text-center tablet:order-2 font-body-xs text-base"
+  >
+    Page {{ paginator.page }} of {{ paginator.total_pages }}
+  </div>
+  <div class="tablet:grid-col-4 text-right tablet:order-3">
+    {% if paginator.next_page %}
+    <a
+      href="{{ paginator.next_page_path | prepend: site.baseurl }}"
+      class="paginate-link usa-link font-family-ui text-no-underline text-bold tablet:margin-top-0"
+      >Next {{ paginator.per_page }} Posts &rsaquo;</a
+    >
+    <a
+      href="{{ paginator.next_page_path | prepend: site.baseurl }}"
+      class="paginate-button usa-button margin-top-3 font-family-ui"
+      >Next {{ paginator.per_page }} Posts &rsaquo;</a
+    >
+    {% endif %}
+  </div>
+  <div class="tablet:grid-col-4 text-left tablet:order-1">
+    {% if paginator.previous_page %}
+    <a
+      href="{{ paginator.previous_page_path | prepend: site.baseurl }}"
+      class="paginate-link usa-link font-family-ui text-no-underline tablet:margin-top-0"
+      >&lsaquo; Previous {{ paginator.per_page }} Posts</a
+    >
+    <a
+      href="{{ paginator.previous_page_path | prepend: site.baseurl }}"
+      class="paginate-button font-family-ui usa-button margin-top-2"
+      >&lsaquo; Previous {{ paginator.per_page }} Posts</a
+    >
+    {% endif %}
+  </div>
+</div>
