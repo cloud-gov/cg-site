@@ -280,7 +280,7 @@ title: cloud.gov Pages
           <a href="{{site.baseurl}}/assets/pages/documents/Federalist-Proposal.pdf"><img alt="Federalist Proposal Thumbnail" src="{{site.baseurl}}/assets/pages/images/home-page/Federalist-Proposal-Thumbnail.png" class="pages-card"></a>
         </div>
         <figcaption>
-          <h6>Federalist proposal</h6>
+          <h4>Federalist proposal</h4>
           <p class="small">A two-page overview about Federalist for stakeholder briefings.</p>
           <a href="{{site.baseurl}}/assets/pages/documents/Federalist-Proposal.pdf">Download PDF</a>
         </figcaption>
@@ -294,7 +294,7 @@ title: cloud.gov Pages
           </a>
         </div>
         <figcaption>
-          <h6>Federalist basic diagram</h6>
+          <h4>Federalist basic diagram</h4>
           <p class="small">An outline of how all of Federalist’s parts work together.</p>
           <a href="{{site.baseurl}}/assets/pages/documents/how-federalist-works-diagram.pdf">Download PDF</a>
         </figcaption>
@@ -306,7 +306,7 @@ title: cloud.gov Pages
           <a href="{{site.baseurl}}/assets/pages/documents/Federalist-Compliance-Memo.pdf"><img alt="Compliance Thumbnail" src="{{site.baseurl}}/assets/pages/images/home-page/Federalist-Compliance-Memo-Thumbnail.jpg" class="pages-card"></a>
         </div>
         <figcaption>
-          <h6>Compliance memo & extension</h6>
+          <h4>Compliance memo & extension</h4>
           <p class="small">Details about Federalist’s compliance and Authority to Operate.</p>
           <a href="{{site.baseurl}}/assets/pages/documents/Federalist-Compliance-Memo.pdf">Download PDF</a>
           <p class="small">Federalist’s compliance and Authority to Operate extension.</p>
