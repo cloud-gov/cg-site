@@ -80,6 +80,8 @@ primary_navigation:
       url: /docs/ops/repos/
   - name: News
     url: /news/
+  - name: Knowledge base
+    url: /knowledge-base/
   - name: Contact us
     url: /contact/
 
@@ -176,6 +178,9 @@ collections:
   docs:
     output: true
     permalink: /:collection/:path/
+  kbarticles:
+    output: true
+    permalink: /knowledge-base/:path/
 
 
 permalink: pretty
