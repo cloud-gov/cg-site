@@ -19,4 +19,4 @@ Things you can check:
 
 * You can try clearing all cache and cookies, restart your browser, and retry logging in.
 
-If these steps don't work, [GSA also has a tool that can clear these items](https://secureauth.gsa.gov/secureauth2/cleancert.aspx). Note - if you are a Mac user, this site will only works in Safari.
+If these steps don't work, [GSA also has a tool that can clear these items](https://secureauth.gsa.gov/secureauth2/cleancert.aspx). Note - if you are a Mac user, this site will only work in Safari.
