@@ -54,6 +54,8 @@ primary_navigation:
         url: /docs/technology/responsibilities/
       - name: Our team
         url: /docs/overview/cloudgov-team/
+  - name: Get started
+    url: /sign-up/
   - name: Pricing
     key: pricing
     children:
@@ -68,8 +70,6 @@ primary_navigation:
   - name: Documentation
     key: docs
     children:
-    - name: Get started
-      url: /sign-up/
     - name: Deploying apps
       url: /docs/deployment/deployment/
     - name: Managing apps
