@@ -15,7 +15,7 @@ The custom-domain and cdn-route services leverage Let's Encrypt to provision cer
 Several months ago, Let's Encrypt announced that they're deprecating their v1 API. To work with their new API, we've written a replacement
 to the cdn-route and custom-domain services, the external-domain service. We now need to migrate your service instances
 to the new service to ensure their certificates can continue renewing without issue. To accomplish this, we've written internal tooling to
-migrate instances automatically without service interruption, but it does require some action on your part to intiate the migration.
+migrate instances automatically without service interruption, but it does require some action on your part to initiate the migration.
 
 ## What you need to do
 
