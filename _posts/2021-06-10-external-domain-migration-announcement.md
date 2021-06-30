@@ -22,15 +22,16 @@ migrate instances automatically without service interruption, but it does requir
 The new external-domain service uses a different method of validation with Let's Encrypt. The new method relies on specific DNS records being created on
 your part. To begin the migration, we need you to create 2 DNS CNAME records for each domain on your custom-domain or cdn-route instances.
 
-The first CNAME should be created for the record allows us to provision SSL certificates on your behalf.
-This record is for the name `_acme-challenge.$DOMAIN` and should have the value `_acme-challenge.$DOMAIN.external-domains-production.cloud.gov`.
+| Type  | Name                      | Value                                                           |
+|-------|---------------------------|-----------------------------------------------------------------|
+| CNAME | `_acme-challenge.$DOMAIN` | `_acme-challenge.$DOMAIN.external-domains-production.cloud.gov` |
+| CNAME | `$DOMAIN`                 | `$DOMAIN.external-domains-production.cloud.gov`                 |
 
-In other words, if you have a custom-domain service created for `directorate.agency.gov`, you'd want to create a CNAME record `_acme-challenge.directorate.agency.gov` with value `_acme-challenge.directorate.agency.gov.external-domains-production.cloud.gov`.
+The `_acme-challenge.$DOMAIN` CNAME record allows us to provision SSL certificates on your behalf.
 
-The second CNAME routes the user traffic to your site. It should be for `$DOMAIN` and should point to `$DOMAIN.external-domains-production.cloud.gov`.
+As an example, if you have a custom-domain service created for `directorate.agency.gov`, you'd want to create a CNAME record `_acme-challenge.directorate.agency.gov` with value `_acme-challenge.directorate.agency.gov.external-domains-production.cloud.gov`.
 
-Using the `directorate.agency.gov` example above, this would be
-`directorate.agency.cloud.gov.external-domains-production.cloud.gov`.
+The `$DOMAIN` CNAME is responsible for routing the user traffic to your site.  Using the `directorate.agency.gov` example above, this would be `directorate.agency.gov.external-domains-production.cloud.gov`.
 
 Note that the second update here changes how users get to your site.
 We've made every effort to validate we're prepared for this change, but you should confirm that
