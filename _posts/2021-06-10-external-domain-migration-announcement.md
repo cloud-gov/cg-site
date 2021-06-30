@@ -22,7 +22,7 @@ migrate instances automatically without service interruption, but it does requir
 The new external-domain service uses a different method of validation with Let's Encrypt. The new method relies on specific DNS records being created on
 your part. To begin the migration, we need you to create 2 DNS CNAME records for each domain on your custom-domain or cdn-route instances.
 
-The first CNAME should created for the record allows us to provision SSL certificates on your behalf.
+The first CNAME should be created for the record allows us to provision SSL certificates on your behalf.
 This record is for the name `_acme-challenge.$DOMAIN` and should have the value `_acme-challenge.$DOMAIN.external-domains-production.cloud.gov`.
 
 In other words, if you have a custom-domain service created for `directorate.agency.gov`, you'd want to create a CNAME record `_acme-challenge.directorate.agency.gov` with value `_acme-challenge.directorate.agency.gov.external-domains-production.cloud.gov`.
