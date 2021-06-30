@@ -44,4 +44,21 @@ currently resolves to. If either of these tests fail, STOP, do not update
 your DNS, and contact cloud.gov support for assistance.
 
 
+## What to expect
+
+### During the migration
+
+The migration will *not* cause:
+- downtime 
+- interruption to your services
+- change in functionality or configuration to your services
+
+During the migration, you may see a new service instance with a name you do not recognize in your space(s).
+
+### After the migration
+
+After the migration, your service instance(s) will have a new instance ID, so any references to your service
+instance ID will need to be updated.
+Additionally, your service instance(s) will be of a different service (`external-domain`) and plan (`domain` or `domain-with-cdn`, depending on your current instance type).
+
 Customers that experience issues, or that have questions about this change, can send a request to support@cloud.gov.
