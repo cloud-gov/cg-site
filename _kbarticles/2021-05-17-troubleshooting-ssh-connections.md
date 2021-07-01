@@ -33,7 +33,13 @@ If you are still experiencing trouble connecting to your app using SSH, it may b
 
 If a modification or update was made to an app using a v3 command or process - even if that change was made by someone else (e.g., another member of a development team) - the app’s schema in the Cloud Controller might have changed to version 3, and a standard cf ssh may no longer work. 
 
-If this occurs and you are using v6 of the `cf` CLI, you can try using `cf v3-ssh {app-name}`. By default a cf v3-ssh will select the `web` process. You can also select a different process if needed with v3-ssh using the `--process` flag.
+#### Using v6 of the cf CLI
+
+If this occurs and you are using v6 of the `cf` CLI, you can try using `cf v3-ssh {app-name}`. By default a cf v3-ssh will select the `web` process. You can also select a different process if needed with v3-ssh using the `--process` flag. 
+
+You may also want to upgrade your version of the CLI tool. [v7 of this tool](https://github.com/cloudfoundry/cli/wiki/V7-CLI-Installation-Guide) automatically connects to the `web` process.
+
+#### Using other utilities
 
 If you need to use a tool like `scp` or a native `ssh` utility to connect to your application instance, you may need to take a slightly different approach. You want to obtain the GUID for the **web** process for your application.
 
