@@ -11,7 +11,7 @@ title: cloud.gov Pages
       <h1>There’s no easier way to build, launch and manage government sites.</h1>
     </div>
   
-    <div class="tablet:grid-col-4 usa-prose bar-top">
+    <div class="tablet:grid-col-4 usa-prose margin-top-5">
         <h3>Trusted and Scalable</h3>
         <p class="pages-arrow"><b>134</b> production .gov sites</p>
         <p class="pages-arrow"><b>9</b> federal agencies</p>

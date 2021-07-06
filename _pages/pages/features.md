@@ -5,11 +5,10 @@ title: cloud.gov Pages - Features
 ---
 
 <section class="usa-section">
-  <!-- <div class="site-welcome"> -->
     <div class="grid-row grid-gap">
-      <div class="tablet:grid-col-8 margin-bottom-6">
-        <h2>Less Work.</h2>
-        <h2>More Federalist.</h2>
+      <div class="tablet:grid-col-8 margin-bottom-6 site-welcome">
+        <h1>Less Work.</h1>
+        <h1>More Federalist.</h1>
         <p class="usa-intro">We’ve taken the work out of launching a compliant federal website.</p>
       </div>
       <div class="tablet:grid-col-4 usa-section--dark">
@@ -18,7 +17,6 @@ title: cloud.gov Pages - Features
         <p><a class="usa-button" href="mailto:federalist-inquiries@gsa.gov?body=What%27s%20your%20name%3F%0A%0AWhat%20agency%20or%20office%20do%20you%20work%20for%3F%0A%0AWhat%27s%20your%20job%20title%20or%20role%3F%0A%0ATell%20us%20a%20little%20about%20your%20website%20project%20or%20your%20questions%20about%20federalist:%0A%0AIf%20you%27d%20like%20us%20to%20call%20you%2C%20what%27s%20your%20phone%20number%20and%20when%20might%20be%20a%20good%20time%3F%0A"> Get in touch</a></p>
       </div>
     </div>
-  <!-- </div> -->
 </section>
 <hr />
 <section class="usa-graphic-list usa-section">
