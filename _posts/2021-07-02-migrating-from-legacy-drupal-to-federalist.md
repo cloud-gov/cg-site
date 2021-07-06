@@ -68,10 +68,10 @@ Migrating from Drupal to Federalist will be different for each agency using Drup
 
 Before migrating, there are a number of factors you should take into consideration.
 
-* Content inventory (for any necessary redirects)
-* List of current enabled modules
-* Modules can provide added functionality that you want to make sure you have accounted for.
-* Some modules (ex: paragraphs) can add extra markup. Make sure you have accounted for this.
+* You may need to conduct a content inventory so you'll know what materials you currently have, and what you need to migrate over
+* Check your list of current enabled modules, to see if any provide functionality critical to your site 
+    - Modules can provide added functionality that you want to make sure you have accounted for.
+    - Some modules (ex: paragraphs) can add extra markup. Make sure you have accounted for this.
 * Plan for taxonomic structure (11ty / netlify / static CMSs almost all have tagging structure)
 * Update any in-content links to new links
 * Migrating users, permissions, etc.
@@ -80,7 +80,7 @@ Before migrating, there are a number of factors you should take into considerati
 
 ## Find out more 
 
-The cloud.gov and Federalist team is ready to help you as you evaluate your options for current Drupal 7 and 8 websites. Questions or inquiries can be sent to [federalist-inquiries@gsa.gov](federalist-inquiries@gsa.gov).
+The cloud.gov and Federalist team is ready to help you as you evaluate your options for current Drupal 7 and 8 websites. 
 
 In addition, the following resources are also available for agencies:
 
@@ -93,3 +93,5 @@ In addition, the following resources are also available for agencies:
 * Drupal export / migration tools:
     - [Markdown Exporter](https://www.drupal.org/project/markdown_exporter) 
     - [Migrate Git](https://www.drupal.org/project/migrate_git)
+
+Questions or inquiries can be sent to [federalist-inquiries@gsa.gov](federalist-inquiries@gsa.gov).
