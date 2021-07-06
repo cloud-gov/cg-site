@@ -33,7 +33,7 @@ title: cloud.gov Pages
   <div class="grid-row grid-gap">
     <h2>How it works?</h2>
   </div>
-  <div class="grid-row">
+  <div class="grid-row bg-accent-warm-light">
     <div class="grid-col-4">
         <figure class="figure">
           <figcaption>
