@@ -9,9 +9,9 @@ excerpt: "With the end of life dates for Drupal versions 7 and 8 fast approachin
 
 Drupal is a commonly used content management system (CMS) in the Federal government. Many existing Drupal sites are still using older, outdated versions of the CMS and site owners may be facing challenges with upgrading to the latest version. In addition, because Drupal is a multi-tiered web application, it has multiple components that must be managed and maintained, adding to complexity and support costs.
 
-With the [end of life dates for Drupal versions 7 and 8 fast approaching](https://www.drupal.org/psa-2020-06-24), Drupal site owners should understand the options they have for migrating to new, simplified, more modern web platforms. This tech talk will discuss migrating from Drupal to the Federalist platform, and will run through a simple example of how such a migration can be accomplished.
+With the [end of life dates for Drupal versions 7 and 8 fast approaching](https://www.drupal.org/psa-2020-06-24), Drupal site owners should understand the options they have for migrating to new, simplified, more modern web platforms. This post will discuss migrating from Drupal to the Federalist platform, and will run through a simple example of how such a migration can be accomplished.
 
-This tech talk will demonstrate how to use some of the commonly available Drupal migration tools to export content from a legacy Drupal site and import the content to a new Federalist starter template. We will discuss some of the issues that Drupal site owners should evaluate when considering a migration to a new platform.
+This post will demonstrate how to use some of the commonly available Drupal migration tools to export content from a legacy Drupal site and import the content to a new Federalist starter template. We will discuss some of the issues that Drupal site owners should evaluate when considering a migration to a new platform.
 
 ## Drupal 7 / 8 end of life
 
