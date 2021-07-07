@@ -9,7 +9,7 @@ excerpt: "With the end of life dates for Drupal versions 7 and 8 fast approachin
 
 Drupal is a commonly used content management system (CMS) in the Federal government. Many existing Drupal sites are still using older, outdated versions of the CMS and site owners may be facing challenges with upgrading to the latest version. In addition, because Drupal is a multi-tiered web application, it has multiple components that must be managed and maintained, adding to complexity and support costs.
 
-With the [end of life dates for Drupal versions 7 and 8 fast approaching](https://www.drupal.org/psa-2020-06-24), Drupal site owners should understand the options they have for migrating to new, simplified, more modern web platforms. This post will discuss migrating from Drupal to the Federalist platform, and will run through a simple example of how such a migration can be accomplished.
+With the [end of life dates for Drupal versions 7 and 8 fast approaching](https://www.drupal.org/psa-2020-06-24){:target="_blank"}, Drupal site owners should understand the options they have for migrating to new, simplified, more modern web platforms. This post will discuss migrating from Drupal to the Federalist platform, and will run through a simple example of how such a migration can be accomplished.
 
 This post will demonstrate how to use some of the commonly available Drupal migration tools to export content from a legacy Drupal site and import the content to a new Federalist starter template. We will discuss some of the issues that Drupal site owners should evaluate when considering a migration to a new platform.
 
@@ -17,7 +17,7 @@ This post will demonstrate how to use some of the commonly available Drupal migr
 
 The end of life date for both Drupal 7 and 8 is fast approaching. Drupal 8 wil reach it's scheduled end of life on November 2, 2021. Drupal 7 wil reach it's scheduled end of life on November 28, 2022 (after being extended for a period of about 1 year).
 
-As the challenges and work required to upgrade to the latest version of Drupal are considered by agencies, other platform options may also be evaluated. One potential option for current Drupal users is the [Federalist platform](https://federalist.18f.gov/) (soon to be renamed to [cloud.gov Pages](https://federalist.18f.gov/cloud-gov-pages/)).
+As the challenges and work required to upgrade to the latest version of Drupal are considered by agencies, other platform options may also be evaluated. One potential option for current Drupal users is the [Federalist platform](https://federalist.18f.gov/){:target="_blank"} (soon to be renamed to [cloud.gov Pages](https://federalist.18f.gov/cloud-gov-pages/)){:target="_blank"}.
 
 ## What is Federalist?
 
@@ -84,14 +84,14 @@ The cloud.gov and Federalist team is ready to help you as you evaluate your opti
 
 In addition, the following resources are also available for agencies:
 
-* [Federalist](https://federalist.18f.gov/)
+* [Federalist](https://federalist.18f.gov/){:target="_blank"}
 * Static site generators
-    - [Tome](https://tome.fyi/) 
-    - [Netlify](ttps://www.netlify.com/) 
-    - [Hugo](https://gohugo.io/) 
-    - [Gatsby](https://www.gatsbyjs.com/) 
+    - [Tome](https://tome.fyi/){:target="_blank"}
+    - [Netlify](ttps://www.netlify.com/){:target="_blank"} 
+    - [Hugo](https://gohugo.io/){:target="_blank"} 
+    - [Gatsby](https://www.gatsbyjs.com/){:target="_blank"} 
 * Drupal export / migration tools:
-    - [Markdown Exporter](https://www.drupal.org/project/markdown_exporter) 
-    - [Migrate Git](https://www.drupal.org/project/migrate_git)
+    - [Markdown Exporter](https://www.drupal.org/project/markdown_exporter){:target="_blank"} 
+    - [Migrate Git](https://www.drupal.org/project/migrate_git){:target="_blank"}
 
 Questions or inquiries can be sent to [federalist-inquiries@gsa.gov](federalist-inquiries@gsa.gov).
