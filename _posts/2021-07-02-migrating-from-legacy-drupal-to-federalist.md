@@ -17,7 +17,7 @@ This post will demonstrate how to use some of the commonly available Drupal migr
 
 The end of life date for both Drupal 7 and 8 is fast approaching. Drupal 8 wil reach it's scheduled end of life on November 2, 2021. Drupal 7 wil reach it's scheduled end of life on November 28, 2022 (after being extended for a period of about 1 year).
 
-As the challenges and work required to upgrade to the latest version of Drupal are considered by agencies, other platform options may also be evaluated. One potential option for current Drupal users is the [Federalist platform](https://federalist.18f.gov/){:target="_blank"} (soon to be renamed to [cloud.gov Pages](https://federalist.18f.gov/cloud-gov-pages/)){:target="_blank"}.
+As the challenges and work required to upgrade to the latest version of Drupal are considered by agencies, other platform options may also be evaluated. One potential option for current Drupal users is the [Federalist platform](https://federalist.18f.gov/){:target="_blank"} (soon to be renamed to [cloud.gov Pages](https://federalist.18f.gov/cloud-gov-pages/){:target="_blank"}).
 
 ## What is Federalist?
 
@@ -87,11 +87,11 @@ In addition, the following resources are also available for agencies:
 * [Federalist](https://federalist.18f.gov/){:target="_blank"}
 * Static site generators
     - [Tome](https://tome.fyi/){:target="_blank"}
-    - [Netlify](ttps://www.netlify.com/){:target="_blank"} 
+    - [Netlify](https://www.netlify.com/){:target="_blank"} 
     - [Hugo](https://gohugo.io/){:target="_blank"} 
     - [Gatsby](https://www.gatsbyjs.com/){:target="_blank"} 
 * Drupal export / migration tools:
     - [Markdown Exporter](https://www.drupal.org/project/markdown_exporter){:target="_blank"} 
     - [Migrate Git](https://www.drupal.org/project/migrate_git){:target="_blank"}
 
-Questions or inquiries can be sent to [federalist-inquiries@gsa.gov](federalist-inquiries@gsa.gov).
+Questions or inquiries can be sent to [federalist-inquiries@gsa.gov](mailto:federalist-inquiries@gsa.gov).
