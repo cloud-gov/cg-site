@@ -19,8 +19,7 @@ migrate instances automatically without service interruption, but it does requir
 
 ## What you need to do
 
-The new external-domain service uses a different method of validation with Let's Encrypt. The new method relies on specific DNS records being created on
-your part. To begin the migration, we need you to create 2 DNS CNAME records for each domain on your custom-domain or cdn-route instances.
+The new external-domain service uses a different method of validation with Let's Encrypt. The new method relies on specific DNS records being created for your domain(s). To begin the migration, you need to create 2 DNS CNAME records for each domain on your custom-domain or cdn-route instances.
 
 | Type  | Name                      | Value                                                           |
 |-------|---------------------------|-----------------------------------------------------------------|
@@ -40,7 +39,7 @@ We've made every effort to validate we're prepared for this change, but you shou
 You can do this by directly comparing the outputs of `nslookup $DOMAIN` and
 `nslookup $DOMAIN.external-domains-production.cloud.gov`, or by modifying your `hosts` file
 to point `$DOMAIN` to one of the IP addresses `$DOMAIN.external-domains-production.cloud.gov`
-currently resolves to. If either of these tests fail, STOP, do not update
+currently resolves to. **If either of these tests fail, _STOP_ and do not update**
 your DNS, and contact cloud.gov support for assistance.
 
 
