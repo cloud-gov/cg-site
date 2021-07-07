@@ -19,7 +19,7 @@ migrate instances automatically without service interruption, but it does requir
 
 ## What you need to do
 
-The new external-domain service uses a different method of validation with Let's Encrypt. The new method relies on specific DNS records being created for your domain(s). To begin the migration, you need to create 2 DNS CNAME records for each domain on your custom-domain or cdn-route instances.
+The new external-domain service uses a different method of validation with Let's Encrypt. The new method relies on specific DNS records being present for each of your domains. To begin the migration, you need to have configured the following DNS records for each domain on your custom-domain or cdn-route instances.
 
 | Type  | Name                      | Value                                                           |
 |-------|---------------------------|-----------------------------------------------------------------|
