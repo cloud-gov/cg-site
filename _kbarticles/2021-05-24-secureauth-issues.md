@@ -29,6 +29,7 @@ For users that log in with the cloud.gov IDP, if a user hasn't logged in in 90 d
 
 Some things you can try:
 
+* Clear your browser cookies and cache, and try again.
 * If you think you have logged in during the previous 90 days, you can try a [password reset](https://cloud.gov/docs/getting-started/accounts/).
 * If you think your account may have been deactivated, you can check your spam folder in the event that the notice was inadvertently routed there.
 
