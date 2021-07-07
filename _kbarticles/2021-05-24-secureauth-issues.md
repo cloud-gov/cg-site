@@ -25,7 +25,7 @@ If these steps don't work, [GSA also has a tool that can clear these items](http
 
 ## If you are using the cloud.gov identity provider (IDP)
 
-For users that log in with the cloud.gov IDP, if a user hasn't logged in in 90 days their account will be deactivated for security purposes. You should receive an email notice when a deactivation is imminent. 
+For users that log in with the cloud.gov IDP, if a user hasn't logged in in 90 days their account will be deactivated for security purposes. You should receive an email notice when a deactivation is imminent, and you may experience receiving SAML errors when logging in (even after a password reset).
 
 Some things you can try:
 
@@ -33,4 +33,3 @@ Some things you can try:
 * If you think your account may have been deactivated, you can check your spam folder in the event that the notice was inadvertently routed there.
 
 If your account was deactivated because of inactivity, your org manager must request a reactivation of your user account. Have your org manager send a request to [support@cloud.gov](mailto:support@cloud.gov) with the name and email address for the account that needs to be reactivated.
-
