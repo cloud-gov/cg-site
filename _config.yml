@@ -152,6 +152,23 @@ documentation_navigation:
       identifier: "design"
       parent: "ops"
 
+pages_primary_navigation:
+  - name: Features
+    url: /pages/features/
+  - name: Success Stories
+    url: /pages/success-stories/
+  - name: Documentation
+    url: /pages/documentation/
+  - name: Pricing
+    url: /pages/pricing/
+  - name: Contact
+    url: /pages/contact/
+    # Look inside assets/js/index.js to see that how this url changes depending on enviroment
+pages_secondary_navigation:
+  - name: Platform Status
+    url: https://federalist.statuspage.io
+  - name: Login
+    url: https://federalistapp.18f.gov
 
 # Search.gov configuration
 #

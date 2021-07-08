@@ -1,6 +1,7 @@
 ---
 permalink: /pages/
 layout: page
+navigation: pages
 title: cloud.gov Pages
 ---
 

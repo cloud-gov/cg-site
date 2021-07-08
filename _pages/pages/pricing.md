@@ -1,6 +1,7 @@
 ---
 permalink: /pages/pricing/
 layout: page
+navigation: pages
 title: cloud.gov Pages - Pricing
 ---
 

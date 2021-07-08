@@ -1,6 +1,7 @@
 ---
 permalink: /pages/contact/
 layout: page
+navigation: pages
 title: cloud.gov Pages - Contact
 ---
 
