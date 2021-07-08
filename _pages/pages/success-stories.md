@@ -15,7 +15,7 @@ title: cloud.gov Pages - Success Stories
 </section>
 <hr />
 <section class="usa-section">
-  <div class="grid-row grid-gap margin-top-4 margin-bottom-4">
+  <div class="grid-row grid-gap margin-bottom-4">
     <div class="grid-col-6 usa-prose">
       <h2>Vote.gov</h2>
       <p>Vote.gov makes it easier for eligible voters to participate in our democratic process by providing streamlined information on how to vote. Visitors can register electronically in states that allow it, and download a printable application in multiple languages for those states where electronic registration isn't an option. Vote.gov was ranked as the <a href="/assets/pages/documents/2017-benchmarking-us-government-websites.pdf">#1 federal website in 2017</a> by the Information Technology &amp; Innovation Foundation for meeting basic standards in security, speed, mobile friendliness, and accessibility.</p>
