@@ -1,23 +1,22 @@
 primary:
-
-
-secondary:
-  - text: Features
-    href: /pages/features/
-  - text: Success Stories
-    href: /pages/success-stories/
-  - text: Documentation
-    href: /pages/documentation/
-  - text: Pricing
-    href: /pages/pricing/
-  - text: Contact
-    href: /pages/contact/
+  - name: Features
+    url: /pages/features/
+  - name: Success Stories
+    url: /pages/success-stories/
+  - name: Documentation
+    url: /pages/documentation/
+  - name: Pricing
+    url: /pages/pricing/
+  - name: Contact
+    url: /pages/contact/
     # Look inside assets/js/index.js to see that how this url changes depending on enviroment
-  - text: Manage Sites
-    href: https://federalistapp.18f.gov
+secondary:
+  - name: Platform Status
+    url: https://federalist.statuspage.io
+  - name: Login
+    url: https://federalistapp.18f.gov
     external: true
     class: usa-button usa-button-secondary nav-button
-
 
 footer:
   - text: Home
