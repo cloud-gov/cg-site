@@ -1,12 +1,20 @@
-.figure-seal{
-  text-align: center;
+// "small" logo variant used for CG branding adjacent to Federalist logo
+.usa-logo--small,
+.usa-header--extended .usa-logo--small {
+  @include at-media($theme-header-min-width) {
+    img {
+      width: units(15);
+    }
+  }
 }
 
-// .figure figcaption {
-//   margin-bottom: 6px;
-//   margin-top: inherit;
-//   text-align: center;
-// }
+.usa-logo--small + .usa-logo {
+  @include at-media($theme-header-min-width) {
+    margin-top: units(-2);
+  }
+}
+
+
 p.pages-arrow {
   @include u-color('ink');
   @include u-font-family('ui');
@@ -23,20 +31,7 @@ p.pages-arrow {
   }
 }
 
-.pages-steps-circle {
-  background-color: #0271BB;
-  border-radius: 5rem;
-  color: white;
-  font-family: "merriweatherblack";
-  font-size: 2.6rem;
-  height: 5rem;
-  line-height: 5rem;
-  position: relative;
-  width: 5rem;
-}
-
 .pages-card {
-  // margin: 0.5rem;
   border-width: 1px;
   border-style: solid;
   border-color: #c6cace;
