@@ -8,19 +8,19 @@ how_it_works:
     image: /assets/pages/images/build.png
     image_alt: Hand building a website
     description: Use our templates or develop your own and publish your web page right away.
-    link_url: /assets/pages/documents/coe-success.pdf
+    link: /assets/pages/documents/coe-success.pdf
     link_text: See how the Centers of Excellence (CoEs) used Federalist to get new pages up quickly
   - name: Launch
     image: /assets/pages/images/launch.png
     image_alt: Hand launching a secure website with cloud.gov
     description: You focus on the content, we'll worry about the security, compliance, and deployment.
-    link_url: /assets/pages/documents/afwerx-success.pdf
+    link: /assets/pages/documents/afwerx-success.pdf
     link_text: Learn how DoD leveraged the Federalist platform to build their own template designs
   - name: Manage
     image: /assets/pages/images/manage.png
     image_alt: Hand using faders to manage website deployments
     description: Use our intuitive interface to control the process from start to finish.
-    link_url: /assets/pages/documents/coe-success.pdf
+    link: /assets/pages/documents/doi-success.pdf
     link_text: Learn how DOI used a Federalist template to host their data projects
 
 case_studies:
@@ -133,7 +133,7 @@ fact_sheets:
         <img class="display-block margin-x-auto" src="{{site.baseurl}}{{item.image}}" alt="{{item.image_alt}}">
         <div class="padding-x-2">
           <p class="font-sans-xs line-height-sans-3">{{ item.description }}</p>
-          <a class="display-block font-sans-3xs line-height-sans-4" href="{{site.baseurl}}{item.url}}">{{ item.link_text }}</a>
+          <a class="display-block font-sans-3xs line-height-sans-4" href="{{site.baseurl}}{{item.link}}">{{ item.link_text }}</a>
         </div>
       </div>
     {% endfor %}
