@@ -1,42 +1,41 @@
 ---
 layout: wide
-permalink: /news/
-redirect_from:
-  - /updates/
+permalink: /knowledge-base/
 pagination:
   enabled: true
+  collection: kbarticles
 ---
 
 <div id="blog" class="usa-graphic-list usa-section usa-section--dark sign-up-intro">
   <div class="grid-container maxw-desktop">
-    <h1 class="margin-0">cloud.gov news</h1>
+    <h1 class="margin-0">cloud.gov knowledge base</h1>
   </div>
 </div>
 <div class="grid-container padding-bottom-2 maxw-desktop">
   <div class="grid-row">
     <div class="desktop:grid-col-8 usa-prose padding-right-4">
       <!-- This loops through the paginated posts -->
-      {% for post in paginator.posts %}
+      {% for kb in paginator.posts %}
       <div
         class="padding-bottom-5 margin-top-4 usa-prose border-bottom-05 border-base-lightest usa-content"
       >
         <h3 class="title">
           <a
             class="usa-link text-no-underline"
-            href="{{ site.baseurl }}{{ post.url }}"
-            >{{post.title}}</a
+            href="{{ site.baseurl }}{{ kb.url }}"
+            >{{kb.title}}</a
           >
         </h3>
         <div class="margin-bottom-2">
           <div class="margin-top-neg-105 font-family-ui">
-            {{ post.date | date: '%B %d, %Y' }}
+            {{ kb.date | date: '%B %d, %Y' }}
           </div>
         </div>
         <div >
-          {% if post.image %} {% asset "{{ post.image }}"
+          {% if kb.image %} {% asset "{{ kb.image }}"
           class="tablet:float-left tablet:width-1/3 padding-right-3
-          padding-top-1" alt="{{ post.image_alt_text }}" %} {% endif %} {{
-          post.excerpt | markdownify }}
+          padding-top-1" alt="{{ kb.image_alt_text }}" %} {% endif %} {{
+          kb.excerpt | markdownify }}
         </div>
       </div>
       {% endfor %}
@@ -45,8 +44,5 @@ pagination:
       {%- include pagination-links.html -%}
     </div>
 
-  </div>
-  <div class="grid-row padding-top-4 tablet:padding-x-4 margin-bottom-4">
-    <a class="usa-link" href="#blog">Return to top</a>
   </div>
 </div>

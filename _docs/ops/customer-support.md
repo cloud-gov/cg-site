@@ -30,6 +30,7 @@ The support team is not required to "pair" in the traditional sense unless the t
 
 As the support team has free cycles, they can pick up tasks from the backlog designated with the `support-team` label. These tasks aim to improve our ability to support the platform by paying down technical debt, adding automation, improving monitoring and alerting, or adding to system documentation such as run-books. Because support team members inevitably face interruptions that cause context switching, the `support-team` backlog is groomed by the team with this in mind. These stories are not mission-critical, easy to pick up, and easy to hand off to another team member.
 
+The support team should also monitor requests for support in Zendesk (and other channels) to identify commonly asked questions or frequently requested issues. These topics should be added to [new or existing knowledge base articles]({{ site.baseurl }}/knowledge-base) to make answering these requests more efficient going forward.
 
 ## Zendesk Support Process
 
@@ -50,6 +51,8 @@ As the support team has free cycles, they can pick up tasks from the backlog des
    acknowledged and set to Open or Pending.
 1. Everyone should join #cg-supportstream to get notifications on Slack. This
    can be useful to alert and coordinate with other team members.
+1. Commonly asked questions or frequently requested items should be considered for 
+   adding to the [cloud.gov knowledge base]({{ site.baseurl }}/knowledge-base).
 
 ## Support Status
 

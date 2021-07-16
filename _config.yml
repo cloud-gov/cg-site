@@ -80,6 +80,8 @@ primary_navigation:
       url: /docs/ops/repos/
   - name: News
     url: /news/
+  - name: Knowledge base
+    url: /knowledge-base/
   - name: Federalist
     url: /pages/
   - name: Contact us
@@ -178,6 +180,9 @@ collections:
   docs:
     output: true
     permalink: /:collection/:path/
+  kbarticles:
+    output: true
+    permalink: /knowledge-base/:path/
 
 
 permalink: pretty

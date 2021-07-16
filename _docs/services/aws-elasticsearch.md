@@ -45,9 +45,9 @@ Note: AWS Elasticsearch creation times will vary and is outside of Cloud.gov's c
 
 When using the `medium` and `medium-ha` plans, please read [Scalability and resilience: clusters, nodes, and shards](https://www.elastic.co/guide/en/elasticsearch/reference/current/scalability.html) for the elasticsearch basics on clusters as well as the AWS specific [Developer Guide](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/what-is-amazon-elasticsearch-service.html).  The `medium` plan is mainly focused for customers that need a single index and have coverage with 2 data nodes.  For customers wanting more coverage and more indexes, then the `medium-ha` plan scales the cluster to 4 data nodes to offer high availability (HA).
 
-### AWS Signing requests requirement
+### Connecting to your service instance
 
-In order to use the Elasticsearch service hosted on AWS you will need to use [AWS signed HTTP headers](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-request-signing.html)
+If you need to directly access your service instance from your local environment, please read [this knowledge base article]({{ site.baseurl }}/knowledge-base/2021-05-20-connecting-to-brokered-service-instances/) for more information.
 
 ## Managing backups
 
