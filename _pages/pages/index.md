@@ -156,9 +156,9 @@ fact_sheets:
       {% for study in page.case_studies %}
       <div class="tablet:grid-col-4 bar-top">
           <h3>{{study.name}}</h3>
-          <a class="display-block border-1px border-base-lighter margin-y-2" href="{{site.base_url}}{{study.link}}"><img class="display-block" src="{{site.baseurl}}{{study.thumbnail}}" alt="{{study.thumbnail_alt}}"></a>
+          <a class="display-block border-1px border-base-lighter margin-y-2" href="{{site.baseurl}}{{study.link}}"><img class="display-block" src="{{site.baseurl}}{{study.thumbnail}}" alt="{{study.thumbnail_alt}}"></a>
           <p>
-            <a href="{{site.base_url}}{{study.link}}">{{ study.read_me_for }}</a>
+            <a href="{{site.baseurl}}{{study.link}}">{{ study.read_me_for }}</a>
           </p>
       </div>
       {% endfor %}
@@ -190,7 +190,7 @@ fact_sheets:
     <div class="grid-row grid-gap margin-bottom-2">
     {% for example_site in page.example_sites %}
       <div class="tablet:grid-col-6 padding-2 text-center">
-        <a class="border border-base-lighter display-block margin-bottom-1" href="{{example_site.link}}"><img class="display-block" src="{{site.base_url}}{{example_site.screenshot}}" alt="Screenshot of {{example_site.name}}"></a>
+        <a class="border border-base-lighter display-block margin-bottom-1" href="{{example_site.link}}"><img class="display-block" src="{{site.baseurl}}{{example_site.screenshot}}" alt="Screenshot of {{example_site.name}}"></a>
         <a href="{{example_site.link}}">{{example_site.name}}</a>
       </div>
     {% endfor %}
@@ -213,7 +213,7 @@ fact_sheets:
       {% for sheet in page.fact_sheets %}
       <div class="tablet:grid-col-4 bar-top">
         <div class="padding-2">
-          <a href="{{site.base_url}}{{sheet.pdfs[0].link}}" class="display-block margin-bottom-2"><img class="border border-base-lighter display-block" src="{{site.baseurl}}{{sheet.thumbnail}}" alt="{{sheet.thumbnail_alt}}"></a>
+          <a href="{{site.baseurl}}{{sheet.pdfs[0].link}}" class="display-block margin-bottom-2"><img class="border border-base-lighter display-block" src="{{site.baseurl}}{{sheet.thumbnail}}" alt="{{sheet.thumbnail_alt}}"></a>
           <h3>{{sheet.name}}</h3>
           {% for pdf in sheet.pdfs %}
           <p>
