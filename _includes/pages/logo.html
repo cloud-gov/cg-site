@@ -1,10 +1,12 @@
-<div class="usa-logo usa-logo--small">
-  <em class="usa-logo__text"><a href="{{site.baseurl}}/" title="{{site.title}}" aria-label="{{site.title}}">
-    {% asset cloud-gov-logo.svg alt="{{site.title}}" class="width-card" %}
-  </a></em>
-</div>
-<div class="usa-logo" id="extended-logo">
-  <em class="usa-logo__text"><a href="{{site.baseurl}}/pages/" title="Pages Home" aria-label="Pages Home">
-    <img src="{{site.baseurl}}/assets/pages/images/federalist-logo-blue.svg" alt="Federalist logo" class="width-card-lg">
-  </a></em>
+<div class="usa-logo-composite">
+  <div class="usa-logo-composite__parent">
+    <em class="usa-logo-composite__text"><a href="{{site.baseurl}}/" title="{{site.title}}" aria-label="{{site.title}}">
+      {% asset cloud-gov-logo.svg alt="{{site.title}}" %}
+    </a></em>
+  </div>
+  <div class="usa-logo-composite__logo">
+    <em class="usa-logo-composite__text"><a href="{{site.baseurl}}/pages/" title="cloud.gov Pages Home" aria-label="cloud.gov Pages Home">
+      {% asset federalist-logo-blue.svg alt="Federalist logo" %}
+    </a></em>
+  </div>
 </div>

@@ -1,39 +1,44 @@
-// "small" logo variant used for CG branding adjacent to Federalist logo
-.usa-logo--small,
-.usa-header--extended .usa-logo--small {
-  @include at-media($theme-header-min-width) {
-    img {
-      width: units(15);
-    }
-  }
+.usa-logo-composite {
+  margin: units(1) 0;
 }
 
-.usa-logo--small + .usa-logo {
-  @include at-media($theme-header-min-width) {
-    margin-top: units(-2);
-  }
+.usa-logo-composite__parent a {
+  display: inline-block;
+  padding-top: units(3);
 }
 
-
-p.pages-arrow {
-  @include u-color('ink');
-  @include u-font-family('ui');
-
-
-  display: block;
-
-  &:before {
-    content: '\02192';
-    display: inline-block;
-    @include u-padding-right('105');
-    @include u-text('secondary-vivid');
-    font-family: 'Times New Roman', Arial, sans-serif;
-  }
+.usa-logo-composite__parent img {
+  height: units(3);
 }
 
-.pages-card {
-  border-width: 1px;
-  border-style: solid;
-  border-color: #c6cace;
-  border-style: solid;
+.usa-logo-composite__logo a {
+  display: inline-block;
+  padding-bottom: units(3);
+}
+
+.usa-logo-composite__logo img {
+  height: units(6);
+}
+
+@include at-media-max($theme-header-min-width) {
+  .usa-logo-composite {
+    @include u-flex("fill");
+    margin: 0;
+  }
+  .usa-logo-composite__parent {
+    display: none;
+  }
+  .usa-logo-composite__parent a,
+  .usa-logo-composite__logo a {
+    display: block;
+    padding: 0;
+  }
+  .usa-logo-composite__parent img {
+    height: units(2);
+    display: none;
+    margin: 0 auto;
+  }
+  .usa-logo-composite__logo img {
+    height: units(4);
+  }
 }
