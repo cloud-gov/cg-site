@@ -83,7 +83,7 @@ sidenav:
       - text: Federalist.json
         href: /pages/documentation/federalist-json/
   - text: For developers
-    href: /pages/documentation/
+    href: /pages/documentation/for-developers/
     subfolderitems:
       - text: How Federalist works
         href: /pages/documentation/how-federalist-works/
