@@ -125,7 +125,7 @@ fact_sheets:
   </div>
   <div class="grid-row grid-gap-lg">
     {% for item in page.how_it_works %}
-      <div class="tablet:grid-col-4">
+      <div class="tablet:grid-col-4 margin-y-4">
         <div class="font-sans-sm text-heavy text-center"><span class="bg-primary-darker display-inline-block padding-1 height-5 width-5 radius-pill">{{ forloop.index }}</span></div>
         <p class="font-sans-lg text-uppercase text-center">
           {{item.name}}
