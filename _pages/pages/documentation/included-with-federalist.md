@@ -17,7 +17,7 @@ redirect_from:
   * `Strict-Transport-Security max-age=31536000; preload;`
   * `X-Frame-Options "SAMEORIGIN";`
 * Easy on-boarding or off-boarding: Federalist can deploy content from existing GitHub repositories used with other tools. Your Federalist site will also be easy to port to another deployment mechanism if that's ever needed.
-* Content delivery network support for your desired URL, with custom 404 page (see [customization](/pages/documentation/customization/)).
+* Content delivery network support for your desired URL, with custom 404 page (see [customization]({{site.baseurl}}/pages/documentation/customization/)).
 * A user community across agencies and vendors using Federalist.
 * A permanent team to maintain and patch Federalist as needed.
 * GSA's previous work to build [cloud.gov]({{ site.baseurl }}), a robust and secure platform as a service, recognized with a FedRAMP Moderate (DISA Level 2) PATO, that ensures Federalist's underlying technology is secure, performant, and scalable.

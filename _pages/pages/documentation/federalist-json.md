@@ -11,7 +11,7 @@ Federalist-specific configuration can be done in a `federalist.json` file in the
 - `fullClone`
 
 ## headers
-See [specifying custom headers](/pages/documentation/custom-headers) for details.
+See [specifying custom headers]({{site.baseurl}}/pages/documentation/custom-headers) for details.
 
 ## fullClone
 

@@ -6,7 +6,7 @@ navigation: pages
 sidenav: pages-documentation
 ---
 
-When you are ready to share your site with the public you can add your own custom domain. Please make sure you have completed all of the requirements in [before you launch](/pages/documentation/before-you-launch#requirements) before continuing.
+When you are ready to share your site with the public you can add your own custom domain. Please make sure you have completed all of the requirements in [before you launch]({{site.baseurl}}/pages/documentation/before-you-launch#requirements) before continuing.
 
 If you are migrating an existing site to Federalist and wish to minimize downtime, see [minimizing downtime](#minimizing-downtime)
 

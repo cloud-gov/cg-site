@@ -17,7 +17,7 @@ title: cloud.gov Pages - Success Stories
   <div class="grid-row grid-gap margin-y-8">
     <div class="grid-col-6 usa-prose">
       <h2>Vote.gov</h2>
-      <p>Vote.gov makes it easier for eligible voters to participate in our democratic process by providing streamlined information on how to vote. Visitors can register electronically in states that allow it, and download a printable application in multiple languages for those states where electronic registration isn't an option. Vote.gov was ranked as the <a href="/assets/pages/documents/2017-benchmarking-us-government-websites.pdf">#1 federal website in 2017</a> by the Information Technology &amp; Innovation Foundation for meeting basic standards in security, speed, mobile friendliness, and accessibility.</p>
+      <p>Vote.gov makes it easier for eligible voters to participate in our democratic process by providing streamlined information on how to vote. Visitors can register electronically in states that allow it, and download a printable application in multiple languages for those states where electronic registration isn't an option. Vote.gov was ranked as the <a href="{{ site.baseurl }}/assets/pages/documents/2017-benchmarking-us-government-websites.pdf">#1 federal website in 2017</a> by the Information Technology &amp; Innovation Foundation for meeting basic standards in security, speed, mobile friendliness, and accessibility.</p>
     </div>
     <div class="grid-col-6">
       <img alt="website thumbnail" src="{{site.baseurl}}/assets/pages/images/partner-sites/vote.gov.png" class="border border-base-lighter">
