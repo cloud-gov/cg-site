@@ -40,7 +40,7 @@ The URLs above have broken CSS and assets because published Federalist sites on 
 
 1. The partner confirms the site is ready for an initial scan; the Federalist team scans the site and sends to GSA IT for initial approval.
 1. After initial scans, the partner confirms readiness for the site to go-live at a specific permanent URL (this URL process needs to happen within a few hours timespan when started).
-1. The Federalist team uses the [cloud.gov CloudFront broker](https://cloud.gov/docs/services/cdn-route/) to begin set up for a distribution for a given URL.
+1. The Federalist team uses the [cloud.gov CloudFront broker]({{ site.baseurl }}/docs/services/cdn-route/) to begin set up for a distribution for a given URL.
     * We do this by accessing our org in cloud.gov and running the command `cf create-service cdn-route cdn-route YOUR.URL.gov-route -c '{"domain": "YOUR.URL.gov", "origin": "federalist-proxy.app.cloud.gov", "path": "/site/<org>/<repo-name>"}'`. Note that the path argument here does not have a trailing slash.
 1. After running the command above, the command `cf service YOUR.URL.gov-route` is used to retrieve the CloudFront URL to be used in DNS changes. We communicate that URL to whoever sets the DNS records.
 1. The partner sets DNS records with a CNAME to point the subdomain (e.g. `yourprogram.youragency.gov`) to the CloudFront distribution URL (e.g. `d2oezh1w8w4o1u.cloudfront.net`).

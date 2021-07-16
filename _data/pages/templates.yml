@@ -1,0 +1,14 @@
+  
+items:
+  - title: Jekyll - U.S. Web Design System v2.0
+    docs_url: https://github.com/18F/federalist-uswds-jekyll
+    preview_url: https://federalist-ce810add-9092-4627-8246-9b65cf94623c.app.cloud.gov/site/18f/federalist-uswds-jekyll/
+    img: /assets/pages/images/templates/federalist-jekyll-uswds-template.png
+    order: 2
+    summary: ""
+  - title: Gatsby - U.S. Web Design System v2.0
+    docs_url: https://github.com/18F/federalist-uswds-gatsby
+    preview_url: https://federalist-b146cf1e-c756-4b1f-bb83-c516cac94fbb.app.cloud.gov/site/18f/federalist-uswds-gatsby/
+    img: /assets/pages/images/templates/federalist-gatsby-uswds-template.png
+    order: 3
+    summary: ""

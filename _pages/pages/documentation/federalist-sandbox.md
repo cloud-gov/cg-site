@@ -14,7 +14,7 @@ If you're interested in seeing how Federalist works for yourself, [let us know](
 
 It's important to try a tool before committing to using it, and with Federalist, we give you the power to do just that before having to do any paperwork.
 
-We understand that signing agreements in the federal government can be slow, but you can read how [AFWERX]({{site.baseurl}}/assets/documents/AFWERX-case-study.pdf) was able to build their entire website in their sandbox environment and when they signed the agreement, the site was ready to launch to production.
+We understand that signing agreements in the federal government can be slow, but you can read how [AFWERX]({{site.baseurl}}/assets/pages/documents/AFWERX-case-study.pdf) was able to build their entire website in their sandbox environment and when they signed the agreement, the site was ready to launch to production.
 
 ## Ready to launch:
 

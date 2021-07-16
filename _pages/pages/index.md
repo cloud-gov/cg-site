@@ -144,7 +144,7 @@ fact_sheets:
       </div>
       {% endfor %}
     </div>
-    <a class="cg-arrow" href="{{site.baseurl}}/success-stories/">See success stories of Federalist-powered sites</a>
+    <a class="cg-arrow" href="{{site.baseurl}}/pages/success-stories/">See success stories of Federalist-powered sites</a>
   </div>
 </section>
 
@@ -202,16 +202,16 @@ fact_sheets:
 </section>
 
 <section class="usa-section margin-y-8">
-  <div class="grid-container maxw-desktop">  
+  <div class="grid-container maxw-desktop usa-prose">  
     <div class="grid-row">
       <h2>Federalist fact sheets</h2>
-      <p class="usa-intro tablet:grid-col-10">
+      <p>
         Need more details about Federalist? Need help convincing your executive team? The Federalist team has developed these resources to help. See more on the <a href="{{site.baseurl}}/pages/documentation/">Federalist support site</a>.
       </p>
     </div>
     <div class="grid-row grid-gap">
       {% for sheet in page.fact_sheets %}
-      <div class="tablet:grid-col-4">
+      <div class="tablet:grid-col-4 bar-top">
         <div class="padding-2">
           <a href="{{site.base_url}}{{sheet.pdfs[0].link}}" class="display-block margin-bottom-2"><img class="border border-base-lighter display-block" src="{{site.baseurl}}{{sheet.thumbnail}}" alt="{{sheet.thumbnail_alt}}"></a>
           <h3>{{sheet.name}}</h3>

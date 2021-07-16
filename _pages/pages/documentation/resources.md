@@ -16,7 +16,7 @@ content editors. The syntax is easy to learn and is also used on GitHub.
 Markdown is used to format the content on your website without having to read or
 write HTML.
 
-GitHub has an excellent guide for [mastering
+GitHub has an excellent guide for [learning
 markdown](https://guides.github.com/features/mastering-markdown/). Here's
 a sample of what it looks like:
 

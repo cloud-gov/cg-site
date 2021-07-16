@@ -60,8 +60,10 @@ sidenav:
         href: /pages/documentation/instructional-demos/
       - text: Builds and previews
         href: /pages/documentation/previews/
-      - text: Launch checklist
-        href: /pages/documentation/launch-checklist/
+      - text: Custom domains
+        href: /pages/documentation/custom-domains/
+      - text: Before you launch
+        href: /pages/documentation/before-you-launch/
       - text: Migration guide
         href: /pages/documentation/migration-guide/
       - text: Adding forms
@@ -91,8 +93,6 @@ sidenav:
         href: /pages/documentation/build-errors/
       - text: Environment variables on builds
         href: /pages/documentation/env-vars-on-federalist-builds/
-      - text: How custom URLs work
-        href: /pages/documentation/custom-urls/
       - text: Federalist and cloud.gov
         href: /pages/documentation/cloud-gov/
       - text: cloud.gov setup

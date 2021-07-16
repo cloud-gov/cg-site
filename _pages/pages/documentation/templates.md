@@ -13,7 +13,7 @@ Federalist offers several templates for common website types that are meant to s
 
 Here are the templates currently available:
 
-{% for template in site.data.templates.items %}
+{% for template in site.data.pages.templates.items %}
   <h3>{{ template.title }}</h3>
   <p>
     <a class='screenshot' href='{{ template.preview_url }}'>
@@ -27,5 +27,5 @@ Here are the templates currently available:
 {% endfor %}
 
 
-Federalist will build any Jekyll, Gatsby or Hugo website, supporting [custom website templates]({{site.baseurl}}/documentation/how-builds-work). 
+Federalist will build any Jekyll, Gatsby or Hugo website, supporting [custom website templates]({{site.baseurl}}/pages/documentation/how-builds-work). 
 Update 

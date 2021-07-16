@@ -8,14 +8,14 @@ sidenav: pages-documentation
 
  ⚠️ **This feature is currently experimental, make sure you know what you are doing!** ⚠️
 
-You can configure custom headers for your site by adding information under the `headers` key in the [Federalist configuration file](/documentation/federalist-json).
+You can configure custom headers for your site by adding information under the `headers` key in the [Federalist configuration file](/pages/documentation/federalist-json).
 
 ## Supported Custom Headers
 - `Cache-Control`
 
 ## Syntax
 
-The `headers` key in [Federalist configuration file](/documentation/federalist-json) expects a list of configurations that include a path pattern to match against the paths of individual files in your site and the headers to apply. Ex.
+The `headers` key in [Federalist configuration file](/pages/documentation/federalist-json) expects a list of configurations that include a path pattern to match against the paths of individual files in your site and the headers to apply. Ex.
 ```
 // federalist.json
 {
@@ -24,7 +24,9 @@ The `headers` key in [Federalist configuration file](/documentation/federalist-j
     {
       "/*.html": {
         "cache-control": "no-cache"
-      },
+      }
+    },
+    {
       "/*": {
         "cache-control": "max-age=60"
       }
@@ -82,7 +84,7 @@ The segment wildcard `":foo"` (where "foo" can be anything) matches everything *
 | `/f:bar` | `/f:bar` | ✅ |
 
 ## Examples
-- [federalist-uswds-gatsby2](https://github.com/18F/federalist-uswds-gatsby2/blob/master/federalist.json)
+- [federalist-uswds-gatsby2](https://github.com/18F/federalist-uswds-gatsby2/blob/main/federalist.json)
 
 ## Caching Headers
 Adding caching related headers to your site is considered a best practice and can greatly improve your site's performance. However, if done incorrectly, it is possible to create undesired outcomes such as users not seeing the latest version of your site. **Make sure you have a good understanding of how caching works before configuring these headers yourself.** See [MDN Caching](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching) and [MDN Cache-Control](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) for more information.

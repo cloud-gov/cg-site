@@ -21,7 +21,7 @@ Get a sense of how big your migration is before you start. How many pages does y
 
 ## Federalist’s role
 
-Federalist is a backend hosting service that enables lots of flexibility with the look and feel of a hosted website. Federalist is opinionated about the back end hosting of a site, so your code needs to be in a form that Federalist can host, this can be static HTML/CSS/JS files or [supported site engines](/documentation/supported-site-engines).
+Federalist is a backend hosting service that enables lots of flexibility with the look and feel of a hosted website. Federalist is opinionated about the back end hosting of a site, so your code needs to be in a form that Federalist can host, this can be static HTML/CSS/JS files or [supported site engines](/pages/documentation/supported-site-engines).
 
 In general, we expect getting your site up as static files to be the quickest option, but static html can be very difficult to edit and maintain. Even though it takes more effort to initially convert your site content to a new format, using a site generator, such as Jekyll or Hugo, can ease the long-term maintenance burden of your site. For example, Jekyll and Hugo use templates to manage common content, so adding an item to a global menu can be done in one file instead of many.
 
@@ -48,7 +48,7 @@ For these pages you can simply fork them on Github and reword the content in ord
 
 Test your migration concept by first making one page and learning how to work with Federalist. Try using setting up layouts and content separately. Once the first page is live on a prototype site, you can migrate other pages, but focus on completing one first so that you have a good sense of the effort required.
 
-You should create a staging branch in your Github repo and create a pull request from that branch to your master branch. Then, migrate to the staging branch and push to master once you’ve confirmed everything is working correctly in staging. This will help you keep track of changes and provide and easy way to identify what is causing issues. You should push to master everyday.
+You should create a staging branch in your Github repo and create a pull request from that branch to your main branch. Then, migrate to the staging branch and push to main once you’ve confirmed everything is working correctly in staging. This will help you keep track of changes and provide and easy way to identify what is causing issues. You should push to main everyday.
 - You may want to consider creating separate staging branches for content and for settings
 
 Reserve time for the go live process. Plan few days before live launch to do a soft launch for stakeholders at a different URL.
@@ -71,4 +71,4 @@ You are able to start working while IAA is being signed.
 ## Additional info
 
 If your site has over 1 GB of images to serve you should look into another way to store those files. Github is not intended to store large amounts of files.
-- Github has no problem storing less than 1GB of different files types. For hosting over 1GB of files, we suggest getting access to a public database service that will load the files. One provider of this type of service is [cloud.gov](https://cloud.gov/). More information on repository size limitations is available [here](https://help.github.com/articles/what-is-my-disk-quota/).
+- Github has no problem storing less than 1GB of different files types. For hosting over 1GB of files, we suggest getting access to a public database service that will load the files. One provider of this type of service is [cloud.gov]({{ site.baseurl }}/). More information on repository size limitations is available [here](https://help.github.com/articles/what-is-my-disk-quota/).

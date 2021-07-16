@@ -3,9 +3,9 @@ Includes your `content` in the alert component. By default, it expects the
 content as markdown. Specify `html=true` if you're using raw HTML instead.
 {% endcomment %}
 <div class="usa-alert usa-alert--{{ include.status | default: 'info' }}">
-  <div class="usa-alert-body">
-    <h3 class="usa-alert-heading">{{ include.heading | escape }}</h3>
-    <div class="usa-alert-text">
+  <div class="usa-alert__body">
+    <h3 class="usa-alert__heading">{{ include.heading | escape }}</h3>
+    <div class="usa-alert__text">
       {% unless include.html %}
         {{ include.content | strip | markdownify }}
       {% else %}

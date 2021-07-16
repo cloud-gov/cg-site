@@ -22,14 +22,14 @@ Instructions for running Federalist components locally are in in each code repos
 ## Deploying Federalist from CircleCI
 
 This guide covers how the deployment process for Federalist and Federalist Builder works.
-In order to understand the process for Federalist Docker Build and Federalist Registry, see [the cloud.gov setup guide]({{site.baseurl}}/documentation/cloud-gov-setup/).
+In order to understand the process for Federalist Docker Build and Federalist Registry, see [the cloud.gov setup guide]({{site.baseurl}}/pages/documentation/cloud-gov-setup/).
 
 Federalist is deployed by [CircleCI](https://circleci.com/docs/2.0/deployment_integrations/).
-Federalist and Federalist Builder are configured such that changes to the master branch are deployed to production and changes to the staging branch are deployed to staging.
+Federalist and Federalist Builder are configured such that changes to the main branch are deployed to production and changes to the staging branch are deployed to staging.
 In both repos this configuration lives in the [`.circleci/config.yml`](https://circleci.com/docs/2.0/) file in the project repository.
 
 Both projects use a file at `scripts/deploy-circle.sh` to run the actual deploy.
-These scripts authenticate with cloud.gov using a [cloud.gov deploy user](https://cloud.gov/docs/apps/continuous-deployment/#deployer-account).
+These scripts authenticate with cloud.gov using a [cloud.gov deploy user]({{ site.baseurl }}/docs/apps/continuous-deployment/#deployer-account).
 Despite some minor differences, both of these scripts do essentially the same thing:
 
 0. Check the current branch and use it to determine which space to deploy to
@@ -40,7 +40,7 @@ Despite some minor differences, both of these scripts do essentially the same th
 ## Zero downtime deploys
 
 Federalist has high availability requirements because it needs to be up to receive GitHub webhook and build status requests.
-Because of this, the [autopilot](https://cloud.gov/docs/apps/production-ready/#zero-downtime-deploy) Cloud Foundry CLI plugin is used so the app can be deployed without downtime.
+Because of this, the [autopilot]({{ site.baseurl }}/docs/apps/production-ready/#zero-downtime-deploy) Cloud Foundry CLI plugin is used so the app can be deployed without downtime.
 
 Zero downtime deploys work by:
 

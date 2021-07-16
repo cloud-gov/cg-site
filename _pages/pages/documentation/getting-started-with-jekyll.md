@@ -16,7 +16,7 @@ hesitate to [reach out](mailto:{{ site.support_email }})._
 
 Federalist monitors your site’s GitHub repository (or repo) for changes you
 make. It will automatically build a new version of your site in a few minutes.
-You can view the live site [from Federalist][federalist-sites] and clicking
+You can view the live site [from Federalist](https://federalistapp.18f.gov/sites) and clicking
 "View site".
 
 {% capture content %}
@@ -38,7 +38,7 @@ formatting. Indentation is important to keep related options together — in ord
 for Jekyll to successfully read the configuration file so that the site will
 build with the proper settings, the correct indentation must be used. We
 recommend using space characters instead of tabs for nesting configuration
-options. Learn more about [working with YAML][resources-yaml].
+options. Learn more about [working with YAML]{{ site.baseurl }}{% link _pages/pages/documentation/resources.md %}#working-with-yaml.
 
 Here's an example `_config.yml` snippet:
 
@@ -69,12 +69,12 @@ GitHub to see your existing pages. Select “page.md” from the list of options
 Once you’re on page.md, look for the pencil icon near the top right of the
 content window to edit the page.
 
-![Screenshot showing a site page on GitHub and the edit page pencil icon]({{ site.baseurl }}/assets/images/getting-started--edit-page-pencil-icon.png)
+![Screenshot showing a site page on GitHub and the edit page pencil icon]({{ site.baseurl }}/assets/pages/images/getting-started--edit-page-pencil-icon.png)
 
 The three dashes `---` separate the “front matter” of the page from the content
 of the page. Front matter is used to instruct the build system about how to
 build the page and provide additional data. Learn more about
-[front matter][resources-front-matter].
+[front matter]({{ site.baseurl }}{% link _pages/pages/documentation/resources.md %}#working-with-front-matter).
 
 ```yaml
 ---
@@ -90,7 +90,7 @@ end the front matter section. The content is all in markdown format,
 a plain-text simple [markup language](https://en.wikipedia.org/wiki/Markup_language)
 designed to be readable for content editors. Try editing your heading by
 replacing the text “Welcome to the Federalist Report Template” with “Hello
-world!”. Learn more about [Markdown][resources-markdown].
+world!”. Learn more about [Markdown]({{ site.baseurl }}{% link _pages/pages/documentation/resources.md %}#working-with-markdown).
 
 Once you’re finished making content changes, scroll to the bottom of the page
 and click “Commit changes.” Federalist will automatically detect your changes
@@ -105,7 +105,7 @@ the changes you’ve made when looking back on the repo’s history.
 {% include pages/components/alert--best-practice.html content=content %}
 
 Once your change is committed, Federalist will start rebuilding your site. You
-can see the build progress on the [build history page][federalist-sites].<!--
+can see the build progress on the [build history page](https://federalistapp.18f.gov/sites).<!--
 TODO link to this site’s build history page. -->
 
 
@@ -146,7 +146,7 @@ start:
 ```markdown
 ---
 title: "Your new content page"
-layout: docs
+layout: page
 permalink: /link/to/your-new-content-page/
 ---
 
@@ -164,16 +164,9 @@ commit your changes when you’re done.
 ## Template-specific customization
 
 You’ll want to refer to the [template
-specific documentation]({{ site.baseurl }}/documentation/templates/)
+specific documentation]({{ site.baseurl }}{% link _pages/pages/documentation/templates.md %})
 to learn how to configure your template beyond what is covered in this guide.
 
 Once you've got the basics down, we recommend that you check out our [customization
 guide]({{ site.baseurl }}{% link _pages/pages/documentation/customization.md %}) for
 some more details on how to customize your site.
-
-
-[Federalist]: {{ site.baseurl }}
-[federalist-sites]: {{ site.baseurl }}/sites
-[resources-front-matter]: {{ site.baseurl }}{% link _pages/pages/documentation/resources.md %}#working-with-front-matter
-[resources-markdown]: {{ site.baseurl }}{% link _pages/pages/documentation/resources.md %}#working-with-markdown
-[resources-yaml]: {{ site.baseurl }}{% link _pages/pages/documentation/resources.md %}#working-with-yaml

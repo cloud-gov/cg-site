@@ -8,11 +8,10 @@ redirect_from:
   - /pages/how-federalist-works/env-vars-on-federalist-builds/
 ---
 
-At the time your site is built with either Jekyll or Hugo, a number of special environment variables are exposed. You can access these environment variables with your build engine to customize your build (for instance, to add some special text to your site to show which branch has been built).
+At the time your site is built, a number of special environment variables are exposed. You can access these environment variables with your build engine to customize your build (for instance, to add some special text to your site to show which branch has been built).
 
-See the [federalist-garden-build README](https://github.com/18f/federalist-garden-build#variables-exposed-during-builds) for further information on the environment variables that your site build can access.
 
-## Default environment variables available when your site builds
+## Default environment variables
 
 When Federalist builds your site it makes available the following environment variables:
 
@@ -24,9 +23,18 @@ REPOSITORY|Github repository
 SITE_PREFIX|Path of s3 bucket in which your site will be deployed
 BASEURL|Path for deployed site
 
-## Adding custom environment variables available when your site builds
+## Adding custom environment variables
 
-Additional environment variables can be added to your live and demo site builds by:
-1. Visit your site's Site Settings -> Advanced Settings
-2. In the Site/Demo Configuration textarea enter your environment variables as yaml formatted text (Note: nested data is supported)
-3. Click "Save advanced settings"
+Additional environment variables can be added to your builds by:
+1. Visit your site's Site Settings -> Environment Variables
+2. Click "Add a new environment variable"
+3. Enter the name and value
+4. Click "Add" to save
+
+You can remove environment variables by clicking the "X" button next to the desired environment variable in the Current Environment Variables table.
+
+Certain environment variable names are reserved for Federalist use and will be ignored. Warnings for any ignored environment variables will be present in the build logs. See above for an up-to-date list.
+
+Federalist is a **FISMA Low** system, do NOT store variables for systems that are Moderate or High, and only expose variables if it is safe to do so. You assume the risk if the values you add contain, or allow access to information that is not suitable for this categorization. See [FISMA Security Categorization](https://csrc.nist.gov/Projects/Risk-Management/Risk-Management-Framework-(RMF)-Overview/Security-Categorization) for more information on FISMA information categorization.
+
+![Image of environment variable settings]({{site.baseurl}}/assets/pages/images/env-vars.png)

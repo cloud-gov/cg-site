@@ -41,7 +41,16 @@ Tips:
 - Be prepared to explain to your Privacy Office the authority, purpose, and uses of the information you’re collecting on your digital form.
 - You can find examples of your agency’s previous System of Records Notices (SORNs) and PIAs on your agency’s Privacy Program page.
 
-How to get started: It is important that you start by first contacting your agency's Privacy Office and telling them what you're trying to accomplish. Ask if you need a new or modified SORN, a Privacy Act Statement on your form, and/or a PIA. GSA users should start by filling out the [GSA Privacy Office intake form](https://docs.google.com/forms/d/1fYME9MzhfAYuRiONJEsf1EFS9cmg03jODFq2Y9hkEgs/viewform?edit_requested=true).
+How to get started: It is important that you start by first contacting your agency's Privacy Office and telling them what you're trying to accomplish. Ask if you need a new or modified SORN, a Privacy Act Statement on your form, and/or a PIA. 
+
+**GSA Users**
+GSA uses one PTA form to identify PII before the development or acquisition
+of a new information system and to re-certify it annually. PTAs are key to
+determining whether a Privacy Impact Assessment (PIA) is required, whether
+a System of Records Notice (SORN) is required, and if any other privacy
+requirements apply to the information system.  If you are developing,
+acquiring or significantly modifying a system or application, work with
+your ISSO and privacy analyst to complete a PTA early in your process.
 
 #### [Federal Records Act](https://www.archives.gov/about/laws/fed-agencies.html)
 What is is: The data collected in your form needs to be stored and destroyed in compliance with the Federal Records Act. You are responsible for identifying what of your data is considered a record, and managing those records in accordance with your agency's [National Archives and Records Administration (NARA)-approved record schedule](https://www.archives.gov/about/laws/fed-agencies.html).

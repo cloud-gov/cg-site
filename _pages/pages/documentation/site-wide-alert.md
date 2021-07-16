@@ -21,7 +21,7 @@ cf uups federalist-site-wide-error -p '{
 }'
 ```
 
-Once the user provided service is updated, the app will need to be restaged. Restaging the app will result in downtime, so it is recommended that instead a zero-downtime-deploy is run. The easiest way to do this is by re-building the master branch in CI.
+Once the user provided service is updated, the app will need to be restaged. Restaging the app will result in downtime, so it is recommended that instead a zero-downtime-deploy is run. The easiest way to do this is by re-building the main branch in CI.
 
 Also, note the the `BODY` parameter in the user provided service may contain HTML tags to allow for the inclusion of links, bulleted lists, etc.
 

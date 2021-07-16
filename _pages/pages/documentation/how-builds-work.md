@@ -15,11 +15,11 @@ If you don't want to use the Federalist templates, you can add your own GitHub r
 
 Federalist is designed to be a modular service so HOW you generate your site is up to you. Some people customize their sites by creating new templates. Others use a default template content, editing with GitHub. When used this way Federalist acts a no-configuration, production-ready hosting solution for GitHub-based static websites, hosted using cloud.gov tooling, with a custom domain.
 
-When building our your sites, please remember that all government websites must meet section 508 accessibility standards. 18F provides [guidance for building accessible websites](https://accessibility.18f.gov/).
+When building out your sites, please remember that all government websites must meet section 508 accessibility standards. 18F provides [guidance for building accessible websites](https://accessibility.18f.gov/).
 
 ## Scheduling nightly builds
 
-Sites with public repositories can schedule builds to occur nightly.  If you wish to schedule automatic builds of your live or demo site, add the following custom environment variable to your [live/demo branch's build configuration]({{site.baseurl}}/documentation/env-vars-on-federalist-builds/):
+Sites with public repositories can schedule builds to occur nightly.  If you wish to schedule automatic builds of your live or demo site, add the following custom environment variable to your [live/demo branch's build configuration]({{site.baseurl}}/pages/documentation/env-vars-on-federalist-builds/):
 ```
 schedule: nightly
 ```
