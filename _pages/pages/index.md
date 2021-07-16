@@ -3,6 +3,26 @@ permalink: /pages/
 layout: wide
 navigation: pages
 title: cloud.gov Pages
+how_it_works:
+  - name: Build
+    image: /assets/pages/images/build.png
+    image_alt: Hand building a website
+    description: Use our templates or develop your own and publish your web page right away.
+    link_url: /assets/pages/documents/coe-success.pdf
+    link_text: See how the Centers of Excellence (CoEs) used Federalist to get new pages up quickly
+  - name: Launch
+    image: /assets/pages/images/launch.png
+    image_alt: Hand launching a secure website with cloud.gov
+    description: You focus on the content, we'll worry about the security, compliance, and deployment.
+    link_url: /assets/pages/documents/afwerx-success.pdf
+    link_text: Learn how DoD leveraged the Federalist platform to build their own template designs
+  - name: Manage
+    image: /assets/pages/images/manage.png
+    image_alt: Hand using faders to manage website deployments
+    description: Use our intuitive interface to control the process from start to finish.
+    link_url: /assets/pages/documents/coe-success.pdf
+    link_text: Learn how DOI used a Federalist template to host their data projects
+
 case_studies:
   - name: AFWERX
     thumbnail: /assets/pages/images/home-page/afwerx-success-Thumbnail.png
@@ -103,26 +123,21 @@ fact_sheets:
   <div class="grid-row grid-gap">
     <h2>How it works.</h2>
   </div>
-  <div class="grid-row">
-    <div class="grid-col-4 padding-3">
-      <h4 class="text-uppercase">1. Build</h4>
-      <img src="{{site.baseurl}}/assets/pages/images/build.png" alt="Hand building a website">
-      <p>Use our templates or develop your own and publish your web page right away.</p>
-      <a class="font-body-3xs line-height-sans-1" href="{{site.baseurl}}/assets/pages/documents/coe-success.pdf">See how the Centers of Excellence (CoEs) used Federalist to get new pages up <span class="text-no-wrap">quickly →</span></a>
-    </div> 
-    <div class="grid-col-4 padding-3">
-      <h4 class="text-uppercase">2. Launch</h4>
-      <img src="{{site.baseurl}}/assets/pages/images/launch.png" alt="Hand launching a secure website with cloud.gov">
-      <p>You focus on the content, we'll worry about the security, compliance, and deployment.</p>
-      <a class="font-body-3xs line-height-sans-1" href="{{site.baseurl}}/assets/pages/documents/afwerx-success.pdf">Learn how DoD leveraged the Federalist platform to build their own template <span class="text-no-wrap">designs →</span></a>
-    </div> 
-    <div class="grid-col-4 padding-3">
-      <h4 class="text-uppercase">3. Manage</h4>
-      <img src="{{site.baseurl}}/assets/pages/images/manage.png" alt="Hand using faders to manage website deployments">
-      <p>Use our intuitive interface to control the process from start to finish.</p>
-      <a class="font-body-3xs line-height-sans-1" href="{{site.baseurl}}/assets/pages/documents/doi-success.pdf">Learn how DOI used a Federalist template to host their data <span class="text-no-wrap">projects →</span></a>
-    </div> 
-  </div>
+  <div class="grid-row grid-gap-lg">
+    {% for item in page.how_it_works %}
+      <div class="tablet:grid-col-4">
+        <div class="font-sans-sm text-heavy text-center"><span class="bg-primary-darker display-inline-block padding-1 height-5 width-5 radius-pill">{{ forloop.index }}</span></div>
+        <p class="font-sans-lg text-uppercase text-center">
+          {{item.name}}
+        </p>
+        <img class="display-block margin-x-auto" src="{{site.baseurl}}{{item.image}}" alt="{{item.image_alt}}">
+        <div class="padding-x-2">
+          <p class="font-sans-xs line-height-sans-3">{{ item.description }}</p>
+          <a class="display-block font-sans-3xs line-height-sans-4" href="{{site.baseurl}}{item.url}}">{{ item.link_text }}</a>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
   </div>
 </section>
 
