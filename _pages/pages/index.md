@@ -101,11 +101,11 @@ fact_sheets:
     <div class="tablet:grid-col-4 tablet:grid-offset-1 usa-prose margin-top-5">
         <h3>Trusted and Scalable</h3>
         <ul class="margin-left-1">
-          <li class=""><b>134</b> production .gov sites</li>
-          <li class=""><b>9</b> federal agencies</li>
-          <li class=""><b>100+</b> million visitors per year</li>
-          <li class=""><b>400+</b> prototypes developed</li>
-          <li class=""><b>639+</b> updates per week</li>
+          <li><b>134</b> production .gov sites</li>
+          <li><b>9</b> federal agencies</li>
+          <li><b>100+</b> million visitors per year</li>
+          <li><b>400+</b> prototypes developed</li>
+          <li><b>639+</b> updates per week</li>
         </ul>
     </div>
     </div>
@@ -242,3 +242,38 @@ fact_sheets:
     </div>
   </div>
 </section>
+
+
+<script>
+
+  if (location.search === "?b") {
+    document.querySelector('#main-content > .usa-section:first-child').classList.add('usa-section--dark');
+    document.querySelector('#main-content > .usa-section:nth-child(2)').classList.remove('usa-section--dark');
+    document.querySelectorAll('.bg-primary-darker.radius-pill').forEach(function(el) {
+      el.classList.add('text-white');
+    });
+
+    document.querySelector('img[src*="build.png"]').src = document.querySelector('img[src*="build.png"]').src.replace(/build.png/, 'Build.svg');
+    document.querySelector('img[src*="launch.png"]').src = document.querySelector('img[src*="launch.png"]').src.replace(/launch.png/, 'Launch.svg');
+    document.querySelector('img[src*="manage.png"]').src = document.querySelector('img[src*="manage.png"]').src.replace(/manage.png/, 'Manage.svg');
+
+    document.querySelectorAll('#main-content > .usa-section:nth-child(2) a[href]:not(.anchorjs-link)').forEach(function(el) {
+      el.classList.add('cg-arrow');
+    });
+  } else if (location.search === '?c') {
+      document.querySelector('#main-content > .usa-section:first-child').classList.add('usa-section--dark');
+      document.querySelector('#main-content > .usa-section:nth-child(2)').classList.remove('usa-section--dark');
+      document.querySelector('#main-content > .usa-section:nth-child(2)').classList.add('usa-section--light');
+      document.querySelectorAll('.bg-primary-darker.radius-pill').forEach(function(el) {
+        el.classList.add('text-white');
+      });
+    document.querySelector('img[src*="build.png"]').src = document.querySelector('img[src*="build.png"]').src.replace(/build.png/, 'Build.svg');
+    document.querySelector('img[src*="launch.png"]').src = document.querySelector('img[src*="launch.png"]').src.replace(/launch.png/, 'Launch.svg');
+    document.querySelector('img[src*="manage.png"]').src = document.querySelector('img[src*="manage.png"]').src.replace(/manage.png/, 'Manage.svg');
+    document.querySelectorAll('#main-content > .usa-section:nth-child(2) a[href]:not(.anchorjs-link)').forEach(function(el) {
+      el.classList.add('cg-arrow');
+    });
+
+  }
+
+</script>

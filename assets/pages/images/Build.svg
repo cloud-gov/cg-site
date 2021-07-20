@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="176px" height="188px" viewBox="0 0 176 188" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Build</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Modified" transform="translate(2.000000, -1.766563)">
+            <g id="Build" transform="translate(0.000000, 3.766563)">
+                <circle id="Oval" stroke="#112D51" stroke-width="4" fill="#0271BB" cx="77" cy="83" r="69"></circle>
+                <g id="Build-Copy">
+                    <g id="Browser" transform="translate(45.000000, 0.000000)" stroke="#F1F1F1" stroke-width="4">
+                        <path d="M-5.11764544e-14,11 L114,11 L114,109.004101 C114,109.554121 113.55254,110 112.997125,110 L1.00287509,110 C0.44900247,110 -5.11764544e-14,109.558616 -5.11764544e-14,109.004101 L-5.11764544e-14,11 Z" id="Rectangle-path" fill="#112D51"></path>
+                        <path d="M-5.11764544e-14,0.995577499 C-5.11764544e-14,0.445735229 0.447460043,0 1.00287509,0 L112.997125,0 C113.550998,0 114,0.444836974 114,0.995577499 L114,11 L-5.11764544e-14,11 L-5.11764544e-14,0.995577499 Z" id="Rectangle-path" fill="#0271BB"></path>
+                    </g>
+                    <g id="Doc" transform="translate(118.000000, 23.000000)" stroke="#0271BB" stroke-width="4">
+                        <path d="M51.11748,64 L3.18492,64 C1.62756,64 0,63.0099478 0,61.7911652 L0,2.20883478 C0,0.990052174 1.62756,0 3.18492,0 L39.83796,0 L54,11.0369391 L54,61.7911652 C54,63.0099478 52.67448,64 51.11748,64 L51.11748,64 Z" id="Shape" fill="#FFFFFF"></path>
+                        <line x1="42" y1="47" x2="13" y2="47" id="Shape"></line>
+                        <line x1="42" y1="39" x2="13" y2="39" id="Shape"></line>
+                        <line x1="42" y1="30" x2="13" y2="30" id="Shape"></line>
+                        <line x1="24" y1="22" x2="13" y2="22" id="Shape"></line>
+                        <polyline id="Shape" points="40 -5.23531636e-15 40 11 54 11"></polyline>
+                    </g>
+                    <g id="Picture" transform="translate(0.000000, 29.000000)">
+                        <path d="M18.4294267,17 C17.29456,17 16,18.0870462 16,19.1737107 L16,56.827053 C16,57.9114265 17.29456,59 18.4294267,59 L71.5725067,59 C72.7066,59 74,57.9114265 74,56.827053 L74,19.1737107 C74,18.0870462 72.7066,17 71.5728933,17 L18.4294267,17 Z" id="Shape" stroke="#FFFFFF" stroke-width="4" fill="#0271BB"></path>
+                        <circle id="Oval" stroke="#FFFFFF" stroke-width="2" fill="#112D51" cx="29.5" cy="30.5" r="5.5"></circle>
+                        <polygon id="Shape" stroke="#FFFFFF" stroke-width="2" fill="#112D51" points="31 58 45.3025125 33.7221423 52.2736398 43.1884336 61.2394225 29 74 47.127606 74 57.3361727"></polygon>
+                        <line x1="15" y1="8" x2="15" y2="8.8817842e-15" id="Shape" stroke="#112D51" stroke-width="4" stroke-linecap="round"></line>
+                        <line x1="8" y1="16" x2="-2.66453526e-14" y2="16" id="Shape" stroke="#112D51" stroke-width="4" stroke-linecap="round"></line>
+                        <line x1="8" y1="59" x2="-2.66453526e-14" y2="59" id="Shape" stroke="#112D51" stroke-width="4" stroke-linecap="round"></line>
+                        <line x1="15" y1="74" x2="15" y2="66" id="Shape" stroke="#112D51" stroke-width="4" stroke-linecap="round"></line>
+                        <line x1="89" y1="59" x2="81" y2="59" id="Shape" stroke="#0271BB" stroke-width="4" stroke-linecap="round"></line>
+                        <line x1="89" y1="16" x2="81" y2="16" id="Shape" stroke="#0271BB" stroke-width="4" stroke-linecap="round"></line>
+                        <line x1="74" y1="8" x2="74" y2="8.8817842e-15" id="Shape" stroke="#0271BB" stroke-width="4" stroke-linecap="round"></line>
+                        <line x1="74" y1="74" x2="74" y2="66" id="Shape" stroke="#0271BB" stroke-width="4" stroke-linecap="round"></line>
+                    </g>
+                    <path d="M141.754544,137 C145.068144,137 146.514944,139.8768 146.514944,143.1904 C146.514944,143.1904 145.352144,153.9992 141.148944,162.2544 C138.158144,168.1288 136.303344,177.5412 135.711744,180.954 C135.120144,184.3668 137.281518,186 133.817821,186 L106.754544,186 C102.285075,186 104.224144,185.394 103.711744,180.954 C103.199344,176.514 96.9881436,169.7724 96.9881436,169.7724 C87.8849436,159.168 80.4341436,138.2608 80.4341436,138.2608 C78.1069436,132.1832 85.7785436,129.608 88.2221436,133.4564 L91.5505436,139 L98.2402428,150.415869 C99.076568,151.843045 99.7545436,151.662621 99.7545436,150.003468 L99.7545436,103 C99.7545436,99.6864 102.440944,97 105.754544,97 C109.068144,97 111.754544,99.6864 111.754544,103 L111.754544,137 L111.754544,131 C111.754544,127.6864 114.440944,125 117.754544,125 C121.068144,125 123.754544,127.6864 123.754544,131 L123.754544,141 L123.754544,135 C123.754544,131.6864 126.440944,129 129.754544,129 C133.068144,129 135.754544,131.6864 135.754544,135 L135.754544,143 L135.754544,145 L135.754544,143 C135.754544,139.6864 138.440944,137 141.754544,137 Z" id="Shape" fill="#B49E89"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
