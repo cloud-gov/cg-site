@@ -5,19 +5,19 @@ navigation: pages
 title: cloud.gov Pages
 how_it_works:
   - name: Build
-    image: /assets/pages/images/build.png
+    image: /assets/pages/images/build-on-blue.svg
     image_alt: Hand building a website
     description: Use our templates or develop your own and publish your web page right away.
     link: /assets/pages/documents/coe-success.pdf
     link_text: See how the Centers of Excellence (CoEs) used Federalist to get new pages up quickly
   - name: Launch
-    image: /assets/pages/images/launch.png
+    image: /assets/pages/images/launch-on-blue.svg
     image_alt: Hand launching a secure website with cloud.gov
     description: You focus on the content, we'll worry about the security, compliance, and deployment.
     link: /assets/pages/documents/afwerx-success.pdf
     link_text: Learn how DoD leveraged the Federalist platform to build their own template designs
   - name: Manage
-    image: /assets/pages/images/manage.png
+    image: /assets/pages/images/manage-on-blue.svg
     image_alt: Hand using faders to manage website deployments
     description: Use our intuitive interface to control the process from start to finish.
     link: /assets/pages/documents/doi-success.pdf
@@ -253,9 +253,10 @@ fact_sheets:
       el.classList.add('text-white');
     });
 
-    document.querySelector('img[src*="build.png"]').src = document.querySelector('img[src*="build.png"]').src.replace(/build.png/, 'Build.svg');
-    document.querySelector('img[src*="launch.png"]').src = document.querySelector('img[src*="launch.png"]').src.replace(/launch.png/, 'Launch.svg');
-    document.querySelector('img[src*="manage.png"]').src = document.querySelector('img[src*="manage.png"]').src.replace(/manage.png/, 'Manage.svg');
+    document.querySelectorAll('img[src*="-on-blue.svg"]').forEach(function(el) {
+      el.src = el.src.replace(/-on-blue/, '-on-white');
+    });
+
 
     document.querySelectorAll('#main-content > .usa-section:nth-child(2) a[href]:not(.anchorjs-link)').forEach(function(el) {
       el.classList.add('cg-arrow');
@@ -267,12 +268,14 @@ fact_sheets:
       document.querySelectorAll('.bg-primary-darker.radius-pill').forEach(function(el) {
         el.classList.add('text-white');
       });
-    document.querySelector('img[src*="build.png"]').src = document.querySelector('img[src*="build.png"]').src.replace(/build.png/, 'Build.svg');
-    document.querySelector('img[src*="launch.png"]').src = document.querySelector('img[src*="launch.png"]').src.replace(/launch.png/, 'Launch.svg');
-    document.querySelector('img[src*="manage.png"]').src = document.querySelector('img[src*="manage.png"]').src.replace(/manage.png/, 'Manage.svg');
-    document.querySelectorAll('#main-content > .usa-section:nth-child(2) a[href]:not(.anchorjs-link)').forEach(function(el) {
-      el.classList.add('cg-arrow');
-    });
+
+      document.querySelectorAll('img[src*="-on-blue.svg"]').forEach(function(el) {
+        el.src = el.src.replace(/-on-blue/, '-on-white');
+      });
+
+      document.querySelectorAll('#main-content > .usa-section:nth-child(2) a[href]:not(.anchorjs-link)').forEach(function(el) {
+        el.classList.add('cg-arrow');
+      });
 
   }
 
