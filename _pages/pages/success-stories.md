@@ -7,8 +7,8 @@ title: cloud.gov Pages - Success Stories
 
 <section class="usa-section">
   <div class="grid-row grid-gap">
-    <div class="tablet:grid-col-8 site-welcome">
-      <h1>Trusted and scalable.</h1>
+    <div class="tablet:grid-col-8">
+      <h1 class="font-heading-3xl">Trusted and scalable.</h1>
       <p class="usa-intro">Federalist hosts over 100+ sites across Federal agencies which account for over 140,000+ page views per day.</p>
     </div>
   </div>

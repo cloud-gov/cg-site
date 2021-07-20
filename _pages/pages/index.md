@@ -93,21 +93,21 @@ fact_sheets:
 ---
 
 <section class="usa-section">
-  <div class="grid-container maxw-desktop site-welcome">
+  <div class="grid-container maxw-desktop">
     <div class="grid-row grid-gap">
-    <div class="tablet:grid-col-7">
-      <h1>There’s no easier way to build, launch and manage government sites.</h1>
-    </div>
-    <div class="tablet:grid-col-4 tablet:grid-offset-1 usa-prose margin-top-5">
-        <h3>Trusted and Scalable</h3>
-        <ul class="margin-left-1">
-          <li><b>134</b> production .gov sites</li>
-          <li><b>9</b> federal agencies</li>
-          <li><b>100+</b> million visitors per year</li>
-          <li><b>400+</b> prototypes developed</li>
-          <li><b>639+</b> updates per week</li>
-        </ul>
-    </div>
+      <div class="tablet:grid-col-7">
+        <h1 class="font-heading-3xl">There’s no easier way to build, launch and manage government sites.</h1>
+      </div>
+      <div class="tablet:grid-col-4 tablet:grid-offset-1 usa-prose padding-5">
+          <h3>Trusted and Scalable</h3>
+          <ul class="margin-left-1">
+            <li><b>134</b> production .gov sites</li>
+            <li><b>9</b> federal agencies</li>
+            <li><b>100+</b> million visitors per year</li>
+            <li><b>400+</b> prototypes developed</li>
+            <li><b>639+</b> updates per week</li>
+          </ul>
+      </div>
     </div>
     <div class="grid-row grid-gap">
       <p class="usa-intro">

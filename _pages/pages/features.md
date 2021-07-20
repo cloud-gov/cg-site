@@ -7,9 +7,8 @@ title: cloud.gov Pages - Features
 
 <section class="usa-section">
     <div class="grid-row grid-gap">
-      <div class="tablet:grid-col-8 site-welcome">
-        <h1>Less Work.</h1>
-        <h1>More Federalist.</h1>
+      <div class="tablet:grid-col-8">
+        <h1 class="font-heading-3xl">Less Work.<br>More Federalist.</h1>
         <p class="usa-intro">We’ve taken the work out of launching a compliant federal website.</p>
       </div>
       <div class="tablet:grid-col-4 usa-section--dark margin-top-8">
