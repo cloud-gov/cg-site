@@ -126,7 +126,7 @@ fact_sheets:
   <div class="grid-row grid-gap-lg">
     {% for item in page.how_it_works %}
       <div class="tablet:grid-col-4 margin-y-4">
-        <div class="font-sans-sm text-heavy text-center"><span class="bg-primary-darker display-inline-block padding-1 height-5 width-5 radius-pill">{{ forloop.index }}</span></div>
+        <div class="font-sans-sm text-heavy text-center"><span class="bg-primary display-inline-block padding-1 height-5 width-5 radius-pill">{{ forloop.index }}</span></div>
         <p class="font-sans-lg text-uppercase text-center">
           {{item.name}}
         </p>
@@ -249,7 +249,7 @@ fact_sheets:
   if (location.search === "?b") {
     document.querySelector('#main-content > .usa-section:first-child').classList.add('usa-section--dark');
     document.querySelector('#main-content > .usa-section:nth-child(2)').classList.remove('usa-section--dark');
-    document.querySelectorAll('.bg-primary-darker.radius-pill').forEach(function(el) {
+    document.querySelectorAll('.bg-primary.radius-pill').forEach(function(el) {
       el.classList.add('text-white');
     });
 
@@ -265,7 +265,7 @@ fact_sheets:
       document.querySelector('#main-content > .usa-section:first-child').classList.add('usa-section--dark');
       document.querySelector('#main-content > .usa-section:nth-child(2)').classList.remove('usa-section--dark');
       document.querySelector('#main-content > .usa-section:nth-child(2)').classList.add('usa-section--light');
-      document.querySelectorAll('.bg-primary-darker.radius-pill').forEach(function(el) {
+      document.querySelectorAll('.bg-primary.radius-pill').forEach(function(el) {
         el.classList.add('text-white');
       });
 
