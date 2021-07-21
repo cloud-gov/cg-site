@@ -528,3 +528,14 @@ main .usa-button--secondary {
   @include u-padding-top(5);
 }
 
+// Use white for headlines inside .usa-section--dark
+.usa-section--dark {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: color("white");
+  }
+}
