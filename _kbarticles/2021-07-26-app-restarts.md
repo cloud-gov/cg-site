@@ -13,7 +13,7 @@ When an app instance running on cloud.gov crashes for some reason (e.g., an unha
 
 ### What else causes app restarts
 
-Certain maintenance activities undertaken by the cloud.gov team require restarting VMs with containers hosting app instances. For example, when we update stemcells or installs a new version of Cloud Foundry - the software that [underlies cloud.gov](https://cloud.gov/docs/overview/what-is-cloudgov/) - all the VMs in a deployment are restarted.
+Certain [maintenance activities undertaken by the cloud.gov team](https://cloud.gov/docs/deployment/app-maintenance/#operating-system-patching) require restarting VMs with containers hosting app instances. For example, when we update stemcells or installs a new version of Cloud Foundry - the software that [underlies cloud.gov](https://cloud.gov/docs/overview/what-is-cloudgov/) - all the VMs in a deployment are restarted.
 
 Cloud Foundry automatically relocates the instances on VMs that are shutting down through a process called "evacuation". Cloud Foundry recreates the app instances on another VM, waits until they are healthy, and then shuts down the old instances. During this  process, apps running a single instance may become temporarily unavailable if the replacement instance does not become healthy within the platform’s operation timeout, which defaults to 10 minutes.
 
