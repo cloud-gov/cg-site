@@ -5,26 +5,26 @@ date: July 26, 2021
 excerpt: When do application restarts happen and what do they mean
 ---
 
-Application restarts are a common occurrence on cloud.gov platform, as our operators regular deploy updates to the various system components. This can sometimes cause confusion as application developers or system owners may interpret restarts as an issue with the way their application is built or functions.
+Application restarts are a common occurrence on the cloud.gov platform, as our operators [regularly deploy updates to the various system components](https://cloud.gov/docs/deployment/app-maintenance/#operating-system-patching). This can sometimes cause confusion as application developers or system owners may interpret restarts as an issue with the way their application is built or functions.
 
-### How are apps managed by the cloud.gov platform
+### What happens when an app crashes?
 
 When an app instance running on cloud.gov crashes for some reason (e.g., an unhandled exception occurs in your application code), the platform will automatically try to restart it. The platform automatically restarts your app by rescheduling the instance on another container 3 times. After 3 failed restarts, the platform [gradually increases the amount of time between restart attempts](https://docs.cloudfoundry.org/devguide/deploy-apps/app-lifecycle.html#crash-events).
 
-### What else causes app restarts
+### What else causes app restarts?
 
-Certain [maintenance activities undertaken by the cloud.gov team](https://cloud.gov/docs/deployment/app-maintenance/#operating-system-patching) require restarting VMs with containers hosting app instances. For example, when we update stemcells or installs a new version of Cloud Foundry - the software that [underlies cloud.gov](https://cloud.gov/docs/overview/what-is-cloudgov/) - all the VMs in a deployment are restarted.
+Certain maintenance activities undertaken by the cloud.gov team require restarting VMs with containers hosting app instances. For example, when we update stemcells or installs a new version of Cloud Foundry - the software that [underlies cloud.gov](https://cloud.gov/docs/overview/what-is-cloudgov/) - all the VMs in the deployment are restarted.
 
-Cloud Foundry automatically relocates the instances on VMs that are shutting down through a process called "evacuation". Cloud Foundry recreates the app instances on another VM, waits until they are healthy, and then shuts down the old instances. During this  process, apps running a single instance may become temporarily unavailable if the replacement instance does not become healthy within the platform’s operation timeout, which defaults to 10 minutes.
+Cloud Foundry automatically relocates the instances on VMs that are shutting down through a process called "evacuation." Cloud Foundry recreates the app instances on another VM, waits until they are healthy, and then shuts down the old instances. During this  process, apps running a single instance may become temporarily unavailable if the replacement instance does not become healthy within the platform’s operation timeout, which defaults to 10 minutes.
 
 This underscores the importance of running [multiple instances of your application](https://cloud.gov/docs/management/multiple-instances/) to ensure that app restarts do not result in downtime. 
 
 
-### How can I tell the difference
+### How can I tell what is causing my app to restart?
 
-The easiest thing to check is the day of the week. Our operators perform platform maintenance that could result in your app restarting from Tuesday to Thursday each week. Application restarts that occur on these days are often related to platform maintenance and deployments.
+The easiest thing to check is the day of the week. Our operators perform platform maintenance that could result in your app restarting from **Tuesday through Thursday** each week. Application restarts that occur on these days are often related to platform maintenance and deployments.
 
-Additionally, if you are seeing app restarts in your application logs, you can usually discern if the cause os platform maintenance or if there is an issue causing your app to crash.
+Additionally, if you are seeing app restarts in your application logs, you can usually discern if the cause is platform maintenance or if there is an issue causing your app to crash.
 
 During regular platform maintenance, you may see log entries that look like the following that indicate the evacuation process for restarting apps:
 
@@ -44,3 +44,5 @@ When an app crashes for some reason, the log signature looks very different. For
 2021-07-27T10:49:03.26-0400 [CELL/0] OUT Cell 47c65d8bcaf81e837dff0037ea75e2a9  successfully destroyed container for instance 0d8ecfd137c9de128e557c3f7d539b32
 2021-07-27T10:49:03.48-0400 [CELL/0] OUT Cell bda99bfd4a206845400ffb0aa9806516  successfully created container for instance 6d4190c228fffa472fa13c200f43e404
 ```
+
+If you are unsure what caused an app restart, check the day of the week and review the details of your application logs.
