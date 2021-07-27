@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Questions About App Restarts"
-date: Ju;y 26, 2021
+date: July 26, 2021
 excerpt: When do application restarts happen and what do they mean
 ---
 
