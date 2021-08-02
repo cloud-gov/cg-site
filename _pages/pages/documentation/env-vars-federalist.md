@@ -13,7 +13,7 @@ At the time your site is built, a number of special environment variables are ex
 
 ## Default environment variables
 
-When Federalist builds your site it makes available the following environment variables:
+When Pages builds your site it makes available the following environment variables:
 
 Name|Description
 ---|---
@@ -33,8 +33,8 @@ Additional environment variables can be added to your builds by:
 
 You can remove environment variables by clicking the "X" button next to the desired environment variable in the Current Environment Variables table.
 
-Certain environment variable names are reserved for Federalist use and will be ignored. Warnings for any ignored environment variables will be present in the build logs. See above for an up-to-date list.
+Certain environment variable names are reserved for Pages use and will be ignored. Warnings for any ignored environment variables will be present in the build logs. See above for an up-to-date list.
 
-Federalist is a **FISMA Low** system, do NOT store variables for systems that are Moderate or High, and only expose variables if it is safe to do so. You assume the risk if the values you add contain, or allow access to information that is not suitable for this categorization. See [FISMA Security Categorization](https://csrc.nist.gov/Projects/Risk-Management/Risk-Management-Framework-(RMF)-Overview/Security-Categorization) for more information on FISMA information categorization.
+Pages is a **FISMA Low** system, do NOT store variables for systems that are Moderate or High, and only expose variables if it is safe to do so. You assume the risk if the values you add contain, or allow access to information that is not suitable for this categorization. See [FISMA Security Categorization](https://csrc.nist.gov/Projects/Risk-Management/Risk-Management-Framework-(RMF)-Overview/Security-Categorization) for more information on FISMA information categorization.
 
 ![Image of environment variable settings]({{site.baseurl}}/assets/pages/images/env-vars.png)

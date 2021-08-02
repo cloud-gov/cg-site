@@ -8,13 +8,13 @@ redirect_from:
   - /pages/how-federalist-works/cloud-gov-setup/
 ---
 
-## Configuring Federalist in cloud.gov's GovCloud environment
+## Configuring Pages in cloud.gov's GovCloud environment
 
-Federalist is built to be deployed to the [GovCloud]({{ site.baseurl }}/docs/apps/govcloud/) region in [cloud.gov]({{ site.baseurl }}/docs/). This guide is targeted at anyone who wishes to deploy the entire Federalist system to cloud.gov from the ground up, or anyone who wishes to get a better grasp of how the system is architected by looking at how it is deployed.
+Pages is built to be deployed to the [GovCloud]({{ site.baseurl }}/docs/apps/govcloud/) region in [cloud.gov]({{ site.baseurl }}/docs/). This guide is targeted at anyone who wishes to deploy the entire Pages system to cloud.gov from the ground up, or anyone who wishes to get a better grasp of how the system is architected by looking at how it is deployed.
 
-Before reading this guide, it may be helpful to refer to [How Federalist Works]({{site.baseurl}}/pages/documentation/how-federalist-works/) to understand what components make up the Federalist architecture and how they are interrelated.
+Before reading this guide, it may be helpful to refer to [How Pages Works]({{site.baseurl}}/pages/documentation/how-federalist-works/) to understand what components make up the Pages architecture and how they are interrelated.
 
-A Federalist deploy comprises of the following steps:
+A Pages deploy comprises of the following steps:
 
 - Creating a GitHub OAuth Application
 - Creating user-provided-services
@@ -23,16 +23,16 @@ A Federalist deploy comprises of the following steps:
     - federalist web
     - federalist builder
     - federalist build containers
-- Federalist External Domain
+- Pages External Domain
 
 ### Creating a GitHub OAuth Application
 
-Federalist requires a GitHub OAuth application in order to work. The OAuth
-application should be setup under the GitHub organization that is deploying Federalist (e.g., the 18F org for any instance of Federalist used by 18F).
+Pages requires a GitHub OAuth application in order to work. The OAuth
+application should be setup under the GitHub organization that is deploying Pages (e.g., the 18F org for any instance of Pages used by 18F).
 
 Adding an application is done within an organization's settings. Navigate to
 `Settings > Developer Settings > OAuth Applications`. Fill out all of the
-necessary fields. Make sure that the authorization URL is set to Federalist's
+necessary fields. Make sure that the authorization URL is set to Pages's
 OAuth authorization URL, e.g. `https://federalist.18f.gov/auth`.
 
 When the application is created, save the client and secret keys to add to the
@@ -83,14 +83,14 @@ Once the user provided services are created deploying is a simple as running `cf
 
 ### Provisioning AWS resources
 
-The next pieces of Federalist that need to be deployed will depend on certain AWS resources. That makes this a good time to provision the AWS resources that are needed:
+The next pieces of Pages that need to be deployed will depend on certain AWS resources. That makes this a good time to provision the AWS resources that are needed:
 
 - An RDS instance for the database
 - An S3 bucket for storing the sites' files
 - An SQS queue for build messages
 - An IAM user for ECR
 
-[How Federalist Works]({{site.baseurl}}/pages/documentation/how-federalist-works/) contains the details about how each of these should be configured.
+[How Pages Works]({{site.baseurl}}/pages/documentation/how-federalist-works/) contains the details about how each of these should be configured.
 
 #### Provisioning an RDS instance
 
@@ -103,20 +103,20 @@ cf create-service aws-rds micro-psql federalist-production-rds
 #### Provisioning an ECR instance
 
 At this time cloud.gov does not have an ECR service broker.  The ECR instance will need to be configured elsewhere.
-For information how Federalist manages its ECR service visit the [federalist-infra repository](https://github.com/18f/federalist-infra).
+For information how Pages manages its ECR service visit the [federalist-infra repository](https://github.com/18f/federalist-infra).
 
 #### Provisioning an SQS queue
 At this time cloud.gov does not have an SQS service broker. The SQS queue will need to be configured elsewhere.
 
-### Deploy Federalist application components
+### Deploy Pages application components
 
 #### Deploy federalist web
 
 For information how to deploy this app visit the [federalist repository](https://github.com/18f/federalist).
 
-##### Federalist External Domain
+##### Pages External Domain
 
-Federalist uses an [external domain service provided by cloud.gov]({{ site.baseurl }}/docs/services/external-domain-service/) which brokers a Cloudfront Distribution to route traffic from the public domain to the application. To create such a service, run the following while targeting the appropriate space in cloud.gov:
+Pages uses an [external domain service provided by cloud.gov]({{ site.baseurl }}/docs/services/external-domain-service/) which brokers a Cloudfront Distribution to route traffic from the public domain to the application. To create such a service, run the following while targeting the appropriate space in cloud.gov:
 
 ```shell
 cf create-service external-domain domain-with-cdn federalist-route -c '{
@@ -125,7 +125,7 @@ cf create-service external-domain domain-with-cdn federalist-route -c '{
 }'
 ```
 
-Once this is done, running `cf service federalist-route` should give you a CloudFront domain name. Next, [open a PR against the DNS repo to add a CNAME record for federalist.18f.gov with the CloudFront URL](https://github.com/18F/dns/commit/403f67db920e629c73bd7e2c43fbb367514af8cf). Once the DNS changes propagate, Federalist should be available at [federalist.18f.gov](https://federalist.18f.gov).
+Once this is done, running `cf service federalist-route` should give you a CloudFront domain name. Next, [open a PR against the DNS repo to add a CNAME record for federalist.18f.gov with the CloudFront URL](https://github.com/18F/dns/commit/403f67db920e629c73bd7e2c43fbb367514af8cf). Once the DNS changes propagate, Pages should be available at [federalist.18f.gov](https://federalist.18f.gov).
 
 By default, the CDN caches error responses, so you will also need to work with cloud.gov support to [change the mimimum error caching TTL to 0](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HTTPStatusCodes.html).
 
@@ -135,11 +135,11 @@ For information how to deploy this app visit the [federalist-builder repository]
 
 #### Deploying build containers
 
-Federalist's "build containers" are cloud.gov apps running with the [federalist-garden-build](https://github.com/18f/federalist-garden-build) image.
+Pages's "build containers" are cloud.gov apps running with the [federalist-garden-build](https://github.com/18f/federalist-garden-build) image.
 
 For information on how to deploy this app visit the [federaist-garden-build repository](https://github.com/18f/federalist-garden-build).
 
-## Updating a Federalist site's CloudFront to serve from S3
+## Updating a Pages site's CloudFront to serve from S3
 
 **Only to be used in proxy downtime situations (which has only happened once historically).**
 

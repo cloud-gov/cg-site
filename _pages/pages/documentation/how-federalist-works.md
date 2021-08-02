@@ -1,5 +1,5 @@
 ---
-title: How Federalist Works
+title: How Pages Works
 permalink: /pages/documentation/how-federalist-works/
 layout: docs
 navigation: pages
@@ -10,32 +10,32 @@ redirect_from:
 
 ---
 
-Federalist is a hosted service run by [18F](https://18f.gsa.gov/) for use by US federal government agencies. The software behind this service is open source and released to the public domain for anyone to use. We also welcome your contributions and ideas.
+Pages is a hosted service run by [18F](https://18f.gsa.gov/) for use by US federal government agencies. The software behind this service is open source and released to the public domain for anyone to use. We also welcome your contributions and ideas.
 
-We use GitHub to manage our work on Federalist. The main code repository for the Federalist is at [https://github.com/18F/federalist](https://github.com/18F/federalist). In addition to hosting code, we use the issue queue on this repository to manage our development tasks and milestones. If you're interested in getting involved with this project, please see the [contributing guide](https://github.com/18F/federalist/blob/main/CONTRIBUTING.md). Here is a specific description of each of Federalist's modular repositories:
+We use GitHub to manage our work on Pages. The main code repository for the Pages is at [https://github.com/18F/federalist](https://github.com/18F/federalist). In addition to hosting code, we use the issue queue on this repository to manage our development tasks and milestones. If you're interested in getting involved with this project, please see the [contributing guide](https://github.com/18F/federalist/blob/main/CONTRIBUTING.md). Here is a specific description of each of Pages's modular repositories:
 
 ### Functional Repositories
 
-- **[federalist](https://github.com/18F/federalist)** This is the core application for Federalist and contains the frontend interface as well as the code that interacts with the GitHub API and sets up new Federalist sites, including a GitHub webhook that triggers messages into the build queue through the app. It has a cloud.gov PostgreSQL database service instance for session storage and persistent data storage of users, sites, and logs.
-- **[federalist-builder](https://github.com/18F/federalist-builder)** This application launches build tasks for Federalist in a Linux Garden container based on messages from a queue and contains scheduling logic.
-- **[federalist-proxy](https://github.com/18F/federalist-proxy)** This application serves as a proxy for the S3 bucket to which Federalist deploys static content. It adds some required headers for compliance.
-- **[federalist-garden-build](https://github.com/18F/federalist-garden-build)** This container image contains the code to build Federalist sites in Garden Linux containers.
+- **[federalist](https://github.com/18F/federalist)** This is the core application for Pages and contains the frontend interface as well as the code that interacts with the GitHub API and sets up new Pages sites, including a GitHub webhook that triggers messages into the build queue through the app. It has a cloud.gov PostgreSQL database service instance for session storage and persistent data storage of users, sites, and logs.
+- **[federalist-builder](https://github.com/18F/federalist-builder)** This application launches build tasks for Pages in a Linux Garden container based on messages from a queue and contains scheduling logic.
+- **[federalist-proxy](https://github.com/18F/federalist-proxy)** This application serves as a proxy for the S3 bucket to which Pages deploys static content. It adds some required headers for compliance.
+- **[federalist-garden-build](https://github.com/18F/federalist-garden-build)** This container image contains the code to build Pages sites in Garden Linux containers.
 
 ### Documentation
 - **[federalist.18f.gov](https://github.com/18f/federalist.18f.gov/)** The documentation website.
 
 ### Templates
 
-- **[federalist-uswds-template](https://github.com/18f/federalist-uswds-template/)** A Federalist template that uses the U.S. Web Design Standards Jekyll theme.
-- **[federalist-report-template](https://github.com/18F/federalist-uswds-template/tree/report-config)** A Federalist template that offers an easy to use setup for hosting multiple pages about a recent report or order. This template code can be found in the report-config branch under the [federalist-uswds-template](https://github.com/18f/federalist-uswds-template/) repo.
+- **[federalist-uswds-template](https://github.com/18f/federalist-uswds-template/)** A Pages template that uses the U.S. Web Design Standards Jekyll theme.
+- **[federalist-report-template](https://github.com/18F/federalist-uswds-template/tree/report-config)** A Pages template that offers an easy to use setup for hosting multiple pages about a recent report or order. This template code can be found in the report-config branch under the [federalist-uswds-template](https://github.com/18f/federalist-uswds-template/) repo.
 - **[federalist-landing-page-template](https://github.com/18F/federalist-landing-page-template)** A single page meant to host information about a new initiative or report.
 - **[federalist-modern-team-template](https://github.com/18F/federalist-modern-team-template)** A simple site to showcase the work of an organization with a few different page types.
 
 ## Architecture
 
-Federalist is located on cloud.gov's GovCloud environment, which has [received FedRAMP certification](https://marketplace.fedramp.gov/index.html#/product/18f-cloudgov). [This blog post](https://18f.gsa.gov/2017/02/02/cloud-gov-is-now-fedramp-authorized/) explains more about FedRAMP.
+Pages is located on cloud.gov's GovCloud environment, which has [received FedRAMP certification](https://marketplace.fedramp.gov/index.html#/product/18f-cloudgov). [This blog post](https://18f.gsa.gov/2017/02/02/cloud-gov-is-now-fedramp-authorized/) explains more about FedRAMP.
 
-The diagram for Federalist's architecture is below. It's not intended for general audiences and is focused on concisely showing all of the components of Federalist as required for compliance. Please contact us with any questions: we aren't expecting this diagram to be useful by itself to gain an understanding of Federalist. [![Diagram of Federalist architecture]({{site.baseurl}}/assets/pages/images/Federalist System Diagram 3-8-18.png)]({{site.baseurl}}/assets/pages/images/Federalist System Diagram 3-8-18.png)
+The diagram for Pages's architecture is below. It's not intended for general audiences and is focused on concisely showing all of the components of Pages as required for compliance. Please contact us with any questions: we aren't expecting this diagram to be useful by itself to gain an understanding of Pages. [![Diagram of Pages architecture]({{site.baseurl}}/assets/pages/images/Pages System Diagram 3-8-18.png)]({{site.baseurl}}/assets/pages/images/Pages System Diagram 3-8-18.png)
 
 
 ### https://federalist.18f.gov
@@ -46,8 +46,8 @@ Build messages generated by the API are sent to the SQS queue
 
 - GH: 18f/federalist
 - CF: -o federalist -s prod -n federalist
-- Federalist API: /*
-- Federalist front-end: /assets/*
+- Pages API: /*
+- Pages front-end: /assets/*
 
 ###  GitHub
 
@@ -109,11 +109,11 @@ Website bucket for hosting generated static website files
 #### Creating new buckets
 *The following guide is intended for use with the new [cloud.gov]({{site.baseurl}}), hosted on the GovCloud AWS region.*
 
-There are two buckets, one for each of Federalist's environments (**production** and **staging**).
+There are two buckets, one for each of Pages's environments (**production** and **staging**).
 These buckets *should* be active and properly configured, but there may be times when a developer needs to create a new one. To accomplish this, he developer should follow the [documentation on cloud.gov]({{site.baseurl}}/docs/apps/s3/#add-s3-to-an-application).
 
 
-Buckets intended to serve websites will need to be created using the `basic-public` plan. Once the bucket is created, the developer must enable CORS access, typically only allowing GET requests to come from the Federalist application the bucket serves.
+Buckets intended to serve websites will need to be created using the `basic-public` plan. Once the bucket is created, the developer must enable CORS access, typically only allowing GET requests to come from the Pages application the bucket serves.
 An example configuration can be found in the [here]({{site.baseurl}}/docs/apps/s3/#allowing-access-from-other-applications).
 
 Finally, the developer will need to enable the website hosting using [the AWS CLI's `s3 website` command](http://docs.aws.amazon.com/cli/latest/reference/s3/website.html). These commands expects the developer's local directory to contain a generic 404 page named `404.html`:
@@ -123,20 +123,20 @@ aws s3 cp ./404.html s3://${BUCKET_NAME}/404.html
 aws s3 website s3://${BUCKET_NAME} --index-document index.html --error-document 404.html
 ```
 
-At this point, the bucket should be enabled to host websites generated by Federalist. The final step to allow the Federalist web app to access the bucket is to bind the service instance to the app. To bind the bucket to Federalist, add the name of the service to the environment specific `manifest.yml` file in Federalist, under the `services` key.
+At this point, the bucket should be enabled to host websites generated by Pages. The final step to allow the Pages web app to access the bucket is to bind the service instance to the app. To bind the bucket to Pages, add the name of the service to the environment specific `manifest.yml` file in Pages, under the `services` key.
 
-**NOTE**: Replacing the binding to the bucket service will point all future builds to the new bucket. Federalist will no longer be able to route to the old bucket, although sites built there will be accsible via the bucket url. Federalist currently only supports a **single bucket per environement**.
+**NOTE**: Replacing the binding to the bucket service will point all future builds to the new bucket. Pages will no longer be able to route to the old bucket, although sites built there will be accsible via the bucket url. Pages currently only supports a **single bucket per environement**.
 
 ### Public Internet
 
 Sites are publicly available as part of an S3 website bucket
 
-CloudFront is used for [custom domains]({{site.baseurl}}/pages/documentation/custom-domains/). 404 pages are configured manually for customers that submit a support request to the Federalist team.
+CloudFront is used for [custom domains]({{site.baseurl}}/pages/documentation/custom-domains/). 404 pages are configured manually for customers that submit a support request to the Pages team.
 
 
 ## Related reading
 
-- [18F Blog Post on Federalist's platform launch](https://18f.gsa.gov/2015/09/15/federalist-platform-launch/)
+- [18F Blog Post on Pages's platform launch](https://18f.gsa.gov/2015/09/15/federalist-platform-launch/)
 - [Building CMS-Free Websites](https://developmentseed.org/blog/2012/07/27/build-cms-free-websites/)
 - [Background on relaunch of Healthcare.gov’s front-end](http://www.theatlantic.com/technology/archive/2013/06/healthcaregov-code-developed-by-the-people-and-for-the-people-released-back-to-the-people/277295/)
 - [HealthCare.gov uses lightweight open source tools](https://www.digitalgov.gov/2013/05/07/the-new-healthcare-gov-uses-a-lightweight-open-source-tool/)

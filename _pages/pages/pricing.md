@@ -7,7 +7,7 @@ title: cloud.gov Pages - Pricing
 
 <section class="usa-section">
   <div class="grid-row">
-    <h1 class="margin-top-0">Platform Access to Federalist for only $24,949/year</h1>
+    <h1 class="margin-top-0">Platform Access to Pages for only $24,949/year</h1>
   </div>
   <div class="grid-row usa-prose">
     <p class="usa-intro">Included in subscription:</p>

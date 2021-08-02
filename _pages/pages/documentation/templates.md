@@ -9,7 +9,7 @@ redirect_from:
 
 ---
 
-Federalist offers several templates for common website types that are meant to serve as a starting point for you. These templates show what’s possible and can even be the basis for your site if your needs are closely aligned to the formatting of the template. Federalist templates are not built to serve as final work products, nor are they like templates that you might typically find in a content management system. Instead, templates serve as a “starter kit.” Substantial configuration of a Federalist template requires technical knowledge and know-how.
+Pages offers several templates for common website types that are meant to serve as a starting point for you. These templates show what’s possible and can even be the basis for your site if your needs are closely aligned to the formatting of the template. Pages templates are not built to serve as final work products, nor are they like templates that you might typically find in a content management system. Instead, templates serve as a “starter kit.” Substantial configuration of a Pages template requires technical knowledge and know-how.
 
 Here are the templates currently available:
 
@@ -27,5 +27,5 @@ Here are the templates currently available:
 {% endfor %}
 
 
-Federalist will build any Jekyll, Gatsby or Hugo website, supporting [custom website templates]({{site.baseurl}}/pages/documentation/how-builds-work). 
+Pages will build any Jekyll, Gatsby or Hugo website, supporting [custom website templates]({{site.baseurl}}/pages/documentation/how-builds-work). 
 Update 

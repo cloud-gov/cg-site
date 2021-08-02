@@ -8,12 +8,12 @@ title: cloud.gov Pages - Features
 <section class="usa-section">
     <div class="grid-row grid-gap">
       <div class="tablet:grid-col-8">
-        <h1 class="font-heading-3xl">Less Work.<br>More Federalist.</h1>
+        <h1 class="font-heading-3xl">Less Work.<br>More Pages.</h1>
         <p class="usa-intro">We’ve taken the work out of launching a compliant federal website.</p>
       </div>
       <div class="tablet:grid-col-4 usa-section--dark margin-top-8">
         <h2>Try it for free</h2>
-        <p class="usa-intro">Contact us to try Federalist temporarily on a prototype or test project.</p>
+        <p class="usa-intro">Contact us to try Pages temporarily on a prototype or test project.</p>
         <p><a class="usa-button usa-button--big" href="mailto:federalist-inquiries@gsa.gov?body=What%27s%20your%20name%3F%0A%0AWhat%20agency%20or%20office%20do%20you%20work%20for%3F%0A%0AWhat%27s%20your%20job%20title%20or%20role%3F%0A%0ATell%20us%20a%20little%20about%20your%20website%20project%20or%20your%20questions%20about%20federalist:%0A%0AIf%20you%27d%20like%20us%20to%20call%20you%2C%20what%27s%20your%20phone%20number%20and%20when%20might%20be%20a%20good%20time%3F%0A"> Get in touch</a></p>
       </div>
     </div>
@@ -28,7 +28,7 @@ title: cloud.gov Pages - Features
     <div class="grid-col-4 padding-y-2">
       <img alt="" src="{{site.baseurl}}/assets/pages/images/icons/icon-rocket-color.svg">
       <h4 class="margin-top-0">Deploy Quickly</h4>
-      <p>If your code is already on GitHub, Federalist can securely deploy a website from your repository in minutes.</p>
+      <p>If your code is already on GitHub, Pages can securely deploy a website from your repository in minutes.</p>
     </div> 
     <div class="grid-col-4 padding-y-2">
       <img alt=""  src="{{site.baseurl}}/assets/pages/images/icons/icon-layout-color.svg">
@@ -38,7 +38,7 @@ title: cloud.gov Pages - Features
     <div class="grid-col-4 padding-y-2">
       <img class="display-block margin-x-auto" alt="" src="{{site.baseurl}}/assets/pages/images/icons/icon-badge-color.svg">
       <h4 class="margin-top-0">Customization</h4>
-      <p>Use a site generator like Jekyll, Hugo, Gatsby, or other tools to deploy custom site designs through Federalist.</p>
+      <p>Use a site generator like Jekyll, Hugo, Gatsby, or other tools to deploy custom site designs through Pages.</p>
     </div>
   </div>
   <div class="grid-row grid-gap usa-prose text-center">
@@ -50,7 +50,7 @@ title: cloud.gov Pages - Features
     <div class="grid-col-4 padding-y-2">
       <img alt="" src="{{site.baseurl}}/assets/pages/images/icons/icon-two-squares-color.svg">
       <h4 class="margin-top-0">Reusable and public</h4>
-      <p>Federalist source code is open source and in the public domain. Share code with other agencies and vendors also using Federalist.</p>
+      <p>Pages source code is open source and in the public domain. Share code with other agencies and vendors also using Pages.</p>
     </div>
   </div>
 </section>
@@ -68,7 +68,7 @@ title: cloud.gov Pages - Features
         <li>Execute an Interagency Agreement in weeks.</li>
         <li>Unlimited storage and bandwidth for your sites.</li>
         <li>Unlimited sites for your team.</li>
-        <li>Federalist’s content delivery network seamlessly keeps your site up and running even when traffic spikes.</li>
+        <li>Pages’s content delivery network seamlessly keeps your site up and running even when traffic spikes.</li>
         <li>No hidden charges.</li>
       </ul>
     </div>
@@ -96,7 +96,7 @@ title: cloud.gov Pages - Features
       <h4>Easy to change content and code</h4>
       <ul>
         <li>Deploy content and code quickly and safely, all while under your control.</li>
-        <li>Move your sites on or off of Federalist at any time.</li>
+        <li>Move your sites on or off of Pages at any time.</li>
         <li>Closed-source software may require expensive training to learn.</li>
       </ul>
     </div>
@@ -106,15 +106,15 @@ title: cloud.gov Pages - Features
 <section class="usa-section">
   <div class="grid-row grid-gap-lg">
     <div class="tablet:grid-col-4 bar-top">
-      <p>Try a free test site to see if Federalist is right for you.<br>&nbsp;</p>
+      <p>Try a free test site to see if Pages is right for you.<br>&nbsp;</p>
       <a class="cg-arrow" href="mailto:federalist-inquiries@gsa.gov?body=What%27s%20your%20name%3F%0A%0AWhat%20agency%20or%20office%20do%20you%20work%20for%3F%0A%0AWhat%27s%20your%20job%20title%20or%20role%3F%0A%0ATell%20us%20a%20little%20about%20your%20website%20project%20or%20your%20questions%20about%20federalist:%0A%0AIf%20you%27d%20like%20us%20to%20call%20you%2C%20what%27s%20your%20phone%20number%20and%20when%20might%20be%20a%20good%20time%3F%0A">Get in touch</a>
     </div>
     <div class="tablet:grid-col-4 bar-top">
-      <p>Join our Slack community to connect and learn from other Federalist users across the federal government.</p>
+      <p>Join our Slack community to connect and learn from other Pages users across the federal government.</p>
       <a class="cg-arrow" href="https://chat.18f.gov/">Join the Slack channel</a>
     </div>
     <div class="tablet:grid-col-4 bar-top">
-      <p>The Federalist team wants to learn from your experience so we can improve the product for all our users.</p>
+      <p>The Pages team wants to learn from your experience so we can improve the product for all our users.</p>
       <a class="cg-arrow" href="mailto:federalist-inquiries@gsa.gov">Share your feedback</a>
     </div>
   </div>

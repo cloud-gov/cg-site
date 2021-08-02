@@ -1,5 +1,5 @@
 ---
-title: RVM on Federalist
+title: RVM on Pages
 permalink: /pages/documentation/rvm-on-federalist/
 layout: docs
 navigation: pages
@@ -8,7 +8,7 @@ redirect_from:
   - /pages/how-federalist-works/rvm-on-federalist/
 ---
 
-Federalist uses [RVM](https://rvm.io/) to select which ruby version to use to build a Federalist site.
+Pages uses [RVM](https://rvm.io/) to select which ruby version to use to build a Pages site.
 
 ## Default Ruby version
 By default, the build will use Ruby version 2.6.6.

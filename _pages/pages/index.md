@@ -9,19 +9,19 @@ how_it_works:
     image_alt: Hand building a website
     description: Use our templates or develop your own and publish your web page right away.
     link: /assets/pages/documents/coe-success.pdf
-    link_text: See how the Centers of Excellence (CoEs) used Federalist to get new pages up quickly
+    link_text: See how the Centers of Excellence (CoEs) used Pages to get new pages up quickly
   - name: Launch
     image: /assets/pages/images/launch-on-blue.svg
     image_alt: Hand launching a secure website with cloud.gov
     description: You focus on the content, we'll worry about the security, compliance, and deployment.
     link: /assets/pages/documents/afwerx-success.pdf
-    link_text: Learn how DoD leveraged the Federalist platform to build their own template designs
+    link_text: Learn how DoD leveraged the Pages platform to build their own template designs
   - name: Manage
     image: /assets/pages/images/manage-on-blue.svg
     image_alt: Hand using faders to manage website deployments
     description: Use our intuitive interface to control the process from start to finish.
     link: /assets/pages/documents/doi-success.pdf
-    link_text: Learn how DOI used a Federalist template to host their data projects
+    link_text: Learn how DOI used a Pages template to host their data projects
 
 case_studies:
   - name: AFWERX
@@ -37,7 +37,7 @@ case_studies:
   - name: Department of the Interior
     thumbnail: /assets/pages/images/home-page/doi-success-Thumbnail.png
     thumbnail_alt: Department of Interior  Success Story Thumbnail
-    read_me_for: How Federalist adds value to my work as a content strategist
+    read_me_for: How Pages adds value to my work as a content strategist
     link: /assets/pages/documents/doi-success.pdf
 agencies_using:
   - name: Department of Education
@@ -70,23 +70,23 @@ example_sites:
     link: https://cio.gov
     screenshot: /assets/pages/images/partner-sites/cio.gov.png
 fact_sheets:
-  - name: Federalist proposal
-    thumbnail: /assets/pages/images/home-page/Federalist-Proposal-Thumbnail.png
+  - name: Pages proposal
+    thumbnail: /assets/pages/images/home-page/Pages-Proposal-Thumbnail.png
     pdfs:
-      - link: /assets/pages/documents/Federalist-Proposal.pdf
-        description: A two-page overview about Federalist for stakeholder briefings
-  - name: Federalist basic diagram
+      - link: /assets/pages/documents/Pages-Proposal.pdf
+        description: A two-page overview about Pages for stakeholder briefings
+  - name: Pages basic diagram
     thumbnail: /assets/pages/images/home-page/how-federalist-works-diagram-Thumbnail.jpg
     pdfs:
       - link: /assets/pages/documents/how-federalist-works-diagram.pdf
-        description: An outline of how all of Federalist’s parts work together.
+        description: An outline of how all of Pages’s parts work together.
   - name: Compliance memo & extension
-    thumbnail: /assets/pages/images/home-page/Federalist-Compliance-Memo-Thumbnail.jpg
+    thumbnail: /assets/pages/images/home-page/Pages-Compliance-Memo-Thumbnail.jpg
     pdfs:
-      - link: /assets/pages/documents/Federalist-Compliance-Memo.pdf
-        description: Details about Federalist’s compliance and Authority to Operate.
-      - link: /assets/pages/documents/Federalist-ATO-Extension-Letter.pdf
-        description: Federalist’s compliance and Authority to Operate extension
+      - link: /assets/pages/documents/Pages-Compliance-Memo.pdf
+        description: Details about Pages’s compliance and Authority to Operate.
+      - link: /assets/pages/documents/Pages-ATO-Extension-Letter.pdf
+        description: Pages’s compliance and Authority to Operate extension
 
 
 
@@ -111,7 +111,7 @@ fact_sheets:
     </div>
     <div class="grid-row grid-gap">
       <p class="usa-intro">
-        Federalist is a publishing platform for modern <a href="{{site.baseurl}}{% link _pages/pages/documentation/21st-century-idea.md %}">21st Century IDEA</a> websites.
+        Pages is a publishing platform for modern <a href="{{site.baseurl}}{% link _pages/pages/documentation/21st-century-idea.md %}">21st Century IDEA</a> websites.
       </p>
     </div>
   </div>
@@ -146,9 +146,9 @@ fact_sheets:
       <h2>Launch your site in minutes.</h2>
       <a name="Customers"></a>
       <p>
-        Federalist uses a <a href="https://github.com/">public code hosting service</a> to load and store code for your site. If your code is already on GitHub, Federalist can securely deploy a website from your repository in minutes.
+        Pages uses a <a href="https://github.com/">public code hosting service</a> to load and store code for your site. If your code is already on GitHub, Pages can securely deploy a website from your repository in minutes.
       </p>
-      <h3>Agencies using Federalist</h3>
+      <h3>Agencies using Pages</h3>
     <div class="grid-row grid-gap margin-bottom-3">
       {% for agency in page.agencies_using %}
       <div class="tablet:grid-col-3 text-center">
@@ -159,7 +159,7 @@ fact_sheets:
       </div>
       {% endfor %}
     </div>
-    <a class="cg-arrow" href="{{site.baseurl}}/pages/success-stories/">See success stories of Federalist-powered sites</a>
+    <a class="cg-arrow" href="{{site.baseurl}}/pages/success-stories/">See success stories of Pages-powered sites</a>
   </div>
 </section>
 
@@ -186,7 +186,7 @@ fact_sheets:
     <div class="grid-row">
       <div class="tablet:grid-col">
         <p class="usa-intro tablet:grid-col-10">
-          Want to talk about what Federalist can do for your agency? Questions about compliance? Want to try it out for yourself?
+          Want to talk about what Pages can do for your agency? Questions about compliance? Want to try it out for yourself?
         </p>
         <p><a class="usa-button usa-button--big" href="{{site.baseurl}}/pages/contact/">Get in touch</a></p>
       </div>
@@ -219,9 +219,9 @@ fact_sheets:
 <section class="usa-section margin-y-8">
   <div class="grid-container maxw-desktop usa-prose">  
     <div class="grid-row">
-      <h2>Federalist fact sheets</h2>
+      <h2>Pages fact sheets</h2>
       <p>
-        Need more details about Federalist? Need help convincing your executive team? The Federalist team has developed these resources to help. See more on the <a href="{{site.baseurl}}/pages/documentation/">Federalist support site</a>.
+        Need more details about Pages? Need help convincing your executive team? The Pages team has developed these resources to help. See more on the <a href="{{site.baseurl}}/pages/documentation/">Pages support site</a>.
       </p>
     </div>
     <div class="grid-row grid-gap">

@@ -8,11 +8,11 @@ redirect_from:
   - /pages/for-federalist-developers/site-wide-alert/
 ---
 
-Members of the Federalist dev team can update Federalist to display a banner explaining any maintenance, bugs, or degradation that users should be aware of. This is done by setting values in a user provided service.
+Members of the Pages dev team can update Pages to display a banner explaining any maintenance, bugs, or degradation that users should be aware of. This is done by setting values in a user provided service.
 
 ## Setting A Site Wide Alert
 
-To set a site wide alert, target the Federalist production space and run the following on the command line:
+To set a site wide alert, target the Pages production space and run the following on the command line:
 
 ```shell
 cf uups federalist-site-wide-error -p '{

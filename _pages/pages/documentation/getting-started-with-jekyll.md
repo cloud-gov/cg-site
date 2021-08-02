@@ -14,13 +14,13 @@ limited technical knowledge and no HTML, CSS, or YAML experience. Keep in mind
 that each template and theme is a little different. If you get stuck, don't
 hesitate to [reach out](mailto:{{ site.support_email }})._
 
-Federalist monitors your site’s GitHub repository (or repo) for changes you
+Pages monitors your site’s GitHub repository (or repo) for changes you
 make. It will automatically build a new version of your site in a few minutes.
-You can view the live site [from Federalist](https://federalistapp.18f.gov/sites) and clicking
+You can view the live site [from Pages](https://federalistapp.18f.gov/sites) and clicking
 "View site".
 
 {% capture content %}
-If you’re unfamiliar with GitHub, the Federalist team recommends that you
+If you’re unfamiliar with GitHub, the Pages team recommends that you
 [familiarize
 yourself](https://federalist.18f.gov/documentation/instructional-demos/#introduction-to-github-for-newcomers)
 before continuing through this guide.
@@ -45,7 +45,7 @@ Here's an example `_config.yml` snippet:
 ```yaml
 # This is a YAML comment. A comment starts
 # with the # character. Comments are
-# ignored by Federalist.
+# ignored by Pages.
 title: This is the site title
 
 theme: uswds-jekyll
@@ -89,11 +89,11 @@ The content of your page starts below the second set of three dashes `---` that
 end the front matter section. The content is all in markdown format,
 a plain-text simple [markup language](https://en.wikipedia.org/wiki/Markup_language)
 designed to be readable for content editors. Try editing your heading by
-replacing the text “Welcome to the Federalist Report Template” with “Hello
+replacing the text “Welcome to the Pages Report Template” with “Hello
 world!”. Learn more about [Markdown]({{ site.baseurl }}{% link _pages/pages/documentation/resources.md %}#working-with-markdown).
 
 Once you’re finished making content changes, scroll to the bottom of the page
-and click “Commit changes.” Federalist will automatically detect your changes
+and click “Commit changes.” Pages will automatically detect your changes
 and start building your site. It should be live within a few minutes.
 
 {% capture content %}
@@ -104,7 +104,7 @@ the changes you’ve made when looking back on the repo’s history.
 {% endcapture %}
 {% include pages/components/alert--best-practice.html content=content %}
 
-Once your change is committed, Federalist will start rebuilding your site. You
+Once your change is committed, Pages will start rebuilding your site. You
 can see the build progress on the [build history page](https://federalistapp.18f.gov/sites).<!--
 TODO link to this site’s build history page. -->
 
@@ -133,7 +133,7 @@ Give the file a name with an `.md` extension.
 
 {% capture content %}
 The filename should be relatively short and use only lowercase
-letters, numbers, dashes, and underscores. Federalist will use this filename in
+letters, numbers, dashes, and underscores. Pages will use this filename in
 the page’s URL by default, so keeping your URLs short and consistent will make
 them easier to read and remember. `open-source-policy.md` is a great filename
 for a page containing your agency’s open source policy.

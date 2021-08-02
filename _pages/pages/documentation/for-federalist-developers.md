@@ -1,5 +1,5 @@
 ---
-title: For Federalist Developers
+title: For Pages Developers
 permalink: /pages/documentation/for-federalist-developers/
 layout: docs
 navigation: pages
@@ -8,24 +8,24 @@ redirect_from:
   - /pages/how-federalist-works/for-federalist-developers/
 ---
 
-# For Federalist Developers
+# For Pages Developers
 
-This page is for people who are developing the Federalist application, including the webapp and build system. It it not for site developers that use Federalist for publishing.
+This page is for people who are developing the Pages application, including the webapp and build system. It it not for site developers that use Pages for publishing.
 
-## Running Federalist locally
-Instructions for running Federalist components locally are in in each code repository README:
+## Running Pages locally
+Instructions for running Pages components locally are in in each code repository README:
 
-- [Federalist README](https://github.com/18F/federalist#running-locally-development)
-- [Federalist-builder README](https://github.com/18F/federalist-builder#running-locally)
-- [Federalist-garden-build README](https://github.com/18F/federalist-garden-build#development)
+- [Pages README](https://github.com/18F/federalist#running-locally-development)
+- [Pages-builder README](https://github.com/18F/federalist-builder#running-locally)
+- [Pages-garden-build README](https://github.com/18F/federalist-garden-build#development)
 
-## Deploying Federalist from CircleCI
+## Deploying Pages from CircleCI
 
-This guide covers how the deployment process for Federalist and Federalist Builder works.
-In order to understand the process for Federalist Docker Build and Federalist Registry, see [the cloud.gov setup guide]({{site.baseurl}}/pages/documentation/cloud-gov-setup/).
+This guide covers how the deployment process for Pages and Pages Builder works.
+In order to understand the process for Pages Docker Build and Pages Registry, see [the cloud.gov setup guide]({{site.baseurl}}/pages/documentation/cloud-gov-setup/).
 
-Federalist is deployed by [CircleCI](https://circleci.com/docs/2.0/deployment_integrations/).
-Federalist and Federalist Builder are configured such that changes to the main branch are deployed to production and changes to the staging branch are deployed to staging.
+Pages is deployed by [CircleCI](https://circleci.com/docs/2.0/deployment_integrations/).
+Pages and Pages Builder are configured such that changes to the main branch are deployed to production and changes to the staging branch are deployed to staging.
 In both repos this configuration lives in the [`.circleci/config.yml`](https://circleci.com/docs/2.0/) file in the project repository.
 
 Both projects use a file at `scripts/deploy-circle.sh` to run the actual deploy.
@@ -39,7 +39,7 @@ Despite some minor differences, both of these scripts do essentially the same th
 
 ## Zero downtime deploys
 
-Federalist has high availability requirements because it needs to be up to receive GitHub webhook and build status requests.
+Pages has high availability requirements because it needs to be up to receive GitHub webhook and build status requests.
 Because of this, the [autopilot]({{ site.baseurl }}/docs/apps/production-ready/#zero-downtime-deploy) Cloud Foundry CLI plugin is used so the app can be deployed without downtime.
 
 Zero downtime deploys work by:
@@ -59,6 +59,6 @@ As a result, the failed deploy will need to be cleaned up before another deploy 
 
 To cleanup after a failed deploy:
 
-0. Delete the new app. For the main Federalist app that would be `federalist`.
+0. Delete the new app. For the main Pages app that would be `federalist`.
 0. Rename the venerable app to the name of the new app. For example, rename `federalist-venerable` to `federalist`.
 0. Start a build on CircleCI to re-deploy.

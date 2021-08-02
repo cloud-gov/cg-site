@@ -58,15 +58,15 @@ You can practice with the [Markdown helper](https://markdown-helper.18f.gov/).
 
 ## Working with YAML
 
-YAML is a markup language used for configuration of your Federalist site.
+YAML is a markup language used for configuration of your Pages site.
 Variables defined in your YAML configuration can be used within your site.
-Comments are ignored by Federalist. Indentation is important to keep related
+Comments are ignored by Pages. Indentation is important to keep related
 options together. We recommend using space characters instead of tabs for
 nesting configuration options.
 
 
 ```
-# This is a YAML comment. It is ignored by Federalist.
+# This is a YAML comment. It is ignored by Pages.
 
 # This is a variable "title".
 title: "This could be the title of your site"
@@ -114,7 +114,7 @@ The title of the page is {% raw %}{{ page.title }}{% endraw %}.
 ## Site configuration
 
 The site configuration lives in `_config.yml`. Some variables have special
-meaning that tell Federalist how to build your site. All variables can be used
+meaning that tell Pages how to build your site. All variables can be used
 throughout your site like this:
 
     Contact our agency by email at {% raw %}{{ site.agency_contact.email }}{% endraw %}
