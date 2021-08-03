@@ -6,7 +6,12 @@ excerpt: Today's update to our Control Implementation Summary (CIS) + Customer
   Responsibility Matrix (CRM) clarifies some language and inhertiance status for
   controls.
 ---
-The **Control Implementation Summary (CIS) + Customer Responsibility Matrix (CRM) + Control-by-Control Inheritance (.xlsx)**](https://cloud.gov/resources/cloud.gov-CIS-Worksheet.xlsx) (last updated August 3, 2021) is a summary of each Low and Moderate security control and whether it is handled by cloud.gov, shared responsibility, or customer responsibility. It includes guidance on which controls a customer system can fully or partially inherit from cloud.gov.
+The **[Control Implementation Summary (CIS) + Customer Responsibility Matrix (CRM) + Control-by-Control Inheritance (.xlsx)](https://cloud.gov/resources/cloud.gov-CIS-Worksheet.xlsx)** is a summary of each Low and Moderate security control and whether it is handled by cloud.gov, shared responsibility, or customer responsibility. It includes guidance on which controls a customer system can fully or partially inherit from cloud.gov.
+
+You can read more on how to start the ATO process with cloud.gov at [](https://cloud.gov/docs/overview/fedramp-tracker/)[our FedRAMP Authorized page](https://cloud.gov/docs/overview/fedramp-tracker/)
+
+Changes to CRM:
+
 Adds another page listing Low-impact controls, which provides color-coded conditional formatting to CRM
 
 Updates to controls:
