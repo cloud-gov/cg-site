@@ -10,7 +10,7 @@ The **[Control Implementation Summary (CIS) + Customer Responsibility Matrix (CR
 
 You can read more on how to start the ATO process with cloud.gov at [](https://cloud.gov/docs/overview/fedramp-tracker/)[our FedRAMP Authorized page](https://cloud.gov/docs/overview/fedramp-tracker/)
 
-Changes to CRM:
+Recent changes to CRM:
 
 Adds another page listing Low-impact controls, which provides color-coded conditional formatting to CRM
 
