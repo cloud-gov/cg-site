@@ -8,7 +8,7 @@ excerpt: Today's update to our Control Implementation Summary (CIS) + Customer
 ---
 The **[Control Implementation Summary (CIS) + Customer Responsibility Matrix (CRM) + Control-by-Control Inheritance (.xlsx)](https://cloud.gov/resources/cloud.gov-CIS-Worksheet.xlsx)** is a summary of each Low and Moderate security control and whether it is handled by cloud.gov, shared responsibility, or customer responsibility. It includes guidance on which controls a customer system can fully or partially inherit from cloud.gov.
 
- We've made some recent changes to this document that we wanted to summarize for platform user, and those interested in implementing a solution on the platform. 
+ We've made some recent changes to this document that we wanted to summarize for platform users, and those interested in implementing a solution on the platform. 
 
 ### Recent changes to CRM
 
