@@ -1,12 +1,9 @@
 ---
 title: Bundler on Pages
+permalink: /pages/documentation/bundler-on-pages/
 layout: docs
 navigation: pages
 sidenav: pages-documentation
-permalink: /pages/documentation/bundler-on-federalist/
-redirect_from:
-  - /pages/how-federalist-works/bundler-on-federalist/
-
 ---
 
 

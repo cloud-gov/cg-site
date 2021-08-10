@@ -4,8 +4,6 @@ permalink: /pages/documentation/instructional-demos/
 layout: docs
 navigation: pages
 sidenav: pages-documentation
-redirect_from: 
-  - /pages/using-federalist/instructional-demos/
 
 ---
 

@@ -4,8 +4,6 @@ permalink: /pages/documentation/customization/
 layout: docs
 navigation: pages
 sidenav: pages-documentation
-redirect_from: 
-  - /using-federalist/customization/
 ---
 
 ## Customizing your site

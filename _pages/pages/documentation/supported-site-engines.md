@@ -4,8 +4,6 @@ permalink: /pages/documentation/supported-site-engines/
 layout: docs
 navigation: pages
 sidenav: pages-documentation
-redirect_from:
-  - /pages/using-federalist/supported-site-engines/
 ---
 
 ## Current Support

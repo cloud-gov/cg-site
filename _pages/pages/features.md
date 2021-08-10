@@ -33,7 +33,7 @@ title: cloud.gov Pages - Features
     <div class="grid-col-4 padding-y-2">
       <img alt=""  src="{{site.baseurl}}/assets/pages/images/icons/icon-layout-color.svg">
       <h4 class="margin-top-0">Accessible templates</h4>
-      <p><a href="{{site.baseurl}}/pages/using-federalist/templates/">Our 508-compliant website templates</a> help you kickstart your design process.</p>
+      <p><a href="{{site.baseurl}}/pages/documentation/templates/">Our 508-compliant website templates</a> help you kickstart your design process.</p>
     </div>
     <div class="grid-col-4 padding-y-2">
       <img class="display-block margin-x-auto" alt="" src="{{site.baseurl}}/assets/pages/images/icons/icon-badge-color.svg">

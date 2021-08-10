@@ -4,8 +4,6 @@ permalink: /pages/documentation/search/
 layout: docs
 navigation: pages
 sidenav: pages-documentation
-redirect_from:
-  - /pages/using-federalist/search/
 ---
 
 It's easy to add search functionality to a site.

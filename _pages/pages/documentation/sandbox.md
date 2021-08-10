@@ -1,11 +1,9 @@
 ---
 title: Pages Sandbox
-permalink: /pages/documentation/federalist-sandbox/
+permalink: /pages/documentation/sandbox/
 layout: docs
 navigation: pages
 sidenav: pages-documentation
-redirect_from: 
-  - /using-federalist/federalist-sandbox/
 ---
 
 ## Getting started:

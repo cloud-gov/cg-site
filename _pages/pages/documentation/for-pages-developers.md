@@ -1,11 +1,9 @@
 ---
 title: For Pages Developers
-permalink: /pages/documentation/for-federalist-developers/
+permalink: /pages/documentation/for-pages-developers/
 layout: docs
 navigation: pages
 sidenav: pages-documentation
-redirect_from:
-  - /pages/how-federalist-works/for-federalist-developers/
 ---
 
 # For Pages Developers
@@ -44,7 +42,7 @@ Because of this, the [autopilot]({{ site.baseurl }}/docs/apps/production-ready/#
 
 Zero downtime deploys work by:
 
-0. Renaming the app to `<appname>-venerable`, for example `federalist-venerable`
+0. Renaming the app to `<appname>-venerable`, for example `pages-venerable`
 0. Pushing a new app with the old app's name
 0. When the new app is started, routing requests to the new app and deleting the venerable app
 
@@ -59,6 +57,6 @@ As a result, the failed deploy will need to be cleaned up before another deploy 
 
 To cleanup after a failed deploy:
 
-0. Delete the new app. For the main Pages app that would be `federalist`.
-0. Rename the venerable app to the name of the new app. For example, rename `federalist-venerable` to `federalist`.
+0. Delete the new app. For the main Pages app that would be `pages`.
+0. Rename the venerable app to the name of the new app. For example, rename `pages-venerable` to `pages`.
 0. Start a build on CircleCI to re-deploy.

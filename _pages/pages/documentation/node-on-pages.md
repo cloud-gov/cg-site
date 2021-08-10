@@ -1,11 +1,9 @@
 ---
 title: Node on Pages
-permalink: /pages/documentation/node-on-federalist/
+permalink: /pages/documentation/node-on-pages/
 layout: docs
 navigation: pages
 sidenav: pages-documentation
-redirect_from: 
-  - /pages/how-federalist-works/node-on-federalist/
 
 ---
 

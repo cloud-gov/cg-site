@@ -4,9 +4,6 @@ permalink: /pages/documentation/resources/
 layout: docs
 navigation: pages
 sidenav: pages-documentation
-redirect_from: 
-  - /pages/using-federalist/resources/
-
 ---
 
 ## Working with markdown

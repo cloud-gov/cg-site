@@ -4,14 +4,12 @@ permalink: /pages/documentation/custom-urls/
 layout: docs
 navigation: pages
 sidenav: pages-documentation
-redirect_from:
-  - /pages/how-federalist-works/custom-urls/
 ---
 
 
 ## How Pages custom URLs work
 
-This is technical documentation about how custom domains work on Pages. It is not required reading to use Pages and only provided for background; instructions for our partners are [here]({{site.baseurl}}/pages/using-federalist/launch-checklist/).
+This is technical documentation about how custom domains work on Pages. It is not required reading to use Pages and only provided for background; instructions for our partners are [here]({{site.baseurl}}documentation/custom-domains/).
 
 All Pages deploys are rendered via S3 at a .com URL such as: 
 

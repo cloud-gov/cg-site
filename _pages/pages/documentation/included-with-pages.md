@@ -1,11 +1,9 @@
 ---
 title: Included with Pages
-permalink: /pages/documentation/included-with-federalist/
+permalink: /pages/documentation/included-with-pages/
 layout: docs
 navigation: pages
 sidenav: pages-documentation
-redirect_from: 
-  - /pages/using-federalist/included-with-federalist/
 
 ---
 

@@ -1,11 +1,9 @@
 ---
 title: RVM on Pages
-permalink: /pages/documentation/rvm-on-federalist/
+permalink: /pages/documentation/rvm-on-pages/
 layout: docs
 navigation: pages
 sidenav: pages-documentation
-redirect_from:
-  - /pages/how-federalist-works/rvm-on-federalist/
 ---
 
 Pages uses [RVM](https://rvm.io/) to select which ruby version to use to build a Pages site.

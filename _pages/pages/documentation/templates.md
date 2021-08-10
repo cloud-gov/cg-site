@@ -4,8 +4,6 @@ permalink: /pages/documentation/templates/
 layout: docs
 navigation: pages
 sidenav: pages-documentation
-redirect_from:
-  - /pages/using-federalist/templates/
 
 ---
 

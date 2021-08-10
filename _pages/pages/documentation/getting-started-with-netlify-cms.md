@@ -1,11 +1,9 @@
 ---
+title: Getting started with Netlify CMS
+permalink: /pages/documentation/getting-started-with-netlify-cms/
 layout: docs
 navigation: pages
 sidenav: pages-documentation
-title: Getting started with Netlify CMS
-permalink: /pages/documentation/getting-started-with-netlify-cms/
-redirect_from:
-  - /pages/getting-started-with-netlify-cms/
 ---
 
 Pages recently integrated support for Netlify CMS, an open source content management system for your Github-based content that provides editors with a friendly UI and workflow.

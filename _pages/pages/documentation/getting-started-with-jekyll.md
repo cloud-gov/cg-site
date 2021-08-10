@@ -4,9 +4,6 @@ permalink: /pages/documentation/getting-started-with-jekyll/
 layout: docs
 navigation: pages
 sidenav: pages-documentation
-redirect_from: 
-  - /pages/using-federalist/getting-started-with-jekyll/
-
 ---
 
 _Welcome! The intended audience of this guide is content creators who have
@@ -22,7 +19,7 @@ You can view the live site [from Pages](https://federalistapp.18f.gov/sites) and
 {% capture content %}
 If you’re unfamiliar with GitHub, the Pages team recommends that you
 [familiarize
-yourself](https://federalist.18f.gov/documentation/instructional-demos/#introduction-to-github-for-newcomers)
+yourself](https://cloud.gov/pages/documentation/instructional-demos/#introduction-to-github-for-newcomers)
 before continuing through this guide.
 {% endcapture %}
 {% include pages/components/alert--note.html content=content %}

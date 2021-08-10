@@ -4,12 +4,10 @@ permalink: /pages/documentation/migration-guide/
 layout: docs
 navigation: pages
 sidenav: pages-documentation
-redirect_from: 
-  - /pages/using-federalist/migration-guide/
 
 ---
 
-Welcome to your migrating journey onto Pages! This process may be difficult. 18F generally cannot provide support for migration work beyond general guidance under a standard Pages agreement, but if you are in a situation where you need a lot of help, please [contact us](mailto:inquiries18F@gsa.gov) for a path analysis from our Custom Partner Solutions team.
+Welcome to your migrating journey onto Pages! This process may be difficult. We generally cannot provide support for migration work beyond general guidance under a standard Pages agreement, but if you are in a situation where you need some guidance, you can [contact us](mailto:federalist-inquiries@gsa.gov) to learn more about our additional support packages.
 
 ## Before you start
 
@@ -59,7 +57,6 @@ Who you need in your migration team is based on the work involved in your specif
 
 - Basic migrations will probably only need front end developers if you can pull a good export of content. If you can't, you may need staff to help convert content.
 - If you are also doing a site redesign and/or restricting content then you may need to bring on user experience designers, visual designers, content designers or more.
-- For high complexity migrations, 18F offers a path analysis to provide you with different technical options, which is not exclusive to a migration to federalist
 - If you are planning on bringing on extra developers for the migration, talk about the technologies you plan to use before bringing on contractors.
 
 Your team will need the following access to get started:

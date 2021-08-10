@@ -1,6 +1,6 @@
 ---
 title: Monorepos on Pages
-permalink: /pages/documentation/monorepos-on-federalist/
+permalink: /pages/documentation/monorepos-on-pages/
 layout: docs
 navigation: pages
 sidenav: pages-documentation

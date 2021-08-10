@@ -4,8 +4,6 @@ permalink: /pages/documentation/how-builds-work/
 layout: docs
 navigation: pages
 sidenav: pages-documentation
-redirect_from: 
-  - /pages/how-federalist-works/how-builds-work/
 ---
 
 

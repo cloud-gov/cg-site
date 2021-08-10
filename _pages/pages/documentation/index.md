@@ -5,11 +5,7 @@ layout: docs
 navigation: pages
 sidenav: pages-documentation
 redirect_from:
-  - /pages/using-federalist/
-  - /support/
-  - /using-federalist/support/
-  - /pages/using-federalist/support/
-
+  - /pages/support/
 
 ---
 
@@ -42,7 +38,7 @@ When logging into Pages you will see a list of your existing sites along with a 
 
 To add a new site, click the `+ Add Site` button and you will be prompted to either:
 1. Create a site from existing Github repository by entering the repository URL
-2. Choose an existing template from [available templates]({{site.baseurl}}/pages/using-federalist/templates/) by clicking 'Use this template' under a template.
+2. Choose an existing template from [available templates]({{site.baseurl}}/pages/documentation/templates/) by clicking 'Use this template' under a template.
 
 
 ![Pages Sitelist Screenshot]({{site.baseurl}}/assets/pages/images/federalist-makesite2.png)

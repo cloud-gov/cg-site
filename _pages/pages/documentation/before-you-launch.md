@@ -4,9 +4,6 @@ permalink: /pages/documentation/before-you-launch/
 layout: docs
 navigation: pages
 sidenav: pages-documentation
-redirect_from:
-  - /pages/using-federalist/launch-checklist/
-  - /pages/documentation/launch-checklist/
 ---
 
 We've worked to make publishing a government site on Pages as simple as possible. Please note that while the entire process usually takes a couple days, it may take up to a week, so plan accordingly.

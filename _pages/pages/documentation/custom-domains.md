@@ -20,7 +20,7 @@ It is possible to add up to 2 custom domains for your site, each one requires th
     * [Adding a subdomain](#adding-a-subdomain)
         - [Minimizing downtime](#minimizing-downtime)
     * [CAA records](#caa-records)
-2. [Notify Pages](#notify-federalist)
+2. [Notify Pages](#notify-pages)
 3. [Update your Site Settings](#update-your-site-settings)
 
 ---
@@ -115,8 +115,8 @@ If you are using CAA records, you must have a record for letsencrypt.org. This a
 
 ## Notify Pages
 Once your DNS changes are complete, notify Pages support via:
-- email: `federalist-support@gsa.gov`
-- Slack: `#federalist-support`
+- email: `pages-support@gsa.gov`
+- Slack: `#pages-support`
 
 Someone from the Pages support team will assist you and make the updates to the Pages platform.
 
