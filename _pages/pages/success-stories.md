@@ -35,7 +35,7 @@ title: cloud.gov Pages - Success Stories
   <div class="grid-row grid-gap margin-y-8">
     <div class="grid-col-6 usa-prose">
       <h2>College Scorecard</h2>
-      <p>The Department of Education uses Pages to host College Scorecard, a website that provides users with important information on everything from financial aid to expected earnings. College Scorecard demonstrates the power of Pages when used together with <a href="http://cloud.gov">cloud.gov</a> for a API-backed database.  Pages's cloud infrastructure helps manage site traffic during spikes in visitors, making sure College Scorecard is always available.</p>
+      <p>The Department of Education uses Pages to host College Scorecard, a website that provides users with important information on everything from financial aid to expected earnings. College Scorecard demonstrates the power of Pages when used together with <a href="http://cloud.gov">cloud.gov</a> for a API-backed database.  Pages' cloud infrastructure helps manage site traffic during spikes in visitors, making sure College Scorecard is always available.</p>
     </div>
     <div class="grid-col-6">
       <img alt="website thumbnail" src="{{site.baseurl}}/assets/pages/images/partner-sites/collegescorecard.ed.gov.png" class="border border-base-lighter">
@@ -53,7 +53,7 @@ title: cloud.gov Pages - Success Stories
   <div class="grid-row grid-gap margin-y-8">
     <div class="grid-col-6 usa-prose">
       <h2>Centers of Excellence</h2>
-      <p>GSA's Centers of Excellence (CoE) program accelerates the modernization of IT infrastructure across government. But in early 2018, the CoE team was in need of their own modernization: their website was cumbersome, required vendors for updates, and took 30-45 minutes to make a single change.<br/>With Pages, CoEs can make their own changes — no outside help needed — in five minutes or less. Because everything's organized in one place, maintaining their website is simple, efficient, and easily managed by in-house staff. And thanks to Pages's modern, accessible templates, this signature White House initiative is now fully compliant with the 21st Century Integrated Digital Experience Act (IDEA).</p>
+      <p>GSA's Centers of Excellence (CoE) program accelerates the modernization of IT infrastructure across government. But in early 2018, the CoE team was in need of their own modernization: their website was cumbersome, required vendors for updates, and took 30-45 minutes to make a single change.<br/>With Pages, CoEs can make their own changes — no outside help needed — in five minutes or less. Because everything's organized in one place, maintaining their website is simple, efficient, and easily managed by in-house staff. And thanks to Pages' modern, accessible templates, this signature White House initiative is now fully compliant with the 21st Century Integrated Digital Experience Act (IDEA).</p>
     </div>
     <div class="grid-col-6">
       <img alt="website thumbnail" src="{{site.baseurl}}/assets/pages/images/partner-sites/coe.gsa.gov.png" class="border border-base-lighter">

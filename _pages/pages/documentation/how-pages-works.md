@@ -9,7 +9,7 @@ sidenav: pages-documentation
 
 Pages is a hosted service run by [cloud.gov](https://cloud.gov/) for use by US federal government agencies. The software behind this service is open source and released to the public domain for anyone to use. We also welcome your contributions and ideas.
 
-We use GitHub to manage our work on Pages. The main code repository for the Pages is at [https://github.com/18F/federalist](https://github.com/18F/federalist). In addition to hosting code, we use the issue queue on this repository to manage our development tasks and milestones. If you're interested in getting involved with this project, please see the [contributing guide](https://github.com/18F/federalist/blob/main/CONTRIBUTING.md). Here is a specific description of each of Pages's modular repositories:
+We use GitHub to manage our work on Pages. The main code repository for the Pages is at [https://github.com/18F/federalist](https://github.com/18F/federalist). In addition to hosting code, we use the issue queue on this repository to manage our development tasks and milestones. If you're interested in getting involved with this project, please see the [contributing guide](https://github.com/18F/federalist/blob/main/CONTRIBUTING.md). Here is a specific description of each of Pages' modular repositories:
 
 ### Functional Repositories
 
@@ -115,7 +115,7 @@ CloudFront is used for [custom domains]({{site.baseurl}}/pages/documentation/cus
 
 ## Related reading
 
-- [18F Blog Post on Pages's platform launch](https://18f.gsa.gov/2015/09/15/federalist-platform-launch/)
+- [18F Blog Post on Pages' platform launch](https://18f.gsa.gov/2015/09/15/federalist-platform-launch/)
 - [Building CMS-Free Websites](https://developmentseed.org/blog/2012/07/27/build-cms-free-websites/)
 - [Background on relaunch of Healthcare.gov’s front-end](http://www.theatlantic.com/technology/archive/2013/06/healthcaregov-code-developed-by-the-people-and-for-the-people-released-back-to-the-people/277295/)
 - [HealthCare.gov uses lightweight open source tools](https://www.digitalgov.gov/2013/05/07/the-new-healthcare-gov-uses-a-lightweight-open-source-tool/)

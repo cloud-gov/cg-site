@@ -59,11 +59,11 @@ _Expected MTA-STS record:_
 
 Update `id-value` identifies the MTA-STS policy in use and `reporting-email-address` will be where you TLS reports will be sent. The `reporting-email-address` can be prefixed with `mailto:tls-reports@example.gov` or sent to a URL like an API endpoint.
 
-## Pages's Responsibilities
+## Pages' Responsibilities
 
 #### We control access to the core Pages codebase.
 
-Access to Pages's configuration tools for your specific content does not grant you access to Pages's "backend." Pages's code is open source, but only approved members of the Pages team are allowed to make or approve changes. No one can access Pages's management tools in [cloud.gov]({{ site.baseurl }}) without FedRAMP-approved two factor authentication.
+Access to Pages' configuration tools for your specific content does not grant you access to Pages' "backend." Pages' code is open source, but only approved members of the Pages team are allowed to make or approve changes. No one can access Pages' management tools in [cloud.gov]({{ site.baseurl }}) without FedRAMP-approved two factor authentication.
 
 #### We control access to the hosting service that serves your webpages
 

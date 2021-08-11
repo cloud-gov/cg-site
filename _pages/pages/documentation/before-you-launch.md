@@ -15,7 +15,7 @@ We've worked to make publishing a government site on Pages as simple as possible
 ## Requirements
 - You must have an active, signed IAA with Pages. Sandbox accounts without IAAs will be unable to configure custom domains and preview urls are **not** suitable for production use.
 
-- Your agency must accept the risk of launching a site on Pages. This requirement varies by agency, some will accept Pages's GSA Agency ATO while others may require additional documentation.
+- Your agency must accept the risk of launching a site on Pages. This requirement varies by agency, some will accept Pages' GSA Agency ATO while others may require additional documentation.
 
 - You must understand [your responsibilities]({{ site.baseurl }}{% link _pages/pages/documentation/customer-responsibilities.md %}).
 
