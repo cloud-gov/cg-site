@@ -9,7 +9,7 @@ sidenav: pages-documentation
 
 ## How Pages custom URLs work
 
-This is technical documentation about how custom domains work on Pages. It is not required reading to use Pages and only provided for background; instructions for our partners are [here]({{site.baseurl}}documentation/custom-domains/).
+This is technical documentation about how custom domains work on Pages. It is not required reading to use Pages and only provided for background; instructions for our partners are [here]({{site.baseurl}}/pages/documentation/custom-domains/).
 
 All Pages deploys are rendered via S3 at a .com URL such as: 
 

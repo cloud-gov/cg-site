@@ -6,7 +6,7 @@ navigation: pages
 sidenav: pages-documentation
 ---
 
-As mentioned elsewhere, Pages is built on top of the [cloud.gov platform-as-a-service]({{ site.baseurl }}) (PaaS). cloud.gov takes care of the vast majority of the systems functionality that enables Pages, especially by maintaining a FedRAMP authorization. cloud.gov also provides security, logging, authentication, cryptographic protection, monitoring, and provisioning services that Pages consumes. Pages's [compliance memo]({{site.baseurl}}/assets/pages/documents/Pages-Compliance-Memo.pdf) & [extension letter]({{site.baseurl}}/assets/pages/documents/Pages-ATO-Extension-Letter.pdf) explains the technical relationship in detail.
+As mentioned elsewhere, Pages is built on top of the [cloud.gov platform-as-a-service]({{ site.baseurl }}) (PaaS). cloud.gov takes care of the vast majority of the systems functionality that enables Pages, especially by maintaining a FedRAMP authorization. cloud.gov also provides security, logging, authentication, cryptographic protection, monitoring, and provisioning services that Pages consumes. Federalist's [compliance memo]({{site.baseurl}}/assets/pages/documents/Federalist-Compliance-Memo.pdf) & [extension letter]({{site.baseurl}}/assets/pages/documents/Federalist-ATO-Extension-Letter.pdf) explains the technical relationship in detail.
 
 ## How Pages and cloud.gov collaborate
 

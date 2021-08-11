@@ -19,7 +19,7 @@ We use GitHub to manage our work on Pages. The main code repository for the Page
 - **[federalist-garden-build](https://github.com/18F/federalist-garden-build)** This container image contains the code to build Pages sites in Garden Linux containers.
 
 ### Documentation
-- **[cloud.gov Pages](https://github.com/_pages/pages/)** The documentation website.
+- **[cloud.gov Pages](https://github.com/cloud-gov/cg-site/_pages/pages/)** The documentation website.
 
 ### Templates
 
@@ -32,7 +32,7 @@ We use GitHub to manage our work on Pages. The main code repository for the Page
 
 Pages is located on cloud.gov's GovCloud environment, which has [received FedRAMP certification](https://marketplace.fedramp.gov/index.html#/product/18f-cloudgov). [This blog post](https://18f.gsa.gov/2017/02/02/cloud-gov-is-now-fedramp-authorized/) explains more about FedRAMP.
 
-The diagram for Pages's architecture is below. It's not intended for general audiences and is focused on concisely showing all of the components of Pages as required for compliance. Please contact us with any questions: we aren't expecting this diagram to be useful by itself to gain an understanding of Pages. [![Diagram of Pages architecture]({{site.baseurl}}/assets/pages/images/Pages System Diagram 3-8-18.png)]({{site.baseurl}}/assets/pages/images/Pages System Diagram 3-8-18.png)
+The diagram for Federalist's architecture is below. It's not intended for general audiences and is focused on concisely showing all of the components of Federalist as required for compliance. Please contact us with any questions: we aren't expecting this diagram to be useful by itself to gain an understanding of Federalist. [![Diagram of Federalist architecture]({{site.baseurl}}/assets/pages/images/Federalist System Diagram 3-8-18.png)]({{site.baseurl}}/assets/pages/images/Federalist System Diagram 3-8-18.png)
 
 
 ### https://app.pages.cloud.gov

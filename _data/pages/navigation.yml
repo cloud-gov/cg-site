@@ -83,7 +83,7 @@ sidenav:
       - text: Federalist.json
         href: /pages/documentation/federalist-json/
   - text: For developers
-    href: /pages/documentation/for-developers/
+    href: /pages/documentation/
     subfolderitems:
       - text: How Pages works
         href: /pages/documentation/how-pages-works/
@@ -101,8 +101,6 @@ sidenav:
         href: /pages/documentation/rvm-on-pages/
       - text: Bundler on Pages
         href: /pages/documentation/bundler-on-pages/
-      - text: Site wide alerts
-        href: /pages/documentation/site-wide-alert/
       - text: Supported site engines
         href: /pages/documentation/supported-site-engines/
       - text: Renaming your site's repository

@@ -51,7 +51,7 @@ The first step to building a new site is to map a strategy for the site's conten
 
 The [18F method cards](https://methods.18f.gov/) are an overview of several different approaches for researching user needs and designing a website. This is often the best place to start for new projects.
 
-The Pages team also provides a [content guide specifically for Pages websites]({{site.baseurl}}/pages/content-guide/). This guide will help you "convey what your team does, using language and tone that a general audience will understand, or how to think about what to write in each section of your new website."
+The Pages team also provides a [content guide specifically for Pages websites]({{site.baseurl}}/pages/documentation/content-guide/). This guide will help you "convey what your team does, using language and tone that a general audience will understand, or how to think about what to write in each section of your new website."
 
 ## Managing site settings
 ![Pages Settings Screenshot]({{site.baseurl}}/assets/pages/images/federalist-settings.png)
