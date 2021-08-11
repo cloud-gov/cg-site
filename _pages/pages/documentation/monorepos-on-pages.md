@@ -1,17 +1,17 @@
 ---
-title: Monorepos on Federalist
-permalink: /pages/documentation/monorepos-on-federalist/
+title: Monorepos on Pages
+permalink: /pages/documentation/monorepos-on-pages/
 layout: docs
 navigation: pages
 sidenav: pages-documentation
 ---
 
 
-Monorepos on Federalist follow the same rules as any other Federalist site; as long as Federalist knows what command to run to build the site AND the contents are available in the `_site` folder in the project root, Federalist will be happy.
+Monorepos on Pages follow the same rules as any other Pages site; as long as Pages knows what command to run to build the site AND the contents are available in the `_site` folder in the project root, Pages will be happy.
 
 ## Using the `script-only` option
 
-The following is an example of using Federalist to build a site that is in a subfolder of a monorepo using the `script-only` option for a `node`-based site.
+The following is an example of using Pages to build a site that is in a subfolder of a monorepo using the `script-only` option for a `node`-based site.
 
 See [federalist-monorepo-test](https://github.com/18F/federalist-monorepo-test) for the full working example.
 
@@ -40,7 +40,7 @@ See [federalist-monorepo-test](https://github.com/18F/federalist-monorepo-test) 
 }
 ```
 
-3. Make the results of the build step available in the `_site` folder for Federalist to deploy, these could be copied or linked to, here we use a symbolic link.
+3. Make the results of the build step available in the `_site` folder for Pages to deploy, these could be copied or linked to, here we use a symbolic link.
 ```
 // package.json
 {

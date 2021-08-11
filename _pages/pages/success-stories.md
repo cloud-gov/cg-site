@@ -9,7 +9,7 @@ title: cloud.gov Pages - Success Stories
   <div class="grid-row grid-gap">
     <div class="tablet:grid-col-8">
       <h1 class="font-heading-3xl">Trusted and scalable.</h1>
-      <p class="usa-intro">Federalist hosts over 100+ sites across Federal agencies which account for over 140,000+ page views per day.</p>
+      <p class="usa-intro">Pages hosts over 100+ sites across Federal agencies which account for over 140,000+ page views per day.</p>
     </div>
   </div>
 </section>
@@ -26,7 +26,7 @@ title: cloud.gov Pages - Success Stories
   <div class="grid-row grid-gap margin-y-8">
     <div class="grid-col-6 usa-prose">
       <h2>Department of the Interior</h2>
-      <p>The Department of the Interior's Natural Resources Revenue site provides data about how the government manages federal energy and mineral resources, revenue, and disbursements. The website delivers valuable data to policy experts, while also ensuring the general public can follow along through an intuitive user interface and contextual information. This is an excellent example of how Federalist can be used to manage complex data sets and visualizations. You can learn more about <a href="https://revenuedata.doi.gov/blog/">their process on their blog</a>.</p>
+      <p>The Department of the Interior's Natural Resources Revenue site provides data about how the government manages federal energy and mineral resources, revenue, and disbursements. The website delivers valuable data to policy experts, while also ensuring the general public can follow along through an intuitive user interface and contextual information. This is an excellent example of how Pages can be used to manage complex data sets and visualizations. You can learn more about <a href="https://revenuedata.doi.gov/blog/">their process on their blog</a>.</p>
     </div>
     <div class="grid-col-6">
       <img alt="website thumbnail" src="{{site.baseurl}}/assets/pages/images/partner-sites/revenuedata.doi.gov.png" class="border border-base-lighter">
@@ -35,7 +35,7 @@ title: cloud.gov Pages - Success Stories
   <div class="grid-row grid-gap margin-y-8">
     <div class="grid-col-6 usa-prose">
       <h2>College Scorecard</h2>
-      <p>The Department of Education uses Federalist to host College Scorecard, a website that provides users with important information on everything from financial aid to expected earnings. College Scorecard demonstrates the power of Federalist when used together with <a href="http://cloud.gov">cloud.gov</a> for a API-backed database.  Federalist's cloud infrastructure helps manage site traffic during spikes in visitors, making sure College Scorecard is always available.</p>
+      <p>The Department of Education uses Pages to host College Scorecard, a website that provides users with important information on everything from financial aid to expected earnings. College Scorecard demonstrates the power of Pages when used together with <a href="http://cloud.gov">cloud.gov</a> for a API-backed database.  Pages' cloud infrastructure helps manage site traffic during spikes in visitors, making sure College Scorecard is always available.</p>
     </div>
     <div class="grid-col-6">
       <img alt="website thumbnail" src="{{site.baseurl}}/assets/pages/images/partner-sites/collegescorecard.ed.gov.png" class="border border-base-lighter">
@@ -44,7 +44,7 @@ title: cloud.gov Pages - Success Stories
   <div class="grid-row grid-gap margin-y-8">
     <div class="grid-col-6 usa-prose">
       <h2>AFWERX</h2>
-      <p>In 2017, the Secretary of the Air Force established AFWERX — a technology accelerator that brings the best from academia and industry together to solve problems and enhance the Air Force's effectiveness.<br/>A military website needs military compliance, and Federalist made it easy for AFWERX to get there. Because it's fully customizable, AFWERX could design a brand that would attract the cutting-edge contributors they were looking for. And because it's FedRAMP-authorized, they could launch their site knowing their security met the standards the Department of Defense demands.</p>
+      <p>In 2017, the Secretary of the Air Force established AFWERX — a technology accelerator that brings the best from academia and industry together to solve problems and enhance the Air Force's effectiveness.<br/>A military website needs military compliance, and Pages made it easy for AFWERX to get there. Because it's fully customizable, AFWERX could design a brand that would attract the cutting-edge contributors they were looking for. And because it's FedRAMP-authorized, they could launch their site knowing their security met the standards the Department of Defense demands.</p>
     </div>
     <div class="grid-col-6">
       <img alt="website thumbnail" src="{{site.baseurl}}/assets/pages/images/partner-sites/afwerx.af.mil.png" class="border border-base-lighter">
@@ -53,7 +53,7 @@ title: cloud.gov Pages - Success Stories
   <div class="grid-row grid-gap margin-y-8">
     <div class="grid-col-6 usa-prose">
       <h2>Centers of Excellence</h2>
-      <p>GSA's Centers of Excellence (CoE) program accelerates the modernization of IT infrastructure across government. But in early 2018, the CoE team was in need of their own modernization: their website was cumbersome, required vendors for updates, and took 30-45 minutes to make a single change.<br/>With Federalist, CoEs can make their own changes — no outside help needed — in five minutes or less. Because everything's organized in one place, maintaining their website is simple, efficient, and easily managed by in-house staff. And thanks to Federalist's modern, accessible templates, this signature White House initiative is now fully compliant with the 21st Century Integrated Digital Experience Act (IDEA).</p>
+      <p>GSA's Centers of Excellence (CoE) program accelerates the modernization of IT infrastructure across government. But in early 2018, the CoE team was in need of their own modernization: their website was cumbersome, required vendors for updates, and took 30-45 minutes to make a single change.<br/>With Pages, CoEs can make their own changes — no outside help needed — in five minutes or less. Because everything's organized in one place, maintaining their website is simple, efficient, and easily managed by in-house staff. And thanks to Pages' modern, accessible templates, this signature White House initiative is now fully compliant with the 21st Century Integrated Digital Experience Act (IDEA).</p>
     </div>
     <div class="grid-col-6">
       <img alt="website thumbnail" src="{{site.baseurl}}/assets/pages/images/partner-sites/coe.gsa.gov.png" class="border border-base-lighter">
@@ -62,7 +62,7 @@ title: cloud.gov Pages - Success Stories
   <div class="grid-row grid-gap margin-y-8">
     <div class="grid-col-6 usa-prose">
       <h2>FedRAMP</h2>
-      <p>The Federal Risk and Authorization Management Program (FedRAMP) is a government-wide program that provides a standardized approach to security assessment, authorization, and continuous monitoring for cloud products and services. FedRAMP's choice to use Federalist for its main website speaks to the security and reliability of the Federalist infrastructure.</p>
+      <p>The Federal Risk and Authorization Management Program (FedRAMP) is a government-wide program that provides a standardized approach to security assessment, authorization, and continuous monitoring for cloud products and services. FedRAMP's choice to use Pages for its main website speaks to the security and reliability of the Pages infrastructure.</p>
     </div>
     <div class="grid-col-6">
       <img alt="website thumbnail" src="{{site.baseurl}}/assets/pages/images/partner-sites/fedramp.gov.png" class="border border-base-lighter">
@@ -71,8 +71,8 @@ title: cloud.gov Pages - Success Stories
 </section>
 
 <section class="usa-section usa-prose">
-  <h2>See more sites powered by Federalist.</h2>
-  <p>Nine agencies use Federalist to host over 100 sites with over 140,000 page views per day. 
+  <h2>See more sites powered by Pages.</h2>
+  <p>Nine agencies use Pages to host over 100 sites with over 140,000 page views per day. 
   This page shows a sample of our partners.</p>
   <div class="grid-row grid-gap-lg text-center">
     <div class="tablet:grid-col-4 padding-y-2">

@@ -1,16 +1,13 @@
 ---
-title: Bundler on Federalist
+title: Bundler on Pages
+permalink: /pages/documentation/bundler-on-pages/
 layout: docs
 navigation: pages
 sidenav: pages-documentation
-permalink: /pages/documentation/bundler-on-federalist/
-redirect_from:
-  - /pages/how-federalist-works/bundler-on-federalist/
-
 ---
 
 
-Federalist uses [Bundler](https://bundler.io/) to manage your Federalist site's dependencies.  By default, Federalist runs Bundler version 1.
+Pages uses [Bundler](https://bundler.io/) to manage your Pages site's dependencies.  By default, Pages runs Bundler version 1.
 
 ## Specifying a Bundler version
 

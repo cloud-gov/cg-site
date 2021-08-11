@@ -1,18 +1,18 @@
 ---
-title: Forms on Federalist sites
+title: Forms on Pages sites
 permalink: /pages/documentation/forms/
 layout: docs
 navigation: pages
 sidenav: pages-documentation
 ---
-Do you want to use a digital form to ask questions of the people visiting your Federalist website? Do you want them to fill out a form with their contact info or feedback? This page provides an overview of existing digital form tools and requirements so you can determine which best apply to your situation and get started.
+Do you want to use a digital form to ask questions of the people visiting your Pages website? Do you want them to fill out a form with their contact info or feedback? This page provides an overview of existing digital form tools and requirements so you can determine which best apply to your situation and get started.
 
 
 ## A note about form services
-Federalist pages are static websites. This means that while you can add a form to your site, there is no mechanism to handle the form submission to store and see the results. You’ll need to use a separate form service to use a digital form on your agency’s site. Federalist identified a list of service providers and setup instructions, through research funded by [GSA's 10x program](https://10x.gsa.gov/). This list is not shared on this public government site to comply with federal laws, which prohibit federal agencies from giving the appearance of endorsement of particular vendors. Neither Federalist nor GSA promote any particular form service. You should check with your agency's Office of Chief Information for what services are licensed and approved for your use.
+Pages pages are static websites. This means that while you can add a form to your site, there is no mechanism to handle the form submission to store and see the results. You’ll need to use a separate form service to use a digital form on your agency’s site. Pages identified a list of service providers and setup instructions, through research funded by [GSA's 10x program](https://10x.gsa.gov/). This list is not shared on this public government site to comply with federal laws, which prohibit federal agencies from giving the appearance of endorsement of particular vendors. Neither Pages nor GSA promote any particular form service. You should check with your agency's Office of Chief Information for what services are licensed and approved for your use.
 
 ## Form requirements
-Several requirements may apply to your agency's digital form, whether posting to Federalist or another site.
+Several requirements may apply to your agency's digital form, whether posting to Pages or another site.
 
 #### [The Paperwork Reduction Act (PRA)](https://digital.gov/resources/paperwork-reduction-act-44-u-s-c-3501-et-seq/)
 What it is: The PRA determines how federal agencies collect information from the public. Adhering to this law doesn't have to be complicated: this [guide to the PRA](https://pra.digital.gov/) will help you understand if and how PRA is applicable to your form.
@@ -25,7 +25,7 @@ How to get started: First [figure out if PRA applies to your form](https://pra.d
 What it is: 508 compliance requires that government websites be fully accessible to people with disabilities. The [21st Century IDEA Act](https://www.congress.gov/bill/115th-congress/house-bill/5759/text) amplifies this accessibility, and requires a modern user experience.
 
 Tips:
-- Use the [United States Web Design System](https://designsystem.digital.gov/) (USWDS) to design your form. It's built to help you more easily comply with accessibility. [Federalist templates](https://federalist.18f.gov/documentation/templates/) are all built using the USWDS. To design the different parts of your form, refer to [USWDS form controls](https://designsystem.digital.gov/components/form-controls/). [Pre-built form templates](https://designsystem.digital.gov/components/form-templates/) offer great examples. Even if you use the USDWS, regularly [scan for accessibility compliance](https://accessibility.18f.gov/tools/).
+- Use the [United States Web Design System](https://designsystem.digital.gov/) (USWDS) to design your form. It's built to help you more easily comply with accessibility. [Pages templates](/pages/documentation/templates/) are all built using the USWDS. To design the different parts of your form, refer to [USWDS form controls](https://designsystem.digital.gov/components/form-controls/). [Pre-built form templates](https://designsystem.digital.gov/components/form-templates/) offer great examples. Even if you use the USDWS, regularly [scan for accessibility compliance](https://accessibility.18f.gov/tools/).
 - If you create a form without using the USWDS, follow [18F's accessibility guide for forms](https://accessibility.18f.gov/forms/) to still ensure your form is accessible.
 - Follow these [plainlanguage guidelines](https://plainlanguage.gov/guidelines/) to ensure your content is accessible to the public.
 
@@ -55,7 +55,7 @@ your ISSO and privacy analyst to complete a PTA early in your process.
 #### [Federal Records Act](https://www.archives.gov/about/laws/fed-agencies.html)
 What is is: The data collected in your form needs to be stored and destroyed in compliance with the Federal Records Act. You are responsible for identifying what of your data is considered a record, and managing those records in accordance with your agency's [National Archives and Records Administration (NARA)-approved record schedule](https://www.archives.gov/about/laws/fed-agencies.html).
 
-Tip: If your form data is considered a record, remember that the data collected in your form is stored in the forms service, not in Federalist.
+Tip: If your form data is considered a record, remember that the data collected in your form is stored in the forms service, not in Pages.
 
 To get started: Get in touch with your agency's Records and Information Management (RIM) office.
 

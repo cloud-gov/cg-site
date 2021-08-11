@@ -14,7 +14,7 @@ secondary:
   - name: Platform Status
     url: https://federalist.statuspage.io
   - name: Login
-    url: https://federalistapp.18f.gov
+    url: https://app.pages.cloud.gov
     external: true
     class: usa-button usa-button-secondary nav-button
 
@@ -32,30 +32,30 @@ footer:
   - text: Contact
     href: /pages/contact/
   - text: Manage Sites
-    href: https://federalistapp.18f.gov
+    href: https://app.pages.cloud.gov
     external: true
 
 
 sidenav:
-  - text: Using Federalist
+  - text: Using Pages
     href: /pages/documentation/
     subfolderitems:
-      - text: Why use Federalist?
-        href: /pages/documentation/why-use-federalist/
+      - text: Why use Pages?
+        href: /pages/documentation/why-use-pages/
       - text: Access and permissions
         href: /pages/documentation/access-permissions/
       - text: Customer responsibilities
         href: /pages/documentation/customer-responsibilities/
       - text: Getting started with a sandbox
-        href: /pages/documentation/federalist-sandbox/
+        href: /pages/documentation/sandbox/
       - text: "21st Century IDEA"
         href: /pages/documentation/21st-century-idea/
       - text: Getting started with Jekyll
         href: /pages/documentation/getting-started-with-jekyll/
       - text: Getting started with Netlify CMS
         href: /pages/documentation/getting-started-with-netlify-cms/
-      - text: Included with Federalist
-        href: /pages/documentation/included-with-federalist/
+      - text: Included with Pages
+        href: /pages/documentation/included-with-pages/
       - text: Instructional demos
         href: /pages/documentation/instructional-demos/
       - text: Builds and previews
@@ -83,31 +83,27 @@ sidenav:
       - text: Federalist.json
         href: /pages/documentation/federalist-json/
   - text: For developers
-    href: /pages/documentation/for-developers/
+    href: /pages/documentation/
     subfolderitems:
-      - text: How Federalist works
-        href: /pages/documentation/how-federalist-works/
+      - text: How Pages works
+        href: /pages/documentation/how-pages-works/
       - text: How builds work
         href: /pages/documentation/how-builds-work/
       - text: Specific build errors
         href: /pages/documentation/build-errors/
       - text: Environment variables on builds
-        href: /pages/documentation/env-vars-on-federalist-builds/
-      - text: Federalist and cloud.gov
+        href: /pages/documentation/env-vars-on-pages-builds/
+      - text: Pages and cloud.gov
         href: /pages/documentation/cloud-gov/
-      - text: cloud.gov setup
-        href: /pages/documentation/cloud-gov-setup/
-      - text: Node on Federalist
-        href: /pages/documentation/node-on-federalist/
-      - text: RVM on Federalist
-        href: /pages/documentation/rvm-on-federalist/
-      - text: Bundler on Federalist
-        href: /pages/documentation/bundler-on-federalist/
-      - text: Site wide alerts
-        href: /pages/documentation/site-wide-alert/
+      - text: Node on Pages
+        href: /pages/documentation/node-on-pages/
+      - text: RVM on Pages
+        href: /pages/documentation/rvm-on-pages/
+      - text: Bundler on Pages
+        href: /pages/documentation/bundler-on-pages/
       - text: Supported site engines
         href: /pages/documentation/supported-site-engines/
       - text: Renaming your site's repository
         href: /pages/documentation/renaming-site-repository/
-      - text: Monorepos on Federalist
-        href: /pages/documentation/monorepos-on-federalist/
+      - text: Monorepos on Pages
+        href: /pages/documentation/monorepos-on-pages/
