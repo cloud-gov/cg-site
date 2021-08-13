@@ -15,7 +15,7 @@ This post will demonstrate how to use some of the commonly available Drupal migr
 
 ## Drupal 7 / 8 end of life
 
-The end of life date for both Drupal 7 and 8 is fast approaching. Drupal 8 wil reach it's scheduled end of life on November 2, 2021. Drupal 7 wil reach it's scheduled end of life on November 28, 2022 (after being extended for a period of about 1 year).
+The end of life date for both Drupal 7 and 8 is fast approaching. Drupal 8 will reach it's scheduled end of life on November 2, 2021. Drupal 7 wil reach it's scheduled end of life on November 28, 2022 (after being extended for a period of about 1 year).
 
 As the challenges and work required to upgrade to the latest version of Drupal are considered by agencies, other platform options may also be evaluated. One potential option for current Drupal users is the [Federalist platform](https://federalist.18f.gov/){:target="_blank"} (soon to be renamed to [cloud.gov Pages](https://federalist.18f.gov/cloud-gov-pages/){:target="_blank"}).
 
@@ -49,7 +49,7 @@ Federalist does have some limitations, so depending on your agency's specific us
 
 * You need to authenticate users, and manage user accounts
 * You need to show different content to different users (user authorization)
-* You need a server (or something that as the characteristics of a server)
+* You need a server (or something that has the characteristics of a server)
 * You have other unique requirements (e.g., software licensing)
 
 ## Getting from Drupal to Federalist

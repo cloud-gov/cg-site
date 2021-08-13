@@ -36,3 +36,5 @@ gem "html-proofer", "~> 3.10"
 gem "kramdown-parser-gfm"
 
 gem "nokogiri", ">= 1.11.0.rc4"
+
+gem "addressable", ">= 2.8.0"
