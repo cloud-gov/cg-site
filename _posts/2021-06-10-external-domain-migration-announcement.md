@@ -24,7 +24,7 @@ The new external-domain service uses a different method of validation with Let's
 | Type  | Name                      | Value                                                           |
 |-------|---------------------------|-----------------------------------------------------------------|
 | CNAME | `_acme-challenge.$DOMAIN` | `_acme-challenge.$DOMAIN.external-domains-production.cloud.gov` |
-| CNAME | `$DOMAIN`                 | `$DOMAIN.external-domains-production.cloud.gov`                 |
+| CNAME* | `$DOMAIN`                 | `$DOMAIN.external-domains-production.cloud.gov`                 |
 
 The `_acme-challenge.$DOMAIN` CNAME record allows us to provision SSL certificates on your behalf.
 
