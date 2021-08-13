@@ -32,6 +32,10 @@ As an example, if you have a custom-domain service created for `directorate.agen
 
 The `$DOMAIN` CNAME is responsible for routing the user traffic to your site.  Using the `directorate.agency.gov` example above, this would be `directorate.agency.gov.external-domains-production.cloud.gov`.
 
+If you already have `CNAME`, `A`, and/or `AAAA` (with `ALIAS`) record(s) for `$DOMAIN`, you should update the value or replace the record to match what is shown above.
+
+* If your domain is a "2nd level domain" (i.e. `agency.gov` instead of `directorate.agency.gov`) you will need to use an `A` and/or `AAAA` (with `ALIAS`) record(s) assuming your DNS provider supports it.
+
 Note that the second update here changes how users get to your site.
 We've made every effort to validate we're prepared for this change, but you should confirm that
 `$DOMAIN.external-domains-production.cloud.gov` currently resolves before making this change.
