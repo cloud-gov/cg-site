@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Migrate to the external-domain service"
-date: June 10, 2021
+date: August 16, 2021
 excerpt: Customers need to take action to migrate from the cdn-service and custom-domain service to the external-domain service
 ---
 
@@ -34,7 +34,7 @@ The `$DOMAIN` CNAME is responsible for routing the user traffic to your site.  U
 
 If you already have `CNAME`, `A`, and/or `AAAA` (with `ALIAS`) record(s) for `$DOMAIN`, you should update the value or replace the record to match what is shown above.
 
-* If your domain is a "2nd level domain" (i.e. `agency.gov` instead of `directorate.agency.gov`) you will need to use an `A` and/or `AAAA` (with `ALIAS`) record(s) assuming your DNS provider supports it.
+* If your domain is an "apex domain" or "2nd level domain" (i.e. `agency.gov` instead of `directorate.agency.gov`) you will need to use an `A` and `AAAA` (with `ALIAS`) record(s) assuming your DNS provider supports it.
 
 Note that the second update here changes how users get to your site.
 We've made every effort to validate we're prepared for this change, but you should confirm that
@@ -57,6 +57,8 @@ The migration will *not* cause:
 - change in functionality or configuration to your services
 
 During the migration, you may see a new service instance with a name you do not recognize in your space(s).
+Once started, the migration takes about 30 minutes for cdn-route instances, and less than 15 minutes for custom-domain instances.
+During this time, you will be unable to make other modifications to the service instance.
 
 ### After the migration
 
