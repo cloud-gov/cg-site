@@ -70,23 +70,21 @@ example_sites:
     link: https://cio.gov
     screenshot: /assets/pages/images/partner-sites/cio.gov.png
 fact_sheets:
-  - name: Federalist proposal
+  - name: Pages proposal
     thumbnail: /assets/pages/images/home-page/Federalist-Proposal-Thumbnail.png
     pdfs:
-      - link: /assets/pages/documents/Federalist-Proposal.pdf
-        description: A two-page overview about Federalist for stakeholder briefings
+      - link: /assets/pages/documents/Pages-Proposal.pdf
+        description: A two-page overview about Pages for stakeholder briefings
   - name: Pages basic diagram
     thumbnail: /assets/pages/images/home-page/how-federalist-works-diagram-Thumbnail.jpg
     pdfs:
       - link: /assets/pages/documents/how-federalist-works-diagram.pdf
         description: An outline of how all of Federalist’s parts work together.
-  - name: Compliance memo & extension
+  - name: Compliance memo
     thumbnail: /assets/pages/images/home-page/Federalist-Compliance-Memo-Thumbnail.jpg
     pdfs:
       - link: /assets/pages/documents/Federalist-Compliance-Memo.pdf
         description: Details about Federalist’s compliance and Authority to Operate.
-      - link: /assets/pages/documents/Federalist-ATO-Extension-Letter.pdf
-        description: Federalist’s compliance and Authority to Operate extension
 
 
 
