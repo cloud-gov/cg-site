@@ -93,6 +93,18 @@ For customers that would like to import or export their Elasticsearch data, this
 
  cloud.gov does offer a code sample repository on Github - [aws-elasticsearch-example](https://github.com/cloud-gov/aws-elasticsearch-example) that shows an example in Python on how to interact with the new ES service using signed headers.  Our customers are encouraged to submit PRs of other examples to share with fellow customers.
 
+## Encryption
+
+Every non-dev AWS Elasticsearch instance configured through cloud.gov is [encrypted at rest](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/encryption-at-rest.html). We use the industry standard AES-256 encryption algorithm to encrypt your data on the server that hosts your AWS Elasticsearch instance. 
+
+Service Name | Plan Name | Encryption at Rest |
+------------ | --------- | --------------- |
+`aws-elasticsearch` | `es-dev` | No |
+`aws-elasticsearch` | `es-medium` | Yes |
+`aws-elasticsearch` | `es-medium-ha` | Yes |
+
+Note: If you have access to larger service plans, they will mirror same settings as `es-medium` or `es-medium-ha`. 
+
 ## Rotating credentials
 
 You can rotate credentials by creating a new instance and [deleting the existing instance](https://cli.cloudfoundry.org/en-US/cf/delete-service.html). If this is not an option, email [cloud.gov support](mailto:support@cloud.gov) to request rotating the credentials manually.
