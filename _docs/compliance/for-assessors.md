@@ -54,7 +54,7 @@ When a new security update is available for one of cloud.gov's underlying techno
 
 ### Encryption
 
-Every S3, AWS Elasticache, and database service configured through cloud.gov is [encrypted at rest](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html). Additionally AWS Elasticsearch is encryption at rest is enabled for all [production service plans](https://cloud.gov/docs/services/aws-elasticsearch/#encryption). We use the industry standard AES-256 encryption algorithm to encrypt your data on the server that hosts your database service instance. The database service then handles authenticating access and decrypting your data, with minimal performance impact and without requiring you to modify your applications.
+Every S3, AWS Elasticache, and database service configured through cloud.gov is [encrypted at rest](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html). Additionally AWS Elasticsearch has encryption at rest enabled for all [production service plans](https://cloud.gov/docs/services/aws-elasticsearch/#encryption). We use the industry standard AES-256 encryption algorithm to encrypt your data on the server that hosts your database service instance. The database service then handles authenticating access and decrypting your data, with minimal performance impact and without requiring you to modify your applications.
 
 All logs are encrypted while in transit and at rest for [logs.fr.cloud.gov](https://logs.fr.cloud.gov) and [Amazon CloudWatch Logs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html).
 
