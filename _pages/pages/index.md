@@ -79,12 +79,12 @@ fact_sheets:
     thumbnail: /assets/pages/images/home-page/how-federalist-works-diagram-Thumbnail.jpg
     pdfs:
       - link: /assets/pages/documents/how-federalist-works-diagram.pdf
-        description: An outline of how all of Federalist’s parts work together.
+        description: An outline of how all of Pages' parts work together.
   - name: Compliance memo
     thumbnail: /assets/pages/images/home-page/Federalist-Compliance-Memo-Thumbnail.jpg
     pdfs:
       - link: /assets/pages/documents/Federalist-Compliance-Memo.pdf
-        description: Details about Federalist’s compliance and Authority to Operate.
+        description: Details about Pages' compliance and Authority to Operate.
 
 
 
