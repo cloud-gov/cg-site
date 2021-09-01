@@ -14,7 +14,7 @@ The tasks on this checklist should be performed each day.
 ### PR as you go
 
 If you see a way to make this checklist better, just submit a PR to the
-[cg-site](https://github.com/18F/cg-site) repo for `content/docs/ops/maintenance-list.md`
+[cg-site](https://github.com/cloud-gov/cg-site) repo for `content/docs/ops/maintenance-list.md`
 
 ### Review and respond to alerts
 
@@ -22,7 +22,7 @@ If you see a way to make this checklist better, just submit a PR to the
 - Review all production smoke tests to ensure they are passing.
 
 #### Investigate open alerts
-- Use our guides for reviewing cloud.gov alerts ([prometheus](https://github.com/18F/cg-deploy-prometheus/tree/master/bosh) for alert descriptions, links to the relevant rules, and starting points for reviewing each type of alert.
+- Use our guides for reviewing cloud.gov alerts ([prometheus](https://github.com/cloud-gov/cg-deploy-prometheus/tree/master/bosh) for alert descriptions, links to the relevant rules, and starting points for reviewing each type of alert.
 - Was the alert caused by known maintenance or testing in dev environments? Check with other members of the cloud.gov team if you can't determine the source.
 - Is this a recurring alert? Search alert history to determine how frequently it is occuring and what event may have started its firing.
 - Should the underlying condition have caused an alert? Alerts should only be raised when they're something we need to remediate.
@@ -62,8 +62,7 @@ Review the [detailed guide on customer support]({{site.baseurl}}/docs/ops/custom
 
 ## Weekly support tasks
 
-- Update the [`#cg-support`](https://gsa-tts.slack.com/messages/cg-support/) topic to include your name as the support contact.
-- Check for any new CVEs in [Elasticsearch](https://www.cvedetails.com/vulnerability-list/vendor_id-13554/Elasticsearch.html), and [Redis](https://www.cvedetails.com/vulnerability-list/vendor_id-15183/product_id-31837/Pivotal-Software-Redis.html).
+Update the [`#cg-support`](https://gsa-tts.slack.com/messages/cg-support/) topic to include your name as the support contact.
 
 ## Review expiring certificates
 
@@ -104,18 +103,6 @@ You can also view this information in each of our four environments, `tooling`, 
       number you're comfortable with monitoring which can vary based on
       experience or confidence in the deployment.  If you're not sure, '3' is a
       good starting point.
-    - **Nessus warning:** Before deploying an update that will recreate the
-      Nessus VM, such as updating the stemcell or VM type, be aware that we
-      need to ensure a 10 day waiting period between Nessus VM stemcell
-      upgrades. This is because the
-      [Nessus manager
-      deployment](https://github.com/18F/cg-deploy-nessus-manager) requires
-      that the System Owner reset the license key after a stemcell upgrade, and
-      the license key can only be reset every [10
-      days](https://docs.tenable.com/nessus/Content/ResetActivationCode.htm).
-      Coordinate with the System Owner to ensure the key is ready to be reset
-      before deploying an update that will upgrade the stemcell. You should
-      also read the [Troubleshooting Nessus runbook]({{ site.baseurl }}/docs/ops/runbook/troubleshooting-nessus).
 
 ## Review AWS CloudTrail events
 
@@ -187,12 +174,6 @@ Ask for a date when new stemcells will be delivered in #security in the
 ### Is a bosh release update required to remediate?
 Update the bosh release and file a PR for the changes.  Once the PR is merged,
 ensure the updated release is deployed to all required VMs.
-
-## Review potential improvements in CloudCheckr
-Review the [Best Practices report in CloudCheckr](https://app.cloudcheckr.com/#Report/BestPracticesConsolidated) and try to fix something near the top.
-
-Pay extra attention to any notices that indicate we are approaching a limit on resources so that we can reach out to AWS
-to ask for a quota increase before the limit is hit.  This will help prevent future sudden outages.
 
 ---
 
