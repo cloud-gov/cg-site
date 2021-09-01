@@ -16,11 +16,11 @@ Pages serves our fellow federal partners by expertly managing the backend and co
 
 - **FedRAMP Certified Platform** Pages is hosted on cloud.gov, a platform with security and compliance verified by the FedRAMP Joint Authorization Board, which means you can trust that your site will be fast, reliable, and ready for unexpected surges in traffic.
 
-- **Compliance out of the box** Federalist’s specific implementation of cloud.gov’s services to host static sites carries a [GSA Agency ATO]({{site.baseurl}}/assets/pages/documents/Federalist-Compliance-Memo.pdf) and its [extension letter]({{site.baseurl}}/assets/pages/documents/Federalist-ATO-Extension-Letter.pdf). If your agency accepts this <span data-term="ATO" class="term">ATO</span>, you can host Pages sites without running your own compliance process. We understand those processes typically cost around $95,000 per site, and $135,000 when including a pentest. Using Federalist allows you to leverage our compliance work, saving you time and money.
+- **Compliance out of the box** Federalist’s specific implementation of cloud.gov’s services to host static sites carries a [GSA Agency ATO]({{site.baseurl}}/assets/pages/documents/pages-compliance-memo.pdf) and its [extension letter]({{site.baseurl}}/assets/pages/documents/Federalist-ATO-Extension-Letter.pdf). If your agency accepts this <span data-term="ATO" class="term">ATO</span>, you can host Pages sites without running your own compliance process. We understand those processes typically cost around $95,000 per site, and $135,000 when including a pentest. Using Federalist allows you to leverage our compliance work, saving you time and money.
 
 - **Easy previews and content approvals** Pages builds out draft updates to your site at a special preview URL. This enables your team to know their changes will show up correctly when pushed to the main site, and makes it easy to get signoff on content updates from stakeholders.
 
-[![Diagram of Pages architecture]({{site.baseurl}}/assets/pages/images/how-federalist-works-diagram.png)]({{site.baseurl}}/assets/pages/documents/how-federalist-works-diagram.pdf)
+[![Diagram of Pages architecture]({{site.baseurl}}/assets/pages/images/how-pages-works-diagram.png)]({{site.baseurl}}/assets/pages/documents/how-pages-works-diagram.pdf)
 
 ## Why static websites?
 

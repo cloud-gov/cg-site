@@ -26,7 +26,7 @@ how_it_works:
 case_studies:
   - name: AFWERX
     thumbnail: /assets/pages/images/home-page/afwerx-success-Thumbnail.png
-    thumbnail_alt: FWERX Success Story Thumbnail
+    thumbnail_alt: AFWERX Success Story Thumbnail
     read_me_for: Challenges with government compliance, and cultural challenges switching to Cloud solutions
     link: /assets/pages/documents/afwerx-success.pdf
   - name: Centers of Excellence
@@ -71,19 +71,19 @@ example_sites:
     screenshot: /assets/pages/images/partner-sites/cio.gov.png
 fact_sheets:
   - name: Pages proposal
-    thumbnail: /assets/pages/images/home-page/Federalist-Proposal-Thumbnail.png
+    thumbnail: /assets/pages/images/home-page/Pages-Proposal-Thumbnail.png
     pdfs:
       - link: /assets/pages/documents/Pages-Proposal.pdf
         description: A two-page overview about Pages for stakeholder briefings
   - name: Pages basic diagram
-    thumbnail: /assets/pages/images/home-page/how-federalist-works-diagram-Thumbnail.jpg
+    thumbnail: /assets/pages/images/home-page/how-pages-works-diagram-Thumbnail.png
     pdfs:
-      - link: /assets/pages/documents/how-federalist-works-diagram.pdf
+      - link: /assets/pages/documents/how-pages-works-diagram.pdf
         description: An outline of how all of Pages' parts work together.
   - name: Compliance memo
-    thumbnail: /assets/pages/images/home-page/Federalist-Compliance-Memo-Thumbnail.jpg
+    thumbnail: /assets/pages/images/home-page/pages-compliance-memo-Thumbnail.jpg
     pdfs:
-      - link: /assets/pages/documents/Federalist-Compliance-Memo.pdf
+      - link: /assets/pages/documents/pages-compliance-memo.pdf
         description: Details about Pages' compliance and Authority to Operate.
 
 
@@ -215,7 +215,7 @@ fact_sheets:
 </section>
 
 <section class="usa-section margin-y-8">
-  <div class="grid-container maxw-desktop usa-prose">  
+  <div class="grid-container maxw-desktop usa-prose">
     <div class="grid-row">
       <h2>Pages fact sheets</h2>
       <p>
