@@ -18,8 +18,7 @@ If you see a way to make this checklist better, just submit a PR to the
 
 ### Review and respond to alerts
 
-- Review all alerts on [Prometheus](https://prometheus.fr.cloud.gov/alerts) (requires the VPN).
-- Review all production smoke tests to ensure they are passing.
+Review all alerts on [Prometheus](https://prometheus.fr.cloud.gov/alerts) (requires the VPN).
 
 #### Investigate open alerts
 - Use our guides for reviewing cloud.gov alerts ([prometheus](https://github.com/cloud-gov/cg-deploy-prometheus/tree/master/bosh) for alert descriptions, links to the relevant rules, and starting points for reviewing each type of alert.
