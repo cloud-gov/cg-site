@@ -7,7 +7,7 @@ sidenav: pages-documentation
 
 ---
 
-Welcome to your migrating journey onto Pages! This process may be difficult. We generally cannot provide support for migration work beyond general guidance under a standard Pages agreement, but if you are in a situation where you need some guidance, you can [contact us](mailto:federalist-inquiries@gsa.gov) to learn more about our additional support packages.
+Welcome to your migrating journey onto Pages! This process may be difficult. We generally cannot provide support for migration work beyond general guidance under a standard Pages agreement, but if you are in a situation where you need some guidance, you can [contact us](mailto:pages-inquiries@cloud.gov) to learn more about our additional support packages.
 
 ## Before you start
 
