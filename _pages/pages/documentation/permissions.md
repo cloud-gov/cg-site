@@ -10,9 +10,9 @@ sidenav: pages-documentation
 ## Initial access
 
 ### Personal access
-Basic access to Pages is authenticated using GitHub OAuth. Please ask your team's primary contact for Pages to request access to Pages by e-mailing federalist-support@gsa.gov with the GitHub usernames of those that should have access. Next, you should receive an invitation to join the federalist-users GitHub organization which you must accept before you can log in to Pages. Primary contacts should also let us know when to remove access as part of offboarding.
+Basic access to Pages is authenticated using GitHub OAuth. Please ask your team's primary contact for Pages to request access to Pages by e-mailing pages-support@cloud.gov with the GitHub usernames of those that should have access. Next, you should receive an invitation to join the federalist-users GitHub organization which you must accept before you can log in to Pages. Primary contacts should also let us know when to remove access as part of offboarding.
 
-***Note:*** If a user is inactive for 90 days, their account will be disabled and they will not be able to login to Pages. In order to regain access to Pages, their team's primary contact for Pages must re-submit a request for access to Pages by e-mailing federalist-support@gsa.gov with the user's GitHub username.
+***Note:*** If a user is inactive for 90 days, their account will be disabled and they will not be able to login to Pages. In order to regain access to Pages, their team's primary contact for Pages must re-submit a request for access to Pages by e-mailing pages-support@cloud.gov with the user's GitHub username.
 
 ### Organizational access
 In order to manage sites where the repository is owned by an organization, Pages uses GitHub oAuth at the organizational level. After you have logged in to Pages, as described in the Personal Access section above, you must [request organization approval](https://help.github.com/en/articles/requesting-organization-approval-for-oauth-apps) for the Pages oAuth App. Be sure to follow up with your organization's GitHub admin to confirm approval.

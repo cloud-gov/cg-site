@@ -87,7 +87,6 @@ title: cloud.gov Pages - Features
       <h4>Federally compliant from the start</h4>
       <ul>
         <li>We are built on the FedRAMP-certified cloud.gov platform and Amazon Web Services GovCloud infrastructure.</li>
-        <li>Your agency can use our Authority to Operate (ATO).</li>
         <li>Protected by multiple levels of authentication.</li>
         <li>We handle vulnerability scanning and penetration testing for you.</li>
       </ul>
