@@ -2,7 +2,7 @@
 layout: post
 title: "Invalid certificate error"
 date: October 10, 2021
-excerpt: A recent update by Let's Encrypt may cause some client issues when accessing sites
+excerpt: A recent update by Lets Encrypt may cause some client issues when accessing sites
 ---
 
 ## Bottom line up front
