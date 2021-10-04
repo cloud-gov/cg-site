@@ -8,9 +8,9 @@
     "start": "bundle exec jekyll serve"
   },
   "dependencies": {
-    "anchor-js": "^4.3.0",
-    "mermaid": "^8.4.6",
-    "netlify-cms": "^2.10.112",
+    "anchor-js": "^4.3.1",
+    "mermaid": "^8.12.1",
+    "netlify-cms": "^2.10.164",
     "uswds": "^2.9.0"
   },
   "devDependencies": {
