@@ -11,7 +11,7 @@ A [recent change by certificate provider Let's Encrypt](https://letsencrypt.org/
 
 ## More details
 
-If an app uses TLS certificates through our [external domain service](https://cloud.gov/docs/services/external-domain-service/), those certs are issued by Let's Encrypt. The certificates serve a trust chain given to us by Lets Encrypt. Clients can use the first cert in the chain to build a full chain up to "DST Root CA X3", which expired 30 September 2021, or the second cert in the chain to build a full chain up to "ISRG Root X1".
+Let's Encrypt is used to issue certificates for the domains on our platform, whether they are a custom domain added to your app through our external domain service](https://cloud.gov/docs/services/external-domain-service/) or one of the default domains used for test and staging apps. The certificates serve a trust chain given to us by Lets Encrypt. Clients can use the first cert in the chain to build a full chain up to "DST Root CA X3", which expired 30 September 2021, or the second cert in the chain to build a full chain up to "ISRG Root X1".
 
 If a client (e.g. the web browser on an older system) has "DST Root CA X3" as a trust anchor but not "ISRG Root X1", they will probably get a certificate validation error because "DST Root CA X3" expired earlier today.
 
