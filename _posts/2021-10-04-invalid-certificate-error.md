@@ -2,14 +2,14 @@
 layout: post
 title: "Invalid certificate error"
 date: October 4, 2021
-excerpt: A recent update by Lets Encrypt may cause some client issues when accessing sites
+excerpt: A recent update by Let's Encrypt may cause some client issues when accessing sites
 ---
 
-## Bottom line up front
+### Bottom line up front
 
 A [recent change by certificate provider Let's Encrypt](https://letsencrypt.org/2020/09/17/new-root-and-intermediates.html) may be causing some issues when client applications attempt to access sites on cloud.gov and Federalist (as well as other sites on the Internet). The issue disproportionately affects users with older operating systems and/or browsers, and fixing the issue is outside of our control.
 
-## More details
+### More details
 
 Let's Encrypt is used to issue certificates for the domains on our platform. The certificates serve a trust chain given to us by Lets Encrypt. Clients can use the first cert in the chain to build a full chain up to "DST Root CA X3", which expired 30 September 2021, or the second cert in the chain to build a full chain up to "ISRG Root X1".
 
