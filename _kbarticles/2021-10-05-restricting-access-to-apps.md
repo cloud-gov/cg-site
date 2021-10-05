@@ -9,6 +9,6 @@ Applications sometimes need to restrict access to just an allow list of IP's lik
 
 In addition, you may also want to take a look at internal routes on cloud.gov. Running an app on an internal route and using an nginx proxy to manage access is the standard way of restricting access to an app. Here are a few resources that might be helpful.
 
-* The cloud.gov team a tech talk not long ago on internal routes: [https://www.youtube.com/watch?v=2m4FP522DU8](https://www.youtube.com/watch?v=2m4FP522DU8)
+* The cloud.gov team a tech talk on internal routes: [https://www.youtube.com/watch?v=2m4FP522DU8](https://www.youtube.com/watch?v=2m4FP522DU8)
 * There are some examples apps that went along with this talk here: [https://github.com/cloud-gov/tech-talk-internal-routes](https://github.com/cloud-gov/tech-talk-internal-routes)
 * Some additional resources that might be useful are here: [https://github.com/cloud-gov/tech-talk-internal-routes#additional-resources](https://github.com/cloud-gov/tech-talk-internal-routes#additional-resources)
