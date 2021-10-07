@@ -42,6 +42,34 @@ cf create-service aws-elasticsearch es-medium my-elastic-service
 
 Note: AWS Elasticsearch creation times will vary and is outside of Cloud.gov's control. AWS says approximately 15-30 mins per node. 
 
+## Options
+
+name             | required | description              | example
+-----------------|----------|--------------------------|--------- 
+advanced_options | false    | map for advanced options | see below
+
+### Advanced Options
+
+These are advanced tuning options that can have significant performance or behavior effects on your cluster. They
+are specified as key/value pairs under the `advanced_options` map in the core parameters. *note*: although these
+all represent numbers, they are all specified as strings. Additionally, although they are dotted, they are not
+nested keys.
+
+Name                                | description                                                 | default 
+------------------------------------|-------------------------------------------------------------|--------
+indices.fielddata.cache.size        | percentage of JVM heap allocated to field data              | "20"
+indices.query.bool.max_clause_count | maximum number of clauses allowed in a Lucene boolean query | "1024"
+
+examples:
+
+```
+$ cf create-service aws-elasticsearch es-medium my-es-service-1 -c '{"advanced_options": {"indices.fielddata.cache.size": "21"}}'
+$ cf create-service aws-elasticsearch es-medium my-es-service-2 -c '{"advanced_options": {"indices.query.bool.max_clause_count": "1025"}}'
+$ cf create-service aws-elasticsearch es-medium my-es-service-3 -c '{"advanced_options": {"indices.query.bool.max_clause_count": "1025", "indices.fielddata.cache.size": "21"}}'
+
+```
+
+
 ### Shard/replica configuration for high availability
 
 When using the `medium` and `medium-ha` plans, please read [Scalability and resilience: clusters, nodes, and shards](https://www.elastic.co/guide/en/elasticsearch/reference/current/scalability.html) for the elasticsearch basics on clusters as well as the AWS specific [Developer Guide](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/what-is-amazon-elasticsearch-service.html).  The `medium` plan is mainly focused for customers that need a single index and have coverage with 2 data nodes.  For customers wanting more coverage and more indexes, then the `medium-ha` plan scales the cluster to 4 data nodes to offer high availability (HA).
