@@ -65,6 +65,8 @@ examples:
 ```
 $ cf create-service aws-elasticsearch es-medium my-es-service-1 -c '{"advanced_options": {"indices.fielddata.cache.size": "21"}}'
 $ cf create-service aws-elasticsearch es-medium my-es-service-2 -c '{"advanced_options": {"indices.query.bool.max_clause_count": "1025"}}'
+$ cf create-service aws-elasticsearch es-medium my-es-service-3 -c '{"advanced_options": {"indices.query.bool.max_clause_count": "1025", "indices.fielddata.cache.size": "21"}}'
+
 ```
 
 
