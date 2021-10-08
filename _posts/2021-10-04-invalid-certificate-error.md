@@ -15,7 +15,7 @@ Cloud.gov uses Let's Encrypt to provision the TLS certificates on our platform. 
 about Let's Encrypt's certificate heirarchy and the reasoning behind it [here](https://letsencrypt.org/2020/09/17/new-root-and-intermediates.html).
 
 The core issue is that on September 30, 2021, the `DST Root CA X3` expired. For well-behaved clients with up-to-date trust stores, this causes not problems. For other clients, this can cause problems:
-- A client with `DST Root CA X3` as a trust anchor but not `ISRG Root X1`, they will probably get a certificate validation error because `DST Root CA X3` expired earlier today.
+- A client with `DST Root CA X3` as a trust anchor but not `ISRG Root X1`, they will probably get a certificate validation error because `DST Root CA X3` expired earlier that day.
 - A client with **both** certs in their trust anchors may give up after constructing a chain to the expired `DST Root CA 3`, but most well-behaved clients will continue checking for a valid chain, and will find the chain to `ISRG Root X1`.
 
 However, either client configuration is wholly outside cloud.gov's control and users will need to address this issue manually or get help from their respective IT departments.
