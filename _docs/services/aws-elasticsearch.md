@@ -70,7 +70,12 @@ $ cf create-service aws-elasticsearch es-medium my-es-service-3 -c '{"advanced_o
 
 ### Shard/replica configuration for high availability
 
-When using the `medium` and `medium-ha` plans, please read [Scalability and resilience: clusters, nodes, and shards](https://www.elastic.co/guide/en/elasticsearch/reference/current/scalability.html) for the elasticsearch basics on clusters as well as the AWS specific [Developer Guide](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/what-is-amazon-elasticsearch-service.html).  The `medium` plan is mainly focused for customers that need a single index and have coverage with 2 data nodes.  For customers wanting more coverage and more indexes,  the `medium-ha` plan scales the cluster to 4 data nodes to offer high availability (HA).
+The `medium` and `large` plans are mainly geared toward customers that need a single index and have coverage with 2 data nodes.  For customers wanting more coverage and more indexes,  the `medium-ha` nd `large-ha` plans scale the cluster to 4 data nodes to offer high availability (HA).
+
+For additional information on configuring your service for high availability when using anything other than the `es-dev` plan, you can refer to [this article from the Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/scalability.html) for an overview of how clusters work. 
+
+AWS specific information can be found in the AWS [Developer Guide](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/what-is-amazon-elasticsearch-service.html).  Note - AWS recently changed the name of this service to AWS OpenSearch.
+
 
 ### Connecting to your service instance
 
@@ -135,7 +140,3 @@ Note: If you have access to larger service plans, they will mirror same settings
 ## Rotating credentials
 
 You can rotate credentials by creating a new instance and [deleting the existing instance](https://cli.cloudfoundry.org/en-US/cf/delete-service.html). If this is not an option, email [cloud.gov support](mailto:support@cloud.gov) to request rotating the credentials manually.
-
-### The broker in GitHub
-
-You can find the broker here: [https://github.com/cloud-gov/aws-broker](https://github.com/cloud-gov/aws-broker).
