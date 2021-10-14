@@ -26,7 +26,7 @@ $200/month per node for **medium**, $400/month per node for **large**. Six nodes
 
 ## When to use
 
-This service is geared toward applications that need to provide search capability, or interact with indexed data. Although Elasticsearch is often used as part of the ELK logging stack (Elasticsearch + Logstash + Kibana), this service **does not** include Kibana, and isn't suitable as a component of a logging solution. To find out more about logging on the cloud.gov platform, please see [the section on logs](https://cloud.gov/docs/deployment/logs/#web-based-logs-with-historic-log-data).
+This service is geared toward applications that need to provide search capability, or interact with indexed data. Although Elasticsearch is often used as part of the ELK logging stack (Elasticsearch + Logstash + Kibana), this service **does not** include Kibana, and isn't suitable as a component of a logging solution. To find out more about logging on the cloud.gov platform, please see [the section on logs]({{ site.baseurl }}/docs/deployment/logs/#web-based-logs-with-historic-log-data).
 
 ## How to create an instance
 
@@ -36,7 +36,7 @@ To create a service instance run the following command:
 cf create-service aws-elasticsearch {service-plan} {service-name}
 ```
 
-For example, to create a new instance named `my-elastic-service` using the `es-medium` plan, you would enter the following at the cf CLI:
+For example, to create a new instance using the `es-medium` plan named `my-elastic-service`, you would enter the following at the cf CLI:
 
 ```
 cf create-service aws-elasticsearch es-medium my-elastic-service
@@ -67,6 +67,8 @@ $ cf create-service aws-elasticsearch es-medium my-es-service-2 -c '{"advanced_o
 $ cf create-service aws-elasticsearch es-medium my-es-service-3 -c '{"advanced_options": {"indices.query.bool.max_clause_count": "1025", "indices.fielddata.cache.size": "21"}}'
 
 ```
+
+Note - if you are using the cf CLI utility on Windows, see the [examples section of the Cloud Foundry documentation](https://cli.cloudfoundry.org/en-US/v6/create-service.html#EXAMPLES) for specific formatting of parameters.
 
 ### Shard/replica configuration for high availability
 
