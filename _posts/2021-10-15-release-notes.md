@@ -23,6 +23,10 @@ Find more at https://cloud.gov/docs/services/aws-elasticsearch/#advanced-options
 
 Note: cloud.gov has not enabled HTTP/2 for the platform yet
 
+### Secure Proxy - 51 up from 50
+* Added HTTPS support to allow use of HTTPS in gorouters
+* cloud.gov has transitioned AWS Load Balancers to send all traffic via HTTPS
+
 ### Go Buildpack - 1.9.36 up from 1.9.35
 * Add go 1.16.8, remove go 1.16.6
 * Add go 1.17.1
