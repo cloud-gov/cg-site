@@ -142,3 +142,7 @@ Note: If you have access to larger service plans, they will mirror same settings
 ## Rotating credentials
 
 You can rotate credentials by creating a new instance and [deleting the existing instance](https://cli.cloudfoundry.org/en-US/cf/delete-service.html). If this is not an option, email [cloud.gov support](mailto:support@cloud.gov) to request rotating the credentials manually.
+
+### The broker in GitHub	
+
+You can find the broker here: [https://github.com/cloud-gov/aws-broker](https://github.com/cloud-gov/aws-broker).
