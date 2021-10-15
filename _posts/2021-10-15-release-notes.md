@@ -2,6 +2,7 @@
 layout: post
 date: October 15, 2021
 title: "October 15th cloud.gov Change Log" 
+excerpt: It’s a new fiscal year! The cloud.gov team is working on providing change logs so everyone can see new features and updates.
 ---
 
 # Happy New Fiscal Year!
@@ -16,7 +17,7 @@ It’s a new fiscal year! The cloud.gov team is working on providing change logs
 
 * Advanced Options is now available for new and existing instances, this allows developers to change two values for that cluster: `indices.fielddata.cache.size` and `indices.query.bool.max_clause_count`
 
-Find more at https://cloud.gov/docs/services/aws-elasticsearch/#advanced-options
+Find more at [AWS Elasticsearch Broker Docs](https://cloud.gov/docs/services/aws-elasticsearch/#advanced-options)
 
 ### Staticfile Buildpack - 1.5.26 up from 1.5.25
 * Add Configurable HTTP/2 Support
@@ -88,8 +89,8 @@ Cloud Controller
 
 ### CF CLI - 1.34.0 up from 1.33.0
 This release contains the following versions of the CF CLI
-| Major version	| Prior version |	Current version
-| --- | - | ---- |
+| Major version	| Prior version |	Current version |
+| ---- | ---- | ---- |
 | v8	| -	| 8.0.0 |
 | v7 | 7.3.0 |	7.3.0 |
 | v6 |	6.53.0 |	6.53.0 |
