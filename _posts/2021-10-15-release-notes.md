@@ -89,11 +89,13 @@ Cloud Controller
 
 ### CF CLI - 1.34.0 up from 1.33.0
 This release contains the following versions of the CF CLI
-| Major version	| Prior version |	Current version |
-| ---- | ---- | ---- |
-| v8	| -	| 8.0.0 |
-| v7 | 7.3.0 |	7.3.0 |
-| v6 |	6.53.0 |	6.53.0 |
+
+
+Major Version | Prior Version | Current Version
+--------------|---------------|-----------------
+v8 | - | 8.0.0
+v7 | 7.3.0 | 7.3.0
+v6 | 6.53.0 | 6.53.0
 
 ### CF Networking - 2.39.0 up from 2.38.0
 Release Highlights
