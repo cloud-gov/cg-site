@@ -8,15 +8,7 @@ description: "AWS Elasticsearch version 7.4: a distributed, RESTful search and a
 status: "Production Ready"
 ---
 
-cloud.gov offers [aws-elasticsearch](https://aws.amazon.com/elasticsearch-service/) 7.4 as a service hosted in AWS Elasticsearch
-
-## Changes
-
-This service is currently running Elasticsearch 7.4.  Our prior Elasticsearch service ran version 5.8.  There has been a good deal of changes including breaking changes between the 5.X and 7.X releases.  Customers are encouraged to read the following links for more information on ES API changes:
-
-  - [ES Release notes for 6.0](https://www.elastic.co/guide/en/elasticsearch/reference/6.0/release-notes-6.0.0.html)
-  - [ES Breaking Changes for 7.0](https://www.elastic.co/guide/en/elasticsearch/reference/7.0/breaking-changes-7.0.html)
-  - [AWS Supported ES Operations](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/aes-supported-es-operations.html#es_version_7_4)
+cloud.gov offers [aws-elasticsearch](https://aws.amazon.com/elasticsearch-service/) 7.4 as a service hosted in AWS Elasticsearch. 
 
 ## Plans
 
@@ -32,11 +24,21 @@ Service Name | Plan Name | Description | Number of nodes |
 
 $200/month per node for **medium**, $400/month per node for **large**. Six nodes included for customers using the FISMA Moderate plan. More information on the [pricing page]({{ site.baseurl }}{% link _pages/pricing.md %}).
 
+## When to use
+
+This service is geared toward applications that need to provide search capability, or interact with indexed data. Although Elasticsearch is often used as part of the ELK logging stack (Elasticsearch + Logstash + Kibana), this service **does not** include Kibana, and isn't suitable as a component of a logging solution. To find out more about logging on the cloud.gov platform, please see [the section on logs]({{ site.baseurl }}/docs/deployment/logs/#web-based-logs-with-historic-log-data).
+
 ## How to create an instance
 
 To create a service instance run the following command:
 
 ```sh
+cf create-service aws-elasticsearch {service-plan} {service-name}
+```
+
+For example, to create a new instance using the `es-medium` plan named `my-elastic-service`, you would enter the following at the cf CLI:
+
+```
 cf create-service aws-elasticsearch es-medium my-elastic-service
 ```
 
@@ -50,10 +52,7 @@ advanced_options | false    | map for advanced options | see below
 
 ### Advanced Options
 
-These are advanced tuning options that can have significant performance or behavior effects on your cluster. They
-are specified as key/value pairs under the `advanced_options` map in the core parameters. *note*: although these
-all represent numbers, they are all specified as strings. Additionally, although they are dotted, they are not
-nested keys.
+These are advanced tuning options that can have significant performance or behavior effects on your cluster. They are specified as key/value pairs under the `advanced_options` map in the core parameters. *Note*: although these all represent numbers, they are all specified as strings. Additionally, although they are dotted, they are not nested keys.
 
 Name                                | description                                                 | default 
 ------------------------------------|-------------------------------------------------------------|--------
@@ -69,10 +68,16 @@ $ cf create-service aws-elasticsearch es-medium my-es-service-3 -c '{"advanced_o
 
 ```
 
+Note - if you are using the cf CLI utility on Windows, see the [examples section of the Cloud Foundry documentation](https://cli.cloudfoundry.org/en-US/v6/create-service.html#EXAMPLES) for specific formatting of parameters.
 
 ### Shard/replica configuration for high availability
 
-When using the `medium` and `medium-ha` plans, please read [Scalability and resilience: clusters, nodes, and shards](https://www.elastic.co/guide/en/elasticsearch/reference/current/scalability.html) for the elasticsearch basics on clusters as well as the AWS specific [Developer Guide](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/what-is-amazon-elasticsearch-service.html).  The `medium` plan is mainly focused for customers that need a single index and have coverage with 2 data nodes.  For customers wanting more coverage and more indexes, then the `medium-ha` plan scales the cluster to 4 data nodes to offer high availability (HA).
+The `medium` and `large` plans are mainly geared toward customers that need a single index and have coverage with 2 data nodes.  For customers wanting more coverage and more indexes,  the `medium-ha` nd `large-ha` plans scale the cluster to 4 data nodes to offer high availability (HA).
+
+For additional information on configuring your service for high availability when using anything other than the `es-dev` plan, you can refer to [this article from the Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/scalability.html) for an overview of how clusters work. 
+
+AWS specific information can be found in the AWS [Developer Guide](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/what-is-amazon-elasticsearch-service.html).  Note - AWS recently changed the name of this service to AWS OpenSearch.
+
 
 ### Connecting to your service instance
 
@@ -138,6 +143,6 @@ Note: If you have access to larger service plans, they will mirror same settings
 
 You can rotate credentials by creating a new instance and [deleting the existing instance](https://cli.cloudfoundry.org/en-US/cf/delete-service.html). If this is not an option, email [cloud.gov support](mailto:support@cloud.gov) to request rotating the credentials manually.
 
-### The broker in GitHub
+### The broker in GitHub	
 
 You can find the broker here: [https://github.com/cloud-gov/aws-broker](https://github.com/cloud-gov/aws-broker).
