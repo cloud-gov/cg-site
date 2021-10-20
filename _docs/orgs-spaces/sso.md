@@ -5,7 +5,7 @@ sidenav: true
 title: Single Sign-On Integration
 ---
 
-If your agency has an identity provider that supports SAML 2.0-based Single Sign-On (SSO), such as Active Directory Federation Service (ADFS) or SecureAuth, you can integrate your identity provider (IDP) with cloud.gov so that users from your agency can authenticate to cloud.gov using your agency IDP.
+If your agency has an identity provider that supports SAML 2.0-based Single Sign-On (SSO), such as Active Directory Federation Service (ADFS) or SecureAuth, you can integrate your identity provider (IDP) with cloud.gov, at no cost, so users from your agency can authenticate to cloud.gov using your agency IDP.
 
 ## Process
 
@@ -20,6 +20,8 @@ The process for integrating with cloud.gov using your SSO solution is fairly sim
 1. cloud.gov will notify you of when the IDP configuration is available in our staging environment.
 1. You can try to log into our staging environment's user portal to ensure the login process works as intended and verify with cloud.gov Support you can log in successfully.
 1. Once the previous step has been completed, the cloud.gov Operations team will schedule and deploy the configuration to our production environment, at which point your SSO configuration will be ready to go!
+
+We provide SSO integration with federal agencies at no cost, since using an agency IdP reduces our overall support and compliance costs. Validation that you control an IdP with a valid U.S. government email domain is sufficient for our needs. 
 
 ## System Information
 
