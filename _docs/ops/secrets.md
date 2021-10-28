@@ -55,7 +55,7 @@ To work with AWS credentials on a day-to-day basis, we rely on [`aws-vault`](htt
 Install `aws-vault` with this [Homebrew](https://brew.sh/) command:
 
 ```sh
-brew cask install aws-vault
+brew install aws-vault
 ```
 
 Now create a profile, e.g., for the AWS GovCloud account:
