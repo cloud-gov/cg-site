@@ -270,3 +270,11 @@ last-modified-at:
 # Custom plugin to render the diagrams as mermaid
 mermaid:
   src: 'mermaid.min.js'
+
+feed:
+  path: updates.xml
+  collections:
+    kbarticles:
+      path: "/support.xml"
+  excerpt_only: true
+  posts_limit: 20
