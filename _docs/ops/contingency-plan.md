@@ -128,7 +128,7 @@ After these steps are complete, updates will be deployed per usual policy using 
 All alerts automatically get delivered to the Cloud Operations team via GSA email.  If GSA email is unavailable, the [Prometheus Alert Manager](https://alertmanager.fr.cloud.gov) provides current alerts.
 
 ### GSA SecureAuth
-Cloud Operations will update the `opslogin` UAA instance to allow temporary access via password authentication for any accounts that require access during a disruption in service.
+Cloud Operations will update the `opslogin` UAA instance to allow temporary access via password authentication for any accounts that require access during a disruption in service. The runbook is included in `internal-docs/runbook/contingency.md` 
 
 When the disruption in service is resolved, Cloud Operations will disable password authentication for all accounts.
 
@@ -151,6 +151,14 @@ Brokered service | Fallback Services | FedRAMP Fallback Status |
 AWS GovCloud Elasticache for Redis | AWS commercial Elasticache for Redis | Moderate |
 AWS GovCloud Elastisearch | AWS commercial Elastisearch | Moderate |
 
+## cloud.gov Pages
+
+Since the cloud.gov Pages service runs entirely on the cloud.gov PaaS, the
+recovery of the PaaS is a prerequisite for recovering the Pages service. A
+full recovery of the PaaS should include the running Pages service. If Pages
+needs to be recovered separately, a [cloud.gov Pages contingency
+plan](https://docs.google.com/document/d/1YG6oucagNO_ZmmlsLPdQeFABCiVcY1BYuhDEEvDwe4Q/edit)
+is available internally. 
 
 
 ## Continuity of Operations and Disaster Recovery Plan
