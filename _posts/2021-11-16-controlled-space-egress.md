@@ -1,6 +1,6 @@
 ---
 layout: post
-date: November 09, 2021
+date: November 16, 2021
 title: "New Controlled Space Egress"
 excerpt: The cloud.gov platform is releasing new space types to help customers better control app egress.
 ---
