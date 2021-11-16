@@ -11,12 +11,14 @@ Here are the following rules associated to the different space ASG types:
 
 - ### `public-egress`
   - Requests being executed from within the app can successfully be sent to the open internet, our brokered services, and other internal routes you have created in your organization.
-  - Your app can make requests to third party APIs
-  - Your app can connect to our data services
+  - Your app can make requests to third party APIs.
+  - Your app can connect to our brokered services.
 
 - ### `restricted-egress`
-  - Requests being executed from within the app can only successfully be sent to our brokered services or other internal routes you have created in your organization.
-  - Any requests to the open internet are blocked
+  - Requests being executed from within the app can only successfully be sent to some of our brokered services or other internal routes you have created in your organization.
+    - Accessible brokered services: [AWS RDS](https://cloud.gov/docs/services/relational-database/), [AWS Elasticache Redis](https://cloud.gov/docs/services/aws-elasticache/), [AWS Elasticsearch](https://cloud.gov/docs/services/aws-elasticsearch/).
+    - Inaccessible brokered service: [S3 Object Storage](https://cloud.gov/docs/services/s3/).
+  - Any requests to the open internet are blocked.
 
 - ### `closed-egress`
   - Requests being executed from within the app can only successfully be sent to other internal routes you have created in your organization.
