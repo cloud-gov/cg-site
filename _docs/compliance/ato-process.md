@@ -1,19 +1,20 @@
 ---
+title: ATO process
 parent: compliance
 layout: docs
 sidenav: true
-title: ATO process
+redirect_from:
+  - /old-path
 ---
-
 This is an outline of a typical ATO process for a cloud.gov customer system. All agencies handle the ATO process in their own way, so you should talk with your agency's security compliance specialists, but this can give you a broad overview.
 
-## What's a FedRAMP Provisional ATO?
+
 
 [cloud.gov has a FedRAMP Authorization.](https://marketplace.fedramp.gov/#/product/18f-cloudgov?sort=productName) In precise terms, it is a Provisional Authority to Operate (P-ATO) at the Moderate impact level from the FedRAMP Joint Authorization Board (JAB).
 
 It's normal and expected that this is a **"Provisional"** ATO. The JAB does not have the authority to issue an ATO for a system at your agency. Only your own agency has the authority to issue ATOs for systems that your agency uses or operates.
 
-So instead, the JAB issues a *pre-authorization* that your agency can review, including [an audited documentation package]({{ site.baseurl }}{% link _docs/overview/fedramp-tracker.md %}). Any federal employee or contractor can access the package using [this FedRAMP form](https://www.fedramp.gov/assets/resources/documents/Agency_Package_Request_Form.pdf) (Package ID F1607067912). If your agency finds that the cloud.gov P-ATO meets their requirements, they can issue an ATO for cloud.gov. [Here's a template agency ATO letter (.docx).](https://s3.amazonaws.com/sitesusa/wp-content/uploads/sites/482/2017/03/FedRAMP-ATO-Letter-Template-v1.0.docx)
+So instead, the JAB issues a *pre-authorization* that your agency can review, including \[an audited documentation package]({{ site.baseurl }}{% link _docs/overview/fedramp-tracker.md %}). Any federal employee or contractor can access the package using [this FedRAMP form](https://www.fedramp.gov/assets/resources/documents/Agency_Package_Request_Form.pdf) (Package ID F1607067912). If your agency finds that the cloud.gov P-ATO meets their requirements, they can issue an ATO for cloud.gov. [Here's a template agency ATO letter (.docx).](https://s3.amazonaws.com/sitesusa/wp-content/uploads/sites/482/2017/03/FedRAMP-ATO-Letter-Template-v1.0.docx)
 
 ## How customer system ATOs work
 
@@ -39,14 +40,20 @@ APPATO -->PROD(Put your system in production)
 Steps in more detail:
 
 1. Early in your process, talk to your AOs and explain your plans so that you get on the right track to ATO.
-  * 1.5. You may be able to start working on your system and preparing your ATO materials -- ask your AOs.
+
+* 1.5. You may be able to start working on your system and preparing your ATO materials -- ask your AOs.
+
 1. AOs request the cloud.gov FedRAMP P-ATO package and review the materials.
-  * *`*` If your AOs have concerns, [contact us]({{ site.baseurl }}/docs/help/) -- we can help, and the [FedRAMP program team](https://www.fedramp.gov/) can help too.*
+
+* *`*` If your AOs have concerns, \[contact us]({{ site.baseurl }}/docs/help/) -- we can help, and the [FedRAMP program team](https://www.fedramp.gov/) can help too.*
+
 1. AOs issue an ATO for cloud.gov itself.
-1. Develop (or migrate) your system and put together your compliance materials.
-  * Your System Security Plan should document that your system inherits some controls (partially or fully) from the cloud.gov ATO, as well as documenting the controls handled by your system.
+2. Develop (or migrate) your system and put together your compliance materials.
+
+* Your System Security Plan should document that your system inherits some controls (partially or fully) from the cloud.gov ATO, as well as documenting the controls handled by your system.
+
 1. Your agency reviews your system and ATO materials.
-1. Your agency issues a *new* ATO just for your system.
+2. Your agency issues a *new* ATO just for your system.
 
 Then if somebody else at your agency wants to run a system on cloud.gov, the cloud.gov ATO is easy to reuse! They don't have to repeat steps 2 and 3 to review the cloud.gov P-ATO.
 
@@ -70,11 +77,13 @@ If your agency prefers, they can issue a consolidated ATO.
 Steps:
 
 1. Your agency reviews the cloud.gov P-ATO materials *and* your customer system ATO materials together.
-  * Your System Security Plan should document that your system inherits some controls (partially or fully) from the cloud.gov P-ATO, as well as documenting the controls handled by your system.
+
+* Your System Security Plan should document that your system inherits some controls (partially or fully) from the cloud.gov P-ATO, as well as documenting the controls handled by your system.
+
 1. Your agency issues an ATO for your system running on cloud.gov.
 
 This does not result in an ATO for cloud.gov in general at your agency, so if another team at your agency wants to run a system on cloud.gov, your agency may need to redo some ATO work.
 
 ### Additional resources
 
-* Our February 2021 blog post on [writing an SSP system environment description]({{ site.baseurl }}{% link _posts/2021-02-17-writing_a_cloud-gov_ssp_system_environment.md %})
+* Our February 2021 blog post on \[writing an SSP system environment description]({{ site.baseurl }}{% link _posts/2021-02-17-writing_a_cloud-gov_ssp_system_environment.md %})
