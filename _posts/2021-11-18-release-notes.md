@@ -182,7 +182,7 @@ USN-5133-1 USN-5133-1: ICU vulnerability:
 
 ### Diego Release 2.53.1 up from 2.53.0
 Changes
-* Bump to Go MySQL Driver v1.6.0 @mariash (#595)
+* Bump Go driver for MySQL to v1.6.0 @mariash (#595)
 * BBS: Implement max-retries when failing to connect to event streams (cloudfoundry/bbs#45)
 
 Resources
