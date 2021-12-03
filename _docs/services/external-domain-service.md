@@ -170,6 +170,9 @@ While there is no mechanism for cloud.gov users to trigger a cache clear,
 instantaneous; Amazon recommends expecting a lag time of 10-15 minutes (more if there are
 many distinct endpoints).
 
+All distributions are configured to forward and cache based on querystrings - that is
+querystrings are part of the cache key, and querystrings are forwarded to your application.
+
 ### Authentication
 
 Cookies are passed through the CDN by default, meaning that cookie-based authentication will work as expected.
