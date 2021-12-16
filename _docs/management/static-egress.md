@@ -7,7 +7,7 @@ redirect_from:
 title: Connect to external services
 ---
 
-You can set up your application to communicate with any external service that is accessible over the internet. For example, you can integrate your application with services in your agency infrastructure or with APIs from commercial providers.
+Subject to [space egress rules]({{ site.baseurl }}{% link _docs/apps/space-egress.md %}), you can set up your application to communicate with any external service that is accessible over the internet. For example, you can integrate your application with services in your agency infrastructure or with APIs from commercial providers.
 
 All traffic from applications on cloud.gov will transit the internet. You can secure the communication with authentication and with encryption in transit, and you can limit access to specific IP ranges.
 
