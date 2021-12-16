@@ -31,13 +31,13 @@ A summary of each of the ASGs that can be applied to your space are as follows:
     - Inaccessible brokered service: [S3 Object Storage](https://cloud.gov/docs/services/s3/).
   - Any requests to the open internet are blocked.
 
-  - ### `public-egress`
+- ### `public-egress`
   - Requests being executed from within the space [can successfully be sent to the open internet]({{ site.baseurl }}{% link _docs/management/static-egress.md %}), our brokered services, and other internal routes you have created in your organization.
   - Applications can make requests to third party APIs.
   - Applications can connect to our brokered services.
 
-When you push your application to cloud.gov, the staging process may require outbound connections to the public internet to fetch dependencies and software modules. As such, during the staging process, your app will run under the `public-egress` until it is staged and ready to run. Once this process is complete, your app will run under the ASGs that have been applied, either by default or by modifications that hae been made to your space.
+When you push your application to cloud.gov, the staging process may require outbound connections to the public internet to fetch dependencies and software modules. As such, during the staging process, your app will run under the `public-egress` until it is staged and ready to run. Once this process is complete, your app will run under the ASGs that have been applied, either by default or by modifications that have been made to your space.
 
-For applications that need access to S3, you have the option of running them under the `public-egress` ASG, or running them in the `restricted-egress` ASG, and using a proxy application (e.g., squid proxy, HA proxy, etc.) to proxy traffic to your S3 bucket(s). Reference implementations showing how to do this will be available soon, or you may reach out to the cloud.gov team for support.
+For applications that need access to S3, you have the option of running them under the `public-egress` ASG, or running them in the `restricted-egress` ASG, and using a proxy application (e.g., [squid proxy](http://www.squid-cache.org/), [HA proxy](http://www.haproxy.org/), etc.) to proxy traffic to your S3 bucket(s). Reference implementations showing how to do this will be available soon, or you may reach out to the cloud.gov team for support.
 
 To modify the ASG that applies to your space, you can open a support ticket by emailing [support@cloud.gov](mailto:support@cloud.gov) and requesting the addition of a new ASG to apply to your space.
