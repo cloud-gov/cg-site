@@ -32,7 +32,7 @@ A summary of each of the ASGs that can be applied to your space are as follows:
   - Any requests to the open internet are blocked.
 
   - ### `public-egress`
-  - Requests being executed from within the space [can successfully be sent to the open internet]({{ site.baseurl }}{% link _docs/apps/static-egress.md %}), our brokered services, and other internal routes you have created in your organization.
+  - Requests being executed from within the space [can successfully be sent to the open internet]({{ site.baseurl }}{% link _docs/management/static-egress.md %}), our brokered services, and other internal routes you have created in your organization.
   - Applications can make requests to third party APIs.
   - Applications can connect to our brokered services.
 

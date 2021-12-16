@@ -11,4 +11,4 @@ By default, when new spaces are created in your organization an application secu
 
 If you have created a new space in your organization and are having trouble making external requests from it (e.g., ssh'ing to your app instance to administer an RDS instance), you may need to modify the ASG that applies to your space.
 
-You can [read the documentation]({{ site.baseurl }}{% link _docs/apps/space-egress.md %}) on controlling space egress here, and you can modify the ASGs that apply to your space by [opening a support ticket](mailto:support@clou.gov).
+You can [read the documentation]({{ site.baseurl }}{% link _docs/management/space-egress.md %}) on controlling space egress here, and you can modify the ASGs that apply to your space by [opening a support ticket](mailto:support@clou.gov).
