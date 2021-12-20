@@ -25,11 +25,11 @@ Test your install with following command:
 
 Now that you have your account and the CLI installed, let’s deploy a Java web application by downloading the application code, connecting to cloud.gov, and “pushing” the application.
 
-##### Download the application code from 18F's GitHub repository
+##### Download the application code from cloud.gov's GitHub repository
 
 If you have Git installed:
 
-`git clone https://github.com/18F/cf-sample-app-spring`
+`git clone https://github.com/cloud-gov/cf-sample-app-spring`
 
 `cd cf-sample-app-spring`
 
@@ -102,12 +102,12 @@ Test your install with following command:
 
 Now that you have your account and the CLI installed, let’s download the "Hello World" samples, choose one, connect to cloud.gov and "push" the application code.
 
-##### Download the Hello World code examples from 18F's GitHub repository
+##### Download the Hello World code examples from cloud.gov's GitHub repository
 
 If you have Git installed:
 
 ```
-git clone https://github.com/18F/cf-hello-worlds
+git clone https://github.com/cloud-gov/cf-hello-worlds
 cd cf-hello-worlds
 ```
 
@@ -173,7 +173,7 @@ If you’re done, you can delete your app by running `cf delete <APPNAME>` (it�
 
 If you've run into any issues with these tutorials, please [Contact support at cloud.gov](mailto:support@cloud.gov). We're happy to help.
 
-Did we miss a tip or useful resource that you think we should add? [Submit a suggestion on GitHub](https://github.com/18F/cg-site/issues/new) or [send us an email](mailto:inquiries@cloud.gov?subject=%5BSuggestion%5D%20&body=%0A%0A%0A%0ARefcode:%20quickstart).
+Did we miss a tip or useful resource that you think we should add? [Submit a suggestion on GitHub](https://github.com/cloud-gov/cg-site/issues/new) or [send us an email](mailto:inquiries@cloud.gov?subject=%5BSuggestion%5D%20&body=%0A%0A%0A%0ARefcode:%20quickstart).
 
 #### Additional sample applications
 

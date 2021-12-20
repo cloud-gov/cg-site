@@ -381,6 +381,20 @@ The `query` section says to only run this update on fields where `app.data.cert.
 
 Note: this means this field will not be searchable by its usual name for that day's index.
 
+## Fixing Max Payload Size Error
+
+Occasionally, Kibana may display client-side errors for all searches that have the following profile:
+
+```
+Getting Cannot read properties of undefined (reading 'get')
+```
+
+This may be related to the `maxPayloadBytes` property in logsearch, which needs to be adjusted from time to time. If this payload size setting is exceeded, an error is returned on log searches. The client-side logic for displaying log search results is unable to parse the error message returned from the backend (which will have a different JSON structure from valid log search results) and therefore displays the error message above. 
+
+This issue may manifest *only* in production, and not in staging, as the relative size of log data in production is greater. Check the JSON response from the backend in Chrome Dev Tools (or similar) to verify the error message being returned.
+
+An example of how to adjust this setting and address the problem [can be seen here](https://github.com/cloud-gov/cg-deploy-logsearch/pull/263).
+
 ## Reindexing
 
 Sometimes, we may need to reindex to fix datatypes. While going through this process, keep in mind the index patterns we use - reindexing will

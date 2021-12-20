@@ -43,8 +43,8 @@ cf target -o sandbox-gsa -s harry.truman
 
 ## Deploy a test application
 
-1. Get code for "hello world" applications ([repository](https://github.com/18F/cf-hello-worlds)):
-   * **Using git:** `git clone https://github.com/18F/cf-hello-worlds.git`
+1. Get code for "hello world" applications ([repository](https://github.com/cloud-gov/cf-hello-worlds)):
+   * **Using git:** `git clone https://github.com/cloud-gov/cf-hello-worlds.git`
    * **Download:** [`https://github.com/cloud-gov/cf-hello-worlds/archive/main.zip`](https://github.com/cloud-gov/cf-hello-worlds/archive/main.zip)
 1. Move into that directory, for example: `cd cf-hello-worlds`
 1. Look at the collection of tiny apps, and `cd` into the directory for the language/framework you feel most comfortable with. For example: `cd python-flask`
