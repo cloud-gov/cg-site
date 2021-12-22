@@ -12,7 +12,7 @@ redirect_from:
 
 ## The infrastructure underlying cloud.gov
 
-cloud.gov runs on top of Infrastructure as a Service provided by Amazon Web Services (AWS) in the [AWS GovCloud partition](https://aws.amazon.com/govcloud-us/), which has a [FedRAMP JAB P-ATO at the High impact level](https://marketplace.fedramp.gov/index.html#/product/aws-govcloud-high). GovCloud also offers support for other formal compliance needs such as [ITAR compliance](https://en.wikipedia.org/wiki/International_Traffic_in_Arms_Regulations).
+cloud.gov runs on top of Infrastructure as a Service provided by Amazon Web Services (AWS) in the [AWS GovCloud partition](https://aws.amazon.com/govcloud-us/) (specifically within the us-gov-west-1 region), which has a [FedRAMP JAB P-ATO at the High impact level](https://marketplace.fedramp.gov/index.html#/product/aws-govcloud-high). GovCloud also offers support for other formal compliance needs such as [ITAR compliance](https://en.wikipedia.org/wiki/International_Traffic_in_Arms_Regulations).
 
 ## Services in our marketplace
 
