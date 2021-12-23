@@ -160,6 +160,9 @@ needs to be recovered separately, a [cloud.gov Pages contingency
 plan](https://docs.google.com/document/d/1YG6oucagNO_ZmmlsLPdQeFABCiVcY1BYuhDEEvDwe4Q/edit)
 is available internally. 
 
+## Statuspage
+
+If Statuspage is unavailable, cloud.gov will use Twitter, [https://twiter.com/clouddotgov](https://twiter.com/clouddotgov), and updates to [https://cloud.gov/news](https://cloud.gov/news).
 
 ## Continuity of Operations and Disaster Recovery Plan
 
