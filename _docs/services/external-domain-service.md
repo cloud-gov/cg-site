@@ -183,6 +183,6 @@ CloudFront forwards a [limited set of headers](http://docs.aws.amazon.com/Amazon
 
 #### Advanced DDOS protection
 
-Customers who have a cloud.gov Extended Support Package, or are enrolled through our GSA Cloud Service, can opt to add
+Customers who have a cloud.gov [Supplemental or Premium Support Package](https://cloud.gov/support-packages/), or are enrolled through our GSA Cloud Service, can opt to add
 AWS Advanced Shield to their CloudFront distribution, as a Customer Custom Resource. Our cloud.gov support team will
 broker the customization for the customer; the customer maintains responsibility for configuration management and change control (e.g CM-3, CM-6)
