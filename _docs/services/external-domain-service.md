@@ -180,3 +180,9 @@ Cookies are passed through the CDN by default, meaning that cookie-based authent
 #### Header forwarding
 
 CloudFront forwards a [limited set of headers](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior) by default. 
+
+#### Advanced DDOS protection
+
+Customers who have a cloud.gov [Supplemental or Premium Support Package](https://cloud.gov/support-packages/), or are enrolled through our GSA Cloud Service, can opt to add
+AWS Advanced Shield to their CloudFront distribution, as a Customer Custom Resource. Our cloud.gov support team will
+broker the customization for the customer; the customer maintains responsibility for configuration management and change control (e.g CM-3, CM-6)
