@@ -12,7 +12,7 @@ title: Managing user access to orgs and spaces
 
 Anyone with a .mil or .gov account can [sign up for their own cloud.gov account]({{ site.baseurl }}/sign-up/) with a sandbox space in their agency's cloud.gov sandbox org.
 
-To invite someone to a non-sandbox org, including federal employees and federal contractors without .gov or .mil email addresses, [send them an invite](https://account.fr.cloud.gov/invite). This may prompt you to log into your cloud.gov account first.
+To invite someone to a non-sandbox org, including federal employees and federal contractors without .gov or .mil email addresses, an Org Manager can [send them an invite](https://account.fr.cloud.gov/invite). This may prompt you to log into your cloud.gov account first.
 
 Then, confirm with them that they have received and accepted the invite. Now they have a cloud.gov account!
 
@@ -75,7 +75,7 @@ cf set-space-role USERNAME ORG SPACE ROLE
 ```
 
 Where ROLE is one of:
-  - `SpaceManager` - Invite and manage users, and enable features for a given space
+  - `SpaceManager` - Manage users, and enable features, for a given space
   - `SpaceDeveloper` - Create and manage apps and services, and see logs and reports
   - `SpaceAuditor` - View logs, reports, and settings on this space
 
