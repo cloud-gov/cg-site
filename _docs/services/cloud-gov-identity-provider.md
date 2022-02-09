@@ -23,10 +23,11 @@ Plan Name | Description |
 To create a service instance that can provision identity provider credentials, run the following command:
 
 ```sh
-cf create-service cloud-gov-identity-provider oauth-client my-uaa-client
+cf create-service cloud-gov-identity-provider oauth-client <SERVICE_INSTANCE_NAME>
 ```
 
-Note: By default, identity provider service instances use the `openid` scope. The user will be prompted to grant any permissions required by scopes the first time they login to your application.
+Note: By default, identity provider service instances use the `openid` scope. The user will be prompted 
+to grant any permissions required by scopes the first time they login to your application.
 
 ## Obtaining credentials
 
@@ -34,13 +35,30 @@ To create an identity provider, bind a [service key](https://docs.cloudfoundry.o
 
 ```bash
 cf create-service-key \
-    my-uaa-client \
-    my-service-key \
-    -c '{"redirect_uri": ["https://my.app.cloud.gov/auth", "https://my.app.cloud.gov/logout"]}'
-cf service-key my-uaa-client my-service-key
+    <SERVICE_INSTANCE_NAME> \
+    <SERVICE_KEY_NAME> \
+    -c '{"redirect_uri": ["<APP_AUTH_REDIRECT_ROUTE>", "<APP_LOGOUT_REDIRECT_ROUTE>"]}'
 ```
 
-This will create a cloud.gov identity provider and make the credentials available to you via a service key. Keep these credentials secure. If they’re compromised, the way to invalidate the credentials is to [delete the service key](https://docs.cloudfoundry.org/devguide/services/service-keys.html#delete) (you can create another, and it will have a fresh set of credentials). Each service key that you bind to your instance creates a separate identity provider with different credentials; you can create as many service keys per instance as you like. <!-- this advice should match on /docs/services/cloud-gov-service-account/ + /docs/services/cloud-gov-identity-provider/ -->
+This will create a cloud.gov identity provider and make the credentials available to you via a service key.
+The `redirect_uri` array registers your app's redirect uris with your service provider.
+
+You can retrieve your credentials with the name of the instance and service key:
+
+```sh
+cf service-key <SERVICE_INSTANCE_NAME> <SERVICE_KEY_NAME>
+```
+
+It will return an object like this:
+
+```bash
+  {
+    "client_id": CLIENT_ID,
+    "client_secret": CLIENT_SECRET
+  }
+```
+
+Keep these credentials secure. If they’re compromised, the way to invalidate the credentials is to [delete the service key](https://docs.cloudfoundry.org/devguide/services/service-keys.html#delete) (you can create another, and it will have a fresh set of credentials). Each service key that you bind to your instance creates a separate identity provider with different credentials; you can create as many service keys per instance as you like. <!-- this advice should match on /docs/services/cloud-gov-service-account/ + /docs/services/cloud-gov-identity-provider/ -->
 
 ### If you can't find your service keys
 

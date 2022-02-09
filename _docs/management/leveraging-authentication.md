@@ -34,14 +34,14 @@ If you are already familiar with OAuth 2.0, you might know where to go from here
 First, generate a link (or redirect the user) to the authorize URL with these
 query parameters:
 
-* `client_id=<YOUR APP'S REGISTERED NAME>`
+* `client_id=<CLIENT_ID>` (you can retrieve your `client_id` via `cf service-key`)
 * `response_type=code`
 * `redirect_uri=<A REGISTERED CALLBACK URL>` (required if you have multiple registered callback URLs)
 * `state=<ANYTHING>` (optional)
 
 You only need to provide `redirect_uri` if you have multiple registered callback URLs for a single
 UAA registration (for instance, if you have both an "app.cloud.gov" URL and a production URL).
-The value of `redirect_uri` must match one of the registered callback URLs.
+The value of `redirect_uri` must match one of the callback URLs registered in your service key.
 
 You can set a `state` parameter with any value you'd like.
 It will be returned to you in a later step. While optional, we *strongly*
@@ -50,7 +50,7 @@ recommend that you use it with a high-quality random number or a hash generated 
 Here is an example:
 
 ```html
-<a href="https://login.fr.cloud.gov/oauth/authorize?client_id=NAME&response_type=code&state=9ab894ad91d99eb9ee4b30ea7f02b9d8e43eb15db58ff93e4894f3b49817d7ab">
+<a href="https://login.fr.cloud.gov/oauth/authorize?client_id=CLIENT_ID&response_type=code&state=9ab894ad91d99eb9ee4b30ea7f02b9d8e43eb15db58ff93e4894f3b49817d7ab">
   Log in
 </a>
 ```
@@ -77,8 +77,8 @@ access token. Here is where things get fun.
     - `code=<CODE FROM QUERY PARAM IN CALLBACK REQUEST>`
     - `grant_type=authorization_code`
     - `response_type=token`
-    - `client_id=<YOUR APP'S REGISTERED NAME>`
-    - `client_secret=<THE SECRET KEY YOU RECEIVED WHEN REGISTERING YOUR APP>`
+    - `client_id=<CLIENT_ID>` (you can retrieve your `client_id` via `cf service-key`)
+    - `client_secret=<CLIENT_SECRET>` (you can retrieve your `client_secret` via `cf service-key`)
     - `redirect_uri=<A REGISTERED CALLBACK URL>` (required if you have multiple registered callback URLs)
 
 2.  If everything works and UAA is able to verify your request, the response
@@ -92,12 +92,13 @@ access token. Here is where things get fun.
 
 3.  The `access_token` is a JSON Web Token that can be decoded using a
     library such as [node-jsonwebtoken](https://github.com/auth0/node-jsonwebtoken).
-    See https://jwt.io/ for a list of libraries for various languages. Decode it
-    to get the authenticated user's `email`, which you can then use within
+    See https://jwt.io/ for a list of libraries for various languages. 
+    
+    Verify the token's signature using cloud.gov's JWK Set and the RSA256 alogrithm. This step ensures the
+    token is authentic. The JWK Set for cloud.gov's UAA is located at `https://uaa.fr.cloud.gov/token_keys`. 
+    
+    Decode the token to get the authenticated user's `email`, which you can then use within
     your application to identify and/or authorize the user.
-
-    After decoding the token verify the signature to ensure the token is authentic.
-    The JWK Set for cloud.gov's UAA is located at `https://uaa.fr.cloud.gov/token_keys`.
 
     If you get an expired token error at some point in the future, you can
     exchange the `refresh_token` from the previous step to get a new `access_token`,
