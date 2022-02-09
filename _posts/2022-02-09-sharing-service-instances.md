@@ -16,7 +16,7 @@ Until today.
 We are happy to announce that [service instance sharing](https://docs.cloudfoundry.org/devguide/services/sharing-instances.html#sharing) has now been enabled on the cloud.gov platform. Here's how it works:
 
 * A developer uses the standard `cf create-service` command to instantiate a new service instance in a particular space.
-* When initially created, viewing the service details via `cf service {service_name}` will indicate that the service is not current shared with any other spaces (see below).
+* When initially created, viewing the service details via `cf service {service_name}` will indicate that the service is not currently shared with any other spaces (see below).
 
 {% asset service-not-shared.png alt="Showing details of a service that is not shared" %}
 
