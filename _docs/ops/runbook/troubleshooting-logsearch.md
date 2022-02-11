@@ -342,8 +342,8 @@ one day and a text field the next, this error can occur.
 In some cases, the solution is to refresh the field list in Kibana:
 
 1. log into Kibana
-1. click on the `management` tab
-1. click on `Index Patterns`
+1. click on the `Stack Management` tab
+1. click on `Index Patterns` under the Kibana left hand menu. 
 1. make sure you have the `logs-app-*` index pattern selected
 1. click the refresh icon in the top right (it should say `refresh field list` when you hover your mouse over it)
 1. try reloading the `discovery` tab - it should work within a minute or so.
