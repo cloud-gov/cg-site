@@ -1,6 +1,6 @@
 ---
 layout: post
-date: February 18, 2022
+date: February 17, 2022
 title: "February 18th cloud.gov Change Log"
 excerpt: The cloud.gov team is working on providing change logs so everyone can see new features and updates.
 ---
@@ -12,7 +12,13 @@ The cloud.gov team is working on providing change logs so everyone can see new f
 ## Customer Facing
 
 ---
-No changes impacting customers directly this sprint.
+
+### Stratos - v4.4.0 from v3
+
+* newest version of the cloud.gov dashboard
+* improved look and feel
+* improved browser compatibility
+* new deploy from UI functionality
 
 ## Platform Changes
 
