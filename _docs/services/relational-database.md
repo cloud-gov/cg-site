@@ -80,6 +80,7 @@ Name               | Description                                                
 `storage`          | Number of GB available to the database instance                | 10                     |
 `enable_functions` | Boolean to enable functions on supported databases             | false                  |
 `version`          | Specifies a supported major version in RDS (must be in quotes) | AWS RDS Latest Default |
+`backup_retention_period` | Specifies a number of days to retain daily snapshots. | 14           |
 
 A couple of notes regarding the optional `version` parameter:
 
@@ -97,6 +98,8 @@ These are the current supported major versions for MySQL:
 
 - 5.7
 - 8.0
+
+The `backup_retention_period` can be no less than 14 days but extended up to 35 days.
 
 #### Examples of optional parameters
 
@@ -125,6 +128,15 @@ cf create-service aws-rds \
     micro-psql \
     my-test-service \
     -c '{"version": "11"}'
+```
+
+To extend the backup retention period for a database to 30 days:
+
+```sh
+cf create-service aws-rds \
+    micro-psql \
+    my-test-service \
+    -c '{"backup_retention_period": 30}'
 ```
 
 You can combine multiple optional parameters as long as the JSON is well-formed:
@@ -181,6 +193,7 @@ There are several optional parameters that you can specify when updating an exis
 Name               | Required | Description                                     |
 ---                | ---      | ---                                             |
 `storage`          |          | Number of GB available to the database instance |
+`backup_retention_period` | | Specifies a number of days to retain daily snapshots. |
 
 #### Examples of optional parameters
 
@@ -208,7 +221,7 @@ The contents of the `DATABASE_URL` environment variable contain the credentials 
 
 *Please note that these instructions will change in the future as we expand our service offerings and provide more options for customers.*
 
-RDS automatically retains daily backups for 14 days. These backups are AWS RDS storage volume snapshots, backing up the entire DB instance and not just individual databases. If you need to have a database restored using one of these backups, you can [email support](mailto:support@cloud.gov).  For non-emergency situations, please provide at least 48 hours advance notice.
+RDS automatically retains daily backups for 14 days. These backups are AWS RDS storage volume snapshots, backing up the entire DB instance and not just individual databases. You can extend the length of retention up to 35 days by using the option detailed above. If you need to have a database restored using one of these backups, you can [email support](mailto:support@cloud.gov).  For non-emergency situations, please provide at least 48 hours advance notice.
 
 If you have an emergency situation, such as data loss or a compromised system, please [email support](mailto:support@cloud.gov) immediately and inform us of the situation.
 
