@@ -148,7 +148,7 @@ Release Highlights
 * ✨ [New Feature] cf-networking + silk-release now support dynamically updating ASG data for app containers without needing a restart! 
 * A new job policy-server-asg-syncer queries CAPI for ASG data periodically and updates the policy-server database
 * A new endpoint on policy-server-internal is exposed to allow vxlan-policy-agent to query for ASG data
-* When disabled, everything behaves as it did previously.   - To disable, set the disable property of policy-server-asg-syncer to true
+* When disabled, everything behaves as it did previously.  - To disable, set the disable property of policy-server-asg-syncer to true
 * 🐛 [Bug Fix] The log-level parameter for policy-server, and policy-server-internal is now propagated from bosh release to agent properly.
 
 Compatibility Notes
