@@ -31,19 +31,57 @@ Happy Women's History Month! The cloud.gov team is working on providing change l
 * Add dotnet-aspnetcore 5.0.14
 * Add dotnet-runtime 6.0.2
 * Add dotnet-runtime 5.0.14
-* Remove old .NET runtimes and SDKs
-  * dotnet-sdk 3.1.412, 3.1.413, 3.1.414
-dotnet-sdk 5.0.400, 5.0.401, 5.0.402
-dotnet-runtime 3.1.18, 3.1.19, 3.1.20
-dotnet-runtime 5.0.9, 5.0.10, 5.0.11
-dotnet-aspnetcore 3.1.18, 3.1.19, 3.1.20
-dotnet-aspnetcore 5.0.9, 5.0.10, 5.0.11
-Remove node 14.x.x
+* Remove node 14.x.x
+* Add node 16.14.0
 
-Add node 16.14.0
+Remove old .NET runtimes and SDKs
+  * dotnet-sdk 3.1.412, 3.1.413, 3.1.414
+  * dotnet-sdk 5.0.400, 5.0.401, 5.0.402
+  * dotnet-runtime 3.1.18, 3.1.19, 3.1.20
+  * dotnet-runtime 5.0.9, 5.0.10, 5.0.11
+  * dotnet-aspnetcore 3.1.18, 3.1.19, 3.1.20
+  * dotnet-aspnetcore 5.0.9, 5.0.10, 5.0.11
+
+### Go Buildpack - v1.9.39 up from v1.9.38
+
+* Add go 1.17.6, remove go 1.17.4
+* Add go 1.16.13, remove go 1.16.11
+* Update libbuildpack
+* Test fixtures: Update ruby app
+
+### Nginx Buildpack - v1.1.35 up from v1.1.33
+
+* Add nginx 1.21.6, remove nginx 1.21.5
+* Bump github.com/onsi/gomega to 1.18.1
+
+### NodeJS Buildpack - v1.7.67 up from v1.7.65
+
+* Add node 12.22.10, remove node 12.22.8
+* Add node 12.22.9, remove node 12.22.7
+* Add node 14.19.0, remove node 14.18.1
+* Add node 16.14.0, remove node 16.13.0
+
+### Python Buildpack - v1.7.49 up from v1.7.48
+
+* Add setuptools 60.2.0, remove setuptools 59.5.0
+
+### R Buildpack - v1.1.26 up from v1.1.25
+
+* Rebuild r 4.1.2
 for stack(s) cflinuxfs3
-(https://www.pivotaltracker.com/story/show/181194351)
-(https://www.pivotaltracker.com/story/show/180864698)
+with dependencies for stack cflinuxfs3: forecast 8.16, plumber 1.1.0, rserve 1.8.10, shiny 1.7.1
+(https://www.pivotaltracker.com/story/show/180851850)
+
+* Rebuild r 3.6.3
+for stack(s) cflinuxfs3
+with dependencies for stack cflinuxfs3: forecast 8.16, plumber 1.1.0, rserve 1.8.10, shiny 1.7.1
+(https://www.pivotaltracker.com/story/show/180851852)
+
+* Update libbuildpack
+
+### Staticfile Buildpack - v1.5.29 up from v1.5.27
+
+* Add nginx 1.21.6, remove nginx 1.21.5
 
 
 ## Platform Changes
@@ -156,6 +194,17 @@ USN-5288-1 USN-5288-1: Expat vulnerabilities:
 * CVE-2022-23852: Expat (aka libexpat) before 2.4.4 has a signed integer overflow in XML_GetBuffer, for configurations with a nonzero XML_CONTEXT_BYTES.
 * CVE-2022-22822: addBinding in xmlparse.c in Expat (aka libexpat) before 2.4.3 has an integer overflow.
 
+### Credhub Release - 2.12.0 up from 2.11.2
+
+Security Fixes
+* Bump various dependencies.
+
+Bug Fixes
+* Fixes an issue where CredHub experiences downtime during certificate rotation process by making CredHub properly load concatenated mTLS CA certificates.
+
+Features
+* CredHub is now compatible with Postgres 13, 14.
+
 ### Diego Release - v2.59.0 up from v2.55.0
 
 Changes
@@ -164,3 +213,44 @@ Changes
 * Route emitter's healthcheck_address no longer accepts leading zeros @ameowlia @geofffranks (#616)
 * Deprecate start and evacuate_running endpoints @moleske (#617)
 * Ensure containers can eventually communicate over TLS using application internal route even if synchronous communication fails
+
+### Loggregator Agent Release - v6.3.8 up from v6.3.6
+
+* Fix counter aggregation (#75)
+  * Forwarder agent respects source-IDs for counter aggregation
+  * treat delta 0 total 0 metrics as total metrics instead of delta
+* skip config files with invalid ports
+  * allows optionally configuring prom scraping for releases
+* bump-golang to v0.95.0
+
+### Metrics Discovery Release - v3.0.8 up from v3.0.7
+
+* skip config files with invalid ports
+  * allows optionally configuring prom scraping for releases
+* update go-loggregator
+
+### Nats Release - v43 up from v40
+
+Release Highlight
+* Optionally exclude password authentication for nats-tls. Thank you @domdom82 for submitting this PR!
+* 🐛 Bug-Fix: A new healthcheck for the nats-tls job alleviates the constant stream of log messages caused by incomplete TLS handshakes from health checks (fixes #32). Thank you @peterellisjones for the PR!
+  * ⚠️ This requires two new properties to be provided to allow the health check to access nats via TLS, listed below.
+* Improvement: Operators are now able to set nats.net and nats.cluster_host to adjust the listening address of the nats and nats-tls jobs for use in multi-homed environments. Thanks @psycofdj!
+* Bug Fix: Operators can force-disable nats authentication via the nats.auth_required property, rather than removing credentials. This helps alleviate Authorization Violation errors seen in cases such as routing-release #259. Thanks @b1tamara and @Mrizwanshaik!
+
+### Routing Release - 0.229.0 up from 0.228.0
+
+* ➕ Improvement: Request URLs are now included in Gorouter's route-service-connection-failed log messages. Thanks for the improvement @plowin! 🎉
+* ➕ Improvement: Gorouter's endpoint_dial_timeout is now configurable. It affects the time to establish a TCP connection with backends (http or websocket), but prior to any TLS negotiation.
+* 🐛 Bug Fix: A bug in Gorouter was resolved that caused incorrect counts when calculating backend-connection limits for app endpoints
+* 🐛 Bug Fix: Gorouter now honors the router.min_tls_version and router.max_tls_version properties when making requests to route-services
+* 🐛 Bug Fix: Resolves an issue introduced in routing-release v0.227.0 where the b3_spanid header was incorrectly being set to 16 bytes. It now is set to 8-bytes. Thanks @stijnvet for the fix! 🎉
+
+### Silk Release - 2.43.0 up from 2.42.0
+* Bump to golang 1.17!
+* Tested with cf-networking-release v2.43.0
+* [Breaking] Added template tests to validate IPs do not contain leading zeros per golang 1.17's new IP parsing standards
+
+### Statsd Injector Release - v1.11.18 up from v1.11.17
+
+* bump-golang to v0.94.0(1.17.5)
