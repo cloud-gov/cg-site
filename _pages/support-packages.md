@@ -88,7 +88,7 @@ bg-color-class: bg-accent-warm-light
           <li class="font-serif-lg">
             <h3>Is there a way to roll over unused hours to the next fiscal year?</h3>
             <p class="font-body-md">
-              Rolling hours over may possible, depending on the agency's authority and funds. For example, some money can cross fiscal years ("no-year money") while other funds must be used within a set time frame ("3-year money").
+              Rolling hours over may be possible, depending on the agency's authority and funds. For example, some money can cross fiscal years ("no-year money") while other funds must be used within a set time frame ("3-year money").
             </p>
           </li>
           <li class="font-serif-lg">
