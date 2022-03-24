@@ -55,4 +55,4 @@ To inspect or modify the ASG that apply to your spaces, you can use the followin
 | `cf running-security-groups`                | List security groups globally configured for running applications |
 | `cf unbind-running-security-group`          | Unbind a security group from the set of security groups for running applications globally |
 
-If you have additional questions or run into issues, you can open a support ticket by emailing [support@cloud.gov](mailto:support@cloud.gov.
+If you have additional questions or run into issues, you can open a support ticket by emailing [support@cloud.gov](mailto:support@cloud.gov).
