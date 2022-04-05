@@ -5,23 +5,25 @@ title: "New Feature: Encrypted Container-to-Container Networking"
 excerpt: A new update to Container-to-Container networking allows developers to enable encryption of traffic between applications using SSL/TLS.
 ---
 
-The cloud.gov platform now offers developers the ability to encrypt container-to-container traffic using SSL/TLS.
-
-So what is container-to-container networking, how does it work, and why would you need encryption?
+The cloud.gov platform now offers developers the ability to encrypt container-to-container traffic using SSL/TLS, providing more security for your applications internal communications. This feature is also another step towards zero trust security.
 
 ## About Container-to-Container Networking
 
-Container-to-container networking allows applications to communicate with each other over an internal network known as an [overlay network](https://docs.cloudfoundry.org/concepts/understand-cf-networking.html#overlay-network). Traffic sent over this overlay network is not allowed leave the network, and the network itself is not externally routable. This ensures that nothing outside of the network can see the traffic being passed between applications.
+Container-to-container networking allows applications to communicate with each other over an internal network known as an [overlay network](https://docs.cloudfoundry.org/concepts/understand-cf-networking.html#overlay-network). Traffic sent over this overlay network is not allowed to leave said network, and the network itself is not externally routable. This ensures that nothing outside of the network can see the traffic being passed between applications.
 
-To use the overlay network you set up [internal routes](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html#internal-routes) to your applications using the `cf map-route` command, and create [network policies](https://docs.cloudfoundry.org/devguide/deploy-apps/cf-networking.html#add-policy) using the `cf add-network-policy` command. Once the routes and policies are in place your apps are able to communicate with each other by connecting to the specified endpoints and ports.
+In order to implement container-to-container networking you will need to:
 
-## Enabling Secure Container-to-Container Networking
+1. Set up [internal routes](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html#internal-routes) to your applications using the `cf map-route` command.
+2. Create [network policies](https://docs.cloudfoundry.org/devguide/deploy-apps/cf-networking.html#add-policy) using the `cf add-network-policy` command.
 
-Container-to-container networking on its own does well in keeping traffic between applications from being seen by the outside world. However, anything on the same network as the applications may potentially be able to read the traffic being sent between them. This is where secure container-to-container networking comes in. By encrypting the internal traffic only the applications that are meant to receive the data will be able to read it.
+Once you have the routes and policies in place your applications will be able to communicate with each other by connecting to the endpoints and ports you specified.
 
-To this end Cloud Foundry, and by extension cloud.gov, has designated port `61443` as the port to use for encrypted container-to-container traffic. Any traffic sent between applications using this port will automatically be encrypted.
+## Securing Container-to-Container Networking
 
-Using the `cf add-network-policy` you can specify that traffic is sent to this port. The destination application itself does not need to be changed, and the source application only needs to be modified to send traffic to the correct port.
+Container-to-container networking on its own works to keep traffic between applications from being accessed by the outside world. However, this does not prevent other applications or users on the internal network from accessing the data being transferred between applications. This is where secure container-to-container networking comes in. By encrypting the internal traffic between applications nothing else will be able to read the information being sent.
 
+In terms of the zero trust security model this addresses the assumption that just because something is on the internal network it should be implicitly trusted. Instead, traffic is encrypted so that only the specified applications involved can see the data.
 
-For more information check out the official Cloud Foundry documentation on [Securing Container-to-Container Traffic](https://docs.cloudfoundry.org/concepts/understand-cf-networking.html#securing-traffic).
+Cloud Foundry, and by extension cloud.gov, has designated port `61443` to be used for encrypted container-to-container traffic. Any traffic sent between applications using this port will automatically be encrypted. This port can be specified using the `cf add-network-policy` command.
+
+When setting up encryption the destination application itself does not need to be changed, and the source application only needs to be modified to send traffic to the correct port. For a more in-depth guide check out the [container-to-container networking]({{ site.baseurl }}{% link _docs/management/container-to-container.md %}) documentation. You can also check out the official Cloud Foundry documentation on [Securing Container-to-Container Traffic](https://docs.cloudfoundry.org/concepts/understand-cf-networking.html#securing-traffic).

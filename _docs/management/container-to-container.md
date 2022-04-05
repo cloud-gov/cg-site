@@ -7,7 +7,7 @@ redirect_from:
 title: Container-to-Container Networking
 ---
 
-App developers can leverage cloud.gov's [container-to-container networking](https://docs.cloudfoundry.org/concepts/understand-cf-networking.html) feature to allow direct communication between their applications. This is implemented by utilizing Cloud Foundry's [overlay network](https://docs.cloudfoundry.org/concepts/understand-cf-networking.html#overlay-network), which is not externally routable. Any traffic sent between containers on this network does not leave the overlay.
+App developers can leverage cloud.gov's [container-to-container networking](https://docs.cloudfoundry.org/concepts/understand-cf-networking.html) feature to allow direct communication between their applications. This utilizes Cloud Foundry's [overlay network](https://docs.cloudfoundry.org/concepts/understand-cf-networking.html#overlay-network), which is not externally routable. Any traffic sent between containers on this network does not leave the overlay.
 
 ## How to set up container-to-container networking
 
