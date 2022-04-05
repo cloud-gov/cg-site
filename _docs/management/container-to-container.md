@@ -32,4 +32,4 @@ cf add-network-policy SOURCE_APP DESTINATION_APP -s DESTINATION_SPACE_NAME -o DE
 ```
 2. Update your source application to send all traffic to the destination application on port 61443.
 
-For more information you can check out the Cloud Foundry documentation on [Secureing Container-to-Container Traffic](https://docs.cloudfoundry.org/concepts/understand-cf-networking.html#securing-traffic)
+For more information you can check out the Cloud Foundry documentation on [Securing Container-to-Container Traffic](https://docs.cloudfoundry.org/concepts/understand-cf-networking.html#securing-traffic)
