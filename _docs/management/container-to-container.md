@@ -24,7 +24,9 @@ cf add-network-policy SOURCE_APP DESTINATION_APP -s DESTINATION_SPACE_NAME -o DE
 
 ## Configuring secure container-to-container networking
 
-To encrypt the traffic between your applications using SSL/TLS:
+Two options are available for configuring encryption of traffic between your applications using SSL/TLS: `automatic` and `manual`. With the automatic option the platform handles everything, from provisioning certificates to ensuring TLS termination at the destination, and specifically uses port `61443`. The manual option involves configuring your application with its own TLS termination, and can be configured to use any available port.
+
+To set up automatic encryption:
 
 1. Create a network policy for your destination application and set the port to 61443. All traffic sent to this port will use SSL/TLS
 ```

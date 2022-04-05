@@ -5,7 +5,7 @@ title: "New Feature: Encrypted Container-to-Container Networking"
 excerpt: A new update to Container-to-Container networking allows developers to enable encryption of traffic between applications using SSL/TLS.
 ---
 
-The cloud.gov platform now offers developers the ability to encrypt container-to-container traffic using SSL/TLS, providing more security for your applications internal communications. This feature is also another step towards zero trust security.
+The cloud.gov platform now offers developers the ability to encrypt container-to-container traffic using SSL/TLS, providing more security for your applications' internal communications. This feature is also a step towards zero trust security.
 
 ## About Container-to-Container Networking
 
@@ -22,10 +22,16 @@ Once you have the routes and policies in place your applications will be able to
 
 Container-to-container networking on its own works to keep traffic between applications from being accessed by the outside world. However, this does not prevent other applications or users on the internal network from accessing the data being transferred between applications. This is where secure container-to-container networking comes in. By encrypting the internal traffic between applications nothing else will be able to read the information being sent.
 
-In terms of the zero trust security model this addresses the assumption that just because something is on the internal network it should be implicitly trusted. Instead, traffic is encrypted so that only the specified applications involved can see the data.
+In terms of the zero trust security model this addresses the assumption that just because something is on the internal network it should be implicitly trusted. Instead of trusting what is on the internal network, we encrypt traffic so that only the specified applications can see the data. This can also be taken one step further by configuring your applications to implement their own TLS and confirming the permissions of the client requesting data.
 
-Cloud Foundry, and by extension cloud.gov, has designated port `61443` to be used for encrypted container-to-container traffic. Any traffic sent between applications using this port will be encrypted automatically. This port can be specified using the `cf add-network-policy` command.
+### Implementation
 
-When setting up encryption the destination application itself does not need to be changed, and the source application only needs to be modified to send traffic to the correct port. If your application is TLS-aware, you still have the option to use a different port and terminate the encryption yourself, using a certificate provided in the application container.
+There are two options for implementing secure container-to-container networking. The `automatic` option which handles provisiong certificates and ensuring TLS termination for you, and the `manual` option where you configure your own certificates and handling of TLS termination.
 
-For a more in-depth guide check out the [container-to-container networking]({{ site.baseurl }}{% link _docs/management/container-to-container.md %}) documentation. You can also check out the official Cloud Foundry documentation on [Securing Container-to-Container Traffic](https://docs.cloudfoundry.org/concepts/understand-cf-networking.html#securing-traffic).
+Cloud Foundry, and by extension cloud.gov, has designated port `61443` to be used for the automatic encryption of container-to-container networking. Any traffic sent to this port will be encrypted automatically. You can specify the use of this port with the `cf add-network-policy` command. When using the automatic option the destination application itself does not need to be changed, and the source application only needs to be modified to send traffic to the correct port. The automatic option is useful if you only need to care about preventing sniffing of traffic between your applications.
+
+If your application is TLS-aware, then you will want to implement the 'manual option' for secure container-to-container networking. You can specify which port to use, not just 61443, and handle terminating the encryption using a certificate provided in the application container. Your application can then examine client certificates and take actions based on that, and is a benefit of using the manual option.
+
+## In Conclusion
+
+Having the ability to encrypt container-to-container networking provides more security for your applications' internal communications, and with multiple methods you can choose which option is best for you and your organization. For a more in-depth guide check out the [container-to-container networking]({{ site.baseurl }}{% link _docs/management/container-to-container.md %}) documentation. You can also find out more from the official Cloud Foundry documentation on [Securing Container-to-Container Traffic](https://docs.cloudfoundry.org/concepts/understand-cf-networking.html#securing-traffic).
