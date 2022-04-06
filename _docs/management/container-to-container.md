@@ -14,24 +14,26 @@ App developers can leverage cloud.gov's [container-to-container networking](http
 To set up and allow traffic between your applications:
 
 1. Create an internal route to your application(s)
-```
-cf map-route APP apps.internal --hostname APP
-```
+   ```
+   cf map-route APP apps.internal --hostname APP
+   ```
 2. Add a network policy to allow traffic from one application to another
-```
-cf add-network-policy SOURCE_APP DESTINATION_APP -s DESTINATION_SPACE_NAME -o DESTINATION_ORG_NAME --protocol (tcp | udp) --port RANGE
-```
+   ```
+   cf add-network-policy SOURCE_APP DESTINATION_APP -s DESTINATION_SPACE_NAME -o DESTINATION_ORG_NAME --protocol (tcp | udp) --port RANGE
+   ```
 
 ## Configuring secure container-to-container networking
 
-Two options are available for configuring encryption of traffic between your applications using SSL/TLS: `automatic` and `manual`. With the automatic option the platform handles everything, from provisioning certificates to ensuring TLS termination at the destination, and specifically uses port `61443`. The manual option involves configuring your application with its own TLS termination, and can be configured to use any available port.
+There are two main ways to enable TLS between your application: 
+- Automatically - With this option the platform handles everything, from provisioning certificates to enforcing TLS termination at the destination (steps described below)
+- Manually - This option is necessary if you want to listen on multiple or non-configurable ports. With this option, you are responsible for configuring your application with its own TLS termination and managing TLS certificates. The steps to enable this option depend on the application(s) you're running, and are out of scope for this documentation.
 
 To set up automatic encryption:
 
 1. Create a network policy for your destination application and set the port to 61443. All traffic sent to this port will use SSL/TLS
-```
-cf add-network-policy SOURCE_APP DESTINATION_APP -s DESTINATION_SPACE_NAME -o DESTINATION_ORG_NAME --protocol tcp --port 61443
-```
+   ```
+   cf add-network-policy SOURCE_APP DESTINATION_APP -s DESTINATION_SPACE_NAME -o DESTINATION_ORG_NAME --protocol tcp --port 61443
+   ```
 2. Update your source application to send all traffic to the destination application on port 61443.
 
 For more information you can check out the Cloud Foundry documentation on [Securing Container-to-Container Traffic](https://docs.cloudfoundry.org/concepts/understand-cf-networking.html#securing-traffic)
