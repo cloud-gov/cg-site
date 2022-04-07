@@ -130,7 +130,7 @@ PLATFORMS
 DEPENDENCIES
   addressable (>= 2.8.0)
   html-proofer (~> 3.10)
-  jekyll (~> 3.8)
+  jekyll (~> 3.9)
   jekyll-assets (~> 3.0)
   jekyll-feed (~> 0.6)
   jekyll-last-modified-at
@@ -144,7 +144,7 @@ DEPENDENCIES
   tzinfo-data
 
 RUBY VERSION
-   ruby 2.6.5p114
+   ruby 2.7.4p191
 
 BUNDLED WITH
    2.1.4

@@ -1,4 +1,4 @@
-ruby '>= 2.5.7'
+ruby '>= 2.7'
 
 source "https://rubygems.org"
 
@@ -10,7 +10,7 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "~> 3.8"
+gem "jekyll", "~> 3.9"
 
 # See https://github.com/envygeeks/jekyll-assets/issues/622
 gem "sprockets", "~> 3.7"
