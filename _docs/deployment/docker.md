@@ -33,6 +33,25 @@ Here are some considerations to keep in mind when deciding to use Docker images 
 
 <!-- Based on the table in this slide: https://twitter.com/benbravo73/status/781125385777999872 -->
 
+### Runtime differences
+
+Pushing an application using a Docker image creates the same type of container in the same runtime as using a buildpack does. When you supply a Docker image for your application, Cloud Foundry:
+1. fetches the Docker image
+1. uses the image layers to construct a base filesystem 
+1. uses the image metadata to determine the command to run, environment vars, user id, and port to expose (if any)
+1. creates an app specification based on the steps above 
+1. passes the app specification on to diego (the multi-host container management system) to be run as a linux container.
+
+No Docker components are involved in this process - your applications are run under the `garden-runc` runtime (versus `containerd` in Docker). Both `garden-runc` and `containerd` are layers built on top of the Open Container Initiative's `runc` package. They have significant overlap in the types of problems they solve and in many of the ways they try to solve them.
+For example, both `garden-runc` and `containerd`:
+- use cgroups to limit resource usage
+- use process namespaces to isolate processes
+- combine image layers into a single root filesystem
+- use user namespaces to prevent users with escalated privileges in containers from gaining escalated privileges on hosts (this is an available option on `containerd` and is a default on `garden-runc`)
+
+Additionally, since containers are running in Cloud Foundry, most or all of the other components of the Docker ecosystem are are replaced with Cloud Foundry components, such as service discovery, process monitoring, virtual networking, routing, volumes, etc. This means most Docker-specific guidance, checklists, etc., will not be directly applicable for applications within Cloud Foundry, regardless of whether they're pushed as Docker images or buildpack applications.
+
+
 #### Docker as tasks
 
 There is [a Cloud Foundry API for tasks creation](http://v3-apidocs.cloudfoundry.org/version/3.31.0/index.html#tasks). This allows single, one-off tasks to be triggered through the API.
