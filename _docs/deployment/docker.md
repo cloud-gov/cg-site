@@ -10,7 +10,7 @@ redirect_from:
   - /docs/apps/docker/
 ---
 
-As an alternative to using buildpacks, you can push applications based on Docker.
+As an alternative to using buildpacks, you can push applications based on Docker images.
 
 To push a Docker image, use the `--docker-image` flag when pushing your app, for example:
 
