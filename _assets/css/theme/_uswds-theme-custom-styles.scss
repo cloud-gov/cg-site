@@ -21,16 +21,16 @@ i.e.
 */
 
 //Table styles
-.usa-table th  {
-    background-color:transparent;
+.usa-table th {
+  background-color: transparent;
 }
 //Responsive tables from USWDS SITE
-$theme-table-responsive-expand-at: "tablet";
+$theme-table-responsive-expand-at: 'tablet';
 $theme-table-responsive-title-width: 15;
-$theme-table-responsive-border-radius: "md";
+$theme-table-responsive-border-radius: 'md';
 $theme-table-padding-x: 2;
 
-$theme-table-responsive-expand-at: "tablet";
+$theme-table-responsive-expand-at: 'tablet';
 $theme-table-padding-x: 2;
 $theme-table-column-gap: 4;
 
@@ -66,7 +66,7 @@ $theme-table-column-gap: 4;
     }
 
     caption {
-      font-weight: fw("bold");
+      font-weight: fw('bold');
       padding-bottom: units(1);
     }
 
@@ -78,11 +78,11 @@ $theme-table-column-gap: 4;
       z-index: z(100);
 
       &[data-title]:before {
-       // @include typeset("lang", 1, 2);
+        // @include typeset("lang", 1, 2);
         @include u-padding-x(1);
         content: attr(data-title);
         flex: none;
-        font-weight: fw("normal");
+        font-weight: fw('normal');
         margin-right: units(0.5);
         max-width: units($theme-table-responsive-title-width);
         text-align: left;
@@ -95,25 +95,22 @@ $theme-table-column-gap: 4;
     }
 
     th:not([data-title]) {
-      font-weight: fw("bold");
+      font-weight: fw('bold');
     }
 
     tr {
-      background-color: color("white");
+      background-color: color('white');
       border: 1px solid;
       border-radius: radius($theme-table-responsive-border-radius);
       display: block;
       padding-bottom: units(2px);
       position: relative;
 
-
-
-
       &::after {
-        @include u-pin("y");
-        @include u-pin("left");
-        content: "";
-        background-color: color("gray-2");
+        @include u-pin('y');
+        @include u-pin('left');
+        content: '';
+        background-color: color('gray-2');
         border-bottom-left-radius: radius(
           $theme-table-responsive-border-radius
         );
@@ -144,7 +141,7 @@ $theme-table-column-gap: 4;
       }
 
       & + td {
-        border-top: units(1px) solid color("base-lighter");
+        border-top: units(1px) solid color('base-lighter');
       }
 
       .site-inline-swatch {
@@ -155,11 +152,11 @@ $theme-table-column-gap: 4;
 
   @include at-media($theme-table-responsive-expand-at) {
     thead {
-    //   @include u-font("lang", 1);
+      //   @include u-font("lang", 1);
     }
 
     caption {
-      font-weight: fw("bold");
+      font-weight: fw('bold');
       padding-bottom: units(1);
     }
 
@@ -203,7 +200,7 @@ $theme-table-column-gap: 4;
         border-top: units(2px) solid;
 
         & + tr {
-          border-top: units(1px) solid color("base-lighter");
+          border-top: units(1px) solid color('base-lighter');
 
           h3 {
             @include u-margin-bottom(0);
@@ -254,17 +251,15 @@ $theme-table-column-gap: 4;
       tbody {
         tr {
           border: none;
-          border-top: units(1px) solid color("base-light");
+          border-top: units(1px) solid color('base-light');
           @include u-padding-y(3);
-
-
 
           &:first-child {
             border-top: none;
             padding-bottom: 0;
           }
 
-          &:nth-child(2){
+          &:nth-child(2) {
             border-top: none;
             @include u-padding(0);
           }
@@ -276,7 +271,7 @@ $theme-table-column-gap: 4;
 
 .site-inline-swatch {
   @include u-square(4);
-  border-radius: radius("sm");
+  border-radius: radius('sm');
   display: inline-block;
   text-align: middle;
 
@@ -286,8 +281,8 @@ $theme-table-column-gap: 4;
 }
 
 .site-caption-swatches {
-//   @include typeset("lang", 10, 2);
-  color: color("ink");
+  //   @include typeset("lang", 10, 2);
+  color: color('ink');
   margin-top: units(2);
   margin-bottom: units(1);
   padding-left: 0;
@@ -298,10 +293,10 @@ $theme-table-column-gap: 4;
 }
 
 .site-table-note {
-//   @include typeset("lang", "2xs", 4);
+  //   @include typeset("lang", "2xs", 4);
   padding: units(2);
-  background-color: color("gold-20v");
-  border-radius: radius("md");
+  background-color: color('gold-20v');
+  border-radius: radius('md');
   margin-bottom: units(1);
 
   @include at-media($theme-table-responsive-expand-at) {
@@ -311,43 +306,56 @@ $theme-table-column-gap: 4;
   }
 }
 
-
 //Custom headings
-h1,.usa-prose h1 {
-    @include u-text('semibold');
+h1,
+.usa-prose h1 {
+  @include u-text('semibold');
 }
 
-h2, .usa-prose h2, h3, .usa-prose h3, h4, .usa-prose h4, h5, .usa-prose h5, h6 .usa-prose h6 {
-    @include u-text('medium');
-    @include u-font-family('sans');
+h2,
+.usa-prose h2,
+h3,
+.usa-prose h3,
+h4,
+.usa-prose h4,
+h5,
+.usa-prose h5,
+h6 .usa-prose h6 {
+  @include u-text('medium');
+  @include u-font-family('sans');
 }
 
-
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   @include u-text('ls-neg-3');
 }
 //Set the heading styles outside of usa-prose
 .usa-section h2 {
-  @include u-font-size('sans', $theme-h2-font-size)
+  @include u-font-size('sans', $theme-h2-font-size);
 }
 
 .usa-section h3 {
-  @include u-font-size('sans', $theme-h3-font-size)
+  @include u-font-size('sans', $theme-h3-font-size);
 }
 
 .usa-section h4 {
-  @include u-font-size('sans', $theme-h4-font-size)
+  @include u-font-size('sans', $theme-h4-font-size);
 }
 
 .usa-section h5 {
-  @include u-font-size('sans', $theme-h5-font-size)
+  @include u-font-size('sans', $theme-h5-font-size);
 }
 
 //Header styles
 .usa-header--extended .usa-nav {
   border: none;
 
-  li.usa-nav__primary-item a, li.usa-nav__primary-item button {
+  li.usa-nav__primary-item a,
+  li.usa-nav__primary-item button {
     @include u-text('medium');
     @include u-color('ink');
 
@@ -359,7 +367,7 @@ h1, h2, h3, h4, h5, h6 {
       }
     }
 
-    &[aria-expanded=true] {
+    &[aria-expanded='true'] {
       @include at-media('desktop') {
         @include u-color('white');
         &:hover {
@@ -407,7 +415,6 @@ main .usa-button {
   &:hover {
     @include u-bg('primary-darker');
   }
-
 }
 
 main .usa-button--secondary {
@@ -425,17 +432,16 @@ main .usa-button--secondary {
   @include u-font-size('sans', 'sm');
 
   &::after {
-    content:"→";
+    content: '→';
     float: right;
   }
 }
 
-.usa-header [role=search] {
+.usa-header [role='search'] {
   width: min-content;
 }
 
 //USA section
-
 
 @media (min-width: 40em) {
   .usa-section {
@@ -443,7 +449,7 @@ main .usa-button--secondary {
   }
 }
 .usa-section--dark {
-    @include u-bg('primary-darkest');
+  @include u-bg('primary-darkest');
 
   h1 {
     @include u-color('white');
@@ -456,7 +462,6 @@ main .usa-button--secondary {
   @include at-media(mobile) {
     @include u-margin-y(2);
   }
-
 }
 
 // Documentation page
@@ -496,7 +501,6 @@ main .usa-button--secondary {
   .usa-current {
     @include u-text('medium');
   }
-  
 }
 
 .usa-sidenav .usa-current i,
