@@ -82,6 +82,7 @@ Bug Fix
 ### Shibboleth - v92 up from v88
 
 * Java updates
+* Tomcat updates
 
 ### UAA Customized - v46 up from v44
 
