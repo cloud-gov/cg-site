@@ -32,14 +32,14 @@ Security tests need to be executed in the development environment where changes 
 
 ## Change workflow
 
-1. All configuration changes must flow through a git repository, centrally managed through GitHub, unless they contain sensitive information. In these cases, sensitive information should be stored in an S3 bucket with a proper security policy and encryption, versioned such that changes can be easily rolled back.
+1. All configuration changes must flow through a git repository, centrally managed through GitHub, unless they contain sensitive information. In these cases, sensitive information should be stored in an S3 bucket or CredHub with a proper security policy and encryption, versioned such that changes can be easily rolled back.
 1. A change is initiated and discussed, following the steps in our [Story Lifecycle](https://github.com/cloud-gov/cg-product/blob/master/StoryLifecycle.md).
 1. In the appropriate GitHub repository for the component, a pull request (PR) against the main branch is created that addresses the change (note - sometimes this branch is called `main`, other times it is not, be sure to check).
-1. If the repository contains cloud.gov-developed code, the PR must have an automated [Code Climate](https://codeclimate.com) check, which must pass before the PR can be merged.
+1. If the repository contains cloud.gov-developed code, the PR must have an automated checks in GitHub Action or Concourse, which must pass before the PR can be merged.
 1. The PR is reviewed by someone other than the committer. Pairing via screen-sharing
 is encouraged and qualifies as a review. Review should include assessment of architectural design, DRY principles, security and code quality.
     The reviewer approves the PR via GitHub.
-1. The reviewer merges the approved PR.
+1. The reviewer merges the approved PR. Further updates invalidate the approval.
     The committer may merge an approved PR if the changes made are time-sensitive.
 1. A continuous integration (CI) server handles automated tests and continuous deployment (CD) of the merged changes.
     - All changes are deployed to a testing environment, such as development.
