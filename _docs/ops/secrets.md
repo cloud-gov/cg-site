@@ -93,7 +93,7 @@ aws-vault exec cloud-gov-govcloud bash
 
 If you do this, running `env | grep AWS` will show you a new set of credentials which are different from the primary IAM role credentials because they are short lived and issued at runtime.  This means that if a malicious script or program attempts to read `~/.aws/credentials` or `~/.aws/config` they will be unable to retrieve the primary credentials.
 
-If you run into issues running `aws` CLI commands, double check that the `region` configured for the profile in your `~/.aws/config` is correct.
+If you run into issues running `aws` CLI commands, double-check that the `region` configured for the profile in your `~/.aws/config` is correct.
 
 ### Next Steps for aws-vault configuration and usage
 
