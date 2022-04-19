@@ -66,11 +66,18 @@ aws-vault add cloud-gov-govcloud
 
 ### Configure MFA for aws-vault
 
-All operators must have MFA enabled, which is taken care of as a part of the platform operator onboarding process.  This can be confirmed by checking in the AWS console under `Services -> IAM -> Users -> firstname.lastname -> Security Credentials`, or in the command line with `aws iam list-virtual-mfa-devices`.  Confirm that MFA is enabled for your account, then use the following commands to add the ARN of the MFA device to the local Amazon configuration in order to enable short lived tokens:
+All operators must have MFA enabled, which is taken care of as a part of the platform operator onboarding process.  This can be confirmed by checking in the AWS console under `Services -> IAM -> Users -> firstname.lastname -> Security Credentials`, or in the command line with `aws iam list-virtual-mfa-devices`. 
+
+After confirming that MFA is enabled for your account, run these commands to set command line variables (where `mfa_serial` is the full ARN of your MFA device found in the AWS console):
 
 ```sh
-me=$(aws iam get-user | jq -r '.User.UserName')
-mfa_serial=$(aws iam list-virtual-mfa-devices | jq --arg me "$me" -r '.VirtualMFADevices[]|select(.User.UserName==$me) | .SerialNumber')
+me=firstname.lastname
+mfa_serial=arn:aws:iam::xxxxx:mfa/firstname.lastname
+```
+
+Then run these commands to set the local Amazon configuration in order to enable short lived tokens (replacing profile name and `region` as appropriate):
+
+```sh
 echo '[profile cloud-gov-govcloud]' >> ~/.aws/config
 echo 'region = us-gov-west-1' >> ~/.aws/config
 echo "mfa_serial = $mfa_serial" >> ~/.aws/config
@@ -85,6 +92,8 @@ aws-vault exec cloud-gov-govcloud bash
 ```
 
 If you do this, running `env | grep AWS` will show you a new set of credentials which are different from the primary IAM role credentials because they are short lived and issued at runtime.  This means that if a malicious script or program attempts to read `~/.aws/credentials` or `~/.aws/config` they will be unable to retrieve the primary credentials.
+
+If you run into issues running `aws` CLI commands, double check that the `region` configured for the profile in your `~/.aws/config` is correct.
 
 ### Next Steps for aws-vault configuration and usage
 
