@@ -66,7 +66,7 @@ aws-vault add cloud-gov-govcloud
 
 ### Configure MFA for aws-vault
 
-All operators must have MFA enabled, which is taken care of as a part of the platform operator onboarding process.  This can be confirmed by checking in the AWS console under `Services -> IAM -> Users -> firstname.lastname -> Security Credentials`, or in the command line with `aws iam list-virtual-mfa-devices`. 
+All operators must have MFA enabled, which is taken care of as a part of the platform operator onboarding process.  This can be confirmed by checking in the AWS console under `Services -> IAM -> Users -> firstname.lastname -> Security Credentials`.
 
 After confirming that MFA is enabled for your account, run these commands to set command line variables (where `mfa_serial` is the full ARN of your MFA device found in the AWS console):
 
