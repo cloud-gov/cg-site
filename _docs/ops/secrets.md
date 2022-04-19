@@ -68,10 +68,9 @@ aws-vault add cloud-gov-govcloud
 
 All operators must have MFA enabled, which is taken care of as a part of the platform operator onboarding process.  This can be confirmed by checking in the AWS console under `Services -> IAM -> Users -> firstname.lastname -> Security Credentials`.
 
-After confirming that MFA is enabled for your account, run these commands to set command line variables (where `mfa_serial` is the full ARN of your MFA device found in the AWS console):
+After confirming that MFA is enabled for your account, run this command to set a command line variable for your MFA device identifier (where `mfa_serial` is the full ARN of your MFA device found in the AWS console):
 
 ```sh
-me=firstname.lastname
 mfa_serial=arn:aws:iam::xxxxx:mfa/firstname.lastname
 ```
 
