@@ -103,6 +103,10 @@ You can also view this information in each of our four environments, `tooling`, 
       experience or confidence in the deployment.  If you're not sure, '3' is a
       good starting point.
 
+## Ensure automated platform builds are successful
+
+The platform's CI builds can be automatically triggered by third-party resources when updates are released (ie. source code, stemcell). Check Concourse for any automated builds that failed, review the logs of the failed build task, and escalate the failure to platform ops if a cursory triage and rebuild does not fix this issue. 
+
 ## Review AWS CloudTrail events
 
 ### Easy way
