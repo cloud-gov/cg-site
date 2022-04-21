@@ -30,7 +30,7 @@ There are two options for implementing secure container-to-container networking.
 
 Cloud Foundry, and by extension cloud.gov, has designated port `61443` to be used for the automatic encryption of container-to-container networking. Any traffic sent to this port will be encrypted automatically. You can specify the use of this port with the `cf add-network-policy` command. When using the automatic option the destination application itself does not need to be changed, and the source application only needs to be modified to send traffic to the correct port. The automatic option is useful if you only need to care about preventing sniffing of traffic between your applications.
 
-If your application is TLS-aware, then you will want to implement the 'manual option' for secure container-to-container networking. You can specify which port to use, not just 61443, and handle terminating the encryption using a certificate provided in the application container. Your application can then examine client certificates and take actions based on that, and is a benefit of using the manual option.
+If your application needs to manage its own TLS termination (for example if it uses mutual TLS), then you need to implement the 'manual option' for secure container-to-container networking. This option requires configuring your own certificates, but it also means your applications can use those certificates for its TLS configuration. Using this option you can also specify which ports your applications will use for terminating your encrypted traffic, instead of only being able to use port `61443`.
 
 ## In Conclusion
 
