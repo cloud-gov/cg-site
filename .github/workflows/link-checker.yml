@@ -1,8 +1,7 @@
 name: Link Checker Workflow
 
 on:
-  pull_request:
-    types: [opened, edited, reopened]
+  push
 
 jobs:
   link-checker:
