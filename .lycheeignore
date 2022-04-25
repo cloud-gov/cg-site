@@ -2,3 +2,4 @@ localhost
 s3
 .*\.cloud\.gov
 192.0.2.*
+https://api.instance-public-ip.xip.io
