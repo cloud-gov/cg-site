@@ -13,6 +13,7 @@ jobs:
       - name: Link Checker
         uses: lycheeverse/lychee-action@v1.4.1
         with:
+          args: --max-concurrency 64 --cache
           # Temporarily don't fail CI, just run link checker
           fail: false
         env:
