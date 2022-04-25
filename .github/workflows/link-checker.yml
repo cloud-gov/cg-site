@@ -12,7 +12,7 @@ jobs:
       - name: Link Checker
         uses: lycheeverse/lychee-action@v1.4.1
         with:
-          args: --max-concurrency 64 --cache
+          args: --max-concurrency 64 --cache --verbose --no-progress './**/*.md' './**/*.html'
           # Temporarily don't fail CI, just run link checker
           fail: false
         env:
