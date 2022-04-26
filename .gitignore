@@ -6,3 +6,4 @@ node_modules
 .jekyll-cache/
 .DS_Store
 .lycheecache
+lychee-out.md
