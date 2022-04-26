@@ -248,13 +248,13 @@ You can also create manual backups using the [export process](#exporting-a-datab
 
 To access a service database, use the [cf-service-connect plugin](https://github.com/18F/cf-service-connect#readme) or the new [cg-manage-rds](https://github.com/cloud-gov/cg-manage-rds) application and the corresponding CLI (command line interface) tools for the database service you are using,
 
-The examples below are for PostgreSQL, but should be similar for MySQL or others.
+The examples below illustrate using PostgreSQL, but should be similar for MySQL or others.
 
 ### Using cg-manage-rds
 
 #### Exporting from a service instance
 
-The `cg-manage-rds` application is meant to simplify and streeamine import, export and cloning operations on service instances. Full usage docs can be found on the github [readme](https://github.com/cloud-gov/cg-manage-rds#usage)
+The `cg-manage-rds` application is meant to simplify and streamline import, export and cloning operations on service instances. Full usage docs can be found on the github [readme](https://github.com/cloud-gov/cg-manage-rds#usage)
 
 To perform a basic export of a postgres instance using the compressed format:
 
@@ -266,7 +266,7 @@ This will create an export using `pg_dump` named `backup.pg`. Other options for 
 
 #### Importing to a service instance
 
-A basic example of importing a previous export to database service instance.
+This is a simple example of importing a previous export to database service instance.
 By default `cg-manage-rds` adds options to remove ownership and create new objects to make porting easy.
 
 ```sh
@@ -275,7 +275,7 @@ $ cg-manage-rds import -o "-F c" -f ./backup.pg ${SERVICE_NAME}
 
 #### Cloning a service instance
 
-A basic example of replicating database service instance to another instance. The destination database must be created beforehand. The export is downloaded locally as in the `export` command. 
+This is a simple example of replicating database service instance to another instance. The destination database must be created beforehand. The export is downloaded locally as in the `export` command. 
 
 ```sh
 $ cg-manage-rds clone ${SERVICE_NAME_SOURCE} ${SERVICE_NAME_DEST} 
