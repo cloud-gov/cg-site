@@ -248,7 +248,7 @@ You can also create manual backups using the [export process](#exporting-a-datab
 
 To access a service database, use the [cf-service-connect plugin](https://github.com/18F/cf-service-connect#readme) or the new [cg-manage-rds](https://github.com/cloud-gov/cg-manage-rds) application and the corresponding CLI (command line interface) tools for the database service you are using,
 
-The examples below illustrate using PostgreSQL, but should be similar for MySQL or others.
+The examples below show working with a PostgreSQL database, but should be similar for MySQL or others.
 
 ### Using cg-manage-rds
 
