@@ -246,11 +246,44 @@ You can also create manual backups using the [export process](#exporting-a-datab
 
 ## Access the data in the database
 
-To access a service database, use the [cf-service-connect plugin](https://github.com/18F/cf-service-connect#readme) and the corresponding CLI (command line interface) tools for the database service you are using.
+To access a service database, use the [cf-service-connect plugin](https://github.com/18F/cf-service-connect#readme) or the new [cg-manage-rds](https://github.com/cloud-gov/cg-manage-rds) application and the corresponding CLI (command line interface) tools for the database service you are using,
 
-### Exporting a database
+The examples below show working with a PostgreSQL database, but should be similar for MySQL or others.
 
-The instructions below are for PostgreSQL, but should be similar for MySQL or others.
+### Using cg-manage-rds
+
+#### Exporting from a service instance
+
+The `cg-manage-rds` application is meant to simplify and streamline import, export and cloning operations on service instances. Full usage docs can be found on the github [readme](https://github.com/cloud-gov/cg-manage-rds#usage)
+
+To perform a basic export of a postgres instance using the compressed format:
+
+```sh
+$ cg-manage-rds export -o "-F c" -f ./backup.pg ${SERVICE_NAME}
+```
+
+This will create an export using `pg_dump` named `backup.pg`. Other options for the pg_dump command can be pased as a string with the `-o` option.
+
+#### Importing to a service instance
+
+This is a simple example of importing a previous export to database service instance.
+By default `cg-manage-rds` adds options to remove ownership and create new objects to make porting easy.
+
+```sh
+$ cg-manage-rds import -o "-F c" -f ./backup.pg ${SERVICE_NAME}
+```
+
+#### Cloning a service instance
+
+This is a simple example of replicating database service instance to another instance. The destination database must be created beforehand. The export is downloaded locally as in the `export` command. 
+
+```sh
+$ cg-manage-rds clone ${SERVICE_NAME_SOURCE} ${SERVICE_NAME_DEST} 
+```
+
+### Using cf-service-connect plugin
+
+#### Exporting a database
 
 First, open a terminal and connect to an instance using the [cf-service-connect plugin](https://github.com/cloud-gov/cf-service-connect#usage) to create a SSH tunnel:
 
@@ -289,6 +322,7 @@ When you are finished, you can terminate the SSH tunnel.  You should also clean 
 ```sh
 $ cf delete-service-key ${SERVICE_NAME} SERVICE_CONNECT
 ```
+
 
 ### Restoring to a local database
 
