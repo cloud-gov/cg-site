@@ -29,7 +29,7 @@ cache = true
 
 ### Output
 
-format = "markdown"
+format = "Markdown"
 output = "lychee-out.md"
 
 ###
