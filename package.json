@@ -6,7 +6,7 @@
     "clean": "bundle exec jekyll clean",
     "reset": "npx rimraf Gemfile.lock package-lock.json LICENSE.md CONTRIBUTING.md degit.json .git",
     "start": "bundle exec jekyll serve --livereload",
-    "link-checker": "lychee --github-token=$GITHUB_TOKEN --max-concurrency 32 ./_site/**/*.html"
+    "link-checker": "lychee --github-token=$GITHUB_TOKEN --max-concurrency 64 ./_site/**/*.html"
   },
   "dependencies": {
     "anchor-js": "^4.3.0",
