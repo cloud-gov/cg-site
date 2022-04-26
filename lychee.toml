@@ -35,8 +35,6 @@ output = lychee-out.md
 ###
 ### Requests
 ###
-# User agent to send with each request
-user_agent = "curl/7.71.1"
 
 # Website timeout from connect to response finished
 timeout = 20
