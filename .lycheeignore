@@ -3,3 +3,5 @@ s3
 .*\.cloud\.gov
 192.0.2.*
 https://api.instance-public-ip.xip.io
+your-test-email-address@cloud.gov
+mailto
