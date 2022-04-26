@@ -106,6 +106,28 @@ site.
 ### Testing
     $ npm test
 
+### Link checking
+
+This project uses [`lychee`](https://github.com/lycheeverse/lychee) and the accompanying [GitHub action](https://github.com/lycheeverse/lychee-action) to verify that all the links in this documentation are valid.
+
+Default configuration for `lychee` can be found in [`lychee.toml`](./lychee.toml).
+
+Default URL patterns that are ignored by `lychee` can be found in [`.lycheeignore`](./.lycheeignore).
+
+#### Running locally
+
+To run the `lychee` link checker locally:
+
+```shell
+GITHUB_TOKEN=<your-github-token> npm run link-checker -- ./_site/**/*.html # can use any globbing pattern of filepath
+```
+
+Including a `GITHUB_TOKEN` environment variable will reduce the number of 429 responses returned by GitHub, since
+GitHub throttles requests without a token.
+
+When you run this script, results from the `lychee` link scan will be generated in `lychee-out.md` so that you can
+review and address any errors.
+
 ## Technologies you should be familiarize yourself with
 
 - [Jekyll](https://jekyllrb.com/docs/) - The primary site engine that builds your code and content.
