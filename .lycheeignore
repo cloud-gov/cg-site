@@ -11,3 +11,4 @@ file://
 https://s3-\$\{(AWS_DEFAULT_REGION|aws_default_region)\}.amazonaws.com/
 http://\$\{(bucket_name|BUCKET_NAME)\}.s3-website-\$\{(AWS_DEFAULT_REGION|aws_default_region)\}.amazonaws.com/
 https://username:password
+192\.0\.2\.[0-9]{1,3}
