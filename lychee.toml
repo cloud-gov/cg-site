@@ -18,7 +18,6 @@ progress = false
 # Maximum number of allowed redirects
 max_redirects = 10
 
-
 ### Retries
 
 max_retries = 0
@@ -45,7 +44,7 @@ timeout = 20
 # Accept 429 responses. They come from GitHub when you are sending too
 # many requests and get throttled. They don't indicate a bad link.
 # See https://github.com/lycheeverse/lychee/issues/367.
-accept = 200,429
+accept = "200,429"
 
 # Proceed for server connections considered insecure (invalid TLS)
 insecure = false
