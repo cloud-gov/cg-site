@@ -29,8 +29,8 @@ cache = true
 
 ### Output
 
-format = markdown
-output = lychee-out.md
+format = "markdown"
+output = "lychee-out.md"
 
 ###
 ### Requests
