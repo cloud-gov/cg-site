@@ -89,8 +89,8 @@ searchgov:
 
 ## Updating content on your own computer
 
-    $ git clone https://github.com/18F/cg-site-federalist
-    $ cd cg-site-federalist
+    $ git clone https://github.com/cloud-gov/cg-site
+    $ cd cg-site
 
 Note that when built by Federalist, `npm run federalist` is used instead of the
 `build` script.

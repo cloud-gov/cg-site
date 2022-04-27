@@ -162,7 +162,7 @@ is available internally.
 
 ## Statuspage
 
-If Statuspage is unavailable, cloud.gov will use Twitter, [https://twiter.com/clouddotgov](https://twiter.com/clouddotgov), and updates to [https://cloud.gov/news](https://cloud.gov/news).
+If Statuspage is unavailable, cloud.gov will use Twitter, [https://twitter.com/clouddotgov](https://twitter.com/clouddotgov), and updates to [https://cloud.gov/news](https://cloud.gov/news).
 
 ## Continuity of Operations and Disaster Recovery Plan
 

@@ -31,7 +31,7 @@ Internal routes are a good option to choose if you have components of your appli
 
 The cloud.gov team has some good documentation and resources available for those interested in learning about and using internal routes.
 
-* The cloud.gov team [presented a tech talk on internal](https://www.youtube.com/watch?v=2m4FP522DU8](https://www.youtube.com/watch?v=2m4FP522DU8))
+* The cloud.gov team [presented a tech talk on internal](https://www.youtube.com/watch?v=2m4FP522DU8)
 * There are some [examples apps that went along with this talk here](https://github.com/cloud-gov/tech-talk-internal-routes)
 * [More resources](https://github.com/cloud-gov/tech-talk-internal-routes#additional-resources) that might be useful are here
 
