@@ -116,7 +116,13 @@ Default URL patterns that are ignored by `lychee` can be found in [`.lycheeignor
 
 #### Running locally
 
-To run the `lychee` link checker locally:
+First, install `lychee`:
+
+```
+brew install lychee
+```
+
+To run `lychee` locally, use the `link-checker` npm script:
 
 ```shell
 # can use any globbing pattern or filepath
@@ -130,7 +136,7 @@ GITHUB_TOKEN=<your-github-token> npm run link-checker -- ./*.md ./_site/**/*.htm
 ```
 
 Including a `GITHUB_TOKEN` environment variable will reduce the number of 429 responses returned by GitHub, since
-GitHub throttles requests without a token.
+by default GitHub throttles requests without a token.
 
 When you run this script, results from the `lychee` link scan will be generated in `lychee-out.md` so that you can
 review and address any errors.
