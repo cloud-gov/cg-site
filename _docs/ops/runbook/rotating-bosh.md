@@ -156,7 +156,7 @@ $CG_SCRIPT/encrypt.sh
 If you encounter an issue with the `masterbosh` deployment. It's very likely due
 to the `master-bosh-state.json` file being in a non-ideal state. In order to get
 this file into a valid state, follow [the instructions found in the BOSH
-troubleshooting guide](https://bosh.io/docs/using-bosh-init.html#recover-deployment-state).
+troubleshooting guide](https://bosh.io/docs/cli-envs/#recover-deployment-state).
 
 Make sure you edit the file down only to the properties featured in the guide.
 You can find the instance & volume IDs from the AWS console. Check [the resource

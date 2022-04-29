@@ -10,7 +10,7 @@ title: Rotating Secrets I
 ## Introduction
 
 This guide assumes that you're following the Offboarding Checklist [found
-here](https://github.com/18F/cg-product/blob/master/OffboardingChecklist.md) and
+here](https://github.com/cloud-gov/product/blob/master/.github/ISSUE_TEMPLATE/team-member-offboarding.md) and
 removed direct access to cloud.gov AWS accounts. The following guide walks a
 cloud.gov operator through rotating all sensitive information (secrets).
 

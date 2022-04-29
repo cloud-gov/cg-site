@@ -74,6 +74,11 @@ You can now connect to your Elasticache service from your local machine using po
 redis-cli -a "${elasticache_password}" -p 8000 --tls
 ```
 
+## Encryption
+
+Every AWS Elasticache instance configured through cloud.gov is [encrypted at rest](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/at-rest-encryption.html). We use the industry standard AES-256 encryption algorithm to encrypt your data on the server that hosts your AWS Elasticache instance. 
+
+
 ## Rotating credentials
 
 You can rotate credentials by creating a new instance and [deleting the existing instance](https://cli.cloudfoundry.org/en-US/cf/delete-service.html). If this is not an option, email [cloud.gov support](mailto:support@cloud.gov) to request rotating the credentials manually.

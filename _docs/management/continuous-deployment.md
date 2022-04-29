@@ -157,7 +157,7 @@ See the [GitHub Actions documentation](https://help.github.com/en/actions) to ge
 
 #### Usage
 
-After following the instructions for setting up a [cloud.gov service account](https://cloud.gov/docs/services/cloud-gov-service-account/), store you username (CG_USERNAME) and password (CG_PASSWORD) as [encrypted secrets](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets). 
+After following the instructions for setting up a [cloud.gov service account](https://cloud.gov/docs/services/cloud-gov-service-account/), store your username (CG_USERNAME) and password (CG_PASSWORD) as [encrypted secrets](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets). 
 
 #### Sample workflow
 

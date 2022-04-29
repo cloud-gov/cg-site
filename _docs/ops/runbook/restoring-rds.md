@@ -48,10 +48,12 @@ Refer to the [RDS documentation](https://docs.aws.amazon.com/AmazonRDS/latest/Us
 Prior to restoring, record the configuration settings of the existing instance:
 - DB identifier (instance name)
 - Instance size (m4.large, etc.)
-- Multi-zone (yes/no)
+- Multi-AZ (yes/no)
 - VPC (dev, staging, etc.)
-- Subnet
-- Security Groups
+- Subnet Group
+- VPC Security Groups (add SGs and delete `default` if not used)
+- IAM DB authentication
+- Parameter Group
 - Primary password (this is the `password` you saw above in the application environment variables)
 
 Copy all of these values and configure them in the restore form to mirror the configuration of the existing database instance.  For the `identifier` name, provide a name like `<instance name>-<date>-restore` to make the instance easy to find.  Note that the database should never be set to publicly accessible.
@@ -134,6 +136,8 @@ cat tmp/sample.file | grep staging_concourse_rds_host | less
 ```
 
 The value displayed is the **database identifier**.  To restore the BOSH instance, grep for `bosh_rds_host_curr`.  Database identifiers can also be found in the AWS RDS console.
+
+Steps to restore the database are the same as above in the [Performing the database restore](#performing-the-database-restore) section.
 
 ### Updating Terraform
 

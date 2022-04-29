@@ -55,7 +55,7 @@ When you log into cloud.gov for the first time, follow the instructions to set t
 1. Go to log into your cloud.gov account at <https://login.fr.cloud.gov>
 1. Click on *Forgot your password?* link to reset your password
 1. Enter your email address into the `Email address` input and click *SEND EMAIL* to receive the reset password confirmation email
-1. Go to you email and click on the verification link in the first step of that email
+1. Go to your email and click on the verification link in the first step of that email
 1. Enter your email address in the `Email address` input on the reset password verification page and click *VERIFY EMAIL*
 1. Your email is verified and then copy/save the temporary password under the `Your temporary password`.
 1. Login to your cloud.gov account at <https://login.fr.cloud.gov/> with the new temporary password
@@ -113,3 +113,7 @@ If you use a cloud.gov account (instead of using an agency single sign-on accoun
 Access to systems and networks owned by cloud.gov is governed by, and subject to, all federal laws, including, but not limited to, the Privacy Act, 5 U.S.C. 552a, if the applicable cloud.gov system maintains individual Privacy Act information. Access to cloud.gov systems constitutes consent to the retrieval and disclosure of the information within the scope of your authorized access, subject to the Privacy Act, and applicable state and federal laws.
 
 Please contact [cloud.gov support]({{ site.baseurl }}/docs/help/) if you have questions about these rules or don't understand them.
+
+## Trouble logging in
+
+If you are a GSA employee encountering issues logging into cloud.gov, please refer to [this knowledge base article]({{ site.baseurl }}/knowledge-base/2021-05-24-secureauth-issues/) for more information.

@@ -8,15 +8,7 @@ description: "AWS Elasticsearch version 7.4: a distributed, RESTful search and a
 status: "Production Ready"
 ---
 
-cloud.gov offers [aws-elasticsearch](https://aws.amazon.com/elasticsearch-service/) 7.4 as a service hosted in AWS Elasticsearch
-
-## Changes
-
-This service is currently running Elasticsearch 7.4.  Our prior Elasticsearch service ran version 5.8.  There has been a good deal of changes including breaking changes between the 5.X and 7.X releases.  Customers are encouraged to read the following links for more information on ES API changes:
-
-  - [ES Release notes for 6.0](https://www.elastic.co/guide/en/elasticsearch/reference/6.0/release-notes-6.0.0.html)
-  - [ES Breaking Changes for 7.0](https://www.elastic.co/guide/en/elasticsearch/reference/7.0/breaking-changes-7.0.html)
-  - [AWS Supported ES Operations](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/aes-supported-es-operations.html#es_version_7_4)
+cloud.gov offers [aws-elasticsearch](https://aws.amazon.com/elasticsearch-service/) 7.4 as a service hosted in AWS Elasticsearch. 
 
 ## Plans
 
@@ -25,29 +17,73 @@ Service Name | Plan Name | Description | Number of nodes |
 `aws-elasticsearch` | `es-dev` | Single data node for non-prod use only | 1 |
 `aws-elasticsearch` | `es-medium` | 3 Primary and 2 Data node cluster | 5 |
 `aws-elasticsearch` | `es-medium-ha` | 3 Primary and 4 Data node cluster | 7 |
-
+`aws-elasticsearch` | `es-large` | 3 Primary and 2 Data node cluster | 5 |
+`aws-elasticsearch` | `es-large-ha` | 3 Primary and 4 Data node cluster | 7 |
+`aws-elasticsearch` | `es-xlarge` | 3 Primary and 2 Data node cluster | 5 |
+`aws-elasticsearch` | `es-xlarge-ha` | 3 Primary and 4 Data node cluster | 7 |
 
 ## Pricing
 
-$200/month per node. Six nodes included for customers using the FISMA Moderate plan. More information on the [pricing page]({{ site.baseurl }}{% link _pages/pricing.md %}).
+$200/month per node for **medium**, $400/month per node for **large**, $600 per node for **extra-large**. Six nodes included for customers using the FISMA Moderate plan. More information on the [pricing page]({{ site.baseurl }}{% link _pages/pricing.md %}).
+
+## When to use
+
+This service is geared toward applications that need to provide search capability, or interact with indexed data. Although Elasticsearch is often used as part of the ELK logging stack (Elasticsearch + Logstash + Kibana), this service **does not** include Kibana, and isn't suitable as a component of a logging solution. To find out more about logging on the cloud.gov platform, please see [the section on logs]({{ site.baseurl }}/docs/deployment/logs/#web-based-logs-with-historic-log-data).
 
 ## How to create an instance
 
 To create a service instance run the following command:
 
 ```sh
+cf create-service aws-elasticsearch {service-plan} {service-name}
+```
+
+For example, to create a new instance using the `es-medium` plan named `my-elastic-service`, you would enter the following at the cf CLI:
+
+```
 cf create-service aws-elasticsearch es-medium my-elastic-service
 ```
 
 Note: AWS Elasticsearch creation times will vary and is outside of Cloud.gov's control. AWS says approximately 15-30 mins per node. 
 
+## Options
+
+name             | required | description              | example
+-----------------|----------|--------------------------|--------- 
+advanced_options | false    | map for advanced options | see below
+
+### Advanced Options
+
+These are advanced tuning options that can have significant performance or behavior effects on your cluster. They are specified as key/value pairs under the `advanced_options` map in the core parameters. *Note*: although these all represent numbers, they are all specified as strings. Additionally, although they are dotted, they are not nested keys.
+
+Name                                | description                                                 | default 
+------------------------------------|-------------------------------------------------------------|--------
+indices.fielddata.cache.size        | percentage of JVM heap allocated to field data              | "20"
+indices.query.bool.max_clause_count | maximum number of clauses allowed in a Lucene boolean query | "1024"
+
+examples:
+
+```
+$ cf create-service aws-elasticsearch es-medium my-es-service-1 -c '{"advanced_options": {"indices.fielddata.cache.size": "21"}}'
+$ cf create-service aws-elasticsearch es-medium my-es-service-2 -c '{"advanced_options": {"indices.query.bool.max_clause_count": "1025"}}'
+$ cf create-service aws-elasticsearch es-medium my-es-service-3 -c '{"advanced_options": {"indices.query.bool.max_clause_count": "1025", "indices.fielddata.cache.size": "21"}}'
+
+```
+
+Note - if you are using the cf CLI utility on Windows, see the [examples section of the Cloud Foundry documentation](https://cli.cloudfoundry.org/en-US/v6/create-service.html#EXAMPLES) for specific formatting of parameters.
+
 ### Shard/replica configuration for high availability
 
-When using the `medium` and `medium-ha` plans, please read [Scalability and resilience: clusters, nodes, and shards](https://www.elastic.co/guide/en/elasticsearch/reference/current/scalability.html) for the elasticsearch basics on clusters as well as the AWS specific [Developer Guide](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/what-is-amazon-elasticsearch-service.html).  The `medium` plan is mainly focused for customers that need a single index and have coverage with 2 data nodes.  For customers wanting more coverage and more indexes, then the `medium-ha` plan scales the cluster to 4 data nodes to offer high availability (HA).
+The `medium` and `large` plans are mainly geared toward customers that need a single index and have coverage with 2 data nodes.  For customers wanting more coverage and more indexes,  the `medium-ha` nd `large-ha` plans scale the cluster to 4 data nodes to offer high availability (HA).
 
-### AWS Signing requests requirement
+For additional information on configuring your service for high availability when using anything other than the `es-dev` plan, you can refer to [this article from the Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/scalability.html) for an overview of how clusters work. 
 
-In order to use the Elasticsearch service hosted on AWS you will need to use [AWS signed HTTP headers](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-request-signing.html)
+AWS specific information can be found in the AWS [Developer Guide](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/what-is-amazon-elasticsearch-service.html).  Note - AWS recently changed the name of this service to AWS OpenSearch.
+
+
+### Connecting to your service instance
+
+If you need to directly access your service instance from your local environment, please read [this knowledge base article]({{ site.baseurl }}/knowledge-base/2021-05-20-connecting-to-brokered-service-instances/) for more information.
 
 ## Managing backups
 
@@ -93,10 +129,22 @@ For customers that would like to import or export their Elasticsearch data, this
 
  cloud.gov does offer a code sample repository on Github - [aws-elasticsearch-example](https://github.com/cloud-gov/aws-elasticsearch-example) that shows an example in Python on how to interact with the new ES service using signed headers.  Our customers are encouraged to submit PRs of other examples to share with fellow customers.
 
+## Encryption
+
+Every non-dev AWS Elasticsearch instance configured through cloud.gov is [encrypted at rest](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/encryption-at-rest.html). We use the industry standard AES-256 encryption algorithm to encrypt your data on the server that hosts your AWS Elasticsearch instance. 
+
+Service Name | Plan Name | Encryption at Rest |
+------------ | --------- | --------------- |
+`aws-elasticsearch` | `es-dev` | No |
+`aws-elasticsearch` | `es-medium` | Yes |
+`aws-elasticsearch` | `es-medium-ha` | Yes |
+
+Note: If you have access to larger service plans, they will mirror same settings as `es-medium` or `es-medium-ha`. 
+
 ## Rotating credentials
 
 You can rotate credentials by creating a new instance and [deleting the existing instance](https://cli.cloudfoundry.org/en-US/cf/delete-service.html). If this is not an option, email [cloud.gov support](mailto:support@cloud.gov) to request rotating the credentials manually.
 
-### The broker in GitHub
+### The broker in GitHub	
 
 You can find the broker here: [https://github.com/cloud-gov/aws-broker](https://github.com/cloud-gov/aws-broker).

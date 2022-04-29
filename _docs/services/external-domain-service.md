@@ -30,7 +30,7 @@ Plan Name         | Plan Description                                            
 
 When you use cloud.gov in general, your application inherits the compliance of the cloud.gov FedRAMP P-ATO, which inherits compliance from the AWS GovCloud FedRAMP P-ATO. This service is a little different. When you use this service, you opt into using an AWS service (CloudFront) that is not in the cloud.gov FedRAMP P-ATO boundary, but is in the AWS Commercial FedRAMP P-ATO boundary (see [Services in Scope](https://aws.amazon.com/compliance/services-in-scope/)).
 
-You are responsible for obtaining appropriate authorization from your agency to use CloudFront for your system. The appropriate steps depend on your agency; they may include discussing this with your Authorizing Official and documenting it as part of your ATO (for example as part of [SC-12](https://nvd.nist.gov/800-53/Rev4/control/SC-12) or [SA-9](https://nvd.nist.gov/800-53/Rev4/control/SA-9)).
+You are responsible for obtaining appropriate authorization from your agency to use CloudFront for your system. The appropriate steps depend on your agency; they may include discussing this with your Authorizing Official and documenting it as part of your ATO (for example as part of [SC-12](https://csrc.nist.gov/Projects/risk-management/sp800-53-controls/release-search#!/control?version=5.1&number=SC-12) or [SA-9](https://csrc.nist.gov/Projects/risk-management/sp800-53-controls/release-search#!/control?version=5.1&number=SA-9)).
 
 ### Technical considerations
 
@@ -61,6 +61,7 @@ Name              | Required   | Description                                   |
 `forward_cookies` | optional   | List of cookies to forward                    | `"JSESSIONID,othercookiename"`    |
 `forward_headers` | optional   | List of headers to forward                    | `"x-my-header,x-another-one"`     |
 `error_responses` | optional   | dictionary of code:path to respond for errors | `{"404": "/errors/404.html"}`     |
+`path`            | optional   | A custom path to serve from                   | `/some/path`                      |
 
 #### origin and insecure_origin
 You can use this option to send traffic to a custom origin, rather than to your app running on cloud.gov
@@ -87,15 +88,22 @@ in its cache calculation, so more unique header combinations will cause more cac
 This option lets you send custom error pages for specific error codes. Set this with an object, where the keys are the error codes (as strings) and the values
 are the path to the custom error page, for example:
 ```
-cf create-service external-domain domain-with-cdn -c '{"domains": "example.gov", "error_responses": {"404": "/errors/404.html", "403": "/login.html"}}
+cf create-service external-domain domain-with-cdn -c '{"domains": "example.gov", "error_responses": {"404": "/errors/404.html", "403": "/login.html"}}'
 ```
 Be careful when setting this for 5xx responses: 5xx responses indicate a server error and setting a custom error response will increase the load on a potentially unhealthy application.
 
 The default for this setting is `{}`, so errors are passed to the client exactly as the CDN receives them, and you can use the same setting to reset to the default:
 ```
-cf create-service external-domain domain-with-cdn -c '{"domains": "example.gov", "error_responses": {}}
+cf create-service external-domain domain-with-cdn -c '{"domains": "example.gov", "error_responses": {}}'
 ```
 Note that only these error codes can be customized: 400, 403, 404, 405, 414, 416, 500, 501, 502, 503, 504
+
+#### path option
+
+You can use this option to send traffic to a custom path at either the default or custom origin.
+```
+cf create-service external-domain domain-with-cdn -c '{"path": "/some/path"}'
+```
 
 
 ## How to create an instance of this service
@@ -170,6 +178,9 @@ While there is no mechanism for cloud.gov users to trigger a cache clear,
 instantaneous; Amazon recommends expecting a lag time of 10-15 minutes (more if there are
 many distinct endpoints).
 
+All distributions are configured to forward and cache based on querystrings - that is
+querystrings are part of the cache key, and querystrings are forwarded to your application.
+
 ### Authentication
 
 Cookies are passed through the CDN by default, meaning that cookie-based authentication will work as expected.
@@ -177,3 +188,9 @@ Cookies are passed through the CDN by default, meaning that cookie-based authent
 #### Header forwarding
 
 CloudFront forwards a [limited set of headers](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior) by default. 
+
+#### Advanced DDOS protection
+
+Customers who have a cloud.gov [Supplemental or Premium Support Package](https://cloud.gov/support-packages/), or are enrolled through our GSA Cloud Service, can opt to add
+AWS Advanced Shield to their CloudFront distribution, as a Customer Custom Resource. Our cloud.gov support team will
+broker the customization for the customer; the customer maintains responsibility for configuration management and change control (e.g CM-3, CM-6)
