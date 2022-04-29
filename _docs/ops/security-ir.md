@@ -242,10 +242,6 @@ Guidelines for addressing Low-sev issues:
 - Responders should avoid service degradation unless stakeholders agree.
 - Sitreps should be sent approximately daily.
 
-## Federalist
-
-The Federalist platform service adheres to the [TTS Handbook's security incidents guide](https://handbook.tts.gsa.gov/security-incidents/).
-
 ---
 
 ### Page information
