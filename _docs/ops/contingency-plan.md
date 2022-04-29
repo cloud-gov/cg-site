@@ -48,7 +48,7 @@ The IC should notify the following people within 15 minutes of identifying the s
 
 The IC must notify the following people within 1 hour of activating the plan:
 
-* TTS and 18F leadership -- give a brief description of the situation in Slack or email to the TTS Director (or TTS Assistant Commissioner for Operations) and the 18F Director.
+* TTS and cloud.gov leadership -- give a brief description of the situation in Slack or email to the TTS Director (or TTS Assistant Commissioner for Operations) and the cloud.gov Director.
 * GSA Information Security -- email a link to the StatusPage and a technical description of the situation (including whether there are any known security aspects) to itservicedesk@gsa.gov, gsa-ir@gsa.gov, devops@gsa.gov (even if there is no security impact).
 * FedRAMP JAB representatives -- email a link to the StatusPage and a technical description of the situation (including whether there are any known security aspects) to our JAB representatives (contact information [at the top of this doc](https://docs.google.com/document/d/1jGddQkjkQ6e9B0UTq9hfQqHe0btAbTeBGL_DxkozAcg/edit#)).
 
