@@ -5,12 +5,13 @@
     "build": "bundle exec jekyll build",
     "clean": "bundle exec jekyll clean",
     "reset": "npx rimraf Gemfile.lock package-lock.json LICENSE.md CONTRIBUTING.md degit.json .git",
-    "start": "bundle exec jekyll serve"
+    "start": "bundle exec jekyll serve --livereload",
+    "link-checker": "lychee --github-token=$GITHUB_TOKEN --max-concurrency 64 --format=markdown"
   },
   "dependencies": {
     "anchor-js": "^4.3.0",
     "netlify-cms": "^2.10.112",
-    "uswds": "^2.9.0"
+    "uswds": "^2.13.3"
   },
   "devDependencies": {
     "rimraf": "^3.0.2"

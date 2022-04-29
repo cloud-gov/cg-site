@@ -5,3 +5,5 @@ node_modules
 .bundle
 .jekyll-cache/
 .DS_Store
+.lycheecache
+lychee-out.md

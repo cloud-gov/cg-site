@@ -12,7 +12,7 @@ title: Managing user access to orgs and spaces
 
 Anyone with a .mil or .gov account can [sign up for their own cloud.gov account]({{ site.baseurl }}/sign-up/) with a sandbox space in their agency's cloud.gov sandbox org.
 
-To invite someone to a non-sandbox org, including federal employees and federal contractors without .gov or .mil email addresses, [send them an invite](https://account.fr.cloud.gov/invite). This may prompt you to log into your cloud.gov account first.
+To invite someone to a non-sandbox org, including federal employees and federal contractors without .gov or .mil email addresses, an Org Manager can [send them an invite](https://account.fr.cloud.gov/invite). This may prompt you to log into your cloud.gov account first.
 
 Then, confirm with them that they have received and accepted the invite. Now they have a cloud.gov account!
 
@@ -36,7 +36,7 @@ Log into the [Dashboard (https://dashboard.fr.cloud.gov)](https://dashboard.fr.c
 {% asset roles-05-open-manage-users.png alt="Click on the Manage Roles by Username icon toward the top of the screen." %}
 1. Type in the username that you want to either add or remove roles for in the organization, then click on the "Next" button at the bottom right of the screen.
 {% asset roles-06-specify-username.png alt="Type in the username that you want to either add or remove roles for in the organization, then click on the Next button at the bottom right of the screen." %}
-1. Select the roles that you would like to add or remove from the user.  You may also set roles for any spaces within the organization that you would like to add or remove them from on this screen.
+1. Select the roles that you would like to add or remove from the user. **Please be sure to check the `User` box** regardless so that the user will have proper access when finished.  You may also set roles for any spaces within the organization that you would like to add or remove them from on this screen.
 {% asset roles-07-select-roles.png alt="Select the roles that you would like to add or remove from the user.  You may also set roles for any spaces within the organization that you would like to add or remove them from on this screen." %}
 1. Confirm your changes and selections by clicking on the "Apply" button on the bottom of the screen.
 {% asset roles-08-confirm-changes.png alt="Confirm your changes and selections by clicking on the Apply button on the bottom of the screen." %}
@@ -75,7 +75,7 @@ cf set-space-role USERNAME ORG SPACE ROLE
 ```
 
 Where ROLE is one of:
-  - `SpaceManager` - Invite and manage users, and enable features for a given space
+  - `SpaceManager` - Manage users, and enable features, for a given space
   - `SpaceDeveloper` - Create and manage apps and services, and see logs and reports
   - `SpaceAuditor` - View logs, reports, and settings on this space
 

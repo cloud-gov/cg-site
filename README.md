@@ -89,8 +89,8 @@ searchgov:
 
 ## Updating content on your own computer
 
-    $ git clone https://github.com/18F/cg-site-federalist
-    $ cd cg-site-federalist
+    $ git clone https://github.com/cloud-gov/cg-site
+    $ cd cg-site
 
 Note that when built by Federalist, `npm run federalist` is used instead of the
 `build` script.
@@ -105,6 +105,41 @@ site.
 
 ### Testing
     $ npm test
+
+### Link checking
+
+This project uses [`lychee`](https://github.com/lycheeverse/lychee) and the accompanying [GitHub action](https://github.com/lycheeverse/lychee-action) to verify that all the links in this documentation are valid.
+
+Default configuration for `lychee` can be found in [`lychee.toml`](./lychee.toml).
+
+Default URL patterns that are ignored by `lychee` can be found in [`.lycheeignore`](./.lycheeignore).
+
+#### Running locally
+
+First, install `lychee`:
+
+```
+brew install lychee
+```
+
+To run `lychee` locally, use the `link-checker` npm script:
+
+```shell
+# can use any globbing pattern or filepath
+GITHUB_TOKEN=<your-github-token> npm run link-checker -- ./_site/**/*.html 
+```
+
+You can also use multiple patterns/filepaths:
+
+```shell
+GITHUB_TOKEN=<your-github-token> npm run link-checker -- ./*.md ./_site/**/*.html 
+```
+
+Including a `GITHUB_TOKEN` environment variable will reduce the number of 429 responses returned by GitHub, since
+by default GitHub throttles requests without a token.
+
+When you run this script, results from the `lychee` link scan will be generated in `lychee-out.md` so that you can
+review and address any errors.
 
 ## Technologies you should be familiarize yourself with
 

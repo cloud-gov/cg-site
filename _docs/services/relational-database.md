@@ -80,6 +80,7 @@ Name               | Description                                                
 `storage`          | Number of GB available to the database instance                | 10                     |
 `enable_functions` | Boolean to enable functions on supported databases             | false                  |
 `version`          | Specifies a supported major version in RDS (must be in quotes) | AWS RDS Latest Default |
+`backup_retention_period` | Specifies a number of days to retain daily snapshots. | 14           |
 
 A couple of notes regarding the optional `version` parameter:
 
@@ -97,6 +98,8 @@ These are the current supported major versions for MySQL:
 
 - 5.7
 - 8.0
+
+The `backup_retention_period` can be no less than 14 days but extended up to 35 days.
 
 #### Examples of optional parameters
 
@@ -125,6 +128,15 @@ cf create-service aws-rds \
     micro-psql \
     my-test-service \
     -c '{"version": "11"}'
+```
+
+To extend the backup retention period for a database to 30 days:
+
+```sh
+cf create-service aws-rds \
+    micro-psql \
+    my-test-service \
+    -c '{"backup_retention_period": 30}'
 ```
 
 You can combine multiple optional parameters as long as the JSON is well-formed:
@@ -181,6 +193,7 @@ There are several optional parameters that you can specify when updating an exis
 Name               | Required | Description                                     |
 ---                | ---      | ---                                             |
 `storage`          |          | Number of GB available to the database instance |
+`backup_retention_period` | | Specifies a number of days to retain daily snapshots. |
 
 #### Examples of optional parameters
 
@@ -208,7 +221,7 @@ The contents of the `DATABASE_URL` environment variable contain the credentials 
 
 *Please note that these instructions will change in the future as we expand our service offerings and provide more options for customers.*
 
-RDS automatically retains daily backups for 14 days. These backups are AWS RDS storage volume snapshots, backing up the entire DB instance and not just individual databases. If you need to have a database restored using one of these backups, you can [email support](mailto:support@cloud.gov).  For non-emergency situations, please provide at least 48 hours advance notice.
+RDS automatically retains daily backups for 14 days. These backups are AWS RDS storage volume snapshots, backing up the entire DB instance and not just individual databases. You can extend the length of retention up to 35 days by using the option detailed above. If you need to have a database restored using one of these backups, you can [email support](mailto:support@cloud.gov).  For non-emergency situations, please provide at least 48 hours advance notice.
 
 If you have an emergency situation, such as data loss or a compromised system, please [email support](mailto:support@cloud.gov) immediately and inform us of the situation.
 
@@ -233,11 +246,44 @@ You can also create manual backups using the [export process](#exporting-a-datab
 
 ## Access the data in the database
 
-To access a service database, use the [cf-service-connect plugin](https://github.com/18F/cf-service-connect#readme) and the corresponding CLI (command line interface) tools for the database service you are using.
+To access a service database, use the [cf-service-connect plugin](https://github.com/18F/cf-service-connect#readme) or the new [cg-manage-rds](https://github.com/cloud-gov/cg-manage-rds) application and the corresponding CLI (command line interface) tools for the database service you are using,
 
-### Exporting a database
+The examples below show working with a PostgreSQL database, but should be similar for MySQL or others.
 
-The instructions below are for PostgreSQL, but should be similar for MySQL or others.
+### Using cg-manage-rds
+
+#### Exporting from a service instance
+
+The `cg-manage-rds` application is meant to simplify and streamline import, export and cloning operations on service instances. Full usage docs can be found on the github [readme](https://github.com/cloud-gov/cg-manage-rds#usage)
+
+To perform a basic export of a postgres instance using the compressed format:
+
+```sh
+$ cg-manage-rds export -o "-F c" -f ./backup.pg ${SERVICE_NAME}
+```
+
+This will create an export using `pg_dump` named `backup.pg`. Other options for the pg_dump command can be pased as a string with the `-o` option.
+
+#### Importing to a service instance
+
+This is a simple example of importing a previous export to database service instance.
+By default `cg-manage-rds` adds options to remove ownership and create new objects to make porting easy.
+
+```sh
+$ cg-manage-rds import -o "-F c" -f ./backup.pg ${SERVICE_NAME}
+```
+
+#### Cloning a service instance
+
+This is a simple example of replicating database service instance to another instance. The destination database must be created beforehand. The export is downloaded locally as in the `export` command. 
+
+```sh
+$ cg-manage-rds clone ${SERVICE_NAME_SOURCE} ${SERVICE_NAME_DEST} 
+```
+
+### Using cf-service-connect plugin
+
+#### Exporting a database
 
 First, open a terminal and connect to an instance using the [cf-service-connect plugin](https://github.com/cloud-gov/cf-service-connect#usage) to create a SSH tunnel:
 
@@ -276,6 +322,7 @@ When you are finished, you can terminate the SSH tunnel.  You should also clean 
 ```sh
 $ cf delete-service-key ${SERVICE_NAME} SERVICE_CONNECT
 ```
+
 
 ### Restoring to a local database
 

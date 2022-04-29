@@ -29,10 +29,10 @@ We welcome vulnerability reports [according to our vulnerability disclosure poli
 
 ### Questions from the public and industry
 
-If you have a question that isn't on behalf of a U.S. government organization (such as if you're a member of the public or representing a company), we invite you to post your question [publicly as an issue on GitHub](https://github.com/18F/cg-site/issues/new) (requires a free GitHub account), so that we can write an answer available to everyone. If you prefer not to post publicly, you can email [inquiries@cloud.gov](mailto:inquiries@cloud.gov).
+If you have a question that isn't on behalf of a U.S. government organization (such as if you're a member of the public or representing a company), we invite you to post your question [publicly as an issue on GitHub](https://github.com/cloud-gov/cg-site/issues/new) (requires a free GitHub account), so that we can write an answer available to everyone. If you prefer not to post publicly, you can email [inquiries@cloud.gov](mailto:inquiries@cloud.gov).
 
-If you are part of a company asking a question to help prepare a response to a RFI/RFQ/RFP (or a similar proposal process), we will ask you to post your question [publicly as an issue on GitHub](https://github.com/18F/cg-site/issues/new) (requires a free GitHub account). We want to answer publicly so that our answer is available to all companies competing in that process.
+If you are part of a company asking a question to help prepare a response to a RFI/RFQ/RFP (or a similar proposal process), we will ask you to post your question [publicly as an issue on GitHub](https://github.com/cloud-gov/cg-site/issues/new) (requires a free GitHub account). We want to answer publicly so that our answer is available to all companies competing in that process.
 
 ### Interested in working on or contributing to cloud.gov?
 
-Check out [Joining 18F](https://pages.18f.gov/joining-18f/) if you'd like to join 18F, or talk to us in [18F's public DevOps chat channel](https://chat.18f.gov/) about how to collaborate, including how to contribute to [our open source work]({{ site.baseurl }}{% link _docs/ops/repos.md %}).
+Check out [joining TTS](https://join.tts.gsa.gov/) if you'd like to join cloud.gov or another TTS program, or talk to us in [TTS's public DevOps chat channel](https://chat.18f.gov/) about how to collaborate, including how to contribute to [our open source work]({{ site.baseurl }}{% link _docs/ops/repos.md %}).
