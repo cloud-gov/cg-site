@@ -16,7 +16,7 @@ redirect_from:
 
 ---
 
-cloud.gov is built and maintained by a team within [18F](https://18f.gsa.gov/) as part of the U.S. General Services Administration’s [Technology Transformation Service](http://www.gsa.gov/portal/category/25729) portfolio. cloud.gov is a cost-recoverable service funded by charging a fee to the teams that use it.
+cloud.gov is built and maintained by a team within the U.S. General Services Administration’s [Technology Transformation Service](http://www.gsa.gov/portal/category/25729) portfolio. cloud.gov is a cost-recoverable service funded by charging a fee to the teams that use it.
 
 Our mission is broader than making it easier for government agencies to adopt cloud deployment. The mission of cloud.gov is to enable agencies to deliver services to the public as fast as they can develop them while applying best practices in security and compliance with minimal effort.
 
@@ -26,9 +26,9 @@ As an agile project, cloud.gov is always under development. We periodically ask 
 
 18F was founded in 2014 and has been deploying new products since soon after. As 18F scaled up the number of teams, it became clear that cloud operations could be a bottleneck. The list of good practices for government digital services introduced by law and federal agency requirements was far greater than the accompanying support implementers need to do them efficiently.
 
-To solve the bottleneck problem, 18F focused on technical operations that could act as force-multipliers for each team, including stronger cloud operations. cloud.gov emerged from this focus. The first prototype of the platform took about three months to complete, and teams began to deploy their work to production about a month after that. Today, it is a product available to [other government agencies]({{ site.baseurl }}{% link _docs/overview/who-can-use-cloudgov.md %}). 
+To solve the bottleneck problem, 18F focused on technical operations that could act as force-multipliers for each team, including stronger cloud operations. cloud.gov emerged from this focus. The first prototype of the platform took about three months to complete, and teams began to deploy their work to production about a month after that. Today, it is a product managed outside of 18F that is available to [other government agencies]({{ site.baseurl }}{% link _docs/overview/who-can-use-cloudgov.md %}). 
 
-One of our goals for cloud.gov is to give other agencies access to the same gains in productivity that 18F has seen from using cloud.gov. By making the model available for other agencies, as well as making it replicable as an open source project, we hope to increase the efficiency with which any agency can deliver digital services. The potential economy of scale is huge.
+One of our goals for cloud.gov is to give other agencies access to the same gains in productivity that 18F and other parts of TTS have seen from using cloud.gov. By making the model available for other agencies, as well as making it replicable as an open source project, we hope to increase the efficiency with which any agency can deliver digital services. The potential economy of scale is huge.
 
 Our experience with this project suggests an open source PaaS is the right choice for many government teams. However, vendor PaaS options offer features which may be attractive to [agencies that have different requirements]({{ site.baseurl }}{% link _docs/overview/who-can-use-cloudgov.md %}).
 
