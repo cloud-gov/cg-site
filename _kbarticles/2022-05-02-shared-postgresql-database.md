@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Quickly creating PostgreSQL databases for your applications"
+title: "Creating a shared PostgreSQL database service broker using postgres-tinsmith"
 date: May 5, 2022
 excerpt: How to quickly create PostgreSQL databases for your applications using the postgres-tinsmith service broker
 ---
@@ -54,7 +54,7 @@ cf bind-service <application-name> <db-name>
 cf restage <application-name>
 ```
 
-Your database service show now be properly bound to  your application.
+Your database service show now be properly bound to your application.
 
 ### Verifying your bound database service
 
