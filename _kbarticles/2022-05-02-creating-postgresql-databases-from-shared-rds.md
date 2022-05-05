@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Creating databases from a shared PostgreSQL instance using postgres-tinsmith"
+title: "Creating PostgreSQL databases from a shared RDS instance using postgres-tinsmith"
 date: May 5, 2022
-excerpt: How to use postgres-tinsmith service broker to quickly create PostgreSQL databases from a shared database instance
+excerpt: How to use postgres-tinsmith service broker to quickly create PostgreSQL databases from a shared RDS instance
 ---
 
 The cloud.gov team [recently deprecated the shared database instance plans]({{ site.baseurl }}{% link _posts/2022-04-25-deprecation-notice.md %}) of our platform.
