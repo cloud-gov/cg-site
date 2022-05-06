@@ -12,7 +12,7 @@ while to create, shared instance plans re-used the same RDS database instance an
 databases within the same instance, which completed almost instantly.
 
 You can replicate the behavior of the deprecated shared instance plans using an 
-open-source service broker known as [`postgres-tinsmith`](https://github.com/markdboyd/cf-postgres-tinsmith).
+open-source service broker known as [`postgres-tinsmith`](https://github.com/blacksmith-community/cf-postgres-tinsmith).
 
 Please note that while this approach has been tested manually, the `postgres-tinsmith` repo is not
 actively maintained by the cloud.gov team, so this documentation is provided as a **proof-of-concept only and does not offer any guarantees of production-readiness**.
@@ -33,7 +33,7 @@ cf create-service aws-rds micro-psql <dedicated-db-name>
 
 ## 2. Deploy and configure `postgres-tinsmith`
 
-Follow [the instructions in the repo README](https://github.com/markdboyd/cf-postgres-tinsmith) to create and configure the `postgres-tinsmith` service broker.
+Follow [the instructions in the repo README](https://github.com/blacksmith-community/cf-postgres-tinsmith) to create and configure the `postgres-tinsmith` service broker.
 
 Make sure to use the `<dedicated-db-name>` created in step 1 as the database service name to bind to
 `postgres-tinsmith`.
