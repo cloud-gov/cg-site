@@ -33,11 +33,21 @@ jobs:
       - name: Build
         run: npm run build      
 
+      - name: Get changed files using a comma separator
+        id: changed-files-comma
+        uses: tj-actions/changed-files@v19
+
       - name: Set env var for Link Checker args
         id: set_link_checker_args
-        run: |
+        run: |        
           LYCHEE_ARGS="--github-token ${{secrets.GITHUB_TOKEN}}"
-          LYCHEE_ARGS="${LYCHEE_ARGS}  --max-concurrency 64"
+          LYCHEE_ARGS="${LYCHEE_ARGS} --max-concurrency 64"
+          LYCHEE_ARGS="${LYCHEE_ARGS} --verbose"
+          LYCHEE_ARGS="${LYCHEE_ARGS} --no-progress"
+          LYCHEE_ARGS="${LYCHEE_ARGS} './*.md' './_site/**/*.html'"
+
+          echo ${{ steps.changed-files.outputs.added_files }}
+
           echo $LYCHEE_ARGS
 
       - name: Link Checker
@@ -45,6 +55,6 @@ jobs:
         with:
           args: --github-token ${{secrets.GITHUB_TOKEN}} --max-concurrency 64 --verbose --no-progress './*.md' './_site/**/*.html'
           # Temporarily don't fail CI, just run link checker
-          fail: true
+          fail: false
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
