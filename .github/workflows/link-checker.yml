@@ -38,6 +38,7 @@ jobs:
         uses: tj-actions/changed-files@v19
         with:
           base_sha: ${{ github.event.pull_request.base.sha }}
+          separator: '\n'
 
       - name: Set env var for Link Checker args
         id: set_link_checker_args
@@ -52,6 +53,8 @@ jobs:
           LYCHEE_EXCLUDES=$(ADDED_FILES=$ADDED_FILES sh scripts/add-lychee-excludes.sh)
           LYCHEE_ARGS="${LYCHEE_ARGS} ${LYCHEE_EXCLUDES}"
           
+          echo "lychee args: $LYCHEE_ARGS"
+
           echo "LYCHEE_ARGS=${LYCHEE_ARGS}" >> $GITHUB_ENV
 
       # - name: Link Checker
