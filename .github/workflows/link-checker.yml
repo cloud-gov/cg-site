@@ -48,10 +48,12 @@ jobs:
           LYCHEE_ARGS="${LYCHEE_ARGS} --no-progress"
           LYCHEE_ARGS="${LYCHEE_ARGS} './*.md' './_site/**/*.html'"
 
-          ADDED_FILES=${{ steps.changed-files.outputs.added_files }}
-          ADDED_ARTICLES=$(${ADDED_FILES} | grep _kbarticles | xargs basename | cut -f 1 -d '.')
+          for file in ${{ steps.changed-files.outputs.added_files }}; do
+            if grep -q _kbarticles $file; then
+              echo "$file is an article"
+            fi
+          done
 
-          echo $ADDED_ARTICLES
           echo $LYCHEE_ARGS
 
       # - name: Link Checker
