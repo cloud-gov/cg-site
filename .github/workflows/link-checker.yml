@@ -48,7 +48,8 @@ jobs:
           LYCHEE_ARGS="${LYCHEE_ARGS} --no-progress"
           LYCHEE_ARGS="${LYCHEE_ARGS} './*.md' './_site/**/*.html'"
 
-          echo ${{ steps.changed-files.outputs.added_files }}
+          ADDED_FILES=${{ steps.changed-files.outputs.added_files }}
+          echo $ADDED_FILES
 
           echo $LYCHEE_ARGS
 
