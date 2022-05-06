@@ -12,8 +12,4 @@ for article in $ADDED_KBARTICLES; do
     LYCHEE_ARGS="${LYCHEE_ARGS} --exclude ${article}"
 done
 
-echo "lychee args: ${LYCHEE_ARGS}"
-
-if [ -n "${GITHUB_ENV}" ]; then
-    echo "LYCHEE_ARGS=${LYCHEE_ARGS}" >> "${GITHUB_ENV}"
-fi
+echo "$LYCHEE_ARGS"
