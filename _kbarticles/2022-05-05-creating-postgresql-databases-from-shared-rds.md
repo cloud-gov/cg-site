@@ -7,8 +7,9 @@ excerpt: How to use postgres-tinsmith service broker to quickly create PostgreSQ
 
 The cloud.gov team [recently deprecated shared database instance plans]({{ site.baseurl }}{% link _posts/2022-04-25-deprecation-notice.md %}).
 
-Unlike dedicated instance plans, which each provision a
-separate RDS database instance and take a while to create, shared instance plans re-used the same RDS database instance and created new databases within the same instance, which completed almost instantly.
+Unlike dedicated instance plans, which each provision a separate RDS database instance and take a
+while to create, shared instance plans re-used the same RDS database instance and created new
+databases within the same instance, which completed almost instantly.
 
 You can replicate the behavior of the deprecated shared instance plans using an 
 open-source service broker known as [`postgres-tinsmith`](https://github.com/markdboyd/cf-postgres-tinsmith).
@@ -48,32 +49,13 @@ cf create-service postgres shared <db-name>
 
 ## 4. Bind database to your application
 
-### Binding using `manifest.yml`
-
-Update the `manifest.yml` for your application to include a binding for your database service (ensure you use the `<db-name>` created in step 3):
-
-```yaml
----
-applications:
-- name: postgres-example-app
-  instances: 1
-  memory:  64M
-  disk: 64M
-  buildpack: nodejs_buildpack 
-  services:
-   - <db-name>
-```
-
-After a `cf push`, your database service should now be bound to your application. 
-
-### Binding manually
-
 ```shell
 cf bind-service <application-name> <db-name>
 cf restage <application-name>
 ```
 
-Your database service show now be properly bound to your application.
+Alternately, you can [bind the database service to your application using a `manifest.yml` file](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest-attributes.html#services-block).
+
 
 ### Verifying your bound database service
 
