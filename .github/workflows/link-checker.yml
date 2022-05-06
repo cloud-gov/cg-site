@@ -48,9 +48,10 @@ jobs:
           LYCHEE_ARGS="${LYCHEE_ARGS} --no-progress"
           LYCHEE_ARGS="${LYCHEE_ARGS} './*.md' './_site/**/*.html'"
 
-          ADDED_ARTICLES=$(${ADDED_FILES} | grep _kbarticles)
-          echo $ADDED_ARTICLES        
+          ADDED_FILES=${{ steps.changed-files.outputs.added_files }}
+          ADDED_ARTICLES=$(${ADDED_FILES} | grep _kbarticles | xargs basename | cut -f 1 -d '.')
 
+          echo $ADDED_ARTICLES
           echo $LYCHEE_ARGS
 
       # - name: Link Checker
