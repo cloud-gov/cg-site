@@ -8,7 +8,6 @@ LYCHEE_ARGS="${LYCHEE_ARGS} './*.md' './_site/**/*.html'"
 
 ADDED_KBARTICLES=$(echo "${ADDED_FILES}" | grep _kbarticles | xargs basename | cut -f 1 -d '.')
 for article in $ADDED_KBARTICLES; do
-    echo "addding $article to be excluded by link checker"
     LYCHEE_ARGS="${LYCHEE_ARGS} --exclude ${article}"
 done
 

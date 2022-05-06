@@ -44,7 +44,8 @@ jobs:
         run: |        
           ADDED_FILES="${{ steps.changed-files.outputs.added_files }}"
           LYCHEE_ARGS=$(GITHUB_TOKEN=${{secrets.GITHUB_TOKEN}} ADDED_FILES=$ADDED_FILES sh scripts/add-lychee-excludes.sh)
-          echo "$LYCHEE_ARGS"
+          
+          echo "LYCHEE_ARGS=${LYCHEE_ARGS}" >> $GITHUB_ENV
 
       # - name: Link Checker
       #   uses: lycheeverse/lychee-action@v1.4.1
