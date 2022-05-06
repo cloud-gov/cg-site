@@ -48,8 +48,8 @@ jobs:
           LYCHEE_ARGS="${LYCHEE_ARGS} --no-progress"
           LYCHEE_ARGS="${LYCHEE_ARGS} './*.md' './_site/**/*.html'"
 
-          ADDED_FILES=${{ steps.changed-files.outputs.added_files }}
-          echo $ADDED_FILES
+          ADDED_ARTICLES=$(${ADDED_FILES} | grep _kbarticles)
+          echo $ADDED_ARTICLES        
 
           echo $LYCHEE_ARGS
 
