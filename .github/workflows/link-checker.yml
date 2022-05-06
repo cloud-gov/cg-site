@@ -50,7 +50,7 @@ jobs:
 
           ADDED_KBARTICLES=$(echo "${{ steps.changed-files.outputs.added_files }}" | grep _kbarticles | xargs basename | cut -f 1 -d '.')
           for article in $ADDED_KBARTICLES; do
-            echo "added kbarticle: $article"
+            echo "addding $article to be ignored by link checker"
           done
 
           echo $LYCHEE_ARGS
