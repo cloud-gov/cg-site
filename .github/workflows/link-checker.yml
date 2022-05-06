@@ -33,13 +33,17 @@ jobs:
       - name: Build
         run: npm run build      
 
+      - name: Set env var for Link Checker args
+        id: set_link_checker_args
+        run: |
+          LYCHEE_ARGS="--github-token ${{secrets.GITHUB_TOKEN}}"
+          LYCHEE_ARGS="${LYCHEE_ARGS}  --max-concurrency 64"
+          echo $LYCHEE_ARGS
+
       - name: Link Checker
         uses: lycheeverse/lychee-action@v1.4.1
         with:
-          args: `--github-token ${{secrets.GITHUB_TOKEN}} \
-          --max-concurrency 64 \
-          --verbose --no-progress \
-          './*.md' './_site/**/*.html`
+          args: '--github-token ${{secrets.GITHUB_TOKEN}} --max-concurrency 64 --verbose --no-progress './*.md' './_site/**/*.html'
           # Temporarily don't fail CI, just run link checker
           fail: true
         env:
