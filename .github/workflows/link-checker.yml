@@ -42,8 +42,9 @@ jobs:
       - name: Set env var for Link Checker args
         id: set_link_checker_args
         run: |        
-          ADDED_FILES="${{ steps.changed-files.outputs.added_files }}"
-          LYCHEE_ARGS=$(GITHUB_TOKEN=${{secrets.GITHUB_TOKEN}} ADDED_FILES=$ADDED_FILES sh scripts/add-lychee-excludes.sh)
+          LYCHEE_ARGS=$(GITHUB_TOKEN=${{secrets.GITHUB_TOKEN}} \
+            ADDED_FILES=${{ steps.changed-files.outputs.added_files }} \
+            sh scripts/add-lychee-excludes.sh)
           
           echo "LYCHEE_ARGS=${LYCHEE_ARGS}" >> $GITHUB_ENV
 
@@ -52,6 +53,6 @@ jobs:
         with:
           args: ${{ env.LYCHEE_ARGS }}
           # Temporarily don't fail CI, just run link checker
-          fail: false
+          fail: true
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
