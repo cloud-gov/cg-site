@@ -48,10 +48,9 @@ jobs:
           LYCHEE_ARGS="${LYCHEE_ARGS} --no-progress"
           LYCHEE_ARGS="${LYCHEE_ARGS} './*.md' './_site/**/*.html'"
 
-          for file in ${{ steps.changed-files.outputs.added_files }}; do
-            if grep -q _kbarticles $file; then
-              echo "$file is an article"
-            fi
+          ADDED_KBARTICLES=$(${{ steps.changed-files.outputs.added_files }} | grep _kbarticles | xargs basename | cut -f 1 -d '.')
+          for article in $ADDED_KBARTICLES;
+            echo "added kbarticle: $article"
           done
 
           echo $LYCHEE_ARGS
