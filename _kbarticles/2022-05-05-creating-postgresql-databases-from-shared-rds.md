@@ -56,7 +56,6 @@ cf restage <application-name>
 
 Alternately, you can [bind the database service to your application using a `manifest.yml` file](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest-attributes.html#services-block).
 
-
 ### Verifying your bound database service
 
 Running `cf env <application>` (e.g. `cf env postgres-example-app`) should show information about the 
