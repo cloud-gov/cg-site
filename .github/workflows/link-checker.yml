@@ -52,7 +52,6 @@ jobs:
         uses: lycheeverse/lychee-action@v1.4.1
         with:
           args: ${{ env.LYCHEE_ARGS }}
-          # Temporarily don't fail CI, just run link checker
           fail: true
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
