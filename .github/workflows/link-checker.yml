@@ -1,7 +1,7 @@
 name: Link Checker Workflow
 
 on:
-  push
+  pull_request:
 
 jobs:
   link-checker:
@@ -33,11 +33,34 @@ jobs:
       - name: Build
         run: npm run build      
 
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v19
+        with:
+          base_sha: ${{ github.event.pull_request.base.sha }}
+          separator: '\n'
+
+      - name: Set env var for Link Checker args
+        id: set_link_checker_args
+        run: |        
+          LYCHEE_ARGS="--github-token ${{secrets.GITHUB_TOKEN}}"
+          LYCHEE_ARGS="${LYCHEE_ARGS} --max-concurrency 64"
+          LYCHEE_ARGS="${LYCHEE_ARGS} --verbose"
+          LYCHEE_ARGS="${LYCHEE_ARGS} --no-progress"
+          LYCHEE_ARGS="${LYCHEE_ARGS} './*.md' './_site/**/*.html'"
+
+          ADDED_FILES="${{ steps.changed-files.outputs.added_files }}"
+          LYCHEE_EXCLUDES=$(ADDED_FILES=$ADDED_FILES sh scripts/add-lychee-excludes.sh)
+          LYCHEE_ARGS="${LYCHEE_ARGS} ${LYCHEE_EXCLUDES}"
+          
+          echo "lychee args: $LYCHEE_ARGS"
+
+          echo "LYCHEE_ARGS=${LYCHEE_ARGS}" >> $GITHUB_ENV
+
       - name: Link Checker
         uses: lycheeverse/lychee-action@v1.4.1
         with:
-          args: --github-token ${{secrets.GITHUB_TOKEN}} --max-concurrency 64 --verbose --no-progress './*.md' './_site/**/*.html'
-          # Temporarily don't fail CI, just run link checker
+          args: ${{ env.LYCHEE_ARGS }}
           fail: true
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
