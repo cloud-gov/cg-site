@@ -14,7 +14,7 @@ fi
 
 is_federalist_build_successful() {
     curl --silent "https://api.github.com/repos/${GITHUB_REPO}/commits/$GITHUB_SHA/status" \
-        | jq --exit-status -c '.statuses[] | select(.context | contains("federalist/build")) | select(.state | contains("pending"))'
+        | jq --exit-status -c '.statuses[] | select(.context | contains("federalist/build")) | select(.state | contains("success"))'
 }
 
 attempt_counter=0
