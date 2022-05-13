@@ -12,9 +12,10 @@ if [ -z "$GITHUB_SHA" ]; then
     exit 1
 fi
 
+# Query for Federalist build success and return the preview URL if successful
 is_federalist_build_successful() {
-    curl --silent "https://api.github.com/repos/${GITHUB_REPO}/commits/$GITHUB_SHA/status" \
-        | jq --exit-status -c '.statuses[] | select(.context | contains("federalist/build")) | select(.state | contains("success"))'
+    curl --silent "$GITHUB_API_URL/repos/${GITHUB_REPO}/commits/$GITHUB_SHA/status" \
+        | jq --exit-status -r -c '.statuses[] | select(.context | contains("federalist/build")) | select(.state | contains("success")) | .target_url'
 }
 
 attempt_counter=0

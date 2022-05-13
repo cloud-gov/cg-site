@@ -30,37 +30,41 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Build
-        run: npm run build
-
-      - name: Get changed files
-        id: changed-files
-        uses: tj-actions/changed-files@v19
-        with:
-          base_sha: ${{ github.event.pull_request.base.sha }}
-          separator: '\n'
-
-      - name: Set env var for Link Checker args
-        id: set_link_checker_args
+      - name: Wait on federalist build
         run: |
-          LYCHEE_ARGS="--github-token ${{secrets.GITHUB_TOKEN}}"
-          LYCHEE_ARGS="${LYCHEE_ARGS} --max-concurrency 64"
-          LYCHEE_ARGS="${LYCHEE_ARGS} --verbose"
-          LYCHEE_ARGS="${LYCHEE_ARGS} --no-progress"
-          LYCHEE_ARGS="${LYCHEE_ARGS} './*.md' './_site/**/*.html'"
+          echo "run number: $GITHUB_RUN_NUMBER"
 
-          ADDED_FILES="${{ steps.changed-files.outputs.added_files }}"
-          LYCHEE_EXCLUDES=$(ADDED_FILES=$ADDED_FILES sh scripts/add-lychee-excludes.sh)
-          LYCHEE_ARGS="${LYCHEE_ARGS} ${LYCHEE_EXCLUDES}"
+          GITHUB_API_URL=$GITHUB_API_URL \
+            sh scripts/wait-for-federalist-build.sh $GITHUB_REPOSITORY $GITHUB_SHA
+
+      # - name: Get changed files
+      #   id: changed-files
+      #   uses: tj-actions/changed-files@v19
+      #   with:
+      #     base_sha: ${{ github.event.pull_request.base.sha }}
+      #     separator: '\n'
+
+      # - name: Set env var for Link Checker args
+      #   id: set_link_checker_args
+      #   run: |
+      #     LYCHEE_ARGS="--github-token ${{secrets.GITHUB_TOKEN}}"
+      #     LYCHEE_ARGS="${LYCHEE_ARGS} --max-concurrency 64"
+      #     LYCHEE_ARGS="${LYCHEE_ARGS} --verbose"
+      #     LYCHEE_ARGS="${LYCHEE_ARGS} --no-progress"
+      #     LYCHEE_ARGS="${LYCHEE_ARGS} './*.md' './_site/**/*.html'"
+
+      #     ADDED_FILES="${{ steps.changed-files.outputs.added_files }}"
+      #     LYCHEE_EXCLUDES=$(ADDED_FILES=$ADDED_FILES sh scripts/add-lychee-excludes.sh)
+      #     LYCHEE_ARGS="${LYCHEE_ARGS} ${LYCHEE_EXCLUDES}"
           
-          echo "lychee args: $LYCHEE_ARGS"
+      #     echo "lychee args: $LYCHEE_ARGS"
 
-          echo "LYCHEE_ARGS=${LYCHEE_ARGS}" >> $GITHUB_ENV
+      #     echo "LYCHEE_ARGS=${LYCHEE_ARGS}" >> $GITHUB_ENV
 
-      - name: Link Checker
-        uses: lycheeverse/lychee-action@v1.4.1
-        with:
-          args: ${{ env.LYCHEE_ARGS }}
-          fail: true
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      # - name: Link Checker
+      #   uses: lycheeverse/lychee-action@v1.4.1
+      #   with:
+      #     args: ${{ env.LYCHEE_ARGS }}
+      #     fail: true
+      #   env:
+      #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
