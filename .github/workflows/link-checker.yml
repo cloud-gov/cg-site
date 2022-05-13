@@ -31,7 +31,7 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npm run build      
+        run: npm run build
 
       - name: Get changed files
         id: changed-files
@@ -42,7 +42,7 @@ jobs:
 
       - name: Set env var for Link Checker args
         id: set_link_checker_args
-        run: |        
+        run: |
           LYCHEE_ARGS="--github-token ${{secrets.GITHUB_TOKEN}}"
           LYCHEE_ARGS="${LYCHEE_ARGS} --max-concurrency 64"
           LYCHEE_ARGS="${LYCHEE_ARGS} --verbose"
