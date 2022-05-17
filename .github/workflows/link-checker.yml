@@ -38,7 +38,7 @@ jobs:
           separator: '\n'
 
       - name: Wait on federalist build
-        if: steps.changed-files.outputs.added_files.length != ''
+        if: steps.changed-files.outputs.added_files != ''
         run: |
           echo "run number: $GITHUB_RUN_NUMBER"
                     
