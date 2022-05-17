@@ -26,7 +26,7 @@ is_federalist_build_successful() {
     GH_RESPONSE=$(curl --silent "$GITHUB_API_URL/repos/${GITHUB_REPOSITORY}/commits/$GITHUB_SHA/status")
     echo "$GH_RESPONSE"
 
-    jq --version
+    echo "$GH_RESPONSE" | jq '.statuses[]'
 
     BUILD_INFO=$(echo "$GH_RESPONSE" \
         | jq --exit-status -c '.statuses[] | select(.context | contains("federalist/build"))')
