@@ -59,6 +59,31 @@ The dedicated plans listed above (marked "AWS RDS Latest") deploy the default ve
 
 ## Choosing a database plan
 
+For PostgreSQL and MySQL, we offer a range of database plans in different sizes (e.g. `micro-psql`, `small-psql`,
+etc).
+
+The primary differences between each database plan size are the available CPU cores and memory for databases
+created with that plan. These parameters may be important to consider when choosing a plan for an application
+that is heavily CPU-bound or memory-bound.
+
+The maximum number of available database connections will also differ between each plan size, in proportion to
+the available memory of that plan. Unfortunately, specifying the exact maximum number of database connections for
+each plan size is difficult because [the maximum is calculated by AWS using a formula](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Limits.html#RDS_Limits.MaxConnections)
+and not all of the inputs to the formula are known in advance to customers.
+
+In general, the following guidance can be offered for the database plan sizes:
+
+- `micro-*` plans: Good for prototyping and development
+- `small-*` plans: Good for low-traffic applications
+- `medium-*` plans: Good general purpose plan for applications
+- `large-*` plans: Good for high-traffic applications
+- `xlarge-*` plans: Good for very high-traffic applications
+
+Once you have chosen a plan size, you should consider whether you need to run your database in [multiple availability zones](https://aws.amazon.com/rds/features/multi-az/),
+which increases the availability and durability of your database.
+
+For databases used for development or staging environments, redundancy may not be as critical. **But for databases used in production applications, you should always use a `*-redundant` database plan.**
+
 ## Create an instance
 
 To create a service instance run the following command:
