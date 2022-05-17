@@ -30,19 +30,19 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v19
+        with:
+          base_sha: ${{ github.event.pull_request.base.sha }}
+          separator: '\n'
+
       - name: Wait on federalist build
+        if: steps.changed-files.outputs.added_files.length != ''
         run: |
           echo "run number: $GITHUB_RUN_NUMBER"
-
-          GITHUB_API_URL=$GITHUB_API_URL \
-            sh scripts/wait-for-federalist-build.sh $GITHUB_REPOSITORY $GITHUB_SHA
-
-      # - name: Get changed files
-      #   id: changed-files
-      #   uses: tj-actions/changed-files@v19
-      #   with:
-      #     base_sha: ${{ github.event.pull_request.base.sha }}
-      #     separator: '\n'
+                    
+          sh scripts/wait-for-federalist-build.sh
 
       # - name: Set env var for Link Checker args
       #   id: set_link_checker_args
