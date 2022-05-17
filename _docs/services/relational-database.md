@@ -29,14 +29,14 @@ Plan Name                   | Description                                       
 `xlarge-gp-psql-redundant`  | Multi-AZ RDS instance of PostgreSQL, minimum 2 cores, minimum 16 GiB memory        | AWS RDS Latest Default |
 `small-mysql`               | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 2 GiB memory                                        | AWS RDS Latest Default |
 `small-mysql-redundant`     | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 2 GiB memory                              | AWS RDS Latest Default |
-`medium-mysql`              | Single-AZ RDS instance of MySQL v8, minimum 2 cores, minimum 4 GiB memory                                       | AWS RDS Latest Default |
-`medium-mysql-redundant`    | Multi-AZ RDS instance of MySQL v8, minimum 2 cores, minimum 4 GiB memory                             | AWS RDS Latest Default |
-`medium-gp-mysql`           | Single-AZ RDS instance of MySQL v8, minimum 1 core, minimum 8 GiB memory                       | AWS RDS Latest Default |
-`medium-gp-mysql-redundant` | Multi-AZ RDS instance of MySQL v8, minimum 1 core, minimum 8 GiB memory             | AWS RDS Latest Default |
-`large-gp-mysql`            | Single-AZ RDS instance of MySQL v8, minimum 1 core, minimum 8 GiB memory                       | AWS RDS Latest Default |
-`large-gp-mysql-redundant`  | Multi-AZ RDS instance of MySQL v8, minimum 1 core, minimum 8 GiB memorye              | AWS RDS Latest Default |
-`xlarge-gp-mysql`           | Single-AZ RDS instance of MySQL v8, minimum 2 cores, minimum 16 GiB memory                      | AWS RDS Latest Default |
-`xlarge-gp-mysql-redundant` | Multi-AZ RDS instance of MySQL v8, minimum 2 cores, minimum 16 GiB memory            | AWS RDS Latest Default |
+`medium-mysql`              | Single-AZ RDS instance of MySQL, minimum 2 cores, minimum 4 GiB memory                                       | AWS RDS Latest Default |
+`medium-mysql-redundant`    | Multi-AZ RDS instance of MySQL, minimum 2 cores, minimum 4 GiB memory                             | AWS RDS Latest Default |
+`medium-gp-mysql`           | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory                       | AWS RDS Latest Default |
+`medium-gp-mysql-redundant` | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory             | AWS RDS Latest Default |
+`large-gp-mysql`            | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory                       | AWS RDS Latest Default |
+`large-gp-mysql-redundant`  | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memorye              | AWS RDS Latest Default |
+`xlarge-gp-mysql`           | Single-AZ RDS instance of MySQL, minimum 2 cores, minimum 16 GiB memory                      | AWS RDS Latest Default |
+`xlarge-gp-mysql-redundant` | Multi-AZ RDS instance of MySQL, minimum 2 cores, minimum 16 GiB memory            | AWS RDS Latest Default |
 `medium-oracle-se2`         | Single-AZ RDS instance of Oracle SE2, minimum 1 core, minimum 4 GiB memory                                           | AWS RDS Latest Default |
 
 *Only the `micro-psql` and `small-mysql` plans are available in [sandbox spaces]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}#sandbox-limitations).*
