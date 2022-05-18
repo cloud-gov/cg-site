@@ -47,7 +47,7 @@ You can always view an up-to-date version of this list directly in your command 
 cf marketplace -s aws-rds
 ```
 
-Or, the following command (using `cf` CLI version 7):
+Or, the following command (using `cf` CLI version 7 or later):
 
 ```sh
 cf marketplace -e aws-rds
