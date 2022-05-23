@@ -40,7 +40,7 @@ jobs:
       - name: Wait on federalist build
         if: steps.changed-files.outputs.added_files != ''
         run: |
-          echo "sha: ${{github.sha}}"
+          echo "sha: ${{ github.sha }}"
           DEBUG=1 bash scripts/wait-for-federalist-build.sh
 
       # - name: Set env var for Link Checker args
