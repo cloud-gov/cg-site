@@ -46,8 +46,10 @@ jobs:
       - name: Build website using Federalist preview URL
         if: steps.changed-files.outputs.added_files != ''
         run: |
-          echo "url: ${{ env.FEDERALIST_BUILD_URL }}" > _config_ci.yml
-          npm run build -- --config _config.yml,_config.ci.yml
+          CI_CONFIG_FILE="_config_ci.yml"
+          echo "url: ${{ env.FEDERALIST_BUILD_URL }}" > $CI_CONFIG_FILE
+          echo "github_branch: $GITHUB_REF" >> $CI_CONFIG_FILE
+          npm run build -- --config _config.yml,$CI_CONFIG_FILE
 
       # - name: Set env var for Link Checker args
       #   id: set_link_checker_args
