@@ -23,18 +23,18 @@ debug() {
 
 # Query for Federalist build success and return the preview URL if successful
 is_federalist_build_successful() {
-    debug "SHA: $GITHUB_SHA"
-    
+    # debug "SHA: $GITHUB_SHA"
+
     GH_RESPONSE=$(curl --silent "$GITHUB_API_URL/repos/${GITHUB_REPOSITORY}/commits/$GITHUB_SHA/status")
-    debug "$GH_RESPONSE"
+    # debug "$GH_RESPONSE"
 
     BUILD_INFO=$(echo "$GH_RESPONSE" \
         | jq --exit-status -c '.statuses[] | select(.context | contains("federalist/build"))')
 
-    debug "$BUILD_INFO"
+    # debug "$BUILD_INFO"
 
     BUILD_STATE=$(echo "$BUILD_INFO" | jq -r '.state')
-    debug "build state: $BUILD_STATE"
+    # debug "build state: $BUILD_STATE"
 
     if [ "$BUILD_STATE" = "success" ]; then
         echo "$BUILD_INFO" | jq -r '.target_url'
