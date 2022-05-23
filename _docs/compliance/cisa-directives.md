@@ -12,7 +12,7 @@ The Cybersecurity and Infrastructure Security Agency (CISA) periodically issues 
 In response to CISA Emergency Directives, cloud.gov will:
 * provide required applicability information in our [FedRAMP secure repository: https://community.max.gov/x/mjypgg](https://community.max.gov/x/mjypgg)
 * provide status updates via our support channel to any authorized customer that requests it.
-* notify agency authorizing officials, customers and community of the applicability update via our [public status service: https://cloudgov.statuspage.io](https://cloudgov.statuspage.io).
+* notify agency authorizing officials, customers, and community of the applicability update via our [public status service: https://cloudgov.statuspage.io](https://cloudgov.statuspage.io).
   * (posted as a "Resolved Incident" that impacts "cloud.gov compliance notification" (operational), with "Send Notification")
 
 We will no longer be publicly providing our specific compliance status, as future directives could apply to components in the cloud.gov system.
