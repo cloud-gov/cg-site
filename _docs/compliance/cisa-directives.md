@@ -11,10 +11,23 @@ The Cybersecurity and Infrastructure Security Agency (CISA) periodically issues 
 
 In response to CISA Emergency Directives, cloud.gov will:
 * provide required applicability information in our [FedRAMP secure repository: https://community.max.gov/x/mjypgg](https://community.max.gov/x/mjypgg)
+* provide status updates via our support channel to any authorized customer that requests it.
 * notify customers and community of the applicability update via our [public status service: https://cloudgov.statuspage.io](https://cloudgov.statuspage.io).
   *  (posted as a "Resolved Incident" that impacts "cloud.gov compliance notification" (operational), with "Send Notification")
 
-We will no longer be publicly providing our specific directive compliance status, as future directives could apply to components in the cloud.gov system. 
+We will no longer be publicly providing our specific compliance status, as future directives could apply to components in the cloud.gov system.
+
+# FY2022
+
+## CISA Emergency Directive 22-03, “Mitigate VMware Vulnerabilities.”
+
+In response to CISA Emergency Directive 22-03, “Mitigate VMware Vulnerabilities”
+(https://www.cisa.gov/emergency-directive-22-03)
+cloud.gov has provided required applicability information in our FedRAMP secure repository: https://community.max.gov/x/mjypgg. Customers can use the FedRAMP repository, or open a cloud.gov support request.
+
+## CISA Emergency Directive 22-02, “Mitigate log4j Vulnerability”
+
+Please see our page, [Log4J Vulnerability / ED 22-02 Update](https://cloud.gov/2021/12/22/log4j_vulnerability_bod_22-02_update/).
 
 # FY2021
 
