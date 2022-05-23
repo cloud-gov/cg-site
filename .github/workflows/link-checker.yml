@@ -40,7 +40,14 @@ jobs:
       - name: Wait on federalist build
         if: steps.changed-files.outputs.added_files != ''
         run: |
-          DEBUG=1 GITHUB_SHA=${{ github.event.pull_request.head.sha }} bash scripts/wait-for-federalist-build.sh
+          FEDERALIST_BUILD_URL=$(GITHUB_SHA=${{ github.event.pull_request.head.sha }} bash scripts/wait-for-federalist-build.sh)
+          echo "FEDERALIST_BUILD_URL=$FEDERALIST_BUILD_URL" >> $GITHUB_ENV
+
+      - name: Build website using Federalist preview URL
+        if: steps.changed-files.outputs.added_files != ''
+        run: |
+          echo "url: ${{ env.FEDERALIST_BUILD_URL }}" > _config_ci.yml
+          npm run build -- --config _config.yml,_config.ci.yml
 
       # - name: Set env var for Link Checker args
       #   id: set_link_checker_args
