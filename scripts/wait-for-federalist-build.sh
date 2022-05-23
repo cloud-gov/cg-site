@@ -23,8 +23,6 @@ debug() {
 
 # Query for Federalist build success and return the preview URL if successful
 is_federalist_build_successful() {
-    debug "SHA: $GITHUB_SHA"
-
     GH_RESPONSE=$(curl --silent "$GITHUB_API_URL/repos/${GITHUB_REPOSITORY}/commits/$GITHUB_SHA/status")
     debug "$GH_RESPONSE"
 
@@ -44,6 +42,8 @@ is_federalist_build_successful() {
 
 attempt_counter=0
 max_attempts=20
+
+debug "SHA: $GITHUB_SHA"
 
 while ! is_federalist_build_successful; do
     if [ ${attempt_counter} -eq ${max_attempts} ]; then
