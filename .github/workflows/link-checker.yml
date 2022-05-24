@@ -40,7 +40,7 @@ jobs:
       - name: Wait on federalist build
         if: steps.changed-files.outputs.added_files != ''
         run: |
-          FEDERALIST_BUILD_URL=$(GITHUB_SHA=${{ github.event.pull_request.head.sha }} bash scripts/wait-for-federalist-build.sh)
+          FEDERALIST_BUILD_URL=$(DEBUG=1 GITHUB_SHA=${{ github.event.pull_request.head.sha }} bash scripts/wait-for-federalist-build.sh)
           echo "FEDERALIST_BUILD_URL=$FEDERALIST_BUILD_URL" >> $GITHUB_ENV
 
       - name: Build website using Federalist preview URL
