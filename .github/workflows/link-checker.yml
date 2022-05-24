@@ -43,7 +43,7 @@ jobs:
           FEDERALIST_BUILD_URL=$(DEBUG=1 GITHUB_SHA=${{ github.event.pull_request.head.sha }} bash scripts/wait-for-federalist-build.sh)
           echo "FEDERALIST_BUILD_URL=$FEDERALIST_BUILD_URL" >> $GITHUB_ENV
 
-      - name: Build website using Federalist preview URL
+      - name: Build website using branch-specific configuration
         if: steps.changed-files.outputs.added_files != ''
         run: |
           CI_CONFIG_FILE="_config_ci.yml"
