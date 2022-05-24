@@ -1,24 +1,36 @@
-- package_name: Basic Support
+- package_name: Platform Support
   description: >
-    This is the support level of our existing cloud.gov agreements.
-    If you run into any issues with the underlying platform, we will
-    resolve them at no cost.
+    This is the support level for previous cloud.gov agreements. If you run into
+    any issues with the underlying cloud.gov platform, we will resolve them at
+    no additional cost. If you run into technical problems with your
+    application, we can point you to useful resources but cannot devote
+    meaningful time on your applications.
   price: <h3>Free</h3>
   hours: Limited to platform issues
+  image: platform-support.svg
+- package_name: Basic Support
+  description: >
+    This is the default support level for new cloud.gov agreements. This package
+    includes all services provided in <em>Platform Support</em>, plus 10hrs of support
+    time that our engineers can devote to resolving issues with your specific
+    applications.
+  price: <h3><sup>$</sup>2750 &#47; year</h3>
+  hours: 10<sup>hrs</sup> &#47; per year
   image: basic-support.svg
 - package_name: Supplemental Support
   description: >
-    This package includes everything from Basic Support,
-    plus 150hrs of support time that our engineers can devote
-    to resolving issues with your specific applications
-  price: <h3><sup>$</sup>41,250 &#47; year</h3><span>for entire organization</span>
+    This package includes everything from <em>Platform Support</em>, plus 150hrs of support
+    time that our engineers can devote to resolving issues with your specific
+    applications
+  price: <h3><sup>$</sup>41,250 &#47; year</h3>
   hours: 150<sup>hrs</sup> &#47; per year
   image: supplemental-support.svg
 - package_name: Premium Support
   description: >
-    This package includes everything from Basic Support,
-    plus 600hrs of support time and the option for a bi-weekly
-    standing meeting with our engineers.
-  price: <h3><sup>$</sup>165,000 &#47; year</h3><span>for entire organization</span>
+    This package includes all services provided in <em>Platform Support</em>, plus 600hrs
+    of support time that our engineers can devote to resolving issues with your
+    specific applications. The Requesting Agency will also have the option for a
+    bi-weekly standing meeting with our engineers.
+  price: <h3><sup>$</sup>165,000 &#47; year</h3>
   hours: 600<sup>hrs</sup> &#47; per year
   image: premium-support.svg
