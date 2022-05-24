@@ -51,6 +51,10 @@ jobs:
           echo "github_branch: $GITHUB_REF" >> $CI_CONFIG_FILE
           npm run build -- --config _config.yml,$CI_CONFIG_FILE
 
+      - name: Build website with normal configuration
+        if: steps.changed-files.outputs.added_files == ''
+        run: npm run build
+
       - name: Link Checker
         uses: lycheeverse/lychee-action@v1.4.1
         with:
