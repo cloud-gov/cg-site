@@ -51,27 +51,10 @@ jobs:
           echo "github_branch: $GITHUB_REF" >> $CI_CONFIG_FILE
           npm run build -- --config _config.yml,$CI_CONFIG_FILE
 
-      # - name: Set env var for Link Checker args
-      #   id: set_link_checker_args
-      #   run: |
-      #     LYCHEE_ARGS="--github-token ${{secrets.GITHUB_TOKEN}}"
-      #     LYCHEE_ARGS="${LYCHEE_ARGS} --max-concurrency 64"
-      #     LYCHEE_ARGS="${LYCHEE_ARGS} --verbose"
-      #     LYCHEE_ARGS="${LYCHEE_ARGS} --no-progress"
-      #     LYCHEE_ARGS="${LYCHEE_ARGS} './*.md' './_site/**/*.html'"
-
-      #     ADDED_FILES="${{ steps.changed-files.outputs.added_files }}"
-      #     LYCHEE_EXCLUDES=$(ADDED_FILES=$ADDED_FILES sh scripts/add-lychee-excludes.sh)
-      #     LYCHEE_ARGS="${LYCHEE_ARGS} ${LYCHEE_EXCLUDES}"
-          
-      #     echo "lychee args: $LYCHEE_ARGS"
-
-      #     echo "LYCHEE_ARGS=${LYCHEE_ARGS}" >> $GITHUB_ENV
-
-      # - name: Link Checker
-      #   uses: lycheeverse/lychee-action@v1.4.1
-      #   with:
-      #     args: ${{ env.LYCHEE_ARGS }}
-      #     fail: true
-      #   env:
-      #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v1.4.1
+        with:
+          args: --github-token ${{secrets.GITHUB_TOKEN}} --max-concurrency 64 --verbose --no-progress './*.md' './_site/**/*.html'
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
