@@ -36,7 +36,6 @@ A summary of each of the ASGs that can be applied to your space are as follows:
   - ASG name: `public_networks_egress`
   - Requests being executed from within the space [can successfully be sent to the open internet]({{ site.baseurl }}{% link _docs/management/static-egress.md %}) and other internal routes you have created in your organization.
   - Applications can make requests to third party APIs.
-  - Applications can connect to our brokered services.
   - Any requests to our brokered services will be blocked.
 
 When you push your application to cloud.gov, the staging process may require outbound connections to the public internet to fetch dependencies and software modules. As such, during the staging process, your app will run under the `public-egress` until it is staged and ready to run. Once this process is complete, your app will run under the ASGs that have been applied, either by default or by modifications that have been made to your space.
