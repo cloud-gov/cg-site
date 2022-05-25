@@ -30,9 +30,6 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Build
-        run: npm run build      
-
       - name: Get changed files
         id: changed-files
         uses: tj-actions/changed-files@v19
@@ -40,27 +37,28 @@ jobs:
           base_sha: ${{ github.event.pull_request.base.sha }}
           separator: '\n'
 
-      - name: Set env var for Link Checker args
-        id: set_link_checker_args
-        run: |        
-          LYCHEE_ARGS="--github-token ${{secrets.GITHUB_TOKEN}}"
-          LYCHEE_ARGS="${LYCHEE_ARGS} --max-concurrency 64"
-          LYCHEE_ARGS="${LYCHEE_ARGS} --verbose"
-          LYCHEE_ARGS="${LYCHEE_ARGS} --no-progress"
-          LYCHEE_ARGS="${LYCHEE_ARGS} './*.md' './_site/**/*.html'"
+      - name: Wait on federalist build
+        if: steps.changed-files.outputs.added_files != ''
+        run: |
+          FEDERALIST_BUILD_URL=$(DEBUG=1 GITHUB_SHA=${{ github.event.pull_request.head.sha }} bash scripts/wait-for-federalist-build.sh)
+          echo "FEDERALIST_BUILD_URL=$FEDERALIST_BUILD_URL" >> $GITHUB_ENV
 
-          ADDED_FILES="${{ steps.changed-files.outputs.added_files }}"
-          LYCHEE_EXCLUDES=$(ADDED_FILES=$ADDED_FILES sh scripts/add-lychee-excludes.sh)
-          LYCHEE_ARGS="${LYCHEE_ARGS} ${LYCHEE_EXCLUDES}"
-          
-          echo "lychee args: $LYCHEE_ARGS"
+      - name: Build website using branch-specific configuration
+        if: steps.changed-files.outputs.added_files != ''
+        run: |
+          CI_CONFIG_FILE="_config_ci.yml"
+          echo "url: ${{ env.FEDERALIST_BUILD_URL }}" > $CI_CONFIG_FILE
+          echo "github_branch: $GITHUB_REF" >> $CI_CONFIG_FILE
+          npm run build -- --config _config.yml,$CI_CONFIG_FILE
 
-          echo "LYCHEE_ARGS=${LYCHEE_ARGS}" >> $GITHUB_ENV
+      - name: Build website with normal configuration
+        if: steps.changed-files.outputs.added_files == ''
+        run: npm run build
 
       - name: Link Checker
         uses: lycheeverse/lychee-action@v1.4.1
         with:
-          args: ${{ env.LYCHEE_ARGS }}
-          fail: false
+          args: --github-token ${{secrets.GITHUB_TOKEN}} --max-concurrency 64 --verbose --no-progress './*.md' './_site/**/*.html'
+          fail: true
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
