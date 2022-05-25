@@ -13,7 +13,7 @@ By default, when new spaces are created in your organization an application secu
 
 A summary of each of the ASGs that can be applied to your space are as follows:
 
-| ASG Type | Public Web | AWS S3 | AWS RDS | AWS Elasticache Redis | AWS Elastic Search | Internal Routes |
+| ASG Type | Public Web | AWS S3 | AWS RDS | AWS EC Redis | AWS Elastic Search | Internal Routes |
 | :-------- |  :-:  | :--: | :-------: | :---------------------: | :-----------------: | :---------------: |
 | `closed-egress`     | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
 | `restricted-egress` | ❌  | ❌ | ✅ | ✅ | ✅ | ✅ |
