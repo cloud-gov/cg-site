@@ -17,7 +17,7 @@ A summary of each of the ASGs that can be applied to your space are as follows:
 | :-------- |  :-:  | :--: | :-------: | :---------------------: | :-----------------: | :---------------: |
 | `closed-egress`     | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
 | `restricted-egress` | ❌  | ❌ | ✅ | ✅ | ✅ | ✅ |
-| `public-egress`     | ✅  | ✅ | ✅ | ✅ | ✅ | ✅ | 
+| `public-egress`     | ✅  | ✅ | ❌ | ❌ | ❌ | ✅ | 
 
 
 - ### `closed-egress`
@@ -26,15 +26,17 @@ A summary of each of the ASGs that can be applied to your space are as follows:
   - Any requests to the open internet or our brokered services will be blocked.
 
 - ### `restricted-egress`
+  - ASG name: `trusted_local_networks_egress`
   - Requests being executed from within the space can only successfully be sent to some of our brokered services or other internal routes you have created in your organization.
     - Accessible brokered services: [AWS RDS](https://cloud.gov/docs/services/relational-database/), [AWS Elasticache Redis](https://cloud.gov/docs/services/aws-elasticache/), [AWS Elasticsearch](https://cloud.gov/docs/services/aws-elasticsearch/).
     - Inaccessible brokered service: [S3 Object Storage](https://cloud.gov/docs/services/s3/).
   - Any requests to the open internet are blocked.
 
 - ### `public-egress`
+  - ASG name: `public_networks_egress`
   - Requests being executed from within the space [can successfully be sent to the open internet]({{ site.baseurl }}{% link _docs/management/static-egress.md %}) and other internal routes you have created in your organization.
   - Applications can make requests to third party APIs.
-  - Applications can connect to our brokered services.
+  - Any requests to our brokered services will be blocked.
 
 When you push your application to cloud.gov, the staging process may require outbound connections to the public internet to fetch dependencies and software modules. As such, during the staging process, your app will run under the `public-egress` until it is staged and ready to run. Once this process is complete, your app will run under the ASGs that have been applied, either by default or by modifications that have been made to your space.
 
