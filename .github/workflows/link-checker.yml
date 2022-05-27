@@ -39,14 +39,11 @@ jobs:
 
       - name: Wait on federalist build
         id: wait-federalist-build
+        if: steps.changed-files.outputs.added_files != ''
         uses: markdboyd/wait-federalist-build-action
         with:
           DEBUG: 'true'
           COMMIT_SHA: ${{ github.event.pull_request.head.sha }}
-        if: steps.changed-files.outputs.added_files != ''
-        run: |
-          FEDERALIST_BUILD_URL=$(DEBUG=1 GITHUB_SHA=${{ github.event.pull_request.head.sha }} bash scripts/wait-for-federalist-build.sh)
-          echo "FEDERALIST_BUILD_URL=$FEDERALIST_BUILD_URL" >> $GITHUB_ENV
 
       - name: Build website using branch-specific configuration
         if: steps.changed-files.outputs.added_files != ''
