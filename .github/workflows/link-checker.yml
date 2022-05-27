@@ -40,7 +40,7 @@ jobs:
       - name: Wait on federalist build
         id: wait-federalist-build
         if: steps.changed-files.outputs.added_files != ''
-        uses: markdboyd/wait-federalist-build-action
+        uses: markdboyd/wait-federalist-build-action@main
         with:
           DEBUG: 'true'
           COMMIT_SHA: ${{ github.event.pull_request.head.sha }}
