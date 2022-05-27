@@ -42,8 +42,8 @@ jobs:
         if: steps.changed-files.outputs.added_files != ''
         uses: markdboyd/wait-federalist-build-action@main
         with:
-          DEBUG: 'true'
-          COMMIT_SHA: ${{ github.event.pull_request.head.sha }}
+          debug: 'true'
+          commit-sha: ${{ github.event.pull_request.head.sha }}
 
       - name: Build website using branch-specific configuration
         if: steps.changed-files.outputs.added_files != ''
