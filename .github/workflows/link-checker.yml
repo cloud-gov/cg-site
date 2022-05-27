@@ -38,6 +38,11 @@ jobs:
           separator: '\n'
 
       - name: Wait on federalist build
+        id: wait-federalist-build
+        uses: markdboyd/wait-federalist-build-action
+        with:
+          DEBUG: 'true'
+          COMMIT_SHA: ${{ github.event.pull_request.head.sha }}
         if: steps.changed-files.outputs.added_files != ''
         run: |
           FEDERALIST_BUILD_URL=$(DEBUG=1 GITHUB_SHA=${{ github.event.pull_request.head.sha }} bash scripts/wait-for-federalist-build.sh)
@@ -47,7 +52,7 @@ jobs:
         if: steps.changed-files.outputs.added_files != ''
         run: |
           CI_CONFIG_FILE="_config_ci.yml"
-          echo "url: ${{ env.FEDERALIST_BUILD_URL }}" > $CI_CONFIG_FILE
+          echo "url: ${{ steps.wait-federalist-build.outputs.preview-url }}" > $CI_CONFIG_FILE
           echo "github_branch: $GITHUB_REF" >> $CI_CONFIG_FILE
           npm run build -- --config _config.yml,$CI_CONFIG_FILE
 
