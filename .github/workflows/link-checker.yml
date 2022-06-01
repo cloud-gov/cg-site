@@ -50,7 +50,7 @@ jobs:
         run: |
           CI_CONFIG_FILE="_config_ci.yml"
           echo "url: ${{ steps.wait-federalist-build.outputs.preview-url }}" > $CI_CONFIG_FILE
-          echo "github_branch: $GITHUB_REF" >> $CI_CONFIG_FILE
+          echo "github_branch: ${{ github.event.pull_request.head.ref }}" >> $CI_CONFIG_FILE
           npm run build -- --config _config.yml,$CI_CONFIG_FILE
 
       - name: Build website with normal configuration
