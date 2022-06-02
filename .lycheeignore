@@ -1,7 +1,6 @@
-# General URLs/patterns to ignore 
+# General URLs/patterns to ignore
 localhost
 s3://
-.*\.cloud\.gov
 https://api.instance-public-ip.xip.io
 https://xyz.instance-public-ip.xip.io/
 your-test-email-address@cloud.gov
@@ -13,6 +12,8 @@ https://s3-\$\{(AWS_DEFAULT_REGION|aws_default_region)\}.amazonaws.com/
 http://\$\{(bucket_name|BUCKET_NAME)\}.s3-website-\$\{(AWS_DEFAULT_REGION|aws_default_region)\}.amazonaws.com/
 https://username:password
 192\.0\.2\.[0-9]{1,3}
+^https://ssl.?$
+^http://www.?$
 
 # URLs with no known replacements
 https://fugacious.18f.gov/
