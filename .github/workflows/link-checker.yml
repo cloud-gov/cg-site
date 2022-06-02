@@ -52,7 +52,9 @@ jobs:
         if: steps.changed-files.outputs.added_files != ''
         run: |
           CI_CONFIG_FILE="_config_ci.yml"
-          echo "url: ${{ steps.wait-federalist-build.outputs.preview-url }}" > $CI_CONFIG_FILE
+          PREVIEW_URL=${{ steps.wait-federalist-build.outputs.preview-url }}
+          # strip trailing slash to make link checking work properly
+          echo "url: ${PREVIEW_URL%/}" > $CI_CONFIG_FILE
           echo "github_branch: ${{ github.event.pull_request.head.ref }}" >> $CI_CONFIG_FILE
           npm run build -- --config _config.yml,$CI_CONFIG_FILE
 
