@@ -1,7 +1,6 @@
 # General URLs/patterns to ignore
 localhost
 s3://
-.*\.cloud\.gov
 https://api.instance-public-ip.xip.io
 https://xyz.instance-public-ip.xip.io/
 your-test-email-address@cloud.gov
