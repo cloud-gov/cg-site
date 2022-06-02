@@ -15,7 +15,6 @@ https://username:password
 ^https://ssl.?$
 ^http://www.?$
 .*\.fr\.cloud\.gov
-<!-- .*\.app\.cloud\.gov -->
 
 # URLs with no known replacements
 https://fugacious.18f.gov/
