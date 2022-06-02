@@ -28,9 +28,10 @@ https://www.fedramp.gov/assets/resources/documents/CSP_TLS_Requirements.pdf
 http://docs.cloudfoundry.org/deploying/aws/cf-stub.html
 http://docs.cloudfoundry.org/deploying/common/consul-security.html
 https://docs.cloudfoundry.org/deploying/common/consul-security.html
-https://console.cloud.gov/
+http://console.cloud.gov/
 https://dashboard.cloud.gov/
 https://login.cloud.gov/
 https://spring-music-adjective-animal.app.cloud.gov/appinfo
 https://flask-example-fluent-okapi.app.cloud.gov/
 https://appname.app.cloud.gov/
+https://docs.cloud.gov/getting-started/one-off-tasks/#cf-ssh
