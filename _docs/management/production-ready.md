@@ -90,7 +90,7 @@ It's best not to serve static files from cloud.gov directly.
 * You can [store your files in S3]({{ site.baseurl }}{% link _docs/services/s3.md %}) or point CloudFront to an assets folder so you serve your assets with a CDN.
 
 ### Custom domain name
-When you need a domain name dedicated for your application, DNS delegation for the domain is the easiest path to getting the domain up and running.
+When launching your application to production, you should deploy it to production using a custom domain name (a `.gov` or `.mil` TLD). When you are ready to launch to production, DNS delegation for the domain is the easiest path to getting the domain up and running.
 
 #### How
 * See [custom domains]({{ site.baseurl }}{% link _docs/management/custom-domains.md %}).
