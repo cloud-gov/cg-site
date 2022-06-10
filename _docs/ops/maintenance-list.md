@@ -42,7 +42,7 @@ that cards to fix alerts are prioritized properly.
 
 ## Review open support requests
 
-* Review the "new" (yellow) and "open" (red) Zendesk tickets. 
+* Review the New (yellow) and Open (red) Zendesk tickets. 
 * `Tier 1` support has primary responsibility to do the work of answering these, and
 you serve as second-tier support providing technical expertise. 
 * If `Tier 1` support personnel need assistance in responding to a customer issue, they will escalate the ticket to the `Platform experts` group in Zendesk. Your main responsibility is to provide technical
