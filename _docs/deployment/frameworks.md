@@ -44,7 +44,7 @@ You can deploy example applications in many languages and frameworks:
 
 Several cloud.gov customers have their code available as open source for review and reuse, including:
 
-* [Dept of Justice Civil Rights Portal](https://github.com/usdoj-crt/crt-portal): Python Django application running https://civilrights.justice.gov
+* [Dept of Justice Civil Rights Portal](https://github.com/usdoj-crt/crt-portal): Python Django application running at [civilrights.justice.gov](https://civilrights.justice.gov)
 * [ATF eRegulations](https://github.com/18F/atf-eregs): Python Django application that uses PostgreSQL.
 * [College Scorecard API](https://github.com/RTICWDT/open-data-maker/): Ruby application with an Elasticsearch backend.
 * [Federal Election Commission API](https://github.com/fecgov/openFEC): Python application with PostgreSQL and Elasticsearch backends.
