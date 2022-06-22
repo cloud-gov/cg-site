@@ -32,7 +32,7 @@ Components run as applications on top of the platform, for users:
 
 Components run as applications on top of the platform, for our team:
 
-- [Compliance documentation system diagrams](https://github.com/cloud-gov/cg-diagramss)
+- [Compliance documentation system diagrams](https://github.com/cloud-gov/cg-diagrams)
 
 Custom components for our Cloud Foundry deployment:
 
