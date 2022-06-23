@@ -9,7 +9,7 @@ title: Ongoing platform maintenance
 
 ## Daily maintenance checklist
 
-The tasks on this checklist should be performed each day but the members of the `Platform experts` group currently on support rotation.
+The tasks on this checklist should be performed each day by the members of the `Platform experts` group currently on support rotation.
 
 ### PR as you go
 
