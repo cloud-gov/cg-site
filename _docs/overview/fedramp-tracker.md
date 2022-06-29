@@ -42,4 +42,4 @@ The [**Control Implementation Summary (CIS) + Customer Responsibility Matrix (CR
 
 ## Start the ATO process
 
-If you want to authorize cloud.gov, [**request the P-ATO documentation package from FedRAMP**](https://www.fedramp.gov/assets/resources/documents/Agency_Package_Request_Form.pdf) (the Package ID for that form is F1607067912). You can also view the [FedRAMP Marketplace page for cloud.gov](https://marketplace.fedramp.gov/#/product/18f-cloudgov?sort=productName).
+If you want to authorize cloud.gov, [**request the P-ATO documentation package from FedRAMP**](https://www.fedramp.gov/assets/resources/documents/Agency_Package_Request_Form.pdf) (the Package ID for that form is F1607067912). GSA customers can use the [DocuSign Template](https://app.docusign.com/templates?view=shared) for a "FedRAMP Package Access Request". You can also view the [FedRAMP Marketplace page for cloud.gov](https://marketplace.fedramp.gov/#/product/18f-cloudgov?sort=productName).
