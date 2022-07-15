@@ -278,3 +278,6 @@ feed:
       path: "/support.xml"
   excerpt_only: true
   posts_limit: 20
+
+include:
+  - .well-known
