@@ -288,12 +288,12 @@ input {
   }
 }
 output {
-        elasticsearch {
-          hosts => ["127.0.0.1:9200"]
-          # update "index" and "prefix" to the appropriate date
-          index => "reindex-logs-app-2020.12.31"
-          manage_template => false
-        }
+  elasticsearch {
+    hosts => ["127.0.0.1:9200"]
+    # update "index" and "prefix" to the appropriate date
+    index => "reindex-logs-app-2020.12.31"
+    manage_template => false
+  }
 }
 ```
 
@@ -313,7 +313,7 @@ Run logstash passing in your edited configuration file:
 export TIMECOP_REJECT_LESS_THAN_HOURS=$((180 * 24))
 source /var/vcap/packages/openjdk-11/bosh/runtime.env
 rm /var/vcap/data/ingestor_syslog/tmp/s3_import.sincedb
-/var/vcap/packages/logstash/bin/logstash --path.config /var/vcap/data/ingestor_syslog/tmp/logstash-restore.config
+/var/vcap/packages/logstash/bin/logstash --path.config /var/vcap/data/ingestor_syslog/tmp/logstash-restore.conf
 ```
 
 ### Monitor progress
