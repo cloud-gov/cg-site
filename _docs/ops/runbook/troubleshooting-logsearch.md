@@ -311,8 +311,8 @@ Run logstash passing in your edited configuration file:
 
 ```sh
 export TIMECOP_REJECT_LESS_THAN_HOURS=$((180 * 24))
-export JAVA_HOME=/var/vcap/packages/openjdk-11/jre
-rm /tmp/s3_import.sincedb
+source /var/vcap/packages/openjdk-11/bosh/runtime.env
+rm /var/vcap/data/ingestor_syslog/tmp/s3_import.sincedb
 /var/vcap/packages/logstash/bin/logstash --path.config /var/vcap/data/ingestor_syslog/tmp/logstash-restore.config
 ```
 
