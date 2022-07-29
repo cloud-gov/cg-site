@@ -60,7 +60,7 @@ First, target and get a token for the main CloudFoundry UAA, and make the user a
 
 ```sh
 cd /path/to/cg-scripts
-# on a jumpbox, you can do uaa/login.sh instead of the next two commands
+# on a jumpbox, run this instead of the next two commands: ./uaa/login.sh
 uaac target <CF_UAA_FQDN>
 uaac token client get admin -s <CF_UAA_ADMINCLIENT_PASSPHRASE>
 ./make-cf-admin.sh <EMAIL_ADDRESS>
@@ -69,7 +69,7 @@ uaac token client get admin -s <CF_UAA_ADMINCLIENT_PASSPHRASE>
 Secondly, target and get a token for the Ops UAA, and then make the user a Concourse admin using their GSA email address.
 
 ```sh
-# on a jumpbox, you can do uaa/login.sh instead of the next two commands
+# on a jumpbox, run this instead of the next two commands: ./uaa/login.sh
 uaac target <OPS_UAA_FQDN>
 uaac token client get admin -s <OPS_UAA_ADMINCLIENT_PASSPHRASE>
 ./make-ops-admin.sh <EMAIL_ADDRESS>
@@ -81,7 +81,7 @@ First, target and get a token for the main CloudFoundry UAA, and remove the user
 
 ```sh
 cd /path/to/cg-scripts
-# on a jumpbox, you can do uaa/login.sh instead of the next two commands
+# on a jumpbox, run this instead of the next two commands: ./uaa/login.sh
 uaac target <CF_UAA_FQDN>
 uaac token client get admin -s <CF_UAA_ADMINCLIENT_PASSPHRASE>
 ./make-cf-admin.sh -r <EMAIL_ADDRESS>
@@ -91,7 +91,7 @@ Secondly, target and get a token for the Ops UAA, and then remove the user as a 
 
 ```sh
 cd /path/to/cg-scripts
-# on a jumpbox, you can do uaa/login.sh instead of the next two commands
+# on a jumpbox, run this instead of the next two commands: ./uaa/login.sh
 uaac target <OPS_UAA_FQDN>
 uaac token client get admin -s <OPS_UAA_ADMINCLIENT_PASSPHRASE>
 ./make-ops-admin.sh -r <EMAIL_ADDRESS>
