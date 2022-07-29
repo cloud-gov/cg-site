@@ -76,7 +76,7 @@ Edit the `/tmp/logstash-restore.conf` and make the following changes:
 
 #### Update the "input" block to only contain S3 information
 
-```
+```conf
 input {
   s3 {
     bucket => ":bucket:"
@@ -100,13 +100,13 @@ When run with default configuration the S3 input plugin will reindex ALL data in
 
 For example, to reindex only data from November 15th, 1968 use a `prefix` to limit to files that match that date:
 
-```
+```conf
 prefix => "1968/11/15"
 ```
 
 To reindex data from a specific hour of that day, include that in the `prefix`:
 
-```
+```conf
 prefix => "1968/11/15/08"
 ```
 
@@ -121,7 +121,7 @@ Using the default configuration logstash will reindex documents into an index fo
 
 Add this stanza to the end of the `filters` section in `/var/vcap/data/ingestor_syslog/tmp/logstash-restore.conf`
 
-```
+```conf
 mutate {
   add_field => {"index-date" => "%{@timestamp}"}
 }
@@ -156,7 +156,7 @@ export TIMECOP_REJECT_LESS_THAN_HOURS=$((180 * 24))
 You must go in to the AWS console and adjust the IAM role policy for the environment ingestor you are restoring in, then
 attach the role policy to the ingestor VM you are working in.  When you find the IAM role policy, make sure the Allow Actions match this block:
 
-```
+```text
 "s3:PutObject",
 "s3:DeleteObject",
 "s3:GetObject",
@@ -168,7 +168,7 @@ attach the role policy to the ingestor VM you are working in.  When you find the
 
 Then make sure that Allow Resources matches this block:
 
-```
+```text
 "arn:${aws_partition}:s3:::logsearch-*/*",
 "arn:${aws_partition}:s3:::logsearch-*"
 ```
@@ -180,8 +180,8 @@ Save the role policy adjustments, then attach the role policy to the ingestor VM
 Run logstash passing in your edited configuration file:
 
 ```sh
-export JAVA_HOME=/var/vcap/packages/openjdk-11/jre
-/var/vcap/packages/logstash/bin/logstash --path.config /var/vcap/data/ingestor_syslog/tmp/logstash-restore.config
+source /var/vcap/packages/openjdk-11/bosh/runtime.env
+/var/vcap/packages/logstash/bin/logstash --path.config /var/vcap/data/ingestor_syslog/tmp/logstash-restore.conf
 ```
 
 ### Monitor reindexing progress
@@ -198,7 +198,7 @@ disown
 watch cat /var/vcap/data/ingestor_syslog/tmp/s3_import.sincedb
 ```
 
-When the proocess has finishing ingesting up to the point at which you are done, kill the background process:
+When the process has finishing ingesting up to the point at which you are done, kill the background process:
 
 ```sh
 # Find the pid (process ID) of the logstash process you put in the background:
