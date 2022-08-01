@@ -19,6 +19,6 @@
 - package_name: Supplemental Support
   description: >
     This package includes all services provided in Platform Support, plus the number of hours that best supports your team (at $275/hour) that our engineers can devote to resolving issues with your specific applications.<br>
-  price: <h3>$250/hour</h3>
+  price: <h3>$275/hour</h3>
   hours: Based on how many hours you choose
   image: premium-support.svg
