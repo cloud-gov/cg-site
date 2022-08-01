@@ -150,7 +150,26 @@ redirect_from:
           </li>
         </ul>
       </div>
-      <div class="grid-row grid-gap">
+      <div class="tablet:grid-col-6 usa-prose">
+        <ul class="column-single">
+          <li>
+            S3 object store -  5TB included<br><i>  $100/month per additional terabyte</i>
+          </li>
+          <li>
+            Postgres, MySQL, Oracle database - 1TB included<br><i>$300/month per additional additional terabyte</i>
+          </li>
+          <li>
+            Elasticsearch RESTful search and analytics<br><i>$200/month per node for medium (each medium instance has 5-7 nodes provisioned), $400/month per node for large (each large instance has 5-7 nodes provisioned), $600 for extra-large (each extra-large instance has 5-7 nodes provisioned), and 6 medium nodes included for FISMA Moderate</i>
+          </li>
+          <li>
+            Elasticache (Redis) in-memory data store - 10 nodes included<br><i>$200/month per 10 nodes block</i>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="usa-section">
+    <div class="grid-row grid-gap">
       <div class="tablet:grid-col-7 usa-prose">
         <h3>Additional charges</h3>
       </div>
@@ -171,8 +190,6 @@ redirect_from:
             Elasticache (Redis) in-memory data store - 10 nodes included<br><i>$200/month per 10 nodes block</i>
           </li>
         </ul>
-      </div>
-    </div>
     </div>
   </section>
   <section class="usa-section">
