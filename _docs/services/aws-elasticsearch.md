@@ -24,7 +24,8 @@ Service Name | Plan Name | Description | Number of nodes |
 
 ## Pricing
 
-$200/month per node for **medium**, $400/month per node for **large**, $600 per node for **extra-large**. Six nodes included for customers using the FISMA Moderate plan. More information on the [pricing page]({{ site.baseurl }}{% link _pages/pricing.md %}).
+Elasticsearch RESTful search and analytics
+$200/month per node for **medium** (each medium instance has 5-7 nodes provisioned), $400/month per node for **large** (each large instance has 5-7 nodes provisioned), $600 for **extra-large** (each extra-large instance has 5-7 nodes provisioned), and 6 medium nodes included for FISMA Moderate. More information on the [pricing page]({{ site.baseurl }}{% link _pages/pricing.md %}).
 
 ## When to use
 
