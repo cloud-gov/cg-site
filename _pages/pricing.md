@@ -150,6 +150,12 @@ redirect_from:
           </li>
         </ul>
       </div>
+      <div class="grid-row grid-gap">
+      <div class="tablet:grid-col-7 usa-prose">
+        <h3>Additional charges</h3>
+      </div>
+    </div>
+    <div class="grid-row grid-gap">
       <div class="tablet:grid-col-6 usa-prose">
         <ul class="column-single">
           <li>
@@ -166,6 +172,7 @@ redirect_from:
           </li>
         </ul>
       </div>
+    </div>
     </div>
   </section>
   <section class="usa-section">
