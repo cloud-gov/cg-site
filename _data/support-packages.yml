@@ -12,13 +12,13 @@
   image: supplemental-support.svg
 - package_name: Premium <br>Support
   description: >
-    This package includes all services provided in Platform Support, plus 50hrs of support time that our engineers can devote to resolving issues with your specific applications. The Requesting Agency will also have the option for a bi-weekly standing meeting with our engineers.
+    This package includes all services provided in Platform Support, plus 50hrs of support time that our engineers can devote to resolving issues with your specific applications. You will also have the option for a bi-weekly standing meeting with our engineers.
   price: <h3>$13,750/year</h3>
   hours: 50 hours per year
   image: premium-support.svg
 - package_name: Supplemental Support
   description: >
-    This package includes all services provided in Platform Support, plus the number of hours that best supports your team (at $275/hour) that our engineers can devote to resolving issues with your specific applications.<br>
+    This package includes all services provided in Platform Support, plus the number of hours that you choose which best supports your team (at $275/hour) that our engineers can devote to resolving issues with your specific applications.<br>
   price: <h3>$275/hour</h3>
   hours: Based on how many hours you choose
   image: premium-support.svg
