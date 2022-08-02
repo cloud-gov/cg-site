@@ -36,11 +36,11 @@ If the user requesting a reset has any apps, routes, or services in their sandbo
     cf delete-service service
     ```
 
-2. Remove user's permissions to all [spaces and orgs](https://docs.cloudfoundry.org/adminguide/cli-user-management.html#orgs-spaces) other than their sandbox. Search for the user in the Admin interface to locate the relevant orgs and spaces. 
+2. Remove user's permissions to all [spaces and orgs](https://docs.cloudfoundry.org/adminguide/cli-user-management.html#orgs-spaces) other than their sandbox. Search for the user in the Admin interface to locate the relevant orgs and spaces.
 
-    For those spaces and orgs, notify the Space Managers and Org Managers that we've removed the user's access because of their request to reset their account's authentication application. 
-    
-3. Reset the user's totp_seed in cloudfoundry's uaa database. 
+    For those spaces and orgs, notify the Space Managers and Org Managers that we've removed the user's access because of their request to reset their account's authentication application.
+
+3. Reset the user's totp_seed in cloudfoundry's uaa database.
 
     Login to a **[concourse jumpbox]({{ site.baseurl }}{% link _docs/ops/runbook/troubleshooting-bosh.md %}#creating-and-intercepting-ephemeral-jumpboxes)** and run the `reset-totp.sh` script:
 
@@ -51,13 +51,16 @@ If the user requesting a reset has any apps, routes, or services in their sandbo
      > I've reset your one-time password. To regain cloud.gov access, log in to cloud.gov again. After entering your username/password combination, you should be prompted to set up a new one-time password with your authenticator app (for example, 1password, Microsoft Authenticator, or Authy).  Since this reset removed your roles on orgs and spaces, you may need to request additional access from your Space Managers and Org Managers again. If you had a sandbox space, that has been reset and is available to you again.
 
 ## Managing Admins
+
 Make sure you have a copy of the [cg-scripts repository](https://github.com/18F/cg-scripts) so you have access to several utility scripts.
 
 ### Creating Admins
+
 First, target and get a token for the main CloudFoundry UAA, and make the user a CloudFoundry admin using their GSA email address.
 
 ```sh
 cd /path/to/cg-scripts
+# on a jumpbox, run this instead of the next two commands: ./uaa/login.sh
 uaac target <CF_UAA_FQDN>
 uaac token client get admin -s <CF_UAA_ADMINCLIENT_PASSPHRASE>
 ./make-cf-admin.sh <EMAIL_ADDRESS>
@@ -66,16 +69,19 @@ uaac token client get admin -s <CF_UAA_ADMINCLIENT_PASSPHRASE>
 Secondly, target and get a token for the Ops UAA, and then make the user a Concourse admin using their GSA email address.
 
 ```sh
+# on a jumpbox, run this instead of the next two commands: ./uaa/login.sh
 uaac target <OPS_UAA_FQDN>
 uaac token client get admin -s <OPS_UAA_ADMINCLIENT_PASSPHRASE>
 ./make-ops-admin.sh <EMAIL_ADDRESS>
 ```
 
 ### Removing Admins
+
 First, target and get a token for the main CloudFoundry UAA, and remove the user as a CloudFoundry admin using their GSA email address.
 
 ```sh
 cd /path/to/cg-scripts
+# on a jumpbox, run this instead of the next two commands: ./uaa/login.sh
 uaac target <CF_UAA_FQDN>
 uaac token client get admin -s <CF_UAA_ADMINCLIENT_PASSPHRASE>
 ./make-cf-admin.sh -r <EMAIL_ADDRESS>
@@ -85,6 +91,7 @@ Secondly, target and get a token for the Ops UAA, and then remove the user as a 
 
 ```sh
 cd /path/to/cg-scripts
+# on a jumpbox, run this instead of the next two commands: ./uaa/login.sh
 uaac target <OPS_UAA_FQDN>
 uaac token client get admin -s <OPS_UAA_ADMINCLIENT_PASSPHRASE>
 ./make-ops-admin.sh -r <EMAIL_ADDRESS>
@@ -109,7 +116,6 @@ cf curl /v3/users/${user_guid} -X DELETE
 
 You can clean up UAA groups via [cg-scripts/remove-user-guid-from-all-groups.sh](https://github.com/cloud-gov/cg-scripts/blob/master/uaa/remove-user-guid-from-all-groups.sh) or manually using `uaac member remove`.
 
-
 ### Deleting Users
 
 If a user requests deletion of their cloud.gov account, check to make sure that the user is not an org manager, org auditor, or billing manager - if they are, these roles may need to be transferred to someone else prior to deleting their account. If they are a user in a sandbox account, you may also need to manually remove any services or apps from their sandbox account, and remove their space in the sandbox org.
@@ -121,4 +127,3 @@ If the user is a user in a sandbox account:
 
 * Delete any services and apps in the user's sandbox space.
 * Delete the user's sandbox space with: `cf delete-space {user-name} -o {sandbox-org-name}`
-
