@@ -152,7 +152,7 @@ redirect_from:
       </div>
     </div>
   </section>
-    <section class="usa-section">
+  <section class="usa-section">
     <div class="grid-row grid-gap">
       <div class="tablet:grid-col-7 usa-prose">
         <h3>Additional charges</h3>
