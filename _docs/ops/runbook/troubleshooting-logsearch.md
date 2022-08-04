@@ -165,12 +165,9 @@ input {
 }
 ```
 
-The values for `:bucket:` and `:region:` can be found in [cg-provision](https://github.com/18F/cg-provision/blob/main/terraform/modules/cloudfoundry/buckets.tf#L25-L30)
-or retrieved from the bosh manifest:
-
-```sh
-bosh -d logsearch manifest
-```
+The values for `:bucket:` and `:region:` can be retrieved from the bosh manifest
+by running `bosh -d logsearch manifest` and searching the output for `bucket`
+and `region`.
 
 **When run with default configuration the S3 input plugin will reindex ALL data in
 the bucket**. To reindex a specific subset of data pass
@@ -342,7 +339,11 @@ In this process, we'll:
 
 ### Create a new index to index documents into
 
-We need to create a new index for the day with the correct settings and mappings, but if it matches the Kibana index pattern, users will see duplicate logs for the whole process. To get the correct settings but not match the patterns, we'll stash the settings and mappings from an existing index, and use an index name that doesn't match index patterns in Kibana.
+We need to create a new index for the day with the correct settings and
+mappings, but if it matches the Kibana index pattern, users will see duplicate
+logs for the whole process. To get the correct settings but not match the
+patterns, we'll stash the settings and mappings from an existing index, and use
+an index name that doesn't match index patterns in Kibana.
 
 Modify this and run it from a jumpbox:
 
@@ -372,6 +373,13 @@ any `ingestor` node:
 
 ```sh
 bosh -d logsearch ssh ingestor/0
+```
+
+Once you are in the VM, make sure to login as root so you have permissions to create
+and edit files:
+
+```sh
+sudo -i
 ```
 
 Make a copy of its current logstash configuration:
@@ -408,16 +416,17 @@ output {
 ```
 
 The values for `:bucket:` and `:region:` can be retrieved from the bosh manifest
-by running `bosh -d logsearch manifest` and searching the output for the `bucket`
-property.
+by running `bosh -d logsearch manifest` and searching the output for `bucket`
+and `region`.
 
 ### Run the reindexing
 
-1. [Adjust IAM permissions to allow reindexing](#adjust-the-iam-role-policy-to-allow-the-reindexing-to-read-from-the-s3-bucket)
+1. [Add IAM role policy to allow reindexing](#adjust-the-iam-role-policy-to-allow-the-reindexing-to-read-from-the-s3-bucket)
 1. [Disable the Timecop filter](#disable-the-timecop-filter)
 1. [Start the reindexing](#start-the-reindexing)
 1. [Monitor reindexing process](#monitor-reindexing-progress)
-1. [Recreate the ingestor](#recreate-ingestor-and-restore-iam-role-policy)
+1. [Recreate the ingestor VM](#recreate-the-ingestor-vm)
+1. [Remove IAM role policy](#remove-iam-role-policy)
 
 ### Alias the new index and drop the old
 
