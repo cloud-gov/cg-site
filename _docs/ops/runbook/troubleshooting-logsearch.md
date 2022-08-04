@@ -64,6 +64,12 @@ Also note that you may want to pause some Concourse pipelines before starting
 this work so that redeployments don't disrupt your progress, particularly those
 that would impact logsearch.
 
+### Checklist
+
+The steps to restore data from S3 are:
+
+1. Create a custom logstash.conf for the restore operation
+
 ### Create a custom logstash.conf for the restore operation
 
 Log into any `ingestor` node and make a copy of its current logstash configuration.
@@ -177,9 +183,11 @@ index => "logs-%{@index_type}-%{[@metadata][index-date]}"
 
 ### Disable the timecop filter
 
-The default Logsearch-for-CloudFoundry configuration will drop any messages older than 24 hours. When reindexing older data this sanity check needs to be disabled.
+The default Logsearch-for-CloudFoundry configuration will drop any messages older
+than 24 hours. When reindexing older data this sanity check needs to be disabled.
 
-To disable the timecop filter set the environment variable `TIMECOP_REJECT_LESS_THAN_HOURS` to match the desired rentention policy:
+To disable the timecop filter, set the environment variable
+`TIMECOP_REJECT_LESS_THAN_HOURS` to match the desired retention policy:
 
 ```sh
 export TIMECOP_REJECT_LESS_THAN_HOURS=$((180 * 24))
@@ -187,9 +195,9 @@ export TIMECOP_REJECT_LESS_THAN_HOURS=$((180 * 24))
 
 ### Adjust the IAM role policy to allow the reindexing to read from the S3 bucket
 
-You must go in to the AWS console and adjust the IAM role policy for the environment
-ingestor you are restoring in, then attach the role policy to the ingestor VM you
-are working in.
+To give the ingestor node access to read backups from S3, you must go in to the
+AWS console and adjust the IAM role policy for the environment
+ingestor you are restoring in.
 
 You can find information about your ingestor VM by running:
 
@@ -197,27 +205,43 @@ You can find information about your ingestor VM by running:
 bosh -d logsearch vms
 ```
 
-When you find the IAM role policy, make sure the Allow Actions match this block:
+For the VM with an instance name beginning with "kibana", take note of the value
+from the `VM CID` column, which is the actual ID of the EC2 instance. Use this
+value to find the VM in the AWS EC2 console.
 
-```text
-"s3:PutObject",
-"s3:DeleteObject",
-"s3:GetObject",
-"s3:ListObjects",
-"s3:ListObjectsV2",
-"s3:ListObjectVersions",
-"s3:ListBucket"
+Once you have found the EC2 instance for the VM, click on the name of the value
+for the "IAM Role" property to view the IAM role page. Then click on
+"Add permissions -> Create inline policy" and a JSON policy like the block below.
+Name the policy `logsearch-restore-s3-<bucket>` so it can be
+easily identified and removed later.
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": "arn:${aws_partition}:s3:::logsearch-*/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket"
+      ],
+      "Resource": "arn:${aws_partition}:s3:::logsearch-*"
+    }
+  ]
+}
 ```
 
-Then make sure that Allow Resources matches this block:
+To determine what value to use for `${aws_partition}`, view the bucket ARN
+in the S3 console.
 
-```text
-"arn:${aws_partition}:s3:::logsearch-*/*",
-"arn:${aws_partition}:s3:::logsearch-*"
-```
-
-Save the role policy adjustments, then attach the role policy to the ingestor VM
-you are working in.
+Save the new role policy and the VM should now have the appropriate permissions
+to fetch backups from S3 for ingestion.
 
 ### Start the reindexing
 
@@ -253,15 +277,19 @@ ps aux | grep <process name>
 kill <pid>
 ```
 
-### Recreate ingestor and restore IAM role policy
+### Recreate ingestor
 
-To restore the ingestor to known good configuration after the restore, recreate the VM:
+To restore the ingestor to known good configuration after the restore, recreate
+the VM:
 
 ```sh
 bosh -d logsearch recreate ingestor/0
 ```
 
-This will also remove the IAM role policy you added to the VM.  Finally, restore the IAM role policy itself.  Refer to the current policy definition in the [logsearch IAM role policy](https://github.com/cloud-gov/cg-provision/blob/master/terraform/modules/iam_role_policy/logsearch_ingestor/policy.json) to revert the changes properly and save the changes.
+### Remove IAM role policy
+
+Find the IAM role for the ingestor VM in the AWS console and remove the
+`logsearch-restore-s3-<bucket>` IAM role policy that you created previously.
 
 ### If you need to rerun the reindexing
 
@@ -269,7 +297,8 @@ When running the reindexing, if there is an issue at any point and you need to r
 
 ## Reindexing whole days from S3
 
-Indexing a whole day makes it easier to align the start/end times of a reingest, but it's slower than reindexing a partial day
+Indexing a whole day makes it easier to align the start/end times of a reingest,
+but it's slower than reindexing a partial day.
 
 ### Overview
 
