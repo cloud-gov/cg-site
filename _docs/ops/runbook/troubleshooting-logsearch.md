@@ -62,7 +62,8 @@ ElasticSearch is corrupted or lost.
 
 Also note that you may want to pause some Concourse pipelines before starting
 this work so that redeployments don't disrupt your progress, particularly those
-that would impact logsearch.
+that would impact Logsearch. If you're not sure which pipelines are used
+for deploying Logsearch, consult a teammate.
 
 The steps to restore data from S3 are:
 
@@ -290,12 +291,16 @@ disown
 watch cat /var/vcap/data/ingestor_syslog/tmp/s3_import.sincedb
 ```
 
+You will know that the ingest has completed when the output of `watch cat`
+stops being updated and the timestamp in the output seems to correspond to the
+end of the time period that you are reindexing.
+
 When the process has finishing ingesting up to the point at which you are done,
 kill the background process:
 
 ```sh
 # Find the pid (process ID) of the logstash process you put in the background:
-ps aux | grep <process name>
+ps aux | grep /var/vcap/data/ingestor_syslog/tmp/logstash-restore.conf
 
 # Terminate the process:
 kill <pid>
