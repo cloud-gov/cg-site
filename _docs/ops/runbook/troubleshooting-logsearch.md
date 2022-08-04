@@ -64,11 +64,65 @@ Also note that you may want to pause some Concourse pipelines before starting
 this work so that redeployments don't disrupt your progress, particularly those
 that would impact logsearch.
 
-### Checklist
-
 The steps to restore data from S3 are:
 
+1. Adjust the IAM role policy to allow the reindexing to read from the S3 bucket
 1. Create a custom logstash.conf for the restore operation
+1. Optional - Disable the timecop filter
+1. Start the reindexing
+1. Monitor reindexing progress
+1. Recreate the ingestor VM
+1. Remove IAM role policy for reindexing
+
+### Add IAM role policy to allow the reindexing to read from the S3 bucket
+
+To give the ingestor node access to read backups from S3, you must go in to the
+AWS console and adjust the IAM role policy for the environment
+ingestor you are restoring in.
+
+You can find information about your ingestor VM by running:
+
+```shell
+bosh -d logsearch vms
+```
+
+For the VM with an instance name beginning with "kibana", take note of the value
+from the `VM CID` column, which is the actual ID of the EC2 instance. Use this
+value to find the VM in the AWS EC2 console.
+
+Once you have found the EC2 instance for the VM, click on the name of the value
+for the "IAM Role" property to view the IAM role page. Then click on
+"Add permissions -> Create inline policy" and a JSON policy like the block below.
+Name the policy `logsearch-restore-s3-<bucket>` so it can be
+easily identified and removed later.
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": "arn:${aws_partition}:s3:::logsearch-*/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket"
+      ],
+      "Resource": "arn:${aws_partition}:s3:::logsearch-*"
+    }
+  ]
+}
+```
+
+To determine what value to use for `${aws_partition}`, view the bucket ARN
+in the S3 console.
+
+Save the new role policy and the VM should now have the appropriate permissions
+to fetch backups from S3 for ingestion.
 
 ### Create a custom logstash.conf for the restore operation
 
@@ -193,56 +247,6 @@ To disable the timecop filter, set the environment variable
 export TIMECOP_REJECT_LESS_THAN_HOURS=$((180 * 24))
 ```
 
-### Adjust the IAM role policy to allow the reindexing to read from the S3 bucket
-
-To give the ingestor node access to read backups from S3, you must go in to the
-AWS console and adjust the IAM role policy for the environment
-ingestor you are restoring in.
-
-You can find information about your ingestor VM by running:
-
-```shell
-bosh -d logsearch vms
-```
-
-For the VM with an instance name beginning with "kibana", take note of the value
-from the `VM CID` column, which is the actual ID of the EC2 instance. Use this
-value to find the VM in the AWS EC2 console.
-
-Once you have found the EC2 instance for the VM, click on the name of the value
-for the "IAM Role" property to view the IAM role page. Then click on
-"Add permissions -> Create inline policy" and a JSON policy like the block below.
-Name the policy `logsearch-restore-s3-<bucket>` so it can be
-easily identified and removed later.
-
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "s3:GetObject"
-      ],
-      "Resource": "arn:${aws_partition}:s3:::logsearch-*/*"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "s3:ListBucket"
-      ],
-      "Resource": "arn:${aws_partition}:s3:::logsearch-*"
-    }
-  ]
-}
-```
-
-To determine what value to use for `${aws_partition}`, view the bucket ARN
-in the S3 console.
-
-Save the new role policy and the VM should now have the appropriate permissions
-to fetch backups from S3 for ingestion.
-
 ### Start the reindexing
 
 Run logstash passing in your edited configuration file:
@@ -254,7 +258,11 @@ source /var/vcap/packages/openjdk-11/bosh/runtime.env
 
 ### Monitor reindexing progress
 
-Logstash will run forever once started. Monitor the progress of the reindex, and stop logstash once the data has been reindexed. Progress can be monitored by first setting turning the logstash reindexing to a background process and then by tailing the sincedb file which logstash will update after each file it processes:
+Logstash will run forever once started. Monitor the progress of the reindex, and
+stop logstash once the data has been reindexed. Progress can be monitored by
+first setting turning the logstash reindexing to a background process and then
+by tailing the sincedb file which logstash will update after each file it
+processes:
 
 ```sh
 # While logstash process is running in your foreground:
@@ -277,7 +285,7 @@ ps aux | grep <process name>
 kill <pid>
 ```
 
-### Recreate ingestor
+### Recreate the ingestor VM
 
 To restore the ingestor to known good configuration after the restore, recreate
 the VM:
@@ -291,9 +299,11 @@ bosh -d logsearch recreate ingestor/0
 Find the IAM role for the ingestor VM in the AWS console and remove the
 `logsearch-restore-s3-<bucket>` IAM role policy that you created previously.
 
-### If you need to rerun the reindexing
+### Rerun the reindexing
 
-When running the reindexing, if there is an issue at any point and you need to restart, make whatever adjustments you need to and be sure to remove any of the new `.sincedb` files created before starting again.
+When running the reindexing, if there is an issue at any point and you need to
+restart, make whatever adjustments you need to and be sure to remove any of the
+new `.sincedb` files created before starting again.
 
 ## Reindexing whole days from S3
 
