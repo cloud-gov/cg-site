@@ -126,11 +126,24 @@ to fetch backups from S3 for ingestion.
 
 ### Create a custom logstash.conf for the restore operation
 
-Log into any `ingestor` node and make a copy of its current logstash configuration.
+From the jumpbox of the environment where you want to do the reindexing, log into
+any `ingestor` node:
 
 ```sh
 bosh -d logsearch ssh ingestor/0
+```
 
+Once you are in the VM, make sure to login as root so you have permissions to create
+and edit files:
+
+```sh
+sudo -i
+```
+
+Make a copy of the current logstash configuration, which will be modified for the
+reindexing:
+
+```sh
 cp /var/vcap/jobs/ingestor_syslog/config/logstash.conf /var/vcap/data/ingestor_syslog/tmp/logstash-restore.conf
 ```
 
@@ -178,7 +191,11 @@ prefix => "1968/11/15/08"
 You're able to go down to the minute; check the S3 bucket to verify the path(s)
 that you would like to reindex.
 
-Lastly, if you want to run multiple months, days, hours or minutes, you can declare multiple S3 blocks with the unique prefix paths (e.g., `2021/01/00`, `2021/01/01`, `2021/01/02/00`) to run multiple batches of data without needing to rerun and update the S3 block settings. Each block just needs a unique prefix and unique `.sincedb` file. For example:
+Lastly, if you want to run multiple months, days, hours or minutes, you can
+declare multiple S3 blocks with the unique prefix paths (e.g., `2021/01/00`,
+`2021/01/01`, `2021/01/02/00`) to run multiple batches of data without needing
+to rerun and update the S3 block settings. Each block just needs a unique prefix
+and unique `.sincedb` file. For example:
 
 ```conf
 input {
@@ -203,16 +220,15 @@ input {
 
 #### Optional: Configure logstash to handle partial day data
 
-**Note: These instructions are for indexing arbitrary lengths of time into the existing
-daily indices.** It's often easier to reindex a whole day's data, replacing the
-existing index for that day. [See the instructions for reindexing a whole day's
-data from S3](#reindexing-whole-days-from-s3).
+**Note: These instructions are only necessary when indexing partial day data
+into existing indices (e.g. prefix => `2022/05/07/00`).** It's often easier to
+[reindex a whole day's data, replacing the existing index for that day](#replacing-indices-and-reindexing-whole-days-from-s3).
 
 Using the default configuration logstash will reindex documents into an index for
 the current day. To avoid this, configure logstash to generate indexes based on
 the timestamps in the data being imported from S3.
 
-Add this stanza to the end of the `filters` section in `/var/vcap/data/ingestor_syslog/tmp/logstash-restore.conf`
+Add this stanza to the end of the `filters` section in `/var/vcap/data/ingestor_syslog/tmp/logstash-restore.conf`:
 
 ```conf
 mutate {
@@ -305,7 +321,7 @@ When running the reindexing, if there is an issue at any point and you need to
 restart, make whatever adjustments you need to and be sure to remove any of the
 new `.sincedb` files created before starting again.
 
-## Reindexing whole days from S3
+## Replacing indices and reindexing whole days from S3
 
 Indexing a whole day makes it easier to align the start/end times of a reingest,
 but it's slower than reindexing a partial day.
@@ -346,11 +362,16 @@ curl -XPUT ${ELASTICSEARCH_IP_PORT}/${NEW_INDEX} \
 
 ### Create a custom logstash.conf for the restore operation
 
-Log into any `ingestor` node and make a copy of its current logstash configuration.
+From the jumpbox of the environment where you want to do the reindexing, log into
+any `ingestor` node:
 
 ```sh
 bosh -d logsearch ssh ingestor/0
+```
 
+Make a copy of its current logstash configuration:
+
+```sh
 cp /var/vcap/jobs/ingestor_syslog/config/logstash.conf /var/vcap/data/ingestor_syslog/tmp/logstash-restore.conf
 ```
 
@@ -364,8 +385,6 @@ input {
   s3 {
     bucket => ":bucket:"
     region => ":region:"
-    access_key_id => ":access_key_id:"
-    secret_access_key => ":secret_access_key:"
     # update "prefix" to appropriate date
     prefix => "2020/12/31"
 
@@ -383,8 +402,9 @@ output {
 }
 ```
 
-The values for `:bucket:` and `:region:` can be found in [cg-provision](https://github.com/18F/cg-provision/blob/master/terraform/modules/cloudfoundry/buckets.tf#L25-L30)
-or retrieved from the bosh manifest via `bosh -d logsearch manifest`.
+The values for `:bucket:` and `:region:` can be retrieved from the bosh manifest
+by running `bosh -d logsearch manifest` and searching the output for the `bucket`
+property.
 
 ### Run the reindexing
 
@@ -396,7 +416,11 @@ or retrieved from the bosh manifest via `bosh -d logsearch manifest`.
 
 ### Alias the new index and drop the old
 
-To make the logs in the new index available to users, we'll create an alias to make it match Kibana's index pattern. Then, to make it so duplicate logs don't show, we'll drop the old index. Validate the index was successful before following these steps. Checking the number of documents and the timestamps on the oldest and newest are some checks you can run.
+To make the logs in the new index available to users, we'll create an alias to
+make it match Kibana's index pattern. Then, to make it so duplicate logs don't
+show, we'll drop the old index. Validate the index was successful before
+following these steps. Checking the number of documents and the timestamps on
+the oldest and newest are some checks you can run.
 
 ```shell
 curl -XPOST localhost:9200/_aliases -d '{"actions": [ {"add": {"index": "reindex-logs-app-2020.12.31", "alias": "logs-app-2020.12.31-reindex"}}]}' -H "content-type: application/json"
