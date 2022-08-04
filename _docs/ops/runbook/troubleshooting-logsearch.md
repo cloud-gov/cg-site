@@ -84,8 +84,6 @@ input {
   s3 {
     bucket => ":bucket:"
     region => ":region:"
-    access_key_id => ":access_key_id:"
-    secret_access_key => ":secret_access_key:"
 
     type => "syslog"
     sincedb_path => "/var/vcap/data/ingestor_syslog/tmp/s3_import.sincedb"
@@ -117,7 +115,8 @@ To reindex data from a specific hour of that day, include that in the `prefix`:
 prefix => "1968/11/15/08"
 ```
 
-You're able to go down to the minute; check the S3 bucket to verify the path(s) that you would like to reindex.
+You're able to go down to the minute; check the S3 bucket to verify the path(s)
+that you would like to reindex.
 
 Lastly, if you want to run multiple months, days, hours or minutes, you can declare multiple S3 blocks with the unique prefix paths (e.g., `2021/01/00`, `2021/01/01`, `2021/01/02/00`) to run multiple batches of data without needing to rerun and update the S3 block settings. Each block just needs a unique prefix and unique `.sincedb` file. For example:
 
@@ -126,8 +125,6 @@ input {
   s3 {
     bucket => ":bucket:"
     region => ":region:"
-    access_key_id => ":access_key_id:"
-    secret_access_key => ":secret_access_key:"
     prefix => "2022/06"
 
     type => "syslog"
@@ -136,8 +133,6 @@ input {
   s3 {
     bucket => ":bucket:"
     region => ":region:"
-    access_key_id => ":access_key_id:"
-    secret_access_key => ":secret_access_key:"
     prefix => "2022/05"
 
     type => "syslog"
