@@ -54,7 +54,7 @@ permalink: /document-with-sidenav
 ```
 ---
 searchgov:
-  endpoint: https://search.usa.gov  # You should not change this.
+  endpoint: https://search.gov  # You should not change this.
   affiliate: federalist-uswds-example # replace this with your search.gov account 
   access_key: your-access-key # This is placeholder. Not private.
   inline: true #this renders the results on the same domain. Otherwise, it will render the results in the search.gov domain
