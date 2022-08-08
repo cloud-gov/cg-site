@@ -68,8 +68,9 @@ for deploying Logsearch, consult a teammate.
 The steps to restore data from S3 are:
 
 1. Log in to a jumpbox
-1. Adjust the IAM role policy to allow the reindexing to read from the S3 bucket
+1. Add IAM role policy to allow the reindexing to read from the S3 bucket
 1. Create a custom logstash.conf for the restore operation
+1. Optional - Configure logstash to handle partial day data
 1. Optional - Disable the timecop filter
 1. Start the reindexing
 1. Monitor reindexing progress
@@ -189,7 +190,7 @@ input {
 ```
 
 The values for `:bucket:` and `:region:` should be what you found previously in BOSH
-manifest for logsearch.
+manifest for Logsearch.
 
 **When run with default configuration the S3 input plugin will reindex ALL data in
 the bucket**. To reindex a specific subset of data pass
@@ -238,7 +239,7 @@ input {
 }
 ```
 
-#### Optional: Configure logstash to handle partial day data
+### Optional: Configure logstash to handle partial day data
 
 **Note: These instructions are only necessary when indexing partial day data
 into existing indices (e.g. prefix => `2022/05/07/00`).** It's often easier to
@@ -461,7 +462,7 @@ manifest for logsearch.
 
 ### Run the reindexing
 
-1. [Add IAM role policy to allow reindexing](#adjust-the-iam-role-policy-to-allow-the-reindexing-to-read-from-the-s3-bucket)
+1. [Add IAM role policy to allow reindexing](#add-iam-role-policy-to-allow-the-reindexing-to-read-from-the-s3-bucket)
 1. [Disable the Timecop filter](#disable-the-timecop-filter)
 1. [Start the reindexing](#start-the-reindexing)
 1. [Monitor reindexing process](#monitor-reindexing-progress)
