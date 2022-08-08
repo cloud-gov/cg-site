@@ -87,7 +87,7 @@ You can find information about your ingestor VM by running:
 bosh -d logsearch vms
 ```
 
-For the VM with an instance name beginning with "kibana", take note of the value
+For the VM with an instance name beginning with "ingestor", take note of the value
 from the `VM CID` column, which is the actual ID of the EC2 instance. Use this
 value to find the VM in the AWS EC2 console.
 
