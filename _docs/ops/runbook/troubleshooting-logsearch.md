@@ -127,8 +127,15 @@ to fetch backups from S3 for ingestion.
 
 ### Create a custom logstash.conf for the restore operation
 
-From the jumpbox of the environment where you want to do the reindexing, log into
-any `ingestor` node:
+[Use the jumpbox script](https://github.com/cloud-gov/cg-scripts/blob/master/jumpbox)
+to log in to the jumpbox of the environment where you want to do the reindexing.
+For example:
+
+```sh
+./jumpbox ci development
+```
+
+From inside of the jumpbox, log in to any `ingestor` node:
 
 ```sh
 bosh -d logsearch ssh ingestor/0
@@ -368,8 +375,15 @@ curl -XPUT ${ELASTICSEARCH_IP_PORT}/${NEW_INDEX} \
 
 ### Create a custom logstash.conf for the restore operation
 
-From the jumpbox of the environment where you want to do the reindexing, log into
-any `ingestor` node:
+[Use the jumpbox script](https://github.com/cloud-gov/cg-scripts/blob/master/jumpbox)
+to log in to the jumpbox of the environment where you want to do the reindexing.
+For example:
+
+```sh
+./jumpbox ci development
+```
+
+From inside of the jumpbox, log in to any `ingestor` node:
 
 ```sh
 bosh -d logsearch ssh ingestor/0
