@@ -67,6 +67,7 @@ for deploying Logsearch, consult a teammate.
 
 The steps to restore data from S3 are:
 
+1. Log in to a jumpbox
 1. Adjust the IAM role policy to allow the reindexing to read from the S3 bucket
 1. Create a custom logstash.conf for the restore operation
 1. Optional - Disable the timecop filter
@@ -75,13 +76,24 @@ The steps to restore data from S3 are:
 1. Recreate the ingestor VM
 1. Remove IAM role policy for reindexing
 
+### Log in to a jumpbox
+
+[Use the jumpbox script](https://github.com/cloud-gov/cg-scripts/blob/master/jumpbox)
+to log in to the jumpbox of the environment where you want to do the reindexing.
+For example:
+
+```sh
+./jumpbox ci development
+```
+
 ### Add IAM role policy to allow the reindexing to read from the S3 bucket
 
 To give the ingestor node access to read backups from S3, you must go in to the
 AWS console and adjust the IAM role policy for the environment
 ingestor you are restoring in.
 
-You can find information about your ingestor VM by running:
+From inside of the jumpbox, you can find information about your ingestor VM
+by running:
 
 ```shell
 bosh -d logsearch vms
@@ -125,15 +137,19 @@ in the S3 console.
 Save the new role policy and the VM should now have the appropriate permissions
 to fetch backups from S3 for ingestion.
 
-### Create a custom logstash.conf for the restore operation
+### Find the bucket and region of the S3 backups
 
-[Use the jumpbox script](https://github.com/cloud-gov/cg-scripts/blob/master/jumpbox)
-to log in to the jumpbox of the environment where you want to do the reindexing.
-For example:
+To find the bucket and region of the S3 backups, first run this command to print
+the BOSH manifest for Logsearch:
 
 ```sh
-./jumpbox ci development
+bosh -d logsearch manifest
 ```
+
+Then, search the output for `bucket` and `region` to determine those values. Make
+sure to note these values for use later.
+
+### Create a custom logstash.conf for the restore operation
 
 From inside of the jumpbox, log in to any `ingestor` node:
 
@@ -172,9 +188,8 @@ input {
 }
 ```
 
-The values for `:bucket:` and `:region:` can be retrieved from the bosh manifest
-by running `bosh -d logsearch manifest` and searching the output for `bucket`
-and `region`.
+The values for `:bucket:` and `:region:` should be what you found previously in BOSH
+manifest for logsearch.
 
 **When run with default configuration the S3 input plugin will reindex ALL data in
 the bucket**. To reindex a specific subset of data pass
@@ -373,7 +388,7 @@ curl -XPUT ${ELASTICSEARCH_IP_PORT}/${NEW_INDEX} \
     -d @settings-and-mappings.json
 ```
 
-### Create a custom logstash.conf for the restore operation
+### Log in to a jumpbox
 
 [Use the jumpbox script](https://github.com/cloud-gov/cg-scripts/blob/master/jumpbox)
 to log in to the jumpbox of the environment where you want to do the reindexing.
@@ -382,6 +397,20 @@ For example:
 ```sh
 ./jumpbox ci development
 ```
+
+### Get bucket and region for S3 backups
+
+To find the bucket and region of the S3 backups, first run this command to print
+the BOSH manifest for Logsearch:
+
+```sh
+bosh -d logsearch manifest
+```
+
+Then, search the output for `bucket` and `region` to determine those values. Make
+sure to note these values for use later.
+
+### Create a custom logstash.conf for the restore operation
 
 From inside of the jumpbox, log in to any `ingestor` node:
 
@@ -402,10 +431,8 @@ Make a copy of its current logstash configuration:
 cp /var/vcap/jobs/ingestor_syslog/config/logstash.conf /var/vcap/data/ingestor_syslog/tmp/logstash-restore.conf
 ```
 
-Edit `/var/vcap/data/ingestor_syslog/tmp/logstash-restore.conf` and make the following
-changes:
-
-#### Update the "input" and "output" blocks
+Edit `/var/vcap/data/ingestor_syslog/tmp/logstash-restore.conf` and update the
+`input` and `output` blocks like so:
 
 ```conf
 input {
@@ -429,9 +456,8 @@ output {
 }
 ```
 
-The values for `:bucket:` and `:region:` can be retrieved from the bosh manifest
-by running `bosh -d logsearch manifest` and searching the output for `bucket`
-and `region`.
+The values for `:bucket:` and `:region:` should be what you found previously in BOSH
+manifest for logsearch.
 
 ### Run the reindexing
 
