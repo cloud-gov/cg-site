@@ -3,8 +3,6 @@ parent: compliance
 layout: docs
 sidenav: true
 title: Logging Requirements
-redirect_from:
-  - /docs/orgs/meeting-tic-requirements
 ---
 
 How our system meets logging requirements specified by M-21-31.
