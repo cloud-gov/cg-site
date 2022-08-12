@@ -4,7 +4,7 @@ layout: docs
 sidenav: true
 redirect_from: 
     - /docs/apps/renaming-spaces/
-title: Renaming Spaces
+title: Renaming spaces
 ---
 
 If you want to change the name of a space in your Cloud Foundry organization, you can follow the steps below.
