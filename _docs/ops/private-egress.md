@@ -6,6 +6,8 @@ sidenav: true
 title: Private egress
 ---
 
+## NOTICE: We do not currently offer isolation segments or private egress to customers. This document was part of previous exploratory work for this feature, but it was never completed and is no longer on our roadmap.
+
 To provide customers access to services running on their private network, we provision dedicated isolation segments in separate networks that connect to customer networks over VPN.
 
 To set up private egress for an organization:

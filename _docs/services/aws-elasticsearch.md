@@ -24,7 +24,8 @@ Service Name | Plan Name | Description | Number of nodes |
 
 ## Pricing
 
-$200/month per node for **medium**, $400/month per node for **large**, $600 per node for **extra-large**. Six nodes included for customers using the FISMA Moderate plan. More information on the [pricing page]({{ site.baseurl }}{% link _pages/pricing.md %}).
+Elasticsearch RESTful search and analytics
+$200/month per node for **medium** (each medium instance has 5-7 nodes provisioned), $400/month per node for **large** (each large instance has 5-7 nodes provisioned), $600 for **extra-large** (each extra-large instance has 5-7 nodes provisioned), and 6 medium nodes included for FISMA Moderate. More information on the [pricing page]({{ site.baseurl }}{% link _pages/pricing.md %}).
 
 ## When to use
 
@@ -109,7 +110,7 @@ For customers that would like to import or export their Elasticsearch data, this
 
     ```sh
     s3_credentials=$(cf service-key my-s3-bucket my-key | tail -n +3)
-    s3_bucket=$(echo "${s3_credentials}" | jq -r '.bucket')
+    s3_bucket=$(echo "${s3_credentials}" | jq -r '.credentials.bucket')
     ```
 
  * Assign your new bucket to your Elasticsearch instance:
@@ -122,7 +123,7 @@ For customers that would like to import or export their Elasticsearch data, this
 
     ```sh
     es_arn=$(cf service-key my-elastic-service my-key | tail -n +3)
-    snapshotRoleARN=$(echo "${es_arn}" | jq -r '.snapshotRoleARN')
+    snapshotRoleARN=$(echo "${es_arn}" | jq -r '.credentials.snapshotRoleARN')
     ```
 
  Once you have your s3 bucket connected and have the `snapshotRoleARN` you can then inside your application connect to the AWS ES host and register your s3 repository endpoint and then perform your snapshot export/import operations using [AWS signed HTTP headers](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-request-signing.html).  Due to the nature of [AWS Signature Calculations](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-header-based-auth.html) there is no direct way with curl to perform these operations and it's best left to client libraries in a programing language your applications are written in.

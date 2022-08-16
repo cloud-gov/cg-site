@@ -21,9 +21,9 @@ migrate instances automatically without service interruption, but it does requir
 
 The new external-domain service uses a different method of validation with Let's Encrypt. The new method relies on specific DNS records being present for each of your domains. To begin the migration, you need to have configured the following DNS records for each domain on your custom-domain or cdn-route instances.
 
-| Type  | Name                      | Value                                                           |
-|-------|---------------------------|-----------------------------------------------------------------|
-| CNAME | `_acme-challenge.$DOMAIN` | `_acme-challenge.$DOMAIN.external-domains-production.cloud.gov` |
+| Type   | Name                      | Value                                                           |
+|--------|---------------------------|-----------------------------------------------------------------|
+| CNAME  | `_acme-challenge.$DOMAIN` | `_acme-challenge.$DOMAIN.external-domains-production.cloud.gov` |
 | CNAME* | `$DOMAIN`                 | `$DOMAIN.external-domains-production.cloud.gov`                 |
 
 The `_acme-challenge.$DOMAIN` CNAME record allows us to provision SSL certificates on your behalf.
@@ -34,7 +34,7 @@ The `$DOMAIN` CNAME is responsible for routing the user traffic to your site.  U
 
 If you already have `CNAME`, `A`, and/or `AAAA` (with `ALIAS`) record(s) for `$DOMAIN`, you should update the value or replace the record to match what is shown above.
 
-* If your domain is an "apex domain" or "2nd level domain" (i.e. `agency.gov` instead of `directorate.agency.gov`) you will need to use an `A` and `AAAA` (with `ALIAS`) record(s) assuming your DNS provider supports it.
+*\* If your domain is an "apex domain" or "2nd level domain" (i.e. `agency.gov` instead of `directorate.agency.gov`) you will need to use an `A` and `AAAA` (with `ALIAS`) record(s) assuming your DNS provider supports it.*
 
 Note that the second update here changes how users get to your site.
 We've made every effort to validate we're prepared for this change, but you should confirm that

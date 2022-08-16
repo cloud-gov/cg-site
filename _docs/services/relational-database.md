@@ -15,39 +15,39 @@ If your application uses relational databases for storage, you can use the AWS R
 
 Plan Name                   | Description                                                                  | Software Version       |
 ---                         | ---                                                                          | ---                    |
-`micro-psql`                | Dedicated micro RDS PostgreSQL DB instance                                   | AWS RDS Latest Default |
-`micro-psql-redundant`      | Dedicated redundant micro RDS PostgreSQL DB instance                         | AWS RDS Latest Default |
-`small-psql`                | Dedicated small RDS PostgreSQL DB instance                                   | AWS RDS Latest Default |
-`small-psql-redundant`      | Dedicated redundant small RDS PostgreSQL DB instance                         | AWS RDS Latest Default |
-`medium-psql`               | Dedicated medium RDS PostgreSQL DB instance                                  | AWS RDS Latest Default |
-`medium-psql-redundant`     | Dedicated redundant medium RDS PostgreSQL DB instance                        | AWS RDS Latest Default |
-`medium-gp-psql`            | Dedicated higher workload medium RDS PostgreSQL DB instance                  | AWS RDS Latest Default |
-`medium-gp-psql-redundant`  | Dedicated higher workload redundant medium RDS PostgreSQL DB instance        | AWS RDS Latest Default |
-`large-gp-psql`             | Dedicated higher workload large RDS PostgreSQL DB instance                   | AWS RDS Latest Default |
-`large-gp-psql-redundant`   | Dedicated higher workload redundant large RDS PostgreSQL DB instance         | AWS RDS Latest Default |
-`xlarge-gp-psql`            | Dedicated higher workload x-large RDS PostgreSQL DB instance                 | AWS RDS Latest Default |
-`xlarge-gp-psql-redundant`  | Dedicated higher workload redundant xlarge RDS PostgreSQL DB instance        | AWS RDS Latest Default |
-`small-mysql`               | Dedicated small RDS MySQL DB instance                                        | AWS RDS Latest Default |
-`small-mysql-redundant`     | Dedicated redundant small RDS MySQL DB instance                              | AWS RDS Latest Default |
-`medium-mysql`              | Dedicated medium RDS MySQL DB instance                                       | AWS RDS Latest Default |
-`medium-mysql-redundant`    | Dedicated redundant medium RDS MySQL DB instance                             | AWS RDS Latest Default |
-`medium-gp-mysql`           | Dedicated higher workload medium RDS MySQL DB instance                       | AWS RDS Latest Default |
-`medium-gp-mysql-redundant` | Dedicated higher workload redundant medium RDS MySQL DB instance             | AWS RDS Latest Default |
-`large-gp-mysql`            | Dedicated higher workload large RDS MySQL DB instance                        | AWS RDS Latest Default |
-`large-gp-mysql-redundant`  | Dedicated higher workload redundant large RDS MySQL DB instance              | AWS RDS Latest Default |
-`xlarge-gp-mysql`           | Dedicated higher workload x-large RDS MySQL DB instance                      | AWS RDS Latest Default |
-`xlarge-gp-mysql-redundant` | Dedicated higher workload redundant x-large RDS MySQL DB instance            | AWS RDS Latest Default |
-`medium-oracle-se2`         | Dedicated medium RDS Oracle SE2 DB                                           | AWS RDS Latest Default |
+`micro-psql`                | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 1 GiB memory                                   | AWS RDS Latest Default |
+`micro-psql-redundant`      |  Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 1 GiB memory                         | AWS RDS Latest Default |
+`small-psql`                | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 2 GiB memor                                   | AWS RDS Latest Default |
+`small-psql-redundant`      |  Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 2 GiB memor                         | AWS RDS Latest Default |
+`medium-psql`               |  Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 4 GiB memor                                  | AWS RDS Latest Default |
+`medium-psql-redundant`     | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 4 GiB memory                        | AWS RDS Latest Default |
+`medium-gp-psql`            | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory                  | AWS RDS Latest Default |
+`medium-gp-psql-redundant`  | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory        | AWS RDS Latest Default |
+`large-gp-psql`             | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory                   | AWS RDS Latest Default |
+`large-gp-psql-redundant`   | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory         | AWS RDS Latest Default |
+`xlarge-gp-psql`            | Single-AZ RDS instance of PostgreSQL, minimum 2 cores, minimum 16 GiB memory                 | AWS RDS Latest Default |
+`xlarge-gp-psql-redundant`  | Multi-AZ RDS instance of PostgreSQL, minimum 2 cores, minimum 16 GiB memory        | AWS RDS Latest Default |
+`small-mysql`               | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 2 GiB memory                                        | AWS RDS Latest Default |
+`small-mysql-redundant`     | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 2 GiB memory                              | AWS RDS Latest Default |
+`medium-mysql`              | Single-AZ RDS instance of MySQL, minimum 2 cores, minimum 4 GiB memory                                       | AWS RDS Latest Default |
+`medium-mysql-redundant`    | Multi-AZ RDS instance of MySQL, minimum 2 cores, minimum 4 GiB memory                             | AWS RDS Latest Default |
+`medium-gp-mysql`           | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory                       | AWS RDS Latest Default |
+`medium-gp-mysql-redundant` | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory             | AWS RDS Latest Default |
+`large-gp-mysql`            | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory                       | AWS RDS Latest Default |
+`large-gp-mysql-redundant`  | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memorye              | AWS RDS Latest Default |
+`xlarge-gp-mysql`           | Single-AZ RDS instance of MySQL, minimum 2 cores, minimum 16 GiB memory                      | AWS RDS Latest Default |
+`xlarge-gp-mysql-redundant` | Multi-AZ RDS instance of MySQL, minimum 2 cores, minimum 16 GiB memory            | AWS RDS Latest Default |
+`medium-oracle-se2`         | Single-AZ RDS instance of Oracle SE2, minimum 1 core, minimum 4 GiB memory                                           | AWS RDS Latest Default |
 
 *Only the `micro-psql` and `small-mysql` plans are available in [sandbox spaces]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}#sandbox-limitations).*
 
-You can always view an up-to-date version of this list directly in your command line as well with the following command (using cf cli version 6):
+You can always view an up-to-date version of this list directly in your command line as well with the following command (using `cf` CLI version 6):
 
 ```sh
 cf marketplace -s aws-rds
 ```
 
-Or, the following command (using cf cli version 7):
+Or, the following command (using `cf` CLI version 7 or later):
 
 ```sh
 cf marketplace -e aws-rds
@@ -56,6 +56,33 @@ cf marketplace -e aws-rds
 The dedicated plans listed above (marked "AWS RDS Latest") deploy the default version as advertised by AWS. If you need to determine the exact version of the RDS service deployed, see [this knowledge base article]({{ site.baseurl }}/knowledge-base/2021-05-20-getting-rds-version-information/).
 
 *Additional Cost:* All databases have a limit of 1TB in storage. After 1TB, each additional terabyte will cost $300 per month.
+
+## Choosing a database plan
+
+For PostgreSQL and MySQL, we offer a range of database plans in different sizes (e.g. `micro-psql`, `small-psql`,
+etc).
+
+The primary differences between each database plan size are the available CPU cores and memory for databases
+created with that plan. These parameters may be important to consider when choosing a plan for an application
+that is heavily CPU-bound or memory-bound.
+
+The maximum number of available database connections will also differ between each plan size, in proportion to
+the available memory of that plan. Unfortunately, specifying the exact maximum number of database connections for
+each plan size is difficult because [the maximum is calculated by AWS using a formula](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Limits.html#RDS_Limits.MaxConnections)
+and not all of the inputs to the formula are known in advance to customers.
+
+In general, the following guidance can be offered for the database plan sizes:
+
+- `micro-*` plans: Good for prototyping and development
+- `small-*` plans: Good for low-traffic applications
+- `medium-*` plans: Good general purpose plan for applications
+- `large-*` plans: Good for high-traffic applications
+- `xlarge-*` plans: Good for very high-traffic applications
+
+Once you have chosen a plan size, you should consider whether you need to run your database in [multiple availability zones](https://aws.amazon.com/rds/features/multi-az/),
+which increases the availability and durability of your database.
+
+For databases used for development or staging environments, redundancy may not be as critical. **But for databases used in production applications, you should always use a `*-redundant` database plan.**
 
 ## Create an instance
 
@@ -80,6 +107,7 @@ Name               | Description                                                
 `storage`          | Number of GB available to the database instance                | 10                     |
 `enable_functions` | Boolean to enable functions on supported databases             | false                  |
 `version`          | Specifies a supported major version in RDS (must be in quotes) | AWS RDS Latest Default |
+`backup_retention_period` | Specifies a number of days to retain daily snapshots. | 14           |
 
 A couple of notes regarding the optional `version` parameter:
 
@@ -97,6 +125,8 @@ These are the current supported major versions for MySQL:
 
 - 5.7
 - 8.0
+
+The `backup_retention_period` can be no less than 14 days but extended up to 35 days.
 
 #### Examples of optional parameters
 
@@ -125,6 +155,15 @@ cf create-service aws-rds \
     micro-psql \
     my-test-service \
     -c '{"version": "11"}'
+```
+
+To extend the backup retention period for a database to 30 days:
+
+```sh
+cf create-service aws-rds \
+    micro-psql \
+    my-test-service \
+    -c '{"backup_retention_period": 30}'
 ```
 
 You can combine multiple optional parameters as long as the JSON is well-formed:
@@ -181,6 +220,7 @@ There are several optional parameters that you can specify when updating an exis
 Name               | Required | Description                                     |
 ---                | ---      | ---                                             |
 `storage`          |          | Number of GB available to the database instance |
+`backup_retention_period` | | Specifies a number of days to retain daily snapshots. |
 
 #### Examples of optional parameters
 
@@ -208,7 +248,7 @@ The contents of the `DATABASE_URL` environment variable contain the credentials 
 
 *Please note that these instructions will change in the future as we expand our service offerings and provide more options for customers.*
 
-RDS automatically retains daily backups for 14 days. These backups are AWS RDS storage volume snapshots, backing up the entire DB instance and not just individual databases. If you need to have a database restored using one of these backups, you can [email support](mailto:support@cloud.gov).  For non-emergency situations, please provide at least 48 hours advance notice.
+RDS automatically retains daily backups for 14 days. These backups are AWS RDS storage volume snapshots, backing up the entire DB instance and not just individual databases. You can extend the length of retention up to 35 days by using the option detailed above. If you need to have a database restored using one of these backups, you can [email support](mailto:support@cloud.gov).  For non-emergency situations, please provide at least 48 hours advance notice.
 
 If you have an emergency situation, such as data loss or a compromised system, please [email support](mailto:support@cloud.gov) immediately and inform us of the situation.
 
@@ -233,11 +273,44 @@ You can also create manual backups using the [export process](#exporting-a-datab
 
 ## Access the data in the database
 
-To access a service database, use the [cf-service-connect plugin](https://github.com/18F/cf-service-connect#readme) and the corresponding CLI (command line interface) tools for the database service you are using.
+To access a service database, use the [cf-service-connect plugin](https://github.com/18F/cf-service-connect#readme) or the new [cg-manage-rds](https://github.com/cloud-gov/cg-manage-rds) application and the corresponding CLI (command line interface) tools for the database service you are using,
 
-### Exporting a database
+The examples below show working with a PostgreSQL database, but should be similar for MySQL or others.
 
-The instructions below are for PostgreSQL, but should be similar for MySQL or others.
+### Using cg-manage-rds
+
+#### Exporting from a service instance
+
+The `cg-manage-rds` application is meant to simplify and streamline import, export and cloning operations on service instances. Full usage docs can be found on the github [readme](https://github.com/cloud-gov/cg-manage-rds#usage)
+
+To perform a basic export of a postgres instance using the compressed format:
+
+```sh
+$ cg-manage-rds export -o "-F c" -f ./backup.pg ${SERVICE_NAME}
+```
+
+This will create an export using `pg_dump` named `backup.pg`. Other options for the pg_dump command can be pased as a string with the `-o` option.
+
+#### Importing to a service instance
+
+This is a simple example of importing a previous export to database service instance.
+By default `cg-manage-rds` adds options to remove ownership and create new objects to make porting easy.
+
+```sh
+$ cg-manage-rds import -o "-F c" -f ./backup.pg ${SERVICE_NAME}
+```
+
+#### Cloning a service instance
+
+This is a simple example of replicating database service instance to another instance. The destination database must be created beforehand. The export is downloaded locally as in the `export` command.
+
+```sh
+$ cg-manage-rds clone ${SERVICE_NAME_SOURCE} ${SERVICE_NAME_DEST}
+```
+
+### Using cf-service-connect plugin
+
+#### Exporting a database
 
 First, open a terminal and connect to an instance using the [cf-service-connect plugin](https://github.com/cloud-gov/cf-service-connect#usage) to create a SSH tunnel:
 
@@ -276,6 +349,7 @@ When you are finished, you can terminate the SSH tunnel.  You should also clean 
 ```sh
 $ cf delete-service-key ${SERVICE_NAME} SERVICE_CONNECT
 ```
+
 
 ### Restoring to a local database
 

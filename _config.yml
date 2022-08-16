@@ -31,6 +31,8 @@ github_url: https://github.com/cloud-gov/cg-site
 support_email: mailto:inquiries@cloud.gov?body=What+is+your+question%3F%0D%0A%0D%0APlease+provide+your+application+name+or+URL.+Do+not+include+any+sensitive+information+about+your+platform+in+this+email.
 inquiries_email: mailto:inquiries@cloud.gov?body=What%27s%20your%20name%3F%0A%0AWhat%20agency%20or%20office%20do%20you%20work%20for%3F%0A%0AWhat%27s%20your%20job%20title%20or%20role%3F%0A%0ATell%20us%20a%20little%20about%20your%20project%20or%20your%20questions%20about%20cloud.gov%3A%0A%0AIf%20you%27d%20like%20us%20to%20call%20you%2C%20what%27s%20your%20phone%20number%20and%20when%20might%20be%20a%20good%20time%3F%0A%0AHow%20did%20you%20first%20hear%20about%20cloud.gov%3F
 
+github_branch: master
+
 # Configuration for Google Analytics, add your UA code here:
 google_analytics_ua: UA-48605964-34
 
@@ -233,12 +235,6 @@ pagination:
   trail:
     before: 2
     after: 2
-  # Optional, the default file extension for generated pages (e.g html, json, xml).
-  # Internally this is set to html by default
-  extension: html
-  # Optional, the default name of the index file for generated pages (e.g. 'index.html')
-  # Without file extension
-  indexpage: "index.html"
 
 exclude:
   - package.json
@@ -253,6 +249,13 @@ exclude:
   - Gemfile.lock
 
 assets:
+  autoprefixer:
+    browsers:
+      - "> 2%"
+      - "last 2 versions"
+      - "IE 11"
+      - "not dead"
+  compression: true
   sources:
     - _assets/images/logos
     - _assets/images/illustrations
@@ -260,12 +263,9 @@ assets:
     - assets/font-awesome/fonts
     - assets/pages/images
     - assets/pages/documents
-    - node_modules/uswds/dist/img
-    - node_modules/uswds/dist/js
-    - node_modules/uswds/dist/scss
     - node_modules/mermaid/dist/
-    - node_modules/uswds/dist/js/uswds.min.js.map
     - node_modules/netlify-cms/dist
+    - node_modules/uswds/dist
 
 ### plugin settings ###
 last-modified-at:
@@ -282,3 +282,6 @@ feed:
       path: "/support.xml"
   excerpt_only: true
   posts_limit: 20
+
+include:
+  - .well-known

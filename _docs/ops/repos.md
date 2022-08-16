@@ -10,9 +10,9 @@ redirect_from:
   - /intro/security/auditing-contributing-security
 ---
 
-cloud.gov is built and maintained by 18F, which has an [open source policy](https://18f.gsa.gov/open-source-policy/) that guides our work: we use and develop open source software, and we encourage you to reuse and adapt our work.
+cloud.gov is built and maintained by a team within the General Services administration's Technology Transformation Services (TTS), which has an [open source policy](https://18f.gsa.gov/open-source-policy/) that guides our work: we use and develop open source software, and we encourage you to reuse and adapt our work.
 
-cloud.gov is an open source project based on [Cloud Foundry](https://www.cloudfoundry.org/) with additional components built by our team and other community members. This includes using open source for security: We use a combination of [ClamAV](https://www.clamav.net), [Tripwire](https://github.com/Tripwire/tripwire-open-source) and [Snort](https://www.snort.org) on each system, with [OpenZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project) to do blackbox testing.  We also run [Prometheus](https://prometheus.io) and a full [ELK stack](https://www.elastic.co/elk-stack) with [ElastAlert](https://github.com/Yelp/elastalert) for additional monitoring and alerting. We do use use a commercial tool for [CIS benchmarking](https://www.cisecurity.org/cis-benchmarks/) and further blackbox testing. We welcome you to audit our security or contribute to it — or to make any other kind of contribution, from documentation to design. 
+cloud.gov is an open source project based on [Cloud Foundry](https://www.cloudfoundry.org/) with additional components built by our team and other community members. This includes using open source for security: We use a combination of [ClamAV](https://www.clamav.net), [Tripwire](https://github.com/Tripwire/tripwire-open-source) and [Snort](https://www.snort.org) on each system, with [OpenZAP](https://www.zaproxy.org) to do blackbox testing.  We also run [Prometheus](https://prometheus.io) and a full [ELK stack](https://www.elastic.co/elk-stack) with [ElastAlert](https://github.com/Yelp/elastalert) for additional monitoring and alerting. We do use a commercial tool for [CIS benchmarking](https://www.cisecurity.org/cis-benchmarks/) and further blackbox testing. We welcome you to audit our security or contribute to it — or to make any other kind of contribution, from documentation to design. 
 
 If you'd like to contribute security research, see our [vulnerability disclosure policy](https://18f.gsa.gov/vulnerability-disclosure-policy/).
 
@@ -26,80 +26,80 @@ Here are many of our main repositories with components, tools, and configuration
 
 Components run as applications on top of the platform, for users:
 
-- [cloud.gov website (this site)](https://github.com/18F/cg-site)
-- [Dashboard](https://github.com/18F/cg-dashboard)
-- [Styles](https://github.com/18F/cg-style) (a library supporting the website and dashboard)
+- [cloud.gov website (this site)](https://github.com/cloud-gov/cg-site)
+- [Dashboard](https://github.com/cloud-gov/cg-dashboard)
+- [Styles](https://github.com/cloud-gov/cg-style) (a library supporting the website and dashboard)
 
 Components run as applications on top of the platform, for our team:
 
-- [Compliance documentation system diagrams](https://github.com/18F/cg-diagrams)
+- [Compliance documentation system diagrams](https://github.com/cloud-gov/cg-diagrams)
 
 Custom components for our Cloud Foundry deployment:
 
-- [UAA extra features](https://github.com/18F/cg-uaa-extras)
-- [Sandbox creation bot](https://github.com/18F/cg-sandbox-bot)
+- [UAA extra features](https://github.com/cloud-gov/cg-uaa-extras)
+- [Sandbox creation bot](https://github.com/cloud-gov/cg-sandbox-bot)
 
 BOSH releases:
 
-- [awslogs](https://github.com/18F/cg-awslogs-boshrelease)
-- [ClamAV](https://github.com/18F/cg-clamav-boshrelease)
-- [Nessus Agent](https://github.com/18F/cg-nessus-agent-boshrelease)
-- [Nessus Manager](https://github.com/18F/cg-nessus-manager-boshrelease)
+- [awslogs](https://github.com/cloud-gov/cg-awslogs-boshrelease)
+- [ClamAV](https://github.com/cloud-gov/cg-clamav-boshrelease)
+- [Nessus Agent](https://github.com/cloud-gov/cg-nessus-agent-boshrelease)
+- [Nessus Manager](https://github.com/cloud-gov/cg-nessus-manager-boshrelease)
 - [New Relic](https://github.com/cloudfoundry-community/newrelic-boshrelease)
-- [SecureProxy](https://github.com/18F/cg-secureproxy-boshrelease)
-- [Snort](https://github.com/18F/cg-snort-boshrelease)
-- [Ubuntu hardening](https://github.com/18F/cg-harden-boshrelease)
-- [Tripwire](https://github.com/18F/cg-tripwire-boshrelease)
+- [SecureProxy](https://github.com/cloud-gov/cg-secureproxy-boshrelease)
+- [Snort](https://github.com/cloud-gov/cg-snort-boshrelease)
+- [Ubuntu hardening](https://github.com/cloud-gov/cg-harden-boshrelease)
+- [Tripwire](https://github.com/cloud-gov/cg-tripwire-boshrelease)
 
 Service brokers:
 
-- [RDS](https://github.com/18F/aws-broker)
-- [CDN (CloudFront and Let's Encrypt)](https://github.com/18F/cf-cdn-service-broker)
+- [RDS](https://github.com/cloud-gov/aws-broker)
+- [CDN (CloudFront and Let's Encrypt)](https://github.com/cloud-gov/cf-cdn-service-broker)
 - [UAA credentials](https://github.com/cloudfoundry-community/uaa-credentials-broker)
 - [S3](https://github.com/cloudfoundry-community/s3-broker)
 
 Configuration/deployment support:
 
-- [Infrastructure provisioning and deployment](https://github.com/18F/cg-provision)
-- [Common Concourse pipeline tasks](https://github.com/18F/cg-pipeline-tasks)
-- [Common Concourse resource](https://github.com/18F/cg-common-resource)
+- [Infrastructure provisioning and deployment](https://github.com/cloud-gov/cg-provision)
+- [Common Concourse pipeline tasks](https://github.com/cloud-gov/cg-pipeline-tasks)
+- [Common Concourse resource](https://github.com/cloud-gov/cg-common-resource)
 
 Deployment pipelines:
 
-- [Admin user interface](https://github.com/18F/cg-deploy-admin-ui)
-- [BOSH](https://github.com/18F/cg-deploy-bosh)
-- [Cloud Foundry](https://github.com/18F/cg-deploy-cf)
-- [Concourse](https://github.com/18F/cg-deploy-concourse)
-- [Concourse task Docker image](https://github.com/18F/cg-deploy-concourse-docker-image)
-- [ELK/logsearch](https://github.com/18F/cg-deploy-logsearch)
-- [Monitoring](https://github.com/18F/cg-deploy-prometheus)
-- [Nessus Manager](https://github.com/18F/cg-deploy-nessus-manager)
-- [RDS broker](https://github.com/18F/cg-deploy-rds-broker)
-- [S3 broker](https://github.com/18F/cg-deploy-s3-broker)
-- [Shibboleth](https://github.com/18F/cg-deploy-shibboleth)
+- [Admin user interface](https://github.com/cloud-gov/cg-deploy-admin-ui)
+- [BOSH](https://github.com/cloud-gov/cg-deploy-bosh)
+- [Cloud Foundry](https://github.com/cloud-gov/cg-deploy-cf)
+- [Concourse](https://github.com/cloud-gov/cg-deploy-concourse)
+- [Concourse task Docker image](https://github.com/cloud-gov/cg-deploy-concourse-docker-image)
+- [ELK/logsearch](https://github.com/cloud-gov/cg-deploy-logsearch)
+- [Monitoring](https://github.com/cloud-gov/cg-deploy-prometheus)
+- [Nessus Manager](https://github.com/cloud-gov/cg-deploy-nessus-manager)
+- [RDS broker](https://github.com/cloud-gov/cg-deploy-rds-broker)
+- [S3 broker](https://github.com/cloud-gov/cg-deploy-s3-broker)
+- [Shibboleth](https://github.com/cloud-gov/cg-deploy-shibboleth)
 
 Metadata for our team, such as issues, checklists, and other documents:
 
-- [Policies and procedures](https://github.com/18F/compliance-docs)
-- [Product work](https://github.com/18F/cg-product)
+- [Policies and procedures](https://github.com/cloud-gov/compliance-docs)
+- [Product work](https://github.com/cloud-gov/cg-product)
 
 Collections of scripts for our team:
 
-- [Scripts](https://github.com/18F/cg-scripts)
+- [Scripts](https://github.com/cloud-gov/cg-scripts)
 
 Optional code offered to our team and customers:
 
-- [Hello world apps](https://github.com/18F/cf-hello-worlds)
-- [Redirect app](https://github.com/18F/cf-redirect)
+- [Hello world apps](https://github.com/cloud-gov/cf-hello-worlds)
+- [Redirect app](https://github.com/cloud-gov/cf-redirect)
 
 Optional Cloud Foundry CLI plugins offered to our team and customers:
 
-- [Route lookup](https://github.com/18F/cf-route-lookup)
-- [Service connection](https://github.com/18F/cf-service-connect)
+- [Route lookup](https://github.com/cloud-gov/cf-route-lookup)
+- [Service connection](https://github.com/cloud-gov/cf-service-connect)
 
 ## Public domain
 
-All components by the cloud.gov team (or other parts of 18F) are in the worldwide [public domain](https://github.com/18F/cg-site/blob/master/LICENSE.md). As stated in [CONTRIBUTING](https://github.com/18F/cg-site/blob/master/CONTRIBUTING.md) for our components:
+All components by the cloud.gov team (or other parts of 18F) are in the worldwide [public domain](https://github.com/cloud-gov/cg-site/blob/master/LICENSE.md). As stated in [CONTRIBUTING](https://github.com/cloud-gov/cg-site/blob/master/CONTRIBUTING.md) for our components:
 
 > This project is in the public domain within the United States, and copyright and related rights in the work worldwide are waived through the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/).
 >
