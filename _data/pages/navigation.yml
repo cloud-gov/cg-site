@@ -9,6 +9,8 @@ primary:
     url: /pages/pricing/
   - name: Contact
     url: /pages/contact/
+  - name: Federalist Migration
+    url: /pages/federalist-migration
     # Look inside assets/js/index.js to see that how this url changes depending on enviroment
 secondary:
   - name: Platform Status
