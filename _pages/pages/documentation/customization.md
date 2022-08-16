@@ -75,7 +75,7 @@ build fast, accessible, mobile-friendly government websites.
 The USWDS is written in Sass, which is compiled by Jekyll to CSS. It is designed
 to be configurable, so you can make customizations by overriding variables or
 including additional CSS rules. Learn more about [customizing the U.S. Web
-Design System](https://designsystem.digital.gov/getting-started/developers/#customization-and-theming).
+Design System](https://designsystem.digital.gov/documentation/getting-started/developers/phase-three-customize/).
 
 
 ## Advanced customization

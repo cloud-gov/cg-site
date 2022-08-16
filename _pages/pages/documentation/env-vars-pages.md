@@ -33,6 +33,6 @@ You can remove environment variables by clicking the "X" button next to the desi
 
 Certain environment variable names are reserved for Pages use and will be ignored. Warnings for any ignored environment variables will be present in the build logs. See above for an up-to-date list.
 
-Pages is a **FISMA Low** system, do NOT store variables for systems that are Moderate or High, and only expose variables if it is safe to do so. You assume the risk if the values you add contain, or allow access to information that is not suitable for this categorization. See [FISMA Security Categorization](https://csrc.nist.gov/Projects/Risk-Management/Risk-Management-Framework-(RMF)-Overview/Security-Categorization) for more information on FISMA information categorization.
+Pages is a **FISMA Low** system, do NOT store variables for systems that are Moderate or High, and only expose variables if it is safe to do so. You assume the risk if the values you add contain, or allow access to information that is not suitable for this categorization. See [FISMA Security Categorization](https://csrc.nist.gov/projects/risk-management/fisma-background) for more information on FISMA information categorization.
 
 ![Image of environment variable settings]({{site.baseurl}}/assets/pages/images/env-vars.png)

@@ -50,8 +50,6 @@ And this is what the above markup looks like when it is rendered on a web page:
 > 
 > _You **can** combine them._
 
-You can practice with the [Markdown helper](https://markdown-helper.18f.gov/).
-
 
 ## Working with YAML
 

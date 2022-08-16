@@ -29,7 +29,7 @@ Tips:
 - If you create a form without using the USWDS, follow [18F's accessibility guide for forms](https://accessibility.18f.gov/forms/) to still ensure your form is accessible.
 - Follow these [plainlanguage guidelines](https://plainlanguage.gov/guidelines/) to ensure your content is accessible to the public.
 
-To get started: Use the USWDS to design your site. Regularly scan your site for accessibility. Contact the [508 Access Board](https://www.access-board.gov/guidelines-and-standards/communications-and-it/about-the-section-508-standards/section-508-standards) for technical assistance . 
+To get started: Use the USWDS to design your site. Regularly scan your site for accessibility. Contact the [508 Access Board](https://www.access-board.gov/contact/) for technical assistance . 
 
 #### [Privacy Act](https://www.archives.gov/about/laws/privacy-act-1974.html)
 What it is: The Privacy Act controls many aspects of an agency’s collection, maintenance, use, and dissemination of information about individuals. The type of information that falls under the Act is much broader than most people expect, and the agency has wide-ranging responsibilities.
