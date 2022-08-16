@@ -61,7 +61,7 @@ example_sites:
     link: https://performance.gov
     screenshot: /assets/pages/images/partner-sites/performance.gov.png
   - name: Privacy and Civil Liberties Oversight Board
-    link: https://pclob.gov
+    link: https://www.pclob.gov
     screenshot: /assets/pages/images/partner-sites/pclob.gov.png
   - name: FedRAMP
     link: https://fedramp.gov
