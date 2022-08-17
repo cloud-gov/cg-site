@@ -13,11 +13,11 @@ By default, when new spaces are created in your organization an application secu
 
 A summary of each of the ASGs that can be applied to your space are as follows:
 
-| ASG Type | Public Web | AWS S3 | AWS RDS | AWS Elasticache Redis | AWS Elasticsearch | Internal Routes |
-| :-------- |  :-:  | :--: | :-------: | :---------------------: | :-----------------: | :---------------: |
-| `closed-egress`     | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
-| `restricted-egress` | ❌  | ❌ | ✅ | ✅ | ✅ | ✅ |
-| `public-egress`     | ✅  | ✅ | ❌ | ❌ | ❌ | ✅ | 
+| ASG Type | Public Web | AWS S3 (user-provided)| AWS S3 (brokered) | AWS RDS | AWS Elasticache Redis | AWS Elasticsearch | Internal Routes |
+| :-------- |  :-: | :--:  | :--: | :-------: | :---------------------: | :-----------------: | :---------------: |
+| `closed-egress`     | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
+| `restricted-egress` | ❌ | ❌ | ✅  | ✅ | ✅ | ✅ | ✅ |
+| `public-egress`     | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 
 
 
 - ### `closed-egress`
@@ -26,45 +26,39 @@ A summary of each of the ASGs that can be applied to your space are as follows:
   - Any requests to the open internet or our brokered services will be blocked.
 
 - ### `restricted-egress`
-  - ASG name: `trusted_local_networks_egress`
   - Requests being executed from within the space can only successfully be sent to some of our brokered services or other internal routes you have created in your organization.
-    - Accessible brokered services: [AWS RDS](https://cloud.gov/docs/services/relational-database/), [AWS Elasticache Redis](https://cloud.gov/docs/services/aws-elasticache/), [AWS Elasticsearch](https://cloud.gov/docs/services/aws-elasticsearch/).
-    - Inaccessible brokered service: [S3 Object Storage](https://cloud.gov/docs/services/s3/).
+    - Accessible brokered services: [AWS RDS](https://cloud.gov/docs/services/relational-database/), [AWS Elasticache Redis](https://cloud.gov/docs/services/aws-elasticache/), [AWS Elasticsearch](https://cloud.gov/docs/services/aws-elasticsearch/), [S3 Object Storage](https://cloud.gov/docs/services/s3/).
   - Any requests to the open internet are blocked.
 
 - ### `public-egress`
-  - ASG name: `public_networks_egress`
-  - Requests being executed from within the space [can successfully be sent to the open internet]({{ site.baseurl }}{% link _docs/management/static-egress.md %}) and other internal routes you have created in your organization.
+  - Requests being executed from within the space [can successfully be sent to the open internet]({{ site.baseurl }}{% link _docs/management/static-egress.md %}), our brokered services, and other internal routes you have created in your organization.
   - Applications can make requests to third party APIs.
-  - Any requests to our brokered services will be blocked.
+  - Applications can connect to our brokered services.
+  - Applications connecting to their own S3 buckets (not brokered) that reside in AWS Govcloud West will need to use an alternate endpoint for s3:  
+ 
+      `*.vpce-01beaa66570dfb2b9-1hlav4x8.s3.us-gov-west-1.vpce.amazonaws.com`
+    ```
+      aws --endpoint-url https://bucket.vpce-01beaa66570dfb2b9-1hlav4x8.s3.us-gov-west-1.vpce.amazonaws.com s3 ls s3://my-private-bucket
+    ```
+      for more details on using alternate endpoints with S3 see [Accessing buckets and S3 access points from S3 interface endpoints](https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html#accessing-bucket-and-aps-from-interface-endpoints)
 
 When you push your application to cloud.gov, the staging process may require outbound connections to the public internet to fetch dependencies and software modules. As such, during the staging process, your app will run under the `public-egress` until it is staged and ready to run. Once this process is complete, your app will run under the ASGs that have been applied, either by default or by modifications that have been made to your space.
 
 For applications that need access to S3, you have the option of running them under the `public-egress` ASG, or running them in the `restricted-egress` ASG, and using a proxy application (e.g., [squid proxy](http://www.squid-cache.org/), [HA proxy](http://www.haproxy.org/), etc.) to proxy traffic to your S3 bucket(s). Reference implementations showing how to do this will be available soon, or you may reach out to the cloud.gov team for support.
 
-## Managing egress settings for your org or space
-
-To inspect or modify the ASG that apply to your spaces, you can use the following `cf` CLI subcommands. Run `cf <subcommand> --help` to find out more about a specific command, or consult [the cf CLI documentation site](https://cli.cloudfoundry.org/en-US/v6/).
+To inspect or modify the ASG that apply to your spaces, you can use the following cf CLI subcommands. Run `cf <subcommand> --help` to find out more about a specific command, or consult [the cf CLI documentation site](https://cli.cloudfoundry.org/en-US/v6/).
 
 | CF CLI subcommand | Description | 
 | :- | :- |
 | `cf security-group`                         | Show a single security group |
 | `cf security-groups`                        | List all security groups |
 | `cf bind-security-group`                    | Bind a security group to a particular space, or all existing spaces of an org |
-| `cf unbind-security-group`                  | Unbind a security group from a space |
+| `cf unbind-security-group`                 | Unbind a security group from a space |
+| `cf bind-staging-security-group`            | Bind a security group to the list of security groups to be used for staging applications globally |
 | `cf staging-security-groups`                | List security groups globally configured for staging applications |
+| `cf unbind-staging-security-group`          | Unbind a security group from the set of security groups for staging applications globally |
+| `cf bind-running-security-group`            | Bind a security group to the list of security groups to be used for running applications |
 | `cf running-security-groups`                | List security groups globally configured for running applications |
-
-To adjust the security groups for a particular space, you must have the [SpaceManager role](https://docs.cloudfoundry.org/concepts/roles.html#roles). (To check the roles for a given space, use the `cf space-users` command.)
-
-For example, to grant public egress to apps running in your sandbox space SPACE (where you are a SpaceManager), run
-
-    cf bind-security-group public_networks_egress sandbox-gsa --space SPACE
-
-To set the security group for all spaces in an organization, you must have the [OrgManager role](https://docs.cloudfoundry.org/concepts/roles.html#roles). (To check the roles for a given space, use the `cf org-users` command.)
-
-For example, to grant public egress to apps running in _any_ space in organization ORG, someone with the OrgManager role should run
-
-    cf bind-security-group public_networks_egress ORG
+| `cf unbind-running-security-group`          | Unbind a security group from the set of security groups for running applications globally |
 
 If you have additional questions or run into issues, you can open a support ticket by emailing [support@cloud.gov](mailto:support@cloud.gov).
