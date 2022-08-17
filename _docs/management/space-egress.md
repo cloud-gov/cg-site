@@ -17,7 +17,7 @@ A summary of each of the ASGs that can be applied to your space are as follows:
 | :-------- |  :-: | :--:  | :--: | :-------: | :---------------------: | :-----------------: | :---------------: |
 | `closed-egress`     | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
 | `restricted-egress` | ❌ | ❌ | ✅  | ✅ | ✅ | ✅ | ✅ |
-| `public-egress`     | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 
+| `public-egress`     | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ✅ | 
 
 
 - ### `closed-egress`
@@ -33,7 +33,8 @@ A summary of each of the ASGs that can be applied to your space are as follows:
 - ### `public-egress`
   - Requests being executed from within the space [can successfully be sent to the open internet]({{ site.baseurl }}{% link _docs/management/static-egress.md %}), our brokered services, and other internal routes you have created in your organization.
   - Applications can make requests to third party APIs.
-  - Applications can connect to our brokered services.
+  - Applications can connect to our brokered s3 service.
+  - Any requests to our other brokered services will be blocked.
   - Applications connecting to their own S3 buckets (not brokered) that reside in AWS Govcloud West will need to use an alternate endpoint for s3:  
  
       `*.vpce-01beaa66570dfb2b9-1hlav4x8.s3.us-gov-west-1.vpce.amazonaws.com`
