@@ -36,7 +36,7 @@ A summary of each of the ASGs that can be applied to your space are as follows:
   - ASG name: `public_networks_egress`
   - Requests being executed from within the space [can successfully be sent to the open internet]({{ site.baseurl }}{% link _docs/management/static-egress.md %}) and other internal routes you have created in your organization.
   - Applications can make requests to third party APIs.
-  - Any requests to our brokered services except for s3 will be blocked.
+  - Any requests to our brokered services except for S3 will be blocked.
   - Applications connecting to their own S3 buckets (not brokered) that reside in AWS Govcloud West will need to use an alternate endpoint for s3:  
  
       `*.vpce-01beaa66570dfb2b9-1hlav4x8.s3.us-gov-west-1.vpce.amazonaws.com`
