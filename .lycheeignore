@@ -16,6 +16,7 @@ https://username:password
 ^https://ssl.?$
 ^http://www.?$
 .*\.fr\.cloud\.gov
+.*\.us-gov-west-1.vpce.amazonaws.com
 
 # URLs with no known replacements
 https://fugacious.18f.gov/
@@ -36,4 +37,3 @@ https://flask-example-fluent-okapi.app.cloud.gov/
 https://appname.app.cloud.gov/
 https://docs.cloud.gov/getting-started/one-off-tasks/#cf-ssh
 https://app.docusign.com/templates
-.*\.vpce-01beaa66570dfb2b9-1hlav4x8.s3.us-gov-west-1.vpce.amazonaws.com
