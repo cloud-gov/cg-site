@@ -11,23 +11,33 @@ How our system meets logging requirements specified by M-21-31.
 
 ### Basic Logging Categories
 
-[describe how we handle this requirement or what steps we will be taking]
+cloud.gov will retain logs for a minimum of 12 months in `Active Storage` (to facilitate frequent use and ease of access) and 18 months in `Cold Storage`.
 
 ### Minimum Logging Data
 
-Currently cloud.gov ensures each event log contains the data applicable for that log type. Customers are responsible for ensuring their applications log the appropriate data.
+cloud.gov ensures that platform component and application logs contain the minimum required data where possible.
 
 ### Time Standard
 
-Timestamps are applied to logs from all components.
+Timestamps are applied to all logs, and cloud.gov will apply updates to conform to ISO 8601 and RFC 339 standards. cloud.gov will implement [Amazon Time Sync](https://aws.amazon.com/about-aws/whats-new/2017/11/introducing-the-amazon-time-sync-service/), which uses a series of satellite-connected and atomic reference clocks to deliver current time readings.
 
 ### Event Forwarding
 
-All logs are currently forwarded to a centralized ELK Stack (Elasticsearch, Logstash, and Kibana). cloud.gov will eventually be switching over to Opensearch as the stack for centalized logging.
+All logs are currently forwarded to a centralized ELK Stack (Elasticsearch, Logstash, and Kibana), and all data is encrypted in transit.
 
 ### Protecting and Validating Log Information
 
-[describe how we handle this requirement or what steps we will be taking]
+Event logging is in place for all active system components. Traps will be put in place to monitor these data streams for disruption.
+
+Only individuals with the correct permissions may access, view, or modify log files.
+
+The cloud.gov team will regularly review the views and usage of log files.
+
+Log files are protected from unauthorized modifications. (Need more detail)
+
+All logs are backed up to a centralized ELK service.
+
+cloud.gov implements AIDE to check and alert on log file changes.
 
 ### Passive DNS
 
@@ -39,60 +49,20 @@ All logs are currently forwarded to a centralized ELK Stack (Elasticsearch, Logs
 
 ### Logging Orchestration, Automation, and Response – Planning
 
-[describe how we handle this requirement or what steps we will be taking]
+cloud.gov will create a plan on how to best implment Security, Orchestration, Automation, and Response (SOAR) capabilities.
 
 ### User Behavior Monitoring – Planning
 
-[describe how we handle this requirement or what steps we will be taking]
+cloud.gov will create a plan on how to best implement user behavior analytics capabilities in our environment. This will be used to identify potentially malicious or malicious activity.
 
 ### Basic Centralized Access
 
-[describe how we handle this requirement or what steps we will be taking]
+cloud.gov logs will be centrally aggregated at a component-level to an Enterprise Log Manager (ELM).
 
 ## EL2 Requirements
 
-### Meeting EL1 maturity level
-
-[describe how we handle this requirement or what steps we will be taking]
-
-### Intermediate Logging Categories
-
-[describe how we handle this requirement or what steps we will be taking]
-
-### Publication of Standardized Log Structure
-
-[describe how we handle this requirement or what steps we will be taking]
-
-### Inspection of Encrypted Data
-
-[describe how we handle this requirement or what steps we will be taking]
-
-### Intermediate Centralized Access
-
-[describe how we handle this requirement or what steps we will be taking]
+To be outlined at a later date.
 
 ## EL3 Requirements
 
-### Meeting EL2 maturity level
-
-[describe how we handle this requirement or what steps we will be taking]
-
-### Advanced Logging Categories
-
-[describe how we handle this requirement or what steps we will be taking]
-
-### Logging Orchestration, Automation, and Response – Finalizing Implementation
-
-[describe how we handle this requirement or what steps we will be taking]
-
-### User Behavior Monitoring – Finalizing Implementation
-
-[describe how we handle this requirement or what steps we will be taking]
-
-### Application Container Security, Operations, and Management
-
-[describe how we handle this requirement or what steps we will be taking]
-
-### Advanced Centralized Access
-
-[describe how we handle this requirement or what steps we will be taking]
+To be outlined at a later date.
