@@ -22,7 +22,7 @@ Due to restrictions imposed by Github and cloud.gov, as well as the internal inf
 
 ### Pages Build Containers
 
-Federalist offer two sizes of build containers ("regular": 4GB and "large": 6GB). The maximum size is limited by the size of containers available on [cloud.gov](https://cloud.gov). The first 2GB of each container is taken up by dependencies installed by Federalist (Ruby, Node, Python, and additional packages for each) leaving either 2GB or 4GB for the user space.
+Pages offer two sizes of build containers ("regular": 4GB and "large": 6GB). The maximum size is limited by the size of containers available on [cloud.gov](https://cloud.gov). The first 2GB of each container is taken up by dependencies installed by Pages (Ruby, Node, Python, and additional packages for each) leaving either 2GB or 4GB for the user space.
 
 ### Github
 
