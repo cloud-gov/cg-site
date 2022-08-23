@@ -32,4 +32,4 @@ Github is not intended to store large files or a large number of files. There ar
 
 More details can be found [on their website](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github).
 
-_*[Git LFS](https://git-lfs.github.com/) can support larger file storage but currently does not integrate with the Federalist build process_
+_*[Git LFS](https://git-lfs.github.com/) can support larger file storage but currently does not integrate with the Pages build process_
