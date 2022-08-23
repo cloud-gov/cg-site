@@ -15,7 +15,7 @@ Due to restrictions imposed by Github and cloud.gov, as well as the internal inf
 - Regular build container provide 2GB of total user space. Because dependencies like those included in your `Gemfile` or `package.json` will be installed here, it's a good rule of thumb to keep your total Github repository size under 1GB.
   - You can minimize your dependency size by removing development dependencies from `package.json` and using using [`npx`](https://www.npmjs.com/package/npx) to call development scripts.
   - You can also minimize your total build size by optimizing images and compressing files that are intended for download.
-- If your site starts hitting this initial limit, you can request an upgrade to 4GB of user space. Send an email to [federalist-support@gsa.gov](mailto:federalist-support@gsa.gov).
+- If your site starts hitting this initial limit, you can request an upgrade to 4GB of user space. Send an email to [pages-support@cloud.gov](mailto:pages-support@cloud.gov).
 - If your site is going over both of these limits, one temporary workaround is to create a new site just to store certain large assets like images, PDFs, or slide decks. For example, you could host large reports in a separate repository which deploys to `reports.example.gov` and then link to these assets from your primary site.
 
 ## Details
