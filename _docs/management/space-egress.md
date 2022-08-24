@@ -13,11 +13,11 @@ By default, when new spaces are created in your organization an application secu
 
 A summary of each of the ASGs that can be applied to your space are as follows:
 
-| ASG Type | Public Web | AWS S3 | AWS RDS | AWS Elasticache Redis | AWS Elasticsearch | Internal Routes |
-| :-------- |  :-:  | :--: | :-------: | :---------------------: | :-----------------: | :---------------: |
-| `closed-egress`     | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
-| `restricted-egress` | ❌  | ❌ | ✅ | ✅ | ✅ | ✅ |
-| `public-egress`     | ✅  | ✅ | ❌ | ❌ | ❌ | ✅ | 
+| ASG Type | Public Web | AWS S3 (user-provided)| AWS S3 (brokered) | AWS RDS | AWS Elasticache Redis | AWS Elasticsearch | Internal Routes |
+| :-------- |  :-: | :--:  | :--: | :-------: | :---------------------: | :-----------------: | :---------------: |
+| `closed-egress`     | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
+| `restricted-egress` | ❌ | ❌ | ✅  | ✅ | ✅ | ✅ | ✅ |
+| `public-egress`     | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ✅ | 
 
 
 - ### `closed-egress`
@@ -36,8 +36,15 @@ A summary of each of the ASGs that can be applied to your space are as follows:
   - ASG name: `public_networks_egress`
   - Requests being executed from within the space [can successfully be sent to the open internet]({{ site.baseurl }}{% link _docs/management/static-egress.md %}) and other internal routes you have created in your organization.
   - Applications can make requests to third party APIs.
-  - Any requests to our brokered services will be blocked.
-
+  - Any requests to our brokered services except for S3 will be blocked.
+  - Applications connecting to their own S3 buckets (not brokered) that reside in AWS Govcloud West will need to use an alternate endpoint for s3:  
+ 
+      `*.vpce-01beaa66570dfb2b9-1hlav4x8.s3.us-gov-west-1.vpce.amazonaws.com`
+    ```
+      aws --endpoint-url https://bucket.vpce-01beaa66570dfb2b9-1hlav4x8.s3.us-gov-west-1.vpce.amazonaws.com s3 ls s3://my-private-bucket
+    ```
+      for more details on using alternate endpoints with S3 see [Accessing buckets and S3 access points from S3 interface endpoints](https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html#accessing-bucket-and-aps-from-interface-endpoints)
+      
 When you push your application to cloud.gov, the staging process may require outbound connections to the public internet to fetch dependencies and software modules. As such, during the staging process, your app will run under the `public-egress` until it is staged and ready to run. Once this process is complete, your app will run under the ASGs that have been applied, either by default or by modifications that have been made to your space.
 
 For applications that need access to S3, you have the option of running them under the `public-egress` ASG, or running them in the `restricted-egress` ASG, and using a proxy application (e.g., [squid proxy](http://www.squid-cache.org/), [HA proxy](http://www.haproxy.org/), etc.) to proxy traffic to your S3 bucket(s). Reference implementations showing how to do this will be available soon, or you may reach out to the cloud.gov team for support.
