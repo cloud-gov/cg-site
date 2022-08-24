@@ -67,5 +67,4 @@ You are able to start working while IAA is being signed.
 
 ## Additional info
 
-If your site has over 1 GB of images to serve you should look into another way to store those files. Github is not intended to store large amounts of files.
-- Github has no problem storing less than 1GB of different files types. For hosting over 1GB of files, we suggest getting access to a public database service that will load the files. One provider of this type of service is [cloud.gov]({{ site.baseurl }}/). More information on repository size limitations is available [here](https://help.github.com/articles/what-is-my-disk-quota/).
+If your site has over 1 GB of files to serve you should look into another way to store those files. Github is not intended to store large amounts of files. More details are available in the [large file handling guide](/pages/documentation/large-file-handling/).

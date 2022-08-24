@@ -105,6 +105,8 @@ sidenav:
         href: /pages/documentation/bundler-on-pages/
       - text: Supported site engines
         href: /pages/documentation/supported-site-engines/
+      - text: Large file handling
+        href: /pages/documentation/large-file-handling/
       - text: Renaming your site's repository
         href: /pages/documentation/renaming-site-repository/
       - text: Monorepos on Pages
