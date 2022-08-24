@@ -11,8 +11,8 @@ How our system meets logging requirements specified by [Executive Order M-21-31]
 
 ### Basic Logging Categories
 
-cloud.gov will retain logs for a minimum of 12 months in `Active Storage` (to facilitate
-frequent use and ease of access) and 18 months in `Cold Storage`.
+cloud.gov will retain logs for a minimum of 12 months in "active" storage (to facilitate
+frequent use and ease of access) and 18 months in "cold" storage.
 
 ### Minimum Logging Data
 
@@ -33,18 +33,13 @@ and Kibana), and all data is encrypted in transit.
 
 ### Protecting and Validating Log Information
 
-Event logging is in place for all active system components. Traps will be put in
+- Event logging is in place for all active system components. Traps will be put in
 place to monitor these data streams for disruption.
-
-Only individuals with the correct permissions may access, view, or modify log files.
-
-The cloud.gov team will regularly review the views and usage of log files.
-
-Log files are protected from unauthorized modifications. (Need more detail)
-
-All logs are backed up to a centralized ELK service.
-
-cloud.gov implements [AIDE](https://aide.github.io/) to check and alert on log
+- Only individuals with the correct permissions may access, view, or modify log files.
+- The cloud.gov team will regularly review the views and usage of log files.
+- Log files are protected from unauthorized modifications. (Need more detail)
+- All logs are backed up to a centralized ELK service.
+- cloud.gov implements [AIDE](https://aide.github.io/) to check and alert on log
 file changes.
 
 ### Passive DNS
