@@ -17,6 +17,7 @@ https://username:password
 ^http://www.?$
 .*\.fr\.cloud\.gov
 https://example.gov
+.*\.us-gov-west-1.vpce.amazonaws.com
 
 # URLs with no known replacements
 https://fugacious.18f.gov/
