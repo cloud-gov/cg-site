@@ -37,18 +37,17 @@ and Kibana), and all data is encrypted in transit.
 place to monitor these data streams for disruption.
 - Only individuals with the correct permissions may access, view, or modify log files.
 - The cloud.gov team will regularly review the views and usage of log files.
-- Log files are protected from unauthorized modifications. (Need more detail)
+- Log files are protected from unauthorized modifications based on current authentication mechanisms.
 - All logs are backed up to a centralized ELK service.
-- cloud.gov implements [AIDE](https://aide.github.io/) to check and alert on log
-file changes.
+- cloud.gov will implement [AIDE](https://aide.github.io/) to check and alert on log file changes.
 
 ### Passive DNS
 
-[describe how we handle this requirement or what steps we will be taking]
+cloud.gov is looking into the possibility of standing up DNS resolvers to meet this requirement, or if there will be Linux distro support for this requirement.
 
 ### Cybersecurity Infrastructure Security Agency (CISA) and Federal Bureau of Investigations (FBI) Access Requirements
 
-[describe how we handle this requirement or what steps we will be taking]
+cloud.gov has multiple ways to provide logs and other relevant data to CISA and the FBI upon request, and we are looking into the technical mechanisms the FBI/CISA have for this.
 
 ### Logging Orchestration, Automation, and Response – Planning
 
