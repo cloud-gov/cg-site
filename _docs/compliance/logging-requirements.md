@@ -36,7 +36,7 @@ required data where possible.
 - Access to cold storage in S3 is limited to "platform operators" only, based on AWS IAM permissions
 - Log files are protected from unauthorized modifications based on current authentication mechanisms.
 - Logs are streamed continuously both to ELK for live viewing and S3 for cold storage.
-- [TODO] Update this... cloud.gov will implement [AIDE](https://aide.github.io/) to check and alert on log file changes.
+- Cloud.gov is in the process of implementing ["Object Lock"](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-overview.html) for logs stored in S3, which follows a write-once-read-many (WORM) model.
 
 ### Passive DNS
 
