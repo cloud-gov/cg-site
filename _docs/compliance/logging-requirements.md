@@ -11,59 +11,45 @@ How our system meets logging requirements specified by [Executive Order M-21-31]
 
 ### Basic Logging Categories
 
-cloud.gov will retain logs for a minimum of 12 months in "active" storage (to facilitate
-frequent use and ease of access) and 18 months in "cold" storage.
+- Cloud.gov currently retains logs in "active" storage (using ELK) for 6 months (to facilitate frequent use and ease of access), and 18 months in cold storage (using s3).
+- Cloud.gov will meet requirements by updating "active" storage to 12 months.
 
 ### Minimum Logging Data
 
-cloud.gov ensures that platform component and application logs contain the minimum
+Cloud.gov ensures that platform component and application logs contain the minimum
 required data where possible.
 
 ### Time Standard
 
-Timestamps are applied to all logs, and cloud.gov will apply updates to conform to
-ISO 8601 and RFC 339 standards. cloud.gov will implement [Amazon Time Sync](https://aws.amazon.com/about-aws/whats-new/2017/11/introducing-the-amazon-time-sync-service/),
-which uses a series of satellite-connected and atomic reference clocks to deliver
-current time readings.
+- Timestamps are currently applied to all logs.
+- Cloud.gov met FedRAMP requirements to use NIST time servers, and will adopt [Amazon Time Sync](https://aws.amazon.com/about-aws/whats-new/2017/11/introducing-the-amazon-time-sync-service/) pending FedRAMP approval to use time based on Stratum 1 GPS-based sources.
 
 ### Event Forwarding
 
-All logs are currently forwarded to a centralized ELK Stack (Elasticsearch, Logstash,
-and Kibana), and all data is encrypted in transit.
+- All logs are currently forwarded by default to a centralized ELK Stack (Elasticsearch, Logstash, and Kibana), as well as S3, and all data is encrypted in transit.
+- Any customer can use a ["log drain"](https://cloud.gov/docs/deployment/logs/#how-to-automatically-copy-your-logs-elsewhere) to forward their logs to their agency services.
 
 ### Protecting and Validating Log Information
 
-- Event logging is in place for all active system components. Traps will be put in
-place to monitor these data streams for disruption.
-- Only individuals with the correct permissions may access, view, or modify log files.
-- The cloud.gov team will regularly review the views and usage of log files.
+- Event logging is in place for all active system components, and internal alerts are in place for any logging disruptions.
+- Cloud Foundry permissions are in place to keep ELK log viewing to authorized roles.
+- Access to cold storage in S3 is limited to "platform operators" only, based on AWS IAM permissions
 - Log files are protected from unauthorized modifications based on current authentication mechanisms.
-- All logs are backed up to a centralized ELK service.
-- cloud.gov will implement [AIDE](https://aide.github.io/) to check and alert on log file changes.
+- Logs are streamed continuously both to ELK for live viewing and S3 for cold storage.
+- [TODO] Update this... cloud.gov will implement [AIDE](https://aide.github.io/) to check and alert on log file changes.
 
 ### Passive DNS
 
-cloud.gov is looking into the possibility of standing up DNS resolvers to meet this requirement, or if there will be Linux distro support for this requirement.
+Slated for implementation in 2023 pending availability of OS support and other infrastructure.
 
 ### Cybersecurity Infrastructure Security Agency (CISA) and Federal Bureau of Investigations (FBI) Access Requirements
 
-cloud.gov has multiple ways to provide logs and other relevant data to CISA and the FBI upon request, and we are looking into the technical mechanisms the FBI/CISA have for this.
-
-### Logging Orchestration, Automation, and Response – Planning
-
-cloud.gov will create a plan on how to best implment Security, Orchestration, Automation,
-and Response (SOAR) capabilities.
-
-### User Behavior Monitoring – Planning
-
-cloud.gov will create a plan on how to best implement user behavior analytics
-capabilities in our environment. This will be used to identify potentially malicious
-or malicious activity.
+Cloud.gov use of S3 for customer logs and AWS CloudWatch for platform logs provides a standard set of tools for log sharing with CISA and law enforcement agencies.
 
 ### Basic Centralized Access
 
-cloud.gov logs will be centrally aggregated at a component-level to an Enterprise
-Log Manager (ELM).
+- Cloud.gov customers can set up a ["Log Drain"](https://cloud.gov/docs/deployment/logs/#how-to-automatically-copy-your-logs-elsewhere) which lets customers stream logs to their agency log centralization service.
+- Cloud.gov is leveraging GSA log centralization services and will provide guidance for GSA customers as that matures.
 
 ## EL2 Requirements
 
