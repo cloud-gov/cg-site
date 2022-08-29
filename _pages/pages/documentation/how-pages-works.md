@@ -35,7 +35,7 @@ Pages is located on cloud.gov's GovCloud environment, which has [received FedRAM
 The diagram for Federalist's architecture is below. It's not intended for general audiences and is focused on concisely showing all of the components of Federalist as required for compliance. Please contact us with any questions: we aren't expecting this diagram to be useful by itself to gain an understanding of Federalist. [![Diagram of Federalist architecture]({{site.baseurl}}/assets/pages/images/Federalist System Diagram 3-8-18.png)]({{site.baseurl}}/assets/pages/images/Federalist System Diagram 3-8-18.png)
 
 
-### https://app.pages.cloud.gov
+### https://pages.cloud.gov
 
 Main application server providing an API and front-end website load balanced across at least two instances
 

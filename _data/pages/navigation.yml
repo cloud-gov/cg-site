@@ -16,7 +16,7 @@ secondary:
   - name: Platform Status
     url: https://federalist.statuspage.io
   - name: Login
-    url: https://app.pages.cloud.gov
+    url: https://pages.cloud.gov
     external: true
     class: usa-button usa-button-secondary nav-button
 
@@ -34,7 +34,7 @@ footer:
   - text: Contact
     href: /pages/contact/
   - text: Manage Sites
-    href: https://app.pages.cloud.gov
+    href: https://pages.cloud.gov
     external: true
 
 
