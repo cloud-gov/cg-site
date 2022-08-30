@@ -2,12 +2,12 @@
 parent: compliance
 layout: docs
 sidenav: true
-title: Logging Requirements
+title: M-21-31 compliance
 ---
 
-How our system meets logging requirements specified by [Executive Order M-21-31](https://www.whitehouse.gov/wp-content/uploads/2021/08/M-21-31-Improving-the-Federal-Governments-Investigative-and-Remediation-Capabilities-Related-to-Cybersecurity-Incidents.pdf).
+This document outlines how our platform enables cloud.gov customers to comply with logging requirements specified by [Executive Order M-21-31](https://www.whitehouse.gov/wp-content/uploads/2021/08/M-21-31-Improving-the-Federal-Governments-Investigative-and-Remediation-Capabilities-Related-to-Cybersecurity-Incidents.pdf). If you have any questions about this document, please contact support@cloud.gov.
 
-## EL1 Requirements
+## EL1 Compliance
 
 ### Basic Logging Categories
 
@@ -36,7 +36,7 @@ required data where possible.
 - Access to cold storage in S3 is limited to "platform operators" only, based on AWS IAM permissions
 - Log files are protected from unauthorized modifications based on current authentication mechanisms.
 - Logs are streamed continuously both to ELK for live viewing and S3 for cold storage.
-- Cloud.gov is in the process of implementing ["Object Lock"](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-overview.html) for logs stored in S3, which follows a write-once-read-many (WORM) model.
+- Cloud.gov will implement Elasticsearch [index lifecycle policies](https://www.elastic.co/guide/en/elasticsearch/reference/current/index-lifecycle-management.html) to make data indices read-only once they [rollover](https://www.elastic.co/guide/en/elasticsearch/reference/current/index-rollover.html).
 
 ### Passive DNS
 
@@ -51,10 +51,10 @@ Cloud.gov use of S3 for customer logs and AWS CloudWatch for platform logs provi
 - Cloud.gov customers can set up a ["Log Drain"](https://cloud.gov/docs/deployment/logs/#how-to-automatically-copy-your-logs-elsewhere) which lets customers stream logs to their agency log centralization service.
 - Cloud.gov is leveraging GSA log centralization services and will provide guidance for GSA customers as that matures.
 
-## EL2 Requirements
+## EL2 Compliance
 
 To be outlined at a later date.
 
-## EL3 Requirements
+## EL3 Compliance
 
 To be outlined at a later date.
