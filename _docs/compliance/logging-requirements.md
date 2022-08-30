@@ -5,7 +5,7 @@ sidenav: true
 title: M-21-31 compliance
 ---
 
-This document outlines how our platform enables cloud.gov customers to comply with logging requirements specified by [Executive Order M-21-31](https://www.whitehouse.gov/wp-content/uploads/2021/08/M-21-31-Improving-the-Federal-Governments-Investigative-and-Remediation-Capabilities-Related-to-Cybersecurity-Incidents.pdf). If you have any questions about this document, please contact support@cloud.gov.
+This document outlines how our platform enables cloud.gov customers to comply with logging requirements specified by [Executive Order M-21-31](https://www.whitehouse.gov/wp-content/uploads/2021/08/M-21-31-Improving-the-Federal-Governments-Investigative-and-Remediation-Capabilities-Related-to-Cybersecurity-Incidents.pdf). If you have any questions about this document, please contact [support@cloud.gov](mailto:support@cloud.gov).
 
 ## EL1 Compliance
 
