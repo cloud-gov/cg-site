@@ -16,7 +16,7 @@ Not a guide for:
 
 ## Threshold for "service disruption"
 
-**If there is an unexpected user-impacting problem that we believe is a platform problem.** 
+**If there is an unexpected user-impacting problem that we believe is a platform problem.**
 
 Examples:
 
@@ -63,6 +63,17 @@ The person with StatusPage responsibility is responsible for asking “any objec
 
 A postmortem is not necessary to close, and it does not have to happen immediately after closing.
 
+### Retroactively adding a component outage
+
+Sometimes we have system outages that may occur outside of normal platform support hours (e.g. on a weekend) and that may resolve without any intervention by platform operators. If this occurs, then we need to retroactively add a component outage so that [the cloud.gov StatusPage](https://cloudgov.statuspage.io/) accurately reflects our system uptime.
+
+To retroactively add a component outage:
+
+1. Log in to [the StatusPage console for cloud.gov](https://manage.statuspage.io/pages/swcbylb1c30f)
+1. Click `Components` in the left sidebar
+1. In the main page area, click on the name of the component that experienced an outage (e.g. "Applications")
+1. At the bottom of the page, there is a graph of uptime. To add an outage, first hover your mouse over the day that you want to update
+
 ## Ensure a postmortem happens
 
 The person who closes the event should then put a card on the component-owning squad’s board in the urgent lane about holding a retrospective discussion and writing the public postmortem.  The card's acceptance criteria should be that the retrospective discussion has happened, and that the public postmortem that resulted has been posted.
@@ -79,7 +90,7 @@ Before or during the meeting, we put together a timeline of the incident in the 
 
 <!-- Discussing remediation steps is important for IR-4 and SI-2 -->
 
-1. The facilitator starts by reading the retrospective prime directive: _Regardless of what we discover, we understand and truly believe that everyone did the best job they could, given what they knew at the time, their skills and abilities, the resources available, and the situation at hand._
+1. The facilitator starts by reading the retrospective prime directive: *Regardless of what we discover, we understand and truly believe that everyone did the best job they could, given what they knew at the time, their skills and abilities, the resources available, and the situation at hand.*
 1. We review the timeline and add anything we have missed.
 1. We analyze the factors that contributed to the incident.
 1. We propose, discuss, and prioritize remediation steps to reduce the likelihood of future incidents, to improve detection and response times for future incidents, to improve our incident handling processes and training, and to validate and test these remediation steps.
@@ -114,5 +125,5 @@ They also have a baseline expectation that we have good answers to the following
 ### Page information
 
 * Last modified on: {% last_modified_at %}
-* [Recent document history](https://github.com/cloud-gov/cg-site/commits/master/{{ page.path }}) (since 2020-02-05)
-* [Older document history](https://github.com/cloud-gov/cg-site/commits/master/content/docs/ops/{{ page.slug }}.md) (before 2020-02-05)
+* [Recent document history](<https://github.com/cloud-gov/cg-site/commits/master/>{{ page.path }}) (since 2020-02-05)
+* [Older document history](<https://github.com/cloud-gov/cg-site/commits/master/content/docs/ops/>{{ page.slug }}.md) (before 2020-02-05)
