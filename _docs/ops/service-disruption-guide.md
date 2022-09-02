@@ -72,7 +72,13 @@ To retroactively add a component outage:
 1. Log in to [the StatusPage console for cloud.gov](https://manage.statuspage.io/pages/swcbylb1c30f)
 1. Click `Components` in the left sidebar
 1. In the main page area, click on the name of the component that experienced an outage (e.g. "Applications")
-1. At the bottom of the page, there is a graph of uptime. To add an outage, first hover your mouse over the day that you want to update
+1. At the bottom of the page, there is a graph of uptime. Hover your mouse over the day that you want to update
+
+    {% asset statuspage-outage-popup.png alt="Screenshot showing a pop-up form to edit the duration of a system outage for a specific day" %}
+
+1. In the pop-up form that appears for that day, edit the time period for "Major outage" or "Partial outage" and then click the check mark icon in the top-right of the pop-up
+
+    {% asset statuspage-outage-popup-edit.png alt="Screenshot showing a pop-up form to edit the duration of a system outage for a specific day" %}
 
 ## Ensure a postmortem happens
 
