@@ -65,20 +65,22 @@ A postmortem is not necessary to close, and it does not have to happen immediate
 
 ### Retroactively adding a component outage
 
-Sometimes we have system outages that may occur outside of normal platform support hours (e.g. on a weekend) and that may resolve without any intervention by platform operators. If this occurs, then we need to retroactively add a component outage so that [the cloud.gov StatusPage](https://cloudgov.statuspage.io/) accurately reflects our system uptime.
+Sometimes system outages occur outside of normal platform support hours (e.g. on a weekend) and may resolve without any intervention by platform operators. When this happenss, a platform operators should retroactively add a component outage so that [the cloud.gov StatusPage](https://cloudgov.statuspage.io/) accurately reflects the actual system uptime.
 
 To retroactively add a component outage:
 
 1. Log in to [the StatusPage console for cloud.gov](https://manage.statuspage.io/pages/swcbylb1c30f)
 1. Click `Components` in the left sidebar
-1. In the main page area, click on the name of the component that experienced an outage (e.g. "Applications")
-1. At the bottom of the page, there is a graph of uptime. Hover your mouse over the day that you want to update
+1. In the main page area, click on the name of the component that experienced an outage (e.g. "Applications") to access the edit page for the component
+1. At the bottom of the edit page for the component, there is a graph of uptime. Hover your mouse over the day that you want to update.
 
-    {% asset statuspage-outage-popup.png alt="Screenshot showing a pop-up form to edit the duration of a system outage for a specific day" %}
+    {% asset statuspage-outage-popup.png alt="Screenshot showing a pop-up form to edit the duration of a system outage for August 24, 2022" %}
 
 1. In the pop-up form that appears for that day, edit the time period for "Major outage" or "Partial outage" and then click the check mark icon in the top-right of the pop-up
 
-    {% asset statuspage-outage-popup-edit.png alt="Screenshot showing a pop-up form to edit the duration of a system outage for a specific day" %}
+    {% asset statuspage-outage-popup-edit.png alt="Screenshot showing a pop-up form with a 2 hour major outage entered for August 24, 2022" %}
+
+1. The component uptime display on the [cloud.gov StatusPage](https://cloudgov.statuspage.io/) should now reflect the outage
 
 ## Ensure a postmortem happens
 
