@@ -65,7 +65,7 @@ A postmortem is not necessary to close, and it does not have to happen immediate
 
 ### Retroactively adding a component outage
 
-Sometimes system outages occur outside of normal platform support hours (e.g. on a weekend) and may resolve without any intervention by platform operators. When this happenss, a platform operators should retroactively add a component outage so that [the cloud.gov StatusPage](https://cloudgov.statuspage.io/) accurately reflects the actual system uptime.
+Sometimes system outages occur outside of normal platform support hours (e.g. on a weekend) and may resolve without any intervention by platform operators. When this happens, a platform operators should retroactively add a component outage so that [the cloud.gov StatusPage](https://cloudgov.statuspage.io/) accurately reflects the actual system uptime.
 
 To retroactively add a component outage:
 
