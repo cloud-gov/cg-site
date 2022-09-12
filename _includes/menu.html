@@ -5,7 +5,12 @@ where we provide an easy way to manage your navigation system
 
 <header class="usa-header usa-header--extended" role="banner">
   <div class="usa-navbar">
-    {%- include logo.html -%}
+    {% case page.navigation %}
+      {% when "pages" %}
+        {%- include pages/logo.html -%}
+      {% else %}
+        {%- include logo.html -%}
+    {% endcase %}
     <button class="usa-menu-btn">Menu</button>
   </div>
   <nav role="navigation" class="usa-nav">
@@ -49,7 +54,7 @@ where we provide an easy way to manage your navigation system
         <ul class="usa-nav__secondary-links">
           {%- for nav_item in include.secondary_navigation -%}
           <li class="usa-nav__secondary-item">
-            <a href="{{ nav_item.url | prepend: site.baseurl }}">{{ nav_item.name | escape }}</a>
+            <a href="{% if nav_item.url contains "https://" %}{{ nav_item.url }}{% else %}{{ nav_item.url | prepend: site.baseurl }}{% endif %}">{{ nav_item.name | escape }}</a>
           </li>
           {%- endfor -%}
         </ul>

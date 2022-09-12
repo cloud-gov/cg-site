@@ -1,0 +1,113 @@
+primary:
+  - name: Features
+    url: /pages/features/
+  - name: Success Stories
+    url: /pages/success-stories/
+  - name: Documentation
+    url: /pages/documentation/
+  - name: Pricing
+    url: /pages/pricing/
+  - name: Contact
+    url: /pages/contact/
+  - name: Federalist Migration
+    url: /pages/federalist-migration
+    # Look inside assets/js/index.js to see that how this url changes depending on enviroment
+secondary:
+  - name: Platform Status
+    url: https://federalist.statuspage.io
+  - name: Login
+    url: https://pages.cloud.gov
+    external: true
+    class: usa-button usa-button-secondary nav-button
+
+footer:
+  - text: Home
+    href: /pages/
+  - text: Features
+    href: /pages/features/
+  - text: Success Stories
+    href: /pages/success-stories/
+  - text: Documentation
+    href: /pages/documentation/
+  - text: Pricing
+    href: /pages/pricing/
+  - text: Contact
+    href: /pages/contact/
+  - text: Manage Sites
+    href: https://pages.cloud.gov
+    external: true
+
+
+sidenav:
+  - text: Using Pages
+    href: /pages/documentation/
+    subfolderitems:
+      - text: Why use Pages?
+        href: /pages/documentation/why-use-pages/
+      - text: Access and permissions
+        href: /pages/documentation/access-permissions/
+      - text: Customer responsibilities
+        href: /pages/documentation/customer-responsibilities/
+      - text: Getting started with a sandbox
+        href: /pages/documentation/sandbox/
+      - text: "21st Century IDEA"
+        href: /pages/documentation/21st-century-idea/
+      - text: Getting started with Jekyll
+        href: /pages/documentation/getting-started-with-jekyll/
+      - text: Getting started with Netlify CMS
+        href: /pages/documentation/getting-started-with-netlify-cms/
+      - text: Included with Pages
+        href: /pages/documentation/included-with-pages/
+      - text: Instructional demos
+        href: /pages/documentation/instructional-demos/
+      - text: Builds and previews
+        href: /pages/documentation/previews/
+      - text: Custom domains
+        href: /pages/documentation/custom-domains/
+      - text: Before you launch
+        href: /pages/documentation/before-you-launch/
+      - text: Migration guide
+        href: /pages/documentation/migration-guide/
+      - text: Adding forms
+        href: /pages/documentation/forms/
+      - text: Adding search 
+        href: /pages/documentation/search/
+      - text: Site templates
+        href: /pages/documentation/templates/
+      - text: Customizing your site
+        href: /pages/documentation/customization/
+      - text: Using the markup languages
+        href: /pages/documentation/resources/
+      - text: Content guide
+        href: /pages/documentation/content-guide/
+      - text: Custom headers
+        href: /pages/documentation/custom-headers/
+      - text: Federalist.json
+        href: /pages/documentation/federalist-json/
+  - text: For developers
+    href: /pages/documentation/
+    subfolderitems:
+      - text: How Pages works
+        href: /pages/documentation/how-pages-works/
+      - text: How builds work
+        href: /pages/documentation/how-builds-work/
+      - text: Specific build errors
+        href: /pages/documentation/build-errors/
+      - text: Environment variables on builds
+        href: /pages/documentation/env-vars-on-pages-builds/
+      - text: Pages and cloud.gov
+        href: /pages/documentation/cloud-gov/
+      - text: Node on Pages
+        href: /pages/documentation/node-on-pages/
+      - text: RVM on Pages
+        href: /pages/documentation/rvm-on-pages/
+      - text: Bundler on Pages
+        href: /pages/documentation/bundler-on-pages/
+      - text: Supported site engines
+        href: /pages/documentation/supported-site-engines/
+      - text: Large file handling
+        href: /pages/documentation/large-file-handling/
+      - text: Renaming your site's repository
+        href: /pages/documentation/renaming-site-repository/
+      - text: Monorepos on Pages
+        href: /pages/documentation/monorepos-on-pages/
