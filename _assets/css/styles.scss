@@ -31,6 +31,8 @@ $theme-image-path: 'img';
 @import 'scss/packages/uswds-utilities';
 @import 'theme/uswds-theme-custom-styles';
 
+@import 'pages/index';
+
 // default mode hide banner
 .usa-banner__content {
   display: hidden;

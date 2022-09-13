@@ -1,0 +1,44 @@
+.usa-logo-composite {
+  margin: units(1) 0;
+}
+
+.usa-logo-composite__parent a {
+  display: inline-block;
+  padding-top: units(3);
+}
+
+.usa-logo-composite__parent img {
+  height: units(3);
+}
+
+.usa-logo-composite__logo a {
+  display: inline-block;
+  padding-bottom: units(3);
+}
+
+.usa-logo-composite__logo img {
+  height: units(6);
+}
+
+@include at-media-max($theme-header-min-width) {
+  .usa-logo-composite {
+    @include u-flex("fill");
+    margin: 0;
+  }
+  .usa-logo-composite__parent {
+    display: none;
+  }
+  .usa-logo-composite__parent a,
+  .usa-logo-composite__logo a {
+    display: block;
+    padding: 0;
+  }
+  .usa-logo-composite__parent img {
+    height: units(2);
+    display: none;
+    margin: 0 auto;
+  }
+  .usa-logo-composite__logo img {
+    height: units(4);
+  }
+}
