@@ -80,14 +80,13 @@ fact_sheets:
     pdfs:
       - link: /assets/pages/documents/how-pages-works-diagram.pdf
         description: An outline of how all of Pages' parts work together.
-  - name: Compliance memo
+  - name: Compliance memo & extension
     thumbnail: /assets/pages/images/home-page/pages-compliance-memo-Thumbnail.jpg
     pdfs:
       - link: /assets/pages/documents/pages-compliance-memo.pdf
         description: Details about Pages' compliance and Authority to Operate.
-
-
-
+      - link: /assets/pages/documents/Federalist-ATO-Extension-Letter.pdf
+        description: Pages's compliance and Authority to Operate extension.
 ---
 
 <section class="usa-section">
