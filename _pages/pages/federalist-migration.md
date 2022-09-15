@@ -26,11 +26,11 @@ title: cloud.gov Pages - Federalist Migration
     </div>
   </div>
   <div class="grid-row grid-gap margin-top-4">
-    <div class="tablet:grid-col-6  usa-prose">
+    <div class="tablet:grid-col-6 usa-prose">
       <h3>New URLs</h3>
       <p>The urls at which you access the platform will be changing to reflect our new name. No action will be required by you and you will continue to be able access the application at the old urls indefinitely, we’ll just send you on over to the new ones.</p>
     </div>
-    <div class="tablet:grid-col-6  usa-prose">
+    <div class="tablet:grid-col-6 usa-prose">
       <h3>Authentication</h3>
       <p>The way you authenticate to the platform will be changing. Instead of using your Github account, you will authenticate using cloud.gov’s authentication service. In some cases, this will allow you to leverage your agency’s existing identity infrastructure, otherwise, you will use an identity service provided by cloud.gov.</p>
     </div>
@@ -43,6 +43,52 @@ title: cloud.gov Pages - Federalist Migration
     <div class="tablet:grid-col-6 usa-prose">
       <h3>Compliance and Authorization</h3>
       <p>With few exceptions, existing customers will continue to receive the GSA provided authorization for your sites for the length of your current agreement. We will be reaching out individually to those of you whose responsibilities will change prior to the expiration of your agreement.</p>
+    </div>
+  </div>
+</section>
+
+<section class="usa-section">
+  <div class="grid-row">
+    <div class="tablet:grid-col-7 usa-prose">
+      <h2>Migration Process</h2>
+    </div>
+  </div>
+  <div class="grid-row">
+    <div class="grid-row margin-top-4">
+      <div class="tablet:grid-col-12 usa-prose">
+        <p>
+          The primary task of migration is changing the way you authenicate. Instead of using your Github account, you will authenticate using cloud.gov’s authentication service. In some cases, this will allow you to leverage your agency’s existing identity infrastructure, otherwise, you will use an identity service provided by cloud.gov.
+        </p>
+        <p>
+          You can migrate your account on your own or stop by weekly Pages office hours. You can receive the invite by notifying us at <a href="mailto:inquiries@cloud.gov">inquiries@cloud.gov</a>.
+        </p>
+        <p>
+          Some information will still be available at the <a href="https://federalistapp.18f.gov">Federalist site</a> but we’re gradually transitioning this to a read-only page before finally turning it off. 
+        </p>
+      </div>
+    </div>
+    <div class="grid-row grid-gap margin-top-4">
+      <div class="tablet:grid-col-6 usa-prose">
+        <p>
+          You will notice there are now two options for logging into Pages: Github and cloud.gov authentication. You will be able to authenticate with Github until October 15th, at which point cloud.gov authentication will be required.
+        </p>
+      </div>
+      <div class="tablet:grid-col-6 usa-prose">
+        <img alt="screenshot of pages.cloud.gov website login page" src="{{site.baseurl}}/assets/pages/images/federalist-migration-login.png"/>
+      </div>
+    </div>
+    <div class="grid-row grid-gap margin-top-4">
+      <div class="tablet:grid-col-6 usa-prose">
+        <p>
+          When logging in to Pages with Github, you will be prompted to create a cloud.gov account using your government or official contractor email. If you're using a .gov email address and your agency has an identity provider configured with cloud.gov, you will see an option to use this to authenticate. Once you have completed the cloud.gov authentication signup or login process, you will no longer be able to login with your Github account.
+        </p>
+        <p>
+          Please let us know if you have any questions at <a href="mailto:pages-support@cloud.gov">pages-support@cloud.gov</a>.
+        </p>
+      </div>
+        <div class="tablet:grid-col-6 usa-prose">
+        <img alt="screenshot of pages.cloud.gov website account migration page" src="{{site.baseurl}}/assets/pages/images/federalist-migration-migrate.png"/>
+      </div>
     </div>
   </div>
 </section>
