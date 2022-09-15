@@ -28,8 +28,7 @@ A summary of each of the ASGs that can be applied to your space are as follows:
 - ### `restricted-egress`
   - ASG name: `trusted_local_networks_egress`
   - Requests being executed from within the space can only successfully be sent to some of our brokered services or other internal routes you have created in your organization.
-    - Accessible brokered services: [AWS RDS](https://cloud.gov/docs/services/relational-database/), [AWS Elasticache Redis](https://cloud.gov/docs/services/aws-elasticache/), [AWS Elasticsearch](https://cloud.gov/docs/services/aws-elasticsearch/).
-    - Inaccessible brokered service: [S3 Object Storage](https://cloud.gov/docs/services/s3/).
+    - Accessible brokered services: [AWS RDS](https://cloud.gov/docs/services/relational-database/), [AWS Elasticache Redis](https://cloud.gov/docs/services/aws-elasticache/), [AWS Elasticsearch](https://cloud.gov/docs/services/aws-elasticsearch/), [S3 Object Storage](https://cloud.gov/docs/services/s3/).
   - Any requests to the open internet are blocked.
 
 - ### `public-egress`
