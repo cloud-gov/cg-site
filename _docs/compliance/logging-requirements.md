@@ -16,8 +16,7 @@ This document outlines how our platform enables cloud.gov customers to comply wi
 
 ### Minimum Logging Data
 
-Cloud.gov ensures that platform component and application logs contain the minimum
-required data where possible.
+Cloud.gov ensures that platform component and application logs contain the minimum required data where possible. Customers are responsible for logging any custom HTTP headers at the application level.
 
 ### Time Standard
 
