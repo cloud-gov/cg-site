@@ -244,6 +244,8 @@ In short, `cf bind-service` will provide a `DATABASE_URL` environment variable f
 
 The contents of the `DATABASE_URL` environment variable contain the credentials to access your database. Treat the contents of this and all other environment variables as sensitive.
 
+Please note: If you are binding a service instance to a new space, please review and adjust your space egress settings accordingly for that new space as all newly made spaces by default have their space egress set to closed which means any requests to the open internet or our brokered services will be blocked. For an overview of space egress settings, see [Space Egress](https://cloud.gov/docs/management/space-egress/).
+
 ## Backups
 
 *Please note that these instructions will change in the future as we expand our service offerings and provide more options for customers.*
