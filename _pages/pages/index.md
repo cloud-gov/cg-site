@@ -85,7 +85,7 @@ fact_sheets:
     pdfs:
       - link: /assets/pages/documents/pages-compliance-memo.pdf
         description: Details about Pages' compliance and Authority to Operate.
-      - link: /assets/documents/Federalist-ATO-Extension-Letter.pdf
+      - link: /assets/pages/documents/Federalist-ATO-Extension-Letter.pdf
         description: Pages's compliance and Authority to Operate extension.
 ---
 
