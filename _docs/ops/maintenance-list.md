@@ -7,10 +7,11 @@ title: Ongoing platform maintenance
 ---
 
 
+
 ## Daily maintenance checklist
 {:.no_toc}
 
-The tasks on this checklist should be performed each day by the members of the `Platform experts` group currently on support rotation.
+The tasks on this checklist should be performed each day by the platform operator who is currently on the maintenance rotation.
 
 - table of contents
 {:toc}
@@ -42,18 +43,9 @@ exists for tuning the alert.
 Be prepared to represent support needs at the next grooming meeting to ensure
 that cards to fix alerts are prioritized properly.
 
-## Review open support requests
+## Provide support backup
 
-- Review the New (yellow) and Open (red) Zendesk tickets.
-- `Tier 1` support has primary responsibility to do the work of answering these, and
-you serve as second-tier support providing technical expertise.
-- If `Tier 1` support personnel need assistance in responding to a customer issue, they will escalate the ticket to the `Platform experts` group in Zendesk. Your main responsibility is to provide technical
-diagnoses/advice/details where needed. The most efficient way to do that is to write comments on the
-associated posts in [`#cg-supportstream`](https://gsa-tts.slack.com/messages/cg-supportstream).
-- `Tier 1` support may also ask you for pairing time to work out responses
-together.
 
-See also: [Detailed guidance on working with our support tools](https://docs.google.com/document/d/1QXZvcUl-6gtI7jEQObXV9FyiIpJC-Fx1R7RzB0C6PHM/edit#heading=h.80zn694rriw3).
 
 ## Review expiring certificates
 
