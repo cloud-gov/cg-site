@@ -84,6 +84,8 @@ primary_navigation:
     url: /news/
   - name: Knowledge base
     url: /knowledge-base/
+  - name: Pages
+    url: /pages/
   - name: Contact us
     url: /contact/
 
@@ -259,9 +261,11 @@ assets:
     - _assets/images/illustrations
     - assets/font-awesome/css
     - assets/font-awesome/fonts
-    - node_modules/uswds/dist
-    - node_modules/netlify-cms/dist
+    - assets/pages/images
+    - assets/pages/documents
     - node_modules/mermaid/dist/
+    - node_modules/netlify-cms/dist
+    - node_modules/uswds/dist
 
 ### plugin settings ###
 last-modified-at:
