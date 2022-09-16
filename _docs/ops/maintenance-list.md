@@ -45,7 +45,7 @@ that cards to fix alerts are prioritized properly.
 
 ## Provide support backup
 
-As necessary and requested, provide assistance to the platform operator on a [support rotation](({{ site.baseurl }}/docs/ops/customer-support)) concurrent to your maintenance rotation.
+As necessary and requested, provide assistance to the platform operator on a [support rotation]({{ site.baseurl }}/docs/ops/customer-support) concurrent to your maintenance rotation.
 
 ## Review expiring certificates
 
