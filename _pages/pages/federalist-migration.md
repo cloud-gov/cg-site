@@ -57,7 +57,7 @@ title: cloud.gov Pages - Federalist Migration
     <div class="grid-row margin-top-4">
       <div class="tablet:grid-col-12 usa-prose">
         <p>
-          The primary task of migration is changing the way you authenticate. Instead of using your Github account, you will authenticate using cloud.gov’s authentication service. In some cases, this will allow you to leverage your agency’s existing identity infrastructure, otherwise, you will use an identity service provided by cloud.gov. If you would like to add your agency's identity provider, see our [documentation on single sign-on](https://cloud.gov/docs/orgs-spaces/sso/).
+          The primary task of migration is changing the way you authenticate. Instead of using your Github account, you will authenticate using cloud.gov’s authentication service. In some cases, this will allow you to leverage your agency’s existing identity infrastructure, otherwise, you will use an identity service provided by cloud.gov. If you would like to add your agency's identity provider, see our <a href="https://cloud.gov/docs/orgs-spaces/sso/">documentation on single sign-on</a>.
         </p>
         <p>
           You can migrate your account on your own or stop by weekly Pages office hours. You can receive the invite by notifying us at <a href="mailto:inquiries@cloud.gov">inquiries@cloud.gov</a>.
