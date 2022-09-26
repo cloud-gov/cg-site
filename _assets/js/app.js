@@ -10,8 +10,8 @@ var sideNavChild = document.querySelectorAll(".usa-sidenav__sublist--middle-gene
 var subLists = document.querySelectorAll("ul.usa-sidenav__sublist");
 var middleSubList = document.querySelectorAll(".usa-sidenav__sublist ul");
 
-anchors.add('h2');
-anchors.add('h3');
+anchors.add('h2').remove('.no-anchor');
+anchors.add('h3').remove('.no-anchor');
 
 
 function openCurrentSubNav(self){

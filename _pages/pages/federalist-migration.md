@@ -12,9 +12,9 @@ title: cloud.gov Pages - Federalist Migration
         <p class="usa-intro">Pages offers the same great services provided to you with your current Federalist agreement, with a new name and new features coming soon.</p>
       </div>
       <div class="tablet:grid-col-4 usa-section--dark margin-top-8">
-        <h2>Interested in being an early Pages adopter?</h2>
-        <p class="usa-intro">Contact us for help on the migration process</p>
-        <p><a class="usa-button usa-button--big" href="mailto:inquiries@cloud.gov"> Get in touch</a></p>
+        <h2 class="no-anchor">Interested in being an early Pages adopter?</h2>
+        <p class="usa-intro">The new application is live now!</p>
+        <p><a class="usa-button usa-button--big" href="https://pages.cloud.gov"> Try it out</a></p>
       </div>
     </div>
 </section>
