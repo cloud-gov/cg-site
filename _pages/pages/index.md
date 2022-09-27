@@ -94,6 +94,12 @@ fact_sheets:
     <div class="grid-row grid-gap">
       <div class="tablet:grid-col-7">
         <h1 class="font-heading-3xl">There’s no easier way to build, launch and manage government sites.</h1>
+        <p class="usa-intro">
+          Pages is a publishing platform for modern <a href="{{site.baseurl}}{% link _pages/pages/documentation/21st-century-idea.md %}">21st Century IDEA</a> websites.
+        </p>
+        <p class="padding-bottom-4">
+          <a class="usa-button usa-button--big" href="https://pages.cloud.gov">Log in to dashboard</a>
+        </p>
       </div>
       <div class="tablet:grid-col-4 tablet:grid-offset-1 usa-prose padding-5">
           <h3>Trusted and Scalable</h3>
@@ -105,11 +111,6 @@ fact_sheets:
             <li><b>639+</b> updates per week</li>
           </ul>
       </div>
-    </div>
-    <div class="grid-row grid-gap">
-      <p class="usa-intro">
-        Pages is a publishing platform for modern <a href="{{site.baseurl}}{% link _pages/pages/documentation/21st-century-idea.md %}">21st Century IDEA</a> websites.
-      </p>
     </div>
   </div>
 </section>
