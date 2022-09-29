@@ -37,8 +37,8 @@ Happy end of September ! The cloud.gov team is working on providing change logs 
 ### Go Buildpack - v1.9.50 up from v1.9.49
 
 * Deprecate Go 1.17 (#285)
-* Add go 1.19.1for stack(s) cflinuxfs3 (https://www.pivotaltracker.com/story/show/183191986)
-* Add go 1.18.6, remove go 1.18.4 for stack(s) cflinuxfs3 (https://www.pivotaltracker.com/story/show/183191760)
+* Add go 1.19.1for stack(s) cflinuxfs3
+* Add go 1.18.6, remove go 1.18.4 for stack(s) cflinuxfs3
 * Adds --stack flag for integration tests
 
 ### Java Buildpack - v4.52 up from v4.50
