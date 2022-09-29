@@ -17,7 +17,7 @@ This post will demonstrate how to use some of the commonly available Drupal migr
 
 The end of life date for both Drupal 7 and 8 is fast approaching. Drupal 8 will reach it's scheduled end of life on November 2, 2021. Drupal 7 wil reach it's scheduled end of life on November 28, 2022 (after being extended for a period of about 1 year).
 
-As the challenges and work required to upgrade to the latest version of Drupal are considered by agencies, other platform options may also be evaluated. One potential option for current Drupal users is the [Federalist platform](https://federalist.18f.gov/){:target="_blank"} (soon to be renamed to [cloud.gov Pages](https://federalist.18f.gov/cloud-gov-pages/){:target="_blank"}).
+As the challenges and work required to upgrade to the latest version of Drupal are considered by agencies, other platform options may also be evaluated. One potential option for current Drupal users is the [Federalist platform](https://cloud.gov/pages/){:target="_blank"}.
 
 ## What is Federalist?
 
