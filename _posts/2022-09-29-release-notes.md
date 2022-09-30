@@ -44,7 +44,7 @@ Happy end of September ! The cloud.gov team is working on providing change logs 
 ### Java Buildpack - v4.52 up from v4.50
 
 * Deprecation of Spring Cloud Connectors & Spring Auto Reconfiguration - this feature is now disabled by default
-* See release notes for latest versions of depenancies - https://github.com/cloudfoundry/java-buildpack/releases/tag/v4.52
+* See release notes for latest versions of dependencies - https://github.com/cloudfoundry/java-buildpack/releases/tag/v4.52
 
 ### Nginx Buildpack - v1.1.43 up from v1.1.42
 
