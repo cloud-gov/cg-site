@@ -33,8 +33,8 @@ If your site is already up and running, please follow the instructions on [Netli
 - Gatsby or Hugo: `/static/admin/config.yml`
 
 For examples of existing configurations, see the Pages starter:
-- [Pages USWDS Jekyll](https://github.com/18F/federalist-uswds-jekyll/blob/main/admin/config.yml)
-- [Pages USWDS Gatsby](https://github.com/18F/federalist-uswds-gatsby/blob/main/static/admin/config.yml)
+- [Pages USWDS Jekyll](https://github.com/cloud-gov/pages-uswds-jekyll/blob/main/admin/config.yml)
+- [Pages USWDS Gatsby](https://github.com/cloud-gov/pages-uswds-gatsby/blob/main/static/admin/config.yml)
 
 ### Configuration Requirements
 To use Netlify CMS, you must authenticate with Github, and in order for Pages to facilitate this, your Netlify CMS configuration should include the following:
@@ -44,9 +44,9 @@ To use Netlify CMS, you must authenticate with Github, and in order for Pages to
     backend:
       name: github
       repo: <your org>/<your repo>
-      base_url: https://federalistapp.18f.gov
+      base_url: https://pages.cloud.gov
       auth_endpoint: external/auth/github
-      preview_context: federalist/build
+      preview_context: pages/build
       branch: main
       
 

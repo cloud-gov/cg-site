@@ -2,7 +2,7 @@ module Jekyll
   module PaginateV2::Generator
 
     #
-    # https://github.com/18F/federalist-uswds-jekyll/pull/260 introduced a
+    # https://github.com/cloud-gov/pages-uswds-jekyll/pull/260 introduced a
     # patch that resolved an issue where paginated pages were using a single
     # cached layout file, causing the wrong content to be displayed.
     #

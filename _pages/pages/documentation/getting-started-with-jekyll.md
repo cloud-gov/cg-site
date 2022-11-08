@@ -13,7 +13,7 @@ hesitate to [reach out](mailto:{{ site.support_email }})._
 
 Pages monitors your site’s GitHub repository (or repo) for changes you
 make. It will automatically build a new version of your site in a few minutes.
-You can view the live site [from Pages](https://federalistapp.18f.gov/sites) and clicking
+You can view the live site [from Pages](https://pages.cloud.gov/sites) and clicking
 "View site".
 
 {% capture content %}
@@ -53,8 +53,8 @@ site_width: wide
 # This is used for adding an edit this page link
 # to the footer
 github:
-  organization: 18F
-  repository: federalist-uswds-template
+  organization: cloud-gov
+  repository: pages-jekyll-uswds-template
   default_branch: report-config
 # Notice how two space characters are used to
 # indent the properties. This means they are
@@ -102,7 +102,7 @@ the changes you’ve made when looking back on the repo’s history.
 {% include pages/components/alert--best-practice.html content=content %}
 
 Once your change is committed, Pages will start rebuilding your site. You
-can see the build progress on the [build history page](https://federalistapp.18f.gov/sites).<!--
+can see the build progress on the [build history page](https://pages.cloud.gov/sites).<!--
 TODO link to this site’s build history page. -->
 
 
