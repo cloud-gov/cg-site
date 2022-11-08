@@ -8,7 +8,7 @@ description: "AWS Elasticache Redis: an in-memory data structure store"
 status: "Production Ready"
 ---
 
-cloud.gov offers [aws-elasticache-redis](https://aws.amazon.com/elasticache/) Redis 5.0.6 as a service.
+cloud.gov offers [aws-elasticache-redis](https://aws.amazon.com/elasticache/) Redis as a service.
 
 ## Plans
 
