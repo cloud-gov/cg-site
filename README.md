@@ -5,7 +5,7 @@ This site uses the [cloud.gov Pages USWDS Jekyll template](https://github.com/cl
 
 This [Jekyll theme](https://jekyllrb.com/docs/themes/) uses the [U.S. Web Design System v 2.0](https://v2.designsystem.digital.gov) and provides developers a starter kit and reference implementation for cloud.gov Pages websites.
 
-This code uses the [Jekyll](https://jekyllrb.com) site engine and built with Ruby. If you prefer to use Javascript, check out [pages-uswds-gatsby](https://github.com/18F/pages-uswds-gatsby), which uses [Gatsby](https://gatsbyjs.org) site engine.
+This code uses the [Jekyll](https://jekyllrb.com) site engine and built with Ruby. If you prefer to use Javascript, check out [pages-uswds-gatsby](https://github.com/cloud-gov/pages-uswds-gatsby), which uses [Gatsby](https://gatsbyjs.org) site engine.
 
 This site uses a customized [U.S. Web Design System](https://v2.designsystem.digital.gov) theme and strives to be compliant with requirements set by [21st Century IDEA Act](https://designsystem.digital.gov/website-standards/). The standards require that a website or digital service:
 
