@@ -70,7 +70,7 @@ searchgov:
 
 - The contents inside `_assets/` folder store your Javascript, SCSS/CSS, images, and other media assets are managed by  [jekyll-assets](https://github.com/envygeeks/jekyll-assets).  Assets are combined, compressed, and automatically available in your theme
 
-- If you look at `package.json` you will see that the `npm run federalist` command that will run when running on the cloud.gov Pages platform.
+- If you look at `package.json` you will see that the `npm run pages` command that will run when running on the cloud.gov Pages platform.
 
 - Do not edit files in the `_site/` folder. These files are auto-generated, and any change you make in the folder will be overwritten.
 
@@ -92,7 +92,7 @@ searchgov:
     $ git clone https://github.com/cloud-gov/cg-site
     $ cd cg-site
 
-Note that when built by cloud.gov Pages, `npm run federalist` is used instead of the
+Note that when built by cloud.gov Pages, `npm run pages` is used instead of the
 `build` script.
 
 ### Install dependencies and run app

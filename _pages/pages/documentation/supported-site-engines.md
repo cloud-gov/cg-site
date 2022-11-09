@@ -71,7 +71,7 @@ Pages supports Jekyll plugins, enabling any plugins in a site's `_plugins` direc
 
 Several dependencies are already available for use in the building environment. These include `ruby`, `python`, and `node.js`. You can write plugins that take advantage of these without needing a `Gemfile`.
 
-To see the exact configuration of the build environment, see the [build environment `Dockerfile`](https://github.com/cloud-gov/pages-garden-build/blob/main/Dockerfile).
+To see the exact configuration of the build environment, see the [build environment `Dockerfile`](https://github.com/cloud-gov/pages-build-container/blob/main/Dockerfile).
 
 **Note:** using `Gemfile` may considerably slow down the generation of your website, depending on how long the `bundle install` step takes to complete.
 
