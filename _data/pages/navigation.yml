@@ -14,7 +14,7 @@ primary:
     # Look inside assets/js/index.js to see that how this url changes depending on enviroment
 secondary:
   - name: Platform Status
-    url: https://federalist.statuspage.io
+    url: https://cloudgov.statuspage.io/
   - name: Login
     url: https://pages.cloud.gov
     external: true
