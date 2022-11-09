@@ -2,10 +2,10 @@
 backend:
   name: github
   repo: cloud-gov/cg-site
-  base_url: https://federalistapp.18f.gov
+  base_url: https://pages.cloud.gov
   auth_endpoint: external/auth/github
-  preview_context: federalist/build
-  branch: master
+  preview_context: pages/build
+  branch: main
   use_graphql: true
 
 ##

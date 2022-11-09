@@ -84,7 +84,7 @@ The segment wildcard `":foo"` (where "foo" can be anything) matches everything *
 | `/f:bar` | `/f:bar` | ✅ |
 
 ## Examples
-- [federalist-uswds-gatsby2](https://github.com/18F/federalist-uswds-gatsby2/blob/main/federalist.json)
+- [pages-uswds-gatsby](https://github.com/cloud-gov/pages-uswds-gatsby/blob/main/federalist.json)
 
 ## Caching Headers
 Adding caching related headers to your site is considered a best practice and can greatly improve your site's performance. However, if done incorrectly, it is possible to create undesired outcomes such as users not seeing the latest version of your site. **Make sure you have a good understanding of how caching works before configuring these headers yourself.** See [MDN Caching](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching) and [MDN Cache-Control](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) for more information.

@@ -82,7 +82,7 @@ After adding that, jekyll will ignore the `node_modules` directory when building
 
 ```json
 {
-  "name": "federalist-gatsby-uswds-template",
+  "name": "pages-gatsby-uswds-template",
   "description": "Description A template for Pages that uses Gatsby and USWDS 2.0",
   "license": "CC0-1.0",
   "version": "0.1.0",
@@ -106,7 +106,7 @@ After adding that, jekyll will ignore the `node_modules` directory when building
 ### Use Node to build an Eleventy site
 ```
 {
-  "name": "federalist-eleventy-template",
+  "name": "pages-eleventy-template",
   "version": "1.0.0",
   "description": "An example Pages site using eleventy",
   "scripts": {

@@ -4,7 +4,7 @@ permalink: /pages/documentation/how-pages-works/
 layout: docs
 navigation: pages
 sidenav: pages-documentation
-
+published: false
 ---
 
 Pages is a hosted service run by [cloud.gov](https://cloud.gov/) for use by US federal government agencies. The software behind this service is open source and released to the public domain for anyone to use. We also welcome your contributions and ideas.

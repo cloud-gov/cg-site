@@ -193,7 +193,7 @@ This plan is most effective if all core cloud.gov team members know about it, re
 * How we protect this plan from unauthorized modification:
   * This plan is stored in a public GitHub repository ([https://github.com/18F/cg-site](https://github.com/18F/cg-site)) with authorization to modify it limited to 18F staff by GitHub access controls. cloud.gov team policy is that 18F staff may not directly make changes to this document; they must propose a change by making a pull request and ask another team member to review and merge the pull request.
 
-## Federalist
+## cloud.gov Pages
 
 [This Contingency Plan doc](https://docs.google.com/document/d/1YG6oucagNO_ZmmlsLPdQeFABCiVcY1BYuhDEEvDwe4Q/edit?usp=sharing) provides guidance for our team in the case of trouble delivering our essential mission and business functions due to disruption, compromise, or failure of any system components or services.
 
