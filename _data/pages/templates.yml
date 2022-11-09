@@ -8,7 +8,7 @@ items:
     summary: ""
   - title: Gatsby - U.S. Web Design System v2.0
     docs_url: https://github.com/cloud-gov/pages-uswds-gatsby
-    preview_url:https://uswds-gatsby.pages.cloud.gov/
+    preview_url: https://uswds-gatsby.pages.cloud.gov/
     img: /assets/pages/images/templates/federalist-gatsby-uswds-template.png
     order: 3
     summary: ""
