@@ -49,7 +49,7 @@ These are the current supported major versions for Redis:
 - 5.0.6
 - 6.0
 - 6.2
-- 7.0
+- 7.0 
 
 #### Examples of optional parameters
 
