@@ -37,7 +37,7 @@ There are several optional parameters that you can specify when creating a new i
 
 Name               | Description                                                    | Default Value          |
 ---                | ---                                                            | ---                    |
-`engineVersion`          | Specifies a supported major version in Redis (must be in "")   | 6.2                    |
+`engineVersion`    | Specifies a supported major version in Redis (must be in "")   | 6.2                    |
 
 A couple of notes regarding the optional `version` parameter:
 
@@ -46,7 +46,7 @@ A couple of notes regarding the optional `version` parameter:
 
 These are the current supported major versions for Redis:
 
-- 5.0.6
+- 5.0
 - 6.0
 - 6.2
 - 7.0 
@@ -59,7 +59,7 @@ If you want to specify the engine version:
 cf create-service aws-elasticache-redis \
     ${SERVICE_PLAN_NAME} \
     ${SERVICE_NAME} \
-    -c '{"engineVersion": 6.2}'
+    -c '{"engineVersion": "6.2"}'
 ```
 
 ## Managing backups
