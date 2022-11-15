@@ -56,7 +56,7 @@ These are the current supported major versions for Redis:
 If you want to specify the engine version:
 
 ```sh
-cf create-service aws-redis \
+cf create-service aws-elasticache-redis \
     ${SERVICE_PLAN_NAME} \
     ${SERVICE_NAME} \
     -c '{"engineVersion": 6.2}'
