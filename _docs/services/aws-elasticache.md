@@ -41,12 +41,12 @@ Name               | Description                                                
 
 A couple of notes regarding the optional `version` parameter:
 
-- It only supports major version numbers; if you specify a minor/patch level version, e.g., "6.2.1" , the command will fail.
+- It only supports major version numbers; if you specify a minor/patch level version, e.g., "6.2.1" , the command will fail with the exception of 5.0.6 which is a major version with a minor version release.
 - The version number must be provided in double quotes (`"`); this is because the value is treated as a string to account for different versions.
 
 These are the current supported major versions for Redis:
 
-- 5.0
+- 5.0.6
 - 6.0
 - 6.2
 - 7.0 
