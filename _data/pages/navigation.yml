@@ -87,8 +87,6 @@ sidenav:
   - text: For developers
     href: /pages/documentation/
     subfolderitems:
-      - text: How Pages works
-        href: /pages/documentation/how-pages-works/
       - text: How builds work
         href: /pages/documentation/how-builds-work/
       - text: Specific build errors
