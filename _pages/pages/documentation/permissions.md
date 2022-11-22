@@ -14,7 +14,7 @@ Users can be granted access to cloud.gov Pages in one of two ways:
 
 1. Pages Users with the `manager` role in a Pages Organization can “invite” users to their Pages Organization. If the invited user is not currently a Pages User, a cloud.gov UAA User is created for them. Once the UAA User accepts the invitation to join UAA and completes the authentication process with their chosen IdP, they are allowed access to the Pages Application. Additionally, once the UAA User is created, the corresponding Pages User is granted access to the appropriate Pages Organization, allowing the Pages User access to the organization’s corresponding Pages Sites.
 
-1.When a Pages Operator creates a new Pages Organization in the Pages Application, a user will be designated as the first `manager` for the Pages Organization. If the user is not already a Pages User, the user follows the same process as in 1.
+1. When a Pages Operator creates a new Pages Organization in the Pages Application, a user will be designated as the first `manager` for the Pages Organization. If the user is not already a Pages User, the user follows the same process as in 1.
 
 
 ### Pages organizations
