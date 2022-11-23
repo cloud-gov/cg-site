@@ -33,7 +33,7 @@ The application memory limit. This setting has a dual-purpose, as your applicati
 `disk_quota / -k`
 - **Default:** `1GB`
 - **Minimum:** `Based on the app's source and dependencies disk size`
-- **Maximum:** `6GB`
+- **Maximum:** `7GB`
 
 The maximum amount of disk space available to your app.
 
