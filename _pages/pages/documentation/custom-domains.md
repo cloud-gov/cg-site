@@ -116,7 +116,7 @@ If you are using CAA records, you must have a record for letsencrypt.org. This a
 ## Notify Pages
 Once your DNS changes are complete, notify Pages support via:
 - email: `pages-support@gsa.gov`
-- Slack: `#pages-support`
+- Slack: `#cg-pages`
 
 Someone from the Pages support team will assist you and make the updates to the Pages platform.
 
