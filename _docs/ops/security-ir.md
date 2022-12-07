@@ -127,7 +127,7 @@ This sitrep should be:
 
 - Posted in [`#incident-response`](https://gsa-tts.slack.com/messages/incident-response/)
 - Emailed to `gsa-ir@gsa.gov` and `devops@gsa.gov`
-- Emailed to FedRAMP ISSO (JAB TR reps), cc: info@fedramp.gov and cloud-gov-compliance@gsa.gov. They require daily updates on open incidents.
+- Emailed to [FedRAMP ISSO (JAB TR reps)][FedRAMP ISSO TRR reps], cc: info@fedramp.gov and cloud-gov-compliance@gsa.gov. They require daily updates on open incidents.
 - Sent (email or Slack) to external stakeholders, if applicable and relevant
 
 #### Comms at the Assess phase
@@ -167,7 +167,7 @@ Once the incident is no longer active — i.e. the breach has been contained, th
 
 - Set the status of the incident to "resolved".
 - Send a final sitrep to stakeholders.
-- Email after-action to FedRAMP ISSO (JAB TR reps), cc: info@fedramp.gov and cloud-gov-compliance@gsa.gov
+- Email after-action to [FedRAMP ISSO (JAB TR reps)][FedRAMP ISSO TRR reps], cc: info@fedramp.gov and cloud-gov-compliance@gsa.gov
 - Thank everyone involved for their service!
 
 #### Comms at the Remediate phase
@@ -249,3 +249,5 @@ Guidelines for addressing Low-sev issues:
 * Last modified on: {% last_modified_at %}
 * [Recent document history](https://github.com/cloud-gov/cg-site/commits/master/{{ page.path }}) (since 2020-02-05)
 * [Older document history](https://github.com/cloud-gov/cg-site/commits/master/content/docs/ops/{{ page.slug }}.md) (before 2020-02-05)
+
+[FedRAMP ISSO TRR reps]: (https://docs.google.com/document/d/1jGddQkjkQ6e9B0UTq9hfQqHe0btAbTeBGL_DxkozAcg/edit)
