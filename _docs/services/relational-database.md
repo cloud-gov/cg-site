@@ -194,6 +194,8 @@ name                 service   plan                bound apps   last operation
 test-oracle          aws-rds   medium-oracle-se2                create succeeded
 ```
 
+By default, when new spaces are created in your organization an application security group (ASG) is applied that restricts access to only the internal cloud.gov network. You will need to [update egress traffic](/docs/management/space-egress/) rules to allow for your app to reach the database. 
+
 ## Update an instance
 
 To update an existing service instance to a different plan run the following command:
