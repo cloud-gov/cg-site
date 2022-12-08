@@ -32,3 +32,5 @@ Listed below are the explanations of some field names for router (RTR) logs:
 * **rtr.verb**: The type of request (POST, GET, etc...)
 * **rtr.x_forwarded_for**: The IP address the request came from
 * **rtr.timestamp**: The time of the request in UTC
+
+The full list of fields available for router logs can be found in [our Elasticsearch field mapping configuration](https://github.com/cloud-gov/logsearch-for-cloudfoundry/blob/develop/jobs/elasticsearch-config-lfc/templates/component-index-mappings-app.json.erb#L38).
