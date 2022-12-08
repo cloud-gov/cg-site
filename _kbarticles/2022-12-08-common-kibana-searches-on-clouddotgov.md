@@ -2,7 +2,7 @@
 layout: post
 title: "Understanding Kibana and how to visualize your application logs"
 date: December 8, 2022
-excerpt: This article documents a brief explaination of what Kibana does and common Kibana search queries on the cloud.gov platform.
+excerpt: This article briefly explains what Kibana does, what types of logs are available in Kibana, and how to create log visualizations in Kibana.
 
 ---
 
