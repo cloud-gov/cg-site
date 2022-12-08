@@ -14,6 +14,8 @@ Kibana is a user interface that lets you search and visualize your application l
 
 Cloud Foundry assigns a type to each log message depending on its origin. Application logs are assigned the APP log type.  HTTP requests being routed to an app will produce the RTR log type. The various types of logs are listed in the documentation [here](https://docs.cloudfoundry.org/devguide/deploy-apps/streaming-logs.html#format).
 
+Cloudfoundry logs are often translated into field names in Elasticsearch/Kibana using the log type as a prefix. For example, APP logs in Kibana include fields like `app.name` for the application name.
+
 ## How to chart the information:
 
 Spikes in traffic can be visualized by using the chart provided in Kibana. To find the specific information you are requesting you need to use the Discover tab to search RTR logs, and then create the chart based on the saved search. Use a count aggregation as the Y-Axis and a date histogram aggregation for the X-Axis.
