@@ -1,0 +1,30 @@
+---
+layout: post
+title: "Common Kibana Searches on cloud.gov"
+date: December 8, 2022
+excerpt: This article documents a brief explaination of what Kibana does and common Kibana search queries on the cloud.gov platform.
+
+---
+
+## What does Kibana do?
+
+Application logs are visualized via Kibana, which has a [user guide](https://www.elastic.co/guide/en/kibana/current/index.html) that explains more about how to use it and customize your views.
+
+## What some types of logs?
+
+Cloud Foundry assigns a type to each log message depending on its origin. Application logs are assigned the APP log type.  HTTP requests being routed to an app will produce the RTR log type. The various types of logs are listed in the documentation [here](https://docs.cloudfoundry.org/devguide/deploy-apps/streaming-logs.html#format).
+
+## How to chart the information
+
+Spikes in traffic can be visualized by using the chart provided in Kibana. To find the specific information you are requesting you need to use the Discover tab to search RTR logs, and then create the chart based on the saved search. Use a count aggregation as the Y-Axis and a date histogram aggregation for the X-Axis.
+
+## Listed below are some common RTR search requests to input into Kibana:
+
+* **rtr.app.id**: The application guid
+* **rtr.hostname**: The domain/hostname the request was sent to (e.g test.app.cloud.gov)
+* **rtr.http_user_agent**: What user agent the request came from (Chrome, Firefox, Curl, etc…)
+* **rtr.path**: the specific url path that was requested (e.g. /my/test/page)
+* **rtr.status**: Gives the status of the request (200, 404, etc…)
+* **rtr.verb**: The type of request (POST, GET, etc...)
+* **rtr.x_forwarded_for**: The IP address the request came from
+* **rtr.timestamp**: The time of the request in UTC
