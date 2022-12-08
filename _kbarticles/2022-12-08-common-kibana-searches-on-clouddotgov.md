@@ -23,7 +23,7 @@ Spikes in traffic can be visualized by using the chart provided in Kibana. To fi
 * **rtr.app.id**: The application guid
 * **rtr.hostname**: The domain/hostname the request was sent to (e.g test.app.cloud.gov)
 * **rtr.http_user_agent**: What user agent the request came from (Chrome, Firefox, Curl, etc…)
-* **rtr.path**: the specific url path that was requested (e.g. /my/test/page)
+* **rtr.path**: The specific url path that was requested (e.g. /my/test/page)
 * **rtr.status**: Gives the status of the request (200, 404, etc…)
 * **rtr.verb**: The type of request (POST, GET, etc...)
 * **rtr.x_forwarded_for**: The IP address the request came from
