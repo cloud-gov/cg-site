@@ -147,6 +147,10 @@ At this point, we're trying to fix the issue! Remediation will be very situation
 
 - The response team should aim to adopt a *containment* strategy: if machines are compromised, they should avoid destroying or shutting them down if possible (this can hamper forensics). For AWS instances, you can leave the instance running and instead reconfigure the Security Group for the instance to drop all ingress and egress traffic until forensics can be performed.
 
+- Containment should also preserve evidence. For example, if there's a
+  credential leak, we should _securely preserve_  the leaked credentials while
+  we also ensure they are rotated, and scrubbed from the record. 
+
 - Remediation may require service disruption. If it does, the team should proceed in a different way depending on the severity:
 
     - For High-severity incidents, the team should take action immediately, even if this causes disruption. A notification about the disruption should be sent out as soon as possible, but the team needs no permission to take action at this level.
