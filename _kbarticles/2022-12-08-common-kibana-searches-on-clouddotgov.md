@@ -8,7 +8,7 @@ excerpt: This article documents a brief explaination of what Kibana does and com
 
 ## What does Kibana do?
 
-Application logs are visualized via Kibana, which has a [user guide](https://www.elastic.co/guide/en/kibana/current/index.html) that explains more about how to use it and customize your views.
+Kibana is a user interface that lets you search and visualize your application logs. Kibana has a [user guide](https://www.elastic.co/guide/en/kibana/current/index.html) that explains more about how to use it and to create custom visualizations.
 
 ## What are some types of logs?
 
