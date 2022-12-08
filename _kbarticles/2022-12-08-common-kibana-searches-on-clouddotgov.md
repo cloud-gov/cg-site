@@ -18,7 +18,9 @@ Cloud Foundry assigns a type to each log message depending on its origin. Applic
 
 Spikes in traffic can be visualized by using the chart provided in Kibana. To find the specific information you are requesting you need to use the Discover tab to search RTR logs, and then create the chart based on the saved search. Use a count aggregation as the Y-Axis and a date histogram aggregation for the X-Axis.
 
-## Listed below are some common RTR search requests to input into Kibana:
+## Fields for router requests
+
+Listed below are the explanations of some field names for router (RTR) logs:
 
 * **rtr.app.id**: The application guid
 * **rtr.hostname**: The domain/hostname the request was sent to (e.g test.app.cloud.gov)
