@@ -16,7 +16,7 @@ Cloud Foundry assigns a type to each log message depending on its origin. Applic
 
 Cloudfoundry logs are often translated into field names in Elasticsearch/Kibana using the log type as a prefix. For example, APP logs in Kibana include fields like `app.name` for the application name.
 
-## How to chart the information:
+## How to visualize application traffic
 
 Spikes in traffic can be visualized by using the chart provided in Kibana. To find the specific information you are requesting you need to use the Discover tab to search RTR logs, and then create the chart based on the saved search. Use a count aggregation as the Y-Axis and a date histogram aggregation for the X-Axis.
 
