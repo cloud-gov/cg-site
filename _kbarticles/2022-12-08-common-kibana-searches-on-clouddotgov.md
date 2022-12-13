@@ -27,7 +27,7 @@ The next step is to visualize your search results based on a specific field. To 
 ![Screenshot of Kibana interface showing the selection of @timestamp as field to use for visualizing request logs](https://user-images.githubusercontent.com/104385372/207403643-d2aa8bb8-702b-4aee-a028-baa7caf25fee.png)
 
 
-## Add Count Aggregation for Y-Axis/Line Chart Visualization
+By default, visualizing logs based on `@timestamp` will produce a histogram chart. To change the chart type to line, which might be more useful for this type of data, click the "Metrics & axes" link in the chart configuration panel on the right side of the screen. Then, under "Metrics" and "Count", select "Line" from the "Chart type" drop-down. Finally, click the "Update" button at the bottom right of the screen and the chart should update to a line chart.
 ![Add Count Aggregation for Y-Axis / Line Chart Visualization](https://user-images.githubusercontent.com/104385372/207403815-9f98ff91-6c1a-4f87-97ea-bd60e285ec49.png)
 
 
