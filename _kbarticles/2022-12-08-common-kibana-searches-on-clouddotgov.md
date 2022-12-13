@@ -18,7 +18,7 @@ Cloudfoundry logs are often translated into field names in Elasticsearch/Kibana 
 
 ## How to visualize application traffic
 
-Spikes in traffic can be visualized by using the chart provided in Kibana. To find the specific information you are requesting you need to use the Discover tab to search RTR logs, and then create the chart based on the saved search. Use a count aggregation as the Y-Axis and a date histogram aggregation for the X-Axis.
+Router log data can be used to create a visualization of your application traffic following the steps below. 
 
 ## Discover Search
 ![Discover Search](https://user-images.githubusercontent.com/104385372/207403558-68266274-af72-43e1-b869-c9ad1805adca.png)
