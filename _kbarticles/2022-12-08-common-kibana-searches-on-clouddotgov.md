@@ -20,6 +20,19 @@ Cloudfoundry logs are often translated into field names in Elasticsearch/Kibana 
 
 Spikes in traffic can be visualized by using the chart provided in Kibana. To find the specific information you are requesting you need to use the Discover tab to search RTR logs, and then create the chart based on the saved search. Use a count aggregation as the Y-Axis and a date histogram aggregation for the X-Axis.
 
+## Discover Search
+![Discover Search](https://user-images.githubusercontent.com/104385372/207403558-68266274-af72-43e1-b869-c9ad1805adca.png)
+
+## Add Timestamp Visualization
+![Add Timestamp Visualization](https://user-images.githubusercontent.com/104385372/207403643-d2aa8bb8-702b-4aee-a028-baa7caf25fee.png)
+
+## Add Date Histogram Aggregation for X-Axis
+![Add Date Histogram Aggregation for X-Axis](https://user-images.githubusercontent.com/104385372/207403718-60e70970-7dd4-452f-9d57-8c2230a5c450.png)
+
+## Add Count Aggregation for Y-Axis/Line Chart Visualization
+![Add Count Aggregation for Y-Axis / Line Chart Visualization](https://user-images.githubusercontent.com/104385372/207403815-9f98ff91-6c1a-4f87-97ea-bd60e285ec49.png)
+
+
 ## Fields for router requests
 
 Listed below are the explanations of some field names for router (RTR) logs:
