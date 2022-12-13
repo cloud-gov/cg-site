@@ -26,8 +26,6 @@ After you have logged into Kibana, click "Discover" in the left sidebar menu. Th
 The next step is to visualize your search results based on a specific field. To visualize request logs over time, choose the `@timestamp` field from the left sidebar of "Available fields". Then, click "Visualize".
 ![Screenshot of Kibana interface showing the selection of @timestamp as field to use for visualizing request logs](https://user-images.githubusercontent.com/104385372/207403643-d2aa8bb8-702b-4aee-a028-baa7caf25fee.png)
 
-## Add Date Histogram Aggregation for X-Axis
-![Add Date Histogram Aggregation for X-Axis](https://user-images.githubusercontent.com/104385372/207403718-60e70970-7dd4-452f-9d57-8c2230a5c450.png)
 
 ## Add Count Aggregation for Y-Axis/Line Chart Visualization
 ![Add Count Aggregation for Y-Axis / Line Chart Visualization](https://user-images.githubusercontent.com/104385372/207403815-9f98ff91-6c1a-4f87-97ea-bd60e285ec49.png)
