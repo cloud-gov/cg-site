@@ -21,6 +21,7 @@ Cloudfoundry logs are often translated into field names in Elasticsearch/Kibana 
 Router log data can be used to create a visualization of your application traffic following the steps below. 
 
 After you have logged into Kibana, click "Discover" in the left sidebar menu. Then, add filters and search terms to query for router logs as seen in the screenshot below. Please note that the filters shown here for a specific space and application are just an example. You might want to view logs for all requests to application in a given space, in which case you would not want a filter for `@cf.app`.  
+
 ![Screenshot of Kibana interface showing a query for router logs for a given CloudFoundry space and application](https://user-images.githubusercontent.com/104385372/207403558-68266274-af72-43e1-b869-c9ad1805adca.png)
 
 The next step is to visualize your search results based on a specific field. To visualize request logs over time, choose the `@timestamp` field from the left sidebar of "Available fields". Then, click "Visualize".
