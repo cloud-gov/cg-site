@@ -30,6 +30,7 @@ The next step is to visualize your search results based on a specific field. To 
 
 
 By default, visualizing logs based on `@timestamp` will produce a histogram chart. To change the chart type to line, which might be more useful for this type of data, click the "Metrics & axes" link in the chart configuration panel on the right side of the screen. Then, under "Metrics" and "Count", select "Line" from the "Chart type" drop-down. Finally, click the "Update" button at the bottom right of the screen and the chart should update to a line chart.
+
 ![Screenshot of Kibana visualization interface showing a line chart of requests over time with a panel for chart configuration options visible on the right side of the screen. In the chart configuration options, "line" is selected as the chart type](https://user-images.githubusercontent.com/104385372/207403815-9f98ff91-6c1a-4f87-97ea-bd60e285ec49.png)
 
 
