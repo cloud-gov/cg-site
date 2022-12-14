@@ -47,12 +47,30 @@ cf create-service aws-elasticsearch es-medium my-elastic-service
 
 Note: AWS Elasticsearch creation times will vary and is outside of Cloud.gov's control. AWS says approximately 15-30 mins per node. 
 
+
 ## Options
 
 name             | required | description              | example
 -----------------|----------|--------------------------|--------- 
 advanced_options | false    | map for advanced options | see below
+ElasticsearchVersion  | false    | Specifies a supported major version in search (must be in "")   | OpenSearch_1.3 
 
+### ElasticsearchVersion Options
+
+These are the current supported major versions for ElasticsearchVersion:
+- Elasticsearch_7.4
+- OpenSearch_1.3
+- OpenSearch_2.3
+
+
+If you want to specify the ElasticsearchVersion:
+
+```sh
+cf create-service aws-elasticSearch \
+    ${SERVICE_PLAN_NAME} \
+    ${SERVICE_NAME} \
+    -c '{"ElasticsearchVersion": OpenSearch_2.3}'
+```
 ### Advanced Options
 
 These are advanced tuning options that can have significant performance or behavior effects on your cluster. They are specified as key/value pairs under the `advanced_options` map in the core parameters. *Note*: although these all represent numbers, they are all specified as strings. Additionally, although they are dotted, they are not nested keys.
