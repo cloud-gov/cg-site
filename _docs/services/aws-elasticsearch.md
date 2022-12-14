@@ -4,12 +4,12 @@ layout: docs
 sidenav: true
 title: "AWS Elasticsearch"
 name: aws-elasticsearch"
-description: "AWS Elasticsearch version 7.4: a distributed, RESTful search and analytics engine"
+description: "AWS search: a distributed, RESTful search and analytics engine"
 status: "Production Ready"
 ---
 
-cloud.gov offers [aws-elasticsearch](https://aws.amazon.com/elasticsearch-service/) 7.4 as a service hosted in AWS Elasticsearch. 
-
+cloud.gov offers [aws-elasticsearch](https://aws.amazon.com/elasticsearch-service/) as a service hosted in AWS Elasticsearch and Opensearch. 
+The Default is Elasticsearch version 7.4
 ## Plans
 
 Service Name | Plan Name | Description | Number of nodes |
