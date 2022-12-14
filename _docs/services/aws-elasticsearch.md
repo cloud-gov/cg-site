@@ -9,7 +9,7 @@ status: "Production Ready"
 ---
 
 cloud.gov offers [aws-elasticsearch](https://aws.amazon.com/elasticsearch-service/) as a service hosted in AWS Elasticsearch and Opensearch. 
-The Default is Elasticsearch version 7.4
+The Default is Elasticsearch version is 7.4
 ## Plans
 
 Service Name | Plan Name | Description | Number of nodes |
