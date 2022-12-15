@@ -69,7 +69,7 @@ If you want to specify the ElasticsearchVersion:
 cf create-service aws-elasticSearch \
     ${SERVICE_PLAN_NAME} \
     ${SERVICE_NAME} \
-    -c '{"ElasticsearchVersion": OpenSearch_2.3}'
+    -c '{"ElasticsearchVersion": "OpenSearch_2.3"}'
 ```
 ### Advanced Options
 
