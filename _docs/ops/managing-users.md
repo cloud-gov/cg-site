@@ -114,7 +114,7 @@ In the event you see an orphaned account (denoted by GUID), you need to clean up
 cf curl /v3/users/${user_guid} -X DELETE
 ```
 
-You can clean up UAA groups via [cg-scripts/remove-user-guid-from-all-groups.sh](https://github.com/cloud-gov/cg-scripts/blob/master/uaa/remove-user-guid-from-all-groups.sh) or manually using `uaac member remove`.
+You can clean up UAA groups via [cg-scripts/remove-user-guid-from-all-groups.sh](https://github.com/cloud-gov/cg-scripts/blob/master/uaa/remove-user-guid-from-all-groups.sh) or manually using `uaac member delete`.
 
 ### Deleting Users
 
