@@ -52,7 +52,7 @@ is encouraged and qualifies as a review. Review should include assessment of arc
 
 Before we put a new repository into production:
 
-* Give it a name. Historically these started with `cf-` or `cg-` when we shared the 18F repo, but no special prefix is needed. 
+* Give it a name. Historically these started with `cf-` or `cg-` when we shared the 18F repo, but no special prefix is needed.
 * [Add `LICENSE`, `CONTRIBUTING`, and `README` files](https://github.com/18F/open-source-policy/blob/master/practice.md#how-to-license-18f-repos) (to support open source reuse of our work).
 * Configure a [protected main branch](https://help.github.com/articles/about-protected-branches/) (CM-9).
   * Enable "Require pull request reviews before merging"
@@ -82,6 +82,10 @@ If possible, Configuration Management tools need to be set up to always roll bac
 * **Cloud Ops** (Platform squad)
   * Ensure Concourse, Terraform, BOSH, GitHub, AWS, and other resources are correctly set up to implement the technical aspects of the plan.
   * Review the plan in our quarterly [Security Policy and Account Review meetings](https://drive.google.com/drive/folders/0B1nrtBDSrHKHSnByWklWc0V4Q1E).
+* **Cloud.gov Pages Ops** (Pages squad)
+  * Relies on **Cloud Ops** for the management of Concourse, GitHub, AWS, and other resources are correctly set up to implement the technical aspects of the plan.
+  * Ensures team specific implementations for Concourse, GitHub, AWS, and other resources are correctly managed in the technical aspects of the plan.
+  * Reviews the plan in our quarterly [Security Policy and Account Review meetings](https://drive.google.com/drive/folders/0B1nrtBDSrHKHSnByWklWc0V4Q1E).
 * **Program Manager**
   * Ensure the team follows the Feature Lifecycle, Story Lifecycle, and other operational aspects of the plan.
 * **System Owner**
@@ -107,7 +111,7 @@ that paired collaboration on a single branch avoids certain types of friction:
 
 When contributing directly on a branch, we're able to modify work-in-progress (WIP) pull requests and encourage collaboration across the Cloud Operations team.
 
-For the cloud.gov team, when forking an upstream repository to add a patch or bugfix, the fork should go to your personal GitHub user account. The `cloud-gov` org is for code maintained by cloud.gov, whether that's original code or a long-lived fork (discouraged, but sometimes necessary) for code we are running in production. 
+For the cloud.gov team, when forking an upstream repository to add a patch or bugfix, the fork should go to your personal GitHub user account. The `cloud-gov` org is for code maintained by cloud.gov, whether that's original code or a long-lived fork (discouraged, but sometimes necessary) for code we are running in production.
 
 ### Squashing commits
 
