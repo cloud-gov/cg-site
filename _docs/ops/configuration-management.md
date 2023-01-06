@@ -82,6 +82,10 @@ If possible, Configuration Management tools need to be set up to always roll bac
 * **Cloud Ops** (Platform squad)
   * Ensure Concourse, Terraform, BOSH, GitHub, AWS, and other resources are correctly set up to implement the technical aspects of the plan.
   * Review the plan in our quarterly [Security Policy and Account Review meetings](https://drive.google.com/drive/folders/0B1nrtBDSrHKHSnByWklWc0V4Q1E).
+* **Cloud.gov Pages Ops** (Pages squad)
+  * Relies on **Cloud Ops** for ensuring Concourse, GitHub, AWS, and other resources are correctly set up to implement the technical aspects of the plan.
+  * Ensures team specific implementations for Concourse, GitHub, AWS, and other resources are correctly managed in the technical aspects of the plan.
+  * Reviews the plan in our quarterly [Security Policy and Account Review meetings](https://drive.google.com/drive/folders/0B1nrtBDSrHKHSnByWklWc0V4Q1E).
 * **Program Manager**
   * Ensure the team follows the Feature Lifecycle, Story Lifecycle, and other operational aspects of the plan.
 * **System Owner**
