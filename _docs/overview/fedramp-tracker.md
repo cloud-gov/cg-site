@@ -38,7 +38,16 @@ Here's an example of a control breakdown for a simple moderate-impact system hos
 
 {% asset fedramp-moderate-controls-new.png alt="Graphic showing the breakdown of how many controls are fully covered by cloud.gov." %}
 
-The [**Control Implementation Summary (CIS) + Customer Responsibility Matrix (CRM) + Control-by-Control Inheritance (.xlsx)**]({{ site.baseurl }}/resources/cloud.gov-CIS-Worksheet.xlsx) (last updated August 3, 2021) is a summary of each Low and Moderate security control and whether it is handled by cloud.gov, shared responsibility, or customer responsibility. It includes guidance on which controls a customer system can fully or partially inherit from cloud.gov.
+### Control Implementation Summary (CIS) + Customer Responsibility Matrix (CRM):
+
+We publish two CIS/CRM documents, one for the Paas/Platform service and one for the Pages service:
+
+* [cloud.gov PaaS CIS Worksheet]({{ site.baseurl }}/resources/cloud.gov-CIS-Worksheet.xlsx) summarizes each Low and Moderate security control and whether it is handled by cloud.gov (inheritable), a shared responsibility, or a customer responsibility. It includes guidance on which controls a customer on the Platform can fully or partially inherit from cloud.gov.
+  * Last Update: 2022-11-15 - Updated front matter
+* [cloud.gov Pages CIS Worksheet]({{ site.baseurl }}/resources/cloud.gov-Pages-CIS-Worksheet.xlsx) summarizes each Low and Moderate security control and whether it is handled by cloud.gov (inheritable), a shared responsibility, or a customer responsibility. It includes guidance on which controls a customer on Pages can fully or partially inherit from cloud.gov.
+  * Last Update: 2022-11-15 - First published CIS/CRM for cloud.gov Pages
+
+A CRM for Pages Moderate-impact controls is under development.
 
 ## Start the ATO process
 

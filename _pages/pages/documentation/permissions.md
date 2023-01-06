@@ -10,12 +10,15 @@ sidenav: pages-documentation
 ## Initial access
 
 ### Personal access
-Basic access to Pages is authenticated using GitHub OAuth. Please ask your team's primary contact for Pages to request access to Pages by e-mailing pages-support@cloud.gov with the GitHub usernames of those that should have access. Next, you should receive an invitation to join the federalist-users GitHub organization which you must accept before you can log in to Pages. Primary contacts should also let us know when to remove access as part of offboarding.
+Users can be granted access to cloud.gov Pages in one of two ways:
 
-***Note:*** If a user is inactive for 90 days, their account will be disabled and they will not be able to login to Pages. In order to regain access to Pages, their team's primary contact for Pages must re-submit a request for access to Pages by e-mailing pages-support@cloud.gov with the user's GitHub username.
+1. Pages Users with the `manager` role in a Pages Organization can “invite” users to their Pages Organization. If the invited user is not currently a Pages User, a cloud.gov UAA User is created for them. Once the UAA User accepts the invitation to join UAA and completes the authentication process with their chosen IdP, they are allowed access to the Pages Application. Additionally, once the UAA User is created, the corresponding Pages User is granted access to the appropriate Pages Organization, allowing the Pages User access to the organization’s corresponding Pages Sites.
 
-### Organizational access
-In order to manage sites where the repository is owned by an organization, Pages uses GitHub oAuth at the organizational level. After you have logged in to Pages, as described in the Personal Access section above, you must [request organization approval](https://help.github.com/en/articles/requesting-organization-approval-for-oauth-apps) for the Pages oAuth App. Be sure to follow up with your organization's GitHub admin to confirm approval.
+1. When a Pages Operator creates a new Pages Organization in the Pages Application, a user will be designated as the first `manager` for the Pages Organization. If the user is not already a Pages User, the user follows the same process as in 1.
+
+
+### Pages organizations
+Pages Users within an Organization will be able to see all of the Sites in the Organization without having to manually add them. Pages Users can have one of two Roles within an Organization: `user` or `manager`. The roles are identical with the exception that Organization `manager`s have the ability to add/remove/manage other Pages Users within the Organization, including triggering invites to the Pages platform if necessary for new users. Organizations can only be created and deactivated by Pages Operators.
 
 ## Site permissions
 

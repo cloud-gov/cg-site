@@ -127,7 +127,7 @@ This sitrep should be:
 
 - Posted in [`#incident-response`](https://gsa-tts.slack.com/messages/incident-response/)
 - Emailed to `gsa-ir@gsa.gov` and `devops@gsa.gov`
-- Emailed to FedRAMP ISSO (JAB TR reps), cc: info@fedramp.gov and cloud-gov-compliance@gsa.gov. They require daily updates on open incidents.
+- Emailed to [FedRAMP ISSO (JAB TR reps)][FedRAMP ISSO TRR reps], cc: info@fedramp.gov and cloud-gov-compliance@gsa.gov. They require daily updates on open incidents.
 - Sent (email or Slack) to external stakeholders, if applicable and relevant
 
 #### Comms at the Assess phase
@@ -146,6 +146,10 @@ At this point, we're trying to fix the issue! Remediation will be very situation
 	- **If the incident involved exposure of information to an unauthorized party,** the remediation steps must include working with TTS Infrastructure and GSA Information Security to notify the owner of the information, coordinate with the owner of the information, and notify the recipient of their obligations for appropriate handling of the information in the context of applicable federal laws, directives, policies, and/or regulations. The specific appropriate point of contact for customers depends on the situation.
 
 - The response team should aim to adopt a *containment* strategy: if machines are compromised, they should avoid destroying or shutting them down if possible (this can hamper forensics). For AWS instances, you can leave the instance running and instead reconfigure the Security Group for the instance to drop all ingress and egress traffic until forensics can be performed.
+
+- Containment should also preserve evidence. For example, if there's a
+  credential leak, we should _securely preserve_  the leaked credentials while
+  we also ensure they are rotated, and scrubbed from the record. 
 
 - Remediation may require service disruption. If it does, the team should proceed in a different way depending on the severity:
 
@@ -167,7 +171,7 @@ Once the incident is no longer active — i.e. the breach has been contained, th
 
 - Set the status of the incident to "resolved".
 - Send a final sitrep to stakeholders.
-- Email after-action to FedRAMP ISSO (JAB TR reps), cc: info@fedramp.gov and cloud-gov-compliance@gsa.gov
+- Email after-action to [FedRAMP ISSO (JAB TR reps)][FedRAMP ISSO TRR reps], cc: info@fedramp.gov and cloud-gov-compliance@gsa.gov
 - Thank everyone involved for their service!
 
 #### Comms at the Remediate phase
@@ -249,3 +253,5 @@ Guidelines for addressing Low-sev issues:
 * Last modified on: {% last_modified_at %}
 * [Recent document history](https://github.com/cloud-gov/cg-site/commits/master/{{ page.path }}) (since 2020-02-05)
 * [Older document history](https://github.com/cloud-gov/cg-site/commits/master/content/docs/ops/{{ page.slug }}.md) (before 2020-02-05)
+
+[FedRAMP ISSO TRR reps]: https://docs.google.com/document/d/1jGddQkjkQ6e9B0UTq9hfQqHe0btAbTeBGL_DxkozAcg/edit

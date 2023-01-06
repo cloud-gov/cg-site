@@ -116,7 +116,7 @@ If you are using CAA records, you must have a record for letsencrypt.org. This a
 ## Notify Pages
 Once your DNS changes are complete, notify Pages support via:
 - email: `pages-support@gsa.gov`
-- Slack: `#pages-support`
+- Slack: `#cg-pages`
 
 Someone from the Pages support team will assist you and make the updates to the Pages platform.
 
@@ -127,10 +127,8 @@ Once the Pages team has notified you that the platform changes are complete, upd
 
 1. In the Pages web application, navigate to the Site Settings page for your site by clicking on the `Site Settings` link on the lefthand navigation:
 
-    ![Site Settings 1]({{ site.baseurl }}/assets/pages/images/site-settings-1.png)
-
 2. Under "Live Site" enter the branch name you want to associate to the custom domain and full url of the domain you just configured. When you are done, (scroll down if necessary and) click "save basic settings"
 
-    ![Site Settings 2]({{ site.baseurl }}/assets/pages/images/site-settings-2.png)
+    ![Site Settings 2]({{ site.baseurl }}/assets/pages/images/federalist-settings.png)
 
 3. Pages will rebuild your site and then it will be available at the custom domain. If you notice that your site does not look correct and/or any site assets (css, js, images) appear to be missing, make sure that the urls to those assets are correct, we provide the environment variable `BASEURL` for this purpose. If using Jekyll, please make sure you use `site.baseurl` when constructing asset urls manually or use the `asset` helper tag if using the `jekyll-assets` gem.

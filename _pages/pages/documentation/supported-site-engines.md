@@ -20,7 +20,7 @@ For all engines **except Static** Pages will serve whatever is in the `_site` fo
 ### Node
 A Node script can be run to generate a site OR as a preliminary step to generating one with Jekyll or Hugo. To use a Node script as the generator, choose **Node.js** as the **Site Engine** in the Advanced Settings configuration for your site.
 
-For more details on using Node see [node on federalist]({{site.baseurl}}/pages/documentation/node-on-pages).
+For more details on using Node see [node on cloud.gov Pages]({{site.baseurl}}/pages/documentation/node-on-pages).
 
 ## Jekyll Resources
 Pages can generate any Jekyll website, which lets you build custom websites hosted on Pages. For documentation on getting started with Jekyll, see [jekyllrb.com](http://jekyllrb.com/).
@@ -61,7 +61,7 @@ To instruct search engines not to index the `preview` builds of your site, try a
 {% endraw %}
 ***Note:*** This code sample assumes the live version of your site's code is maintained in the `main` branch of your site's code repository.
 
-For all versions of your site that aren't built from `main`, the source code of the site will contain the code above. For an example, see [here](https://federalist-proxy.app.cloud.gov/preview/18f/federalist-docs/wslack-patch-1/), view source, and jump to line 57.
+For all versions of your site that aren't built from `main`, the source code of the site will contain the code above.
 
 ### Jekyll Plugins
 
@@ -71,7 +71,7 @@ Pages supports Jekyll plugins, enabling any plugins in a site's `_plugins` direc
 
 Several dependencies are already available for use in the building environment. These include `ruby`, `python`, and `node.js`. You can write plugins that take advantage of these without needing a `Gemfile`.
 
-To see the exact configuration of the build environment, see the [build environment `Dockerfile`](https://github.com/18F/federalist-garden-build/blob/main/Dockerfile).
+To see the exact configuration of the build environment, see the [build environment `Dockerfile`](https://github.com/cloud-gov/pages-build-container/blob/main/Dockerfile).
 
 **Note:** using `Gemfile` may considerably slow down the generation of your website, depending on how long the `bundle install` step takes to complete.
 

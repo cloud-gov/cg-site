@@ -4,12 +4,12 @@ layout: docs
 sidenav: true
 title: "AWS Elasticsearch"
 name: aws-elasticsearch"
-description: "AWS Elasticsearch version 7.4: a distributed, RESTful search and analytics engine"
+description: "AWS search: a distributed, RESTful search and analytics engine"
 status: "Production Ready"
 ---
 
-cloud.gov offers [aws-elasticsearch](https://aws.amazon.com/elasticsearch-service/) 7.4 as a service hosted in AWS Elasticsearch. 
-
+cloud.gov offers [aws-elasticsearch](https://aws.amazon.com/elasticsearch-service/) as a service hosted in AWS Elasticsearch and Opensearch. 
+The default is Elasticsearch version is 7.4
 ## Plans
 
 Service Name | Plan Name | Description | Number of nodes |
@@ -47,12 +47,30 @@ cf create-service aws-elasticsearch es-medium my-elastic-service
 
 Note: AWS Elasticsearch creation times will vary and is outside of Cloud.gov's control. AWS says approximately 15-30 mins per node. 
 
+
 ## Options
 
 name             | required | description              | example
 -----------------|----------|--------------------------|--------- 
 advanced_options | false    | map for advanced options | see below
+ElasticsearchVersion  | false    | Specifies a supported major version in search (must be in "")   | OpenSearch_1.3 
 
+### ElasticsearchVersion Options
+
+These are the current supported major versions for ElasticsearchVersion:
+- Elasticsearch_7.4
+- OpenSearch_1.3
+- OpenSearch_2.3
+
+
+If you want to specify the ElasticsearchVersion:
+
+```sh
+cf create-service aws-elasticSearch \
+    ${SERVICE_PLAN_NAME} \
+    ${SERVICE_NAME} \
+    -c '{"ElasticsearchVersion": "OpenSearch_2.3"}'
+```
 ### Advanced Options
 
 These are advanced tuning options that can have significant performance or behavior effects on your cluster. They are specified as key/value pairs under the `advanced_options` map in the core parameters. *Note*: although these all represent numbers, they are all specified as strings. Additionally, although they are dotted, they are not nested keys.

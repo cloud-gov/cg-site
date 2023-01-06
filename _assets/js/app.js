@@ -1,7 +1,7 @@
 //= require js/uswds.min.js
 
 // Add your custom javascript here
-console.log("Hi from Federalist");
+console.log("Hi from cloud.gov Pages");
 
 mermaid.initialize({startOnLoad:true, theme: null}, ".someOtherClass");
 

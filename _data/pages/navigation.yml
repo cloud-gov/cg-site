@@ -14,7 +14,7 @@ primary:
     # Look inside assets/js/index.js to see that how this url changes depending on enviroment
 secondary:
   - name: Platform Status
-    url: https://federalist.statuspage.io
+    url: https://cloudgov.statuspage.io/
   - name: Login
     url: https://pages.cloud.gov
     external: true
@@ -87,8 +87,6 @@ sidenav:
   - text: For developers
     href: /pages/documentation/
     subfolderitems:
-      - text: How Pages works
-        href: /pages/documentation/how-pages-works/
       - text: How builds work
         href: /pages/documentation/how-builds-work/
       - text: Specific build errors

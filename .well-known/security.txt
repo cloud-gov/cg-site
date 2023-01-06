@@ -1,7 +1,10 @@
-# Our security address
+# Vulnerability reporting:
 Contact: gsa-vulnerability@gsa.gov
-Contact: cloud-gov-compliance@gsa.gov
 Contact: https://hackerone.com/gsa_vdp
+Contact: cloud-gov-compliance@gsa.ogv
+
+# Incident response:
+Contact: cloud-gov-security@gsa.gov
 
 # Our security policy
 Policy: https://www.gsa.gov/vulnerability-disclosure-policy

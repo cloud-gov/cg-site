@@ -25,8 +25,8 @@ We've worked to make publishing a government site on Pages as simple as possible
 
 ## Launch Process
 1. Notify Pages support of your intent to launch along with your repository name/url and production-ready git branch via:
-- email: `federalist-support@gsa.gov`
-- Slack: `#federalist-support`
+- email: `pages-support@cloud.gov`
+- Slack: `#cg-pages`
 
 2. Pages support will:
 - initiate GSA IT-provided scans of the preview build and source code of your site to identify any vulnerabilites

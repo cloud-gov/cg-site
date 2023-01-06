@@ -1,11 +1,11 @@
 
 # cloud.gov
 
-This site uses the [Federalist USWDS Jekyll template](https://github.com/18F/federalist-uswds-jekyll). [Federalist](https://federalist.18f.gov/) runs on cloud.gov and supports the development of this template. By leveraging this template cloud.gov get the benefits  of a maintained template as well as a way to test out new functionality in the template.
+This site uses the [cloud.gov Pages USWDS Jekyll template](https://github.com/cloud-gov/pages-uswds-jekyll). [cloud.gov Pages](https://cloud.gov/pages/) runs on cloud.gov and supports the development of this template. By leveraging this template cloud.gov get the benefits  of a maintained template as well as a way to test out new functionality in the template.
 
-This [Jekyll theme](https://jekyllrb.com/docs/themes/) uses the [U.S. Web Design System v 2.0](https://v2.designsystem.digital.gov) and provides developers a starter kit and reference implementation for Federalist websites.
+This [Jekyll theme](https://jekyllrb.com/docs/themes/) uses the [U.S. Web Design System v 2.0](https://v2.designsystem.digital.gov) and provides developers a starter kit and reference implementation for cloud.gov Pages websites.
 
-This code uses the [Jekyll](https://jekyllrb.com) site engine and built with Ruby. If you prefer to use Javascript, check out [federalist-uswds-gatsby](https://github.com/18F/federalist-uswds-gatsby), which uses [Gatsby](https://gatsbyjs.org) site engine.
+This code uses the [Jekyll](https://jekyllrb.com) site engine and built with Ruby. If you prefer to use Javascript, check out [pages-uswds-gatsby](https://github.com/cloud-gov/pages-uswds-gatsby), which uses [Gatsby](https://gatsbyjs.org) site engine.
 
 This site uses a customized [U.S. Web Design System](https://v2.designsystem.digital.gov) theme and strives to be compliant with requirements set by [21st Century IDEA Act](https://designsystem.digital.gov/website-standards/). The standards require that a website or digital service:
 
@@ -55,7 +55,7 @@ permalink: /document-with-sidenav
 ---
 searchgov:
   endpoint: https://search.gov  # You should not change this.
-  affiliate: federalist-uswds-example # replace this with your search.gov account 
+  affiliate: pages-uswds-example # replace this with your search.gov account 
   access_key: your-access-key # This is placeholder. Not private.
   inline: true #this renders the results on the same domain. Otherwise, it will render the results in the search.gov domain
 ---
@@ -70,7 +70,7 @@ searchgov:
 
 - The contents inside `_assets/` folder store your Javascript, SCSS/CSS, images, and other media assets are managed by  [jekyll-assets](https://github.com/envygeeks/jekyll-assets).  Assets are combined, compressed, and automatically available in your theme
 
-- If you look at `package.json` you will see that the `npm run federalist` command that will run when running on the Federalist platform.
+- If you look at `package.json` you will see that the `npm run pages` command that will run when running on the cloud.gov Pages platform.
 
 - Do not edit files in the `_site/` folder. These files are auto-generated, and any change you make in the folder will be overwritten.
 
@@ -92,7 +92,7 @@ searchgov:
     $ git clone https://github.com/cloud-gov/cg-site
     $ cd cg-site
 
-Note that when built by Federalist, `npm run federalist` is used instead of the
+Note that when built by cloud.gov Pages, `npm run pages` is used instead of the
 `build` script.
 
 ### Install dependencies and run app

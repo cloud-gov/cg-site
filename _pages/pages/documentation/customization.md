@@ -99,7 +99,7 @@ If a user navigates to a page on your site that does not exist, they will see a 
 ## Pages default 404 page
 ![Default 404 Page]({{site.baseurl}}/assets/pages/images/default-404.png)
 
-In order to use a custom 404 Page, name your 404 Page "404.html" and make sure it is at the root of and included in the resources that are deployed. Jekyll sites should also have the file in the root of the project with the front matter data value set to `permalink: /404.html`, see [the docs for reference](https://jekyllrb.com/tutorials/custom-404-page/). If you need to direct 404 errors to a file not named "404.html" to support single page applications (SPA), let #federalist-support or pages-support@cloud.gov know that you would like to use a custom 404 page for a SPA and we will handle the rest.
+In order to use a custom 404 Page, name your 404 Page "404.html" and make sure it is at the root of and included in the resources that are deployed. Jekyll sites should also have the file in the root of the project with the front matter data value set to `permalink: /404.html`, see [the docs for reference](https://jekyllrb.com/tutorials/custom-404-page/). If you need to direct 404 errors to a file not named "404.html" to support single page applications (SPA), let #cg-pages or pages-support@cloud.gov know that you would like to use a custom 404 page for a SPA and we will handle the rest.
 
 > If you have a custom domain and, while trying to set up your custom 404 page using a development branch, you are able to see it when running locally, but not live on the branch site, try pushing it to your custom domain. 
 
