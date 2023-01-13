@@ -50,53 +50,7 @@ An error occurred (AccessDenied) when calling the ListUsers operation: User: ...
 ```
 To work with AWS credentials on a day-to-day basis, we rely on [`aws-vault`](https://github.com/99designs/aws-vault/).
 
-### Install aws-vault for AWS credentials and create a profile
-
-Install `aws-vault` with this [Homebrew](https://brew.sh/) command:
-
-```sh
-brew install aws-vault
-```
-
-Now create a profile, e.g., for the AWS GovCloud account:
-
-```sh
-aws-vault add cloud-gov-govcloud
-```
-
-### Configure MFA for aws-vault
-
-All operators must have MFA enabled, which is taken care of as a part of the platform operator onboarding process.  This can be confirmed by checking in the AWS console under `Services -> IAM -> Users -> firstname.lastname -> Security Credentials`.
-
-After confirming that MFA is enabled for your account, run this command to set a command line variable for your MFA device identifier (where `mfa_serial` is the full ARN of your MFA device found in the AWS console):
-
-```sh
-mfa_serial=arn:aws:iam::xxxxx:mfa/firstname.lastname
-```
-
-Then run these commands to set the local Amazon configuration in order to enable short lived tokens (replacing profile name and `region` as appropriate):
-
-```sh
-echo '[profile cloud-gov-govcloud]' >> ~/.aws/config
-echo 'region = us-gov-west-1' >> ~/.aws/config
-echo "mfa_serial = $mfa_serial" >> ~/.aws/config
-```
-
-### Executing a command with short lived credentials
-
-You can execute any system command with short lived credentials using the `aws-vault exec` command.  For example, to open a new shell session with the credentials set in the environment, run the following command:
-
-```sh
-aws-vault exec cloud-gov-govcloud bash
-```
-
-If you do this, running `env | grep AWS` will show you a new set of credentials which are different from the primary IAM role credentials because they are short lived and issued at runtime.  This means that if a malicious script or program attempts to read `~/.aws/credentials` or `~/.aws/config` they will be unable to retrieve the primary credentials.
-
-If you run into issues running `aws` CLI commands, double-check that the `region` configured for the profile in your `~/.aws/config` is correct.
-
-### Next Steps for aws-vault configuration and usage
-
-Once this is complete, you can provision additional profiles which use only specific resources, or specific permissions such as read only.  This scopes the role of the temporary credentials to further reduce the attack surface.
+Details on using `aws-vault` on our team are in our internal documentation.
 
 ## Maintenance of system secret keys
 
