@@ -42,8 +42,8 @@ Happy New Year! The cloud.gov team provides this change log so everyone can see 
 ### python-buildpack v1.8.3 from v1.8.1
 
 * Add python 3.11.0 for stack(s) cflinuxfs3, cflinuxfs4
-* Add python 3.8.15, remove python 3.8.13 for stack(s) cflinuxfs3, cflinuxfs4 (https://www.pivotaltracker.com/story/show/183514400)
-* Add python 3.9.15, remove python 3.9.13 for stack(s) cflinuxfs4, cflinuxfs3 (https://www.pivotaltracker.com/story/show/183514701)
+* Add python 3.8.15, remove python 3.8.13 for stack(s) cflinuxfs3, cflinuxfs4
+* Add python 3.9.15, remove python 3.9.13 for stack(s) cflinuxfs4, cflinuxfs3
 * Add python 3.10.8, remove python 3.10.6 for stack(s) cflinuxfs3, cflinuxfs4
 * Add python 3.7.15, remove python 3.7.13 for stack(s) cflinuxfs4, cflinuxfs3
 * Add pip 22.3.1, remove pip 22.2.2 for stack(s) cflinuxfs4, cflinuxfs3
@@ -66,11 +66,11 @@ Happy New Year! The cloud.gov team provides this change log so everyone can see 
     * This seems to be from a heroku era effort to support windows.
 * openjdk8: update dependency
 * Remove EOL'd jruby 9.2 (#612)
-* Add jruby 9.4.0.0 for stack(s) cflinuxfs3 (https://www.pivotaltracker.com/story/show/183926892)
-* Add ruby 2.7.7, remove ruby 2.7.5 for stack(s) cflinuxfs3 (https://www.pivotaltracker.com/story/show/183904439)
-* Add ruby 3.1.3, remove ruby 3.1.1 for stack(s) cflinuxfs3 (https://www.pivotaltracker.com/story/show/183904461)
-* Add bundler 2.3.26, remove bundler 2.3.25 for stack(s) cflinuxfs3 (https://www.pivotaltracker.com/story/show/183824072)
-* Add rubygems 3.3.26, remove rubygems 3.3.25 for stack(s) cflinuxfs3 (https://www.pivotaltracker.com/story/show/183824077)
+* Add jruby 9.4.0.0 for stack(s) cflinuxfs3
+* Add ruby 2.7.7, remove ruby 2.7.5 for stack(s) cflinuxfs3
+* Add ruby 3.1.3, remove ruby 3.1.1 for stack(s) cflinuxfs3
+* Add bundler 2.3.26, remove bundler 2.3.25 for stack(s) cflinuxfs3
+* Add rubygems 3.3.26, remove rubygems 3.3.25 for stack(s) cflinuxfs3
 * Test fixtures: Updates rails5 Gemfile.lock to resolve C compilation issues
 * Test fixtures: Removes integration tests for Rails 4 has been out of support since Aug. 2019
 
