@@ -50,7 +50,7 @@ An error occurred (AccessDenied) when calling the ListUsers operation: User: ...
 ```
 To work with AWS credentials on a day-to-day basis, we rely on [`aws-vault`](https://github.com/99designs/aws-vault/).
 
-Details on using `aws-vault` on our team are in our internal documentation.
+Details on using `aws-vault` on our team are in our [internal documentation]([url](https://github.com/cloud-gov/aws-admin/blob/main/docs/user_access.md#initial-setup)).
 
 ## Maintenance of system secret keys
 
