@@ -21,7 +21,7 @@ You will need to access the postgres database on the cli using one of the method
 
 * The name of the table on your RDS for PostgreSQL DB instance
 
-This is the table into which the aws_s3.table_import_from_s3 function is to import the data.
+  This is the table into which the aws_s3.table_import_from_s3 function is to import the data.
 
 * The S3 bucket name
 * The S3 file path
