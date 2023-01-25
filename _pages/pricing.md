@@ -72,7 +72,7 @@ redirect_from:
         <a href="#estimate-your-monthly-cost"></a>
         <h2 id="estimate-your-monthly-cost">Estimate your monthly cost</h2>
         <p>
-          Monthly costs are based on the package fee (i.e., Prototyping, FISMA Low, FISMA Moderate) plus memory usage. Memory quota cost are based on the amount of memory (RAM) that you reserve for your system (<sup>$</sup>130/GB RAM per month).
+          Monthly costs are based on the package fee (i.e., Prototyping, FISMA Low, FISMA Moderate) plus memory usage. Memory quota cost is based on the amount of memory (RAM) that you reserve for your system (<sup>$</sup>130/GB RAM per month).
         </p>
         <p class="footnote">
           Most cloud.gov customers typically reserve 4–8 GB of memory to cover multiple applications across development, staging, and production environments.
@@ -165,7 +165,7 @@ redirect_from:
             S3 object store -  5TB included<br><i>  $100/month per additional terabyte</i>
           </li>
           <li>
-            Postgres, MySQL, Oracle database - 1TB included<br><i>$300/month per additional additional terabyte</i>
+            Postgres, MySQL, Oracle database - 1TB included<br><i>$300/month per additional terabyte</i>
           </li>
           <li>
             Elasticsearch RESTful search and analytics<br><i>$200/month per node for medium (each medium instance has 5-7 nodes provisioned), $400/month per node for large (each large instance has 5-7 nodes provisioned), $600 for extra-large (each extra-large instance has 5-7 nodes provisioned), and 6 medium nodes included for FISMA Moderate</i>
