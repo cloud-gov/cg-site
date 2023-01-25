@@ -101,6 +101,8 @@ sidenav:
         href: /pages/documentation/rvm-on-pages/
       - text: Bundler on Pages
         href: /pages/documentation/bundler-on-pages/
+      - text: Caching Build Dependencies
+        href: /pages/documentation/cache-dependencies/
       - text: Supported site engines
         href: /pages/documentation/supported-site-engines/
       - text: Large file handling
