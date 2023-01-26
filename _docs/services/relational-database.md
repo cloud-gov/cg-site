@@ -108,6 +108,7 @@ Name               | Description                                                
 `enable_functions` | Boolean to enable functions on supported databases             | false                  |
 `version`          | Specifies a supported major version in RDS (must be in quotes) | AWS RDS Latest Default |
 `backup_retention_period` | Specifies a number of days to retain daily snapshots. | 14           |
+`binary_log_format` | Specifies the format for [MySQL binary logging](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQL.BinaryFormat.html). **Only supported for MySQL database plans**. Valid options: `ROW`, `STATEMENT`, `MIXED`. | ---           |
 
 A couple of notes regarding the optional `version` parameter:
 
@@ -146,6 +147,15 @@ cf create-service aws-rds \
     ${MYSQL_SERVICE_PLAN_NAME} \
     ${SERVICE_NAME} \
     -c '{"enable_functions": true}'
+```
+
+To specify the binary log format for a MySQL instance:
+
+```sh
+cf create-service aws-rds \
+    ${MYSQL_SERVICE_PLAN_NAME} \
+    ${SERVICE_NAME} \
+    -c '{"binary_log_format": "ROW"}'
 ```
 
 To specify a major version of a new instance, e.g., PostgreSQL version 11 (please note the double quotes (`"`) around the version number; they are required):
@@ -194,7 +204,7 @@ name                 service   plan                bound apps   last operation
 test-oracle          aws-rds   medium-oracle-se2                create succeeded
 ```
 
-By default, when new spaces are created in your organization, an application security group (ASG) is applied that doesn't allow any outgoing traffic. You will need to [update egress traffic]({{ site.baseurl }}{% link _docs/management/space-egress.md %}) rules to allow for your app to reach the database. 
+By default, when new spaces are created in your organization, an application security group (ASG) is applied that doesn't allow any outgoing traffic. You will need to [update egress traffic]({{ site.baseurl }}{% link _docs/management/space-egress.md %}) rules to allow for your app to reach the database.
 
 ## Update an instance
 
@@ -223,6 +233,7 @@ Name               | Required | Description                                     
 ---                | ---      | ---                                             |
 `storage`          |          | Number of GB available to the database instance |
 `backup_retention_period` | | Specifies a number of days to retain daily snapshots. |
+`binary_log_format` | Specifies the format for [MySQL binary logging](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQL.BinaryFormat.html). **Only supported for MySQL database plans**. Valid options: `ROW`, `STATEMENT`, `MIXED`. | ---           |
 
 #### Examples of optional parameters
 
@@ -233,6 +244,13 @@ cf update-service ${SERVICE_NAME} -c '{"storage": 50}'
 ```
 
 Note that you can only update to a larger size. If you want to downgrade to a lesser size, please email [support](mailto:support@cloud.gov) for assistance.
+
+To update the binary log format for a MySQL instance:
+
+```sh
+cf update-service ${SERVICE_NAME} \
+    -c '{"binary_log_format": "ROW"}'
+```
 
 #### A note about upgrading major versions
 
