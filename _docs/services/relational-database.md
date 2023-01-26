@@ -229,11 +229,11 @@ You can update to larger or smaller plans depending on your specific needs, and 
 
 There are several optional parameters that you can specify when updating an existing instance:
 
-Name               | Required | Description                                     |
----                | ---      | ---                                             |
-`storage`          |          | Number of GB available to the database instance |
-`backup_retention_period` | | Specifies a number of days to retain daily snapshots. |
-`binary_log_format` | Specifies the format for [MySQL binary logging](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQL.BinaryFormat.html). **Only supported for MySQL database plans**. Valid options: `ROW`, `STATEMENT`, `MIXED`. | ---           |
+Name               | Description                                     |
+---                | ---                                             |
+`storage`          | Number of GB available to the database instance |
+`backup_retention_period` | Specifies a number of days to retain daily snapshots. |
+`binary_log_format` | Specifies the format for [MySQL binary logging](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQL.BinaryFormat.html). **Only supported for MySQL database plans**. Valid options: `ROW`, `STATEMENT`, `MIXED`. |
 
 #### Examples of optional parameters
 
