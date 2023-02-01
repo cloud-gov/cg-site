@@ -11,7 +11,7 @@ Pages recently integrated support for Netlify CMS, an open source content manage
 ### Building a new site from template
 The Pages templates include pre-configured Netlify CMS functionality. To begin utilizing: 
 1. select the [template]({{site.baseurl}}/pages/documentation/templates/) that you wish to use as your base site
-2. navigate to the new repository that Pages created, and **update** the Netlify CMS configuration to point to the current repository
+2. navigate to the new GitHub repository that Pages created, and **update** the Netlify CMS configuration to point to the current repository
 
 ```
     # Jekyll: /admin/config.yml
@@ -19,7 +19,7 @@ The Pages templates include pre-configured Netlify CMS functionality. To begin u
 
     backend:
       ...
-      repo: <your org>/<your repo>
+      repo: <your github org>/<your repo>
       ...
 ```
 3. when you are done, your configuration should look something like the one in [configuration requirements](#configuration-requirements)
