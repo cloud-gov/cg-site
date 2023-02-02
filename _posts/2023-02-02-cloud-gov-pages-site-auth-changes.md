@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Cloud.gov Pages Site Authorization Changes
-date: January 31, 2023
+date: February 02, 2023
 excerpt: "The GSA ATO covering new site launches and renewals after April 1st,
   2023 will end and non-GSA sites will no longer be covered with a GSA ATO after
   the start of FY24 (October 1st, 2023). "
