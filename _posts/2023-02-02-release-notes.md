@@ -42,35 +42,20 @@ excerpt: The cloud.gov team is working on providing change logs so everyone can 
 * Add app-id and drain url in the error message
 * Sanitize ProcID in syslog messages so messages with utf-8 in the source_type are not dropped
 
-
 ### Nats 56 up from 54
 * Built with go 1.19.4
 
 ### Nginx-Buildpack 1.1.46 up from 1.1.45
 * Add nginx 1.23.3, remove nginx 1.23.2 for stack(s) cflinuxfs3
 
-### Nodejs-Buildpack 1.8.5 up from 1.8.4
-
-### Php-Buildpack 4.5.1 up from 4.5.0
-
 ### Prometheus 27.2.2 up from 27.2.1
 * This release breaks dashboards using pie charts
 * Fixes an issue with setting grafana home dashboard
 * Adds grafana configuration for id_token_attribute_name in generic oauth 
 
-### Python-Buildpack 1.8.4 up from 1.8.3
-
-### R-Buildpack 1.1.37 up from 1.1.36
-
 ### Routing 0.255.0 up from 0.253.0
 * Upgrade healthchecker in release. In order to limit the scope of packages brought in with the introduction of http healthchecker, we migrated the healthchecker package out of cf-networking-helpers into its own release.
 * Built with go 1.19.5
 
-### Ruby-Buildpack 1.9.1 up from 1.9.0
-
 ### Silk 3.19.0 up from 3.18.0
 * Bumped go to 1.19.5
-
-### Snort 585 up from 584
-
-### Staticfile-Buildpack 1.5.37 up from 1.5.36
