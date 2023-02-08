@@ -245,6 +245,7 @@ Name               | Description                                     |
 `backup_retention_period` | Specifies a number of days to retain daily snapshots. |
 `binary_log_format` | Specifies the format for [MySQL binary logging](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQL.BinaryFormat.html). **Only supported for MySQL database plans**. Valid options: `ROW`, `STATEMENT`, `MIXED`. |
 `enable_pg_cron` | Boolean to enable [`pg_cron` extension on PostgreSQL databases](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL_pg_cron.html) (requires PostgreSQL 12.5 and above) | false           |
+`disable_pg_cron` | Boolean to disable [`pg_cron` extension on PostgreSQL databases](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL_pg_cron.html) (requires PostgreSQL 12.5 and above) | false           |
 
 #### Examples of optional parameters
 
@@ -264,6 +265,13 @@ cf update-service ${SERVICE_NAME} \
 ```
 
 To enable the `pg_cron` extension for a PostgreSQL instance:
+
+```sh
+cf update-service ${SERVICE_NAME} \
+    -c '{"enable_pg_cron": true}'
+```
+
+To disable the `pg_cron` extension for a PostgreSQL instance:
 
 ```sh
 cf update-service ${SERVICE_NAME} \
