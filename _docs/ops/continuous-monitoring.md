@@ -261,5 +261,6 @@ Examples:
 ### Page information
 
 * Last modified on: {% last_modified_at %}
-* [Recent document history](https://github.com/cloud-gov/cg-site/commits/master/{{ page.path }}) (since 2020-02-05)
-* [Older document history](https://github.com/cloud-gov/cg-site/commits/master/content/docs/ops/{{ page.slug }}.md) (before 2020-02-05)
+* [Recent document history](https://github.com/cloud-gov/cg-site/commits/main/{{ page.path }}) (since 2022-11-08)
+* [Older document history](https://github.com/cloud-gov/cg-site/commits/master/{{ page.path }}) (from 2020-02-05 to 2022-11-08)
+* [Much older document history](https://github.com/cloud-gov/cg-site/commits/master/content/docs/ops/{{ page.slug }}.md) (before 2020-02-05)
