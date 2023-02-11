@@ -109,7 +109,6 @@ Name               | Description                                                
 `version`          | Specifies a supported major version in RDS (must be in quotes) | AWS RDS Latest Default |
 `backup_retention_period` | Specifies a number of days to retain daily snapshots. | 14           |
 `binary_log_format` | Specifies the format for [MySQL binary logging](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQL.BinaryFormat.html). **Only supported for MySQL database plans**. Valid options: `ROW`, `STATEMENT`, `MIXED`. | ---           |
-`enable_pg_cron` | Boolean to enable [`pg_cron` extension on PostgreSQL databases](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL_pg_cron.html) (requires PostgreSQL 12.5 and above) | false           |
 
 A couple of notes regarding the optional `version` parameter:
 
@@ -157,15 +156,6 @@ cf create-service aws-rds \
     ${MYSQL_SERVICE_PLAN_NAME} \
     ${SERVICE_NAME} \
     -c '{"binary_log_format": "ROW"}'
-```
-
-To enable the `pg_cron` extension for a PostgreSQL instance:
-
-```sh
-cf create-service aws-rds \
-    ${POSTGRESQL_SERVICE_PLAN_NAME} \
-    ${SERVICE_NAME} \
-    -c '{"enable_pg_cron": true}'
 ```
 
 To specify a major version of a new instance, e.g., PostgreSQL version 11 (please note the double quotes (`"`) around the version number; they are required):
@@ -244,8 +234,6 @@ Name               | Description                                     |
 `storage`          | Number of GB available to the database instance |
 `backup_retention_period` | Specifies a number of days to retain daily snapshots. |
 `binary_log_format` | Specifies the format for [MySQL binary logging](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQL.BinaryFormat.html). **Only supported for MySQL database plans**. Valid options: `ROW`, `STATEMENT`, `MIXED`. |
-`enable_pg_cron` | Boolean to enable [`pg_cron` extension on PostgreSQL databases](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL_pg_cron.html) (requires PostgreSQL 12.5 and above) | false           |
-`disable_pg_cron` | Boolean to disable [`pg_cron` extension on PostgreSQL databases](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL_pg_cron.html) (requires PostgreSQL 12.5 and above) | false           |
 
 #### Examples of optional parameters
 
@@ -262,20 +250,6 @@ To update the binary log format for a MySQL instance:
 ```sh
 cf update-service ${SERVICE_NAME} \
     -c '{"binary_log_format": "ROW"}'
-```
-
-To enable the `pg_cron` extension for a PostgreSQL instance:
-
-```sh
-cf update-service ${SERVICE_NAME} \
-    -c '{"enable_pg_cron": true}'
-```
-
-To disable the `pg_cron` extension for a PostgreSQL instance:
-
-```sh
-cf update-service ${SERVICE_NAME} \
-    -c '{"enable_pg_cron": true}'
 ```
 
 #### A note about upgrading major versions
