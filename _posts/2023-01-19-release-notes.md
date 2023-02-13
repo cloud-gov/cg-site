@@ -1,6 +1,6 @@
 ---
 layout: post
-date: January 19th 2022
+date: January 19th 2023
 title: "January 19th cloud.gov Change Log"
 excerpt: The cloud.gov team is working on providing change logs so everyone can see new features and updates.
 ---
