@@ -32,7 +32,7 @@ Once you have installed the AWS S3 extension, you then need to gather informatio
 * The S3 file path
 * The S3 file type
   
-  These can be obtained from the service key for your S3 service. To get the credentials such as the bucket name, region and file type, these can be obtained from the service key, you can run ‘cf service-key <SERVICE_INSTANCE_NAME> <KEY_NAME>’; you will see a JSON description of the credentials. Treat these values as sensitive!
+  These can be obtained from the service key for your S3 service. To get the credentials such as the bucket name, region and file type, these can be obtained from the service key, you can run `cf service-key <SERVICE_INSTANCE_NAME> <KEY_NAME>`; you will see a JSON description of the credentials. Treat these values as sensitive!
   
 * The AWS Region: us-gov-west-1
 
