@@ -277,7 +277,7 @@ cf update-service ${SERVICE_NAME} \
     -c '{"enable_pg_cron": false}'
 ```
 
-Please note that you may need to request an instance reboot after making these changes in order for them to apply immediately. You can request a reboot of your RDS instance by emailing [support@cloud.gov][support]
+Please note that you may need to request an instance reboot after making these changes in order for them to apply immediately. You can request a reboot of your RDS instance by emailing [support@cloud.gov][support].
 
 #### A note about upgrading major versions
 
