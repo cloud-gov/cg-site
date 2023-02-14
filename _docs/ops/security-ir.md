@@ -11,6 +11,8 @@ linktitle: Security IR Guide
 
 This document outlines cloud.gov's internal process for responding to security incidents. It outlines roles and responsibilities during and after incidents, and it lays out the steps we'll take to resolve them.
 
+This document does not address mission, size, structure, and functions to meet unique requirements related to Cloud.gov environment.
+
 *If you're responding to an incident, [here's our IR checklist]({{ site.baseurl }}{% link _docs/ops/security-ir-checklist.md %}) as a short, actionable companion to this guide.*
 
 (If you're a member of the public who has noticed something in cloud.gov that may be a security problem, please see [our vulnerability disclosure policy and reporting process](https://18f.gsa.gov/vulnerability-disclosure-policy/). As it explains, we want security researchers to feel comfortable reporting vulnerabilities they’ve discovered, as set out in that policy, so that we can fix them and keep our information safe.)
