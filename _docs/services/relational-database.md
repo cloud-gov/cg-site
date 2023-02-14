@@ -109,6 +109,7 @@ Name               | Description                                                
 `version`          | Specifies a supported major version in RDS (must be in quotes) | AWS RDS Latest Default |
 `backup_retention_period` | Specifies a number of days to retain daily snapshots. | 14           |
 `binary_log_format` | Specifies the format for [MySQL binary logging](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQL.BinaryFormat.html). **Only supported for MySQL database plans**. Valid options: `ROW`, `STATEMENT`, `MIXED`. | ---           |
+`enable_pg_cron` | Boolean to enable [`pg_cron` extension on PostgreSQL databases](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL_pg_cron.html) (requires PostgreSQL 12.5 and above) | false           |
 
 A couple of notes regarding the optional `version` parameter:
 
@@ -156,6 +157,15 @@ cf create-service aws-rds \
     ${MYSQL_SERVICE_PLAN_NAME} \
     ${SERVICE_NAME} \
     -c '{"binary_log_format": "ROW"}'
+```
+
+To enable the `pg_cron` extension for a PostgreSQL instance:
+
+```sh
+cf create-service aws-rds \
+    ${POSTGRESQL_SERVICE_PLAN_NAME} \
+    ${SERVICE_NAME} \
+    -c '{"enable_pg_cron": true}'
 ```
 
 To specify a major version of a new instance, e.g., PostgreSQL version 11 (please note the double quotes (`"`) around the version number; they are required):
@@ -234,6 +244,7 @@ Name               | Description                                     |
 `storage`          | Number of GB available to the database instance |
 `backup_retention_period` | Specifies a number of days to retain daily snapshots. |
 `binary_log_format` | Specifies the format for [MySQL binary logging](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQL.BinaryFormat.html). **Only supported for MySQL database plans**. Valid options: `ROW`, `STATEMENT`, `MIXED`. |
+`enable_pg_cron` | Boolean to enable [`pg_cron` extension on PostgreSQL databases](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL_pg_cron.html) (requires PostgreSQL 12.5 and above) | false           |
 
 #### Examples of optional parameters
 
@@ -243,7 +254,7 @@ If you want to increase the storage available to the instance to be 50 GB:
 cf update-service ${SERVICE_NAME} -c '{"storage": 50}'
 ```
 
-Note that you can only update to a larger size. If you want to downgrade to a lesser size, please email [support](mailto:support@cloud.gov) for assistance.
+Note that you can only update to a larger size. If you want to downgrade to a lesser size, please email [support][support] for assistance.
 
 To update the binary log format for a MySQL instance:
 
@@ -252,9 +263,25 @@ cf update-service ${SERVICE_NAME} \
     -c '{"binary_log_format": "ROW"}'
 ```
 
+To enable the `pg_cron` extension for a PostgreSQL instance:
+
+```sh
+cf update-service ${SERVICE_NAME} \
+    -c '{"enable_pg_cron": true}'
+```
+
+To disable the `pg_cron` extension for a PostgreSQL instance:
+
+```sh
+cf update-service ${SERVICE_NAME} \
+    -c '{"enable_pg_cron": false}'
+```
+
+Please note that you may need to request an instance reboot after making these changes in order for them to apply immediately. You can request a reboot of your RDS instance by emailing [support@cloud.gov][support].
+
 #### A note about upgrading major versions
 
-**You cannot update an existing instance to a new major version** with the `update-service` command.  If you'd like to update your existing database instance to a new major version, please email [support](mailto:support@cloud.gov) for assistance.
+**You cannot update an existing instance to a new major version** with the `update-service` command.  If you'd like to update your existing database instance to a new major version, please email [support@cloud.gov][support] for assistance.
 
 ### Bind to an application
 
@@ -270,13 +297,13 @@ Please note: If you are binding a service instance to a new space, please review
 
 *Please note that these instructions will change in the future as we expand our service offerings and provide more options for customers.*
 
-RDS automatically retains daily backups for 14 days. These backups are AWS RDS storage volume snapshots, backing up the entire DB instance and not just individual databases. You can extend the length of retention up to 35 days by using the option detailed above. If you need to have a database restored using one of these backups, you can [email support](mailto:support@cloud.gov).  For non-emergency situations, please provide at least 48 hours advance notice.
+RDS automatically retains daily backups for 14 days. These backups are AWS RDS storage volume snapshots, backing up the entire DB instance and not just individual databases. You can extend the length of retention up to 35 days by using the option detailed above. If you need to have a database restored using one of these backups, you can [email support@cloud.gov][support].  For non-emergency situations, please provide at least 48 hours advance notice.
 
-If you have an emergency situation, such as data loss or a compromised system, please [email support](mailto:support@cloud.gov) immediately and inform us of the situation.
+If you have an emergency situation, such as data loss or a compromised system, please [email support@cloud.gov][support] immediately and inform us of the situation.
 
 If you deleted your database instance and want to recover it, the recovery must be done within 14 days of the instance being deleted.  We can perform a restoration using the automated backups that are retained for that 14 day window after a database is removed.
 
-When you do [contact support](mailto:support@cloud.gov) with a database backup or restoration request, please include the following information:
+When you do [contact support@cloud.gov][support] with a database backup or restoration request, please include the following information:
 
 - Your organization name
 - The space you are working within
@@ -387,7 +414,7 @@ Every RDS instance configured through cloud.gov is [encrypted at rest](https://d
 
 ## Rotating credentials
 
-You can rotate credentials by creating a new instance and [deleting the existing instance](https://cli.cloudfoundry.org/en-US/cf/delete-service.html). If this is not an option, email [cloud.gov support](mailto:support@cloud.gov) to request rotating the credentials manually.
+You can rotate credentials by creating a new instance and [deleting the existing instance](https://cli.cloudfoundry.org/en-US/cf/delete-service.html). If this is not an option, email [support@cloud.gov][support] to request rotating the credentials manually.
 
 ## Working with OracleDB
 
@@ -516,8 +543,10 @@ New instances of dedicated RDS plans use the latest default database version ava
 
 The PostgreSQL and MySQL plans are configured to automatically upgrade currently-running dedicated instances to the most recent compatible [minor version](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html) available via AWS RDS GovCloud (US).
 
-For Oracle plans, minor upgrades are not automatic. To upgrade an existing Oracle database instance, please contact [support](mailto:support@cloud.gov) and schedule a maintenance window for the upgrade to take place.
+For Oracle plans, minor upgrades are not automatic. To upgrade an existing Oracle database instance, please contact [support@cloud.gov][support] and schedule a maintenance window for the upgrade to take place.
 
 ## The broker in GitHub
 
 You can find the broker here: [https://github.com/18F/aws-broker](https://github.com/18F/aws-broker).
+
+[support]: mailto:support@cloud.gov
