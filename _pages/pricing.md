@@ -85,7 +85,7 @@ redirect_from:
     </div>
     <div class="grid-row grid-gap">
       <div class="diagram tablet:grid-col margin-y-5">
-        {% asset pricing-example-FY20 alt="" %}
+        {% asset pricing-example-FY20 alt="Illustration of sample app running in dev, staging, and production environments" %}
       </div>
     </div>
     <div class="grid-row grid-gap">
