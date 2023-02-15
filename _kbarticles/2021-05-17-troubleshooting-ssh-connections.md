@@ -24,9 +24,9 @@ It is possible your internet service provider or network provider will block tra
 
 1. Retrieve the APP_GUID for your app: `cf app APP_NAME --guid`.
 2. Retrieve a one-time ssh passcode using `cf ssh-code`. You will be prompted for this code below.
-3. Use `ssh` (not `cf ssh`) to connect to your app container. Substitute the value for your APP_GUID: `ssh -p 22 cf:APP_GUID/0@ssh.fr.cloud.gov`. You will be prompted to enter a password. Use the one-time ssh passcode you generated in step 2.
+3. Use `ssh` (not `cf ssh`) to connect to your app container. Substitute the value for your APP_GUID: `ssh -p 2222 cf:APP_GUID/0@ssh.fr.cloud.gov`. You will be prompted to enter a password. Use the one-time ssh passcode you generated in step 2.
 
-This will open an ssh connection using port 22 to your app instance with index of 0. If you need to connect to a different instance, replace the `0` in the command above.
+This will open an ssh connection using port 2222 to your app instance with index of 0. If you need to connect to a different instance, replace the `0` in the command above.
 
 Note - If this approach does not work for you, and you see an error that says **Permission denied, please try again.**, then you should review the section below on changes to your application in the CAPI.
 
@@ -51,4 +51,4 @@ If you need to use a tool like `scp` or a native `ssh` utility to connect to you
 (The remaining steps are identical to those listed in the prior section, except instead of using the APP_GUID, you will use the PROCESS_GUID you just identified to connect to your application.)
 
 2. Retrieve a one-time ssh passcode using `cf ssh-code`. You will be prompted for this code below.
-3. Use `ssh` (not `cf ssh`) to connect to your app container. Substitute the value for your APP_GUID: `ssh -p 22 cf:PROCESS_GUID/0@ssh.fr.cloud.gov`. You will be prompted to enter a password. Use the one-time ssh passcode you generated in step 2.
+3. Use `ssh` (not `cf ssh`) to connect to your app container. Substitute the value for your APP_GUID: `ssh -p 2222 cf:PROCESS_GUID/0@ssh.fr.cloud.gov`. You will be prompted to enter a password. Use the one-time ssh passcode you generated in step 2.
