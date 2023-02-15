@@ -17,7 +17,11 @@ When building out your sites, please remember that all government websites must 
 
 ## Scheduling nightly builds
 
-Sites with public repositories can schedule builds to occur nightly.  If you wish to schedule automatic builds of your live or demo site, add the following custom environment variable to your [live/demo branch's build configuration]({{site.baseurl}}/pages/documentation/env-vars-on-pages-builds/):
+Sites with public repositories can schedule builds to occur nightly.  If you wish to schedule automatic builds of your live or demo site, add the following information to your site/demo configuration in the "Site settings" tab:
 ```
 schedule: nightly
 ```
+
+as shown below.
+
+![Site Configuration pane showing schedule: nightly]({{site.baseurl}}/assets/pages/images/schedule-nightly.png)
