@@ -24,7 +24,7 @@ bg-color-class: bg-accent-warm-light
       {% for product in site.data.support-packages %}
         <div class="desktop:grid-col">
           <div class="intro">
-            {% asset "{{ product.image }}" class="square-15" %}
+            {% asset "{{ product.image }}" class="square-15" alt="" %}
             <h2>{{ product.package_name }}</h2>
           </div>
           <table class="usa-table usa-table--borderless">
