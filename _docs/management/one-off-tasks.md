@@ -71,7 +71,7 @@ Note that this will not work for any command that is interactive.
    changes to your copied manifest at a minimum, you can provide these
    configuration options directly on the command-line:
 ```sh
-cf push -f task_manifest.yml --health-check-type none --no-route
+cf push -f task_manifest.yml --health-check-type process --no-route
 cf logs --recent task-runner
 ```
 1. If needed, use [`cf ssh`]({{ site.baseurl }}{% link _docs/management/using-ssh.md %}) to collect any artifacts.
