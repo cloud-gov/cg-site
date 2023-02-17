@@ -42,7 +42,7 @@ If the user requesting a reset has any apps, routes, or services in their sandbo
 
 3. Reset the user's totp_seed in cloudfoundry's uaa database.
 
-    Login to a **[concourse jumpbox]({{ site.baseurl }}{% link _docs/ops/runbook/troubleshooting-bosh.md %}#creating-and-intercepting-ephemeral-jumpboxes)** and run the `reset-totp.sh` script:
+    Login to a **[concourse jumpbox](https://github.com/cloud-gov/internal-docs/blob/main/docs/runbooks/BOSH/troubleshooting-bosh.md#creating-and-intercepting-ephemeral-jumpboxes)** and run the `reset-totp.sh` script:
 
         cg-scripts/reset-totp.sh cf-production ${username}
 

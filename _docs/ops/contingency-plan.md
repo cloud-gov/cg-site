@@ -92,7 +92,7 @@ Next, the team schedules an internal postmortem to discuss the event. This is th
 
 ### Jumpbox
 
-Internal [BOSH troubleshooting]({{ site.baseurl }}{% link _docs/ops/runbook/troubleshooting-bosh.md %}) relies on ephemeral Concourse jumpboxes. If concourse itself is unavailable, we need to create [emergency jumpboxes](https://github.com/cloud-gov/internal-docs/blob/master/runbooks/contingency.md#jumpboxes) (internal documentation)
+Internal [BOSH troubleshooting](https://github.com/cloud-gov/internal-docs/blob/main/docs/runbooks/BOSH/troubleshooting-bosh.md) relies on ephemeral Concourse jumpboxes. If concourse itself is unavailable, we need to create [emergency jumpboxes](https://github.com/cloud-gov/internal-docs/blob/main/docs/runbooks/Platform/contingency.md#jumpboxes) (internal documentation)
 
 ## External dependencies
 
@@ -140,7 +140,7 @@ In case of a **significant** disruption, after receiving approval from our Autho
 If all AWS regions are disrupted, Cloud Operations will deploy the system to another BOSH-supported IaaS provider (such as Microsoft Azure).
 
 #### AWS RDS
-Major services (Cloud Foundry, BOSH, Concourse, and UAA) rely on databases provided by RDS. To restore a database from backup, see [restoring RDS]({{ site.baseurl }}{% link _docs/ops/runbook/restoring-rds.md %}).
+Major services (Cloud Foundry, BOSH, Concourse, and UAA) rely on databases provided by RDS. To restore a database from backup, see [restoring RDS](https://github.com/cloud-gov/internal-docs/blob/main/docs/runbooks/AWS/restoring-rds.md).
 
 #### Brokered AWS services
 
