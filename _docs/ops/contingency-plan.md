@@ -92,7 +92,7 @@ Next, the team schedules an internal postmortem to discuss the event. This is th
 
 ### Jumpbox
 
-Internal [BOSH troubleshooting]({{ site.baseurl }}{% link _docs/ops/runbook/troubleshooting-bosh.md %}) relies on ephemeral Concourse jumpboxes. If concourse itself is unavailable, we need to create [emergency jumpboxes](https://github.com/cloud-gov/internal-docs/blob/master/runbooks/contingency.md#jumpboxes) (internal documentation)
+Internal [BOSH troubleshooting](https://github.com/cloud-gov/internal-docs/blob/main/docs/runbooks/BOSH/troubleshooting-bosh.md) relies on ephemeral Concourse jumpboxes. If concourse itself is unavailable, we need to create [emergency jumpboxes](https://github.com/cloud-gov/internal-docs/blob/main/docs/runbooks/Platform/contingency.md#jumpboxes) (internal documentation)
 
 ## External dependencies
 
