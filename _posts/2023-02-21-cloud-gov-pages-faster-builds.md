@@ -7,7 +7,7 @@ excerpt: We advertise that cloud.gov Pages, previously known as Federalist, can 
 
 We advertise that [cloud.gov Pages](https://cloud.gov/pages), previously known as Federalist, can “securely deploy a website from your repository in minutes.” Getting your content on the web quickly, seeing fast previews, and even seeing errors early are all important to good maintenance of a website. But as sites become larger and more complex, this can be a difficult task. We’ve made two recent changes to cloud.gov Pages to make website deployment faster so you can focus on your code, design, and content.
 
-## Differential publishing
+## Publishing improvements
 
 Static site generators, like those frequently used with cloud.gov Pages, generate each website page in advance. We then copy each page to our hosting service so it can appear online. If we want to save time, we can choose to only copy the page if we can tell that it changed from the previous build.
 
@@ -17,8 +17,8 @@ Sites like [digital.gov](https://digital.gov/), with over 20,000 files, had been
 
 <div class="border bg-white padding-2 margin-bottom-2 margin-top-1 radius-md padding-bottom-0 maxw-tablet">
 
-<h4 class="margin-0">Median Build Times for Digital.gov by Month</h4>
-<p class="margin-top-1 font-sans-2xs text-base margin-bottom--3">Digital.gov was taking seventeen minutes to build on cloud.gov Pages with most of the time spent uploading new files. After the October release of the differential publishing, build times were reduced to about seven or eight minutes.</p>
+<h4 class="margin-0">Median Build Times (in minutes) for Digital.gov by Month</h4>
+<p class="margin-top-1 font-sans-2xs text-base margin-bottom--3">Digital.gov was taking seventeen minutes to build on cloud.gov Pages with most of the time spent uploading new files. After the October release of publishing improvements, build times were reduced to about seven or eight minutes.</p>
 
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: D3.js v3 + https://designsystem.digital.gov/components/data-visualizations/ -->
@@ -34,7 +34,7 @@ Sites like [digital.gov](https://digital.gov/), with over 20,000 files, had been
 .line-st8{font-size:24px;}
 .font-svg-main{font-size:26px;}
 </style>
-<g id="Roosevelts">
+<g>
 <g>
   <line class="line-st0" x1="69.45" y1="574.89" x2="971.08" y2="574.89"/>
 </g>
@@ -138,7 +138,7 @@ Sites like [digital.gov](https://digital.gov/), with over 20,000 files, had been
 
 ## Caching build dependencies
 
-Sites were installing all required custom software dependencies on each build. This process commonly takes about two or three minutes. We replaced this step with a new opt-out caching strategy:
+Sites were installing all required custom software dependencies on each build. This process commonly takes about two or three minutes. We replaced this step with a new, opt-out, caching strategy:
 - If your dependencies didn’t change from the previous build, we’ll re-download the prior package from a secure cache. This takes about fifteen seconds
 - If your dependencies did change, which doesn’t happen often, we’ll re-install them.
 - Because downloading dependencies from a cache can create some errors, we have an [option to opt-out](https://cloud.gov/pages/documentation/cache-dependencies/#configuration). 
@@ -147,7 +147,7 @@ We just recently added this change, so we’re still waiting to see the full met
 
 <div class="border bg-white padding-2 margin-bottom-2 margin-top-1 radius-md padding-bottom-0 maxw-tablet">
 
-<h4 class="margin-0">Median Build Times for cloud.gov Pages Sites by Month</h4>
+<h4 class="margin-0">Median Build Times (in minutes) for cloud.gov Pages Sites by Month</h4>
 <p class="margin-top-1 font-sans-2xs text-base margin-bottom--3">Sites were taking about six minutes to build in mid-2022. Publishing improvements in October helped reduce the time by about two minutes. Caching improvements in January reduced the build time by about another minute.</p>
 
 <?xml version="1.0" encoding="utf-8"?>
@@ -164,7 +164,7 @@ We just recently added this change, so we’re still waiting to see the full met
 .line-st8{font-size:24px;}
 .font-svg-main{font-size:26px;}
 </style>
-<g id="Roosevelts">
+<g>
 <g>
   <line class="line-st0" x1="69.45" y1="574.89" x2="971.08" y2="574.89"/>
 </g>
