@@ -9,6 +9,12 @@ linktitle: Security IR Guide
 
 ## Cloud.gov
 
+cloud.gov is a secure and compliant Platform as a Service (PaaS) with a core focus on government work. cloud.gov helps federal agencies deliver the services the public deserves in a faster, more user-centered way. The cloud.gov platform runs on top of industry-provided infrastructure (currently Amazon Web Services) and includes access to some of the most popular AWS services while removing the complexity of customers managing it from thier own experience.
+
+cloud.gov is built and maintained by a team within the U.S. General Services Administration’s Technology Transformation Service portfolio. The mission of the team is to enable agencies to deliver services to the public as fast as they can develop them while applying best practices in security and compliance with minimal effort.
+
+## Purpose
+
 This document outlines cloud.gov's internal process for responding to security incidents. It outlines roles and responsibilities during and after incidents, and it lays out the steps we'll take to resolve them.
 
 *If you're responding to an incident, [here's our IR checklist]({{ site.baseurl }}{% link _docs/ops/security-ir-checklist.md %}) as a short, actionable companion to this guide.*
