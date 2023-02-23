@@ -13,7 +13,7 @@ Static site generators, like those frequently used with cloud.gov Pages, generat
 
 Starting in late 2020, cloud.gov Pages was publishing every file individually. We did this because a new feature for [adding headers](https://cloud.gov/pages/documentation/custom-headers/) prevented us from quickly comparing whether files had changed. This past October, we made a change to return to only publishing changed files if sites weren’t using the header feature.
 
-Sites like [digital.gov](https://digital.gov/), with over 20,000 files, had been taking seventeen minutes on each build! Now their builds update about one-third of the total files and have brought the build times down to seven or eight minutes. Across our whole portfolio, production sites deployment saw 25% faster builds, saving 1 minute 40 seconds on average.
+Sites like [Digital.gov](https://digital.gov/), with over 20,000 files, had been taking seventeen minutes on each build! Now their production builds only update about one-third of the total files and have brought the build times down to seven or eight minutes (fresh preview builds still take about fourteen). Across our whole portfolio, production sites saw 25% faster builds, saving 1 minute 40 seconds on average.
 
 <div class="border bg-white padding-2 margin-bottom-2 margin-top-1 radius-md padding-bottom-0 maxw-tablet">
 
