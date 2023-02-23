@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Faster build times on cloud.gov Pages
-date: February 21, 2023
+date: February 23, 2023
 excerpt: We advertise that cloud.gov Pages, previously known as Federalist, can “securely deploy a website from your repository in minutes.” Getting your content on the web quickly, seeing fast previews, and even seeing errors early are all important to good maintenance of a website
 ---
 
