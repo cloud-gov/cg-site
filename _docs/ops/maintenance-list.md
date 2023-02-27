@@ -149,7 +149,7 @@ If you're unable to ascertain an event was authorized, follow the
 - [Nessus Vulnerability Reports](https://nessus.fr.cloud.gov/)
 - [Nessus Compliance Reports](https://nessus.fr.cloud.gov/)
 - [CloudFoundry Alerts](https://www.cloudfoundry.org/category/security/)
-- [US Cert Alerts](https://www.us-cert.gov/ncas/alerts)
+- [US Cert Alerts](https://www.cisa.gov/news-events/cybersecurity-advisories)
 
 If the reports contain any HIGH items work to remediate them.
 
