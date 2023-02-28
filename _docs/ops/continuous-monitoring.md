@@ -160,7 +160,7 @@ On a monthly basis, Authorizing Officials will be monitoring these deliverables 
 
 ## Quarterly Security Policy and Account Review
 
-cloud.gov performs quarterly security policy and account reviews to satisty various AC, AU and CM controls. The purpose of these reviews is to confirm that all members of the cloud Operations team require thier level of access, and that the team reviews the content on the publicly accessible information system for nonpublic information and removes such information if discovered. During the account review meetings, cloud.gov also reviews its continuous monitoring strategy and identifies areas for improvements. 
+cloud.gov performs quarterly security policy and account reviews to satisty various AC, AU and CM controls. The purpose of these reviews is to confirm that all members of the cloud Operations team require their level of access, and that the team reviews the content on the publicly accessible information system for nonpublic information and removes such information if discovered. During the account review meetings, cloud.gov also reviews its continuous monitoring strategy and identifies areas for improvements. 
 
 ## Appendix: Significant change rubric
 
