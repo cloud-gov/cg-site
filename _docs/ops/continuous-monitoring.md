@@ -158,6 +158,10 @@ We use our [Continuous Monitoring Checklist Template](https://github.com/18F/cg-
 
 On a monthly basis, Authorizing Officials will be monitoring these deliverables to ensure that cloud.gov maintains an appropriate risk posture -– which typically means the risk posture stays at the level of authorization or improves. As a part of any authorization letter, cloud.gov is required to maintain a continuous monitoring program. This analysis on a monthly basis leads to a continuous authorization decision every month by Authorizing Officials.
 
+## Quarterly Security Policy and Account Review
+
+cloud.gov performs quarterly security policy and account reviews to satisty various AC, AU and CM controls. The purpose of these reviews is to confirm that all members of the cloud Operations team require their level of access, and that the team reviews the content on the publicly accessible information system for nonpublic information and removes such information if discovered. During the account review meetings, cloud.gov also reviews its continuous monitoring strategy and identifies areas for improvements. 
+
 ## Appendix: Significant change rubric
 
 We follow this rubric for changes before they are deployed to production. This is part of the [Security Impact Analysis step of our Feature Lifecycle](https://github.com/18F/cg-product/blob/master/FeatureLifecycle.md). This rubric supports controls including CA-6 &#40;c), CM-2 (1), and RA-3.
