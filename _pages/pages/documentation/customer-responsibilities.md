@@ -42,6 +42,10 @@ Pages does not manage your domain name nor provide DNS services. To launch a sit
 
 If your domain is not an apex (e.g. 2nd level) domain, the process may be more challenging as some DNS providers do not support all required DNS record types. We recommend that you plan a solution before signing an agreement, please see [custom domains]({{site.baseurl}}/pages/documentation/custom-domains) for more details.
 
+#### You must use a MAX.gov account to download the FedRAMP package.
+
+MAX.gov is a suite of government service and resources. You will need a MAX.gov account to access the FedRAMP packgage. MAX.gov accounts are available to those with .gov or .mil email addresses. You will need to [register online for a MAX.gov account](https://portal.max.gov/portal/main/displayRegistrationForm) if you do not already have one. Please [contact MAX.gov](https://portal.max.gov/portal/contactUs) if you require support with this registration process.
+
 ##### SPF, DMARC, and MTA-STS records
 GSA IT requires that your your URL's apex domain has appropriately set DMARC and SPF records in accordance with [BOD 18-01](https://cyber.dhs.gov/bod/18-01/).
 
