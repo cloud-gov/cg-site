@@ -13,12 +13,6 @@ Using Pages places certain responsibilities on you as the government user of Pag
 
 Pages retains other responsibilities, clarified below. The intent of these policies is to empower you to use Pages to its full potential with awareness of your responsibilities when using advanced features.
 
-#### You must use a GitHub account to log onto Pages.
-
-Pages is a service that leverages GitHub repositories for publishing. Pages eliminates redundancy by allowing GitHub users with editing access to a repository to configure the site on Pages. This requires Pages users to authorize the Pages application on their GitHub account **and** for Pages to be approved by the parent organizations of repos that are hosted with Pages. Pages users must also have two factor authentication enabled for their GitHub accounts in order to be given access.
-
-GitHub is used across the government (see [this dashboard](https://gsa.github.io/github-federal-stats/) from our partners in GSA's Office of Government-wide Policy), and a majority of cabinet agencies have a GitHub presence. However, GSA does not endorse Github and there are other ways to launch sites if your agency is not prepared to use GitHub. At this time, no prospective Pages customer has been deterred by integration with GitHub.
-
 #### You own your content
 
 Pages provides templates for you to start with in configuring your sites, but is not responsible for editing or updating the content or local configuration of your site. The Pages team ensures that the publishing mechanism remains available to you so that your content edits can be published within minutes. Your content must be low impact according to [FIPS 199](http://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.199.pdf) and each branch on GitHub is published publicly by Pages. Pages is not suitable for hosting the following types of information:
