@@ -13,7 +13,7 @@ Using Pages places certain responsibilities on you as the government user of Pag
 
 Pages retains other responsibilities, clarified below. The intent of these policies is to empower you to use Pages to its full potential with awareness of your responsibilities when using advanced features.
 
-#### You must have a GitHub account to work with Pages.
+#### You must use a GitHub account to work with Pages.
 
 Pages is a service that leverages GitHub repositories for publishing. A Pages user with editing access to a repository must authorize the Pages application on their GitHub account **and** Pages must be approved by the parent organizations of repos that are hosted with Pages. Pages users must also have two factor authentication enabled for their GitHub accounts in order to be given access.
 
