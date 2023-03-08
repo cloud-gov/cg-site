@@ -15,7 +15,7 @@ Pages retains other responsibilities, clarified below. The intent of these polic
 
 #### You must use a GitHub account to work with Pages.
 
-Pages is a service that leverages GitHub repositories for publishing. A Pages user with editing access to a repository must authorize the Pages application on their GitHub account **and** Pages must be approved by the parent organizations of repos that are hosted with Pages. Pages users must also have two factor authentication enabled for their GitHub accounts in order to be given access.
+Pages is a service that leverages GitHub repositories for publishing. A Pages user with editing access to a repository must authorize the Pages application on their GitHub account **and** Pages must be approved by the parent organizations of repos that are hosted with Pages. We strongly recommend that users and organizations enable two factor authentication for their GitHub accounts.
 
 GitHub is used across the government (see [this dashboard](https://gsa.github.io/github-federal-stats/) from our partners in GSA's Office of Government-wide Policy), and a majority of cabinet agencies have a GitHub presence. However, GSA does not endorse Github and there are other ways to launch sites if your agency is not prepared to use GitHub. At this time, no prospective Pages customer has been deterred by integration with GitHub.
 
