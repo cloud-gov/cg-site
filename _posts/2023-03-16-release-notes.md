@@ -45,14 +45,12 @@ excerpt: The cloud.gov team is working on providing change logs so everyone can 
 * Add dotnet-sdk 6.0.406, remove dotnet-sdk 6.0.405 (#742)
 * Add node 18.14.2, remove node 18.14.0 (#743)
     for stack(s) cflinuxfs3, cflinuxfs4
-    (https://www.pivotaltracker.com/story/show/184532347)
 * Update libbuildpack-dynatrace (#691)
 * Removes compatibility table that only exists for brats tests and replaces it with simpler logic
 
 ### Go-Buildpack 1.10.6 up from 1.10.4
 * Add go 1.20.1
 for stack(s) cflinuxfs3, cflinuxfs4
-(https://www.pivotaltracker.com/story/show/184573596)
 
 ### Nginx-Buildpack 1.2.1 up from 1.2.0
 * Bump github.com/Dynatrace/libbuildpack-dynatrace from 1.5.1 to 1.5.2 (#186)
