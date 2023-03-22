@@ -20,7 +20,7 @@ Pages will install dependencies from NPM on your behalf, you **should not** incl
 - Your project must have a package-lock.json file
 - The dependencies in package-lock.json must match those in package.json
 
-Note that this process is skipped if [build dependency caching]({{ site.baseurl }}{% link _pages/pages/documentation/cache-dependencies.md %}) is enabled.
+Note that this process is skipped if [build dependency caching]({{ site.baseurl }}/pages/documentation/cache-dependencies) is enabled.
 
 See [npm-ci](https://docs.npmjs.com/cli/ci) and [npm-install](https://docs.npmjs.com/cli/install) for more details.
 
