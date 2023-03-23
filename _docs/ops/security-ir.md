@@ -133,7 +133,7 @@ This sitrep should be:
 
 - Posted in [`#incident-response`](https://gsa-tts.slack.com/messages/incident-response/)
 - Emailed to `gsa-ir@gsa.gov` and `devops@gsa.gov`
-- Emailed to [FedRAMP ISSO (JAB TR reps)][FedRAMP ISSO TRR reps], cc: info@fedramp.gov and cloud-gov-compliance@gsa.gov. They require daily updates on open incidents.
+- Emailed to [FedRAMP ISSO (JAB TR reps)][FedRAMP ISSO TRR reps], cc: fedramp_security@gsa.gov and cloud-gov-compliance@gsa.gov. They require daily updates on open incidents.
 - Sent (email or Slack) to external stakeholders, if applicable and relevant
 
 #### Comms at the Assess phase
@@ -155,7 +155,7 @@ At this point, we're trying to fix the issue! Remediation will be very situation
 
 - Containment should also preserve evidence. For example, if there's a
   credential leak, we should _securely preserve_  the leaked credentials while
-  we also ensure they are rotated, and scrubbed from the record. 
+  we also ensure they are rotated, and scrubbed from the record.
 
 - Remediation may require service disruption. If it does, the team should proceed in a different way depending on the severity:
 
@@ -177,7 +177,7 @@ Once the incident is no longer active — i.e. the breach has been contained, th
 
 - Set the status of the incident to "resolved".
 - Send a final sitrep to stakeholders.
-- Email after-action to [FedRAMP ISSO (JAB TR reps)][FedRAMP ISSO TRR reps], cc: info@fedramp.gov and cloud-gov-compliance@gsa.gov
+- Email after-action to [FedRAMP ISSO (JAB TR reps)][FedRAMP ISSO TRR reps], cc: fedramp_security@gsa.gov and cloud-gov-compliance@gsa.gov
 - Thank everyone involved for their service!
 
 #### Comms at the Remediate phase
