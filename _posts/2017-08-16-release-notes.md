@@ -11,7 +11,7 @@ Curious what’s new that you might find helpful as a cloud.gov user? Here are h
 ### Added
 
 * Space managers can [add any member of your organization to a space from the dashboard]({{ site.baseurl }}/docs/apps/managing-teammates#space-users).
-* Documentation for how to take [snapshots and restore backups of your ElasticSearch service data](https://github.com/18F/cg-site/blob/6418e8e933f887896a102d8575f1c7af468d1d2f/content/docs/services/elasticsearch24).
+* Documentation for how to take [snapshots and restore backups of your ElasticSearch service data](https://github.com/cloud-gov/cg-site/blob/6418e8e933f887896a102d8575f1c7af468d1d2f/content/docs/services/elasticsearch24.md).
 * All customers can now use [Oracle’s SE2 relational database]({{ site.baseurl }}/docs/services/relational-database).
 
 ### Changed
