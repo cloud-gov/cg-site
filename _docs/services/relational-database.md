@@ -285,6 +285,31 @@ Please note that you may need to request an instance reboot after making these c
 
 **You cannot update an existing instance to a new major version** with the `update-service` command.  If you'd like to update your existing database instance to a new major version, please email [support@cloud.gov][support] for assistance.
 
+### Rotate your credentials
+
+> **NOTE: Rotating your database credentials will likely incur some downtime for your application.** [While AWS documentation states that existing connections using your current password are not dropped](https://repost.aws/knowledge-center/reset-master-user-password-rds), depending on how your application handles database connections you could see errors
+trying to establish new connections until the application is restaged with the new credentials.
+
+To change the password of your database instance:
+
+```shell
+cf update-service ${SERVICE_NAME} \
+    -c '{"rotate_credentials": true}'
+```
+
+Once that command has finished running, you need to unbind your database instance from your application and re-bind it so that the application receives the updated credentials:
+
+```shell
+cf unbind-service <application-name> ${SERVICE_NAME}
+cf bind-service <application-name> ${SERVICE_NAME}
+```
+
+Lastly, you need to restage your application so that it uses the updated credentials (tip: you can use the `--strategy rolling` flag to ensure your application instances remain available to handle traffic):
+
+```shell
+cf restage <application-name> --strategy rolling
+```
+
 ### Bind to an application
 
 To use the service instance from your application, bind the service instance to the application. For an overview of this process and how to retrieve the credentials for the service instance from environment variables, see [Bind a Service Instance](https://docs.cloudfoundry.org/devguide/services/managing-services.html#bind) and the linked details at [Delivering Service Credentials to an Application](https://docs.cloudfoundry.org/devguide/services/application-binding.html).
