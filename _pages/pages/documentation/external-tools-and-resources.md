@@ -45,7 +45,7 @@ These tools run before a site update is deployed to production and look at the s
 
 #### Live site scanning
 
-These tools run after a preview or production update is deployed to the sit. They check the live site to identify vulnerabilities.
+These tools run after a preview or production update is deployed to the site. They check the live site to identify vulnerabilities.
 
 - [OWASP Zap](https://www.zaproxy.org/)
 - [Invicti](https://www.invicti.com/)
