@@ -8,11 +8,11 @@ sidenav: pages-documentation
 
 An outline of external tools and resources customer could leverage outside of the cloud.gov Pages platform to improve site accessibility, user experience, and security posture.
 
-Cloud.gov Pages sites' source code is managed via [Git](https://git-scm.com/) version control and hosted on [GitHub](https://www.github.com). The combination of these source code management tools allows cloud.gov Pages customers to leverage open source tools, third-party services, and other resources outside of the cloud.gov Pages platform to improve their development workflow, user experience, and security posture. This will outline different areas of interest with possible resources for customers to research in-depth based on their current priorities, resources, skill sets, and constraints. This is not an endorsement of any single resource or tool so this outline will change as with the landscape and it is only a small sample of possible tools and resources.
+Cloud.gov Pages sites' source code is managed via [Git](https://git-scm.com/) version control and hosted on [GitHub](https://www.github.com). The combination of these source code management tools allows cloud.gov Pages customers to leverage open source tools, third-party services, and other resources outside of the cloud.gov Pages platform to improve their development workflow, user experience, and security posture. This will outline different areas of interest with possible resources for customers to research in-depth based on their current priorities, resources, skill sets, and constraints. This is not an endorsement of any single resource or tool so this outline will change with the landscape and it is only a small sample of possible tools and resources.
 
 ## Continuous integration and deployment
 
-Continuous integration and deployment (CI/CD) refers to the use of automated workflows to build, test, and deploy code. Implementing these automated workflows improves consistency in the development process and adds confidence when deploying updates to the system. CI/CD can be leveraged by cloud.gov Pages customers to automatically run checks against any update to the site source code and protect the production site from errors or security vulnerabilities that could be introduced from an update to the site. The following is a small list of possible CI/CD platforms that could be used in conjunction with your cloud.gov Pages site:
+Continuous integration and deployment (CI/CD) refers to the use of automated workflows to build, test, and deploy code. Implementing these automated workflows improves consistency in the development process and adds confidence when deploying updates to the system. CI/CD can be leveraged by cloud.gov Pages customers to automatically run checks against any update to the site source code and protect the production site from errors or security vulnerabilities that could be introduced from an update to the site. The following are some of the CI/CD platforms that could potentially be used in conjunction with your cloud.gov Pages site:
 
 - [GitHub Actions](https://github.com/features/actions)
 - [CircleCI](https://circleci.com/)
@@ -28,7 +28,7 @@ The above is just a small list of CI/CD platforms that a customer could use to a
 
 ## Automated workflows
 
-The automated workflows in a site's CI/CD system enables cloud.gov Pages customers to leverage external tools, resources, and services. The following sections will outline some possibilities customers may choose to explore.
+The automated workflows in a site's CI/CD system enable cloud.gov Pages customers to leverage external tools, resources, and services. The following sections will outline some possibilities customers may choose to explore.
 
 ### Scanning tools
 
@@ -45,7 +45,7 @@ These tools run before a site update is deployed to production and look at the s
 
 #### Live site scanning
 
-These tools run after a preview or production update is deployed to the site and they check the live site to identify vulnerabilities.
+These tools run after a preview or production update is deployed to the sit. They check the live site to identify vulnerabilities.
 
 - [OWASP Zap](https://www.zaproxy.org/)
 - [Invicti](https://www.invicti.com/)
