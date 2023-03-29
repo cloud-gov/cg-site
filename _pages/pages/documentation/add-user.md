@@ -23,7 +23,7 @@ If you are having trouble locating who the organization manager is you can reach
 4. Fill out the required fields of Email and Role
 * If you do not know the GitHub username of the invitee you can add it post invite
 
- 5.Click invite
+5.Click invite
 
 ## User Acceptance
 
