@@ -66,7 +66,6 @@ Configuration/deployment support:
 
 Deployment pipelines:
 
-- [Admin user interface](https://github.com/cloud-gov/cg-deploy-admin-ui)
 - [BOSH](https://github.com/cloud-gov/cg-deploy-bosh)
 - [Cloud Foundry](https://github.com/cloud-gov/cg-deploy-cf)
 - [Concourse](https://github.com/cloud-gov/cg-deploy-concourse)
