@@ -17,9 +17,9 @@ If you are having trouble locating who the organization manager is you can reach
 
 1. Navigate to the organizations tab
 2. Click edit in the lower right hand corner of the organization pane
-![Screenshot of the Pages admin UI interface where organization managers can access the edit feature of a singular organinzation](edit_organization.png)
+![Screenshot of the Pages admin UI interface where organization managers can access the edit feature of a singular organinzation](https://github.com/Ephraim-G/images/blob/a16563b4824af4c80e72d7813276ae35c425ed20/edit_organizations.png)
 3. Click the plus sign under “Members” 
-![Screenshot of the Pages admin UI interface where organization managers can access the add memebers feature to send invitations to the organization ](add_user.png)
+![Screenshot of the Pages admin UI interface where organization managers can access the add memebers feature to send invitations to the organization ](https://github.com/Ephraim-G/images/blob/a16563b4824af4c80e72d7813276ae35c425ed20/add_user.png)
 4. Fill out the required fields of Email and Role
 
 * If you do not know the GitHub username of the invitee you can add it post invite
