@@ -22,6 +22,7 @@ If you are having trouble locating who the organization manager is you can reach
 ![Screenshot of the Pages admin UI interface where organization managers can access the add memebers feature to send invitations to the organization ](add_user.png)
 4. Fill out the required fields of Email and Role
 * If you do not know the GitHub username of the invitee you can add it post invite
+
 5.Click invite
 
 ## User Acceptance
