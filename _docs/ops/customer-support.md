@@ -47,6 +47,14 @@ For specialized tickets, like security and compliance, the support team can assi
 
 See also: [Detailed guidance on working with our support tools](https://docs.google.com/document/d/1QXZvcUl-6gtI7jEQObXV9FyiIpJC-Fx1R7RzB0C6PHM/edit#heading=h.80zn694rriw3).
 
+## Additional Support
+
+If the support engineer on duty requires additional engineering assistance to satisfy/address support ticket requests then the support engineer on duty creates a GitHub ticket/issue on the matter which is then prioritized after a discussion as a team.
+
+## Support documentation For ongoing customer requests
+
+For customer tickets and requests that are considering modifying cloud.gov infrastructure and/or require more than 1 business day towards developing a solution/answer to a customer request a GitHub issue/ticket will be started.
+
 ## Monitor \#cg-support
 
 Some customers have access to post questions in the `#cg-support` channel. As with Zendesk support requests, `Tier 1` support operators will be primarily responsible for answering these questions and can escalate to the platform operator on support as necessary.
@@ -80,3 +88,7 @@ day if a response from the customer requires additional research.
 **Solved**
 
 We've responded in a manner that does not expect a response from the customer.
+
+## Support handoff
+
+The support engineer coming off duty meets with the oncoming support engineer at the beginning of a new support rotation at which time the off coming support engineer debriefs the oncoming support engineer on the status and contents of the tickets/customer matters that are currently under consideration and being addressed as well as any details, documentation and thoughts put towards any potential solutions. The tickets/customer matters going forward are then the responsibility of the oncoming/on rotation support engineer until their rotation ends and is then responsibility is transferred to the next support engineer coming on duty/rotation.
