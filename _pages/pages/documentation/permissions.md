@@ -23,14 +23,22 @@ Pages Users within an Organization will be able to see all of the Sites in the O
 
 ## Adding a user to an organization
 
+
 1. Navigate to the organizations tab
 2. Click edit in the lower right hand corner of the organization pane
+ 
  <img src="https://github.com/cloud-gov/cg-site/blob/ephraimg-patch-1/assets/pages/images/edit_organizations.png" width="60%" height="40%" />
+
 3. Click the plus sign under “Members” 
+ 
  <img src="https://github.com/cloud-gov/cg-site/blob/ephraimg-patch-1/assets/pages/images/add_user.png" width="60%" height="40%" />
+
 4. Fill out the required fields of Email and Role
 * If you do not know the GitHub username of the invitee you can add it post invite
 
+5. Click Invite
+
+ 
 ## User Acceptance
 
 As a new user to the platform you will be sent an invitation via email. The link in the email will take you directly to the cloud.gov login page to authenticate your credentials.  You will need to create a cloud.gov account and then use these credentials to login to Pages. 
