@@ -46,6 +46,8 @@ sidenav:
         href: /pages/documentation/why-use-pages/
       - text: Access and permissions
         href: /pages/documentation/access-permissions/
+      - text: Adding a user to an Organization
+        href: /pages/documentation/adding-users/
       - text: Customer responsibilities
         href: /pages/documentation/customer-responsibilities/
       - text: Getting started with a sandbox
