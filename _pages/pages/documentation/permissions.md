@@ -27,11 +27,11 @@ Pages Users within an Organization will be able to see all of the Sites in the O
 1. Navigate to the organizations tab
 2. Click edit in the lower right hand corner of the organization pane
  
- <img src="https://github.com/cloud-gov/cg-site/blob/ephraimg-patch-1/assets/pages/images/edit_organizations.png" width="60%" height="40%" />
+ <img src="{{ site.baseurl }}/assets/pages/images/edit_organizations.png" width="60%" height="40%" />
 
 3. Click the plus sign under “Members” 
  
- <img src="https://github.com/cloud-gov/cg-site/blob/ephraimg-patch-1/assets/pages/images/add_user.png" width="60%" height="40%" />
+ <img src="{{ site.baseurl }}/assets/pages/images/add_user.png" width="60%" height="40%" />
 
 4. Fill out the required fields of Email and Role
 * If you do not know the GitHub username of the invitee you can add it post invite
