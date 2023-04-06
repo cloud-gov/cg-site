@@ -15,16 +15,17 @@ If you are having trouble locating who the organization manager is you can reach
 
 ## Adding a new user
 
-1. Navigate to the organizations tab
-2. Click edit in the lower right hand corner of the organization pane
-![Screenshot of the Pages admin UI interface where organization managers can access the edit feature of a singular organinzation]({{ site.baseurl }}/assets/pages/images/edit_organizations.png)
-3. Click the plus sign under “Members” 
-![Screenshot of the Pages admin UI interface where organization managers can access the add members feature to send invitations to the organization ]({{ site.baseurl }}/assets/pages/images/add_user.png)
-4. Fill out the required fields of Email and Role
+- Navigate to the organizations tab
+- Click edit in the lower right hand corner of the organization pane
+  <img src="{{ site.baseurl }}/assets/pages/images/edit_organizations.png"/>
 
-* If you do not know the GitHub username of the invitee you can add it post invite
+- Click the plus sign under “Members” 
+  <img src="{{ site.baseurl }}/assets/pages/images/add_user.png"/>
 
-5. Click invite
+- Fill out the required fields of Email and Role
+ * If you do not know the GitHub username of the invitee you can add it post invite
+
+- Click Invite
 
 ## User Acceptance
 
