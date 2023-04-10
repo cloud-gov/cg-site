@@ -14,23 +14,22 @@ Both plans offer:
 1. Custom domain support, so that your application can have your domain instead of the default `*.app.cloud.gov` domain.
 1. HTTPS support via free TLS certificates with auto-renewal (using [Let's Encrypt](https://letsencrypt.org/)), so that user traffic is encrypted.
 
-The domain-with-cdn plan also provides Content Distribution Network (CDN) caching (using [AWS CloudFront](https://aws.amazon.com/cloudfront/)), for
-fast delivery of content to your users.
+The domain-with-cdn plan also provides Content Distribution Network (CDN) caching (using [AWS CloudFront](https://aws.amazon.com/cloudfront/)) for fast delivery of content to your users.
 
-### Plans
+## Plans
 
 Plan Name         | Plan Description                                                                      |
 ------------------|---------------------------------------------------------------------------------------|
 `domain`          | Custom domain with automatically renewing ssl certificate.                            |
 `domain-with-cdn` | Caching distributed CDN with custom domain and automatically renewing ssl certificate |
 
-## `domain` plan
+### domain plan
 
 Name      | Required   | Description                   | Example                           |
 ----------|------------|-------------------------------|-----------------------------------|
 `domains` | *Required* | Your custom domain or domains | `"my-domain.gov,www.my-domain.gov"` or `["my-domain.gov",  "www.my-domain.gov"]` |
 
-## `domain-with-cdn` plan
+### domain-with-cdn plan
 
 Name              | Required   | Description                                   | Example                           |
 ------------------|------------|-----------------------------------------------|-----------------------------------|
@@ -42,19 +41,20 @@ Name              | Required   | Description                                   |
 `error_responses` | optional   | dictionary of code:path to respond for errors | `{"404": "/errors/404.html"}`     |
 `path`            | optional   | A custom path to serve from                   | `/some/path`                      |
 
-### origin and insecure_origin
+#### origin and insecure_origin
+
 You can use this option to send traffic to a custom origin, rather than to your app running on cloud.gov
 If your custom origin is served over HTTP without HTTPS available, set `insecure_origin` to `true`. This flag
 does not apply to apps hosted on cloud.gov.
 
-### forward_cookies option
+#### forward_cookies option
 
 This option allows you to control what cookies to pass on to your application. By default, all cookies are passed.
 You can specify a list of cookie names (comma-separated) to forward, ignoring others. To pass no cookies, pass an empty string, e.g.
 `cf create-service external-domain domain-with-cdn my-cdn -c '{"domains": "example.gov,www.example.gov", "forward_cookies": ""}'`.
 You can explicitly set the default of forwarding all cookies with the string `"*"` (note that this is a special string, not a glob/regex).
 
-### forward_headers option
+#### forward_headers option
 
 This option lets you configure what headers to forward to your application. [CloudFront preconfigures
 some of these](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior), 
@@ -62,7 +62,7 @@ and unless you are using a custom origin, we set the `Host` header.
 You can add up to nine additional headers or header patterns but note that CloudFront considers forwarded headers
 in its cache calculation, so more unique header combinations will cause more cache misses.
 
-### error_responses option
+#### error_responses option
 
 This option lets you send custom error pages for specific error codes. Set this with an object, where the keys are the error codes (as strings) and the values
 are the path to the custom error page, for example:
@@ -77,13 +77,12 @@ cf create-service external-domain domain-with-cdn -c '{"domains": "example.gov",
 ```
 Note that only these error codes can be customized: 400, 403, 404, 405, 414, 416, 500, 501, 502, 503, 504
 
-### path option
+#### path option
 
 You can use this option to send traffic to a custom path at either the default or custom origin.
 ```
 cf create-service external-domain domain-with-cdn -c '{"path": "/some/path"}'
 ```
-
 
 ## How to create an instance of this service
 
@@ -119,13 +118,15 @@ cf create-service external-domain domain-with-cdn -c '{"path": "/some/path"}'
     Create in progress. Use 'cf services' or 'cf service my-cdn' to check operation status.
    ``` 
 
-6. Wait for the service instance to complete provisioning. The `domain-with-cdn` plan may take up to 2 hours to complete provisioning, the `domain` plan should
-   complete within an hour. You can check the status by running `cf service <service instance name>`
+6. Wait for the service instance to complete provisioning. The `domain-with-cdn` plan may take up to 2 hours to complete provisioning, the `domain` plan should complete within an hour. You can check the status by running `cf service <service instance name>`.
    
 7. If you didn't complete step 2 above, do so now.
 
+## Update an instance
 
-## Updating domain-with-cdn instances
+Updating the plan for an instance is not currently supported by the broker. To migrate from a `domain` plan to a `domain-with-cdn` plan, you must delete the current instance, then create a new one with the new plan.
+
+### domain-with-cdn instances
 
 When you update a domain-with-cdn instance, any parameter you leave out of the update params will
 remain unchanged. (Exception: if you switch from using a custom origin to using cloud.gov as the
@@ -172,3 +173,7 @@ Cookies are passed through the CDN by default, meaning that cookie-based authent
 ### Header forwarding
 
 CloudFront forwards a [limited set of headers](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior) by default. 
+
+### Migrating from another AWS account
+
+No two CloudFront distributions may have the same alternate domain names (CNAMEs) across all AWS accounts. AWS has instructions for [moving an alternate domain name to a different distribution using wildcard domains](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move). However, because the external domain broker does not currently support wildcard domains, you must delete your source distribution and related DNS CNAME records before creating the new domain-with-cdn service instance in cloud.gov. This will require downtime for your site during your migration.
