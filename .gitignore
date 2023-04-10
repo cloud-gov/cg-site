@@ -8,3 +8,6 @@ node_modules
 .lycheecache
 lychee-out.md
 _config*.yml
+assets/fonts/**/*
+assets/img/uswds/**/*
+assets/css/styles.css

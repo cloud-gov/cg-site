@@ -56,7 +56,7 @@ There’s no denying the deep and abiding love that data analytics folks have fo
 
 Many customers have told us they want to deploy apps built using R and Shiny on cloud.gov, and now it’s possible! Check out the [new R buildpack](https://docs.cloudfoundry.org/buildpacks/r/index.html). We’ve also published [a demonstration](https://github.com/18f/cf-rshiny-demo) showing how to run the the movie explorer application from the official [Shiny examples](https://github.com/rstudio/shiny-examples), pictured below.
 
-{% asset "r-shiny-demo.png" alt="R Shiny movie explorer application screenshot" style="border:1px solid grey;" %}
+!["R Shiny movie explorer application screenshot"]({{site.baseurl}}/assets/"r-shiny-demo.png"){:style="border:1px solid grey;"}
 
 ### Build edge-facing web engineering apps using the NGINX buildpack
 

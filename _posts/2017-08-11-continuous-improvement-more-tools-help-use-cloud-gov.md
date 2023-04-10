@@ -13,7 +13,7 @@ Every quarter we update you with the important news about new features and updat
 
 Managing users in your organization and granting them the permissions they need should be a straightforward process so your team can get to work building your app on cloud.gov. To make it easier for you and us, we built new features for inviting new users and giving them roles within your organization using the dashboard. With these changes, it's easy for even the least technical people on your team to invite new folks and manage their roles.
 
-{% asset invite-users.png alt="The user invitation screen with notification" width="624" height="272" %}
+!["The user invitation screen with notification"]({{site.baseurl}}/assets/invite-users.png){:width=624,height=272}
 
 #### Continuous improvement
 
@@ -47,10 +47,10 @@ If you have leftover funds at the end of the fiscal year and need a prototyping 
 
 The Federal Bureau of Investigation (FBI) recently launched their new Crime Data Explorer (CDE) on cloud.gov. 18F and the FBI partnered to make crime data more accessible to the American public. The CDE enables users to visualize national, state, and local crime trends and offers bulk datasets and an open API for more detailed views of the data. Check it out at: [https://crime-data-explorer.fr.cloud.gov/](https://crime-data-explorer.fr.cloud.gov/)
 
-{% asset  fbi-crime-data.png alt="the fbi crime data explorer homepage" width="624" height="320" %}
+!["the fbi crime data explorer homepage" width="624" height="320"]({{site.baseurl}}/assets/ fbi-crime-data.png)
 
 #### Federal Election Commission
 
 The Federal Election Commission (FEC) recently relaunched their flagship website, fec.gov, with cloud.gov. The FEC collects financial reports for all federal elections and discloses fundraising figures to the public. By hosting FEC.gov on cloud.gov and moving its data to the cloud, the FEC anticipates saving 85% in hosting costs and is better prepared for peak traffic events. Read a case study about the FEC here: [{{ site.baseurl }}/overview/customer-stories/fec/]({{ site.baseurl }}/overview/customer-stories/fec/) and check out their new, cloud.gov-hosted website at [https://fec.gov](https://fec.gov)
 
-{% asset  fec-screen.png alt="the new cloud.gov hosted fec homepage" width="624" height="320" %}
+!["the new cloud.gov hosted fec homepage" width="624" height="320"]({{site.baseurl}}/assets/ fec-screen.png)

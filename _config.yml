@@ -285,3 +285,11 @@ feed:
 
 include:
   - .well-known
+
+# sass:
+#   source_dir: _sass
+#   load_paths:
+#     - node_modules/uswds/dist/
+#   sourcemap: development
+#   quiet_deps: true
+#   style: compressed
