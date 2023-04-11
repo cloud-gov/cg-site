@@ -3,6 +3,9 @@ permalink: /pages/
 layout: wide
 navigation: pages
 title: cloud.gov Pages
+redirect_from:
+  - /pages/federalist-migration/
+
 how_it_works:
   - name: Build
     image: /assets/pages/images/build-on-blue.svg
