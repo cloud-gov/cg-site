@@ -1,4 +1,4 @@
-// Override USWDS mixin to use jekyll-assets asset_url()
+// Override USWDS mixin to fix background-image svg path
 
 @mixin add-background-svg($image-name, $image-path: $theme-image-path) {
   background-image: url('../#{$image-path}/#{$image-name}.svg'),

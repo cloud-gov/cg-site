@@ -11,3 +11,4 @@ _config*.yml
 assets/fonts/**/*
 assets/img/uswds/**/*
 assets/css/styles.css
+assets/css/styles.css.map

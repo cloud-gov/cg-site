@@ -359,7 +359,7 @@ a {
   background-size: 1040px 148px;
 
   @include at-media('desktop') {
-    background-image: asset_url('peaks.svg');
+    background-image: url('../img/peaks.svg');
   }
 }
 

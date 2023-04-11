@@ -1,4 +1,4 @@
-// Override USWDS mixin to use jekyll-assets asset_url()
+// Override USWDS mixin to use fix mask/image props path
 
 @mixin add-color-icon($icon-object, $contrast-bg: 'default') {
   $filename-base: map-get($icon-object, 'name');
