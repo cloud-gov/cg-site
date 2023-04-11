@@ -85,7 +85,7 @@ redirect_from:
     </div>
     <div class="grid-row grid-gap">
       <div class="diagram tablet:grid-col margin-y-5">
-        <img src={{site.baseurl}}/assets/images/pricing-example-FY20.png alt="Illustration of sample app running in dev, staging, and production environments" />
+        <img src="{{site.baseurl}}/assets/img/pricing-example-FY20.png" alt="Illustration of sample app running in dev, staging, and production environments" />
       </div>
     </div>
     <div class="grid-row grid-gap">
