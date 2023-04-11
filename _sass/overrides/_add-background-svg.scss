@@ -1,7 +1,0 @@
-// Override USWDS mixin to fix background-image svg path
-
-@mixin add-background-svg($image-name, $image-path: $theme-image-path) {
-  background-image: url('../#{$image-path}/#{$image-name}.svg'),
-    linear-gradient(transparent, transparent);
-  background-repeat: no-repeat;
-}
