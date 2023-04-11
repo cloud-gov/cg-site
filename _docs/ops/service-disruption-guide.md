@@ -74,11 +74,11 @@ To retroactively add a component outage:
 1. In the main page area, click on the name of the component that experienced an outage (e.g. "Applications") to access the edit page for the component
 1. At the bottom of the edit page for the component, there is a graph of uptime. Hover your mouse over the day that you want to update.
 
-    !["Screenshot showing a pop-up form to edit the duration of a system outage for August 24, 2022"](/_assets/images/statuspage-outage-popup.png)
+    !["Screenshot showing a pop-up form to edit the duration of a system outage for August 24, 2022"]({{site.baseurl}}/assets/img/statuspage-outage-popup.png)
 
 1. In the pop-up form that appears for that day, edit the time period for "Major outage" or "Partial outage" and then click the check mark icon in the top-right of the pop-up
 
-    !["Screenshot showing a pop-up form with a 2 hour major outage entered for August 24, 2022"](/_assets/images/statuspage-outage-popup-edit.png)
+    !["Screenshot showing a pop-up form with a 2 hour major outage entered for August 24, 2022"]({{site.baseurl}}/assets/img/statuspage-outage-popup-edit.png)
 
 1. The component uptime display on the [cloud.gov StatusPage](https://cloudgov.statuspage.io/) should now reflect the outage
 

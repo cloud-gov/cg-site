@@ -68,8 +68,6 @@ searchgov:
 
 - We try to keep configuration options to a minimum so you can easily change functionality. You should review `_config.yml` to see the options that are available to you. There are a few values on top that you **need** to change. They refer to the agency name and contact information. The rest of `_config.yml` has a range of more advanced options.
 
-- The contents inside `_assets/` folder store your Javascript, SCSS/CSS, images, and other media assets are managed by  [jekyll-assets](https://github.com/envygeeks/jekyll-assets).  Assets are combined, compressed, and automatically available in your theme
-
 - If you look at `package.json` you will see that the `npm run pages` command that will run when running on the cloud.gov Pages platform.
 
 - Do not edit files in the `_site/` folder. These files are auto-generated, and any change you make in the folder will be overwritten.
