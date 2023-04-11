@@ -13,12 +13,12 @@ jobs:
 
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7
+          ruby-version: 3.1
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 14.19.1
+          node-version: 18.15.0
 
       - name: Install Dependencies
         run: npm install
