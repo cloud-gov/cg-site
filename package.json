@@ -9,15 +9,15 @@
     "watch:css": "parcel watch --no-hmr _assets/css/styles.scss --dist-dir _site/assets/css",
     "watch:images": "parcel watch --no-hmr _assets/images/**/* --dist-dir _site/assets/images/",
     "watch:server": "http-server _site -o",
-    "build": "run-s prod:*",
-    "prod:jekyll": "bundle exec jekyll build JEKYLL_ENV=production",
+    "build-local": "run-s prod:parcel jekyll",
+    "jekyll": "bundle exec jekyll build JEKYLL_ENV=production",
     "prod:parcel": "run-p build:css build:static:js build:static:docs build:images",
-    "build:static:js": "copy-and-watch _assets/js/* _site/assets/js",
-    "build:static:docs": "parcel build _assets/documents/* --dist-dir _site/assets/documents",
-    "build:css": "parcel build _assets/css/styles.scss --dist-dir _site/assets/css",
-    "build:images": "parcel build _assets/images/**/* --dist-dir _site/assets/images/",
+    "build:static:js": "copy-and-watch _assets/js/* assets/js",
+    "build:static:docs": "parcel build _assets/documents/* --dist-dir assets/documents",
+    "build:css": "parcel build _assets/css/styles.scss --dist-dir assets/css",
+    "build:images": "parcel build _assets/images/**/* --dist-dir assets/images/",
     "link-checker": "sh scripts/run-lychee-local.sh",
-    "pages": "npm run build"
+    "pages": "npm run prod:parcel"
   },
   "dependencies": {
     "anchor-js": "^4.3.0",
