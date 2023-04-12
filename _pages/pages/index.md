@@ -5,87 +5,87 @@ navigation: pages
 title: cloud.gov Pages
 how_it_works:
   - name: Build
-    image: /assets/pages/images/build-on-blue.svg
+    image: /assets/images/pages/build-on-blue.svg
     image_alt: Hand building a website
     description: Use our templates or develop your own and publish your web page right away.
-    link: /assets/pages/documents/coe-success.pdf
+    link: /assets/documents/coe-success.pdf
     link_text: See how the Centers of Excellence (CoEs) used Pages to get new pages up quickly
   - name: Launch
-    image: /assets/pages/images/launch-on-blue.svg
+    image: /assets/images/pages/launch-on-blue.svg
     image_alt: Hand launching a secure website with cloud.gov
     description: You focus on the content, we'll worry about the security, compliance, and deployment.
-    link: /assets/pages/documents/afwerx-success.pdf
+    link: /assets/documents/afwerx-success.pdf
     link_text: Learn how DoD leveraged the Pages platform to build their own template designs
   - name: Manage
-    image: /assets/pages/images/manage-on-blue.svg
+    image: /assets/images/pages/manage-on-blue.svg
     image_alt: Hand using faders to manage website deployments
     description: Use our intuitive interface to control the process from start to finish.
-    link: /assets/pages/documents/doi-success.pdf
+    link: /assets/documents/doi-success.pdf
     link_text: Learn how DOI used a Pages template to host their data projects
 
 case_studies:
   - name: AFWERX
-    thumbnail: /assets/pages/images/home-page/afwerx-success-Thumbnail.png
+    thumbnail: /assets/images/pages/afwerx-success-Thumbnail.png
     thumbnail_alt: AFWERX Success Story Thumbnail
     read_me_for: Challenges with government compliance, and cultural challenges switching to Cloud solutions
-    link: /assets/pages/documents/afwerx-success.pdf
+    link: /assets/documents/afwerx-success.pdf
   - name: Centers of Excellence
-    thumbnail: /assets/pages/images/home-page/coe-success-Thumbnail.png
+    thumbnail: /assets/images/pages/coe-success-Thumbnail.png
     thumbnail_alt: Centers of Excellence  Success Story Thumbnail
     read_me_for: Enhanced functionality, hands-on support, and modern design
-    link: /assets/pages/documents/coe-success.pdf
+    link: /assets/documents/coe-success.pdf
   - name: Department of the Interior
-    thumbnail: /assets/pages/images/home-page/doi-success-Thumbnail.png
+    thumbnail: /assets/images/pages/doi-success-Thumbnail.png
     thumbnail_alt: Department of Interior  Success Story Thumbnail
     read_me_for: How Pages adds value to my work as a content strategist
-    link: /assets/pages/documents/doi-success.pdf
+    link: /assets/documents/doi-success.pdf
 agencies_using:
   - name: Department of Education
-    seal: /assets/pages/images/logos/partners/500px-Education.png
+    seal: /assets/images/pages/500px-Education.png
   - name: Department of Homeland Security
-    seal: /assets/pages/images/logos/partners/500px-DHS.png
+    seal: /assets/images/pages/500px-DHS.png
   - name: Department of the Interior
-    seal: /assets/pages/images/logos/partners/500px-DOI.png
+    seal: /assets/images/pages/500px-DOI.png
   - name: Department of the Treasury
-    seal: /assets/pages/images/logos/partners/500px-treasury.png
+    seal: /assets/images/pages/500px-treasury.png
   - name: General Services Administration
-    seal: /assets/pages/images/logos/partners/500px-GSA.png
+    seal: /assets/images/pages/500px-GSA.png
   - name: National Science Foundation
-    seal: /assets/pages/images/logos/partners/500px-NSF.png
+    seal: /assets/images/pages/500px-NSF.png
   - name: Office of Personnel Management
-    seal: /assets/pages/images/logos/partners/500px-OPM.png
+    seal: /assets/images/pages/500px-OPM.png
   - name: Department of Defense
-    seal: /assets/pages/images/logos/partners/DODc.gif
+    seal: /assets/images/pages/DODc.gif
 example_sites:
   - name: Performance.gov
     link: https://performance.gov
-    screenshot: /assets/pages/images/partner-sites/performance.gov.png
+    screenshot: /assets/images/pages/performance.gov.png
   - name: Privacy and Civil Liberties Oversight Board
     link: https://www.pclob.gov
-    screenshot: /assets/pages/images/partner-sites/pclob.gov.png
+    screenshot: /assets/images/pages/pclob.gov.png
   - name: FedRAMP
     link: https://fedramp.gov
-    screenshot: /assets/pages/images/partner-sites/fedramp.gov.png
+    screenshot: /assets/images/pages/fedramp.gov.png
   - name: CIO.gov
     link: https://cio.gov
-    screenshot: /assets/pages/images/partner-sites/cio.gov.png
+    screenshot: /assets/images/pages/cio.gov.png
 fact_sheets:
   - name: Pages proposal
-    thumbnail: /assets/pages/images/home-page/Pages-Proposal-Thumbnail.png
+    thumbnail: /assets/images/pages/Pages-Proposal-Thumbnail.png
     pdfs:
-      - link: /assets/pages/documents/Pages-Proposal.pdf
+      - link: /assets/documents/Pages-Proposal.pdf
         description: A two-page overview about Pages for stakeholder briefings
   - name: Pages basic diagram
-    thumbnail: /assets/pages/images/home-page/how-pages-works-diagram-Thumbnail.png
+    thumbnail: /assets/images/pages/how-pages-works-diagram-Thumbnail.png
     pdfs:
-      - link: /assets/pages/documents/how-pages-works-diagram.pdf
+      - link: /assets/documents/how-pages-works-diagram.pdf
         description: An outline of how all of Pages' parts work together.
   - name: Compliance memo & extension
-    thumbnail: /assets/pages/images/home-page/pages-compliance-memo-Thumbnail.jpg
+    thumbnail: /assets/images/pages/pages-compliance-memo-Thumbnail.jpg
     pdfs:
-      - link: /assets/pages/documents/pages-compliance-memo.pdf
+      - link: /assets/documents/pages-compliance-memo.pdf
         description: Details about Pages' compliance and Authority to Operate.
-      - link: /assets/pages/documents/Federalist-ATO-Extension-Letter.pdf
+      - link: /assets/documents/Federalist-ATO-Extension-Letter.pdf
         description: Pages's compliance and Authority to Operate extension.
 ---
 

@@ -33,7 +33,7 @@ Before you start using Pages, the Pages team needs to authorize you to use Pages
 When logging into Pages you will see a list of your existing sites along with a button to add a new site.
 
 
-![Pages Sitelist Screenshot]({{site.baseurl}}/assets/pages/images/federalist-sitelist.png)
+![Pages Sitelist Screenshot]({{site.baseurl}}/assets/images/pages/federalist-sitelist.png)
 
 
 To add a new site, click the `+ Add Site` button and you will be prompted to either:
@@ -41,7 +41,7 @@ To add a new site, click the `+ Add Site` button and you will be prompted to eit
 2. Choose an existing template from [available templates]({{site.baseurl}}/pages/documentation/templates/) by clicking 'Use this template' under a template.
 
 
-![Pages Sitelist Screenshot]({{site.baseurl}}/assets/pages/images/federalist-makesite2.png)
+![Pages Sitelist Screenshot]({{site.baseurl}}/assets/images/pages/federalist-makesite2.png)
 
 After you pick a template or an existing repository to add to Pages, your new site will be built and added to your list of websites. If you don't see the new site in your list of websites, refresh the page. Sometimes there is a slight delay as your website finishes building.
 
@@ -54,7 +54,7 @@ The [18F method cards](https://methods.18f.gov/) are an overview of several diff
 The Pages team also provides a [content guide specifically for Pages websites]({{site.baseurl}}/pages/documentation/content-guide/). This guide will help you "convey what your team does, using language and tone that a general audience will understand, or how to think about what to write in each section of your new website."
 
 ## Managing site settings
-![Pages Settings Screenshot]({{site.baseurl}}/assets/pages/images/federalist-settings.png)
+![Pages Settings Screenshot]({{site.baseurl}}/assets/images/pages/federalist-settings.png)
 
 The settings option for a site lets you adjust how Pages handles the site. These settings are for advanced functionality and most people will not need to change them.
 

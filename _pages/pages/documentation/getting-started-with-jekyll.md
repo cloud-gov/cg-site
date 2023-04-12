@@ -66,7 +66,7 @@ GitHub to see your existing pages. Select “page.md” from the list of options
 Once you’re on page.md, look for the pencil icon near the top right of the
 content window to edit the page.
 
-![Screenshot showing a site page on GitHub and the edit page pencil icon]({{ site.baseurl }}/assets/pages/images/getting-started--edit-page-pencil-icon.png)
+![Screenshot showing a site page on GitHub and the edit page pencil icon]({{ site.baseurl }}/assets/images/pages/getting-started--edit-page-pencil-icon.png)
 
 The three dashes `---` separate the “front matter” of the page from the content
 of the page. Front matter is used to instruct the build system about how to
@@ -113,7 +113,7 @@ We recommend they be stored in the assets/ directory.
 
 {% capture content %}
 There’s no standard practice, but many projects group similar assets into
-directories like `assets/images` for images or `assets/css` for CSS files.
+directories like `assets/images/content` for images or `assets/css` for CSS files.
 {% endcapture %}
 {% include pages/components/alert--tip.html content=content %}
 

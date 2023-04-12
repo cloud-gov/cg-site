@@ -247,25 +247,7 @@ exclude:
   - node_modules
   - Gemfile
   - Gemfile.lock
-
-assets:
-  autoprefixer:
-    browsers:
-      - "> 2%"
-      - "last 2 versions"
-      - "IE 11"
-      - "not dead"
-  compression: true
-  sources:
-    - _assets/images/logos
-    - _assets/images/illustrations
-    - assets/font-awesome/css
-    - assets/font-awesome/fonts
-    - assets/pages/images
-    - assets/pages/documents
-    - node_modules/mermaid/dist/
-    - node_modules/netlify-cms/dist
-    - node_modules/uswds/dist
+  - .parcel-cache
 
 ### plugin settings ###
 last-modified-at:
@@ -285,11 +267,3 @@ feed:
 
 include:
   - .well-known
-
-# sass:
-#   source_dir: _sass
-#   load_paths:
-#     - node_modules/uswds/dist/
-#   sourcemap: development
-#   quiet_deps: true
-#   style: compressed

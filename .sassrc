@@ -1,0 +1,6 @@
+{
+  "includePaths": ["node_modules/uswds/dist"],
+  "outputStyle": "expanded",
+  "sourceMap": true,
+  "outFile": "/assets/css/styles.css"
+}

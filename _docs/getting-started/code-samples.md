@@ -70,7 +70,7 @@ state     since #0   running   2017-12-02 12:53:29 PM
 
 Use your browser to visit the `routes:` from the push command (in the above example, https://flask-example-fluent-okapi.app.cloud.gov). Your browser should display something like this:
 
-!["Cloud Foundry sample application"]({{site.baseurl}}/assets/img/cf-spring-sample-app.png)
+!["Cloud Foundry sample application"]({{site.baseurl}}/assets/images/content/cf-spring-sample-app.png)
 
 Congratulations! You now have a running webapp built on the [Java Spring framework.](https://spring.io)
 
