@@ -9,8 +9,6 @@ primary:
     url: /pages/pricing/
   - name: Contact
     url: /pages/contact/
-  - name: Federalist Migration
-    url: /pages/federalist-migration
     # Look inside assets/js/index.js to see that how this url changes depending on enviroment
 secondary:
   - name: Platform Status
@@ -46,6 +44,8 @@ sidenav:
         href: /pages/documentation/why-use-pages/
       - text: Access and permissions
         href: /pages/documentation/access-permissions/
+      - text: Adding a user to an Organization
+        href: /pages/documentation/adding-users/
       - text: Customer responsibilities
         href: /pages/documentation/customer-responsibilities/
       - text: Getting started with a sandbox
@@ -70,7 +70,7 @@ sidenav:
         href: /pages/documentation/migration-guide/
       - text: Adding forms
         href: /pages/documentation/forms/
-      - text: Adding search 
+      - text: Adding search
         href: /pages/documentation/search/
       - text: Site templates
         href: /pages/documentation/templates/
@@ -111,3 +111,5 @@ sidenav:
         href: /pages/documentation/renaming-site-repository/
       - text: Monorepos on Pages
         href: /pages/documentation/monorepos-on-pages/
+      - text: External tools and resources
+        href: /pages/documentation/external-tools-and-resources/

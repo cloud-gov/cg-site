@@ -3,6 +3,9 @@ permalink: /pages/
 layout: wide
 navigation: pages
 title: cloud.gov Pages
+redirect_from:
+  - /pages/federalist-migration/
+
 how_it_works:
   - name: Build
     image: /assets/images/pages/build-on-blue.svg
@@ -72,16 +75,19 @@ example_sites:
 fact_sheets:
   - name: Pages proposal
     thumbnail: /assets/images/pages/Pages-Proposal-Thumbnail.png
+    thumbnail_alt: Pages proposal fact sheet PDF document thumbnail
     pdfs:
       - link: /assets/documents/Pages-Proposal.pdf
         description: A two-page overview about Pages for stakeholder briefings
   - name: Pages basic diagram
     thumbnail: /assets/images/pages/how-pages-works-diagram-Thumbnail.png
+    thumbnail_alt: Pages basic diagram fact sheet PDF document thumbnail
     pdfs:
       - link: /assets/documents/how-pages-works-diagram.pdf
         description: An outline of how all of Pages' parts work together.
   - name: Compliance memo & extension
     thumbnail: /assets/images/pages/pages-compliance-memo-Thumbnail.jpg
+    thumbnail_alt: Compliance memo & extension fact sheet PDF document thumbnail
     pdfs:
       - link: /assets/documents/pages-compliance-memo.pdf
         description: Details about Pages' compliance and Authority to Operate.
