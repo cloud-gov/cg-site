@@ -75,16 +75,19 @@ example_sites:
 fact_sheets:
   - name: Pages proposal
     thumbnail: /assets/pages/images/home-page/Pages-Proposal-Thumbnail.png
+    thumbnail_alt: Pages proposal fact sheet PDF document thumbnail
     pdfs:
       - link: /assets/pages/documents/Pages-Proposal.pdf
         description: A two-page overview about Pages for stakeholder briefings
   - name: Pages basic diagram
     thumbnail: /assets/pages/images/home-page/how-pages-works-diagram-Thumbnail.png
+    thumbnail_alt: Pages basic diagram fact sheet PDF document thumbnail
     pdfs:
       - link: /assets/pages/documents/how-pages-works-diagram.pdf
         description: An outline of how all of Pages' parts work together.
   - name: Compliance memo & extension
     thumbnail: /assets/pages/images/home-page/pages-compliance-memo-Thumbnail.jpg
+    thumbnail_alt: Compliance memo & extension fact sheet PDF document thumbnail
     pdfs:
       - link: /assets/pages/documents/pages-compliance-memo.pdf
         description: Details about Pages' compliance and Authority to Operate.
