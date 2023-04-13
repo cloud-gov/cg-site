@@ -28,7 +28,7 @@ We've worked to make publishing a government site on Pages as simple as possible
 - email: `pages-support@cloud.gov`
 - Slack: `#cg-pages`
 
-2. Complete any site security scanning requirements as required by your agency CISO.
+2. Complete any site security scanning requirements as required by your agency CISO. Read our [documentation about required security scanning]({{site.baseurl}}/pages/documentation/external-tools-and-resources/#scanning-tools) for more information
 
 3. Complete the process of [adding your custom domain]({{ site.baseurl }}{% link _pages/pages/documentation/custom-domains.md %}). If you are migrating an existing site to Pages, make sure to review [minimizing downtime]({{ site.baseurl }}{% link _pages/pages/documentation/custom-domains.md %}#minimizing-downtime)
 
