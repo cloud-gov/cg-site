@@ -76,7 +76,7 @@ If your application logs are output in JSON, they will be easily searchable in [
 
 ## How to automatically copy your logs elsewhere
 
-If you want to set up your own storage for your application logs, you can set up [a "log drain" service](https://docs.cloudfoundry.org/devguide/services/log-management.html) that sends the logs to S3 or your preferred location.
+If you want to set up your own storage for your application logs, you can set up [a "log drain" service](https://docs.cloudfoundry.org/devguide/services/log-management.html) that sends the logs to your preferred location.
 
 Create the user provided service and point it toward the endpoint where you want to send your logs: 
 
