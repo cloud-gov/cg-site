@@ -11,7 +11,7 @@
     "watch:server": "mkdir -p _site && sleep 5 && browser-sync _site -w --reload-delay 1000",
     "build": "run-s prod:parcel jekyll",
     "jekyll": "bundle exec jekyll build JEKYLL_ENV=production",
-    "prod:parcel": "run-p build:css build:static:js build:static:docs build:images",
+    "prod:parcel": "run-p build:*",
     "build:static:js": "copy-and-watch _assets/js/* assets/js",
     "build:static:docs": "parcel build _assets/documents/* --dist-dir assets/documents",
     "build:css": "parcel build _assets/css/styles.scss --dist-dir assets/css",
