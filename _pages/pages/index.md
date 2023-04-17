@@ -101,7 +101,7 @@ fact_sheets:
       <div class="tablet:grid-col-7">
         <h1 class="font-heading-3xl">There’s no easier way to build, launch and manage government sites.</h1>
         <p class="usa-intro">
-          Pages is a publishing platform for modern <a href="{{site.baseurl}}{% link _pages/pages/documentation/21st-century-idea.md %}">21st Century IDEA</a> websites.
+          Pages is a publishing platform for modern <a href="{% link _pages/pages/documentation/21st-century-idea.md %}">21st Century IDEA</a> websites.
         </p>
         <p class="padding-bottom-4">
           <a class="usa-button usa-button--big" href="https://pages.cloud.gov">Log in to dashboard</a>
