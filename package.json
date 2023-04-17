@@ -12,7 +12,7 @@
     "build": "run-s prod:parcel jekyll",
     "jekyll": "bundle exec jekyll build JEKYLL_ENV=production",
     "prod:parcel": "run-p build:*",
-    "build:static:js": "copy-and-watch _assets/js/* assets/js",
+    "build:static:js": "npx copy-and-watch _assets/js/* assets/js",
     "build:static:docs": "parcel build _assets/documents/* --dist-dir assets/documents",
     "build:css": "parcel build _assets/css/styles.scss --dist-dir assets/css",
     "build:images": "parcel build _assets/images/**/* --dist-dir assets/images/",
@@ -22,13 +22,11 @@
   },
   "dependencies": {
     "anchor-js": "^4.3.0",
-    "browser-sync": "^2.29.1",
     "netlify-cms": "^2.10.112",
     "uswds": "^2.13.3"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.8.3",
-    "copy-and-watch": "^0.1.6",
+    "browser-sync": "^2.29.1",
     "npm-run-all": "^4.1.5",
     "parcel": "^2.8.3",
     "posthtml-cli": "^0.10.0",
