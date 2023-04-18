@@ -1,5 +1,5 @@
 {
-  "includePaths": ["node_modules/uswds/dist"],
+  "includePaths": ["node_modules/uswds/dist", "node_modules/fontawesome-free/scss"],
   "outputStyle": "expanded",
   "sourceMap": true,
   "outFile": "/assets/css/styles.css"

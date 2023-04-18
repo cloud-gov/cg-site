@@ -30,6 +30,8 @@ $theme-image-path: '../../node_modules/uswds/dist/img';
 @import 'scss/packages/uswds-utilities';
 @import 'theme/uswds-theme-custom-styles';
 
+@import 'fontawesome';
+
 @import 'pages/index';
 
 // default mode hide banner
