@@ -27,7 +27,7 @@ title: cloud.gov Pages - Contact
   <div class="grid-row">
     <h2>Report a vulnerability</h2>
     <p>
-      We welcome vulnerability reports <a href="https://18f.gsa.gov/vulnerability-disclosure-policy/">according to our vulnerability disclosure policy</a>. We accept and discuss vulnerability reports on <a href="https://hackerone.com/tts">HackerOne</a>, via email at <a href="mailto:tts-vulnerability-reports@gsa.gov">tts-vulnerability-reports@gsa.gov</a>, or <a href="https://docs.google.com/forms/d/e/1FAIpQLSdhr6REOq8QRZ3C2cRWVHWbjcGgdNL8_nVSGY1cBSl1-tfkWA/viewform">through this reporting form</a>. Please review our vulnerability disclosure policy before reporting a vulnerability.
+      We welcome vulnerability reports <a href="https://www.gsa.gov/vulnerability-disclosure-policy">according to our vulnerability disclosure policy</a>. Please review our vulnerability disclosure policy before reporting a vulnerability.
     </p>
   </div>
 </section>
