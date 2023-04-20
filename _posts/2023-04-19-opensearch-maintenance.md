@@ -5,8 +5,6 @@ title: "Off-peak windows now defined for all brokered Elasticsearch/Opensearch d
 excerpt: We have configured off-peak windows for software updates on all brokered Elasticsearch/Opensearch domains to minimize service disruption.
 ---
 
-# Off-peak windows now enabled for all Elasticsearch/Opensearch domains
-
 ## Background
 
 [Periodically, AWS pushes out required software updates for Elasticsearch/Opensearch](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html). While these updates are applied using a blue/green deployment to minimize disruption, it is still possible for customers to experience partial downtime or outages for their domains during the upgrade.
