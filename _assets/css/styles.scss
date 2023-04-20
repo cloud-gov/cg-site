@@ -30,7 +30,12 @@ $theme-image-path: '../../node_modules/uswds/dist/img';
 @import 'scss/packages/uswds-utilities';
 @import 'theme/uswds-theme-custom-styles';
 
-@import 'fontawesome';
+$fa-font-path: "../../node_modules/@fortawesome/fontawesome-free/webfonts";
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/regular.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/v4-shims.scss";
 
 @import 'pages/index';
 
