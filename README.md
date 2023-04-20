@@ -87,22 +87,31 @@ searchgov:
 
 ## Updating content on your own computer
 
-    $ git clone https://github.com/cloud-gov/cg-site
-    $ cd cg-site
+```shell
+    git clone https://github.com/cloud-gov/cg-site
+    cd cg-site
+```
 
 Note that when built by cloud.gov Pages, `npm run pages` is used instead of the
 `build` script.
 
 ### Install dependencies and run app
-    $ npm install
-    $ bundle install
-    $ npm start
+
+```shell
+    nvm use
+    npm install
+    bundle install
+    npm start
+```
 
 Open your web browser to [localhost:4000](http://localhost:4000/) to view your
 site.
 
 ### Testing
-    $ npm test
+
+```shell
+    npm test
+```
 
 ### Link checking
 
@@ -116,7 +125,7 @@ Default URL patterns that are ignored by `lychee` can be found in [`.lycheeignor
 
 First, install `lychee`:
 
-```
+```shell
 brew install lychee
 ```
 
