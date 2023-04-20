@@ -15,7 +15,7 @@ While AWS automatically enables and defines off-peak windows for domains **creat
 
 ## What we did
 
-[To give all of our customers the benefit of off-peak windows, **the cloud.gov team enabled off-peak windows for any domains where they were not already enabled**](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html#off-peak-enable). A default off-peak window of 00:00 UTC - 10:00 UTC was applied to these domains.
+[To give all of our customers the benefit of off-peak windows, **the cloud.gov team enabled off-peak windows for any domains where they were not already enabled**](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html#off-peak-enable). A default off-peak window of `00:00 UTC - 10:00 UTC` was applied to these domains.
 
 **All Elasticsearch/Opensearch domains managed by cloud.gov now have off-peak windows enabled.**
 
