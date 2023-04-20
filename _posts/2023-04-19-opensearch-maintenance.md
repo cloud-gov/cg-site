@@ -2,7 +2,7 @@
 layout: post
 date: "2023-04-19"
 title: "Off-peak windows now defined for all brokered Elasticsearch/Opensearch domains"
-excerpt: We have configured off-peak windows for software updates on all brokered Elasticsearch/Opensearch domains to minimize service disruption
+excerpt: We have configured off-peak windows for software updates on all brokered Elasticsearch/Opensearch domains to minimize service disruption.
 ---
 
 # Off-peak windows now enabled for all Elasticsearch/Opensearch domains
