@@ -29,7 +29,7 @@ title: cloud.gov Pages - Features
       <img alt="" src="{{site.baseurl}}/assets/images/pages/icon-rocket-color.svg">
       <h4 class="margin-top-0">Deploy Quickly</h4>
       <p>If your code is already on GitHub, Pages can securely deploy a website from your repository in minutes.</p>
-    </div> 
+    </div>
     <div class="grid-col-4 padding-y-2">
       <img alt=""  src="{{site.baseurl}}/assets/images/pages/icon-layout-color.svg">
       <h4 class="margin-top-0">Accessible templates</h4>
@@ -38,7 +38,7 @@ title: cloud.gov Pages - Features
     <div class="grid-col-4 padding-y-2">
       <img class="display-block margin-x-auto" alt="" src="{{site.baseurl}}/assets/images/pages/icon-badge-color.svg">
       <h4 class="margin-top-0">Customization</h4>
-      <p>Use a site generator like Jekyll, Hugo, Gatsby, or other tools to deploy custom site designs through Pages.</p>
+      <p>Use a site generator like 11ty, Hugo, Gatsby, Jekyll, or other tools to deploy custom site designs through Pages.</p>
     </div>
   </div>
   <div class="grid-row grid-gap usa-prose text-center">
@@ -46,7 +46,7 @@ title: cloud.gov Pages - Features
       <img alt="" src="{{site.baseurl}}/assets/images/pages/icon-clockback-color.svg">
       <h4 class="margin-top-0">Simple version control</h4>
       <p>Use GitHub, a web-based hosting service with built-in version control, for real-time publishing and easy collaboration.</p>
-    </div> 
+    </div>
     <div class="grid-col-4 padding-y-2">
       <img alt="" src="{{site.baseurl}}/assets/images/pages/icon-two-squares-color.svg">
       <h4 class="margin-top-0">Reusable and public</h4>
