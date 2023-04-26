@@ -9,7 +9,7 @@ excerpt: Using sidecar processes.
 Sidecar processes are additional processes you can run in the same container as your application.
 
 ## How do sidecar processes work?
-When deploying a sidecar with your application Cloud Foundry packages the code and configuration needed for running the application and sidecar in the same droplet. The droplet is then deployed in the same container with the application and sidecar being deployed in parellel. The application and sidecar have independent health checks.
+When deploying a sidecar with your application Cloud Foundry packages the code and configuration needed for running the application and sidecar in the same droplet. The droplet is then deployed in the same container with the application and sidecar being deployed in parallel. The application and sidecar have independent health checks.
 
 ## Use Case
 Sidecars can be used on processes which depend on each other or need to run in the same container.
