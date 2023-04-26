@@ -59,7 +59,7 @@ For full details, read on.
 
 ### Initiate
 
-An incident begins when someone becomes aware of a potential incident. We define "incident" broadly, following [NIST SP 800-61](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf), as "a violation or imminent threat of violation of computer security policies, acceptable use policies, or standard security practices" (6). This is a deliberately broad definition, designed to encompass any scenario that might threaten the security of cloud.gov.
+An incident begins when someone becomes aware of a potential incident. We define "incident" broadly, following [NIST SP 800-61](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf), as "a violation or imminent threat of violation of computer security policies, acceptable use policies, or standard security practices" (6). This is a deliberately broad definition, designed to encompass any scenario that might threaten the security of cloud.gov.
 
 When a person outside the cloud.gov team (the *reporter*) notices a cloud.gov-related incident, they should begin reporting it by using the [TTS incident response process](https://handbook.tts.gsa.gov/general-information-and-resources/tech-policies/security-incidents/), and then post about it in [`#cloud-gov`](https://gsa-tts.slack.com/messages/cloud-gov/) using `@cg-team`. If they don't get acknowledgment from the cloud.gov team right away, they should escalate by contacting the cloud.gov leads directly until they receive acknowledgment of their report.
 
