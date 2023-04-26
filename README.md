@@ -20,7 +20,7 @@ This site uses a customized [U.S. Web Design System](https://v2.designsystem.dig
 
 ## Key Functionality
 This repository contains the following examples and functionality:
- 
+
 ✅  Publish blog posts, press releases, announcements, etc. To modify this code, check out `blog/index.html`, which manages how the posts are listed. You should then check out `_layouts/post.html` to see how individual posts are structured.
 
 ✅ Publish single one-off pages. Instead of creating lots of folders throughout the root directory, you should put single pages in `_pages` folder and change the `permalink` at the top of each page. Use sub-folders only when you really need to.
@@ -49,20 +49,20 @@ permalink: /document-with-sidenav
 ---
 ```
 
-✅ Enable search with [Search.gov](https://search.gov) by adding option to `_config.yml`. 
+✅ Enable search with [Search.gov](https://search.gov) by adding option to `_config.yml`.
 
 ```
 ---
 searchgov:
   endpoint: https://search.gov  # You should not change this.
-  affiliate: pages-uswds-example # replace this with your search.gov account 
+  affiliate: pages-uswds-example # replace this with your search.gov account
   access_key: your-access-key # This is placeholder. Not private.
   inline: true #this renders the results on the same domain. Otherwise, it will render the results in the search.gov domain
 ---
 ```
 
 ## How to edit cloud.gov content
-- Non-developers should focus on editing markdown content in the `_posts`, `_docs`, and `_pages` folder. Generally most of the cloud.gov content will be in the _docs file. 
+- Non-developers should focus on editing markdown content in the `_posts`, `_docs`, and `_pages` folder. Generally most of the cloud.gov content will be in the _docs file.
 
 - Pricing updates can go directly into `_data/pricing.yml` file and if any of the aws services need to be updated that can occur in the `_data/services.yml` file.
 
@@ -78,7 +78,7 @@ searchgov:
     - The `homepage` can be editted more directly by manipulating the `.html` in `home.html`
     - The `pricing` page is mostly edited with the `pricing.html`
     - The `getting-started` page is in the `_pages/sign-up.md` folder.
-    
+
 - `_layouts/` may require the least amount of editing of all the files since they are primarily responsible for printing the content.
 
 - `search/index.html` is used by search.gov.
@@ -104,7 +104,7 @@ Note that when built by cloud.gov Pages, `npm run pages` is used instead of the
     npm start
 ```
 
-Open your web browser to [localhost:4000](http://localhost:4000/) to view your
+Open your web browser to [localhost:3000](http://localhost:3000/) to view your
 site.
 
 ### Testing
@@ -133,13 +133,13 @@ To run `lychee` locally, use the `link-checker` npm script:
 
 ```shell
 # can use any globbing pattern or filepath
-GITHUB_TOKEN=<your-github-token> npm run link-checker -- ./_site/**/*.html 
+GITHUB_TOKEN=<your-github-token> npm run link-checker -- ./_site/**/*.html
 ```
 
 You can also use multiple patterns/filepaths:
 
 ```shell
-GITHUB_TOKEN=<your-github-token> npm run link-checker -- ./*.md ./_site/**/*.html 
+GITHUB_TOKEN=<your-github-token> npm run link-checker -- ./*.md ./_site/**/*.html
 ```
 
 Including a `GITHUB_TOKEN` environment variable will reduce the number of 429 responses returned by GitHub, since
@@ -152,7 +152,7 @@ review and address any errors.
 
 - [Jekyll](https://jekyllrb.com/docs/) - The primary site engine that builds your code and content.
 - [Front Matter](https://jekyllrb.com/docs/frontmatter) - The top of each page/post includes keywords within `--` tags. This is meta data that helps Jekyll build the site, but you can also use it to pass custom variables.
-- [U.S. Web Design System v 2.0](https://v2.designsystem.digital.gov) 
+- [U.S. Web Design System v 2.0](https://v2.designsystem.digital.gov)
 
 ## Contributing
 
