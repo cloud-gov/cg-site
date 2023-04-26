@@ -21,7 +21,7 @@ In general, when helping out with support requests, it is always helpful for use
 
 When these points of information are not included, we often end up having to track them down, which slows down the debugging process. We may also ask you to add Pages staff to your repo with `write` privileges so that we can more quickly debug.
 
-If questions exist regarding launch please email support after checking the launch checklist. 
+If questions exist regarding launch please email support after checking the launch checklist.
 
 
 ## Getting authorized
@@ -71,11 +71,10 @@ The settings option for a site lets you adjust how Pages handles the site. These
 ### Advanced settings
 
 - **Site Engine** This controls if and how Pages builds your site. Currently, the following options are supported:
-  - **Hugo** - builds your site with [Hugo](https://gohugo.io/)
-  - **Jekyll** - builds your site with [Jekyll](http://jekyllrb.com)
   - **Node.js** - runs a [Node](https://nodejs.org) script
+    - [**11ty**](https://www.11ty.dev/)
+    - [**Gatsby**](https://www.gatsbyjs.com/)
+    - **etc.**
+  - **Hugo** - builds your site with [Hugo](https://gohugo.io/)
   - **Static HTML** - serves pre-generated content
-
-If using one of the Pages provided templates, this should always be "**Jekyll**". The site engine should not be altered once your site is live. Contact the Pages team for additional support. 
-
-- **Custom configuration (site and preview)** For advanced Jekyll users, you can append different settings to your `_config.yml` configuration during build. This configuration is stored in Pages, so you may use it to store settings that you don't want to commit to your GitHub repository. Pages automatically adds a `branch` attribute with the name of the rendered branch, accessible in templates as `site.branch`.
+  - **Jekyll** - builds your site with [Jekyll](http://jekyllrb.com)

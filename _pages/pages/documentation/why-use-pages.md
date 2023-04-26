@@ -34,7 +34,7 @@ Pages generates static websites instead of using a more complex content manageme
 
 ## What can I build with Pages?
 
-Pages supports plain files and certain [site engines]({{site.baseurl}}/pages/documentation/supported-site-engines), and provides [ready-to-use Jekyll templates]({{site.baseurl}}/pages/documentation/templates/) for several common website types.
+Pages supports plain files and certain [site engines]({{site.baseurl}}/pages/documentation/supported-site-engines), and provides [starter templates]({{site.baseurl}}/pages/documentation/templates/) to deploy a site.
 
 Possible sites include:
 

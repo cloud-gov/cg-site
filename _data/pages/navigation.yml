@@ -52,8 +52,6 @@ sidenav:
         href: /pages/documentation/sandbox/
       - text: "21st Century IDEA"
         href: /pages/documentation/21st-century-idea/
-      - text: Getting started with Jekyll
-        href: /pages/documentation/getting-started-with-jekyll/
       - text: Getting started with Netlify CMS
         href: /pages/documentation/getting-started-with-netlify-cms/
       - text: Included with Pages

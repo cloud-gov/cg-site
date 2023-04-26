@@ -23,10 +23,8 @@ We use GitHub to manage our work on Pages. The main code repository for the Page
 
 ### Templates
 
-- **[federalist-uswds-template](https://github.com/18f/federalist-uswds-template/)** A Pages template that uses the U.S. Web Design Standards Jekyll theme.
-- **[federalist-report-template](https://github.com/18F/federalist-uswds-template/tree/report-config)** A Pages template that offers an easy to use setup for hosting multiple pages about a recent report or order. This template code can be found in the report-config branch under the [federalist-uswds-template](https://github.com/18f/federalist-uswds-template/) repo.
-- **[federalist-landing-page-template](https://github.com/18F/federalist-landing-page-template)** A single page meant to host information about a new initiative or report.
-- **[federalist-modern-team-template](https://github.com/18F/federalist-modern-team-template)** A simple site to showcase the work of an organization with a few different page types.
+- **[pages-uswds-11ty](https://github.com/cloud-gov/pages-uswds-11ty/)** A Pages template that uses the U.S. Web Design Standards version 3 with 11ty.
+- **[pages-uswds-gatsby](https://github.com/cloud-gov/pages-uswds-gatsby/)** A Pages template that uses the U.S. Web Design Standards version 2 with Gatsby.
 
 ## Architecture
 
