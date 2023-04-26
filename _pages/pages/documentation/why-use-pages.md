@@ -18,7 +18,7 @@ Pages serves our fellow federal partners by expertly managing the backend and co
 
 - **Easy previews and content approvals** Pages builds out draft updates to your site at a special preview URL. This enables your team to know their changes will show up correctly when pushed to the main site, and makes it easy to get signoff on content updates from stakeholders.
 
-[![Diagram of Pages architecture]({{site.baseurl}}/assets/pages/images/how-pages-works-diagram.png)]({{site.baseurl}}/assets/pages/documents/how-pages-works-diagram.pdf)
+[![Diagram of Pages architecture]({{site.baseurl}}/assets/images/pages/how-pages-works-diagram.png)]({{site.baseurl}}/assets/documents/how-pages-works-diagram.pdf)
 
 ## Why static websites?
 

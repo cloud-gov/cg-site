@@ -17,10 +17,10 @@ title: cloud.gov Pages - Success Stories
   <div class="grid-row grid-gap margin-y-8">
     <div class="grid-col-6 usa-prose">
       <h2>Vote.gov</h2>
-      <p>Vote.gov makes it easier for eligible voters to participate in our democratic process by providing streamlined information on how to vote. Visitors can register electronically in states that allow it, and download a printable application in multiple languages for those states where electronic registration isn't an option. Vote.gov was ranked as the <a href="{{ site.baseurl }}/assets/pages/documents/2017-benchmarking-us-government-websites.pdf">#1 federal website in 2017</a> by the Information Technology &amp; Innovation Foundation for meeting basic standards in security, speed, mobile friendliness, and accessibility.</p>
+      <p>Vote.gov makes it easier for eligible voters to participate in our democratic process by providing streamlined information on how to vote. Visitors can register electronically in states that allow it, and download a printable application in multiple languages for those states where electronic registration isn't an option. Vote.gov was ranked as the <a href="{{ site.baseurl }}/assets/documents/2017-benchmarking-us-government-websites.pdf">#1 federal website in 2017</a> by the Information Technology &amp; Innovation Foundation for meeting basic standards in security, speed, mobile friendliness, and accessibility.</p>
     </div>
     <div class="grid-col-6">
-      <img alt="website thumbnail" src="{{site.baseurl}}/assets/pages/images/partner-sites/vote.gov.png" class="border border-base-lighter">
+      <img alt="website thumbnail" src="{{site.baseurl}}/assets/images/pages/vote.gov.png" class="border border-base-lighter">
     </div>
   </div>
   <div class="grid-row grid-gap margin-y-8">
@@ -29,7 +29,7 @@ title: cloud.gov Pages - Success Stories
       <p>The Department of the Interior's Natural Resources Revenue site provides data about how the government manages federal energy and mineral resources, revenue, and disbursements. The website delivers valuable data to policy experts, while also ensuring the general public can follow along through an intuitive user interface and contextual information. This is an excellent example of how Pages can be used to manage complex data sets and visualizations. You can learn more about <a href="https://revenuedata.doi.gov/blog/">their process on their blog</a>.</p>
     </div>
     <div class="grid-col-6">
-      <img alt="website thumbnail" src="{{site.baseurl}}/assets/pages/images/partner-sites/revenuedata.doi.gov.png" class="border border-base-lighter">
+      <img alt="website thumbnail" src="{{site.baseurl}}/assets/images/pages/revenuedata.doi.gov.png" class="border border-base-lighter">
     </div> 
   </div>
   <div class="grid-row grid-gap margin-y-8">
@@ -38,7 +38,7 @@ title: cloud.gov Pages - Success Stories
       <p>The Department of Education uses Pages to host College Scorecard, a website that provides users with important information on everything from financial aid to expected earnings. College Scorecard demonstrates the power of Pages when used together with an API-backed database on <a href="http://cloud.gov">cloud.gov</a>.  Pages' cloud infrastructure helps manage site traffic during spikes in visitors, making sure College Scorecard is always available.</p>
     </div>
     <div class="grid-col-6">
-      <img alt="website thumbnail" src="{{site.baseurl}}/assets/pages/images/partner-sites/collegescorecard.ed.gov.png" class="border border-base-lighter">
+      <img alt="website thumbnail" src="{{site.baseurl}}/assets/images/pages/collegescorecard.ed.gov.png" class="border border-base-lighter">
     </div> 
   </div>
   <div class="grid-row grid-gap margin-y-8">
@@ -47,7 +47,7 @@ title: cloud.gov Pages - Success Stories
       <p>In 2017, the Secretary of the Air Force established AFWERX — a technology accelerator that brings the best from academia and industry together to solve problems and enhance the Air Force's effectiveness.<br/>A military website needs military compliance, and Pages made it easy for AFWERX to get there. Because it's fully customizable, AFWERX could design a brand that would attract the cutting-edge contributors they were looking for. And because it's FedRAMP-authorized, they could launch their site knowing their security met the standards the Department of Defense demands.</p>
     </div>
     <div class="grid-col-6">
-      <img alt="website thumbnail" src="{{site.baseurl}}/assets/pages/images/partner-sites/afwerx.af.mil.png" class="border border-base-lighter">
+      <img alt="website thumbnail" src="{{site.baseurl}}/assets/images/pages/afwerx.af.mil.png" class="border border-base-lighter">
     </div> 
   </div>
   <div class="grid-row grid-gap margin-y-8">
@@ -56,7 +56,7 @@ title: cloud.gov Pages - Success Stories
       <p>GSA's Centers of Excellence (CoE) program accelerates the modernization of IT infrastructure across government. But in early 2018, the CoE team was in need of their own modernization: their website was cumbersome, required vendors for updates, and took 30-45 minutes to make a single change.<br/>With Pages, CoEs can make their own changes — no outside help needed — in five minutes or less. Because everything's organized in one place, maintaining their website is simple, efficient, and easily managed by in-house staff. And thanks to Pages' modern, accessible templates, this signature White House initiative is now fully compliant with the 21st Century Integrated Digital Experience Act (IDEA).</p>
     </div>
     <div class="grid-col-6">
-      <img alt="website thumbnail" src="{{site.baseurl}}/assets/pages/images/partner-sites/coe.gsa.gov.png" class="border border-base-lighter">
+      <img alt="website thumbnail" src="{{site.baseurl}}/assets/images/pages/coe.gsa.gov.png" class="border border-base-lighter">
     </div> 
   </div>
   <div class="grid-row grid-gap margin-y-8">
@@ -65,7 +65,7 @@ title: cloud.gov Pages - Success Stories
       <p>The Federal Risk and Authorization Management Program (FedRAMP) is a government-wide program that provides a standardized approach to security assessment, authorization, and continuous monitoring for cloud products and services. FedRAMP's choice to use Pages for its main website speaks to the security and reliability of the Pages infrastructure.</p>
     </div>
     <div class="grid-col-6">
-      <img alt="website thumbnail" src="{{site.baseurl}}/assets/pages/images/partner-sites/fedramp.gov.png" class="border border-base-lighter">
+      <img alt="website thumbnail" src="{{site.baseurl}}/assets/images/pages/fedramp.gov.png" class="border border-base-lighter">
     </div> 
   </div>
 </section>
@@ -77,19 +77,19 @@ title: cloud.gov Pages - Success Stories
   <div class="grid-row grid-gap-lg text-center">
     <div class="tablet:grid-col-4 padding-y-2">
         <a class="display-block" href="https://www.performance.gov">
-          <img class="margin-bottom-2 border border-base-lighter" src="{{site.baseurl}}/assets/pages/images/partner-sites/performance.gov.png" alt="Performance.gov screenshot">
+          <img class="margin-bottom-2 border border-base-lighter" src="{{site.baseurl}}/assets/images/pages/performance.gov.png" alt="Performance.gov screenshot">
           Performance.gov
         </a>
     </div>
     <div class="tablet:grid-col-4 padding-y-2">
         <a class="display-block" href="https://18f.gsa.gov">
-          <img class="margin-bottom-2 border border-base-lighter" src="{{site.baseurl}}/assets/pages/images/partner-sites/18f.gsa.gov.png" alt="18F screenshot">
+          <img class="margin-bottom-2 border border-base-lighter" src="{{site.baseurl}}/assets/images/pages/18f.gsa.gov.png" alt="18F screenshot">
           18F
         </a>
     </div>
     <div class="tablet:grid-col-4 padding-y-2">
         <a class="display-block" href="https://cio.gov">
-          <img class="margin-bottom-2 border border-base-lighter" src="{{site.baseurl}}/assets/pages/images/partner-sites/cio.gov.png" alt="CIO.gov screenshot">
+          <img class="margin-bottom-2 border border-base-lighter" src="{{site.baseurl}}/assets/images/pages/cio.gov.png" alt="CIO.gov screenshot">
           CIO.gov
         </a>
     </div>
@@ -97,19 +97,19 @@ title: cloud.gov Pages - Success Stories
   <div class="grid-row grid-gap-lg text-center">
     <div class="tablet:grid-col-4 padding-y-2">
         <a class="display-block" href="https://designsystem.digital.gov">
-          <img class="margin-bottom-2 border border-base-lighter" src="{{site.baseurl}}/assets/pages/images/partner-sites/uswds.png" alt="U.S. Web Design System screenshot">
+          <img class="margin-bottom-2 border border-base-lighter" src="{{site.baseurl}}/assets/images/pages/uswds.png" alt="U.S. Web Design System screenshot">
           U.S. Web Design System
         </a>
     </div>
     <div class="tablet:grid-col-4 padding-y-2">
         <a class="display-block" href="https://oes.gsa.gov">
-          <img class="margin-bottom-2 border border-base-lighter" src="{{site.baseurl}}/assets/pages/images/partner-sites/oes.gsa.gov.png" alt="Office of Evaluation Sciences screenshot">
+          <img class="margin-bottom-2 border border-base-lighter" src="{{site.baseurl}}/assets/images/pages/oes.gsa.gov.png" alt="Office of Evaluation Sciences screenshot">
           Office of Evaluation Sciences
         </a>
     </div>
     <div class="tablet:grid-col-4 padding-y-2">
         <a class="display-block" href="https://www.pclob.gov">
-          <img class="margin-bottom-2 border border-base-lighter" src="{{site.baseurl}}/assets/pages/images/partner-sites/pclob.gov.png" alt="PCLOB screenshot">
+          <img class="margin-bottom-2 border border-base-lighter" src="{{site.baseurl}}/assets/images/pages/pclob.gov.png" alt="PCLOB screenshot">
           PCLOB
         </a>
     </div>

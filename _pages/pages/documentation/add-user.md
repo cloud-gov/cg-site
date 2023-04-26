@@ -17,10 +17,10 @@ If you are having trouble locating who the organization manager is you can reach
 
 - Navigate to the organizations tab
 - Click edit in the lower right hand corner of the organization pane
-  <img src="{{ site.baseurl }}/assets/pages/images/edit_organizations.png"/>
+  <img src="{{ site.baseurl }}/assets/images/pages/edit_organizations.png"/>
 
 - Click the plus sign under “Members” 
-  <img src="{{ site.baseurl }}/assets/pages/images/add_user.png"/>
+  <img src="{{ site.baseurl }}/assets/images/pages/add_user.png"/>
 
 - Fill out the required fields of Email and Role
  * If you do not know the GitHub username of the invitee you can add it post invite

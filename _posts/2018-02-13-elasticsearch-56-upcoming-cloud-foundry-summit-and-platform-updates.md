@@ -6,7 +6,7 @@ redirect_from:
   - /updates/2018-02-13-elasticsearch-56-upcoming-cloud-foundry-summit-and-platform-updates/
 ---
 
-{% asset "fec-case-study-illo.svg" alt="FEC case study illustration" %}
+!["FEC case study illustration"]({{site.baseurl}}/assets/"fec-case-study-illo.svg")
 ### Announcements
 
 - **In this featured [FEC Case Study]({{ site.baseurl }}/overview/customer-stories/fec/)**, find out how cloud.gov helps the agency ensure their applications are available, secure, and resilient. Want us to feature your agency? Drop us a line at [inquiries@cloud.gov](mailto:inquiries@cloud.gov?subject="Case%20Study").  

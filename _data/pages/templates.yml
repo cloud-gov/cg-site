@@ -3,12 +3,12 @@ items:
   - title: Jekyll - U.S. Web Design System v2.0
     docs_url: https://github.com/cloud-gov/pages-uswds-jekyll
     preview_url: https://uswds-jekyll.pages.cloud.gov/
-    img: /assets/pages/images/templates/federalist-jekyll-uswds-template.png
+    img: /assets/images/pages/federalist-jekyll-uswds-template.png
     order: 2
     summary: ""
   - title: Gatsby - U.S. Web Design System v2.0
     docs_url: https://github.com/cloud-gov/pages-uswds-gatsby
     preview_url: https://uswds-gatsby.pages.cloud.gov/
-    img: /assets/pages/images/templates/federalist-gatsby-uswds-template.png
+    img: /assets/images/pages/federalist-gatsby-uswds-template.png
     order: 3
     summary: ""

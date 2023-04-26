@@ -1,7 +1,5 @@
 # From https://github.com/jasonbellamy/jekyll-mermaid but not pulling in as a gem because no longer
 # maintained
-require 'jekyll-assets'
-
 module Jekyll
     class Mermaid < Liquid::Block
   

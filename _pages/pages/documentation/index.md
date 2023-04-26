@@ -33,7 +33,7 @@ Before you start using Pages, the Pages team needs to authorize you to use Pages
 When logging into Pages you will see a list of your existing sites along with a button to add a new site.
 
 
-![Pages Sitelist Screenshot]({{site.baseurl}}/assets/pages/images/federalist-sitelist.png)
+![Pages Sitelist Screenshot]({{site.baseurl}}/assets/images/pages/federalist-sitelist.png)
 
 
 To add a new site, click the `+ Add Site` button and you will be prompted to either:
@@ -41,7 +41,7 @@ To add a new site, click the `+ Add Site` button and you will be prompted to eit
 2. Choose an existing template from [available templates]({{site.baseurl}}/pages/documentation/templates/) by clicking 'Use this template' under a template.
 
 
-![Pages Sitelist Screenshot]({{site.baseurl}}/assets/pages/images/federalist-makesite2.png)
+![Pages Sitelist Screenshot]({{site.baseurl}}/assets/images/pages/federalist-makesite2.png)
 
 After you pick a template or an existing repository to add to Pages, your new site will be built and added to your list of websites. If you don't see the new site in your list of websites, refresh the page. Sometimes there is a slight delay as your website finishes building.
 
@@ -54,7 +54,7 @@ The [18F method cards](https://methods.18f.gov/) are an overview of several diff
 The Pages team also provides a [content guide specifically for Pages websites]({{site.baseurl}}/pages/documentation/content-guide/). This guide will help you "convey what your team does, using language and tone that a general audience will understand, or how to think about what to write in each section of your new website."
 
 ## Managing site settings
-![Pages Settings Screenshot]({{site.baseurl}}/assets/pages/images/federalist-settings.png)
+![Pages Settings Screenshot]({{site.baseurl}}/assets/images/pages/federalist-settings.png)
 
 The settings option for a site lets you adjust how Pages handles the site. These settings are for advanced functionality and most people will not need to change them.
 
@@ -64,7 +64,7 @@ The settings option for a site lets you adjust how Pages handles the site. These
 
 - **Repository Settings** Pages supports both public and private repositories. You can connect your private repository with Pages; however, we may ask that you share that repository with us so we'd be able to access it to better assist you. Ultimately, feel free to maintain your repositories as public and/or private.
 
-- **Custom Domains** Enter domain (including https://; without a trailing slash) to host your website on a custom domain. For example, `https://example.gov`. When this setting is defined during the launch process, Pages will build your site so that links and images are loaded at the custom domain, and so that relative links are set according to the custom domain. For more about setting a custom domain, see the "[launch checklist]({{site.baseurl}}{% link _pages/pages/documentation/before-you-launch.md %})" section.
+- **Custom Domains** Enter domain (including https://; without a trailing slash) to host your website on a custom domain. For example, `https://example.gov`. When this setting is defined during the launch process, Pages will build your site so that links and images are loaded at the custom domain, and so that relative links are set according to the custom domain. For more about setting a custom domain, see the "[launch checklist]({% link _pages/pages/documentation/before-you-launch.md %})" section.
 
 - **Demo Site** Pages allows you to specify a different branch and domain for a "demo site" that can be used to publicly preview your content at a URL of your choice, such as "preview.login.gov." Launch of a demo URL works just like a live URL from a security standpoint.
 

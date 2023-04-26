@@ -24,4 +24,4 @@ schedule: nightly
 
 as shown below.
 
-![Site Configuration pane showing schedule: nightly]({{site.baseurl}}/assets/pages/images/schedule-nightly.png)
+![Site Configuration pane showing schedule: nightly]({{site.baseurl}}/assets/images/pages/schedule-nightly.png)
