@@ -7,10 +7,10 @@ sidenav: pages-documentation
 ---
 
 ## Current Support
-- [Jekyll](http://jekyllrb.com)
 - [Hugo](https://gohugo.io/)
 - Node.js - Runs a [Node](https://nodejs.org) script
-- Static - Pushes the files in your repository to S3 without modifying them, useful for exports from content management systems or web development tools.
+- Static - Hosts the files in your repository without modifying them, useful for exports from content management systems or web development tools.
+- [Jekyll](http://jekyllrb.com)
 
 ## Requirements
 For all engines **except Static** Pages will serve whatever is in the `_site` folder so you should either:

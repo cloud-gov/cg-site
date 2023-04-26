@@ -9,8 +9,6 @@ primary:
     url: /pages/pricing/
   - name: Contact
     url: /pages/contact/
-  - name: Federalist Migration
-    url: /pages/federalist-migration
     # Look inside assets/js/index.js to see that how this url changes depending on enviroment
 secondary:
   - name: Platform Status
@@ -46,14 +44,14 @@ sidenav:
         href: /pages/documentation/why-use-pages/
       - text: Access and permissions
         href: /pages/documentation/access-permissions/
+      - text: Adding a user to an Organization
+        href: /pages/documentation/adding-users/
       - text: Customer responsibilities
         href: /pages/documentation/customer-responsibilities/
       - text: Getting started with a sandbox
         href: /pages/documentation/sandbox/
       - text: "21st Century IDEA"
         href: /pages/documentation/21st-century-idea/
-      - text: Getting started with Jekyll
-        href: /pages/documentation/getting-started-with-jekyll/
       - text: Getting started with Netlify CMS
         href: /pages/documentation/getting-started-with-netlify-cms/
       - text: Included with Pages

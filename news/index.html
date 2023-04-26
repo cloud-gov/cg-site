@@ -33,10 +33,14 @@ pagination:
           </div>
         </div>
         <div >
-          {% if post.image %} {% asset "{{ post.image }}"
-          class="tablet:float-left tablet:width-1/3 padding-right-3
-          padding-top-1" alt="{{ post.image_alt_text }}" %} {% endif %} {{
-          post.excerpt | markdownify }}
+          {% if post.image %}
+          <img
+            src="{{site.baseurl}}/assets/image/{{post.image}}"
+            class="tablet:float-left tablet:width-1/3 padding-right-3 padding-top-1"
+            alt="{{ post.image_alt_text }}"
+          />
+          {% endif %}
+          {{ post.excerpt | markdownify }}
         </div>
       </div>
       {% endfor %}

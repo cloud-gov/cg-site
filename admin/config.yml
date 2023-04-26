@@ -22,10 +22,10 @@ backend:
 ##
 ##
 
-media_folder: assets/img
-public_folder: /assets/img
+media_folder: assets/images/content
+public_folder: /assets/images/content
 publish_mode: editorial_workflow
-logo_url: https://cloud.gov/assets/img/cloud-gov-logo.svg
+logo_url: https://cloud.gov/assets/images/content/cloud-gov-logo.svg
 
 slug:
   encoding: "ascii"

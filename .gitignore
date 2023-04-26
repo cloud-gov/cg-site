@@ -4,7 +4,9 @@ _site
 node_modules
 .bundle
 .jekyll-cache/
+.parcel-cache/
 .DS_Store
 .lycheecache
 lychee-out.md
 _config*.yml
+assets/

@@ -297,11 +297,18 @@ cf update-service ${SERVICE_NAME} \
     -c '{"rotate_credentials": true}'
 ```
 
-Once that command has finished running, you need to unbind your database instance from your application and re-bind it so that the application receives the updated credentials:
+Once that command has finished running, you need to unbind your database instance from your application and re-bind it so that the application receives the updated credentials. **Please note that you may want to wait about a minute between running `cf unbind-service` and `cf bind-service`** otherwise you may get an error indicating that the database is not ready.
 
 ```shell
-cf unbind-service <application-name> ${SERVICE_NAME}
+cf unbind-service <application-name> ${SERVICE_NAME} # wait a minute or so after running this
 cf bind-service <application-name> ${SERVICE_NAME}
+```
+
+You will also need to delete and recreate any service keys for your database instance to incorporate the new credentials into the keys:
+
+```shell
+cf delete-service-key ${SERVICE_NAME} <service-key-name>
+cf create-service-key ${SERVICE_NAME} <service-key-name>
 ```
 
 Lastly, you need to restage your application so that it uses the updated credentials (tip: you can use the `--strategy rolling` flag to ensure your application instances remain available to handle traffic):
@@ -362,7 +369,7 @@ The `cg-manage-rds` application is meant to simplify and streamline import, expo
 To perform a basic export of a postgres instance using the compressed format:
 
 ```sh
-$ cg-manage-rds export -o "-F c" -f ./backup.pg ${SERVICE_NAME}
+cg-manage-rds export -o "-F c" -f ./backup.pg ${SERVICE_NAME}
 ```
 
 This will create an export using `pg_dump` named `backup.pg`. Other options for the pg_dump command can be pased as a string with the `-o` option.
@@ -373,7 +380,7 @@ This is a simple example of importing a previous export to database service inst
 By default `cg-manage-rds` adds options to remove ownership and create new objects to make porting easy.
 
 ```sh
-$ cg-manage-rds import -o "-F c" -f ./backup.pg ${SERVICE_NAME}
+cg-manage-rds import -o "-F c" -f ./backup.pg ${SERVICE_NAME}
 ```
 
 #### Cloning a service instance
@@ -381,7 +388,7 @@ $ cg-manage-rds import -o "-F c" -f ./backup.pg ${SERVICE_NAME}
 This is a simple example of replicating database service instance to another instance. The destination database must be created beforehand. The export is downloaded locally as in the `export` command.
 
 ```sh
-$ cg-manage-rds clone ${SERVICE_NAME_SOURCE} ${SERVICE_NAME_DEST}
+cg-manage-rds clone ${SERVICE_NAME_SOURCE} ${SERVICE_NAME_DEST}
 ```
 
 ### Using cf-service-connect plugin
@@ -403,7 +410,7 @@ Name: ...
 If this fails to open a SSH tunnel, try deleting any existing `connect-to-service` service keys first:
 
 ```sh
-$ cf delete-service-key ${SERVICE_NAME} SERVICE_CONNECT
+cf delete-service-key ${SERVICE_NAME} SERVICE_CONNECT
 ```
 
 Then try the previous step again.
@@ -423,16 +430,15 @@ This will create the `backup.pg` file on your local machine in whatever your cur
 When you are finished, you can terminate the SSH tunnel.  You should also clean up the `SERVICE_KEY` created by the cf-service-connect plugin so that you are able to reconnect in the future:
 
 ```sh
-$ cf delete-service-key ${SERVICE_NAME} SERVICE_CONNECT
+cf delete-service-key ${SERVICE_NAME} SERVICE_CONNECT
 ```
-
 
 ### Restoring to a local database
 
 Continuing with the PostgreSQL example and the `backup.pg` file, load the dump into your local database using the [pg_restore](https://www.postgresql.org/docs/current/static/app-pgrestore.html) tool. If objects exist in a local copy of the database already, you might run into inconsistencies when doing a `pg_restore`. This pg_restore invocation does not drop all of the objects in the database when loading the dump:
 
 ```sh
-$ pg_restore --clean --no-owner --no-acl --dbname={database name} backup.pg
+pg_restore --clean --no-owner --no-acl --dbname={database name} backup.pg
 ```
 
 ## Encryption
@@ -447,14 +453,13 @@ You can rotate credentials by creating a new instance and [deleting the existing
 
 Since Oracle is not open-source there are fewer resources available online to get started working with OracleDB and Cloud Foundry. We provide a few tips here.  This example worked with `ojdbc8.jar`, and will likely needs some tweaks for `ojdbc10.jar`.
 
-
 ### Demo with Spring Music and Oracle
 
 To demonstrate the core Cloud Foundry / OracleDB functionality, we'll start by deploying the
 [Spring Music app](https://github.com/cloudfoundry-samples/spring-music).
 
 First, though, one needs the proprietary Oracle database drivers.
-Visit the Oracle drivers' site at http://www.oracle.com/technetwork/database/application-development/jdbc/downloads/index.html and download the `ojdbc8.jar` from the latest available release. You will need to have a valid Oracle profile account for the download.
+Visit the Oracle drivers' site at <http://www.oracle.com/technetwork/database/application-development/jdbc/downloads/index.html> and download the `ojdbc8.jar` from the latest available release. You will need to have a valid Oracle profile account for the download.
 
 Then, clone the repository and make a `libs/` directory:
 
@@ -473,6 +478,7 @@ Edit `build.gradle`, look for the following near line 60:
     // compile files('libs/ojdbc8.jar')
     // compile files('libs/ojdbc7.jar')
 ```
+
 and remove the `//` comment from the line for `libs/ojdbc8.jar`. Save the `build.gradle` file.
 
 After installing the 'cf' [command-line interface for Cloud Foundry](http://docs.cloudfoundry.org/cf-cli/), and logging in to cloud.gov, `cf login --sso -a https://api.fr.cloud.gov`, the application can be built and pushed using these commands:
@@ -531,7 +537,6 @@ Then you can use SQLPLUS commands like `SELECT table_name FROM user_tables;`
 ## Connect to databases without use of `connect-to-service`
 
 Example for app name `hello-doe`
-
 
 ```
 myapp_guid=$(cf app --guid hello-doe)

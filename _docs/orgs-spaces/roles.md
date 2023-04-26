@@ -25,21 +25,21 @@ After a user has a cloud.gov account and has logged in, an Org Manager can assig
 Log into the [Dashboard (https://dashboard.fr.cloud.gov)](https://dashboard.fr.cloud.gov)
 
 1. In the left menu, click on the "Cloud Foundry" text.
-{% asset roles-01-open-cloud-foundry.png alt="In the left menu, click on the Cloud Foundry text." %}
+!["In the left menu, click on the Cloud Foundry text."]({{site.baseurl}}/assets/images/content/roles-01-open-cloud-foundry.png)
 1. Click either "Organizations" in the secondary left menu that appears or the box labeled "Orgs" in the bottom center of the screen.
-{% asset roles-02-open-organizations.png alt="Click either Organizations in the secondary left menu that appears or the box labeled Orgs in the bottom center of the screen." %}
+!["Click either Organizations in the secondary left menu that appears or the box labeled Orgs in the bottom center of the screen."]({{site.baseurl}}/assets/images/content/roles-02-open-organizations.png)
 1. Click on the box of the organization that you want to manage users for.
-{% asset roles-03-select-organization.png alt="Click on the box of the organization that you want to manage users for." %}
+!["Click on the box of the organization that you want to manage users for."]({{site.baseurl}}/assets/images/content/roles-03-select-organization.png)
 1. Click on either "Users" in the secondary left menu that appears or the box labeled "Users" in the bottom center of the screen.
-{% asset roles-04-open-users.png alt="Click on either Users in the secondary left menu that appears or the box labeled Users in the bottom center of the screen." %}
+!["Click on either Users in the secondary left menu that appears or the box labeled Users in the bottom center of the screen."]({{site.baseurl}}/assets/images/content/roles-04-open-users.png)
 1. Click on the "Manage Roles by Username" icon toward the top of the screen.
-{% asset roles-05-open-manage-users.png alt="Click on the Manage Roles by Username icon toward the top of the screen." %}
+!["Click on the Manage Roles by Username icon toward the top of the screen."]({{site.baseurl}}/assets/images/content/roles-05-open-manage-users.png)
 1. Type in the username that you want to either add or remove roles for in the organization, then click on the "Next" button at the bottom right of the screen.
-{% asset roles-06-specify-username.png alt="Type in the username that you want to either add or remove roles for in the organization, then click on the Next button at the bottom right of the screen." %}
+!["Type in the username that you want to either add or remove roles for in the organization, then click on the Next button at the bottom right of the screen."]({{site.baseurl}}/assets/images/content/roles-06-specify-username.png)
 1. Select the roles that you would like to add or remove from the user. **Please be sure to check the `User` box** regardless so that the user will have proper access when finished.  You may also set roles for any spaces within the organization that you would like to add or remove them from on this screen.
-{% asset roles-07-select-roles.png alt="Select the roles that you would like to add or remove from the user.  You may also set roles for any spaces within the organization that you would like to add or remove them from on this screen." %}
+!["Select the roles that you would like to add or remove from the user.  You may also set roles for any spaces within the organization that you would like to add or remove them from on this screen."]({{site.baseurl}}/assets/images/content/roles-07-select-roles.png)
 1. Confirm your changes and selections by clicking on the "Apply" button on the bottom of the screen.
-{% asset roles-08-confirm-changes.png alt="Confirm your changes and selections by clicking on the Apply button on the bottom of the screen." %}
+!["Confirm your changes and selections by clicking on the Apply button on the bottom of the screen."]({{site.baseurl}}/assets/images/content/roles-08-confirm-changes.png)
 
 The user will immediately be granted access to (or removed from) the orgs and spaces you have set. Repeat the process to add or modify additional users and their roles and permissions.
 

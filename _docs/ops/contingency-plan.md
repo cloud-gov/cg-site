@@ -46,7 +46,7 @@ If this is also a security incident: also follow the [security incident communic
 
 The IC should notify the following people within 15 minutes of identifying the service disruption:
 
-* cloud.gov users ([through StatusPage](https://manage.statuspage.io/pages/swcbylb1c30f)) following [our StatusPage guidance]({{site.baseurl}}{% link _docs/ops/service-disruption-guide.md %}#statuspage).
+* cloud.gov users ([through StatusPage](https://manage.statuspage.io/pages/swcbylb1c30f)) following [our StatusPage guidance]({% link _docs/ops/service-disruption-guide.md %}#statuspage).
 
 The IC must notify the following people within 1 hour of activating the plan:
 

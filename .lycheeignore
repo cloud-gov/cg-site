@@ -18,7 +18,7 @@ https://username:password
 .*\.fr\.cloud\.gov
 https://example.gov
 .*\.us-gov-west-1.vpce.amazonaws.com
-https://github.com/cloudfoundry/stacks/releases/
+https://www.congress.gov/bill/.*
 
 # URLs with no known replacements
 https://fugacious.18f.gov/
@@ -38,10 +38,14 @@ https://login.cloud.gov/
 https://spring-music-adjective-animal.app.cloud.gov/appinfo
 https://flask-example-fluent-okapi.app.cloud.gov/
 https://appname.app.cloud.gov/
-https://docs.cloud.gov/getting-started/one-off-tasks/#cf-ssh
 https://app.docusign.com/templates
-https://www.congress.gov/
 http://jpattonassociates.com/wp-content/uploads/2015/03/story_mapping.pdf
 https://tf.nist.gov/tf-cgi/servers.cgi
 https://agency.gov
 http://agency.gov
+
+https://github.com/cloudfoundry/stacks/releases/
+
+# URLs that are failing for unknown reasons
+https://public.cyber.mil/dccs/
+https://dl.dod.cyber.mil/wp-content/uploads/cloud/zip/U_Cloud_Computing_SRG_V1R4.zip

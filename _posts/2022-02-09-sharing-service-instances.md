@@ -18,16 +18,16 @@ We are happy to announce that [service instance sharing](https://docs.cloudfound
 * A developer uses the standard `cf create-service` command to instantiate a new service instance in a particular space.
 * When initially created, viewing the service details via `cf service {service_name}` will indicate that the service is not currently shared with any other spaces (see below).
 
-{% asset service-not-shared.png alt="Showing details of a service that is not shared" %}
+!["Showing details of a service that is not shared"]({{site.baseurl}}/assets/service-not-shared.png)
 
 * A developer can share a service instance created in one space with another space - provided that they have the Space Developer role in _both_ spaces - by using `cf share-service {service_name} -s {other-space}`
 * Once the service instance is shared, viewing the service details via `cf service {service_name}` **in the space it was created in** will indicate which other spaces it is shared with and the number of bound apps  (see below).
 
-{% asset service-shared.png alt="Showing details of a service that is shared" %}
+!["Showing details of a service that is shared"]({{site.baseurl}}/assets/service-shared.png)
 
 * Viewing the service details **in the space the service was shared with** indicates that this is a shared service, and the org/space the service it was shared from  (see below).
 
-{% asset show-service-details.png alt="Showing service details from another space" %}
+!["Showing service details from another space"]({{site.baseurl}}/assets/show-service-details.png)
 
 ### Security considerations
 

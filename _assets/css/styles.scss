@@ -18,18 +18,24 @@
 @import 'theme/uswds-theme-components';
 
 // Set correct paths for use with asset pipeline
-$theme-font-path: 'fonts';
-$theme-image-path: 'img';
+$theme-font-path: '../../node_modules/uswds/dist/fonts';
+$theme-image-path: '../../node_modules/uswds/dist/img';
 
 // -------------------------------------
 // Import individual USWDS packages...
 @import 'scss/packages/required';
-@import 'overrides/all';
 @import 'scss/packages/global';
 
 @import 'scss/packages/uswds-components';
 @import 'scss/packages/uswds-utilities';
 @import 'theme/uswds-theme-custom-styles';
+
+$fa-font-path: "../../node_modules/@fortawesome/fontawesome-free/webfonts";
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/regular.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/v4-shims.scss";
 
 @import 'pages/index';
 
@@ -82,9 +88,7 @@ $theme-image-path: 'img';
   .usa-banner__header-action {
     color: color('base-light');
     &::after {
-      -webkit-mask: url('/img/chevron.svg') no-repeat center / 1.3128205128ex
-        0.8ex;
-      mask: url('/img/chevron.svg') no-repeat center / 1.3128205128ex 0.8ex;
+      mask: url('../images/content/chevron.svg') no-repeat center / 1.3128205128ex 0.8ex;
       background-color: color('base-light');
     }
     &:hover {
@@ -101,8 +105,7 @@ $theme-image-path: 'img';
 
   .usa-banner__button[aria-expanded='true']::after {
     @include u-bg('white');
-    -webkit-mask: url(/img/close-alt.svg) no-repeat center/1rem 1rem;
-    mask: url(/img/close-alt.svg) no-repeat center/1rem 1rem;
+    mask: url('../images/content/close-alt.svg') no-repeat center/1rem 1rem;
   }
 
   @include at-media('tablet') {
@@ -110,9 +113,7 @@ $theme-image-path: 'img';
     .usa-banner__button[aria-expanded='true'] {
       color: color('base-light');
       &::after {
-        -webkit-mask: url('/img/chevron.svg') no-repeat center / 1.3128205128ex
-          0.8ex;
-        mask: url('/img/chevron.svg') no-repeat center / 1.3128205128ex 0.8ex;
+        mask: url('../images/content/chevron.svg') no-repeat center / 1.3128205128ex 0.8ex;
         background-color: color('base-light');
       }
       &:hover {
@@ -359,7 +360,7 @@ a {
   background-size: 1040px 148px;
 
   @include at-media('desktop') {
-    background-image: asset_url('peaks.svg');
+    background-image: url('../images/content/peaks.svg');
   }
 }
 
