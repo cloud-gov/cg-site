@@ -16,7 +16,7 @@ The base OS image used by your cloud.gov applications is called a "stack". The s
 
 If you push your Cloud Foundry applications as Docker containers with `cf push --docker-image `, these changes do not impact you.
 
-However, most cloud.gov customers deploy their applications using buildpacks, and their apps don’t have any dependency on the particular OS version that runs them. If that describes you, this upgrade will probably be a miraculous non-event… You can request the new stack at your next cf push and carry on as you always have.
+However, most cloud.gov customers deploy their applications using buildpacks, and their apps don’t have any dependency on the particular OS version that runs them. If that describes you, this upgrade will probably be a miraculous non-event… You can request the new stack at your next cf push with a stack parameter and carry on as you always have.
 
 However, there may be exceptions! For example, you may have used the `apt-buildpack` to ensure that a particular library or utility is installed when your app is deployed. In that case, you might run into problems if the location or name of that dependency has changed between Ubuntu 18.04 and Ubuntu 22.04.  You'll also want to be sure to use the newest [v0.3.0](https://github.com/cloudfoundry/apt-buildpack/releases/tag/v0.3.0) version of this release which supports cflinuxfs4.
 
@@ -45,7 +45,7 @@ However, this is only a temporary solution because cflinuxfs3 will be removed as
 
 #### Option 1 - Use the Dashboard UI for individual apps
 
-You can use the Stratos UI dashboard at `https://dashboard.fr.cloud.gov/` and navigate to "Applications > select an app > Build info" to see what stack version each of your applications is using.  If it says "cflinuxfs3" you still need to upgade your stack by repushing your application.
+You can use the Stratos UI dashboard at `https://dashboard.fr.cloud.gov/` and navigate to "Applications > select an app > Build info" to see what stack version each of your applications is using.  If it says "cflinuxfs3" you still need to upgade your stack by repushing your application with the stack paramter.
 
 #### Option 2 - Use the CF cli for all apps
 
