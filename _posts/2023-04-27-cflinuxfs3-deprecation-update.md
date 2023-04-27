@@ -22,7 +22,7 @@ However, most cloud.gov customers deploy their applications using buildpacks, an
 ### What should you do now for existing apps?
 
 
-For existing applications which were created under `cflinuxfs3` you will need to update the stack declaration to `cflinuxfs4`, there are three common ways of doing this detailed below.  The options below only have to be run once for each application on `cflinuxfs3`, once the stack is set for an application, it is persistent until changed with any of these 3 steps. 
+For existing applications which were created under `cflinuxfs3` you will need to update the stack declaration to `cflinuxfs4`, there are two common ways of doing this detailed below.  The options below only have to be run once for each application on `cflinuxfs3`, once the stack is set for an application, it is persistent until changed with any of these two steps. 
 
 1. Push the app manually and specify the stack with the cf cli:
 
@@ -30,16 +30,7 @@ For existing applications which were created under `cflinuxfs3` you will need to
    cf push MY-APP -s cflinuxfs4
    ```
 
-2. Add the stack to your app manifest and push the app, this is documented at [https://docs.cloudfoundry.org/devguide/deploy-apps/manifest-attributes.html#stack](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest-attributes.html#stack):
-
-
-   ```
-   ---
-     ...
-     stack: cflinuxfs4
-   ```
-
-3. Use the `stack-auditor` cf cli plugin to change the stack without having to push the application.  Documentation for using this plugin is at [https://docs.cloudfoundry.org/adminguide/stack-auditor.html#change-stacks](https://docs.cloudfoundry.org/adminguide/stack-auditor.html#change-stacks), the basic workflow is:
+2. Use the `stack-auditor` cf cli plugin to change the stack without having to push the application.  Documentation for using this plugin is at [https://docs.cloudfoundry.org/adminguide/stack-auditor.html#change-stacks](https://docs.cloudfoundry.org/adminguide/stack-auditor.html#change-stacks), the basic workflow is:
 
    - Install the plugin
    - Use the `cf` cli to target the org and space for your existing application
