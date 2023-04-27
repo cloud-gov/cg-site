@@ -68,7 +68,7 @@ cf curl "/v3/apps?per_page=5000&include=space.organization" | jq '(.included.spa
 | ----------------|-------------|------------------|---------------|
 | **March 23** | Roll out all cflinuxfs4 buildpacks | cflinuxfs3, cflinuxfs4 | cflinuxfs3
 | **March 23 - April 27** | Developers test and update apps to use cflinuxfs4 | cflinuxfs3, cflinuxfs4 | cflinuxfs3
-| **April 27** | Support ends for cflinuxfs3.  All apps pushed or staged will use cflinuxfs4 by default  | cflinuxfs3, cflinuxfs4 | **cflinuxfs4**
+| **April 27** | Support ends for cflinuxfs3.  All new apps pushed will use cflinuxfs4 by default, existing apps will need to be migrated.  | cflinuxfs3, cflinuxfs4 | **cflinuxfs4**
 | **April 27 - May 10** | Explicitly opt to use cflinuxfs3 if you need more time | cflinuxfs3, cflinuxfs4 | **cflinuxfs4**
 | **May 10 - onward** | Only cflinuxfs4 will be available, this is a breaking change for apps not updated to use cflinuxfs4 |  cflinuxfs4 | **cflinuxfs4**
 
@@ -93,4 +93,4 @@ cf curl "/v3/apps?per_page=5000&include=space.organization" | jq '(.included.spa
 
 ### Update
 
-The original instructions indicated that a `cf restage` will move apps to cflinuxfs4.  It does not, you have to `cf push` your application.
+The original instructions indicated that a `cf restage` will move apps to cflinuxfs4.  It does not, you have to `cf push -s STACK_NAME` your application.
