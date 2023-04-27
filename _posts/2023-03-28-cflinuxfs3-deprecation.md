@@ -16,13 +16,13 @@ The base OS image used by your cloud.gov applications is called a "stack". The s
 
 If you push your Cloud Foundry applications as Docker containers with `cf push --docker-image `, these changes do not impact you.
 
-However, most cloud.gov customers deploy their applications using buildpacks, and their apps don’t have any dependency on the particular OS version that runs them. If that describes you, this upgrade will probably be a miraculous non-event… You can request the new stack at your next cf push or cf restage and carry on as you always have.
+However, most cloud.gov customers deploy their applications using buildpacks, and their apps don’t have any dependency on the particular OS version that runs them. If that describes you, this upgrade will probably be a miraculous non-event… You can request the new stack at your next cf push and carry on as you always have.
 
 However, there may be exceptions! For example, you may have used the `apt-buildpack` to ensure that a particular library or utility is installed when your app is deployed. In that case, you might run into problems if the location or name of that dependency has changed between Ubuntu 18.04 and Ubuntu 22.04.  You'll also want to be sure to use the newest [v0.3.0](https://github.com/cloudfoundry/apt-buildpack/releases/tag/v0.3.0) version of this release which supports cflinuxfs4.
 
 ### What should you do now?
 
-If you are using buildpacks to build your apps, you should try out the new cflinuxfs4 stack before we make it the default on April 27th. Check out the [Cloud Foundry stack docs](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html) to see how. To change your stack and restage your app, run the following command:
+If you are using buildpacks to build your apps, you should try out the new cflinuxfs4 stack before we make it the default on April 27th. Check out the [Cloud Foundry stack docs](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html) to see how. To change your stack and re-push your app, run the following command:
 
 ```
 cf push MY-APP -s cflinuxfs4
@@ -90,3 +90,7 @@ cf curl "/v3/apps?per_page=5000&include=space.organization" | jq '(.included.spa
 | nginx_buildpack       | v1.2.1  | Yes
 | r_buildpack           | v1.2.0  | Yes
 
+
+### Update
+
+The original instructions indicated that a `cf restage` will move apps to cflinuxfs4.  It does not, you have to `cf push` your application.
