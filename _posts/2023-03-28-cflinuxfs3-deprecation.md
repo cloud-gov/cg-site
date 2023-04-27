@@ -5,6 +5,10 @@ title: "Deprecation of cflinuxfs3"
 excerpt: Ubuntu 22.04 stack (cflinuxfs4) buildpacks are here and Ubuntu 18.04 (cflinuxfs3) are retiring, test and upgrade your apps now!
 ---
 
+
+> ***Important Update - 4/27/2023*** : The original instructions indicated that a `cf restage` will move apps to cflinuxfs4.  It does not, you have to `cf push -s STACK_NAME` your application.
+
+
 # Deprecation of cflinuxfs3
 
 ## Ubuntu 22.04 stack (cflinuxfs4) buildpacks are here and Ubuntu 18.04 (cflinuxfs3) are retiring: Test and upgrade your apps now!
@@ -90,7 +94,3 @@ cf curl "/v3/apps?per_page=5000&include=space.organization" | jq '(.included.spa
 | nginx_buildpack       | v1.2.1  | Yes
 | r_buildpack           | v1.2.0  | Yes
 
-
-### Update
-
-The original instructions indicated that a `cf restage` will move apps to cflinuxfs4.  It does not, you have to `cf push -s STACK_NAME` your application.
