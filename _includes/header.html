@@ -4,6 +4,9 @@ This appears at the top of the page letting the user know it's an official gover
 
 <div class="page-landing-page layout-demo ">
   <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+  {% if page.sidenav %}
+      <a class="usa-skipnav" href="#section-nav">Skip to section navigation</a>
+  {% endif %}
   <div class="site-banner usa-banner">
     <div class="usa-accordion">
       <header class="usa-banner__header">

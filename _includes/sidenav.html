@@ -1,12 +1,12 @@
-{%- comment -%} 
+{%- comment -%}
 The sidenav is not loaded by default on the main pages. To include this navigation you can either use the
 _layouts/page.html layout template, or you can add "sidenav: true" in the front-matter of your pages
 {%- endcomment -%}
 
-<aside class="usa-layout-docs-sidenav desktop:grid-col-4 padding-bottom-4">
+<aside id="section-nav" class="usa-layout-docs-sidenav desktop:grid-col-4 padding-bottom-4">
   <nav>
     <ul class="usa-sidenav">
-      
+
       {%- for nav_item in include.documentation_navigation -%}
       {%- assign nav_id = 'side-nav-' | append: nav_item.identifier -%}
 
@@ -21,7 +21,7 @@ _layouts/page.html layout template, or you can add "sidenav: true" in the front-
           {%- endif -%}
           {{ nav_item.name | escape }}
         </a>
-      
+
         <ul class="usa-sidenav__sublist {% if relevant_parent != nav_item.identifier %}display-none{% endif %}"
          id="{{ nav_id }}" aria-hidden="true">
         {%- unless nav_item.children -%}
@@ -57,7 +57,7 @@ _layouts/page.html layout template, or you can add "sidenav: true" in the front-
         </ul>
       </li>
 
-      
+
       {%- endfor -%}
     </ul>
   </nav>
