@@ -5,6 +5,10 @@ title: "Deprecation of cflinuxfs3"
 excerpt: Ubuntu 22.04 stack (cflinuxfs4) buildpacks are here and Ubuntu 18.04 (cflinuxfs3) are retiring, test and upgrade your apps now!
 ---
 
+
+> ***Important Update - 4/27/2023*** : The original instructions indicated that a `cf restage` will move apps to cflinuxfs4.  It does not, you have to `cf push -s STACK_NAME` your application.
+
+
 # Deprecation of cflinuxfs3
 
 ## Ubuntu 22.04 stack (cflinuxfs4) buildpacks are here and Ubuntu 18.04 (cflinuxfs3) are retiring: Test and upgrade your apps now!
@@ -16,7 +20,7 @@ The base OS image used by your cloud.gov applications is called a "stack". The s
 
 If you push your Cloud Foundry applications as Docker containers with `cf push --docker-image `, these changes do not impact you.
 
-However, most cloud.gov customers deploy their applications using buildpacks, and their apps don’t have any dependency on the particular OS version that runs them. If that describes you, this upgrade will probably be a miraculous non-event… You can request the new stack at your next cf push and carry on as you always have.
+However, most cloud.gov customers deploy their applications using buildpacks, and their apps don’t have any dependency on the particular OS version that runs them. If that describes you, this upgrade will probably be a miraculous non-event… You can request the new stack at your next cf push with a stack parameter and carry on as you always have.
 
 However, there may be exceptions! For example, you may have used the `apt-buildpack` to ensure that a particular library or utility is installed when your app is deployed. In that case, you might run into problems if the location or name of that dependency has changed between Ubuntu 18.04 and Ubuntu 22.04.  You'll also want to be sure to use the newest [v0.3.0](https://github.com/cloudfoundry/apt-buildpack/releases/tag/v0.3.0) version of this release which supports cflinuxfs4.
 
@@ -45,7 +49,7 @@ However, this is only a temporary solution because cflinuxfs3 will be removed as
 
 #### Option 1 - Use the Dashboard UI for individual apps
 
-You can use the Stratos UI dashboard at `https://dashboard.fr.cloud.gov/` and navigate to "Applications > select an app > Build info" to see what stack version each of your applications is using.  If it says "cflinuxfs3" you still need to upgade your stack by repushing your application.
+You can use the Stratos UI dashboard at `https://dashboard.fr.cloud.gov/` and navigate to "Applications > select an app > Build info" to see what stack version each of your applications is using.  If it says "cflinuxfs3" you still need to upgade your stack by repushing your application with the stack paramter.
 
 #### Option 2 - Use the CF cli for all apps
 
@@ -68,7 +72,7 @@ cf curl "/v3/apps?per_page=5000&include=space.organization" | jq '(.included.spa
 | ----------------|-------------|------------------|---------------|
 | **March 23** | Roll out all cflinuxfs4 buildpacks | cflinuxfs3, cflinuxfs4 | cflinuxfs3
 | **March 23 - April 27** | Developers test and update apps to use cflinuxfs4 | cflinuxfs3, cflinuxfs4 | cflinuxfs3
-| **April 27** | Support ends for cflinuxfs3.  All apps pushed or staged will use cflinuxfs4 by default  | cflinuxfs3, cflinuxfs4 | **cflinuxfs4**
+| **April 27** | Support ends for cflinuxfs3.  All new apps pushed will use cflinuxfs4 by default, existing apps will need to be migrated.  | cflinuxfs3, cflinuxfs4 | **cflinuxfs4**
 | **April 27 - May 10** | Explicitly opt to use cflinuxfs3 if you need more time | cflinuxfs3, cflinuxfs4 | **cflinuxfs4**
 | **May 10 - onward** | Only cflinuxfs4 will be available, this is a breaking change for apps not updated to use cflinuxfs4 |  cflinuxfs4 | **cflinuxfs4**
 
@@ -90,7 +94,3 @@ cf curl "/v3/apps?per_page=5000&include=space.organization" | jq '(.included.spa
 | nginx_buildpack       | v1.2.1  | Yes
 | r_buildpack           | v1.2.0  | Yes
 
-
-### Update
-
-The original instructions indicated that a `cf restage` will move apps to cflinuxfs4.  It does not, you have to `cf push` your application.
