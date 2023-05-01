@@ -9,6 +9,11 @@ excerpt: The cloud.gov team is working on providing change logs so everyone can 
 
 ## Customer Facing Changes
 ---
+
+### `cflinuxfs3` Retirement
+
+`cflinuxfs4` is now the default for all new applications.  For existing applications, app maintainers should use `cf push APP_NAME -s cflinuxfs4` or the CF Stack Auditor plugin.  Additional details can be found at [https://cloud.gov/2023/04/27/cflinuxfs3-deprecation-update/](https://cloud.gov/2023/04/27/cflinuxfs3-deprecation-update/)
+
 ### Binary Buildpack - v1.1.4 up from v1.1.3
 * Update libbuildpack
   * Uncached buildpack SHA256: bd2bb05de690ef0cbe6efbf9e1c66b6085dc8efa3ebc186d7202b9e9d54ebd28
@@ -186,6 +191,4 @@ For a more detailed look at the changes in 4.57, please take a look at the [comm
   * Bump rspec-core from 3.12.1 to 3.12.2 by @dependabot in #567
   * Bump rspec-expectations from 3.12.2 to 3.12.3 by @dependabot in #568
 
-### Last but not least
 
-`cflinuxfs4` is now the default for all new applications.  For existing applications, app maintainers should use `cf push APP_NAME -s cflinuxfs4` or the CF Stack Auditor plugin.  Additional details can be found at [https://cloud.gov/2023/04/27/cflinuxfs3-deprecation-update/](https://cloud.gov/2023/04/27/cflinuxfs3-deprecation-update/)
