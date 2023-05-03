@@ -21,11 +21,15 @@ Service Name | Plan Name | Description | Number of nodes |
 `aws-elasticsearch` | `es-large-ha` | 3 Primary and 4 Data node cluster | 7 |
 `aws-elasticsearch` | `es-xlarge` | 3 Primary and 2 Data node cluster | 5 |
 `aws-elasticsearch` | `es-xlarge-ha` | 3 Primary and 4 Data node cluster | 7 |
+`aws-elasticsearch` | `es-2xlarge-gp` | 3 Primary and 2 Data node cluster | 5 |
+`aws-elasticsearch` | `es-2xlarge-gp-ha` | 3 Primary and 4 Data node cluster | 7 |
+`aws-elasticsearch` | `es-4xlarge-gp` | 3 Primary and 2 Data node cluster | 5 |
+`aws-elasticsearch` | `es-4xlarge-gp-ha` | 3 Primary and 4 Data node cluster | 7 |
 
 ## Pricing
 
-Elasticsearch RESTful search and analytics
-$200/month per node for **medium** (each medium instance has 5-7 nodes provisioned), $400/month per node for **large** (each large instance has 5-7 nodes provisioned), $600 for **extra-large** (each extra-large instance has 5-7 nodes provisioned), and 6 medium nodes included for FISMA Moderate. More information on the [pricing page]({{ site.baseurl }}{% link _pages/pricing.md %}).
+Elasticsearch RESTful search and analytics 
+$200/month per node for **medium** (each medium instance has 5-7 nodes provisioned), $400/month per node for **large** (each large instance has 5-7 nodes provisioned), $600/month per node for **extra-large** (each extra-large instance has 5-7 nodes provisioned), $800/month per node for **2extra-large** (each 2extra-large instance has 5-7 nodes), $1600/month per node for **4extra-large** (each 4extra-large instance has 5-7 nodes), and 6 medium nodes included for FISMA Moderate. More information on the [pricing page]({{ site.baseurl }}{% link _pages/pricing.md %}).
 
 ## When to use
 
