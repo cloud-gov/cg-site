@@ -168,7 +168,7 @@ redirect_from:
             Postgres, MySQL, Oracle database - 1TB included<br><i>$300/month per additional terabyte</i>
           </li>
           <li>
-            Elasticsearch RESTful search and analytics<br><i>$200/month per node for medium (each medium instance has 5-7 nodes provisioned), $400/month per node for large (each large instance has 5-7 nodes provisioned), $600 for extra-large (each extra-large instance has 5-7 nodes provisioned), and 6 medium nodes included for FISMA Moderate</i>
+            Elasticsearch RESTful search and analytics<br><i>$200/month per node for medium (each medium instance has 5-7 nodes provisioned), $400/month per node for large (each large instance has 5-7 nodes provisioned), $600/month for extra-large (each extra-large instance has 5-7 nodes provisioned), $800/month for 2extra-large (each 2extra-large instance has 5-7 nodes provisioned), $1600/month for 4extra-large (each 4extra-large instance has 5-7 nodes provisioned) and 6 medium nodes included for FISMA Moderate</i>
           </li>
           <li>
             Elasticache (Redis) in-memory data store - 10 nodes included<br><i>$200/month per 10 nodes block</i>
