@@ -8,8 +8,8 @@ description: "AWS search: a distributed, RESTful search and analytics engine"
 status: "Production Ready"
 ---
 
-cloud.gov offers [aws-elasticsearch](https://aws.amazon.com/elasticsearch-service/) as a service hosted in AWS Elasticsearch and Opensearch. 
-The default is Elasticsearch version is 7.4
+cloud.gov offers [aws-elasticsearch](https://aws.amazon.com/elasticsearch-service/) as a service hosted in AWS Elasticsearch and Opensearch.
+
 ## Plans
 
 Service Name | Plan Name | Description | Number of nodes |
@@ -28,7 +28,7 @@ Service Name | Plan Name | Description | Number of nodes |
 
 ## Pricing
 
-Elasticsearch RESTful search and analytics 
+Elasticsearch RESTful search and analytics
 $200/month per node for **medium** (each medium instance has 5-7 nodes provisioned), $400/month per node for **large** (each large instance has 5-7 nodes provisioned), $600/month per node for **extra-large** (each extra-large instance has 5-7 nodes provisioned), $800/month per node for **2extra-large** (each 2extra-large instance has 5-7 nodes), $1600/month per node for **4extra-large** (each 4extra-large instance has 5-7 nodes), and 6 medium nodes included for FISMA Moderate. More information on the [pricing page]({{ site.baseurl }}{% link _pages/pricing.md %}).
 
 ## When to use
@@ -45,52 +45,53 @@ cf create-service aws-elasticsearch {service-plan} {service-name}
 
 For example, to create a new instance using the `es-medium` plan named `my-elastic-service`, you would enter the following at the cf CLI:
 
-```
+```shell
 cf create-service aws-elasticsearch es-medium my-elastic-service
 ```
 
-Note: AWS Elasticsearch creation times will vary and is outside of Cloud.gov's control. AWS says approximately 15-30 mins per node. 
-
+Note: AWS Elasticsearch creation times will vary and is outside of Cloud.gov's control. AWS says approximately 15-30 mins per node.
 
 ## Options
 
 name             | required | description              | example
------------------|----------|--------------------------|--------- 
-advanced_options | false    | map for advanced options | see below
-ElasticsearchVersion  | false    | Specifies a supported major version in search (must be in "")   | OpenSearch_1.3 
+-----------------|----------|--------------------------|---------
+`advanced_options` | false | map for advanced options | see below
+`ElasticsearchVersion`  | false | Specifies a supported major version in search (must be in "")   | `OpenSearch_1.3`
 
-### ElasticsearchVersion Options
+### Elasticsearch version
 
-These are the current supported major versions for ElasticsearchVersion:
-- Elasticsearch_7.4
-- OpenSearch_1.3
-- OpenSearch_2.3
+These are the current supported major versions for Elasticsearch version:
 
+- `Elasticsearch_7.4`
+- `OpenSearch_1.3`
+- `OpenSearch_2.3`
 
-If you want to specify the ElasticsearchVersion:
+If you don't specify any option, currently `Elasticsearch_7.4` is used by default.
+
+If you want to specify the Elasticsearch version:
 
 ```sh
-cf create-service aws-elasticSearch \
+cf create-service aws-elasticsearch \
     ${SERVICE_PLAN_NAME} \
     ${SERVICE_NAME} \
     -c '{"ElasticsearchVersion": "OpenSearch_2.3"}'
 ```
+
 ### Advanced Options
 
 These are advanced tuning options that can have significant performance or behavior effects on your cluster. They are specified as key/value pairs under the `advanced_options` map in the core parameters. *Note*: although these all represent numbers, they are all specified as strings. Additionally, although they are dotted, they are not nested keys.
 
-Name                                | description                                                 | default 
+Name                                | description                                                 | default
 ------------------------------------|-------------------------------------------------------------|--------
 indices.fielddata.cache.size        | percentage of JVM heap allocated to field data              | "20"
 indices.query.bool.max_clause_count | maximum number of clauses allowed in a Lucene boolean query | "1024"
 
 examples:
 
-```
-$ cf create-service aws-elasticsearch es-medium my-es-service-1 -c '{"advanced_options": {"indices.fielddata.cache.size": "21"}}'
-$ cf create-service aws-elasticsearch es-medium my-es-service-2 -c '{"advanced_options": {"indices.query.bool.max_clause_count": "1025"}}'
-$ cf create-service aws-elasticsearch es-medium my-es-service-3 -c '{"advanced_options": {"indices.query.bool.max_clause_count": "1025", "indices.fielddata.cache.size": "21"}}'
-
+```shell
+cf create-service aws-elasticsearch es-medium my-es-service-1 -c '{"advanced_options": {"indices.fielddata.cache.size": "21"}}'
+cf create-service aws-elasticsearch es-medium my-es-service-2 -c '{"advanced_options": {"indices.query.bool.max_clause_count": "1025"}}'
+cf create-service aws-elasticsearch es-medium my-es-service-3 -c '{"advanced_options": {"indices.query.bool.max_clause_count": "1025", "indices.fielddata.cache.size": "21"}}'
 ```
 
 Note - if you are using the cf CLI utility on Windows, see the [examples section of the Cloud Foundry documentation](https://cli.cloudfoundry.org/en-US/v6/create-service.html#EXAMPLES) for specific formatting of parameters.
@@ -99,10 +100,9 @@ Note - if you are using the cf CLI utility on Windows, see the [examples section
 
 The `medium` and `large` plans are mainly geared toward customers that need a single index and have coverage with 2 data nodes.  For customers wanting more coverage and more indexes,  the `medium-ha` nd `large-ha` plans scale the cluster to 4 data nodes to offer high availability (HA).
 
-For additional information on configuring your service for high availability when using anything other than the `es-dev` plan, you can refer to [this article from the Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/scalability.html) for an overview of how clusters work. 
+For additional information on configuring your service for high availability when using anything other than the `es-dev` plan, you can refer to [this article from the Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/scalability.html) for an overview of how clusters work.
 
 AWS specific information can be found in the AWS [Developer Guide](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/what-is-amazon-elasticsearch-service.html).  Note - AWS recently changed the name of this service to AWS OpenSearch.
-
 
 ### Connecting to your service instance
 
@@ -114,34 +114,34 @@ By default AWS will create hourly snapshot backups of your Elasticsearch service
 
 For customers that would like to import or export their Elasticsearch data, this can be done following the [AWS Elasticsearch Manual Snapshot Process](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains-snapshots.html)
 
- As part of the process of using manual snapshots, customers will need to assign an existing S3 bucket and the broker will provide a AWS policy ARN to use with the manual S3 snapshot process
+As part of the process of using manual snapshots, customers will need to assign an existing S3 bucket and the broker will provide a AWS policy ARN to use with the manual S3 snapshot process
 
- * Create an instance of the [S3 service]({{ site.baseurl }}{% link _docs/services/s3.md %}):
+- Create an instance of the [S3 service]({{ site.baseurl }}{% link _docs/services/s3.md %}):
 
-     ```sh
-     cf create-service s3 basic my-s3-bucket
-     ```
+    ```sh
+    cf create-service s3 basic my-s3-bucket
+    ```
 
- * Create a [service key](https://docs.cloudfoundry.org/devguide/services/service-keys.html) to access S3 credentials:
+- Create a [service key](https://docs.cloudfoundry.org/devguide/services/service-keys.html) to access S3 credentials:
 
-     ```sh
-     cf create-service-key my-s3-bucket my-key
-     ```
+    ```sh
+    cf create-service-key my-s3-bucket my-key
+    ```
 
- * Get your s3 bucket name:
+- Get your s3 bucket name:
 
     ```sh
     s3_credentials=$(cf service-key my-s3-bucket my-key | tail -n +3)
     s3_bucket=$(echo "${s3_credentials}" | jq -r '.credentials.bucket')
     ```
 
- * Assign your new bucket to your Elasticsearch instance:
+- Assign your new bucket to your Elasticsearch instance:
 
     ```sh
     cf create-service-key my-elastic-service my-key -c '{"bucket":"${s3_bucket}"}'
     ```
 
- * Find your AWS ARN for your AWS policy to reference for your backup:
+- Find your AWS ARN for your AWS policy to reference for your backup:
 
     ```sh
     es_arn=$(cf service-key my-elastic-service my-key | tail -n +3)
@@ -154,7 +154,7 @@ For customers that would like to import or export their Elasticsearch data, this
 
 ## Encryption
 
-Every non-dev AWS Elasticsearch instance configured through cloud.gov is [encrypted at rest](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/encryption-at-rest.html). We use the industry standard AES-256 encryption algorithm to encrypt your data on the server that hosts your AWS Elasticsearch instance. 
+Every non-dev AWS Elasticsearch instance configured through cloud.gov is [encrypted at rest](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/encryption-at-rest.html). We use the industry standard AES-256 encryption algorithm to encrypt your data on the server that hosts your AWS Elasticsearch instance.
 
 Service Name | Plan Name | Encryption at Rest |
 ------------ | --------- | --------------- |
@@ -162,12 +162,12 @@ Service Name | Plan Name | Encryption at Rest |
 `aws-elasticsearch` | `es-medium` | Yes |
 `aws-elasticsearch` | `es-medium-ha` | Yes |
 
-Note: If you have access to larger service plans, they will mirror same settings as `es-medium` or `es-medium-ha`. 
+Note: If you have access to larger service plans, they will mirror same settings as `es-medium` or `es-medium-ha`.
 
 ## Rotating credentials
 
 You can rotate credentials by creating a new instance and [deleting the existing instance](https://cli.cloudfoundry.org/en-US/cf/delete-service.html). If this is not an option, email [cloud.gov support](mailto:support@cloud.gov) to request rotating the credentials manually.
 
-### The broker in GitHub	
+### The broker in GitHub
 
 You can find the broker here: [https://github.com/cloud-gov/aws-broker](https://github.com/cloud-gov/aws-broker).
