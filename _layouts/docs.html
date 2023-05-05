@@ -16,17 +16,17 @@ This template is for a single page that does not have a date associated with it.
           {% include pages/sidenav.html %}
       {% endcase %}
 
-      <div class="usa-layout-docs__main desktop:grid-col-8 usa-prose bg-white padding-y-8 padding-x-4">
+      <div id="main-content" class="usa-layout-docs__main desktop:grid-col-8 usa-prose bg-white padding-y-8 padding-x-4">
         <h1>{{ page.title }}</h1>
         {{ content }}
-        
-        
+
+
         <div class="grid-row">
           <div class="grid-col flex-4"></div>
           <div class="grid-col flex-1"><p><a href="{{ site.github_url }}/edit/{{ site.github_branch }}/{{ page.relative_path }}">Suggest edits</a></p></div>
         </div>
-        
-        
+
+
       </div>
     </div>
   </div>

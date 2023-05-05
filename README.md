@@ -20,7 +20,7 @@ This site uses a customized [U.S. Web Design System](https://v2.designsystem.dig
 
 ## Key Functionality
 This repository contains the following examples and functionality:
- 
+
 ✅  Publish blog posts, press releases, announcements, etc. To modify this code, check out `blog/index.html`, which manages how the posts are listed. You should then check out `_layouts/post.html` to see how individual posts are structured.
 
 ✅ Publish single one-off pages. Instead of creating lots of folders throughout the root directory, you should put single pages in `_pages` folder and change the `permalink` at the top of each page. Use sub-folders only when you really need to.
@@ -49,26 +49,24 @@ permalink: /document-with-sidenav
 ---
 ```
 
-✅ Enable search with [Search.gov](https://search.gov) by adding option to `_config.yml`. 
+✅ Enable search with [Search.gov](https://search.gov) by adding option to `_config.yml`.
 
 ```
 ---
 searchgov:
   endpoint: https://search.gov  # You should not change this.
-  affiliate: pages-uswds-example # replace this with your search.gov account 
+  affiliate: pages-uswds-example # replace this with your search.gov account
   access_key: your-access-key # This is placeholder. Not private.
   inline: true #this renders the results on the same domain. Otherwise, it will render the results in the search.gov domain
 ---
 ```
 
 ## How to edit cloud.gov content
-- Non-developers should focus on editing markdown content in the `_posts`, `_docs`, and `_pages` folder. Generally most of the cloud.gov content will be in the _docs file. 
+- Non-developers should focus on editing markdown content in the `_posts`, `_docs`, and `_pages` folder. Generally most of the cloud.gov content will be in the _docs file.
 
 - Pricing updates can go directly into `_data/pricing.yml` file and if any of the aws services need to be updated that can occur in the `_data/services.yml` file.
 
 - We try to keep configuration options to a minimum so you can easily change functionality. You should review `_config.yml` to see the options that are available to you. There are a few values on top that you **need** to change. They refer to the agency name and contact information. The rest of `_config.yml` has a range of more advanced options.
-
-- The contents inside `_assets/` folder store your Javascript, SCSS/CSS, images, and other media assets are managed by  [jekyll-assets](https://github.com/envygeeks/jekyll-assets).  Assets are combined, compressed, and automatically available in your theme
 
 - If you look at `package.json` you will see that the `npm run pages` command that will run when running on the cloud.gov Pages platform.
 
@@ -80,7 +78,7 @@ searchgov:
     - The `homepage` can be editted more directly by manipulating the `.html` in `home.html`
     - The `pricing` page is mostly edited with the `pricing.html`
     - The `getting-started` page is in the `_pages/sign-up.md` folder.
-    
+
 - `_layouts/` may require the least amount of editing of all the files since they are primarily responsible for printing the content.
 
 - `search/index.html` is used by search.gov.
@@ -89,22 +87,31 @@ searchgov:
 
 ## Updating content on your own computer
 
-    $ git clone https://github.com/cloud-gov/cg-site
-    $ cd cg-site
+```shell
+    git clone https://github.com/cloud-gov/cg-site
+    cd cg-site
+```
 
 Note that when built by cloud.gov Pages, `npm run pages` is used instead of the
 `build` script.
 
 ### Install dependencies and run app
-    $ npm install
-    $ bundle install
-    $ npm start
 
-Open your web browser to [localhost:4000](http://localhost:4000/) to view your
+```shell
+    nvm use
+    npm install
+    bundle install
+    npm start
+```
+
+Open your web browser to [localhost:3000](http://localhost:3000/) to view your
 site.
 
 ### Testing
-    $ npm test
+
+```shell
+    npm test
+```
 
 ### Link checking
 
@@ -118,7 +125,7 @@ Default URL patterns that are ignored by `lychee` can be found in [`.lycheeignor
 
 First, install `lychee`:
 
-```
+```shell
 brew install lychee
 ```
 
@@ -126,13 +133,13 @@ To run `lychee` locally, use the `link-checker` npm script:
 
 ```shell
 # can use any globbing pattern or filepath
-GITHUB_TOKEN=<your-github-token> npm run link-checker -- ./_site/**/*.html 
+GITHUB_TOKEN=<your-github-token> npm run link-checker -- ./_site/**/*.html
 ```
 
 You can also use multiple patterns/filepaths:
 
 ```shell
-GITHUB_TOKEN=<your-github-token> npm run link-checker -- ./*.md ./_site/**/*.html 
+GITHUB_TOKEN=<your-github-token> npm run link-checker -- ./*.md ./_site/**/*.html
 ```
 
 Including a `GITHUB_TOKEN` environment variable will reduce the number of 429 responses returned by GitHub, since
@@ -145,7 +152,7 @@ review and address any errors.
 
 - [Jekyll](https://jekyllrb.com/docs/) - The primary site engine that builds your code and content.
 - [Front Matter](https://jekyllrb.com/docs/frontmatter) - The top of each page/post includes keywords within `--` tags. This is meta data that helps Jekyll build the site, but you can also use it to pass custom variables.
-- [U.S. Web Design System v 2.0](https://v2.designsystem.digital.gov) 
+- [U.S. Web Design System v 2.0](https://v2.designsystem.digital.gov)
 
 ## Contributing
 

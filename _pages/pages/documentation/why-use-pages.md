@@ -18,7 +18,7 @@ Pages serves our fellow federal partners by expertly managing the backend and co
 
 - **Easy previews and content approvals** Pages builds out draft updates to your site at a special preview URL. This enables your team to know their changes will show up correctly when pushed to the main site, and makes it easy to get signoff on content updates from stakeholders.
 
-[![Diagram of Pages architecture]({{site.baseurl}}/assets/pages/images/how-pages-works-diagram.png)]({{site.baseurl}}/assets/pages/documents/how-pages-works-diagram.pdf)
+[![Diagram of Pages architecture]({{site.baseurl}}/assets/images/pages/how-pages-works-diagram.png)]({{site.baseurl}}/assets/documents/how-pages-works-diagram.pdf)
 
 ## Why static websites?
 
@@ -34,7 +34,7 @@ Pages generates static websites instead of using a more complex content manageme
 
 ## What can I build with Pages?
 
-Pages supports plain files and certain [site engines]({{site.baseurl}}/pages/documentation/supported-site-engines), and provides [ready-to-use Jekyll templates]({{site.baseurl}}/pages/documentation/templates/) for several common website types.
+Pages supports plain files and certain [site engines]({{site.baseurl}}/pages/documentation/supported-site-engines), and provides [starter templates]({{site.baseurl}}/pages/documentation/templates/) to deploy a site.
 
 Possible sites include:
 

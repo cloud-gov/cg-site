@@ -53,16 +53,16 @@ Logs are currently retained for 180 days, and you will only see data for applica
 
 After logging in, you'll see the App Overview dashboard.
 
-{% asset app-overview.png alt="App Overview dashboard" %}
+!["App Overview dashboard"]({{site.baseurl}}/assets/images/content/app-overview.png)
 
 The default time period is "Last 15 minutes". To change the time period of data that you are viewing, or to turn on auto-refresh, click on the time period in the top right menu.
 
-{% asset time-period.png alt="Time period selection" %}
+!["Time period selection"]({{site.baseurl}}/assets/images/content/time-period.png)
 
 You can also view several dashboards that present different visualizations of your log data. You can select these by going to "Dashboard" at left and clicking "Open" in the top toolbar.
 
 
-{% asset select-dashboard.png alt="Select dashboards" %}
+!["Select dashboards"]({{site.baseurl}}/assets/images/content/select-dashboard.png)
 
 These visualizations are provided via Kibana, which has a [user guide](https://www.elastic.co/guide/en/kibana/current/index.html) that explains more about how to use it and customize your views.
 
@@ -76,7 +76,7 @@ If your application logs are output in JSON, they will be easily searchable in [
 
 ## How to automatically copy your logs elsewhere
 
-If you want to set up your own storage for your application logs, you can set up [a "log drain" service](https://docs.cloudfoundry.org/devguide/services/log-management.html) that sends the logs to S3 or your preferred location.
+If you want to set up your own storage for your application logs, you can set up [a "log drain" service](https://docs.cloudfoundry.org/devguide/services/log-management.html) that sends the logs to your preferred location.
 
 Create the user provided service and point it toward the endpoint where you want to send your logs: 
 

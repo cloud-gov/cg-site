@@ -25,7 +25,7 @@ You should not include any passwords or sensitive environment variables in your 
 
 ### Report a vulnerability
 
-We welcome vulnerability reports [according to our vulnerability disclosure policy](https://18f.gsa.gov/vulnerability-disclosure-policy/), which includes how to best contact us for this kind of information.
+We welcome vulnerability reports [according to our vulnerability disclosure policy](https://www.gsa.gov/vulnerability-disclosure-policy), which includes how to best contact us for this kind of information.
 
 ### Questions from the public and industry
 

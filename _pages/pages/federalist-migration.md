@@ -74,7 +74,7 @@ title: cloud.gov Pages - Federalist Migration
         </p>
       </div>
       <div class="tablet:grid-col-6 usa-prose">
-        <img alt="screenshot of pages.cloud.gov website login page" src="{{site.baseurl}}/assets/pages/images/federalist-migration-login.png"/>
+        <img alt="screenshot of pages.cloud.gov website login page" src="{{site.baseurl}}/assets/images/pages/federalist-migration-login.png"/>
       </div>
     </div>
     <div class="grid-row grid-gap margin-top-4">
@@ -87,7 +87,7 @@ title: cloud.gov Pages - Federalist Migration
         </p>
       </div>
         <div class="tablet:grid-col-6 usa-prose">
-        <img alt="screenshot of pages.cloud.gov website account migration page" src="{{site.baseurl}}/assets/pages/images/federalist-migration-migrate.png"/>
+        <img alt="screenshot of pages.cloud.gov website account migration page" src="{{site.baseurl}}/assets/images/pages/federalist-migration-migrate.png"/>
       </div>
     </div>
   </div>

@@ -1,14 +1,14 @@
-  
+
 items:
-  - title: Jekyll - U.S. Web Design System v2.0
-    docs_url: https://github.com/cloud-gov/pages-uswds-jekyll
-    preview_url: https://uswds-jekyll.pages.cloud.gov/
-    img: /assets/pages/images/templates/federalist-jekyll-uswds-template.png
+  - title: Eleventy (11ty) - U.S. Web Design System v3.0
+    docs_url: https://github.com/cloud-gov/pages-uswds-11ty
+    preview_url: https://uswds-11ty.pages.cloud.gov/
+    img: https://pages.cloud.gov/images/pages-uswds-v3-11ty-thumbnail.png
     order: 2
     summary: ""
   - title: Gatsby - U.S. Web Design System v2.0
     docs_url: https://github.com/cloud-gov/pages-uswds-gatsby
     preview_url: https://uswds-gatsby.pages.cloud.gov/
-    img: /assets/pages/images/templates/federalist-gatsby-uswds-template.png
+    img: https://pages.cloud.gov/images/pages-uswds-v2-gatsby-thumbnail.png
     order: 3
     summary: ""

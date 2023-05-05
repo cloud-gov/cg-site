@@ -23,16 +23,14 @@ We use GitHub to manage our work on Pages. The main code repository for the Page
 
 ### Templates
 
-- **[federalist-uswds-template](https://github.com/18f/federalist-uswds-template/)** A Pages template that uses the U.S. Web Design Standards Jekyll theme.
-- **[federalist-report-template](https://github.com/18F/federalist-uswds-template/tree/report-config)** A Pages template that offers an easy to use setup for hosting multiple pages about a recent report or order. This template code can be found in the report-config branch under the [federalist-uswds-template](https://github.com/18f/federalist-uswds-template/) repo.
-- **[federalist-landing-page-template](https://github.com/18F/federalist-landing-page-template)** A single page meant to host information about a new initiative or report.
-- **[federalist-modern-team-template](https://github.com/18F/federalist-modern-team-template)** A simple site to showcase the work of an organization with a few different page types.
+- **[pages-uswds-11ty](https://github.com/cloud-gov/pages-uswds-11ty/)** A Pages template that uses the U.S. Web Design Standards version 3 with 11ty.
+- **[pages-uswds-gatsby](https://github.com/cloud-gov/pages-uswds-gatsby/)** A Pages template that uses the U.S. Web Design Standards version 2 with Gatsby.
 
 ## Architecture
 
 Pages is located on cloud.gov's GovCloud environment, which has [received FedRAMP certification](https://marketplace.fedramp.gov/index.html#/product/18f-cloudgov). [This blog post](https://18f.gsa.gov/2017/02/02/cloud-gov-is-now-fedramp-authorized/) explains more about FedRAMP.
 
-The diagram for Federalist's architecture is below. It's not intended for general audiences and is focused on concisely showing all of the components of Federalist as required for compliance. Please contact us with any questions: we aren't expecting this diagram to be useful by itself to gain an understanding of Federalist. [![Diagram of Federalist architecture]({{site.baseurl}}/assets/pages/images/Federalist System Diagram 3-8-18.png)]({{site.baseurl}}/assets/pages/images/Federalist System Diagram 3-8-18.png)
+The diagram for Federalist's architecture is below. It's not intended for general audiences and is focused on concisely showing all of the components of Federalist as required for compliance. Please contact us with any questions: we aren't expecting this diagram to be useful by itself to gain an understanding of Federalist. [![Diagram of Federalist architecture]({{site.baseurl}}/assets/images/pages/Federalist System Diagram 3-8-18.png)]({{site.baseurl}}/assets/images/pages/Federalist System Diagram 3-8-18.png)
 
 
 ### https://pages.cloud.gov

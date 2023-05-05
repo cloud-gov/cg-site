@@ -20,7 +20,7 @@ This update improves the security of these accounts because you're now using you
 
 ### Use the new version of `cf-ssh`
 
-If you use [`cf-ssh` for running one-off commands](https://docs.cloud.gov/getting-started/one-off-tasks/#cf-ssh), we released [version 3 on June 2](https://github.com/18F/cf-ssh/releases/). Please download and use that latest version.
+If you use [`cf-ssh` for running one-off commands](https://cloud.gov/docs/management/using-ssh/), we released [version 3 on June 2](https://github.com/18F/cf-ssh/releases/). Please download and use that latest version.
 
 If you haven't updated `cf-ssh`, you may get this error when you try to use it:
 

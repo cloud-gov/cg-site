@@ -11,7 +11,7 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
 
 ### Fixed
 - TLS certificates (for custom domains) provided by the [CDN Route service]({{ site.baseurl }}/docs/services/cdn-route) are now automatically obtained with [less risk of rate-limiting](https://cloudgov.statuspage.io/incidents/z49pkl4ms21j).
-- We improved monitoring and reliability for the [Redis]({{ site.baseurl }}/docs/services/redis) and [Elasticsearch](https://github.com/18F/cg-site/blob/6418e8e933f887896a102d8575f1c7af468d1d2f/content/docs/services/elasticsearch24) services, enabling them to automatically restart if non-responsive.
+- We improved monitoring and reliability for the [Redis]({{ site.baseurl }}/docs/services/redis) and [Elasticsearch](https://github.com/cloud-gov/cg-site/blob/6418e8e933f887896a102d8575f1c7af468d1d2f/content/docs/services/elasticsearch24.md) services, enabling them to automatically restart if non-responsive.
 
 ### Removed
 - cloud.gov documentation no longer provides instructions for using the deprecated East/West environment, because all customer applications have migrated to the GovCloud environment.

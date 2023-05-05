@@ -10,7 +10,7 @@ redirect_from:
 All operations performed on organizations and spaces are logged as `events`.  This includes over 75 distinct events which describe the action taken and the user who authorized the action.  Event logs are useful for continuous security, compliance and monitoring actions taken on the system.  For example, you can use event logs from cloud.gov to help meet [the Audit and Accountability (AU) requirements](https://nvd.nist.gov/800-53/Rev4/family/Audit%20and%20Accountability) of the NIST 800-53 family of controls.
 
 To audit events, you'll need the `Org Manager` or `Org Auditor` roles for your organization, as discussed
-in [managing teammates]({{site.baseurl}}{% link _docs/orgs-spaces/roles.md %}).
+in [managing teammates]({% link _docs/orgs-spaces/roles.md %}).
 
 There are two way of auditing events. The quickest way is to use the [cloud.gov dashboard](https://dashboard.fr.cloud.gov/cloud-foundry/) and navigate to `Cloud Foundry` on the left navigation. Then select your relevant `Organization`. From there you can view the users and their roles from the `Users` menu, or all the recent events from the `Events` menu. There's no ability to view _logins_ as such, since they're global events, not specific to any organization.
 
@@ -18,7 +18,7 @@ Or you use the Cloud Foundry command line tooling. The remainder of this guide u
 
 To use the following commands you will need:
 
-* The `cf` command line tool, as described in our [getting started guide]({{site.baseurl}}{% link _docs/getting-started/setup.md %})
+* The `cf` command line tool, as described in our [getting started guide]({% link _docs/getting-started/setup.md %})
 * The `jq` command line tool, available for MacOS (`brew install jq`) or [Windows](https://stedolan.github.io/jq/download/)
 
 ## All Events as JSON

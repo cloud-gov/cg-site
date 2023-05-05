@@ -26,29 +26,29 @@ title: cloud.gov Pages - Features
   </div>
   <div class="grid-row grid-gap usa-prose text-center">
     <div class="grid-col-4 padding-y-2">
-      <img alt="" src="{{site.baseurl}}/assets/pages/images/icons/icon-rocket-color.svg">
+      <img alt="" src="{{site.baseurl}}/assets/images/pages/icon-rocket-color.svg">
       <h4 class="margin-top-0">Deploy Quickly</h4>
       <p>If your code is already on GitHub, Pages can securely deploy a website from your repository in minutes.</p>
-    </div> 
+    </div>
     <div class="grid-col-4 padding-y-2">
-      <img alt=""  src="{{site.baseurl}}/assets/pages/images/icons/icon-layout-color.svg">
+      <img alt=""  src="{{site.baseurl}}/assets/images/pages/icon-layout-color.svg">
       <h4 class="margin-top-0">Accessible templates</h4>
       <p><a href="{{site.baseurl}}/pages/documentation/templates/">Our 508-compliant website templates</a> help you kickstart your design process.</p>
     </div>
     <div class="grid-col-4 padding-y-2">
-      <img class="display-block margin-x-auto" alt="" src="{{site.baseurl}}/assets/pages/images/icons/icon-badge-color.svg">
+      <img class="display-block margin-x-auto" alt="" src="{{site.baseurl}}/assets/images/pages/icon-badge-color.svg">
       <h4 class="margin-top-0">Customization</h4>
-      <p>Use a site generator like Jekyll, Hugo, Gatsby, or other tools to deploy custom site designs through Pages.</p>
+      <p>Use a site generator like 11ty, Hugo, Gatsby, Jekyll, or other tools to deploy custom site designs through Pages.</p>
     </div>
   </div>
   <div class="grid-row grid-gap usa-prose text-center">
     <div class="grid-col-4 padding-y-2 grid-offset-2">
-      <img alt="" src="{{site.baseurl}}/assets/pages/images/icons/icon-clockback-color.svg">
+      <img alt="" src="{{site.baseurl}}/assets/images/pages/icon-clockback-color.svg">
       <h4 class="margin-top-0">Simple version control</h4>
       <p>Use GitHub, a web-based hosting service with built-in version control, for real-time publishing and easy collaboration.</p>
-    </div> 
+    </div>
     <div class="grid-col-4 padding-y-2">
-      <img alt="" src="{{site.baseurl}}/assets/pages/images/icons/icon-two-squares-color.svg">
+      <img alt="" src="{{site.baseurl}}/assets/images/pages/icon-two-squares-color.svg">
       <h4 class="margin-top-0">Reusable and public</h4>
       <p>Pages source code is open source and in the public domain. Share code with other agencies and vendors also using Pages.</p>
     </div>

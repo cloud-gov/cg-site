@@ -1,4 +1,4 @@
-ruby '>= 2.7'
+ruby '~> 3.1'
 
 source "https://rubygems.org"
 
@@ -10,9 +10,7 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "~> 4.0"
-gem "execjs", "2.7.0" # https://github.com/rails/execjs/issues/99
-gem "autoprefixer-rails"
+gem "jekyll", "~> 4.3.2"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
@@ -21,7 +19,6 @@ group :jekyll_plugins do
   gem 'jekyll-paginate-v2', "3.0.0"
   gem 'jekyll-sitemap'
   gem 'jekyll-seo-tag'
-  gem 'jekyll-assets', git: "https://github.com/envygeeks/jekyll-assets"
   gem "jekyll-last-modified-at"
 end
 

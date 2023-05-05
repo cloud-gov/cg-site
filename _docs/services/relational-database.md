@@ -109,7 +109,7 @@ Name               | Description                                                
 `version`          | Specifies a supported major version in RDS (must be in quotes) | AWS RDS Latest Default |
 `backup_retention_period` | Specifies a number of days to retain daily snapshots. | 14           |
 `binary_log_format` | Specifies the format for [MySQL binary logging](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQL.BinaryFormat.html). **Only supported for MySQL database plans**. Valid options: `ROW`, `STATEMENT`, `MIXED`. | ---           |
-`enable_pg_cron` | Boolean to enable [`pg_cron` extension on PostgreSQL databases](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL_pg_cron.html) (requires PostgreSQL 12.5 and above) | false           |
+`enable_pg_cron` | Boolean to enable [`pg_cron` extension on PostgreSQL databases](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL_pg_cron.html) (requires PostgreSQL 12.5 and above; see example below for details) | false           |
 
 A couple of notes regarding the optional `version` parameter:
 
@@ -167,6 +167,8 @@ cf create-service aws-rds \
     ${SERVICE_NAME} \
     -c '{"enable_pg_cron": true}'
 ```
+
+After running this command, you must [finish setting up pg_cron on your instance](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/PostgreSQL_pg_cron.html#PostgreSQL_pg_cron.enable). You can use [cf-service-connect](https://github.com/cloud-gov/cf-service-connect) to connect to your instance, or connect via an application. Note that you must target the `postgres` database. To do this via `cf-service-connect`, run `\c postgres` in the psql shell.
 
 To specify a major version of a new instance, e.g., PostgreSQL version 11 (please note the double quotes (`"`) around the version number; they are required):
 
@@ -283,6 +285,38 @@ Please note that you may need to request an instance reboot after making these c
 
 **You cannot update an existing instance to a new major version** with the `update-service` command.  If you'd like to update your existing database instance to a new major version, please email [support@cloud.gov][support] for assistance.
 
+### Rotate your credentials
+
+> **NOTE: Rotating your database credentials will likely incur some downtime for your application.** [While AWS documentation states that existing connections using your current password are not dropped](https://repost.aws/knowledge-center/reset-master-user-password-rds), depending on how your application handles database connections you could see errors
+trying to establish new connections until the application is restaged with the new credentials.
+
+To change the password of your database instance:
+
+```shell
+cf update-service ${SERVICE_NAME} \
+    -c '{"rotate_credentials": true}'
+```
+
+Once that command has finished running, you need to unbind your database instance from your application and re-bind it so that the application receives the updated credentials. **Please note that you may want to wait about a minute between running `cf unbind-service` and `cf bind-service`** otherwise you may get an error indicating that the database is not ready.
+
+```shell
+cf unbind-service <application-name> ${SERVICE_NAME} # wait a minute or so after running this
+cf bind-service <application-name> ${SERVICE_NAME}
+```
+
+You will also need to delete and recreate any service keys for your database instance to incorporate the new credentials into the keys:
+
+```shell
+cf delete-service-key ${SERVICE_NAME} <service-key-name>
+cf create-service-key ${SERVICE_NAME} <service-key-name>
+```
+
+Lastly, you need to restage your application so that it uses the updated credentials (tip: you can use the `--strategy rolling` flag to ensure your application instances remain available to handle traffic):
+
+```shell
+cf restage <application-name> --strategy rolling
+```
+
 ### Bind to an application
 
 To use the service instance from your application, bind the service instance to the application. For an overview of this process and how to retrieve the credentials for the service instance from environment variables, see [Bind a Service Instance](https://docs.cloudfoundry.org/devguide/services/managing-services.html#bind) and the linked details at [Delivering Service Credentials to an Application](https://docs.cloudfoundry.org/devguide/services/application-binding.html).
@@ -335,7 +369,7 @@ The `cg-manage-rds` application is meant to simplify and streamline import, expo
 To perform a basic export of a postgres instance using the compressed format:
 
 ```sh
-$ cg-manage-rds export -o "-F c" -f ./backup.pg ${SERVICE_NAME}
+cg-manage-rds export -o "-F c" -f ./backup.pg ${SERVICE_NAME}
 ```
 
 This will create an export using `pg_dump` named `backup.pg`. Other options for the pg_dump command can be pased as a string with the `-o` option.
@@ -346,7 +380,7 @@ This is a simple example of importing a previous export to database service inst
 By default `cg-manage-rds` adds options to remove ownership and create new objects to make porting easy.
 
 ```sh
-$ cg-manage-rds import -o "-F c" -f ./backup.pg ${SERVICE_NAME}
+cg-manage-rds import -o "-F c" -f ./backup.pg ${SERVICE_NAME}
 ```
 
 #### Cloning a service instance
@@ -354,7 +388,7 @@ $ cg-manage-rds import -o "-F c" -f ./backup.pg ${SERVICE_NAME}
 This is a simple example of replicating database service instance to another instance. The destination database must be created beforehand. The export is downloaded locally as in the `export` command.
 
 ```sh
-$ cg-manage-rds clone ${SERVICE_NAME_SOURCE} ${SERVICE_NAME_DEST}
+cg-manage-rds clone ${SERVICE_NAME_SOURCE} ${SERVICE_NAME_DEST}
 ```
 
 ### Using cf-service-connect plugin
@@ -376,7 +410,7 @@ Name: ...
 If this fails to open a SSH tunnel, try deleting any existing `connect-to-service` service keys first:
 
 ```sh
-$ cf delete-service-key ${SERVICE_NAME} SERVICE_CONNECT
+cf delete-service-key ${SERVICE_NAME} SERVICE_CONNECT
 ```
 
 Then try the previous step again.
@@ -396,16 +430,15 @@ This will create the `backup.pg` file on your local machine in whatever your cur
 When you are finished, you can terminate the SSH tunnel.  You should also clean up the `SERVICE_KEY` created by the cf-service-connect plugin so that you are able to reconnect in the future:
 
 ```sh
-$ cf delete-service-key ${SERVICE_NAME} SERVICE_CONNECT
+cf delete-service-key ${SERVICE_NAME} SERVICE_CONNECT
 ```
-
 
 ### Restoring to a local database
 
 Continuing with the PostgreSQL example and the `backup.pg` file, load the dump into your local database using the [pg_restore](https://www.postgresql.org/docs/current/static/app-pgrestore.html) tool. If objects exist in a local copy of the database already, you might run into inconsistencies when doing a `pg_restore`. This pg_restore invocation does not drop all of the objects in the database when loading the dump:
 
 ```sh
-$ pg_restore --clean --no-owner --no-acl --dbname={database name} backup.pg
+pg_restore --clean --no-owner --no-acl --dbname={database name} backup.pg
 ```
 
 ## Encryption
@@ -420,14 +453,13 @@ You can rotate credentials by creating a new instance and [deleting the existing
 
 Since Oracle is not open-source there are fewer resources available online to get started working with OracleDB and Cloud Foundry. We provide a few tips here.  This example worked with `ojdbc8.jar`, and will likely needs some tweaks for `ojdbc10.jar`.
 
-
 ### Demo with Spring Music and Oracle
 
 To demonstrate the core Cloud Foundry / OracleDB functionality, we'll start by deploying the
 [Spring Music app](https://github.com/cloudfoundry-samples/spring-music).
 
 First, though, one needs the proprietary Oracle database drivers.
-Visit the Oracle drivers' site at http://www.oracle.com/technetwork/database/application-development/jdbc/downloads/index.html and download the `ojdbc8.jar` from the latest available release. You will need to have a valid Oracle profile account for the download.
+Visit the Oracle drivers' site at <http://www.oracle.com/technetwork/database/application-development/jdbc/downloads/index.html> and download the `ojdbc8.jar` from the latest available release. You will need to have a valid Oracle profile account for the download.
 
 Then, clone the repository and make a `libs/` directory:
 
@@ -446,6 +478,7 @@ Edit `build.gradle`, look for the following near line 60:
     // compile files('libs/ojdbc8.jar')
     // compile files('libs/ojdbc7.jar')
 ```
+
 and remove the `//` comment from the line for `libs/ojdbc8.jar`. Save the `build.gradle` file.
 
 After installing the 'cf' [command-line interface for Cloud Foundry](http://docs.cloudfoundry.org/cf-cli/), and logging in to cloud.gov, `cf login --sso -a https://api.fr.cloud.gov`, the application can be built and pushed using these commands:
@@ -504,7 +537,6 @@ Then you can use SQLPLUS commands like `SELECT table_name FROM user_tables;`
 ## Connect to databases without use of `connect-to-service`
 
 Example for app name `hello-doe`
-
 
 ```
 myapp_guid=$(cf app --guid hello-doe)

@@ -19,7 +19,7 @@ This document outlines cloud.gov's internal process for responding to security i
 
 *If you're responding to an incident, [here's our IR checklist]({{ site.baseurl }}{% link _docs/ops/security-ir-checklist.md %}) as a short, actionable companion to this guide.*
 
-(If you're a member of the public who has noticed something in cloud.gov that may be a security problem, please see [our vulnerability disclosure policy and reporting process](https://18f.gsa.gov/vulnerability-disclosure-policy/). As it explains, we want security researchers to feel comfortable reporting vulnerabilities they’ve discovered, as set out in that policy, so that we can fix them and keep our information safe.)
+(If you're a member of the public who has noticed something in cloud.gov that may be a security problem, please see [our vulnerability disclosure policy and reporting process](https://www.gsa.gov/vulnerability-disclosure-policy). As it explains, we want security researchers to feel comfortable reporting vulnerabilities they’ve discovered, as set out in that policy, so that we can fix them and keep our information safe.)
 
 ## Overview
 
@@ -59,7 +59,7 @@ For full details, read on.
 
 ### Initiate
 
-An incident begins when someone becomes aware of a potential incident. We define "incident" broadly, following [NIST SP 800-61](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf), as "a violation or imminent threat of violation of computer security policies, acceptable use policies, or standard security practices" (6). This is a deliberately broad definition, designed to encompass any scenario that might threaten the security of cloud.gov.
+An incident begins when someone becomes aware of a potential incident. We define "incident" broadly, following [NIST SP 800-61](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf), as "a violation or imminent threat of violation of computer security policies, acceptable use policies, or standard security practices" (6). This is a deliberately broad definition, designed to encompass any scenario that might threaten the security of cloud.gov.
 
 When a person outside the cloud.gov team (the *reporter*) notices a cloud.gov-related incident, they should begin reporting it by using the [TTS incident response process](https://handbook.tts.gsa.gov/general-information-and-resources/tech-policies/security-incidents/), and then post about it in [`#cloud-gov`](https://gsa-tts.slack.com/messages/cloud-gov/) using `@cg-team`. If they don't get acknowledgment from the cloud.gov team right away, they should escalate by contacting the cloud.gov leads directly until they receive acknowledgment of their report.
 
@@ -133,7 +133,7 @@ This sitrep should be:
 
 - Posted in [`#incident-response`](https://gsa-tts.slack.com/messages/incident-response/)
 - Emailed to `gsa-ir@gsa.gov` and `devops@gsa.gov`
-- Emailed to [FedRAMP ISSO (JAB TR reps)][FedRAMP ISSO TRR reps], cc: info@fedramp.gov and cloud-gov-compliance@gsa.gov. They require daily updates on open incidents.
+- Emailed to [FedRAMP ISSO (JAB TR reps)][FedRAMP ISSO TRR reps], cc: fedramp_security@gsa.gov and cloud-gov-compliance@gsa.gov. They require daily updates on open incidents.
 - Sent (email or Slack) to external stakeholders, if applicable and relevant
 
 #### Comms at the Assess phase
@@ -155,7 +155,7 @@ At this point, we're trying to fix the issue! Remediation will be very situation
 
 - Containment should also preserve evidence. For example, if there's a
   credential leak, we should _securely preserve_  the leaked credentials while
-  we also ensure they are rotated, and scrubbed from the record. 
+  we also ensure they are rotated, and scrubbed from the record.
 
 - Remediation may require service disruption. If it does, the team should proceed in a different way depending on the severity:
 
@@ -177,7 +177,7 @@ Once the incident is no longer active — i.e. the breach has been contained, th
 
 - Set the status of the incident to "resolved".
 - Send a final sitrep to stakeholders.
-- Email after-action to [FedRAMP ISSO (JAB TR reps)][FedRAMP ISSO TRR reps], cc: info@fedramp.gov and cloud-gov-compliance@gsa.gov
+- Email after-action to [FedRAMP ISSO (JAB TR reps)][FedRAMP ISSO TRR reps], cc: fedramp_security@gsa.gov and cloud-gov-compliance@gsa.gov
 - Thank everyone involved for their service!
 
 #### Comms at the Remediate phase

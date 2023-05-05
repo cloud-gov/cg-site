@@ -14,7 +14,7 @@ cloud.gov is built and maintained by a team within the General Services administ
 
 cloud.gov is an open source project based on [Cloud Foundry](https://www.cloudfoundry.org/) with additional components built by our team and other community members. This includes using open source for security: We use a combination of [ClamAV](https://www.clamav.net), [AIDE](https://aide.github.io/) and [Snort](https://www.snort.org) on each system, with [OpenZAP](https://www.zaproxy.org) to do blackbox testing.  We also run [Prometheus](https://prometheus.io) and a full [ELK stack](https://www.elastic.co/elk-stack) with [ElastAlert](https://github.com/Yelp/elastalert) for additional monitoring and alerting. We do use a commercial tool for [CIS benchmarking](https://www.cisecurity.org/cis-benchmarks/) and further blackbox testing. We welcome you to audit our security or contribute to it — or to make any other kind of contribution, from documentation to design.
 
-If you'd like to contribute security research, see our [vulnerability disclosure policy](https://18f.gsa.gov/vulnerability-disclosure-policy/).
+If you'd like to contribute security research, see our [vulnerability disclosure policy](https://www.gsa.gov/vulnerability-disclosure-policy).
 
 If you're interested in contributing to cloud.gov but not sure where to start, or if you have questions about contributing, feel free to join the [18F DevOps or open source chat channels](https://chat.18f.gov/) and explain your question. You can also open an issue with your question in a relevant repository.
 
@@ -66,7 +66,6 @@ Configuration/deployment support:
 
 Deployment pipelines:
 
-- [Admin user interface](https://github.com/cloud-gov/cg-deploy-admin-ui)
 - [BOSH](https://github.com/cloud-gov/cg-deploy-bosh)
 - [Cloud Foundry](https://github.com/cloud-gov/cg-deploy-cf)
 - [Concourse](https://github.com/cloud-gov/cg-deploy-concourse)
