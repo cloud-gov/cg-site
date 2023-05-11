@@ -59,6 +59,8 @@ These tools run against the site to make it more accessible and improve the user
 - [Pa11y CI](https://github.com/pa11y/pa11y-ci)
 - [Axe](https://www.deque.com/axe/)
 
+WebAIM's [WAVE tools](https://wave.webaim.org/) analyze an individual page for accessibility issues. Extensions are available for several major browsers to allow a WAVE scan to be run against the currently-viewed page.
+
 ### Other
 
 Here are some additional tools customers could add to improve their site.
