@@ -8,6 +8,7 @@ excerpt: Ubuntu 22.04 stack (cflinuxfs4) buildpacks are here and Ubuntu 18.04 (c
 
 > ***Important Update - 4/27/2023*** : The original instructions indicated that a `cf restage` will move apps to cflinuxfs4.  It does not, you have to `cf push -s STACK_NAME` your application.
 
+> ***Important Update - 5/16/2023*** : The deprecation dates for cflinuxfs3 have been pushed out from the original date of 5/10/2023 to the dates now seen in the document.
 
 # Deprecation of cflinuxfs3
 
@@ -73,8 +74,9 @@ cf curl "/v3/apps?per_page=5000&include=space.organization" | jq '(.included.spa
 | **March 23** | Roll out all cflinuxfs4 buildpacks | cflinuxfs3, cflinuxfs4 | cflinuxfs3
 | **March 23 - April 27** | Developers test and update apps to use cflinuxfs4 | cflinuxfs3, cflinuxfs4 | cflinuxfs3
 | **April 27** | Support ends for cflinuxfs3.  All new apps pushed will use cflinuxfs4 by default, existing apps will need to be migrated.  | cflinuxfs3, cflinuxfs4 | **cflinuxfs4**
-| **April 27 - May 10** | Explicitly opt to use cflinuxfs3 if you need more time | cflinuxfs3, cflinuxfs4 | **cflinuxfs4**
-| **May 10 - onward** | Only cflinuxfs4 will be available, this is a breaking change for apps not updated to use cflinuxfs4 |  cflinuxfs4 | **cflinuxfs4**
+| **April 27 - June 30** | Explicitly opt to use cflinuxfs3 if you need more time | cflinuxfs3, cflinuxfs4 | **cflinuxfs4**
+| **June 30**  | cflinuxfs3 buildpacks will be retired from the platform, apps needing cflinuxfs3 buildpacks will need to reference them via URL on the cf push |  cflinuxfs3, cflinuxfs4 | **cflinuxfs4**
+| **Sept 30** | Only cflinuxfs4 will be available, this is a breaking change for apps not updated to use cflinuxfs4 |  cflinuxfs4 | **cflinuxfs4**
 
 
 
