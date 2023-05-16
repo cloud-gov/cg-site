@@ -1,18 +1,18 @@
 ---
 layout: post
-title: "Troubleshooting SSH Connections"
-date: May 17, 2021
-excerpt: Some tips and tricks for logging into app instances using SSH
+title: "Configuring Dependabot"
+date: May 17, 2023
+excerpt: Configure Dependabot to assist with managing PRs
 ---
 
 ## Dependabot defined
 There are 3 distinct functions of Dependabot.  
 
-* Dependabot alerts: Alerts regarding dependency vulnerabilities where PRs are automatically opened.
+* __Dependabot alerts__: Alerts regarding dependency vulnerabilities where PRs are automatically opened.
 
-* Dependabot security updates: Additional alerts/information regarding vulnerabilities in any out of date dependencies where a vulnerability alert “faux” non mergeable PR is opened in relation to the initial out of date dependency alert. If applicable it is linked to the actual dependency PR.  
+* __Dependabot security updates__: Additional alerts/information regarding vulnerabilities in any out of date dependencies where a vulnerability alert “faux” non mergeable PR is opened in relation to the initial out of date dependency alert. If applicable it is linked to the actual dependency PR.  
 
-* Dependabot version updates: Automatic PRs opened when version bumps are available for dependencies.   
+* __Dependabot version updates__: Automatic PRs opened when version bumps are available for dependencies.   
 
 \* For Pages users with existing jekyll sites Dependabot alerts was automatically enabled upon launch. This is not the case for users who have 11ty or Gatsby based sites where by default all Dependabot services are disabled upon launch.
 
@@ -26,10 +26,13 @@ The best way to take advantage of Dependabot while not getting overwhelmed by th
 
 There are certain conditions which can be set in your dependabot.yml file which will help reduce noise and cut down the amount of open PRs in your repository. The conditions that we will focus on specifically are as follows:
 
-<interval>
-<open-pull-requests-limit>
-<ignore>
-<target-branch>
+<p>interval
+  <br>
+open-pull-requests-limit
+  <br>
+ignore
+  <br>
+target-branch</p>
 
 This example dependabot.yml file is for any Jekyll site running on Pages. In this case there are two defined package ecosystems which are npm and bundler. Specifically for the npm package we’ve set the conditions for Dependabot to check for dependency updates once a week, on monday, while specifying the time and timezone. By default Dependabot is set to the UTC timezone. We’ve added and set the condition “open-pull-requests-limit” to the value 2 so no matter how many updates there are Dependabot will only open 2 PRs a week maximum which will drastically cut down on noise. We have also set an “ignore” condition for the dependency minimatch which will ignore all updates through version 3, effectively pinning it at its current version for the time being. For the second defined package ecosystem bundler we have set similar conditions but have specified a monthly check for updates. 
 
