@@ -74,9 +74,9 @@ cf curl "/v3/apps?per_page=5000&include=space.organization" | jq '(.included.spa
 | **March 23** | Roll out all cflinuxfs4 buildpacks | cflinuxfs3, cflinuxfs4 | cflinuxfs3
 | **March 23 - April 27** | Developers test and update apps to use cflinuxfs4 | cflinuxfs3, cflinuxfs4 | cflinuxfs3
 | **April 27** | Support ends for cflinuxfs3.  All new apps pushed will use cflinuxfs4 by default, existing apps will need to be migrated.  | cflinuxfs3, cflinuxfs4 | **cflinuxfs4**
-| **April 27 - June 30** | Explicitly opt to use cflinuxfs3 if you need more time | cflinuxfs3, cflinuxfs4 | **cflinuxfs4**
-| **June 30**  | cflinuxfs3 buildpacks will be retired from the platform, apps needing cflinuxfs3 buildpacks will need to reference them via URL on the cf push |  cflinuxfs3, cflinuxfs4 | **cflinuxfs4**
-| **Sept 30** | Only cflinuxfs4 will be available, this is a breaking change for apps not updated to use cflinuxfs4 |  cflinuxfs4 | **cflinuxfs4**
+| **April 27 - June 29** | Explicitly opt to use cflinuxfs3 if you need more time | cflinuxfs3, cflinuxfs4 | **cflinuxfs4**
+| **June 29**  | cflinuxfs3 buildpacks will be retired from the platform, apps needing cflinuxfs3 buildpacks will need to reference them via URL on the cf push |  cflinuxfs3, cflinuxfs4 | **cflinuxfs4**
+| **Sept 28** | Only cflinuxfs4 will be available, this is a breaking change for apps not updated to use cflinuxfs4 |  cflinuxfs4 | **cflinuxfs4**
 
 
 

@@ -15,8 +15,8 @@ The base OS image used by your cloud.gov applications is called a "stack". The s
 ### Important Dates
 Ubuntu 18.04 will likely no longer receive security updates in May, so we will stop supporting the cflinuxfs3 stack and buildpacks in cloud.gov.  What this means is: 
 
- - On **June 30th, 2023** the platform will no longer provide cflinuxfs3 buildpacks. Applications will need to reference an external buildpack to continue to push updated versions of cflinuxfs3 applications.  Existing cflinuxfs3 applications will continue to restart without intervention.
- - On **September 30th, 2023**, all support for cflinuxfs3 will end and all applications still on this stack will stop and cannot be started unless migrated to cflinuxfs4.
+ - On **June 29th, 2023** the platform will no longer provide cflinuxfs3 buildpacks. Applications will need to reference an external buildpack to continue to push updated versions of cflinuxfs3 applications.  Existing cflinuxfs3 applications will continue to restart without intervention.
+ - On **September 28th, 2023**, all support for cflinuxfs3 will end and all applications still on this stack will stop and cannot be started unless migrated to cflinuxfs4.
 
 
 Ubuntu 18.04 will likely no longer receive security updates in May, so we will stop supporting cflinuxfs3 in cloud.gov May 10th.
@@ -58,7 +58,7 @@ cf push MY-APP
 
 ### How do you push a cflinuxfs3 app with an external buildpack?
 
-Until September 30th, 2023, you can use an external buildpack to push apps to the cflinuxfs3 stack by referencing a URL in a `cf push` command.  As an example, to push a Ruby app using 2.7.6 on cflinuxfs3:
+Until September 28th, 2023, you can use an external buildpack to push apps to the cflinuxfs3 stack by referencing a URL in a `cf push` command.  As an example, to push a Ruby app using 2.7.6 on cflinuxfs3:
 
 ```
 cf push MY-APP https://github.com/cloudfoundry/ruby-buildpack/releases/download/v1.9.4/ruby-buildpack-cflinuxfs3-v1.9.4.zip -s cflinuxfs3
