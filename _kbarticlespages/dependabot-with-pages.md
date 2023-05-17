@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Configuring Dependabot"
-date: May 17, 2023
+date: May 18, 2023
 excerpt: Configure Dependabot to assist with managing PRs
 ---
 
@@ -36,10 +36,11 @@ target-branch</p>
 
 This example dependabot.yml file is for any Jekyll site running on Pages. In this case there are two defined package ecosystems which are npm and bundler. Specifically for the npm package we’ve set the conditions for Dependabot to check for dependency updates once a week, on monday, while specifying the time and timezone. By default Dependabot is set to the UTC timezone. We’ve added and set the condition “open-pull-requests-limit” to the value 2 so no matter how many updates there are Dependabot will only open 2 PRs a week maximum which will drastically cut down on noise. We have also set an “ignore” condition for the dependency minimatch which will ignore all updates through version 3, effectively pinning it at its current version for the time being. For the second defined package ecosystem bundler we have set similar conditions but have specified a monthly check for updates. 
 
-< SCREENSHOT >
+<img src="{{ site.baseurl }}/assets/images/pages/dependabot-yml.png"/>
+
 
 By default Dependabot will check for manifest files on the production  branch and raise pull requests for version updates against it. You can override this behavior by explicitly setting the “target-branch” condition to another branch and have PRs opened against it instead of your main branch. In this example for an 11ty site we have pointed it to our staging branch.
 
-< SCREENSHOT >
+<img src="{{ site.baseurl }}/assets/images/pages/dependabot-target-branch.png"/>
 
-<!-- (Add screen shots of full yaml file with all conditions specified and the PR list showing that only 2 were opened 5/10 after specifying pr limit to 2) -->
+
