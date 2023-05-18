@@ -61,7 +61,7 @@ cf push MY-APP
 Until September 28th, 2023, you can use an external buildpack to push apps to the cflinuxfs3 stack by referencing a URL in a `cf push` command.  As an example, to push a Ruby app using 2.7.6 on cflinuxfs3:
 
 ```
-cf push MY-APP https://github.com/cloudfoundry/ruby-buildpack/releases/download/v1.9.4/ruby-buildpack-cflinuxfs3-v1.9.4.zip -s cflinuxfs3
+cf push MY-APP -b https://github.com/cloudfoundry/ruby-buildpack/releases/download/v1.9.4/ruby-buildpack-cflinuxfs3-v1.9.4.zip -s cflinuxfs3
 ```
 
 Many of the external buildpacks can be found on Github at [https://github.com/cloudfoundry?q=buildpacks&type=all&language=&sort=](https://github.com/cloudfoundry?q=buildpacks&type=all&language=&sort=)
