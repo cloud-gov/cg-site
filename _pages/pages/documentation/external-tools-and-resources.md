@@ -59,6 +59,10 @@ These tools run against the site to make it more accessible and improve the user
 - [Pa11y CI](https://github.com/pa11y/pa11y-ci)
 - [Axe](https://www.deque.com/axe/)
 
+These tools do detailed scans of an individual page, and can be run from a web browser extension or bookmarklet:
+- [WAVE tools](https://wave.webaim.org/)
+- [ANDI](https://www.ssa.gov/accessibility/andi/help/install.html)
+
 ### Other
 
 Here are some additional tools customers could add to improve their site.
