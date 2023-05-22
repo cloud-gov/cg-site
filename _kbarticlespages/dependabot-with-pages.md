@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Configuring Dependabot"
-date: May 18, 2023
+date: May 22, 2023
 excerpt: Configure Dependabot to assist with managing PRs
 ---
 
@@ -38,9 +38,6 @@ This example dependabot.yml file is for any Jekyll site running on Pages. In thi
 
 <img src="{{ site.baseurl }}/assets/images/pages/dependabot-yml.png"/>
 
-
 By default Dependabot will check for manifest files on the production  branch and raise pull requests for version updates against it. You can override this behavior by explicitly setting the “target-branch” condition to another branch and have PRs opened against it instead of your main branch. In this example for an 11ty site we have pointed it to our staging branch.
 
 <img src="{{ site.baseurl }}/assets/images/pages/dependabot-target-branch.png"/>
-
-
