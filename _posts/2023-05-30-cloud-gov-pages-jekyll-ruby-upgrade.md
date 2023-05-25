@@ -30,7 +30,7 @@ We’ve documented the migration process in a [PR to our deprecated jekyll templ
     - `bundle lock --remove-platform example_platform_name`. For example `bundle lock --remove-platform arm64-darwin-21`
 - [The hard step] Replace the primary functionality of jekyll-assets:
   - First move everything from the `_assets` folder to the `assets` folder
-  - Remove any uses of the `{% asset %}` liquid tag or `asset_url` function in your content. This tag and function provided a way to find a given asset in any of multiple specified site folders. You’ll likely want to replace this with `{{site.baseurl}}/assets/example.png` or `{{ /assets/example.png | relative_url }}` where `example.png` is the name of the example file.
+  - Remove any uses of the {% raw %}`{% asset %}`{% endraw %}  liquid tag or `asset_url` function in your content. This tag and function provided a way to find a given asset in any of multiple specified site folders. You’ll likely want to replace this with {% raw %} `{{site.baseurl}}/assets/example.png` or `{{ /assets/example.png | relative_url }}`{% endraw %}  where `example.png` is the name of the example file.
   - Move all SASS partials to a new folder called `_sass`. You can leave the entrypoint SASS file (styles.scss) in `assets/css` but you’ll need to add [two sets of triple dashes to the start of the file](https://jekyllrb.com/docs/assets/).
   - Add our two helper jekyll plugins to the `_plugins` folder:
     - [`asset-helper.rb`](https://github.com/cloud-gov/pages-uswds-jekyll/blob/main/_plugins/asset-helper.rb) copies USWDS assets from the `node_modules` folder into your `assets` folder
