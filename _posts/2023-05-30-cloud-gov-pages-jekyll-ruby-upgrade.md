@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Upgrading a Jekyll site to Ruby 3.1
-date: May 30, 2023
+date: May 24, 2023
 excerpt: "Ruby 2.7 has reached “end of life” so we’re providing instructions on how to upgrade your Jekyll site to use Ruby 3.1. Cloud.gov Pages will continue supporting Ruby 2.7 builds for six months, but then only Ruby 3 versions will be supported."
 ---
 
