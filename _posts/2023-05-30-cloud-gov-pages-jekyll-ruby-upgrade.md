@@ -14,7 +14,7 @@ The main difficulty with upgrading a site to use a newer version of Ruby is that
 If you don’t see `jekyll-assets` in your `Gemfile` or `Gemfile.lock`, you don’t have a dependency on `jekyll-assets` and you might be able to upgrade to Ruby 3.1 with just a few steps:
 - Create a file called `.ruby-version` in your site folder which contains the string `3.1`. If you already have this file, you can replace the previous version with `3.1`
 - If you have any other site-specific scripts which specify the ruby version, update these as well.
-- Delete your previous `Gemfile.lock` and regenerate by running `bundle install`
+- Add or change your specified Ruby version (e.g. `ruby '~> 3.1'`).Delete your previous `Gemfile.lock` and regenerate by running `bundle install`
   - If this command adds a new `PLATFORM` to your `Gemfile.lock`, and it’s anything other than `ruby`, remove it with the following command:
     - `bundle lock --remove-platform example_platform_name`. For example `bundle lock --remove-platform arm64-darwin-21`
 - Commit and push all these changes to see if the cloud.gov Pages build succeeds!
@@ -23,9 +23,9 @@ If you don’t see `jekyll-assets` in your `Gemfile` or `Gemfile.lock`, you don�
 
 Jekyll Assets is a helpful gem for compiling SASS, JS, and image files into your final jekyll build. Unfortunately it is unmaintained and hasn’t been updated in three years. It also doesn’t support Ruby 3. So if you remove it, you’ll need alternative ways to make sure your SASS, JS, and image files are included in your site build correctly. 
 We’ve documented the migration process in a [PR to our deprecated jekyll template](https://github.com/cloud-gov/pages-uswds-jekyll/pull/314) and included the main steps below. Your site may have specific customizations which make some of these steps not applicable.
-- Create a file called `.ruby-version`  in your site folder which contains the string `3.1`. If you already have this file, you can replace the previous version with `3.1`
+- Create a file called `.ruby-version`  in your site folder which contains the string `3.1`. If you already have this file, you can replace the previous version with `3.1`.
 - If you have any other site-specific scripts which specify the ruby version, update these as well.
-- Remove `jekyll-assets` from your `Gemfile`. Delete your previous `Gemfile.lock` and regenerate by running `bundle install`
+- Remove `jekyll-assets` from your `Gemfile`. Add or change your specified Ruby version (e.g. `ruby '~> 3.1'`). Delete your previous `Gemfile.lock` and regenerate by running `bundle install`
   - If this command adds a new `PLATFORM` to your `Gemfile.lock`, and it’s anything other than `ruby`, remove it with the following command:
     - `bundle lock --remove-platform example_platform_name`. For example `bundle lock --remove-platform arm64-darwin-21`
 - [The hard step] Replace the primary functionality of jekyll-assets:
