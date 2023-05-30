@@ -27,7 +27,7 @@ You are responsible for setting up HSTS preloading for your [custom domain]({{ s
 
 The SSL/TLS implementation depends on how your client is reaching cloud.gov, which is either through an AWS load balancer, or through the CDN service based on Amazon CloudFront.
 
-* [AWS load balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#tls-security-policies) implement the `ELBSecurityPolicy-TLS-1-2-2017-01` SSL/TLS policy.
+* [AWS load balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#tls13-security-policies) implement the `ELBSecurityPolicy-TLS13-1-2-Ext1-2021-06` SSL/TLS policy.
 * [Amazon CloudFront distributions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers) implement the `TLSv1.2_2018` policy.
 
 Our TLS implementation and cipher suites are consistent with [White House Office of Management and Budget's M-15-13](https://https.cio.gov/), the Department of Homeland Security's [Binding Operational Directive 18-01](https://cyber.dhs.gov/bod/18-01/), and the [NIST Guidelines for TLS Implementations](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-52r2.pdf). Some SSL/TLS scanners will nonetheless return results flagging the following ciphers as "weak":
@@ -44,7 +44,7 @@ These are false positives. While the CBC cipher modes of operation are being pha
 
 **Cipher suite names**: The AWS documentation uses the OpenSSL cipher names which are different from IANA/RFC cipher names returned by scanners. For example, `ECDHE-RSA-AES128-SHA256` on the documentation page will be called `TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256` by scanners and other tools.
 
-**Cipher suite count**: The `ELBSecurityPolicy-TLS-1-2-2017-01` has 12 ciphers, but your scanner may only show 8 results. That's because our certificates are signed with RSA keys, not Elliptic Curve (ECDSA) keys, so those cipher suites are not in use.
+**Cipher suite count**: The `ELBSecurityPolicy-TLS13-1-2-Ext1-2021-06` has 15 ciphers, but your scanner may only show 11 results. That's because our certificates are signed with RSA keys, not Elliptic Curve (ECDSA) keys, so those cipher suites are not in use.
 
 ## DNSSEC
 
