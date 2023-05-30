@@ -22,7 +22,7 @@ If you don’t see `jekyll-assets` in your `Gemfile` or `Gemfile.lock`, you don�
 ## Instructions for sites with jekyll-assets
 
 Jekyll Assets is a helpful gem for compiling SASS, JS, and image files into your final jekyll build. Unfortunately it is unmaintained and hasn’t been updated in three years. It also doesn’t support Ruby 3. So if you remove it, you’ll need alternative ways to make sure your SASS, JS, and image files are included in your site build correctly. 
-We’ve documented the migration process in a [PR to our deprecated jekyll template](https://github.com/cloud-gov/pages-uswds-jekyll/pull/314) and included the main steps below.
+We’ve documented the migration process in a [PR to our deprecated jekyll template](https://github.com/cloud-gov/pages-uswds-jekyll/pull/314) and included the main steps below. Your site may have specific customizations which make some of these steps not applicable.
 - Create a file called `.ruby-version`  in your site folder which contains the string `3.1`. If you already have this file, you can replace the previous version with `3.1`
 - If you have any other site-specific scripts which specify the ruby version, update these as well.
 - Remove `jekyll-assets` from your `Gemfile`. Delete your previous `Gemfile.lock` and regenerate by running `bundle install`
