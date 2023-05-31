@@ -40,7 +40,7 @@ TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384 (0xC028)
 
 These are false positives. While the CBC cipher modes of operation are being phased out (they are theoretically subject to padding oracle attacks), our cipher implementation is consistent with all relevant guidance, as noted above.
 
-**TLS 1.3**: TLS 1.3 has been implemented with `ELBSecurityPolicy-TLS13-1-2-Ext1-2021-06` TLS protocol and `TLSv1.2_2018` security policy.
+**TLS 1.3**: TLS 1.3 has been implemented with `ELBSecurityPolicy-TLS13-1-2-Ext1-2021-06` TLS protocol.
 
 **Cipher suite names**: The AWS documentation uses the OpenSSL cipher names which are different from IANA/RFC cipher names returned by scanners. For example, `ECDHE-RSA-AES128-SHA256` on the documentation page will be called `TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256` by scanners and other tools.
 
