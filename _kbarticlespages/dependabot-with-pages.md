@@ -5,7 +5,10 @@ date: May 22, 2023
 excerpt: Configure Dependabot to assist with managing PRs
 ---
 
-## Dependabot defined
+## GitHub Dependabot defined
+
+Dependabot is a feature of GitHub whose main purpose is to assist developers stay on top of their dependency ecosystem by automating the dependency updating process which in turn proactively addresses any potential secuirty concerns. Dependabot also explicitly raises pull requests to address security vulnerabilities in dependencies and alerts developers to the precise location in the code where the vulnerabilities lie. When enabled it achieves this by scanning a projects dependency files such as package manifests (ie. package-json, Gemfile) or configuration files to identify dependencies and their versions. It then compares the current versons against the latest versions in the relevant package registries. As a developer woking on a site hosted on Pages you may have seen a host of these types of alerts/pull requests in your given repository. This article will explin on how to effectively manage these alerts without comprosing your code's security. 
+
 There are 3 distinct functions of Dependabot.  
 
 * __Dependabot alerts__: Alerts regarding dependency vulnerabilities where PRs are automatically opened.
@@ -22,7 +25,7 @@ To enable any of the Dependabot features navigate to the rightmost tab “settin
 
 ## Where to locate and configure the dependabot.yml file
 
-The best way to take advantage of Dependabot while not getting overwhelmed by the amount of PRs opened is to override the default behavior by customizing the dependabot.yml file which is located in the .github folder of the repository. You can either create it manually or have it be automatically generated when enabling Dependabot version updates.
+The best way to take advantage of Dependabot while not getting overwhelmed by the amount of PRs opened is to override the default behavior by customizing the dependabot.yml file which is located in the .github folder of the repository. You can either create it manually or have it automatically generated when enabling Dependabot version updates.
 
 There are certain conditions which can be set in your dependabot.yml file which will help reduce noise and cut down the amount of open PRs in your repository. The conditions that we will focus on specifically are as follows:
 
@@ -34,10 +37,10 @@ ignore
   <br>
 target-branch</p>
 
-This example dependabot.yml file is for any Jekyll site running on Pages. In this case there are two defined package ecosystems which are npm and bundler. Specifically for the npm package we’ve set the conditions for Dependabot to check for dependency updates once a week, on monday, while specifying the time and timezone. By default Dependabot is set to the UTC timezone. We’ve added and set the condition “open-pull-requests-limit” to the value 2 so no matter how many updates there are Dependabot will only open 2 PRs a week maximum which will drastically cut down on noise. We have also set an “ignore” condition for the dependency minimatch which will ignore all updates through version 3, effectively pinning it at its current version for the time being. For the second defined package ecosystem bundler we have set similar conditions but have specified a monthly check for updates. 
+This example dependabot.yml file is for any Jekyll site running on Pages. In this case there are two defined package ecosystems which are npm and bundler. Specifically for the npm package we’ve set the conditions for Dependabot to check for dependency updates once a week, on monday, while specifying the time and timezone. By default Dependabot is set to the UTC timezone. We’ve added and set the condition “open-pull-requests-limit” to the value 2 so no matter how many updates there are Dependabot will only open 2 PRs a week maximum which will drastically cut down on noise. We have also set an “ignore” condition for the dependency minimatch which will ignore all updates through version 3, effectively pinning it at its current version for the time being. 
 
 <img src="{{ site.baseurl }}/assets/images/pages/dependabot-yml.png"/>
 
-By default Dependabot will check for manifest files on the production  branch and raise pull requests for version updates against it. You can override this behavior by explicitly setting the “target-branch” condition to another branch and have PRs opened against it instead of your main branch. In this example for an 11ty site we have pointed it to our staging branch.
+For the second defined package ecosystem bundler we have set similar conditions but have specified a monthly check for updates. By default Dependabot will check for manifest files on the production  branch and raise pull requests for version updates against it. You can override this behavior by explicitly setting the “target-branch” condition to another branch and have PRs opened against it instead of your main branch. In this example an 11ty site is used and we have pointed it to the staging branch.
 
 <img src="{{ site.baseurl }}/assets/images/pages/dependabot-target-branch.png"/>
