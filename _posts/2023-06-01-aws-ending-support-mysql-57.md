@@ -43,3 +43,5 @@ To upgrade your existing MySQL 5.7 database to MySQL 8.0:
   ```shell
   cg-manage-rds import -f backup.sql <mysql80-database-name>
   ```
+
+If you have any issues with this process, please contact [support@cloud.gov](mailto:support@cloud.gov).
