@@ -114,7 +114,7 @@ Name               | Description                                                
 A couple of notes regarding the optional `version` parameter:
 
 - It is currently only supported for dedicated MySQL and PostgreSQL instances; if you specify it for any other type of instance it is ignored.
-- It only supports major version numbers; if you specify a minor/patch level version, e.g., "11.8" for PostgreSQL or "5.7.22" for MySQL, the command will fail.
+- It only supports major version numbers (e.g. "8.0"); if you specify a minor/patch level version (e.g., "11.8" for PostgreSQL or "8.0.32" for MySQL), the command will fail.
 - The version number must be provided in double quotes (`"`); this is because the value is treated as a string to account for different engine types and version schemes.
 
 These are the current supported major versions for PostgreSQL:
@@ -125,7 +125,6 @@ These are the current supported major versions for PostgreSQL:
 
 These are the current supported major versions for MySQL:
 
-- 5.7
 - 8.0
 
 The `backup_retention_period` can be no less than 14 days but extended up to 35 days.
