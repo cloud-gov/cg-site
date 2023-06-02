@@ -51,6 +51,9 @@ cf create-service aws-elasticsearch es-medium my-elastic-service
 
 Note: AWS Elasticsearch creation times will vary and is outside of Cloud.gov's control. AWS says approximately 15-30 mins per node.
 
+## Changing instance plans
+Please note that you cannot use the broker to update the instance plan at this time.
+
 ## Options
 
 name             | required | description              | example
