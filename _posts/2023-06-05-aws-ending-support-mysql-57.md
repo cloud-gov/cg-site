@@ -33,7 +33,12 @@ You can find more information about creating/updating RDS databases on [our data
 
 To upgrade your existing MySQL 5.7 database to MySQL 8.0:
 
-1. Target your organization and space
+1. Target your organization and space:
+
+    ```sh
+    cf target -o <ORG> -s <SPACE>
+    ```
+
 1. Create a new database service using the same database plan as your MySQL 5.7 database:
 
     ```shell
