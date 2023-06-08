@@ -13,7 +13,6 @@ title: cloud.gov Pages - Pricing
     <p class="usa-intro">Included in subscription:</p>
     <ul>
       <li>U.S. Web Design System Starter kits in Javascript and Ruby with built-in integrations with Search.gov and GSA Digital Analytics Program to get your site running within minutes.</li>
-      <li>GSA-maintained GSA Authority to Operate (ATO) for all your sites.</li>
       <li>Automated tests and previews before going live.</li>
       <li>Web-based configuration page for managing individual sites.</li>
       <li>Highly scalable content delivery network (CDN) to ensure uptime.</li>
