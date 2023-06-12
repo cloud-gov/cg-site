@@ -13,7 +13,7 @@ There are 3 distinct functions of Dependabot.
 
 * __Dependabot alerts__: Alerts regarding dependency vulnerabilities where pull requests are automatically opened.
 
-* __Dependabot security updates__: Additional alerts/information regarding vulnerabilities in any out of date dependencies where a vulnerability alert “faux” non mergeable pull request is opened in relation to the initial out of date dependency alert. If applicable it is linked to the actual dependency pull request.  
+* __Dependabot security updates__: Additional alerts/information regarding vulnerabilities in any out-of-date dependencies where a vulnerability alert (non mergeable pull request) is opened in relation to the initial out of date dependency alert. If applicable it is linked to the actual dependency pull request.  
 
 * __Dependabot version updates__: Automatic pull requests opened when version bumps are available for dependencies.   
 
