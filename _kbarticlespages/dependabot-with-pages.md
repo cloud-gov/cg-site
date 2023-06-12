@@ -37,7 +37,7 @@ There are certain configuration options which can be set in your dependabot.yml 
 **open-pull-requests-limit**: Modify the max limit of pull requests opened for version updates.
   <br>
   
-**ignore**: Explicitly ignore specific dependencies, versions and update-types.
+* `ignore`: Explicitly ignore specific dependencies, versions and update-types.
   <br>
   
 * `target-branch`: Specify a different branch for manifest files and for pull requests instead of the default branch.
