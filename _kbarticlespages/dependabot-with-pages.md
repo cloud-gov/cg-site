@@ -40,7 +40,7 @@ There are certain configuration options which can be set in your dependabot.yml 
 **ignore**: Explicitly ignore specific dependencies, versions and update-types.
   <br>
   
-**target-branch**: Specify a different branch for manifest files and for pull requests instead of the default branch.
+* `target-branch`: Specify a different branch for manifest files and for pull requests instead of the default branch.
 </p>
 
 For a complete list of configuration options and implementations, visit the GitHub site via [Configuration options for the dependabot.yml file](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#about-the-dependabotyml-file).
