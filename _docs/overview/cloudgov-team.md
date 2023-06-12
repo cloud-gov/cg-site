@@ -16,7 +16,7 @@ redirect_from:
 
 ---
 
-cloud.gov is built and maintained by a team within the U.S. General Services Administration’s [Technology Transformation Service](http://www.gsa.gov/portal/category/25729) portfolio. cloud.gov is a cost-recoverable service funded by charging a fee to the teams that use it.
+cloud.gov is built and maintained by a team within the U.S. General Services Administration’s [Technology Transformation Service](https://www.gsa.gov/about-us/organization/federal-acquisition-service/technology-transformation-services) portfolio. cloud.gov is a cost-recoverable service funded by charging a fee to the teams that use it.
 
 Our mission is broader than making it easier for government agencies to adopt cloud deployment. The mission of cloud.gov is to enable agencies to deliver services to the public as fast as they can develop them while applying best practices in security and compliance with minimal effort.
 
