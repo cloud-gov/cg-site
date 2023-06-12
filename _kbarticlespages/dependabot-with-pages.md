@@ -34,7 +34,7 @@ There are certain configuration options which can be set in your dependabot.yml 
  * `interval`: Set the frequency that Dependabot will check for new versions for each defined package manager.
   <br>
   
-**open-pull-requests-limit**: Modify the max limit of pull requests opened for version updates.
+* `open-pull-requests-limit`: Modify the max limit of pull requests opened for version updates.
   <br>
   
 * `ignore`: Explicitly ignore specific dependencies, versions and update-types.
