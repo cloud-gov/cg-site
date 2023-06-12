@@ -27,7 +27,7 @@ To enable any of the Dependabot features navigate to the rightmost tab “settin
 
 The best way to take advantage of Dependabot while not getting overwhelmed by the amount of pull requests opened is to override the default behavior by customizing the dependabot.yml file which is located in the .github folder of the repository. You can either create it manually or have it automatically generated when enabling Dependabot version updates.
 
-There are certain configuration options which can be set in your dependabot.yml file which will help reduce noise and cut down the amount of open pull requests in your repository. The options that we will focus on specifically are as follows:
+There are certain configuration options which can be set in your `dependabot.yml` file which will help reduce noise and cut down the amount of open pull requests in your repository. The options that we will focus on specifically are as follows:
 
 <p>
   
