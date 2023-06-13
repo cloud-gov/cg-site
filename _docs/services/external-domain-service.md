@@ -11,6 +11,7 @@ status: "Production Ready"
 This service provides two different plans allowing you to use custom domains for your apps running on cloud.gov.
 
 Both plans offer:
+
 1. Custom domain support, so that your application can have your domain instead of the default `*.app.cloud.gov` domain.
 1. HTTPS support via free TLS certificates with auto-renewal (using [Let's Encrypt](https://letsencrypt.org/)), so that user traffic is encrypted.
 
@@ -57,8 +58,8 @@ You can explicitly set the default of forwarding all cookies with the string `"*
 #### forward_headers option
 
 This option lets you configure what headers to forward to your application. [CloudFront preconfigures
-some of these](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior), 
-and unless you are using a custom origin, we set the `Host` header. 
+some of these](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior),
+and unless you are using a custom origin, we set the `Host` header.
 You can add up to nine additional headers or header patterns but note that CloudFront considers forwarded headers
 in its cache calculation, so more unique header combinations will cause more cache misses.
 
@@ -66,60 +67,103 @@ in its cache calculation, so more unique header combinations will cause more cac
 
 This option lets you send custom error pages for specific error codes. Set this with an object, where the keys are the error codes (as strings) and the values
 are the path to the custom error page, for example:
-```
+
+```shell
 cf create-service external-domain domain-with-cdn -c '{"domains": "example.gov", "error_responses": {"404": "/errors/404.html", "403": "/login.html"}}'
 ```
+
 Be careful when setting this for 5xx responses: 5xx responses indicate a server error and setting a custom error response will increase the load on a potentially unhealthy application.
 
 The default for this setting is `{}`, so errors are passed to the client exactly as the CDN receives them, and you can use the same setting to reset to the default:
-```
+
+```shell
 cf create-service external-domain domain-with-cdn -c '{"domains": "example.gov", "error_responses": {}}'
 ```
+
 Note that only these error codes can be customized: 400, 403, 404, 405, 414, 416, 500, 501, 502, 503, 504
 
 #### path option
 
 You can use this option to send traffic to a custom path at either the default or custom origin.
-```
+
+```shell
 cf create-service external-domain domain-with-cdn -c '{"path": "/some/path"}'
 ```
 
 ## How to create an instance of this service
 
-1. For each of the domains you want to add to the service, create a DNS CNAME or ALIAS record in the form `_acme-challenge.${DOMAIN}` with a
-   value `_acme-challenge.${DOMAIN}.external-domains-production.cloud.gov.`. For example, if you wanted to set up a service for `www.example.gov` and `example.gov`,
-   you'd start by creating the CNAME or ALIAS records for `_acme-challenge.www.example.gov.` with value `_acme-challenge.www.example.gov.external-domains-production.cloud.gov.`
-   and a record for `_acme-challenge.example.gov.` with value `_acme-challenge.example.gov.external-domains-production.cloud.gov.`. These will be validated upon
-   service creation, so be sure to set these up ahead of time.
+1. For each of the domains you want to add to the service, create a DNS CNAME or ALIAS record for this name:
 
-2. Optional: Complete this step now only for sites that have not yet launched, or for sites that can withstand downtime. For each of the domains you want to add to
-   the service, create a DNS CNAME or ALIAS record in the form `${DOMAIN}.external-domains-production.cloud.gov`. For example, if you wanted to set up a service for 
-   `www.example.gov` and `example.gov`, you'd create an ALIAS record for `www.example.gov.` with value `www.example.gov.external-domains-production.cloud.gov.` and an
-   ALIAS record for `example.gov.` with value `example.gov.external-domains-production.cloud.gov.`
+   ```text
+   _acme-challenge.<DOMAIN>.
+   ```
+
+   and with this value:
+
+   ```text
+   _acme-challenge.<DOMAIN>.external-domains-production.cloud.gov.
+   ```
+
+   For example, if you wanted to set up a service for `www.example.gov` and `example.gov`,
+   you'd start by creating the CNAME or ALIAS records:
+
+   ```shell
+   _acme-challenge.example.gov. # record name
+   _acme-challenge.example.gov.external-domains-production.cloud.gov. # record value
+   ```
+
+   ```shell
+   _acme-challenge.www.example.gov. # record name
+   _acme-challenge.www.example.gov.external-domains-production.cloud.gov. # record value
+   ```
+
+   These records will be validated upon service creation, so be sure to set these up ahead of time.
+
+2. **Optional: Complete this step now only for sites that have not yet launched, or for sites that can withstand downtime.** For each of the domains you want to add to the service, create a DNS CNAME or ALIAS record:
+
+   ```shell
+   <DOMAIN> # record name
+   <DOMAIN>.external-domains-production.cloud.gov. # record value
+   ```
+
+   For example, if you wanted to set up a service for
+   `www.example.gov` and `example.gov`, you'd create these CNAME/ALIAS records:
+
+   ```shell
+   www.example.gov. # record name
+   www.example.gov.external-domains-production.cloud.gov. # record value
+   ```
+
+   ```shell
+   example.gov. # record name
+   example.gov.external-domains-production.cloud.gov. # record value
+   ```
 
 3. Create the cf domain for each of the domains you are adding to the service:
-   ```
-   $ cf create-domain my-org example.gov
-   $ cf create-domain my-org www.example.gov
+
+   ```shell
+   cf create-domain my-org example.gov
+   cf create-domain my-org www.example.gov
    ```
 
 4. Map the routes to your app. There are several ways to do this, documented [here](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html#map-route). For example:
-   ```
-   $ cf map-route my-app example.gov
-   $ cf map-route my-app www.example.gov
+
+   ```shell
+   cf map-route my-app example.gov
+   cf map-route my-app www.example.gov
    ```
 
 5. Create the service. For example, with `example.gov` and `www.example.gov`, run:
-   ```
+
+   ```shell
    $ cf create-service external-domain domain-with-cdn my-cdn -c '{"domains": "example.gov,www.example.gov"}'
     Creating service instance my-cdn in org my-org / space my-service as me...
     OK
 
     Create in progress. Use 'cf services' or 'cf service my-cdn' to check operation status.
-   ``` 
+   ```
 
 6. Wait for the service instance to complete provisioning. The `domain-with-cdn` plan may take up to 2 hours to complete provisioning, the `domain` plan should complete within an hour. You can check the status by running `cf service <service instance name>`.
-   
 7. If you didn't complete step 2 above, do so now.
 
 ## Update an instance
@@ -136,9 +180,9 @@ to false)
 To stop using a custom origin and instead route traffic to an app running on cloud.gov, pass either
 `null` or empty string (`""`) to the origin parameter:
 
-```
-$ cf update-service my-cdn -c '{"origin": ""}'  # passing empty string
-$ cf update-service my-cdn -c '{"origin": null}'  # passing null
+```shell
+cf update-service my-cdn -c '{"origin": ""}'  # passing empty string
+cf update-service my-cdn -c '{"origin": null}'  # passing null
 ```
 
 ## Technical considerations for domain-with-cdn plan
@@ -147,7 +191,7 @@ $ cf update-service my-cdn -c '{"origin": null}'  # passing null
 
 This service requires you to create a CNAME or ALIAS record, and these are slightly different. The exact difference is beyond the scope of this article,
 but what is important to note is that if your domain is an `apex` domain, that is it has only one dot (e.g. `example.gov`, `my-agency.gov`) you must use
-ALIAS records, but not all DNS providers offer ALIAS records. These are limitations in the DNS specification, and not specific to this service. 
+ALIAS records, but not all DNS providers offer ALIAS records. These are limitations in the DNS specification, and not specific to this service.
 
 ### Caching
 
@@ -172,7 +216,7 @@ Cookies are passed through the CDN by default, meaning that cookie-based authent
 
 ### Header forwarding
 
-CloudFront forwards a [limited set of headers](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior) by default. 
+CloudFront forwards a [limited set of headers](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior) by default.
 
 ### Migrating from another AWS account
 
