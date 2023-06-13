@@ -29,19 +29,19 @@ The best way to take advantage of Dependabot while not getting overwhelmed by th
 
 There are certain configuration options which can be set in your `dependabot.yml` file which will help reduce noise and cut down the amount of open pull requests in your repository. The options that we will focus on specifically are as follows:
 
-<p>
+
   
- * `interval`: Set the frequency that Dependabot will check for new versions for each defined package manager.
+  `interval`: Set the frequency that Dependabot will check for new versions for each defined package manager.
   <br>
   
-* `open-pull-requests-limit`: Modify the max limit of pull requests opened for version updates.
+ `open-pull-requests-limit`: Modify the max limit of pull requests opened for version updates.
   <br>
   
-* `ignore`: Explicitly ignore specific dependencies, versions and update-types.
+ `ignore`: Explicitly ignore specific dependencies, versions and update-types.
   <br>
   
-* `target-branch`: Specify a different branch for manifest files and for pull requests instead of the default branch.
-</p>
+ `target-branch`: Specify a different branch for manifest files and for pull requests instead of the default branch.
+
 
 For a complete list of configuration options and implementations, visit the GitHub site via [Configuration options for the dependabot.yml file](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#about-the-dependabotyml-file).
 
