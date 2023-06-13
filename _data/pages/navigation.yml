@@ -7,6 +7,8 @@ primary:
     url: /pages/documentation/
   - name: Pricing
     url: /pages/pricing/
+  - name: Knowledge Base
+    url: /pages/knowledge-base/
   - name: Contact
     url: /pages/contact/
     # Look inside assets/js/index.js to see that how this url changes depending on enviroment
@@ -29,6 +31,8 @@ footer:
     href: /pages/documentation/
   - text: Pricing
     href: /pages/pricing/
+  - text: Knowledge Base
+    href: /pages/knowledge-base/
   - text: Contact
     href: /pages/contact/
   - text: Manage Sites
