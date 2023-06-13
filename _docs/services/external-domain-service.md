@@ -104,19 +104,7 @@ cf create-service external-domain domain-with-cdn -c '{"path": "/some/path"}'
    _acme-challenge.<DOMAIN>.external-domains-production.cloud.gov.
    ```
 
-   For example, if you wanted to set up a service for `www.example.gov`, you would create a CNAME or ALIAS record with the name:
-
-   ```text
-   _acme-challenge.www.example.gov.
-   ```
-
-   and the value:
-
-   ```text
-   _acme-challenge.www.example.gov.external-domains-production.cloud.gov.
-   ```
-
-   Or for `example.gov`, you would create a CNAME or ALIAS record with the name:
+   For example, if you wanted to set up a service for `example.gov`, you would create a CNAME or ALIAS record with the name:
 
    ```text
    _acme-challenge.example.gov.
@@ -126,6 +114,18 @@ cf create-service external-domain domain-with-cdn -c '{"path": "/some/path"}'
 
    ```text
    _acme-challenge.example.gov.external-domains-production.cloud.gov.
+   ```
+
+   Or for `www.example.gov`, you would create a CNAME or ALIAS record with the name:
+
+   ```text
+   _acme-challenge.www.example.gov.
+   ```
+
+   and the value:
+
+   ```text
+   _acme-challenge.www.example.gov.external-domains-production.cloud.gov.
    ```
 
    These records will be validated upon service creation, so be sure to set these up ahead of time.
@@ -143,19 +143,7 @@ cf create-service external-domain domain-with-cdn -c '{"path": "/some/path"}'
    ```
 
    For example, if you wanted to set up a service for
-   `www.example.gov`, you would create a CNAME or ALIAS record with the name:
-
-   ```text
-   www.example.gov.
-   ```
-
-   and the value:
-
-   ```text
-   www.example.gov.external-domains-production.cloud.gov.
-   ```
-
-   Or, for `example.gov`, you would create a CNAME or ALIAS record with the name:
+   `example.gov`, you would create a CNAME or ALIAS record with the name:
 
    ```text
    example.gov.
@@ -165,6 +153,18 @@ cf create-service external-domain domain-with-cdn -c '{"path": "/some/path"}'
 
    ```text
    example.gov.external-domains-production.cloud.gov.
+   ```
+
+   Or, for `www.example.gov`, you would create a CNAME or ALIAS record with the name:
+
+   ```text
+   www.example.gov.
+   ```
+
+   and the value:
+
+   ```text
+   www.example.gov.external-domains-production.cloud.gov.
    ```
 
 3. Create the cf domain for each of the domains you are adding to the service:
