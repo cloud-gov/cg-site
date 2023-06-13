@@ -64,6 +64,13 @@ The IC should also:
 
 The Cloud Operations team assesses the situation and works to recover the system. See the list of [external dependencies](#external-dependencies) for procedures for recovery from problems with external services.
 
+cloud.gov maintains certain recovery scenarios in our internal [contingency plan runbook](https://github.com/cloud-gov/internal-docs/blob/main/docs/runbooks/Platform/contingency.md) since details are sensitive, or not of sufficient interest to an outside audience. These include:
+
+* Recovery from loss of an availability zone
+* Restoring leadership credentials
+* Restoring jumpboxes
+* Continuity of Operations (CoOp)
+
 If this is also a security incident, the IC and Cloud Operations also follow the security incident [assessment]({{ site.baseurl }}{% link _docs/ops/security-ir.md %}#initiate) and [remediation]({{ site.baseurl }}{% link _docs/ops/security-ir.md %}#remediate) processes.
 
 If the IC assesses that the overall response process is likely to last longer than 3 hours, the IC should organize shifts so that each responder works on response for no longer than 3 hours at a time, including handing off their own responsibility to a new IC after 3 hours.
@@ -135,6 +142,8 @@ Cloud Operations will update the `opslogin` UAA instance to allow temporary acce
 When the disruption in service is resolved, Cloud Operations will disable password authentication for all accounts.
 
 ### AWS
+
+Loss of a signle av
 In case of a **significant** disruption, after receiving approval from our Authorizing Official, Cloud Operations will deploy a new instance of the entire system to a different region using the instructions stored in the [cg-provision repository](https://github.com/18f/cg-provision).
 
 If all AWS regions are disrupted, Cloud Operations will deploy the system to another BOSH-supported IaaS provider (such as Microsoft Azure).
@@ -201,7 +210,8 @@ This plan is most effective if all core cloud.gov team members know about it, re
 
 ### Page information
 
-* Last modified on: {% last_modified_at %}
+* Last modified on: {% last_modified_at %} 
+  * 2023-06-13: Add link to internal contingency plan runbook
 * [Recent document history](https://github.com/cloud-gov/cg-site/commits/main/{{ page.path }}) (since 2022-11-08)
 * [Older document history](https://github.com/cloud-gov/cg-site/commits/master/{{ page.path }}) (from 2020-02-05 to 2022-11-08)
 * [Much older document history](https://github.com/cloud-gov/cg-site/commits/master/content/docs/ops/{{ page.slug }}.md) (before 2020-02-05)
