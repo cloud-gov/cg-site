@@ -92,51 +92,79 @@ cf create-service external-domain domain-with-cdn -c '{"path": "/some/path"}'
 
 ## How to create an instance of this service
 
-1. For each of the domains you want to add to the service, create a DNS CNAME or ALIAS record for this name:
+1. For each of the domains you want to add to the service, create a DNS CNAME or ALIAS record with the name:
 
    ```text
    _acme-challenge.<DOMAIN>.
    ```
 
-   and with this value:
+   and the value:
 
    ```text
    _acme-challenge.<DOMAIN>.external-domains-production.cloud.gov.
    ```
 
-   For example, if you wanted to set up a service for `www.example.gov` and `example.gov`,
-   you'd start by creating the CNAME or ALIAS records:
+   For example, if you wanted to set up a service for `www.example.gov`, you would create a CNAME or ALIAS record with the name:
 
-   ```shell
-   _acme-challenge.example.gov. # record name
-   _acme-challenge.example.gov.external-domains-production.cloud.gov. # record value
+   ```text
+   _acme-challenge.example.gov.
    ```
 
-   ```shell
-   _acme-challenge.www.example.gov. # record name
-   _acme-challenge.www.example.gov.external-domains-production.cloud.gov. # record value
+   and the value:
+
+   ```text
+   _acme-challenge.example.gov.external-domains-production.cloud.gov.
+   ```
+
+   Or for `example.gov`, you would create a CNAME or ALIAS record with the name:
+
+   ```text
+   _acme-challenge.www.example.gov.
+   ```
+
+   and the value:
+
+   ```text
+   _acme-challenge.www.example.gov.external-domains-production.cloud.gov.
    ```
 
    These records will be validated upon service creation, so be sure to set these up ahead of time.
 
-2. **Optional: Complete this step now only for sites that have not yet launched, or for sites that can withstand downtime.** For each of the domains you want to add to the service, create a DNS CNAME or ALIAS record:
+2. **Optional: Complete this step now only for sites that have not yet launched, or for sites that can withstand downtime.** For each of the domains you want to add to the service, create a DNS CNAME or ALIAS record with the name:
 
-   ```shell
-   <DOMAIN> # record name
-   <DOMAIN>.external-domains-production.cloud.gov. # record value
+   ```text
+   <DOMAIN>.
+   ```
+
+   and the value:
+
+   ```text
+   <DOMAIN>.external-domains-production.cloud.gov.
    ```
 
    For example, if you wanted to set up a service for
-   `www.example.gov` and `example.gov`, you'd create these CNAME/ALIAS records:
+   `www.example.gov`, you would create a CNAME or ALIAS record with the name:
 
-   ```shell
-   www.example.gov. # record name
-   www.example.gov.external-domains-production.cloud.gov. # record value
+   ```text
+   www.example.gov.
    ```
 
-   ```shell
-   example.gov. # record name
-   example.gov.external-domains-production.cloud.gov. # record value
+   and the value:
+
+   ```text
+   www.example.gov.external-domains-production.cloud.gov.
+   ```
+
+   Or, for `example.gov`, you would create a CNAME or ALIAS record with the name:
+
+   ```text
+   example.gov.
+   ```
+
+   and the value:
+
+   ```text
+   example.gov.external-domains-production.cloud.gov.
    ```
 
 3. Create the cf domain for each of the domains you are adding to the service:
