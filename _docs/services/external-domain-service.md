@@ -107,18 +107,6 @@ cf create-service external-domain domain-with-cdn -c '{"path": "/some/path"}'
    For example, if you wanted to set up a service for `www.example.gov`, you would create a CNAME or ALIAS record with the name:
 
    ```text
-   _acme-challenge.example.gov.
-   ```
-
-   and the value:
-
-   ```text
-   _acme-challenge.example.gov.external-domains-production.cloud.gov.
-   ```
-
-   Or for `example.gov`, you would create a CNAME or ALIAS record with the name:
-
-   ```text
    _acme-challenge.www.example.gov.
    ```
 
@@ -126,6 +114,18 @@ cf create-service external-domain domain-with-cdn -c '{"path": "/some/path"}'
 
    ```text
    _acme-challenge.www.example.gov.external-domains-production.cloud.gov.
+   ```
+
+   Or for `example.gov`, you would create a CNAME or ALIAS record with the name:
+
+   ```text
+   _acme-challenge.example.gov.
+   ```
+
+   and the value:
+
+   ```text
+   _acme-challenge.example.gov.external-domains-production.cloud.gov.
    ```
 
    These records will be validated upon service creation, so be sure to set these up ahead of time.
