@@ -12,9 +12,9 @@ You can leverage cloud.gov's identity hub to reduce the burden of authenticating
 
 ## Plans
 
-Plan Name | Description | 
+Plan Name | Description |
 --------- | ----------- | -----
-`oauth-client` | OAuth2 client credentials for authenticating cloud.gov users in your app | 
+`oauth-client` | OAuth2 client credentials for authenticating cloud.gov users in your app |
 
 *These instances are available in [sandbox spaces]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}#sandbox-limitations).*
 
@@ -26,7 +26,7 @@ To create a service instance that can provision identity provider credentials, r
 cf create-service cloud-gov-identity-provider oauth-client <SERVICE_INSTANCE_NAME>
 ```
 
-Note: By default, identity provider service instances use the `openid` scope. The user will be prompted 
+Note: By default, identity provider service instances use the `openid` scope. The user will be prompted
 to grant any permissions required by scopes the first time they login to your application.
 
 ## Obtaining credentials
@@ -60,6 +60,19 @@ It will return an object like this:
 
 Keep these credentials secure. If they’re compromised, the way to invalidate the credentials is to [delete the service key](https://docs.cloudfoundry.org/devguide/services/service-keys.html#delete) (you can create another, and it will have a fresh set of credentials). Each service key that you bind to your instance creates a separate identity provider with different credentials; you can create as many service keys per instance as you like. <!-- this advice should match on /docs/services/cloud-gov-service-account/ + /docs/services/cloud-gov-identity-provider/ -->
 
+### Support for the PKCE authorization flow
+
+> Note: The [draft for the OAuth 2.1 spec](https://oauth.net/2.1/) **requires PKCE for all clients using the authorization code flow**.
+
+If you need to create an OAuth client that supports the [PKCE authorization flow](https://dropbox.tech/developers/pkce--what-and-why-), you need to specify the `allowpublic: true` option when creating a service key like so:
+
+```shell
+cf create-service-key \
+    <SERVICE_INSTANCE_NAME> \
+    <SERVICE_KEY_NAME> \
+    -c '{"redirect_uri": ["<APP_AUTH_REDIRECT_ROUTE>", "<APP_LOGOUT_REDIRECT_ROUTE>", "allowpublic": true]}'
+```
+
 ### If you can't find your service keys
 
 <!-- this description matches on cloud-gov-identity-provider.md and cloud-gov-service-account.md -->
@@ -76,4 +89,4 @@ The identity provider service creates unique cloud.gov credentials for each serv
 
 ### The broker in GitHub
 
-You can find the broker here: [https://github.com/cloudfoundry-community/uaa-credentials-broker](https://github.com/cloudfoundry-community/uaa-credentials-broker).
+You can find the broker here: [https://github.com/cloud-gov/uaa-credentials-broker](https://github.com/cloud-gov/uaa-credentials-broker).
