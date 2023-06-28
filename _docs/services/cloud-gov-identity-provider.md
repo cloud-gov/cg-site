@@ -37,7 +37,12 @@ To create an identity provider, bind a [service key](https://docs.cloudfoundry.o
 cf create-service-key \
     <SERVICE_INSTANCE_NAME> \
     <SERVICE_KEY_NAME> \
-    -c '{"redirect_uri": ["<APP_AUTH_REDIRECT_ROUTE>", "<APP_LOGOUT_REDIRECT_ROUTE>"]}'
+    -c '{
+      "redirect_uri": [
+        "<APP_AUTH_REDIRECT_ROUTE>",
+        "<APP_LOGOUT_REDIRECT_ROUTE>"
+      ]
+    }'
 ```
 
 This will create a cloud.gov identity provider and make the credentials available to you via a service key.
@@ -70,7 +75,13 @@ If you need to create an OAuth client that supports the [PKCE authorization flow
 cf create-service-key \
     <SERVICE_INSTANCE_NAME> \
     <SERVICE_KEY_NAME> \
-    -c '{"redirect_uri": ["<APP_AUTH_REDIRECT_ROUTE>", "<APP_LOGOUT_REDIRECT_ROUTE>", "allowpublic": true]}'
+    -c '{
+      "redirect_uri": [
+        "<APP_AUTH_REDIRECT_ROUTE>",
+        "<APP_LOGOUT_REDIRECT_ROUTE>",
+      ],
+      "allowpublic": true
+    }'
 ```
 
 ### If you can't find your service keys
