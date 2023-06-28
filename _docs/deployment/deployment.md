@@ -3,7 +3,7 @@ parent: deployment
 layout: docs
 sidenav: true
 title: Basic deployment instructions
-redirect_from: 
+redirect_from:
     - /docs/apps/deployment/
 weight: -100
 ---
@@ -51,7 +51,7 @@ By default, `cf push` will deploy the working state of all the files you have in
 
 ## Next steps on application architecture
 
-1. cloud.gov works best with applications that follow the [Twelve-Factor App](http://12factor.net/) guidelines. This is more of a comprehensive philosophy than a set of requirements, and it helps explain how cloud.gov expects applications to behave.
+1. cloud.gov works best with applications that follow the [Twelve-Factor App](https://12factor.net/) guidelines. This is more of a comprehensive philosophy than a set of requirements, and it helps explain how cloud.gov expects applications to behave.
 1. The Cloud Foundry [Considerations for Designing and Running an Application in the Cloud](https://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html) apply to cloud.gov as well, including more details about the core principles above.
 1. The cloud.gov [production-ready guide]({{ site.baseurl }}{% link _docs/deployment/production-ready.md %}) explains how to prepare your application for success in production on cloud.gov.
 
