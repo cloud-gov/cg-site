@@ -20,6 +20,8 @@ https://example.gov
 .*\.us-gov-west-1.vpce.amazonaws.com
 https://www.congress.gov/bill/.*
 https://www.pivotaltracker.com/story/show/.*
+otherapp.hostname.gov
+anotherapp.hostname.com
 
 # URLs with no known replacements
 https://fugacious.18f.gov/
@@ -41,7 +43,6 @@ http://jpattonassociates.com/wp-content/uploads/2015/03/story_mapping.pdf
 https://tf.nist.gov/tf-cgi/servers.cgi
 https://agency.gov
 http://agency.gov
-
 https://github.com/cloudfoundry/stacks/releases/
 
 # URLs that are failing for unknown reasons
