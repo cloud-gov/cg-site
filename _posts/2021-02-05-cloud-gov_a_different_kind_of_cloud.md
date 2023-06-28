@@ -8,7 +8,7 @@ excerpt: The cloud.gov platform acts as a concierge for your cloud deployments,
 ---
 As a program manager or CIO tasked with moving applications to the cloud, one of the first questions you might find yourself faced with is: which cloud should I move to?
 
-One of the many benefits of the continued advancement of cloud technologies is that [there are lots of different cloud deployment and operational models](https://cic.gsa.gov/basics/cloud-basics/) to choose from. And it’s also one of the main drawbacks. 
+One of the many benefits of the continued advancement of cloud technologies is that [there are lots of different cloud deployment and operational models](https://bluexp.netapp.com/blog/cvo-blg-cloud-computing-deployment-models-and-architectures) to choose from. And it’s also one of the main drawbacks. 
 
 Which cloud option is right for your project? Which service model offers the best mix of cost effectiveness, security, and ease of use? 
 
