@@ -12,7 +12,7 @@ configuration file leverages resources of type `aws_route53_record`. To learn
 more about Terraform configuration continue on below, or [read the documentation
 on Terraform's documentation site][docs-terraform#resources].
 
-[docs-terraform#resources]: https://www.terraform.io/docs/configuration/resources.html "Terraform - Docs - Configuration - Resources"
+[docs-terraform#resources]: https://www.terraform.io/docs/configuration/resources "Terraform - Docs - Configuration - Resources"
 [repo-18f/cg-provision]: https://www.github.com/18F/cg-provision "Github 18F/cg-provision"
 [repo-18f/cg-provision#stack.tf]: https://github.com/18F/cg-provision/blob/master/terraform/stacks/dns/stack.tf "Terraform configuration file for cloud.gov"
 
@@ -94,7 +94,7 @@ resource "aws_route53_record" "cloud_gov_<DOMAIN_NAME_UNDERSCORED>_txt" {
 The configuration files uses the Terraform syntax. To read more about Terraform
 syntax, [please read the documentation on Terraform's documentation site][docs-terraform#syntax].
 
-[docs-terraform#syntax]: https://www.terraform.io/docs/configuration/syntax.html "Terraform - Docs - Configuration - Syntax"
+[docs-terraform#syntax]: https://www.terraform.io/docs/configuration/syntax "Terraform - Docs - Configuration - Syntax"
 
 ## Submit a Pull Request
 
