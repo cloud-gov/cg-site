@@ -68,7 +68,7 @@ environment. This solution means that CredHub would have a single database
 that it would leverage to store its data for its specific BOSH director.
 
 {% mermaid_diagram id-prefix="colocated-diagram" %}
-graph LR;
+graph TB;
   master[Master BOSH + CredHub]
   tooling[Tooling BOSH + CredHub]
   development[BOSH + CredHub]
@@ -84,21 +84,21 @@ graph LR;
     tooling-->|Interpolates from Tooling CredHub|tooling-d
   end
   subgraph Production VPC
-    tooling-->production
+    tooling---->production
     subgraph Production BOSH
       production
     end
     production-->|Interpolates from Production CredHub|production-d
   end
   subgraph Staging VPC
-    tooling-->staging
+    tooling---->staging
     subgraph Staging BOSH
       staging
     end
     staging-->|Interpolates from Staging CredHub|staging-d
   end
   subgraph Development VPC
-    tooling-->development
+    tooling---->development
     subgraph Development BOSH
       development
     end

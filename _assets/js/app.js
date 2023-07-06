@@ -1,7 +1,7 @@
 // Add your custom javascript here
 console.log("Hi from cloud.gov Pages");
 
-mermaid.initialize({startOnLoad:true, theme: null}, ".someOtherClass");
+mermaid.initialize({startOnLoad:true, theme: 'base'}, ".someOtherClass");
 
 var sideNavParents = document.querySelectorAll(".usa-sidenav__item--parent-item");
 var sideNavChild = document.querySelectorAll(".usa-sidenav__sublist--middle-generation");

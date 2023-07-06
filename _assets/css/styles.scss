@@ -437,20 +437,20 @@ code.language-plaintext {
 }
 
 .cg-diagrams-stage {
-  background: #f1f1f1;
+  background: #f1f1f1 !important;
   font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', 'Roboto',
-    'Arial', sans-serif;
+    'Arial', sans-serif !important;
 }
 .cg-diagrams-stage .label {
-  color: #ffffff;
-  overflow-wrap: break-word;
-  word-break: break-word;
+  color: #ffffff !important;
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
 }
 
 .cg-diagrams,
 .cg-diagrams-stage {
-  overflow: scroll;
-  width: 100%;
+  overflow: scroll !important;
+  width: 100% !important;
 }
 
 .cluster rect {
@@ -460,31 +460,31 @@ code.language-plaintext {
 }
 
 .cluster text {
-  font-size: 1.7rem;
-  font-weight: 700;
+  font-size: 1.7rem !important;
+  font-weight: 700 !important;
   font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', 'Roboto',
-    'Arial', sans-serif;
-  font-size: 17px;
+    'Arial', sans-serif !important;
+  font-size: 17px !important;
 }
 
 .node rect,
 .node circle,
 .node ellipse,
 .node polygon {
-  fill: color('primary');
-  stroke: color('primary-dark');
-  stroke-width: 2px;
+  fill: color('primary') !important;
+  stroke: color('primary-dark') !important;
+  stroke-width: 2px !important;
 }
 
-.node .label {
+.node .label, .node .nodeLabel {
   font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', 'Roboto',
-    'Arial', sans-serif;
-  color: white;
+    'Arial', sans-serif !important;
+  color: white !important;
 }
 
 .edgePath .path {
-  stroke: color('primary-dark');
-  stroke-width: 2px;
+  stroke: color('primary-dark') !important;
+  stroke-width: 2px !important;
 }
 
 .edgePath marker path {
@@ -492,81 +492,83 @@ code.language-plaintext {
 }
 
 .edgeLabel {
-  background-color: #ffffff;
-  border: #ffffff 5px solid;
-  color: #000000;
+  background-color: #ffffff !important;
+  border: #ffffff 5px solid !important;
+  color: #000000 !important;
   font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', 'Roboto',
-    'Arial', sans-serif;
-  font-family: 17px;
+    'Arial', sans-serif !important;
+  font-family: 17px !important;
 }
 .edgeLabel:empty {
-  border: none;
+  border: none !important;
 }
 
 rect {
-  fill: color('primary-vivid');
-  stroke: color('primary-dark');
-  stroke-width: 2px;
+  fill: color('primary-vivid') !important;
+  stroke: color('primary-dark') !important;
+  stroke-width: 2px !important;
 }
 rect.note {
-  fill: #e1f3f8;
-  stroke: color('primary')-light;
-  stroke-width: 2px;
+  fill: #e1f3f8 !important;
+  stroke: color('primary')-light !important;
+  stroke-width: 2px !important;
 }
 rect.labelBox {
-  fill: color('primary-vivid');
-  stroke: color('primary');
+  fill: color('primary-vivid') !important;
+  stroke: color('primary') !important;
 }
 rect.actor {
-  fill: 'priamry-vivid';
-  stroke: color('primary-dark');
+  fill: 'priamry-vivid' !important;
+  stroke: color('primary-dark') !important;
 }
 
 #crosshead path,
 #arrowhead path {
-  fill: color('primary-dark');
+  fill: color('primary-dark') !important;
 }
 
 line[class^='messageLine'],
 line.actor-line {
-  fill: color('primary-dark');
-  stroke: color('primary-dark');
-  stroke-width: 2px;
+  fill: color('primary-dark') !important;
+  stroke: color('primary-dark') !important;
+  stroke-width: 2px !important;
 }
 
 line.loopLine {
-  fill: color('primary-dark');
-  stroke: color('primary');
-  stroke-width: 2px;
+  fill: color('primary-dark') !important;
+  stroke: color('primary') !important;
+  stroke-width: 2px !important;
 }
 
 text.messageText {
-  font-family: 'Bitstream Vera Sans Mono', 'Consolas', 'Courier', monospace;
-  text-shadow: 2px 2px 0 #ffffff, 1px 1px 0 #5b616b;
-  fill: color('primary-vivid');
-  font-size: 1rem;
+  font-family: 'Bitstream Vera Sans Mono', 'Consolas', 'Courier', monospace !important;
+  text-shadow: 2px 2px 0 #ffffff, 1px 1px 0 #5b616b !important;
+  fill: color('primary-vivid') !important;
+  font-size: 1rem !important;
 }
 
 text.actor {
-  fill: #ffffff;
+  fill: #ffffff !important;
 }
 
 text.noteText {
-  fill: #212121;
-  font-size: 1.25rem;
+  fill: #212121 !important;
+  font-size: 1.25rem !important;
 }
 
 text.labelText {
   font-family: 'Merriweather', 'Georgia', 'Cambria', 'Times New Roman', 'Times',
-    serif;
-  fill: #dce4ef;
-  font-size: 1.25rem;
-  text-transform: uppercase;
+    serif !important;
+  fill: #dce4ef !important;
+  font-size: 1.25rem !important;
+  text-transform: uppercase !important;
 }
 
 text.loopText {
   font-family: 'Merriweather', 'Georgia', 'Cambria', 'Times New Roman', 'Times',
-    serif;
-  font-size: 1rem;
-  font-style: oblique;
+    serif !important;
+  font-size: 1rem !important;
+  font-style: oblique !important;
 }
+
+

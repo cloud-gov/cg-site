@@ -104,7 +104,7 @@ Note that when built by cloud.gov Pages, `npm run pages` is used instead of the
     npm start
 ```
 
-Open your web browser to [localhost:3000](http://localhost:3000/) to view your
+Open your web browser to [localhost:4000](http://localhost:4000/) to view your
 site.
 
 ### Testing
