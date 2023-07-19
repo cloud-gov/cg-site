@@ -41,7 +41,7 @@ If you [specify front-matter defaults](http://jekyllrb.com/docs/configuration/#f
 
 ### Base URLs
 
-To handle routing sites for previews, Pages automatically sets a `baseurl` path for your site. This essentially nests your site in a subdirectory under the `federalist.18f.gov` domain, such as `federalist.18f.gov/preview/18f/hub/new-draft`, where `/preview/18f/hub` is the `baseurl`.
+To handle routing sites for previews, Pages automatically sets a `baseurl` path for your site. This essentially nests your site in a subdirectory under the `pages.cloud.gov` domain, such as `sites.pages.cloud.gov/preview/18f/hub/new-draft`, where `/preview/18f/hub` is the `baseurl`.
 
 All links to other pages or resources on the site require a `baseurl` prefix. If you're designing a custom template to work with Pages, make sure all references to relative links include `site.baseurl` prefixes, including trailing slashes, as follows:
 
