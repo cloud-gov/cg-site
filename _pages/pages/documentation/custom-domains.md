@@ -40,10 +40,10 @@ An "apex" or "2nd level" domain is the "root" of your domain and will contain on
 
 #### Examples
 
-| apex domains  | subdomains           |
-| ------------- | -------------------- |
-| `example.gov` | `www.example.gov`    | 
-| `18f.gov`     | `federalist.18f.gov` |
+| apex domains  | subdomains              |
+| ------------- | ----------------------- |
+| `example.gov` | `www.example.gov`       |
+| `18f.gov`     | `accessibility.18f.gov` |
 
 ---
 
