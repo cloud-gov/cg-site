@@ -11,16 +11,16 @@ redirect_from:
 
 ### Want to use cloud.gov?
 
-If you're interested in using cloud.gov, email [**{{site.email}}**](mailto:{{site.email}}?body=What%27s%20your%20name%3F%0A%0AWhat%20agency%20or%20office%20do%20you%20work%20for%3F%0A%0AWhat%27s%20your%20job%20title%20or%20role%3F%0A%0ATell%20us%20a%20little%20about%20your%20project%20or%20your%20questions%20about%20cloud.gov%3A%0A%0AIf%20you%27d%20like%20us%20to%20call%20you%2C%20what%27s%20your%20phone%20number%20and%20when%20might%20be%20a%20good%20time%3F%0A%0AHow%20did%20you%20first%20hear%20about%20cloud.gov%3F). We’ll schedule a call to answer your questions and help you [get started]({{ site.baseurl }}{% link _pages/sign-up.md %}).
+If you're interested in using cloud.gov, email [**{{site.email}}**](mailto:{{site.inquiries_email}}). We’ll schedule a call to answer your questions and help you [get started]({{ site.baseurl }}{% link _pages/sign-up.md %}).
 
 If you have a U.S. federal government email address, you can [get access to a free sandbox space]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}).
 
 ### Support for people who use cloud.gov
 
-Email [**{{site.support_email}}**](mailto:{{site.support_email}}?body=What%20are%20you%20trying%20to%20do%3F%0A%0AWhat%20do%20you%20expect%20to%20happen%3F%0A%0AWhat%20actually%20happened%3F%0A%0AAttach%20relevant%20logs%20or%20screenshots%20%28remove%20sensitive%20information%29%3A). See our [customer service objectives page]({{ site.baseurl }}{% link _docs/overview/customer-service-objectives.md %}) for information about our support availability.
+Email [**{{site.support_email_address}}**](mailto:{{site.support_email}}). See our [customer service objectives page]({{ site.baseurl }}{% link _docs/overview/customer-service-objectives.md %}) for information about our support availability.
 
 If you need help with an application security incident, the request should come from the System Owner or Org Manager, to help us validate the request. For an active incident, refer to our
-standard (security.txt)[{{ site.baseurl }}/.well-known/security.txt] file.
+standard [security.txt]({{ site.baseurl }}/.well-known/security.txt) file.
 
 You should not include any passwords or sensitive environment variables in your email (we don't need them to help you, and you should keep them protected).
 
