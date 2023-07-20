@@ -15,9 +15,9 @@ To create a new organization through this process, you must be an existing custo
 
 ### Org name
 
-The new organization will be named for both the customer (e.g. "GSA") and the system, such as "CTO" or "18f-federalist". For a prototyping organization, the system name should be "prototyping".
+The new organization will be named for both the customer (e.g. "GSA") and the system, such as "CTO" or "tts-analytics". For a prototyping organization, the system name should be "prototyping".
 
-The org and system then are combined with a dash, e.g. "gsa-18f-federalist".
+The org and system then are combined with a dash, e.g. "gsa-tts-analytics".
 
 Note: Names cannot contain spaces and should instead use dashes (-).
 

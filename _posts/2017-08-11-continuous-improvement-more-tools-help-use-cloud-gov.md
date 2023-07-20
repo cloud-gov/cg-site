@@ -51,6 +51,6 @@ The Federal Bureau of Investigation (FBI) recently launched their new Crime Data
 
 #### Federal Election Commission
 
-The Federal Election Commission (FEC) recently relaunched their flagship website, fec.gov, with cloud.gov. The FEC collects financial reports for all federal elections and discloses fundraising figures to the public. By hosting FEC.gov on cloud.gov and moving its data to the cloud, the FEC anticipates saving 85% in hosting costs and is better prepared for peak traffic events. Read a case study about the FEC here: [{{ site.baseurl }}/overview/customer-stories/fec/]({{ site.baseurl }}/overview/customer-stories/fec/) and check out their new, cloud.gov-hosted website at [https://fec.gov](https://fec.gov)
+The Federal Election Commission (FEC) recently relaunched their flagship website, fec.gov, with cloud.gov. The FEC collects financial reports for all federal elections and discloses fundraising figures to the public. By hosting FEC.gov on cloud.gov and moving its data to the cloud, the FEC anticipates saving 85% in hosting costs and is better prepared for peak traffic events. Read a case study about the FEC here: [{{ site.baseurl }}/overview/customer-stories/fec/]({{ site.baseurl }}/overview/customer-stories/fec/) and check out their new, cloud.gov-hosted website at [https://www.fec.gov](https://www.fec.gov)
 
 !["the new cloud.gov hosted fec homepage" width="624" height="320"]({{site.baseurl}}/assets/ fec-screen.png)
