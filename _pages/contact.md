@@ -11,13 +11,13 @@ redirect_from:
 
 ### Want to use cloud.gov?
 
-If you're interested in using cloud.gov, email [**{{site.email}}**](mailto:{{site.inquiries_email}}). We’ll schedule a call to answer your questions and help you [get started]({{ site.baseurl }}{% link _pages/sign-up.md %}).
+If you're interested in using cloud.gov, email [**{{site.email}}**]({{site.inquiries_email}}). We’ll schedule a call to answer your questions and help you [get started]({{ site.baseurl }}{% link _pages/sign-up.md %}).
 
 If you have a U.S. federal government email address, you can [get access to a free sandbox space]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}).
 
 ### Support for people who use cloud.gov
 
-Email [**{{site.support_email_address}}**](mailto:{{site.support_email}}). See our [customer service objectives page]({{ site.baseurl }}{% link _docs/overview/customer-service-objectives.md %}) for information about our support availability.
+Email [**{{site.support_email_address}}**]({{site.support_email}}). See our [customer service objectives page]({{ site.baseurl }}{% link _docs/overview/customer-service-objectives.md %}) for information about our support availability.
 
 If you need help with an application security incident, the request should come from the System Owner or Org Manager, to help us validate the request. For an active incident, refer to our
 standard [security.txt]({{ site.baseurl }}/.well-known/security.txt) file.
