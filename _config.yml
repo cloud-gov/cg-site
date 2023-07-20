@@ -20,6 +20,7 @@
 
 title: cloud.gov
 email: inquiries@cloud.gov
+support_email: support@cloud.gov
 description: >- # this means to ignore newlines until "baseurl:"
   Expedite your agency’s path to a secure and compliant cloud. cloud.gov provides an application environment that enables rapid deployment and ATO assessment for modern web applications.
 baseurl: "" # the subpath of your site, e.g. /blog
