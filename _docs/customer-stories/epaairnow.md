@@ -9,7 +9,7 @@ redirect_from:
   - /case-studies/epa-airnow-gov/
 ---
 
-!["Screenshot from analytics.usa.gov on June 13, 2023"]({{ site.baseurl }}/assets/images/content/TopDomainsAirNow.png)
+!["Screenshot from analytics.usa.gov showing the top requested government domains for the last 7 days on June 13, 2023"]({{ site.baseurl }}/assets/images/content/TopDomainsAirNow.png)
 
 In 2018, as wildfires raged in California, Californians turned to [AirNow.gov](https://www.airnow.gov), which is a partnership program operated by the Environmental Protection Agency (EPA) in order to provide the public with near real-time air quality data.
 
