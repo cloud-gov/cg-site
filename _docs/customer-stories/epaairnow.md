@@ -9,7 +9,7 @@ redirect_from:
   - /case-studies/epaairnow/
 ---
 
-![Screenshot from analytics.usa.gov on June 13, 2023]({{ site.baseurl }}/assets/images/content/TopDomainsAirNow.png)
+!["Screenshot from analytics.usa.gov on June 13, 2023"]({{ site.baseurl }}/assets/images/content/TopDomainsAirNow.png)
 
 In 2018, as wildfires raged in California, Californians turned to [AirNow.gov](https://www.airnow.gov), which is a partnership program operated by the Environmental Protection Agency (EPA) in order to provide the public with near real-time air quality data.
 
@@ -30,7 +30,7 @@ But in the summer of 2023, the newfound “elasticity” of AirNow.gov and its r
 
 The Canadian wildfires of summer 2023 “drove our traffic higher than it’s ever been before”, said Dickerson. The traffic was “several orders of magnitude higher than what we have ever seen before.” 
 
-![Screenshot of EPA AirNow Traffic from 2018 until 2023](https://github.com/ArsHaider/Images/blob/main/analytics-2018-now.jpg)
+!["Screenshot of EPA AirNow Traffic from 2018 until 2023"]({{ site.baseurl }}/assets/images/content/epaairnow-analytics-2018-now.jpg)
 **Exhibit 1. A screenshot provided by the EPA of Google Analytics showing the traffic for AirNow.gov, including the spikes from the California wildfires in 2018 and the Canadian wildfires in summer 2023. Please note: AirNow.gov did not start running on Cloud.gov until 2019.**
 
 Not only was the traffic volume higher than ever before, it also grew at a faster rate than ever before. As Dickerson put it: “This past episode was amazing, the traffic surged faster than we’ve ever seen, it probably went up by a million hits in one day”. He continued: “On a Tuesday morning everything looked normal and by Wednesday afternoon we were at a new record high for traffic, which was then broken on Thursday, it happened that fast”.
