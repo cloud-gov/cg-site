@@ -2,7 +2,7 @@
 parent: customer-stories
 layout: docs
 sidenav: true
-title: Environmental Protection Agency AirNow
+title: Environmental Protection Agency - AirNow.gov
 kicker: Case study
 redirect_from:
   - /overview/customer-stories/environmental-protection-agency-airnow/
