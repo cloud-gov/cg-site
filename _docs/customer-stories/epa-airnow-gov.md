@@ -47,7 +47,7 @@ The AirNow team attributed the stability of AirNow.gov [to their ability to easi
 
 As the EPA discovered, while the platform infrastructure offered by Cloud.gov is designed to scale, it also empowers users to scale their applications as necessary. To take advantage of this flexibility offered by Cloud.gov, the EPA AirNow team developed a standard operating procedure for when they observe increased traffic from their analytics:
 
-* Scale up the number of their application instances
+* [Scale up the number of their application instances]({{ site.baseurl }}{% link _docs/management/multiple-instances.md %})
 * Modify the cache headers on their site assets to increase cache lifetime in the CDN and decrease load on their applications
 * Use plugins like [“cf top” to monitor the health of their instances](https://github.com/ECSTeam/cloudfoundry-top-plugin)
 
