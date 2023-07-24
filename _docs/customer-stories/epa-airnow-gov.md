@@ -37,7 +37,7 @@ The Canadian wildfires of summer 2023 “drove our traffic higher than it’s ev
   <figcaption>A screenshot provided by the EPA of Google Analytics showing the traffic for AirNow.gov, including the spikes from the California wildfires in 2018 and the Canadian wildfires in summer 2023.<strong> Please note: AirNow.gov did not start running on Cloud.gov until 2019.</strong></figcaption>
 </figure>
 
-Not only was the traffic volume higher than ever before, it also grew at a faster rate than ever before. As Dickerson put it: “This past episode was amazing, the traffic surged faster than we’ve ever seen, it probably went up by a million hits in one day”. He continued: “On a Tuesday morning everything looked normal and by Wednesday afternoon we were at a new record high for traffic, which was then broken on Thursday, it happened that fast”.
+Not only was the traffic volume higher than ever before, it also grew at a faster rate than ever before. As Dickerson put it: “This past episode was amazing, the traffic surged faster than we’ve ever seen, it probably went up by a million hits in one day.” He continued: “On a Tuesday morning everything looked normal and by Wednesday afternoon we were at a new record high for traffic, which was then broken on Thursday, it happened that fast”.
 
 Even in the face of this unprecedented traffic and load, AirNow.gov was completely stable. “My team and I were amazed it did not slow down or show any signs of having trouble before we could get in to monitor it”, said Dickerson.
 
