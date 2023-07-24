@@ -6,7 +6,7 @@ title: Environmental Protection Agency - AirNow.gov
 kicker: Case study
 redirect_from:
   - /overview/customer-stories/environmental-protection-agency-airnow-gov/
-  - /case-studies/epaairnow/
+  - /case-studies/epa-airnow-gov/
 ---
 
 !["Screenshot from analytics.usa.gov on June 13, 2023"]({{ site.baseurl }}/assets/images/content/TopDomainsAirNow.png)
