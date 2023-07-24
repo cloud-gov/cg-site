@@ -55,4 +55,4 @@ Building on the solid foundation offered by cloud.gov, the AirNow.gov team is de
 
 EPA’s success in operating AirNow.gov on Cloud.gov played an important role in the launch of a companion service on Cloud.gov, the [AirNow Fire and Smoke Map](https://fire.airnow.gov/), which EPA runs in partnership with the U.S. Forest Service. Again, the EPA credited the ease of using Cloud.gov in allowing them to quickly develop new services for the public.
 
-If you are a government agency interested in building on a secure, scalable platform so you can spend less time worrying about infrastructure and more time focusing on your application, please contact us at [inquiries@cloud.gov](inquiries@cloud.gov). We would love to help you deliver on your mission.
+If you are a government agency interested in building on a secure, scalable platform so you can spend less time worrying about infrastructure and more time focusing on your application, please contact us at [{{site.email}}](mailto:{{site.email}}). We would love to help you deliver on your mission.
