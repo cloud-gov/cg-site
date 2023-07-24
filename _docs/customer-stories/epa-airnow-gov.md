@@ -20,7 +20,7 @@ The increased traffic to AirNow.gov during this event put more load on the web s
 
 As a service providing public health data, it is vital for AirNow.gov to remain available, especially during wildfire smoke events when poor air quality can affect millions of people.
 
-To better handle these unanticipated traffic surges in the future, the EPA AirNow team began to look at their options for migrating to cloud infrastructure. The team quickly discovered that the EPA’s Office of Mission Support had [a prototyping agreement with Cloud.gov](https://cloud.gov/pricing/) which they could leverage to deploy AirNow.gov in the cloud.
+To better handle these unanticipated traffic surges in the future, the EPA AirNow team began to look at their options for migrating to cloud infrastructure. The team quickly discovered that the EPA’s Office of Mission Support had [a prototyping agreement with Cloud.gov]({{ site.baseurl }}/pricing/) which they could leverage to deploy AirNow.gov in the cloud.
 
 In the summer of 2019, the EPA AirNow team began deploying AirNow on Cloud.gov.
 
