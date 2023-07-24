@@ -33,7 +33,7 @@ But in the summer of 2023, the newfound “elasticity” of AirNow.gov and its r
 The Canadian wildfires of summer 2023 “drove our traffic higher than it’s ever been before”, said Dickerson. The traffic was “several orders of magnitude higher than what we have ever seen before.”
 
 <figure class="content-image">
-  <img alt="Screenshot of Google Analytics showing AirNow.gov traffic from 2018 until 2023" src="/assets/images/content/epaairnow-analytics-2018-now.jpg" />
+  <img alt="Screenshot of Google Analytics showing AirNow.gov traffic from 2018 until 2023" src="{{site.baseurl}}/assets/images/content/epaairnow-analytics-2018-now.jpg" />
   <figcaption>A screenshot provided by the EPA of Google Analytics showing the traffic for AirNow.gov, including the spikes from the California wildfires in 2018 and the Canadian wildfires in summer 2023.<strong> Please note: AirNow.gov did not start running on Cloud.gov until 2019.</strong></figcaption>
 </figure>
 
