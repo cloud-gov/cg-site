@@ -12,24 +12,24 @@ This page documents policies and procedures related to cloud.gov continuous moni
 
 ## Overview
 
-Within the FedRAMP Security Assessment Framework, once an authorization has been granted, cloud.gov’s security posture is monitored according to the assessment and authorization process.  Monitoring security controls is part of the overall risk management framework for information security and is a requirement for cloud.gov to maintain a security authorization that meets the FedRAMP requirements.  
+Within the FedRAMP Security Assessment Framework, once an authorization has been granted, cloud.gov’s security posture is monitored according to the assessment and authorization process.  Monitoring security controls is part of the overall risk management framework for information security and is a requirement for cloud.gov to maintain a security authorization that meets the FedRAMP requirements.
 
-Traditionally, this process has been referred to as “Continuous Monitoring” as noted in *NIST SP 800-137 Information Security Continuous Monitoring for Federal Information Systems and Organizations*.  Other NIST documents such as NIST SP 800-37, Revision 1 refer to “ongoing assessment of security controls”.  It is important to note that both the terms “Continuous Monitoring” and “Ongoing Security Assessments” mean essentially the same thing and should be interpreted as such.  
+Traditionally, this process has been referred to as “Continuous Monitoring” as noted in *NIST SP 800-137 Information Security Continuous Monitoring for Federal Information Systems and Organizations*.  Other NIST documents such as NIST SP 800-37, Revision 1 refer to “ongoing assessment of security controls”.  It is important to note that both the terms “Continuous Monitoring” and “Ongoing Security Assessments” mean essentially the same thing and should be interpreted as such.
 
-Performing ongoing security assessments determines whether the set of deployed security controls in a cloud information system remains effective in light of new exploits and attacks, and planned and unplanned changes that occur in the system and its environment over time.  To maintain an authorization that meets the FedRAMP requirements, cloud.gov must monitor their security controls, assess them on a regular basis, and demonstrate that the security posture of their service offering is continuously acceptable.  
+Performing ongoing security assessments determines whether the set of deployed security controls in a cloud information system remains effective in light of new exploits and attacks, and planned and unplanned changes that occur in the system and its environment over time.  To maintain an authorization that meets the FedRAMP requirements, cloud.gov must monitor their security controls, assess them on a regular basis, and demonstrate that the security posture of their service offering is continuously acceptable.
 
-Ongoing assessment of security controls results in greater control over the security posture of the cloud.gov system and enables timely risk-management decisions.  Security-related information collected through continuous monitoring is used to make recurring updates to the security assessment package.  Ongoing due diligence and review of security controls enables the security authorization package to remain current which allows agencies to make informed risk management decisions as they use cloud services.  
+Ongoing assessment of security controls results in greater control over the security posture of the cloud.gov system and enables timely risk-management decisions.  Security-related information collected through continuous monitoring is used to make recurring updates to the security assessment package.  Ongoing due diligence and review of security controls enables the security authorization package to remain current which allows agencies to make informed risk management decisions as they use cloud services.
 
 ## Process
 
 The FedRAMP continuous monitoring program is based on the continuous monitoring process described in *NIST SP 800-137, Information Security Continuous Monitoring for Federal Information Systems and Organization*.  The goal is to provide: (i) operational visibility; (ii) managed change control; (iii) and attendance to incident response duties.  For more information on incident response, review the *FedRAMP Incident Communications Procedure*.
 
-The effectiveness of cloud.gov’s continuous monitoring capability supports ongoing authorization and reauthorization decisions.  Security-related information collected during continuous monitoring is used to make updates to the security authorization package.  Updated documents provide evidence that FedRAMP baseline security controls continue to safeguard the system as originally planned.  
+The effectiveness of cloud.gov’s continuous monitoring capability supports ongoing authorization and reauthorization decisions.  Security-related information collected during continuous monitoring is used to make updates to the security authorization package.  Updated documents provide evidence that FedRAMP baseline security controls continue to safeguard the system as originally planned.
 
 As defined by the National Institute of Standards and Technology (NIST), the process for continuous monitoring includes the following initiatives:
 
-* **Define** a continuous monitoring strategy based on risk tolerance that maintains clear visibility into assets and awareness of vulnerabilities and utilizes up-to-date threat information.  
-* **Establish** measures, metrics, and status monitoring and control assessments frequencies that make known organizational security status and detect changes to information system infrastructure and environments of operation, and status of security control effectiveness in a manner that supports continued operation within acceptable risk tolerances.  
+* **Define** a continuous monitoring strategy based on risk tolerance that maintains clear visibility into assets and awareness of vulnerabilities and utilizes up-to-date threat information.
+* **Establish** measures, metrics, and status monitoring and control assessments frequencies that make known organizational security status and detect changes to information system infrastructure and environments of operation, and status of security control effectiveness in a manner that supports continued operation within acceptable risk tolerances.
 * **Implement** a continuous monitoring program to collect the data required for the defined measures and report on findings; automate collection, analysis and reporting of data where possible.
 * **Analyze** the data gathered and **Report** findings accompanied by recommendations.  It may become necessary to collect additional information to clarify or supplement existing monitoring data.
 * **Respond** to assessment findings by making decisions to either mitigate technical, management and operational vulnerabilities; or accept the risk; or transfer it to another authority.
@@ -47,31 +47,31 @@ Authorizing Officials and their teams (“AOs”) serve as the focal point for c
 * Notify cloud.gov if the agency becomes aware of an incident that cloud.gov has not yet reported.
 * Provide a primary and secondary POC for cloud.gov and US-CERT as described in agency and cloud.gov Incident Response Plans.
 * Notify US-CERT when cloud.gov reports an incident.
-* Work with cloud.gov to resolve incidents; provide coordination with US-CERT if necessary. 
-* Notify FedRAMP ISSO of cloud.gov incident activity. 
-* Monitor security controls that are agency responsibilities.  
+* Work with cloud.gov to resolve incidents; provide coordination with US-CERT if necessary.
+* Notify FedRAMP ISSO of cloud.gov incident activity.
+* Monitor security controls that are agency responsibilities.
 During incident response, both cloud.gov and leveraging agencies are responsible for coordinating incident handling activities together, and with US-CERT.  The team-based approach to incident handling ensures that all parties are informed and enables incidents to be closed as quickly as possible.
 
-### FedRAMP PMO 
+### FedRAMP PMO
 
 The FedRAMP Program Management Office (PMO) acts as the liaison for the Joint Authorization Board for ensuring that CSPs with a JAB P-ATO strictly adhere to their established Continuous Monitoring Plan.  The JAB and FedRAMP PMO only perform Continuous Monitoring activities for those CSPs that have a JAB P-ATO.
 
-### Department of Homeland Security (DHS) 
+### Department of Homeland Security (DHS)
 
 The FedRAMP Policy Memo released by OMB defines the DHS FedRAMP responsibilities to include:
 
 * Assisting government-wide and agency-specific efforts to provide adequate, risk-based and cost-effective cybersecurity.
 * Coordinating cybersecurity operations and incident response and providing appropriate assistance.
 * Developing continuous monitoring standards for ongoing cybersecurity of Federal information systems to include real-time monitoring and continuously verified operating configurations.
-* Developing guidance on agency implementation of the Trusted Internet Connection (TIC) program for cloud services.  
+* Developing guidance on agency implementation of the Trusted Internet Connection (TIC) program for cloud services.
 
-The FedRAMP PMO works with DHS to incorporate DHS’s guidance into the FedRAMP program guidance and documents.  
+The FedRAMP PMO works with DHS to incorporate DHS’s guidance into the FedRAMP program guidance and documents.
 
-## Third Party Assessment Organization (3PAO) 
+## Third Party Assessment Organization (3PAO)
 
 Third Party Assessment Organizations (3PAO) are responsible for independently verifying and validating the control implementation and test results for cloud.gov in the continuous monitoring phase of the FedRAMP process.  Specifically, 3PAOs are responsible for:
 
-* Assessing a defined subset of the security controls annually.  
+* Assessing a defined subset of the security controls annually.
 * Submitting the assessment report to the ISSO one year after cloud.gov’s authorization date and each year thereafter.
 * Performing announced penetration testing.
 * Perform annual scans of web applications, databases, and operating systems.
@@ -88,7 +88,7 @@ In order to be effective in this role, 3PAOs are responsible for ensuring that t
 
 The cloud.gov team is responsible for implementing, verifying, and validating the cloud.gov continuous monitoring strategy.
 
-The cloud.gov Program Manager coordinates the tasks needed for the continuous monitoring strategy. They guide the team in assigning necessary tasks to team members in an agile way, including individuals on the Cloud Operations sub-team. 
+The cloud.gov Program Manager coordinates the tasks needed for the continuous monitoring strategy. They guide the team in assigning necessary tasks to team members in an agile way, including individuals on the Cloud Operations sub-team.
 
 The cloud.gov team achieves its continuous monitoring strategy primarily by implementing and maintaining a suite of automated components, with some manual tasks to assist with documenting and reporting to people outside the core team.
 
@@ -98,12 +98,11 @@ The cloud.gov team has implemented a suite of automated components to provide co
 
 * **Metric types and system components that automatically monitor these metrics:** The cloud.gov system has automated components that continuously monitor system metrics:
 	* Performance metrics:
-		* **collectd**
+		* Cloudfoundry performance and health metrics are shipped to Grafana and Prometheus, which has alerts configured for defined rules
 	* Job / program health:
 		* **BOSH Health Monitor (health-monitor)**
 	* Malicious code detection:
 		* **ClamAV:** detects trojans, viruses, malware, and other malicious threats. This runs continuously; files are scanned when they are written/accessed.
-		* **Code Climate:** scans all 18F or GSA-originated code for test coverage, complexity, duplication, and security, before being introduced into the production environment. When anyone proposes a change to an 18F-developed component that cloud.gov depends on (in the form of a GitHub pull request), the Code Climate service automatically runs its static analysis tool on the change.
 	* Network intrusion detection:
 		* **Snort:** continuously monitors network traffic, signatures, and behaviors, and raises alerts based on defined rules.
 	* Intruder detection / file integrity:
@@ -113,7 +112,8 @@ The cloud.gov team has implemented a suite of automated components to provide co
 		* **OWASP ZAP:** runs monthly to scan for web application vulnerabilities.
 * **Monitoring of the monitoring components:** The cloud.gov team uses BOSH as an automated way to continuously monitor the six monitoring components. (BOSH is an open source tool for release engineering, deployment, lifecycle management, and monitoring of distributed systems. BOSH allows individual developers and teams to easily version, package and deploy software in a reproducible manner.)
 * **Continuous deployment of the monitoring components:** The cloud.gov team uses Concourse to provide automated continuous deployment of the components, to ensure the components stay up to date. In addition, one component, Nessus, has self-updating capabilities.
-* **Static code analysis:** The cloud.gov team uses Code Climate to automate code scanning on all original projects that cloud.gov builds. Code Climate results are published on every pull request (code change).
+* **Static code analysis:** The cloud.gov team uses the following code scanning tools:
+	* Terraform: `terraform validate`
 
 ### Manual components
 
@@ -160,7 +160,7 @@ On a monthly basis, Authorizing Officials will be monitoring these deliverables 
 
 ## Quarterly Security Policy and Account Review
 
-cloud.gov performs quarterly security policy and account reviews to satisty various AC, AU and CM controls. The purpose of these reviews is to confirm that all members of the cloud Operations team require their level of access, and that the team reviews the content on the publicly accessible information system for nonpublic information and removes such information if discovered. During the account review meetings, cloud.gov also reviews its continuous monitoring strategy and identifies areas for improvements. 
+cloud.gov performs quarterly security policy and account reviews to satisty various AC, AU and CM controls. The purpose of these reviews is to confirm that all members of the cloud Operations team require their level of access, and that the team reviews the content on the publicly accessible information system for nonpublic information and removes such information if discovered. During the account review meetings, cloud.gov also reviews its continuous monitoring strategy and identifies areas for improvements.
 
 ## Appendix: Significant change rubric
 
