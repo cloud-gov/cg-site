@@ -98,7 +98,7 @@ The cloud.gov team has implemented a suite of automated components to provide co
 
 * **Metric types and system components that automatically monitor these metrics:** The cloud.gov system has automated components that continuously monitor system metrics:
 	* Performance metrics:
-		* Cloudfoundry performance and health metrics are shipped to Grafana and Prometheus, which has alerts configured for defined rules
+		* **Grafana/Prometheus**: Cloudfoundry performance and health metrics are shipped to Grafana and Prometheus, which has alerts configured for defined rules
 	* Job / program health:
 		* **BOSH Health Monitor (health-monitor)**
 	* Malicious code detection:
