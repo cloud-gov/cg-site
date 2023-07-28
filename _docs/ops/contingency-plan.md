@@ -183,7 +183,7 @@ The full Continuity of Operations Plan (COOP) and Disaster Recovery Plan (DRP) a
 * [TTS Devolution of Operations Playbook (Jan 2020)](https://drive.google.com/file/d/1sfSVhVPBteobeqhqnyb152z1PqboOKJI/view)
 * [TTS Google COOP Site](https://sites.google.com/a/gsa.gov/continuity/home/coming-soon---customized-hsso-pages/ocsit)
 * [TTS-wide Emergency Contact Spreadsheet](https://docs.google.com/spreadsheets/d/1-Hhv5S0M03W4JY1k-CM5vxrZildHUdMaxAoqLTWF2Ts/edit#gid=1295161336)
-* [cloud.gov COOP/DRP resources](https://github.com/cloud-gov/internal-docs/blob/master/runbooks/contingency.md#coop)
+* [cloud.gov COOP/DRP resources](https://github.com/cloud-gov/internal-docs/blob/main/docs/runbooks/Platform/contingency.md#coop)
 * [(deprecated) TTS Emergency Personnel Roster](https://docs.google.com/spreadsheets/d/1ITXXOu2IAntV8r6snIYHyXlRt1MgIlxpr-GudDP8tqQ/edit#gid=0)
 
 
@@ -212,7 +212,10 @@ This plan is most effective if all core cloud.gov team members know about it, re
 ### Page information
 
 * Last modified on: {% last_modified_at %} 
+  * 2023-07-28: Link correction for internal plans
   * 2023-06-13: Add link to internal contingency plan runbook
 * [Recent document history](https://github.com/cloud-gov/cg-site/commits/main/{{ page.path }}) (since 2022-11-08)
 * [Older document history](https://github.com/cloud-gov/cg-site/commits/master/{{ page.path }}) (from 2020-02-05 to 2022-11-08)
 * [Much older document history](https://github.com/cloud-gov/cg-site/commits/master/content/docs/ops/{{ page.slug }}.md) (before 2020-02-05)
+
+For assessment purposes, updates to [internal contingency plans](https://github.com/cloud-gov/internal-docs/blob/main/docs/runbooks/Platform/contingency.md) should be included along with public documentation updates.
