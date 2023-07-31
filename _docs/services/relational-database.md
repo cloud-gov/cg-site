@@ -15,29 +15,31 @@ If your application uses relational databases for storage, you can use the AWS R
 
 Plan Name                   | Description                                                                  | Software Version       |
 ---                         | ---                                                                          | ---                    |
-`micro-psql`                | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 1 GiB memory                                   | AWS RDS Latest Default |
-`micro-psql-redundant`      |  Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 1 GiB memory                         | AWS RDS Latest Default |
-`small-psql`                | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 2 GiB memor                                   | AWS RDS Latest Default |
-`small-psql-redundant`      |  Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 2 GiB memor                         | AWS RDS Latest Default |
-`medium-psql`               |  Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 4 GiB memor                                  | AWS RDS Latest Default |
-`medium-psql-redundant`     | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 4 GiB memory                        | AWS RDS Latest Default |
-`medium-gp-psql`            | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory                  | AWS RDS Latest Default |
-`medium-gp-psql-redundant`  | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory        | AWS RDS Latest Default |
-`large-gp-psql`             | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory                   | AWS RDS Latest Default |
-`large-gp-psql-redundant`   | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory         | AWS RDS Latest Default |
-`xlarge-gp-psql`            | Single-AZ RDS instance of PostgreSQL, minimum 2 cores, minimum 16 GiB memory                 | AWS RDS Latest Default |
-`xlarge-gp-psql-redundant`  | Multi-AZ RDS instance of PostgreSQL, minimum 2 cores, minimum 16 GiB memory        | AWS RDS Latest Default |
-`small-mysql`               | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 2 GiB memory                                        | AWS RDS Latest Default |
-`small-mysql-redundant`     | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 2 GiB memory                              | AWS RDS Latest Default |
-`medium-mysql`              | Single-AZ RDS instance of MySQL, minimum 2 cores, minimum 4 GiB memory                                       | AWS RDS Latest Default |
-`medium-mysql-redundant`    | Multi-AZ RDS instance of MySQL, minimum 2 cores, minimum 4 GiB memory                             | AWS RDS Latest Default |
+`micro-psql`                | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 1 GiB memory                                   | 15.x* |
+`micro-psql-redundant`      |  Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 1 GiB memory                         | 15.x* |
+`small-psql`                | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 2 GiB memor                                   | 15.x* |
+`small-psql-redundant`      |  Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 2 GiB memor                         | 15.x* |
+`medium-psql`               |  Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 4 GiB memor                                  | 15.x* |
+`medium-psql-redundant`     | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 4 GiB memory                        | 15.x* |
+`medium-gp-psql`            | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory                  | 15.x* |
+`medium-gp-psql-redundant`  | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory        | 15.x* |
+`large-gp-psql`             | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory                   | 15.x* |
+`large-gp-psql-redundant`   | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory         | 15.x* |
+`xlarge-gp-psql`            | Single-AZ RDS instance of PostgreSQL, minimum 2 cores, minimum 16 GiB memory                 | 15.x* |
+`xlarge-gp-psql-redundant`  | Multi-AZ RDS instance of PostgreSQL, minimum 2 cores, minimum 16 GiB memory        | 15.x* |
+`small-mysql`               | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 2 GiB memory                                        | 8.x.x* |
+`small-mysql-redundant`     | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 2 GiB memory                              | 8.x.x* |
+`medium-mysql`              | Single-AZ RDS instance of MySQL, minimum 2 cores, minimum 4 GiB memory                                       | 8.x.x* |
+`medium-mysql-redundant`    | Multi-AZ RDS instance of MySQL, minimum 2 cores, minimum 4 GiB memory                             | 8.x.x* |
 `medium-gp-mysql`           | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory                       | AWS RDS Latest Default |
-`medium-gp-mysql-redundant` | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory             | AWS RDS Latest Default |
-`large-gp-mysql`            | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory                       | AWS RDS Latest Default |
-`large-gp-mysql-redundant`  | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memorye              | AWS RDS Latest Default |
-`xlarge-gp-mysql`           | Single-AZ RDS instance of MySQL, minimum 2 cores, minimum 16 GiB memory                      | AWS RDS Latest Default |
-`xlarge-gp-mysql-redundant` | Multi-AZ RDS instance of MySQL, minimum 2 cores, minimum 16 GiB memory            | AWS RDS Latest Default |
+`medium-gp-mysql-redundant` | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory             | 8.x.x* |
+`large-gp-mysql`            | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory                       | 8.x.x* |
+`large-gp-mysql-redundant`  | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memorye              | 8.x.x* |
+`xlarge-gp-mysql`           | Single-AZ RDS instance of MySQL, minimum 2 cores, minimum 16 GiB memory                      | 8.x.x* |
+`xlarge-gp-mysql-redundant` | Multi-AZ RDS instance of MySQL, minimum 2 cores, minimum 16 GiB memory            | 8.x.x* |
 `medium-oracle-se2`         | Single-AZ RDS instance of Oracle SE2, minimum 1 core, minimum 4 GiB memory                                           | AWS RDS Latest Default |
+
+*Note: The actual database engine version used is the latest minor/patch version offered by AWS RDS for this major version*
 
 *Only the `micro-psql` and `small-mysql` plans are available in [sandbox spaces]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}#sandbox-limitations).*
 
@@ -106,7 +108,7 @@ Name               | Description                                                
 ---                | ---                                                            | ---                    |
 `storage`          | Number of GB available to the database instance                | 10                     |
 `enable_functions` | Boolean to enable functions on supported databases             | false                  |
-`version`          | Specifies a supported major version in RDS (must be in quotes) | AWS RDS Latest Default |
+`version`          | Specifies a supported major version in RDS (must be in quotes) | PostgreSQL: 15.X, MySQL 8.x.x |
 `backup_retention_period` | Specifies a number of days to retain daily snapshots. | 14           |
 `binary_log_format` | Specifies the format for [MySQL binary logging](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQL.BinaryFormat.html). **Only supported for MySQL database plans**. Valid options: `ROW`, `STATEMENT`, `MIXED`. | ---           |
 `enable_pg_cron` | Boolean to enable [`pg_cron` extension on PostgreSQL databases](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL_pg_cron.html) (requires PostgreSQL 12.5 and above; see example below for details) | false           |
