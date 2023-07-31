@@ -122,6 +122,9 @@ These are the current supported major versions for PostgreSQL:
 - 10
 - 11
 - 12
+- 13
+- 14
+- 15
 
 These are the current supported major versions for MySQL:
 
