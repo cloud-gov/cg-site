@@ -93,7 +93,7 @@ The platform's CI builds can be automatically triggered by third-party resources
 
 ### Monitor terraform-provision pipeline
 
-As part of platform automation, and Concourse and Terraform run a `plan-bootstrap-<environment>` job if parts of our infrastructure have changed due to PR or automation. Alerts for reviewing Terraform plan runs are located in `#cg-platoform`.  Review the plan updates and coordinate a time to run `bootstrap-<environment>` so the changes to the infrastructure can be made. All `bootstrap-<environment>` Concourse jobs are set for manual operator release so make sure the review of `plan-bootstrap-<environment>` and running `bootstrap-<environment>` are done in a timely fashion.  This is needed to keep parts of the platform current like platform certificates as example.
+As part of platform automation, and Concourse and Terraform run a `plan-bootstrap-<environment>` job if parts of our infrastructure have changed due to PR or automation. Alerts for reviewing Terraform plan runs are located in `#cg-platform`.  Review the plan updates and coordinate a time to run `bootstrap-<environment>` so the changes to the infrastructure can be made. All `bootstrap-<environment>` Concourse jobs are set for manual operator release so make sure the review of `plan-bootstrap-<environment>` and running `bootstrap-<environment>` are done in a timely fashion.  This is needed to keep parts of the platform current like platform certificates as example.
 
 ### Monitor production deployment jobs
 
