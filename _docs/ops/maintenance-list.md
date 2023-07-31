@@ -101,9 +101,13 @@ The Concourse jobs for deploying `production-cf` and `production-logsearch` are 
 
 ## Monitor AWS alerts
 
-Keep tabs on the private channel `#cg-aws-security` and review the alerts that are posted by AWS GuardDuty.  Review the linked CloudWatch alert for more details and research what triggered the alert.  
+The platform uses AWS GuardDuty to monitor changes to the platform.  If alerts are triggered by GuardDuty, they will be emailed to the security Google group.  Review these alerts to determine what triggered the alert.
 
-If you're unable to ascertain an event was triggered, follow the
+### Monitor failed AWS logins
+
+Keep tabs on the private channel `#cg-aws-security` and review the alerts that are posted on failed logins via [cg-aws-cloudtrail-notifier](https://github.com/cloud-gov/cg-aws-cloudtrail-notifier).  Review the linked CloudWatch alert for more details and research what triggered the alert.  As part of the response, in thread to each of these alerts, respond the review status of the alert.
+
+If you're unable to ascertain why an alert was triggered, follow the
 [Security Incident Response Guide]({{site.baseurl}}/docs/ops/security-ir).
 
 ## Review vulnerability and compliance reports
