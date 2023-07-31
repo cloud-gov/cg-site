@@ -24,7 +24,7 @@ Review all alerts on [Prometheus](https://prometheus.fr.cloud.gov/alerts) (requi
 
 - Use our guides for reviewing cloud.gov alerts ([prometheus](https://github.com/cloud-gov/cg-deploy-prometheus/tree/master/bosh) for alert descriptions, links to the relevant rules, and starting points for reviewing each type of alert.
 - Was the alert caused by known maintenance or testing in dev environments? Check with other members of the cloud.gov team if you can't determine the source.
-- Is this a recurring alert? Search alert history to determine how frequently it is occuring and what event may have started its firing.
+- Is this a recurring alert? Search alert history to determine how frequently it is occurring and what event may have started its firing.
 - Should the underlying condition have caused an alert? Alerts should only be raised when they're something we need to remediate.
 
 ### Is the alert a real issue?
@@ -91,57 +91,23 @@ You can also view this information in each of our four environments, `tooling`, 
 
 The platform's CI builds can be automatically triggered by third-party resources when updates are released (ie. source code, stemcell). Monitor the `#cg-platform` and `#cg-platform-news` Slack channels for notifications about any failed builds. For any automated builds that failed, review the logs of the failed build task in Concourse, and escalate the failure to platform ops if a cursory triage and rebuild does not fix this issue.
 
-## Review AWS CloudTrail events
+### Monitor terraform-provision pipeline
 
-### Easy way
+As part of platform automation, and Concourse and Terraform run a `plan-bootstrap-<environment>` job if parts of our infrastructure have changed due to PR or automation. Alerts for reviewing Terraform plan runs are located in `#cg-platform`.  Review the plan updates and coordinate a time to run `bootstrap-<environment>` so the changes to the infrastructure can be made. All `bootstrap-<environment>` Concourse jobs are set for manual operator release so make sure the review of `plan-bootstrap-<environment>` and running `bootstrap-<environment>` are done in a timely fashion.  This is needed to keep parts of the platform current like platform certificates as example.
 
-Run [cloud-trail-check.sh](https://github.com/cloud-gov/cg-scripts/blob/master/cloudtrail-check.sh) for each AWS account we own,
-and review the output
+### Monitor production deployment jobs
 
-### Hard way
+The Concourse jobs for deploying `production-cf` and `production-logsearch` are setup for manual operator release.  Keep track of when changes are ready to deploy in production since these are customer facing and make sure deployment of these jobs are done during normal platform support hours and during pre-determined times as described [here](https://cloud.gov/docs/overview/customer-service-objectives/). 
 
-> [Get familiar with the documentation for CloudTrail logs](http://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html).
+## Monitor AWS alerts
 
-Use the [AWS Console](http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-console.html)
-to [review API activity history](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html)
-for the _EventNames_ listed below.
-Or, use the AWS CLI with the appropriate `$event_name`, and parse the emitted JSON:
+The platform uses AWS GuardDuty to monitor changes to the platform.  If alerts are triggered by GuardDuty, they will be emailed to the security Google group.  Review these alerts to determine what triggered the alert.
 
-```sh
-aws cloudtrail lookup-events --lookup-attributes AttributeKey=EventName,AttributeValue=$event_name
-```
+### Monitor failed AWS logins
 
-These `EventNames` should be attributed to human individuals on the cloud.gov team:
+Keep tabs on the private channel `#cg-aws-security` and review the alerts that are posted on failed logins via [cg-aws-cloudtrail-notifier](https://github.com/cloud-gov/cg-aws-cloudtrail-notifier).  Review the linked CloudWatch alert for more details and research what triggered the alert.  As part of the response, in thread to each of these alerts, respond the review status of the alert.
 
-- ConsoleLogin
-
-All human-generated events should be mapped to named users, e.g. `firstname.lastname`, and NOT to `Administrator`.
-Discuss the event(s) with the indicated [cloud.gov operator(s)](https://docs.google.com/spreadsheets/d/1mW3tphZ98ExmMxLHPogSpTq8DzYr5Oh8_SHnOTvjRWM/edit)
-
-All events in the following `EventNames` should be attributed to Terraform:
-
-- DeleteTrail
-- UpdateTrail
-- ModifyVpcAttribute
-- PutUserPolicy
-- PutRolePolicy
-- RevokeSecurityGroupEgress
-- RevokeSecurityGroupIngress
-- AuthorizeSecurityGroupEgress
-- AuthorizeSecurityGroupIngress
-- CreatePolicy
-- CreateSecurityGroup
-
-Terraform runs on instances that use instance profile roles, so authorized events will include:
-
-- a user name like `i-17deadbeef1234567`
-- a source IP address within AWS.
-- an AWS access key starting with `ASIA`
-
-If you observe any non-Terraform activity, discuss the event(s) with the
-indicated cloud.gov operator(s) (see above)
-
-If you're unable to ascertain an event was authorized, follow the
+If you're unable to ascertain why an alert was triggered, follow the
 [Security Incident Response Guide]({{site.baseurl}}/docs/ops/security-ir).
 
 ## Review vulnerability and compliance reports
