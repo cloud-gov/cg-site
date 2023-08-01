@@ -14,7 +14,7 @@ Part of the mission of cloud.gov is to improve cloud adoption across the U.S. go
 
 The goal of the community is to bring together people working on FedRAMP compliance to address common questions and concerns.  We strive to maintain an inclusive, professional community that engages in on-topic discussions. The community is not associated with the FedRAMP Program Management Office.
 
-By voluntarily participating in this community, you are agreeing to abide by these guidelines and the [TTS code of conduct](https://handbook.tts.gsa.gov/about-us/code-of-conduct/). If you do not agree, email us at [cloud-gov-compliance@gsa.gov](mailto:cloud-gov-compliance@gsa.gov), and we will unsubscribe you from the LISTSERV mailing list.
+By voluntarily participating in this community, you are agreeing to abide by these guidelines and the [TTS code of conduct](https://handbook.tts.gsa.gov/about-us/code-of-conduct/). If you do not agree, email us at [community@cloud.gov](mailto:community@cloud.gov), and we will unsubscribe you from the LISTSERV mailing list.
 
 When GSA becomes aware of alleged violations of the guidelines or code of conduct, we will review and evaluate the incident and determine an appropriate course of action. In accordance with GSA’s policies and legal guidance, the cloud.gov team implements this process.
 
@@ -26,7 +26,7 @@ Courses of action include:
 
 Severe or repeated violations may result in temporary or permanent removal from the community.
 
-Email us at [cloud-gov-compliance@gsa.gov](mailto:cloud-gov-compliance@gsa.gov) to report an alleged violation.
+Email us at [community@cloud.gov](mailto:community@cloud.gov) to report an alleged violation.
 
 ## Who can join?
 
@@ -35,7 +35,7 @@ The cloud.gov compliance team will approve memberships.
 
 ## How to join?
 
-Send an email to [cloud-gov-compliance@gsa.gov](mailto:cloud-gov-compliance@gsa.gov) from the domain of your FedRAMP CSP.
+Send an email to [community@cloud.gov](mailto:community@cloud.gov) from the domain of your FedRAMP CSP.
 
 If you're unable to use that domain for this community, email from your preferred address
 and provide an explanation and alternate means of 
@@ -81,7 +81,7 @@ Words matter. Choose words that create a safe, inclusive, respectful, and welcom
 
 ## Manage your mailing list subscription
 
-Email us at [cloud-gov-compliance@gsa.gov](mailto:cloud-gov-compliance@gsa.gov) and we’ll help you manage your LISTSERV subscription. The most common requests are to:
+Email us at [community@cloud.gov](mailto:community@cloud.gov) and we’ll help you manage your LISTSERV subscription. The most common requests are to:
 * receive a daily digest (instead of each individual message),
 * access the mailing list archive, and
 * unsubscribe.

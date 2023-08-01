@@ -11,4 +11,4 @@ The goal of the community is to bring together people working on FedRAMP complia
 
 The list is open to compliance staff at CSPs listed at the [FedRAMP Marketplace](https://marketplace.fedramp.gov) as authorized or in-process, or when a CSP has retained a 3PAO to pursue authorization.
 
-You can read all about this at [cloud.gov Compliance Community](({{ site.baseurl }}{% link _docs/compliance/compliance-community.md %})), and join today by sending an email to [cloud-gov-compliance@gsa.gov](mailto:cloud-gov-compliance@gsa.gov) from the domain of your FedRAMP CSP.
+You can read all about this at [cloud.gov Compliance Community]({{ site.baseurl }}{% link _docs/compliance/compliance-community.md %}), and join today by sending an email to [community@cloud.gov](mailto:community@cloud.gov) from the domain of your FedRAMP CSP.
