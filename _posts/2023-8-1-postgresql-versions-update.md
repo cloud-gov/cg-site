@@ -11,4 +11,4 @@ Cloud.gov is pleased to announce that all major and minor versions of PostgreSQL
 
 - Note that users are still able to explicitly set any of the [currently supported PostgreSQL versions](https://cloud.gov/docs/services/relational-database/#create-an-instance) upon database creation with the following command: 
 
-```cf create-service aws-rds micro-psql <databse-name> -c '{"version":"<desired-version>"}'```
+```cf create-service aws-rds <database-type> <databse-name> -c '{"version":"<desired-version>"}'```
