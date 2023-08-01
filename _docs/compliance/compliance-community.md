@@ -76,7 +76,7 @@ Words matter. Choose words that create a safe, inclusive, respectful, and welcom
 | Treat other people's identities and cultures with respect. Spell and say their name correctly and use their [pronouns](https://digital.gov/resources/an-introduction-to-pronouns/). | Don’t make derogatory comments on race, color, sex, sexual orientation, gender identity, religion, national origin, age, disability, genetic information, marital status, parental status, political affiliation, or appearance. |
 | Ensure the community is free from harassment, including sexual harassment and sexual misconduct. | Don’t harass anyone. This includes, but is not limited to, retaliating against anyone who files a complaint. |
 | Remember that everything you write on the mailing list is a federal record and subject to release under FOIA. | Don’t assume your communications are private. |
-Use <a href="https://www.plainlanguage.gov/" class="usa-link usa-link--external">plain language</a>. | Don’t use confusing or overly technical language. |
+| Use <a href="https://www.plainlanguage.gov/" class="usa-link usa-link--external">plain language</a>. | Don’t use confusing or overly technical language. |
 
 
 ## Manage your mailing list subscription
