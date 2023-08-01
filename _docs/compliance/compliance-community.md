@@ -30,7 +30,7 @@ Email us at [cloud-gov-compliance@gsa.gov](mailto:cloud-gov-compliance@gsa.gov) 
 
 ## Who can join?
 
-Open to compliance staff at CSPs that are listed at [FedRAMP Marketplace](https://marketplace.fedramp.gov) as authorized or in-process, or at compliance staff at a CSP has retained a 3PAO to pursue authorization.
+Open to compliance staff at CSPs listed in the [FedRAMP Marketplace](https://marketplace.fedramp.gov) as authorized or in-process, or a CSP that has retained a 3PAO to pursue authorization.
 The cloud.gov compliance team will approve memberships.
 
 ## How to join?
