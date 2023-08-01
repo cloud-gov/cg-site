@@ -5,10 +5,6 @@ sidenav: true
 title: Compliance community
 summary: cloud.gov supports an email listserve for FedRAMP compliance practitioners 
 weight: 50
-redirect_from:
-  - /docs/intro/security/for-assessors
-  - /intro/security/for-assessors
-  - /overview/security/for-assessors/
 ---
 
 
