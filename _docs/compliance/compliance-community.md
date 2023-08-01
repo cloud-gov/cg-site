@@ -3,7 +3,7 @@ parent: compliance
 layout: docs
 sidenav: true
 title: Compliance community
-summary: cloud.gov support an email listserve for FedRAMP compliance practitioners 
+summary: cloud.gov supportx an email listserve for FedRAMP compliance practitioners 
 weight: 50
 redirect_from:
   - /docs/intro/security/for-assessors
@@ -37,11 +37,11 @@ The cloud.gov compliance team will approve memberships.
 
 ## How to join?
 
-Send an email to [cloud-gov-community@gsa.gov](mailto:cloud-gov-community@gsa.gov) from the domain of your FedRAMP CSP.
+Send an email to [cloud-gov-compliance@gsa.gov](mailto:cloud-gov-compliance@gsa.gov) from the domain of your FedRAMP CSP.
 
 If you're unable to use that domain for this community, email from your preferred address
 and provide an explanation and alternate means of 
-validation, such as an address you can use for confirmation. 
+validation, such as an CSP-based address you can use for confirmation. 
 
 If your CSP has retained a 3PAO, provide a contact at the 3PAO who can affirm that they've been retained, and CC: them on your email.
 
@@ -66,7 +66,7 @@ Words matter. Choose words that create a safe, inclusive, respectful, and welcom
 
 | Preferred behavior | Discouraged behavior |
 | ------------------ | -------------------- |
-| Understand that you are participating in a professional community. | Don’t conduct yourself in a way that’s unbecoming of your organization. |
+| Understand that you are participating in a professional community.  | Don’t conduct yourself in a way that’s unbecoming of your organization. |
 | Respect your colleagues. Always assume the best of others. | Don’t make personal attacks. |
 | Be patient. Understand that community members have various experience levels.| Don’t be condescending or talk down to other people. |
 | Listen carefully and actively. Listen as much as you speak. | Don’t disrupt meetings, talks, or discussions, including mailing lists and chats. |
@@ -83,7 +83,7 @@ Use <a href="https://www.plainlanguage.gov/" class="usa-link usa-link--external"
 
 ## Manage your mailing list subscription
 
-Email us at [digitalgov@gsa.gov](mailto:digitalgov@gsa.gov) and we’ll help you manage your LISTSERV subscription. The most common requests are to:
+Email us at [cloud-gov-compliance@gsa.gov](mailto:cloud-gov-compliance@gsa.gov) and we’ll help you manage your LISTSERV subscription. The most common requests are to:
 * receive a daily digest (instead of each individual message),
 * access the mailing list archive, and
 * unsubscribe.
