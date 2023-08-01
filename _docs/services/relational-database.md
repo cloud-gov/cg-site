@@ -108,7 +108,7 @@ Name               | Description                                                
 ---                | ---                                                            | ---                    |
 `storage`          | Number of GB available to the database instance                | 10                     |
 `enable_functions` | Boolean to enable functions on supported databases             | false                  |
-`version`          | Specifies a supported major version in RDS (must be in quotes) | PostgreSQL: 15.X, MySQL 8.x.x |
+`version`          | Specifies a supported major version in RDS (must be in quotes) | PostgreSQL: `15`, MySQL `8.0` |
 `backup_retention_period` | Specifies a number of days to retain daily snapshots. | 14           |
 `binary_log_format` | Specifies the format for [MySQL binary logging](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQL.BinaryFormat.html). **Only supported for MySQL database plans**. Valid options: `ROW`, `STATEMENT`, `MIXED`. | ---           |
 `enable_pg_cron` | Boolean to enable [`pg_cron` extension on PostgreSQL databases](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL_pg_cron.html) (requires PostgreSQL 12.5 and above; see example below for details) | false           |
