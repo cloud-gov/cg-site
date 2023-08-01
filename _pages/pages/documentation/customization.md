@@ -97,7 +97,7 @@ your experience so we can learn from you. Thank you!
 If a user navigates to a page on your site that does not exist, they will see a “404 Page” (webspeak for a page that doesn’t exist). Pages provides a default 404 Page (shown below), but you may prefer something that looks and feels like it is part of your site.
 
 _***NOTE:**_ Only one custom 404 page can be set for the site's preview, demo, and live site deployments that do not have a custom domain
-associated to them. We automatically set the 404 to the live site's deployment path so all other branch deployments will send 404 requests to live site's 404. If you are adding a custom domain to a branch deployment for a demo site, we can add the custom 404 page. See [Custom domain 404 page](#custom-domain-404-page).
+associated with them. We automatically set the 404 to the live site's deployment path so all other branch deployments will send 404 requests to the live site's 404. If you are adding a custom domain to a branch deployment for a demo site, we can add the custom 404 page. See [Custom domain 404 page](#custom-domain-404-page).
 
 ## Pages default 404 page
 ![Default 404 Page]({{site.baseurl}}/assets/images/pages/default-404.png)
