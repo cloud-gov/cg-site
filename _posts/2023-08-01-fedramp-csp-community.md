@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Announcing FedRAMP CSP Community mailing list
-date: July 3, 2023
+date: August 1, 2023
 excerpt: "Email cloud-gov-compliance@gsa.gov from your CSP email to join"
 ---
 
