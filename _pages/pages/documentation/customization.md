@@ -96,12 +96,16 @@ your experience so we can learn from you. Thank you!
 ## Custom 404 pages
 If a user navigates to a page on your site that does not exist, they will see a “404 Page” (webspeak for a page that doesn’t exist). Pages provides a default 404 Page (shown below), but you may prefer something that looks and feels like it is part of your site.
 
+_***NOTE:**_ Only one custom 404 page can be set for the site's preview, demo, and live site deployments that do not have a custom domain
+associated with them. We automatically set the 404 to the live site's deployment path so all other branch deployments will send 404 requests to the live site's 404. If you are adding a custom domain to a branch deployment for a demo site, we can add the custom 404 page. See [Custom domain 404 page](#custom-domain-404-page).
+
 ## Pages default 404 page
 ![Default 404 Page]({{site.baseurl}}/assets/images/pages/default-404.png)
 
-In order to use a custom 404 Page, name your 404 Page "404.html" and make sure it is at the root of and included in the resources that are deployed. Jekyll sites should also have the file in the root of the project with the front matter data value set to `permalink: /404.html`, see [the docs for reference](https://jekyllrb.com/tutorials/custom-404-page/). If you need to direct 404 errors to a file not named "404.html" to support single page applications (SPA), let #cg-pages or pages-support@cloud.gov know that you would like to use a custom 404 page for a SPA and we will handle the rest.
+In order to use a custom 404 Page, name your 404 Page "404.html" and make sure it is at the root of and included in the resources that are deployed. Jekyll sites should also have the file in the root of the project with the front matter data value set to `permalink: /404.html`, see [the docs for reference](https://jekyllrb.com/tutorials/custom-404-page/). 
 
-> If you have a custom domain and, while trying to set up your custom 404 page using a development branch, you are able to see it when running locally, but not live on the branch site, try pushing it to your custom domain. 
+### Custom domain 404 page
+If you have a custom domain for a demo site or need to direct 404 errors to a file not named "404.html" to support single page applications (SPA), let #cg-pages or pages-support@cloud.gov know that you would like to use a custom 404 page for your custom domain and we will handle the rest.
 
 ## security.txt
 
