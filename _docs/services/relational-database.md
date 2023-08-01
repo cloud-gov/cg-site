@@ -39,7 +39,7 @@ Plan Name                   | Description                                       
 `xlarge-gp-mysql-redundant` | Multi-AZ RDS instance of MySQL, minimum 2 cores, minimum 16 GiB memory            | 8.x.x* |
 `medium-oracle-se2`         | Single-AZ RDS instance of Oracle SE2, minimum 1 core, minimum 4 GiB memory                                           | AWS RDS Latest Default |
 
-*Note: The actual database engine version used is the latest minor/patch version offered by AWS RDS for this major version*
+*\*Note: The actual database engine version used is the latest minor/patch version offered by AWS RDS for this major version*
 
 *Only the `micro-psql` and `small-mysql` plans are available in [sandbox spaces]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}#sandbox-limitations).*
 
