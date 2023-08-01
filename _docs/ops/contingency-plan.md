@@ -174,7 +174,7 @@ is available internally.
 
 ## Statuspage
 
-If Statuspage is unavailable, cloud.gov will use Twitter, [https://twitter.com/clouddotgov](https://twitter.com/clouddotgov), and updates to [https://cloud.gov/news](https://cloud.gov/news).
+If Statuspage is unavailable, cloud.gov will use the main page at [https://github.com/cloud-gov/status](https://github.com/cloud-gov/status) to provide updates.
 
 ## Continuity of Operations and Disaster Recovery Plan
 
@@ -212,6 +212,7 @@ This plan is most effective if all core cloud.gov team members know about it, re
 ### Page information
 
 * Last modified on: {% last_modified_at %} 
+  * 2023-08-01: Replace Twitter for StatusPage fallback
   * 2023-07-28: Link correction for internal plans
   * 2023-06-13: Add link to internal contingency plan runbook
 * [Recent document history](https://github.com/cloud-gov/cg-site/commits/main/{{ page.path }}) (since 2022-11-08)
