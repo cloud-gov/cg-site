@@ -13,7 +13,7 @@ If your application uses relational databases for storage, you can use the AWS R
 
 ## Plans
 
-Plan Name                   | Description                                                                  | Software Version       |
+Plan Name                   | Description                                                                  | Software Version (default)     |
 ---                         | ---                                                                          | ---                    |
 `micro-psql`                | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 1 GiB memory                                   | 15.x* |
 `micro-psql-redundant`      |  Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 1 GiB memory                         | 15.x* |
