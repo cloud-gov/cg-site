@@ -3,7 +3,7 @@ parent: compliance
 layout: docs
 sidenav: true
 title: Compliance community
-summary: cloud.gov supports an email listserve for FedRAMP compliance practitioners 
+summary: cloud.gov supports an email listserv for FedRAMP compliance practitioners 
 weight: 50
 ---
 
