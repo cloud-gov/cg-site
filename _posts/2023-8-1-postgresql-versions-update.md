@@ -2,7 +2,7 @@
 layout: post
 title: New versions of PostgreSQL supported
 date: August 1, 2023
-excerpt: "PostgeSQL versions 13,14 and 15 are now fully supported on the platform"
+excerpt: "PostgreSQL versions 13, 14, and 15 are now fully supported on cloud.gov"
 ---
 
 # New versions of PostgreSQL
