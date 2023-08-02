@@ -116,13 +116,11 @@ Name               | Description                                                
 A couple of notes regarding the optional `version` parameter:
 
 - It is currently only supported for dedicated MySQL and PostgreSQL instances; if you specify it for any other type of instance it is ignored.
-- It only supports major version numbers (e.g. "8.0"); if you specify a minor/patch level version (e.g., "11.8" for PostgreSQL or "8.0.32" for MySQL), the command will fail.
+- It only supports major version numbers (e.g. "8.0"); if you specify a minor/patch level version (e.g., "12.8" for PostgreSQL or "8.0.32" for MySQL), the command will fail.
 - The version number must be provided in double quotes (`"`); this is because the value is treated as a string to account for different engine types and version schemes.
 
 These are the current supported major versions for PostgreSQL:
 
-- 10
-- 11
 - 12
 - 13
 - 14
@@ -174,13 +172,13 @@ cf create-service aws-rds \
 
 After running this command, you must [finish setting up pg_cron on your instance](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/PostgreSQL_pg_cron.html#PostgreSQL_pg_cron.enable). You can use [cf-service-connect](https://github.com/cloud-gov/cf-service-connect) to connect to your instance, or connect via an application. Note that you must target the `postgres` database. To do this via `cf-service-connect`, run `\c postgres` in the psql shell.
 
-To specify a major version of a new instance, e.g., PostgreSQL version 11 (please note the double quotes (`"`) around the version number; they are required):
+To specify a major version of a new instance, e.g., PostgreSQL version 14 (please note the double quotes (`"`) around the version number; they are required):
 
 ```sh
 cf create-service aws-rds \
     micro-psql \
     my-test-service \
-    -c '{"version": "11"}'
+    -c '{"version": "14"}'
 ```
 
 To extend the backup retention period for a database to 30 days:
