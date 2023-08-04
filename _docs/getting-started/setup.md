@@ -23,7 +23,7 @@ cloud.gov is based on the Cloud Foundry open source project, so cloud.gov uses t
   1. It'll say `One Time Code ( Get one at `[`https://login.fr.cloud.gov/passcode`](https://login.fr.cloud.gov/passcode)` )` -- visit this login link in your browser.
      1. If you use a cloud.gov account, you may need to log in using your email address, password, and multi-factor authentication token. (EPA, FDIC, GSA, and NSF: use your agency button.)
   1. The page will display your 10-character Temporary Authentication Code. If you aren't already logged in, you'll have to do so. 
-  1. Copy and paste that 10-character code into the command line (no typing indicators will show), and enter it.
+  1. Copy and paste that 32-character code into the command line (no typing indicators will show), and enter it.
 
 <!--**Tip:** The `fr.` in this URL (and other cloud.gov URLs) is short for FedRAMP.-->
 
