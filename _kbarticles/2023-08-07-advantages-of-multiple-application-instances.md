@@ -51,7 +51,7 @@ cf scale myapp -i 2
 
 Please note that running multiple instances may sometimes cause scheduled tasks or data loads to run multiple times. This issue can be prevented by updating scheduled tasks to use the [`CF_INSTANCE_INDEX` environment variable]({{ site.baseurl }}{% link _docs/management/multiple-instances.md %}#managing-multiple-instances-with-cf-instance-index), which denotes a specific application instance number.
 
-## Application instances and memory usage
+### Application instances and memory usage
 
 Each individual application instance utilizes the same amount of memory that is specified in the application manifest or indicated in the `cf push` command. Please note that the application cannot use more than the [defined memory quota for your org]({{ site.baseurl }}{% link _docs/management/limits.md %} .
 
