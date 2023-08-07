@@ -2,7 +2,7 @@
 layout: post
 title: "Advantages of multiple application instances"
 date: August 7, 2023
-excerpt: Advantages of multiple application instances.
+excerpt: How and why to scale your cloud.gov applications by adding more application instances
 ---
 
 ## Importance of multiple application instances
