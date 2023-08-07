@@ -1,3 +1,10 @@
+---
+layout: post
+title: "Advantages of multiple application instances"
+date: August 7, 2023
+excerpt: Advantages of multiple application instances.
+---
+
 ## Importance of multiple application instances
 One of the benefits of Cloud.gov is the underlying ability to deploy applications, it allows you to very simply take an application’s source code and [launch an application in the Cloud.gov environment with a command](https://cloud.gov/docs/deployment/deployment/#how-deployment-works). 
 
