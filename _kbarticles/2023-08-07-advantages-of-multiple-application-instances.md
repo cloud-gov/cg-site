@@ -53,7 +53,7 @@ Please note that running multiple instances may sometimes cause scheduled tasks 
 
 ### Application instances and memory usage
 
-Each individual application instance utilizes the same amount of memory that is specified in the application manifest or indicated in the `cf push` command. Please note that the application cannot use more than the [defined memory quota for your org]({{ site.baseurl }}{% link _docs/management/limits.md %} .
+Each individual application instance utilizes the same amount of memory that is specified in the application manifest or indicated in the `cf push` command. Please note that the application cannot use more than the [defined memory quota for your org]({{ site.baseurl }}{% link _docs/management/limits.md %}).
 
 For example, if the org `my-example-org` had:
 
