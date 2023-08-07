@@ -45,7 +45,7 @@ You can also use the [cf scale](http://docs.cloudfoundry.org/devguide/deploy-app
 
 `cf scale myapp -i 2`
 
-Please note, running multiple instances may sometimes cause scheduled tasks or data loads to run multiple times. This issue can be prevented by using the [cf-instance-index](http://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html#CF-INSTANCE-INDEX) environment variable. This variable denotes the specific instance number.
+Please note that running multiple instances may sometimes cause scheduled tasks or data loads to run multiple times. This issue can be prevented by updating scheduled tasks to use the [`CF_INSTANCE_INDEX` environment variable]({{ site.baseurl }}{% link _docs/management/multiple-instances %}#managing-multiple-instances-with-cf-instance-index), which denotes a specific application instance number.
 
 ## Application instances and memory usage
 
