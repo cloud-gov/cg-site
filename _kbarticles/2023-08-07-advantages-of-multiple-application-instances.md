@@ -18,7 +18,8 @@ Running multiple application instances allows your instances to be [scheduled ac
 Most recently, [as detailed in the EPA AirNow customer story](https://cloud.gov/docs/customer-stories/epa-airnow-gov/), the EPA’s AirNow program utilized the ability to quickly and easily scale up their number of application instances to handle increased customer traffic.
 
 ## How it works
-Using the [cf push command](https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html#custom-cf-push) you can use the `-i` flag to indicate the number of application instances you would like.
+
+Using the [cf push command](https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html#custom-cf-push), you can use the `-i` flag to indicate the number of application instances you would like.
 
 Example pushing an application with 2 instances:
 `cf push myapp -i 2`
