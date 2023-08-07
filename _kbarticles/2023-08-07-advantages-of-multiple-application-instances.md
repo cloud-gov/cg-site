@@ -13,7 +13,7 @@ By default, applications are deployed with a single instance which handles all t
 
 To increase the load that your application can handle, you can horizontally scale your application by running multiple application instances. Adding application instances improves your application's availability, or ability to respond to requests. Your application requests are load-balanced among the application instances to ensure that no single instance is prematurely overloaded, thus to maximizing your application availability. By default, the routing infrastructure in cloud.gov [distributes requests to application instances using a `round-robin` algorithm](https://docs.cloudfoundry.org/concepts/http-routing.html#balancing-algorithm).
 
-Running multiple application instances allows increases the chances that your application will be [balanced across availability zones](https://docs.cloudfoundry.org/concepts/diego/diego-auction.html#auction).
+Running multiple application instances also increases the chances that your application will be [balanced across availability zones](https://docs.cloudfoundry.org/concepts/diego/diego-auction.html#auction).
 
 The benefits of running multiple application instances are [exemplified in the EPA AirNow.gov customer story]({{ site.baseurl }}{% link _docs/customer-stories/epa-airnow-gov.md %}), which details how the EPA utilized the ability to quickly and easily scale up their number of application instances to handle increased customer traffic for AirNow.gov.
 
