@@ -19,7 +19,7 @@ Running multiple application instances also increases the chances that your appl
 
 The benefits of running multiple application instances are [exemplified in the EPA AirNow.gov customer story]({{ site.baseurl }}{% link _docs/customer-stories/epa-airnow-gov.md %}), which details how the EPA utilized the ability to quickly and easily scale up their number of application instances to handle increased customer traffic for AirNow.gov.
 
-## How it works
+### How to scale your application instances
 
 Using the [cf push command](https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html#custom-cf-push), you can use the `-i` flag to indicate the number of application instances you would like.
 
