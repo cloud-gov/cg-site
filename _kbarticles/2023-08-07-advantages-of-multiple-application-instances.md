@@ -50,7 +50,3 @@ Please note, running multiple instances may sometimes cause scheduled tasks or d
 Each individual application instance utilizes the same amount of [org memory and disk reservation/limit](https://cloud.gov/docs/management/limits/) that is specified in the application manifest or indicated in the `cf push` command. Please note the application cannot access more than the specified amount of memory. 
 
 For example if the org `my-example-org` had a memory quota of 3 GB and were hosting a single application `myapp` that had specified 256 mb of memory per application instance in their manifest with 4 application instances specified in their manifest, then the application would be utilizing 1 GB of the org’s 3 GB total memory quota. This would leave 2 GB available for the org to otherwise use. 
-
-If the org wanted to scale up their number of running application instances they could use the cf scale command to increase their number of instances to 6 instances `cf scale myapp -i 6` which would then increase their number of running application instances to 6 instances. Which should increase their org memory being used from 1 GB to 1.5 GB and leaving 1.5 GB free.
-
-If `my-example-org` wanted to later decrease their number of running application instances from 6 instances down to 4 instances, they could also use `cf scale myapp -i 4` which would result in 1 GB of org memory being used and leaving 2 GB available for the org to otherwise use.
