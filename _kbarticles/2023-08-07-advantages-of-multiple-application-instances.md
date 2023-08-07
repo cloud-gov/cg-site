@@ -5,7 +5,7 @@ date: August 7, 2023
 excerpt: How and why to scale your cloud.gov applications by adding more application instances
 ---
 
-## Importance of multiple application instances
+### Importance of multiple application instances
 
 One of the benefits of Cloud.gov is the ability to [deploy applications with a simple command](https://cloud.gov/docs/deployment/deployment/#how-deployment-works). 
 
