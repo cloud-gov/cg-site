@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Advantages of multiple application instances"
+title: "Scaling your cloud.gov applications"
 date: August 7, 2023
 excerpt: How and why to scale your cloud.gov applications by adding more application instances
 ---
