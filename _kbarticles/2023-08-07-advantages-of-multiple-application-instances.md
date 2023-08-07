@@ -43,7 +43,9 @@ Please note the default number of instances is 1 instance.
 
 You can also use the [cf scale](http://docs.cloudfoundry.org/devguide/deploy-apps/cf-scale.html) command to increase the number of instances for a running app.
 
-`cf scale myapp -i 2`
+```shell
+cf scale myapp -i 2
+```
 
 Please note that running multiple instances may sometimes cause scheduled tasks or data loads to run multiple times. This issue can be prevented by updating scheduled tasks to use the [`CF_INSTANCE_INDEX` environment variable]({{ site.baseurl }}{% link _docs/management/multiple-instances %}#managing-multiple-instances-with-cf-instance-index), which denotes a specific application instance number.
 
