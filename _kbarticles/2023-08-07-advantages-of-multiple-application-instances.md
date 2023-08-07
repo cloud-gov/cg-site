@@ -17,7 +17,7 @@ Multiple application instances allow customer traffic to continue being served i
 
 Running multiple application instances allows your instances to be [scheduled across availability zones](https://docs.aws.amazon.com/whitepapers/latest/real-time-communication-on-aws/use-multiple-availability-zones.html). The increased number of instances also assists with load-balancing user requests to your application (Please note: you should set up your instances to share session data when using multiple application instances).
 
-Most recently, [as detailed in the EPA AirNow customer story](https://cloud.gov/docs/customer-stories/epa-airnow-gov/), the EPA’s AirNow program utilized the ability to quickly and easily scale up their number of application instances to handle increased customer traffic.
+The benefits of running multiple application instances are [exemplified in the EPA AirNow.gov customer story]({{ site.baseurl }}{% link _docs/customer-stories/epa-airnow-gov.md %}), which details how the EPA utilized the ability to quickly and easily scale up their number of application instances to handle increased customer traffic for AirNow.gov.
 
 ## How it works
 
