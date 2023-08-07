@@ -29,7 +29,8 @@ cf push myapp -i 2
 
 Additionally you can also define the number of application instances in your application manifest.yml file with the [instance manifest attribute](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest-attributes.html#instances).
 
-Example for defining an application with 2 instances in your manifest.yml file:
+An example for defining an application with 2 instances in your `manifest.yml` file:
+
 ```shell
     memory: 512mb
     instances: 2
