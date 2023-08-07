@@ -49,7 +49,7 @@ Please note, running multiple instances may sometimes cause scheduled tasks or d
 
 ## Application instances and memory usage
 
-Each individual application instance utilizes the same amount of [org memory and disk reservation/limit](https://cloud.gov/docs/management/limits/) that is specified in the application manifest or indicated in the `cf push` command. Please note the application cannot access more than the specified amount of memory. 
+Each individual application instance utilizes the same amount of memory that is specified in the application manifest or indicated in the `cf push` command. Please note that the application cannot use more than the [defined memory quota for your org]({{ site.baseurl }}{% link _docs/management/limits.md %} .
 
 For example, if the org `my-example-org` had:
 
