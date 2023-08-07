@@ -9,7 +9,9 @@ excerpt: How and why to scale your cloud.gov applications by adding more applica
 
 One of the benefits of Cloud.gov is the ability to [deploy applications with a simple command](https://cloud.gov/docs/deployment/deployment/#how-deployment-works). 
 
-Once an application is up and available, resiliency of that application becomes a consideration and as such running multiple application instances is paramount. Running multiple instances of an application increases the resilience and availability of the application.
+By default, applications are deployed with a single instance which handles all traffic and load for your application. If you have unexpected surges in application load, it is likely that your single application instance may run out of available CPU or memory or both, leading to an outage for your application. 
+
+There is a solution to improve the availability of your applications on cloud.gov: horizontally scale your application by running multiple application instances. Running multiple application instances increases the overall load that your application can handle. The load is balanced among the application instances to ensure that no single instance is prematurely overloaded and thus to maximize the availability of your application. By default, the routing infrastructure in cloud.gov [distributes requests to application instances using a `round-robin` algorithm](https://docs.cloudfoundry.org/concepts/http-routing.html#balancing-algorithm).
 
 Multiple application instances allow customer traffic to continue being served if there are any issues with any individual application instance such as if an underlying platform component is being upgraded. Additionally having multiple application instances provides decreased chance of downtime. 
 
