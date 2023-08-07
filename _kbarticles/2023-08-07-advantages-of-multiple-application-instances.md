@@ -21,8 +21,11 @@ Most recently, [as detailed in the EPA AirNow customer story](https://cloud.gov/
 
 Using the [cf push command](https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html#custom-cf-push), you can use the `-i` flag to indicate the number of application instances you would like.
 
-Example pushing an application with 2 instances:
-`cf push myapp -i 2`
+For example, pushing an application with 2 instances:
+
+```shell
+cf push myapp -i 2
+```
 
 Additionally you can also define the number of application instances in your application manifest.yml file with the [instance manifest attribute](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest-attributes.html#instances).
 
