@@ -51,4 +51,10 @@ Please note, running multiple instances may sometimes cause scheduled tasks or d
 
 Each individual application instance utilizes the same amount of [org memory and disk reservation/limit](https://cloud.gov/docs/management/limits/) that is specified in the application manifest or indicated in the `cf push` command. Please note the application cannot access more than the specified amount of memory. 
 
-For example if the org `my-example-org` had a memory quota of 3 GB and were hosting a single application `myapp` that had specified 256 mb of memory per application instance in their manifest with 4 application instances specified in their manifest, then the application would be utilizing 1 GB of the org’s 3 GB total memory quota. This would leave 2 GB available for the org to otherwise use. 
+For example, if the org `my-example-org` had:
+
+- a memory quota of 3 GB and were hosting a single application `myapp` 
+- 256 MB of memory per application instance 
+- 4 application instances
+
+Then, the application would be utilizing 1 GB (256 MB * 4 instances) of the org’s 3 GB total memory quota. This would leave 2 GB available for the org to otherwise use. 
