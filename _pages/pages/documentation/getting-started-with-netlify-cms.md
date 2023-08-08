@@ -55,10 +55,10 @@ To use Netlify CMS, you must authenticate with Github, and in order for Pages to
     ...
 ```
 
-See [Netlify CMS Backends Overview](https://www.netlifycms.org/docs/backends-overview) for a full description of the configuration options.
+See [Netlify CMS Backends Overview](https://decapcms.org/docs/backends-overview/) for a full description of the configuration options.
 
 ### Authentication Requirements
 Because Pages facilitates the authentication with Github, we require users of Netlify CMS to be Pages users in addition to having `write` permissions to the Github repository.
 
 ### Getting familiar with Netlify CMS
-To learn more about Netlify CMS and how it may help you manage content changes on your Pages site, please visit [netlifycms.org/](https://www.netlifycms.org/)
+To learn more about Netlify CMS and how it may help you manage content changes on your Pages site, please visit [netlifycms.org/]([https://www.netlifycms.org/)
