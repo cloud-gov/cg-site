@@ -30,18 +30,21 @@ Email us at [community@cloud.gov](mailto:community@cloud.gov) to report an alleg
 
 ## Who can join?
 
-Open to compliance staff at CSPs listed in the [FedRAMP Marketplace](https://marketplace.fedramp.gov) as authorized or in-process, or a CSP that has retained a 3PAO to pursue authorization.
-The cloud.gov compliance team will approve memberships.
+The community is open to:
+
+* compliance staff at CSPs listed in the [FedRAMP Marketplace](https://marketplace.fedramp.gov) as authorized or in-process
+* compliance staff at CSPs pursuing authorization
+
+The cloud.gov compliance team will approve memberships based on eligibility evidence.
 
 ## How to join?
 
-Send an email to [community@cloud.gov](mailto:community@cloud.gov) from the domain of your FedRAMP CSP.
+Send an email to [community@cloud.gov](mailto:community@cloud.gov) providing:
 
-If you're unable to use that domain for this community, email from your preferred address
-and provide an explanation and alternate means of 
-validation, such as an CSP-based address you can use for confirmation. 
+- Your name and role
+- CSP name and FedRAMP status
+- Statement of interest
 
-If your CSP has retained a 3PAO, provide a contact at the 3PAO who can affirm that they've been retained, and CC: them on your email.
 
 ## Your communications are not private
 
