@@ -47,7 +47,7 @@ While the CBC cipher modes of operation are being phased out (they are theoretic
 
 **Cipher suite names**: The AWS documentation uses the OpenSSL cipher names which are different from IANA/RFC cipher names returned by scanners. For example, `ECDHE-RSA-AES128-SHA256` on the documentation page will be called `TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256` by scanners and other tools.
 
-**Cipher suite count**: The `ELBSecurityPolicy-TLS13-1-2-Ext1-2021-06` has 15 ciphers, but your scanner may only show 11 results. That's because our certificates are signed with RSA keys, not Elliptic Curve (ECDSA) keys, so those cipher suites are not in use.
+**Cipher suite count**: The `ELBSecurityPolicy-TLS13-1-2-Ext1-2021-06` has 15 ciphers, but your scanner may only show 11 results. That's because our certificates are signed with RSA keys, not Elliptic Curve (ECDSA) keys, so those cipher suites are not in use. In June, 2023, a switch to ECDSA caused an [outage for a significant percentage of cloud.gov users](https://cloudgov.statuspage.io/incidents/vz9t74zm7zw8), so we will support RSA for the foreseeable future.
 
 ## DNSSEC
 
