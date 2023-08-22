@@ -206,7 +206,7 @@ cf create-service aws-rds \
 Dedicated RDS instance provisioning can take anywhere between 5 minutes and 60
 minutes. During instance provisioning, the results of `cf services` or `cf service SERVICE_NAME` will show status as `create in progress`, as in the following example:
 
-```
+```shell
 > cf services
 name                 service   plan                bound apps   last operation
 test-oracle          aws-rds   medium-oracle-se2                create in progress
@@ -214,7 +214,7 @@ test-oracle          aws-rds   medium-oracle-se2                create in progre
 
 Once the instance is ready for use, it will show `create succeeded` as below:
 
-```
+```shell
 > cf services
 name                 service   plan                bound apps   last operation
 test-oracle          aws-rds   medium-oracle-se2                create succeeded
@@ -445,6 +445,38 @@ Continuing with the PostgreSQL example and the `backup.pg` file, load the dump i
 pg_restore --clean --no-owner --no-acl --dbname={database name} backup.pg
 ```
 
+### Importing to a service instance - Windows
+
+> Note: you can find all the information for accessing your database (username, password, host, database name) by running `cf env app_name` for your app and looking at the `credentials` for your RDS database
+
+Open an SSH tunnel to your database:
+
+```shell
+cf ssh -N -L port:host:port application_name
+```
+
+with these values:
+
+- `port` - port for accessing your database
+- `host` - AWS host for accessing your database
+- `application_name` - your application name
+
+Once the SSH tunnel is open, your database should be available for connections on `localhost:<port>`.
+
+Now you can run a command in a separate prompt to import a data backup into the database. For example, using the [`mysqlsh` tool](https://dev.mysql.com/doc/mysql-shell/8.0/en/):
+
+```shell
+mysqlsh -u username -p -h host -P port -D db_name -f path-to-file.sql
+```
+
+with these values:
+
+- `username` - username for accessing your database
+- `host` - AWS host for accessing your database
+- `port` - port for accessing your database
+- `db_name` - database name for accessing your database
+- `path-to-file.sql` - Full path to the database backup file on your machine
+
 ## Encryption
 
 Every RDS instance configured through cloud.gov is [encrypted at rest](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html). We use the industry standard AES-256 encryption algorithm to encrypt your data on the server that hosts your RDS instance. The RDS then handles authenticating access and decrypting your data, with minimal performance impact and without requiring you to modify your applications.
@@ -477,7 +509,7 @@ Copy the downloaded `ojdbc8.jar` to the `libs/` directory of `spring-music`.
 
 Edit `build.gradle`, look for the following near line 60:
 
-```
+```java
     // Oracle - uncomment one of the following after placing driver in ./libs
     // compile files('libs/ojdbc8.jar')
     // compile files('libs/ojdbc7.jar')
@@ -532,7 +564,7 @@ cf ssh -N -L 15210:cg-aws-broker-prod.RANDOMSTRING.us-gov-west-1.rds.amazonaws.c
 
 Now connect using `sqlplus random-username/secretpassword@host:port/ORCL`, where host is `localhost` and `port` is the first part of the `-L` connection string above. e.g.:
 
-```
+```shell
 ./sqlplus random-username/secretpassword@localhost:15210/ORCL
 ```
 
@@ -542,7 +574,7 @@ Then you can use SQLPLUS commands like `SELECT table_name FROM user_tables;`
 
 Example for app name `hello-doe`
 
-```
+```shell
 myapp_guid=$(cf app --guid hello-doe)
 
 tunnel=$(cf curl /v2/apps/$myapp_guid/env \
@@ -555,7 +587,7 @@ cf ssh -N -L 5432:$tunnel hello-doe
 
 Another window:
 
-```
+```shell
 myapp_guid=$(cf app --guid hello-doe)
 
 creds=$(cf curl /v2/apps/$myapp_guid/env \
@@ -568,7 +600,6 @@ dbname=$(cf curl /v2/apps/$myapp_guid/env \
     | .name')
 
 psql postgres://$creds@localhost:5432/$dbname
-
 ```
 
 ## Version information
