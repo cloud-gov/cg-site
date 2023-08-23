@@ -42,10 +42,9 @@ The cloud.gov compliance team will approve memberships based on eligibility evid
 
 Send an email to [community@cloud.gov](mailto:community@cloud.gov) providing:
 
-- Your name and role
-- CSP name and FedRAMP status
-- Statement of interest
-
+* Your name and role
+* CSP name and FedRAMP status
+* Statement of interest (required if your CSP is not on the marketplace)
 
 ## Your communications are not private
 
