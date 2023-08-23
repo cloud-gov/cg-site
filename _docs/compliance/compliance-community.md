@@ -33,7 +33,8 @@ Email us at [community@cloud.gov](mailto:community@cloud.gov) to report an alleg
 The community is open to:
 
 * compliance staff at CSPs listed in the [FedRAMP Marketplace](https://marketplace.fedramp.gov) as authorized or in-process
-* compliance staff at CSPs pursuing authorization
+* compliance staff at CSPs pursuing authorization per their public statements (website, pdf)
+* contracted staff dedicated to supporting FedRAMP authorization for client CSPs
 
 The cloud.gov compliance team will approve memberships based on eligibility evidence.
 
