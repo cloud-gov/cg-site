@@ -55,7 +55,7 @@ primary_navigation:
         url: /docs/overview/portfolio-analysis/
       - name: Benefits of PaaS
         url: /docs/technology/responsibilities/
-      - name: Cloud.gov customer success stories
+      - name: Customer stories
         url: /docs/customer-stories/epa-airnow-gov/
       - name: Our team
         url: /docs/overview/cloudgov-team/
