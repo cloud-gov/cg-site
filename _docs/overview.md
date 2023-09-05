@@ -1,5 +1,5 @@
 ---
-type: 
+type: index
 ---
 
 ### Platform as a Service (PaaS) for government agencies
