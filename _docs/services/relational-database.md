@@ -116,7 +116,11 @@ Name               | Description                                                
 A couple of notes regarding the optional `version` parameter:
 
 - It is currently only supported for dedicated MySQL and PostgreSQL instances; if you specify it for any other type of instance it is ignored.
+<<<<<<< HEAD
 - It only supports major version numbers (e.g. "8.0"); if you specify a minor/patch level version (e.g., "12.16" for PostgreSQL or "8.0.32" for MySQL), the command will fail.
+=======
+- It only supports major version numbers (e.g. "8.0"); if you specify a minor/patch level version (e.g., "12.8" for PostgreSQL or "8.0.32" for MySQL), the command will fail.
+>>>>>>> 4c5b5bd09c832c935b080a1e0dd52cb3d8c22d2b
 - The version number must be provided in double quotes (`"`); this is because the value is treated as a string to account for different engine types and version schemes.
 
 These are the current supported major versions for PostgreSQL:

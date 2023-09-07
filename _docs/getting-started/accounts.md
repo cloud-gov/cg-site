@@ -26,7 +26,6 @@ If you were invited with an email address that isn't part of an agency with sing
 Setting up a cloud.gov account requires using a password and Time-based One-Time-Password (TOTP) application. Any application or service which is compatible with RFC [6238](https://tools.ietf.org/html/rfc6238) will work. We recommend leveraging an authenticator application or service which supports cross-device or backup access so you don't need to reach out to cloud.gov support when you need to replace your phone or laptop. Here is a non-exhaustive list of cross-device authenticators which are compatible with cloud.gov:
 
 * [Microsoft Authenticator](https://www.microsoft.com/en-us/account/authenticator)
-* [LastPass Password Manager](https://www.lastpass.com/solutions/business-password-manager)
 * [1password](https://1password.com/)
 * [Authy](https://www.authy.com/app/mobile)
 
