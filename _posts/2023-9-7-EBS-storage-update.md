@@ -5,7 +5,7 @@ date: September 7, 2023
 excerpt: "All EBS volumes across brokered plans have been upgraded to gp3"
 ---
 
-# EBS volumes and storage upgraded to gp3
+## EBS volumes and storage upgraded to gp3
 
 Cloud.gov is happy to announce that we have upgraded all our brokered Elasticsearch/Opensearch plans from `gp2` volumes to the high-performance `gp3` volumes by default. We have also upgraded all of our brokered database plans to use `gp3` as the storage volume type by default.
 
