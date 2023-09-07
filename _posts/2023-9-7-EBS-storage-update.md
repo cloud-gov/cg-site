@@ -1,6 +1,6 @@
 ---
 layout: post
-title: EBS volumes upgraded
+title: Brokered EBS volumes and storage upgraded to gp3
 date: September 7, 2023
 excerpt: "All EBS volumes across brokered plans have been upgraded to gp3"
 ---
