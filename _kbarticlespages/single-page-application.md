@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Single-Page Application"
-date: TBD, 2023
+date: September 14, 2023
 excerpt: Single-Page Application with React library
 ---
 
