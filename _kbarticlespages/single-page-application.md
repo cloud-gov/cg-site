@@ -31,8 +31,20 @@ We imported `RouterProvider` to serve as the mechanism/component for rendering t
 We also imported our 4 components individually from their respective root paths. In our last block of code we call the `createRoot` function and select the DOM element with the ID “root”. `render` is a method called to render everything that is in the DOM. We wrapped our router in `Strict Mode` which runs our app basically twice to ensure that any potential issues in the app are brought to our attention in an extremely obvious way. There may be instances where no errors appear in the console or lints errors so this acts as an extra more thorough safeguard. It is not required but can be useful in certain situations.
 
 ### Layout.js
-We start off by importing the React module and some different classes from the react/react-router-dom library. We again assign the value of our publicURL environment variable to the path variable.In `class Layout extends Component` here `class` is used to define a new class in javascript which is named `Layout` and `extends Component` specifies that the `Layout` class is extending the `Component` class. We have our parent and child routes set within the scope of the `router`.  For users to be able to access our page and the different components all the `NavLink` need to point to the path that was defined in the index.js file along with the specified component. In the JSX there are some html tags to define the structure of the UI. We also pass the string as a ‘className' property to apply styling and CSS changes. `Outlet` is a component used to render the child routes/paths which are nested in our application as part of the React Router configuration. When a user navigates to any path then the content of the matching root/child routes/path will be displayed within `Outlet` as it indicates where the content of nested routes/paths should be displayed. It will always contain the header above it 
-{insert code block layout.s line 9-16}. Lastly `export default Layout` is used to export the `Layout` component as the default export of the Layout.js file. Now when another module imports `Layout`(as in the index.js file)  without specifying a particular named import, it will receive the `Layout` component as the default export. 
+We start off by importing the React module and some different classes from the react/react-router-dom library. We again assign the value of our publicURL environment variable to the path variable.In `class Layout extends Component` here `class` is used to define a new class in javascript which is named `Layout` and `extends Component` specifies that the `Layout` class is extending the `Component` class. We have our parent and child routes set within the scope of the `router`.  For users to be able to access our page and the different components all the `NavLink` need to point to the path that was defined in the index.js file along with the specified component. In the JSX there are some html tags to define the structure of the UI. We also pass the string as a ‘className' property to apply styling and CSS changes. `Outlet` is a component used to render the child routes/paths which are nested in our application as part of the React Router configuration. When a user navigates to any path then the content of the matching root/child routes/path will be displayed within `Outlet` as it indicates where the content of nested routes/paths should be displayed. It will always contain the header above it as such. 
+
+```
+           <div>
+                <h1>Simple SPA</h1>
+                <ul className="header">
+                    {/* All nav links need to go to {path} */}
+                    <li><NavLink to={path}>Home</NavLink></li>
+                    <li><NavLink to={path + "stuff"}>Stuff</NavLink></li>
+                    <li><NavLink to={path + "contact"}>Contact</NavLink></li>
+                </ul>
+                <div className="content">
+```
+Lastly `export default Layout` is used to export the `Layout` component as the default export of the Layout.js file. Now when another module imports `Layout` (as in the index.js file) without specifying a particular named import, it will receive the `Layout` component as the default export. 
 
 ## .env
 
