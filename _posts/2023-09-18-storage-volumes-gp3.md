@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Brokered storage volumes upgraded to gp3
-date: September 7, 2023
+date: September 18, 2023
 excerpt: "Storage volumes across all brokered plans have been upgraded to gp3"
 ---
 
