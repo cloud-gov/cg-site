@@ -85,7 +85,3 @@ cf create-service aws-rds micro-psql my-spring-db
 cf bind-service my-spring my-spring-db
 cf restage my-spring
 ```
-
-#### Docker task with S3 and CF CLI Variable
-
-The folks at [Stark and Wayne](https://github.com/starkandwayne/) have published a [useful demo](https://github.com/starkandwayne/pcf-docker-scheduler-demo) of packaging a shell script into a Docker image, then pushing it to Cloud Foundry with the necessary environment variables.
