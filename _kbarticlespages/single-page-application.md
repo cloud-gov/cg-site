@@ -48,7 +48,7 @@ Lastly `export default Layout` is used to export the `Layout` component as the d
 
 ## .env
 
-Environments variables here are embedded at build time and never read at runtime hence Pages being a static site generator/hosting platform. These are created by our shell script in `build.sh`. 
+Environment variables here are embedded at build time and never read at runtime hence Pages being a static site generator/hosting platform. These are created by our shell script in `build.sh`. 
 
 ## Build.sh
 
