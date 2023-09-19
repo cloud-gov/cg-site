@@ -44,7 +44,7 @@ We start off by importing the React module and some different classes from the `
                 </ul>
                 <div className="content">
 ```
-Lastly `export default Layout` is used to export the `Layout` component as the default export of the Layout.js file. Now when another module imports `Layout` (as in the index.js file) without specifying a particular named import, it will receive the `Layout` component as the default export. 
+Lastly `export default Layout` is used to export the `Layout` component as the default export of the `Layout.js` file. Now when another module imports `Layout` (as in the `index.js` file) without specifying a particular named import, it will receive the `Layout` component as the default export. 
 
 ## .env
 
