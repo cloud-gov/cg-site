@@ -11,7 +11,7 @@ This will serve as an informative article regarding hosting a single-page applic
 
 ## .vscode/build/node_modules/public/src
 
-These folders are all created initially in the repository when you `create-react-app`. For the purpose of this example the src and public folders were cleared out and files were implemented from scratch. Additionally when you run `npm build` all the optimized javascript will be placed into the “`build`” folder.
+These folders are all created initially in the repository when you `create-react-app`. For the purpose of this example the src and public folders were cleared out and files were implemented from scratch. Additionally when you run `npm build` all the optimized Javascript will be placed into the “`build`” folder.
 
 ## Src
 ### Contact.js/Home.js/Stuff.js 
