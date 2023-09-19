@@ -28,6 +28,8 @@ We’ve documented the migration process in a [PR to our deprecated jekyll templ
 - Remove `jekyll-assets` from your `Gemfile`. Add or change your specified Ruby version (e.g. `ruby '~> 3.1'`). Delete your previous `Gemfile.lock` and regenerate by running `bundle install`
   - If this command adds a new `PLATFORM` to your `Gemfile.lock`, and it’s anything other than `ruby`, remove it with the following command:
     - `bundle lock --remove-platform example_platform_name`. For example `bundle lock --remove-platform arm64-darwin-21`
+  - You may need to add `ruby` as a platform, as `bundle` now requires at least one platform, using `bundle lock --add-platform ruby`	
+
 - [The hard step] Replace the primary functionality of jekyll-assets:
   - First move everything from the `_assets` folder to the `assets` folder
   - Remove any uses of the {% raw %}`{% asset %}`{% endraw %}  liquid tag or `asset_url` function in your content. This tag and function provided a way to find a given asset in any of multiple specified site folders. You’ll likely want to replace this with {% raw %} `{{site.baseurl}}/assets/example.png` or `{{ /assets/example.png | relative_url }}`{% endraw %}  where `example.png` is the name of the example file.
