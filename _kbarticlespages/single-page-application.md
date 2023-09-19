@@ -52,4 +52,4 @@ Environment variables here are embedded at build time and never read at runtime 
 
 ## Build.sh
 
-This is an #!/bin/bash shell script that will create 3 environment variables into the ``.env`` file. To take `echo “Public_URL=$BASEURL” >> .env` as an example this prints out the key=value pair specified (setting the public URL as the base URL we get from Pages) and then use the redirection operator `>>` to store the output in the `.env` file. 3 separate scripts are run at build time each storing their outputs (env vars)  in `.env`.
+This is an `#!/bin/bash` shell script that will create 3 environment variables into the ``.env`` file. To take `echo “Public_URL=$BASEURL” >> .env` as an example this prints out the key=value pair specified (setting the public URL as the base URL we get from Pages) and then use the redirection operator `>>` to store the output in the `.env` file. 3 separate scripts are run at build time each storing their outputs (env vars)  in `.env`.
