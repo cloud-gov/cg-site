@@ -35,7 +35,7 @@ As a new user to the platform you will be sent an invitation via email. The link
 
 
   
-Netlify CMS users **must** login to pages.cloud.gov prior to using the content editor.
+Decap CMS users **must** login to pages.cloud.gov prior to using the content editor.
 
 ## Who should be added
 
