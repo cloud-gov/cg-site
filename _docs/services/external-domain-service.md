@@ -191,6 +191,12 @@ cf create-service external-domain domain-with-cdn -c '{"path": "/some/path"}'
     Create in progress. Use 'cf services' or 'cf service my-cdn' to check operation status.
    ```
 
+   **Note:** If you are on Windows, the command to create the service should be:
+
+   ```shell
+   cf create-service external-domain domain-with-cdn my-cdn -c "{\"domains\": \"example.gov,www.example.gov\"}"
+   ```
+
 6. Wait for the service instance to complete provisioning. The `domain-with-cdn` plan may take up to 2 hours to complete provisioning, the `domain` plan should complete within an hour. You can check the status by running `cf service <service instance name>`.
 7. If you didn't complete step 2 above, do so now.
 
