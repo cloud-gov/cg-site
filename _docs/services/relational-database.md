@@ -16,11 +16,11 @@ If your application uses relational databases for storage, you can use the AWS R
 Plan Name                   | Description                                                                  | Software Version (default)     |
 ---                         | ---                                                                          | ---                    |
 `micro-psql`                | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 1 GiB memory                                   | 15.x* |
-`micro-psql-redundant`      |  Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 1 GiB memory                         | 15.x* |
+`micro-psql-redundant`      | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 1 GiB memory                         | 15.x* |
 `small-psql`                | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 2 GiB memor                                   | 15.x* |
-`small-psql-redundant`      |  Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 2 GiB memor                         | 15.x* |
-`medium-psql`               |  Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 4 GiB memor                                  | 15.x* |
-`medium-psql-redundant`     | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 4 GiB memory                        | 15.x* |
+`small-psql-redundant`      | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 2 GiB memory                         | 15.x* |
+`medium-psql`               | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 4 GiB memory                                  | 15.x* |
+`medium-psql-redundant`     | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 4 GiB memory                        | 15.x* |
 `medium-gp-psql`            | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory                  | 15.x* |
 `medium-gp-psql-redundant`  | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory        | 15.x* |
 `large-gp-psql`             | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory                   | 15.x* |
