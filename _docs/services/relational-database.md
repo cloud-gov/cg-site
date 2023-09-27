@@ -126,7 +126,7 @@ These are the current supported major versions for PostgreSQL:
 - 14
 - 15
 
-*\*Note: For PostgreSQL versions 15+ to connect to your database an SSL connection is required. As such you will need to configure your client library you use to connect to your database to use an SSL connection. 
+*\*Note: For PostgreSQL versions 15+ to connect to your database an SSL connection is required. As such you will need to configure your client library you use to connect to your database to use an SSL connection.*
 
 These are the current supported major versions for MySQL:
 
