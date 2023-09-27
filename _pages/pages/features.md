@@ -67,7 +67,7 @@ title: cloud.gov Pages - Features
       <ul>
         <li>Execute an Interagency Agreement in weeks.</li>
         <li>Unlimited storage and bandwidth for your sites.</li>
-        <li>Unlimited sites for your team.</li>
+        <li>Five custom domains included, with more available.</li>
         <li>Pages’s content delivery network seamlessly keeps your site up and running even when traffic spikes.</li>
         <li>No hidden charges.</li>
       </ul>
