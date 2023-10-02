@@ -97,7 +97,7 @@ As part of platform automation, and Concourse and Terraform run a `plan-bootstra
 
 ### Monitor production deployment jobs
 
-The Concourse jobs for deploying `production-cf` and `production-logsearch` are setup for manual operator release.  Keep track of when changes are ready to deploy in production since these are customer facing and make sure deployment of these jobs are done during normal platform support hours and during pre-determined times as described [here](https://cloud.gov/docs/overview/customer-service-objectives/). 
+The Concourse jobs for deploying `production-cf` and `production-logsearch` are setup for manual operator release.  Keep track of when changes are ready to deploy in production since these are customer facing and make sure deployment of these jobs are done during normal platform support hours and during pre-determined times as described [here](https://cloud.gov/docs/overview/customer-service-objectives/).
 
 ## Monitor AWS alerts
 
@@ -143,4 +143,5 @@ If you see a way to make this checklist better, just submit a PR to the
 
 ## Page information
 
-To view modifications to this page, review the [git commit history](https://github.com/cloud-gov/cg-site/commits/master/_docs/ops/maintenance-list.md).
+* Last modified on: {% last_modified_at %}
+* [Recent document history](https://github.com/cloud-gov/cg-site/commits/main/{{ page.path }}) (since 2022-11-08)
