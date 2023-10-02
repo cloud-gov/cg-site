@@ -212,6 +212,7 @@ This plan is most effective if all core cloud.gov team members know about it, re
   * 2023-08-01: Replace Twitter for StatusPage fallback
   * 2023-07-28: Link correction for internal plans
   * 2023-06-13: Add link to internal contingency plan runbook
-* [Recent document history](https://github.com/cloud-gov/cg-site/commits/main/{{ page.path }}) (since 2022-11-08)
+* [Recent document history](https://github.com/cloud-gov/cg-site/commits/main/{{ page.path }}) (since 2020-02-05)
+* [Older document history](https://github.com/cloud-gov/cg-site/commits/main/content/docs/ops/{{ page.slug }}.md) (before 2020-02-05)
 
 For assessment purposes, updates to [internal contingency plans](https://github.com/cloud-gov/internal-docs/blob/main/docs/runbooks/Platform/contingency.md) should be included along with public documentation updates.

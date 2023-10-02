@@ -46,4 +46,5 @@ This is where all customer workloads live. All the same rules apply to our produ
 ### Page information
 
 * Last modified on: {% last_modified_at %}
-* [Recent document history](https://github.com/cloud-gov/cg-site/commits/main/{{ page.path }}) (since 2022-11-08)
+* [Recent document history](https://github.com/cloud-gov/cg-site/commits/main/{{ page.path }}) (since 2020-02-05)
+* [Older document history](https://github.com/cloud-gov/cg-site/commits/main/content/docs/ops/{{ page.slug }}.md) (before 2020-02-05)
