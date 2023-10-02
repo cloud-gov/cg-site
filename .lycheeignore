@@ -22,6 +22,7 @@ https://www.congress.gov/bill/.*
 https://www.pivotaltracker.com/story/show/.*
 otherapp.hostname.gov
 anotherapp.hostname.com
+https://github.com/cloud-gov/internal-docs/.*
 
 # URLs with no known replacements
 https://fugacious.18f.gov/
