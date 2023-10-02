@@ -107,7 +107,7 @@ There are several optional parameters that you can specify when creating a new i
 Name               | Description                                                    | Default Value          |
 ---                | ---                                                            | ---                    |
 `storage`          | Number of GB available to the database instance                | 10                     |
-`enable_functions` | Boolean to enable functions on supported databases             | false                  |
+`enable_functions` | Boolean to enable functions, procedures, and triggers on MySQL databases             | false                  |
 `version`          | Specifies a supported major version in RDS (must be in quotes) | PostgreSQL: `15`, MySQL `8.0` |
 `backup_retention_period` | Specifies a number of days to retain daily snapshots. | 14           |
 `binary_log_format` | Specifies the format for [MySQL binary logging](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQL.BinaryFormat.html). **Only supported for MySQL database plans**. Valid options: `ROW`, `STATEMENT`, `MIXED`. | ---           |
@@ -145,7 +145,7 @@ cf create-service aws-rds \
     -c '{"storage": 50}'
 ```
 
-To enable functions in MySQL instances:
+To enable functions, triggers, and procedures in MySQL instances:
 
 ```sh
 cf create-service aws-rds \
@@ -251,6 +251,7 @@ Name               | Description                                     |
 `backup_retention_period` | Specifies a number of days to retain daily snapshots. |
 `binary_log_format` | Specifies the format for [MySQL binary logging](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQL.BinaryFormat.html). **Only supported for MySQL database plans**. Valid options: `ROW`, `STATEMENT`, `MIXED`. |
 `enable_pg_cron` | Boolean to enable [`pg_cron` extension on PostgreSQL databases](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL_pg_cron.html) (requires PostgreSQL 12.5 and above) | false           |
+`enable_functions` | Boolean to enable functions, procedures, and triggers on MySQL databases             | false                  |
 
 #### Examples of optional parameters
 
@@ -261,6 +262,13 @@ cf update-service ${SERVICE_NAME} -c '{"storage": 50}'
 ```
 
 Note that you can only update to a larger size. If you want to downgrade to a lesser size, please email [support][support] for assistance.
+
+To enable functions, triggers, and procedures for a MySQL instance:
+
+```sh
+cf update-service ${SERVICE_NAME} \
+    -c '{"enable_functions": true}'
+```
 
 To update the binary log format for a MySQL instance:
 
