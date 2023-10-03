@@ -180,10 +180,9 @@ If Statuspage is unavailable, cloud.gov will use the main page at [https://githu
 
 The full Continuity of Operations Plan (COOP) and Disaster Recovery Plan (DRP) are out of scope for this Information System Contingency Plan (ICSP), (per [NIST Special Publication 800-34](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-34r1.pdf), p. 11). In the event of a major disaster beyond the scope of this plan we will reference the GSA/TTS COOP plan including the following _internal_ resources:
 
-* [TTS Devolution of Operations Playbook (Jan 2020)](https://drive.google.com/file/d/1sfSVhVPBteobeqhqnyb152z1PqboOKJI/view)
+* [TTS Devolution of Operations Playbook (Sep 2023)](https://docs.google.com/document/d/10hCmwiBsNTximFsKgfMNOmdAwihNy9wV/edit)
 * [TTS Google COOP Site](https://sites.google.com/a/gsa.gov/continuity/home/coming-soon---customized-hsso-pages/ocsit)
 * [cloud.gov COOP/DRP resources](https://github.com/cloud-gov/internal-docs/blob/main/docs/runbooks/Platform/contingency.md#coop)
-* [(deprecated) TTS Emergency Personnel Roster](https://docs.google.com/spreadsheets/d/1ITXXOu2IAntV8r6snIYHyXlRt1MgIlxpr-GudDP8tqQ/edit#gid=0)
 
 ## How this document works
 
