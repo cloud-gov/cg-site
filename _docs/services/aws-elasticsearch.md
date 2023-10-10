@@ -52,6 +52,7 @@ cf create-service aws-elasticsearch es-medium my-elastic-service
 Note: AWS Elasticsearch creation times will vary and is outside of Cloud.gov's control. AWS says approximately 15-30 mins per node.
 
 ## Changing instance plans
+
 Please note that you cannot use the broker to update the instance plan at this time.
 
 ## Options
@@ -60,6 +61,7 @@ name             | required | description              | example
 -----------------|----------|--------------------------|---------
 `advanced_options` | false | map for advanced options | see below
 `ElasticsearchVersion`  | false | Specifies a supported major version in search (must be in "")   | `OpenSearch_1.3`
+`volume_type`  | false | Specifies the EBS storage volume type. **Only supported when updating instances.** Valid options: `gp3`   | `gp3`
 
 ### Elasticsearch version
 
@@ -98,6 +100,17 @@ cf create-service aws-elasticsearch es-medium my-es-service-3 -c '{"advanced_opt
 ```
 
 Note - if you are using the cf CLI utility on Windows, see the [examples section of the Cloud Foundry documentation](https://cli.cloudfoundry.org/en-US/v6/create-service.html#EXAMPLES) for specific formatting of parameters.
+
+### Updating storage volume type
+
+To update an existing Elasticsearch/Opensearch instance to use `gp3` storage volumes:
+
+```shell
+cf update-service ${SERVICE_NAME} \
+  -c '{"volume_type": "gp3"}'
+```
+
+[Updating the volume type to `gp3` for your Elasticsearch/Opensearch instance **will trigger a blue/green deployment and some amount of downtime**](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes.html#bg) while the instance updates.
 
 ### Shard/replica configuration for high availability
 
