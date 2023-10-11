@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Updating existing instances to gp3 storage volumes is now supported
-date: October 10, 2023
+date: October 11, 2023
 excerpt: "Updating to gp3 storage volumes for existing RDS and Elasticsearch/Opensearch instances is now supported"
 ---
 
