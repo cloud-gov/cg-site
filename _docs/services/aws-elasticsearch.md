@@ -26,16 +26,11 @@ Service Name | Plan Name | Description | Number of nodes |
 `aws-elasticsearch` | `es-4xlarge-gp` | 3 Primary and 2 Data node cluster | 5 |
 `aws-elasticsearch` | `es-4xlarge-gp-ha` | 3 Primary and 4 Data node cluster | 7 |
 
-## Pricing
-
-Elasticsearch RESTful search and analytics
-$200/month per node for **medium** (each medium instance has 5-7 nodes provisioned), $400/month per node for **large** (each large instance has 5-7 nodes provisioned), $600/month per node for **extra-large** (each extra-large instance has 5-7 nodes provisioned), $800/month per node for **2extra-large** (each 2extra-large instance has 5-7 nodes), $1600/month per node for **4extra-large** (each 4extra-large instance has 5-7 nodes), and 6 medium nodes included for FISMA Moderate. More information on the [pricing page]({{ site.baseurl }}{% link _pages/pricing.md %}).
-
 ## When to use
 
 This service is geared toward applications that need to provide search capability, or interact with indexed data. Although Elasticsearch is often used as part of the ELK logging stack (Elasticsearch + Logstash + Kibana), this service **does not** include Kibana, and isn't suitable as a component of a logging solution. To find out more about logging on the cloud.gov platform, please see [the section on logs]({{ site.baseurl }}/docs/deployment/logs/#web-based-logs-with-historic-log-data).
 
-## How to create an instance
+## Create an instance
 
 To create a service instance run the following command:
 
@@ -51,17 +46,12 @@ cf create-service aws-elasticsearch es-medium my-elastic-service
 
 Note: AWS Elasticsearch creation times will vary and is outside of Cloud.gov's control. AWS says approximately 15-30 mins per node.
 
-## Changing instance plans
-Please note that you cannot use the broker to update the instance plan at this time.
-
-## Options
+### Setting optional parameters
 
 name             | required | description              | example
 -----------------|----------|--------------------------|---------
 `advanced_options` | false | map for advanced options | see below
 `ElasticsearchVersion`  | false | Specifies a supported major version in search (must be in "")   | `OpenSearch_1.3`
-
-### Elasticsearch version
 
 These are the current supported major versions for Elasticsearch version:
 
@@ -89,12 +79,17 @@ Name                                | description                               
 indices.fielddata.cache.size        | percentage of JVM heap allocated to field data              | "20"
 indices.query.bool.max_clause_count | maximum number of clauses allowed in a Lucene boolean query | "1024"
 
-examples:
+Here are some examples of how to set these values:
 
 ```shell
-cf create-service aws-elasticsearch es-medium my-es-service-1 -c '{"advanced_options": {"indices.fielddata.cache.size": "21"}}'
-cf create-service aws-elasticsearch es-medium my-es-service-2 -c '{"advanced_options": {"indices.query.bool.max_clause_count": "1025"}}'
-cf create-service aws-elasticsearch es-medium my-es-service-3 -c '{"advanced_options": {"indices.query.bool.max_clause_count": "1025", "indices.fielddata.cache.size": "21"}}'
+cf create-service aws-elasticsearch es-medium my-es-service-1 \
+    -c '{"advanced_options": {"indices.fielddata.cache.size": "21"}}'
+
+cf create-service aws-elasticsearch es-medium my-es-service-2 \
+    -c '{"advanced_options": {"indices.query.bool.max_clause_count": "1025"}}'
+
+cf create-service aws-elasticsearch es-medium my-es-service-3 \
+    -c '{"advanced_options": {"indices.query.bool.max_clause_count": "1025", "indices.fielddata.cache.size": "21"}}'
 ```
 
 Note - if you are using the cf CLI utility on Windows, see the [examples section of the Cloud Foundry documentation](https://cli.cloudfoundry.org/en-US/v6/create-service.html#EXAMPLES) for specific formatting of parameters.
@@ -107,7 +102,30 @@ For additional information on configuring your service for high availability whe
 
 AWS specific information can be found in the AWS [Developer Guide](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/what-is-amazon-elasticsearch-service.html).  Note - AWS recently changed the name of this service to AWS OpenSearch.
 
-### Connecting to your service instance
+## Update an instance
+
+### Setting optional parameters
+
+name             | required | description              | example
+-----------------|----------|--------------------------|---------
+`volume_type`  | false | Specifies the EBS storage volume type. Valid options: `gp3` | `gp3`
+
+### Changing instance plans
+
+Please note that you cannot use the broker to update the instance plan at this time.
+
+### Updating storage volume type
+
+To update an existing Elasticsearch/Opensearch instance to use `gp3` storage volumes:
+
+```shell
+cf update-service ${SERVICE_NAME} \
+  -c '{"volume_type": "gp3"}'
+```
+
+[Updating the volume type to `gp3` for your Elasticsearch/Opensearch instance **will trigger a blue/green deployment and some amount of downtime**](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes.html#bg) while the instance updates.
+
+## Connecting to your service instance
 
 If you need to directly access your service instance from your local environment, please read [this knowledge base article]({{ site.baseurl }}/knowledge-base/2021-05-20-connecting-to-brokered-service-instances/) for more information.
 

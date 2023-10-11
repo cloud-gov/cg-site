@@ -8,7 +8,7 @@ redirect_from:
   - /docs/services/
   - /docs/pricing/managed-services-cost/
 ---
-You can expand the functionality of your cloud.gov application by making use of services. Before your application can use a service, you must provision the service and supply the credentials for using the service to your application. 
+You can expand the functionality of your cloud.gov application by making use of services. Before your application can use a service, you must provision the service and supply the credentials for using the service to your application.
 
 There are two ways to provision services:
 
@@ -16,7 +16,7 @@ There are two ways to provision services:
 * **Managed service instances**: You can provision a [managed service instance](https://docs.cloudfoundry.org/devguide/services/#instances) through the marketplace in cloud.gov on demand, and let cloud.gov supply the credentials.
 
 ## When to use a user-provided service
-User-provided services enable developers to use services that are not available in the marketplace with their apps running on Cloud.gov. 
+User-provided services enable developers to use services that are not available in the marketplace with their apps running on Cloud.gov.
 
 If the provisioning of the service is not automated or already existent, you should set up a user-provided service.
 
@@ -47,7 +47,7 @@ cf cups <name-of-service> -p '{"username":"admin","password":"pa55woRD"}'
 
 cloud.gov offers a marketplace of FedRAMP-authorized [managed services]({{ site.baseurl }}{% link _docs/deployment/managed-services.md %}) that we operate in a secure and compliant manner on your behalf. You can also [extend the marketplace](#extending-the-marketplace) to include additional services run by other organizations.
 
-To list all the managed services and plans available to a given space, you run `cf marketplace` from your command line. Here is a list of the managed services that are generally available: 
+To list all the managed services and plans available to a given space, you run `cf marketplace` from your command line. Here is a list of the managed services that are generally available:
 
 {% assign cgservices = site.data.services %}
 
@@ -78,7 +78,7 @@ To list all the managed services and plans available to a given space, you run `
 
 ### Extending the marketplace
 
-"Brokers" are the invisible integrators that enable you to set up managed service instances in cloud.gov in a consistent and self-service fashion. A broker offers a simple API that manages the service instance lifecycle. You can run your own broker to make a service from outside cloud.gov available through cloud.gov's marketplace. 
+"Brokers" are the invisible integrators that enable you to set up managed service instances in cloud.gov in a consistent and self-service fashion. A broker offers a simple API that manages the service instance lifecycle. You can run your own broker to make a service from outside cloud.gov available through cloud.gov's marketplace.
 
 *Note that when you extend the cloud.gov marketplace with your own broker, the cloud.gov team cannot vouch for the security or compliance of the brokered services. You will need to document and authorize your own brokered services in accordance with  your agency's compliance requirements.*
 

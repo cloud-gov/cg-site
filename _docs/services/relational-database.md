@@ -250,8 +250,9 @@ Name               | Description                                     |
 `storage`          | Number of GB available to the database instance |
 `backup_retention_period` | Specifies a number of days to retain daily snapshots. |
 `binary_log_format` | Specifies the format for [MySQL binary logging](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQL.BinaryFormat.html). **Only supported for MySQL database plans**. Valid options: `ROW`, `STATEMENT`, `MIXED`. |
-`enable_pg_cron` | Boolean to enable [`pg_cron` extension on PostgreSQL databases](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL_pg_cron.html) (requires PostgreSQL 12.5 and above) | false           |
-`enable_functions` | Boolean to enable functions, procedures, and triggers on MySQL databases             | false                  |
+`enable_pg_cron` | Boolean to enable [`pg_cron` extension on PostgreSQL databases](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL_pg_cron.html) (requires PostgreSQL 12.5 and above) |
+`enable_functions` | Boolean to enable functions, procedures, and triggers on MySQL databases             |
+`storage_type` | [RDS storage type to use for the database](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html). Valid options: `gp3`             |
 
 #### Examples of optional parameters
 
@@ -289,6 +290,20 @@ To disable the `pg_cron` extension for a PostgreSQL instance:
 ```sh
 cf update-service ${SERVICE_NAME} \
     -c '{"enable_pg_cron": false}'
+```
+
+To update the database to use `gp3` storage:
+
+```sh
+cf update-service ${SERVICE_NAME} \
+    -c '{"storage_type": "gp3"}'
+```
+
+**Please note that databases must be at least 20 GB in size to use `gp3` as the storage type.** If you get an error during the update about your database storage size, try specifying a minimum value of `20` for `storage` (you can also choose a larger value) in the `update-service` command:
+
+```sh
+cf update-service ${SERVICE_NAME} \
+    -c '{"storage_type": "gp3", "storage": 20}'
 ```
 
 Please note that you may need to request an instance reboot after making these changes in order for them to apply immediately. You can request a reboot of your RDS instance by emailing [support@cloud.gov][support].

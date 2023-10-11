@@ -79,6 +79,8 @@ primary_navigation:
       url: /docs/deployment/deployment/
     - name: Managing apps
       url: /docs/management/plugins/
+    - name: Managing services
+      url: /docs/services/intro/
     - name: Managing orgs
       url: /docs/orgs-spaces/dashboard/
     - name: cloud.gov team documentation
