@@ -9,7 +9,7 @@ excerpt: "Updating to gp3 storage volumes for existing RDS and Elasticsearch/Ope
 
 In a previous post, [we announced that **new** RDS and Elasticsearch/Opensearch instances created on cloud.gov would default to `gp3` for their storage volumes]({{ site.baseurl }}{% link _posts/2023-09-18-storage-volumes-gp3.md %}).
 
-We are happy to announce that upgrading your **existing** RDS and Elasticsearch/Opensearch instances to use `gp3` storage volumes is also now supported on cloud.gov.
+We are happy to announce that updating your **existing** RDS and Elasticsearch/Opensearch instances to use `gp3` storage volumes is also now supported on cloud.gov.
 
 ### How to update your existing instances
 
@@ -19,7 +19,7 @@ To update an existing RDS instance to use `gp3` storage volumes:
 cf update-service SERVICE-NAME -c '{"storage_type": "gp3"}'
 ```
 
-[There is no expected downtime when upgrading the storage volume type for an RDS instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html).
+[There is no expected downtime when updating the storage volume type for an RDS instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html).
 
 To update an existing Elasticsearch/Opensearch instance to use `gp3` storage volumes:
 
