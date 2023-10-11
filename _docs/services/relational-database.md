@@ -299,7 +299,7 @@ cf update-service ${SERVICE_NAME} \
     -c '{"storage_type": "gp3"}'
 ```
 
-**Please note that databases must be at least 20 GB in size to use `gp3` as the storage type.**. If you get an error during the update about your databse storage size, try specifying the `storage` in the `update-service` command:
+**Please note that databases must be at least 20 GB in size to use `gp3` as the storage type.**. If you get an error during the update about your databse storage size, try specifying a minimum value of `20` for `storage` in the `update-service` command:
 
 ```sh
 cf update-service ${SERVICE_NAME} \
