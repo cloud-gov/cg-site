@@ -34,7 +34,7 @@ Plan Name                   | Description                                       
 `medium-gp-mysql`           | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory                       | 8.x.x* |
 `medium-gp-mysql-redundant` | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory             | 8.x.x* |
 `large-gp-mysql`            | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory                       | 8.x.x* |
-`large-gp-mysql-redundant`  | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memorye              | 8.x.x* |
+`large-gp-mysql-redundant`  | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory              | 8.x.x* |
 `xlarge-gp-mysql`           | Single-AZ RDS instance of MySQL, minimum 2 cores, minimum 16 GiB memory                      | 8.x.x* |
 `xlarge-gp-mysql-redundant` | Multi-AZ RDS instance of MySQL, minimum 2 cores, minimum 16 GiB memory            | 8.x.x* |
 `medium-oracle-se2`         | Single-AZ RDS instance of Oracle SE2, minimum 1 core, minimum 4 GiB memory                                           | AWS RDS Latest Default |
