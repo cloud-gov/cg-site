@@ -9,17 +9,18 @@ linktitle: Security IR Guide
 
 ## Cloud.gov
 
-cloud.gov is a secure and compliant Platform as a Service (PaaS) with a core focus on government work. cloud.gov helps federal agencies deliver the services the public deserves in a faster, more user-centered way. The cloud.gov platform runs on top of industry-provided infrastructure (currently Amazon Web Services) and includes access to some of the most popular AWS services while removing the complexity of customers managing it from thier own experience.
+Cloud.gov provides cloud.gov Platform, a secure and compliant Platform as a Service (PaaS),
+and cloud.gov Pages, a static website management and delivery service.
 
-cloud.gov is built and maintained by a team within the U.S. General Services Administration’s Technology Transformation Service portfolio. The mission of the team is to enable agencies to deliver services to the public as fast as they can develop them while applying best practices in security and compliance with minimal effort.
+Cloud.gov is built and maintained by a team within the U.S. General Services Administration’s Technology Transformation Service portfolio. The mission of the team is to enable agencies to deliver services to the public as fast as they can develop them while applying best practices in security and compliance with minimal effort.
 
 ## Purpose
 
-This document outlines cloud.gov's internal process for responding to security incidents. It outlines roles and responsibilities during and after incidents, and it lays out the steps we'll take to resolve them.
+This document outlines cloud.gov's internal process for responding to security incidents impacting
+our cloud products. Issues with staff account or systems should be handled via 
+the [TTS Incident Response Process](https://handbook.tts.gsa.gov/general-information-and-resources/tech-policies/security-incidents/). 
 
-*If you're responding to an incident, [here's our IR checklist]({{ site.baseurl }}{% link _docs/ops/security-ir-checklist.md %}) as a short, actionable companion to this guide.*
-
-(If you're a member of the public who has noticed something in cloud.gov that may be a security problem, please see [our vulnerability disclosure policy and reporting process](https://www.gsa.gov/vulnerability-disclosure-policy). As it explains, we want security researchers to feel comfortable reporting vulnerabilities they’ve discovered, as set out in that policy, so that we can fix them and keep our information safe.)
+(If you're a member of the public who has noticed something in cloud.gov that may be a security problem, please see [our vulnerability disclosure policy and reporting process](https://www.gsa.gov/vulnerability-disclosure-policy). As it explains, we want security researchers to feel comfortable reporting vulnerabilities they’ve discovered, as set out in that policy, so that we can fix them and keep our information safe. You can also refer to our well-known [security.txt](https://cloud.gov/.well-known/security.txt).)
 
 ## Overview
 
@@ -27,9 +28,21 @@ At a high level, incident response follows this process:
 
 [Initiate](#initiate):
 
-- A TTS staff member inside or outside the cloud.gov team (the *reporter*) notices and reports a cloud.gov-related incident, using the [TTS incident response process](https://handbook.tts.gsa.gov/general-information-and-resources/tech-policies/security-incidents/) and then notifying the cloud.gov team in [`#cloud-gov`](https://gsa-tts.slack.com/messages/cloud-gov/) using `@cg-team`.
-- The first responder on the cloud.gov team (which could be the reporter if the reporter is on the team) becomes the initial *Incident Commander* (IC).
-- The IC follows the [TTS incident response process](https://handbook.tts.gsa.gov/general-information-and-resources/tech-policies/security-incidents/) (or supports the reporter if the reporter already started it).
+- Determine if the anomaly / service disruption qualifies as an incident. That is:
+  - Is there evidence of compromise or attack?
+  - Has the system been unable to maintain our [service level objectives]({{ site.baseurl }}{% link _docs/overview/customer-service-objectives/ %})?
+  - Is an attack imminent or suspected (e.g. a Log4J type vulnerability)
+  - Most reported vulnerabilities are _not_ incidents, and are handled by our SI-02 Flaw Remediation process
+- Outside cloud.gov: A TTS staff member (the *reporter*) notices and reports a cloud.gov-related incident using the [TTS incident response process](https://handbook.tts.gsa.gov/general-information-and-resources/tech-policies/security-incidents/) and then notifying the cloud.gov team in [`#cg-support`](https://gsa-tts.slack.com/archives/C09CR1Q9Z)
+- Inside cloud.gov: Join [`#cg-incidents`](https://gsa-tts.slack.com/archives/GTNBK2L9K), and use the "Declare Incident" Workflow.
+- Declaring an incident results in further guidance to:
+  - Designate an Incident Commander and Scribe
+  - Claim an incident folder in our "Incident Response" [Google Drive folder](https://drive.google.com/drive/folders/1WtLFiZuxLmKR4mrztEE9YtS78nGxC--P)
+    - We try to populate incident folders in advance based on existing templates
+  - Share the URL of the incident document
+  - Update incident doc in that folder with comms and key findings.
+  - Gather in a Google Meet
+  - Set reminders to send comms updates, and to rotate key roles every 6 hours.
 
 [Assess](#assess):
 
@@ -50,7 +63,7 @@ At a high level, incident response follows this process:
 During this process, the team communicates in the following places:
 
 - Situation updates, investigation notes, and other relevant information gets captured in the GitHub issue created to track this event.
-- Real-time communication happens in Slack, in the [`#incident-response`](https://gsa-tts.slack.com/messages/incident-response/) channel.
+- Real-time communication happens in Slack, in the [`#cg-incidents`](https://gsa-tts.slack.com/archives/GTNBK2L9K) channel.
 - If needed, the team can use a Google Hangout and/or Google Docs to share information that's not appropriate for Slack or GitHub (PII, etc.).
 
 For full details, read on.
@@ -61,11 +74,23 @@ For full details, read on.
 
 An incident begins when someone becomes aware of a potential incident. We define "incident" broadly, following [NIST SP 800-61](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf), as "a violation or imminent threat of violation of computer security policies, acceptable use policies, or standard security practices" (6). This is a deliberately broad definition, designed to encompass any scenario that might threaten the security of cloud.gov.
 
-When a person outside the cloud.gov team (the *reporter*) notices a cloud.gov-related incident, they should begin reporting it by using the [TTS incident response process](https://handbook.tts.gsa.gov/general-information-and-resources/tech-policies/security-incidents/), and then post about it in [`#cloud-gov`](https://gsa-tts.slack.com/messages/cloud-gov/) using `@cg-team`. If they don't get acknowledgment from the cloud.gov team right away, they should escalate by contacting the cloud.gov leads directly until they receive acknowledgment of their report.
+When a TTS staff member (the *reporter*) notices and reports a cloud.gov-related incident using the [TTS incident response process](https://handbook.tts.gsa.gov/general-information-and-resources/tech-policies/security-incidents/) they should then  notify the cloud.gov team in [`#cg-support`](https://gsa-tts.slack.com/archives/C09CR1Q9Z)
 
-When a cloud.gov team member is the first person to notice an incident, they should also begin reporting it by using the [TTS incident response process](https://handbook.tts.gsa.gov/general-information-and-resources/tech-policies/security-incidents/) and posting about it in [`#cloud-gov`](https://gsa-tts.slack.com/messages/cloud-gov/) using `@cg-team` (including notifying the cloud.gov leads).
+When a cloud.gov team member is the first person to notice an incident, they should 
+join [`#cg-incidents`](https://gsa-tts.slack.com/archives/GTNBK2L9K), and use the "Declare Incident" Workflow.
 
-In either case, the first participant on the cloud.gov team becomes the initial *Incident Commander* (IC) and carries out the next steps in the response. The IC's responsibility is coordination, not necessarily investigation. The IC's primary role is to guide the process. The first responder may remain IC throughout the process, or they may hand off IC duties later in the process.
+Declaring an incident results in further guidance to:
+  - Designate an Incident Commander and Scribe
+  - Claim an incident folder in our "Incident Response" [Google Drive folder](https://drive.google.com/drive/folders/1WtLFiZuxLmKR4mrztEE9YtS78nGxC--P)
+    - We try to populate incident folders in advance based on existing templates
+  - Share the URL of the incident document
+  - Update incident doc in that folder with comms and key findings.
+  - Gather in a Google Meet
+  - Set reminders to send comms updates, and to rotate key roles every 6 hours.
+
+In either case, the first participant on the cloud.gov team becomes the initial *Incident Commander* (IC) and carries out the next steps in the response. The IC's responsibility is coordination, not necessarily investigation. The IC's primary role is to guide the process. The first responder may remain IC throughout the process, or they may hand off IC duties later in the process. 
+
+A Scribe is highly recommended to keep notes, update the incident doc, and support the IC in drafting communications.
 
 The IC makes sure that the [TTS incident response process](https://handbook.tts.gsa.gov/general-information-and-resources/tech-policies/security-incidents/) is followed, including supporting the reporter if the reporter already started it, or starting it if nobody has started it yet.
 
@@ -73,7 +98,14 @@ The IC makes sure that the [TTS incident response process](https://handbook.tts.
 
 Note that at this point the issue's status is "investigating" — we haven't confirmed that it's really an issue yet. So, we should actually refer to this as just an "event" at this point; it doesn't become an "incident" until we've confirmed it.
 
-At this phase, communications should follow the steps in the [TTS incident response process](https://handbook.tts.gsa.gov/general-information-and-resources/tech-policies/security-incidents/) including creating an issue in the [`security-incidents`](https://github.com/18f/security-incidents) GitHub repository. Copy the following template to create the issue:
+At this phase, communications should follow the steps in the [FedRAMP Incident 
+Communications Procedures Guide](https://www.fedramp.gov/assets/resources/documents/CSP_Incident_Communications_Procedures.pdf) and the [TTS incident response
+process](https://handbook.tts.gsa.gov/general-information-and-resources/tech-policies/security-incidents/) process.
+
+- Exception: cloud.gov does not directly notify US-CERT. That is handled by 
+GSA Incident Response Team.
+
+Initial comms should include:
 
 ```
 Short description of what's going on
@@ -87,9 +119,17 @@ Short description of what's going on
 Any extra details about the issue can go here.
 ```
 
-The IC is responsible for keeping this issue up-to-date as investigation and remediation progresses. Everyone involved in the issue (*responders*) should leave notes as comments on the issue.
+This sitrep should be:
 
-- The IC may start a Google Hangout and/or create Google Docs so that responders can share sensitive information not suitable for sharing in GitHub or Slack.
+- Emailed to `gsa-ir@gsa.gov` 
+- Emailed to [FedRAMP ISSO (JAB TR reps)][FedRAMP ISSO TRR reps], cc: fedramp_security@gsa.gov and cloud-gov-compliance@gsa.gov. They require daily updates on open incidents.
+- Sent (email or Slack) to external stakeholders, if applicable and relevant
+
+The IC is responsible for keeping this incident document up-to-date as investigation and remediation progresses. Everyone involved in the issue (*responders*) should leave notes
+in the incident Google Doc.  Slack should be used for most asynchronous communications.
+
+- The IC may start a Google Hangout and they, and the Scribe, should
+update the incident Google Doc to summarize key findings and actions.
 
 
 ### Assess
@@ -128,13 +168,6 @@ We've confirmed reports of escaped chickens.
 Looks like a fox may have tunneled into the run.
 Dave is working to fix the fence, Spot is tracking the fox.
 ```
-
-This sitrep should be:
-
-- Posted in [`#incident-response`](https://gsa-tts.slack.com/messages/incident-response/)
-- Emailed to `gsa-ir@gsa.gov` and `devops@gsa.gov`
-- Emailed to [FedRAMP ISSO (JAB TR reps)][FedRAMP ISSO TRR reps], cc: fedramp_security@gsa.gov and cloud-gov-compliance@gsa.gov. They require daily updates on open incidents.
-- Sent (email or Slack) to external stakeholders, if applicable and relevant
 
 #### Comms at the Assess phase
 
@@ -252,6 +285,40 @@ Guidelines for addressing Low-sev issues:
 - Responders should avoid service degradation unless stakeholders agree.
 - Sitreps should be sent approximately daily.
 
+## Special Situations
+
+### False Alarm
+
+Follow this checklist if an event turns out not to be a security incident:
+
+- Notify `gsa-ir@gsa.gov` of the false alarm.
+- If any sitreps have been sent out, send a final sitrep to all previous recipients, noting the false alarm.
+
+### Handing off IC
+
+Follow this checklist if you need to hand over IC duties:
+
+- Old IC: brief New IC on the situation.
+- New IC: confirm that you're taking over.
+- New IC: update Slack and Google Doc for the incident, noting that you're now the IC.
+- New IC: send out a sitrep, noting that you're taking over IC.
+- Old IC: stick around for 15-20 minutes to ensure a smooth handoff, then log off!
+
+#### Network Interconnect
+
+If a cloud.gov team member or automated scanning system detects unauthorized access or traffic across a secure VPN / interconnection with a customer:
+
+- Invite customer team contacts (such as Org Managers and System Owner) to the call
+- Confirm whether traffic should be terminated or captured
+- If traffic should be terminated: from the Amazon AWS console select `Services -> VPC -> Virtual Private Gateways -> VPN ID -> Detach from VPC`
+- If traffic should be captured:
+  - VPC Flow Logs: from the Amazon AWS console select `Services -> VPC -> VPC ID -> Flow Logs`
+  - Live capture: from the Isolation Segment Diego Cell run `tcpdump -i $INTERFACE -s 65535 -w /tmp/incident-$(date +%s).pcap`
+  - Customer: the customer has control of all systems on the customer side of the VPN, so the customer needs to capture that traffic
+
+#### Github Secret Leak
+
+If we've leaked secrets in Github, _once the Incident Response team has told us to remove the data from Github_, follow [these instructions to remove the secret from Git history](https://help.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository), and then file a [support ticket to have the files removed from their cache](https://support.github.com/contact).
 ---
 
 ### Page information
