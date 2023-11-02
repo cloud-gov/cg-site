@@ -26,11 +26,11 @@ Pages Users within an Organization will be able to see all of the Sites in the O
 
 - Navigate to the organizations tab
 - Click edit in the lower right hand corner of the organization pane
-  <img src="{{ site.baseurl }}/assets/pages/images/edit_organizations.png"
+  <img src="{{ site.baseurl }}/assets/images/pages/edit_organizations.png"
        alt="'Your Organizations' pane with an 'Edit' link highlighted"/>
 
 - Click the plus sign under “Members”
-  <img src="{{ site.baseurl }}/assets/pages/images/add_user.png"
+  <img src="{{ site.baseurl }}/assets/images/pages/add_user.png"
        alt="Organization edit pane with the plus sign button next to 'Add user' highlighted"/>
 
 - Fill out the required fields of Email and Role
