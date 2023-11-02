@@ -21,7 +21,7 @@ In this example we will be taking a look at a simple single-page application whi
 
 Static site generators like Jekyll and Hugo handle routing by creating an HTML file at each path that can be requested by the user. For single-page applications, we will only render one HTML file: index.html, which loads the JavaScript necessary for running our application and router.
 
-All of the routing is located in the `index.js` file. Here we import all our components, css and functions. We create the `<BrowserRouter>` and use the `<RouterProvider>` to provide that router to our application. The parent route registers a `Layout` component which essentially wraps all the other page components thus providing a uniform structure/design for all the components.
+All of the routing is located in the `index.js` file. Here we import all our components, CSS and functions. We create the `<BrowserRouter>` and use the `<RouterProvider>` to provide that router to our application. The parent route registers a `Layout` component which essentially wraps all the other page components thus providing a uniform structure/design for all the components.
 
 ```
 const router = createBrowserRouter(
