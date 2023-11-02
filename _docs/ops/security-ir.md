@@ -30,7 +30,8 @@ At a high level, incident response follows this process:
 
 - Determine if the anomaly / service disruption qualifies as an incident. That is:
   - Is there evidence of compromise or attack?
-  - Has the system been unable to maintain our [service level objectives]({{ site.baseurl }}{% link _docs/overview/customer-service-objectives/ %})?
+  - Has the system been unable to maintain our [service level objectives]({{ site.baseurl }}{% link _docs/overview/customer-service-objectives.md %})?
+    - An availability issue impacting a single customer is likely _not_ an incident
   - Is an attack imminent or suspected (e.g. a Log4J type vulnerability)
   - Most reported vulnerabilities are _not_ incidents, and are handled by our SI-02 Flaw Remediation process
 - Outside cloud.gov: A TTS staff member (the *reporter*) notices and reports a cloud.gov-related incident using the [TTS incident response process](https://handbook.tts.gsa.gov/general-information-and-resources/tech-policies/security-incidents/) and then notifying the cloud.gov team in [`#cg-support`](https://gsa-tts.slack.com/archives/C09CR1Q9Z)

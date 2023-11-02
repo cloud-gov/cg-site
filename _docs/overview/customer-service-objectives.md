@@ -26,6 +26,8 @@ Our program’s top **priorities** are:
 Our **performance goals**:
 
   - We publicly publish real time metrics regarding platform availability at https://cloudgov.statuspage.io.
+  - For incidents, we consider less than 90% availability over one hour as an incident (6 minute outage), less than 97% over a 24-hour period (43 minute outage)>
+    - Our site is "unavailable" if more than 10% of public users are experiencing issues.
 
 Our **support availability**:
 
