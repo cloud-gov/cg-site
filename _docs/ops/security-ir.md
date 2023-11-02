@@ -5,6 +5,8 @@ layout: docs
 sidenav: true
 title: Security Incident Response Guide
 linktitle: Security IR Guide
+redirect_from:
+  - /docs/ops/security-ir-checklist/
 ---
 
 ## Cloud.gov
@@ -305,7 +307,7 @@ Follow this checklist if you need to hand over IC duties:
 - New IC: send out a sitrep, noting that you're taking over IC.
 - Old IC: stick around for 15-20 minutes to ensure a smooth handoff, then log off!
 
-#### Network Interconnect
+### Network Interconnect
 
 If a cloud.gov team member or automated scanning system detects unauthorized access or traffic across a secure VPN / interconnection with a customer:
 
@@ -317,9 +319,10 @@ If a cloud.gov team member or automated scanning system detects unauthorized acc
   - Live capture: from the Isolation Segment Diego Cell run `tcpdump -i $INTERFACE -s 65535 -w /tmp/incident-$(date +%s).pcap`
   - Customer: the customer has control of all systems on the customer side of the VPN, so the customer needs to capture that traffic
 
-#### Github Secret Leak
+### Github Secret Leak
 
 If we've leaked secrets in Github, _once the Incident Response team has told us to remove the data from Github_, follow [these instructions to remove the secret from Git history](https://help.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository), and then file a [support ticket to have the files removed from their cache](https://support.github.com/contact).
+
 ---
 
 ### Page information
