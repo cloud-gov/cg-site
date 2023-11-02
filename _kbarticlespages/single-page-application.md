@@ -9,7 +9,7 @@ excerpt:
 
 cloud.gov Pages hosts static sites, but this doesn’t mean that developers are limited to only using [“static site generators”](https://jamstack.org/generators/): anything that can be compiled down into HTML can be run on Pages. You can use single-page application frameworks like Vue.js, Svelte, Angular, or React etc. and host it seamlessly on the Pages platform. This is achieved via the `npm run pages` command which allows developers to add a custom build script, and we’ll automatically publish everything in the `_site` folder. Details on utilizing a custom build script will be covered later in the article.  
 
-In this example we will be taking a look at a simple single-page application which uses the React library and React Router v6. You can view a repository with a full example here {insert repo link} and see the results at {preview URL}. There are also more detailed instructions on how to run this locally in the repositories’ README.md. This article serves a high level overview and will highlight three key features:
+In this example we will be taking a look at a simple single-page application which uses the React library and React Router v6. You can view a repository with a full example here <https://github.com/Ephraim-G/react_spa4> and see the results in Pages [here](https://federalist-01aa8660-8aca-452d-a270-5e58ffa18645.sites.pages.cloud.gov/site/ephraim-g/react_spa4/). There are also more detailed instructions on how to run this locally in the repositories’ README.md. This article serves a high level overview and will highlight three key features:
 
 * Application routing
 * Environment variables
@@ -77,14 +77,15 @@ It’s important to remember that none of these routes are creating new HTML fil
 
 Pages provides [certain environment variables](https://cloud.gov/pages/documentation/env-vars-on-pages-builds/) in each build container and you can also add customer variables in your “Site Settings”. In the case of `create-react-app`, the library we’re using in this example, [we need two variables](https://create-react-app.dev/docs/advanced-configuration/):
     - `BUILD_PATH`: this determines the output directory where all the built assets end up after running `react-scripts build`. In our case, Pages requires all assets to be in the `_site` folder. We can set that in the UI like so:
-![]({{site.baseurl}}/assets/images/pages/env_vars.png)
+![]({{site.baseurl}}/assets/images/pages/env_var.png)
 
 `PUBLIC_URL`: this variable determines how assets are referenced in the final build. We can’t set this one statically in the UI because our root URL will change for preview builds. Instead, we’ll add a small bash script to our custom build command to set the default environment variable `BASEURL` as the value for `PUBLIC_URL` like this:
+
 ```
 echo "PUBLIC_URL=$BASEURL" >> .env
 ```
-
-	You can see how this is included in the build command in the repository <https://github.com/Ephraim-G/react_spa4/blob/main/build.sh#L3C32-L3C32>. 
+	
+  You can see how this is included in the build command in the [repository](https://github.com/Ephraim-G/react_spa4/blob/main/build.sh#L3C32-L3C32). 
 
 
 
