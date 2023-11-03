@@ -16,7 +16,7 @@ In order to mitigate these ongoing attacks to keep our customers' applications s
 
 All inbound traffic to the cloud.gov platform are protected by a set of [web application firewall (WAF) rules](https://aws.amazon.com/waf/), which allow us to block any traffic that matches known malicious patterns. The WAF rules for cloud.gov currently include these managed rule sets offered by AWS that offer protection against:
 
-- Cross-site scripting (XSS)
+- [Cross-site scripting (XSS)](https://owasp.org/www-community/attacks/xss/)
 - Requests for invalid paths or extensions
 - Requests from known or suspected malicious IP ranges
 - Known Java exploits
