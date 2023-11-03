@@ -36,7 +36,7 @@ In order to mitigate the effect of traffic surges on the platform, cloud.gov inc
 - Traffic coming through CloudFront is rate limited with a [CHALLENGE action][challenge action] to **2000 requests** per **forwarded IP address** per 5 minutes
 - Traffic not coming through CloudFront is rate limited with a [CHALLENGE action][challenge action] to **2000 requests** per **source IP address** per 5 minutes
 
-## AWS CloudFront & CDNs
+### AWS CloudFront & CDNs
 
 Another protection against traffic surges available on the platform is the ability to use [Amazon CloudFront as a CDN for your application](({{ site.baseurl }}{% link _docs/services/external-domain-service.md %})). Among its other benefits, CloudFront can cache requests based on configurable patterns. Since cached requests will be handled by CloudFront and not reach your application, they offer some protection against floods of traffic.
 
