@@ -42,7 +42,7 @@ Another protection against traffic surges available on the platform is the abili
 
 ## Reporting impact on legitimate traffic
 
-If you suspect that your traffic is being improperly affected by these protections, please contact us at [support@cloud.gov](({{ site.support_email }})).
+If you suspect that your traffic is being improperly affected by these protections, please contact us at [support@cloud.gov]({{ site.support_email }}).
 
 ---
 
