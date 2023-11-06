@@ -2,7 +2,7 @@
 parent: technology
 layout: docs
 sidenav: true
-title: Protections against malicious traffic
+title: Protections against malicious activity
 weight: 30
 ---
 
