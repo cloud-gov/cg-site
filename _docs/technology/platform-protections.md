@@ -6,7 +6,7 @@ title: Protections against malicious activity
 weight: 30
 ---
 
-Applications and services on the internet experience frequent attacks, probes, and other malicious traffic. Threat actors making malicious requests may aim to exploit vulnerabilities, compromise infrastructure, or deny service to legitimate clients of your applications.
+Applications and services on the internet experience frequent attacks, probes, and other malicious traffic. Threat actors making malicious requests may aim to exploit vulnerabilities, to compromise infrastructure, or to deny service to legitimate clients of your applications.
 
 As a multi-tenant platform, cloud.gov observes a diverse and frequent number of attacks. We are constantly improving our defenses to keep your applications online and unaffected by high-traffic-volume attacks against the platform and our customers. To achieve this, cloud.gov includes multiple layers of defense against different types of attacks.
 
