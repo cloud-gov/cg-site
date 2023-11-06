@@ -6,11 +6,9 @@ title: Protections against malicious activity
 weight: 30
 ---
 
-As a multi-tenant platform hosting web applications, cloud.gov experiences frequent attacks and ongoing malicious traffic. The goal of these attacks may be to exploit vulnerabilities, to compromise infrastructure, or to deny service altogether.
+Applications and services on the internet experience frequent attacks, probes, and other malicious traffic. Threat actors making malicious requests may aim to exploit vulnerabilities, compromise infrastructure, or deny service to legitimate clients of your applications.
 
-Given the multitude of applications and application types running on cloud.gov, there is a much greater diversity of attacks experienced by the overall platform than those faced by any single application operating on cloud.gov. Thus, in order to keep all of our customers' applications safe from a variety of attacks, cloud.gov includes multiple layers of defense against different types of attacks.
-
-These protections are not just intended to protect individual tenants from attack, but also to preserve multi-tenancy by preventing large traffic volumes to one customer application affecting other customer applications.
+As a multi-tenant platform, cloud.gov observes a diverse and frequent number of attacks. We are constantly improving our defenses to keep your applications online and unaffected by high-traffic-volume attacks against the platform and our customers. To achieve this, cloud.gov includes multiple layers of defense against different types of attacks.
 
 ## Blocking known malicious patterns
 
