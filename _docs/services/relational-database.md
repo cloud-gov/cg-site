@@ -262,7 +262,7 @@ If you want to increase the storage available to the instance to be 50 GB:
 cf update-service ${SERVICE_NAME} -c '{"storage": 50}'
 ```
 
-Note that you can only update to a larger size. If you want to downgrade to a lesser size, please email ({{ site.support_email }})({{ site.support_email }}) for assistance.
+Note that you can only update to a larger size. If you want to downgrade to a lesser size, please email [support@cloud.gov]({{ site.support_email }}) for assistance.
 
 To enable functions, triggers, and procedures for a MySQL instance:
 
@@ -358,13 +358,13 @@ Please note: If you are binding a service instance to a new space, please review
 
 *Please note that these instructions will change in the future as we expand our service offerings and provide more options for customers.*
 
-RDS automatically retains daily backups for 14 days. These backups are AWS RDS storage volume snapshots, backing up the entire DB instance and not just individual databases. You can extend the length of retention up to 35 days by using the option detailed above. If you need to have a database restored using one of these backups, you can [email support@cloud.gov]({{ site.support_email }}).  For non-emergency situations, please provide at least 48 hours advance notice.
+RDS automatically retains daily backups for 14 days. These backups are AWS RDS storage volume snapshots, backing up the entire DB instance and not just individual databases. You can extend the length of retention up to 35 days by using the option detailed above. If you need to have a database restored using one of these backups, you can email [support@cloud.gov]({{ site.support_email }}).  For non-emergency situations, please provide at least 48 hours advance notice.
 
-If you have an emergency situation, such as data loss or a compromised system, please [email support@cloud.gov]({{ site.support_email }}) immediately and inform us of the situation.
+If you have an emergency situation, such as data loss or a compromised system, please email [support@cloud.gov]({{ site.support_email }}) immediately and inform us of the situation.
 
 If you deleted your database instance and want to recover it, the recovery must be done within 14 days of the instance being deleted.  We can perform a restoration using the automated backups that are retained for that 14 day window after a database is removed.
 
-When you do [contact support@cloud.gov]({{ site.support_email }}) with a database backup or restoration request, please include the following information:
+When you do contact [support@cloud.gov]({{ site.support_email }}) with a database backup or restoration request, please include the following information:
 
 - Your organization name
 - The space you are working within
