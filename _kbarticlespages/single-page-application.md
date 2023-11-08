@@ -15,7 +15,7 @@ In this example we will be taking a look at a simple single-page application whi
 * 404 Pages
 
 
-#### Application Routing
+## Application Routing
 
 Static site generators like Jekyll and Hugo handle routing by creating an HTML file at each path that can be requested by the user. For single-page applications, we will only render one HTML file: index.html, which loads the JavaScript necessary for running our application and router.
 
