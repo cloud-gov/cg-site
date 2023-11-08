@@ -5,7 +5,6 @@ date: November 2, 2023
 excerpt: 
 ---
 
-## Intro
 
 cloud.gov Pages hosts static sites, but this doesn’t mean that developers are limited to only using [“static site generators”](https://jamstack.org/generators/): anything that can be compiled down into HTML can be run on Pages. You can use a single-page application framework like Vue.js, Svelte, Angular, React, etc. and host it seamlessly on the Pages platform. This is achieved via the `npm run pages` command which allows developers to add a custom build script, and we’ll automatically publish everything in the `_site` folder. Details on utilizing a custom build script will be covered later in the article.  
 
