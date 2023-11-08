@@ -5,23 +5,21 @@ date: November 2, 2023
 excerpt: 
 ---
 
-## Intro
 
-cloud.gov Pages hosts static sites, but this doesn’t mean that developers are limited to only using [“static site generators”](https://jamstack.org/generators/): anything that can be compiled down into HTML can be run on Pages. You can use single-page application frameworks like Vue.js, Svelte, Angular, or React etc. and host it seamlessly on the Pages platform. This is achieved via the `npm run pages` command which allows developers to add a custom build script, and we’ll automatically publish everything in the `_site` folder. Details on utilizing a custom build script will be covered later in the article.  
+cloud.gov Pages hosts static sites, but this doesn’t mean that developers are limited to only using [“static site generators”](https://jamstack.org/generators/): anything that can be compiled down into HTML can be run on Pages. You can use a single-page application framework like Vue.js, Svelte, Angular, React, etc. and host it seamlessly on the Pages platform. This is achieved via the `npm run pages` command which allows developers to add a custom build script, and we’ll automatically publish everything in the `_site` folder. Details on utilizing a custom build script will be covered later in the article.  
 
-In this example we will be taking a look at a simple single-page application which uses the React library and React Router v6. You can view a repository with a full example here <https://github.com/cloud-gov/pages-example-spa> and see the results in Pages [here](https://federalist-01aa8660-8aca-452d-a270-5e58ffa18645.sites.pages.cloud.gov/preview/cloud-gov/pages-example-spa/content/). There are also more detailed instructions on how to run this locally in the repositories’ README.md. This article serves a high level overview and will highlight three key features:
+In this example we will be taking a look at a simple single-page application which uses the React library and React Router v6. You can view a repository with a full example here <https://github.com/cloud-gov/pages-example-spa> and see the results in Pages [here](https://federalist-01aa8660-8aca-452d-a270-5e58ffa18645.sites.pages.cloud.gov/preview/cloud-gov/pages-example-spa/content/). There are also more detailed instructions on how to run this locally in the repositories’ README.md. This article serves as a high level overview and will highlight three key features:
 
 * Application routing
 * Environment variables
 * 404 Pages
 
-## Key features of a single-page application on Pages
 
-#### Application Routing
+## Application Routing
 
-Static site generators like Jekyll and Hugo handle routing by creating an HTML file at each path that can be requested by the user. For single-page applications, we will only render one HTML file: index.html, which loads the Javascript necessary for running our application and router.
+Static site generators like Jekyll and Hugo handle routing by creating an HTML file at each path that can be requested by the user. For single-page applications, we will only render one HTML file: index.html, which loads the JavaScript necessary for running our application and router.
 
-All of the routing is located in the `index.js` file. Here we import all our components, css and functions. We create the `<BrowserRouter>` and use the `<RouterProvider>` to provide that router to our application. The parent route registers a `Layout` component which essentially wraps all the other page components thus providing a uniform structure/design for all the components.
+All of the routing is located in the `index.js` file. Here we import all our components, CSS and functions. We create the `<BrowserRouter>` and use the `<RouterProvider>` to provide that router to our application. The parent route registers a `Layout` component which essentially wraps all the other page components thus providing a uniform structure/design for all the components.
 
 ```
 const router = createBrowserRouter(
