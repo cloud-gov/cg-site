@@ -14,7 +14,6 @@ In this example we will be taking a look at a simple single-page application whi
 * Environment variables
 * 404 Pages
 
-## Key features of a single-page application on Pages
 
 #### Application Routing
 
