@@ -84,7 +84,7 @@ Pages provides [certain environment variables](https://cloud.gov/pages/documenta
 echo "PUBLIC_URL=$BASEURL" >> .env
 ```
 	
-  You can see how this is included in the build command in the [repository](https://github.com/Ephraim-G/react_spa4/blob/main/build.sh#L3C32-L3C32). 
+  You can see how this is included in the build command in the [repository](https://github.com/cloud-gov/pages-example-spa/blob/main/build.sh#L3C32-L3C32). 
 
 
 
