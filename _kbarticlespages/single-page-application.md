@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Hosting Single Page Applications on Pages"
-date: November 2, 2023
-excerpt: 
+date: November 9, 2023
+excerpt: Take a look at how Pages handles single page applications
 ---
 
 
@@ -75,6 +75,7 @@ It’s important to remember that none of these routes are creating new HTML fil
 
 Pages provides [certain environment variables](https://cloud.gov/pages/documentation/env-vars-on-pages-builds/) in each build container and you can also add customer variables in your “Site Settings”. In the case of `create-react-app`, the library we’re using in this example, [we need two variables](https://create-react-app.dev/docs/advanced-configuration/):
     - `BUILD_PATH`: this determines the output directory where all the built assets end up after running `react-scripts build`. In our case, Pages requires all assets to be in the `_site` folder. We can set that in the UI like so:
+
 <img src="{{ site.baseurl }}/assets/images/pages/env_var.png"/>
 
 `PUBLIC_URL`: this variable determines how assets are referenced in the final build. We can’t set this one statically in the UI because our root URL will change for preview builds. Instead, we’ll add a small bash script to our custom build command to set the default environment variable `BASEURL` as the value for `PUBLIC_URL` like this:
