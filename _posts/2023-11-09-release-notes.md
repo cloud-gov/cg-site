@@ -24,7 +24,7 @@ Notably, this bump addresses:
 
 ### Java-Buildpack 4.63.0 up from 4.62.0
 
-This release includes the Java quarterly patch releases, as well updates to the following frameworks/agents:
+This release includes the Java quarterly patch releases, as well as updates to the following frameworks/agents:
 
 * AppDynamics
 * Azure App Insights
