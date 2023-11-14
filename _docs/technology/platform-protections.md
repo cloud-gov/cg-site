@@ -36,7 +36,7 @@ In order to mitigate the effect of traffic surges on the platform, cloud.gov inc
 
 ### AWS CloudFront & CDNs
 
-Another protection against traffic surges available on the platform is the ability to use [Amazon CloudFront as a CDN for your application](({{ site.baseurl }}{% link _docs/services/external-domain-service.md %})). Among its other benefits, CloudFront can cache requests based on configurable patterns. Since cached requests will be handled by CloudFront and not reach your application, they offer some protection against floods of traffic.
+Another protection against traffic surges available on the platform is the ability to use [Amazon CloudFront as a CDN for your application]({{ site.baseurl }}{% link _docs/services/external-domain-service.md %}). Among its other benefits, CloudFront can cache requests based on configurable patterns. Since cached requests will be handled by CloudFront and not reach your application, they offer some protection against floods of traffic.
 
 ## Reporting impact on legitimate traffic
 
