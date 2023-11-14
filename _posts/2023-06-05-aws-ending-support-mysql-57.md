@@ -5,7 +5,7 @@ date: June 5, 2023
 excerpt: "AWS is ending support for MySQL 5.7 databases starting in December 2023. Read on for instructions for how to upgrade your brokered databases."
 ---
 
-[AWS RDS is ending support for MySQL versions 5.7.x starting in December 2023](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Concepts.VersionMgmt.html).
+[AWS RDS is ending support for MySQL versions 5.7.x starting in January/February 2024](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Concepts.VersionMgmt.html).
 
 > **Please note:** AWS has updated the end of support for MySQL 5.7 databases to January/February 2024. A previous version of this post had the end of support for MySQL 5.7 as December 2023.
 ## What this means for you
