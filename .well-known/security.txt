@@ -1,16 +1,11 @@
 # Vulnerability reporting:
-Contact: gsa-vulnerability@gsa.gov
+Contact: gsa-vulnerability-reports@gsa.gov
 Contact: https://hackerone.com/gsa_bbp
-Contact: cloud-gov-compliance@gsa.ogv
 
 # Incident response:
 Contact: cloud-gov-security@gsa.gov
 
 # Our security policy
 Policy: https://www.gsa.gov/vulnerability-disclosure-policy
-
-# Note: GSA does _offer_ bounties -- the 
-# "ineligible" notice at https://hackerone.com/gsa_vdp?type=team
-# are incorrect / outdated (2023-11-02)
 
 Expires: 2029-12-31T23:59:59
