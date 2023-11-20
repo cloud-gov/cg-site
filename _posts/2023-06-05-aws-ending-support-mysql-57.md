@@ -77,10 +77,10 @@ To upgrade your existing MySQL 5.7 database to MySQL 8.0:
     cf unbind-service <app-name> <mysql57-database-name>
     ```
 
-1. Restage your application (the `--rolling` flag is optional but ensures no downtime):
+1. Restage your application (the `--strategy rolling` flag is optional but ensures no downtime):
 
     ```shell
-    cf restage <app-name> --rolling
+    cf restage <app-name> --strategy rolling
     ```
 
 1. Verify that your application is still working and operating with the expected data.
