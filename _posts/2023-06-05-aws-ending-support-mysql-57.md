@@ -7,7 +7,8 @@ excerpt: "AWS is ending support for MySQL 5.7 databases starting in December 202
 
 [AWS RDS is ending support for MySQL versions 5.7.x starting in January/February 2024](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Concepts.VersionMgmt.html).
 
-> **Please note:** AWS has updated the end of support for MySQL 5.7 databases to January/February 2024. A previous version of this post had the end of support for MySQL 5.7 as December 2023.
+> **Please note:** AWS has updated the end of support for MySQL 5.7 databases to January/February 2024. A previous version of this post said that support for MySQL 5.7 was ending December 2023.
+
 ## What this means for you
 
 As a cloud.gov customer, if you are running a MySQL 5.7 database, then you will need to upgrade that database to at least MySQL version 8.0 by January/February 2024. **Affected customers will receive direct outreach from the cloud.gov team.**
