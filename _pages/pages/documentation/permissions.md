@@ -41,7 +41,7 @@ Pages Users within an Organization will be able to see all of the Sites in the O
 
 ## User Acceptance
 
-As a new user to the platform you will be sent an invitation via email. The link in the email will take you directly to the cloud.gov login page to authenticate your credentials.  You will need to create a cloud.gov account and then use these credentials to login to Pages.
+As a new user to the platform, you will be sent an invitation via email. The link in the email will take you directly to the cloud.gov login page to authenticate your credentials.  You will need to create a cloud.gov account and then use these credentials to login to Pages.
 
 \*Note if a user already belongs to these agencies FDIC, EPA, NIH, GSA, DOJ, OMB or has existing cloud.gov credentials they can use their existing account login information to authenticate into Pages.
 
