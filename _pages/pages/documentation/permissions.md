@@ -45,7 +45,7 @@ As a new user to the platform, you will be sent an invitation via email. The lin
 
 **Note:** 
 * If a user already belongs to these agencies FDIC, EPA, NIH, GSA, DOJ, OMB or has existing cloud.gov credentials they can use their existing account login information to authenticate into Pages.
-* Netlify CMS users **must** login to <https://pages.cloud.gov/> prior to using the content editor.
+* Netlify CMS users **must** login to [pages.cloud.gov](https://pages.cloud.gov/) prior to using the content editor.
 
 ## Site permissions
 
