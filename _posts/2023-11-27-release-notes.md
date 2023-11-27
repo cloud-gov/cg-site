@@ -69,13 +69,13 @@ This section is for the platform operators at `cloud.gov` to highlight changes t
   * Bump golang from 1.21.3 to 1.21.4
   * Bump redis from 7.2.2 to 7.2.3
 * Cloud Controller
-  * Enable CF API to present routable field for app processes (cloudfoundry/cloud_controller_ng#3500)[https://github.com/cloudfoundry/cloud_controller_ng/pull/3500]
-  * Remove copilot (cloudfoundry/cloud_controller_ng#3355)[https://github.com/cloudfoundry/cloud_controller_ng/pull/3355]
-  * Prevent parallel test failures in request_spec (cloudfoundry/cloud_controller_ng#3505)[https://github.com/cloudfoundry/cloud_controller_ng/pull/3505]
-  * Update diego sync to not fetch every bit of every object, only completely fetch objects that need syncing (cloudfoundry/cloud_controller_ng#3503)[https://github.com/cloudfoundry/cloud_controller_ng/pull/3503]
-  * Introduce single source of truth for audit events (cloudfoundry/cloud_controller_ng#3504)[https://github.com/cloudfoundry/cloud_controller_ng/pull/3504]
-  * v3 should allow to update docker registry credentials (cloudfoundry/cloud_controller_ng#3467)[https://github.com/cloudfoundry/cloud_controller_ng/pull/3467]
-  * Require cloud_controller.read access(or equivalent) to access list endpoints (cloudfoundry/cloud_controller_ng#3450)[https://github.com/cloudfoundry/cloud_controller_ng/pull/3450]
+  * Enable CF API to present routable field for app processes [cloudfoundry/cloud_controller_ng#3500](https://github.com/cloudfoundry/cloud_controller_ng/pull/3500)
+  * Remove copilot [cloudfoundry/cloud_controller_ng#3355](https://github.com/cloudfoundry/cloud_controller_ng/pull/3355)
+  * Prevent parallel test failures in request_spec [cloudfoundry/cloud_controller_ng#3505](https://github.com/cloudfoundry/cloud_controller_ng/pull/3505)
+  * Update diego sync to not fetch every bit of every object, only completely fetch objects that need syncing [cloudfoundry/cloud_controller_ng#3503](https://github.com/cloudfoundry/cloud_controller_ng/pull/3503)
+  * Introduce single source of truth for audit events [cloudfoundry/cloud_controller_ng#3504](https://github.com/cloudfoundry/cloud_controller_ng/pull/3504)
+  * v3 should allow to update docker registry credentials [cloudfoundry/cloud_controller_ng#3467](https://github.com/cloudfoundry/cloud_controller_ng/pull/3467)
+  * Require cloud_controller.read access(or equivalent) to access list endpoints [cloudfoundry/cloud_controller_ng#3450](https://github.com/cloudfoundry/cloud_controller_ng/pull/3450)
   * Fetch service plan visibilities with eager loading [cloudfoundry/cloud_controller_ng#3507](https://github.com/cloudfoundry/cloud_controller_ng/pull/3507)
 * Dependency Bumps
   * Bump prometheus-client from 4.2.1 to 4.2.2
