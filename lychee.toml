@@ -40,13 +40,13 @@ timeout = 20
 # Comma-separated list of accepted status codes for valid links.
 # Omit to accept all response types.
 
-# Accept 403 responses because "access denied" responses don't necessarily
+# Accept 401/403 responses because "access denied" responses don't necessarily
 # indicate a bad link.
 #
 # Accept 429 responses. They come from GitHub when you are sending too
 # many requests and get throttled. They don't indicate a bad link.
 # See https://github.com/lycheeverse/lychee/issues/367.
-accept = "200,403,429"
+accept = "200,403,429,401"
 
 # Proceed for server connections considered insecure (invalid TLS)
 insecure = false
