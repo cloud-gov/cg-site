@@ -15,7 +15,7 @@ Then you can integrate your identity provider (IdP) with cloud.gov, at no cost, 
 
 ## Process
 
-The process for integrating with cloud.gov using your SSO solution is fairly simple and straightforward. To properly integrate, here is a high-level overview of what the process looks like.
+The process for integrating with cloud.gov using your SSO solution is fairly simple and straightforward. To properly integrate, here is a high-level overview of the process:
 
 1. Send an email to cloud.gov Support to get the process started, notifying us you'd like to integrate.
 1. cloud.gov Support will ask you for the necessary information to integrate with your provider:
@@ -47,6 +47,8 @@ The process for integrating with cloud.gov using your SSO solution is fairly sim
           - given_name: Attribute holding given name in the OIDC ID Token
           - family_name: Attribute holding family name in the OIDC ID Token
           - user_name: Attribute holding email in the OIDC ID Token
+
+    **Please note that displaying an agency seal when logging in is only supported for SAML integrations.**
 1. Once cloud.gov Support has the information, we'll schedule and then deploy the configuration to our staging environment. This aspect can take a few weeks as it requires manual steps from the cloud.gov Operations team.
 1. cloud.gov will notify you of when the IdP configuration is available in our staging environment.
 1. You can try to log into our staging environment's user portal to ensure the login process works as intended and verify with cloud.gov Support you can log in successfully.
