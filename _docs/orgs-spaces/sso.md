@@ -36,7 +36,7 @@ The process for integrating with cloud.gov using your SSO solution is fairly sim
     - OIDC
       - Client ID/secret, **required**
       - List of email domains to authenticate users against, **required**
-      - Discovery URL, optional (e.g. <https://accounts.google.com/.well-known/openid-configuration>)
+      - Discovery URL, **optional** (e.g. <https://accounts.google.com/.well-known/openid-configuration>)
         - If a discovery URL is provided, then you can omit several attributes like URLs for the issuer, authorization endpoint, token endpoint, userinfo endpoint, and token key endpoint
       - Issuer URL, **required if discovery URL is not provided**
       - URL for authorize endpoint, **required if discovery URL is not provided**
@@ -70,7 +70,7 @@ This is the environment where we test the configuration first. It matches our pr
 
 #### Entity ID
 
-- <login.fr-stage.cloud.gov>
+- <https://login.fr-stage.cloud.gov>
 
 #### OIDC Configuration
 
