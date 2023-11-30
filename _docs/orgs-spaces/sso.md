@@ -88,7 +88,7 @@ The same configuration as our staging environment, just with production hostname
 
 #### Entity ID
 
-- <login.fr.cloud.gov>
+- <https://login.fr.cloud.gov>
 
 #### OIDC Configuration
 
