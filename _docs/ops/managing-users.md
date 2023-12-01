@@ -36,7 +36,7 @@ If the user requesting a reset has any apps, routes, or services in their sandbo
     cf delete-service service
     ```
 
-2. Remove user's permissions to all [spaces and orgs](https://docs.cloudfoundry.org/adminguide/cli-user-management.html#orgs-spaces) other than their sandbox. Search for the user in the Admin interface to locate the relevant orgs and spaces.
+2. Remove user's permissions to all [spaces and orgs](https://docs.cloudfoundry.org/adminguide/cli-user-management.html#orgs-spaces) other than their sandbox. Use the  `cg-scripts/cf-get-user-roles.sh` and then `cg-scripts/strip-user-org-and-space-roles.sh` to find user roles and strip them away. 
 
     For those spaces and orgs, notify the Space Managers and Org Managers that we've removed the user's access because of their request to reset their account's authentication application.
 
