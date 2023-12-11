@@ -65,7 +65,7 @@ At a high level, incident response follows this process:
 
 During this process, the team communicates in the following places:
 
-- Situation updates, investigation notes, and other relevant information gets captured in the GitHub issue created to track this event.
+- Situation updates, investigation notes, and other relevant information gets captured in the Google Doc created to track this event.
 - Real-time communication happens in Slack, in the [`#cg-incidents`](https://gsa-tts.slack.com/archives/GTNBK2L9K) channel.
 - If needed, the team can use a Google Hangout and/or Google Docs to share information that's not appropriate for Slack or GitHub (PII, etc.).
 
@@ -144,11 +144,11 @@ The next step is to assess the issue. We need to answer two questions:
 
 To answer these questions, the IC should form a response team by DM'ing people in Slack. The response team should work to confirm the issue and assess its impact.
 
-If the issue turns out to be a false alarm, the IC should update the ticket, setting the status to "false alarm", and closing the issue.
+If the issue turns out to be a false alarm, the IC should update the Google Doc, setting the status to "false alarm", and update the email chain.
 
 If the issue is valid, the team should assess its impact and determine an initial severity following the incident severity guide below. (Note that the severity can change over the lifespan of the incident, so it's OK to determine the initial severity fairly quickly.)
 
-Once this is done, the IC should update the ticket, noting:
+Once this is done, the IC should update the Google Doc, noting:
 
 - Status: "confirmed"
 - Severity: High/Med/Low
@@ -156,12 +156,10 @@ Once this is done, the IC should update the ticket, noting:
 
 The IC should assess whether to also activate the [contingency plan]({{ site.baseurl }}{% link _docs/ops/contingency-plan.md %}).
 
-At this point, the IC should write an initial situation report ("sitrep") confirming the incident, summarizing what's going on, identifying the IC, and linking to the issue. Here's an example sitrep:
+At this point, the IC should write an initial situation report ("sitrep") in the Google Doc confirming the incident, summarizing what's going on, and identifying the IC. Here's an example sitrep:
 
 ```
 Subject: [sitrep] The chickens have escaped
-
-https://github.com/18F/security-incidents/issues/12345
 
 Severity: high
 IC: Farmer Jane
@@ -172,9 +170,16 @@ Looks like a fox may have tunneled into the run.
 Dave is working to fix the fence, Spot is tracking the fox.
 ```
 
+This sitrep should be:
+
+- Posted in `#cg-incidents`
+- Emailed to `gsa-ir@gsa.gov` and `devops@gsa.gov`
+- Emailed to [FedRAMP ISSO (JAB TR reps)][FedRAMP ISSO TRR reps], cc: fedramp_security@gsa.gov and cloud-gov-compliance@gsa.gov. They require daily updates on open incidents.
+- Sent (email or Slack) to external stakeholders, if applicable and relevant
+
 #### Comms at the Assess phase
 
-Updates and real-time chat should continue as above (updates on the GitHub issue, chat in Slack or Google Hangouts).
+Updates and real-time chat should continue as above (updates on the Google Doc, chat in Slack or Google Hangouts).
 
 ### Remediate
 
@@ -182,9 +187,9 @@ At this point, we're trying to fix the issue! Remediation will be very situation
 
 - The IC's responsibility is coordination, communication, and information-collection. The remediation team will be focused on resolving the issue, so it's up to the IC to make sure that we properly track what happened, how we're fixing it, who's doing what, etc. Ideally, the notes kept by the IC should be sufficient for an outside investigator to independently follow the work of the response team and validate the team's work.
 
-- The team will develop a list of **leads** — actionable information about breaches, stolen data, etc. The IC should track these leads, maintain information about which are being investigated (and by whom), and what information that investigation leads. These can be tracked as checklists in the GitHub issue.
+- The team will develop a list of **leads** — actionable information about breaches, stolen data, etc. The IC should track these leads, maintain information about which are being investigated (and by whom), and what information that investigation leads. These can be tracked as checklists in the Google Doc.
 
-- Similarly, the team will develop a list of **remediation steps**. The IC is likewise responsible for tracking those, making sure they're assigned and followed-up, and verifying them as they're completed. These may be tracked in the central GitHub issue as well. The IC should distinguish between immediate concerns which should be completed before the incident is considered resolved and long-term improvements/hardening which can be deferred to the Retrospective.
+- Similarly, the team will develop a list of **remediation steps**. The IC is likewise responsible for tracking those, making sure they're assigned and followed-up, and verifying them as they're completed. These may be tracked in the central Google Doc as well. The IC should distinguish between immediate concerns which should be completed before the incident is considered resolved and long-term improvements/hardening which can be deferred to the Retrospective.
 	- **If the incident involved exposure of information to an unauthorized party,** the remediation steps must include working with TTS Infrastructure and GSA Information Security to notify the owner of the information, coordinate with the owner of the information, and notify the recipient of their obligations for appropriate handling of the information in the context of applicable federal laws, directives, policies, and/or regulations. The specific appropriate point of contact for customers depends on the situation.
 
 - The response team should aim to adopt a *containment* strategy: if machines are compromised, they should avoid destroying or shutting them down if possible (this can hamper forensics). For AWS instances, you can leave the instance running and instead reconfigure the Security Group for the instance to drop all ingress and egress traffic until forensics can be performed.
@@ -218,7 +223,7 @@ Once the incident is no longer active — i.e. the breach has been contained, th
 
 #### Comms at the Remediate phase
 
-- Updates and real-time chat should continue as above (updates on the GitHub issue, chat in Slack or Google Hangouts).
+- Updates and real-time chat should continue as above (updates on the Google Doc, chat in Slack or Google Hangouts).
 
 - The IC should continue to post updated sitreps on a regular cadence (the section on severities, below, suggests cadences for each level). These sitreps should be sent to Slack, to GSA-IT, US-CERT, and [FedRAMP ISSO (JAB Technical Reviewers)](https://docs.google.com/document/d/1jGddQkjkQ6e9B0UTq9hfQqHe0btAbTeBGL_DxkozAcg/edit) via email, and to any other stakeholders identified throughout the process (e.g. clients).
 
