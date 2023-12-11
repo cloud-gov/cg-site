@@ -34,6 +34,14 @@ In order to mitigate the effect of traffic surges on the platform, cloud.gov inc
 - Traffic coming through CloudFront is rate limited with a [CHALLENGE action][challenge action] to **2000 requests** per **forwarded IP address** per 5 minutes
 - Traffic not coming through CloudFront is rate limited with a [CHALLENGE action][challenge action] to **2000 requests** per **source IP address** per 5 minutes
 
+### Vulnerability scans & CHALLENGE responses
+
+Based on customer reports, some site scanning or penetration testing tools are flagging responses that include an `aws-waf-token` cookie as a security vulnerability. These results are a **false positive** and do not indicate a vulnerability.
+
+To give a bit more context, [the CHALLENGE action works by responding to a web request with an interstitial page that should allow legitimate web browsers to continue on the request destination but block most bot traffic](https://docs.aws.amazon.com/waf/latest/APIReference/API_ChallengeAction.html).
+
+If the CHALLENGE is handled successfully by the client making the request, [then the request succeeds and an `aws-waf-token` cookie is generated to store the timestamp of the client's last successful response to a challenge](https://docs.aws.amazon.com/waf/latest/developerguide/waf-tokens-details.html). Thus, the presence of this cookie is not an indication of a security issue but is actually evidence of a platform protection intended to reduce malicious traffic.
+
 ### AWS CloudFront & CDNs
 
 Another protection against traffic surges available on the platform is the ability to use [Amazon CloudFront as a CDN for your application]({{ site.baseurl }}{% link _docs/services/external-domain-service.md %}). Among its other benefits, CloudFront can cache requests based on configurable patterns. Since cached requests will be handled by CloudFront and not reach your application, they offer some protection against floods of traffic.
