@@ -523,7 +523,11 @@ If you get an error like `ERROR: 1227` when trying to import to your database:
 1. Make sure that your database dump was generated with the `--set-gtid-purged=OFF` option. For example:
 
     ```shell
-    mysqldump -h <host> -u <username> -p --set-gtid-purged=OFF <database_name> > backup.sql
+    mysqldump -h <host> \
+        -u <username> \
+        -p \
+        --set-gtid-purged=OFF \
+        <database_name> > backup.sql
     ```
 
 If those steps do not help, additional remediation steps can be found in the [AWS knowledge center article on how to resolve this error](https://repost.aws/knowledge-center/definer-error-mysqldump).
