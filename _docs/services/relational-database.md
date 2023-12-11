@@ -500,6 +500,38 @@ with these values:
 - `db_name` - database name for accessing your database
 - `path-to-file.sql` - Full path to the database backup file on your machine
 
+### Database import errors
+
+#### MySQL
+
+If you get an error like `ERROR: 1227` when trying to import to your database:
+
+1. Make sure that `enable_functions` is enabled for your database:
+
+    ```shell
+    # on Linux / Mac
+    cf update-service ${SERVICE_NAME} \
+        -c '{"enable_functions": true}'
+
+    # on Windows
+    cf update-service ${SERVICE_NAME} \
+        -c "{\"enable_functions\": true}"
+    ```
+
+    After making these changes, make sure to request a database reboot by contacting [cloud.gov support]({{ site.support_email }}).
+
+1. Make sure that your database dump was generated with the `--set-gtid-purged=OFF` option. For example:
+
+    ```shell
+    mysqldump -h <host> \
+        -u <username> \
+        -p \
+        --set-gtid-purged=OFF \
+        <database_name> > backup.sql
+    ```
+
+If those steps do not help, additional remediation steps can be found in the [AWS knowledge center article on how to resolve this error](https://repost.aws/knowledge-center/definer-error-mysqldump).
+
 ## Encryption
 
 Every RDS instance configured through cloud.gov is [encrypted at rest](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html). We use the industry standard AES-256 encryption algorithm to encrypt your data on the server that hosts your RDS instance. The RDS then handles authenticating access and decrypting your data, with minimal performance impact and without requiring you to modify your applications.
