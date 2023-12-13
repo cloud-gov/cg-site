@@ -30,7 +30,7 @@ The SSL/TLS implementation depends on how your client is reaching cloud.gov, whi
 * [AWS load balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#tls13-security-policies) implement the `ELBSecurityPolicy-TLS13-1-2-Ext1-2021-06` SSL/TLS policy.
 * [Amazon CloudFront distributions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers) implement the `TLSv1.2_2018` policy.
 
-Our TLS implementation and cipher suites are consistent with [White House Office of Management and Budget's M-15-13](https://https.cio.gov/), the Department of Homeland Security's [Binding Operational Directive 18-01](https://cyber.dhs.gov/bod/18-01/), and [NIST's 800-52r2 Guidelines for TLS Implementations](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-52r2.pdf). 
+Our TLS implementation and cipher suites are consistent with [White House Office of Management and Budget's M-15-13](https://https.cio.gov/), the Department of Homeland Security's [Binding Operational Directive 18-01](https://cyber.dhs.gov/bod/18-01/), and [NIST's 800-52r2 Guidelines for TLS Implementations](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-52r2.pdf).
 
 Some SSL/TLS scanners will nonetheless return results flagging the following ciphers as "weak":
 
@@ -38,9 +38,12 @@ Some SSL/TLS scanners will nonetheless return results flagging the following cip
 TLS_RSA_WITH_AES_128_CBC_SHA256 (0x003C)
 TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256 (0xC027)
 TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384 (0xC028)
+TLS_RSA_WITH_AES_256_CBC_SHA256 (0x003D)
+TLS_RSA_WITH_AES_128_GCM_SHA256 (0x009C)
+TLS_RSA_WITH_AES_256_GCM_SHA384 (0x009D)
 ```
 
-These are false positives. At cloud.gov we leverage TLS implementations from Amazon Web Services, which use [s2n-tls](https://github.com/aws/s2n-tls) to inject random timing variations to mitigate CBC attacks like [LUCKY13](https://aws.amazon.com/blogs/security/s2n-and-lucky-13/). Further, these ciphersuites are still acceptable per [NIST 800-52r2, Appendix D](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-52r2.pdf#%5B%7B%22num%22%3A174%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C70%2C719%2C0%5D).
+These are false positives. At cloud.gov we leverage TLS implementations from Amazon Web Services, which use [s2n-tls](https://github.com/aws/s2n-tls) to inject random timing variations [to mitigate CBC attacks like LUCKY13](https://aws.amazon.com/blogs/security/s2n-and-lucky-13/). Further, these ciphersuites are still acceptable per [NIST 800-52r2, Appendix D](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-52r2.pdf#%5B%7B%22num%22%3A174%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C70%2C719%2C0%5D).
 While the CBC cipher modes of operation are being phased out (they are theoretically subject to padding oracle attacks), we support them so we can serve members of the public who are unable to adopt newer technology.
 
 **TLS 1.3**: TLS 1.3 has been implemented with `ELBSecurityPolicy-TLS13-1-2-Ext1-2021-06` security policies on our load balancers. All new Cloudfront domains are created with the `TLSv1.2_2018` security policy, which supports TLS 1.3. The TLS versions supported by other AWS service endpoints, like S3, are controlled by AWS itself.
@@ -55,7 +58,7 @@ cloud.gov does not currently support DNSSEC on `cloud.gov` domains. For example,
 
 [OMB memo M-18-23](https://www.whitehouse.gov/wp-content/uploads/2018/08/M-18-23.pdf) rescinds M-08-23, the OMB memo that originally mandated DNSSEC for federal systems. You should consider carefully whether DNSSEC is still a requirement for your system.
 
-If you do need DNSSEC for your custom domain, you are responsible for configuring DNSSEC in your DNS system. cloud.gov can't configure DNSSEC for you because cloud.gov does not have access to your DNS system. 
+If you do need DNSSEC for your custom domain, you are responsible for configuring DNSSEC in your DNS system. cloud.gov can't configure DNSSEC for you because cloud.gov does not have access to your DNS system.
 
 cloud.gov supports mapping your DNSSEC-enabled custom domain to your applications hosted on cloud.gov -- see [DNSSEC support for the CDN service]({{ site.baseurl }}{% link _docs/services/cdn-route.md %}#dnssec-support) and [DNSSEC support for the custom domain service]({{ site.baseurl }}{% link _docs/services/custom-domains.md %}#dnssec-support).
 
