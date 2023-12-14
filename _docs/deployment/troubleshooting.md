@@ -76,6 +76,8 @@ Avoid placing long-running or multi-step tasks in the application start command.
 
 If you are getting errors like:
 
+- `organization's memory limit exceeded: staging requires 1024M memory`
+- `memory_in_mb exceeds organization memory quota`
 - `Error: organization's memory limit exceeded`
 - `ERR Failed to stage application: insufficient resources`
 
@@ -83,8 +85,8 @@ Then you do not have enough memory left in your [organization's memory quota]({{
 
 If you are experiencing these errors, then you can try:
 
-- Check the memory usage of your apps using `cf app <appname>` to see if you can reduce the memory usage for any of your apps
+- Check the memory usage of your apps using `cf app <appname>` to see if you can reduce the memory allocation for any of your apps
 - Delete any unused or unnecessary applications
-- [Check to see if you have any running tasks](https://docs.cloudfoundry.org/devguide/using-tasks.html#list-tasks) using up memory that can be stopped
+- [Check to see if you have any running tasks](https://docs.cloudfoundry.org/devguide/using-tasks.html#list-tasks) using up memory that can be [canceled](https://docs.cloudfoundry.org/devguide/using-tasks.html#cancel-task)
 
-If none of those options free, then you can contact [inquiries@cloud.gov]({{ site.inquiries_email }}) to request an increase to your organization's memory quota.
+If none of those options free up enough memory to resolve the errors, then you can contact [inquiries@cloud.gov]({{ site.inquiries_email }}) to request an increase to your organization's memory quota.

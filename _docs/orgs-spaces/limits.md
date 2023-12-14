@@ -9,9 +9,11 @@ Org Managers are free to configure your org's [quota]({{ site.baseurl }}{% link 
 
 ### How your memory quota works
 
-Every application instance or running task uses some amount of your organizaton's memory quota. The amount of memory used by your running tasks and applications must not exceed your memory quota.
+Every application instance or running task uses some amount of your organizaton's memory quota. The amount of memory used by your running tasks and started applications must not exceed your memory quota.
 
-**Important caveat:** In order to stage existing or new applications, [CloudFoundry currently requires 1 GB of memory overhead by default](https://github.com/cloudfoundry/capi-release/blob/a172ff232ab6befdc8f9a55b17bd20cc1a3eeb40/jobs/cloud_controller_ng/spec#L913), so the **available memory for your running applications and tasks is actually your organization's memory quota minus 1 GB**.
+### Memory overhead for staging applications
+
+In order to stage existing or new applications, [CloudFoundry currently requires 1 GB of memory overhead by default](https://github.com/cloudfoundry/capi-release/blob/a172ff232ab6befdc8f9a55b17bd20cc1a3eeb40/jobs/cloud_controller_ng/spec#L913), meaning you
 
 ### Example
 
@@ -20,16 +22,24 @@ As an example, if the `gov-agency` org has a memory quota of 4 GB and the follow
 - 1 application instance using 1 GB in their `staging` space
 - 2 application instances using **1 GB each** in their `prod` space
 
-Then they are currently using 3 GB out of their 4 GB memory quota.
+Then they are currently using 3 GB out of their 4 GB memory quota:
 
-With only 1 GB of overhead remaining in the memory quota, developers in this org **could not**:
+```text
+(1 GB * 1 instance) + (1 GB * 2 instances) = 3 GB
+```
+
+Since 1 GB of memory overhead is required when deploying or redeploying applications,
+
+developers in this org **could not**:
 
 - Increase the memory allocation for any of their applications
 - Deploy a new application
 
-Developers in this org **could**:
+None of those options would work because the remaining 1 GB of memory is reserved for staging applications.
 
-- Launch new [tasks](https://docs.cloudfoundry.org/devguide/using-tasks.html#run-tasks) using up to 1 GB of memory
+However, developers in this org **could**:
+
+- Launch new [tasks](https://docs.cloudfoundry.org/devguide/using-tasks.html#run-tasks) using up to 1 GB of memory. Launching tasks on existing applications does not require staging those applications, thus the [memory overhead for application staging is not necessary](#memory-overhead-for-staging-applications).
 
 ## Updating a quota
 
