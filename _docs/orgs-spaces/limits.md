@@ -32,7 +32,7 @@ Even if staging for an application succeeds, **the total amount of memory used b
 As an example, if the `gov-agency` org has a memory quota of 4 GB and the following running applications/tasks:
 
 - 1 application instance using 1 GB in their `staging` space
-- 2 application instances using **1 GB each** in their `prod` space
+- 2 application instances using 1 GB each in their `prod` space
 
 Then they are currently using 3 GB out of their 4 GB memory quota:
 
@@ -50,7 +50,7 @@ Developers in this org **could**:
 - Launch new [tasks](https://docs.cloudfoundry.org/devguide/using-tasks.html#run-tasks) using up to 1 GB of total memory. Launching tasks on existing applications does not require staging those applications, thus the memory overhead for application staging is not necessary.
 - Scale either of their existing applications using [`cf scale`](https://cli.cloudfoundry.org/en-US/v7/scale.html) to have 1 additional instance
 - Deploy application(s) using less than or equal to 1 GB of memory per instance without exceeding the remaining 1 GB of the memory quota, such as:
-  - 1 application instances each using 1 GB of memory
+  - 1 application instance using 1 GB of memory
     - The initial deployment of this application would succeed, but subsequent re-pushes or restaging of any application would fail since there would no longer be sufficient memory overhead to stage any application
   - 2 application instances each using 512 MB of memory
   - 4 application instances each using 256 MB of memory
