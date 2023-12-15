@@ -85,7 +85,7 @@ Then you do not have enough memory left in your [organization's memory quota]({{
 
 If you are experiencing these errors, then you can try:
 
-- Check the memory usage of your apps using `cf app <appname>` or using the [recommended plugins](({{ site.baseurl }}{% link _docs/orgs-spaces/limits.md %}#tracking-quota-usage) to see if you can reduce the memory allocation for any of your apps
+- Check the memory usage of your apps using `cf app <appname>` or using the [recommended plugins]({{ site.baseurl }}{% link _docs/orgs-spaces/limits.md %}#tracking-quota-usage) to see if you can reduce the memory allocation for any of your applications
 - Delete any unused or unnecessary applications
 - [Check to see if you have any running tasks](https://docs.cloudfoundry.org/devguide/using-tasks.html#list-tasks) using up memory that can be [canceled](https://docs.cloudfoundry.org/devguide/using-tasks.html#cancel-task)
 

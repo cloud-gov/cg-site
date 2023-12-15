@@ -20,7 +20,7 @@ If you are trying to stage an application using less than 1 GB of memory per app
 So for example:
 
 - If you want to stage an application with **a single instance using 2 GB of memory**, you must have at least **2 GB** of memory left in your memory quota
-- If you want to stage an application with **2 instances each using 1 GB of memory**, you must have at leaset **1 GB** of memory left in your memory quota
+- If you want to stage an application with **2 instances each using 1 GB of memory**, you must have at least **1 GB** of memory left in your memory quota
 - If you want to stage an application with anything **less than 1 GB of memory per instance**, staging should always succeed
 
 Even if staging for an application succeeds, **the total amount of memory used by all application instance(s) still cannot exceed the memory quota otherwise deployment will fail**.
@@ -42,15 +42,16 @@ Then they are currently using 3 GB out of their 4 GB memory quota:
 
 Developers in this org **could not**:
 
-- Deploy a new application with greater than or equal to 1 GB of memory per instance, since that operation would [exceed the minimum amount of memory required for staging applications](#memory-overhead-for-staging-applications) and the total memory in the quota
-- Add any application instances for their applications
+- Deploy a new application with greater than 1 GB of memory per instance, since that operation would exceed the total memory in the quota
+- Add an instance using [`instances` in the app manifest](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest-attributes.html#instances) and deploy via [`cf push`](https://cli.cloudfoundry.org/en-US/v7/push.html) for either application. Though the application would instantly scale to the desired number of instances, using up all of the memory quota, it would fail when trying restage the app because there would any memory left for staging
 
 Developers in this org **could**:
 
 - Launch new [tasks](https://docs.cloudfoundry.org/devguide/using-tasks.html#run-tasks) using up to 1 GB of total memory. Launching tasks on existing applications does not require staging those applications, thus the memory overhead for application staging is not necessary.
+- Scale either of their existing applications using [`cf scale`](https://cli.cloudfoundry.org/en-US/v7/scale.html) to have 1 additional instance
 - Deploy application(s) using less than or equal to 1 GB of memory per instance without exceeding the remaining 1 GB of the memory quota, such as:
   - 1 application instances each using 1 GB of memory
-    - The initial deployment of this application would succeed, but subsequent re-pushes or restaging would fail since there would no longer be sufficient memory overhead to stage the application
+    - The initial deployment of this application would succeed, but subsequent re-pushes or restaging of any application would fail since there would no longer be sufficient memory overhead to stage any application
   - 2 application instances each using 512 MB of memory
   - 4 application instances each using 256 MB of memory
 
