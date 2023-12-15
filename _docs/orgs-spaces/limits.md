@@ -13,12 +13,19 @@ Every application instance or running task uses some amount of your organizaton'
 
 ### Memory overhead for staging applications
 
-In order to stage new applications or to update an existing application's memory, you must have **as much memory left in your quota as the total amount of memory that you are trying to stage**.
+In order to stage applications using 1 GB or more memory per application instance, **you must have as much memory left in your quota as the memory used by each instance**.
+
+If you are trying to stage an application using less than 1 GB of memory per application instance, [**then the check for available memory in your quota will be bypassed**](https://github.com/cloudfoundry/cloud_controller_ng/blob/9941def05eca25e732c4a73ac709e05215e056f5/lib/cloud_controller/backends/quota_validating_staging_memory_calculator.rb#L10) and staging should always succeed.
 
 So for example:
 
-- If you want to stage an application with **2 GB** of memory, you must have **2 GB** of memory left in your memory quota
-- If you want to stage an application with **2 instances each using 1 GB** of memory, you must have **2 GB** of memory left in your memory quota
+- If you want to stage an application with **a single instance using 2 GB of memory**, you must have at least **2 GB** of memory left in your memory quota
+- If you want to stage an application with **2 instances each using 1 GB of memory**, you must have at leaset **1 GB** of memory left in your memory quota
+- If you want to stage an application with anything **less than 1 GB of memory per instance**, staging should always succeed
+
+Even if staging for an application succeeds, **the total amount of memory used by all application instance(s) still cannot exceed the memory quota otherwise deployment will fail**.
+
+> **Please note:** [This 1 GB threshold for checking the memory quota when staging applications is based on current CloudFoundry configuration](https://github.com/cloudfoundry/capi-release/blob/a172ff232ab6befdc8f9a55b17bd20cc1a3eeb40/jobs/cloud_controller_ng/spec#L913) and is subject to change.
 
 ### Example
 
@@ -35,16 +42,17 @@ Then they are currently using 3 GB out of their 4 GB memory quota:
 
 Developers in this org **could not**:
 
-- Deploy a new application with more 1 GB of memory
-- Add any application instances for their running applications
+- Deploy a new application with greater than or equal to 1 GB of memory per instance, since that operation would [exceed the minimum amount of memory required for staging applications](#memory-overhead-for-staging-applications) and the total memory in the quota
+- Add any application instances for their applications
 
 Developers in this org **could**:
 
-- Launch new [tasks](https://docs.cloudfoundry.org/devguide/using-tasks.html#run-tasks) using up to 1 GB of total memory. Launching tasks on existing applications does not require staging those applications, thus the [memory overhead for application staging is not necessary](#memory-overhead-for-staging-applications).
-- Deploy application(s) using less than or equal to 1 GB of memory for the total number of instances, for example:
-  - 1 application instance using 1 GB of memory or less
-  - 2 application instances each using 512 MB of memory or less
-  - 4 application instances each using 256 MB of memory or less
+- Launch new [tasks](https://docs.cloudfoundry.org/devguide/using-tasks.html#run-tasks) using up to 1 GB of total memory. Launching tasks on existing applications does not require staging those applications, thus the memory overhead for application staging is not necessary.
+- Deploy application(s) using less than or equal to 1 GB of memory per instance without exceeding the remaining 1 GB of the memory quota, such as:
+  - 1 application instances each using 1 GB of memory
+    - The initial deployment of this application would succeed, but subsequent re-pushes or restaging would fail since there would no longer be sufficient memory overhead to stage the application
+  - 2 application instances each using 512 MB of memory
+  - 4 application instances each using 256 MB of memory
 
 ## Updating a quota
 
