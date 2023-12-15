@@ -47,7 +47,7 @@ Developers in this org **could not**:
 
 Developers in this org **could**:
 
-- Launch new [tasks](https://docs.cloudfoundry.org/devguide/using-tasks.html#run-tasks) using up to 1 GB of total memory. Launching tasks on existing applications does not require staging those applications, thus the memory overhead for application staging is not necessary.
+- [Launch new tasks](https://docs.cloudfoundry.org/devguide/using-tasks.html#run-tasks) using up to 1 GB of total memory. Launching tasks on existing applications does not require staging those applications, thus the memory overhead for application staging is not necessary.
 - Scale either of their existing applications using [`cf scale`](https://cli.cloudfoundry.org/en-US/v7/scale.html) to have 1 additional instance
 - Deploy application(s) using less than or equal to 1 GB of memory per instance without exceeding the remaining 1 GB of the memory quota, such as:
   - 1 application instance using 1 GB of memory
@@ -73,13 +73,18 @@ To view your [org quota]({{ site.baseurl }}{% link _docs/pricing/quotas.md %}):
 
 You can use the following `cf` CLI plugins to help identify the right quota to set for your org.
 
-- The [report-usage plugin](https://github.com/aegershman/cf-report-usage-plugin) gives you a report of how your quota is used across visible organizations and spaces. See the [plugin README for installation instructions](https://github.com/aegershman/cf-report-usage-plugin?tab=readme-ov-file#installation).
+- The [report-usage plugin](https://github.com/aegershman/cf-report-usage-plugin) gives you a report of how your quota is used across visible organizations and spaces. See the [plugin README for installation instructions](https://github.com/aegershman/cf-report-usage-plugin?tab=readme-ov-file#installation). The plugin can be invoked like so to give a summary of memory usage for an organization:
+
+    ```shell
+    cf report-usage -o <org-name> --format string
+    ```
 
 - The [Statistics plugin](https://github.com/swisscom/cf-statistics-plugin) gives you real-time visibility of the actual memory usage for each application instance compared to the memory limit. To install:
   1. Add the _CF-Community_ plugin site:
 
       ```shell
-      cf add-plugin-repo CF-Community https://plugins.cloudfoundry.org/
+      cf add-plugin-repo CF-Community \
+        https://plugins.cloudfoundry.org/
       ```
 
   1. Install
