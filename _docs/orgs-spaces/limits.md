@@ -13,7 +13,12 @@ Every application instance or running task uses some amount of your organizaton'
 
 ### Memory overhead for staging applications
 
-In order to stage existing or new applications, [CloudFoundry currently requires 1 GB of memory overhead by default](https://github.com/cloudfoundry/capi-release/blob/a172ff232ab6befdc8f9a55b17bd20cc1a3eeb40/jobs/cloud_controller_ng/spec#L913), meaning you
+In order to stage new applications or to update an existing application's memory, you must have **as much memory left in your quota as the total amount of memory that you are trying to stage**.
+
+So for example:
+
+- If you want to stage an application with **2 GB** of memory, you must have **2 GB** of memory left in your memory quota
+- If you want to stage an application with **2 instances each using 1 GB** of memory, you must have **2 GB** of memory left in your memory quota
 
 ### Example
 
@@ -28,18 +33,18 @@ Then they are currently using 3 GB out of their 4 GB memory quota:
 (1 GB * 1 instance) + (1 GB * 2 instances) = 3 GB
 ```
 
-Since 1 GB of memory overhead is required when deploying or redeploying applications,
+Developers in this org **could not**:
 
-developers in this org **could not**:
+- Deploy a new application with more 1 GB of memory
+- Add any application instances for their running applications
 
-- Increase the memory allocation for any of their applications
-- Deploy a new application
+Developers in this org **could**:
 
-None of those options would work because the remaining 1 GB of memory is reserved for staging applications.
-
-However, developers in this org **could**:
-
-- Launch new [tasks](https://docs.cloudfoundry.org/devguide/using-tasks.html#run-tasks) using up to 1 GB of memory. Launching tasks on existing applications does not require staging those applications, thus the [memory overhead for application staging is not necessary](#memory-overhead-for-staging-applications).
+- Launch new [tasks](https://docs.cloudfoundry.org/devguide/using-tasks.html#run-tasks) using up to 1 GB of total memory. Launching tasks on existing applications does not require staging those applications, thus the [memory overhead for application staging is not necessary](#memory-overhead-for-staging-applications).
+- Deploy application(s) using less than or equal to 1 GB of memory for the total number of instances, for example:
+  - 1 application instance using 1 GB of memory or less
+  - 2 application instances each using 512 MB of memory or less
+  - 4 application instances each using 256 MB of memory or less
 
 ## Updating a quota
 
@@ -57,10 +62,21 @@ To view your [org quota]({{ site.baseurl }}{% link _docs/pricing/quotas.md %}):
 
 ### Tracking quota usage
 
-You can use the following `cf` CLI plugins to help identify the right quota to set for your org. They are available from the _CF-Community_ plugin site: `cf add-plugin-repo CF-Community https://plugins.cloudfoundry.org/`
+You can use the following `cf` CLI plugins to help identify the right quota to set for your org.
 
-- The [report-usgae plugin](https://github.com/aegershman/cf-report-usage-plugin) gives you a report of how your quota is used across visible organizations and spaces. To install: `cf install-plugin 'Usage Report' -r CF-Community`
+- The [report-usage plugin](https://github.com/aegershman/cf-report-usage-plugin) gives you a report of how your quota is used across visible organizations and spaces. See the [plugin README for installation instructions](https://github.com/aegershman/cf-report-usage-plugin?tab=readme-ov-file#installation).
 
-- The [Statistics plugin](https://github.com/swisscom/cf-statistics-plugin) gives you real-time visibility of the actual memory usage for each application instance compared to the memory limit. To install: `cf install-plugin Statistics -r CF-Community`
+- The [Statistics plugin](https://github.com/swisscom/cf-statistics-plugin) gives you real-time visibility of the actual memory usage for each application instance compared to the memory limit. To install:
+  1. Add the _CF-Community_ plugin site:
+
+      ```shell
+      cf add-plugin-repo CF-Community https://plugins.cloudfoundry.org/
+      ```
+
+  1. Install
+
+      ```shell
+      cf install-plugin Statistics -r CF-Community
+      ```
 
 You can use these two in combination to get a good sense of where you can lower instance memory limits to make room for more instances elsewhere in your org or just reduce your quota to reduce costs.
