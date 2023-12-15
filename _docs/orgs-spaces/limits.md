@@ -7,7 +7,7 @@ title: Manage org quotas
 
 Org Managers are free to configure your org's [quota]({{ site.baseurl }}{% link _docs/pricing/quotas.md %}) capacity among your spaces and applications as you see fit. This enables Org Managers to limit usage and corresponding costs.
 
-### How your memory quota works
+## How your memory quota works
 
 Every application instance or running task uses some amount of your organizaton's memory quota. The amount of memory used by your running tasks and started applications must not exceed your memory quota.
 
