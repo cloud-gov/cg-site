@@ -43,7 +43,7 @@ Then they are currently using 3 GB out of their 4 GB memory quota:
 Developers in this org **could not**:
 
 - Deploy a new application with greater than 1 GB of memory per instance, since that operation would exceed the total memory in the quota
-- Add an instance using [`instances` in the app manifest](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest-attributes.html#instances) and deploy via [`cf push`](https://cli.cloudfoundry.org/en-US/v7/push.html) for either application. Though the application would instantly scale to the desired number of instances, using up all of the memory quota, it would fail when trying restage the app because there would any memory left for staging
+- Add an instance using [`instances` in the app manifest](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest-attributes.html#instances) and deploy via [`cf push`](https://cli.cloudfoundry.org/en-US/v7/push.html) for either application. Though the application would instantly scale to the desired number of instances, using up all of the memory quota, it would fail when trying restage the app because there would not be any memory left for staging
 
 Developers in this org **could**:
 
