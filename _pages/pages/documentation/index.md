@@ -54,7 +54,7 @@ The [18F method cards](https://methods.18f.gov/) are an overview of several diff
 The Pages team also provides a [content guide specifically for Pages websites]({{site.baseurl}}/pages/documentation/content-guide/). This guide will help you "convey what your team does, using language and tone that a general audience will understand, or how to think about what to write in each section of your new website."
 
 ## Managing site settings
-![Pages Settings Screenshot]({{site.baseurl}}/assets/images/pages/federalist-settings.png)
+![Pages Settings Screenshot]({{site.baseurl}}/assets/images/pages/pages-site-settings-branch-config.png)
 
 The settings option for a site lets you adjust how Pages handles the site. These settings are for advanced functionality and most people will not need to change them.
 

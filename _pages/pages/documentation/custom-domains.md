@@ -21,7 +21,7 @@ It is possible to add up to 2 custom domains for your site, each one requires th
         - [Minimizing downtime](#minimizing-downtime)
     * [CAA records](#caa-records)
 2. [Notify Pages](#notify-pages)
-3. [Update your Site Settings](#update-your-site-settings)
+3. [Configure your custom domain](#configure-your-custom-domain)
 
 ---
 
@@ -122,13 +122,17 @@ Someone from the Pages support team will assist you and make the updates to the 
 
 ---
 
-## Update your site settings
-Once the Pages team has notified you that the platform changes are complete, update your Site Settings to reflect the new custom domain.
+## Configure your custom domain
+Before the platform can launch a custom domain for your site, you will need to configure the domain name and the branch name to prepare the site for the custom domain.
 
-1. In the Pages web application, navigate to the Site Settings page for your site by clicking on the `Site Settings` link on the lefthand navigation:
+1. In the Pages web application, navigate to the **Custom Domains** page for your site by clicking on the `Custom Domains` link on the lefthand navigation:
 
-2. Under "Live Site" enter the branch name you want to associate to the custom domain and full url of the domain you just configured. When you are done, (scroll down if necessary and) click "save basic settings"
+2. Click the `Add new domain` button and enter the name of the custom domain into the `Domain Name` input and select the branch name you want to associate in the `Branch Context` input. 
 
-    ![Site Settings 2]({{ site.baseurl }}/assets/images/pages/federalist-settings.png)
+    ![Site Custom Domain]({{ site.baseurl }}/assets/images/pages/custom-domain-create.png)
 
-3. Pages will rebuild your site and then it will be available at the custom domain. If you notice that your site does not look correct and/or any site assets (css, js, images) appear to be missing, make sure that the urls to those assets are correct, we provide the environment variable `BASEURL` for this purpose. If using Jekyll, please make sure you use `site.baseurl` when constructing asset urls manually or use the `asset` helper tag if using the `jekyll-assets` gem.
+    *If you do not see the branch name in the `Branch Context` select, go to the **Site Settings** page and enter the branch name in the `Live site` or `Demo site` inputs under `Branch Configurations`.*
+
+    ![Site Settings Branch Configurations]({{ site.baseurl }}/assets/images/pages/pages-site-settings-branch-config.png)
+
+3. The Pages platform will be ready to launch your new custom domain so email the Pages team to complete launch of the custom domain.
