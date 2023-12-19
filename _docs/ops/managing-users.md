@@ -56,22 +56,22 @@ Make sure you have a copy of the [cg-scripts repository](https://github.com/18F/
 
 ### Creating Admins
 
-First, target and get a token for the main CloudFoundry UAA, and make the user a CloudFoundry admin using their GSA email address.
+Make the user a Production CloudFoundry admin using their GSA email address.
 
 ```sh
-cd /path/to/cg-scripts
-# on a jumpbox, run this instead of the next two commands: ./uaa/login.sh
-uaac target <CF_UAA_FQDN>
-uaac token client get admin -s <CF_UAA_ADMINCLIENT_PASSPHRASE>
+# login to the production jumpbox, then:
+cd ./cg-scripts
 ./make-cf-admin.sh <EMAIL_ADDRESS>
+# For global auditor, instead use `add-global-cf-auditor-permissions.sh`
+# Check permission with:
+./validate-admins.sh
 ```
 
-Secondly, target and get a token for the Ops UAA, and then make the user a Concourse admin using their GSA email address.
+
+Secondly, make the user a Concourse admin in Tooling using their GSA email address.
 
 ```sh
-# on a jumpbox, run this instead of the next two commands: ./uaa/login.sh
-uaac target <OPS_UAA_FQDN>
-uaac token client get admin -s <OPS_UAA_ADMINCLIENT_PASSPHRASE>
+# on a tooling jumpbox, 
 ./make-ops-admin.sh <EMAIL_ADDRESS>
 ```
 
