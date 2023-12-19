@@ -135,4 +135,4 @@ Before the platform can launch a custom domain for your site, you will need to c
 
     ![Site Settings Branch Configurations]({{ site.baseurl }}/assets/images/pages/pages-site-settings-branch-config.png)
 
-3. The Pages platform will be ready to launch your new custom domain so email the Pages team to complete launch of the custom domain.
+3. The Pages platform will be ready to launch your new custom domain, so email the Pages team to complete launch of the custom domain.
