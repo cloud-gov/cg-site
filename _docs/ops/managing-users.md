@@ -74,7 +74,7 @@ Secondly, make the user a Concourse admin in Tooling using their GSA email addre
 
 ```sh
 # on a tooling jumpbox, run:
-u/uaa/login.sh
+./uaa/login.sh
 ./make-ops-admin.sh <EMAIL_ADDRESS>
 # Verify changes with:
 ./validate-admins.sh
@@ -98,6 +98,7 @@ Secondly, remove the user as a Concourse admin from Tooling using their GSA emai
 ```sh
 # on a tooling jumpbox, run:
 cd ./cg-scripts
+./uaa/login.sh
 ./make-ops-admin.sh -r <EMAIL_ADDRESS>
 # verify changes with:
 ./validate-admins.sh
