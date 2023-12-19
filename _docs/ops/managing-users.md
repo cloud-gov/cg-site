@@ -59,10 +59,12 @@ Make sure you have a copy of the [cg-scripts repository](https://github.com/18F/
 Make the user a Production CloudFoundry admin using their GSA email address.
 
 ```sh
-# login to the production jumpbox, then:
+# on a production jumpbox, run:
 cd ./cg-scripts
+./uaa/login.sh
 ./make-cf-admin.sh <EMAIL_ADDRESS>
-# For global auditor, instead use `add-global-cf-auditor-permissions.sh`
+# For global auditor, instead use 
+# ./add-global-cf-auditor-permissions.sh <EMAIL_ADDRESS>`
 # Check permission with:
 ./validate-admins.sh
 ```
@@ -71,37 +73,34 @@ cd ./cg-scripts
 Secondly, make the user a Concourse admin in Tooling using their GSA email address.
 
 ```sh
-# on a tooling jumpbox, 
+# on a tooling jumpbox, run:
+u/uaa/login.sh
 ./make-ops-admin.sh <EMAIL_ADDRESS>
+# Verify changes with:
+./validate-admins.sh
 ```
 
 ### Removing Admins
 
-First, target and get a token for the main CloudFoundry UAA, and remove the user as a CloudFoundry admin using their GSA email address.
+First, remove the user as a Production CloudFoundry admin using their GSA email address.
 
 ```sh
-cd /path/to/cg-scripts
-# on a jumpbox, run this instead of the next two commands: ./uaa/login.sh
-uaac target <CF_UAA_FQDN>
-uaac token client get admin -s <CF_UAA_ADMINCLIENT_PASSPHRASE>
+# on a production jumpbox, run:
+cd ./cg-scripts
+./uaa/login.sh
 ./make-cf-admin.sh -r <EMAIL_ADDRESS>
+# verify changes with:
+./validate-admins.sh
 ```
 
-Secondly, target and get a token for the Ops UAA, and then remove the user as a Concourse admin using their GSA email address.
+Secondly, remove the user as a Concourse admin from Tooling using their GSA email address.
 
 ```sh
-cd /path/to/cg-scripts
-# on a jumpbox, run this instead of the next two commands: ./uaa/login.sh
-uaac target <OPS_UAA_FQDN>
-uaac token client get admin -s <OPS_UAA_ADMINCLIENT_PASSPHRASE>
+# on a tooling jumpbox, run:
+cd ./cg-scripts
 ./make-ops-admin.sh -r <EMAIL_ADDRESS>
-```
-
-Verify their permissions have been removed using `validate_admins.sh` and making sure their email address no longer appears in the lists.
-
-```sh
-cd /path/to/cg-scripts
-./validate_admins.sh
+# verify changes with:
+./validate-admins.sh
 ```
 
 ### Deleting Admins
