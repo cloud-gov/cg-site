@@ -64,7 +64,7 @@ cd ./cg-scripts
 ./uaa/login.sh
 ./make-cf-admin.sh <EMAIL_ADDRESS>
 # For global auditor, instead use 
-# ./add-global-cf-auditor-permissions.sh <EMAIL_ADDRESS>`
+# ./add-global-cf-auditor-permissions.sh <EMAIL_ADDRESS>
 # Check permission with:
 ./validate-admins.sh
 ```
