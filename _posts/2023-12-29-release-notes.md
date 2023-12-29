@@ -5,7 +5,7 @@ title: "December 29th cloud.gov Change Log"
 excerpt: The cloud.gov team is working on providing change logs so everyone can see new features and updates.
 ---
 
-# Change Log - Goodbye 2023, looking foward to the New Year!
+# Change Log - Goodbye 2023, looking forward to the New Year!
 
 ## Customer Facing Changes
 ---
