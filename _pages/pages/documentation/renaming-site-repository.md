@@ -6,14 +6,17 @@ navigation: pages
 sidenav: pages-documentation
 ---
 
-## Updating your Pages site after renaming your repository
+## Renaming your Pages site repository
 
-Renaming your site repository will interrupt a site's ability to build.  In order to resume site building, it will require you to add a new site to Pages with the new repository url.  (Note: Please be aware that if your site is already live and its repository has been renamed, it will be frozen until a new site is added to Pages at the new repository and a security scan is successfully performed on your new site.)
+Renaming your site's Github repository will interrupt its ability to build. In order to resume site building, it will require you to notify our support team <a href="mailto:pages-support@cloud.gov">pages-support@cloud.gov</a> about your change in repository organizations and/or name. (Note: Please be aware that if your site is already live and its repository has been renamed, it will be frozen until the Pages team can update your site's Github repository.)
 
-## Next steps after renaming your repository
+## Steps for renaming your repository
 
-1. Add the new site repository as described [here]({{site.baseurl}}/pages/documentation/#adding-a-new-site)
-2. Build your site and verify that the site is ready for launch using our preview URLs.
-3. Contact the Pages team; we’ll scan your site within a few days as part of our compliance process and let you know of the results.
-4. Let us know when you are ready to go live with the new site and we will update your CloudFront URL to point to your new site.
-5. Optional: After the new site is live, you can delete the old site within Site Settings.  (Note: Once deleted, the settings and build history for the site will be lost and is not transferable to a different site.)
+1. Notify <a href="mailto:pages-support@cloud.gov">pages-support@cloud.gov</a> about the upcoming change to the Github repository. Provide Pages support the following:
+   - The site the changing Github repository will affect.
+   - The email of the Pages user that has admin access to the newly renamed Github repository
+   - The Github organization and/or repository name that will be changing in the rename.
+   - Schedule a time to rename the Github repository
+2. Rename the Github repository with it's updated organizations and/or name
+3. Wait as the Pages support team to update your Pages site to the renamed repository
+4. After the site update, create a test branch to verify the site is building as expected.
