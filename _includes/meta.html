@@ -16,15 +16,25 @@ site, this is the place to do it.
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Title and meta description
     ================================================== -->
-  <title>{{site.title}} - {{ page.title}}</title>
-  <meta property="og:title" content="{{site.title}}">
-  <meta name="description" content="{{site.description}}">
-  <meta property="og:description" content="{{site.description}}">
+  {% capture title %}{%- if page.title -%}{{ page.title | strip_html }} | {% endif -%}{{ site.title }}{% endcapture %}
+  {% capture description %}
+    {%- if page.url == "/" -%}
+      {{ site.description }}
+    {%- elsif page.description -%}
+      {{ page.description | truncate: 160 }}
+    {%- else -%}
+      {{ page.content | markdownify | strip | strip_html | strip_newlines | truncate: 160 }}
+    {%- endif -%}
+  {% endcapture %}
+  <title>{{title}}</title>
+  <meta property="og:title" content="{{title}}">
+  <meta name="description" content="{{description}}">
+  <meta property="og:description" content="{{description}}">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@{{site.twitter}}" />
-  <meta name="twitter:title" content="{{site.title}}" />
-  <meta name="twitter:description" content="{{site.description}}" />
+  <meta name="twitter:title" content="{{title}}" />
+  <meta name="twitter:description" content="{{description}}" />
   <meta name="google-site-verification" content="JlbE7awT0VhzUvlXbc1wO1yhfFme3lSE1ViUmFX6EEY" />
 
   <meta property="og:type" content="article">
