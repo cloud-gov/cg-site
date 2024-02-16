@@ -16,16 +16,19 @@ site, this is the place to do it.
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Title and meta description
     ================================================== -->
-  {% capture title %}{%- if page.title -%}{{ page.title | strip_html }} | {% endif -%}{{ site.title }}{% endcapture %}
+  {% capture title %}
+    {%- if page.title -%}{{- page.title | strip_html }} | {% endif -%}{{ site.title -}}
+  {% endcapture %}
   {% capture description %}
     {%- if page.url == "/" -%}
-      {{ site.description }}
+      {{- site.description -}}
     {%- elsif page.description -%}
-      {{ page.description | truncate: 160 }}
+      {{- page.description | truncate: 160 -}}
     {%- else -%}
-      {{ page.content | markdownify | strip | strip_html | strip_newlines | truncate: 160 }}
+      {{- page.content | markdownify | strip_html | normalize_whitespace | strip | truncate: 160 -}}
     {%- endif -%}
   {% endcapture %}
+
   <title>{{title}}</title>
   <meta property="og:title" content="{{title}}">
   <meta name="description" content="{{description}}">
