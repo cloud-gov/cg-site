@@ -302,4 +302,4 @@ Misc:
 
 ## Final Note
 
-We are welcoming a new/old team member next week, congratulations!
+Tune in next sprint for new release notes!
