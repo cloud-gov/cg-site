@@ -42,6 +42,11 @@ To give a bit more context, [the CHALLENGE action works by responding to a web r
 
 If the CHALLENGE is handled successfully by the client making the request, [then the request succeeds and an `aws-waf-token` cookie is generated to store the timestamp of the client's last successful response to a challenge](https://docs.aws.amazon.com/waf/latest/developerguide/waf-tokens-details.html). Thus, the presence of this cookie is not an indication of a security issue but is actually evidence of a platform protection intended to reduce malicious traffic.
 
+Additionally, since AWS responds with a CHALLENGE reponse for any requests that exceed the rate-limit threshold **before they reach your application**, the CHALLENGE response may not match your normal application behavior. For example, the CHALLENGE response will:
+
+- Not redirect HTTP requests to HTTPS
+- Not include headers normally returned by your application
+
 ### AWS CloudFront & CDNs
 
 Another protection against traffic surges available on the platform is the ability to use [Amazon CloudFront as a CDN for your application]({{ site.baseurl }}{% link _docs/services/external-domain-service.md %}). Among its other benefits, CloudFront can cache requests based on configurable patterns. Since cached requests will be handled by CloudFront and not reach your application, they offer some protection against floods of traffic.
