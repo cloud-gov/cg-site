@@ -30,9 +30,8 @@ The below diagram shows the relationships between the three services:
 3. The static website, hosted on Pages, makes an HTTP `fetch` request for some dynamic content to the cloud.gov-hosted API application. 
 
 <figure class="content-image">
-<img alt="Dynamic content infrastructure"src="{{site.baseurl}}/_assets/images/content/illustrationPagesDynamicContent.png" />
-<figcaption>Figure 1. Dynamic Content Architecture
-</figcaption>
+ <img alt="Infrastructure serving dynamic content to a Pages static site" src="{{site.baseurl}}/_assets/images/content/illustrationPagesDynamicContent.png" />
+  <figcaption>Figure 1. Dynamic Content Architecture.</figcaption>
 </figure>
 
 ### Set up a database using cloud.gov’s RDS
