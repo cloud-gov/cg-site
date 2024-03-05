@@ -589,3 +589,98 @@ blockquote .source {
   display: flex;
   align-items: center;
 }
+
+// missing syntax highlighting styles -- ported from Rouge / old Jekyll build
+.highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w, .highlight code {
+  color: #f4f5fb;
+  background-color: #04050e;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+  font-size: .75rem;
+}
+.highlight .err {
+  color: #151515;
+  background-color: #ac4142;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #505050;
+}
+.highlight .cp {
+  color: #f4bf75;
+}
+.highlight .nt {
+  color: #f4bf75;
+}
+.highlight .o, .highlight .ow {
+  color: #b2b8dc;
+}
+.highlight .p, .highlight .pi {
+  color: #8794db;
+}
+.highlight .gi {
+  color: #90a959;
+}
+.highlight .gd {
+  color: #c74345;
+}
+.highlight .gh {
+  color: #6a9fb5;
+  background-color: #151515;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #cd80be;
+}
+.highlight .kc {
+  color: #de7c2c;
+}
+.highlight .kt {
+  color: #6cd69e;
+}
+.highlight .kd {
+  color: #6cd69e;
+}
+.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #b7d675;
+}
+.highlight .sr {
+  color: #89cdc1;
+}
+.highlight .si {
+  color: #c97446;
+}
+.highlight .se {
+  color: #c97446;
+}
+.highlight .nn {
+  color: #f4bf75;
+}
+.highlight .nc {
+  color: #f4bf75;
+}
+.highlight .no {
+  color: #f4bf75;
+}
+.highlight .n {
+  color: #d6f9e8;
+}
+.highlight .na {
+  color: #92cae3;
+}
+.highlight .nf {
+  color: #b6e9ff;
+}
+.highlight .nx {
+  color: #18c8ff;
+}
+.highlight .nb {
+  color: #b286fe;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #90a959;
+}
+.highlight .ss {
+  color: #90a959;
+}
