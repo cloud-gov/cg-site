@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Displaying dynamic content on a Pages static site"
-date: March 8, 2024
+date: March 1, 2024
 excerpt: Serve content from a backend database to a static site
 ---
 
@@ -15,9 +15,9 @@ Taking advantage of end-to-end cloud.gov services gives our agency customers bak
  
 2. A **database** and environment to store the data, provided by cloud.gov. In our example, we chose an [RDS instance](https://cloud.gov/docs/services/relational-database/) of PostgreSQL v15 database due to its rich feature set and simple methods of storing data from a CSV.
    
-3. A **server-side application** that securely accesses the database and responds to HTTP requests. Our example uses a simple [API flask application](https://github.com/Ephraim-G/cfpyapi) deployed on cloud.gov
+3. A **server-side application** that securely accesses the database and responds to HTTP requests. Our example uses a simple [API flask application](https://github.com/cloud-gov/pages-example-api-website) deployed on cloud.gov
     
-4. The **static [website](https://federalist-c8f0d18e-b710-44dc-9412-4b4f26efb0a3.sites.pages.cloud.gov/site/ephraim-g/data-table/)** hosted on cloud.gov Pages. [Our example](https://github.com/Ephraim-G/cfpyapi) uses a simple HTML file, but you could use any static site generator or single-page application on Pages.
+4. The **static [website](https://federalist-31c21015-f923-4733-95df-2e979da3e393.sites.pages.cloud.gov/site/cloud-gov/pages-example-api-website/)** hosted on cloud.gov Pages. [Our example](https://github.com/cloud-gov/pages-example-api-website) uses a simple HTML file, but you could use any static site generator or single-page application on Pages.
 
 ## How it all comes together
 
@@ -30,7 +30,7 @@ The below diagram shows the relationships between the three services:
 3. The static website, hosted on Pages, makes an HTTP `fetch` request for some dynamic content to the cloud.gov-hosted API application. 
 
 <figure class="content-image">
- <img alt="Infrastructure serving dynamic content to a Pages static site" src="{{site.baseurl}}/_assets/images/content/illustrationPagesDynamicContent.png" />
+ <img alt="Diagram of the infrastructure serving dynamic content to a Pages static site. An HTTP request from a static Pages site triggers the Flask API application to get credentials from the env veriables in cloud.gov, then executes a SQL query against the PostgreSQL database. The results returned from the database are passed through the API application and back to the Pages static site through the HTTP response in JSON." src="{{site.baseurl}}/assets/images/content/illustrationPagesDynamicContent.png" />
   <figcaption>Figure 1. Dynamic Content Architecture.</figcaption>
 </figure>
 
@@ -44,7 +44,15 @@ In our case, we provisioned a PostgreSQL v15 database instance within cloud.gov 
 
 When queried via the API application, the database will select a number of rows, convert them to a Python dictionary via the [RealDictCursor module](https://www.psycopg.org/docs/extras.html#real-dictionary-cursor), and return that collection.
 
-<!--(Implement larger DB SS)-->
+```
+Bank Name                | City          | State | Cert  | Acquiring Institution               | Closing Date | Fund  | id 
+-------------------------+---------------+-------+-------+-------------------------------------+--------------+-------+---
+Citizens Bank            | Sac City      | IA    | 8758  | Iowa Trust & Savings Bank           | 3-Nov-23     | 10545 | 1
+Heartland Tri-State Bank | Elkhart       | KS    | 25851 | Dream First Bank, N.A.              | 28-Jul-23    | 10544 | 2
+First Republic Bank      | San Francisco | CA    | 59017 | JPMorgan Chase Bank, N.A.           | 1-May-23     | 10543 | 3
+Signature Bank           | New York      | NY    | 57053 | Flagstar Bank, N.A.                 | 12-Mar-23    | 10540 | 4
+Silicon Valley Bank      | Santa Clara   | CA    | 24735 | First–Citizens Bank & Trust Company | 10-Mar-23    | 10539 | 5
+```
 
 If you’re thinking of trying this yourself, know that you aren’t limited to using RDS and PostgreSQL for storing the data; you have your choice of database infrastructure hosted on cloud.gov. Check out more options for database services provided by cloud.gov in our CloudFoundry [marketplace](https://cloud.gov/docs/services/intro/#provisioning-managed-services-through-the-marketplace). Please note that database options are limited for those working in a cloud.gov [sandbox](https://cloud.gov/docs/pricing/free-limited-sandbox/#sandbox-limitations).
 
@@ -69,11 +77,10 @@ In order for our example web server to handle HTTP requests, dispatch responses,
    `- flask_cors` and `CORS` for handling Cross-Origin Resource Sharing (CORS), which is what allows Pages and the server to talk to one another even though they’re on separate domains
   
 #### 2. Set up the secure database connection
-Because we’ve set up the database using RDS and bound to the service in this cloud.gov org space, we have direct access to the database credentials via application environment variables. Cloud.gov and RDS make it easy to set up a secure connection to the database using these environment variables. Here is how we connect to our database using thepsycopg2 Python module in our Flask app:
+Because we’ve set up the database using RDS and bound to the service in this cloud.gov org space, we have direct access to the database credentials via application environment variables. Cloud.gov and RDS make it easy to set up a secure connection to the database using these environment variables. Here is how we connect to our database using the psycopg2 Python module in our Flask app:
 
-```
+```py
 aws_rds = app_env.get_service(name='your-database-name-here')
-
 
 connection = psycopg2.connect(
    host=aws_rds.credentials.get('host'),
@@ -88,11 +95,11 @@ connection = psycopg2.connect(
 
 The server application can now access the database, so we need it to provide endpoints for our static site to actually make the requests. These endpoints are defined in the Flask application’s routes. Our example app has two endpoints that can handle GET requests.
 
-+ The root-level route (“/”) is accessed when an HTTP request is made to the bare domain itself; in our case, it will react to requests of https://cfpyapi.app.cloud.gov/ with a simple string response letting you know the app is running. It’s a best practice not to use your root-level domain for serving data anything other than some general information about your API service.
++ The root-level route (`"/"`) is accessed when an HTTP request is made to the bare domain itself; in our case, it will react to requests of https://cfpyapi.app.cloud.gov/ with a simple string response letting you know the app is running. It’s a best practice not to use your root-level domain for serving data anything other than some general information about your API service.
   
-+ The second route (“/get_table”) is the one we use for accessing data from the database. When an HTTP request visits **https://cfpyapi.app.cloud.gov/get_table**, the Flask app will execute our `get_table()` function, which queries the database using the above credentials, finds matching results, and returns them in JSON format. Serving data and handling requests from a route endpoint makes the API more organized and easier to understand. When you need more endpoints for other queries in the future, it’s easy to add more routes.
++ The second route (`"/get_table"`) is the one we use for accessing data from the database. When an HTTP request visits **https://cfpyapi.app.cloud.gov/get_table**, the Flask app will execute our `get_table()` function, which queries the database using the above credentials, finds matching results, and returns them in JSON format. Serving data and handling requests from a route endpoint makes the API more organized and easier to understand. When you need more endpoints for other queries in the future, it’s easy to add more routes.
 
-```
+```py
 @app.route('/', methods=['GET'])
 def hello():
    return 'There is a table right behind this door!'
@@ -104,11 +111,11 @@ def get_table(page):
 ```
 
 #### 4. Make the API available to your Pages app
-By default, a Flask web server like ours can handle HTTP requests, executes the queries, and sends back JSON responses to the client, *as long as* the request comes from the same origin (or domain). The initial CORS settings assume you would not want websites and applications from other domains to be able to make requests of yours. In order for the app to respond to a request from a static site, that request origin must be specifically allowed in the CORS settings. It’s a good security practice to make the allowable domains as specific as possible, so we’ve set it to the full federalist domain that our Pages static site deploys to. If your Pages site uses a custom domain, that would be the origin to use.
+By default, a Flask web server like ours can handle HTTP requests, execute queries, and send back JSON responses to the client, *as long as* the request comes from the same origin (or domain). The initial CORS settings assume you would not want websites and applications from other domains to be able to make requests of yours. In order for the app to respond to a request from a static site, that request origin must be specifically allowed in the CORS settings. It’s a good security practice to make the allowable domains as specific as possible, so we’ve set it to the full Federalist domain that our Pages static site deploys to. If your Pages site uses a custom domain, that would be the origin to use.
 
 Be sure *not* to set the allowed CORS origins to the wildcard `‘*’` as that would allow any application to make (potentially malicious) requests to the application endpoint and access the data.
 
-```
+```py
 CORS(app, origins=['https://federalist-preview-or-production-url-here.sites.pages.cloud.gov'], headers=['Content-Type'], methods=['GET'])
 ```
 
@@ -124,7 +131,7 @@ There are two steps left: Making the HTTP request to the server app, and then di
 
 First, our static site makes an asynchronous request to the API. There are a few ways to do this; our example function `getDataFromCloudAPI()` uses the fetch pattern to make a request at the `/get_table` endpoint, waits for the response using `await`, and then parses it into JSON when the [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) resolves. We’ve wrapped the request in a `try/catch` block to log any errors to the console in the browser if the request fails. Once resolved, the function ultimately returns the data requested in JSON. 
 
-```
+```js
    async function getDataFromCloudAPI() {
      let dataJson = null;
      try {
@@ -143,11 +150,10 @@ First, our static site makes an asynchronous request to the API. There are a few
 
 To keep our example simple, our static site displays the API-provided data in a simple HTML table. Using the JSON response data, we first build the table’s headers and then the rows, one by one, and append them all to an empty HTML table element that already exists in the static page. Using the source data to build both the table headers and the content rows means they will always match, even if the data structure on the server or database changes. 
 
-```
+```js
    function createTableHead(rowData) {
      const tableHead = document.createElement("thead");
      let newRow = tableHead.insertRow();
-
 
      Object.entries(rowData[0]).forEach(([key, value], cellIndex) => {
        if (key !== "id") {
@@ -158,7 +164,6 @@ To keep our example simple, our static site displays the API-provided data in a 
      });
      return tableHead
    }
-
 
    function createTableBody(rowData) {
      const tableBody = document.createElement("tbody");
@@ -174,7 +179,6 @@ To keep our example simple, our static site displays the API-provided data in a 
      return tableBody
    }
 
-
    function createTable(data) {
      document.getElementById("data-table").appendChild(createTableHead(data));
      document.getElementById("data-table").appendChild(createTableBody(data));
@@ -185,6 +189,6 @@ And that’s it! The static HTML page makes the fetch request to the API on load
 
 Serving dynamic content from a backend database via an API to a static site hosted on cloud.gov Pages is easy within the cloud.gov ecosystem. We proudly offer a suite of secure and compliant databases which you can leverage to store data and dynamically display within their Pages websites without the need to manually update the static files or struggle with large data collections checked into the static site repo.
 
-If you’re interested in enhancing your static sites with dynamic content, we’d love to help you set up a dual agreement for cloud.gov and Pages services with your agency or office. If you’re already a Pages customer, it takes a simple modification to your current IAA to access services from cloud.gov to get started. Launching an app on cloud.gov will require an Authority to Operate (ATO), and we’re here to help you through every stage. For more information, please reach out to [inquiries@cloud.gov](inquiries@cloud.gov).
+If you’re interested in enhancing your static sites with dynamic content, we’d love to help you set up a dual agreement for cloud.gov and Pages services with your agency or office. If you’re already a Pages customer, it takes a simple modification to your current IAA to access services from cloud.gov to get started. Launching an app on cloud.gov will require an Authority to Operate (ATO), and we’re here to help you through every stage. For more information, please reach out to [inquiries@cloud.gov](mailto:inquiries@cloud.gov).
 
-For support with implementation and general questions about Pages sites, please reach out to [pages-support@cloud.gov](pages-support@cloud.gov).
+For support with implementation and general questions about Pages sites, please reach out to [pages-support@cloud.gov](mailto:pages-support@cloud.gov).
