@@ -13,7 +13,7 @@ Taking advantage of end-to-end cloud.gov services gives our agency customers bak
 
 1. **Some data** you need to store, process, or access separately from the static site. In this case, we pulled a [CSV file dataset](https://catalog.data.gov/dataset/fdic-failed-bank-list) from the FDIC, a Pages customer, which is hosted on [data.gov](https://data.gov/), another office alongside cloud.gov in TTS.
  
-2. A **database** and environment to store the data, provided by cloud.gov. In our example, we chose an [RDS instance](https://cloud.gov/docs/services/relational-database/) of PostgreSQL v15 database due to its rich feature set and simple methods of storing data from a CSV.
+2. A **database** and environment to store the data, provided by cloud.gov. In our example, we chose an [RDS instance](https://cloud.gov/docs/services/relational-database/)(Relational Database Service) of the PostgreSQL v15 database due to its rich feature set and simple methods of storing data from a CSV.
    
 3. A **server-side application** that securely accesses the database and responds to HTTP requests. Our example uses a simple [API flask application](https://github.com/cloud-gov/pages-example-api-website) deployed on cloud.gov
     
@@ -23,7 +23,7 @@ Taking advantage of end-to-end cloud.gov services gives our agency customers bak
 
 The below diagram shows the relationships between the three services:
 
-1. The PostgreSQL database, which houses the dataset, returns the results found by the query. The fetched data is sent back to the API application, and the API application passes it on to the static site in the response body as JSON.
+1. The PostgreSQL database, which houses the dataset and returns the results found by the query. The fetched data is sent back to the API application, and the API application passes it on to the static site in the response body as JSON.
  
 2. The API application first securely connects to the database by retrieving the RDS service credentials via cloud.gov’s Cloud Foundry environment. Once it establishes a secure connection to the PostgreSQL database, the application executes a SQL query against the database.
 
@@ -36,7 +36,7 @@ The below diagram shows the relationships between the three services:
 
 ### Set up a database using cloud.gov’s RDS
 
-Before you can create an API to access the data, the data must be available in the appropriate cloud.gov org and space. It’s relatively straightforward to provision a database of your choice and make it available for querying from other applications using cloud.gov’s RDS (Relational Database Service).
+Before you can create an API to access the data, the data must be available in the appropriate cloud.gov org and space. It’s relatively straightforward to provision a database of your choice and make it available for querying from other applications using cloud.gov’s RDS.
 
 When you create an RDS service instance, cloud.gov automatically creates the default username and password for the database. If you want to allow an application (like our Flask API app) to access that database, you can [bind that RDS database service](https://docs.cloudfoundry.org/devguide/services/application-binding.html#bind) to your application to safely expose those credentials as environment variables within the cloud.gov environment. This means your cloud.gov API application will have privileges to data that your Pages app will not, which can be useful in separating data concerns and keeping some information private.
 
@@ -123,7 +123,7 @@ Once your server API can connect to the database, execute queries at specific ro
 
 ### Serve content to the Pages website
 
-Now, you’re ready to request dynamic content from your static. In our example, the Pages-hosted site is a single [index.html](https://github.com/Ephraim-G/Data-table/blob/main/index.html) file with some CSS and image assets and a few lines of JavaScript to make the request and display the dynamic content. We’re using an already minified version of the U.S. Web Design System USWDS library from a Content Delivery Network (CDN) so there’s no build tasks, transpiling, preprocessing, or compiling in this project – just a simple static site with some nav and the basic structure of a table, waiting to be filled with dynamic content.
+Now, you’re ready to request dynamic content from your static. In our example, the Pages-hosted site is a single [index.html](https://github.com/Ephraim-G/Data-table/blob/main/index.html) file with some CSS and image assets and a few lines of JavaScript to make the request and display the dynamic content. We’re using an already minified version of the U.S. Web Design System (USWDS) library from a Content Delivery Network (CDN) so there are no build tasks, transpiling, preprocessing, or compiling in this project – just a simple static site with some nav and the basic structure of a table, waiting to be filled with dynamic content.
 
 There are two steps left: Making the HTTP request to the server app, and then displaying the response that the server app provides. Both are handled with straightforward JavaScript.
 
