@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Displaying dynamic content on a Pages static site"
-date: March 8, 2024
+date: March 5, 2024
 excerpt: Serve content from a backend database to a static site
 ---
 
