@@ -111,12 +111,16 @@ def get_table(page):
 ```
 
 #### 4. Make the API available to your Pages app
-By default, a Flask web server like ours can handle HTTP requests, execute queries, and send back JSON responses to the client, *as long as* the request comes from the same origin (or domain). The initial CORS settings assume you would not want websites and applications from other domains to be able to make requests of yours. In order for the app to respond to a request from a static site, that request origin must be specifically allowed in the CORS settings. It’s a good security practice to make the allowable domains as specific as possible, so we’ve set it to the full Federalist domain that our Pages static site deploys to. If your Pages site uses a custom domain, that would be the origin to use.
 
-Be sure *not* to set the allowed CORS origins to the wildcard `‘*’` as that would allow any application to make (potentially malicious) requests to the application endpoint and access the data.
+By default, a Flask web server like ours can handle HTTP requests, executes the queries, and sends back JSON responses to the client, as long as the request comes from the same origin (or domain). The initial CORS settings assume you would not want websites and applications from other domains to be able to make requests of yours. In order for the app to respond to a request from a static site, that request origin must be specifically allowed in the CORS settings. It’s good security practice to use environment variables whenever you’re able to so we’ve stored our Pages website URL as an [environment variable in the application instance](https://cli.cloudfoundry.org/en-US/v6/push.html) using `cf push --var ORIGIN='<site>.sites.pages.cloud.gov'`.This not only enables us to avoid having to hardcode the full URL but also if we had different environments ie. development, staging and production we can easily change the origin without having to modify the code. If your Pages site uses a custom domain, that would be the origin to use.
+
+
 
 ```py
-CORS(app, origins=['https://federalist-preview-or-production-url-here.sites.pages.cloud.gov'], headers=['Content-Type'], methods=['GET'])
+origin = os.getenv("ORIGIN")
+port = int(os.getenv("PORT", 8080))
+app = Flask(__name__)
+CORS(app, origins=origin)
 ```
 
 Once your server API can connect to the database, execute queries at specific routes, and respond to only your Pages site domain, you’re ready to deploy. For instructions on how to deploy applications on cloud.gov, please refer to the official cloud.gov [documentation](https://cloud.gov/docs/deployment/deployment/).
