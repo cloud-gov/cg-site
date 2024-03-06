@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Displaying dynamic content on a Pages static site"
-date: March 5, 2024
+date: March 6, 2024
 excerpt: Serve content from a backend database to a static site
 ---
 
@@ -127,7 +127,7 @@ Once your server API can connect to the database, execute queries at specific ro
 
 ### Serve content to the Pages website
 
-Now, you’re ready to request dynamic content from your static. In our example, the Pages-hosted site is a single [index.html](https://github.com/Ephraim-G/Data-table/blob/main/index.html) file with some CSS and image assets and a few lines of JavaScript to make the request and display the dynamic content. We’re using an already minified version of the U.S. Web Design System (USWDS) library from a Content Delivery Network (CDN) so there are no build tasks, transpiling, preprocessing, or compiling in this project – just a simple static site with some nav and the basic structure of a table, waiting to be filled with dynamic content.
+Now, you’re ready to request dynamic content from your static. In our example, the Pages-hosted site is a single [index.html](https://github.com/cloud-gov/pages-example-api-website) file with some CSS and image assets and a few lines of JavaScript to make the request and display the dynamic content. We’re using an already minified version of the U.S. Web Design System (USWDS) library from a Content Delivery Network (CDN) so there are no build tasks, transpiling, preprocessing, or compiling in this project – just a simple static site with some nav and the basic structure of a table, waiting to be filled with dynamic content.
 
 There are two steps left: Making the HTTP request to the server app, and then displaying the response that the server app provides. Both are handled with straightforward JavaScript.
 
