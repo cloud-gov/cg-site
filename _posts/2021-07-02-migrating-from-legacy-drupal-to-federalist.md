@@ -80,11 +80,11 @@ Before migrating, there are a number of factors you should take into considerati
 
 ## Find out more 
 
-The cloud.gov and Federalist team is ready to help you as you evaluate your options for current Drupal 7 and 8 websites. 
+The cloud.gov and Pages team is ready to help you as you evaluate your options for current Drupal 7 and 8 websites. 
 
 In addition, the following resources are also available for agencies:
 
-* [Federalist](https://federalist.18f.gov/){:target="_blank"}
+* [Pages](https://pages.cloud.gov/){:target="_blank"}
 * Static site generators
     - [Tome](https://tome.fyi/){:target="_blank"}
     - [Netlify](https://www.netlify.com/){:target="_blank"} 

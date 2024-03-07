@@ -61,7 +61,7 @@ We are excited to announce new people joining cloud.gov. Please welcome our newe
 
 ### Eddie Tejeda, cloud.gov Director
 
-Eddie has fifteen years of experience building technology products for civic institutions. At 18F, he worked on a range of topics, including security training, open data, and served as the Director of [Federalist](https://federalist.18f.gov/). Before joining 18F, he co-founded Civic Insight (acquired in 2015), a data platform used by residents across the country to search and visualize building permits, planning and code enforcement data. 
+Eddie has fifteen years of experience building technology products for civic institutions. At 18F, he worked on a range of topics, including security training, open data, and served as the Director of [Pages (formerly Federalist)](http://cloud.gov/pages). Before joining 18F, he co-founded Civic Insight (acquired in 2015), a data platform used by residents across the country to search and visualize building permits, planning and code enforcement data. 
 
 In 2012, he served as a Code for America Fellow and worked with the city of New Orleans to help residents track the progress of vacant and abandoned homes. He also worked with Cornell University and the Department of Transportation (DOT) to develop Regulation Room, a commenting platform used to increase public participation in the regulatory process. Eddie is engaged in his local community and co-founded OpenOakland, a non-profit that promotes civic engagement, and served as Vice Chair in the City of Oakland's Public Ethics Commission.
 
