@@ -46,7 +46,12 @@ https://agency.gov
 http://agency.gov
 https://github.com/cloudfoundry/stacks/releases/
 
+# URLs which are retired but need to exist for historical reasons
+https://federalist.18f.gov/
+https://federalist.18f.gov
+
 # URLs that are failing for unknown reasons
 https://public.cyber.mil/dccs/
 https://dl.dod.cyber.mil/wp-content/uploads/cloud/zip/U_Cloud_Computing_SRG_V1R4.zip
 https://www.microsoft.com/en-us/security/mobile-authenticator-app
+https://csrc.nist.gov/projects/risk-management/fisma-background
