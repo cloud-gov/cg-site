@@ -15,7 +15,7 @@ Taking advantage of end-to-end cloud.gov services gives our agency customers bak
  
 2. A **database** and environment to store the data, provided by cloud.gov. In our example, we chose an [RDS instance](https://cloud.gov/docs/services/relational-database/)(Relational Database Service) of the PostgreSQL v15 database due to its rich feature set and simple methods of storing data from a CSV.
    
-3. A **server-side application** that securely accesses the database and responds to HTTP requests. Our example uses a simple [API flask application](https://github.com/cloud-gov/pages-example-api-website) deployed on cloud.gov
+3. A **server-side application** that securely accesses the database and responds to HTTP requests. Our example uses a simple [API flask application](https://github.com/cloud-gov/pages-example-website-api) deployed on cloud.gov
     
 4. The **static [website](https://federalist-31c21015-f923-4733-95df-2e979da3e393.sites.pages.cloud.gov/site/cloud-gov/pages-example-api-website/)** hosted on cloud.gov Pages. [Our example](https://github.com/cloud-gov/pages-example-api-website) uses a simple HTML file, but you could use any static site generator or single-page application on Pages.
 
@@ -112,7 +112,7 @@ def get_table(page):
 
 #### 4. Make the API available to your Pages app
 
-By default, a Flask web server like ours can handle HTTP requests, executes the queries, and sends back JSON responses to the client, as long as the request comes from the same origin (or domain). The initial CORS settings assume you would not want websites and applications from other domains to be able to make requests of yours. In order for the app to respond to a request from a static site, that request origin must be specifically allowed in the CORS settings. It’s good security practice to use environment variables whenever you’re able to so we’ve stored our Pages website URL as an [environment variable in the application instance](https://cli.cloudfoundry.org/en-US/v6/push.html) using `cf push --var ORIGIN='<site>.sites.pages.cloud.gov'`.This not only enables us to avoid having to hardcode the full URL but also if we had different environments ie. development, staging and production we can easily change the origin without having to modify the code. If your Pages site uses a custom domain, that would be the origin to use.
+By default, a Flask web server like ours handles HTTP requests, executes the queries, and sends back JSON responses to the client, as long as the request comes from the same origin (or domain). The initial CORS settings assume you would not want websites and applications from other domains to be able to make requests of yours. In order for the app to respond to a request from a static site, that request origin must be specifically allowed in the CORS settings. It’s good security practice to use environment variables whenever you’re able to so we’ve stored our Pages website URL as an [environment variable in the application instance](https://cli.cloudfoundry.org/en-US/v6/push.html) using `cf push --var ORIGIN='<site>.sites.pages.cloud.gov'`.This not only enables us to avoid having to hardcode the full URL but also if we had different environments ie. development, staging and production we can easily change the origin without having to modify the code. If your Pages site uses a custom domain, that would be the origin to use.
 
 
 
