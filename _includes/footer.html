@@ -1,23 +1,71 @@
-<footer class="usa-footer site-footer" role="contentinfo">
-  <div class="footer-section-bottom">
+<footer class="usa-footer usa-footer--slim" role="contentinfo">
+  <div class="usa-footer__primary-section bg-accent-warm-light border-top border-accent-warm-dark padding-bottom-4">
     <div class="grid-container">
-      <div class="grid-col-8 margin-y-2 tablet:grid-col-auto">
-        <img src="{{ site.baseurl }}/assets/images/content/cloud-gov-logo.svg" alt="cloud.gov" class="width-card-lg">
-      </div>
-      <div class="grid-col-fill"></div>
-      <div class="grid-col-4 padding-y-3 tablet:grid-col-auto">
-        <ul class="add-list-reset">
-          <li><a href="https://cloud.gov/docs/help/#support-for-people-who-use-cloud-gov">Get help for customer issues</a></li>
-          <li><a href="https://18f.gsa.gov/">Built by 18F</a></li>
-        </ul>
-        <ul class="add-list-reset">
-          <li>
-            <a href="https://cloud.gov/docs/ops/repos/">Open source and in the public domain</a>
-          </li>
-          <li>
-            <a href="https://www.gsa.gov/vulnerability-disclosure-policy">Vulnerability disclosure policy</a>
-          </li>
-        </ul>
+      <nav class="usa-footer__nav" aria-label="Footer navigation,,">
+        <div class="grid-row grid-gap-4">
+          <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+            <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
+              <h4 class="usa-footer__primary-link">Get in touch</h4>
+              <ul class="usa-list usa-list--unstyled">
+                <li class="usa-footer__secondary-link">
+                  <a href="{{ site.baseurl }}/contact">Customer support</a>
+                </li>
+                <li class="usa-footer__secondary-link">
+                  <a href="mailto:inquiries@cloud.gov">Business inquiries</a>
+                </li>
+                <li class="usa-footer__secondary-link">
+                  <a href="https://join.tts.gsa.gov/">Join our team</a>
+                </li>
+              </ul>
+            </section>
+          </div>
+          <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+            <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
+              <h4 class="usa-footer__primary-link">For developers</h4>
+              <ul class="usa-list usa-list--unstyled">
+                <li class="usa-footer__secondary-link">
+                  <a href="{{ site.baseurl }}/docs/ops/repos/#repositories">Repositories</a>
+                </li>
+                <li class="usa-footer__secondary-link">
+                  <a href="{{ site.baseurl }}/docs/pricing/free-limited-sandbox/">Free developer sandbox</a>
+                </li>
+                <li class="usa-footer__secondary-link">
+                  <a href="https://cloudgov.statuspage.io/">cloud.gov status</a>
+                </li>
+              </ul>
+            </section>
+          </div>
+          <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+            <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
+              <h4 class="usa-footer__primary-link">Policies</h4>
+              <ul class="usa-list usa-list--unstyled">
+                <li class="usa-footer__secondary-link">
+                  <a href="https://www.gsa.gov/vulnerability-disclosure-policy">
+                    Vulnerability disclosure policy</a>
+                </li>
+                <li class="usa-footer__secondary-link">
+                  <a href="https://18f.gsa.gov/open-source-policy/">Open source policy</a>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="usa-footer__secondary-section bg-accent-warm">
+    <div class="grid-container">
+      <div class="usa-footer__logo grid-row grid-gap-2">
+        <div class="grid-col-auto">
+          <img lass="usa-footer__logo-img" src="{{ site.baseurl }}/assets/images/content/cloud-gov-logo.svg"
+            alt="cloud.gov" class="width-card-lg">
+        </div>
+        <div class="grid-col-auto desktop:margin-left-auto">
+          <p class="">
+            <a href="mailto:support@cloud.gov">support@cloud.gov</a>
+          </p>
+        </div>
       </div>
     </div>
   </div>
