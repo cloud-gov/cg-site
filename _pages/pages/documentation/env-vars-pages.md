@@ -35,4 +35,4 @@ Certain environment variable names are reserved for Pages use and will be ignore
 
 Pages is a **FISMA Low** system, do NOT store variables for systems that are Moderate or High, and only expose variables if it is safe to do so. You assume the risk if the values you add contain, or allow access to information that is not suitable for this categorization. See [FISMA Security Categorization](https://csrc.nist.gov/projects/risk-management/fisma-background) for more information on FISMA information categorization.
 
-![Image of environment variable settings]({{site.baseurl}}/assets/images/pages/env-vars.png)
+![Image of environment variable settings]({{site.baseurl}}/assets/images/pages/env_vars.png)
