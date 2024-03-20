@@ -147,7 +147,7 @@ Loss of a single availability zone is covered in our [internal contingency plan 
 
 In case of a **significant** disruption, after receiving approval from our Authorizing Official, Cloud Operations will deploy a new instance of the entire system to a different region using the instructions stored in the [cg-provision repository](https://github.com/18f/cg-provision).
 
-If all AWS regions are disrupted, Cloud Operations will deploy the system to another BOSH-supported IaaS provider (such as Microsoft Azure).
+
 
 #### AWS RDS
 Major services (Cloud Foundry, BOSH, Concourse, and UAA) rely on databases provided by RDS. To restore a database from backup, see [restoring RDS](https://github.com/cloud-gov/internal-docs/blob/main/docs/runbooks/AWS/restoring-rds.md).
