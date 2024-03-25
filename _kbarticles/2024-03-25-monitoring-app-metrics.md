@@ -6,7 +6,7 @@ excerpt: How to monitor the CPU and memory metrics for your application on cloud
 
 ---
 
-Like any hosting environment, cloud.gov offers [performance metrics that are incredibly useful for
+One of the benefits of hosting your applications on cloud.gov is that it offers [performance metrics for
 monitoring the health of your application](https://docs.cloudfoundry.org/loggregator/container-metrics.html).
 
 The most important metrics for monitoring your application's health are the memory and CPU metrics, which can help you identify:
@@ -19,7 +19,7 @@ The most important metrics for monitoring your application's health are the memo
 
 CPUs are virtualized and shared across application containers on a Diego cell virtual machine (VM).
 
-[The CPU usage figure reported as part of the application metrics represents the CPU usage of an applicaiton instance as a percentage of a single CPU core][container metrics]. Thus, **it is possible for the CPU usage to exceed 100%**, which means your application is more than the compute power of more than a single CPU core.
+[The CPU usage figure reported as part of the application metrics represents the CPU usage of an applicaiton instance as a percentage of a single CPU core][container metrics]. Since there are usually multiple CPU cores per VM, **it is possible for the CPU usage to exceed 100%**, which means your application is using the equivalent compute power of more than a single CPU core.
 
 A CPU usage figure above 100% is not necessarily problematic. The more important metric for identifying scaling issues is CPU entitlement, which is [a formula Cloud Foundry uses to determine how much CPU your application **is allowed to use** from the host VM based on its memory capacity][container metrics].
 
@@ -27,7 +27,7 @@ If the CPU entitlement figure exceeds 100% for any application instance, then th
 
 [Cloud Foundry provides a `cf` CLI plugin for determining if any of your applicaiton instances are exceeding their CPU entitlement](https://docs.cloudfoundry.org/loggregator/container-metrics.html#cpu-entitlement).
 
-While the CPU usage figure does not independently reveal scaling issues, it is still worth monitoring as a relative value, since sudden spikes in the value can still indicate abnormal performance of your application.
+While the CPU usage figure itself does not independently reveal scaling issues, it is still worth monitoring as a relative value, since sudden spikes in the value can still indicate abnormal performance of your application.
 
 ## Retrieving current memory and CPU metrics
 
@@ -54,7 +54,7 @@ they correlate to observed performance issues for your application.
 
 Logs containining these application metrics are already ingested into the [Elasticsearch/Kibana instance for customer logs][kibana prod]. Furthermore, there are already built-in visualizations and dashboards for viewing these metrics for your applications.
 
-To view the dashboard for application metrics, follow these steps:
+To view the dashboards for application metrics, follow these steps:
 
 1. Log in to [Kibana][kibana prod].
 1. Click `Dashboard` in the bookmark links at the top of the page.
