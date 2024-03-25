@@ -61,19 +61,19 @@ To view the dashboard for application metrics, follow these steps:
 
     !["Screenshot of Kibana interface with an arrow pointing towards the Dashboard bookmark at the top of the page"]({{site.baseurl}}/assets/images/content/kibana-click-dashboard-link.png)
 
-1. Enter `App - Metrics` in the search bar on the Dashboards page and click the link to the `App - Metrics` dashboard in the results
+1. Enter `App - Metrics` in the search bar on the Dashboards page and click the link to the `App - Metrics` dashboard in the results.
 
     !["Screenshot of Kibana dashboards search page with App - Metrics as the search query"]({{site.baseurl}}/assets/images/content/search-app-metrics-dashboard.png)
 
-1. The `App - Metrics` dashboard should automatically populate with metrics for a graph of CPU usage, memory usage (in bytes), and disk usage for all of your applications. Add filters (e.g. `@cf.space`) to limit the results to the desired applications and adjust the time filter to see metrics for the desired period
+1. The `App - Metrics` dashboard should automatically populate with metrics for a graph of CPU usage, memory usage (in bytes), and disk usage for all of your applications. Add filters (e.g. `@cf.space`) to limit the results to the desired applications and adjust the time filter to see metrics for the desired time period.
 
     !["Full-page screenshot of the App - Metrics dashboard in Kibana displaying visualizations of CPU usage, memory usage, and disk usage based on application metrics"]({{site.baseurl}}/assets/images/content/app-metrics-dashboard.png)
 
-1. If you want to see a dashboard of the same application metrics, but grouped by **each application instance** instead of just each application, repeat steps 3 - 4 and search for a dashboard name `App - Metrics by instance`
+1. If you want to see a dashboard of the same application metrics, but grouped by **each application instance** instead of just each application, repeat steps 3 - 4 and search for a dashboard name `App - Metrics by instance`.
 
     !["Full-page screenshot of the App - Metrics by instance dashboard in Kibana displaying visualizations of CPU usage, memory usage, and disk usage aggregated by application instance"]({{site.baseurl}}/assets/images/content/app-metrics-by-instance-dashboard.png)
 
-If you encounter any difficulties using these dashboards or have any questinos about them, please contact
+If you encounter any difficulties using these dashboards or have any questions about them, please contact
 [{{site.support_email_address}}]({{site.support_email}}) and we would be happy to assist you.
 
 [kibana prod]: https://logs.fr.cloud.gov
