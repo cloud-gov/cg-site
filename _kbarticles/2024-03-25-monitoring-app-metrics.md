@@ -21,13 +21,13 @@ CPUs are virtualized and shared across application containers on a Diego cell vi
 
 [The CPU usage figure reported as part of the application metrics represents the CPU usage of an applicaiton instance as a percentage of a single CPU core][container metrics]. Since there are usually multiple CPU cores per VM, **it is possible for the CPU usage to exceed 100%**, which means your application is using the equivalent compute power of more than a single CPU core.
 
-A CPU usage figure above 100% is not necessarily problematic. The more important metric for identifying scaling issues is CPU entitlement, which is [a formula Cloud Foundry uses to determine how much CPU your application **is allowed to use** from the host VM based on its memory capacity][container metrics].
+A CPU usage figure above 100% is not necessarily problematic. The more important metric for identifying issues is CPU entitlement, which is [a formula Cloud Foundry uses to determine how much CPU your application **is allowed to use** from the host VM based on its memory capacity][container metrics].
 
-If the CPU entitlement figure exceeds 100% for any application instance, then the instance is effectively borrowing spare CPU resources from the host VM. Since applications are regularly redistributed across the available host VMs, the amount of spare CPU capacity available on the VM can change, so any instances of CPU entitlement above 100% should be treated as an indication of insufficient scaling and addressed appropriately.
+If the CPU entitlement figure exceeds 100% for any application instance, then the instance is effectively borrowing spare CPU resources from the host VM. Since applications are regularly redistributed across the available host VMs, the amount of spare CPU capacity available on the VM can change, so any instances of CPU entitlement above 100% should be treated as an indication of insufficient application resources and addressed appropriately.
 
 [Cloud Foundry provides a `cf` CLI plugin for determining if any of your application instances are exceeding their CPU entitlement](https://docs.cloudfoundry.org/loggregator/container-metrics.html#cpu-entitlement).
 
-While the CPU usage figure itself does not independently reveal scaling issues, it is still worth monitoring as a relative value, since sudden spikes in the value can still indicate abnormal performance of your application.
+While the CPU usage figure itself does not independently reveal application issues, it is still worth monitoring as a relative value, since sudden spikes in the value can still indicate abnormal performance of your application.
 
 ## Retrieving current memory and CPU metrics
 
