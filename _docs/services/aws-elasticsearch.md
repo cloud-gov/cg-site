@@ -51,15 +51,15 @@ Note: AWS Elasticsearch creation times will vary and is outside of Cloud.gov's c
 name             | required | description              | example
 -----------------|----------|--------------------------|---------
 `advanced_options` | false | map for advanced options | see below
-`ElasticsearchVersion`  | false | Specifies a supported major version in search (must be in "")   | `OpenSearch_1.3`
+`ElasticsearchVersion`  | false | Specifies a supported major version in search (must be in "")   | `OpenSearch_2.11`
 
 These are the current supported major versions for Elasticsearch version:
 
-- `Elasticsearch_7.4`
+- `Elasticsearch_7.10`
 - `OpenSearch_1.3`
-- `OpenSearch_2.3`
+- `OpenSearch_2.11`
 
-If you don't specify any option, currently `Elasticsearch_7.4` is used by default.
+If you don't specify any option, currently `Elasticsearch_7.10` is used by default.
 
 If you want to specify the Elasticsearch version:
 
@@ -67,7 +67,7 @@ If you want to specify the Elasticsearch version:
 cf create-service aws-elasticsearch \
     ${SERVICE_PLAN_NAME} \
     ${SERVICE_NAME} \
-    -c '{"ElasticsearchVersion": "OpenSearch_2.3"}'
+    -c '{"ElasticsearchVersion": "OpenSearch_2.11"}'
 ```
 
 ### Advanced Options
