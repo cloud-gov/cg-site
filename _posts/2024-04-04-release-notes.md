@@ -12,7 +12,7 @@ excerpt: The cloud.gov team is working on providing change logs so everyone can 
 
 The audience for this section is developers who maintain applications on cloud.gov and may need to respond to stack or buildpack changes.
 
-### CF-Deployment - v39.3.0 to v40.1.0
+### CF-Deployment - v39.7.0 to v40.1.0
 
 Changes below are broken down by component:
 
