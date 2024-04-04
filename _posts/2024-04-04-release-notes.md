@@ -17,11 +17,11 @@ The audience for this section is developers who maintain applications on cloud.g
 Changes below are broken down by component:
 
 
-### binary-buildpack 1.1.9 to 1.1.10
+#### binary-buildpack 1.1.9 to 1.1.10
 
 * Rebuild Executables
 
-### dotnet-core-buildpack 2.4.25 to 2.4.26
+#### dotnet-core-buildpack 2.4.25 to 2.4.26
 
 * Add dotnet-sdk 8.0.203, remove dotnet-sdk 8.0.202
 * Add dotnet-aspnetcore 6.0.28, remove dotnet-aspnetcore 6.0.27
@@ -57,8 +57,7 @@ Default binary versions:
 * dotnet-sdk 6.0.x
 * bower 1.8.x
 
-
-### php-buildpack 4.6.16 to 4.6.17
+#### php-buildpack 4.6.16 to 4.6.17
 
 * Add php 8.3.4, remove php 8.3.1
 * Add php 8.2.17, remove php 8.2.15
@@ -90,10 +89,7 @@ Default binary versions:
 * composer 2.7.2
 
 
-
-
-### python-buildpack 1.8.21 to 1.8.22
-
+#### python-buildpack 1.8.21 to 1.8.22
 
 * Add setuptools 69.2.0, remove setuptools 69.1.1
 
@@ -116,8 +112,7 @@ Default binary versions:
 * python 3.10.x
 
 
-
-### r-buildpack 1.2.9 to 1.2.10
+#### r-buildpack 1.2.9 to 1.2.10
 
 * Update r 4.2.3 dependencies:
   * forecast from 8.21.1 to 8.22.0
@@ -128,7 +123,7 @@ Packaged binaries:
 * r 4.3.2
 
 
-### cflinuxfs4 1.82.0 to 1.86.0
+#### cflinuxfs4 1.82.0 to 1.86.0
 
 Notably, this release addresses:
 
@@ -214,18 +209,9 @@ This section is for the platform operators at `cloud.gov` to highlight changes t
   * Bump github.com/onsi/gomega from 1.31.1 to 1.32.0 in /src/acceptance_tests
 
 
-
 ## Final Note
 
-Enjoy the eclipse!   
+Enjoy the eclipse!  Our friends at NASA have [more details](https://science.nasa.gov/eclipses/future-eclipses/eclipse-2024/where-when/).  
 
 Tune in next sprint for more cloud.gov release notes.
-
-
-
-
-
-
-
-
 
