@@ -1,7 +1,7 @@
 ---
 layout: post
 date: March 7th 2024
-title: "Martch 7th cloud.gov Change Log"
+title: "March 7th cloud.gov Change Log"
 excerpt: The cloud.gov team is working on providing change logs so everyone can see new features and updates.
 ---
 
