@@ -86,6 +86,8 @@ sidenav:
         href: /pages/documentation/custom-headers/
       - text: Federalist.json
         href: /pages/documentation/federalist-json/
+      - text: Build Scans
+        href: /pages/documentation/build-scans/
   - text: For developers
     href: /pages/documentation/
     subfolderitems:
