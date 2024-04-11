@@ -225,7 +225,7 @@ If you'd like to make an update not supported by the broker, you must delete and
             <th scope="col">domain-with-org-lb</th>
         </tr>
         <tr>
-            <th style="vertical-align:center" rowspan=5 scope="rowgroup">Exising plan</th>
+            <th style="vertical-align:center" rowspan=5 scope="rowgroup">Existing plan</th>
         </tr>
         <tr>
             <th scope="row">domain</th>
