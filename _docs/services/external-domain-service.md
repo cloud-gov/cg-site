@@ -216,32 +216,31 @@ If you'd like to make an update not supported by the broker, you must delete and
 
 <table style="text-align:center;">
         <tr>
-            <th></th>
-            <th style="text-align:center;" colspan=4>New Plan</th>
+            <td colspan=2 rowspan=2></td>
+            <th style="text-align:center;" colspan=3 scope="colgroup">New Plan</th>
         </tr>
         <tr>
-            <th colspan=2></th>
             <th scope="col">domain</th>
             <th scope="col">domain-with-cdn</th>
             <th scope="col">domain-with-org-lb</th>
         </tr>
         <tr>
-            <td style="vertical-align:center" rowspan=5>Exising plan</td>
+            <th style="vertical-align:center" rowspan=5 scope="rowgroup">Exising plan</th>
         </tr>
         <tr>
-            <td>domain</td>
+            <th scope="row">domain</th>
             <td>✅</td>
             <td>🚫</td>
             <td>✅</td>
         </tr>
         <tr>
-            <td>domain-with-cdn</td>
+            <th scope="row">domain-with-cdn</th>
             <td>🚫</td>
             <td>✅</td>
             <td>🚫</td>
         </tr>
         <tr>
-            <td>domain-with-org-lb</td>
+            <th scope="row">domain-with-org-lb</th>
             <td>🚫</td>
             <td>🚫</td>
             <td>🚫</td>
