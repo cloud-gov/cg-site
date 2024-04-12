@@ -9,7 +9,7 @@ sidenav: pages-documentation
 
 Builds Scans are a new experimental feature being offered by Pages.
 
-For select site builds, users can see scan results which check their website for security vulnerabilities, accessibility violations, and other relevant information to help improve their site. These scans begin running after a build completes. When the scan finishes, the results are available as downloadable HTML files for easy sharing among team members. There are currently two scans available: ZAP Security Scan and Accessibility Scan. If you are interested in being part of the beta test of this new feature, please email us at pages-support@cloud.gov.
+For select site builds, users can see scan results which check their website for security vulnerabilities, accessibility violations, and other relevant information to help improve their site. These scans begin running after a build completes. When the scan finishes, the results are available as downloadable HTML files for easy sharing among team members. There are currently two scans available: ZAP Security Scan and Accessibility Scan.
 
 ![Build Scan Example]({{site.baseurl}}/assets/images/pages/build-scans.png)
 
