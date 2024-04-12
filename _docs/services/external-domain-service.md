@@ -15,7 +15,7 @@ All plans offer:
 1. Custom domain support, so that your application can have your domain instead of the default `*.app.cloud.gov` domain.
 1. HTTPS support via free TLS certificates with auto-renewal (using [Let's Encrypt](https://letsencrypt.org/)), so that user traffic is encrypted.
 
-The domain-with-cdn plan also provides Content Distribution Network (CDN) caching (using [AWS CloudFront](https://aws.amazon.com/cloudfront/)) for fast delivery of content to your users.
+The `domain-with-cdn` plan also provides Content Distribution Network (CDN) caching (using [AWS CloudFront](https://aws.amazon.com/cloudfront/)) for fast delivery of content to your users.
 The domain-with-org-lb plan is offers load balancers dedicated to your Cloud Foundry organization. This plan is not enabled by default for all organizations, but please contact [**{{site.support_email_address}}**]({{site.support_email}}) if you are interested in using it.
 for your org.
 
