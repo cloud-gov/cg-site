@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GitHub Repository Best Practices"
-date: April 16, 2024
+date: April 12, 2024
 excerpt: Pages guide for mainitning GitHub hosted repositories
 ---
 
