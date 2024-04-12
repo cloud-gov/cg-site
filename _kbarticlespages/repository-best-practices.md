@@ -11,10 +11,10 @@ Adhering to a set of best practices when it comes to managing GitHub repositorie
 
 A repository does *not need* to be public in order for Pages to be able to build the website; both public and private repositories are acceptable. When it comes to Pages there are certainly some unique considerations for each.
 
-#### **Public**
+### **Public**
 
 
-##### **Pros**
+#### **Pros**
   - Easy for Pages engineers to access the codebase and provide support/debug
   - Transparency/High visibility
   - Able to utilize CodeQL free of charge
@@ -22,19 +22,19 @@ A repository does *not need* to be public in order for Pages to be able to build
   - Collaboration with outside contributors
   - Compliance with open source and transparency initiatives per agency/program 
 
-##### **Cons**
+#### **Cons**
   - Any sensitive information inadvertently hardcoded is immediately visible 
 
-#### **Private**
+### **Private**
 
 
-##### **Pros**
+#### **Pros**
   - Restrict access to authorized collaborators and contributors (for any support issues a Pages engineer will request to be added as a collaborator to the repository if necessary)
   - Risk mitigation
   - Test/Make changes to a website without exposing commits to the public
   - Safeguard against any potential leaks of sensitive information
 
-##### **Cons**
+#### **Cons**
   - Not able to utilize CodeQL for free
   - Potentially out of compliance with agency/program transparency initiatives
 
