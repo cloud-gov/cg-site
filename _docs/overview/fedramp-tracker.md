@@ -26,7 +26,7 @@ Once that P-ATO is granted, FedRAMP requires cloud.gov to undergo re-assessment 
 
 * The FedRAMP package (see below) includes the DISA Provisional Authorization (PA) letter for your reference.
 * Per the PA and the [DoD Cloud Computing SRG](https://public.cyber.mil/dccs/), the artifacts available to an Authorizing Official (AO) are those included in the FedRAMP-approved package. See [Figure 5-2, "DoD Continuous Monitoring for CSOs with a FedRAMP JAB PA"](https://dl.dod.cyber.mil/wp-content/uploads/cloud/zip/U_Cloud_Computing_SRG_V1R4.zip) in the Cloud Computing SRG for a useful illustration to that effect.
-* To meet the intent of OMB and DoD policies that cloud authorization follow a "do once, use many times" framework, cloud.gov will not provide artifacts that are already encompassed by the FedRAMP authorization and continuous monitoring program.  
+* To meet the intent of OMB and DoD policies that cloud authorization follow a "do once, use many times" framework, cloud.gov will not provide artifacts that are already encompassed by the FedRAMP authorization and continuous monitoring program.
 
 ## How you can use this P-ATO
 
@@ -44,10 +44,16 @@ We publish two CIS/CRM documents, one for the Paas/Platform service and one for 
 
 * [cloud.gov PaaS CIS Worksheet]({{ site.baseurl }}/resources/cloud.gov-CIS-Worksheet.xlsx) summarizes each Low and Moderate security control and whether it is handled by cloud.gov (inheritable), a shared responsibility, or a customer responsibility. It includes guidance on which controls a customer on the Platform can fully or partially inherit from cloud.gov.
   * Last Update: 2023-03-17 - Updated front matter
-* [cloud.gov Pages CIS Worksheet]({{ site.baseurl }}/resources/cloud.gov-Pages-CIS-Worksheet.xlsx) summarizes each Low and Moderate security control and whether it is handled by cloud.gov (inheritable), a shared responsibility, or a customer responsibility. It includes guidance on which controls a customer on Pages can fully or partially inherit from cloud.gov.
-  * Last Update: 2022-11-15 - First published CIS/CRM for cloud.gov Pages
+* [cloud.gov Pages CIS Worksheet]({{ site.baseurl }}/resources/cloud.gov-Pages-CIS-and-CRM-Workbook.xlsx) summarizes each Low and Moderate security control and whether it is handled by cloud.gov (inheritable), a shared responsibility, or a customer responsibility. It includes guidance on which controls a customer on Pages can fully or partially inherit from cloud.gov.
+  * Updated: 2022-11-15 - First published CIS/CRM for cloud.gov Pages
+  * Updated: 2024-04-09 
+    * Updated the date of change to the CIS/CRM.
+    * The CIS/CRM has been updated and revised using the latest FedRAMP rev5 template including Low and 
+Moderate controls. The CRM focuses on the consideration of cloud.gov Pages static website customers.
+    
+    
 
-A CRM for Pages Moderate-impact controls is under development.
+
 
 ## Start the ATO process
 
