@@ -45,12 +45,15 @@ We publish two CIS/CRM documents, one for the Paas/Platform service and one for 
 * [cloud.gov PaaS CIS Worksheet]({{ site.baseurl }}/resources/cloud.gov-CIS-Worksheet.xlsx) summarizes each Low and Moderate security control and whether it is handled by cloud.gov (inheritable), a shared responsibility, or a customer responsibility. It includes guidance on which controls a customer on the Platform can fully or partially inherit from cloud.gov.
   * Last Update: 2023-03-17 - Updated front matter
 * [cloud.gov Pages CIS Worksheet]({{ site.baseurl }}/resources/cloud.gov-Pages-CIS-and-CRM-Workbook.xlsx) summarizes each Low and Moderate security control and whether it is handled by cloud.gov (inheritable), a shared responsibility, or a customer responsibility. It includes guidance on which controls a customer on Pages can fully or partially inherit from cloud.gov.
-  * Update: 2022-11-15 - First published CIS/CRM for cloud.gov Pages
-  * Updated: 2024-04-09 - Updated the date of change to the CIS/CRM.
+  * Updated: 2022-11-15 - First published CIS/CRM for cloud.gov Pages
+  * Updated: 2024-04-09 
+    * Updated the date of change to the CIS/CRM.
+    * The CIS/CRM has been updated and revised using the latest FedRAMP rev5 template including Low and 
+Moderate controls. The CRM focuses on the consideration of cloud.gov Pages static website customers.
+    
     
 
 
-A CRM for Pages Moderate-impact controls is under development.
 
 ## Start the ATO process
 
