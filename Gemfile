@@ -19,6 +19,8 @@ group :jekyll_plugins do
   gem 'jekyll-paginate-v2', "3.0.0"
   gem 'jekyll-sitemap'
   gem 'jekyll-seo-tag'
+# gem install posix-spawn -- --with-cflags="-Wno-incompatible-function-pointer-types" 
+# because this package and the dependency are no longer maintained
   gem "jekyll-last-modified-at"
 end
 
