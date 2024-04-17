@@ -8,7 +8,7 @@ title: Configuration management
 
 <!-- This page is important for FedRAMP compliance. See the CM family of controls, including CM-9. Code Climate is part of SA-11 (1), SI-3, and RA-5. -->
 
-This document describes how the cloud.gov team approaches configuration management of the core platform. Before configuration changes go into production, they need to pass our [significant change rubric]({{ site.baseurl }}{% link _docs/ops/continuous-monitoring.md %}#appendix-significant-change-rubric), as described in our [Feature Lifecycle](https://github.com/cloud-gov/cg-product/blob/master/FeatureLifecycle.md) and [Story Lifecycle](https://github.com/cloud-gov/cg-product/blob/master/StoryLifecycle.md).
+This document describes how the Cloud.gov team approaches configuration management of the core platform. Before configuration changes go into production, they need to pass our [significant change rubric]({{ site.baseurl }}{% link _docs/ops/continuous-monitoring.md %}#appendix-significant-change-rubric), as described in our [Feature Lifecycle](https://github.com/cloud-gov/cg-product/blob/master/FeatureLifecycle.md) and [Story Lifecycle](https://github.com/cloud-gov/cg-product/blob/master/StoryLifecycle.md).
 
 ## What goes into configuration management?
 In short, everything needed to run and operate the platform that is not a _secret_. (See [Secret Key Management]({{ site.baseurl }}{% link _docs/ops/secrets.md %}) for that.)
@@ -21,7 +21,7 @@ Here are some examples that should be in configuration management:
 - Software configuration (BOSH)
 - Cloud.gov-developed code
 
-*Special cases:* For changing settings that we currently cannot manage as configuration files in version control, such as GitHub repository settings and Nessus scan settings, you must first get agreement from another cloud.gov team member that the change should be made (such as over Slack or Hangouts).
+*Special cases:* For changing settings that we currently cannot manage as configuration files in version control, such as GitHub repository settings and Nessus scan settings, you must first get agreement from another Cloud.gov team member that the change should be made (such as over Slack or Hangouts).
 
 ## Where should all this configuration go?
 All configuration must be stored in GitHub using the following "Change Workflow" unless it is a _secret_.
@@ -35,7 +35,7 @@ Security tests need to be executed in the development environment where changes 
 1. All configuration changes must flow through a git repository, centrally managed through GitHub, unless they contain sensitive information. In these cases, sensitive information should be stored in an S3 bucket or CredHub with a proper security policy and encryption, versioned such that changes can be easily rolled back.
 1. A change is initiated and discussed, following the steps in our [Story Lifecycle](https://github.com/cloud-gov/cg-product/blob/master/StoryLifecycle.md).
 1. In the appropriate GitHub repository for the component, a pull request (PR) against the main branch is created that addresses the change (note - sometimes this branch is called `main`, other times it is not, be sure to check).
-1. If the repository contains cloud.gov-developed code, the PR must have an automated checks in GitHub Action or Concourse, which must pass before the PR can be merged.
+1. If the repository contains Cloud.gov-developed code, the PR must have an automated checks in GitHub Action or Concourse, which must pass before the PR can be merged.
 1. The PR is reviewed by someone other than the committer. Pairing via screen-sharing
 is encouraged and qualifies as a review. Review should include assessment of architectural design, DRY principles, security and code quality.
     The reviewer approves the PR via GitHub.
@@ -96,11 +96,11 @@ If possible, Configuration Management tools need to be set up to always roll bac
 
 <!-- As long as these GitHub guidelines comply with the FedRAMP-required policies above and our TTS GitHub requirements, we can adjust them at will, according to our team preferences. -->
 
-Because cloud.gov was originally built by 18F, and we maintain close operational alignment with other parts of TTS, we follow [the TTS requirements for using GitHub](https://handbook.tts.gsa.gov/github/). These are our team practices within those requirements.
+Because Cloud.gov was originally built by 18F, and we maintain close operational alignment with other parts of TTS, we follow [the TTS requirements for using GitHub](https://handbook.tts.gsa.gov/github/). These are our team practices within those requirements.
 
 ### Forking vs. branching
 
-Both forking and branching are welcome in our repositories. Contributors inside cloud.gov can use forking or branching according to their personal preferences, and contributors outside cloud.gov can fork repositories.
+Both forking and branching are welcome in our repositories. Contributors inside Cloud.gov can use forking or branching according to their personal preferences, and contributors outside Cloud.gov can fork repositories.
 
 The team often practices branching. The rationale for branching within a team is
 that paired collaboration on a single branch avoids certain types of friction:
@@ -111,7 +111,7 @@ that paired collaboration on a single branch avoids certain types of friction:
 
 When contributing directly on a branch, we're able to modify work-in-progress (WIP) pull requests and encourage collaboration across the Cloud Operations team.
 
-For the cloud.gov team, when forking an upstream repository to add a patch or bugfix, the fork should go to your personal GitHub user account. The `cloud-gov` org is for code maintained by cloud.gov, whether that's original code or a long-lived fork (discouraged, but sometimes necessary) for code we are running in production.
+For the Cloud.gov team, when forking an upstream repository to add a patch or bugfix, the fork should go to your personal GitHub user account. The `cloud-gov` org is for code maintained by Cloud.gov, whether that's original code or a long-lived fork (discouraged, but sometimes necessary) for code we are running in production.
 
 ### Squashing commits
 
@@ -134,7 +134,7 @@ You can request a review using GitHub's built-in tools, mention someone in the P
 
 ### When reviewing a PR, should the change be tested locally?
 
-Whenever possible, the proposed changes should be tested locally. Because of the nature of many of the cloud.gov repositories and deployment environments, local testing is not always possible or practical. Visual code review, however, is always required.
+Whenever possible, the proposed changes should be tested locally. Because of the nature of many of the Cloud.gov repositories and deployment environments, local testing is not always possible or practical. Visual code review, however, is always required.
 
 ---
 

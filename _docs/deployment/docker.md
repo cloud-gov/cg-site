@@ -22,7 +22,7 @@ You can also push an image from a private Docker registry by providing the host 
 
 Details are in the Cloud Foundry documentation for [deploying an app with Docker](https://docs.cloudfoundry.org/devguide/deploy-apps/push-docker.html#private-repo). If you want to build your own Docker image, or if you want to read more about the implementation, check out the [Docker documentation](http://docs.cloudfoundry.org/adminguide/docker.html) in the Cloud Foundry project.
 
-Once you push a Docker image as your application, cloud.gov cannot update the baseline for your application, so you are responsible for keeping it up to date. **You are responsible** for maintaining the operating system, libraries, application code, and all of the associated configuration. See [this chart of responsibilities]({{ site.baseurl }}{% link _docs/technology/responsibilities.md %}). This is not a recommended path and is only viable in some use cases; be aware that you lose a large set of features and some of the benefits of a PaaS system by leveraging this functionality.
+Once you push a Docker image as your application, Cloud.gov cannot update the baseline for your application, so you are responsible for keeping it up to date. **You are responsible** for maintaining the operating system, libraries, application code, and all of the associated configuration. See [this chart of responsibilities]({{ site.baseurl }}{% link _docs/technology/responsibilities.md %}). This is not a recommended path and is only viable in some use cases; be aware that you lose a large set of features and some of the benefits of a PaaS system by leveraging this functionality.
 
 Here are some considerations to keep in mind when deciding to use Docker images instead of supported buildpacks in your application's deployment:
 
@@ -58,13 +58,13 @@ There is [a Cloud Foundry API for tasks creation](http://v3-apidocs.cloudfoundry
 
 ### Using non-standard ports in Docker containers
 
-When you assign a route to an app running on cloud.gov using the `*.app.cloud.gov` domain, external ports 80 and 443 are mapped to a dynamically assigned internal port on the container(s) running your app. You can't change the internal port assigned to your app if it's been assigned an `*.app.cloud.gov` domain, but you can use alternate ports if your app is assigned [an internal route](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html#internal-routes) on cloud.gov.
+When you assign a route to an app running on Cloud.gov using the `*.app.cloud.gov` domain, external ports 80 and 443 are mapped to a dynamically assigned internal port on the container(s) running your app. You can't change the internal port assigned to your app if it's been assigned an `*.app.cloud.gov` domain, but you can use alternate ports if your app is assigned [an internal route](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html#internal-routes) on Cloud.gov.
 
-When you deploy a Docker image that has a non-standard port exposed (e.g., port 5000) and assign an internal route to this app, this overrides the dynamic assignment of a default port by cloud.gov and exposes that non-standard port to container-to-container traffic. Your app can't be accessed by external traffic coming from outside the cloud.gov platform, but can be reached by traffic from another application running in your cloud.gov org.
+When you deploy a Docker image that has a non-standard port exposed (e.g., port 5000) and assign an internal route to this app, this overrides the dynamic assignment of a default port by Cloud.gov and exposes that non-standard port to container-to-container traffic. Your app can't be accessed by external traffic coming from outside the Cloud.gov platform, but can be reached by traffic from another application running in your Cloud.gov org.
 
 In this scenario, if you want to enable external traffic to reach your Docker app running on a non-standard port, you'll need to do the following:
 
-* Deploy a proxy application to route traffic from outside cloud.gov to the internal route you assigned to your Docker app. This can be something as simple as an nginx app that [uses a `proxy_pass` directive](http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass) to route traffic to your Docker app. An example of this approach [can be seen here](https://github.com/cloud-gov/cf-redash).
+* Deploy a proxy application to route traffic from outside Cloud.gov to the internal route you assigned to your Docker app. This can be something as simple as an nginx app that [uses a `proxy_pass` directive](http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass) to route traffic to your Docker app. An example of this approach [can be seen here](https://github.com/cloud-gov/cf-redash).
 
 * Enable container-to-container traffic by [adding a new network policy](https://cli.cloudfoundry.org/en-US/v6/add-network-policy.html) specifying the source app (your nginx proxy) and the destination app (your Docker app) as well as the port and protocol for the traffic.
 
@@ -74,7 +74,7 @@ In this scenario, if you want to enable external traffic to reach your Docker ap
 
 We often use the [Spring Music app](https://github.com/cloudfoundry-samples/spring-music) to demonstrate the use of database services on Cloud Foundry. The same application works when bundled [into a Docker image](https://fabianlee.org/2018/05/24/docker-running-a-spring-boot-based-app-in-a-docker-container/), and works identically.
 
-For example, push it to cloud.gov using a prebuilt Docker image with an in-memory database:
+For example, push it to Cloud.gov using a prebuilt Docker image with an in-memory database:
 ```
 cf push my-spring --docker-image pburkholder/my-springmusic -m 1016M
 ```

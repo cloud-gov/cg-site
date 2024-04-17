@@ -9,13 +9,13 @@ redirect_from:
 !["FEC case study illustration"]({{site.baseurl}}/assets/"fec-case-study-illo.svg")
 ### Announcements
 
-- **In this featured [FEC Case Study]({{ site.baseurl }}/overview/customer-stories/fec/)**, find out how cloud.gov helps the agency ensure their applications are available, secure, and resilient. Want us to feature your agency? Drop us a line at [inquiries@cloud.gov](mailto:inquiries@cloud.gov?subject="Case%20Study").  
-- **Join us at the [Cloud Foundry Summit](https://www.cloudfoundry.org/event/nasummit2018/)** on April 18-20 in Boston, MA. Members of the cloud.gov team will present at this gathering of people who use and run platforms—like cloud.gov—that are based on the Cloud Foundry open source project. It includes [government-focused sessions](https://cfna18.sched.com/overview/type/Government+%26+Wild+Card) and training opportunities that may be useful to you and your team.
+- **In this featured [FEC Case Study]({{ site.baseurl }}/overview/customer-stories/fec/)**, find out how Cloud.gov helps the agency ensure their applications are available, secure, and resilient. Want us to feature your agency? Drop us a line at [inquiries@cloud.gov](mailto:inquiries@cloud.gov?subject="Case%20Study").  
+- **Join us at the [Cloud Foundry Summit](https://www.cloudfoundry.org/event/nasummit2018/)** on April 18-20 in Boston, MA. Members of the Cloud.gov team will present at this gathering of people who use and run platforms—like Cloud.gov—that are based on the Cloud Foundry open source project. It includes [government-focused sessions](https://cfna18.sched.com/overview/type/Government+%26+Wild+Card) and training opportunities that may be useful to you and your team.
 
 ### Added
 
 - Elasticsearch version 5.6 is now available. This includes [performance improvements and new features](https://www.elastic.co/blog/elasticsearch-5-0-0-released). We recommend upgrading from version 2.4 to 5.6, but we don’t have near-term plans to end support for 2.4.  
-- If your application involves multiple languages, and it’s not practical to split it into smaller applications, cloud.gov now has [improved support for multiple buildpacks]({{ site.baseurl }}/docs/apps/experimental/custom-buildpacks/#experimental-multi-buildpack-support)  
+- If your application involves multiple languages, and it’s not practical to split it into smaller applications, Cloud.gov now has [improved support for multiple buildpacks]({{ site.baseurl }}/docs/apps/experimental/custom-buildpacks/#experimental-multi-buildpack-support)  
 
 ### Fixed
 

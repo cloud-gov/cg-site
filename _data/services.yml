@@ -18,11 +18,11 @@
   status: "Production"
   source-code: https://github.com/cloud-gov/external-domain-broker
 - name: cloud-gov-identity-provider
-  description: "Authenticate cloud.gov users in your app"
+  description: "Authenticate Cloud.gov users in your app"
   status:  "Production"
   source-code: https://github.com/cloudfoundry-community/uaa-credentials-broker
 - name: cloud-gov-service-account
-  description: "cloud.gov service accounts for automated access by programs"
+  description: "Cloud.gov service accounts for automated access by programs"
   status: "Production"
   source-code: https://github.com/cloudfoundry-community/uaa-credentials-broker
 - name: custom-domains

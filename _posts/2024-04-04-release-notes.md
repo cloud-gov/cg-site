@@ -1,8 +1,8 @@
 ---
 layout: post
 date: April 4th 2024
-title: "April 4th cloud.gov Change Log"
-excerpt: The cloud.gov team is working on providing change logs so everyone can see new features and updates.
+title: "April 4th Cloud.gov Change Log"
+excerpt: The Cloud.gov team is working on providing change logs so everyone can see new features and updates.
 ---
 
 # Change Log 
@@ -10,7 +10,7 @@ excerpt: The cloud.gov team is working on providing change logs so everyone can 
 ## Customer Facing Changes
 ---
 
-The audience for this section is developers who maintain applications on cloud.gov and may need to respond to stack or buildpack changes.
+The audience for this section is developers who maintain applications on Cloud.gov and may need to respond to stack or buildpack changes.
 
 ### CF-Deployment - v39.7.0 to v40.1.0
 
@@ -213,5 +213,5 @@ This section is for the platform operators at `cloud.gov` to highlight changes t
 
 Enjoy the eclipse!  Our friends at NASA have [more details](https://science.nasa.gov/eclipses/future-eclipses/eclipse-2024/where-when/).  
 
-Tune in next sprint for more cloud.gov release notes.
+Tune in next sprint for more Cloud.gov release notes.
 

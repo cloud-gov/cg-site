@@ -1,11 +1,11 @@
 ---
 layout: post
 date: November 23rd 2022
-title: "November 23rd cloud.gov Change Log"
-excerpt: The cloud.gov team is working on providing change logs so everyone can see new features and updates.
+title: "November 23rd Cloud.gov Change Log"
+excerpt: The Cloud.gov team is working on providing change logs so everyone can see new features and updates.
 ---
 
-Happy Thanksgiving Week! The cloud.gov team is working on providing change logs so everyone can see new features and updates. Highlights this time include redis and disk quotas!
+Happy Thanksgiving Week! The Cloud.gov team is working on providing change logs so everyone can see new features and updates. Highlights this time include redis and disk quotas!
 
 # Change Log
 

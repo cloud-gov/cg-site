@@ -6,11 +6,11 @@ redirect_from:
   - /updates/2017-02-01-release-notes/
 ---
 
-Curious what’s new that you might find helpful as a cloud.gov application developer? Here are highlights from our platform updates over the past six weeks.
+Curious what’s new that you might find helpful as a Cloud.gov application developer? Here are highlights from our platform updates over the past six weeks.
 <!--more-->
 
 ### Added
-- cloud.gov account holders in the GovCloud environment get automated notifications of expiring passwords, starting ten days before expiration.
+- Cloud.gov account holders in the GovCloud environment get automated notifications of expiring passwords, starting ten days before expiration.
 - The dashboard provides a start button for stopped apps (on the app page).
 
 ### Changed

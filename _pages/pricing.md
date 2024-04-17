@@ -75,7 +75,7 @@ redirect_from:
           Monthly costs are based on the package fee (i.e., Prototyping, FISMA Low, FISMA Moderate) plus memory usage. Memory quota cost is based on the amount of memory (RAM) that you reserve for your system (<sup>$</sup>130/GB RAM per month).
         </p>
         <p class="footnote">
-          Most cloud.gov customers typically reserve 4–8 GB of memory to cover multiple applications across development, staging, and production environments.
+          Most Cloud.gov customers typically reserve 4–8 GB of memory to cover multiple applications across development, staging, and production environments.
         </p>
         <h3>Example</h3>
         <p>
@@ -111,7 +111,7 @@ redirect_from:
   <section class="usa-section">
     <div class="grid-row grid-gap">
       <div class="tablet:grid-col-7 usa-prose">
-        <h2>All use of cloud.gov includes:</h2>
+        <h2>All use of Cloud.gov includes:</h2>
         <h3>Standard Services</h3>
       </div>
     </div>

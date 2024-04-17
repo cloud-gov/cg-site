@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2019-08-26"
-title: "Changes to cloud.gov services and prices" 
+title: "Changes to Cloud.gov services and prices" 
 excerpt: Cloud.gov’s funding source (the Acquisition Services Fund) requires us to review our expenditures and adjust rates to cover the cost of running the service. Starting on October 1, 2019, new interagency agreements (including renewals) will use the following prices. Agreements already in place will not change, and any modification or amendment to an existing agreement in FY20 will retain the original rate until FY21.
 redirect_from:
   - /updates/2019-08-26-changes-to-cloud-gov-services-and-prices/
@@ -34,7 +34,7 @@ Resource  | Previous monthly price | New monthly price  |
 
 - RDS, S3, Elasticsearch, and Redis will now run on “high-availability” servers, providing you with additional stability and redundancy.
 
-- Previously, cloud.gov provided RDS, S3, Elasticsearch, and Redis at no additional cost for a “limited time.” We will continue to provide these services at no additional cost as long as your memory quota remains below the following limits. 
+- Previously, Cloud.gov provided RDS, S3, Elasticsearch, and Redis at no additional cost for a “limited time.” We will continue to provide these services at no additional cost as long as your memory quota remains below the following limits. 
 
 
      | Previous storage cap | New storage cap | Additional Storage

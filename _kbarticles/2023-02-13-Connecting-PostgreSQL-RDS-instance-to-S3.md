@@ -5,11 +5,11 @@ date: February 13, 2023
 excerpt: You can now load data from an S3 bucket into a PostgreSQL RDS instance.
 ---
 
-This method can be used to load a large amount of data into an RDS instance running on cloud.gov and utilizes an AWS PostgreSQL S3 extension in the process described in the AWS documentation for [Importing data from S3 into RDS for PostgreSQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PostgreSQL.S3Import.html).
+This method can be used to load a large amount of data into an RDS instance running on Cloud.gov and utilizes an AWS PostgreSQL S3 extension in the process described in the AWS documentation for [Importing data from S3 into RDS for PostgreSQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PostgreSQL.S3Import.html).
 
 ## Prerequisites
 
-This process, outlined in the AWS documentation, will work with your cloud.gov PostgreSQL database and S3 buckets, given the following:
+This process, outlined in the AWS documentation, will work with your Cloud.gov PostgreSQL database and S3 buckets, given the following:
 
 * You have created a [PostgreSQL RDS database with the aws-rds broker in your space](https://cloud.gov/docs/services/relational-database/#create-an-instance).
 * You have created an [S3 bucket with the s3-broker service in your space](https://cloud.gov/docs/services/s3/#how-to-create-an-instance).

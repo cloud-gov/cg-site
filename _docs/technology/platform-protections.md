@@ -8,18 +8,18 @@ weight: 30
 
 Applications and services on the internet experience frequent attacks, probes, and other malicious traffic. Threat actors making malicious requests may aim to exploit vulnerabilities, to compromise infrastructure, or to deny service to legitimate clients of your applications.
 
-As a multi-tenant platform, cloud.gov observes a diverse and frequent number of attacks. We are constantly improving our defenses to keep your applications online and unaffected by high-traffic-volume attacks against the platform and our customers. To achieve this, cloud.gov includes multiple layers of defense against different types of attacks.
+As a multi-tenant platform, Cloud.gov observes a diverse and frequent number of attacks. We are constantly improving our defenses to keep your applications online and unaffected by high-traffic-volume attacks against the platform and our customers. To achieve this, Cloud.gov includes multiple layers of defense against different types of attacks.
 
 ## Blocking known malicious patterns
 
-All inbound traffic to the cloud.gov platform are protected by a set of [web application firewall (WAF) rules](https://aws.amazon.com/waf/), which can block any traffic that matches known malicious patterns. The WAF rules for cloud.gov currently include managed rule sets offered by AWS that offer protection against:
+All inbound traffic to the Cloud.gov platform are protected by a set of [web application firewall (WAF) rules](https://aws.amazon.com/waf/), which can block any traffic that matches known malicious patterns. The WAF rules for Cloud.gov currently include managed rule sets offered by AWS that offer protection against:
 
 - [Cross-site scripting (XSS)](https://owasp.org/www-community/attacks/xss/)
 - Requests for invalid paths or extensions
 - Requests from known or suspected malicious IP ranges
 - Known Java exploits
 
-The WAF rules for cloud.gov also include a custom rule set that blocks:
+The WAF rules for Cloud.gov also include a custom rule set that blocks:
 
 - Traffic attempting to exploit [Log4j vulnerabilities](https://www.cisa.gov/news-events/news/apache-log4j-vulnerability-guidance)
 - Traffic from [fuzzing](https://owasp.org/www-community/Fuzzing) or probing tools that have been identified from logs
@@ -27,9 +27,9 @@ The WAF rules for cloud.gov also include a custom rule set that blocks:
 
 ## Protections against traffic surges
 
-Occasionally, cloud.gov sees significant spikes in traffic that may be attempting to overwhelm platform infrastructure via a [DDoS attack](https://www.cloudflare.com/learning/ddos/what-is-a-ddos-attack/) or may simply be a very large scale probing attack.
+Occasionally, Cloud.gov sees significant spikes in traffic that may be attempting to overwhelm platform infrastructure via a [DDoS attack](https://www.cloudflare.com/learning/ddos/what-is-a-ddos-attack/) or may simply be a very large scale probing attack.
 
-In order to mitigate the effect of traffic surges on the platform, cloud.gov includes the following rate limits for requests:
+In order to mitigate the effect of traffic surges on the platform, Cloud.gov includes the following rate limits for requests:
 
 - Traffic coming through CloudFront is rate limited with a [CHALLENGE action][challenge action] to **2000 requests** per **forwarded IP address** per 5 minutes
 - Traffic not coming through CloudFront is rate limited with a [CHALLENGE action][challenge action] to **2000 requests** per **source IP address** per 5 minutes

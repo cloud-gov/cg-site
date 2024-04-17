@@ -14,7 +14,7 @@ It shouldn’t be that way.
 
 Pages serves our fellow federal partners by expertly managing the backend and compliance work to launch and manage a website, allowing you to focus your expertise on your content.
 
-- **FedRAMP Certified Platform** Pages is hosted on cloud.gov, a platform with security and compliance verified by the FedRAMP Joint Authorization Board, which means you can trust that your site will be fast, reliable, and ready for unexpected surges in traffic.
+- **FedRAMP Certified Platform** Pages is hosted on Cloud.gov, a platform with security and compliance verified by the FedRAMP Joint Authorization Board, which means you can trust that your site will be fast, reliable, and ready for unexpected surges in traffic.
 
 - **Easy previews and content approvals** Pages builds out draft updates to your site at a special preview URL. This enables your team to know their changes will show up correctly when pushed to the main site, and makes it easy to get signoff on content updates from stakeholders.
 

@@ -6,7 +6,7 @@ sidenav: true
 title: Managing users
 ---
 
-Only single sign-on user accounts and cloud.gov IDP accounts are allowed. Service accounts, such as deployer credentials, are to be generated only via the [service account]({{ site.baseurl }}/docs/services/cloud-gov-service-account/) managed service to ensure that they are scoped to a particular space with limited access.
+Only single sign-on user accounts and Cloud.gov IDP accounts are allowed. Service accounts, such as deployer credentials, are to be generated only via the [service account]({{ site.baseurl }}/docs/services/cloud-gov-service-account/) managed service to ensure that they are scoped to a particular space with limited access.
 
 No local accounts to UAA shall be created for user access.
 
@@ -22,7 +22,7 @@ If a user logs in using their agency's account system, the only way to reset tha
 
 ## Resetting TOTP tokens
 
-Follow the process below for users logging in with a cloud.gov account.
+Follow the process below for users logging in with a Cloud.gov account.
 
 If the user requesting a reset has any apps, routes, or services in their sandbox or access to any other spaces or orgs, tell them that **[these will be removed]({{ site.baseurl }}{% link _docs/getting-started/accounts.md %}#cloudgov-accounts)** and ask them if we should proceed. If they agree:
 
@@ -48,7 +48,7 @@ If the user requesting a reset has any apps, routes, or services in their sandbo
 
 4. Let the user know the reset process is complete. _Do not include specific account information such as the user's roles or roles/contact info for other people in their organization_
 
-     > I've reset your one-time password. To regain cloud.gov access, log in to cloud.gov again. After entering your username/password combination, you should be prompted to set up a new one-time password with your authenticator app (for example, 1password, Microsoft Authenticator, or Authy).  Since this reset removed your roles on orgs and spaces, you may need to request additional access from your Space Managers and Org Managers again. If you had a sandbox space, that has been reset and is available to you again.
+     > I've reset your one-time password. To regain Cloud.gov access, log in to Cloud.gov again. After entering your username/password combination, you should be prompted to set up a new one-time password with your authenticator app (for example, 1password, Microsoft Authenticator, or Authy).  Since this reset removed your roles on orgs and spaces, you may need to request additional access from your Space Managers and Org Managers again. If you had a sandbox space, that has been reset and is available to you again.
 
 ## Managing Admins
 
@@ -118,7 +118,7 @@ You can clean up UAA groups via [cg-scripts/remove-user-guid-from-all-groups.sh]
 
 ### Deleting Users
 
-If a user requests deletion of their cloud.gov account, check to make sure that the user is not an org manager, org auditor, or billing manager - if they are, these roles may need to be transferred to someone else prior to deleting their account. If they are a user in a sandbox account, you may also need to manually remove any services or apps from their sandbox account, and remove their space in the sandbox org.
+If a user requests deletion of their Cloud.gov account, check to make sure that the user is not an org manager, org auditor, or billing manager - if they are, these roles may need to be transferred to someone else prior to deleting their account. If they are a user in a sandbox account, you may also need to manually remove any services or apps from their sandbox account, and remove their space in the sandbox org.
 
 * Remove the user from their org/space in Stratos.
 * Delete the user account with: `cf delete-user {user-name}` (Note - this _might_ not be needed, as Stratos may take care of it.)

@@ -20,7 +20,7 @@ For all engines **except Static** Pages will serve whatever is in the `_site` fo
 ### Node
 A Node script can be run to generate a site OR as a preliminary step to generating one with Jekyll or Hugo. To use a Node script as the generator, choose **Node.js** as the **Site Engine** in the Advanced Settings configuration for your site.
 
-For more details on using Node see [node on cloud.gov Pages]({{site.baseurl}}/pages/documentation/node-on-pages).
+For more details on using Node see [node on Cloud.gov Pages]({{site.baseurl}}/pages/documentation/node-on-pages).
 
 ## Jekyll Resources
 Pages can generate any Jekyll website, which lets you build custom websites hosted on Pages. For documentation on getting started with Jekyll, see [jekyllrb.com](http://jekyllrb.com/).

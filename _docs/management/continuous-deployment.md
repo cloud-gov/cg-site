@@ -20,24 +20,24 @@ Before setting up continuous deployment:
 
 ## Provision deployment credentials
 
-Continuous deployment systems require credentials for use in pushing new versions of your application code to cloud.gov. You should use a restricted set of credentials that can only access a particular target space, rather than credentials tied to a user who has more access, or who may lose access when leaving your team or project. This "least privilege" approach minimizes the harm that is possible if the credentials are compromised in any way.
+Continuous deployment systems require credentials for use in pushing new versions of your application code to Cloud.gov. You should use a restricted set of credentials that can only access a particular target space, rather than credentials tied to a user who has more access, or who may lose access when leaving your team or project. This "least privilege" approach minimizes the harm that is possible if the credentials are compromised in any way.
 
 To create deployer account credentials with permission to deploy to a single space, [set up a service account]({{ site.baseurl }}{% link _docs/services/cloud-gov-service-account.md %}).
 
 ## Configure your service
 
-cloud.gov does not provide a CI/CD (continuous integration/continuous deployment) service, but you can use any CI/CD service of your choice.
+Cloud.gov does not provide a CI/CD (continuous integration/continuous deployment) service, but you can use any CI/CD service of your choice.
 
 You can configure your code repositories, [spaces]({{ site.baseurl }}{% link _docs/getting-started/concepts.md %}#spaces), and CI/CD service together to enable automated or semi-automated deployments to your environments (such as development, staging, and production environments). For deployments in each environment, you can configure access control and testing requirements according to your project's needs.
 
 The core concept is to set up a script that triggers when you update the material that you want to test and deploy (typically your code in your version control system). The script runs your commands, including your deploy command, using your service account credentials.
 
-To illustrate how a CI/CD workflow could be incorporated with cloud.gov:
+To illustrate how a CI/CD workflow could be incorporated with Cloud.gov:
 
 {% mermaid_diagram id-prefix="Figure-1.-Continuous-deployment-workflow" %}
 graph TD
 
-subgraph cloud.gov
+subgraph Cloud.gov
   subgraph Org
   subgraph Dev space
       Dev[App]
@@ -65,10 +65,10 @@ graph TD
 
 Developer((Developer)) -->|Commit code| Repo(Code repository)
 Repo -->|Automatically notify that a commit happened|CD(Continuous Deployment service)
-CD -->|If dev branch, deploy| Dev(Dev app on cloud.gov)
-CD -->|If prod branch, deploy, run tests | Preprod(Preprod app on cloud.gov)
+CD -->|If dev branch, deploy| Dev(Dev app on Cloud.gov)
+CD -->|If prod branch, deploy, run tests | Preprod(Preprod app on Cloud.gov)
 Preprod --> | Test results | CD
-CD -->|If preprod tests OK, deploy prod branch| Prod(Prod app on cloud.gov)
+CD -->|If preprod tests OK, deploy prod branch| Prod(Prod app on Cloud.gov)
 
 {% endmermaid_diagram %}
 
@@ -136,7 +136,7 @@ dependencies:
 
 test:
   post:
-    - cf login -a https://api.fr.cloud.gov -u DEPLOYER_SERVICE_ACCOUNT_USERNAME -p $CF_PASS -o ORG -s SPACE
+    - cf login -a https://api.fr.Cloud.gov -u DEPLOYER_SERVICE_ACCOUNT_USERNAME -p $CF_PASS -o ORG -s SPACE
 
 deployment:
   production:
@@ -157,11 +157,11 @@ See the [GitHub Actions documentation](https://help.github.com/en/actions) to ge
 
 #### Usage
 
-After following the instructions for setting up a [cloud.gov service account](https://cloud.gov/docs/services/cloud-gov-service-account/), store your username (CG_USERNAME) and password (CG_PASSWORD) as [encrypted secrets](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets). 
+After following the instructions for setting up a [Cloud.gov service account](https://cloud.gov/docs/services/cloud-gov-service-account/), store your username (CG_USERNAME) and password (CG_PASSWORD) as [encrypted secrets](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets). 
 
 #### Sample workflow
 
-The following is an example of a workflow that uses this action. This example shows how to deploy a simple [.NET Core app](https://github.com/cloud-gov/cf-hello-worlds/tree/main/dotnet-core) to cloud.gov
+The following is an example of a workflow that uses this action. This example shows how to deploy a simple [.NET Core app](https://github.com/cloud-gov/cf-hello-worlds/tree/main/dotnet-core) to Cloud.gov
 
 ```yml
 name: .NET Core Deploy
@@ -193,7 +193,7 @@ jobs:
     
     steps:
       - uses: actions/checkout@v2
-      - name: Deploy to cloud.gov
+      - name: Deploy to Cloud.gov
         uses: cloud-gov/cg-cli-tools@main
         with: 
           cf_api: https://api.fr.cloud.gov

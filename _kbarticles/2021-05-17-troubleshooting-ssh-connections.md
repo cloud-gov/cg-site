@@ -5,7 +5,7 @@ date: May 17, 2021
 excerpt: Some tips and tricks for logging into app instances using SSH
 ---
 
-**UPDATE: As of November 28, 2022, cloud.gov only supports connecting to applications using SSH over port 2222. It is no longer possible to use port 22 to connect to applications over SSH.**
+**UPDATE: As of November 28, 2022, Cloud.gov only supports connecting to applications using SSH over port 2222. It is no longer possible to use port 22 to connect to applications over SSH.**
 
 This post will help you troubleshoot issues when [connecting to your app using SSH](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html).
 

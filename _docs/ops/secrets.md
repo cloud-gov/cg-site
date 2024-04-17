@@ -8,7 +8,7 @@ title: Secret key management
 
 ## Sharing secret keys
 
-For sharing the following types of [sensitive information](https://github.com/18F/open-source-policy/blob/master/practice.md#protecting-sensitive-information) related to cloud.gov, cloud.gov team members must use GSA Google Meet. The team member must share the information only with intended recipient(s) who need to know the sensitive information. Team members can use the Meet screen-sharing feature or verbally share the information.
+For sharing the following types of [sensitive information](https://github.com/18F/open-source-policy/blob/master/practice.md#protecting-sensitive-information) related to Cloud.gov, Cloud.gov team members must use GSA Google Meet. The team member must share the information only with intended recipient(s) who need to know the sensitive information. Team members can use the Meet screen-sharing feature or verbally share the information.
 
 * Passwords
 * Secret keys
@@ -21,7 +21,7 @@ For sharing the following types of [sensitive information](https://github.com/18
 
 ### About AWS credential management
 
-Multi-factor authentication is not only important to interactive console logins, but also for command-line interaction. Checking for console MFA is a standard compliance check, e.g. a [Chef Inspec check that all AWS users have MFA enabled](https://github.com/inspec/inspec-aws#ensure-all-aws-users-have-mfa-enabled), but at cloud.gov we go beyond that to ensure we have MFA enabled for _all_ API calls. We do so with the following IAM policy snippet:
+Multi-factor authentication is not only important to interactive console logins, but also for command-line interaction. Checking for console MFA is a standard compliance check, e.g. a [Chef Inspec check that all AWS users have MFA enabled](https://github.com/inspec/inspec-aws#ensure-all-aws-users-have-mfa-enabled), but at Cloud.gov we go beyond that to ensure we have MFA enabled for _all_ API calls. We do so with the following IAM policy snippet:
 
 ```javascript
       {
@@ -58,7 +58,7 @@ To meet NIST security control [SC-12 (1)](https://web.nvd.nist.gov/view/800-53/R
 
 Authorized federal staff rotate, encrypt, and backup keys yearly. Privileged users can access the keys only with two-factor authentication and a decryption passphrase. In the rare case that both the keys and the decryption passphrase for the backup are lost or compromised, new keys can be rotated in by authorized federal staff, while maintaining availability of information.
 
-## Managing legacy cloud.gov credentials
+## Managing legacy Cloud.gov credentials
 
 Most credentials are moving to CredHub, but some are still managed in S3. 
 To work with them you'll need your AWS account set up, along with `aws-vault` (see above).

@@ -22,7 +22,7 @@ Examples:
 
 * We caused end-user-visible errors in customer applications.
 * A platform-owned component such as the dashboard or brokers is giving errors.
-* Two or more teams using cloud.gov have reported the same non-trivial problem, which indicates it isn't just a problem with a customer application.
+* Two or more teams using Cloud.gov have reported the same non-trivial problem, which indicates it isn't just a problem with a customer application.
 * AWS or another service we depend on is causing problems for our users.
 * Something unexpected went wrong during scheduled maintenance, and it impacts users.
 
@@ -30,11 +30,11 @@ Examples:
 
 ### How soon to post to [Status Page](http://cloudgov.statuspage.io/)?
 
-As soon as possible. Goal: at most 15 minutes after the first cloud.gov team member notices the problem.
+As soon as possible. Goal: at most 15 minutes after the first Cloud.gov team member notices the problem.
 
 ### Who is responsible for posting and updating?
 
-* First person on the cloud.gov team who notices a problem is responsible for finding the right people to address it (can include themself), including finding a person with [Status Page](http://cloudgov.statuspage.io/) access to post about it (can include themself).
+* First person on the Cloud.gov team who notices a problem is responsible for finding the right people to address it (can include themself), including finding a person with [Status Page](http://cloudgov.statuspage.io/) access to post about it (can include themself).
 * Platform squad person on support rotation should be the first person to begin addressing the technical issue (and the first person for non-platform squad people to ping for help with this). See the platform squad channel topic for the current person.
 * A person should explicitly say “I'm taking care of Status Page for this” and continue being responsible for updates until they explicitly hand off that responsibility.
 
@@ -65,11 +65,11 @@ A postmortem is not necessary to close, and it does not have to happen immediate
 
 ### Retroactively adding a component outage
 
-Sometimes system outages occur outside of normal platform support hours (e.g. on a weekend) and may resolve without any intervention by platform operators. When this happens, a platform operators should retroactively add a component outage so that [the cloud.gov StatusPage](https://cloudgov.statuspage.io/) accurately reflects the actual system uptime.
+Sometimes system outages occur outside of normal platform support hours (e.g. on a weekend) and may resolve without any intervention by platform operators. When this happens, a platform operators should retroactively add a component outage so that [the Cloud.gov StatusPage](https://cloudgov.statuspage.io/) accurately reflects the actual system uptime.
 
 To retroactively add a component outage:
 
-1. Log in to [the StatusPage console for cloud.gov](https://manage.statuspage.io/pages/swcbylb1c30f)
+1. Log in to [the StatusPage console for Cloud.gov](https://manage.statuspage.io/pages/swcbylb1c30f)
 1. Click `Components` in the left sidebar
 1. In the main page area, click on the name of the component that experienced an outage (e.g. "Applications") to access the edit page for the component
 1. At the bottom of the edit page for the component, there is a graph of uptime. Hover your mouse over the day that you want to update.
@@ -80,7 +80,7 @@ To retroactively add a component outage:
 
     !["Screenshot showing a pop-up form with a 2 hour major outage entered for August 24, 2022"]({{site.baseurl}}/assets/images/content/statuspage-outage-popup-edit.png)
 
-1. The component uptime display on the [cloud.gov StatusPage](https://cloudgov.statuspage.io/) should now reflect the outage
+1. The component uptime display on the [Cloud.gov StatusPage](https://cloudgov.statuspage.io/) should now reflect the outage
 
 ## Ensure a postmortem happens
 
@@ -90,7 +90,7 @@ For non-security-sensitive work, work to resolve root causes does not have to be
 
 ### Retrospective meeting guide
 
-We hold a retrospective discussion as soon as possible after a cloud.gov service disruption or other incident.
+We hold a retrospective discussion as soon as possible after a Cloud.gov service disruption or other incident.
 
 We keep our retro notes in [this folder](https://drive.google.com/drive/folders/0B58iDAWKmw_BSEtqcUFFQ041MHc).
 

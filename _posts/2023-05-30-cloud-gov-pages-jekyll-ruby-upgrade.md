@@ -17,7 +17,7 @@ If you don’t see `jekyll-assets` in your `Gemfile` or `Gemfile.lock`, you don�
 - Add or change your specified Ruby version (e.g. `ruby '~> 3.1'`).Delete your previous `Gemfile.lock` and regenerate by running `bundle install`
   - If this command adds a new `PLATFORM` to your `Gemfile.lock`, and it’s anything other than `ruby`, remove it with the following command:
     - `bundle lock --remove-platform example_platform_name`. For example `bundle lock --remove-platform arm64-darwin-21`
-- Commit and push all these changes to see if the cloud.gov Pages build succeeds!
+- Commit and push all these changes to see if the Cloud.gov Pages build succeeds!
 
 ## Instructions for sites with jekyll-assets
 

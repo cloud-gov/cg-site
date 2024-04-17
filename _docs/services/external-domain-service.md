@@ -8,7 +8,7 @@ description: "Custom domains and TLS certificates with automatic renewal"
 status: "Production Ready"
 ---
 
-This service provides two different plans allowing you to use custom domains for your apps running on cloud.gov.
+This service provides two different plans allowing you to use custom domains for your apps running on Cloud.gov.
 
 Both plans offer:
 
@@ -44,9 +44,9 @@ Name              | Required   | Description                                   |
 
 #### origin and insecure_origin
 
-You can use this option to send traffic to a custom origin, rather than to your app running on cloud.gov
+You can use this option to send traffic to a custom origin, rather than to your app running on Cloud.gov
 If your custom origin is served over HTTP without HTTPS available, set `insecure_origin` to `true`. This flag
-does not apply to apps hosted on cloud.gov.
+does not apply to apps hosted on Cloud.gov.
 
 #### forward_cookies option
 
@@ -207,11 +207,11 @@ Updating the plan for an instance is not currently supported by the broker. To m
 ### domain-with-cdn instances
 
 When you update a domain-with-cdn instance, any parameter you leave out of the update params will
-remain unchanged. (Exception: if you switch from using a custom origin to using cloud.gov as the
+remain unchanged. (Exception: if you switch from using a custom origin to using Cloud.gov as the
 origin, we'll automatically add `HOST` to the forwarded headers, and automatically set `insecure_origin`
 to false)
 
-To stop using a custom origin and instead route traffic to an app running on cloud.gov, pass either
+To stop using a custom origin and instead route traffic to an app running on Cloud.gov, pass either
 `null` or empty string (`""`) to the origin parameter:
 
 ```shell
@@ -236,8 +236,8 @@ CloudFront will use a default timeout of **24 hours**. This can be
 particularly confusing as different requests might be routed to different
 CloudFront Edge endpoints.
 
-While there is no mechanism for cloud.gov users to trigger a cache clear,
-[cloud.gov support]({{ site.baseurl }}/docs/help/) can. Cache invalidation is not
+While there is no mechanism for Cloud.gov users to trigger a cache clear,
+[Cloud.gov support]({{ site.baseurl }}/docs/help/) can. Cache invalidation is not
 instantaneous; Amazon recommends expecting a lag time of 10-15 minutes (more if there are
 many distinct endpoints).
 
@@ -254,4 +254,4 @@ CloudFront forwards a [limited set of headers](http://docs.aws.amazon.com/Amazon
 
 ### Migrating from another AWS account
 
-No two CloudFront distributions may have the same alternate domain names (CNAMEs) across all AWS accounts. AWS has instructions for [moving an alternate domain name to a different distribution using wildcard domains](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move). However, because the external domain broker does not currently support wildcard domains, you must delete your source distribution and related DNS CNAME records before creating the new domain-with-cdn service instance in cloud.gov. This will require downtime for your site during your migration.
+No two CloudFront distributions may have the same alternate domain names (CNAMEs) across all AWS accounts. AWS has instructions for [moving an alternate domain name to a different distribution using wildcard domains](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move). However, because the external domain broker does not currently support wildcard domains, you must delete your source distribution and related DNS CNAME records before creating the new domain-with-cdn service instance in Cloud.gov. This will require downtime for your site during your migration.

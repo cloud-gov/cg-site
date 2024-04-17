@@ -14,7 +14,7 @@ Use this procedure to perform a database backup or restore operation by using `c
 
 This process requires the [cf-service-
 connect](https://github.com/18F/cf-service-connect) plugin that folks on the
-cloud.gov team have developed for Cloud Foundry.
+Cloud.gov team have developed for Cloud Foundry.
 
 Please make sure you have the
 latest version installed before starting. If you need to update the plugin, you

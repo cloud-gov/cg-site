@@ -7,7 +7,7 @@ title: Setting up a local development environment
 linktitle: Local Development
 ---
 
-This guide is useful for setting up a local development environment for cloud.gov platform operations and includes a number of command-line tools used in the development and maintenance of the cloud.gov system.
+This guide is useful for setting up a local development environment for Cloud.gov platform operations and includes a number of command-line tools used in the development and maintenance of the Cloud.gov system.
 
 This guide assumes you are using a standard GSA-provided Mac OS development asset for specifying commands and packages.
 
@@ -26,12 +26,12 @@ This guide assumes you are using a standard GSA-provided Mac OS development asse
   - `brew install cf-cli`
   - `brew install cloudfoundry/tap/bosh-cli`
   - `brew install openssl`
-- An existing cloud.gov teammate will [make your cloud.gov admin account]({{ site.baseurl }}/docs/ops/managing-users/#creating-admins)
+- An existing Cloud.gov teammate will [make your Cloud.gov admin account]({{ site.baseurl }}/docs/ops/managing-users/#creating-admins)
   - They will use the `create-cf-admin` script from `cg-scripts` with your GSA email address
-- Verify cloud.gov account setup and CloudFoundry installation via the CLI
-  - `cf login -a api.fr.cloud.gov --sso`
+- Verify Cloud.gov account setup and CloudFoundry installation via the CLI
+  - `cf login -a api.fr.Cloud.gov --sso`
   - `cf orgs`
-    - As a cloud.gov team member, you should have a very giant list of organizations
+    - As a Cloud.gov team member, you should have a very giant list of organizations
     - If you have none or one (e.g. sandbox) org, contact your facilitator
 
 ### Install Bosh
@@ -61,8 +61,8 @@ This guide assumes you are using a standard GSA-provided Mac OS development asse
   - Verify AWS CLI installed and is in your path
     - Run `aws` and helper text should display
 
-### Install cloud.gov dev scripts
+### Install Cloud.gov dev scripts
 
-- Install cloud.gov dev scripts by cloning the [`cg-scripts` repo](https://github.com/18F/cg-scripts/)
+- Install Cloud.gov dev scripts by cloning the [`cg-scripts` repo](https://github.com/18F/cg-scripts/)
   - `git clone https://github.com/18F/cg-scripts.git`
   - Note: may also be done via Github Desktop

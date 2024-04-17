@@ -7,9 +7,9 @@ sidenav: true
 title: Multi-factor authentication
 ---
 
-Users can authenticate to cloud.gov either via a SAML IDP managed by their agency or, if their agency has not configured an IDP, using the cloud.gov fallback IDP. The current fallback IDP is based on Shibboleth, with users stored in the Cloud Foundry UAA database.
+Users can authenticate to Cloud.gov either via a SAML IDP managed by their agency or, if their agency has not configured an IDP, using the Cloud.gov fallback IDP. The current fallback IDP is based on Shibboleth, with users stored in the Cloud Foundry UAA database.
 
-Problem: the current fallback IDP is solely maintained by the cloud.gov team, which means that it's missing useful features and in need of updates.
+Problem: the current fallback IDP is solely maintained by the Cloud.gov team, which means that it's missing useful features and in need of updates.
 
 Solution: use Cloud Foundry UAA with MFA as the fallback IDP, and deprecate Shibboleth.
 

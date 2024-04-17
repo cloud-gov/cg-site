@@ -11,7 +11,7 @@ There are a few guidelines and restrictions to be aware of when dealing with lar
 
 ## General Guidelines
 
-Due to restrictions imposed by Github and cloud.gov, as well as the internal infrastructure of Pages, sometimes builds fail when running out of disk space. This usually shows up as an error in build logs like `"Disk quota exceeded"` or `"No space left on device"`. The Pages team is looking into longer-term upgrades to help ease these restrictions. In the meantime, here are a few general rules and tips:
+Due to restrictions imposed by Github and Cloud.gov, as well as the internal infrastructure of Pages, sometimes builds fail when running out of disk space. This usually shows up as an error in build logs like `"Disk quota exceeded"` or `"No space left on device"`. The Pages team is looking into longer-term upgrades to help ease these restrictions. In the meantime, here are a few general rules and tips:
 - Regular build container provide 2GB of total user space. Because dependencies like those included in your `Gemfile` or `package.json` will be installed here, it's a good rule of thumb to keep your total Github repository size under 1GB.
   - You can minimize your dependency size by removing development dependencies from `package.json` and using using [`npx`](https://www.npmjs.com/package/npx) to call development scripts.
   - You can also minimize your total build size by optimizing images and compressing files that are intended for download.

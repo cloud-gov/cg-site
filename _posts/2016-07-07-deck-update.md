@@ -6,7 +6,7 @@ redirect_from:
   - /updates/2016-07-07-deck-update/
 ---
 
-Today we released a new version of the [cloud.gov Deck (now Dashboard)](https://dashboard.cloud.gov/). The best part is invisible: we refactored the codebase so we can improve it much faster than we could with the old version. But it has visible changes too, so here’s what’s new, what we have in mind, and how to tell us what you think.
+Today we released a new version of the [Cloud.gov Deck (now Dashboard)](https://dashboard.cloud.gov/). The best part is invisible: we refactored the codebase so we can improve it much faster than we could with the old version. But it has visible changes too, so here’s what’s new, what we have in mind, and how to tell us what you think.
 <!--more-->
 
 We'll keep the [old Deck](https://console.cloud.gov/) around for about a week and then will redirect it to this new version. Let us know if this would cause problems for you.
@@ -14,7 +14,7 @@ We'll keep the [old Deck](https://console.cloud.gov/) around for about a week an
 ### What's new and different
 
 * **Name:** We took this opportunity to rename it from the “Deck” to the “Dashboard”, since that’s what people usually call it.
-* **Style:** It fits into the overall cloud.gov style and navigation! So for example, when you’re in the Dashboard troubleshooting something, you can easily go look at [documentation]({{ site.baseurl }}/docs/) and [status](https://cloudgov.statuspage.io/).
+* **Style:** It fits into the overall Cloud.gov style and navigation! So for example, when you’re in the Dashboard troubleshooting something, you can easily go look at [documentation]({{ site.baseurl }}/docs/) and [status](https://cloudgov.statuspage.io/).
 * **Navigation:** Navigating to your orgs, spaces, and apps is simpler: the sidebar displays a straightforward list of the orgs and spaces in your account, along with the marketplaces available for your orgs. You won’t have to click as many menus to do common tasks.
 * **Labels:** Data about your apps has unit labels to identify whether numbers are in GB or MB.
 * **Code:** The Dashboard's refactored codebase has better tests and less repetition.
@@ -31,11 +31,11 @@ We'll keep the [old Deck](https://console.cloud.gov/) around for about a week an
 
 As we figure out next steps, we know that people want the Dashboard to help them:
 
-* Understand how to use cloud.gov
+* Understand how to use Cloud.gov
 * Troubleshoot apps that are having problems
 * Do more tasks that are only available on the command line
 * Get insight into quotas and billing
 
 ### We’d like your thoughts
 
-Everyone can [file issues](https://github.com/18F/cg-deck/issues) for bugs and suggestions. If you're in 18F, come talk to us about the Dashboard in [#cloud-gov-navigator](https://gsa-tts.slack.com/messages/cloud-gov-navigator/). If you're a cloud.gov user outside 18F, you can send thoughts and questions to us at [support@cloud.gov](mailto:support@cloud.gov).
+Everyone can [file issues](https://github.com/18F/cg-deck/issues) for bugs and suggestions. If you're in 18F, come talk to us about the Dashboard in [#cloud-gov-navigator](https://gsa-tts.slack.com/messages/cloud-gov-navigator/). If you're a Cloud.gov user outside 18F, you can send thoughts and questions to us at [support@cloud.gov](mailto:support@cloud.gov).

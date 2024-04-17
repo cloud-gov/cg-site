@@ -143,7 +143,7 @@ var client = new elasticsearch.Client({
 **config/initializers/elasticsearch.rb**
 
 ```ruby
-# we use "production" env for all things at cloud.gov
+# we use "production" env for all things at Cloud.gov
 if Rails.env.production?
   vcap = ENV["VCAP_SERVICES"]
   vcap_config = JSON.parse(vcap)

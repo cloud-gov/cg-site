@@ -1,11 +1,11 @@
 ---
 layout: post
 date: May 26th 2022
-title: "May 26th cloud.gov Change Log"
-excerpt: The cloud.gov team is working on providing change logs so everyone can see new features and updates.
+title: "May 26th Cloud.gov Change Log"
+excerpt: The Cloud.gov team is working on providing change logs so everyone can see new features and updates.
 ---
 
-Happy end of May! The cloud.gov team is working on providing change logs so everyone can see new features and updates. Highlights this time include new stemcells.
+Happy end of May! The Cloud.gov team is working on providing change logs so everyone can see new features and updates. Highlights this time include new stemcells.
 
 # Change Log
 

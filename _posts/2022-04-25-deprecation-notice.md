@@ -5,13 +5,13 @@ title: "Deprecation Notice: Shared Database Service Instances"
 excerpt: Important change to service offerings in the database service
 ---
 
-This message is to let you know about the planned deprecation of the shared instance plans in cloud.gov’s relational database service.
+This message is to let you know about the planned deprecation of the shared instance plans in Cloud.gov’s relational database service.
 
-## What is happening and what is the impact on cloud.gov customers?
+## What is happening and what is the impact on Cloud.gov customers?
 
 As of April 29, 2022, shared instance plans will no longer be available as a choice for creating new database instances.  Customers will only be able to choose from the dedicated service plans.  Sandbox accounts will only have access to the micro-psql and small-mysql service plans.
 
-## What do cloud.gov customers need to do?
+## What do Cloud.gov customers need to do?
 
 At this time, customers who are currently running shared database server instances will need to migrate to a dedicated instance plan.  To perform a migration, a customer must export their existing database and restore it into a new instance created with a dedicated service plan.  We have [instructions on how to export and restore a database](https://cloud.gov/docs/services/relational-database/#exporting-a-database) on our website.
 
@@ -28,6 +28,6 @@ Customers can begin using the new service plans right away when creating a new d
 - Converting existing shared instance plans to dedicated instance plans is not possible; you must manually backup and restore your database
 - Converting  database engines for existing instances (e.g., PostgreSQL and MySQL) is not possible; you must switch between plans for the same database engine
 
-Additionally, we have also updated our documentation to include [all of the service plans we currently offer in cloud.gov](https://cloud.gov/docs/services/relational-database/#plans) and which plans are available in sandbox accounts.
+Additionally, we have also updated our documentation to include [all of the service plans we currently offer in Cloud.gov](https://cloud.gov/docs/services/relational-database/#plans) and which plans are available in sandbox accounts.
 If you have any questions or concerns, please contact us at support@cloud.gov.
 

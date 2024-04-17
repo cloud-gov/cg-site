@@ -8,19 +8,19 @@ redirect_from:
 title: Managing user access to orgs and spaces
 ---
 
-## Make sure the user has a cloud.gov account
+## Make sure the user has a Cloud.gov account
 
-Anyone with a .mil or .gov account can [sign up for their own cloud.gov account]({{ site.baseurl }}/sign-up/) with a sandbox space in their agency's cloud.gov sandbox org.
+Anyone with a .mil or .gov account can [sign up for their own Cloud.gov account]({{ site.baseurl }}/sign-up/) with a sandbox space in their agency's Cloud.gov sandbox org.
 
-To invite someone to a non-sandbox org, including federal employees and federal contractors without .gov or .mil email addresses, an Org Manager can [send them an invite](https://account.fr.cloud.gov/invite). This may prompt you to log into your cloud.gov account first.
+To invite someone to a non-sandbox org, including federal employees and federal contractors without .gov or .mil email addresses, an Org Manager can [send them an invite](https://account.fr.cloud.gov/invite). This may prompt you to log into your Cloud.gov account first.
 
-Then, confirm with them that they have received and accepted the invite. Now they have a cloud.gov account!
+Then, confirm with them that they have received and accepted the invite. Now they have a Cloud.gov account!
 
 You can manage users [using the dashboard](#managing-roles-via-the-dashboard) or the [cf cli](#managing-roles-via-the-cli)
 
 ## Managing roles via the dashboard
 
-After a user has a cloud.gov account and has logged in, an Org Manager can assign roles using the [dashboard](https://dashboard.fr.cloud.gov/) as follows.
+After a user has a Cloud.gov account and has logged in, an Org Manager can assign roles using the [dashboard](https://dashboard.fr.cloud.gov/) as follows.
 
 Log into the [Dashboard (https://dashboard.fr.cloud.gov)](https://dashboard.fr.cloud.gov)
 
@@ -45,7 +45,7 @@ The user will immediately be granted access to (or removed from) the orgs and sp
 
 ## Managing roles via the cli
 
-After a user has a cloud.gov account and has logged in, an Org Manager can assign roles using the [cf cli]({{ site.baseurl }}{% link _docs/getting-started/setup.md %}#set-up-the-command-line).
+After a user has a Cloud.gov account and has logged in, an Org Manager can assign roles using the [cf cli]({{ site.baseurl }}{% link _docs/getting-started/setup.md %}#set-up-the-command-line).
 
 ### Adding and removing org roles
 

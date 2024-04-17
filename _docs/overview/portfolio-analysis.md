@@ -7,12 +7,12 @@ overview: true
 weight: 16
 ---
 
-cloud.gov is suitable for a wide range of applications, including websites and non-website applications for internal and public uses.
+Cloud.gov is suitable for a wide range of applications, including websites and non-website applications for internal and public uses.
 
-Here's a process you can follow to identify the applications in your portfolio ready to move to cloud.gov.
+Here's a process you can follow to identify the applications in your portfolio ready to move to Cloud.gov.
 <!--more-->
 
-For help interpreting this list or evaluating specific cases, please email the cloud.gov team at [inquiries@cloud.gov](mailto:inquiries@cloud.gov). The cloud.gov team can help you evaluate whether you application is easy to migrate to cloud.gov, as well as how to approach more complex applications that require more modification. 
+For help interpreting this list or evaluating specific cases, please email the Cloud.gov team at [inquiries@cloud.gov](mailto:inquiries@cloud.gov). The Cloud.gov team can help you evaluate whether you application is easy to migrate to Cloud.gov, as well as how to approach more complex applications that require more modification. 
 
 ## Identify applications with a compatible security impact level
 - FISMA Low
@@ -54,15 +54,15 @@ For help interpreting this list or evaluating specific cases, please email the c
   - S3
 
 ## Bring your own broker and User-Provided Services
-In addition to above, you can [extend your cloud.gov instance](https://cloud.gov/docs/services/intro/) by setting up your own broker or user-provided service. 
-* [Set up your own user-provided service](https://cloud.gov/docs/services/intro/#setting-up-user-provided-service-instances) on cloud.gov
+In addition to above, you can [extend your Cloud.gov instance](https://cloud.gov/docs/services/intro/) by setting up your own broker or user-provided service. 
+* [Set up your own user-provided service](https://cloud.gov/docs/services/intro/#setting-up-user-provided-service-instances) on Cloud.gov
 * [Set up a Simple Service Broker](https://github.com/cloud-gov/cf-byo-broker/tree/master/simple-service-broker)
 * [Set up a GCP Spanner Service Broker](https://github.com/cloud-gov/cf-byo-broker/tree/master/gcp-service-broker)
 
 ## Evaluate applications for cloud operations readiness
 Once you have a list of applications with a compatible impact level and technology stack, use these criteria to sort that list from those applications already ideally suited to running in a PaaS environment to those which are likely to require modification.
 
-Ideal applications follow as many of the [12-Factor App](https://12factor.net/) guidelines as possible. The more of the following questions you can answer with "yes", the better. Applications that follow these guidelines are easier to migrate between modern hosting environments; the guidelines aren't cloud.gov-specific except as noted!
+Ideal applications follow as many of the [12-Factor App](https://12factor.net/) guidelines as possible. The more of the following questions you can answer with "yes", the better. Applications that follow these guidelines are easier to migrate between modern hosting environments; the guidelines aren't Cloud.gov-specific except as noted!
 
 1. **Codebase**: Is the codebase tracked in version control?
 1. **Dependencies**: Are dependencies explicitly listed (such as package manager manifest)?
@@ -71,7 +71,7 @@ Ideal applications follow as many of the [12-Factor App](https://12factor.net/) 
 1. **Build, release, run**: Can you build the deployment artifacts outside of the deployment environment, for example in a continuous deployment system?
 1. **Processes**: Does the application keep its state in a backing service, rather than shared memory or filesystem?
 1. **Port binding**: Does the application listen for requests over HTTP?
-  - Applications that only accept requests over straight TCP are also possible, but may require additional work on the cloud.gov side to get going.
+  - Applications that only accept requests over straight TCP are also possible, but may require additional work on the Cloud.gov side to get going.
 1. **Concurrency**: Does the application scale correctly without modification when you run additional instances of it behind a load-balancer?
   - Applications that require instances to be aware of each other are also possible, but may require additional work to configure correctly.
 1. **Disposability**: Can the application start quickly and shutdown gracefully?
@@ -82,7 +82,7 @@ Ideal applications follow as many of the [12-Factor App](https://12factor.net/) 
 ## Watch out for networking complexity
 
 - Does the application need to access services that reside in a private network (for example in your data center or in another cloud service provider)?
-    - This is supported, but adds complexity because you may need to coordinate with your agency's network security staff and cloud.gov staff.
+    - This is supported, but adds complexity because you may need to coordinate with your agency's network security staff and Cloud.gov staff.
 
 ## What now?
-Now that you have a sense of which applications are compatible with cloud.gov, and which will require more effort or are more complex, identify those which have the highest cost-of-delay... That is, the systems which will deliver the most benefit and which will reduce operational and security overhead the most by being in the cloud. You may need to work with your agency leadership to come to a consensus about where there's the most pain to be relieved or the most gain to be received, from the mission and financial (rather than technical) side.
+Now that you have a sense of which applications are compatible with Cloud.gov, and which will require more effort or are more complex, identify those which have the highest cost-of-delay... That is, the systems which will deliver the most benefit and which will reduce operational and security overhead the most by being in the cloud. You may need to work with your agency leadership to come to a consensus about where there's the most pain to be relieved or the most gain to be received, from the mission and financial (rather than technical) side.

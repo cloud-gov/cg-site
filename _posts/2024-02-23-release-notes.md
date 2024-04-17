@@ -1,15 +1,15 @@
 ---
 layout: post
 date: February 23rd 2024
-title: "February 23rd cloud.gov Change Log"
-excerpt: The cloud.gov team is working on providing change logs so everyone can see new features and updates.
+title: "February 23rd Cloud.gov Change Log"
+excerpt: The Cloud.gov team is working on providing change logs so everyone can see new features and updates.
 ---
 
 # Change Log 
 
 ## Before digging into the changes...
 
-* Reminder: Please contact support@cloud.gov to schedule your RDS upgrades if you have not already done so.
+* Reminder: Please contact support@Cloud.gov to schedule your RDS upgrades if you have not already done so.
 * On February 29th at 9AM ET we'll be performing RDS upgrades on our own databases, we're all in the same boat!  In lower environments we've seen a ~5 minute unavailability while the RDS instances upgrade and expect similar results for production.  The scheduled maintenance can be followed at [https://cloudgov.statuspage.io/incidents/kk7t7lrm2jln](https://cloudgov.statuspage.io/incidents/kk7t7lrm2jln) 
 * The default amount of memory for staging applications has been increased from 1GB to 2GB to attempt to mitigate staging OOM issues.  This is a temporary solution while we work to identify the underlying issue.
 
@@ -17,7 +17,7 @@ excerpt: The cloud.gov team is working on providing change logs so everyone can 
 ## Customer Facing Changes
 ---
 
-The audience for this section is developers who maintain applications on cloud.gov and may need to respond to stack or buildpack changes.
+The audience for this section is developers who maintain applications on Cloud.gov and may need to respond to stack or buildpack changes.
 
 ### CF-Deployment - v37.4.0 to v38.1.0
 

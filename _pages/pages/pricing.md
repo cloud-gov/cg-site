@@ -2,7 +2,7 @@
 permalink: /pages/pricing/
 layout: page
 navigation: pages
-title: cloud.gov Pages - Pricing
+title: Cloud.gov Pages - Pricing
 ---
 
 <section class="usa-section">

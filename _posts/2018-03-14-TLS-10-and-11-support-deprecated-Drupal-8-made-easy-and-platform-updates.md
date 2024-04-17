@@ -7,18 +7,18 @@ redirect_from:
 ---
 
 ### Upcoming breaking change
-- **We will remove support for TLS 1.0 and 1.1 connections to all applications on cloud.gov on March 30, so that all connections must use TLS 1.2**. TLS 1.0 and 1.1 are outdated versions of the encryption protocol for HTTPS connections, and federal standards require federal systems to stop using them ([see FedRAMP TLS Requirements](https://www.fedramp.gov/assets/resources/documents/CSP_TLS_Requirements.pdf)). After this change, your applications will be inaccessible for anyone using a client device that requires TLS 1.1 or lower. We estimate this change will block less than 1 percent of traffic that reaches applications hosted on cloud.gov today. It’s probably required for your applications by your own agency as well, but if you have any concerns or questions, please [contact us]({{ site.baseurl }}/docs/help/).
+- **We will remove support for TLS 1.0 and 1.1 connections to all applications on Cloud.gov on March 30, so that all connections must use TLS 1.2**. TLS 1.0 and 1.1 are outdated versions of the encryption protocol for HTTPS connections, and federal standards require federal systems to stop using them ([see FedRAMP TLS Requirements](https://www.fedramp.gov/assets/resources/documents/CSP_TLS_Requirements.pdf)). After this change, your applications will be inaccessible for anyone using a client device that requires TLS 1.1 or lower. We estimate this change will block less than 1 percent of traffic that reaches applications hosted on Cloud.gov today. It’s probably required for your applications by your own agency as well, but if you have any concerns or questions, please [contact us]({{ site.baseurl }}/docs/help/).
 
 ### Announcements
 
-- **Join us at the [Cloud Foundry Summit](https://www.cloudfoundry.org/event/nasummit2018/)** on April 18-20 in Boston. Members of the cloud.gov team will present at this gathering of people who use and run platforms—like cloud.gov—that are based on the Cloud Foundry open source project. It includes [government-focused sessions](https://cfna18.sched.com/overview/type/Government+%26+Wild+Card) and training opportunities that may be useful to you and your team.
+- **Join us at the [Cloud Foundry Summit](https://www.cloudfoundry.org/event/nasummit2018/)** on April 18-20 in Boston. Members of the Cloud.gov team will present at this gathering of people who use and run platforms—like Cloud.gov—that are based on the Cloud Foundry open source project. It includes [government-focused sessions](https://cfna18.sched.com/overview/type/Government+%26+Wild+Card) and training opportunities that may be useful to you and your team.
 
-- **We invite research volunteers** to help us improve cloud.gov. To participate, click on the embedded sign-up form at the bottom of the [home page](https://cloud.gov).
+- **We invite research volunteers** to help us improve Cloud.gov. To participate, click on the embedded sign-up form at the bottom of the [home page](https://cloud.gov).
 
 
 ### Added
 
-- **We’ve made a demo showing how easy it is to [deploy Drupal 8 to cloud.gov](https://github.com/18F/cf-ex-drupal)**. 
+- **We’ve made a demo showing how easy it is to [deploy Drupal 8 to Cloud.gov](https://github.com/18F/cf-ex-drupal)**. 
 
 - **We’ve provided [a guide]({{ site.baseurl }}/docs/compliance/auditing-activity/)** explaining how to generate audit logs for events such as role changes, service bindings, and 75+ other events.  
 

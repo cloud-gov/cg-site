@@ -2,7 +2,7 @@
 permalink: /pages/features/
 layout: page
 navigation: pages
-title: cloud.gov Pages - Features
+title: Cloud.gov Pages - Features
 ---
 
 <section class="usa-section">
@@ -86,7 +86,7 @@ title: cloud.gov Pages - Features
     <div class="tablet:grid-col-6 usa-prose">
       <h4>Federally compliant from the start</h4>
       <ul>
-        <li>We are built on the FedRAMP-certified cloud.gov platform and Amazon Web Services GovCloud infrastructure.</li>
+        <li>We are built on the FedRAMP-certified Cloud.gov platform and Amazon Web Services GovCloud infrastructure.</li>
         <li>Protected by multiple levels of authentication.</li>
         <li>We handle vulnerability scanning and penetration testing for you.</li>
       </ul>

@@ -6,7 +6,7 @@ redirect_from:
   - /updates/2019-05-13-cflinuxfs2-final-warning/
 ---
 
-**Background:** [We announced on February 26]({{ site.baseurl }}/updates/2019-02-26-quarterly-update/) that cloud.gov would remove support for the cflinuxfs2 stack (the operating system image for applications). This was the default stack for cloud.gov applications deployed before April 15. On April 15 we set the default stack for new applications to cflinuxfs3.
+**Background:** [We announced on February 26]({{ site.baseurl }}/updates/2019-02-26-quarterly-update/) that Cloud.gov would remove support for the cflinuxfs2 stack (the operating system image for applications). This was the default stack for Cloud.gov applications deployed before April 15. On April 15 we set the default stack for new applications to cflinuxfs3.
 
 **The change we’re making:** We will disable support for the outdated cflinuxfs2 stack on Tuesday May 21. Before we make the change, we will set any application still using the cflinuxfs2 stack to use cflinuxfs3, then restage it. There’s a risk that these applications will have a compatibility problem with cflinuxfs3 that prevents them from restaging, starting, and operating correctly, which would cause downtime until the application owner updates it.
 
@@ -20,7 +20,7 @@ Without action, these applications will be subject to risk of extended downtime 
 Here are three ways to inspect your applications to see if they're running cflinuxfs2:
 
 1. You can inspect each app individually using the CF CLI by running `cf app YOUR-APPNAME-HERE` and looking for the `stack:` line in the output.
-1. You can inspect the apps individually using the [beta cloud.gov dashboard](https://dashboard-beta.fr.cloud.gov/applications) and looking for the `Build info:` line in the application details.
+1. You can inspect the apps individually using the [beta Cloud.gov dashboard](https://dashboard-beta.fr.cloud.gov/applications) and looking for the `Build info:` line in the application details.
 1. You can inspect all your apps at once by installing the [`stack-auditor` CLI plugin](https://github.com/cloudfoundry/stack-auditor) and running `cf audit-stack`.
 
 We are also explicitly emailing people with administrative control over applications that are still using cflinuxfs2.

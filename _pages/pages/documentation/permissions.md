@@ -10,9 +10,9 @@ sidenav: pages-documentation
 ## Initial access
 
 ### Personal access
-Users can be granted access to cloud.gov Pages in one of two ways:
+Users can be granted access to Cloud.gov Pages in one of two ways:
 
-1. Pages Users with the `manager` role in a Pages Organization can “invite” users to their Pages Organization. If the invited user is not currently a Pages User, a cloud.gov UAA User is created for them. Once the UAA User accepts the invitation to join UAA and completes the authentication process with their chosen IdP, they are allowed access to the Pages Application. Additionally, once the UAA User is created, the corresponding Pages User is granted access to the appropriate Pages Organization, allowing the Pages User access to the organization’s corresponding Pages Sites.
+1. Pages Users with the `manager` role in a Pages Organization can “invite” users to their Pages Organization. If the invited user is not currently a Pages User, a Cloud.gov UAA User is created for them. Once the UAA User accepts the invitation to join UAA and completes the authentication process with their chosen IdP, they are allowed access to the Pages Application. Additionally, once the UAA User is created, the corresponding Pages User is granted access to the appropriate Pages Organization, allowing the Pages User access to the organization’s corresponding Pages Sites.
 
 1. When a Pages Operator creates a new Pages Organization in the Pages Application, a user will be designated as the first `manager` for the Pages Organization. If the user is not already a Pages User, the user follows the same process as in 1.
 
@@ -41,12 +41,12 @@ Pages Users within an Organization will be able to see all of the Sites in the O
 
 ## User Acceptance
 
-As a new user to the platform you will be sent an invitation via email. The link in the email will take you directly to the cloud.gov login page to authenticate your credentials.  You will need to create a cloud.gov account and then use these credentials to login to Pages.
+As a new user to the platform you will be sent an invitation via email. The link in the email will take you directly to the Cloud.gov login page to authenticate your credentials.  You will need to create a Cloud.gov account and then use these credentials to login to Pages.
 
-\*Note if a user already belongs to these agencies FDIC, EPA, NIH, GSA, DOJ, OMB or has existing cloud.gov credentials they can use their existing account login information to authenticate into Pages.
+\*Note if a user already belongs to these agencies FDIC, EPA, NIH, GSA, DOJ, OMB or has existing Cloud.gov credentials they can use their existing account login information to authenticate into Pages.
 
 
-Netlify CMS users **must** login to pages.cloud.gov prior to using the content editor.
+Netlify CMS users **must** login to pages.Cloud.gov prior to using the content editor.
 
 ## Site permissions
 

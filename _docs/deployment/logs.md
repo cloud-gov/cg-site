@@ -7,7 +7,7 @@ redirect_from:
 title: Logs
 ---
 
-For logs to be captured by cloud.gov, your application should be writing them to `STDOUT`/`STDERR`, rather than a log file – see the framework-specific guidance in the menu.
+For logs to be captured by Cloud.gov, your application should be writing them to `STDOUT`/`STDERR`, rather than a log file – see the framework-specific guidance in the menu.
 
 ## Current logs
 
@@ -93,4 +93,4 @@ Not seeing the logs you expect? Here are a few questions to ask yourself to help
 ### Logs front end ([logs.fr.cloud.gov](https://logs.fr.cloud.gov))
 
 1. Check the time period in the upper right corner, since the default is "Last 15 minutes". You may need to expand that time period to hours or days.
-1. Check [cloud.gov status](https://cloudgov.statuspage.io/) to see if the the logs front end is under scheduled maintenance.
+1. Check [Cloud.gov status](https://cloudgov.statuspage.io/) to see if the the logs front end is under scheduled maintenance.

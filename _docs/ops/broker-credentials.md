@@ -13,7 +13,7 @@ satisfy IA-5 with broker credential management. This level of detail seemed
 excessive for the SSP, so this is page is referenced in 10.1, under the 
 "Secrets" heading. -->
 
-This page is primarily for auditors who need to understand how the cloud.gov brokers, and related components, handle credentials so that they aren't stored or transmitted in the clear. All calls between entities are made over HTTPS, unless otherwise specified. The cloud.gov brokers follow the [Open Server Broker API standards](https://www.openservicebrokerapi.org/), as specified in the [Cloud Foundry Service Broker interface](https://docs.cloudfoundry.org/services/api.html).
+This page is primarily for auditors who need to understand how the Cloud.gov brokers, and related components, handle credentials so that they aren't stored or transmitted in the clear. All calls between entities are made over HTTPS, unless otherwise specified. The Cloud.gov brokers follow the [Open Server Broker API standards](https://www.openservicebrokerapi.org/), as specified in the [Cloud Foundry Service Broker interface](https://docs.cloudfoundry.org/services/api.html).
 
 This is specific to the operation of the [AWS Server Broker](https://github.com/cloud-gov/aws-broker). Other brokers will document their handling with their source code, as follows:
 
@@ -55,7 +55,7 @@ There are important environment variables that should be overriden inside the `m
 
 ## Instantiation
 
-The broker is deployed by Concourse CI onto CloudFoundry, using a manifest that is built by the cloud.gov secrets management system to specify the environment variables. When the app is deployed, Concourse [registers](https://docs.cloudfoundry.org/services/managing-service-brokers.html#register-broker) the broker, specifying the AUTH_USER and AUTH_PASS.
+The broker is deployed by Concourse CI onto CloudFoundry, using a manifest that is built by the Cloud.gov secrets management system to specify the environment variables. When the app is deployed, Concourse [registers](https://docs.cloudfoundry.org/services/managing-service-brokers.html#register-broker) the broker, specifying the AUTH_USER and AUTH_PASS.
 
 The CF Cloud Controller stores the configuration for the app, including these environment variables, in an encrypted database table on the CCDB, as described in [Cloud Foundry security concepts](https://docs.cloudfoundry.org/concepts/security.html). The `aws-broker` app does not write these to static storage since Cloud Foundry makes them available as environment variables.
 

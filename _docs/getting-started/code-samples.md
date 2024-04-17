@@ -11,7 +11,7 @@ sidenav: true
 
 ##### Install the CloudFoundry command line interface (CLI)
 
-Since cloud.gov is based on the open-source Cloud Foundry project, it uses the Cloud Foundry CLI. Download and install the CLI for your system:
+Since Cloud.gov is based on the open-source Cloud Foundry project, it uses the Cloud Foundry CLI. Download and install the CLI for your system:
 
 * [Windows (64-bit)](https://cli.run.pivotal.io/stable?release=windows64&source=github)
 * [Mac (64-bit)](https://cli.run.pivotal.io/stable?release=macosx64&source=github)
@@ -23,9 +23,9 @@ Test your install with following command:
 
 #### Deploy the sample app
 
-Now that you have your account and the CLI installed, let’s deploy a Java web application by downloading the application code, connecting to cloud.gov, and “pushing” the application.
+Now that you have your account and the CLI installed, let’s deploy a Java web application by downloading the application code, connecting to Cloud.gov, and “pushing” the application.
 
-##### Download the application code from cloud.gov's GitHub repository
+##### Download the application code from Cloud.gov's GitHub repository
 
 If you have Git installed:
 
@@ -37,9 +37,9 @@ If you don’t have Git installed, download [`main.zip`](https://github.com/clou
 
 `cd cf-sample-app-spring-main`
 
-##### Connect to cloud.gov
+##### Connect to Cloud.gov
 
-`cf login -a https://api.fr.cloud.gov --sso`
+`cf login -a https://api.fr.Cloud.gov --sso`
 
 Complete the login in your browser at [https://login.fr.cloud.gov/passcode](https://login.fr.cloud.gov/passcode). You’ll get a one-time passcode, which you then paste into your terminal.
 
@@ -47,7 +47,7 @@ Complete the login in your browser at [https://login.fr.cloud.gov/passcode](http
 
 `cf push`
 
-The `push` command will upload your sample app, prepare it for cloud.gov, then after a couple minutes tell you what URL to visit in your browser. Look for the `routes:` line, as in this example output:
+The `push` command will upload your sample app, prepare it for Cloud.gov, then after a couple minutes tell you what URL to visit in your browser. Look for the `routes:` line, as in this example output:
 
 `cf push`
 
@@ -74,7 +74,7 @@ Use your browser to visit the `routes:` from the push command (in the above exam
 
 Congratulations! You now have a running webapp built on the [Java Spring framework.](https://spring.io)
 
-##### Exploring other cloud.gov features
+##### Exploring other Cloud.gov features
 
 Visit the dashboard — [https://dashboard.fr.cloud.gov/](https://dashboard.fr.cloud.gov/) — to see your options for managing your application via your browser.
 
@@ -88,7 +88,7 @@ If you’re done, you can delete your app by running `cf delete <APPNAME>` (it�
 
 #### Install the CloudFoundry command line interface (CLI)
 
-Since cloud.gov is based on the open-source Cloud Foundry project, it uses the Cloud Foundry CLI. Download and install the CLI for your system:
+Since Cloud.gov is based on the open-source Cloud Foundry project, it uses the Cloud Foundry CLI. Download and install the CLI for your system:
 
 *   [Windows (64-bit)](https://cli.run.pivotal.io/stable?release=windows64&source=github)
 *   [Mac (64-bit)](https://cli.run.pivotal.io/stable?release=macosx64&source=github)
@@ -100,9 +100,9 @@ Test your install with following command:
 
 #### Deploy a Hello World app
 
-Now that you have your account and the CLI installed, let’s download the "Hello World" samples, choose one, connect to cloud.gov and "push" the application code.
+Now that you have your account and the CLI installed, let’s download the "Hello World" samples, choose one, connect to Cloud.gov and "push" the application code.
 
-##### Download the Hello World code examples from cloud.gov's GitHub repository
+##### Download the Hello World code examples from Cloud.gov's GitHub repository
 
 If you have Git installed:
 
@@ -125,9 +125,9 @@ E.g., `cd python-flask`
 
 Regardless of the framework you choose, the remaining steps are all the same.
 
-##### Connect to cloud.gov
+##### Connect to Cloud.gov
 
-`cf login -a https://api.fr.cloud.gov --sso`
+`cf login -a https://api.fr.Cloud.gov --sso`
 
 Complete the login in your browser at [https://login.fr.cloud.gov/passcode](https://login.fr.cloud.gov/passcode). You’ll get a one-time passcode, which you then paste into your terminal.
 
@@ -135,7 +135,7 @@ Complete the login in your browser at [https://login.fr.cloud.gov/passcode](http
 
 `cf push`
 
-The `push` command will upload your sample app, prepare it for cloud.gov, then after a couple minutes tell you what URL to visit in your browser. Look for the `routes:` line, as in this example output:
+The `push` command will upload your sample app, prepare it for Cloud.gov, then after a couple minutes tell you what URL to visit in your browser. Look for the `routes:` line, as in this example output:
 
 `cf push`
 
@@ -161,7 +161,7 @@ Use your browser to visit the `routes:` from the push command (in the above exam
 
 Congratulations! You now have a running web app built on the language and framework of your choice.
 
-##### Exploring other cloud.gov features
+##### Exploring other Cloud.gov features
 
 Visit the dashboard — [https://dashboard.fr.cloud.gov/](https://dashboard.fr.cloud.gov/) — to see your options for managing your application via your browser.
 
@@ -171,7 +171,7 @@ If you’re done, you can delete your app by running `cf delete <APPNAME>` (it�
 
 ### Additional resources
 
-If you've run into any issues with these tutorials, please [Contact support at cloud.gov](mailto:support@cloud.gov). We're happy to help.
+If you've run into any issues with these tutorials, please [Contact support at Cloud.gov](mailto:support@cloud.gov). We're happy to help.
 
 Did we miss a tip or useful resource that you think we should add? [Submit a suggestion on GitHub](https://github.com/cloud-gov/cg-site/issues/new) or [send us an email](mailto:inquiries@cloud.gov?subject=%5BSuggestion%5D%20&body=%0A%0A%0A%0ARefcode:%20quickstart).
 
@@ -190,4 +190,4 @@ Did we miss a tip or useful resource that you think we should add? [Submit a sug
 Want more?
 ----------
 
-Upgrade to a paid package to get full access to the platform and permanent spaces for hosting longer term demos and web applications in production. Email us at [inquiries@cloud.gov]({{site.inquiries_email}}) to learn more about what cloud.gov can do.
+Upgrade to a paid package to get full access to the platform and permanent spaces for hosting longer term demos and web applications in production. Email us at [inquiries@cloud.gov]({{site.inquiries_email}}) to learn more about what Cloud.gov can do.

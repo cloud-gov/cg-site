@@ -10,22 +10,22 @@ excerpt: cflinuxfs4 buildpacks are here and cflinuxfs3 buildpacks are retiring, 
 # Deprecation Notice for cflinuxfs3 stack and cflinuxfs3 Buildpacks
 
 
-The base OS image used by your cloud.gov applications is called a "stack". The stack we’ve provided to date is called `cflinuxfs3`, and it’s based on Ubuntu 18.04 LTS, released originally in mid 2018 with continuous security updates since then. `cflinuxfs4` is a new OS image based on Ubuntu 22.04 LTS, and is now default stack in cloud.gov. 
+The base OS image used by your Cloud.gov applications is called a "stack". The stack we’ve provided to date is called `cflinuxfs3`, and it’s based on Ubuntu 18.04 LTS, released originally in mid 2018 with continuous security updates since then. `cflinuxfs4` is a new OS image based on Ubuntu 22.04 LTS, and is now default stack in Cloud.gov. 
 
 ### Important Dates
-Ubuntu 18.04 will likely no longer receive security updates in May, so we will stop supporting the cflinuxfs3 stack and buildpacks in cloud.gov.  What this means is: 
+Ubuntu 18.04 will likely no longer receive security updates in May, so we will stop supporting the cflinuxfs3 stack and buildpacks in Cloud.gov.  What this means is: 
 
  - On **June 29th, 2023** the platform will no longer provide cflinuxfs3 buildpacks. Applications will need to reference an external buildpack to continue to push updated versions of cflinuxfs3 applications.  Existing cflinuxfs3 applications will continue to restart without intervention.
  - On **September 28th, 2023**, all support for cflinuxfs3 will end and all applications still on this stack will stop and cannot be started unless migrated to cflinuxfs4.
 
 
-Ubuntu 18.04 will likely no longer receive security updates in May, so we will stop supporting cflinuxfs3 in cloud.gov May 10th.
+Ubuntu 18.04 will likely no longer receive security updates in May, so we will stop supporting cflinuxfs3 in Cloud.gov May 10th.
 
 ### Who is impacted?
 
 If you push your Cloud Foundry applications as Docker containers with `cf push --docker-image `, these changes do not impact you.
 
-However, most cloud.gov customers deploy their applications using buildpacks, and their apps don’t have any dependency on the particular OS version that runs them. If that describes you and you have existing applications running on cloud.gov, this upgrade will impact you and you'll need to update the stack on your applications.
+However, most Cloud.gov customers deploy their applications using buildpacks, and their apps don’t have any dependency on the particular OS version that runs them. If that describes you and you have existing applications running on Cloud.gov, this upgrade will impact you and you'll need to update the stack on your applications.
 
 
 ### What should you do now for existing apps?

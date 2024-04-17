@@ -2,7 +2,7 @@
 permalink: /pages/
 layout: wide
 navigation: pages
-title: cloud.gov Pages
+title: Cloud.gov Pages
 redirect_from:
   - /pages/federalist-migration/
 
@@ -15,7 +15,7 @@ how_it_works:
     link_text: See how the Centers of Excellence (CoEs) used Pages to get new pages up quickly
   - name: Launch
     image: /assets/images/pages/launch-on-blue.svg
-    image_alt: Hand launching a secure website with cloud.gov
+    image_alt: Hand launching a secure website with Cloud.gov
     description: You focus on the content, we'll worry about the security, compliance, and deployment.
     link: /assets/documents/afwerx-success.pdf
     link_text: Learn how DoD leveraged the Pages platform to build their own template designs

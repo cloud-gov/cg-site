@@ -10,23 +10,23 @@ redirect_from:
   - /intro/security/auditing-contributing-security
 ---
 
-cloud.gov is built and maintained by a team within the General Services administration's Technology Transformation Services (TTS), which has an [open source policy](https://18f.gsa.gov/open-source-policy/) that guides our work: we use and develop open source software, and we encourage you to reuse and adapt our work.
+Cloud.gov is built and maintained by a team within the General Services administration's Technology Transformation Services (TTS), which has an [open source policy](https://18f.gsa.gov/open-source-policy/) that guides our work: we use and develop open source software, and we encourage you to reuse and adapt our work.
 
-cloud.gov is an open source project based on [Cloud Foundry](https://www.cloudfoundry.org/) with additional components built by our team and other community members. This includes using open source for security: We use a combination of [ClamAV](https://www.clamav.net), [AIDE](https://aide.github.io/) and [Snort](https://www.snort.org) on each system, with [OpenZAP](https://www.zaproxy.org) to do blackbox testing.  We also run [Prometheus](https://prometheus.io) and a full [ELK stack](https://www.elastic.co/elk-stack) with [ElastAlert](https://github.com/Yelp/elastalert) for additional monitoring and alerting. We do use a commercial tool for [CIS benchmarking](https://www.cisecurity.org/cis-benchmarks/) and further blackbox testing. We welcome you to audit our security or contribute to it — or to make any other kind of contribution, from documentation to design.
+Cloud.gov is an open source project based on [Cloud Foundry](https://www.cloudfoundry.org/) with additional components built by our team and other community members. This includes using open source for security: We use a combination of [ClamAV](https://www.clamav.net), [AIDE](https://aide.github.io/) and [Snort](https://www.snort.org) on each system, with [OpenZAP](https://www.zaproxy.org) to do blackbox testing.  We also run [Prometheus](https://prometheus.io) and a full [ELK stack](https://www.elastic.co/elk-stack) with [ElastAlert](https://github.com/Yelp/elastalert) for additional monitoring and alerting. We do use a commercial tool for [CIS benchmarking](https://www.cisecurity.org/cis-benchmarks/) and further blackbox testing. We welcome you to audit our security or contribute to it — or to make any other kind of contribution, from documentation to design.
 
 If you'd like to contribute security research, see our [vulnerability disclosure policy](https://www.gsa.gov/vulnerability-disclosure-policy).
 
-If you're interested in contributing to cloud.gov but not sure where to start, or if you have questions about contributing, feel free to join the [18F DevOps or open source chat channels](https://chat.18f.gov/) and explain your question. You can also open an issue with your question in a relevant repository.
+If you're interested in contributing to Cloud.gov but not sure where to start, or if you have questions about contributing, feel free to join the [18F DevOps or open source chat channels](https://chat.18f.gov/) and explain your question. You can also open an issue with your question in a relevant repository.
 
 To contribute to these repositories, you'll need to use [a GitHub account](https://help.github.com/articles/signing-up-for-a-new-github-account/), which is free to open and use. If you're part of the federal government, many agencies have approved use of public repository services such as GitHub ([some examples here](https://18f.gsa.gov/2016/08/08/facts-about-publishing-open-source-code-in-government/)).
 
 ## Repositories
 
-Here are many of our main repositories with components, tools, and configuration for the platform. This isn't a complete or fully up-to-date list; we intend to continuously update it, but sometimes we fall behind a bit. You can [find more cloud.gov repositories on GitHub](https://github.com/search?utf8=%E2%9C%93&q=user%3A18F+%28cf+OR+cg+OR+%22cloud+foundry%22+OR+cloud.gov%29+NOT+cfn+fork%3Atrue&type=Repositories&ref=advsearch&l=&l=).
+Here are many of our main repositories with components, tools, and configuration for the platform. This isn't a complete or fully up-to-date list; we intend to continuously update it, but sometimes we fall behind a bit. You can [find more Cloud.gov repositories on GitHub](https://github.com/search?utf8=%E2%9C%93&q=user%3A18F+%28cf+OR+cg+OR+%22cloud+foundry%22+OR+cloud.gov%29+NOT+cfn+fork%3Atrue&type=Repositories&ref=advsearch&l=&l=).
 
 Components run as applications on top of the platform, for users:
 
-- [cloud.gov website (this site)](https://github.com/cloud-gov/cg-site)
+- [Cloud.gov website (this site)](https://github.com/cloud-gov/cg-site)
 - [Dashboard](https://github.com/cloud-gov/cg-dashboard)
 - [Styles](https://github.com/cloud-gov/cg-style) (a library supporting the website and dashboard)
 
@@ -98,7 +98,7 @@ Optional Cloud Foundry CLI plugins offered to our team and customers:
 
 ## Public domain
 
-All components by the cloud.gov team (or other parts of 18F) are in the worldwide [public domain](https://github.com/cloud-gov/cg-site/blob/master/LICENSE.md). As stated in [CONTRIBUTING](https://github.com/cloud-gov/cg-site/blob/master/CONTRIBUTING.md) for our components:
+All components by the Cloud.gov team (or other parts of 18F) are in the worldwide [public domain](https://github.com/cloud-gov/cg-site/blob/master/LICENSE.md). As stated in [CONTRIBUTING](https://github.com/cloud-gov/cg-site/blob/master/CONTRIBUTING.md) for our components:
 
 > This project is in the public domain within the United States, and copyright and related rights in the work worldwide are waived through the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/).
 >

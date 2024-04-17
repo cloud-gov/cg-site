@@ -8,10 +8,10 @@ title: Production-ready guide
 weight: -90
 ---
 
-This is your guide to building production-ready apps on cloud.gov. Read this early and often, especially when you’re starting to consider a future project. It explains things you can do for reliable and responsive applications deployed on cloud.gov.
+This is your guide to building production-ready apps on Cloud.gov. Read this early and often, especially when you’re starting to consider a future project. It explains things you can do for reliable and responsive applications deployed on Cloud.gov.
 
 ## Core best practices
-To build consistent, healthy, production-ready applications on cloud.gov, incorporate the following practices into your development workflow from the beginning.
+To build consistent, healthy, production-ready applications on Cloud.gov, incorporate the following practices into your development workflow from the beginning.
 
 ### Configuration as code
 To ensure consistency and reproducibility, capture your application configuration in version control.
@@ -49,7 +49,7 @@ When running an application for development or testing, it is best to have a sep
 
 ### Prevent non-auditable changes to production apps
 
-All changes made to running production applications should be logged for auditing, which means that those changes should be made using commands in the cloud.gov dashboard, command line interface, or CF API (or automated commands in deployment scripts). By default, cloud.gov also allows [SSH access]({{ site.baseurl }}{% link _docs/management/using-ssh.md %}), which allows making changes that are harder to audit. This means you should disable SSH access to production applications.
+All changes made to running production applications should be logged for auditing, which means that those changes should be made using commands in the Cloud.gov dashboard, command line interface, or CF API (or automated commands in deployment scripts). By default, Cloud.gov also allows [SSH access]({{ site.baseurl }}{% link _docs/management/using-ssh.md %}), which allows making changes that are harder to audit. This means you should disable SSH access to production applications.
 
 You may need to document your restrictions for remote access to your applications for control AC-17 in your System Security Plan, and this is a restriction that you can document.
 
@@ -63,7 +63,7 @@ You want to receive alerts about application errors, downtime, and throughput is
 * There are many external services that provide alerting. For example, New Relic provides application availability monitoring with "Synthetics".
 
 ## Additional practices
-The following practices are very helpful to incorporate into most cloud.gov apps. Evaluate which ones you need for your team and users.
+The following practices are very helpful to incorporate into most Cloud.gov apps. Evaluate which ones you need for your team and users.
 
 ### Zero-downtime deploy
 Your application should be able to be deployed without any downtime. Be aware there are known issues if your application automatically does database migrations when deploying.
@@ -84,7 +84,7 @@ The best way to prevent performance issues is to enable caching on your applicat
 * You can use [S3 file storage]({{ site.baseurl }}{% link _docs/services/s3.md %}) for caches.
 
 ### Asset serving
-It's best not to serve static files from cloud.gov directly.
+It's best not to serve static files from Cloud.gov directly.
 
 #### How
 * You can [store your files in S3]({{ site.baseurl }}{% link _docs/services/s3.md %}) or point CloudFront to an assets folder so you serve your assets with a CDN.

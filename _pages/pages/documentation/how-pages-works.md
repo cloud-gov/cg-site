@@ -13,13 +13,13 @@ We use GitHub to manage our work on Pages. The main code repository for the Page
 
 ### Functional Repositories
 
-- **[federalist](https://github.com/18F/federalist)** This is the core application for Pages and contains the frontend interface as well as the code that interacts with the GitHub API and sets up new Pages sites, including a GitHub webhook that triggers messages into the build queue through the app. It has a cloud.gov PostgreSQL database service instance for session storage and persistent data storage of users, sites, and logs.
+- **[federalist](https://github.com/18F/federalist)** This is the core application for Pages and contains the frontend interface as well as the code that interacts with the GitHub API and sets up new Pages sites, including a GitHub webhook that triggers messages into the build queue through the app. It has a Cloud.gov PostgreSQL database service instance for session storage and persistent data storage of users, sites, and logs.
 - **[federalist-builder](https://github.com/18F/federalist-builder)** This application launches build tasks for Pages in a Linux Garden container based on messages from a queue and contains scheduling logic.
 - **[federalist-proxy](https://github.com/18F/federalist-proxy)** This application serves as a proxy for the S3 bucket to which Pages deploys static content. It adds some required headers for compliance.
 - **[federalist-garden-build](https://github.com/18F/federalist-garden-build)** This container image contains the code to build Pages sites in Garden Linux containers.
 
 ### Documentation
-- **[cloud.gov Pages](https://github.com/cloud-gov/cg-site/_pages/pages/)** The documentation website.
+- **[Cloud.gov Pages](https://github.com/cloud-gov/cg-site/_pages/pages/)** The documentation website.
 
 ### Templates
 
@@ -28,7 +28,7 @@ We use GitHub to manage our work on Pages. The main code repository for the Page
 
 ## Architecture
 
-Pages is located on cloud.gov's GovCloud environment, which has [received FedRAMP certification](https://marketplace.fedramp.gov/index.html#/product/18f-cloudgov). [This blog post](https://18f.gsa.gov/2017/02/02/cloud-gov-is-now-fedramp-authorized/) explains more about FedRAMP.
+Pages is located on Cloud.gov's GovCloud environment, which has [received FedRAMP certification](https://marketplace.fedramp.gov/index.html#/product/18f-cloudgov). [This blog post](https://18f.gsa.gov/2017/02/02/cloud-gov-is-now-fedramp-authorized/) explains more about FedRAMP.
 
 The diagram for Federalist's architecture is below. It's not intended for general audiences and is focused on concisely showing all of the components of Federalist as required for compliance. Please contact us with any questions: we aren't expecting this diagram to be useful by itself to gain an understanding of Federalist. [![Diagram of Federalist architecture]({{site.baseurl}}/assets/images/pages/Federalist System Diagram 3-8-18.png)]({{site.baseurl}}/assets/images/pages/Federalist System Diagram 3-8-18.png)
 
@@ -76,7 +76,7 @@ Message is deleted after a task is initiated
 - CF: -o federalist -s prod -n federalist-builder
 
 
-### cloud.gov Build Container Orchestration
+### Cloud.gov Build Container Orchestration
 
 Runs docker container tasks.
 

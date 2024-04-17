@@ -2,7 +2,7 @@
 permalink: /pages/federalist-migration/
 layout: page
 navigation: pages
-title: cloud.gov Pages - Federalist Migration
+title: Cloud.gov Pages - Federalist Migration
 ---
 
 <section class="usa-section">
@@ -32,7 +32,7 @@ title: cloud.gov Pages - Federalist Migration
     </div>
     <div class="tablet:grid-col-6 usa-prose">
       <h3>Authentication</h3>
-      <p>The way you authenticate to the platform will be changing. Instead of using your Github account, you will authenticate using cloud.gov’s authentication service. In some cases, this will allow you to leverage your agency’s existing identity infrastructure, otherwise, you will use an identity service provided by cloud.gov.</p>
+      <p>The way you authenticate to the platform will be changing. Instead of using your Github account, you will authenticate using Cloud.gov’s authentication service. In some cases, this will allow you to leverage your agency’s existing identity infrastructure, otherwise, you will use an identity service provided by Cloud.gov.</p>
     </div>
   </div>
   <div class="grid-row grid-gap margin-top-4">
@@ -57,7 +57,7 @@ title: cloud.gov Pages - Federalist Migration
     <div class="grid-row margin-top-4">
       <div class="tablet:grid-col-12 usa-prose">
         <p>
-          The primary task of migration is changing the way you authenticate. Instead of using your Github account, you will authenticate using cloud.gov’s authentication service. In some cases, this will allow you to leverage your agency’s existing identity infrastructure, otherwise, you will use an identity service provided by cloud.gov. If you would like to add your agency's identity provider, see our <a href="https://cloud.gov/docs/orgs-spaces/sso/">documentation on single sign-on</a>.
+          The primary task of migration is changing the way you authenticate. Instead of using your Github account, you will authenticate using Cloud.gov’s authentication service. In some cases, this will allow you to leverage your agency’s existing identity infrastructure, otherwise, you will use an identity service provided by Cloud.gov. If you would like to add your agency's identity provider, see our <a href="https://cloud.gov/docs/orgs-spaces/sso/">documentation on single sign-on</a>.
         </p>
         <p>
           You can migrate your account on your own or stop by weekly Pages office hours. You can receive the invite by notifying us at <a href="mailto:inquiries@cloud.gov">inquiries@cloud.gov</a>.
@@ -70,24 +70,24 @@ title: cloud.gov Pages - Federalist Migration
     <div class="grid-row grid-gap margin-top-4">
       <div class="tablet:grid-col-6 usa-prose">
         <p>
-          You will notice there are now two options for logging into Pages: Github and cloud.gov authentication. You will be able to authenticate with Github until October 15th, at which point cloud.gov authentication will be required.
+          You will notice there are now two options for logging into Pages: Github and Cloud.gov authentication. You will be able to authenticate with Github until October 15th, at which point Cloud.gov authentication will be required.
         </p>
       </div>
       <div class="tablet:grid-col-6 usa-prose">
-        <img alt="screenshot of pages.cloud.gov website login page" src="{{site.baseurl}}/assets/images/pages/federalist-migration-login.png"/>
+        <img alt="screenshot of pages.Cloud.gov website login page" src="{{site.baseurl}}/assets/images/pages/federalist-migration-login.png"/>
       </div>
     </div>
     <div class="grid-row grid-gap margin-top-4">
       <div class="tablet:grid-col-6 usa-prose">
         <p>
-          When logging in to Pages with Github, you will be prompted to create a cloud.gov account using your government or official contractor email. If you're using a .gov email address and your agency has an identity provider configured with cloud.gov, you will see an option to use this to authenticate. Once you have completed the cloud.gov authentication signup or login process, you will no longer be able to login with your Github account.
+          When logging in to Pages with Github, you will be prompted to create a Cloud.gov account using your government or official contractor email. If you're using a .gov email address and your agency has an identity provider configured with Cloud.gov, you will see an option to use this to authenticate. Once you have completed the Cloud.gov authentication signup or login process, you will no longer be able to login with your Github account.
         </p>
         <p>
           Please let us know if you have any questions at <a href="mailto:pages-support@cloud.gov">pages-support@cloud.gov</a>.
         </p>
       </div>
         <div class="tablet:grid-col-6 usa-prose">
-        <img alt="screenshot of pages.cloud.gov website account migration page" src="{{site.baseurl}}/assets/images/pages/federalist-migration-migrate.png"/>
+        <img alt="screenshot of pages.Cloud.gov website account migration page" src="{{site.baseurl}}/assets/images/pages/federalist-migration-migrate.png"/>
       </div>
     </div>
   </div>

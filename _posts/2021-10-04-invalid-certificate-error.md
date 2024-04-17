@@ -7,7 +7,7 @@ excerpt: A recent update by Let's Encrypt may cause some client issues when acce
 
 ### Bottom line up front
 
-The expiration of a Certificate Authority's root certificate may be causing some issues when client applications attempt to access sites on cloud.gov and Federalist (as well as other sites on the Internet). The issue disproportionately affects users with older operating systems and/or browsers, and fixing the issue is outside of our control.
+The expiration of a Certificate Authority's root certificate may be causing some issues when client applications attempt to access sites on Cloud.gov and Federalist (as well as other sites on the Internet). The issue disproportionately affects users with older operating systems and/or browsers, and fixing the issue is outside of our control.
 
 ### More details
 
@@ -18,7 +18,7 @@ The core issue is that on September 30, 2021, the `DST Root CA X3` expired. For 
 - A client with `DST Root CA X3` as a trust anchor but not `ISRG Root X1`, they will probably get a certificate validation error because `DST Root CA X3` expired earlier that day.
 - A client with **both** certs in their trust anchors may give up after constructing a chain to the expired `DST Root CA 3`, but most well-behaved clients will continue checking for a valid chain, and will find the chain to `ISRG Root X1`.
 
-However, either client configuration is wholly outside cloud.gov's control and users will need to address this issue manually or get help from their respective IT departments.
+However, either client configuration is wholly outside Cloud.gov's control and users will need to address this issue manually or get help from their respective IT departments.
 
 Some additional information may be available on the [Let's Encrypt community forum](https://community.letsencrypt.org/t/help-thread-for-dst-root-ca-x3-expiration-september-2021/149190).
 

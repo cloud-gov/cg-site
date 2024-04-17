@@ -9,10 +9,10 @@ redirect_from:
 New feature: Zero-setup persistent logs.
 <!--more-->
 
-Given the universal need for compliant logging, we've recently added a common logging facility to cloud.gov. Now, logs and events for every cloud.gov application are stored and indexed automatically, with zero setup required. 
+Given the universal need for compliant logging, we've recently added a common logging facility to Cloud.gov. Now, logs and events for every Cloud.gov application are stored and indexed automatically, with zero setup required. 
 
 For more information about this feature, please see [our documentation about logging]({{ site.baseurl }}/apps/logs/#historic-logs:6d6e87c8985e9c9e781f22ee066f5a45).
 
-Now that cloud.gov provides platform-level logging, the ELK service we previously provided will be deprecated. If you are still using it, we recommend you delete the instance whenever is convenient to reduce your resource usage (and hence costs).
+Now that Cloud.gov provides platform-level logging, the ELK service we previously provided will be deprecated. If you are still using it, we recommend you delete the instance whenever is convenient to reduce your resource usage (and hence costs).
 
 If you have feedback about this service, please don't hesitate to [contact us](mailto:support@cloud.gov).

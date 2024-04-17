@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Release of cloud.gov Pages Customer Responsibility Matrix (CRM)
+title: Release of Cloud.gov Pages Customer Responsibility Matrix (CRM)
 date: November 15, 2022
-excerpt: As part of the launch of cloud.gov Pages we are 
+excerpt: As part of the launch of Cloud.gov Pages we are 
   publishing the Pages-specific Customer Responsibility Matrix (CRM)
 ---
 
@@ -13,10 +13,10 @@ is replacing the Federalist offering, formerly at
 https://federalist.18f.gov. As part of that migration, we are
 publishing the **[Control Implementation Summary (CIS) + Customer Responsibility Matrix (CRM) + Control-by-Control Inheritance (.xlsx)]({{ site.baseurl }}/resources/cloud.gov-Pages-CIS-Worksheet.xlsx)**.
 The CRM is a summary of each Low security control and whether it
-is handled by cloud.gov, a shared responsibility, or a customer
+is handled by Cloud.gov, a shared responsibility, or a customer
 responsibility. It includes guidance on which controls a customer
-system can fully or partially inherit from cloud.gov Pages.
+system can fully or partially inherit from Cloud.gov Pages.
 
-We will release a CRM for the cloud.gov Pages Moderate impact controls in the near future. Updates to the cloud.gov Pages CRM will
+We will release a CRM for the Cloud.gov Pages Moderate impact controls in the near future. Updates to the Cloud.gov Pages CRM will
 be reflected on our [FedRAMP Tracker page]({{ site.baseurl }}/docs/overview/fedramp-tracker/)
 

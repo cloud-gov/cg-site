@@ -9,13 +9,13 @@ redirect_from:
   - /docs/help/
 ---
 
-### Want to use cloud.gov?
+### Want to use Cloud.gov?
 
-If you're interested in using cloud.gov, email [**{{site.email}}**]({{site.inquiries_email}}). We’ll schedule a call to answer your questions and help you [get started]({{ site.baseurl }}{% link _pages/sign-up.md %}).
+If you're interested in using Cloud.gov, email [**{{site.email}}**]({{site.inquiries_email}}). We’ll schedule a call to answer your questions and help you [get started]({{ site.baseurl }}{% link _pages/sign-up.md %}).
 
 If you have a U.S. federal government email address, you can [get access to a free sandbox space]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}).
 
-### Support for people who use cloud.gov
+### Support for people who use Cloud.gov
 
 Email [**{{site.support_email_address}}**]({{site.support_email}}). See our [customer service objectives page]({{ site.baseurl }}{% link _docs/overview/customer-service-objectives.md %}) for information about our support availability.
 
@@ -34,6 +34,6 @@ If you have a question that isn't on behalf of a U.S. government organization (s
 
 If you are part of a company asking a question to help prepare a response to a RFI/RFQ/RFP (or a similar proposal process), we will ask you to post your question [publicly as an issue on GitHub]({{site.github_url}}/issues/new) (requires a free GitHub account). We want to answer publicly so that our answer is available to all companies competing in that process.
 
-### Interested in working on cloud.gov?
+### Interested in working on Cloud.gov?
 
-Check out [joining TTS](https://join.tts.gsa.gov/) if you'd like to join cloud.gov or another TTS program.
+Check out [joining TTS](https://join.tts.gsa.gov/) if you'd like to join Cloud.gov or another TTS program.

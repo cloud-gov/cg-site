@@ -1,11 +1,11 @@
 ---
 layout: post
 date: February 4, 2022
-title: "February 4th cloud.gov Change Log"
-excerpt: The cloud.gov team is working on providing change logs so everyone can see new features and updates.
+title: "February 4th Cloud.gov Change Log"
+excerpt: The Cloud.gov team is working on providing change logs so everyone can see new features and updates.
 ---
 
-The cloud.gov team is working on providing change logs so everyone can see new features and updates. Highlights this month include changes to several of the platform buildpacks.
+The Cloud.gov team is working on providing change logs so everyone can see new features and updates. Highlights this month include changes to several of the platform buildpacks.
 
 # Change Log
 ## Customer Facing

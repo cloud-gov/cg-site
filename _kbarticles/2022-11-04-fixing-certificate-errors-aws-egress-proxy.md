@@ -7,7 +7,7 @@ excerpt: How to fix certificate errors if you are using the AWS CLI from an appl
 
 If you are using the [`cg-egress-proxy`](https://github.com/GSA/cg-egress-proxy) to restrict the egress traffic for your application, you may experience certificate validation errors which prevent you from [interacting with brokered AWS services using the CLI](https://cloud.gov/docs/services/s3/#interacting-with-your-s3-bucket-from-outside-cloudgov).
 
-The cause of the issue is that AWS CLI is overriding certificates that cloud.gov provides and preventing the AWS CLI from being able to validate TLS connections, thus causing CLI commands to fail.
+The cause of the issue is that AWS CLI is overriding certificates that Cloud.gov provides and preventing the AWS CLI from being able to validate TLS connections, thus causing CLI commands to fail.
 
 To force the AWS CLI to use the system CA cert stores, you can add this environment variable:
 

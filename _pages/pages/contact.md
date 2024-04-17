@@ -2,7 +2,7 @@
 permalink: /pages/contact/
 layout: page
 navigation: pages
-title: cloud.gov Pages - Contact
+title: Cloud.gov Pages - Contact
 ---
 
 
@@ -21,7 +21,7 @@ title: cloud.gov Pages - Contact
       The Pages team provides support during business hours for U.S. East and West Coast time zones. While we're unable to guarantee support outside of these hours, we’re always monitoring for issues that might affect uptime as we host many sites using Pages.
     </p>
     <p>
-      Pages is hosted on cloud.gov. cloud.gov is constantly monitored and set up for low or zero-downtime deployments, and should be continuously operating. <a href="https://cloudgov.statuspage.io">Check cloud.gov's current status and history of uptime</a>.
+      Pages is hosted on Cloud.gov. Cloud.gov is constantly monitored and set up for low or zero-downtime deployments, and should be continuously operating. <a href="https://cloudgov.statuspage.io">Check Cloud.gov's current status and history of uptime</a>.
     </p>
   </div>
   <div class="grid-row">

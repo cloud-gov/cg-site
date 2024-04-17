@@ -5,7 +5,7 @@ date: July 2, 2021
 excerpt: "With the end of life dates for Drupal versions 7 and 8 fast approaching, this tech talk will discuss strategies for migrating from legacy versions of Drupal to the Federalist platform."
 ---
 
-**Note - this blog post includes content originally presented during a cloud.gov / Federalist tech talk on June 17th, 2021.**
+**Note - this blog post includes content originally presented during a Cloud.gov / Federalist tech talk on June 17th, 2021.**
 
 Drupal is a commonly used content management system (CMS) in the Federal government. Many existing Drupal sites are still using older, outdated versions of the CMS and site owners may be facing challenges with upgrading to the latest version. In addition, because Drupal is a multi-tiered web application, it has multiple components that must be managed and maintained, adding to complexity and support costs.
 
@@ -80,7 +80,7 @@ Before migrating, there are a number of factors you should take into considerati
 
 ## Find out more 
 
-The cloud.gov and Pages team is ready to help you as you evaluate your options for current Drupal 7 and 8 websites. 
+The Cloud.gov and Pages team is ready to help you as you evaluate your options for current Drupal 7 and 8 websites. 
 
 In addition, the following resources are also available for agencies:
 

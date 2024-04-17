@@ -2,11 +2,11 @@
 layout: post
 title: "Monitoring your application's health"
 date: March 25, 2024
-excerpt: How to monitor the CPU and memory metrics for your application on cloud.gov
+excerpt: How to monitor the CPU and memory metrics for your application on Cloud.gov
 
 ---
 
-One of the benefits of hosting your applications on cloud.gov is that it offers [performance metrics for
+One of the benefits of hosting your applications on Cloud.gov is that it offers [performance metrics for
 monitoring the health of your application](https://docs.cloudfoundry.org/loggregator/container-metrics.html).
 
 The most important metrics for monitoring your application's health are the memory and CPU metrics, which can help you identify:

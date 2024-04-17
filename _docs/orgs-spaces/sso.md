@@ -11,14 +11,14 @@ If your agency has an identity provider that supports Single Sign-On (SSO) using
 - OAuth 2.0
 - OpenID Connect (OIDC)
 
-Then you can integrate your identity provider (IdP) with cloud.gov, at no cost, so users from your agency can authenticate to cloud.gov using your agency IdP.
+Then you can integrate your identity provider (IdP) with Cloud.gov, at no cost, so users from your agency can authenticate to Cloud.gov using your agency IdP.
 
 ## Process
 
-The process for integrating with cloud.gov using your SSO solution is fairly simple and straightforward. To properly integrate, here is a high-level overview of the process:
+The process for integrating with Cloud.gov using your SSO solution is fairly simple and straightforward. To properly integrate, here is a high-level overview of the process:
 
-1. Send an email to cloud.gov Support to get the process started, notifying us you'd like to integrate.
-1. cloud.gov Support will ask you for the necessary information to integrate with your provider:
+1. Send an email to Cloud.gov Support to get the process started, notifying us you'd like to integrate.
+1. Cloud.gov Support will ask you for the necessary information to integrate with your provider:
     - SAML 2.0
       - Public SAML 2.0 Endpoint (preferred) or Federation Metadata, **required**
       - 100x100 transparent PNG of your agency's seal, **required**
@@ -49,16 +49,16 @@ The process for integrating with cloud.gov using your SSO solution is fairly sim
           - user_name: Attribute holding email in the OIDC ID Token
 
     **Please note that displaying an agency seal when logging in is only supported for SAML integrations.**
-1. Once cloud.gov Support has the information, we'll schedule and then deploy the configuration to our staging environment. This aspect can take a few weeks as it requires manual steps from the cloud.gov Operations team.
-1. cloud.gov will notify you of when the IdP configuration is available in our staging environment.
-1. You can try to log into our staging environment's user portal to ensure the login process works as intended and verify with cloud.gov Support you can log in successfully.
-1. Once the previous step has been completed, the cloud.gov Operations team will schedule and deploy the configuration to our production environment, at which point your SSO configuration will be ready to go!
+1. Once Cloud.gov Support has the information, we'll schedule and then deploy the configuration to our staging environment. This aspect can take a few weeks as it requires manual steps from the Cloud.gov Operations team.
+1. Cloud.gov will notify you of when the IdP configuration is available in our staging environment.
+1. You can try to log into our staging environment's user portal to ensure the login process works as intended and verify with Cloud.gov Support you can log in successfully.
+1. Once the previous step has been completed, the Cloud.gov Operations team will schedule and deploy the configuration to our production environment, at which point your SSO configuration will be ready to go!
 
 We provide SSO integration with federal agencies at no cost, since using an agency IdP reduces our overall support and compliance costs. Validation that you control an IdP with a valid U.S. government email domain is sufficient for our needs.
 
 ## System Information
 
-By default, your SSO integration will appear on our default login page for all customers with your agency seal (for SAML only) and base email domain for an easy user experience. Below is a list of things that you may find useful for integrating with us, depending on your IdP's configuration.  The only attribute cloud.gov needs to authenticate a user is the email attribute as we manage group membership independently of the downstream IdP.
+By default, your SSO integration will appear on our default login page for all customers with your agency seal (for SAML only) and base email domain for an easy user experience. Below is a list of things that you may find useful for integrating with us, depending on your IdP's configuration.  The only attribute Cloud.gov needs to authenticate a user is the email attribute as we manage group membership independently of the downstream IdP.
 
 ### Staging
 
@@ -125,11 +125,11 @@ QsUE9cqEYgqzbPgWAYCtmTQW6Xw=
 
 ### Upstream Documentation
 
-If you would like to understand how the integration works, please see the [open source documentation](https://docs.cloudfoundry.org/uaa/identity-providers.html). LDAP integration is not supported, only SAML. In the existing configuration, cloud.gov acts as the Service Provider (SP) in the SAML assertion workflow, and any authentication requests coming from cloud.gov will be SP initiated. IdP initiated authentication is not supported.
+If you would like to understand how the integration works, please see the [open source documentation](https://docs.cloudfoundry.org/uaa/identity-providers.html). LDAP integration is not supported, only SAML. In the existing configuration, Cloud.gov acts as the Service Provider (SP) in the SAML assertion workflow, and any authentication requests coming from Cloud.gov will be SP initiated. IdP initiated authentication is not supported.
 
 ## Active Directory Federation Services Integration Reference
 
-This is a basic reference of steps used to configure Active Directory Federation Services (ADFS) as a SAML IdP for your agency in cloud.gov. These steps listed are intended to be used as a reference, not a source of truth, as every agency will likely have a different configuration. These steps were kindly donated to cloud.gov by the folks from the Office of Management and Budget (OMB).
+This is a basic reference of steps used to configure Active Directory Federation Services (ADFS) as a SAML IdP for your agency in Cloud.gov. These steps listed are intended to be used as a reference, not a source of truth, as every agency will likely have a different configuration. These steps were kindly donated to Cloud.gov by the folks from the Office of Management and Budget (OMB).
 
 ### Add Relying Party Trust
 
@@ -139,15 +139,15 @@ You can find the Microsoft documentation for configuring a Relying Party Trust [
 
 #### Select a Data Source
 
-Select the *Import data about the relying party published online or on a local network* radio button. While you can download the cloud.gov SAML SP metadata, by referencing our metadata endpoint, you can receive any updates as we push them out. Enter the staging or production metadata URL referenced in the System Information section.
+Select the *Import data about the relying party published online or on a local network* radio button. While you can download the Cloud.gov SAML SP metadata, by referencing our metadata endpoint, you can receive any updates as we push them out. Enter the staging or production metadata URL referenced in the System Information section.
 
 #### Specify Display Name
 
-This value can be whatever you want it to be, we recommend attaching an environment reference so it's easily distinguishable between the cloud.gov environments at a glance. Notes are optional and at your discretion.
+This value can be whatever you want it to be, we recommend attaching an environment reference so it's easily distinguishable between the Cloud.gov environments at a glance. Notes are optional and at your discretion.
 
 #### Choose Access Control Policy
 
-Apply whichever policy is relevant to your agency, however it's recommended to allow _Permit Everyone_ as cloud.gov manages user authorization within the platform.
+Apply whichever policy is relevant to your agency, however it's recommended to allow _Permit Everyone_ as Cloud.gov manages user authorization within the platform.
 
 #### Ready to Add Trust
 
@@ -155,7 +155,7 @@ Verify the initial configuration is valid and then save it.
 
 #### Secure Hash Algorithm
 
-In order to properly ensure all data is encrypted and decrypted in the same format, the relying party trust needs to use the same algorithm cloud.gov uses.
+In order to properly ensure all data is encrypted and decrypted in the same format, the relying party trust needs to use the same algorithm Cloud.gov uses.
 
 1. Double-click the new relying party trust.
 1. In the Advanced tab, select SHA1 for the Secure hash algorithm.
@@ -174,7 +174,7 @@ ADFS will refresh it's certificate store the next time an authentication request
 
 #### Disable Revocation Checking
 
-cloud.gov does not support certificate revocation checking, so the certificate revocation check will need to be disabled. This is specific to the cloud.gov relying party trust and will not impact other configurations.
+Cloud.gov does not support certificate revocation checking, so the certificate revocation check will need to be disabled. This is specific to the Cloud.gov relying party trust and will not impact other configurations.
 
 Run this command in Powershell:
 
@@ -186,9 +186,9 @@ Set-AdfsRelyingPartyTrust -TargetName "<display-name>" `
 
 #### Create a Claim Mapping
 
-In order to properly map users in your SSO system to the cloud.gov SAML identifier, you may need to create a claim policy. If this is the case, you will need to take these steps for each of the cloud.gov environments.
+In order to properly map users in your SSO system to the Cloud.gov SAML identifier, you may need to create a claim policy. If this is the case, you will need to take these steps for each of the Cloud.gov environments.
 
-1. Select the cloud.gov relying party trust.
+1. Select the Cloud.gov relying party trust.
 1. Right-click > Edit Claim Issuance Policy
 1. Add Rule
 1. You can name the rule whatever is easiest to understand, we recommend something similar to *Transform NameID to Email* so it's clear.
@@ -201,8 +201,8 @@ In order to properly map users in your SSO system to the cloud.gov SAML identifi
 
 #### Test
 
-This is the end of the reference kindly donated by OMB, please ensure you try to log into cloud.gov.
+This is the end of the reference kindly donated by OMB, please ensure you try to log into Cloud.gov.
 
 ## Help
 
-We are committed to improving the user experience of government. If you have questions, please don't hesitate to reach out at [support@cloud.gov](mailto:support@cloud.gov). We recommend that you subscribe to service updates at the [cloud.gov StatusPage](https://cloudgov.statuspage.io/).
+We are committed to improving the user experience of government. If you have questions, please don't hesitate to reach out at [support@cloud.gov](mailto:support@cloud.gov). We recommend that you subscribe to service updates at the [Cloud.gov StatusPage](https://cloudgov.statuspage.io/).

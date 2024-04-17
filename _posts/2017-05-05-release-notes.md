@@ -6,14 +6,14 @@ redirect_from:
   - /updates/2017-05-05-release-notes/
 ---
 
-Curious what’s new that you might find helpful as a cloud.gov application developer? Here are highlights from our platform updates over the past five weeks.
+Curious what’s new that you might find helpful as a Cloud.gov application developer? Here are highlights from our platform updates over the past five weeks.
 
 <!--more-->
 
 ### Changed
 - [logs.fr.cloud.gov](https://logs.fr.cloud.gov), where you can view and search your logs on the web, has been upgraded to a newer version of Kibana (the open source project that powers the log viewer). The new version includes bug fixes and provides a slightly different look. For help navigating the new interface, [start with our logs documentation]({{ site.baseurl }}/docs/apps/logs/#web-based-logs-with-historic-log-data). The [Kibana user guide](https://www.elastic.co/guide/en/kibana/current/index.html) provides more information about the most recent version.
-- You can now [migrate to the cloud.gov CDN broker]({{ site.baseurl }}/docs/services/cdn-route/#how-to-set-up-dns) with zero downtime. You can create a TXT record to be validated by Let’s Encrypt before you migrate, whereas before you needed to start by pointing your domain at the cloud.gov CDN to create a certificate.
-- cloud.gov’s web-based [dashboard](https://dashboard.fr.cloud.gov/) now provides more useful information if you have an empty org or space. For example, if you’re the only user in your organization, the dashboard gives you more information about inviting new users.
+- You can now [migrate to the Cloud.gov CDN broker]({{ site.baseurl }}/docs/services/cdn-route/#how-to-set-up-dns) with zero downtime. You can create a TXT record to be validated by Let’s Encrypt before you migrate, whereas before you needed to start by pointing your domain at the Cloud.gov CDN to create a certificate.
+- Cloud.gov’s web-based [dashboard](https://dashboard.fr.cloud.gov/) now provides more useful information if you have an empty org or space. For example, if you’re the only user in your organization, the dashboard gives you more information about inviting new users.
 
 ### Deprecated
 Python 3.3 has been deprecated with an anticipated end-of-life (EOL) in October 2017. The latest Python buildpacks no longer include 3.3.

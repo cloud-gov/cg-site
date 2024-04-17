@@ -1,15 +1,15 @@
 ---
 layout: post
 date: March 21st 2024
-title: March 21st cloud.gov Change Log
-excerpt: The cloud.gov team is working on providing change logs so everyone can see new features and updates.
+title: March 21st Cloud.gov Change Log
+excerpt: The Cloud.gov team is working on providing change logs so everyone can see new features and updates.
 ---
 
 # Change Log 
 
 ## Before digging into the changes...
 
-* Reminder: Please contact support@cloud.gov to schedule your RDS upgrades if you have not already done so. 
+* Reminder: Please contact support@Cloud.gov to schedule your RDS upgrades if you have not already done so. 
 * The default amount of memory for staging applications has been increased from 1GB to 2GB to attempt to mitigate staging OOM issues.   Once we verify the recently deployed stemcells with the fix, we will be dropping it back down to 1 GB during upgrades next week. 
 * As mentioned above there is a fix for the Out of Memory issue, which is live in production. The release 1.404 contains this fix: 
 	
@@ -19,7 +19,7 @@ excerpt: The cloud.gov team is working on providing change logs so everyone can 
 ## Customer Facing Changes
 ---
 
-The audience for this section is developers who maintain applications on cloud.gov and may need to respond to stack or buildpack changes.
+The audience for this section is developers who maintain applications on Cloud.gov and may need to respond to stack or buildpack changes.
 
 ### CF-Deployment - v38.1.0 to v39.7.0
 

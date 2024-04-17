@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2019-09-16"
-title: "For Humans and Agencies: The cloud.gov Deprecation Policy" 
+title: "For Humans and Agencies: The Cloud.gov Deprecation Policy" 
 redirect_from:
   - /updates/2019-09-06-deprecation-policy/
 ---
@@ -13,13 +13,13 @@ As our first step, we are publishing a deprecation policy that outlines the step
 
 ## Consistency & Predictability
 
-Over the years, as technologies have evolved, changed, and become obsolete, we've had to deprecate and remove several components from cloud.gov. Instead of following a set process for handling deprecation, we took a _what do we do this time?_ approach. That led to inconsistent rollouts and confusion.
+Over the years, as technologies have evolved, changed, and become obsolete, we've had to deprecate and remove several components from Cloud.gov. Instead of following a set process for handling deprecation, we took a _what do we do this time?_ approach. That led to inconsistent rollouts and confusion.
 
 It's time that we do better.
 
 Regardless of what we change we make, we want to make sure that we are consistent in our communication, especially with timelines and support. That should help make transitions easier and let your team prepare for future changes. 
 
-Technologies will inevitably change, and that is why we want to provide transparency into our approach to deprecation as well. We understand that it's fellow humans that depend on cloud.gov's consistency to run their applications. With the consistency, we want to make sure we provide your team predictability you can count on.
+Technologies will inevitably change, and that is why we want to provide transparency into our approach to deprecation as well. We understand that it's fellow humans that depend on Cloud.gov's consistency to run their applications. With the consistency, we want to make sure we provide your team predictability you can count on.
 
 ## We're Here for You
 
@@ -27,4 +27,4 @@ We are committed to improving the user experience of government. If you have que
 
 With regards,
 
-The humans of cloud.gov
+The humans of Cloud.gov

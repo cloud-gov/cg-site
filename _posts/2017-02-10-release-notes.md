@@ -6,11 +6,11 @@ redirect_from:
   - /updates/2017-02-10-release-notes/
 ---
 
-Curious what’s new that you might find helpful as a cloud.gov application developer? Here are highlights from our platform updates over the past two weeks.
+Curious what’s new that you might find helpful as a Cloud.gov application developer? Here are highlights from our platform updates over the past two weeks.
 <!--more-->
 
 ### Added
-You can download the [cloud.gov Control Implementation Summary + Customer Responsibility Matrix]({{ site.baseurl }}/docs/security/fedramp-tracker.md#how-you-can-use-this), a summary from the FedRAMP JAB P-ATO documentation. It lists whether each Low and Moderate security control is handled by cloud.gov, shared responsibility, or customer responsibility.
+You can download the [Cloud.gov Control Implementation Summary + Customer Responsibility Matrix]({{ site.baseurl }}/docs/security/fedramp-tracker.md#how-you-can-use-this), a summary from the FedRAMP JAB P-ATO documentation. It lists whether each Low and Moderate security control is handled by Cloud.gov, shared responsibility, or customer responsibility.
 
 ### Fixed
 - In the dashboard, when you reach the end of your activity log, the log no longer displays a “Show more” button. Previously this button implied there might be more content when there was not.
@@ -18,7 +18,7 @@ You can download the [cloud.gov Control Implementation Summary + Customer Respon
 
 ### Security
 
-cloud.gov is now included in the [18F vulnerability disclosure policy](https://18f.gsa.gov/vulnerability-disclosure-policy/), which gives guidelines for security researchers from the public.
+Cloud.gov is now included in the [18F vulnerability disclosure policy](https://18f.gsa.gov/vulnerability-disclosure-policy/), which gives guidelines for security researchers from the public.
 
 ### See also
 

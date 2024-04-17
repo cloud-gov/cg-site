@@ -1,11 +1,11 @@
 ---
 layout: post
 date: March 4th 2022
-title: "March 4th cloud.gov Change Log"
-excerpt: The cloud.gov team is working on providing change logs so everyone can see new features and updates.
+title: "March 4th Cloud.gov Change Log"
+excerpt: The Cloud.gov team is working on providing change logs so everyone can see new features and updates.
 ---
 
-Happy Women's History Month! The cloud.gov team is working on providing change logs so everyone can see new features and updates. Highlights this month include Cloud Foundry Deployment and AWS RDS Broker updates.
+Happy Women's History Month! The Cloud.gov team is working on providing change logs so everyone can see new features and updates. Highlights this month include Cloud Foundry Deployment and AWS RDS Broker updates.
 
 # Change Log
 

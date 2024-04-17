@@ -1,24 +1,24 @@
 ---
 layout: post
-title: Faster build times on cloud.gov Pages
+title: Faster build times on Cloud.gov Pages
 date: February 23, 2023
-excerpt: We advertise that cloud.gov Pages, previously known as Federalist, can “securely deploy a website from your repository in minutes.” Getting your content on the web quickly, seeing fast previews, and even seeing errors early are all important to good maintenance of a website
+excerpt: We advertise that Cloud.gov Pages, previously known as Federalist, can “securely deploy a website from your repository in minutes.” Getting your content on the web quickly, seeing fast previews, and even seeing errors early are all important to good maintenance of a website
 ---
 
-We advertise that [cloud.gov Pages](https://cloud.gov/pages), previously known as Federalist, can “securely deploy a website from your repository in minutes.” Getting your content on the web quickly, seeing fast previews, and even seeing errors early are all important to good maintenance of a website. But as sites become larger and more complex, this can be a difficult task. We’ve made two recent changes to cloud.gov Pages to make website deployment faster so you can focus on your code, design, and content.
+We advertise that [Cloud.gov Pages](https://cloud.gov/pages), previously known as Federalist, can “securely deploy a website from your repository in minutes.” Getting your content on the web quickly, seeing fast previews, and even seeing errors early are all important to good maintenance of a website. But as sites become larger and more complex, this can be a difficult task. We’ve made two recent changes to Cloud.gov Pages to make website deployment faster so you can focus on your code, design, and content.
 
 ## Publishing improvements
 
-Static site generators, like those frequently used with cloud.gov Pages, generate each website page in advance. We then copy each page to our hosting service so it can appear online. If we want to save time, we can choose to only copy the page if we can tell that it changed from the previous build.
+Static site generators, like those frequently used with Cloud.gov Pages, generate each website page in advance. We then copy each page to our hosting service so it can appear online. If we want to save time, we can choose to only copy the page if we can tell that it changed from the previous build.
 
-Starting in late 2020, cloud.gov Pages was publishing every file individually. We did this because a new feature for [adding headers](https://cloud.gov/pages/documentation/custom-headers/) prevented us from quickly comparing whether files had changed. This past October, we made a change to return to only publishing changed files if sites weren’t using the header feature.
+Starting in late 2020, Cloud.gov Pages was publishing every file individually. We did this because a new feature for [adding headers](https://cloud.gov/pages/documentation/custom-headers/) prevented us from quickly comparing whether files had changed. This past October, we made a change to return to only publishing changed files if sites weren’t using the header feature.
 
 Sites like [Digital.gov](https://digital.gov/), with over 20,000 files, had been taking seventeen minutes on each build! Now their production builds only update about one-third of the total files and have brought the build times down to seven or eight minutes (fresh preview builds still take about fourteen). Across our whole portfolio, production sites saw 25% faster builds, saving 1 minute 40 seconds on average.
 
 <div class="border bg-white padding-2 margin-bottom-2 margin-top-1 radius-md padding-bottom-0 maxw-tablet">
 
 <h4 class="margin-0">Median Build Times (in minutes) for Digital.gov by Month</h4>
-<p class="margin-top-1 font-sans-2xs text-base margin-bottom--3">Digital.gov was taking seventeen minutes to build on cloud.gov Pages with most of the time spent uploading new files. After the October release of publishing improvements, build times were reduced to about seven or eight minutes.</p>
+<p class="margin-top-1 font-sans-2xs text-base margin-bottom--3">Digital.gov was taking seventeen minutes to build on Cloud.gov Pages with most of the time spent uploading new files. After the October release of publishing improvements, build times were reduced to about seven or eight minutes.</p>
 
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: D3.js v3 + https://designsystem.digital.gov/components/data-visualizations/ -->
@@ -133,7 +133,7 @@ Sites like [Digital.gov](https://digital.gov/), with over 20,000 files, had been
       </tr>
     </tbody>
   </table>
-  <p id="source_line">Source: internal cloud.gov Pages analytic data</p>
+  <p id="source_line">Source: internal Cloud.gov Pages analytic data</p>
 </div>
 
 ## Caching build dependencies
@@ -147,7 +147,7 @@ We just recently added this change, so we’re still waiting to see the full met
 
 <div class="border bg-white padding-2 margin-bottom-2 margin-top-1 radius-md padding-bottom-0 maxw-tablet">
 
-<h4 class="margin-0">Median Build Times (in minutes) for cloud.gov Pages Sites by Month</h4>
+<h4 class="margin-0">Median Build Times (in minutes) for Cloud.gov Pages Sites by Month</h4>
 <p class="margin-top-1 font-sans-2xs text-base margin-bottom--3">Sites were taking about six minutes to build in mid-2022. Publishing improvements in October helped reduce the time by about two minutes. Caching improvements in January reduced the build time by about another minute.</p>
 
 <?xml version="1.0" encoding="utf-8"?>
@@ -230,7 +230,7 @@ We just recently added this change, so we’re still waiting to see the full met
 </svg>
 
   <table class="usa-sr-only" aria-describedby="source_line">
-    <caption>Median Build Times for cloud.gov Pages Sites by Month</caption>
+    <caption>Median Build Times for Cloud.gov Pages Sites by Month</caption>
     <thead>
       <tr>
         <th scope="col"></th>
@@ -260,7 +260,7 @@ We just recently added this change, so we’re still waiting to see the full met
       </tr>
     </tbody>
   </table>
-  <p id="source_line">Source: internal cloud.gov Pages analytic data</p>
+  <p id="source_line">Source: internal Cloud.gov Pages analytic data</p>
 </div>
 
-Please [let us know](mailto:inquiries@cloud.gov) if these new features have helped you out or you’d like to try [cloud.gov Pages](https://cloud.gov/pages).
+Please [let us know](mailto:inquiries@cloud.gov) if these new features have helped you out or you’d like to try [Cloud.gov Pages](https://cloud.gov/pages).

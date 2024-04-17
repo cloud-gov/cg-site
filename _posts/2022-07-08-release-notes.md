@@ -1,11 +1,11 @@
 ---
 layout: post
 date: July 8th 2022
-title: "July 8th cloud.gov Change Log"
-excerpt: The cloud.gov team is working on providing change logs so everyone can see new features and updates.
+title: "July 8th Cloud.gov Change Log"
+excerpt: The Cloud.gov team is working on providing change logs so everyone can see new features and updates.
 ---
 
-Happy July! The cloud.gov team is working on providing change logs so everyone can see new features and updates. Highlights this month include buildpack updates, and bug fixes.
+Happy July! The Cloud.gov team is working on providing change logs so everyone can see new features and updates. Highlights this month include buildpack updates, and bug fixes.
 
 # Change Log
 

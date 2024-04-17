@@ -1,8 +1,8 @@
 ---
 layout: post
 date: March 16th 2023
-title: "March 16th cloud.gov Change Log"
-excerpt: The cloud.gov team is working on providing change logs so everyone can see new features and updates. Happy March Madness!
+title: "March 16th Cloud.gov Change Log"
+excerpt: The Cloud.gov team is working on providing change logs so everyone can see new features and updates. Happy March Madness!
 ---
 
 # Change Log

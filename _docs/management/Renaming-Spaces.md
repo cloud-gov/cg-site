@@ -11,9 +11,9 @@ If you want to change the name of a space in your Cloud Foundry organization, yo
 
 **Please note:** if you would like to change the name of a space you need to have the space manager role for that space.
 
-Login to cloud.gov using Cloud Foundry CLI:
+Login to Cloud.gov using Cloud Foundry CLI:
 
-`cf login -a api.cloud.gov --sso`
+`cf login -a api.Cloud.gov --sso`
 
 [Use the CLI to target the organization containing the space that you would like to rename](https://cloud.gov/docs/getting-started/concepts/#target-an-org):
 

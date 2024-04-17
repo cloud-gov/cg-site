@@ -10,7 +10,7 @@ The online dashboard gives users web-based access to common tasks, such as manag
 
 ## Log into the dashboard (web interface)
 
-The cloud.gov dashboard is available at: [https://dashboard.fr.cloud.gov/](https://dashboard.fr.cloud.gov/)
+The Cloud.gov dashboard is available at: [https://dashboard.fr.cloud.gov/](https://dashboard.fr.cloud.gov/)
 
 Please note that adding users to organizations may return an error - if so, please use the new dashboard or CLI to perform this action.
 

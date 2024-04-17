@@ -8,7 +8,7 @@ description: "AWS search: a distributed, RESTful search and analytics engine"
 status: "Production Ready"
 ---
 
-cloud.gov offers [aws-elasticsearch](https://aws.amazon.com/elasticsearch-service/) as a service hosted in AWS Elasticsearch and Opensearch.
+Cloud.gov offers [aws-elasticsearch](https://aws.amazon.com/elasticsearch-service/) as a service hosted in AWS Elasticsearch and Opensearch.
 
 ## Plans
 
@@ -28,7 +28,7 @@ Service Name | Plan Name | Description | Number of nodes |
 
 ## When to use
 
-This service is geared toward applications that need to provide search capability, or interact with indexed data. Although Elasticsearch is often used as part of the ELK logging stack (Elasticsearch + Logstash + Kibana), this service **does not** include Kibana, and isn't suitable as a component of a logging solution. To find out more about logging on the cloud.gov platform, please see [the section on logs]({{ site.baseurl }}/docs/deployment/logs/#web-based-logs-with-historic-log-data).
+This service is geared toward applications that need to provide search capability, or interact with indexed data. Although Elasticsearch is often used as part of the ELK logging stack (Elasticsearch + Logstash + Kibana), this service **does not** include Kibana, and isn't suitable as a component of a logging solution. To find out more about logging on the Cloud.gov platform, please see [the section on logs]({{ site.baseurl }}/docs/deployment/logs/#web-based-logs-with-historic-log-data).
 
 ## Create an instance
 
@@ -171,11 +171,11 @@ As part of the process of using manual snapshots, customers will need to assign 
 
  Once you have your s3 bucket connected and have the `snapshotRoleARN` you can then inside your application connect to the AWS ES host and register your s3 repository endpoint and then perform your snapshot export/import operations using [AWS signed HTTP headers](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-request-signing.html).  Due to the nature of [AWS Signature Calculations](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-header-based-auth.html) there is no direct way with curl to perform these operations and it's best left to client libraries in a programing language your applications are written in.
 
- cloud.gov does offer a code sample repository on Github - [aws-elasticsearch-example](https://github.com/cloud-gov/aws-elasticsearch-example) that shows an example in Python on how to interact with the new ES service using signed headers.  Our customers are encouraged to submit PRs of other examples to share with fellow customers.
+ Cloud.gov does offer a code sample repository on Github - [aws-elasticsearch-example](https://github.com/cloud-gov/aws-elasticsearch-example) that shows an example in Python on how to interact with the new ES service using signed headers.  Our customers are encouraged to submit PRs of other examples to share with fellow customers.
 
 ## Encryption
 
-Every non-dev AWS Elasticsearch instance configured through cloud.gov is [encrypted at rest](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/encryption-at-rest.html). We use the industry standard AES-256 encryption algorithm to encrypt your data on the server that hosts your AWS Elasticsearch instance.
+Every non-dev AWS Elasticsearch instance configured through Cloud.gov is [encrypted at rest](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/encryption-at-rest.html). We use the industry standard AES-256 encryption algorithm to encrypt your data on the server that hosts your AWS Elasticsearch instance.
 
 Service Name | Plan Name | Encryption at Rest |
 ------------ | --------- | --------------- |
@@ -187,7 +187,7 @@ Note: If you have access to larger service plans, they will mirror same settings
 
 ## Rotating credentials
 
-You can rotate credentials by creating a new instance and [deleting the existing instance](https://cli.cloudfoundry.org/en-US/cf/delete-service.html). If this is not an option, email [cloud.gov support](mailto:support@cloud.gov) to request rotating the credentials manually.
+You can rotate credentials by creating a new instance and [deleting the existing instance](https://cli.cloudfoundry.org/en-US/cf/delete-service.html). If this is not an option, email [Cloud.gov support](mailto:support@cloud.gov) to request rotating the credentials manually.
 
 ### The broker in GitHub
 

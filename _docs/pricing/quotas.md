@@ -11,7 +11,7 @@ redirect_from:
 
 ---
 
-cloud.gov usage is billed by org memory quota.
+Cloud.gov usage is billed by org memory quota.
 
 ## Costs
 

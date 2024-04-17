@@ -25,7 +25,7 @@ For details about `cf push` options, see [Deploy an Application](https://docs.cl
 
 ## Application architecture principles
 
-Here are core architecture principles for this cloud environment -- the five things you need to know to avoid surprises when running your applications on cloud.gov.
+Here are core architecture principles for this cloud environment -- the five things you need to know to avoid surprises when running your applications on Cloud.gov.
 
 ### Avoid writing to the local file system
 
@@ -33,9 +33,9 @@ Don't depend on local file system storage. When your application restarts (for e
 
 ### The platform will restart your application
 
-cloud.gov will automatically restart your application instances occasionally. For example, application instances will be restarted if they exceed [memory limits]({{ site.baseurl }}{% link _docs/management/limits.md %}#app).
+Cloud.gov will automatically restart your application instances occasionally. For example, application instances will be restarted if they exceed [memory limits]({{ site.baseurl }}{% link _docs/management/limits.md %}#app).
 
-Application instances will also be restarted when the cloud.gov platform is updated, which can be several times a week. This shouldn't disrupt your running application if you [set up multiple application instances]({{ site.baseurl }}{% link _docs/management/multiple-instances.md %}) and avoid writing to the local file system.
+Application instances will also be restarted when the Cloud.gov platform is updated, which can be several times a week. This shouldn't disrupt your running application if you [set up multiple application instances]({{ site.baseurl }}{% link _docs/management/multiple-instances.md %}) and avoid writing to the local file system.
 
 ### Check your log configuration
 
@@ -51,9 +51,9 @@ By default, `cf push` will deploy the working state of all the files you have in
 
 ## Next steps on application architecture
 
-1. cloud.gov works best with applications that follow the [Twelve-Factor App](https://12factor.net/) guidelines. This is more of a comprehensive philosophy than a set of requirements, and it helps explain how cloud.gov expects applications to behave.
-1. The Cloud Foundry [Considerations for Designing and Running an Application in the Cloud](https://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html) apply to cloud.gov as well, including more details about the core principles above.
-1. The cloud.gov [production-ready guide]({{ site.baseurl }}{% link _docs/deployment/production-ready.md %}) explains how to prepare your application for success in production on cloud.gov.
+1. Cloud.gov works best with applications that follow the [Twelve-Factor App](https://12factor.net/) guidelines. This is more of a comprehensive philosophy than a set of requirements, and it helps explain how Cloud.gov expects applications to behave.
+1. The Cloud Foundry [Considerations for Designing and Running an Application in the Cloud](https://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html) apply to Cloud.gov as well, including more details about the core principles above.
+1. The Cloud.gov [production-ready guide]({{ site.baseurl }}{% link _docs/deployment/production-ready.md %}) explains how to prepare your application for success in production on Cloud.gov.
 
 ## Troubleshooting buildpack issues
 

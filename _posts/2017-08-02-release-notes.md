@@ -6,7 +6,7 @@ redirect_from:
   - /updates/2017-08-02-release-notes/
 ---
 
-Curious what’s new that you might find helpful as a cloud.gov user? Here are highlights from our platform updates over the past two weeks.
+Curious what’s new that you might find helpful as a Cloud.gov user? Here are highlights from our platform updates over the past two weeks.
 <!--more-->
 
 ### Added
@@ -17,7 +17,7 @@ In the dashboard, Org Managers and Space Managers can [remove a person from a sp
 Org Managers must remove a person from all spaces before removing them from the Org otherwise. If you try to remove them with the dashboard, you’ll see an error if the user still belongs to any space.
 
 ### In case you missed it
-We presented at two events during the Amazon Web Services Public Sector summit: [Deliver your agency mission faster with cloud.gov](https://www.youtube.com/watch?v=NGmDhWEfMuo&list=PLhr1KZpdzukePsKIUofhgp50b63-5yr1V&index=78) and [FedRAMP Accelerated: An update with GSA and cloud.gov](https://www.youtube.com/watch?v=iXqbIxtiwQY&index=87&list=PLhr1KZpdzukePsKIUofhgp50b63-5yr1V).
+We presented at two events during the Amazon Web Services Public Sector summit: [Deliver your agency mission faster with Cloud.gov](https://www.youtube.com/watch?v=NGmDhWEfMuo&list=PLhr1KZpdzukePsKIUofhgp50b63-5yr1V&index=78) and [FedRAMP Accelerated: An update with GSA and Cloud.gov](https://www.youtube.com/watch?v=iXqbIxtiwQY&index=87&list=PLhr1KZpdzukePsKIUofhgp50b63-5yr1V).
 
 ### Platform releases
 We upgraded the Cloud Foundry deployment to [v268](https://github.com/cloudfoundry/cf-release/releases/tag/v268#v268-security-notices).

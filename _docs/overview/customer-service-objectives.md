@@ -19,7 +19,7 @@ Our **objectives** are:
 
 Our program’s top **priorities** are:
 
-  1. **Compliance** - Applications running on cloud.gov gain the inheritance model provided by FedRAMP JAB’s Moderate P-ATO. By focusing on FedRAMP compliance, we are ensuring all the applications on the platform remain compliant.
+  1. **Compliance** - Applications running on Cloud.gov gain the inheritance model provided by FedRAMP JAB’s Moderate P-ATO. By focusing on FedRAMP compliance, we are ensuring all the applications on the platform remain compliant.
   1. **Safety & Security** - We maintain a large platform with many different applications. Tenant safety is of the utmost importance to ensure that all our customers are safe from interference and abuse.
   1. **Transparency** - We publish metrics and status updates about the platform as events happen. Our code base is open to the public and we provide customers visibility in our process.
 

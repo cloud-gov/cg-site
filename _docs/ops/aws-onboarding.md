@@ -21,7 +21,7 @@ While we minimize interaction with AWS directly (explained below), there are dif
 
 #### Restoring access for team members
 
-If cloud.gov team members have lost access to their MFA application or need to
+If Cloud.gov team members have lost access to their MFA application or need to
 reset their password, verify their identity and coordinate or pair with them.
 
 1. Find their user in AWS console.
@@ -41,7 +41,7 @@ To set up multi-factor authentication (MFA):
 
 ### Changing AWS configuration
 
-As mentioned previously, the cloud.gov team minimizes the amount of direct access and manipulation made to AWS directly, instead favoring automation and configuration-as-code through [BOSH](http://bosh.io/) and [Terraform](https://www.terraform.io/). Terraform is used to do the bootstrapping of the AWS environment—this information can be found in the [cg-provision](https://github.com/18F/cg-provision) repository. This includes:
+As mentioned previously, the Cloud.gov team minimizes the amount of direct access and manipulation made to AWS directly, instead favoring automation and configuration-as-code through [BOSH](http://bosh.io/) and [Terraform](https://www.terraform.io/). Terraform is used to do the bootstrapping of the AWS environment—this information can be found in the [cg-provision](https://github.com/18F/cg-provision) repository. This includes:
 
 * EC2 instances for BOSH
 * Networking (VPCs)

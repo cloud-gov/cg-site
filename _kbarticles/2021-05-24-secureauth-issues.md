@@ -1,19 +1,19 @@
 ---
 layout: post
-title: "Trouble Logging in to cloud.gov"
+title: "Trouble Logging in to Cloud.gov"
 date: May 20, 2021
-excerpt: If you see an error while logging into cloud.gov, these tips can help you troubleshoot
+excerpt: If you see an error while logging into Cloud.gov, these tips can help you troubleshoot
 ---
 
 ## If you are using GSA's single sign on integration (SecureAuth)
 
-When logging in to cloud.gov, you may encounter an error message that includes reference to `InResponseToField`. For example, something like:
+When logging in to Cloud.gov, you may encounter an error message that includes reference to `InResponseToField`. For example, something like:
 
 ```
 InResponseToField of the Response doesn’t correspond to sent message {code}
 ```
 
-This is typically caused by SecureAuth having an old certificate or session cookie in your browser, and is not related to the cloud.gov platform. 
+This is typically caused by SecureAuth having an old certificate or session cookie in your browser, and is not related to the Cloud.gov platform. 
 
 Things you can check:
 
@@ -23,9 +23,9 @@ Things you can check:
 
 If these steps don't work, [GSA also has a tool that can clear these items](https://secureauth.gsa.gov/secureauth2/cleancert.aspx). Note - if you are a Mac user, this site will only work in Safari.
 
-## If you are using the cloud.gov identity provider (IDP)
+## If you are using the Cloud.gov identity provider (IDP)
 
-For users that log in with the cloud.gov IDP, if a user hasn't logged in in 90 days their account will be deactivated for security purposes. You should receive an email notice when a deactivation is imminent, and you may experience receiving SAML errors when logging in (even after a password reset).
+For users that log in with the Cloud.gov IDP, if a user hasn't logged in in 90 days their account will be deactivated for security purposes. You should receive an email notice when a deactivation is imminent, and you may experience receiving SAML errors when logging in (even after a password reset).
 
 Some things you can try:
 

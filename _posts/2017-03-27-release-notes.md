@@ -6,21 +6,21 @@ redirect_from:
   - /updates/2017-03-27-release-notes/
 ---
 
-Curious what’s new that you might find helpful as a cloud.gov application developer? Here are highlights from our platform updates over the past two weeks.
+Curious what’s new that you might find helpful as a Cloud.gov application developer? Here are highlights from our platform updates over the past two weeks.
 
 <!--more-->
 
 ### Added
-When you create a [cloud.gov identity provider service instance]({{ site.baseurl }}/docs/services/cloud-gov-identity-provider/), you can now add scopes from a whitelist of approved scopes. This makes it easier to enable specific permissions and access for additional types of users in your applications.
+When you create a [Cloud.gov identity provider service instance]({{ site.baseurl }}/docs/services/cloud-gov-identity-provider/), you can now add scopes from a whitelist of approved scopes. This makes it easier to enable specific permissions and access for additional types of users in your applications.
 
 ### Changed
 We recommend updating to the [latest version (6.25)](https://github.com/cloudfoundry/cli/releases/tag/v6.25.0) of the Cloud Foundry command line interface (CLI). This can prevent errors when using the cf CLI. You can check your currently-installed version using `cf -v`
 
 ### Fixed
-The cloud.gov dashboard’s loading icon no longer displays after pages finish loading. Before, they would continue indefinitely.
+The Cloud.gov dashboard’s loading icon no longer displays after pages finish loading. Before, they would continue indefinitely.
 
 ### Deprecated
-- On March 15th, we deprecated support for building and deployment on the cloud.gov East/West environment. This is in preparation for an upcoming shutdown of that environment. We are supporting a few customers in the process of migrating from East/West to GovCloud, but in all other cases we now support the GovCloud environment exclusively.
+- On March 15th, we deprecated support for building and deployment on the Cloud.gov East/West environment. This is in preparation for an upcoming shutdown of that environment. We are supporting a few customers in the process of migrating from East/West to GovCloud, but in all other cases we now support the GovCloud environment exclusively.
 - The latest Go buildpack deprecates support for Go 1.6. The next Go release will remove support for 1.6.
 
 ### Removed

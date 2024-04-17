@@ -3,7 +3,7 @@ parent: operations
 layout: ops
 layout: docs
 sidenav: true
-title: DNS settings for cloud.gov
+title: DNS settings for Cloud.gov
 ---
 
 The [`18F/cg-provision` repository][repo-18f/cg-provision] contains the [`cloud.gov.tf` Terraform
@@ -14,7 +14,7 @@ on Terraform's documentation site][docs-terraform#resources].
 
 [docs-terraform#resources]: https://www.terraform.io/docs/configuration/resources "Terraform - Docs - Configuration - Resources"
 [repo-18f/cg-provision]: https://www.github.com/18F/cg-provision "Github 18F/cg-provision"
-[repo-18f/cg-provision#stack.tf]: https://github.com/18F/cg-provision/blob/master/terraform/stacks/dns/stack.tf "Terraform configuration file for cloud.gov"
+[repo-18f/cg-provision#stack.tf]: https://github.com/18F/cg-provision/blob/master/terraform/stacks/dns/stack.tf "Terraform configuration file for Cloud.gov"
 
 ## Examples of records
 
@@ -102,4 +102,4 @@ To update a DNS record, submit a pull request to the `18F/cg-provision` reposito
 your changes. Either branches or forks are okay.
 
 Pull requests will be reviewed and merged by a member of the infrastructure team
-or members of the cloud.gov team.
+or members of the Cloud.gov team.

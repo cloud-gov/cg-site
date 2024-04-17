@@ -13,15 +13,15 @@ title: More languages (custom buildpacks)
 weight: 30
 ---
 
-Cloud Foundry (the underlying open source project behind cloud.gov) uses [buildpacks]({{site.baseurl }}/docs/getting-started/concepts/#buildpacks) to allow your applications to be deployed. cloud.gov [officially supports]({{ site.baseurl }}/pricing/) a set of buildpacks, and it also allows you to provide your own.
+Cloud Foundry (the underlying open source project behind Cloud.gov) uses [buildpacks]({{site.baseurl }}/docs/getting-started/concepts/#buildpacks) to allow your applications to be deployed. Cloud.gov [officially supports]({{ site.baseurl }}/pricing/) a set of buildpacks, and it also allows you to provide your own.
 
-Once you push your code using a custom buildpack, cloud.gov cannot update it for you. You are responsible for keeping it up to date. Please see [this description of responsibilities]({{ site.baseurl }}/docs/technology/responsibilities/).
+Once you push your code using a custom buildpack, Cloud.gov cannot update it for you. You are responsible for keeping it up to date. Please see [this description of responsibilities]({{ site.baseurl }}/docs/technology/responsibilities/).
 
 ## Example custom buildpacks
 
 ### apt-buildpack
 
-cloud.gov does not allow the use of `sudo` inside of buildpacks. If your app depends on a library that is `apt-get` installable, you can use the CF flavor of [`apt-buildpack`](https://github.com/cloudfoundry/apt-buildpack), which is a custom buildpack.
+Cloud.gov does not allow the use of `sudo` inside of buildpacks. If your app depends on a library that is `apt-get` installable, you can use the CF flavor of [`apt-buildpack`](https://github.com/cloudfoundry/apt-buildpack), which is a custom buildpack.
 
 ## Multi-buildpack support
 

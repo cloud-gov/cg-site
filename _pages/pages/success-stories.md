@@ -2,7 +2,7 @@
 permalink: /pages/success-stories/
 layout: page
 navigation: pages
-title: cloud.gov Pages - Success Stories
+title: Cloud.gov Pages - Success Stories
 ---
 
 <section class="usa-section">

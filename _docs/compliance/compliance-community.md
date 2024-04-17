@@ -3,20 +3,20 @@ parent: compliance
 layout: docs
 sidenav: true
 title: Compliance community
-summary: cloud.gov supports an email listserv for FedRAMP compliance practitioners 
+summary: Cloud.gov supports an email listserv for FedRAMP compliance practitioners 
 weight: 50
 ---
 
 
 ## Cloud.gov and the compliance community
 
-Part of the mission of cloud.gov is to improve cloud adoption across the U.S. government, irrespective of vendor. In that vein, we support the FedRAMP®️ Compliance Practitioner Community of Practice, an email listserv supported by GSA's [Digital.gov](https://digital.gov/).
+Part of the mission of Cloud.gov is to improve cloud adoption across the U.S. government, irrespective of vendor. In that vein, we support the FedRAMP®️ Compliance Practitioner Community of Practice, an email listserv supported by GSA's [Digital.gov](https://digital.gov/).
 
 The goal of the community is to bring together people working on FedRAMP compliance to address common questions and concerns.  We strive to maintain an inclusive, professional community that engages in on-topic discussions. The community is not associated with the FedRAMP Program Management Office.
 
 By voluntarily participating in this community, you are agreeing to abide by these guidelines and the [TTS code of conduct](https://handbook.tts.gsa.gov/about-us/code-of-conduct/). If you do not agree, email us at [community@cloud.gov](mailto:community@cloud.gov), and we will unsubscribe you from the LISTSERV mailing list.
 
-When GSA becomes aware of alleged violations of the guidelines or code of conduct, we will review and evaluate the incident and determine an appropriate course of action. In accordance with GSA’s policies and legal guidance, the cloud.gov team implements this process.
+When GSA becomes aware of alleged violations of the guidelines or code of conduct, we will review and evaluate the incident and determine an appropriate course of action. In accordance with GSA’s policies and legal guidance, the Cloud.gov team implements this process.
 
 Courses of action include:
 
@@ -36,7 +36,7 @@ The community is open to:
 * compliance staff at CSPs pursuing authorization per their public statements (website, pdf)
 * contracted staff dedicated to supporting FedRAMP authorization for client CSPs
 
-The cloud.gov compliance team will approve memberships based on eligibility evidence.
+The Cloud.gov compliance team will approve memberships based on eligibility evidence.
 
 ## How to join?
 

@@ -373,13 +373,13 @@ When you do contact [support@cloud.gov]({{ site.support_email }}) with a databas
 
 **Please *do not* share any passwords or details of any exploit or compromise.**  We'll call you if necessary, and we'll never ask you for a password over the phone.
 
-We'll confirm this information and remind you that a restoration may result in a brief period of downtime with database connectivity.  Once we receive confirmation from you to proceed, we'll perform the restore, which results in a new DB instance being created in AWS RDS.  cloud.gov support will take care of renaming the new instance and configuring it with the same VPC and security group as the old instance in AWS so that it can still be found by your bound application(s) once the restoration is complete.
+We'll confirm this information and remind you that a restoration may result in a brief period of downtime with database connectivity.  Once we receive confirmation from you to proceed, we'll perform the restore, which results in a new DB instance being created in AWS RDS.  Cloud.gov support will take care of renaming the new instance and configuring it with the same VPC and security group as the old instance in AWS so that it can still be found by your bound application(s) once the restoration is complete.
 
 When the restore process is completely finished, we'll notify you and ask you to confirm that your application(s) is still functioning properly and that the data is properly restored.  We'll also coordinate with you to determine when it would be appropriate to remove the old instance, particularly if it is needed for something such as a security audit or forensic analysis.
 
 When we remove the old database instance, we will not retain snapshots or backups of it unless we're explicitly asked to do so.  We'll remind you of this when coordinating a specific date and time to remove the old instance.
 
-You can also create manual backups using the [export process](#exporting-a-database) described below. In general, you are responsible for making sure that your backup procedures are adequate for your needs; see CP-9 in the cloud.gov SSP.
+You can also create manual backups using the [export process](#exporting-a-database) described below. In general, you are responsible for making sure that your backup procedures are adequate for your needs; see CP-9 in the Cloud.gov SSP.
 
 ## Access the data in the database
 
@@ -518,7 +518,7 @@ If you get an error like `ERROR: 1227` when trying to import to your database:
         -c "{\"enable_functions\": true}"
     ```
 
-    After making these changes, make sure to request a database reboot by contacting [cloud.gov support]({{ site.support_email }}).
+    After making these changes, make sure to request a database reboot by contacting [Cloud.gov support]({{ site.support_email }}).
 
 1. Make sure that your database dump was generated with the `--set-gtid-purged=OFF` option. For example:
 
@@ -534,7 +534,7 @@ If those steps do not help, additional remediation steps can be found in the [AW
 
 ## Encryption
 
-Every RDS instance configured through cloud.gov is [encrypted at rest](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html). We use the industry standard AES-256 encryption algorithm to encrypt your data on the server that hosts your RDS instance. The RDS then handles authenticating access and decrypting your data, with minimal performance impact and without requiring you to modify your applications.
+Every RDS instance configured through Cloud.gov is [encrypted at rest](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html). We use the industry standard AES-256 encryption algorithm to encrypt your data on the server that hosts your RDS instance. The RDS then handles authenticating access and decrypting your data, with minimal performance impact and without requiring you to modify your applications.
 
 ## Rotating credentials
 
@@ -572,7 +572,7 @@ Edit `build.gradle`, look for the following near line 60:
 
 and remove the `//` comment from the line for `libs/ojdbc8.jar`. Save the `build.gradle` file.
 
-After installing the 'cf' [command-line interface for Cloud Foundry](http://docs.cloudfoundry.org/cf-cli/), and logging in to cloud.gov, `cf login --sso -a https://api.fr.cloud.gov`, the application can be built and pushed using these commands:
+After installing the 'cf' [command-line interface for Cloud Foundry](http://docs.cloudfoundry.org/cf-cli/), and logging in to Cloud.gov, `cf login --sso -a https://api.fr.cloud.gov`, the application can be built and pushed using these commands:
 
 ```bash
 cf create-service aws-rds medium-oracle-se2 spring-oracle

@@ -1,20 +1,20 @@
 ---
 layout: post
 date: "2017-09-12"
-title: "High availability Redis, our upcoming workshop, and more from cloud.gov"
+title: "High availability Redis, our upcoming workshop, and more from Cloud.gov"
 redirect_from:
   - /updates/2017-09-12-high-availability-redis-upcoming-workshop-more-from-cloud-gov/
 ---
 
-Curious what’s new that you might find helpful as a cloud.gov user? Here are highlights from our platform updates over the past two weeks.
+Curious what’s new that you might find helpful as a Cloud.gov user? Here are highlights from our platform updates over the past two weeks.
 
 ### Announcements
 
-**Reminder:** [Our workshop is coming up on September 28th](https://www.digitalgov.gov/event/hands-on-workshop-with-cloud-gov/). If you’re evaluating cloud.gov or getting started with it, you will learn how to use cloud.gov to launch applications and get the power and advantages that come from using a Platform as a Service. Bring a laptop if you're coming in-person or join us online to learn how cloud.gov can work for you. [Register now if you’d like to attend!](https://www.eventbrite.com/e/hands-on-workshop-with-cloudgov-registration-36963135734)
+**Reminder:** [Our workshop is coming up on September 28th](https://www.digitalgov.gov/event/hands-on-workshop-with-cloud-gov/). If you’re evaluating Cloud.gov or getting started with it, you will learn how to use Cloud.gov to launch applications and get the power and advantages that come from using a Platform as a Service. Bring a laptop if you're coming in-person or join us online to learn how Cloud.gov can work for you. [Register now if you’d like to attend!](https://www.eventbrite.com/e/hands-on-workshop-with-cloudgov-registration-36963135734)
 
 ### Added
 * [Redis 3.2]({{ site.baseurl }}/docs/services/redis), including both standard and high availability versions, are now available! If you use Redis, we encourage you to upgrade your application to use these beta version 3.2 services instead of the older alpha version 2.8 service.
-* The [.NET Core buildpack](https://docs.cloudfoundry.org/buildpacks/dotnet-core/index.html#cli-tools) includes support for .NET Core 2.0. The[ 2.0 SDK is now the default](https://github.com/cloudfoundry/dotnet-core-buildpack/releases/tag/v1.0.25) for C# and Visual Basic apps. .NET Core 2.0 supports [.NET Standard 2.0](https://docs.microsoft.com/en-us/dotnet/api/?view=netstandard-2.0), more than doubling that set of APIs available for your .NET projects on cloud.gov.
+* The [.NET Core buildpack](https://docs.cloudfoundry.org/buildpacks/dotnet-core/index.html#cli-tools) includes support for .NET Core 2.0. The[ 2.0 SDK is now the default](https://github.com/cloudfoundry/dotnet-core-buildpack/releases/tag/v1.0.25) for C# and Visual Basic apps. .NET Core 2.0 supports [.NET Standard 2.0](https://docs.microsoft.com/en-us/dotnet/api/?view=netstandard-2.0), more than doubling that set of APIs available for your .NET projects on Cloud.gov.
 * Updated documentation about how to [securely authenticate your communication with external services]({{ site.baseurl }}/docs/apps/static-egress).
 
 ### Deprecated

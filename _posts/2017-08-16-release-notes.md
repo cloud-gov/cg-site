@@ -6,7 +6,7 @@ redirect_from:
   - /updates/2017-08-16-release-notes/
 ---
 
-Curious what’s new that you might find helpful as a cloud.gov user? Here are highlights from our platform updates over the past two weeks.
+Curious what’s new that you might find helpful as a Cloud.gov user? Here are highlights from our platform updates over the past two weeks.
 
 ### Added
 
@@ -18,7 +18,7 @@ Curious what’s new that you might find helpful as a cloud.gov user? Here are h
 
 * On the dashboard, new error messages alert you when you try to remove someone from your organization who still has roles in your spaces.
 <br/>![remove space user dashboard screen]({{ site.baseurl }}/img/remove-space-user.png)
-* Visualization of platform uptime available from the [cloud.gov status page](https://cloudgov.statuspage.io/). You can see current and the previous 90 days uptime for customer applications, API, dashboard, and many other components of the cloud.gov platform.
+* Visualization of platform uptime available from the [Cloud.gov status page](https://cloudgov.statuspage.io/). You can see current and the previous 90 days uptime for customer applications, API, dashboard, and many other components of the Cloud.gov platform.
 
 ### Platform releases
 We upgraded the Cloud Foundry deployment to [v270](https://github.com/cloudfoundry/cf-release/releases/tag/v270), which remediates the following vulnerabilities:

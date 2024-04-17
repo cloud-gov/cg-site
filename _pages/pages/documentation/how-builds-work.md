@@ -11,7 +11,7 @@ Pages is a continuous deployment-like build environment for sites. It works by s
 
 If you don't want to use the Pages templates, you can add your own GitHub repository to build a completely custom site. When you add an existing repository, you specify a default branch of your repository to serve as the "production" version of the site and choose your build engine.
 
-Pages is designed to be a modular service so HOW you generate your site is up to you. Some people customize their sites by creating new templates. Others use a default template content, editing with GitHub. When used this way Pages acts a no-configuration, production-ready hosting solution for GitHub-based static websites, hosted using cloud.gov tooling, with a custom domain.
+Pages is designed to be a modular service so HOW you generate your site is up to you. Some people customize their sites by creating new templates. Others use a default template content, editing with GitHub. When used this way Pages acts a no-configuration, production-ready hosting solution for GitHub-based static websites, hosted using Cloud.gov tooling, with a custom domain.
 
 When building out your sites, please remember that all government websites must meet section 508 accessibility standards. 18F provides [guidance for building accessible websites](https://accessibility.18f.gov/).
 

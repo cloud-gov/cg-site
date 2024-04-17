@@ -2,10 +2,10 @@
 layout: post
 date: November 16, 2021
 title: "New Controlled Space Egress"
-excerpt: The cloud.gov platform is releasing new space types to help customers better control app egress.
+excerpt: The Cloud.gov platform is releasing new space types to help customers better control app egress.
 ---
 
-To better help our customers control egress from their apps, we are offering additional space types for your organization with new application security group (ASG) rules. These new ASG rules allow space egress to be more locked down to minimize the impacts of possible data exfiltration. Currently, all cloud.gov org spaces allow egress from an app to the open internet, our brokered services ([AWS RDS](https://cloud.gov/docs/services/relational-database/), [AWS Elasticache Redis](https://cloud.gov/docs/services/aws-elasticache/), [AWS Elasticsearch](https://cloud.gov/docs/services/aws-elasticsearch/)), and [internal routes](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html#internal-routes) to other apps within your organization. Our additional space ASG offerings will now include `public-egress`, `trusted-local-egress`, and `closed-egress`. These ASG rules will apply to all apps running within a certain space type and will allow you to group apps based on functionality.
+To better help our customers control egress from their apps, we are offering additional space types for your organization with new application security group (ASG) rules. These new ASG rules allow space egress to be more locked down to minimize the impacts of possible data exfiltration. Currently, all Cloud.gov org spaces allow egress from an app to the open internet, our brokered services ([AWS RDS](https://cloud.gov/docs/services/relational-database/), [AWS Elasticache Redis](https://cloud.gov/docs/services/aws-elasticache/), [AWS Elasticsearch](https://cloud.gov/docs/services/aws-elasticsearch/)), and [internal routes](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html#internal-routes) to other apps within your organization. Our additional space ASG offerings will now include `public-egress`, `trusted-local-egress`, and `closed-egress`. These ASG rules will apply to all apps running within a certain space type and will allow you to group apps based on functionality.
 
 Here are the following rules associated to the different space ASG types:
 

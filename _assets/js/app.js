@@ -1,5 +1,5 @@
 // Add your custom javascript here
-console.log("Hi from cloud.gov Pages");
+console.log("Hi from Cloud.gov Pages");
 
 mermaid.initialize({startOnLoad:true, theme: 'base'}, ".someOtherClass");
 

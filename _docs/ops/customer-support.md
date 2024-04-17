@@ -53,7 +53,7 @@ If the support engineer on duty requires additional engineering assistance to sa
 
 ## Support documentation for ongoing customer requests
 
-For customer tickets and requests that involve considering modification of cloud.gov infrastructure and/or require more than 1 business day towards developing a solution/answer to a customer request, a GitHub issue/ticket will be started.
+For customer tickets and requests that involve considering modification of Cloud.gov infrastructure and/or require more than 1 business day towards developing a solution/answer to a customer request, a GitHub issue/ticket will be started.
 
 ## Monitor \#cg-support
 

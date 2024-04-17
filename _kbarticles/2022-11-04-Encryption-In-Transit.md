@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Encryption in transit on cloud.gov"
+title: "Encryption in transit on Cloud.gov"
 date: November 4, 2022
-excerpt: This article documents the status of encryption in transit for various types of traffic on the cloud.gov platform.
+excerpt: This article documents the status of encryption in transit for various types of traffic on the Cloud.gov platform.
 ---
 
 ## Application to services
@@ -15,4 +15,4 @@ While traffic between customer applications is not secured with TLS by default, 
 
 ## Inbound traffic to applications
 
-All inbound connections to customer applications on cloud.gov are protected by TLS. As that traffic comes into cloud.gov, it crosses a few boundaries where in memory it's decrypted for inspection/routing and then encrypted when it leaves that boundary all the way to the customer application endpoint. For further details, see the documentation on our [SSL/TLS implementation](https://cloud.gov/docs/compliance/domain-standards/#ssltls-implementation).
+All inbound connections to customer applications on Cloud.gov are protected by TLS. As that traffic comes into Cloud.gov, it crosses a few boundaries where in memory it's decrypted for inspection/routing and then encrypted when it leaves that boundary all the way to the customer application endpoint. For further details, see the documentation on our [SSL/TLS implementation](https://cloud.gov/docs/compliance/domain-standards/#ssltls-implementation).

@@ -6,7 +6,7 @@ redirect_from:
   - /updates/2017-06-01-release-notes/
 ---
 
-Curious what’s new that you might find helpful as a cloud.gov application developer? Here are highlights from our platform updates over the past week and a half.
+Curious what’s new that you might find helpful as a Cloud.gov application developer? Here are highlights from our platform updates over the past week and a half.
 <!--more-->
 
 ### Fixed
@@ -14,10 +14,10 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
 - We improved monitoring and reliability for the [Redis]({{ site.baseurl }}/docs/services/redis) and [Elasticsearch](https://github.com/cloud-gov/cg-site/blob/6418e8e933f887896a102d8575f1c7af468d1d2f/content/docs/services/elasticsearch24.md) services, enabling them to automatically restart if non-responsive.
 
 ### Removed
-- cloud.gov documentation no longer provides instructions for using the deprecated East/West environment, because all customer applications have migrated to the GovCloud environment.
+- Cloud.gov documentation no longer provides instructions for using the deprecated East/West environment, because all customer applications have migrated to the GovCloud environment.
 
 ### Platform releases
-cloud.gov now includes the following releases and upgrades. You will need to [restage your application](http://cli.cloudfoundry.org/en-US/cf/restage.html) to [incorporate fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) and ensure you’re running the most recent language version supported by your buildpack.
+Cloud.gov now includes the following releases and upgrades. You will need to [restage your application](http://cli.cloudfoundry.org/en-US/cf/restage.html) to [incorporate fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) and ensure you’re running the most recent language version supported by your buildpack.
 
 We upgraded the Cloud Foundry deployment to [v262](https://github.com/cloudfoundry/cf-release/releases/tag/v262). This upgrade addresses this security vulnerability:
 [CVE-2017-4991: UAA password reset vulnerability](https://cloudfoundry.org/cve-2017-4991/)

@@ -10,7 +10,7 @@ If you notice strange behavior in your application, or if builds / deployments a
 Some things to check:
 
 * You can check which buildpack and version your app is using by running `cf app APP_NAME`
-* You can check the latest version of cloud.gov system buildpacks by running: `cf buildpacks`
+* You can check the latest version of Cloud.gov system buildpacks by running: `cf buildpacks`
 * You can check the latest buildpack release version by checking the releases page in the appropriate buildpack GitHub repository: `https://github.com/cloudfoundry/{BUILDPACK-TYPE}-buildpack/releases`
 
 New buildpack versions are released often to update components and address security vulnerabilities. When a new buildpack is available (either via a reference to a buildpack URL or a system buildpack), it will be picked up and used by your application when you do a `cf restage`.

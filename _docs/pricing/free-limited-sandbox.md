@@ -9,7 +9,7 @@ redirect_from:
   - /docs/pricing/free-limited-sandbox/
 ---
 
-A sandbox is a free space that you can use to see if cloud.gov might suit your team’s needs. From the [setup process]({{ site.baseurl }}{% link _docs/getting-started/setup.md %}) through [deploying an app]({{ site.baseurl }}{% link _docs/getting-started/your-first-deploy.md %}), it works similarly to other spaces that are included in [paid access packages]({{ site.baseurl }}/pricing/), with [some limitations](#sandbox-limitations).
+A sandbox is a free space that you can use to see if Cloud.gov might suit your team’s needs. From the [setup process]({{ site.baseurl }}{% link _docs/getting-started/setup.md %}) through [deploying an app]({{ site.baseurl }}{% link _docs/getting-started/your-first-deploy.md %}), it works similarly to other spaces that are included in [paid access packages]({{ site.baseurl }}/pricing/), with [some limitations](#sandbox-limitations).
 
 ## Get a sandbox
 
@@ -19,13 +19,13 @@ If you’re interested in [purchasing full access]({{ site.baseurl }}/pricing/) 
 
 ## Keep in mind before you try your sandbox
 
-* If your agency has not already integrated its single-sign on authentication provider with cloud.gov (only EPA, FDIC, GSA, NSF, OMB, and DOJ have done this so far), you will access your sandbox through a [cloud.gov account]({{ site.baseurl }}{% link _docs/getting-started/accounts.md %}#cloudgov-accounts). This account requires multi-factor authentication using a mobile app such as 1password, Microsoft Authenticator, or Authy. If you cannot install or use these apps, such as if your workplace prohibits mobile phones or mobile phone cameras, you might not be able to set up access. (Paid access packages support integration with your agency single sign-on authentication provider.)
-* If your agency prohibits installing the [cloud.gov command line interface]({{ site.baseurl }}{% link _docs/getting-started/setup.md %}#set-up-the-command-line) on your computer, you won’t be able to deploy applications in your sandbox. (For paid access packages, we can coordinate with your agency to help them approve this tool.)
+* If your agency has not already integrated its single-sign on authentication provider with Cloud.gov (only EPA, FDIC, GSA, NSF, OMB, and DOJ have done this so far), you will access your sandbox through a [Cloud.gov account]({{ site.baseurl }}{% link _docs/getting-started/accounts.md %}#cloudgov-accounts). This account requires multi-factor authentication using a mobile app such as 1password, Microsoft Authenticator, or Authy. If you cannot install or use these apps, such as if your workplace prohibits mobile phones or mobile phone cameras, you might not be able to set up access. (Paid access packages support integration with your agency single sign-on authentication provider.)
+* If your agency prohibits installing the [Cloud.gov command line interface]({{ site.baseurl }}{% link _docs/getting-started/setup.md %}#set-up-the-command-line) on your computer, you won’t be able to deploy applications in your sandbox. (For paid access packages, we can coordinate with your agency to help them approve this tool.)
 * If your agency blocks many network ports, you might receive errors when you try [`cf logs`]({{ site.baseurl }}{% link _docs/deployment/logs.md %}) or [`cf ssh`]({{ site.baseurl }}{% link _docs/management/using-ssh.md %}). (For paid access packages, we can coordinate with your agency to ask for unblocking those ports.)
 
 ## A few things you can try in your sandbox
 
-On a technical level, a sandbox is a specially-limited ["space"]({{ site.baseurl }}{% link _docs/getting-started/concepts.md %}#spaces) within a sandbox-only ["organization"]({{ site.baseurl }}{% link _docs/getting-started/concepts.md %}#organizations) that is managed by cloud.gov. You can build and deploy applications and services within that space.
+On a technical level, a sandbox is a specially-limited ["space"]({{ site.baseurl }}{% link _docs/getting-started/concepts.md %}#spaces) within a sandbox-only ["organization"]({{ site.baseurl }}{% link _docs/getting-started/concepts.md %}#organizations) that is managed by Cloud.gov. You can build and deploy applications and services within that space.
 
 As part of that, you can:
 
@@ -37,7 +37,7 @@ As part of that, you can:
 
 ## Sandbox limitations
 
-Sandboxes are limited because cloud.gov is a cost-recoverable service. They’re a free trial to help you evaluate whether to purchase cloud.gov.
+Sandboxes are limited because Cloud.gov is a cost-recoverable service. They’re a free trial to help you evaluate whether to purchase Cloud.gov.
 
 Sandboxes are for testing; they’re suitable for information and applications that require **no confidentiality, integrity, or availability**. (Don’t put production applications or production data in sandboxes; that’s not what they’re for.)
 
@@ -48,5 +48,5 @@ Limitations include:
 * You can only create certain managed service instances. (See each [service documentation page]({{ site.baseurl }}{% link _docs/services/intro.md %}) for details about which service instances are available in sandboxes.)
 * You can only use the default `*.app.cloud.gov` domain, not [custom domains]({{ site.baseurl }}{% link _docs/management/custom-domains.md %}).
 * Sandboxes do not have an "org manager" role available. (You can control access and permissions for your own sandbox space.) If you want to manage an org of prototyping spaces for people at your agency, consider purchasing a [prototyping package]({{ site.baseurl }}{% link _pages/pricing.md %}).
-* Government agency users that login to Cloud.gov using their agency single sign-on credentials have access to their government agency’s sandbox. A Cloud.gov user account (Cloud.gov IdP) cannot be added to spaces in the government agency sandbox. A user must have single sign-on credentials with that specific government agency which they can use login to cloud.gov to access their government agency's sandbox as well as to be added to spaces within their government agency’s sandbox.
+* Government agency users that login to Cloud.gov using their agency single sign-on credentials have access to their government agency’s sandbox. A Cloud.gov user account (Cloud.gov IdP) cannot be added to spaces in the government agency sandbox. A user must have single sign-on credentials with that specific government agency which they can use login to Cloud.gov to access their government agency's sandbox as well as to be added to spaces within their government agency’s sandbox.
 * We periodically delete sandbox contents to ensure that users don't run production applications in sandboxes. Specifically, we clear all sandbox contents 90 days after the first application or service is created. We'll warn you via email five days before clearing out your sandbox.

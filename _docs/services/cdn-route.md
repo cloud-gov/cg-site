@@ -18,7 +18,7 @@ This service provides:
 1. HTTPS support via free TLS certificates with auto-renewal (using [Let's Encrypt](https://letsencrypt.org/)), so that user traffic is encrypted.
 1. Content Distribution Network (CDN) caching (using [AWS CloudFront](https://aws.amazon.com/cloudfront/)), for fast delivery of content to your users.
 
-This cloud.gov feature has unique [compliance impact](#compliance-impact) considerations. If you don't need CDN caching, use the [external domain service]({{ site.baseurl }}{% link _docs/services/external-domain-service.md %}) instead.
+This Cloud.gov feature has unique [compliance impact](#compliance-impact) considerations. If you don't need CDN caching, use the [external domain service]({{ site.baseurl }}{% link _docs/services/external-domain-service.md %}) instead.
 
 ## Plans
 
@@ -33,7 +33,7 @@ Plan Name | Description |
 Name | Required | Description | Default
 --- | --- | --- | ---
 `domain` | *Required* | Your custom domain (or domains separated by commas) |
-`origin` | *Optional* | *Don't put this in your command for cloud.gov tenant applications.* For services/applications that are not cloud.gov tenant applications ([more info](#external-services-and-applications)): the origin root URL of the application |
+`origin` | *Optional* | *Don't put this in your command for Cloud.gov tenant applications.* For services/applications that are not Cloud.gov tenant applications ([more info](#external-services-and-applications)): the origin root URL of the application |
 `path` | *Optional* | The path for the application within the main domain supplied | `""`
 `insecure_origin` | *Optional* | Read the application over HTTP instead of HTTPS | `false`
 `cookies` | *Optional* | Forward cookies to the origin | `true`
@@ -44,7 +44,7 @@ This service is similar to the [custom domain service]({{ site.baseurl }}/docs/s
 
 ### Compliance impact
 
-When you use cloud.gov in general, your application inherits the compliance of the cloud.gov FedRAMP P-ATO, which inherits compliance from the AWS GovCloud FedRAMP P-ATO. This service is a little different. When you use this service, you opt into using an AWS service (CloudFront) that is not in the cloud.gov FedRAMP P-ATO boundary, but is in the AWS Commerical FedRAMP P-ATO boundary (see [Services in Scope](https://aws.amazon.com/compliance/services-in-scope/)).
+When you use Cloud.gov in general, your application inherits the compliance of the Cloud.gov FedRAMP P-ATO, which inherits compliance from the AWS GovCloud FedRAMP P-ATO. This service is a little different. When you use this service, you opt into using an AWS service (CloudFront) that is not in the Cloud.gov FedRAMP P-ATO boundary, but is in the AWS Commerical FedRAMP P-ATO boundary (see [Services in Scope](https://aws.amazon.com/compliance/services-in-scope/)).
 
 You are responsible for obtaining appropriate authorization from your agency to use CloudFront for your system. The appropriate steps depend on your agency; they may include discussing this with your Authorizing Official and documenting it as part of your ATO (for example as part of [SC-12](https://nvd.nist.gov/800-53/Rev4/control/SC-12) or [SA-9](https://nvd.nist.gov/800-53/Rev4/control/SA-9)).
 
@@ -54,7 +54,7 @@ Before setting up this service, review [how the CDN works](#more-about-how-the-c
 
 ## How to create an instance of this service
 
-*Use these instructions for cloud.gov tenant applications. If you're creating a custom domain for something else (such as a public S3 bucket), see [external services and applications](#external-services-and-applications).*
+*Use these instructions for Cloud.gov tenant applications. If you're creating a custom domain for something else (such as a public S3 bucket), see [external services and applications](#external-services-and-applications).*
 
 Before you begin, note that once you initiate creation of a CDN service instance, you can't update or delete it until it has been created successfully. Typos in the service creation parameters can cause creation to get stuck in a pending state. If you need to implement DNSSEC, see [DNSSEC support](#dnssec-support).
 
@@ -181,7 +181,7 @@ If a `cf create-service` command times out due to certificate rate limiting, and
 * Let's Encrypt has a [rate limit of 20 certificates per registered domain per week](https://letsencrypt.org/docs/rate-limits/). This can happen if you're working with many subdomains for the same domain name.
 
 After you create your CDN route service, your TXT record must be created within 7 days.
-* If your record was not made within the timeframe, contact cloud.gov, they will change the status of service so that you can delete the old service and make a new service.
+* If your record was not made within the timeframe, contact Cloud.gov, they will change the status of service so that you can delete the old service and make a new service.
 
 ## How to update a service instance
 
@@ -210,14 +210,14 @@ After you delete an existing service instance, you may need to wait up to 30 min
 
 ## External services and applications
 
-To create a custom domain for a service or application that is not a cloud.gov tenant application (such as a public S3 bucket), put in the `origin` option:
+To create a custom domain for a service or application that is not a Cloud.gov tenant application (such as a public S3 bucket), put in the `origin` option:
 
 ```sh
 cf create-service cdn-route cdn-route my-cdn-route \
     -c '{"domain": "my.example.gov", "origin": "my-app.external-example.gov"}'
 ```
 
-Unlike creating custom domains for cloud.gov tenant applications, you don't need to run the `cf create-domain` command first -- there's no need to create a private domain for externally-managed services and applications.
+Unlike creating custom domains for Cloud.gov tenant applications, you don't need to run the `cf create-domain` command first -- there's no need to create a private domain for externally-managed services and applications.
 
 Then [set up DNS](#how-to-set-up-dns).
 
@@ -232,8 +232,8 @@ CloudFront will use a default timeout of **24 hours**. This can be
 particularly confusing as different requests might be routed to different
 CloudFront Edge endpoints.
 
-While there is no mechanism for cloud.gov users to trigger a cache clear,
-[cloud.gov support]({{ site.baseurl }}/docs/help/) can. Cache invalidation is not
+While there is no mechanism for Cloud.gov users to trigger a cache clear,
+[Cloud.gov support]({{ site.baseurl }}/docs/help/) can. Cache invalidation is not
 instantaneous; Amazon recommends expecting a lag time of 10-15 minutes (more if there are
 many distinct endpoints).
 
@@ -269,15 +269,15 @@ When making requests to the origin, CloudFront's caching mechanism associates HT
 
 If you plan to use a domain with DNSSEC, you need to [verify your DNSSEC configuration](https://www.icann.org/resources/pages/tools-2012-02-25-en) before starting the steps above, because invalid DNSSEC configuration will cause creation to get stuck.
 
-However, custom domains using the CDN broker will not fully validate DNSSEC (between your CNAME record and cloudfront.net). This is because the AWS CloudFront service does not currently support DNSSEC. For a complete implementation of DNSSEC, we recommend instead running a proxy server within your boundary that forwards to your application in cloud.gov, or using an alternative CDN that supports DNSSEC. For implementation advice to help you meet your compliance needs, contact [cloud.gov support]({{ site.baseurl }}/docs/help/).
+However, custom domains using the CDN broker will not fully validate DNSSEC (between your CNAME record and cloudfront.net). This is because the AWS CloudFront service does not currently support DNSSEC. For a complete implementation of DNSSEC, we recommend instead running a proxy server within your boundary that forwards to your application in Cloud.gov, or using an alternative CDN that supports DNSSEC. For implementation advice to help you meet your compliance needs, contact [Cloud.gov support]({{ site.baseurl }}/docs/help/).
 
-Alternatively, you may be able to make the case for an alternative implementation without DNSSEC. As described in the [HTTPS-Only Standard](https://https.cio.gov/faq/#how-does-https-protect-against-dns-spoofing), a properly implemented solution using HTTPS-only and HSTS can meet the same requirements around preventing DNS spoofing that DNSSEC is intended to implement. cloud.gov enforces HTTPS for all applications and enables HSTS by default; we recommend configuring HSTS preload as well.
+Alternatively, you may be able to make the case for an alternative implementation without DNSSEC. As described in the [HTTPS-Only Standard](https://https.cio.gov/faq/#how-does-https-protect-against-dns-spoofing), a properly implemented solution using HTTPS-only and HSTS can meet the same requirements around preventing DNS spoofing that DNSSEC is intended to implement. Cloud.gov enforces HTTPS for all applications and enables HSTS by default; we recommend configuring HSTS preload as well.
 
 See our [compliance guide for federal standards and recommendations for domain names]({{ site.baseurl }}/docs/compliance/domain-standards/) for more details.
 
 ## Certificate validity and renewal
 
-Let's Encrypt TLS certificates are valid for 90 days.  The broker will automatically renew your certificate every 60 days.  This process is usually immediate but can take several days to complete.  If your certificate is expiring within the next 21 days and has not been renewed automatically, contact [cloud.gov support]({{ site.baseurl }}/docs/help/).
+Let's Encrypt TLS certificates are valid for 90 days.  The broker will automatically renew your certificate every 60 days.  This process is usually immediate but can take several days to complete.  If your certificate is expiring within the next 21 days and has not been renewed automatically, contact [Cloud.gov support]({{ site.baseurl }}/docs/help/).
 
 ## The broker in GitHub
 

@@ -21,6 +21,6 @@ Shortcuts to common tasks:
 * [Custom domains]({{ site.baseurl }}{% link _docs/management/custom-domains.md %})
 * [Managing teammates]({{ site.baseurl }}{% link _docs/orgs-spaces/roles.md %})
 
-### cloud.gov team docs
+### Cloud.gov team docs
 
-cloud.gov is an open source project based on [Cloud Foundry](https://www.cloudfoundry.org/) with additional components built by our team and other community members. We maintain our code and team documentation publicly here, and we invite you to read it, contribute to it, and adapt it for other projects. See [our list of repositories]({{ site.baseurl }}{% link _docs/ops/repos.md %}).
+Cloud.gov is an open source project based on [Cloud Foundry](https://www.cloudfoundry.org/) with additional components built by our team and other community members. We maintain our code and team documentation publicly here, and we invite you to read it, contribute to it, and adapt it for other projects. See [our list of repositories]({{ site.baseurl }}{% link _docs/ops/repos.md %}).

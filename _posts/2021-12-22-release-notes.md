@@ -1,13 +1,13 @@
 ---
 layout: post
 date: December 22, 2021
-title: "December 22th cloud.gov Change Log" 
-excerpt: The cloud.gov team is working on providing change logs so everyone can see new features and updates.
+title: "December 22th Cloud.gov Change Log" 
+excerpt: The Cloud.gov team is working on providing change logs so everyone can see new features and updates.
 ---
 
 # Happy Holidays!
 
-The cloud.gov team is working on providing change logs so everyone can see new features and updates. Some highlights include cf-deployment v17.1, S3 Broker and Log4J Fixes. 
+The Cloud.gov team is working on providing change logs so everyone can see new features and updates. Some highlights include cf-deployment v17.1, S3 Broker and Log4J Fixes. 
 
 # Change Log
 ## Customer Facing

@@ -44,7 +44,7 @@ You can do this by directly comparing the outputs of `nslookup $DOMAIN` and
 `nslookup $DOMAIN.external-domains-production.cloud.gov`, or by modifying your `hosts` file
 to point `$DOMAIN` to one of the IP addresses `$DOMAIN.external-domains-production.cloud.gov`
 currently resolves to. **If either of these tests fail, _STOP_ and do not update**
-your DNS, and contact cloud.gov support for assistance.
+your DNS, and contact Cloud.gov support for assistance.
 
 
 ## What to expect

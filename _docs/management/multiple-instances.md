@@ -10,10 +10,10 @@ title: Running multiple instances
 
 It is critical that your production application has more than one instance. Then if there are any issues with one of the platform runners where your app instances are assigned, or we upgrade platform components underneath an instance, your app will continue to function correctly (with less risk of downtime).
 
-When you scale your app by running multiple instances, cloud.gov schedules those instances across availability zones to maximize your app's resiliency. cloud.gov also load-balances access from users by default, so you should set up your instances to share session data to avoid unexpected behavior. If your application already stores data in a database, you can use it for this as well; applications that don't yet have databases can establish one (for example using [AWS RDS]({{ site.baseurl }}{% link _docs/services/relational-database.md %})) or use another type of data storage (such as [Redis]({{ site.baseurl }}{% link _docs/services/aws-elasticache.md %})).
+When you scale your app by running multiple instances, Cloud.gov schedules those instances across availability zones to maximize your app's resiliency. Cloud.gov also load-balances access from users by default, so you should set up your instances to share session data to avoid unexpected behavior. If your application already stores data in a database, you can use it for this as well; applications that don't yet have databases can establish one (for example using [AWS RDS]({{ site.baseurl }}{% link _docs/services/relational-database.md %})) or use another type of data storage (such as [Redis]({{ site.baseurl }}{% link _docs/services/aws-elasticache.md %})).
 
 ## Starting multiple instances
-There are three ways to start multiple app instances on cloud.gov:
+There are three ways to start multiple app instances on Cloud.gov:
 
 1.  In the `cf push` command
 2.  In the `manifest.yml`

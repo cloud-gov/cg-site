@@ -1,11 +1,11 @@
 ---
 layout: post
 date: May 12th 2022
-title: "May 12th cloud.gov Change Log"
-excerpt: The cloud.gov team is working on providing change logs so everyone can see new features and updates.
+title: "May 12th Cloud.gov Change Log"
+excerpt: The Cloud.gov team is working on providing change logs so everyone can see new features and updates.
 ---
 
-Happy May! The cloud.gov team is working on providing change logs so everyone can see new features and updates. Highlights this month include Cloud Foundry Deployment and bug fixes.
+Happy May! The Cloud.gov team is working on providing change logs so everyone can see new features and updates. Highlights this month include Cloud Foundry Deployment and bug fixes.
 
 # Change Log
 

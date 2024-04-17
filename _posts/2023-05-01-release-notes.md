@@ -1,8 +1,8 @@
 ---
 layout: post
 date: May 1st 2023
-title: "May 1st cloud.gov Change Log"
-excerpt: The cloud.gov team is working on providing change logs so everyone can see new features and updates.
+title: "May 1st Cloud.gov Change Log"
+excerpt: The Cloud.gov team is working on providing change logs so everyone can see new features and updates.
 ---
 
 # Change Log

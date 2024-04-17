@@ -5,15 +5,15 @@ date: July 26, 2021
 excerpt: When do application restarts happen and what do they mean
 ---
 
-Application restarts are a common occurrence on the cloud.gov platform, as our operators [regularly deploy updates to the various system components](https://cloud.gov/docs/deployment/app-maintenance/#operating-system-patching). This can sometimes cause confusion as application developers or system owners may interpret restarts as an issue with the way their application is built or functions.
+Application restarts are a common occurrence on the Cloud.gov platform, as our operators [regularly deploy updates to the various system components](https://cloud.gov/docs/deployment/app-maintenance/#operating-system-patching). This can sometimes cause confusion as application developers or system owners may interpret restarts as an issue with the way their application is built or functions.
 
 ### What happens when an app crashes?
 
-When an app instance running on cloud.gov crashes for some reason (e.g., an unhandled exception occurs in your application code), the platform will automatically try to restart it. The platform automatically restarts your app by rescheduling the instance on another container 3 times. After 3 failed restarts, the platform [gradually increases the amount of time between restart attempts](https://docs.cloudfoundry.org/devguide/deploy-apps/app-lifecycle.html#crash-events).
+When an app instance running on Cloud.gov crashes for some reason (e.g., an unhandled exception occurs in your application code), the platform will automatically try to restart it. The platform automatically restarts your app by rescheduling the instance on another container 3 times. After 3 failed restarts, the platform [gradually increases the amount of time between restart attempts](https://docs.cloudfoundry.org/devguide/deploy-apps/app-lifecycle.html#crash-events).
 
 ### What else causes app restarts?
 
-Certain maintenance activities undertaken by the cloud.gov team require restarting VMs with containers hosting app instances. For example, when we update stemcells or installs a new version of Cloud Foundry - the software that [underlies cloud.gov](https://cloud.gov/docs/overview/what-is-cloudgov/) - all the VMs in the deployment are restarted.
+Certain maintenance activities undertaken by the Cloud.gov team require restarting VMs with containers hosting app instances. For example, when we update stemcells or installs a new version of Cloud Foundry - the software that [underlies Cloud.gov](https://cloud.gov/docs/overview/what-is-cloudgov/) - all the VMs in the deployment are restarted.
 
 Cloud Foundry automatically relocates the instances on VMs that are shutting down through a process called "evacuation." Cloud Foundry recreates the app instances on another VM, waits until they are healthy, and then shuts down the old instances. During this  process, apps running a single instance may become temporarily unavailable if the replacement instance does not become healthy within the platform’s operation timeout, which defaults to 10 minutes.
 

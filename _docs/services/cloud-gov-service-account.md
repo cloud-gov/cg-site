@@ -2,9 +2,9 @@
 parent: services
 layout: docs
 sidenav: true
-title: cloud.gov service account
+title: Cloud.gov service account
 name: "cloud-gov-service-account"
-description: "cloud.gov service accounts for automated access by programs"
+description: "Cloud.gov service accounts for automated access by programs"
 status: "Beta"
 redirect_from:
 - /docs/services/deployer-account/
@@ -57,7 +57,7 @@ The last command will return a username/password pair, that you can use, like th
 }
 ```
 
-This will create a cloud.gov service account and make the credentials available to you via a service key. Keep these credentials secure. If they’re compromised, the way to invalidate the credentials is to [delete the service key](https://docs.cloudfoundry.org/devguide/services/service-keys.html#delete) (you can create another, and it will have a fresh set of credentials). Each service key that you bind to your instance creates a separate service account with different credentials; you can create as many service keys per instance as you like. <!-- this advice should match on /docs/services/cloud-gov-service-account/ + /docs/services/cloud-gov-identity-provider/ -->
+This will create a Cloud.gov service account and make the credentials available to you via a service key. Keep these credentials secure. If they’re compromised, the way to invalidate the credentials is to [delete the service key](https://docs.cloudfoundry.org/devguide/services/service-keys.html#delete) (you can create another, and it will have a fresh set of credentials). Each service key that you bind to your instance creates a separate service account with different credentials; you can create as many service keys per instance as you like. <!-- this advice should match on /docs/services/cloud-gov-service-account/ + /docs/services/cloud-gov-identity-provider/ -->
 
 After you create one of these service keys, you will see a new "user" in your org and space with a name made of 36 letters, numbers, and dashes as its unique identifier, similar to `f6ab4cfb-6e6c-4b10-8585-3f39e740905c`. In your event logs, its actions will display as actions by `service-account@cloud.gov`.
 
@@ -76,7 +76,7 @@ To use this service, see [continuous deployment]({{ site.baseurl }}{% link _docs
 
 ### Rotating credentials
 
-The service account service creates unique cloud.gov credentials for each service key. To rotate credentials associated with a service key, [delete](https://docs.cloudfoundry.org/devguide/services/service-keys.html#delete) and recreate the service key.
+The service account service creates unique Cloud.gov credentials for each service key. To rotate credentials associated with a service key, [delete](https://docs.cloudfoundry.org/devguide/services/service-keys.html#delete) and recreate the service key.
 
 ### Handling expired passwords
 
@@ -99,7 +99,7 @@ The last command will return the service account username/password pair. These s
 
 ### Not for human consumption
 
-Don't use service account credentials to manually log into cloud.gov as a human. cloud.gov has no technical mechanism to prevent you from doing this, because there's no way to distinguish a human from an automated script at login. Typically, your agency and system security compliance requirements require people to only log in using their own accounts (agency single sign-on accounts or cloud.gov accounts with multi-factor authentication).
+Don't use service account credentials to manually log into Cloud.gov as a human. Cloud.gov has no technical mechanism to prevent you from doing this, because there's no way to distinguish a human from an automated script at login. Typically, your agency and system security compliance requirements require people to only log in using their own accounts (agency single sign-on accounts or Cloud.gov accounts with multi-factor authentication).
 
 ### The broker in GitHub
 

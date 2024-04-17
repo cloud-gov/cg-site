@@ -6,7 +6,7 @@ redirect_from:
   - /updates/2016-12-14-release-notes/
 ---
 
-Curious what’s new that you might find helpful as a cloud.gov application developer? Here are highlights from our platform updates over the past two weeks.
+Curious what’s new that you might find helpful as a Cloud.gov application developer? Here are highlights from our platform updates over the past two weeks.
 <!--more-->
 
 ### Added
@@ -15,12 +15,12 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
   - Org and space level views now include a quick overview of the health of application instances.
 
 ### Changed
-- We upgraded Cloud Foundry (the underlying open source project that powers cloud.gov) to [Release v249](https://github.com/cloudfoundry/cf-release/releases/tag/v249) (see also [Release v248](https://github.com/cloudfoundry/cf-release/releases/tag/v248)), which includes updates to buildpacks and improvements for internal components.
+- We upgraded Cloud Foundry (the underlying open source project that powers Cloud.gov) to [Release v249](https://github.com/cloudfoundry/cf-release/releases/tag/v249) (see also [Release v248](https://github.com/cloudfoundry/cf-release/releases/tag/v248)), which includes updates to buildpacks and improvements for internal components.
 - Changes in Cloud Foundry require an upgrade to the latest version of the command line interface (CLI) client (`cf`) in order for `cf logs` to work properly. Please upgrade your local version to the [latest version](https://github.com/cloudfoundry/cli/releases/latest) ([installation instructions](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)).
 
 ### Fixed
 - The latest Cloud Foundry command line interface client ([available here](https://github.com/cloudfoundry/cli/releases/latest)) addresses an issue where inspecting application logs returned errors.
-- We updated the cloud.gov account creation form to include previously-missing information about password requirements.
+- We updated the Cloud.gov account creation form to include previously-missing information about password requirements.
 
 ### Security
 The Cloud Foundry upgrade included updates for the base filesystem used for running your application, addressing several security vulnerabilities in that filesystem. You can [restage your application](https://cli.cloudfoundry.org/en-US/cf/restage.html) to ensure you [incorporate fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) and are running the most recent language version supported by your [buildpack](https://docs.cloudfoundry.org/buildpacks/).

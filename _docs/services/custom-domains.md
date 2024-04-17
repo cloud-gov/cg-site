@@ -66,7 +66,7 @@ cf create-service custom-domain custom-domain my-custom-domain \
 
 ### How to set up DNS
 
-**Note:** If you are creating a new site on cloud.gov or you are migrating an existing site to cloud.gov that can tolerate a small amount of downtime during the migration, you can skip the first step and proceed directly to [Create CNAME record(s)](#step-2-create-cname-record-s)
+**Note:** If you are creating a new site on Cloud.gov or you are migrating an existing site to Cloud.gov that can tolerate a small amount of downtime during the migration, you can skip the first step and proceed directly to [Create CNAME record(s)](#step-2-create-cname-record-s)
 
 #### Step 1: Create TXT record(s)
 
@@ -154,15 +154,15 @@ creating/recreating the service.
 
 If you plan to use a domain with DNSSEC, you need to [verify your DNSSEC configuration](https://www.icann.org/resources/pages/tools-2012-02-25-en) before starting the steps above, because invalid DNSSEC configuration will cause creation to get stuck.
 
-However, custom domains using the custom domain broker will not fully validate DNSSEC (between your CNAME record and the cloud.gov origin). This is because the AWS load balancer service does not currently support DNSSEC. For a complete implementation of DNSSEC, we recommend instead running a proxy server within your boundary that forwards to your application in cloud.gov, or using an alternative service that supports DNSSEC. For implementation advice to help you meet your compliance needs, contact [cloud.gov support]({{ site.baseurl }}/docs/help/).
+However, custom domains using the custom domain broker will not fully validate DNSSEC (between your CNAME record and the Cloud.gov origin). This is because the AWS load balancer service does not currently support DNSSEC. For a complete implementation of DNSSEC, we recommend instead running a proxy server within your boundary that forwards to your application in Cloud.gov, or using an alternative service that supports DNSSEC. For implementation advice to help you meet your compliance needs, contact [Cloud.gov support]({{ site.baseurl }}/docs/help/).
 
-Alternatively, you may be able to make the case for an alternative implementation without DNSSEC. As described in the [HTTPS-Only Standard](https://https.cio.gov/faq/#how-does-https-protect-against-dns-spoofing), a properly implemented solution using HTTPS-only and HSTS can meet the same requirements around preventing DNS spoofing that DNSSEC is intended to implement. cloud.gov enforces HTTPS for all applications and enables HSTS by default; we recommend configuring HSTS preload as well.
+Alternatively, you may be able to make the case for an alternative implementation without DNSSEC. As described in the [HTTPS-Only Standard](https://https.cio.gov/faq/#how-does-https-protect-against-dns-spoofing), a properly implemented solution using HTTPS-only and HSTS can meet the same requirements around preventing DNS spoofing that DNSSEC is intended to implement. Cloud.gov enforces HTTPS for all applications and enables HSTS by default; we recommend configuring HSTS preload as well.
 
 See our [compliance guide for federal standards and recommendations for domain names]({{ site.baseurl }}{% link _docs/compliance/domain-standards.md %}) for more details.
 
 ## Certificate validity and renewal
 
-Let's Encrypt TLS certificates are valid for 90 days.  The broker will automatically renew your certificate every 60 days.  This process is usually immedate but can take several days to complete.  If your certificate is expiring within the next 21 days and has not been renewed automatically, contact [cloud.gov support]({{ site.baseurl }}/docs/help/).
+Let's Encrypt TLS certificates are valid for 90 days.  The broker will automatically renew your certificate every 60 days.  This process is usually immedate but can take several days to complete.  If your certificate is expiring within the next 21 days and has not been renewed automatically, contact [Cloud.gov support]({{ site.baseurl }}/docs/help/).
 
 ## The broker in GitHub
 

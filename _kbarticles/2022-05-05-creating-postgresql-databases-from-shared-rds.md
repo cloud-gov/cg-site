@@ -5,7 +5,7 @@ date: May 5, 2022
 excerpt: How to use postgres-tinsmith service broker to quickly create PostgreSQL databases from a shared RDS instance
 ---
 
-The cloud.gov team [recently deprecated shared database instance plans]({{ site.baseurl }}{% link _posts/2022-04-25-deprecation-notice.md %}).
+The Cloud.gov team [recently deprecated shared database instance plans]({{ site.baseurl }}{% link _posts/2022-04-25-deprecation-notice.md %}).
 
 Unlike dedicated instance plans, which each provision a separate RDS database instance and take a
 while to create, shared instance plans re-used the same RDS database instance and created new
@@ -15,7 +15,7 @@ You can replicate the behavior of the deprecated shared instance plans using an
 open-source service broker known as [`postgres-tinsmith`](https://github.com/blacksmith-community/cf-postgres-tinsmith).
 
 Please note that while this approach has been tested manually, the `postgres-tinsmith` repo is not
-actively maintained by the cloud.gov team, so this documentation is provided as a **proof-of-concept only and does not offer any guarantees of production-readiness**.
+actively maintained by the Cloud.gov team, so this documentation is provided as a **proof-of-concept only and does not offer any guarantees of production-readiness**.
 
 ## 1. Create a dedicated RDS service
 

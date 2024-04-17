@@ -1,8 +1,8 @@
 ---
 layout: post
 date: November 9th 2023
-title: "November 9th cloud.gov Change Log"
-excerpt: The cloud.gov team is working on providing change logs so everyone can see new features and updates.
+title: "November 9th Cloud.gov Change Log"
+excerpt: The Cloud.gov team is working on providing change logs so everyone can see new features and updates.
 ---
 
 # Change Log - Happy almost Turkey Day!

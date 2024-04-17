@@ -7,7 +7,7 @@ redirect_from:
 title: Security-related HTTP headers
 ---
 
-By default, cloud.gov sets several security-related HTTP headers if your application does not:
+By default, Cloud.gov sets several security-related HTTP headers if your application does not:
 
 ```
 X-Frame-Options: DENY
@@ -16,6 +16,6 @@ X-XSS-Protection: 1; mode=block
 Strict-Transport-Security: max-age=31536000
 ```
 
-These headers reflect some of the main recommendations of the [OWASP Secure Headers Project](https://owasp.org/www-project-secure-headers/#div-headers). Many web application security scanners (commonly implemented to help fulfill [RA-5](https://nvd.nist.gov/800-53/Rev4/control/RA-5)) identify lack of these headers as a potential vulnerability, so cloud.gov sets them by default to support your application's security and security compliance.
+These headers reflect some of the main recommendations of the [OWASP Secure Headers Project](https://owasp.org/www-project-secure-headers/#div-headers). Many web application security scanners (commonly implemented to help fulfill [RA-5](https://nvd.nist.gov/800-53/Rev4/control/RA-5)) identify lack of these headers as a potential vulnerability, so Cloud.gov sets them by default to support your application's security and security compliance.
 
 To override any of these headers, you can set them to a different value in your application. To omit the `X-Frame-Options header` entirely, you can set its value to `ALLOWALL`. [Details on the behavior of HTTP headers.](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)

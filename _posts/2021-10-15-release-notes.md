@@ -1,13 +1,13 @@
 ---
 layout: post
 date: October 15, 2021
-title: "October 15th cloud.gov Change Log" 
-excerpt: It’s a new fiscal year! The cloud.gov team is working on providing change logs so everyone can see new features and updates.
+title: "October 15th Cloud.gov Change Log" 
+excerpt: It’s a new fiscal year! The Cloud.gov team is working on providing change logs so everyone can see new features and updates.
 ---
 
 # Happy New Fiscal Year!
 
-It’s a new fiscal year! The cloud.gov team is working on providing change logs so everyone can see new features and updates.
+It’s a new fiscal year! The Cloud.gov team is working on providing change logs so everyone can see new features and updates.
 
 # Change Log
 ## Customer Facing
@@ -22,11 +22,11 @@ Find more at [AWS Elasticsearch Broker Docs](https://cloud.gov/docs/services/aws
 ### Staticfile Buildpack - 1.5.26 up from 1.5.25
 * Add Configurable HTTP/2 Support
 
-Note: cloud.gov has not enabled HTTP/2 for the platform yet
+Note: Cloud.gov has not enabled HTTP/2 for the platform yet
 
 ### Secure Proxy - 51 up from 50
 * Added HTTPS support to allow use of HTTPS in gorouters
-* cloud.gov has transitioned AWS Load Balancers to send all traffic via HTTPS
+* Cloud.gov has transitioned AWS Load Balancers to send all traffic via HTTPS
 
 ### Go Buildpack - 1.9.36 up from 1.9.35
 * Add go 1.16.8, remove go 1.16.6

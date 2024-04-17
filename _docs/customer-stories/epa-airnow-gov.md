@@ -51,7 +51,7 @@ As the EPA discovered, while the platform infrastructure offered by Cloud.gov is
 * Modify the cache headers on their site assets to increase cache lifetime in the CDN and decrease load on their applications
 * Use plugins like [“cf top” to monitor the health of their instances](https://github.com/ECSTeam/cloudfoundry-top-plugin)
 
-Building on the solid foundation offered by cloud.gov, the AirNow.gov team is delivering for the public even under the most extreme conditions.
+Building on the solid foundation offered by Cloud.gov, the AirNow.gov team is delivering for the public even under the most extreme conditions.
 
 EPA’s success in operating AirNow.gov on Cloud.gov played an important role in the launch of a companion service on Cloud.gov, the [AirNow Fire and Smoke Map](https://fire.airnow.gov/), which EPA runs in partnership with the U.S. Forest Service. Again, the EPA credited the ease of using Cloud.gov in allowing them to quickly develop new services for the public.
 

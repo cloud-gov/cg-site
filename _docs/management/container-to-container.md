@@ -7,7 +7,7 @@ redirect_from:
 title: Container-to-Container Networking
 ---
 
-App developers can leverage cloud.gov's [container-to-container networking](https://docs.cloudfoundry.org/concepts/understand-cf-networking.html) feature to allow direct communication between their applications. This utilizes Cloud Foundry's [overlay network](https://docs.cloudfoundry.org/concepts/understand-cf-networking.html#overlay-network), which is not externally routable. Any traffic sent between containers on this network does not leave the overlay.
+App developers can leverage Cloud.gov's [container-to-container networking](https://docs.cloudfoundry.org/concepts/understand-cf-networking.html) feature to allow direct communication between their applications. This utilizes Cloud Foundry's [overlay network](https://docs.cloudfoundry.org/concepts/understand-cf-networking.html#overlay-network), which is not externally routable. Any traffic sent between containers on this network does not leave the overlay.
 
 ## How to set up container-to-container networking
 
@@ -41,7 +41,7 @@ For more information you can check out the Cloud Foundry documentation on [Secur
 
 ### Addressing certificate validation errors
 
-Regarding container-to-container networking and certificate validation: some code libraries may import their own certificate stores, overriding certificates that cloud.gov provides and preventing applications from being able to validate TLS connections. If your application runs into certificate validation errors, you may need to set the certificate store locations by configuring the library or by setting environment variables to point to the system certificate store. All the certificates for a buildpack based system on cloudfoundry are stored in /etc/ssl/certs and the correct CA authority is stored in /etc/ssl/certs/ca-certificates.crt
+Regarding container-to-container networking and certificate validation: some code libraries may import their own certificate stores, overriding certificates that Cloud.gov provides and preventing applications from being able to validate TLS connections. If your application runs into certificate validation errors, you may need to set the certificate store locations by configuring the library or by setting environment variables to point to the system certificate store. All the certificates for a buildpack based system on cloudfoundry are stored in /etc/ssl/certs and the correct CA authority is stored in /etc/ssl/certs/ca-certificates.crt
 
 For example:
 The Python Requests library depends upon the Certifi library which installs its own CA certificate file, thus breaking container to container TLS CA validation.

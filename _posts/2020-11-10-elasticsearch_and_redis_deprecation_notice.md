@@ -3,7 +3,7 @@ layout: post
 title: Elasticsearch and Redis deprecation notice
 date: November 10, 2020
 ---
-As part of our reliability and stability enhancements to cloud.gov, the legacy Redis 3.2 and Elasticsearch 5.6 offerings from cloud.gov will be deprecated as of April 5, 2021. In accordance with our deprecation policy, provisioning of new instances will be disabled on December 6, 2020 and on April 5, 2021 we will shut down all active instances. This work is an important step in moving cloud.gov towards a more stable and reliable platform by moving away from a bespoke Kubernetes cluster to AWS-hosted services. Learn more about our deprecation policy here:<https://cloud.gov/docs/technology/responsibilities/#deprecation-policy>
+As part of our reliability and stability enhancements to Cloud.gov, the legacy Redis 3.2 and Elasticsearch 5.6 offerings from Cloud.gov will be deprecated as of April 5, 2021. In accordance with our deprecation policy, provisioning of new instances will be disabled on December 6, 2020 and on April 5, 2021 we will shut down all active instances. This work is an important step in moving Cloud.gov towards a more stable and reliable platform by moving away from a bespoke Kubernetes cluster to AWS-hosted services. Learn more about our deprecation policy here:<https://cloud.gov/docs/technology/responsibilities/#deprecation-policy>
 
 The new services of AWS Elasticache for Redis 5.0.6 and AWS Elasticsearch 7.4 replace the legacy Redis 3.2 and Elasticsearch 5.6 services. These new offerings will offer substantial benefits over our legacy offerings, including:
 

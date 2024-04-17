@@ -4,26 +4,26 @@ layout: docs
 sidenav: true
 redirect_from: 
     - /docs/apps/leveraging-authenication/
-title: Leveraging cloud.gov authentication
+title: Leveraging Cloud.gov authentication
 ---
 
-cloud.gov uses Cloud Foundry's [User Account and Authentication (UAA) server](https://docs.cloudfoundry.org/concepts/architecture/uaa.html) to provide identity management capabilities for the cloud.gov platform.
+Cloud.gov uses Cloud Foundry's [User Account and Authentication (UAA) server](https://docs.cloudfoundry.org/concepts/architecture/uaa.html) to provide identity management capabilities for the Cloud.gov platform.
 
-App developers can leverage cloud.gov's UAA instance as a backend that brokers authentication with [supported identity providers]({{ site.baseurl }}{% link _docs/getting-started/accounts.md %}#get-access-to-cloudgov) (currently EPA, FDIC, GSA, NSF, and a cloud.gov provider that supports other agencies). You can use cloud.gov's authentication brokering if the users that you need to authenticate in your application are federal employees and contractors who can use those authentication methods.
+App developers can leverage Cloud.gov's UAA instance as a backend that brokers authentication with [supported identity providers]({{ site.baseurl }}{% link _docs/getting-started/accounts.md %}#get-access-to-cloudgov) (currently EPA, FDIC, GSA, NSF, and a Cloud.gov provider that supports other agencies). You can use Cloud.gov's authentication brokering if the users that you need to authenticate in your application are federal employees and contractors who can use those authentication methods.
 
-This service handles only authentication, not authorization -- it's up to your application to manage what they can access within the application. Once you set it up, you can direct your users to the [list of ways to get cloud.gov access]({{ site.baseurl }}{% link _docs/getting-started/accounts.md %}#get-access-to-cloudgov); they don't need any org or space roles, they just need to be able to log into cloud.gov.
+This service handles only authentication, not authorization -- it's up to your application to manage what they can access within the application. Once you set it up, you can direct your users to the [list of ways to get Cloud.gov access]({{ site.baseurl }}{% link _docs/getting-started/accounts.md %}#get-access-to-cloudgov); they don't need any org or space roles, they just need to be able to log into Cloud.gov.
 
-## Using cloud.gov authentication
+## Using Cloud.gov authentication
 
 ### Register your application instances
 
-You will first need to register all instances (such as dev, staging, and production) with cloud.gov's UAA. To register your instance, use the [cloud.gov identity provider]({{ site.baseurl }}{% link _docs/services/cloud-gov-identity-provider.md %}) service.
+You will first need to register all instances (such as dev, staging, and production) with Cloud.gov's UAA. To register your instance, use the [Cloud.gov identity provider]({{ site.baseurl }}{% link _docs/services/cloud-gov-identity-provider.md %}) service.
 
 ### Integrate with your application
 
 UAA handles authentication according to the [OpenID Connect](http://openid.net/connect/) specification, which is "a simple identity layer on top of the OAuth 2.0 protocol."
 
-There are two important cloud.gov URLs you will need to use:
+There are two important Cloud.gov URLs you will need to use:
 - `https://login.fr.cloud.gov/oauth/authorize`, which is where you will direct the user to login with their agency credentials
 - `https://uaa.fr.cloud.gov/oauth/token`, which is where you will exchange auth codes for auth tokens
 
@@ -55,7 +55,7 @@ Here is an example:
 </a>
 ```
 
-Once the user clicks on this link, they will be sent to cloud.gov to login.
+Once the user clicks on this link, they will be sent to Cloud.gov to login.
 
 #### The user is returned to your site
 
@@ -94,8 +94,8 @@ access token. Here is where things get fun.
     library such as [node-jsonwebtoken](https://github.com/auth0/node-jsonwebtoken).
     See https://jwt.io/ for a list of libraries for various languages. 
     
-    Verify the token's signature using cloud.gov's JWK Set and the RSA256 alogrithm. This step ensures the
-    token is authentic. The JWK Set for cloud.gov's UAA is located at `https://uaa.fr.cloud.gov/token_keys`. 
+    Verify the token's signature using Cloud.gov's JWK Set and the RSA256 alogrithm. This step ensures the
+    token is authentic. The JWK Set for Cloud.gov's UAA is located at `https://uaa.fr.cloud.gov/token_keys`. 
     
     Decode the token to get the authenticated user's `email`, which you can then use within
     your application to identify and/or authorize the user.
@@ -116,7 +116,7 @@ To implement this logout:
 - Provide a `redirect` link and the `client_id` for your application so that
   users come back to a familiar place when logged out.
 
-Include the `redirect` link when you register your [cloud.gov identity
+Include the `redirect` link when you register your [Cloud.gov identity
 provider]({{ site.baseurl }}{% link _docs/services/cloud-gov-identity-provider.md %})
 service. It's common for this redirect link to be your application's URL with a
 path of `/logout`.
@@ -128,7 +128,7 @@ Management** > **Logout.do**.
 ## Managing UAA access
 
 If you (or a user of your app) ever need to modify or revoke the permissions of
-third-party applications that you've granted access through the cloud.gov UAA,
+third-party applications that you've granted access through the Cloud.gov UAA,
 visit [https://login.fr.cloud.gov/profile](https://login.fr.cloud.gov/profile).
 
 ## Using a development UAA server
@@ -136,11 +136,11 @@ visit [https://login.fr.cloud.gov/profile](https://login.fr.cloud.gov/profile).
 During development, you may want to authenticate against a local UAA server
 so you can test as multiple users, skip 2-factor authentication,
 and view UAA logs. Running UAA in [Docker](https://www.docker.com) can simplify this,
-and you can follow an example of this in the [cloud.gov demonstrations repository](https://github.com/18F/cg-demos/blob/master/cg-identity/README.md#2-run-a-local-uaa-server-for-local-development).
+and you can follow an example of this in the [Cloud.gov demonstrations repository](https://github.com/18F/cg-demos/blob/master/cg-identity/README.md#2-run-a-local-uaa-server-for-local-development).
 
-## Demonstrating the cloud.gov identity provider
+## Demonstrating the Cloud.gov identity provider
 
-You can go through the process of setting up a simple application, written in Node.js, to use the cloud.gov identity provider in the [cloud.gov demonstrations repository](https://github.com/18F/cg-demos/blob/master/cg-identity/README.md#1-run-an-application-in-cloudgov-that-uses-the-identity-provider).
+You can go through the process of setting up a simple application, written in Node.js, to use the Cloud.gov identity provider in the [Cloud.gov demonstrations repository](https://github.com/18F/cg-demos/blob/master/cg-identity/README.md#1-run-an-application-in-cloudgov-that-uses-the-identity-provider).
 
 ## Resources
 

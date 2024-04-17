@@ -1,8 +1,8 @@
 ---
 layout: post
 date: November 27th 2023
-title: "November 27th cloud.gov Change Log"
-excerpt: The cloud.gov team is working on providing change logs so everyone can see new features and updates.
+title: "November 27th Cloud.gov Change Log"
+excerpt: The Cloud.gov team is working on providing change logs so everyone can see new features and updates.
 ---
 
 # Change Log - Enjoy the Turkey Day leftovers!
@@ -10,7 +10,7 @@ excerpt: The cloud.gov team is working on providing change logs so everyone can 
 ## Customer Facing Changes
 ---
 
-The audience for this section is developers who maintain applications on cloud.gov and may need to respond to stack or buildpack changes.
+The audience for this section is developers who maintain applications on Cloud.gov and may need to respond to stack or buildpack changes.
 
 ### CF-Deployment - v33.4.0 to v33.10.0
 

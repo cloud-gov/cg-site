@@ -1,8 +1,8 @@
 ---
 layout: post
 date: October 29, 2021
-title: "October 29th cloud.gov Change Log" 
-excerpt: The cloud.gov team is working on providing change logs so everyone can see new features and updates.
+title: "October 29th Cloud.gov Change Log" 
+excerpt: The Cloud.gov team is working on providing change logs so everyone can see new features and updates.
 ---
 
 # Change Log

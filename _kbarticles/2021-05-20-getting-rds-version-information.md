@@ -7,7 +7,7 @@ excerpt: Find out what version of AWS RDS version your app is using
 
 The dedicated plans listed in the [RDS Services page](https://cloud.gov/docs/services/relational-database/) (marked “AWS RDS Latest”) deploy the default version as advertised by AWS. 
 
-There is currently no way to verify ahead of time the version of an RDS service that will be deployed by the cloud.gov broker, but you can check the version once an instance has been created by connecting to that instance using the cf-service-connect plugin.  Once the database prompt appears, run the command that matches the database you're using:
+There is currently no way to verify ahead of time the version of an RDS service that will be deployed by the Cloud.gov broker, but you can check the version once an instance has been created by connecting to that instance using the cf-service-connect plugin.  Once the database prompt appears, run the command that matches the database you're using:
 
 - PostgreSQL:  `SELECT version();`
 - MySQL:  `SELECT VERSION();`

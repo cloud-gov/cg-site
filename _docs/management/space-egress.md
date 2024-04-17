@@ -9,7 +9,7 @@ title: Controlling egress traffic
 
 Developers have granular control of egress traffic from application instances, allowing you to control how your applications connect to external services and resources on the public internet.
 
-By default, when new spaces are created in your organization an application security group (ASG) is applied that restricts access to only the internal cloud.gov network. Applications running in this ASG can respond to incoming requests, but new egress traffic to cloud.gov brokered services or to the public internet can't be initiated from these instances. And while this default ASG might be suitable for a limited number of use cases (e.g., serving a static website), for other application types, you will need to modify the ASGs that apply to your space.
+By default, when new spaces are created in your organization an application security group (ASG) is applied that restricts access to only the internal Cloud.gov network. Applications running in this ASG can respond to incoming requests, but new egress traffic to Cloud.gov brokered services or to the public internet can't be initiated from these instances. And while this default ASG might be suitable for a limited number of use cases (e.g., serving a static website), for other application types, you will need to modify the ASGs that apply to your space.
 
 A summary of each of the ASGs that can be applied to your space are as follows:
 
@@ -46,9 +46,9 @@ A summary of each of the ASGs that can be applied to your space are as follows:
 
 Often, production applications need to communicate with an internal, brokered service like a database and make requests to the public internet for third-party APIs. Such applications would need **both `trusted-local-egress` and `public-egress`** applied to their space.
 
-When you push your application to cloud.gov, the staging process may require outbound connections to the public internet to fetch dependencies and software modules. As such, during the staging process, your app will run under the `public-egress` until it is staged and ready to run. Once this process is complete, your app will run under the ASGs that have been applied, either by default or by modifications that have been made to your space.
+When you push your application to Cloud.gov, the staging process may require outbound connections to the public internet to fetch dependencies and software modules. As such, during the staging process, your app will run under the `public-egress` until it is staged and ready to run. Once this process is complete, your app will run under the ASGs that have been applied, either by default or by modifications that have been made to your space.
 
-For applications that need access to their own S3 buckets, you have the option of running them under the `public-egress` ASG, or running them in the `trusted-local-egress` ASG, and using a proxy application (e.g., squid proxy, HA proxy, etc.) to proxy traffic to your S3 bucket(s). Reference implementations showing how to do this will be available soon, or you may reach out to the cloud.gov team for support.
+For applications that need access to their own S3 buckets, you have the option of running them under the `public-egress` ASG, or running them in the `trusted-local-egress` ASG, and using a proxy application (e.g., squid proxy, HA proxy, etc.) to proxy traffic to your S3 bucket(s). Reference implementations showing how to do this will be available soon, or you may reach out to the Cloud.gov team for support.
 
 ## Managing egress settings for your org or space
 

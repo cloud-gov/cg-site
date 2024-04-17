@@ -11,18 +11,18 @@ redirect_from:
 
 ## Cloud.gov
 
-Cloud.gov provides cloud.gov Platform, a secure and compliant Platform as a Service (PaaS),
-and cloud.gov Pages, a static website management and delivery service.
+Cloud.gov provides Cloud.gov Platform, a secure and compliant Platform as a Service (PaaS),
+and Cloud.gov Pages, a static website management and delivery service.
 
 Cloud.gov is built and maintained by a team within the U.S. General Services Administration’s Technology Transformation Service portfolio. The mission of the team is to enable agencies to deliver services to the public as fast as they can develop them while applying best practices in security and compliance with minimal effort.
 
 ## Purpose
 
-This document outlines cloud.gov's internal process for responding to security incidents impacting
+This document outlines Cloud.gov's internal process for responding to security incidents impacting
 our cloud products. Issues with staff account or systems should be handled via 
 the [TTS Incident Response Process](https://handbook.tts.gsa.gov/general-information-and-resources/tech-policies/security-incidents/). 
 
-(If you're a member of the public who has noticed something in cloud.gov that may be a security problem, please see [our vulnerability disclosure policy and reporting process](https://www.gsa.gov/vulnerability-disclosure-policy). As it explains, we want security researchers to feel comfortable reporting vulnerabilities they’ve discovered, as set out in that policy, so that we can fix them and keep our information safe. You can also refer to our well-known [security.txt](https://cloud.gov/.well-known/security.txt).)
+(If you're a member of the public who has noticed something in Cloud.gov that may be a security problem, please see [our vulnerability disclosure policy and reporting process](https://www.gsa.gov/vulnerability-disclosure-policy). As it explains, we want security researchers to feel comfortable reporting vulnerabilities they’ve discovered, as set out in that policy, so that we can fix them and keep our information safe. You can also refer to our well-known [security.txt](https://cloud.gov/.well-known/security.txt).)
 
 ## Overview
 
@@ -36,8 +36,8 @@ At a high level, incident response follows this process:
     - An availability issue impacting a single customer is likely _not_ an incident
   - Is an attack imminent or suspected (e.g. a Log4J type vulnerability)
   - Most reported vulnerabilities are _not_ incidents, and are handled by our SI-02 Flaw Remediation process
-- Outside cloud.gov: A TTS staff member (the *reporter*) notices and reports a cloud.gov-related incident using the [TTS incident response process](https://handbook.tts.gsa.gov/general-information-and-resources/tech-policies/security-incidents/) and then notifying the cloud.gov team in [`#cg-support`](https://gsa-tts.slack.com/archives/C09CR1Q9Z)
-- Inside cloud.gov: Join [`#cg-incidents`](https://gsa-tts.slack.com/archives/GTNBK2L9K), and use the "Declare Incident" Workflow.
+- Outside Cloud.gov: A TTS staff member (the *reporter*) notices and reports a Cloud.gov-related incident using the [TTS incident response process](https://handbook.tts.gsa.gov/general-information-and-resources/tech-policies/security-incidents/) and then notifying the Cloud.gov team in [`#cg-support`](https://gsa-tts.slack.com/archives/C09CR1Q9Z)
+- Inside Cloud.gov: Join [`#cg-incidents`](https://gsa-tts.slack.com/archives/GTNBK2L9K), and use the "Declare Incident" Workflow.
 - Declaring an incident results in further guidance to:
   - Designate an Incident Commander and Scribe
   - Claim an incident folder in our "Incident Response" [Google Drive folder](https://drive.google.com/drive/folders/1WtLFiZuxLmKR4mrztEE9YtS78nGxC--P)
@@ -57,7 +57,7 @@ At a high level, incident response follows this process:
 
 - The responders work to contain and remediate the issue; timelines vary based on the assessed severity.
 - The IC coordinates, communicates, and tracks the investigation and remediation.
-- If appropriate to the situation, GSA, TTS, and cloud.gov coordinate on notifying affected customers.
+- If appropriate to the situation, GSA, TTS, and Cloud.gov coordinate on notifying affected customers.
 
 [Retrospective](#retrospective):
 
@@ -75,11 +75,11 @@ For full details, read on.
 
 ### Initiate
 
-An incident begins when someone becomes aware of a potential incident. We define "incident" broadly, following [NIST SP 800-61](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf), as "a violation or imminent threat of violation of computer security policies, acceptable use policies, or standard security practices" (6). This is a deliberately broad definition, designed to encompass any scenario that might threaten the security of cloud.gov.
+An incident begins when someone becomes aware of a potential incident. We define "incident" broadly, following [NIST SP 800-61](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf), as "a violation or imminent threat of violation of computer security policies, acceptable use policies, or standard security practices" (6). This is a deliberately broad definition, designed to encompass any scenario that might threaten the security of Cloud.gov.
 
-When a TTS staff member (the *reporter*) notices and reports a cloud.gov-related incident using the [TTS incident response process](https://handbook.tts.gsa.gov/general-information-and-resources/tech-policies/security-incidents/) they should then  notify the cloud.gov team in [`#cg-support`](https://gsa-tts.slack.com/archives/C09CR1Q9Z)
+When a TTS staff member (the *reporter*) notices and reports a Cloud.gov-related incident using the [TTS incident response process](https://handbook.tts.gsa.gov/general-information-and-resources/tech-policies/security-incidents/) they should then  notify the Cloud.gov team in [`#cg-support`](https://gsa-tts.slack.com/archives/C09CR1Q9Z)
 
-When a cloud.gov team member is the first person to notice an incident, they should 
+When a Cloud.gov team member is the first person to notice an incident, they should 
 join [`#cg-incidents`](https://gsa-tts.slack.com/archives/GTNBK2L9K), and use the "Declare Incident" Workflow.
 
 Declaring an incident results in further guidance to:
@@ -91,7 +91,7 @@ Declaring an incident results in further guidance to:
   - Gather in a Google Meet
   - Set reminders to send comms updates, and to rotate key roles every 6 hours.
 
-In either case, the first participant on the cloud.gov team becomes the initial *Incident Commander* (IC) and carries out the next steps in the response. The IC's responsibility is coordination, not necessarily investigation. The IC's primary role is to guide the process. The first responder may remain IC throughout the process, or they may hand off IC duties later in the process. 
+In either case, the first participant on the Cloud.gov team becomes the initial *Incident Commander* (IC) and carries out the next steps in the response. The IC's responsibility is coordination, not necessarily investigation. The IC's primary role is to guide the process. The first responder may remain IC throughout the process, or they may hand off IC duties later in the process. 
 
 A Scribe is highly recommended to keep notes, update the incident doc, and support the IC in drafting communications.
 
@@ -105,7 +105,7 @@ At this phase, communications should follow the steps in the [FedRAMP Incident
 Communications Procedures Guide](https://www.fedramp.gov/assets/resources/documents/CSP_Incident_Communications_Procedures.pdf) and the [TTS incident response
 process](https://handbook.tts.gsa.gov/general-information-and-resources/tech-policies/security-incidents/) process.
 
-- Exception: cloud.gov does not directly notify US-CERT. That is handled by 
+- Exception: Cloud.gov does not directly notify US-CERT. That is handled by 
 GSA Incident Response Team.
 
 Initial comms should include:
@@ -202,7 +202,7 @@ At this point, we're trying to fix the issue! Remediation will be very situation
 
     - For High-severity incidents, the team should take action immediately, even if this causes disruption. A notification about the disruption should be sent out as soon as possible, but the team needs no permission to take action at this level.
 
-    - For Medium-severity incidents, the team should notify the cloud.gov leads of the planned action, and help them assess the relative risk of disruption vs. security. If the leads are unavailable via Slack, they should be contacted using the phone numbers, found either in their Slack profiles or on the [cloud.gov Team Roster](https://docs.google.com/spreadsheets/d/187663k5MYJBNlKExLu_nhuovcZQfIbqYCu2n4noNY1o/edit#gid=0). The team should reach a collaborative decision on action, with a bias towards disruption. If they can't be reached within 1 hour, the team may take action without them.
+    - For Medium-severity incidents, the team should notify the Cloud.gov leads of the planned action, and help them assess the relative risk of disruption vs. security. If the leads are unavailable via Slack, they should be contacted using the phone numbers, found either in their Slack profiles or on the [Cloud.gov Team Roster](https://docs.google.com/spreadsheets/d/187663k5MYJBNlKExLu_nhuovcZQfIbqYCu2n4noNY1o/edit#gid=0). The team should reach a collaborative decision on action, with a bias towards disruption. If they can't be reached within 1 hour, the team may take action without them.
 
     - For Low-severity issues, the team should notify as above, and not take action until a mutually-agreed-on course of action has been determined.
 
@@ -314,7 +314,7 @@ Follow this checklist if you need to hand over IC duties:
 
 ### Network Interconnect
 
-If a cloud.gov team member or automated scanning system detects unauthorized access or traffic across a secure VPN / interconnection with a customer:
+If a Cloud.gov team member or automated scanning system detects unauthorized access or traffic across a secure VPN / interconnection with a customer:
 
 - Invite customer team contacts (such as Org Managers and System Owner) to the call
 - Confirm whether traffic should be terminated or captured

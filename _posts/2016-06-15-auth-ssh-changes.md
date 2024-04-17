@@ -6,17 +6,17 @@ redirect_from:
   - /updates/2016-06-15-auth-ssh-changes/
 ---
 
-Earlier this month we updated **cloud.gov login** and **`cf-ssh`** in ways that mean most cloud.gov users need to change how they use them. You've probably already made these changes if you need to (we sent email notifications to people who should log in using the new system), but here are the details as a handy reference.
+Earlier this month we updated **Cloud.gov login** and **`cf-ssh`** in ways that mean most Cloud.gov users need to change how they use them. You've probably already made these changes if you need to (we sent email notifications to people who should log in using the new system), but here are the details as a handy reference.
 <!--more-->
 
-### For GSA and EPA, your cloud.gov login is now your agency login
+### For GSA and EPA, your Cloud.gov login is now your agency login
 
-We updated how @gsa.gov and @epa.gov accounts authenticate with cloud.gov. When you log in, use your official agency credentials instead of your old cloud.gov-specific username and password. Here's how:
+We updated how @gsa.gov and @epa.gov accounts authenticate with Cloud.gov. When you log in, use your official agency credentials instead of your old Cloud.gov-specific username and password. Here's how:
 
 * **On the web:** At [https://login.cloud.gov/](https://login.cloud.gov/), select the button for your agency and enter your agency credentials (the same credentials you use for your agency's own services).
-* **On the command line:** Use the new command listed at [Setting up the command line]({{ site.baseurl }}/getting-started/setup/) for agency accounts: `cf login -a api.cloud.gov --sso`
+* **On the command line:** Use the new command listed at [Setting up the command line]({{ site.baseurl }}/getting-started/setup/) for agency accounts: `cf login -a api.Cloud.gov --sso`
 
-This update improves the security of these accounts because you're now using your agency's existing multi-factor authentication system. This is a step in our progress toward FedRAMP compliance and certification for cloud.gov.
+This update improves the security of these accounts because you're now using your agency's existing multi-factor authentication system. This is a step in our progress toward FedRAMP compliance and certification for Cloud.gov.
 
 ### Use the new version of `cf-ssh`
 

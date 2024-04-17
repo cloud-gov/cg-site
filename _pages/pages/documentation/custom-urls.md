@@ -24,7 +24,7 @@ Luckily, Pages also proxies — that is, creates a forwarding address — for th
 
 The proxy adds some required headers and is much cleaner for sending preview links around. 
 
-When ready to go live at their own .gov URL, partners point DNS for sampleprogram.sampleagency.gov at a CloudFront CDN service created by a cloud.gov broker. The Pages team directs the CDN service to load from the proxy URL, and since the proxy is loading from S3, that completes a technical connection from the live URL to the S3 bucket contents.
+When ready to go live at their own .gov URL, partners point DNS for sampleprogram.sampleagency.gov at a CloudFront CDN service created by a Cloud.gov broker. The Pages team directs the CDN service to load from the proxy URL, and since the proxy is loading from S3, that completes a technical connection from the live URL to the S3 bucket contents.
 
 Here's a full example chain:
 
@@ -39,8 +39,8 @@ The URLs above have broken CSS and assets because published Pages sites on their
 
 1. The partner confirms the site is ready for an initial scan; the Pages team scans the site and sends to GSA IT for initial approval.
 1. After initial scans, the partner confirms readiness for the site to go-live at a specific permanent URL (this URL process needs to happen within a few hours timespan when started).
-1. The Pages team uses the [cloud.gov CloudFront broker]({{ site.baseurl }}/docs/services/cdn-route/) to begin set up for a distribution for a given URL.
-    * We do this by accessing our org in cloud.gov and running the command `cf create-service cdn-route cdn-route YOUR.URL.gov-route -c '{"domain": "YOUR.URL.gov", "origin": "federalist-proxy.app.cloud.gov", "path": "/site/<org>/<repo-name>"}'`. Note that the path argument here does not have a trailing slash.
+1. The Pages team uses the [Cloud.gov CloudFront broker]({{ site.baseurl }}/docs/services/cdn-route/) to begin set up for a distribution for a given URL.
+    * We do this by accessing our org in Cloud.gov and running the command `cf create-service cdn-route cdn-route YOUR.URL.gov-route -c '{"domain": "YOUR.URL.gov", "origin": "federalist-proxy.app.cloud.gov", "path": "/site/<org>/<repo-name>"}'`. Note that the path argument here does not have a trailing slash.
 1. After running the command above, the command `cf service YOUR.URL.gov-route` is used to retrieve the CloudFront URL to be used in DNS changes. We communicate that URL to whoever sets the DNS records.
 1. The partner sets DNS records with a CNAME to point the subdomain (e.g. `yourprogram.youragency.gov`) to the CloudFront distribution URL (e.g. `d2oezh1w8w4o1u.cloudfront.net`).
     * It takes roughly 15-30 minutes for the CNAME to a `d2oezh1w8w4o1u.cloudfront.net`-style URL to propagate and the broker to create an HTTPS certificate, which also must propagate. Once `yourprogram.youragency.gov` shows site content (perhaps without images or CSS) under the correct HTTPS certificate, the CloudFront delegation process is complete.

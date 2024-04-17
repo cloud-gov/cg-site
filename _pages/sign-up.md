@@ -5,7 +5,7 @@ layout: wide
 <section class="usa-graphic-list usa-section usa-section--dark sign-up-intro">
 <div class="grid-container maxw-desktop">
 <div class="tablet:grid-col-7"  markdown="1">
-# Try cloud.gov for free
+# Try Cloud.gov for free
 
 <p class="usa-intro">Follow this guide to create an account and deploy a sample app in your own free sandbox.</p>
 </div>
@@ -31,13 +31,13 @@ Federal employees and contractors with an email ending in .mil, .gov, or .fed.us
 <div class="tablet:grid-col-7 usa-prose"  markdown="1">
 ## 2.<br />Go build in your sandbox
 
-Follow any of the tutorials to launch your own web application from your sandbox. You’ll need your cloud.gov account and some familiarity with Windows Powershell or Mac/Linux terminal. Learn more about [sandbox spaces]({{ site.baseurl }}/docs/pricing/free-limited-sandbox/) and [sandbox limitations]({{ site.baseurl }}/docs/pricing/free-limited-sandbox/#sandbox-limitations).
+Follow any of the tutorials to launch your own web application from your sandbox. You’ll need your Cloud.gov account and some familiarity with Windows Powershell or Mac/Linux terminal. Learn more about [sandbox spaces]({{ site.baseurl }}/docs/pricing/free-limited-sandbox/) and [sandbox limitations]({{ site.baseurl }}/docs/pricing/free-limited-sandbox/#sandbox-limitations).
 
-<a href="https://account.fr.cloud.gov/signup" class="usa-button usa-button--big">Set up cloud.gov</a>
+<a href="https://account.fr.cloud.gov/signup" class="usa-button usa-button--big">Set up Cloud.gov</a>
 
-We also have video tutorials on <a href="https://www.youtube.com/watch?v=LKb0liZyepA&feature=emb_logo" target="_blank">an overview of the cloud.gov platform</a>, <a href="https://www.youtube.com/watch?v=ip8G_Rafb_c&feature=emb_logo" target="_blank">a walk through of the initial registration process</a>, and <a href="https://www.youtube.com/watch?v=G2J8dxSF0-I&feature=emb_logo" target="_blank">a hands-on workshop on how to start running applications</a>.
+We also have video tutorials on <a href="https://www.youtube.com/watch?v=LKb0liZyepA&feature=emb_logo" target="_blank">an overview of the Cloud.gov platform</a>, <a href="https://www.youtube.com/watch?v=ip8G_Rafb_c&feature=emb_logo" target="_blank">a walk through of the initial registration process</a>, and <a href="https://www.youtube.com/watch?v=G2J8dxSF0-I&feature=emb_logo" target="_blank">a hands-on workshop on how to start running applications</a>.
 
-If you've run into any issues, please [contact support at cloud.gov](mailto:support@cloud.gov). We're happy to help. You can also send us suggestions on [GitHub](https://github.com/18F/cg-site/issues/new) or [via email](mailto:inquiries@cloud.gov?subject=%5BSuggestion%5D%20&body=%0A%0A%0A%0ARefcode:%20quickstart).
+If you've run into any issues, please [contact support at Cloud.gov](mailto:support@cloud.gov). We're happy to help. You can also send us suggestions on [GitHub](https://github.com/18F/cg-site/issues/new) or [via email](mailto:inquiries@cloud.gov?subject=%5BSuggestion%5D%20&body=%0A%0A%0A%0ARefcode:%20quickstart).
 
 </div>
 <div class="tablet:grid-col-1"></div>
@@ -71,7 +71,7 @@ If you've run into any issues, please [contact support at cloud.gov](mailto:supp
 
 Upgrade to a paid package to get full access to the platform and permanent
 spaces for hosting longer term demos and web applications in production.
-Email us at inquiries@cloud.gov to learn more about what cloud.gov
+Email us at inquiries@Cloud.gov to learn more about what Cloud.gov
 can do.
 
 <a href="mailto:inquiries@cloud.gov?subject=%5BSuggestion%5D%20&body=%0A%0A%0A%0ARefcode:%20quickstart" class="usa-button usa-button--secondary usa-button--big">Contact us</a>

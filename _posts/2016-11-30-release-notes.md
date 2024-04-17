@@ -6,14 +6,14 @@ redirect_from:
   - /updates/2016-11-30-release-notes/
 ---
 
-Curious what’s new that you might find helpful as a cloud.gov application developer? Here are highlights from our platform updates over the past two weeks.
+Curious what’s new that you might find helpful as a Cloud.gov application developer? Here are highlights from our platform updates over the past two weeks.
 <!--more-->
 
 ### Added
 - The [dashboard](https://dashboard.fr.cloud.gov) now allows restarting of apps from the app page.
 
 ### Changed
-- We upgraded Cloud Foundry (the underlying open source project that powers cloud.gov) to [Release v247](https://github.com/cloudfoundry/cf-release/releases/tag/v247), which includes updates to buildpacks and improvements for internal components. 
+- We upgraded Cloud Foundry (the underlying open source project that powers Cloud.gov) to [Release v247](https://github.com/cloudfoundry/cf-release/releases/tag/v247), which includes updates to buildpacks and improvements for internal components. 
 
 ### Fixed
 - **Dashboard**: We fixed an [issue](https://github.com/18F/cg-dashboard/issues/672) that prevented creating service instances on the marketplace page.

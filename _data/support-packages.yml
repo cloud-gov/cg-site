@@ -1,12 +1,12 @@
 - package_name: Platform <br>Support
   description: >
-    If you run into any issues with the underlying cloud.gov platform, we will resolve them at no additional cost. If you run into technical problems with your application, we can point you to useful resources but cannot devote meaningful time on your applications.<br>
+    If you run into any issues with the underlying Cloud.gov platform, we will resolve them at no additional cost. If you run into technical problems with your application, we can point you to useful resources but cannot devote meaningful time on your applications.<br>
   price: <h3>$0.00/year</h3>
   hours: Limited to platform issues
   image: basic-support.svg
 - package_name: Basic <br>Support
   description: >
-    This is the default support level for new cloud.gov agreements. This package includes all services provided in Platform Support, plus 10hrs of support time that our engineers can devote to resolving issues with your specific applications.<br><br>
+    This is the default support level for new Cloud.gov agreements. This package includes all services provided in Platform Support, plus 10hrs of support time that our engineers can devote to resolving issues with your specific applications.<br><br>
   price: <h3>$2,750/year</h3>
   hours: 10 hours per year
   image: supplemental-support.svg

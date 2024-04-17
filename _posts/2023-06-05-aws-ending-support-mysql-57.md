@@ -11,7 +11,7 @@ excerpt: "AWS is ending support for MySQL 5.7 databases starting in January/Febr
 
 ## What this means for you
 
-As a cloud.gov customer, if you are running a MySQL 5.7 database, then you will need to upgrade that database to at least MySQL version 8.0 by January/February 2024. **Affected customers will receive direct outreach from the cloud.gov team.**
+As a Cloud.gov customer, if you are running a MySQL 5.7 database, then you will need to upgrade that database to at least MySQL version 8.0 by January/February 2024. **Affected customers will receive direct outreach from the Cloud.gov team.**
 
 To upgrade your database from MySQL 5.7 to 8.0, see the [guidance below](#how-to-upgrade).
 
@@ -21,7 +21,7 @@ If you do not upgrade your database by January/February 2024, then AWS will auto
 
 |When|What|
 |-|-|
-| **June 5, 2023** | MySQL 5.7 databases can no longer be created on cloud.gov |
+| **June 5, 2023** | MySQL 5.7 databases can no longer be created on Cloud.gov |
 | **June 5 2023 - January/February 2024** | Window for customers to self-upgrade their MySQL databases to 8.0 |
 | **January/February 2024** | MySQL 5.7 databases are fully deprecated by AWS. Any remaining databases are auto-upgraded to the next supported major version. |
 

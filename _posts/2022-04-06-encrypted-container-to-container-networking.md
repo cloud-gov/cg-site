@@ -5,7 +5,7 @@ title: "New Feature: Encrypted Container-to-Container Networking"
 excerpt: A new update to Container-to-Container networking allows developers to enable encryption of traffic between applications using SSL/TLS.
 ---
 
-The cloud.gov platform now offers developers the ability to encrypt container-to-container traffic using SSL/TLS, providing more security for your applications' internal communications. This feature is also a step towards zero trust security.
+The Cloud.gov platform now offers developers the ability to encrypt container-to-container traffic using SSL/TLS, providing more security for your applications' internal communications. This feature is also a step towards zero trust security.
 
 ## About Container-to-Container Networking
 
@@ -28,7 +28,7 @@ In terms of the zero trust security model this addresses the assumption that jus
 
 There are two options for implementing secure container-to-container networking. The `automatic` option which handles provisiong certificates and ensuring TLS termination for you, and the `manual` option where you configure your own certificates and handling of TLS termination.
 
-Cloud Foundry, and by extension cloud.gov, has designated port `61443` to be used for the automatic encryption of container-to-container networking. Any traffic sent to this port will be encrypted automatically. You can specify the use of this port with the `cf add-network-policy` command. When using the automatic option the destination application itself does not need to be changed, and the source application only needs to be modified to send traffic to the correct port. The automatic option is useful if you only need to care about preventing sniffing of traffic between your applications.
+Cloud Foundry, and by extension Cloud.gov, has designated port `61443` to be used for the automatic encryption of container-to-container networking. Any traffic sent to this port will be encrypted automatically. You can specify the use of this port with the `cf add-network-policy` command. When using the automatic option the destination application itself does not need to be changed, and the source application only needs to be modified to send traffic to the correct port. The automatic option is useful if you only need to care about preventing sniffing of traffic between your applications.
 
 If your application needs to manage its own TLS termination (for example if it uses mutual TLS), then you need to implement the 'manual option' for secure container-to-container networking. This option requires configuring your own certificates, but it also means your applications can use those certificates for its TLS configuration. Using this option you can also specify which ports your applications will use for terminating your encrypted traffic, instead of only being able to use port `61443`.
 

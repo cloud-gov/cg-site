@@ -6,7 +6,7 @@ title: Your first deploy
 weight: -30
 ---
 
-Practice deploying a simple "hello world" application using the cloud.gov command line interface (CLI).
+Practice deploying a simple "hello world" application using the Cloud.gov command line interface (CLI).
 
 ## Get ready
 
@@ -14,15 +14,15 @@ First, [set up your command line interface (CLI)]({{ site.baseurl }}{% link _doc
 
 Log in:
 
-  1. Enter **`cf login -a api.fr.cloud.gov --sso`**
+  1. Enter **`cf login -a api.fr.Cloud.gov --sso`**
   1. It'll say `One Time Code ( Get one at `[`https://login.fr.cloud.gov/passcode`](https://login.fr.cloud.gov/passcode)` )` -- visit this login link in your browser.
-  1. If you use a cloud.gov account, you may need to log in using your email address, password, and multi-factor authentication token. (EPA, FDIC, GSA, and NSF: use your agency button.)
+  1. If you use a Cloud.gov account, you may need to log in using your email address, password, and multi-factor authentication token. (EPA, FDIC, GSA, and NSF: use your agency button.)
   1. After you log in, the page will display your 10-character Temporary Authentication Code.
   1. Copy and paste that 10-character code into the command line (no typing indicators will show), and enter it.
 
 ## Target your "sandbox"
 
-If you have a federal email address, when you log in for the first time, cloud.gov will start automatically creating a [sandbox space]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}) for you. You might need to wait up to 5 minutes before it becomes available.
+If you have a federal email address, when you log in for the first time, Cloud.gov will start automatically creating a [sandbox space]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}) for you. You might need to wait up to 5 minutes before it becomes available.
 
 Here's how to deploy a test app in your sandbox using the CLI.
 
@@ -54,18 +54,18 @@ cf target -o sandbox-gsa -s harry.truman
     cf push APPNAME
     ```
 1. You'll see a series of messages noting the stages of creating the app. When complete, it'll say "App started" and give information about your app. Use the `routes` line (`routes: [ROUTENAME].app.cloud.gov`) to visit your app on the web.
-1. Try editing the app locally (without committing) and run `cf push <APPNAME>` again to see your changes. The changes will be reflected even without being committed to Git. cloud.gov is not Git-aware – it simply deploys whatever is contained in the directory that you `push` from. You can set up [continuous deployment]({{ site.baseurl }}{% link _docs/management/continuous-deployment.md %}) from a Git repository.
+1. Try editing the app locally (without committing) and run `cf push <APPNAME>` again to see your changes. The changes will be reflected even without being committed to Git. Cloud.gov is not Git-aware – it simply deploys whatever is contained in the directory that you `push` from. You can set up [continuous deployment]({{ site.baseurl }}{% link _docs/management/continuous-deployment.md %}) from a Git repository.
 1. Visit the dashboard ([`https://dashboard.fr.cloud.gov/`](https://dashboard.fr.cloud.gov/)) to see your options for managing your application via your browser.
 1. If you're done, you can delete your app by running `cf delete <APPNAME>` (it's up to you whether to keep it running for more experiments or delete it).
 
 ## Next steps
 
-Next, check out [Concepts]({{ site.baseurl }}{% link _docs/getting-started/concepts.md %}) for an overview of cloud.gov terms and architecture.
+Next, check out [Concepts]({{ site.baseurl }}{% link _docs/getting-started/concepts.md %}) for an overview of Cloud.gov terms and architecture.
 
-Then, head over to [**deployment instructions and architecture principles**]({{ site.baseurl }}{% link _docs/deployment/deployment.md %}) for an introduction to deploying your own applications on cloud.gov.
+Then, head over to [**deployment instructions and architecture principles**]({{ site.baseurl }}{% link _docs/deployment/deployment.md %}) for an introduction to deploying your own applications on Cloud.gov.
 
 ## Good to know
 
-Check out [Status](https://cloudgov.statuspage.io/), which tells you about cloud.gov service disruptions. You can use "Subscribe to Updates" in the upper right corner to get email or SMS notifications about platform problems that may affect cloud.gov users.
+Check out [Status](https://cloudgov.statuspage.io/), which tells you about Cloud.gov service disruptions. You can use "Subscribe to Updates" in the upper right corner to get email or SMS notifications about platform problems that may affect Cloud.gov users.
 
-cloud.gov is based on Cloud Foundry, so in general, the [the Cloud Foundry documentation](http://docs.cloudfoundry.org) and other Cloud Foundry resources mostly apply to cloud.gov. For example, you can also try deploying the [sample apps maintained by the Cloud Foundry community](https://github.com/cloudfoundry-samples).
+Cloud.gov is based on Cloud Foundry, so in general, the [the Cloud Foundry documentation](http://docs.cloudfoundry.org) and other Cloud Foundry resources mostly apply to Cloud.gov. For example, you can also try deploying the [sample apps maintained by the Cloud Foundry community](https://github.com/cloudfoundry-samples).

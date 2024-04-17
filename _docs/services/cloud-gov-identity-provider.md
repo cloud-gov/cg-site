@@ -2,19 +2,19 @@
 parent: services
 layout: docs
 sidenav: true
-title: cloud.gov identity provider
+title: Cloud.gov identity provider
 name: "cloud-gov-identity-provider"
-description: "Authenticate cloud.gov users in your app"
+description: "Authenticate Cloud.gov users in your app"
 status: "Beta"
 ---
 
-You can leverage cloud.gov's identity hub to reduce the burden of authenticating users from government agencies and partners in your app.
+You can leverage Cloud.gov's identity hub to reduce the burden of authenticating users from government agencies and partners in your app.
 
 ## Plans
 
 Plan Name | Description |
 --------- | ----------- | -----
-`oauth-client` | OAuth2 client credentials for authenticating cloud.gov users in your app |
+`oauth-client` | OAuth2 client credentials for authenticating Cloud.gov users in your app |
 
 *These instances are available in [sandbox spaces]({{ site.baseurl }}{% link _docs/pricing/free-limited-sandbox.md %}#sandbox-limitations).*
 
@@ -45,7 +45,7 @@ cf create-service-key \
     }'
 ```
 
-This will create a cloud.gov identity provider and make the credentials available to you via a service key.
+This will create a Cloud.gov identity provider and make the credentials available to you via a service key.
 The `redirect_uri` array registers your app's redirect uris with your service provider.
 
 You can retrieve your credentials with the name of the instance and service key:
@@ -96,7 +96,7 @@ See [leveraging authentication]({{ site.baseurl }}{% link _docs/management/lever
 
 ### Rotating credentials
 
-The identity provider service creates unique cloud.gov credentials for each service key. To rotate credentials associated with a service key, [delete](https://docs.cloudfoundry.org/devguide/services/service-keys.html#delete) and recreate the service key.
+The identity provider service creates unique Cloud.gov credentials for each service key. To rotate credentials associated with a service key, [delete](https://docs.cloudfoundry.org/devguide/services/service-keys.html#delete) and recreate the service key.
 
 ### The broker in GitHub
 

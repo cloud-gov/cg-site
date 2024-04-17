@@ -10,13 +10,13 @@ excerpt: Ubuntu 22.04 stack (cflinuxfs4) buildpacks are here and you likely need
 ## Ubuntu 22.04 stack (cflinuxfs4) buildpacks are here and Ubuntu 18.04 (cflinuxfs3) are retiring: upgrade your apps now!
 
 
-The base OS image used by your cloud.gov applications is called a "stack". The stack we’ve provided to date is called `cflinuxfs3`, and it’s based on Ubuntu 18.04 LTS, released originally in mid 2018 with continuous security updates since then. `cflinuxfs4` is a new OS image based on Ubuntu 22.04 LTS, and is now default stack in cloud.gov. Ubuntu 18.04 will likely no longer receive security updates in May, so we will stop supporting cflinuxfs3 in cloud.gov May 10th.
+The base OS image used by your Cloud.gov applications is called a "stack". The stack we’ve provided to date is called `cflinuxfs3`, and it’s based on Ubuntu 18.04 LTS, released originally in mid 2018 with continuous security updates since then. `cflinuxfs4` is a new OS image based on Ubuntu 22.04 LTS, and is now default stack in Cloud.gov. Ubuntu 18.04 will likely no longer receive security updates in May, so we will stop supporting cflinuxfs3 in Cloud.gov May 10th.
 
 ### Who is impacted?
 
 If you push your Cloud Foundry applications as Docker containers with `cf push --docker-image `, these changes do not impact you.
 
-However, most cloud.gov customers deploy their applications using buildpacks, and their apps don’t have any dependency on the particular OS version that runs them. If that describes you and you have existing applications running on cloud.gov, this upgrade will impact you and you'll need to update the stack on your applications.
+However, most Cloud.gov customers deploy their applications using buildpacks, and their apps don’t have any dependency on the particular OS version that runs them. If that describes you and you have existing applications running on Cloud.gov, this upgrade will impact you and you'll need to update the stack on your applications.
 
 
 ### What should you do now for existing apps?

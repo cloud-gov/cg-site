@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Scaling your cloud.gov applications"
+title: "Scaling your Cloud.gov applications"
 date: August 7, 2023
-excerpt: How and why to scale your cloud.gov applications by adding more application instances
+excerpt: How and why to scale your Cloud.gov applications by adding more application instances
 ---
 
 ### Importance of multiple application instances
@@ -13,7 +13,7 @@ By default, applications are deployed with a single instance which handles all t
 
 To increase your application's ability to respond to requests, also known as availability, you can horizontally scale your application by running multiple application instances. When you have multiple application instances, your application requests are load-balanced among them to ensure that no single instance is prematurely overloaded, thus maximizing your availability. 
 
-By default, the routing infrastructure in cloud.gov [distributes requests to application instances using a `round-robin` algorithm](https://docs.cloudfoundry.org/concepts/http-routing.html#balancing-algorithm).
+By default, the routing infrastructure in Cloud.gov [distributes requests to application instances using a `round-robin` algorithm](https://docs.cloudfoundry.org/concepts/http-routing.html#balancing-algorithm).
 
 Running multiple application instances also increases the chances that your application will be [balanced across availability zones](https://docs.cloudfoundry.org/concepts/diego/diego-auction.html#auction).
 

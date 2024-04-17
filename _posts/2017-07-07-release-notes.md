@@ -6,7 +6,7 @@ redirect_from:
   - /updates/2017-07-07-release-notes/
 ---
 
-Curious what’s new that you might find helpful as a cloud.gov application developer? Here are highlights from our platform updates over the past six weeks.
+Curious what’s new that you might find helpful as a Cloud.gov application developer? Here are highlights from our platform updates over the past six weeks.
 <!--more-->
 
 ### Added
@@ -16,7 +16,7 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
 ### Changed
 
 - When you make a new service account or identity provider service instance, you will now [get the credentials using a service key]({{ site.baseurl }}/updates/2017-07-07-changes-to-credentials-broker.md), instead of getting the credentials from a Toaster (formerly Fugacious) link. This doesn’t change existing service account and identity provider instances, but you can delete and recreate them to use this new method.
-- [Static IP addresses for communicating with external apps]({{ site.baseurl }}/docs/apps/static-egress.md): Outbound traffic from cloud.gov now comes from specific IP addresses to help customers open up a connection between cloud.gov and outside data centers.
+- [Static IP addresses for communicating with external apps]({{ site.baseurl }}/docs/apps/static-egress.md): Outbound traffic from Cloud.gov now comes from specific IP addresses to help customers open up a connection between Cloud.gov and outside data centers.
 - We recommend you upgrade your Cloud Foundry CLI to [the latest version](https://github.com/cloudfoundry/cli/releases) to get the latest bug fixes.
 - We improved the responsiveness of the dashboard to better reflect actions that happen on the backend.
 

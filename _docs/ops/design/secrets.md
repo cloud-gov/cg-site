@@ -25,7 +25,7 @@ secrets, and have to be kept in-sync.
 
 ## Goals for secrets management
 
-Goals the cloud.gov team wants in a secrets management solution:
+Goals the Cloud.gov team wants in a secrets management solution:
 
 * Single source of truth for each secret.
 * BOSH and Concourse can read from same secret store.
@@ -34,7 +34,7 @@ Goals the cloud.gov team wants in a secrets management solution:
 
 ## Proposed Approach
 
-The proposed approach is it to use [CredHub][gh-credhub]. The cloud.gov team has
+The proposed approach is it to use [CredHub][gh-credhub]. The Cloud.gov team has
 several reasons to choose CredHub over other secrets management services.
 
 * Integrates with BOSH (via config server API) and Concourse.
@@ -45,19 +45,19 @@ several reasons to choose CredHub over other secrets management services.
 
 ## Proposed Architecture
 
-The cloud.gov operations team is proposing to leverage BOSH + CredHub
+The Cloud.gov operations team is proposing to leverage BOSH + CredHub
 co-location.
 
 [The strategy suggested by the CredHub maintainers][cf-slack] is to leverage
 co-located CredHub deployments with BOSH and to not allow BOSH directors to
-communicate with a shared CredHub instance. This means that cloud.gov operators
+communicate with a shared CredHub instance. This means that Cloud.gov operators
 will be moving forward with a [CredHub co-located deployment][bosh-colo] within
 each BOSH director.
 
 [cf-slack]: https://cloudfoundry.slack.com/archives/C3EN0BFC0/p1532382357000186?thread_ts=1532358425.000099&cid=C3EN0BFC0
 [bosh-colo]: #bosh-and-credhub-co-location
 
-The cloud.gov operations team will begin importing existing secrets into CredHub
+The Cloud.gov operations team will begin importing existing secrets into CredHub
 and removing BOSH `vars` files from the interpolate commands in the current BOSH
 deployment pipelines.
 
@@ -119,7 +119,7 @@ graph TB;
 #### Cons
 
 * Co-location with BOSH would require maintenance of multiple CredHub
-  deployments and databases for each BOSH director the cloud.gov operations team
+  deployments and databases for each BOSH director the Cloud.gov operations team
   deploys
     * This includes backup strategies for each of these CredHub deployments.
 * Maintenance heavy, multiple deployments to update/fail.
@@ -145,13 +145,13 @@ Concourse, and CredHub.
   generate, rotation, and storage.
 * There would be a single interface for secrets management for BOSH deployments
   using the `credhub-cli`.
-* cloud.gov operators can create documented process, automation, and tooling
+* Cloud.gov operators can create documented process, automation, and tooling
   around importing, setting, generating, and rotating credentials.
 
 #### Cons
 
 * Concourse uses paths that are different from BOSH paths, or arbitrary paths
-  cloud.gov operators can define, with no desire to change this functionality.
+  Cloud.gov operators can define, with no desire to change this functionality.
     * BOSH paths: `/$director/$deployment/$secret` or absolute path.
     * Concourse paths: `/$team/$pipeline/$secret`; `$team/$secret`; no absolute path.
         * Closed pull-request: https://github.com/concourse/atc/pull/273
@@ -191,23 +191,23 @@ vars-to-credhub \
 credhub-import-${bosh-director-name}-${bosh-deployment-name}.yml
 ```
 
-cloud.gov operators inspect the `credhub-import-*` file for types and names that
+Cloud.gov operators inspect the `credhub-import-*` file for types and names that
 are referenced in BOSH operation files, BOSH variable files, or upstream
 manifest partials. Keep in mind names that are not prefixed by a forward-slash
 `/` will be converted by BOSH before being looked up in CredHub with a prefix of
 `/${bosh-director-name}/${bosh-deployment-name}/`.
 
-To transfer the file from a cloud.gov operator's local machine to a jumpbox,
-cloud.gov operators leverage the `s3://cloud-gov-varz` bucket to temporary
+To transfer the file from a Cloud.gov operator's local machine to a jumpbox,
+Cloud.gov operators leverage the `s3://cloud-gov-varz` bucket to temporary
 upload `credhub-import-*` files to be downloaded from within a jumpbox using
-the cloud.gov operator's AWS credentials using ephemeral environmental variables
+the Cloud.gov operator's AWS credentials using ephemeral environmental variables
 using the `aws-cli`.
 
 ```sh
 aws s3 cp tmp/credhub-import-file.yml s3://cloud-gov-varz/credhub-import-file.yml --sse AES256
 ```
 
-cloud.gov operators ensure that these credentials are not saved on the jumpbox
+Cloud.gov operators ensure that these credentials are not saved on the jumpbox
 nor in the shell's `history` by preceding the commands with a single space ` `
 to prevent it being saved in `history`.
 
@@ -226,7 +226,7 @@ credhub import \
   -f credhub-import-${bosh-director-name}-${bosh-deployment-name}.yml
 ```
 
-Once this file is successfully imported into CredHub, cloud.gov operators will
+Once this file is successfully imported into CredHub, Cloud.gov operators will
 delete the `credhub-import-*` file from the `s3://cloud-gov-varz/` bucket.
 
 ```sh
@@ -237,7 +237,7 @@ aws s3 rm s3://cloud-gov-varz/credhub-import-file.yml
 
 CredHub only [supports specific
 types](https://docs.cloudfoundry.org/credhub/credential-types.html#cred-types).
-If a cloud.gov operator needs to store a different type of credential, such as
+If a Cloud.gov operator needs to store a different type of credential, such as
 an array. It's required to modify the structure of the manifest using an opsfile
 and storing the key of the array in the CredHub database. An generic example is
 described below:
@@ -288,10 +288,10 @@ deployments normally do not have a prefix `/` slash in their name. This means
 that they would be looked up in CredHub by the BOSH director adding a prefix of
 `/${director}/${deployment}/${variable-name}`. [See the documentation here](https://github.com/cloudfoundry-incubator/credhub/blob/master/docs/bosh-config-server.md#namespacing).
 
-This means for the cloud.gov Cloud Foundry deployments, there would be three
+This means for the Cloud.gov Cloud Foundry deployments, there would be three
 different variable look ups in each respective CredHub deployment for
 variables without a prefix which requires different variable files for each
-environment cloud.gov operators deploy:
+environment Cloud.gov operators deploy:
 
 ```sh
 /bosh/cf-development/cdn-broker-client-secret
@@ -300,7 +300,7 @@ environment cloud.gov operators deploy:
 ```
 
 In order to avoid the need to create variable files for deployments in different
-environments, the cloud.gov operations team will leverage custom absolute paths
+environments, the Cloud.gov operations team will leverage custom absolute paths
 for dependencies across different deployments. This requires manifests to be
 modified from their previous variable names without a prefix `/` slash to the
 new customer absolute path.
@@ -326,7 +326,7 @@ The `${generalized-deployment-name}` should be named after the producer of the
 secret, e.g. where the secret is set or configured. In the case of Cloud Foundry
 UAA client secrets, it's the `cf` deployment name. Consumers of the credential
 should never be considered for the `${generalized-deployment-name}`. In order to
-create a custom absolute path for a credential, cloud.gov operators must
+create a custom absolute path for a credential, Cloud.gov operators must
 understand the consumer/producer relationship of the dependencies of the
 software they're deploying.
 
@@ -338,7 +338,7 @@ software they're deploying.
 
 > To Be Decided
 
-### cloud.gov Operator Tooling
+### Cloud.gov Operator Tooling
 
 > To Be Decided
 

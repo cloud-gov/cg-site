@@ -1,11 +1,11 @@
 ---
 layout: post
 date: September 29th 2022
-title: "September 29th cloud.gov Change Log"
-excerpt: The cloud.gov team is working on providing change logs so everyone can see new features and updates.
+title: "September 29th Cloud.gov Change Log"
+excerpt: The Cloud.gov team is working on providing change logs so everyone can see new features and updates.
 ---
 
-Happy end of September ! The cloud.gov team is working on providing change logs so everyone can see new features and updates. Highlights this time include new stemcell and new version of cf-deployment.
+Happy end of September ! The Cloud.gov team is working on providing change logs so everyone can see new features and updates. Highlights this time include new stemcell and new version of cf-deployment.
 
 # Change Log
 

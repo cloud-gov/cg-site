@@ -15,13 +15,13 @@ excerpt: Ubuntu 22.04 stack (cflinuxfs4) buildpacks are here and Ubuntu 18.04 (c
 ## Ubuntu 22.04 stack (cflinuxfs4) buildpacks are here and Ubuntu 18.04 (cflinuxfs3) are retiring: Test and upgrade your apps now!
 
 
-The base OS image used by your cloud.gov applications is called a "stack". The stack we’ve provided to date is called `cflinuxfs3`, and it’s based on Ubuntu 18.04 LTS, released originally in mid 2018 with continuous security updates since then. `cflinuxfs4` is a new OS image based on Ubuntu 22.04 LTS, and it’s already available for your use. We’ll be making cflinuxfs4 the default stack in cloud.gov on April 27th. In addition, Ubuntu 18.04 will likely no longer receive security updates in May, so we will stop supporting cflinuxfs3 in cloud.gov May 10th.
+The base OS image used by your Cloud.gov applications is called a "stack". The stack we’ve provided to date is called `cflinuxfs3`, and it’s based on Ubuntu 18.04 LTS, released originally in mid 2018 with continuous security updates since then. `cflinuxfs4` is a new OS image based on Ubuntu 22.04 LTS, and it’s already available for your use. We’ll be making cflinuxfs4 the default stack in Cloud.gov on April 27th. In addition, Ubuntu 18.04 will likely no longer receive security updates in May, so we will stop supporting cflinuxfs3 in Cloud.gov May 10th.
 
 ### Who is impacted?
 
 If you push your Cloud Foundry applications as Docker containers with `cf push --docker-image `, these changes do not impact you.
 
-However, most cloud.gov customers deploy their applications using buildpacks, and their apps don’t have any dependency on the particular OS version that runs them. If that describes you, this upgrade will probably be a miraculous non-event… You can request the new stack at your next cf push with a stack parameter and carry on as you always have.
+However, most Cloud.gov customers deploy their applications using buildpacks, and their apps don’t have any dependency on the particular OS version that runs them. If that describes you, this upgrade will probably be a miraculous non-event… You can request the new stack at your next cf push with a stack parameter and carry on as you always have.
 
 However, there may be exceptions! For example, you may have used the `apt-buildpack` to ensure that a particular library or utility is installed when your app is deployed. In that case, you might run into problems if the location or name of that dependency has changed between Ubuntu 18.04 and Ubuntu 22.04.  You'll also want to be sure to use the newest [v0.3.0](https://github.com/cloudfoundry/apt-buildpack/releases/tag/v0.3.0) version of this release which supports cflinuxfs4.
 

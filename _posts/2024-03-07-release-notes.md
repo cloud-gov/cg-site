@@ -1,20 +1,20 @@
 ---
 layout: post
 date: March 7th 2024
-title: "March 7th cloud.gov Change Log"
-excerpt: The cloud.gov team is working on providing change logs so everyone can see new features and updates.
+title: "March 7th Cloud.gov Change Log"
+excerpt: The Cloud.gov team is working on providing change logs so everyone can see new features and updates.
 ---
 
 # Change Log 
 
 ## Before digging into the changes...
 
-* Reminder: Please contact support@cloud.gov to schedule your RDS upgrades if you have not already done so.
+* Reminder: Please contact support@Cloud.gov to schedule your RDS upgrades if you have not already done so.
 
 ## Customer Facing Changes
 ---
 
-The audience for this section is developers who maintain applications on cloud.gov and may need to respond to stack or buildpack changes.
+The audience for this section is developers who maintain applications on Cloud.gov and may need to respond to stack or buildpack changes.
 
 ### CF-Deployment - v38.1.0 to v39.3.0
 
@@ -273,7 +273,7 @@ Cloud Controller Database Migrations
 
 There is a new article about [displaying dynamic content on Pages static sites](https://cloud.gov/pages/knowledge-base/website-api/) which is worth a read!  
 
-Tune in next sprint for more cloud.gov release notes.
+Tune in next sprint for more Cloud.gov release notes.
 
 
 

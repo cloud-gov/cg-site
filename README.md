@@ -1,9 +1,9 @@
 
-# cloud.gov
+# Cloud.gov
 
-This site uses the [cloud.gov Pages USWDS Jekyll template](https://github.com/cloud-gov/pages-uswds-jekyll). [cloud.gov Pages](https://cloud.gov/pages/) runs on cloud.gov and supports the development of this template. By leveraging this template cloud.gov get the benefits  of a maintained template as well as a way to test out new functionality in the template.
+This site uses the [Cloud.gov Pages USWDS Jekyll template](https://github.com/cloud-gov/pages-uswds-jekyll). [Cloud.gov Pages](https://cloud.gov/pages/) runs on Cloud.gov and supports the development of this template. By leveraging this template Cloud.gov get the benefits  of a maintained template as well as a way to test out new functionality in the template.
 
-This [Jekyll theme](https://jekyllrb.com/docs/themes/) uses the [U.S. Web Design System v 2.0](https://v2.designsystem.digital.gov) and provides developers a starter kit and reference implementation for cloud.gov Pages websites.
+This [Jekyll theme](https://jekyllrb.com/docs/themes/) uses the [U.S. Web Design System v 2.0](https://v2.designsystem.digital.gov) and provides developers a starter kit and reference implementation for Cloud.gov Pages websites.
 
 This code uses the [Jekyll](https://jekyllrb.com) site engine and built with Ruby. If you prefer to use Javascript, check out [pages-uswds-gatsby](https://github.com/cloud-gov/pages-uswds-gatsby), which uses [Gatsby](https://gatsbyjs.org) site engine.
 
@@ -61,14 +61,14 @@ searchgov:
 ---
 ```
 
-## How to edit cloud.gov content
-- Non-developers should focus on editing markdown content in the `_posts`, `_docs`, and `_pages` folder. Generally most of the cloud.gov content will be in the _docs file.
+## How to edit Cloud.gov content
+- Non-developers should focus on editing markdown content in the `_posts`, `_docs`, and `_pages` folder. Generally most of the Cloud.gov content will be in the _docs file.
 
 - Pricing updates can go directly into `_data/pricing.yml` file and if any of the aws services need to be updated that can occur in the `_data/services.yml` file.
 
 - We try to keep configuration options to a minimum so you can easily change functionality. You should review `_config.yml` to see the options that are available to you. There are a few values on top that you **need** to change. They refer to the agency name and contact information. The rest of `_config.yml` has a range of more advanced options.
 
-- If you look at `package.json` you will see that the `npm run pages` command that will run when running on the cloud.gov Pages platform.
+- If you look at `package.json` you will see that the `npm run pages` command that will run when running on the Cloud.gov Pages platform.
 
 - Do not edit files in the `_site/` folder. These files are auto-generated, and any change you make in the folder will be overwritten.
 
@@ -92,7 +92,7 @@ searchgov:
     cd cg-site
 ```
 
-Note that when built by cloud.gov Pages, `npm run pages` is used instead of the
+Note that when built by Cloud.gov Pages, `npm run pages` is used instead of the
 `build` script.
 
 ### Install dependencies and run app

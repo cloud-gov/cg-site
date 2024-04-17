@@ -12,7 +12,7 @@ These diagrams can help you build a System Security Plan for an application, or 
 You can use these realistic sample diagrams as inspiration for your own diagrams for your customer system.
 
 * [Example #1 PDF]({{ site.baseurl }}/assets/images/content/example-diagram-1.pdf) ([SVG]({{ site.baseurl }}/assets/images/content/example-diagram-1.svg)) - A frontend website application and a backend API application, connected to a database.
-* [Example #2 PDF]({{ site.baseurl }}/assets/images/content/example-diagram-2.pdf) ([SVG]({{ site.baseurl }}/assets/images/content/example-diagram-2.svg)) - An application connected to a database and a Redis queue, with authentication, and with a connection to an external email service (not provided by cloud.gov).
+* [Example #2 PDF]({{ site.baseurl }}/assets/images/content/example-diagram-2.pdf) ([SVG]({{ site.baseurl }}/assets/images/content/example-diagram-2.svg)) - An application connected to a database and a Redis queue, with authentication, and with a connection to an external email service (not provided by Cloud.gov).
 
 ## Customer systems
 
@@ -22,7 +22,7 @@ You can use these realistic sample diagrams as inspiration for your own diagrams
 
 ## Platform
 
-Platform architecture diagrams from the [cloud.gov P-ATO documentation package]({{ site.baseurl }}{% link _docs/overview/fedramp-tracker.md %}#how-you-can-use-this-p-ato):
+Platform architecture diagrams from the [Cloud.gov P-ATO documentation package]({{ site.baseurl }}{% link _docs/overview/fedramp-tracker.md %}#how-you-can-use-this-p-ato):
 
 * [Network](https://diagrams.fr.cloud.gov/10-1-network.html)
 * [Customer data flow](https://diagrams.fr.cloud.gov/10-4.1-customer-data-flow.html)

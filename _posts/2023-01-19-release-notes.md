@@ -1,11 +1,11 @@
 ---
 layout: post
 date: January 19th 2023
-title: "January 19th cloud.gov Change Log"
-excerpt: The cloud.gov team is working on providing change logs so everyone can see new features and updates.
+title: "January 19th Cloud.gov Change Log"
+excerpt: The Cloud.gov team is working on providing change logs so everyone can see new features and updates.
 ---
 
-Happy New Year! The cloud.gov team is working on providing change logs so everyone can see new features and updates. Highlights this time include platform changes.
+Happy New Year! The Cloud.gov team is working on providing change logs so everyone can see new features and updates. Highlights this time include platform changes.
 
 # Change Log
 

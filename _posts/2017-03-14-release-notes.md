@@ -6,12 +6,12 @@ redirect_from:
   - /updates/2017-03-14-release-notes/
 ---
 
-Curious what’s new that you might find helpful as a cloud.gov application developer? Here are highlights from our platform updates over the past two weeks.
+Curious what’s new that you might find helpful as a Cloud.gov application developer? Here are highlights from our platform updates over the past two weeks.
 
 <!--more-->
 
 ### Added
-The [cloud.gov dashboard](https://dashboard.fr.cloud.gov) now alerts you when it’s unable to fetch recent data. This can help you when you’re troubleshooting problems with your application.
+The [Cloud.gov dashboard](https://dashboard.fr.cloud.gov) now alerts you when it’s unable to fetch recent data. This can help you when you’re troubleshooting problems with your application.
 
 ### Changed
 

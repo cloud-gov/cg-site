@@ -5,19 +5,19 @@ date: March 6, 2024
 excerpt: Serve content from a backend database to a static site
 ---
 
-For many of our customers, a simple static site hosted on cloud.gov Pages is a lightweight and easy to manage solution for their agency or office. But what about situations where a static site needs to display a small amount of dynamic content; for example, structured data that updates more frequently than the written content, or is provided by another team or application? Certain kinds of data and content are more suitably stored in a database and accessed via an API on page load. While those services aren’t available in Pages, databases and APIs are available to our customers through cloud.gov.
+For many of our customers, a simple static site hosted on Cloud.gov Pages is a lightweight and easy to manage solution for their agency or office. But what about situations where a static site needs to display a small amount of dynamic content; for example, structured data that updates more frequently than the written content, or is provided by another team or application? Certain kinds of data and content are more suitably stored in a database and accessed via an API on page load. While those services aren’t available in Pages, databases and APIs are available to our customers through Cloud.gov.
 
-Taking advantage of end-to-end cloud.gov services gives our agency customers baked-in security to help ease their compliance burden, and we provide support for dual agreements to make accessing these services simple. Below, we share how to display dynamic content using a lightweight database and API on cloud.gov connected to a Pages static website. Once you see how easy it is, we hope you’ll consider situations where your static Pages sites could be enhanced with dynamic content using additional cloud.gov services.
+Taking advantage of end-to-end Cloud.gov services gives our agency customers baked-in security to help ease their compliance burden, and we provide support for dual agreements to make accessing these services simple. Below, we share how to display dynamic content using a lightweight database and API on Cloud.gov connected to a Pages static website. Once you see how easy it is, we hope you’ll consider situations where your static Pages sites could be enhanced with dynamic content using additional Cloud.gov services.
 
 ## What you’ll need to get started
 
-1. **Some data** you need to store, process, or access separately from the static site. In this case, we pulled a [CSV file dataset](https://catalog.data.gov/dataset/fdic-failed-bank-list) from the FDIC, a Pages customer, which is hosted on [data.gov](https://data.gov/), another office alongside cloud.gov in TTS.
+1. **Some data** you need to store, process, or access separately from the static site. In this case, we pulled a [CSV file dataset](https://catalog.data.gov/dataset/fdic-failed-bank-list) from the FDIC, a Pages customer, which is hosted on [data.gov](https://data.gov/), another office alongside Cloud.gov in TTS.
  
-2. A **database** and environment to store the data, provided by cloud.gov. In our example, we chose an [RDS instance](https://cloud.gov/docs/services/relational-database/)(Relational Database Service) of the PostgreSQL v15 database due to its rich feature set and simple methods of storing data from a CSV.
+2. A **database** and environment to store the data, provided by Cloud.gov. In our example, we chose an [RDS instance](https://cloud.gov/docs/services/relational-database/)(Relational Database Service) of the PostgreSQL v15 database due to its rich feature set and simple methods of storing data from a CSV.
    
-3. A **server-side application** that securely accesses the database and responds to HTTP requests. Our example uses a simple [API flask application](https://github.com/cloud-gov/pages-example-website-api) deployed on cloud.gov
+3. A **server-side application** that securely accesses the database and responds to HTTP requests. Our example uses a simple [API flask application](https://github.com/cloud-gov/pages-example-website-api) deployed on Cloud.gov
     
-4. The **static [website](https://federalist-31c21015-f923-4733-95df-2e979da3e393.sites.pages.cloud.gov/site/cloud-gov/pages-example-api-website/)** hosted on cloud.gov Pages. [Our example](https://github.com/cloud-gov/pages-example-api-website) uses a simple HTML file, but you could use any static site generator or single-page application on Pages.
+4. The **static [website](https://federalist-31c21015-f923-4733-95df-2e979da3e393.sites.pages.cloud.gov/site/cloud-gov/pages-example-api-website/)** hosted on Cloud.gov Pages. [Our example](https://github.com/cloud-gov/pages-example-api-website) uses a simple HTML file, but you could use any static site generator or single-page application on Pages.
 
 ## How it all comes together
 
@@ -25,22 +25,22 @@ The below diagram shows the relationships between the three services:
 
 1. The PostgreSQL database, which houses the dataset and returns the results found by the query. The fetched data is sent back to the API application, and the API application passes it on to the static site in the response body as JSON.
  
-2. The API application first securely connects to the database by retrieving the RDS service credentials via cloud.gov’s Cloud Foundry environment. Once it establishes a secure connection to the PostgreSQL database, the application executes a SQL query against the database.
+2. The API application first securely connects to the database by retrieving the RDS service credentials via Cloud.gov’s Cloud Foundry environment. Once it establishes a secure connection to the PostgreSQL database, the application executes a SQL query against the database.
 
-3. The static website, hosted on Pages, makes an HTTP `fetch` request for some dynamic content to the cloud.gov-hosted API application. 
+3. The static website, hosted on Pages, makes an HTTP `fetch` request for some dynamic content to the Cloud.gov-hosted API application. 
 
 <figure class="content-image">
- <img alt="Diagram of the infrastructure serving dynamic content to a Pages static site. An HTTP request from a static Pages site triggers the Flask API application to get credentials from the env veriables in cloud.gov, then executes a SQL query against the PostgreSQL database. The results returned from the database are passed through the API application and back to the Pages static site through the HTTP response in JSON." src="{{site.baseurl}}/assets/images/content/illustrationPagesDynamicContent.png" />
+ <img alt="Diagram of the infrastructure serving dynamic content to a Pages static site. An HTTP request from a static Pages site triggers the Flask API application to get credentials from the env veriables in Cloud.gov, then executes a SQL query against the PostgreSQL database. The results returned from the database are passed through the API application and back to the Pages static site through the HTTP response in JSON." src="{{site.baseurl}}/assets/images/content/illustrationPagesDynamicContent.png" />
   <figcaption>Figure 1. Dynamic Content Architecture.</figcaption>
 </figure>
 
-### Set up a database using cloud.gov’s RDS
+### Set up a database using Cloud.gov’s RDS
 
-Before you can create an API to access the data, the data must be available in the appropriate cloud.gov org and space. It’s relatively straightforward to provision a database of your choice and make it available for querying from other applications using cloud.gov’s RDS.
+Before you can create an API to access the data, the data must be available in the appropriate Cloud.gov org and space. It’s relatively straightforward to provision a database of your choice and make it available for querying from other applications using Cloud.gov’s RDS.
 
-When you create an RDS service instance, cloud.gov automatically creates the default username and password for the database. If you want to allow an application (like our Flask API app) to access that database, you can [bind that RDS database service](https://docs.cloudfoundry.org/devguide/services/application-binding.html#bind) to your application to safely expose those credentials as environment variables within the cloud.gov environment. This means your cloud.gov API application will have privileges to data that your Pages app will not, which can be useful in separating data concerns and keeping some information private.
+When you create an RDS service instance, Cloud.gov automatically creates the default username and password for the database. If you want to allow an application (like our Flask API app) to access that database, you can [bind that RDS database service](https://docs.cloudfoundry.org/devguide/services/application-binding.html#bind) to your application to safely expose those credentials as environment variables within the Cloud.gov environment. This means your Cloud.gov API application will have privileges to data that your Pages app will not, which can be useful in separating data concerns and keeping some information private.
 
-In our case, we provisioned a PostgreSQL v15 database instance within cloud.gov to store some sample data. For the purposes of filling out an example database, we sourced a CSV from FDIC which itemizes recently failed banks, and then imported the CSV into the database’s single row table using the syntax [COPY/FROM](https://www.postgresql.org/docs/current/sql-copy.html). 
+In our case, we provisioned a PostgreSQL v15 database instance within Cloud.gov to store some sample data. For the purposes of filling out an example database, we sourced a CSV from FDIC which itemizes recently failed banks, and then imported the CSV into the database’s single row table using the syntax [COPY/FROM](https://www.postgresql.org/docs/current/sql-copy.html). 
 
 When queried via the API application, the database will select a number of rows, convert them to a Python dictionary via the [RealDictCursor module](https://www.psycopg.org/docs/extras.html#real-dictionary-cursor), and return that collection.
 
@@ -54,11 +54,11 @@ Signature Bank           | New York      | NY    | 57053 | Flagstar Bank, N.A.  
 Silicon Valley Bank      | Santa Clara   | CA    | 24735 | First–Citizens Bank & Trust Company | 10-Mar-23    | 10539 | 5
 ```
 
-If you’re thinking of trying this yourself, know that you aren’t limited to using RDS and PostgreSQL for storing the data; you have your choice of database infrastructure hosted on cloud.gov. Check out more options for database services provided by cloud.gov in our CloudFoundry [marketplace](https://cloud.gov/docs/services/intro/#provisioning-managed-services-through-the-marketplace). Please note that database options are limited for those working in a cloud.gov [sandbox](https://cloud.gov/docs/pricing/free-limited-sandbox/#sandbox-limitations).
+If you’re thinking of trying this yourself, know that you aren’t limited to using RDS and PostgreSQL for storing the data; you have your choice of database infrastructure hosted on Cloud.gov. Check out more options for database services provided by Cloud.gov in our CloudFoundry [marketplace](https://cloud.gov/docs/services/intro/#provisioning-managed-services-through-the-marketplace). Please note that database options are limited for those working in a Cloud.gov [sandbox](https://cloud.gov/docs/pricing/free-limited-sandbox/#sandbox-limitations).
 
-### Set up a server API Application in your cloud.gov org space
+### Set up a server API Application in your Cloud.gov org space
 
-You may write the server-side API in whatever language you’re comfortable with; we chose a simple Flask application in Python. [Our example app](https://github.com/cloud-gov/pages-example-website-api) which is hosted on cloud.gov serves as the interface between the PostgreSQL database and the Pages website. Through the Flask application’s endpoint, the Pages website can request data and receive structured responses via HTTP. 
+You may write the server-side API in whatever language you’re comfortable with; we chose a simple Flask application in Python. [Our example app](https://github.com/cloud-gov/pages-example-website-api) which is hosted on Cloud.gov serves as the interface between the PostgreSQL database and the Pages website. Through the Flask application’s endpoint, the Pages website can request data and receive structured responses via HTTP. 
 In our example app, the Flask app fetches the 15 most recent results from the PostgreSQL database table and returns them via HTTP as an JSON response. JSON is a reliable choice for easy parsing from the front-end static site using JavaScript, but you could also send XML, a string, or another data type.
 
 #### 1. Import the modules
@@ -77,7 +77,7 @@ In order for our example web server to handle HTTP requests, dispatch responses,
    `- flask_cors` and `CORS` for handling Cross-Origin Resource Sharing (CORS), which is what allows Pages and the server to talk to one another even though they’re on separate domains
   
 #### 2. Set up the secure database connection
-Because we’ve set up the database using RDS and bound to the service in this cloud.gov org space, we have direct access to the database credentials via application environment variables. Cloud.gov and RDS make it easy to set up a secure connection to the database using these environment variables. Here is how we connect to our database using the psycopg2 Python module in our Flask app:
+Because we’ve set up the database using RDS and bound to the service in this Cloud.gov org space, we have direct access to the database credentials via application environment variables. Cloud.gov and RDS make it easy to set up a secure connection to the database using these environment variables. Here is how we connect to our database using the psycopg2 Python module in our Flask app:
 
 ```py
 aws_rds = app_env.get_service(name='your-database-name-here')
@@ -123,7 +123,7 @@ app = Flask(__name__)
 CORS(app, origins=origin)
 ```
 
-Once your server API can connect to the database, execute queries at specific routes, and respond to only your Pages site domain, you’re ready to deploy. For instructions on how to deploy applications on cloud.gov, please refer to the official cloud.gov [documentation](https://cloud.gov/docs/deployment/deployment/).
+Once your server API can connect to the database, execute queries at specific routes, and respond to only your Pages site domain, you’re ready to deploy. For instructions on how to deploy applications on Cloud.gov, please refer to the official Cloud.gov [documentation](https://cloud.gov/docs/deployment/deployment/).
 
 ### Serve content to the Pages website
 
@@ -191,8 +191,8 @@ To keep our example simple, our static site displays the API-provided data in a 
 
 And that’s it! The static HTML page makes the fetch request to the API on load, then builds the table contents using the response, seamlessly.
 
-Serving dynamic content from a backend database via an API to a static site hosted on cloud.gov Pages is easy within the cloud.gov ecosystem. We proudly offer a suite of secure and compliant databases which you can leverage to store data and dynamically display within their Pages websites without the need to manually update the static files or struggle with large data collections checked into the static site repo.
+Serving dynamic content from a backend database via an API to a static site hosted on Cloud.gov Pages is easy within the Cloud.gov ecosystem. We proudly offer a suite of secure and compliant databases which you can leverage to store data and dynamically display within their Pages websites without the need to manually update the static files or struggle with large data collections checked into the static site repo.
 
-If you’re interested in enhancing your static sites with dynamic content, we’d love to help you set up a dual agreement for cloud.gov and Pages services with your agency or office. If you’re already a Pages customer, it takes a simple modification to your current IAA to access services from cloud.gov to get started. Launching an app on cloud.gov will require an Authority to Operate (ATO), and we’re here to help you through every stage. For more information, please reach out to [inquiries@cloud.gov](mailto:inquiries@cloud.gov).
+If you’re interested in enhancing your static sites with dynamic content, we’d love to help you set up a dual agreement for Cloud.gov and Pages services with your agency or office. If you’re already a Pages customer, it takes a simple modification to your current IAA to access services from Cloud.gov to get started. Launching an app on Cloud.gov will require an Authority to Operate (ATO), and we’re here to help you through every stage. For more information, please reach out to [inquiries@cloud.gov](mailto:inquiries@cloud.gov).
 
 For support with implementation and general questions about Pages sites, please reach out to [pages-support@cloud.gov](mailto:pages-support@cloud.gov).

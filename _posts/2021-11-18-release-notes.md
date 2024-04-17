@@ -1,13 +1,13 @@
 ---
 layout: post
 date: November 18, 2021
-title: "November 18th cloud.gov Change Log" 
-excerpt: The cloud.gov team is working on providing change logs so everyone can see new features and updates.
+title: "November 18th Cloud.gov Change Log" 
+excerpt: The Cloud.gov team is working on providing change logs so everyone can see new features and updates.
 ---
 
 # Happy almost Turkey Day!
 
-The cloud.gov team is working on providing change logs so everyone can see new features and updates. Some highlights include cf-deployment v17 and Concourse v7. Additionally, if you use the [PHP buildpack](https://cloud.gov/2021/11/15/dhs-bod-22-01/) and have not restaged your application since November 10th, 2021, please do that. 
+The Cloud.gov team is working on providing change logs so everyone can see new features and updates. Some highlights include cf-deployment v17 and Concourse v7. Additionally, if you use the [PHP buildpack](https://cloud.gov/2021/11/15/dhs-bod-22-01/) and have not restaged your application since November 10th, 2021, please do that. 
 
 # Change Log
 ## Customer Facing

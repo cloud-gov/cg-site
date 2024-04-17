@@ -6,7 +6,7 @@ sidenav: true
 title: Provisioning TLS certificates
 ---
 
-We use one wildcard TLS certificate for each cloud.gov environment, plus an additional certificate for customer applications in production:
+We use one wildcard TLS certificate for each Cloud.gov environment, plus an additional certificate for customer applications in production:
 
 * Development: `*.dev.us-gov-west-1.aws-us-gov.cloud.gov`
 * Staging: `*.fr-stage.cloud.gov`
