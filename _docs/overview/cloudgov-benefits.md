@@ -36,4 +36,4 @@ A Platform as a Service (PaaS) like Cloud.gov can save you the resources of mana
 
 The Cloud.gov UI delivers the main concepts of the Cloud Foundry project in a straightforward form. Cloud Foundry provides a good API and tools for teams to manage all the environments, services, and applications necessary to deliver an app to production with minimal hassle. Cloud Foundry also provides well-designed tenancy controls. They make it easy to manage both who can access what, and how usage will be billed back to specific projects or agencies.
 
-The Cloud.gov deployment is [publicly documented in GitHub]({{ site.baseurl }}{% link _docs/ops/repos.md %}). We encourage other agencies and the general public to contribute. Anyone is also free to take our work to deploy their own Platform as a Service.
+The Cloud.gov deployment is [publicly documented in GitHub](https://github.com/cloud-gov). We encourage other agencies and the general public to contribute. Anyone is also free to take our work to deploy their own Platform as a Service.

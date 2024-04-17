@@ -48,4 +48,4 @@ For issues that impact the platform or services we will:
 
   - Log communication and coordination between the team to resolve the issue.
   - Hold a retrospective to analyze and report on follow-up items and lessons-learned.
-  - For security incidents, we follow the process outlined in our [Incident Response]({{ site.baseurl }}/docs/ops/security-ir/).
+  - For security incidents, we follow an Incident Response process.

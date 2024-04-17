@@ -83,8 +83,6 @@ primary_navigation:
       url: /docs/services/intro/
     - name: Managing orgs
       url: /docs/orgs-spaces/dashboard/
-    - name: cloud.gov team documentation
-      url: /docs/ops/repos/
   - name: News
     url: /news/
   - name: Knowledge base
@@ -140,28 +138,6 @@ documentation_navigation:
     identifier: "compliance"
     icon: fa-check-square-o
     weight: -95
-  - name: "Team documentation"
-    identifier: "ops"
-    icon: fa-wrench
-    children:
-    - name: "Deployment"
-      identifier: "deploying-cloudgov"
-      parent: "ops"
-    - name: "Tenant support"
-      identifier: "tenants"
-      parent: "ops"
-    - name: "Operations"
-      identifier: "operations"
-      parent: "ops"
-    - name: "Runbook"
-      identifier: "runbook"
-      parent: "ops"
-    - name: "Plans and policies"
-      identifier: "policies"
-      parent: "ops"
-    - name: "Design considerations"
-      identifier: "design"
-      parent: "ops"
 
 
 # Search.gov configuration

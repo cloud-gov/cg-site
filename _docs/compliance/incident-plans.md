@@ -3,6 +3,39 @@ parent: compliance
 layout: docs
 sidenav: true
 title: Contingency/incident plans
+# links to our old ops handbook redirect here
+redirect_from:
+  - /docs/ops/aws-onboarding/
+  - /docs/ops/broker-credentials/
+  - /docs/ops/configuration-management/
+  - /docs/ops/contingency-plan/
+  - /docs/ops/continuous-integration/
+  - /docs/ops/continuous-monitoring/
+  - /docs/ops/create-org/
+  - /docs/ops/creating-a-development-environment-with-bosh-lite/
+  - /docs/ops/customer-support/
+  - /docs/ops/design/domains/
+  - /docs/ops/design/mfa/
+  - /docs/ops/design/secrets/
+  - /docs/ops/dns/
+  - /docs/ops/federated-identity/
+  - /docs/ops/maintenance-list/
+  - /docs/ops/making-announcements/
+  - /docs/ops/managing-users/
+  - /docs/ops/private-egress/
+  - /docs/ops/quotas/
+  - /docs/ops/repos/
+  - /docs/ops/runbook/moved/
+  - /docs/ops/secrets/
+  - /docs/ops/security-ir/
+  - /docs/ops/service-credential-rotation/
+  - /docs/ops/service-disruption-guide/
+  - /docs/ops/services/
+  - /docs/ops/setting-up-a-local-development-environment/
+  - /docs/ops/system-tooling-overview/
+  - /docs/ops/tls-certs/
+  - /docs/ops/updating-cf/
+  
 ---
 
 You, as the customer, are responsible for contingency planning (disaster recovery planning) and security incident response planning for your customer system. To help, this page has suggestions for developing your plans.
@@ -20,7 +53,7 @@ From our Control-by-Control Inheritance matrix:
 
 You can build a brief contingency plan that focuses on communications around the application and management of your application code and data.
 
-For example, consider writing down which roles on your team are subscribed to [Cloud.gov status updates](https://cloudgov.statuspage.io) (such as Application System Owner and Product Manager), and link to parts of the Cloud.gov documentation that give instructions for re-deploying your application or restoring data backups. If your agency doesn't provide a template, NIST provides templates, and feel free to adapt [the Cloud.gov contingency plan]({{ site.baseurl }}/docs/ops/contingency-plan/).
+For example, consider writing down which roles on your team are subscribed to [Cloud.gov status updates](https://cloudgov.statuspage.io) (such as Application System Owner and Product Manager), and link to parts of the Cloud.gov documentation that give instructions for re-deploying your application or restoring data backups. If your agency doesn't provide a template, [FISMA](https://www.fedramp.gov/documents-templates/) and [NIST](https://csrc.nist.gov/pubs/sp/800/34/r1/upd1/final) provide resources.
 
 ### Functional exercise plan template
 
@@ -35,4 +68,4 @@ If your agency doesn't provide a template, here's a template that you can use, b
 
 Along the same lines as the contingency plan, you can build a brief security incident response plan that focuses on communications for your application.
 
-For example, consider writing down who you need to notify at your agency if you have a security incident in your application, as well as which role on your team is responsible for [notifying Cloud.gov of the incident and asking Cloud.gov for support]({{ site.baseurl }}/docs/help/). If your agency doesn’t provide a template, NIST provides templates, and feel free to adapt the [Cloud.gov incident response plan]({{ site.baseurl }}/docs/ops/security-ir/).
+For example, consider writing down who you need to notify at your agency if you have a security incident in your application, as well as which role on your team is responsible for [notifying Cloud.gov of the incident and asking Cloud.gov for support]({{ site.baseurl }}/docs/help/). If your agency doesn’t provide a template, [FISMA](https://www.fedramp.gov/documents-templates/) and [NIST](https://csrc.nist.gov/Projects/incident-response/publications) provide resources.
