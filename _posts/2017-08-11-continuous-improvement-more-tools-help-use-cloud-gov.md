@@ -27,7 +27,7 @@ We also added and documented smaller features like setting up [specific IP addre
 
 #### Learn about Cloud.gov from the AWS Public Sector Summit
 
-Cloud.gov recently presented at the AWS Public Sector Summit. We did two sessions, both have been posted to YouTube. The first, [Deliver your agency mission faster with Cloud.gov](https://www.youtube.com/watch?v=NGmDhWEfMuo&list=PLhr1KZpdzukePsKIUofhgp50b63-5yr1V&index=78), was about how your agency can use Cloud.gov to save time. For the second, we were joined by members of the FedRAMP team to talk more specifically about [cloud.gov's moderate-level P-ATO and the FedRAMP process](https://www.youtube.com/watch?v=iXqbIxtiwQY&index=87&list=PLhr1KZpdzukePsKIUofhgp50b63-5yr1V).
+Cloud.gov recently presented at the AWS Public Sector Summit. We did two sessions, both have been posted to YouTube. The first, [Deliver your agency mission faster with Cloud.gov](https://www.youtube.com/watch?v=NGmDhWEfMuo&list=PLhr1KZpdzukePsKIUofhgp50b63-5yr1V&index=78), was about how your agency can use Cloud.gov to save time. For the second, we were joined by members of the FedRAMP team to talk more specifically about [Cloud.gov's moderate-level P-ATO and the FedRAMP process](https://www.youtube.com/watch?v=iXqbIxtiwQY&index=87&list=PLhr1KZpdzukePsKIUofhgp50b63-5yr1V).
 
 ### Interested in using Cloud.gov?
 

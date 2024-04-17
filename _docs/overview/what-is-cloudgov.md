@@ -2,7 +2,7 @@
 parent: overview
 layout: docs
 sidenav: true
-title: What is cloud.gov?
+title: What is Cloud.gov?
 weight: -99
 overview: true
 redirect_from:
@@ -30,6 +30,6 @@ Cloud.gov was designed with **FISMA compliance** in mind. Cloud.gov has a [FedRA
 
 All federal agencies have a mandate to deploy products in the cloud. Any agency tackling this problem will face regulatory and compliance challenges. Some agencies tackle these problems with little cloud operations capability or experience. Even agencies with the right expertise can face resource shortages, confusion about the right solution, bureaucracy, or other limitations.
 
-One of our goals for Cloud.gov is to give other agencies access to the same gains in productivity that [we have seen from using cloud.gov]({{ site.baseurl }}{% link _docs/overview/cloudgov-team.md %}). A centralized, open source PaaS model, one that is already compliant with federal rules, **reduces the work and cost of cloud adoption**. And the more widely it’s used, the more efficient it gets. Your agency can deliver more quickly and more securely with less effort.
+One of our goals for Cloud.gov is to give other agencies access to the same gains in productivity that [we have seen from using Cloud.gov]({{ site.baseurl }}{% link _docs/overview/cloudgov-team.md %}). A centralized, open source PaaS model, one that is already compliant with federal rules, **reduces the work and cost of cloud adoption**. And the more widely it’s used, the more efficient it gets. Your agency can deliver more quickly and more securely with less effort.
 
-**[Learn more about the benefits of cloud.gov.]({{ site.baseurl }}{% link _docs/overview/cloudgov-benefits.md %})**
+**[Learn more about the benefits of Cloud.gov.]({{ site.baseurl }}{% link _docs/overview/cloudgov-benefits.md %})**

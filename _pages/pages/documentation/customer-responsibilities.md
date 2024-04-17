@@ -74,4 +74,4 @@ Access to Pages' configuration tools for your specific content does not grant yo
 Pages moves content from your GitHub repositories into a secure build process and then into a file storage system that holds your site files. The credentials for the file storage system (Amazon S3 for those familiar) are secured within Cloud.gov.
 
 #### We maintain customer build logs for 180 days
-In accordance with [cloud.gov's log retention policy]({{ site.baseurl }}/docs/deployment/logs/#web-based-logs-with-historic-log-data), we will store logs from customer builds for 180 days, after which they will no longer be available.
+In accordance with [Cloud.gov's log retention policy]({{ site.baseurl }}/docs/deployment/logs/#web-based-logs-with-historic-log-data), we will store logs from customer builds for 180 days, after which they will no longer be available.

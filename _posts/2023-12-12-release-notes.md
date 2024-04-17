@@ -213,7 +213,7 @@ Notably, this bump addresses:
 ## Platform Changes
 ---
 
-This section is for the platform operators at `cloud.gov` to highlight changes to Cloud Foundry components, this is likely not of interest for developers using the platform.
+This section is for the platform operators at Cloud.gov to highlight changes to Cloud Foundry components, this is likely not of interest for developers using the platform.
 
 
 ### BOSH DNS - v1.36.10 to v1.36.11

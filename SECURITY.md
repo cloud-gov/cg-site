@@ -3,7 +3,7 @@
 
 Please refrain from reporting security vulnerabilities through public GitHub issues.
 
-Instead, kindly report them via the information provided in [cloud.gov's security.txt](https://cloud.gov/.well-known/security.txt).
+Instead, kindly report them via the information provided in [Cloud.gov's security.txt](https://cloud.gov/.well-known/security.txt).
 
 When reporting, include the following details (as much as possible) to help us understand the nature and extent of the potential issue:
 

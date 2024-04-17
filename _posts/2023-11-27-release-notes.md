@@ -47,7 +47,7 @@ This release contains the following versions of the CF CLI:
 ## Platform Changes
 ---
 
-This section is for the platform operators at `cloud.gov` to highlight changes to Cloud Foundry components, this is likely not of interest for developers using the platform.
+This section is for the platform operators at Cloud.gov to highlight changes to Cloud Foundry components, this is likely not of interest for developers using the platform.
 
 
 ### BOSH DNS - v1.36.10 from 1.36.9

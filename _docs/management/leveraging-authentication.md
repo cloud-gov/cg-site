@@ -107,7 +107,7 @@ access token. Here is where things get fun.
 
 #### Logging users out of UAA and your application
 
-cloud.gov's UAA server provides a logout endpoint to terminate the user session.
+Cloud.gov's UAA server provides a logout endpoint to terminate the user session.
 To implement this logout:
 
 - Provide a local logout feature specific to your application and use that to

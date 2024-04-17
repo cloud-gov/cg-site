@@ -35,7 +35,7 @@ title: Cloud.gov Pages - Success Stories
   <div class="grid-row grid-gap margin-y-8">
     <div class="grid-col-6 usa-prose">
       <h2>College Scorecard</h2>
-      <p>The Department of Education uses Pages to host College Scorecard, a website that provides users with important information on everything from financial aid to expected earnings. College Scorecard demonstrates the power of Pages when used together with an API-backed database on <a href="http://cloud.gov">cloud.gov</a>.  Pages' cloud infrastructure helps manage site traffic during spikes in visitors, making sure College Scorecard is always available.</p>
+      <p>The Department of Education uses Pages to host College Scorecard, a website that provides users with important information on everything from financial aid to expected earnings. College Scorecard demonstrates the power of Pages when used together with an API-backed database on <a href="http://cloud.gov">Cloud.gov</a>.  Pages' cloud infrastructure helps manage site traffic during spikes in visitors, making sure College Scorecard is always available.</p>
     </div>
     <div class="grid-col-6">
       <img alt="website thumbnail" src="{{site.baseurl}}/assets/images/pages/collegescorecard.ed.gov.png" class="border border-base-lighter">
