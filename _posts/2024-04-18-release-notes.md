@@ -68,7 +68,7 @@ Cloud Controller Database Migrations
 * Bump golang, cf-cli and smoke_tests packages
 
 
-### routing 0.294.0 to 0.29.0
+### routing 0.294.0 to 0.295.0
 
 * Reverting the removal of the deprecated BuildNameToCertificate() call
 * Bumps to golang 1.21.9 + golang.org/x/net 0.23.0 to patch `CVE-2023-45288`
