@@ -1,20 +1,20 @@
 ---
 layout: post
 title: "GitHub Repository Best Practices"
-date: April 12, 2024
+date: April 23, 2024
 excerpt: Pages guide for maintaining GitHub hosted repositories
 ---
 
 Adhering to a set of best practices when it comes to managing GitHub repositories can greatly ease the maintenance burden and drastically improve the developer experience for websites hosted on cloud.gov Pages. This document should serve as a constructive conversation piece for agencies and not as an audit mechanism. But by utilizing certain code scanning tools, agencies may find it easier to identify and cover certain security controls within their respective Customer Responsibility Matrix (CRM). Here is a useful guide for you to get started with implementing some best practices regarding user permissions and security for your GitHub hosted repositories.
 
-## **Public vs Private repositories**
+## Public vs Private repositories
 
-A repository does *not need* to be public in order for Pages to be able to build the website; both public and private repositories are acceptable. When it comes to Pages there are certainly some unique considerations for each.
+A repository does *not need* to be public in order for Pages to be able to build the website and there are no added website security benefits for private repositories; both public and private repositories are acceptable on Pages due to all branches, both public and private, being published publicly when built. When it comes to deciding whether to make your GitHub repository public or private you may consider the following items.
 
-### **Public**
+### Public
 
 
-#### **Pros**
+#### Pros
   - Easy for Pages engineers to access the codebase and provide support/debug
   - Transparency/High visibility
   - Able to utilize CodeQL free of charge
@@ -22,17 +22,15 @@ A repository does *not need* to be public in order for Pages to be able to build
   - Collaboration with outside contributors
   - Compliance with open source and transparency initiatives per agency/program 
 
-#### **Cons**
-  - Any sensitive information inadvertently hardcoded is immediately visible 
+#### Cons
+  - Sensitive information inadvertently hardcoded in an website configuration file is visible 
 
-### **Private**
+### Private
 
 
-#### **Pros**
-  - Restrict access to authorized collaborators and contributors (for any support issues a Pages engineer will request to be added as a collaborator to the repository if necessary)
-  - Risk mitigation
+#### Pros
   - Test/Make changes to a website without exposing commits to the public
-  - Safeguard against any potential leaks of sensitive information
+  - Safeguard sensitive data such as API keys, access tokens or other credentials in any configuration files 
 
 #### **Cons**
   - Not able to utilize CodeQL for free
