@@ -53,12 +53,11 @@ Dependabot is a useful and highly configurable automated dependency management t
 
 [Branch protection](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches) is a security feature within GitHub that limits users with write and push access the ability to push directly to any branch where branch protections are enabled. This includes but is not limited to requiring a pull request to merge code, setting the number of pull request reviews required, requiring status checks, dismissing approvals and other configuration options. With good branch protection settings you can protect your repository from an attack by a malicious actor with the stolen credentials from a single maintainer of that repository. 
 
-
-#### *Additional Advanced Feature Settings for GitHub Repository Security*
-
 ### OpenSSF Allstar
 
 [Allstar](https://github.com/ossf/allstar?tab=readme-ov-file#disabling-unwanted-issues-1) is an open source security tool which monitors organizations and repositories within GitHub for adherence to security best practices and improves the security posture for those organizations. It achieves this by continuously scanning repositories for any breach of enabled [security policies](https://github.com/ossf/allstar?tab=readme-ov-file#policies) and then raising an alert for any security remediation findings. This alert can be in the form of a GitHub issue or another type of configured action. In some instances Allstar can automatically resolve the issue on the admin/owner's behalf. 
+
+## *Additional Advanced Feature Settings for GitHub Repository Security*
 
 ### CodeQL
 
