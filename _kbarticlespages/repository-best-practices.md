@@ -23,14 +23,15 @@ A repository does *not need* to be public in order for Pages to be able to build
   - Compliance with open source and transparency initiatives per agency/program 
 
 #### Cons
-  - Sensitive information inadvertently hardcoded in an website configuration file is visible 
+  - Sensitive information inadvertently hardcoded is immediately visible 
 
 ### Private
 
 
 #### Pros
   - Test/Make changes to a website without exposing commits to the public
-  - Safeguard sensitive data such as API keys, access tokens or other credentials in any configuration files 
+  - Safeguard sensitive data such as API keys, access tokens or other credentials in any configuration files by storing them as environment variables in `config.yml` for Jekyll sites or using `dotenv` to load values from a separate `.env` file for 11ty, Gatsby and Node.js websites as an additional layer of privacy.
+  *Websites on Pages are all published publicly, user's configuration settings and static site build engine factor into what is included in the site build output.*
 
 #### Cons
   - Not able to utilize CodeQL for free
