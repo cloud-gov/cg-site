@@ -2,7 +2,7 @@
 parent: services
 layout: docs
 sidenav: true
-title: App-AutoScaler
+title: Application AutoScaler
 name: "app-autoscaler"
 description: "Cloud Foundry App-AutoScaler: scale number of application instances based on metrics"
 status: "Beta"
