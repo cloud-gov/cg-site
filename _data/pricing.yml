@@ -9,7 +9,7 @@
   image: pricing-sandbox.svg
 - package_name: Prototyping
   description: Self-service workspaces for your organization to build non-production systems.
-  price: <h3><sup>$</sup>1550&#47; month</h3><span>for entire organization</span>
+  price: <h3><sup>$</sup>1780 &#47; month</h3><span>for entire organization</span>
   memory: <sup>$</sup>130 &#47; GB memory per month
   image: pricing-prototype.svg
   production: Non-production systems
@@ -18,7 +18,7 @@
   sign_up: <a href="mailto:inquiries@cloud.gov?subject=Purchasing%20Prototyping%20Package" class="usa-button" id="Prototyping-cta">Contact us</a><br/>
 - package_name: FISMA Low
   description: Production environment ideal for hosting public information.
-  price: <h3><sup>$</sup>2070 &#47; month</h3><span>FISMA Low system</span>
+  price: <h3><sup>$</sup>2380 &#47; month</h3><span>FISMA Low system</span>
   memory: <sup>$</sup>130 &#47; GB memory per month
   production: One system
   number_of_systems: Multiple environments (e.g. dev, stage, prod) supporting one system
@@ -27,7 +27,7 @@
   image: pricing-fisma-moderate.svg
 - package_name: FISMA Moderate
   description: Production environment for systems that need assurances in confidentiality, integrity, and availability.
-  price: <h3><sup>$</sup>9300 &#47; month</h3>FISMA Moderate <br /><span>DoD Impact Level 2 system</span>
+  price: <h3><sup>$</sup>10700 &#47; month</h3>FISMA Moderate <br /><span>DoD Impact Level 2 system</span>
   memory: <sup>$</sup>130 &#47; GB memory per month
   production: One system
   number_of_systems: Multiple environments (e.g. dev, stage, prod) supporting one system

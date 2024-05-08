@@ -94,7 +94,7 @@ redirect_from:
           Access Fee
         </h4>
         <p class="pricing-line-item">
-          FISMA Low <span><sup>$</sup>2070</span>
+          FISMA Low <span><sup>$</sup>2380</span>
         </p>
         <h4>
           Memory Quota Cost
@@ -103,7 +103,7 @@ redirect_from:
           [ 1 GB + 2 GB + 1 GB ] x <sup>$</sup>130 <span><sup>$</sup>520</span>
         </p>
         <p class="pricing-total">
-          Total monthly cost <span><sup>$</sup>2590</span>
+          Total monthly cost <span><sup>$</sup>2900</span>
         </p>
       </div>
     </div>
