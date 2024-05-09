@@ -25,12 +25,12 @@ Service Name | Plan Name | Description |
 ------------ | --------- | ----------- | 
 `app-autoscaler` | `autoscaler-free-plan` | Automatically increase or decrease the number of application instances based on a policy you define. | 
 
-If your organization does not have access to the `app-autoscaler` service in the Cloud Foundry Marketplace (`cf marketplace`), please contact [support@cloud.gov]({{ site.support_email }}) to arrange for a modification to your inter-agency agreement.
+If your organization does not have access to the `app-autoscaler` service in the Cloud Foundry Marketplace (`cf marketplace`), please contact [inquiries@cloud.gov]({{ site.inquiries_email }}) to arrange for a modification to your inter-agency agreement.
 
 
 ## Scalable Metric Types
 
-The following are the built-in metrics that you can use to scale the number of application instances. They metrics values are averaged over all the instances of the application.
+The following are the built-in metrics that you can use to scale the number of application instances. A metric's values are averaged over all the instances of the application.
 
 Metric Type | Unit of Measure | Description |
 ----------- | --------------- | ----------- |
@@ -101,7 +101,7 @@ The Scaling Policy defines the rules of how, why and when to scale application i
 The top level keys used to define a Scaling Policy are:
 
  - `instance_min_count` - The minimum number of application instances that can be scaled down to. This integer value cannot be less than 1. This key/value is required.
- - `instance_max_count` - The maximum number of application instances that can be scaled up to.  This integer value has no upper boundary but be greater than the organization quota for memory allows for at the time of scaling.  This key/value is required.
+ - `instance_max_count` - The maximum number of application instances that can be scaled up to.  This integer value has no upper boundary but cannot be greater than the organization quota for memory allows for at the time of scaling.  This key/value is required.
  - `scaling_rules` - This is an array of Scaling Rules, at least one block is required:
    - `metric_type` - One of "Scalable Metric Types" like `cpu` or `memoryused`
    - `threshold` - The boundary when metric value exceeds is considered as a breach, always an integer value.
@@ -118,7 +118,7 @@ There is a fourth optional top level Scaling Policy key called `Schedules`:
  - App-AutoScaler uses schedules to overwrite the default instance limits for specific time periods and is primarily used to prepare enough instances for peak hours.
  - During these time periods all dynamic scaling rules are still in effect.
  - You can define recurring schedules, or specific schedules which are executed only once.
- - Besides overriding the default instance limit of `instance_min_count` and `instance_max_count`, you can also define an `initial_min_instance_count` in the schedule.
+ - In addition to overriding the default instance limit of `instance_min_count` and `instance_max_count`, you can also define an `initial_min_instance_count` in the schedule.
 
 
 
@@ -131,8 +131,8 @@ There is a fourth optional top level Scaling Policy key called `Schedules`:
 | start_time                           | String,"hh:mm"      | true    | the start time of the schedule                                                          |
 | end_time                             | String,"hh:mm"      | true    | the end time of the schedule                                                            |
 | days_of_week / days_of_month         | Array<int>          | false   | recurring days of a week or month. Use [1,2,..,7] or [1,2,...,31] to define it          |
-| instance_min_count                   | int                 | true    | minimal number of instance count for this schedule                                      |
-| instance_max_count                   | int                 | true    | maximal number of instance count for this schedule                                      |
+| instance_min_count                   | int                 | true    | minimum number of instance count for this schedule                                      |
+| instance_max_count                   | int                 | true    | maximum number of instance count for this schedule                                      |
 | initial_min_instance_count           | int                 | false   | the initial minimal number of instance count for this schedule                          |
 
 ### Specific Date
@@ -141,8 +141,8 @@ There is a fourth optional top level Scaling Policy key called `Schedules`:
 |:-------------------------------------|----------------------------|---------|----------------------------------------------------------------------------|
 | start_date_time                      | String,"yyyy-mm-ddThh:mm"  | true    | the start time of the schedule. Must be a future time                      |
 | end_date_time                        | String,"yyyy-mm-ddThh:mm"  | true    | the end time of the schedule. Must be a future time                        |
-| instance_min_count                   | int                        | true    | minimal number of instance count for this schedule                         |
-| instance_max_count                   | int                        | true    | maximal number of instance count for this schedule                         |
+| instance_min_count                   | int                        | true    | minimum number of instance count for this schedule                         |
+| instance_max_count                   | int                        | true    | maximum number of instance count for this schedule                         |
 | initial_min_instance_count           | int                        | false   | the initial minimal number of instance count for this schedule             |
 
 
@@ -201,7 +201,7 @@ If one schedule overlaps another, the one which **starts** first will be guarant
 
 You can define your own metric name and emit that metric to App-AutoScaler to trigger dynamic scaling. 
 
-To scale with a custom metric, the application needs to emit its own metric to App-AutoScaler's MetricsForwarder URL. Given the metric submission is proceeded inside an application, an App-AutoScaler specific service instance credential is required to authorize the access.  
+To scale with a custom metric, the application needs to emit its own metric to App-AutoScaler's MetricsForwarder URL. Since the metric is sent from the application to App-AutoScaler, an App-AutoScaler specific service instance credential is required to authorize the access.  
 
 
 
@@ -233,7 +233,7 @@ An example Scaling Policy using a custom metric is:
 }
 ```
 
-When naming a custom metric, only alphabet letters, numbers and "_" are allowed. The maximum length of the metric name is limited up to 100 characters.
+When naming a custom metric, only alphabet letters, numbers and "_" are allowed. A metric name is limited to 100 characters.
 
 
 ### Configuring Application Security Groups 
@@ -253,7 +253,7 @@ If only built-in dynamic metrics are being used (ie: `cpu`, `memoryused`, `disk`
 When a service instance of App-AutoScaler is bound to an application, the username and password credentials along with App-AutoScaler URL are injected into `VCAP_SERVICES `directly and can be viewed by running:
 
 ```bash
-cf curl "/v3/apps/$(cf app --guid my_app/env" | jq -r '.system_env_json.VCAP_SERVICES.["app-autoscaler"][0].credentials.custom_metrics' 
+cf curl "/v3/apps/$(cf app --guid my_app/env)" | jq -r '.system_env_json.VCAP_SERVICES.["app-autoscaler"][0].credentials.custom_metrics' 
 ```
 
 This will emit output similar to:
@@ -462,11 +462,11 @@ memory quota_exceeded
 FAILED
 ```
 
-Contact [support@cloud.gov]({{ site.support_email }}) to purchase additional organization quota memory or reduce the memory resources consumed by the applications.
+Contact [inquiries@cloud.gov]({{ site.inquiries_email }}) to purchase additional organization quota memory or [support@cloud.gov]({{ site.support_email }}) to reduce the memory resources consumed by the applications.
 
 
 
 ## Are you ready to use App-AutoScaler?  
 
-Contact [support@cloud.gov]({{ site.support_email }}) to add this feature!
+Contact [inquiries@cloud.gov]({{ site.inquiries_email }}) to add this feature!
 
