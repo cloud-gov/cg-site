@@ -172,9 +172,9 @@ redirect_from:
             <i>
               $200/month per node for es-medium (each medium instance has 5-7 nodes provisioned),
               $400/month per node for es-large (each large instance has 5-7 nodes provisioned),
-              $600/month for es-xlarge (each es-xlarge instance has 5-7 nodes provisioned),
-              $800/month for es-2xlarge (each es-2xlarge instance has 5-7 nodes provisioned),
-              $1600/month for es-4xlarge (each es-4xlarge instance has 5-7 nodes provisioned) and 6 medium nodes included for FISMA Moderate
+              $600/month per node for es-xlarge (each es-xlarge instance has 5-7 nodes provisioned),
+              $800/month per node for es-2xlarge (each es-2xlarge instance has 5-7 nodes provisioned),
+              $1600/month per node for es-4xlarge (each es-4xlarge instance has 5-7 nodes provisioned) and 6 medium nodes included for FISMA Moderate
             </i>
           </li>
           <li>
