@@ -253,7 +253,7 @@ If only built-in dynamic metrics are being used (ie: `cpu`, `memoryused`, `disk`
 When a service instance of App-AutoScaler is bound to an application, the username and password credentials along with App-AutoScaler URL are injected into `VCAP_SERVICES `directly and can be viewed by running:
 
 ```bash
-cf curl "/v3/apps/$(cf app --guid my_app/env)" | jq -r '.system_env_json.VCAP_SERVICES.["app-autoscaler"][0].credentials.custom_metrics' 
+cf curl "/v3/apps/$(cf app --guid my_app)/env" | jq -r '.system_env_json.VCAP_SERVICES.["app-autoscaler"][0].credentials.custom_metrics' 
 ```
 
 This will emit output similar to:
