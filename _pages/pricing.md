@@ -180,6 +180,9 @@ redirect_from:
           <li>
             Elasticache (Redis) in-memory data store - 10 nodes included<br><i>$200/month per 10 nodes block</i>
           </li>
+          <li>
+            App Autoscaler Option<br><i>$5000/year</i>
+          </li>
         </ul>
       </div>
     </div>
