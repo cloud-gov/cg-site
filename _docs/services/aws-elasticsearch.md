@@ -25,6 +25,12 @@ Service Name | Plan Name | Description | Number of nodes |
 `aws-elasticsearch` | `es-2xlarge-gp-ha` | 3 Primary and 4 Data node cluster | 7 |
 `aws-elasticsearch` | `es-4xlarge-gp` | 3 Primary and 2 Data node cluster | 5 |
 `aws-elasticsearch` | `es-4xlarge-gp-ha` | 3 Primary and 4 Data node cluster | 7 |
+`aws-elasticsearch` | `es-8xlarge-gp` | 3 Primary and 4 Data node cluster (by request) | 7 |
+`aws-elasticsearch` | `es-8xlarge-gp-ha` | 3 Primary and 8 Data node cluster (by request) | 11 |
+`aws-elasticsearch` | `es-12xlarge-gp` | 3 Primary and 2 Data node cluster (by request) | 5 |
+`aws-elasticsearch` | `es-12xlarge-gp-ha` | 3 Primary and 4 Data node cluster (by request) | 7 |
+`aws-elasticsearch` | `es-24xlarge-gp` | 3 Primary and 4 Data node cluster (by request) | 7 |
+`aws-elasticsearch` | `es-24xlarge-gp-ha` | 3 Primary and 8 Data node cluster (by request) | 11 |
 
 ## When to use
 
