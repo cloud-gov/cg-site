@@ -133,7 +133,7 @@ For a more detailed look at the changes in 4.67.0, please take a look at the [c
 | Tomcat Access Logging Support    | `3.4.0_RELEASE`  | Included inline above                                                              | Included inline above                                                                                                                        |
 | Tomcat Lifecycle Support         | `3.4.0_RELEASE`  | Included inline above                                                              | Included inline above                                                                                                                        |
 | Tomcat Logging Support           | `3.4.0_RELEASE`  | Included inline above                                                              | Included inline above                                                                                                                        |
-| YourKit Profiler                 | `2023.9.109`     |                                                                                    | [Release Notes](https://www.yourkit.com/download/yjp_2023_9_builds.jsp)                                                                      |
+| YourKit Profiler                 | `2023.9.109`     |                                                                                    | [Release Notes](https://www.yourkit.com/changes/2023.9/yjp_2023_9.jsp)                                                                      |
 
 
 #### nginx-buildpack 1.2.11 to 1.2.12
