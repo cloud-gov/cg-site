@@ -12,25 +12,25 @@ cloud.gov offers [aws-elasticsearch](https://aws.amazon.com/elasticsearch-servic
 
 ## Plans
 
-Service Name | Plan Name | Description | Number of nodes |
+Service Name | Plan Name | Instance Type | Description | Number of nodes |
 ------------ | --------- | ----------- | --------------- | -----
-`aws-elasticsearch` | `es-dev` | Single data node for non-prod use only | 1 |
-`aws-elasticsearch` | `es-medium` | 3 Primary and 2 Data node cluster | 5 |
-`aws-elasticsearch` | `es-medium-ha` | 3 Primary and 4 Data node cluster | 7 |
-`aws-elasticsearch` | `es-large` | 3 Primary and 2 Data node cluster | 5 |
-`aws-elasticsearch` | `es-large-ha` | 3 Primary and 4 Data node cluster | 7 |
-`aws-elasticsearch` | `es-xlarge` | 3 Primary and 2 Data node cluster | 5 |
-`aws-elasticsearch` | `es-xlarge-ha` | 3 Primary and 4 Data node cluster | 7 |
-`aws-elasticsearch` | `es-2xlarge-gp` | 3 Primary and 2 Data node cluster | 5 |
-`aws-elasticsearch` | `es-2xlarge-gp-ha` | 3 Primary and 4 Data node cluster | 7 |
-`aws-elasticsearch` | `es-4xlarge-gp` | 3 Primary and 2 Data node cluster | 5 |
-`aws-elasticsearch` | `es-4xlarge-gp-ha` | 3 Primary and 4 Data node cluster | 7 |
-`aws-elasticsearch` | `es-8xlarge-gp` | 3 Primary and 4 Data node cluster (by request) | 7 |
-`aws-elasticsearch` | `es-8xlarge-gp-ha` | 3 Primary and 8 Data node cluster (by request) | 11 |
-`aws-elasticsearch` | `es-12xlarge-gp` | 3 Primary and 2 Data node cluster (by request) | 5 |
-`aws-elasticsearch` | `es-12xlarge-gp-ha` | 3 Primary and 4 Data node cluster (by request) | 7 |
-`aws-elasticsearch` | `es-24xlarge-gp` | 3 Primary and 4 Data node cluster (by request) | 7 |
-`aws-elasticsearch` | `es-24xlarge-gp-ha` | 3 Primary and 8 Data node cluster (by request) | 11 |
+`aws-elasticsearch` | `es-dev` | t3.small.search | Single data node for non-prod use only | 1 |
+`aws-elasticsearch` | `es-medium` | c5.large.search | 3 Primary and 2 Data node cluster | 5 |
+`aws-elasticsearch` | `es-medium-ha` | c5.large.search | 3 Primary and 4 Data node cluster | 7 |
+`aws-elasticsearch` | `es-large` | c5.xlarge.search | 3 Primary and 2 Data node cluster | 5 |
+`aws-elasticsearch` | `es-large-ha` | c5.xlarge.search | 3 Primary and 4 Data node cluster | 7 |
+`aws-elasticsearch` | `es-xlarge` | c5.2xlarge.search | 3 Primary and 2 Data node cluster | 5 |
+`aws-elasticsearch` | `es-xlarge-ha` | c5.2xlarge.search | 3 Primary and 4 Data node cluster | 7 |
+`aws-elasticsearch` | `es-2xlarge-gp` | m5.2xlarge.search | 3 Primary and 2 Data node cluster | 5 |
+`aws-elasticsearch` | `es-2xlarge-gp-ha` | m5.2xlarge.search | 3 Primary and 4 Data node cluster | 7 |
+`aws-elasticsearch` | `es-4xlarge-gp` | m5.4xlarge.search | 3 Primary and 2 Data node cluster | 5 |
+`aws-elasticsearch` | `es-4xlarge-gp-ha` | m5.4xlarge.search | 3 Primary and 4 Data node cluster | 7 |
+`aws-elasticsearch` | `es-8xlarge-gp` | m5.4xlarge.search | 3 Primary and 4 Data node cluster (by request) | 7 |
+`aws-elasticsearch` | `es-8xlarge-gp-ha` | m5.4xlarge.search | 3 Primary and 8 Data node cluster (by request) | 11 |
+`aws-elasticsearch` | `es-12xlarge-gp` | m5.12xlarge.search | 3 Primary and 2 Data node cluster (by request) | 5 |
+`aws-elasticsearch` | `es-12xlarge-gp-ha` | m5.12xlarge.search | 3 Primary and 4 Data node cluster (by request) | 7 |
+`aws-elasticsearch` | `es-24xlarge-gp` | m5.12xlarge.search | 3 Primary and 4 Data node cluster (by request) | 7 |
+`aws-elasticsearch` | `es-24xlarge-gp-ha` | m5.12xlarge.search | 3 Primary and 8 Data node cluster (by request) | 11 |
 
 ## When to use
 
