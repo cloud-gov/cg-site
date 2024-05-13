@@ -13,7 +13,7 @@ cloud.gov offers [aws-elasticsearch](https://aws.amazon.com/elasticsearch-servic
 ## Plans
 
 Service Name | Plan Name | Instance Type | Description | Number of nodes |
------------- | --------- | ----------- | --------------- | -----
+------------ | --------- | ------------- | ----------- | -----
 `aws-elasticsearch` | `es-dev` | t3.small.search | Single data node for non-prod use only | 1 |
 `aws-elasticsearch` | `es-medium` | c5.large.search | 3 Primary and 2 Data node cluster | 5 |
 `aws-elasticsearch` | `es-medium-ha` | c5.large.search | 3 Primary and 4 Data node cluster | 7 |
