@@ -94,7 +94,7 @@ redirect_from:
           Access Fee
         </h4>
         <p class="pricing-line-item">
-          FISMA Low <span><sup>$</sup>2070</span>
+          FISMA Low <span><sup>$</sup>2380</span>
         </p>
         <h4>
           Memory Quota Cost
@@ -103,7 +103,7 @@ redirect_from:
           [ 1 GB + 2 GB + 1 GB ] x <sup>$</sup>130 <span><sup>$</sup>520</span>
         </p>
         <p class="pricing-total">
-          Total monthly cost <span><sup>$</sup>2590</span>
+          Total monthly cost <span><sup>$</sup>2900</span>
         </p>
       </div>
     </div>
@@ -168,10 +168,24 @@ redirect_from:
             Postgres, MySQL, Oracle database - 1TB included<br><i>$300/month per additional terabyte</i>
           </li>
           <li>
-            Elasticsearch RESTful search and analytics<br><i>$200/month per node for medium (each medium instance has 5-7 nodes provisioned), $400/month per node for large (each large instance has 5-7 nodes provisioned), $600/month for extra-large (each extra-large instance has 5-7 nodes provisioned), $800/month for 2extra-large (each 2extra-large instance has 5-7 nodes provisioned), $1600/month for 4extra-large (each 4extra-large instance has 5-7 nodes provisioned) and 6 medium nodes included for FISMA Moderate</i>
+            Elasticsearch RESTful search and analytics<br>
+            <ul>
+              <li><i>6 es-medium nodes are included in FISMA Moderate packages</i></li>
+              <li><i>$200/month per node for es-medium (each es-medium instance has 5-7 nodes provisioned)</i></li>
+              <li><i>$400/month per node for es-large (each es-large instance has 5-7 nodes provisioned)</i></li>
+              <li><i>$600/month per node for es-xlarge (each es-xlarge instance has 5-7 nodes provisioned)</i></li>
+              <li><i>$800/month per node for es-2xlarge (each es-2xlarge instance has 5-7 nodes provisioned)</i></li>
+              <li><i>$1600/month per node for es-4xlarge (each es-4xlarge instance has 5-7 nodes provisioned)</i></li>
+              <li><i>$1600/month per node for es-8xlarge (each es-8xlarge instance has 7-11 nodes provisioned)</i></li>
+              <li><i>$4800/month per node for es-12xlarge (each es-12xlarge instance has 5-7 nodes provisioned)</i></li>
+              <li><i>$4800/month per node for es-24xlarge (each es-24xlarge instance has 7-11 nodes provisioned)</i></li>
+            </ul>
           </li>
           <li>
             Elasticache (Redis) in-memory data store - 10 nodes included<br><i>$200/month per 10 nodes block</i>
+          </li>
+          <li>
+            App Autoscaler Option<br><i>$5000/year</i>
           </li>
         </ul>
       </div>
