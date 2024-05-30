@@ -1,6 +1,7 @@
 ---
 parent: ops
-layout: ops
+
+layout: docs
 sidenav: true
 title: Team Docs Have Moved
 redirect_from:
