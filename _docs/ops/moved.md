@@ -3,7 +3,7 @@ parent: ops
 
 layout: docs
 sidenav: true
-title: Team Docs Have Moved
+title: Team docs have moved
 redirect_from:
   - /docs/ops/aws-onboarding/
   - /docs/ops/broker-credentials/
