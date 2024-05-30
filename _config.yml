@@ -82,8 +82,6 @@ primary_navigation:
         url: /docs/services/intro/
       - name: Managing orgs
         url: /docs/orgs-spaces/dashboard/
-      - name: cloud.gov team documentation
-        url: /docs/ops/repos/
   - name: News
     url: /news/
   - name: Knowledge base
