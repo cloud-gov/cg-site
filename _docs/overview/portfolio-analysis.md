@@ -44,7 +44,6 @@ For help interpreting this list or evaluating specific cases, please email the c
 
 - **Relational databases**:
   - MySQL
-  - Oracle
   - PostgreSQL
 - **Search engines**:
   - Elasticsearch
