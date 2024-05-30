@@ -28,7 +28,7 @@ cloud.gov enforces an immutable infrastructure. Instead of logging into a live s
 
 cloud.gov has a [Provisional Authority to Operate (P-ATO) at the Moderate impact level from the FedRAMP Joint Authorization Board (JAB)]({{ site.baseurl }}{% link _docs/overview/fedramp-tracker.md %}). When you deploy a system on cloud.gov, you can [leverage this P-ATO](https://www.fedramp.gov/faqs/) as part of your agency ATO.
 
-Of the [261 security controls](https://nvd.nist.gov/800-53/Rev4/impact/moderate) required for FISMA Moderate-impact systems, as many as 60 percent of the controls covered as part of the cloud.gov P-ATO can be partially or fully inherited for agency systems deployed on the cloud.gov platform. The decision of which controls apply to an IT system and/or which may be inherited from the underlying platform ultimately rests with your agency's Authorizing Official.  However, this inheritability of controls can dramatically shorten the time and effort required to obtain an ATO for your system.
+Of the [261 security controls](https://nvd.nist.gov/800-53/Rev4/impact/moderate) required for FISMA Moderate-impact systems, as many as 60 percent of the controls covered as part of the cloud.gov P-ATO can be partially or fully inherited for agency systems deployed on the cloud.gov platform. The decision of which controls apply to an IT system and/or which may be inherited from the underlying platform ultimately rests with your agency's Authorizing Official. However, this inheritability of controls can dramatically shorten the time and effort required to obtain an ATO for your system.
 
 ## 3. Usability
 
@@ -36,4 +36,4 @@ A Platform as a Service (PaaS) like cloud.gov can save you the resources of mana
 
 The cloud.gov UI delivers the main concepts of the Cloud Foundry project in a straightforward form. Cloud Foundry provides a good API and tools for teams to manage all the environments, services, and applications necessary to deliver an app to production with minimal hassle. Cloud Foundry also provides well-designed tenancy controls. They make it easy to manage both who can access what, and how usage will be billed back to specific projects or agencies.
 
-The cloud.gov deployment is [publicly documented in GitHub]({{ site.baseurl }}{% link _docs/ops/repos.md %}). We encourage other agencies and the general public to contribute. Anyone is also free to take our work to deploy their own Platform as a Service.
+The cloud.gov deployment is [publicly documented in GitHub](https://github.com/cloud-gov/). We encourage other agencies and the general public to contribute. Anyone is also free to take our work to deploy their own Platform as a Service.
