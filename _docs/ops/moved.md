@@ -1,8 +1,6 @@
 ---
 parent: ops
 layout: ops
-
-layout: docs
 sidenav: true
 title: Team Docs Have Moved
 redirect_from:
@@ -58,7 +56,6 @@ redirect_from:
   - /intro/security/auditing-contributing-security
   - /docs/ops/aws-accounts/
   - /docs/ops/security-ir-checklist/
-
 ---
 
 To reduce confusion about our public documentation and to continue evolving our security practices, the cloud.gov team has moved these docs to a private location. If you are part of a team in government who previously referenced this documentation or you have questions about how we work, please reach out to [{{ site.support_email_address }}]({{ site.support_email }}).

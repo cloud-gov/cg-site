@@ -37,7 +37,6 @@ github_branch: main
 # Configuration for Google Analytics, add your UA code here:
 google_analytics_ua: UA-48605964-34
 
-
 # Configuration for DAP, add your agency ID here:
 dap_agency: GSA
 dap_subagency: TTS,cloud.gov
@@ -75,16 +74,16 @@ primary_navigation:
   - name: Documentation
     key: docs
     children:
-    - name: Deploying apps
-      url: /docs/deployment/deployment/
-    - name: Managing apps
-      url: /docs/management/plugins/
-    - name: Managing services
-      url: /docs/services/intro/
-    - name: Managing orgs
-      url: /docs/orgs-spaces/dashboard/
-    - name: cloud.gov team documentation
-      url: /docs/ops/repos/
+      - name: Deploying apps
+        url: /docs/deployment/deployment/
+      - name: Managing apps
+        url: /docs/management/plugins/
+      - name: Managing services
+        url: /docs/services/intro/
+      - name: Managing orgs
+        url: /docs/orgs-spaces/dashboard/
+      - name: cloud.gov team documentation
+        url: /docs/ops/repos/
   - name: News
     url: /news/
   - name: Knowledge base
@@ -94,14 +93,11 @@ primary_navigation:
   - name: Contact us
     url: /contact/
 
-
-
 secondary_navigation:
   - name: Platform Status
     url: https://cloudgov.statuspage.io/
   - name: Log in
     url: https://login.fr.cloud.gov/login
-
 
 documentation_navigation:
   - name: "Overview"
@@ -143,26 +139,6 @@ documentation_navigation:
   - name: "Team documentation"
     identifier: "ops"
     icon: fa-wrench
-    children:
-    - name: "Deployment"
-      identifier: "deploying-cloudgov"
-      parent: "ops"
-    - name: "Tenant support"
-      identifier: "tenants"
-      parent: "ops"
-    - name: "Operations"
-      identifier: "operations"
-      parent: "ops"
-    - name: "Runbook"
-      identifier: "runbook"
-      parent: "ops"
-    - name: "Plans and policies"
-      identifier: "policies"
-      parent: "ops"
-    - name: "Design considerations"
-      identifier: "design"
-      parent: "ops"
-
 
 # Search.gov configuration
 #
@@ -193,7 +169,6 @@ collections:
   kbarticlespages:
     output: true
     permalink: /pages/knowledge-base/:path/
-
 
 permalink: pretty
 
@@ -259,11 +234,11 @@ exclude:
 
 ### plugin settings ###
 last-modified-at:
-    date-format: '%Y-%m-%d'
+  date-format: "%Y-%m-%d"
 
 # Custom plugin to render the diagrams as mermaid
 mermaid:
-  src: 'mermaid.min.js'
+  src: "mermaid.min.js"
 
 feed:
   path: updates.xml
