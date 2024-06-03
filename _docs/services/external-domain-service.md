@@ -8,23 +8,33 @@ description: "Custom domains and TLS certificates with automatic renewal"
 status: "Production Ready"
 ---
 
-This service provides two different plans allowing you to use custom domains for your apps running on cloud.gov.
+This service provides three different plans allowing you to use custom domains for your apps running on cloud.gov.
 
-Both plans offer:
+All plans offer:
 
 1. Custom domain support, so that your application can have your domain instead of the default `*.app.cloud.gov` domain.
 1. HTTPS support via free TLS certificates with auto-renewal (using [Let's Encrypt](https://letsencrypt.org/)), so that user traffic is encrypted.
 
-The domain-with-cdn plan also provides Content Distribution Network (CDN) caching (using [AWS CloudFront](https://aws.amazon.com/cloudfront/)) for fast delivery of content to your users.
+The `domain-with-cdn` plan also provides Content Distribution Network (CDN) caching (using [AWS CloudFront](https://aws.amazon.com/cloudfront/)) for fast delivery of content to your users.
+
+The `domain-with-org-lb` plan is offers load balancers dedicated to your Cloud Foundry organization. This plan is not enabled by default for all organizations, but please contact [**{{site.support_email_address}}**]({{site.support_email}}) if you are interested in using it.
+for your org.
 
 ## Plans
 
-Plan Name         | Plan Description                                                                      |
-------------------|---------------------------------------------------------------------------------------|
-`domain`          | Custom domain with automatically renewing ssl certificate.                            |
-`domain-with-cdn` | Caching distributed CDN with custom domain and automatically renewing ssl certificate |
+Plan Name            | Plan Description                                                                      |
+---------------------|---------------------------------------------------------------------------------------|
+`domain`             | Custom domain with automatically renewing ssl certificate.                            |
+`domain-with-cdn`    | Caching distributed CDN with custom domain and automatically renewing ssl certificate |
+`domain-with-org-lb` | Custom domain on a load balancer dedicated to your cf organization                    |
 
 ### domain plan
+
+Name      | Required   | Description                   | Example                           |
+----------|------------|-------------------------------|-----------------------------------|
+`domains` | *Required* | Your custom domain or domains | `"my-domain.gov,www.my-domain.gov"` or `["my-domain.gov",  "www.my-domain.gov"]` |
+
+### domain-with-org-lb plan
 
 Name      | Required   | Description                   | Example                           |
 ----------|------------|-------------------------------|-----------------------------------|
@@ -202,8 +212,41 @@ cf create-service external-domain domain-with-cdn -c '{"path": "/some/path"}'
 
 ## Update an instance
 
-Updating the plan for an instance is not currently supported by the broker. To migrate from a `domain` plan to a `domain-with-cdn` plan, you must delete the current instance, then create a new one with the new plan.
+Not all plans can be updated - see the matrix below for options.
+If you'd like to make an update not supported by the broker, you must delete and re-create your service
 
+<table style="text-align:center;">
+        <tr>
+            <td colspan=2 rowspan=2></td>
+            <th style="text-align:center;" colspan=3 scope="colgroup">New Plan</th>
+        </tr>
+        <tr>
+            <th scope="col">domain</th>
+            <th scope="col">domain-with-cdn</th>
+            <th scope="col">domain-with-org-lb</th>
+        </tr>
+        <tr>
+            <th style="vertical-align:center" rowspan=5 scope="rowgroup">Existing plan</th>
+        </tr>
+        <tr>
+            <th scope="row">domain</th>
+            <td>✅</td>
+            <td>🚫</td>
+            <td>✅</td>
+        </tr>
+        <tr>
+            <th scope="row">domain-with-cdn</th>
+            <td>🚫</td>
+            <td>✅</td>
+            <td>🚫</td>
+        </tr>
+        <tr>
+            <th scope="row">domain-with-org-lb</th>
+            <td>🚫</td>
+            <td>🚫</td>
+            <td>🚫</td>
+        </tr>
+</table>
 ### domain-with-cdn instances
 
 When you update a domain-with-cdn instance, any parameter you leave out of the update params will
