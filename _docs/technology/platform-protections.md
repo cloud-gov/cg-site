@@ -6,50 +6,50 @@ title: Protections against malicious activity
 weight: 30
 ---
 
-Applications and services on the internet experience frequent attacks, probes, and other malicious traffic. Threat actors making malicious requests may aim to exploit vulnerabilities, to compromise infrastructure, or to deny service to legitimate clients of your applications.
+Applications and services on the internet experience frequent attacks, probes, and other malicious traffic. Threat actors making malicious requests may aim to exploit vulnerabilities, to compromise infrastructure, or to deny service to legitimate users.
 
-As a multi-tenant platform, cloud.gov observes a diverse and frequent number of attacks. We are constantly improving our defenses to keep your applications online and unaffected by high-traffic-volume attacks against the platform and our customers. To achieve this, cloud.gov includes multiple layers of defense against different types of attacks.
+As a multi-tenant platform, cloud.gov experiences a wide range of malicious activity and frequent attacks. To ensure your application remains online and unaffected, we continuously enhance our defenses. Cloud.gov employs multiple layers of protection to safeguard against different types of attacks.
 
 ## Blocking known malicious patterns
 
-All inbound traffic to the cloud.gov platform are protected by a set of [web application firewall (WAF) rules](https://aws.amazon.com/waf/), which can block any traffic that matches known malicious patterns. The WAF rules for cloud.gov currently include managed rule sets offered by AWS that offer protection against:
+All inbound traffic to cloud.gov is protected by a comprehensive set of [web application firewall (WAF) rules](https://aws.amazon.com/waf/). These rules, which include both managed and custom rule sets, block traffic that matches malicious patterns.
+
+Managed rule sets provided by AWS offer protection against:
 
 - [Cross-site scripting (XSS)](https://owasp.org/www-community/attacks/xss/)
 - Requests for invalid paths or extensions
 - Requests from known or suspected malicious IP ranges
 - Known Java exploits
 
-The WAF rules for cloud.gov also include a custom rule set that blocks:
+Our custom rule set additionally blocks:
 
 - Traffic attempting to exploit [Log4j vulnerabilities](https://www.cisa.gov/news-events/news/apache-log4j-vulnerability-guidance)
-- Traffic from [fuzzing](https://owasp.org/www-community/Fuzzing) or probing tools that have been identified from logs
+- Traffic from [fuzzing](https://www.cisa.gov/news-events/news/apache-log4j-vulnerability-guidance) or probing tools identified in logs
 - Traffic matching [path traversal attack patterns](https://owasp.org/www-community/attacks/Path_Traversal)
 
 ## Protections against traffic surges
 
-Occasionally, cloud.gov sees significant spikes in traffic that may be attempting to overwhelm platform infrastructure via a [DDoS attack](https://www.cloudflare.com/learning/ddos/what-is-a-ddos-attack/) or may simply be a very large scale probing attack.
-
-In order to mitigate the effect of traffic surges on the platform, cloud.gov includes the following rate limits for requests:
-
-- Traffic coming through CloudFront is rate limited with a [CHALLENGE action][challenge action] to **2000 requests** per **forwarded IP address** per 5 minutes
-- Traffic not coming through CloudFront is rate limited with a [CHALLENGE action][challenge action] to **2000 requests** per **source IP address** per 5 minutes
+Cloud.gov occasionally encounters significant spikes, either due to [DDoS](https://www.cloudflare.com/learning/ddos/what-is-a-ddos-attack/) or large scale probing. To mitigate the impact of such surges, we enforce rate limits on requests with a [CHALLENGE action][challenge action].
 
 ### Vulnerability scans & CHALLENGE responses
 
-Based on customer reports, some site scanning or penetration testing tools are flagging responses that include an `aws-waf-token` cookie as a security vulnerability. These results are a **false positive** and do not indicate a vulnerability.
+Some site scanning or penetration testing tools may incorrectly flag responses that include an `aws-waf-token` cookie as a security vulnerability. This is a false positive and not indicative of a real vulnerability.
 
-To give a bit more context, [the CHALLENGE action works by responding to a web request with an interstitial page that should allow legitimate web browsers to continue on the request destination but block most bot traffic](https://docs.aws.amazon.com/waf/latest/APIReference/API_ChallengeAction.html).
+The [CHALLENGE action](https://docs.aws.amazon.com/waf/latest/APIReference/API_ChallengeAction.html) responds to web requests with an interstitial page, allowing legitimate browsers to proceed while blocking requests from most bots. Successfully passing the CHALLENGE results in an [aws-waf-token cookie](https://docs.aws.amazon.com/waf/latest/developerguide/waf-tokens-details.html), which stores the timestamp of the client’s last successful response. The presence of this cookie is evidence of our platform’s protective measures.
 
-If the CHALLENGE is handled successfully by the client making the request, [then the request succeeds and an `aws-waf-token` cookie is generated to store the timestamp of the client's last successful response to a challenge](https://docs.aws.amazon.com/waf/latest/developerguide/waf-tokens-details.html). Thus, the presence of this cookie is not an indication of a security issue but is actually evidence of a platform protection intended to reduce malicious traffic.
+Since AWS handles the CHALLENGE response for requests exceeding the rate-limit threshold before reaching your application, these responses may not align with your normal application behavior. For example, CHALLENGE responses may not:
 
-Additionally, since AWS responds with a CHALLENGE reponse for any requests that exceed the rate-limit threshold **before they reach your application**, the CHALLENGE response may not match your normal application behavior. For example, the CHALLENGE response will:
-
-- Not redirect HTTP requests to HTTPS
-- Not include headers normally returned by your application
+- Redirect HTTP requests to HTTPS
+- Include headers normally returned by your application
 
 ### AWS CloudFront & CDNs
 
-Another protection against traffic surges available on the platform is the ability to use [Amazon CloudFront as a CDN for your application]({{ site.baseurl }}{% link _docs/services/external-domain-service.md %}). Among its other benefits, CloudFront can cache requests based on configurable patterns. Since cached requests will be handled by CloudFront and not reach your application, they offer some protection against floods of traffic.
+Cloud.gov offers [Amazon CloudFront as a CDN]({{ site.baseurl }}{% link _docs/services/external-domain-service.md %}) to enhance protection against traffic surges.  CloudFront can cache requests, reducing the load on your application.
+
+CloudFront CDNs managed by Cloud.gov receive additional protections:
+
+- Rate limiting of requests with a [CHALLENGE action][challenge action]
+- [Shield Advanced Protection, which auto-detects and auto-mitigates attacks at layer 3, layer 4, and layer 7](https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html)
 
 ## Reporting impact on legitimate traffic
 
