@@ -37,7 +37,7 @@ Some site scanning or penetration testing tools may incorrectly flag responses t
 
 The [CHALLENGE action](https://docs.aws.amazon.com/waf/latest/APIReference/API_ChallengeAction.html) responds to web requests with an interstitial page, allowing legitimate browsers to proceed while blocking requests from most bots. Successfully passing the CHALLENGE results in an [aws-waf-token cookie](https://docs.aws.amazon.com/waf/latest/developerguide/waf-tokens-details.html), which stores the timestamp of the client’s last successful response. The presence of this cookie is evidence of our platform’s protective measures.
 
-Since AWS handles the CHALLENGE response for requests exceeding the rate-limit threshold before reaching your application, these responses may not align with your normal application behavior. For example, CHALLENGE responses may not:
+Since AWS handles the CHALLENGE response for requests exceeding the rate-limit threshold **before reaching your application**, these responses may not align with your normal application behavior. For example, CHALLENGE responses may not:
 
 - Redirect HTTP requests to HTTPS
 - Include headers normally returned by your application
