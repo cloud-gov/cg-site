@@ -24,7 +24,7 @@ Managed rule sets provided by AWS offer protection against:
 Our custom rule set additionally blocks:
 
 - Traffic attempting to exploit [Log4j vulnerabilities](https://www.cisa.gov/news-events/news/apache-log4j-vulnerability-guidance)
-- Traffic from [fuzzing](https://www.cisa.gov/news-events/news/apache-log4j-vulnerability-guidance) or probing tools identified in logs
+- Traffic from [fuzzing](https://owasp.org/www-community/Fuzzing)) or probing tools identified in logs
 - Traffic matching [path traversal attack patterns](https://owasp.org/www-community/attacks/Path_Traversal)
 
 ## Protections against traffic surges
