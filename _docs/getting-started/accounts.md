@@ -8,8 +8,7 @@ weight: -100
 
 ## Get access to cloud.gov
 
-* **If you're in EPA, GSA, or NSF:** You automatically have access and can log in using your agency credentials.
-* **If you're in FDIC:** Some FDIC staff automatically have access and can log in using agency credentials. If you try to log in and receive a "status message is null" error, contact the FDIC identity team to be added to the cloud.gov access group.
+* **If your agency has integrated SSO with cloud.gov:** You can see a list of agencies which have integrated SSO on the [cloud.gov login page](https://login.fr.cloud.gov/login). If you are a member of one of these agencies, you automatically have access and can log in using your agency credentials.
 * **If you're in another agency:** If you have a U.S. federal government email address, you can [sign up for access](https://account.fr.cloud.gov/signup).
 * **Otherwise:** If your team uses cloud.gov and you don't have a federal government email address (such as if you're a contractor), ask a teammate to [invite you]({{ site.baseurl }}{% link _docs/orgs-spaces/roles.md %}).
 
@@ -17,7 +16,7 @@ weight: -100
 
 ### Agency single sign-on accounts
 
-If you have an EPA, FDIC, GSA, or NSF email address, sign in using your agency credentials. Follow [these instructions to log in]({{ site.baseurl }}{% link _docs/getting-started/setup.md %}).
+If your agency has integrated SSO with cloud.gov, you can sign in using your agency credentials. Follow [these instructions to log in]({{ site.baseurl }}{% link _docs/getting-started/setup.md %}).
 
 ### cloud.gov accounts
 
@@ -42,7 +41,6 @@ When you log into cloud.gov for the first time, follow the instructions to set t
     1. Enter your old password into the `Old Password` input
     1. Then create and enter the new password into `New Password` input and confirm it in the `Repeat New Password` input
     1. Finally, click *CHANGE*
-
 
 #### To reset your password
 
