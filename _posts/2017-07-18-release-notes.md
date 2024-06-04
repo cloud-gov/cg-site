@@ -30,7 +30,7 @@ You should [restage your application](http://cli.cloudfoundry.org/en-US/cf/resta
 * Buildpack updates:
   * [PHP v4.3.29](https://github.com/cloudfoundry/php-buildpack/releases/tag/v4.3.29)
   * [.NET Core v1.0.21](https://github.com/cloudfoundry/dotnet-core-buildpack/releases/tag/v1.0.21)
-  * [NodeJS v1.6.2](https://github.com/cloudfoundry/nodejs-buildpack/releases/tag/v1.6.2), which remediates [CVE-2017-1000381 - c-ares NAPTR parser out of bounds access](https://ubuntu.com/security/2017/CVE-2017-1000381.html)
+  * [NodeJS v1.6.2](https://github.com/cloudfoundry/nodejs-buildpack/releases/tag/v1.6.2), which remediates [CVE-2017-1000381 - c-ares NAPTR parser out of bounds access](https://ubuntu.com/security/CVE-2017-1000381.html)
   * [Python v1.5.20](https://github.com/cloudfoundry/python-buildpack/releases/tag/v1.5.20)
   * [Staticfile v1.4.10](https://github.com/cloudfoundry/staticfile-buildpack/releases/tag/v1.4.10)
   * [Ruby v1.6.43](https://github.com/cloudfoundry/ruby-buildpack/releases/tag/v1.6.43)
