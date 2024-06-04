@@ -7,13 +7,13 @@
 - package_name: Basic <br>Support
   description: >
     This is the default support level for new cloud.gov agreements. This package includes all services provided in Platform Support, plus 10hrs of support time that our engineers can devote to resolving issues with your specific applications.<br><br>
-  price: <h3>$2,750/year</h3>
+  price: <h3>$2,500/year</h3>
   hours: 10 hours per year
   image: supplemental-support.svg
 - package_name: Premium <br>Support
   description: >
     This package includes all services provided in Platform Support, plus 50hrs of support time that our engineers can devote to resolving issues with your specific applications. You will also have the option for a bi-weekly standing meeting with our engineers.
-  price: <h3>$13,750/year</h3>
+  price: <h3>$12,500/year</h3>
   hours: 50 hours per year
   image: premium-support.svg
 - package_name: Supplemental Support
