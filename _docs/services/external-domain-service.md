@@ -17,8 +17,7 @@ All plans offer:
 
 The `domain-with-cdn` plan also provides Content Distribution Network (CDN) caching (using [AWS CloudFront](https://aws.amazon.com/cloudfront/)) for fast delivery of content to your users.
 
-The `domain-with-org-lb` plan is offers load balancers dedicated to your Cloud Foundry organization. This plan is not enabled by default for all organizations, but please contact [**{{site.support_email_address}}**]({{site.support_email}}) if you are interested in using it.
-for your org.
+The `domain-with-org-lb` plan offers load balancers dedicated to your Cloud.gov organization. This plan is not enabled by default for all organizations. Please contact [**{{site.support_email_address}}**]({{site.support_email}}) if you are interested in using the `domain-with-org-lb` plan for your Cloud.gov organization.
 
 ## Plans
 
@@ -26,7 +25,7 @@ Plan Name            | Plan Description                                         
 ---------------------|---------------------------------------------------------------------------------------|
 `domain`             | Custom domain with automatically renewing ssl certificate.                            |
 `domain-with-cdn`    | Caching distributed CDN with custom domain and automatically renewing ssl certificate |
-`domain-with-org-lb` | Custom domain on a load balancer dedicated to your cf organization                    |
+`domain-with-org-lb` | Custom domain on a load balancer dedicated to your Cloud.gov organization             |
 
 ### domain plan
 
