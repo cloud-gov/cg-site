@@ -14,3 +14,9 @@ Please note that users are still able to explicitly set any of the [currently su
 ```shell
 cf create-service aws-rds <database-plan> <database-name> -c '{"version":"<desired-version>"}'
 ```
+
+For example,
+
+```shell
+cf create-service aws-rds micro-psql my-test-service -c '{"version":"15"}'
+```
