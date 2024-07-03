@@ -77,7 +77,7 @@ Pages provides [certain environment variables](https://cloud.gov/pages/documenta
 base: process.env.BASEURL
 ```
 
-Once the `base` variable is set in the vite configuration, it statically injects a variable, `import.meta.env.BASE_URL`, at build time. In our ` main.jsx ` file react router can use that variable to set [`opts.basename`](https://reactrouter.com/en/main/routers/create-browser-router#optsbasename) which ensures that routing is handled correctly regardless of where the application is served from. When a site is viewed at a non-production domain or preview URL it is not served from the root of the domain but rather a sub path.  
+Once the `base` variable is set in the vite configuration, it statically injects a variable, `import.meta.env.BASE_URL`, at build time. In our `main.jsx` file react router can use that variable to set [`opts.basename`](https://reactrouter.com/en/main/routers/create-browser-router#optsbasename) which ensures that routing is handled correctly regardless of where the application is served from. When a site is viewed at a non-production domain or preview URL it is not served from the root of the domain but rather a sub path.  
 
 ```
 const router = createBrowserRouter(
