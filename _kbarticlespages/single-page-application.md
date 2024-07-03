@@ -21,7 +21,7 @@ Static site generators like Jekyll and Hugo handle routing by creating an HTML f
 
 All of the routing is located in the `main.jsx` file. Here we import all our components, CSS and functions. We create the `<BrowserRouter>` and use the `<RouterProvider>` to provide that router to our application. The parent route registers a `Layout` component which essentially wraps all the other page components thus providing a uniform structure/design for all the components.
 
-```
+```js
 const router = createBrowserRouter(
  createRoutesFromElements(
    // set route as the path plus layout
@@ -46,7 +46,7 @@ createRoot(document.getElementById("root")).render(
 
 Additionally within the `Layout` component is where we house all the `NavLinks` and `navbar` which are located at the top of the page. The `Outlet` component tells the `react router` where to output the child route page components within the layout. 
 
-```
+```js
 class Layout extends Component {
    render() {
        return (
@@ -73,13 +73,13 @@ It’s important to remember that none of these routes are creating new HTML fil
 Pages provides [certain environment variables](https://cloud.gov/pages/documentation/env-vars-on-pages-builds/) in each build container and you can also add customer variables in your “Site Settings”. In the case of `vite`, the library we’re using in this example, [we are using a single variable provided by Pages](https://vitejs.dev/guide/env-and-mode) in two separate places:
     - `BASEURL`: This variable is supplied by the Pages build container and cannot be modified. This will insert the Pages site path based on the branch and associated domain. We’ll utilize this environment variable in our config file, `vite.config.js`, to set the [base](https://vitejs.dev/config/shared-options.html#base) variable which will be used to update our assets path.
 
-```
+```js
 base: process.env.BASEURL
 ```
 
 Once the `base` variable is set in the vite configuration, it statically injects a variable, `import.meta.env.BASE_URL`, at build time. In our `main.jsx` file react router can use that variable to set [`opts.basename`](https://reactrouter.com/en/main/routers/create-browser-router#optsbasename) which ensures that routing is handled correctly regardless of where the application is served from. When a site is viewed at a non-production domain or preview URL it is not served from the root of the domain but rather a sub path.  
 
-```
+```js
 const router = createBrowserRouter(
    …,
   {basename: import.meta.env.BASE_URL}
@@ -96,7 +96,7 @@ const router = createBrowserRouter(
 
 In our application code, we created a 404 page as another component to be imported into the `index.jsx` file to be handled by `react-router`. The Route for the 404 page was set as a wildcard catch-all so that when any path entered is not `/`, `/contact` or `/stuff` the Page404 component will be rendered. 
 
-```
+```js
 <Route path="*" element={<Page404 />}/>
 ```
 
