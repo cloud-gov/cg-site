@@ -40,7 +40,6 @@ createRoot(document.getElementById("root")).render(
    <RouterProvider router={router} />
  </React.StrictMode>
 );
-
 ```
 
 
@@ -65,7 +64,6 @@ class Layout extends Component {
        )
    }
 }
-
 ```
 
 It’s important to remember that none of these routes are creating new HTML files at a given path, they are only rendering in the browser (unless you prerender with [react-snap](https://github.com/stereobooster/react-snap)). We’ll see how to handle situations when the URL doesn’t match the HTML file in a later section.
@@ -77,7 +75,6 @@ Pages provides [certain environment variables](https://cloud.gov/pages/documenta
 
 ```
 base: process.env.BASEURL
-
 ```
 
 Once the `base` variable is set in the vite configuration, it statically injects a variable, `import.meta.env.BASE_URL`, at build time. In our ` main.jsx ` file react router can use that variable to set [`opts.basename`](https://reactrouter.com/en/main/routers/create-browser-router#optsbasename) which ensures that routing is handled correctly regardless of where the application is served from. When a site is viewed at a non-production domain or preview URL it is not served from the root of the domain but rather a sub path.  
@@ -87,8 +84,6 @@ const router = createBrowserRouter(
    …,
   {basename: import.meta.env.BASE_URL}
 );
-
-
 ```
 
 
