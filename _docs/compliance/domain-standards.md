@@ -52,6 +52,24 @@ While the CBC cipher modes of operation are being phased out (they are theoretic
 
 **Cipher suite count**: The `ELBSecurityPolicy-TLS13-1-2-Ext1-2021-06` has 15 ciphers, but your scanner may only show 11 results. That's because our certificates are signed with RSA keys, not Elliptic Curve (ECDSA) keys, so those cipher suites are not in use. In June, 2023, a switch to ECDSA caused an [outage for a significant percentage of cloud.gov users](https://cloudgov.statuspage.io/incidents/vz9t74zm7zw8), so we will support RSA for the foreseeable future.
 
+## Compression and BREACH (CVE-2013-3587)
+
+Security scanners targeting applications hosted on cloud.gov may generate findings for
+BREACH, [CVE-2013-3587](https://nvd.nist.gov/vuln/detail/CVE-2013-3587) (CVSS score 5.9, Medium),
+and then suggest disabling HTTP compression as the mitigation. However, there are multiple mitigations
+according to the [BREACH authors](https://breachattack.com), including the following:
+
+* Separating secrets from user input
+* Randomizing secrets per request
+* Masking secrets (effectively randomizing by XORing with a random secret per request)
+* Protecting vulnerable pages with CSRF
+* Length hiding (by adding random number of bytes to the responses)
+
+Since any modern web application framework should include CSRF token masking to mitigate BREACH,
+disabling compression is not necessary, and would badly impact all end users of cloud.gov. We
+suggest that you mitigate BREACH at the application level, or carry the finding as an operational
+requirement.
+
 ## DNSSEC
 
 cloud.gov does not currently support DNSSEC on `cloud.gov` domains. For example, an application at `*.app.cloud.gov` would not support DNSSEC.
