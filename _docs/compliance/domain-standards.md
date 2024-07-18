@@ -55,7 +55,7 @@ While the CBC cipher modes of operation are being phased out (they are theoretic
 ## Compression and BREACH (CVE-2013-3587)
 
 Security scanners targeting applications hosted on cloud.gov may generate findings for
-BREACH, (CVE-2013-3587)[https://nvd.nist.gov/vuln/detail/CVE-2013-3587] (CVSS score 5.9, Medium),
+BREACH, [CVE-2013-3587](https://nvd.nist.gov/vuln/detail/CVE-2013-3587) (CVSS score 5.9, Medium),
 and then suggest disabling HTTP compression as the mitigation. However, there are multiple mitigations
 according to the [BREACH authors](https://breachattack.com), including the following:
 
