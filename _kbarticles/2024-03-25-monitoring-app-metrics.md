@@ -19,7 +19,7 @@ The most important metrics for monitoring your application's health are the memo
 
 CPUs are virtualized and shared across application containers on a Diego cell virtual machine (VM).
 
-[The CPU usage figure reported as part of the application metrics represents the CPU usage of an applicaiton instance as a percentage of a single CPU core][container metrics]. Since there are usually multiple CPU cores per VM, **it is possible for the CPU usage to exceed 100%**, which means your application is using the equivalent compute power of more than a single CPU core.
+[The CPU usage figure reported as part of the application metrics represents the CPU usage of an application instance as a percentage of a single CPU core][container metrics]. Since there are usually multiple CPU cores per VM, **it is possible for the CPU usage to exceed 100%**, which means your application is using the equivalent compute power of more than a single CPU core.
 
 A CPU usage figure above 100% is not necessarily problematic. The more important metric for identifying issues is CPU entitlement, which is [a formula Cloud Foundry uses to determine how much CPU your application **is allowed to use** from the host VM based on its memory capacity][container metrics].
 
