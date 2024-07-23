@@ -72,7 +72,7 @@ This is the environment where we test the configuration first. It matches our pr
 
 #### Entity ID
 
-- <https://login.fr-stage.cloud.gov>
+- `login.fr-stage.cloud.gov`
 
 #### OIDC Configuration
 
@@ -90,7 +90,7 @@ The same configuration as our staging environment, just with production hostname
 
 #### Entity ID
 
-- <https://login.fr.cloud.gov>
+- `login.fr.cloud.gov`
 
 #### OIDC Configuration
 
