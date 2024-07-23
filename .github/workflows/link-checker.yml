@@ -40,12 +40,14 @@ jobs:
 
       - name: Build website using branch-specific configuration
         if: steps.changed-files.outputs.added_files != ''
+        env:
+          BRANCH: ${{ github.event.pull_request.head.ref }}
         run: |
           PREVIEW_URL=${{ steps.wait-federalist-build.outputs.preview-url }}
           # strip trailing slash to make link checking work properly
           echo "url: ${PREVIEW_URL%/}" >> _config.yml
           sed -i -e "/github_branch/d" _config.yml
-          echo "github_branch: ${{ github.event.pull_request.head.ref }}" >> _config.yml
+          echo "github_branch: $BRANCH" >> _config.yml
           npm run build
 
       - name: Build website with normal configuration
