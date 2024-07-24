@@ -50,8 +50,8 @@ sidenav:
         href: /pages/documentation/access-permissions/
       - text: Adding a user to an Organization
         href: /pages/documentation/adding-users/
-      - text: Customer responsibilities
-        href: /pages/documentation/customer-responsibilities/
+      - text: Before you launch
+        href: /pages/documentation/before-you-launch/
       - text: Getting started with a sandbox
         href: /pages/documentation/sandbox/
       - text: "21st Century IDEA"
@@ -66,8 +66,6 @@ sidenav:
         href: /pages/documentation/previews/
       - text: Custom domains
         href: /pages/documentation/custom-domains/
-      - text: Before you launch
-        href: /pages/documentation/before-you-launch/
       - text: Migration guide
         href: /pages/documentation/migration-guide/
       - text: Adding forms
@@ -86,6 +84,15 @@ sidenav:
         href: /pages/documentation/custom-headers/
       - text: Federalist.json
         href: /pages/documentation/federalist-json/
+  - text: For security and compliance
+    href: /pages/documentation/
+    subfolderitems:
+      - text: Security and Compliance
+        href: /pages/documentation/security-and-compliance
+      - text: Customer responsibilities
+        href: /pages/documentation/customer-responsibilities/
+      - text: FedRAMP Tracker
+        href: /docs/overview/fedramp-tracker/
       - text: Build Scans
         href: /pages/documentation/build-scans/
   - text: For developers
