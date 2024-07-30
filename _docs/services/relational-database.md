@@ -418,7 +418,7 @@ This is a simple example of replicating database service instance to another ins
 cg-manage-rds clone ${SERVICE_NAME_SOURCE} ${SERVICE_NAME_DEST}
 ```
 
-### Tunneling to your database
+## Tunneling to your database
 
 Databases on cloud.gov can only be connected to from other resources within our internal network. You cannot make a connection directly from your local machine to a database hosted on cloud.gov.
 
@@ -475,33 +475,48 @@ vcap@abc123-de45-fg67-hi89-jk10:~$
 
 Once the SSH tunnel is open, your database should be available for connections on `localhost:<port>`.
 
-## Exporting a database dump/backup manually
+## Exporting a cloud.gov database dump/backup manually
 
-[Once the SSH tunnel is created](#tunneling-to-your-database), keep it running in that terminal window and open a separate terminal session in another window/tab.
+> Note: you can find all the information for accessing your database (username, password, host, database name) by running `cf env app_name` for the app connected to your database and looking at the `credentials` for your RDS database
 
-In the separate terminal window/tab, create the backup file (be sure to tailor the backup/export command to your specific needs).
+1. [Create an SSH tunnel to your database](#tunneling-to-your-database) and keep it running in that terminal window
+1. Open a separate terminal session in another window/tab
+1. View the credentials for accessing your database by running `cf env app_name` for the app connected to your database and looking at the `credentials` for your RDS database
+1. In the separate terminal window/tab, create the backup file (be sure to tailor the backup/export command to your specific needs).
 
-For example, to create a dump of a PostgreSQL database:
+    For example, to create a dump of a PostgreSQL database:
 
-```sh
-$ pg_dump -F c \
-    --no-acl \
-    --no-owner \
-    -f backup.pg \
-    postgresql://${USERNAME}:${PASSWORD}@localhost:${PORT}/${NAME}
-```
+    ```sh
+    $ pg_dump -F c \
+        --no-acl \
+        --no-owner \
+        -f backup.pg \
+        postgresql://<username>:${PASSWORD}@localhost:<port>/<db_name>
+    ```
 
-This command will create the `backup.pg` file on your local machine in the current working directory.
+    with the values:
 
-When you are finished, you can terminate the SSH tunnel.
+    - `<username>` - username for accessing your database
+    - `<port>` - port opened for SSH tunnel to your database
+    - `<db_name>` - database name
 
-### Restoring to a database manually
+    This command will create the `backup.pg` file on your local machine in the current working directory.
 
-Continuing with the PostgreSQL example and the `backup.pg` file, you can import the dump into your database using the [pg_restore](https://www.postgresql.org/docs/current/static/app-pgrestore.html) tool.
+1. When you are finished, you can terminate the SSH tunnel.
 
-If you want to restore to a cloud.gov hosted database, [you will need to first open a tunnel to that database which will expose a port on your local machine for connecting to the database](#tunneling-to-your-database).
+## Restoring to a database manually
 
-#### PostgreSQL
+Once you have a database backup file, you can import the dump into another database.
+
+1. If you want to restore to a cloud.gov hosted database, [you will need to first open a tunnel to that database which will expose a port on your local machine for connecting to the database](#tunneling-to-your-database).
+    - If you are restoring to a local database, opening a tunnel is not necessary.
+1. View the credentials necessary for accessing your database by running `cf env <app_name>` on the app connected to your database.
+1. Use the commands for PostgreSQL/MySQL below to restore your database.
+
+    - For importing to a cloud.gov database, the `<port>` value should be the port opened by the SSH tunnel on your local machine.
+    - For importing to a local database, the `<port>` value should be whatever is configured for that database service
+
+### PostgreSQL
 
 This pg_restore invocation does not drop all of the objects in the database when loading the dump, so if objects exist in a local copy of the database already, you might run into inconsistencies when doing a `pg_restore`:
 
@@ -523,7 +538,7 @@ pg_restore --create --clean --no-owner --no-acl \
     --dbname=<database-name> backup.pg
 ```
 
-#### MySQL
+### MySQL
 
 Run this command to import a database backup into a MySQL database using the [`mysqlsh` tool](https://dev.mysql.com/doc/mysql-shell/8.0/en/):
 
@@ -537,7 +552,7 @@ with these values:
 - `host` - AWS host for accessing your database
 - `port` - port for accessing your database
 - `db_name` - database name for accessing your database
-- `path-to-file.sql` - Full path to the database backup file on your mach
+- `path-to-file.sql` - Full path to the database backup file on your machine
 
 ### Database import errors
 
