@@ -512,8 +512,6 @@ By default, `cf connect-to-service` should open a database shell for the relevan
 
 ## Exporting a database manually
 
-> Note: you can find all the information for accessing your database (username, password, host, database name) by running `cf env app_name` for the app connected to your database and looking at the `credentials` for your RDS database
-
 1. [Create an SSH tunnel to your database](#tunneling-to-your-database) and keep it running in that terminal window
 1. Open a separate terminal session in another window/tab
 1. View the credentials for accessing your database by running `cf env app_name` for the app connected to your database and looking at the `credentials` for your RDS database
