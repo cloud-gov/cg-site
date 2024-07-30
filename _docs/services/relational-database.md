@@ -424,7 +424,7 @@ Databases on cloud.gov can only be connected to from other resources within our 
 
 To connect to databases hosted on cloud.gov, you need to use an SSH tunnel. Two options for creating an SSH tunnel are outlined below.
 
-### Using cf-service-connect plugin
+### Using `cf connect-to-service` to open a tunnel
 
 First, open a terminal and connect to an instance using the [cf-service-connect plugin](https://github.com/cloud-gov/cf-service-connect#usage) to create a SSH tunnel:
 
@@ -474,6 +474,47 @@ vcap@abc123-de45-fg67-hi89-jk10:~$
 ```
 
 Once the SSH tunnel is open, your database should be available for connections on `localhost:<port>`.
+
+## Opening a shell to your cloud.gov database
+
+### Using `cf connect-to-service` to start a database shell
+
+Run this command:
+
+```shell
+cf connect-to-service <APP_NAME> <SERVICE_NAME>
+```
+
+with the values:
+
+- `<APP_NAME>` - the name of the app connected to your database
+- `<SERVICE_NAME>` - the name of your database services
+
+By default, `cf connect-to-service` should open a database shell for the relevant database type if you have the utility installed on your machine (e.g. `psql` for PostgreSQL databases).
+
+### Using `cf ssh` to start a database shell
+
+1. [Create a tunnel to your database](#tunneling-to-your-database)
+2. In another terminal window, connect to the database:
+
+    ```shell
+    myapp_guid=$(cf app --guid <app_name>)
+
+    creds=$(cf curl /v2/apps/$myapp_guid/env \
+        | jq -r '[.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials \
+        | .username, .password] \
+        | join(":")')
+
+    dbname=$(cf curl /v2/apps/$myapp_guid/env \
+        | jq -r '.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials \
+        | .name')
+
+    psql postgres://$creds@localhost:5432/$dbname
+    ```
+
+    with values:
+
+    - `<app_name>` - The name of the app connected to your database
 
 ## Exporting a cloud.gov database dump/backup manually
 
@@ -674,38 +715,6 @@ Now connect using `sqlplus random-username/secretpassword@host:port/ORCL`, where
 ```
 
 Then you can use SQLPLUS commands like `SELECT table_name FROM user_tables;`
-
-## Connect to databases without use of `connect-to-service`
-
-Given an example app named `hello-doe` and that you want to use credentials for the **first database bound to the app**:
-
-```shell
-myapp_guid=$(cf app --guid hello-doe)
-
-tunnel=$(cf curl /v2/apps/$myapp_guid/env \
-    | jq -r '[.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials \
-    | .host, .port] \
-    | join(":")')
-
-cf ssh -N -L 5432:$tunnel hello-doe
-```
-
-In another terminal window, connect to the database:
-
-```shell
-myapp_guid=$(cf app --guid hello-doe)
-
-creds=$(cf curl /v2/apps/$myapp_guid/env \
-    | jq -r '[.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials \
-    | .username, .password] \
-    | join(":")')
-
-dbname=$(cf curl /v2/apps/$myapp_guid/env \
-    | jq -r '.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials \
-    | .name')
-
-psql postgres://$creds@localhost:5432/$dbname
-```
 
 ## Version information
 
