@@ -379,19 +379,13 @@ When the restore process is completely finished, we'll notify you and ask you to
 
 When we remove the old database instance, we will not retain snapshots or backups of it unless we're explicitly asked to do so.  We'll remind you of this when coordinating a specific date and time to remove the old instance.
 
-You can also create manual backups using the [export process](#exporting-a-database) described below. In general, you are responsible for making sure that your backup procedures are adequate for your needs; see CP-9 in the cloud.gov SSP.
+You can also create manual backups using the [export process](#exporting-a-database-manually) described below. In general, you are responsible for making sure that your backup procedures are adequate for your needs; see CP-9 in the cloud.gov SSP.
 
-## Access the data in the database
-
-To access a service database, use the [cf-service-connect plugin](https://github.com/18F/cf-service-connect#readme) or the new [cg-manage-rds](https://github.com/cloud-gov/cg-manage-rds) application and the corresponding CLI (command line interface) tools for the database service you are using,
-
-The examples below show working with a PostgreSQL database, but should be similar for MySQL or others.
-
-### Using cg-manage-rds
-
-#### Exporting from a service instance
+## Using cg-manage-rds
 
 The `cg-manage-rds` application is meant to simplify and streamline import, export and cloning operations on service instances. Full usage docs can be found on the github [readme](https://github.com/cloud-gov/cg-manage-rds#usage)
+
+### Exporting from a service instance
 
 To perform a basic export of a postgres instance using the compressed format:
 
@@ -401,7 +395,7 @@ cg-manage-rds export -o "-F c" -f ./backup.pg ${SERVICE_NAME}
 
 This will create an export using `pg_dump` named `backup.pg`. Other options for the pg_dump command can be pased as a string with the `-o` option.
 
-#### Importing to a service instance
+### Importing to a service instance
 
 This is a simple example of importing a previous export to database service instance.
 By default `cg-manage-rds` adds options to remove ownership and create new objects to make porting easy.
@@ -410,7 +404,7 @@ By default `cg-manage-rds` adds options to remove ownership and create new objec
 cg-manage-rds import -o "-F c" -f ./backup.pg ${SERVICE_NAME}
 ```
 
-#### Cloning a service instance
+### Cloning a service instance
 
 This is a simple example of replicating database service instance to another instance. The destination database must be created beforehand. The export is downloaded locally as in the `export` command.
 
@@ -516,7 +510,7 @@ By default, `cf connect-to-service` should open a database shell for the relevan
 
     - `<app_name>` - The name of the app connected to your database
 
-## Exporting a cloud.gov database dump/backup manually
+## Exporting a database manually
 
 > Note: you can find all the information for accessing your database (username, password, host, database name) by running `cf env app_name` for the app connected to your database and looking at the `credentials` for your RDS database
 
