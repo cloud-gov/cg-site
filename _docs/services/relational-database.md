@@ -418,9 +418,13 @@ This is a simple example of replicating database service instance to another ins
 cg-manage-rds clone ${SERVICE_NAME_SOURCE} ${SERVICE_NAME_DEST}
 ```
 
-### Using cf-service-connect plugin
+### Tunneling to your database
 
-#### Exporting a database
+Databases on cloud.gov can only be connected to from other resources within our internal network. You cannot make a connection directly from your local machine to a database hosted on cloud.gov.
+
+To connect to databases hosted on cloud.gov, you need to use an SSH tunnel. Two options for creating an SSH tunnel are outlined below.
+
+### Using cf-service-connect plugin
 
 First, open a terminal and connect to an instance using the [cf-service-connect plugin](https://github.com/cloud-gov/cf-service-connect#usage) to create a SSH tunnel:
 
@@ -442,51 +446,86 @@ cf delete-service-key ${SERVICE_NAME} SERVICE_CONNECT
 
 Then try the previous step again.
 
-Once the SSH tunnel is created, keep it running in that terminal window and open a separate terminal session in another window/tab, then create the backup file using the parameters provided by the plugin in the new terminal session, e.g. (be sure to tailor the backup/export command to your specific needs):
+Once the SSH tunnel is created, keep it running in that terminal window to use the tunnel to make database connections.
 
-```sh
-$ pg_dump -F c \
-    --no-acl \
-    --no-owner \
-    -f backup.pg \
-    postgresql://${USERNAME}:${PASSWORD}@${HOST}:${PORT}/${NAME}
-```
+The `Port` specified in the terminal output is the port on your local machine where the tunnel to your database is open. You should use this port when making connections to the database on `localhost` for utilities like `pg_dump`, `mysqldump`, or `mysqlsh`.
 
-This will create the `backup.pg` file on your local machine in whatever your current working directory is.
-
-When you are finished, you can terminate the SSH tunnel.  You should also clean up the `SERVICE_KEY` created by the cf-service-connect plugin so that you are able to reconnect in the future:
-
-```sh
-cf delete-service-key ${SERVICE_NAME} SERVICE_CONNECT
-```
-
-### Restoring to a local database
-
-Continuing with the PostgreSQL example and the `backup.pg` file, load the dump into your local database using the [pg_restore](https://www.postgresql.org/docs/current/static/app-pgrestore.html) tool. If objects exist in a local copy of the database already, you might run into inconsistencies when doing a `pg_restore`. This pg_restore invocation does not drop all of the objects in the database when loading the dump:
-
-```sh
-pg_restore --clean --no-owner --no-acl --dbname={database name} backup.pg
-```
-
-### Importing to a service instance - Windows
+### Using `cf ssh`
 
 > Note: you can find all the information for accessing your database (username, password, host, database name) by running `cf env app_name` for your app and looking at the `credentials` for your RDS database
 
 Open an SSH tunnel to your database:
 
 ```shell
-cf ssh -N -L port:host:port application_name
+cf ssh -N -L <tunnel-port>:<host>:<db-port> <application_name>
 ```
 
 with these values:
 
-- `port` - port for accessing your database
-- `host` - AWS host for accessing your database
-- `application_name` - your application name
+- `<tunnel-port>` - port to open on your local machine for accessing your database. This value can be any port that is available for use on your local machine.
+- `<db-port>` - port database is running on in RDS
+- `<host>` - AWS host for accessing your database
+- `<application_name>` - your application name
+
+If the `cf ssh` command succeeded, you should see an empty shell prompt that looks something like, which indicates that the SSH tunnel is open:
+
+```shell
+vcap@abc123-de45-fg67-hi89-jk10:~$
+```
 
 Once the SSH tunnel is open, your database should be available for connections on `localhost:<port>`.
 
-Now you can run a command in a separate prompt to import a data backup into the database. For example, using the [`mysqlsh` tool](https://dev.mysql.com/doc/mysql-shell/8.0/en/):
+## Exporting a database dump/backup manually
+
+[Once the SSH tunnel is created](#tunneling-to-your-database), keep it running in that terminal window and open a separate terminal session in another window/tab.
+
+In the separate terminal window/tab, create the backup file (be sure to tailor the backup/export command to your specific needs).
+
+For example, to create a dump of a PostgreSQL database:
+
+```sh
+$ pg_dump -F c \
+    --no-acl \
+    --no-owner \
+    -f backup.pg \
+    postgresql://${USERNAME}:${PASSWORD}@localhost:${PORT}/${NAME}
+```
+
+This command will create the `backup.pg` file on your local machine in the current working directory.
+
+When you are finished, you can terminate the SSH tunnel.
+
+### Restoring to a database manually
+
+Continuing with the PostgreSQL example and the `backup.pg` file, you can import the dump into your database using the [pg_restore](https://www.postgresql.org/docs/current/static/app-pgrestore.html) tool.
+
+If you want to restore to a cloud.gov hosted database, [you will need to first open a tunnel to that database which will expose a port on your local machine for connecting to the database](#tunneling-to-your-database).
+
+#### PostgreSQL
+
+This pg_restore invocation does not drop all of the objects in the database when loading the dump, so if objects exist in a local copy of the database already, you might run into inconsistencies when doing a `pg_restore`:
+
+```sh
+pg_restore --clean --no-owner --no-acl \
+    -h localhost \
+    -p <port> \
+    -U <username>
+    --dbname=<database-name> backup.pg
+```
+
+If you want to drop and recreate the database before doing a restore, thus avoiding any data collisions, use the `--create` flag:
+
+```sh
+pg_restore --create --clean --no-owner --no-acl \
+    -h localhost \
+    -p <port> \
+    -U <username>
+    --dbname=<database-name> backup.pg
+```
+
+#### MySQL
+
+Run this command to import a database backup into a MySQL database using the [`mysqlsh` tool](https://dev.mysql.com/doc/mysql-shell/8.0/en/):
 
 ```shell
 mysqlsh -u username -p -h host -P port -D db_name -f path-to-file.sql
@@ -498,7 +537,7 @@ with these values:
 - `host` - AWS host for accessing your database
 - `port` - port for accessing your database
 - `db_name` - database name for accessing your database
-- `path-to-file.sql` - Full path to the database backup file on your machine
+- `path-to-file.sql` - Full path to the database backup file on your mach
 
 ### Database import errors
 
@@ -623,7 +662,7 @@ Then you can use SQLPLUS commands like `SELECT table_name FROM user_tables;`
 
 ## Connect to databases without use of `connect-to-service`
 
-Example for app name `hello-doe`
+Given an example app named `hello-doe` and that you want to use credentials for the **first database bound to the app**:
 
 ```shell
 myapp_guid=$(cf app --guid hello-doe)
@@ -636,7 +675,7 @@ tunnel=$(cf curl /v2/apps/$myapp_guid/env \
 cf ssh -N -L 5432:$tunnel hello-doe
 ```
 
-Another window:
+In another terminal window, connect to the database:
 
 ```shell
 myapp_guid=$(cf app --guid hello-doe)
@@ -665,4 +704,4 @@ For Oracle plans, minor upgrades are not automatic. To upgrade an existing Oracl
 
 ## The broker in GitHub
 
-You can find the broker here: [https://github.com/18F/aws-broker](https://github.com/18F/aws-broker).
+You can find the broker here: [https://github.com/cloud-gov/aws-broker](https://github.com/cloud-gov/aws-broker).
