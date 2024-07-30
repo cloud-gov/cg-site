@@ -383,7 +383,7 @@ You can also create manual backups using the [export process](#exporting-a-datab
 
 ## Using cg-manage-rds
 
-The `cg-manage-rds` application is meant to simplify and streamline import, export and cloning operations on service instances. Full usage docs can be found on the github [readme](https://github.com/cloud-gov/cg-manage-rds#usage)
+The `cg-manage-rds` application is meant to simplify and streamline import, export and cloning operations on service instances. Full usage docs can be found on the [GitHub repository](https://github.com/cloud-gov/cg-manage-rds#usage).
 
 ### Exporting from a service instance
 
