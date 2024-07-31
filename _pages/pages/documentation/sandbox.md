@@ -6,7 +6,7 @@ navigation: pages
 sidenav: pages-documentation
 ---
 
-## Getting started:
+## Getting started
 
 If you're interested in seeing how Pages works for yourself, [let us know]({{site.baseurl}}/contact/), and we can create a sandbox environment for your team.
 
@@ -14,7 +14,7 @@ It's important to try a tool before committing to using it, and with Pages, we g
 
 We understand that signing agreements in the federal government can be slow, but you can read how [AFWERX]({{site.baseurl}}/assets/documents/AFWERX-case-study.pdf) was able to build their entire website in their sandbox environment and when they signed the agreement, the site was ready to launch to production.
 
-## Ready to launch:
+## Ready to launch
 
 If the Pages sandbox environment proves useful, our team will work with you through the necessary the IAA process. In the meantime, you are more than welcome to continue using the sandbox environment in staging. 
 
