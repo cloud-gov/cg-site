@@ -17,7 +17,7 @@ Get a sense of how big your migration is before you start. How many pages does y
 - Example: “site:18f.gsa.gov” shows that there are about 722 pages on 18F’s website
   - Note that blog tag pages or others may show up as individual pages, skewing the count
 
-## Pages’s role
+## Pages’ role
 
 Pages is a backend hosting service that enables lots of flexibility with the look and feel of a hosted website. Pages is opinionated about the back end hosting of a site, so your code needs to be in a form that Pages can host, this can be static HTML/CSS/JS files or [supported site engines]({{site.baseurl}}/pages/documentation/supported-site-engines).
 
