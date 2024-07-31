@@ -684,3 +684,13 @@ blockquote .source {
 .highlight .ss {
   color: #90a959;
 }
+
+ul#toc {
+  background-color: #f5f5f0;
+  padding: 2em;
+  font-size: .9rem;
+}
+
+ul#toc, ul#toc ul {
+  list-style: none;
+}
