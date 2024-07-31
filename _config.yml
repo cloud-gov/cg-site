@@ -179,6 +179,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-last-modified-at
+  - jekyll-toc
 
 ############################################################
 # Site configuration for the Jekyll 3 Pagination Gem
