@@ -381,7 +381,7 @@ When we remove the old database instance, we will not retain snapshots or backup
 
 You can also create manual backups using the [export process](#exporting-a-database-manually) described below. In general, you are responsible for making sure that your backup procedures are adequate for your needs; see CP-9 in the cloud.gov SSP.
 
-## Using cg-manage-rds
+## Exporting/importing/cloning your database using `cg-manage-rds`
 
 The `cg-manage-rds` application is meant to simplify and streamline import, export and cloning operations on service instances. Full usage docs can be found on the [GitHub repository](https://github.com/cloud-gov/cg-manage-rds#usage).
 
