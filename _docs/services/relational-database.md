@@ -381,37 +381,6 @@ When we remove the old database instance, we will not retain snapshots or backup
 
 You can also create manual backups using the [export process](#exporting-a-database-manually) described below. In general, you are responsible for making sure that your backup procedures are adequate for your needs; see CP-9 in the cloud.gov SSP.
 
-## Exporting/importing/cloning your database using `cg-manage-rds`
-
-The `cg-manage-rds` application is meant to simplify and streamline import, export and cloning operations on service instances. Full usage docs can be found on the [GitHub repository](https://github.com/cloud-gov/cg-manage-rds#usage).
-
-### Exporting from a service instance
-
-To perform a basic export of a postgres instance using the compressed format:
-
-```sh
-cg-manage-rds export -o "-F c" -f ./backup.pg ${SERVICE_NAME}
-```
-
-This will create an export using `pg_dump` named `backup.pg`. Other options for the pg_dump command can be pased as a string with the `-o` option.
-
-### Importing to a service instance
-
-This is a simple example of importing a previous export to database service instance.
-By default `cg-manage-rds` adds options to remove ownership and create new objects to make porting easy.
-
-```sh
-cg-manage-rds import -o "-F c" -f ./backup.pg ${SERVICE_NAME}
-```
-
-### Cloning a service instance
-
-This is a simple example of replicating database service instance to another instance. The destination database must be created beforehand. The export is downloaded locally as in the `export` command.
-
-```sh
-cg-manage-rds clone ${SERVICE_NAME_SOURCE} ${SERVICE_NAME_DEST}
-```
-
 ## Tunneling to your database
 
 Databases on cloud.gov can only be connected to from other resources within our internal network. You cannot make a connection directly from your local machine to a database hosted on cloud.gov.
@@ -469,6 +438,146 @@ vcap@abc123-de45-fg67-hi89-jk10:~$
 
 Once the SSH tunnel is open, your database should be available for connections on `localhost:<port>`.
 
+## Exporting your database
+
+### Exporting using `cg-manage-rds`
+
+To perform a basic export of a PostgreSQL instance using the compressed format using [`cg-manage-rds`][cg-manage-rds]:
+
+```sh
+cg-manage-rds export -o "-F c" -f ./backup.pg ${SERVICE_NAME}
+```
+
+This will create an export using `pg_dump` named `backup.pg`. Other options for the pg_dump command can be pased as a string with the `-o` option.
+
+### Exporting a database manually
+
+1. [Create an SSH tunnel to your database](#tunneling-to-your-database) and keep it running in that terminal window
+1. Open a separate terminal session in another window/tab
+1. View the credentials for accessing your database by running `cf env app_name` for the app connected to your database and looking at the `credentials` for your RDS database
+1. In the separate terminal window/tab, create the backup file (be sure to tailor the backup/export command to your specific needs).
+
+    For example, to create a dump of a PostgreSQL database:
+
+    ```sh
+    $ pg_dump -F c \
+        --no-acl \
+        --no-owner \
+        -f backup.pg \
+        postgresql://<username>:${PASSWORD}@localhost:<port>/<db_name>
+    ```
+
+    with the values:
+
+    - `<username>` - username for accessing your database
+    - `<port>` - port opened for SSH tunnel to your database
+    - `<db_name>` - database name
+
+    This command will create the `backup.pg` file on your local machine in the current working directory.
+
+1. When you are finished, you can terminate the SSH tunnel.
+
+## Restoring to a database
+
+### Restoring to a database using `cg-manage-rds`
+
+This is a simple example of importing a previous export to database service instance.
+By default [`cg-manage-rds`][cg-manage-rds] adds options to remove ownership and create new objects to make porting easy.
+
+```sh
+cg-manage-rds import -o "-F c" -f ./backup.pg ${SERVICE_NAME}
+```
+
+### Restoring to a database manually
+
+Once you have a database backup file, you can import the dump into another database.
+
+1. If you want to restore to a cloud.gov hosted database, [you will need to first open a tunnel to that database which will expose a port on your local machine for connecting to the database](#tunneling-to-your-database).
+    - If you are restoring to a local database, opening a tunnel is not necessary.
+1. View the credentials necessary for accessing your database by running `cf env <app_name>` on the app connected to your database.
+1. Use the commands for PostgreSQL/MySQL below to restore your database.
+
+    - For importing to a cloud.gov database, the `<port>` value should be the port opened by the SSH tunnel on your local machine.
+    - For importing to a local database, the `<port>` value should be whatever is configured for that database service
+
+#### PostgreSQL
+
+This pg_restore invocation does not drop all of the objects in the database when loading the dump, so if objects exist in a local copy of the database already, you might run into inconsistencies when doing a `pg_restore`:
+
+```sh
+pg_restore --clean --no-owner --no-acl \
+    -h localhost \
+    -p <port> \
+    -U <username>
+    --dbname=<database-name> backup.pg
+```
+
+If you want to drop and recreate the database before doing a restore, thus avoiding any data collisions, use the `--create` flag:
+
+```sh
+pg_restore --create --clean --no-owner --no-acl \
+    -h localhost \
+    -p <port> \
+    -U <username>
+    --dbname=<database-name> backup.pg
+```
+
+#### MySQL
+
+Run this command to import a database backup into a MySQL database using the [`mysqlsh` tool](https://dev.mysql.com/doc/mysql-shell/8.0/en/):
+
+```shell
+mysqlsh -u username -p -h host -P port -D db_name -f path-to-file.sql
+```
+
+with these values:
+
+- `username` - username for accessing your database
+- `host` - AWS host for accessing your database
+- `port` - port for accessing your database
+- `db_name` - database name for accessing your database
+- `path-to-file.sql` - Full path to the database backup file on your machine
+
+## Database import errors
+
+### MySQL
+
+If you get an error like `ERROR: 1227` when trying to import to your database:
+
+1. Make sure that `enable_functions` is enabled for your database:
+
+    ```shell
+    # on Linux / Mac
+    cf update-service ${SERVICE_NAME} \
+        -c '{"enable_functions": true}'
+
+    # on Windows
+    cf update-service ${SERVICE_NAME} \
+        -c "{\"enable_functions\": true}"
+    ```
+
+    After making these changes, make sure to request a database reboot by contacting [cloud.gov support]({{ site.support_email }}).
+
+1. Make sure that your database dump was generated with the `--set-gtid-purged=OFF` option. For example:
+
+    ```shell
+    mysqldump -h <host> \
+        -u <username> \
+        -p \
+        --set-gtid-purged=OFF \
+        <database_name> > backup.sql
+    ```
+
+If those steps do not help, additional remediation steps can be found in the [AWS knowledge center article on how to resolve this error](https://repost.aws/knowledge-center/definer-error-mysqldump).
+
+## Cloning a service instance using `cg-manage-rds`
+
+This is a simple example of replicating database service instance to another instance using [`cg-manage-rds`][cg-manage-rds]. The destination database must be created beforehand. The export is downloaded locally as in the `export` command.
+
+```sh
+cg-manage-rds clone ${SERVICE_NAME_SOURCE} ${SERVICE_NAME_DEST}
+```
+
 ## Opening a shell to your cloud.gov database
 
 ### Using `cf connect-to-service` to start a database shell
@@ -509,115 +618,6 @@ By default, `cf connect-to-service` should open a database shell for the relevan
     with values:
 
     - `<app_name>` - The name of the app connected to your database
-
-## Exporting a database manually
-
-1. [Create an SSH tunnel to your database](#tunneling-to-your-database) and keep it running in that terminal window
-1. Open a separate terminal session in another window/tab
-1. View the credentials for accessing your database by running `cf env app_name` for the app connected to your database and looking at the `credentials` for your RDS database
-1. In the separate terminal window/tab, create the backup file (be sure to tailor the backup/export command to your specific needs).
-
-    For example, to create a dump of a PostgreSQL database:
-
-    ```sh
-    $ pg_dump -F c \
-        --no-acl \
-        --no-owner \
-        -f backup.pg \
-        postgresql://<username>:${PASSWORD}@localhost:<port>/<db_name>
-    ```
-
-    with the values:
-
-    - `<username>` - username for accessing your database
-    - `<port>` - port opened for SSH tunnel to your database
-    - `<db_name>` - database name
-
-    This command will create the `backup.pg` file on your local machine in the current working directory.
-
-1. When you are finished, you can terminate the SSH tunnel.
-
-## Restoring to a database manually
-
-Once you have a database backup file, you can import the dump into another database.
-
-1. If you want to restore to a cloud.gov hosted database, [you will need to first open a tunnel to that database which will expose a port on your local machine for connecting to the database](#tunneling-to-your-database).
-    - If you are restoring to a local database, opening a tunnel is not necessary.
-1. View the credentials necessary for accessing your database by running `cf env <app_name>` on the app connected to your database.
-1. Use the commands for PostgreSQL/MySQL below to restore your database.
-
-    - For importing to a cloud.gov database, the `<port>` value should be the port opened by the SSH tunnel on your local machine.
-    - For importing to a local database, the `<port>` value should be whatever is configured for that database service
-
-### PostgreSQL
-
-This pg_restore invocation does not drop all of the objects in the database when loading the dump, so if objects exist in a local copy of the database already, you might run into inconsistencies when doing a `pg_restore`:
-
-```sh
-pg_restore --clean --no-owner --no-acl \
-    -h localhost \
-    -p <port> \
-    -U <username>
-    --dbname=<database-name> backup.pg
-```
-
-If you want to drop and recreate the database before doing a restore, thus avoiding any data collisions, use the `--create` flag:
-
-```sh
-pg_restore --create --clean --no-owner --no-acl \
-    -h localhost \
-    -p <port> \
-    -U <username>
-    --dbname=<database-name> backup.pg
-```
-
-### MySQL
-
-Run this command to import a database backup into a MySQL database using the [`mysqlsh` tool](https://dev.mysql.com/doc/mysql-shell/8.0/en/):
-
-```shell
-mysqlsh -u username -p -h host -P port -D db_name -f path-to-file.sql
-```
-
-with these values:
-
-- `username` - username for accessing your database
-- `host` - AWS host for accessing your database
-- `port` - port for accessing your database
-- `db_name` - database name for accessing your database
-- `path-to-file.sql` - Full path to the database backup file on your machine
-
-### Database import errors
-
-#### MySQL
-
-If you get an error like `ERROR: 1227` when trying to import to your database:
-
-1. Make sure that `enable_functions` is enabled for your database:
-
-    ```shell
-    # on Linux / Mac
-    cf update-service ${SERVICE_NAME} \
-        -c '{"enable_functions": true}'
-
-    # on Windows
-    cf update-service ${SERVICE_NAME} \
-        -c "{\"enable_functions\": true}"
-    ```
-
-    After making these changes, make sure to request a database reboot by contacting [cloud.gov support]({{ site.support_email }}).
-
-1. Make sure that your database dump was generated with the `--set-gtid-purged=OFF` option. For example:
-
-    ```shell
-    mysqldump -h <host> \
-        -u <username> \
-        -p \
-        --set-gtid-purged=OFF \
-        <database_name> > backup.sql
-    ```
-
-If those steps do not help, additional remediation steps can be found in the [AWS knowledge center article on how to resolve this error](https://repost.aws/knowledge-center/definer-error-mysqldump).
 
 ## Encryption
 
@@ -721,3 +721,5 @@ For Oracle plans, minor upgrades are not automatic. To upgrade an existing Oracl
 ## The broker in GitHub
 
 You can find the broker here: [https://github.com/cloud-gov/aws-broker](https://github.com/cloud-gov/aws-broker).
+
+[cg-manage-rds]: https://github.com/cloud-gov/cg-manage-rds#usage
