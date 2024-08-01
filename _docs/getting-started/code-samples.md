@@ -5,17 +5,18 @@ layout: docs
 sidenav: true
 ---
 
-##  Java app   
+##  Java app
 
-#### Learn how to deploy a Java web application in your sandbox. 
+#### Learn how to deploy a Java web application in your sandbox.
 
 ##### Install the CloudFoundry command line interface (CLI)
 
 Since cloud.gov is based on the open-source Cloud Foundry project, it uses the Cloud Foundry CLI. Download and install the CLI for your system:
 
-* [Windows (64-bit)](https://cli.run.pivotal.io/stable?release=windows64&source=github)
-* [Mac (64-bit)](https://cli.run.pivotal.io/stable?release=macosx64&source=github)
-* [All Downloads](https://github.com/cloudfoundry/cli#downloads)
+* [Windows (64-bit)](https://packages.cloudfoundry.org/stable?release=windows64-exe&version=v8&source=github)
+* [Mac (64-bit) / Intel](https://packages.cloudfoundry.org/stable?release=macosx64-binary&version=v8&source=github)
+* [Mac (64-bit) / ARM](https://packages.cloudfoundry.org/stable?release=macosarm-binary&version=v8&source=github)
+* [All Downloads](https://github.com/cloudfoundry/cli?tab=readme-ov-file#downloads)
 
 Test your install with following command:
 
@@ -82,9 +83,9 @@ View your application logs with `cf logs --recent` or with the web-based logview
 
 If you’re done, you can delete your app by running `cf delete <APPNAME>` (it’s up to you whether to keep it running for more experiments or delete it).
 
-##  Other languages   
+##  Other languages
 
-### Try a simple "Hello world" app in .Net Core, PHP, Python, R, Ruby, NodeJS or Clojure in your sandbox. 
+### Try a simple "Hello world" app in .Net Core, PHP, Python, R, Ruby, NodeJS or Clojure in your sandbox.
 
 #### Install the CloudFoundry command line interface (CLI)
 
