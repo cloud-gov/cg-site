@@ -18,8 +18,13 @@ This template is for a single page that does not have a date associated with it.
 
       <div id="main-content" class="usa-layout-docs__main desktop:grid-col-8 usa-prose bg-white padding-y-8 padding-x-4">
         <h1>{{ page.title }}</h1>
-        {{ content | toc }}
+        
+        <div id="table-of-contents">
+          <h2>Table of Contents</h2>
+          {{ content | toc_only }}
+        </div>
 
+        {{ content }}
 
         <div class="grid-row">
           <div class="grid-col flex-4"></div>
