@@ -258,7 +258,7 @@ defaults:
 
 toc:
   min_level: 1
-  max_level: 1
+  max_level: 2
   ordered_list: true
   no_toc_section_class: no_toc_section
   list_id: toc
