@@ -249,3 +249,10 @@ feed:
 
 include:
   - .well-known
+
+# _config.yml
+defaults:
+  - scope:
+      path: ""
+    values:
+      toc: true

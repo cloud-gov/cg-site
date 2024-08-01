@@ -6,7 +6,6 @@ title: RDS - Relational databases
 description: "Persistent, relational databases using Amazon RDS"
 redirect_from:
   - /docs/apps/databases
-toc: true
 ---
 
 
