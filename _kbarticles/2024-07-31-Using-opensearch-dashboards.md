@@ -57,3 +57,12 @@ Listed below are the explanations of some field names for router (RTR) logs:
 - **rtr.timestamp**: The time of the request in UTC
 
 The full list of fields available for router logs can be found in [our Opensearch field mapping configuration](https://github.com/cloud-gov/opensearch-boshrelease/blob/5100229e391237f4a41df023338a247c55276ee8/jobs/opensearch_templates/templates/component-index-mappings-app.json.erb#L44).
+
+## Generate report of logs.
+
+Opensearch allows for [generating a report](https://opensearch.org/docs/latest/reporting/report-dashboard-index/) from a saved search. This is done by choosing a search and clicking the **Reporting** menu option.
+
+![Screenshot of Dashboards interface showing the selection of ]({{ site.baseurl }}/assets/images/content/opensearch-reporting.png)
+
+> Reports have a non-configurable 10,000 row limit. They have no explicit size limit (for example, MB),
+> but extremely large documents could cause report generation to fail with an out of memory error from the V8 JavaScript engine
