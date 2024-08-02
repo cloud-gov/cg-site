@@ -2,7 +2,7 @@
 parent: management
 layout: docs
 sidenav: true
-redirect_from: 
+redirect_from:
     - /docs/apps/continuous-deployment/
 title: Continuous deployment
 ---
@@ -120,7 +120,6 @@ deploy:
 
 For details, see [Jekyll's Continuous Integration guide](http://jekyllrb.com/docs/continuous-integration/travis-ci/).
 
-
 ### CircleCI
 
 See [Getting Started with CircleCI](https://circleci.com/docs/1.0/getting-started/) -- you'll need to set up a CircleCI account and give it access to your code repository.
@@ -130,7 +129,7 @@ In your code repository, use the following template to set up your `circle.yml` 
 ```yaml
 dependencies:
   pre:
-    - curl -v -L -o cf-cli_amd64.deb 'https://cli.run.pivotal.io/stable?release=debian64&source=github'
+    - curl -v -L -o cf-cli_amd64.deb 'https://packages.cloudfoundry.org/stable?release=debian64&version=v8&source=github'
     - sudo dpkg -i cf-cli_amd64.deb
     - cf -v
 
@@ -157,7 +156,7 @@ See the [GitHub Actions documentation](https://help.github.com/en/actions) to ge
 
 #### Usage
 
-After following the instructions for setting up a [cloud.gov service account](https://cloud.gov/docs/services/cloud-gov-service-account/), store your username (CG_USERNAME) and password (CG_PASSWORD) as [encrypted secrets](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets). 
+After following the instructions for setting up a [cloud.gov service account](https://cloud.gov/docs/services/cloud-gov-service-account/), store your username (CG_USERNAME) and password (CG_PASSWORD) as [encrypted secrets](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets).
 
 #### Sample workflow
 
@@ -185,7 +184,7 @@ jobs:
       run: dotnet restore
       
     - name: Build
-      run: dotnet build 
+      run: dotnet build
       
   deploy:
     runs-on: ubuntu-latest
@@ -195,7 +194,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Deploy to cloud.gov
         uses: cloud-gov/cg-cli-tools@main
-        with: 
+        with:
           cf_api: https://api.fr.cloud.gov
           cf_username: ${{ secrets.CG_USERNAME }}
           cf_password: ${{ secrets.CG_PASSWORD }}

@@ -16,7 +16,7 @@ This is used in blog posts. The index page can be found at blog/index.html
             {{ page.date | date: '%B %d, %Y' }}
           </div>
         </div>
-        {{ content }}
+        {{ content | toc }}
         <div class="grid-row">
           <div class="grid-col flex-4"></div>
           <div class="grid-col flex-1"><p><a href="{{ site.github_url }}/edit/{{ site.github_branch }}/{{ page.relative_path }}">Suggest edits</a></p></div>
