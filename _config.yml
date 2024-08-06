@@ -252,7 +252,39 @@ include:
 
 defaults:
   - scope:
-      path: ""
+      path: "_docs/compliance"
+    values:
+      toc: true
+  - scope:
+      path: "_docs/deployment"
+    values:
+      toc: true
+  - scope:
+      path: "_docs/getting-started"
+    values:
+      toc: true
+  - scope:
+      path: "_docs/management"
+    values:
+      toc: true
+  - scope:
+      path: "_docs/orgs-spaces"
+    values:
+      toc: true
+  - scope:
+      path: "_docs/overview"
+    values:
+      toc: true
+  - scope:
+      path: "_docs/pricing"
+    values:
+      toc: true
+  - scope:
+      path: "_docs/services"
+    values:
+      toc: true
+  - scope:
+      path: "_docs/technology"
     values:
       toc: true
 

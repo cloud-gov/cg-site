@@ -698,6 +698,15 @@ blockquote .source {
   list-style-position: inside;
 }
 
-#table-of-contents ul {
+#table-of-contents h2 {
+  display: none;
+}
+
+#table-of-contents ol {
+  display: none;
   font-size: .9rem;
+}
+
+#table-of-contents h2 + ol {
+  display: block;
 }
