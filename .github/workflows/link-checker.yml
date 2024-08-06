@@ -7,7 +7,7 @@ jobs:
   link-checker:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 2
 
@@ -15,7 +15,7 @@ jobs:
         with:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
 
@@ -55,7 +55,7 @@ jobs:
         run: npm run build
 
       - name: Link Checker
-        uses: lycheeverse/lychee-action@v1.4.1
+        uses: lycheeverse/lychee-action@v1
         with:
           args: --github-token ${{secrets.GITHUB_TOKEN}} --max-concurrency 64 --verbose --no-progress './*.md' './_site/**/*.html'
           fail: true
