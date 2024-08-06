@@ -59,5 +59,6 @@ jobs:
         with:
           args: --github-token ${{secrets.GITHUB_TOKEN}} --max-concurrency 64 --verbose --no-progress './*.md' './_site/**/*.html'
           fail: true
+          debug: true
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
