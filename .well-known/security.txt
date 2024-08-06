@@ -1,6 +1,6 @@
-Contact: https://hackerone.com/gsa_vdp?type=team
+Contact: https://hackerone.com/gsa_bbp
 Expires: 2029-08-06T17:21:00.000Z
-Acknowledgments: https://hackerone.com/gsa_vdp/thanks
+Acknowledgments: https://hackerone.com/gsa_ppb/thanks
 Preferred-Languages: en
 Canonical: https://cloud.gov/.well-known/security.txt
 Policy: https://www.gsa.gov/vulnerability-disclosure-policy
