@@ -46,7 +46,7 @@ timeout = 20
 # Accept 429 responses. They come from GitHub when you are sending too
 # many requests and get throttled. They don't indicate a bad link.
 # See https://github.com/lycheeverse/lychee/issues/367.
-accept = "200,403,429,401"
+accept = ["200,403,429,401"]
 
 # Proceed for server connections considered insecure (invalid TLS)
 insecure = false
@@ -88,5 +88,5 @@ exclude_link_local = true
 # Exclude loopback IP address range and localhost from checking
 exclude_loopback = true
 
-# Exclude all mail addresses from checking
-exclude_mail = true
+# Check mail addresses
+include_mail = false
