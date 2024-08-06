@@ -1,11 +1,6 @@
-# Vulnerability reporting:
-Contact: gsa-vulnerability-reports@gsa.gov
 Contact: https://hackerone.com/gsa_bbp
-
-# Incident response:
-Contact: cloud-gov-security@gsa.gov
-
-# Our security policy
+Expires: 2029-08-06T17:21:00.000Z
+Acknowledgments: https://hackerone.com/gsa_bbp/thanks
+Preferred-Languages: en
+Canonical: https://cloud.gov/.well-known/security.txt
 Policy: https://www.gsa.gov/vulnerability-disclosure-policy
-
-Expires: 2029-12-31T23:59:59
