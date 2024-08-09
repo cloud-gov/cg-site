@@ -693,20 +693,8 @@ blockquote .source {
   background-color: color($theme-color-accent-warm-light);
 }
 
-#table-of-contents ol#toc {
+#table-of-contents ol {
+  font-size: .9rem;
   padding: 0;
   list-style-position: inside;
-}
-
-#table-of-contents h2 {
-  display: none;
-}
-
-#table-of-contents ol {
-  display: none;
-  font-size: .9rem;
-}
-
-#table-of-contents h2 + ol {
-  display: block;
 }

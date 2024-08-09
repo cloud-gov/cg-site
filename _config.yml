@@ -173,13 +173,13 @@ permalink: pretty
 markdown: kramdown
 url: "https://cloud.gov"
 plugins:
+  - jekyll-toc
   - jekyll-feed
   - jekyll-paginate-v2
   - jekyll-redirect-from
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-last-modified-at
-  - jekyll-toc
 
 ############################################################
 # Site configuration for the Jekyll 3 Pagination Gem
