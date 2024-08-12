@@ -27,7 +27,7 @@ If you need agency user or developer traffic to traverse a TIC
 point, then some of the architectural guidance related to TIC 2.2
 is provided below.
 
-### Restricting developer and operator access to cloud.gov services
+## Restricting developer and operator access to cloud.gov services
 
 You can ensure that developer and operator access to cloud.gov
 services traverses your agency's TIC so that you can monitor all
@@ -70,7 +70,7 @@ cloud.gov's TLS endpoint is not restricted, but rather accessible over the open 
 
 Your agency can accomplish this by establishing an operational requirement that all administrative access to cloud.gov services happens via the agency network. You can further enforce this requirement with a technical control: Prevent users in your domain from using the cloud.gov API except from your agency's TIC egress range. Requests from an IP origin that does not match the range we have on record for your TIC (the dotted/dashed line in the diagram) will be rejected.
 
-### Restricting usage of your application
+## Restricting usage of your application
 
 You may also need to restrict access through the "front door" of your deployed applications, such as administrator access to a Wordpress site, or public access to an internal-only service. The diagram below shows where you can implement this restriction.
 
