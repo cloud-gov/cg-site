@@ -19,8 +19,10 @@ This template is for a single page that does not have a date associated with it.
       <div id="main-content" class="usa-layout-docs__main desktop:grid-col-8 usa-prose bg-white padding-y-8 padding-x-4">
         <h1>{{ page.title }}</h1>
 
-        {% assign toc_content = content | toc_only | strip %}
-        {% if toc_content != '' %}
+        {% assign toc_content = content | toc_only | strip | strip_newlines %}
+        {% assign empty_toc_content = '<ol id="toc" class="section-nav"></ol>' %}
+
+        {% if toc_content != '' and toc_content != empty_toc_content %}
           <h2>Table of Contents</h2>
           <div id="table-of-contents">
             {{ toc_content }}
