@@ -179,6 +179,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-last-modified-at
+  - jekyll-toc
 
 ############################################################
 # Site configuration for the Jekyll 3 Pagination Gem
@@ -248,3 +249,52 @@ feed:
 
 include:
   - .well-known
+
+defaults:
+  - scope:
+      path: "_docs/compliance"
+    values:
+      toc: true
+  - scope:
+      path: "_docs/deployment"
+    values:
+      toc: true
+  - scope:
+      path: "_docs/getting-started"
+    values:
+      toc: true
+  - scope:
+      path: "_docs/management"
+    values:
+      toc: true
+  - scope:
+      path: "_docs/orgs-spaces"
+    values:
+      toc: true
+  - scope:
+      path: "_docs/overview"
+    values:
+      toc: true
+  - scope:
+      path: "_docs/pricing"
+    values:
+      toc: true
+  - scope:
+      path: "_docs/services"
+    values:
+      toc: true
+  - scope:
+      path: "_docs/technology"
+    values:
+      toc: true
+
+toc:
+  min_level: 2
+  max_level: 2
+  ordered_list: true
+  no_toc_section_class: no_toc_section
+  list_id: toc
+  list_class: section-nav
+  sublist_class: ''
+  item_class: toc-entry
+  item_prefix: toc-

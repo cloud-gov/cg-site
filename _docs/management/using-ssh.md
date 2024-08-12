@@ -2,7 +2,7 @@
 parent: management
 layout: docs
 sidenav: true
-redirect_from: 
+redirect_from:
     - /docs/apps/using-ssh/
 title: Using SSH
 ---
@@ -14,7 +14,7 @@ ssh`](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#ssh-comma
 command, which lets you securely log in to an application instance where you can
 perform debugging, environment inspection, and other tasks.
 
-### Application debugging tips
+## Application debugging tips
 
 **Configure your shell**: If you're trying to debug your app, you'll need to [configure your session to match your application's environment](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#ssh-env) by running `/tmp/lifecycle/shell`.
 
@@ -32,7 +32,7 @@ SSH access is enabled by default. Space Developers can disable SSH access to ind
 
 You should [disable SSH access for production applications]({{ site.baseurl }}{% link _docs/deployment/production-ready.md %}#prevent-non-auditable-changes-to-production-apps) to ensure you can audit changes to those applications.
 
-## SSH version information 
+## SSH version information
 
 Application containers use the SSH-2.0 protocol. The SSH service uses the [Cloud Foundry SSH implementation](https://github.com/cloudfoundry/diego-ssh). For more on how Cloud Foundry implements SSH, refer to Cloud Foundry's documentation on [Understanding Application SSH](https://docs.cloudfoundry.org/concepts/diego/ssh-conceptual.html).
 

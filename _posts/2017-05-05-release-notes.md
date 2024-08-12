@@ -35,7 +35,7 @@ We upgraded the Cloud Foundry deployment to [v257](https://github.com/cloudfound
 - [Diego 1.14.1](https://github.com/cloudfoundry/diego-release/releases/tag/v1.14.1)
 - [RootFS cflinuxfs2 1.115.0](https://github.com/cloudfoundry/cflinuxfs2/releases/tag/1.115.0), which address vulnerabilities described in these security notices:
     - [USN-3246-1: Eject vulnerability](https://www.ubuntu.com/usn/usn-3246-1/)
-    - [USN-3259-1: Bind vulnerabilities](https://www.ubuntu.com/usn/usn-3259-1/)
+    - [USN-3259-1: Bind vulnerabilities](https://ubuntu.com/security/notices/USN-3259-1)
     - [USN-3263-1: FreeType vulnerability](https://www.ubuntu.com/usn/usn-3263-1/)
 - Stemcell 3312.23, which address vulnerabilities described in these security notices:
   - [USN-3249-2: Linux kernel (Xenial HWE) vulnerability](https://www.ubuntu.com/usn/usn-3249-2/)

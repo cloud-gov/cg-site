@@ -18,19 +18,19 @@ redirect_from:
   - /overview/overview/why-available-other-agencies
 ---
 
-## 1. Security
+## Security
 
 cloud.gov is built on the open source [Cloud Foundry project](http://www.cloudfoundry.org/), which is run by a non-profit foundation with many commercial members and an active community of contributors. Cloud Foundry’s “stemcell” capability allows cloud.gov to deploy all apps on a hardened operating system image that is tightly audited for compliance with federal standards. We are continually improving the security of the platform, which in turn centrally improves the security of your products that are running on the platform.
 
 cloud.gov enforces an immutable infrastructure. Instead of logging into a live system to make a change, we deploy an entirely new system with security updates applied. That ensures any foothold which might have been exploited by hackers gets wiped away at the same time. The same is true for applications deployed on cloud.gov. When vulnerabilities in a software stack are identified, we can re-deploy applications that use it on a clean and updated baseline. This happens independently of the application team’s availability, as often as needed, and without downtime.
 
-## 2. Compliance with federal requirements
+## Compliance with federal requirements
 
 cloud.gov has a [Provisional Authority to Operate (P-ATO) at the Moderate impact level from the FedRAMP Joint Authorization Board (JAB)]({{ site.baseurl }}{% link _docs/overview/fedramp-tracker.md %}). When you deploy a system on cloud.gov, you can [leverage this P-ATO](https://www.fedramp.gov/faqs/) as part of your agency ATO.
 
 Of the [261 security controls](https://nvd.nist.gov/800-53/Rev4/impact/moderate) required for FISMA Moderate-impact systems, as many as 60 percent of the controls covered as part of the cloud.gov P-ATO can be partially or fully inherited for agency systems deployed on the cloud.gov platform. The decision of which controls apply to an IT system and/or which may be inherited from the underlying platform ultimately rests with your agency's Authorizing Official. However, this inheritability of controls can dramatically shorten the time and effort required to obtain an ATO for your system.
 
-## 3. Usability
+## Usability
 
 A Platform as a Service (PaaS) like cloud.gov can save you the resources of managing your own cloud deployments, but it has to work the way you need it to work. cloud.gov was built inside a government development environment by government developers. We face similar security and compliance requirements to the ones that other government teams do, and our coworkers on other teams deploy their applications on cloud.gov. We know first-hand that it works for government teams.
 

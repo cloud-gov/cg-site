@@ -2,7 +2,7 @@
   "name": "cg-site",
   "version": "1.3.0",
   "scripts": {
-    "start": "run-p watch:* watch:static:*",
+    "start": "bundle install && run-p watch:* watch:static:*",
     "watch:jekyll": "bundle exec jekyll serve",
     "watch:static:js": "npx copy-and-watch --watch _assets/js/* assets/js",
     "watch:static:docs": "parcel watch --no-hmr _assets/documents/* --dist-dir assets/documents",

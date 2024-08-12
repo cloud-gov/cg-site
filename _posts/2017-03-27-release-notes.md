@@ -35,7 +35,7 @@ We upgraded the Cloud Foundry deployment to [v254](https://github.com/cloudfound
 As part of the Cloud Foundry upgrade, the base filesystem used for running your application has been updated to address several security vulnerabilities. You should [restage your application](http://cli.cloudfoundry.org/en-US/cf/restage.html) to [incorporate fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) and ensure you’re running the most recent language version supported by your [buildpack](https://docs.cloudfoundry.org/buildpacks/).
 
 - [USN-3183-2: GnuTLS vulnerability](https://www.ubuntu.com/usn/usn-3183-2/)
-- [USN-3189-2: Linux kernel (Xenial HWE) vulnerabilities](https://www.ubuntu.com/usn/usn-3189-2/)
+- [USN-3189-2: Linux kernel (Xenial HWE) vulnerabilities](https://ubuntu.com/security/notices/USN-3189-2)
 - [USN-3213-1: GD library vulnerabilities](https://www.ubuntu.com/usn/USN-3213-1/)
 - [USN-3220-2: Linux kernel (Xenial HWE) vulnerability](https://www.ubuntu.com/usn/usn-3220-2/)
 - [USN-3222-1: ImageMagick vulnerabilities](https://www.ubuntu.com/usn/USN-3222-1/)

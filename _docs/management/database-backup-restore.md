@@ -10,7 +10,7 @@ title: Perform a database backup or restore
 
 Use this procedure to perform a database backup or restore operation by using `cf-service-connect` to import and export data.
 
-### Install or update plugin
+## Install or update plugin
 
 This process requires the [cf-service-
 connect](https://github.com/18F/cf-service-connect) plugin that folks on the
@@ -21,15 +21,15 @@ latest version installed before starting. If you need to update the plugin, you
 need to uninstall it first before you can install the new version. To uninstall
 a plugin, run this command:
 
-```
+```shell
 cf uninstall-plugin <plugin name>
 ```
 
 Then follow the installation instructions found in the plugin's documentation.
 
-### Database backup or data export
+## Database backup or data export
 
-```
+```shell
 # Target the environment you're exporting from
 cf target [-o <org name>] -s <space name>
 
@@ -55,9 +55,9 @@ cf delete-service-key <service name> SERVICE_CONNECT
 
 Once these steps are complete, you may also want to upload a copy of the backup to the Drive folder.
 
-### Database restore or data import
+## Database restore or data import
 
-```
+```shell
 # Target the environment you're restoring into
 cf target [-o <org name>] -s <space name>
 

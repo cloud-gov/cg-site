@@ -11,39 +11,39 @@ redirect_from:
 
 Managed services provide applications with on-demand access to services outside of the stateless application environment. Typical managed services include databases, queues, and key-value stores.
 
-### List services
+## List services
 
 To create a service instance and binding for use with an application, you first need to identify the available services and their respective plans.
 
-```
-% cf marketplace
+```shell
+cf marketplace
 ```
 
 See [the services guide]({{ site.baseurl }}{% link _docs/services/intro.md %}) as well.
 
-### Create a service instance
+## Create a service instance
 
 Target the org and space which will hold the app to which the service instance will be bound.
 
-```
-% cf target -o ORG -s SPACE
+```shell
+cf target -o ORG -s SPACE
 ```
 
 Create a new service instance by specifying a service, plan, and a name of your choice for the service instance. Note that service instance names must be unique and can be renamed. For some services, you'll need to include additional parameters in your create-service command -- refer to [the services guide]({{ site.baseurl }}{% link _docs/services/intro.md %}) for details.
 
-```
-% cf create-service SERVICE_NAME PLAN_NAME INSTANCE_NAME
+```shell
+cf create-service SERVICE_NAME PLAN_NAME INSTANCE_NAME
 ```
 
-### Sharing service instances
+## Sharing service instances
 
 Sharing of service instances allows users to share service instances between spaces inside their organization as a way to consolidate service instance usage and avoid data duplication in their service instances.  Users need to be aware that sharing service instances between spaces has limitations and can expose data in those service instances across environment boundaries.  Please see [Sharing Service Instances](https://docs.cloudfoundry.org/devguide/services/sharing-instances.html) for more information on limitations and security concerns.
 
-```
-% cf share-service SERVICE-INSTANCE -s OTHER-SPACE [-o OTHER-ORG]
+```shell
+cf share-service SERVICE-INSTANCE -s OTHER-SPACE [-o OTHER-ORG]
 ```
 
-### Bind the service instance
+## Bind the service instance
 
 For services that apply to an application ([Elasticsearch]({{ site.baseurl }}{% link _docs/services/aws-elasticsearch.md %}), [Redis]({{ site.baseurl }}{% link _docs/services/aws-elasticache.md %}), [relational databases (RDS)]({{ site.baseurl }}{% link _docs/services/relational-database.md %}), and [S3]({{ site.baseurl }}{% link _docs/services/s3.md %})), the service instance must be bound to the application which will access it. (The [CDN service]({{ site.baseurl }}{% link _docs/services/cdn-route.md %}), [identity provider]({{ site.baseurl }}{% link _docs/services/cloud-gov-identity-provider.md %}), and [service account]({{ site.baseurl }}{% link _docs/services/cloud-gov-service-account.md %}) have different instructions, available in their service documentation.)
 
@@ -62,7 +62,7 @@ A service binding will be created with the next `cf push`.
 
 Alternatively, a service instance can also bound to an existing application via the `cf` CLI:
 
-```
+```shell
 % cf bind-service APPLICATION INSTANCE_NAME
 ```
 
@@ -99,7 +99,7 @@ In this case, `url` alone could be sufficient for establishing a connection from
 
 The contents of the `VCAP_SERVICES` environment variable contain the credentials to access your service. Treat the contents of this and all other environment variables as sensitive.
 
-### Access the service configuration
+## Access the service configuration
 
 Configuration and credentials for the bound service can be accessed in several ways:
 
@@ -107,11 +107,11 @@ Configuration and credentials for the bound service can be accessed in several w
 * Through a language-specific module such as [cfenv](https://www.npmjs.org/package/cfenv) for node.js.
 * Through buildpack-populated environment variables as in the [Ruby buildpack](http://docs.cloudfoundry.org/buildpacks/ruby/ruby-service-bindings.html#vcap-services-defines-database-url).
 
-#### Node.js example
+### Node.js example
 
 To access the elasticsearch service described above with a node app:
 
-**package.json**
+`package.json`:
 
 ```javascript
 // ...
@@ -123,7 +123,7 @@ To access the elasticsearch service described above with a node app:
 // ...
 ```
 
-**app.js**
+`app.js`:
 
 ```javascript
 // ...
@@ -138,9 +138,9 @@ var client = new elasticsearch.Client({
 // ...
 ```
 
-#### Ruby on Rails example
+### Ruby on Rails example
 
-**config/initializers/elasticsearch.rb**
+`config/initializers/elasticsearch.rb`:
 
 ```ruby
 # we use "production" env for all things at cloud.gov

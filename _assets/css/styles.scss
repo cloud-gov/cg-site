@@ -684,3 +684,17 @@ blockquote .source {
 .highlight .ss {
   color: #90a959;
 }
+
+#table-of-contents {
+  @include u-border($theme-color-base-lighter);
+  border-width: 1px;
+  border-style: solid;
+  padding: 0 2em;
+  background-color: color($theme-color-accent-warm-light);
+}
+
+#table-of-contents ol {
+  font-size: .9rem;
+  padding: 0;
+  list-style-position: inside;
+}
