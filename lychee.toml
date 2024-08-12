@@ -26,6 +26,9 @@ max_retries = 0
 
 cache = true
 
+# Maximum number of concurrent link checks.
+max_concurrency = 64
+
 ### Output
 
 output = "lychee-out.md"
