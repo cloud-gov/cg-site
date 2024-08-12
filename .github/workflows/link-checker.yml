@@ -57,7 +57,7 @@ jobs:
       - name: Link Checker
         uses: lycheeverse/lychee-action@v1
         with:
-          args: --github-token ${{secrets.GITHUB_TOKEN}} './*.md' './_site/**/*.html' --config lychee.toml
+          args: --github-token ${{secrets.GITHUB_TOKEN}} --max-concurrency 64 './*.md' './_site/**/*.html' --config lychee.toml
           fail: true
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
