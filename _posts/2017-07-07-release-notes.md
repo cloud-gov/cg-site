@@ -32,7 +32,7 @@ You should [restage your application](http://cli.cloudfoundry.org/en-US/cf/resta
   - [USN-3309-1: Libtasn1 vulnerability](https://www.ubuntu.com/usn/USN-3309-1/)
   - [USN-3304-1: Sudo vulnerability](https://www.ubuntu.com/usn/USN-3304-1/)
   - [USN-3212-2: LibTIFF regression](https://www.ubuntu.com/usn/USN-3212-2/)
-  - [USN-3302-1: ImageMagick vulnerabilities](https://www.ubuntu.com/usn/USN-3302-1/)
+  - [USN-3302-1: ImageMagick vulnerabilities](https://ubuntu.com/security/notices/USN-3302-1)
 - [Diego 1.19.0](https://github.com/cloudfoundry/diego-release/releases/tag/v1.19.0)
 - Stemcell 3312.29
 - Buildpack updates:

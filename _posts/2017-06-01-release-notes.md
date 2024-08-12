@@ -40,5 +40,5 @@ We upgraded the Cloud Foundry deployment to [v262](https://github.com/cloudfound
   - [USN-3282-1: FreeType vulnerabilities](https://www.ubuntu.com/usn/USN-3282-1/)
   - [USN-3283-1: rtmpdump vulnerabilities](https://www.ubuntu.com/usn/USN-3283-1/)
   - [USN-3287-1: Git vulnerability](https://www.ubuntu.com/usn/USN-3287-1/)
-  - [USN-3294-1: Bash vulnerabilities](https://www.ubuntu.com/usn/USN-3294-1/)
+  - [USN-3294-1: Bash vulnerabilities](https://ubuntu.com/security/notices/USN-3294-1)
   - [USN-3295-1: JasPer vulnerabilities](https://www.ubuntu.com/usn/USN-3295-1/)

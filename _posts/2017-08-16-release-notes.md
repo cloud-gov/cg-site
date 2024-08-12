@@ -28,7 +28,7 @@ We upgraded the Cloud Foundry deployment to [v270](https://github.com/cloudfound
 * [USN-3347-1: Libgcrypt vulnerabilities](https://usn.ubuntu.com/usn/usn-3347-1/)
 * [USN-3349-1: NTP vulnerabilities](https://usn.ubuntu.com/usn/usn-3349-1/)
 * [USN-3353-1: Heimdal vulnerability](https://usn.ubuntu.com/usn/usn-3353-1/)
-* [USN-3356-1: Expat vulnerability](https://usn.ubuntu.com/usn/usn-3356-1)
+* [USN-3356-1: Expat vulnerability](https://ubuntu.com/security/notices/USN-3356-1)
 * [USN-3363-1: ImageMagick vulnerabilities](https://usn.ubuntu.com/usn/usn-3363-1/)
 * [USN-3363-2: ImageMagick regression](https://usn.ubuntu.com/usn/usn-3363-2/)
 * [USN-3364-2: Linux kernel (Xenial HWE) vulnerabilities](https://usn.ubuntu.com/usn/usn-3364-2/)
