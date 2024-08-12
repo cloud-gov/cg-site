@@ -54,11 +54,6 @@ jobs:
         if: steps.changed-files.outputs.added_files == ''
         run: npm run build
 
-      - name: testing
-        run: |
-          pwd
-          ls
-
       - name: Link Checker
         uses: lycheeverse/lychee-action@v1
         with:
