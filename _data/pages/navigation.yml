@@ -39,7 +39,6 @@ footer:
     href: https://pages.cloud.gov
     external: true
 
-
 sidenav:
   - text: Using Pages
     href: /pages/documentation/
@@ -93,8 +92,8 @@ sidenav:
         href: /pages/documentation/customer-responsibilities/
       - text: FedRAMP Tracker
         href: /docs/overview/fedramp-tracker/
-      - text: Build Scans
-        href: /pages/documentation/build-scans/
+      - text: Automated Site Reports
+        href: /pages/documentation/automated-site-reports/
   - text: For developers
     href: /pages/documentation/
     subfolderitems:
