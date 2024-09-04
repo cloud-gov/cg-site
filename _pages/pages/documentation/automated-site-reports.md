@@ -1,6 +1,6 @@
 ---
 title: Automated Site Reports
-permalink: /pages/documentation/automated-site-reports
+permalink: /pages/documentation/automated-site-reports/
 layout: docs
 navigation: pages
 sidenav: pages-documentation
