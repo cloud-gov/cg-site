@@ -96,7 +96,7 @@ log shipper application itself**. Doing so may cause a logging feedback loop, wh
 which are then sent to the application, and so on. This loop can quickly overwhelm your application, likely causing
 dropped logs and unnecessary resource consumption.
 
-An example might look like:
+An example manifest for a log shipper application might look like:
 ```yml
 ---
 # manifest.yml
