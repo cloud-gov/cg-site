@@ -63,7 +63,7 @@ title: cloud.gov Pages - Federalist Migration
           You can migrate your account on your own or stop by weekly Pages office hours. You can receive the invite by notifying us at <a href="mailto:inquiries@cloud.gov">inquiries@cloud.gov</a>.
         </p>
         <p>
-          Some information will still be available at the <a href="https://federalistapp.18f.gov">Federalist site</a> but we’re gradually transitioning this to a read-only page before finally turning it off. 
+          Some information will still be available at the <a href="https://federalistapp.18f.gov">Federalist site</a> but we’re gradually transitioning this to a read-only page before finally turning it off.
         </p>
       </div>
     </div>
@@ -101,7 +101,7 @@ title: cloud.gov Pages - Federalist Migration
     </div>
     <div class="tablet:grid-col-4 bar-top">
       <p>Join our Slack community to connect and learn from other Pages users across the federal government.</p>
-      <a class="cg-arrow" href="https://chat.18f.gov/">Join the Slack channel</a>
+      <a class="cg-arrow" href="https://docs.google.com/forms/d/1vcsvQ64qt5mYNyVajcwtYDRMqEOyPzsXZBGM5c4_BD8/edit">Join the Slack channel</a>
     </div>
     <div class="tablet:grid-col-4 bar-top">
       <p>The Pages team wants to learn from your experience so we can improve the product for all our users.</p>

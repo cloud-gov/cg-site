@@ -171,7 +171,7 @@ Did we miss a tip or useful resource that you think we should add? [Submit a sug
 
 ### Join the communities
 
-* [The public DevOps channel on 18F's Slack (sign up at chat.18f.gov).](https://chat.18f.gov/)
+* [The public DevOps channel on TTS's Slack (sign up at with this form).](https://docs.google.com/forms/d/1vcsvQ64qt5mYNyVajcwtYDRMqEOyPzsXZBGM5c4_BD8/edit)
 * [Cloud Foundry communities (Slack, newsletters, mail lists)](https://www.cloudfoundry.org/community/)
 
 Want more?
