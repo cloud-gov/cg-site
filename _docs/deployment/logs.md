@@ -86,7 +86,7 @@ Then, bind the service you created to the app that you want connect:
 
       cf bind-service my-app my-log-drain
 
-If your log storage system cannot receive logs via syslog or https, it may be possible to forward
+If your log storage system cannot receive logs via `syslog` or `https`, it may be possible to forward
 the logs to an application running on cloud.gov, which then sends the logs to your logging system.
 To accomplish this, the agent must receive logs over https (since cloud.gov does not currently
 support raw TCP applications).
