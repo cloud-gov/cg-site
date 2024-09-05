@@ -81,7 +81,7 @@ can do.
 <h4>Join the communities</h4>
         <ul>
             <li>
-            <a href="https://chat.18f.gov/">The public DevOps channel on 18F's Slack (sign up at chat.18f.gov).</a>
+            <a href="https://docs.google.com/forms/d/1vcsvQ64qt5mYNyVajcwtYDRMqEOyPzsXZBGM5c4_BD8/edit">The public DevOps channel on TTS's Slack (sign up at using this form).</a>TTS Slack
             </li>
             <li>
             <a href="https://www.cloudfoundry.org/community/">Cloud Foundry communities (Slack, newsletters, mail lists)</a>

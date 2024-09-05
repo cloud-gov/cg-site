@@ -110,7 +110,7 @@ title: cloud.gov Pages - Features
     </div>
     <div class="tablet:grid-col-4 bar-top">
       <p>Join our Slack community to connect and learn from other Pages users across the federal government.</p>
-      <a class="cg-arrow" href="https://chat.18f.gov/">Join the Slack channel</a>
+      <a class="cg-arrow" href="https://docs.google.com/forms/d/1vcsvQ64qt5mYNyVajcwtYDRMqEOyPzsXZBGM5c4_BD8/edit">Join the Slack channel</a>
     </div>
     <div class="tablet:grid-col-4 bar-top">
       <p>The Pages team wants to learn from your experience so we can improve the product for all our users.</p>
