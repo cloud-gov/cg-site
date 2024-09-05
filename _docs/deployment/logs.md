@@ -2,7 +2,7 @@
 parent: deployment
 layout: docs
 sidenav: true
-redirect_from: 
+redirect_from:
     - /docs/apps/logs/
 title: Logs
 ---
@@ -76,15 +76,49 @@ If your application logs are output in JSON, they will be easily searchable in [
 
 ## How to automatically copy your logs elsewhere
 
-If you want to set up your own storage for your application logs, you can set up [a "log drain" service](https://docs.cloudfoundry.org/devguide/services/log-management.html) that sends the logs to your preferred location.
+If you want to set up your own storage for your application logs, you can set up [a "log drain" service](https://docs.cloudfoundry.org/devguide/services/log-management.html#user-provided) that sends the logs to your preferred location.
 
-Create the user provided service and point it toward the endpoint where you want to send your logs: 
+Create the user provided service and point it toward the endpoint where you want to send your logs:
 
-  cf cups log-drain -l syslog-tls://<your-log-drain-service-endpont>
-  
+      cf create-user-provided-service my-log-drain \
+        -l syslog-tls://<your-log-drain-service-endpont>
+
 Then, bind the service you created to the app that you want connect:
 
-  cf bind-service YOUR-APP YOUR-LOG-STORE
+      cf bind-service my-app my-log-drain
+
+If your log storage system cannot receive logs via `syslog` or `https`, it may be possible to forward
+the logs to an application running on cloud.gov, which then sends the logs to your logging system.
+**To accomplish this, the application must receive logs over `https`** (since cloud.gov does not currently
+support raw TCP applications).
+
+When using a log drain with a log shipper application, you **must not bind the log drain service to the
+log shipper application itself**. Doing so may cause a logging feedback loop, where shipping logs to the application generates logs
+which are then sent to the application, and so on. This loop can quickly overwhelm your application, likely causing
+dropped logs and unnecessary resource consumption.
+
+An example manifest for a log shipper application might look like:
+```yml
+---
+# manifest.yml
+---
+applications:
+- name: log-forwarder
+  route: ((forwarder-route))
+  memory: 256M
+  stack: cflinuxfs4
+  buildpacks:
+    - binary_buildpack
+```
+
+And the commands to create the log drain and bind it to your main application (not your log shipper application) would be:
+
+```shell
+$ cf push --var forwarder-route=logs.agency.example.gov
+$ cf create-user-provided-service main-log-drain \
+  -l https://logs.agency.example.gov
+$ cf bind-service my-main-app main-log-drain
+```
 
 ## Troubleshooting missing logs
 
