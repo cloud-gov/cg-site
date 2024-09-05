@@ -114,7 +114,8 @@ And the commands to create the log drain and bind it to your main application (n
 
 ```shell
 $ cf push --var forwarder-route=logs.agency.example.gov
-$ cf create-user-provided-service main-log-drain -l https://logs.agency.example.gov
+$ cf create-user-provided-service main-log-drain \
+  -l https://logs.agency.example.gov
 $ cf bind-service my-main-app main-log-drain
 ```
 
