@@ -89,9 +89,11 @@ Then, bind the service you created to the app that you want connect:
 If your log storage system cannot receive logs via syslog or https, it may be possible to forward
 the logs to an agent running on cloud.gov, which then sends the logs to your logging system.
 To accomplish this, the agent must receive logs over https (since cloud.gov does not currently
-support raw TCP applications). When you do this, you *must* not bind the log drain service to the
-agent. Doing so may cause a logging feedback loop, where shipping logs to the agent generates logs
-which are then sent to the agent, and so on. This can quickly overwhelm your agent, likely causing
+support raw TCP applications). 
+
+When using a log drain with a log shipper application, you* *must not bind the log drain service to the
+log shipper application itself**. Doing so may cause a logging feedback loop, where shipping logs to the application generates logs
+which are then sent to the application, and so on. This loop can quickly overwhelm your application, likely causing
 dropped logs and unnecessary resource consumption.
 
 An example might look like:
