@@ -128,3 +128,4 @@ Not seeing the logs you expect? Here are a few questions to ask yourself to help
 
 1. Check the time period in the upper right corner, since the default is "Last 15 minutes". You may need to expand that time period to hours or days.
 1. Check [cloud.gov status](https://cloudgov.statuspage.io/) to see if the the logs front end is under scheduled maintenance.
+1. Is your application writing logs to a logfile? Your application needs to emit logs to `STDOUT` or `STDERR` for the logging system to consume them.
