@@ -17,7 +17,7 @@ When building out your sites, please remember that all government websites must 
 
 ## Scheduling nightly builds
 
-Sites with public repositories can schedule builds to occur nightly.  If you wish to schedule automatic builds of your live or demo site, add the following information to your site/demo configuration in the "Site settings" tab:
+Sites with public repositories can schedule builds to occur nightly at 1am Eastern Time.  If you wish to schedule automatic daily builds of your live or demo site, add the following information to your site/demo configuration in the "Site settings" tab:
 ```
 schedule: nightly
 ```
