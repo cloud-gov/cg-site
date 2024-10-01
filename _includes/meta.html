@@ -20,7 +20,7 @@ site, this is the place to do it.
     {%- if page.title -%}{{- page.title | strip_html }} | {% endif -%}{{ site.title -}}
   {% endcapture %}
   {% capture description %}
-    {%- if page.url == "/" -%}
+    {%- if page.url == "/" OR page.url == "/news/" -%}
       {{- site.description -}}
     {%- elsif page.description -%}
       {{- page.description | truncate: 160 -}}
