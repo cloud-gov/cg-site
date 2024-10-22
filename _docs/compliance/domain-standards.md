@@ -27,7 +27,7 @@ You are responsible for setting up HSTS preloading for your [custom domain]({{ s
 
 The SSL/TLS implementation depends on how your client is reaching cloud.gov, which is either through an AWS load balancer, or through the CDN service based on Amazon CloudFront.
 
-* [AWS load balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#tls13-security-policies) implement the `ELBSecurityPolicy-TLS13-1-2-Ext1-2021-06` SSL/TLS policy.
+* [AWS load balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#fips-security-policies) implement the `ELBSecurityPolicy-TLS13-1-2-FIPS-2023-04` SSL/TLS policy. This policy leverages the AWS-LC FIPS validated cryptographic module. To learn more, see the [AWS-LC Cryptographic Module](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4631) page on the NIST Cryptographic Module Validation Program site.
 * [Amazon CloudFront distributions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers) implement the `TLSv1.2_2018` policy.
 
 Our TLS implementation and cipher suites are consistent with [White House Office of Management and Budget's M-15-13](https://https.cio.gov/), the Department of Homeland Security's [Binding Operational Directive 18-01](https://cyber.dhs.gov/bod/18-01/), and [NIST's 800-52r2 Guidelines for TLS Implementations](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-52r2.pdf).
@@ -46,11 +46,11 @@ TLS_RSA_WITH_AES_256_GCM_SHA384 (0x009D)
 These are false positives. At cloud.gov we leverage TLS implementations from Amazon Web Services, which use [s2n-tls](https://github.com/aws/s2n-tls) to inject random timing variations [to mitigate CBC attacks like LUCKY13](https://aws.amazon.com/blogs/security/s2n-and-lucky-13/). Further, these ciphersuites are still acceptable per [NIST 800-52r2, Appendix D](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-52r2.pdf#%5B%7B%22num%22%3A174%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C70%2C719%2C0%5D).
 While the CBC cipher modes of operation are being phased out (they are theoretically subject to padding oracle attacks), we support them so we can serve members of the public who are unable to adopt newer technology.
 
-**TLS 1.3**: TLS 1.3 has been implemented with `ELBSecurityPolicy-TLS13-1-2-Ext1-2021-06` security policies on our load balancers. All new Cloudfront domains are created with the `TLSv1.2_2018` security policy, which supports TLS 1.3. The TLS versions supported by other AWS service endpoints, like S3, are controlled by AWS itself.
+**TLS 1.3**: TLS 1.3 has been implemented with `ELBSecurityPolicy-TLS13-1-2-FIPS-2023-04` security policies on our load balancers. All new Cloudfront domains are created with the `TLSv1.2_2018` security policy, which supports TLS 1.3. The TLS versions supported by other AWS service endpoints, like S3, are controlled by AWS itself.
 
 **Cipher suite names**: The AWS documentation uses the OpenSSL cipher names which are different from IANA/RFC cipher names returned by scanners. For example, `ECDHE-RSA-AES128-SHA256` on the documentation page will be called `TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256` by scanners and other tools.
 
-**Cipher suite count**: The `ELBSecurityPolicy-TLS13-1-2-Ext1-2021-06` has 15 ciphers, but your scanner may only show 11 results. That's because our certificates are signed with RSA keys, not Elliptic Curve (ECDSA) keys, so those cipher suites are not in use. In June, 2023, a switch to ECDSA caused an [outage for a significant percentage of cloud.gov users](https://cloudgov.statuspage.io/incidents/vz9t74zm7zw8), so we will support RSA for the foreseeable future.
+**Cipher suite count**: The `ELBSecurityPolicy-TLS13-1-2-FIPS-2023-04` has 10 ciphers, but your scanner may only show 6 results. That's because our certificates are signed with RSA keys, not Elliptic Curve (ECDSA) keys, so those cipher suites are not in use. In June, 2023, a switch to ECDSA caused an [outage for a significant percentage of cloud.gov users](https://cloudgov.statuspage.io/incidents/vz9t74zm7zw8), so we will support RSA for the foreseeable future.
 
 ## Compression and BREACH (CVE-2013-3587)
 
