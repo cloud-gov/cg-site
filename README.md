@@ -1,11 +1,10 @@
-
 # cloud.gov
 
-This site uses the [cloud.gov Pages USWDS Jekyll template](https://github.com/cloud-gov/pages-uswds-jekyll). [cloud.gov Pages](https://cloud.gov/pages/) runs on cloud.gov and supports the development of this template. By leveraging this template cloud.gov get the benefits  of a maintained template as well as a way to test out new functionality in the template.
+This site uses the [cloud.gov Pages USWDS Jekyll template](https://github.com/cloud-gov/pages-uswds-jekyll). [cloud.gov Pages](https://cloud.gov/pages/) runs on cloud.gov and supports the development of this template. By leveraging this template cloud.gov get the benefits of a maintained template as well as a way to test out new functionality in the template.
 
 This [Jekyll theme](https://jekyllrb.com/docs/themes/) uses the [U.S. Web Design System v 2.0](https://v2.designsystem.digital.gov) and provides developers a starter kit and reference implementation for cloud.gov Pages websites.
 
-This code uses the [Jekyll](https://jekyllrb.com) site engine and built with Ruby. If you prefer to use Javascript, check out [pages-uswds-gatsby](https://github.com/cloud-gov/pages-uswds-gatsby), which uses [Gatsby](https://gatsbyjs.org) site engine.
+This code uses the [Jekyll](https://jekyllrb.com) site engine and built with Ruby. If you prefer to use Javascript, check out [pages-uswds-gatsby](https://github.com/cloud-gov/pages-uswds-gatsby), which uses [Gatsby](https://gatsbyjs.com) site engine.
 
 This site uses a customized [U.S. Web Design System](https://v2.designsystem.digital.gov) theme and strives to be compliant with requirements set by [21st Century IDEA Act](https://designsystem.digital.gov/website-standards/). The standards require that a website or digital service:
 
@@ -19,13 +18,14 @@ This site uses a customized [U.S. Web Design System](https://v2.designsystem.dig
 - is mobile-friendly.
 
 ## Key Functionality
+
 This repository contains the following examples and functionality:
 
-✅  Publish blog posts, press releases, announcements, etc. To modify this code, check out `blog/index.html`, which manages how the posts are listed. You should then check out `_layouts/post.html` to see how individual posts are structured.
+✅ Publish blog posts, press releases, announcements, etc. To modify this code, check out `blog/index.html`, which manages how the posts are listed. You should then check out `_layouts/post.html` to see how individual posts are structured.
 
 ✅ Publish single one-off pages. Instead of creating lots of folders throughout the root directory, you should put single pages in `_pages` folder and change the `permalink` at the top of each page. Use sub-folders only when you really need to.
 
-✅  Publish data (for example: job listings, links, references), you can use the template `_layouts/data.html`. Just create a file in you `_pages` folder with the following options:
+✅ Publish data (for example: job listings, links, references), you can use the template `_layouts/data.html`. Just create a file in you `_pages` folder with the following options:
 
 ```
 ---
@@ -38,7 +38,7 @@ datafile: collections
 
 The reference to `datafile` referers to the name of the file in `_data/collections.yml` and loops through the values. Feel free to modify this as needed.
 
-✅  There are two different kinds of `pages`, one does not have a side bar navigation, and the other uses `_includes/sidenav.html`. You can enable this option by adding `sidenav: true` to your page front matter.
+✅ There are two different kinds of `pages`, one does not have a side bar navigation, and the other uses `_includes/sidenav.html`. You can enable this option by adding `sidenav: true` to your page front matter.
 
 ```
 ---
@@ -62,7 +62,8 @@ searchgov:
 ```
 
 ## How to edit cloud.gov content
-- Non-developers should focus on editing markdown content in the `_posts`, `_docs`, and `_pages` folder. Generally most of the cloud.gov content will be in the _docs file.
+
+- Non-developers should focus on editing markdown content in the `_posts`, `_docs`, and `_pages` folder. Generally most of the cloud.gov content will be in the \_docs file.
 
 - Pricing updates can go directly into `_data/pricing.yml` file and if any of the aws services need to be updated that can occur in the `_data/services.yml` file.
 
@@ -75,9 +76,10 @@ searchgov:
 - To edit the look and feel of the site, you need to edit files in `_includes/` folder, which render key components, like the menu, side navigation, and logos.
 
 - Some pages are styled to be `.html` rather than markdown you can find these in the `_layouts` folder.
-    - The `homepage` can be editted more directly by manipulating the `.html` in `home.html`
-    - The `pricing` page is mostly edited with the `pricing.html`
-    - The `getting-started` page is in the `_pages/sign-up.md` folder.
+
+  - The `homepage` can be editted more directly by manipulating the `.html` in `home.html`
+  - The `pricing` page is mostly edited with the `pricing.html`
+  - The `getting-started` page is in the `_pages/sign-up.md` folder.
 
 - `_layouts/` may require the least amount of editing of all the files since they are primarily responsible for printing the content.
 
