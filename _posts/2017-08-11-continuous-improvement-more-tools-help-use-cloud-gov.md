@@ -1,4 +1,5 @@
 ---
+layout: post
 date: "2017-08-11"
 title: "Quarterly update: Continuous improvement, more tools to help you use cloud.gov"
 redirect_from:
@@ -41,7 +42,7 @@ Whether a legacy system or new development, we’d love to learn about your apps
 
 If you have leftover funds at the end of the fiscal year and need a prototyping account, you can buy one now, start right away and continue to use it for the next 12 months. Contact us right away at [inquiries@cloud.gov](mailto:inquiries@cloud.gov) to get started.
 
-### Featured customers:
+### Featured customers
 
 #### FBI: Crime Data Explorer
 
