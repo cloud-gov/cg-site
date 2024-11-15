@@ -7,7 +7,7 @@ excerpt: The Cloud.gov team is working on providing release notes so everyone ca
 
 # Release Notes
 
-## Developer Impacting Changes
+## Developer-Impacting Changes
 
 The audience for this section is developers who maintain applications on cloud.gov and may need to respond to stack or buildpack changes.
 
@@ -19,7 +19,7 @@ Changes below are broken down by component:
 
 - [Update buildpack to use Python 3](https://github.com/cloudfoundry/php-buildpack/releases/tag/v4.6.24)
 
-### Platform Changes
+## Platform Changes
 
 Full platform changes - only of interest to a small subset of developers:
 
