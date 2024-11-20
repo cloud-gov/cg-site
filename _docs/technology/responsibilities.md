@@ -2,7 +2,7 @@
 parent: technology
 layout: docs
 sidenav: true
-title: What the cloud.gov PaaS offers
+title: Cloud.gov responsibilities and deprecation policy
 weight: 5
 redirect_from:
   - /docs/intro/technology/responsibilities/
@@ -10,7 +10,10 @@ redirect_from:
   - /overview/technology/responsibilities/
 ---
 
-As a Platform as a Service, cloud.gov is responsible for maintenance and security of the cloud.gov platform. Customers are responsible for maintenance and security of their custom code running on the platform.
+
+## Cloud.gov Platform responsibilities
+
+As a Platform as a Service, Cloud.gov is responsible for maintenance and security of the Cloud.gov platform. Customers are responsible for maintenance and security of their custom code running on the platform.
 
 Here's a chart to illustrate this in three example use cases:
 
@@ -28,7 +31,7 @@ App #2 uses a [custom buildpack]({{ site.baseurl }}{% link _docs/deployment/cust
 
 App #3 is a Docker setup, where the customer is fully responsible for their Docker container and custom image. [Learn about this feature.]({{ site.baseurl }}{% link _docs/deployment/docker.md %})
 
-cloud.gov is always responsible for the following components at its platform level:
+Cloud.gov is always responsible for the following components at its platform level:
 
 * Operating system
 * Continuous monitoring
@@ -38,6 +41,8 @@ cloud.gov is always responsible for the following components at its platform lev
 * Scaling
 * Logging
 * Alerting
+
+**See also**: The Cloud.gov [customer service objectives]({{ site.baseurl }}{% link _docs/overview/customer-service-objectives.md %})
 
 ## Deprecation policy
 
@@ -55,7 +60,7 @@ Deprecations happen in steps:
 
 Here's an example:
 
-First, cloud.gov determines that the coffee service is not serving customers as well as a new espresso service might, and we decide 
+First, Cloud.gov determines that the coffee service is not serving customers as well as a new espresso service might, and we decide 
 to replace the coffee service entirely with the espresso service. 
 First, we make the espresso service generally available. Next, we send out the general announcement to all of our users. This announcement goes out on April 3rd and states:
 
@@ -66,3 +71,8 @@ First, we make the espresso service generally available. Next, we send out the g
 
 After May 3rd, we begin sending emails to users still using the coffee service, at least one message every other week.
 Finally, on August 31st, we shut down the last instances of the coffee service.
+
+### Exceptions
+
+Cloud.gov may need to accelerate a deprecation timeline when maintaining a service poses risks to platform
+operation. We will note in customer communications when and why we're using an accelerated timeline.
