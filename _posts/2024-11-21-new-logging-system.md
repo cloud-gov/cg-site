@@ -40,7 +40,7 @@ We recommend you take the following actions:
 
 * **Migrate saved searches and dashboards**: While all the log entries are being migrated for you, you will need to migrate customizations you have made. We will provide documentation next week.
 * **Update bookmarks**: Saved bookmarks that work with the old system will not work with the new system. You will need to update your bookmarks, as we'll detail in our transition documentation.
-* **Take a tour:** If you can, try out the new system in December while you can compare functionality to the old system. Consider attending the Cloud.gov Logs workshop the week of December 9.
+* **Take a tour:** If you can, try out the new system in December while you can compare functionality to the old system. Consider attending the Cloud.gov Logs workshop the week on December 10.
 * **Ask for help**: Report any undocumented issues you encounter, or questions you may have, to <support@cloud.gov>.
 
 ## Support we're providing during this transition
