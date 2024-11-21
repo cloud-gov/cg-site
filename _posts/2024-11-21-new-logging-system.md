@@ -1,6 +1,6 @@
 ---
 layout: post
-date: November 18th 2024
+date: November 21st, 2024
 title: "Announcing Cloud.gov Logging system update"
 excerpt: The Cloud.gov is upgrading the current application logging system in Dec 2024, and decommissioning the old system. 
 ---
