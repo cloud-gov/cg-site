@@ -59,7 +59,7 @@ This section is for the platform operators at `cloud.gov` to highlight changes t
 
 * Updates golang package golang-1-linux to 1.21.4
 * Fixed CVEs:
-  * [CVE-2023-39325](https://github.com/advisories/GHSA-4374-p667-p6c8): rapid stream resets can cause excessive work ([CVE-2023-44487](https://github.com/advisories/GHSA-qppj-fm5r-hxr3))
+  * CVE-2023-39325: rapid stream resets can cause excessive work (CVE-2023-44487)
 
 ### CAPI - v1.165.0 up from v1.164.0
 

@@ -254,18 +254,18 @@ Default binary versions:
 
 Notably, this release addresses:
 * [USN-6694-1](https://ubuntu.com/security/notices/USN-6694-1) Expat vulnerabilities:
-   * [CVE-2024-28757](https://ubuntu.com/security/CVE-2024-28757):  libexpat through 2.6.1 allows an XML Entity Expansion attack when there is isolated use of external parsers (created via XML_ExternalEntityParserCreate).
-   * [CVE-2023-52425](https://ubuntu.com/security/CVE-2023-52425):  libexpat through 2.5.0 allows a denial of service (resource consumption) because many full reparsings are required in the case of a large token for which multiple buffer fills are needed.
+   * CVE-2024-28757:  libexpat through 2.6.1 allows an XML Entity Expansion attack when there is isolated use of external parsers (created via XML_ExternalEntityParserCreate).
+   * CVE-2023-52425:  libexpat through 2.5.0 allows a denial of service (resource consumption) because many full reparsings are required in the case of a large token for which multiple buffer fills are needed.
 
 * [USN-6677-1](https://ubuntu.com/security/notices/USN-6677-1) libde265 vulnerabilities:
 
-   * [CVE-2023-49468](https://ubuntu.com/security/CVE-2023-49468): Libde265 v1.0.14 was discovered to contain a global buffer overflow vulnerability in the read_coding_unit function at slice.cc.
-   * [CVE-2023-49465](https://ubuntu.com/security/CVE-2023-49465): Libde265 v1.0.14 was discovered to contain a heap-buffer-overflow vulnerability in the derive_spatial_luma_vector_prediction function at motion.cc.
-   * [CVE-2023-27102](https://ubuntu.com/security/CVE-2023-27102): Libde265 v1.0.11 was discovered to contain a segmentation violation via the function decoder_context::process_slice_segment_header at decctx.cc.
-   * [CVE-2023-49467](https://ubuntu.com/security/CVE-2023-49467): Libde265 v1.0.14 was discovered to contain a heap-buffer-overflow vulnerability in the derive_combined_bipredictive_merging_candidates function at motion.cc.
-   * [CVE-2023-27103](https://ubuntu.com/security/CVE-2023-27103): Libde265 v1.0.11 was discovered to contain a heap buffer overflow via the function derive_collocated_motion_vectors at motion.cc.
-   * [CVE-2023-47471](https://ubuntu.com/security/CVE-2023-47471): Buffer Overflow vulnerability in strukturag libde265 v1.10.12 allows a local attacker to cause a denial of service via the slice_segment_header function in the slice.cc component.
-   * [CVE-2023-43887](https://ubuntu.com/security/CVE-2023-43887): Libde265 v1.0.12 was discovered to contain multiple buffer overflows via the num_tile_columns and num_tile_row parameters in the function pic_parameter_set::dump.
+   * CVE-2023-49468: Libde265 v1.0.14 was discovered to contain a global buffer overflow vulnerability in the read_coding_unit function at slice.cc.
+   * CVE-2023-49465: Libde265 v1.0.14 was discovered to contain a heap-buffer-overflow vulnerability in the derive_spatial_luma_vector_prediction function at motion.cc.
+   * CVE-2023-27102: Libde265 v1.0.11 was discovered to contain a segmentation violation via the function decoder_context::process_slice_segment_header at decctx.cc.
+   * CVE-2023-49467: Libde265 v1.0.14 was discovered to contain a heap-buffer-overflow vulnerability in the derive_combined_bipredictive_merging_candidates function at motion.cc.
+   * CVE-2023-27103: Libde265 v1.0.11 was discovered to contain a heap buffer overflow via the function derive_collocated_motion_vectors at motion.cc.
+   * CVE-2023-47471: Buffer Overflow vulnerability in strukturag libde265 v1.10.12 allows a local attacker to cause a denial of service via the slice_segment_header function in the slice.cc component.
+   * CVE-2023-43887: Libde265 v1.0.12 was discovered to contain multiple buffer overflows via the num_tile_columns and num_tile_row parameters in the function pic_parameter_set::dump.
 
 ## Platform Changes
 ---
