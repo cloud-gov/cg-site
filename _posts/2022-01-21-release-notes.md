@@ -16,7 +16,7 @@ The cloud.gov team is working on providing change logs so everyone can see new f
 ### java-buildpack - 4.47* up from 4.46*
 * Bump java-buildpack to 4.47*
 
-This release focuses on dependency updates, primarily that fix the latest Apache Log4j2 vulnerability, [CVE-2021-45105](https://github.com/advisories/GHSA-p6xc-xr62-6r2g), in dependencies used by the Java buildpack.
+This release focuses on dependency updates, primarily that fix the latest Apache Log4j2 vulnerability, CVE-2021-45105, in dependencies used by the Java buildpack.
 
 In particular, the following dependencies have been updated to include Log4j 2.17.0 and have been patched in this release:
 

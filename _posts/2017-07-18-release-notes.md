@@ -24,7 +24,7 @@ You should [restage your application](http://cli.cloudfoundry.org/en-US/cf/resta
 
 #### Additional upgrades
 * [RootFS cflinuxfs2 1.138.0](https://github.com/cloudfoundry/cflinuxfs2/releases/tag/1.138.0), which addresses this security vulnerability:
-  * [CVE-2017-11103](http://people.ubuntu.com/~ubuntu-security/cve/CVE-2017-11103), service impersonation attack only affecting applications using or embedding Heimdal code before 7.4.
+  * CVE-2017-11103, service impersonation attack only affecting applications using or embedding Heimdal code before 7.4.
 * [Diego v1.22.0](https://github.com/cloudfoundry/diego-release/releases/tag/v1.22.0)
 * Stemcell
 * Buildpack updates:
