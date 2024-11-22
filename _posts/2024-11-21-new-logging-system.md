@@ -8,7 +8,7 @@ excerpt: The Cloud.gov is upgrading the current application logging system in De
 
 # Cloud.gov customer notice: Major upgrade of application logging system in December
 
-Cloud.gov is upgrading the current application logging system, <https://logs.fr.cloud.gov>, with a more capable and performant system in December 2024. We're excited by the new capabilities this logging system affords, and we're confident our customers will appreciate the improved performance and new features.
+Cloud.gov is upgrading our logging system, <https://logs.fr.cloud.gov>, with a more capable and performant system in December 2024. We're excited by the new capabilities this logging system affords, and we're confident our customers will appreciate the improved performance and new features.
 
 The significance of the update requires a cutover from the current system to the new one that will take place on the following timeline:
 
