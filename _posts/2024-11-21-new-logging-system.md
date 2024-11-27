@@ -54,3 +54,7 @@ We recommend you take the following actions:
 ## Deprecation notice
 
 The [Cloud.gov deprecation policy](http://cloud.gov) calls for a longer transition period between services than we're employing here, unless continuing that service poses risks to the platform. Since the current logging system uses components that are reaching EOL, continued operation poses security and compliance risks, and we are moving to decommission the service by January 10, 2025.
+
+## Updates
+
+November 26, 2024: [Changes to expect with the December 2024 logging update]( {{ site.baseurl }}{% link _kbarticles/2024-11-26-migrating-opensearch.md })
