@@ -1,0 +1,22 @@
+---
+layout: post
+title: "PHP buildpack failed to clone git repository issue"
+date: December 02, 2024
+excerpt: How to resolve the PHP buildpack failed to clone git repository issue
+---
+
+On December 2nd, 2024 it was brought to our attention that Cloud.gov customers attempting to push or restage applications using the most recent PHP buildpack version (beyond version 4.6.23) were experiencing a “Failed to clone git repository at [https://github.com/cloudfoundry/php-buildpack](https://github.com/cloudfoundry/php-buildpack)” error.
+
+The reason why this issue is occurring is because the recently updated buildpack versions are set to use SSH instead of HTTPS. Cloud.gov supports HTTPS egress for buildpacks during staging, not SSH, as such the buildpack is unable to be fetched and the staging process fails. An [issue](https://github.com/cloudfoundry/php-buildpack/issues/1110) with the PHP buildpack has already been posted to the CloudFoundry GitHub.
+
+The solution to this issue is pin the version of the buildpack that you are using with your application to version 4.6.23 or a prior version.
+
+This can be accomplished by adding the buildpack version URL that you are specifying to your application manifest under the `buildpacks:` attribute as shown below.
+
+```shell
+buildpacks:
+- [https://github.com/cloudfoundry/php-buildpack#v4.6.23](https://github.com/cloudfoundry/php-buildpack#v4.6.23)
+```
+
+If you encounter any difficulties deploying this solution or have any questions, please contact
+[{{site.support_email_address}}]({{site.support_email}}) and we would be happy to assist you.
