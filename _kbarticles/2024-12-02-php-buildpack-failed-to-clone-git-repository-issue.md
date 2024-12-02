@@ -15,7 +15,7 @@ This can be accomplished by adding the buildpack version URL that you are specif
 
 ```shell
 buildpacks:
-- [https://github.com/cloudfoundry/php-buildpack#v4.6.23](https://github.com/cloudfoundry/php-buildpack#v4.6.23)
+- https://github.com/cloudfoundry/php-buildpack#v4.6.23
 ```
 
 If you encounter any difficulties deploying this solution or have any questions, please contact
