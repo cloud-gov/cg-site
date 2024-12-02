@@ -11,7 +11,7 @@ The reason why this issue is occurring is because the recently updated buildpack
 
 The solution to this issue is pin the version of the buildpack that you are using with your application to version 4.6.23 or a prior version.
 
-This can be accomplished by adding the buildpack version URL that you are specifying to your application manifest under the `buildpacks:` attribute as shown below.
+To pin the buildpack version, specify the buildpack version URL in your application manifest under the `buildpacks:` attribute as shown below.
 
 ```shell
 buildpacks:
