@@ -13,7 +13,7 @@ The solution to this issue is pin the version of the buildpack that you are usin
 
 To pin the buildpack version, specify the buildpack version URL in your application manifest under the `buildpacks:` attribute as shown below.
 
-```shell
+```yaml
 buildpacks:
 - https://github.com/cloudfoundry/php-buildpack#v4.6.23
 ```
