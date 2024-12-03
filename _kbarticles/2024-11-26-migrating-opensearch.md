@@ -8,7 +8,7 @@ excerpt: Changes to expect in our logging system in December 2024
 
 ## What's Changing in December 2024
 
-As we [announced on November 21, 2024]({{ site.base_url }}{% link _posts/2024-11-21-new-logging-system.md}),
+As we [announced on November 21, 2024]({{site.base_url}}{% link _posts/2024-11-21-new-logging-system.md %}),
 we are upgrading the Cloud.gov customer application logging system and the user interface
 at https://logs.fr.cloud.gov. The application logs interface prior to December 2024
 was based on [_Kibana_](https://www.elastic.co/kibana), and we are migrating to one
