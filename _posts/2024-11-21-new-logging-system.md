@@ -57,4 +57,4 @@ The [Cloud.gov deprecation policy](http://cloud.gov) calls for a longer transiti
 
 ## Updates
 
-November 26, 2024: [Changes to expect with the December 2024 logging update]( {{ site.baseurl }}{% link _kbarticles/2024-11-26-migrating-opensearch.md })
+November 26, 2024: [Changes to expect with the December 2024 logging update]({{site.baseurl}}{% link _kbarticles/2024-11-26-migrating-opensearch.md %})
