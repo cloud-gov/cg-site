@@ -12,7 +12,7 @@ Cloud.gov is upgrading our logging system, <https://logs.fr.cloud.gov>, with a m
 
 The significance of the update requires a cutover from the current system to the new one that will take place on the following timeline:
 
-* **December 3**: The new system will be generally available at [https://logs-beta.fr.cloud.gov](https://log-beta.fr.cloud.gov).
+* **December 3**: The new system will be generally available at [https://logs-beta.fr.cloud.gov](https://logs-beta.fr.cloud.gov).
 * **December 10**: The current logging system will be renamed to <https://logs-deprecated.fr.cloud.gov>, and new system will be available at <https://logs.fr.cloud.gov>
 * **January 7, 2025**: The deprecated logging system will be decommissioned.
 
