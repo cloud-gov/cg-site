@@ -17,8 +17,6 @@ based on [_OpenSearch Dashboards_](https://www.opensearch.org/docs/latest/dashbo
 While all the underlying functionality is unchanged, or improved, there are some
 differences between Kibana (old) and OpenSearch (new), which we'll outline here:
 
-
-
 ## Logging in to the new system
 
 The first time you log in to the OpenSearch-based system you'll be presented
@@ -31,7 +29,7 @@ access later, you can do so at: https://login.fr.cloud.gov/profile
 
 You'll then need to choose the Cloud.gov org you want to work with in the "Select you Tenant" dialog:
 
-!['Screenshot of dialog box titled "Select your tenant"']({{site.baseurl}}/assets/images/content/opensearch-app-auth-dialog.png)
+!['Screenshot of dialog box titled "Select your tenant"']({{site.baseurl}}/assets/images/content/_assets/images/content/opensearch_select_tenant.png)
 
 If you have access to multiple orgs, you can switch your tenant later by clicking the OpenSearch user avatar on top right.
 
@@ -43,11 +41,11 @@ with OpenSearch.
 !['Screenshot of dialog box titled "Dashboards"']({{site.baseurl}}/assets/images/content/opensearch_choose_dashboard.png)
 
 
-## Migrating to OpenSearch
+## Migrating Kibana customizations to OpenSearch
 
 All of the application and CloudFoundry logs that have been available in Kibana
 will be available to you in OpenSearch. You needn't take any action to ensure that.
-You will need to migrate custom dashboards and saved searches, by exporting them
+You will need to migrate custom dashboards and saved searches by exporting them
 from Kibana and importing them into OpenSearch.
 
 **Export Saved Objects from Kibana**
@@ -71,21 +69,29 @@ or as individual `.ndjson` files:
 
 !['Screenshot of Kibana export single selected object']({{site.baseurl}}/assets/images/content/kibana_export_single_object.png)
 
+
+
 **Importing saved objects into Opensearch**
 
-Once you've export 
+Once you've exported the objects as `.ndjson` files, switch to OpenSearch, then:
+
+* From the LeftNav menu, select, "Management -> Dashboards Management"
+* On the"Dashboards Management" window, select "Saved Objects" on the left menu
+* Then select "Import" on the upper right corner.
+* On the "Import saved objects" window:
+  * Select the file to upload
+  * For "Import options" select:
+    * "Check for existing objects"
+    * "Request action on conflict"
+  * The click the "Import" button, as show below: ![Screenshot of Import saved objects, with selections as described]({{site.baseurl}}/assets/images/content/opensearch-import-saved-objects.png)
+  * If the import results in an "Overwrite index-pattern" dialog, you will likely want to "Skip" the overwrite: ![Screenshot of Overwrite index-pattern with "Skip" selected]({{site.baseurl}}/assets/images/content/opensearch-import-overwrite-dialog.png)
+  * When the import is complete, click "Done"
 
 
-**Recovering Saved Searches and Visualizations**: If you missed migrating a Saved Object
-from Kibana to OpenSearch, and Kibana is no longer available, 
+**Recovering Saved Searches and Visualizations after Kibana decomissioning**: If you missed migrating a Saved Object
+from Kibana to OpenSearch, and Kibana is no longer available,
 please contact [Cloud.gov Support](mailto:support@cloud.gov).
 We have saved all customer objects and can recover those for you.
-
-
-
-
-
-
 
 
 ### Compare the two systems
@@ -119,11 +125,3 @@ Retention
 
 - Alerting
 
-## Authentication and Tenancy Changes
-
-<!-- >
-In a cloud system like Cloud.gov, "tenancy" is used to describe the sharing of resources between 
-the different users, or "tenants" of a system. As an analogy to the physical world, if you are a tenant of a
-large apartment build, do you ever see the other tenants? Do you have to wait for an elevator because
-another tenant is using it? Or do you ever run out of hot water in the shower?
--->
