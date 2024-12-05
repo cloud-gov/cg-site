@@ -25,21 +25,20 @@ with the following OpenId "Application Authorization" dialog:
 !['Screenshot of dialog box titled "Application Authorization: opensearch_dashboards_proxy" with boxes checked for "Access profile", "View details of your applications and services" and "Read all SCIM entries". The options are "Authorize" or "Deny"']({{site.baseurl}}/assets/images/content/opensearch-app-auth-dialog.png)
 
 You'll need to accept all the scopes. If for some reason you need to revoke
-access later, you can do so at: https://login.fr.cloud.gov/profile
+access later, you can do so at: <https://login.fr.cloud.gov/profile>
 
 You'll then need to choose the Cloud.gov org you want to work with in the "Select you Tenant" dialog:
 
-!['Screenshot of dialog box titled "Select your tenant"']({{site.baseurl}}/assets/images/content/_assets/images/content/opensearch_select_tenant.png)
+!['Screenshot of dialog box titled "Select your tenant"']({{site.baseurl}}/assets/images/content/opensearch_select_tenant.png)
 
 If you have access to multiple orgs, you can switch your tenant later by clicking the OpenSearch user avatar on top right.
 
 The main OpenSearch Dashboard should resemble the Kibana dashboard. If you're provided a 
-Dashboard selection screen (see below), choose "App - Overview".  Otherwise the main
-navigation menus should be familiar and you're now ready to explore your Cloud.gov logs
-with OpenSearch.
+Dashboard selection screen (see below), choose "App - Overview".  
 
 !['Screenshot of dialog box titled "Dashboards"']({{site.baseurl}}/assets/images/content/opensearch_choose_dashboard.png)
 
+Otherwise the main navigation menus should be familiar and you're now ready to explore your Cloud.gov logs with OpenSearch.
 
 ## Migrating Kibana customizations to OpenSearch
 
@@ -50,6 +49,8 @@ from Kibana and importing them into OpenSearch.
 
 **Export Saved Objects from Kibana**
 
+
+
 In Kibana, use the left navigation menu to select "Management" -> "Stack Management":
 
 !['Screenshot of Kibana leftnav with "Stack Management" highlighted']({{site.baseurl}}/assets/images/content/kibana_select_stack_mgmt.png)
@@ -58,16 +59,12 @@ Then in the Stack Management view, select "Saved Objects" under the "Kibana" hea
 
 !['Screenshot of Kibana Stack Management with "Saved Objects" highlighted']({{site.baseurl}}/assets/images/content/kibana_select_saved_objects.png)
 
-From the Saved Objects screen, you can search for the Visualizations or
-Searches you've previously saved. The example belows shows the ones with "PeterB"
-in the name:
-
-!['Screenshot of Kibana View Saved Objects with "Export 7 Objects" highlighted']({{site.baseurl}}/assets/images/content/kibana_view_saved_objects.png)
-
-From that screen you can export all the matching objects as a single `export.ndjson` file,
+From the Saved Objects screen, you can search for the visualizations or
+searches you've previously saved. From that screen you can export all the matching objects as a single `export.ndjson` file (as shown below),
 or as individual `.ndjson` files:
 
-!['Screenshot of Kibana export single selected object']({{site.baseurl}}/assets/images/content/kibana_export_single_object.png)
+
+!['Screenshot of Kibana View Saved Objects with "Export 7 Objects" highlighted']({{site.baseurl}}/assets/images/content/kibana_view_saved_objects.png)
 
 
 
@@ -93,6 +90,10 @@ from Kibana to OpenSearch, and Kibana is no longer available,
 please contact [Cloud.gov Support](mailto:support@cloud.gov).
 We have saved all customer objects and can recover those for you.
 
+## User interface changes
+
+- How to change your homedashboard
+- How to graph metrics
 
 ### Compare the two systems
 
@@ -103,6 +104,7 @@ your findings to Kibana. If you suspect that any log messages are missing.
 
 ## System differences
 
+RDS Logs
 
 Index exhaustion fixed
 Handling large (over 32kb) messages
@@ -112,10 +114,7 @@ Retention
 
 > @peterb another new thing in opensearch, the new cpu_entitlement metric. the meaning of the metric is discussed here: https://www.cloudfoundry.org/blog/better-way-split-cake-cpu-entitlements/ it basically is a better way for customers to track whether they're exceeding the allowed CPU for their app and borrowing CPU cycles from the host VM
 
-## User interface changes
 
-- How to change your homedashboard
-- How to graph metrics
 
 
 
