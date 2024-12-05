@@ -2,7 +2,7 @@
 layout: post
 date: November 21st, 2024
 title: "Announcing Cloud.gov Logging system update"
-excerpt: The Cloud.gov is upgrading the current application logging system in December 2024, and decommissioning the old system. 
+excerpt: The Cloud.gov is upgrading the current application logging system in December 2024, and decommissioning the old system.
 ---
 
 
@@ -25,7 +25,7 @@ The current logging system is based on a branch of the [Elastic ELK stack ](http
   * Meets M-21-31 requirements for live logging access
 * Better tenant isolation: The updated system uses OpenSearch Organizations and a new authorization system to improve multitenancy. The new architecture resolves a variety of errors for customers.
 * Better performance, better security, and better upgrade paths
-* New: Logs for brokered RDS database instances are now available
+* New: Logs for brokered RDS database instances are now available. [**Please note that only databases which are configured to publish their logs to CloudWatch will have their logs ingested into our new logging system**](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.Procedural.UploadtoCloudWatch.html).
 * New: JSON log parsing. JSON logs are now ingested using the [flat_object field type in OpenSearch](https://opensearch.org/docs/latest/field-types/supported-field-types/flat-object/). [The flat_object field type allows for searching nested fields of a JSON object using dot notation](https://opensearch.org/docs/latest/field-types/supported-field-types/flat-object/#using-flat-object) but does not require the overhead of custom fields in the index, which is more performant and prevents custom logs from being dropped because of index field limits.
 * Coming Soon:
   * Support for alerting, and routing alerts to external systems
