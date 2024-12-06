@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Migrating to the OpenSearch Dashboard for Cloud.gov logs"
-date: December 3, 2024
+date: December 6, 2024
 excerpt: Changes to expect in our logging system in December 2024
 
 ---
@@ -47,9 +47,7 @@ will be available to you in OpenSearch. You needn't take any action to ensure th
 You will need to migrate custom dashboards and saved searches by exporting them
 from Kibana and importing them into OpenSearch.
 
-**Export Saved Objects from Kibana**
-
-
+### Export Saved Objects from Kibana
 
 In Kibana, use the left navigation menu to select "Management" -> "Stack Management":
 
@@ -66,9 +64,7 @@ or as individual `.ndjson` files:
 
 !['Screenshot of Kibana View Saved Objects with "Export 7 Objects" highlighted']({{site.baseurl}}/assets/images/content/kibana_view_saved_objects.png)
 
-
-
-**Importing saved objects into Opensearch**
+### Importing saved objects into OpenSearch
 
 Once you've exported the objects as `.ndjson` files, switch to OpenSearch, then:
 
@@ -84,43 +80,46 @@ Once you've exported the objects as `.ndjson` files, switch to OpenSearch, then:
   * If the import results in an "Overwrite index-pattern" dialog, you will likely want to "Skip" the overwrite: ![Screenshot of Overwrite index-pattern with "Skip" selected]({{site.baseurl}}/assets/images/content/opensearch-import-overwrite-dialog.png)
   * When the import is complete, click "Done"
 
+**If you used the same saved object in Kibana across multiple Cloud.gov orgs**,
+you will need to import it into each OpenSearch tenant (org).
 
-**Recovering Saved Searches and Visualizations after Kibana decomissioning**: If you missed migrating a Saved Object
+
+### Recovering Saved Searches and Visualizations after Kibana decomissioning
+
+If you missed migrating a Saved Object
 from Kibana to OpenSearch, and Kibana is no longer available,
 please contact [Cloud.gov Support](mailto:support@cloud.gov).
 We have saved all customer objects and can recover those for you.
 
 ## User interface changes
 
-- How to change your homedashboard
-- How to graph metrics
+The screenshot below show some of the major changes to the user interfaces, such as:
+1. The drop down menus have moved from the upper left to the upper right
+2. The "Top 5 values" for a field view is now an option to the right of the field, instead of a double-click
+3. There are a lot more values gathered for container metrics
 
-### Compare the two systems
+![Screenshot comparing Kibana to OpenSearch]({{site.baseurl}}/assets/images/content/opensearch-ui-diffences.png)
 
-The Cloud.gov team encourages to you explore the OpenSearch system and compare
-your findings to Kibana. If you suspect that any log messages are missing. 
-- Customization migration
-- Bookmarks
+## Key system differences
 
-## System differences
+The Cloud.gov team has implemented OpenSearch to deliver a number of benefits to our customers. Among these are:
 
-RDS Logs
-
-Index exhaustion fixed
-Handling large (over 32kb) messages
-AWS Service Logging
-Retention
-
-
-> @peterb another new thing in opensearch, the new cpu_entitlement metric. the meaning of the metric is discussed here: https://www.cloudfoundry.org/blog/better-way-split-cake-cpu-entitlements/ it basically is a better way for customers to track whether they're exceeding the allowed CPU for their app and borrowing CPU cycles from the host VM
-
-
-
-
+* Twelve months of live access to system logs, in alignment with M-21-31.
+* Definitions of saved searches and visualizations are now isolated by Cloud.gov organization.
+  * You no longer need to worry about choosing a globally unique name.
+  * If you share the same saved object across multiple orgs, you will need to import it into each of your orgs.
+* Better handling of large log messages. Both Kibana/ELK and OpenSearch have a 32kb limit on message size. The older system dropped such messages from Kibana (although they were still retained in cold storage), the newer system keeps the first 32kb and discards the rest
+  * Truncated messages are tagged with `_messagetrimmed`. 
+  * Extremely large log messages (over 1Gb) are trimmed and tagged `_logtrimmed` -- such message are probably indicative of a coding error in your application.
+  * You can search for such messages with a filter of `@logs is one of "_messagetrimmed", "_logtrimmed"`, as shown here
+  ![Screenshot from OpenSearch edit filter with settings as described above]({{site.baseurl}}/assets/images/content/opensearch-logtrimmed.png)
+* AWS Brokered Service Logs (Beta): If your Cloud.gov organization had already arranged Cloudwatch ingest of RDS database logs, then you can filter for those logs with the filter `@version: 1`. Most databases, as of December 2024, are not shipped to Cloudwatch and OpenSearch.
+  * Cloud.gov will be expanding the availability and features of RDS logs, and other brokered services, in 2025. This is a [beta feature]({{site.baseurl}}/docs/services/intro/#support-status) and subject to change.
+* JSON log parsing: Custom logs are not at risk of being dropped because of index field limits. JSON logs are now ingested using the [flat_object field type](https://opensearch.org/docs/latest/field-types/supported-field-types/flat-object/) in OpenSearch. The flat_object field type allows for [searching nested fields of a JSON object](https://opensearch.org/docs/latest/field-types/supported-field-types/flat-object/#using-flat-object) using dot notation.
+* Additional container metrics: We now log additional container metrics, available under the `containermetric.name` field. Particularly useful is the `containermetric.name: cpu_entitlement`, which is a way to track whether you're [exceeding the allowed CPU for your apps](https://www.cloudfoundry.org/blog/better-way-split-cake-cpu-entitlements/).
 
 ## Reporting Issues and Getting Help
 
-## Coming soon
+Report any undocumented issues you encounter, or questions you may have, to support@cloud.gov.
 
-- Alerting
 
