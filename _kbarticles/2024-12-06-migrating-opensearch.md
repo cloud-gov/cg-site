@@ -113,7 +113,7 @@ The Cloud.gov team has implemented OpenSearch to deliver a number of benefits to
 * Definitions of saved searches and visualizations are now isolated by OpenSearch tenants that correspond to Cloud.gov organizations.
   * You no longer need to worry about choosing a globally unique name.
   * If you share the same saved object across multiple orgs, you will need to import it into each of your orgs.
-* Better handling of large log messages. Both Kibana/ELK and OpenSearch have a 32kb limit on message size. The older system dropped such messages from Kibana (although they were still retained in cold storage), the newer system keeps the first 32kb and discards the rest
+* Better handling of large log messages. Both Kibana/ELK and OpenSearch have a 32kb limit on message size. The older system dropped such messages from Kibana (although they were still retained in cold storage), the newer system, for JSON messages, keeps the first 32kb and discards the rest
   * Truncated messages are tagged with `_messagetrimmed`.
   * Extremely large log messages (over 1Mb) are trimmed and tagged `_logtrimmed` -- such message are probably indicative of a coding error in your application.
   * You can search for such messages with a filter of `@logs is one of "_messagetrimmed", "_logtrimmed"`, as shown here
