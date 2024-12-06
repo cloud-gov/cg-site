@@ -98,9 +98,10 @@ We have saved all customer objects and can recover those for you.
 ## User interface changes
 
 The screenshot below show some of the major changes to the user interfaces, such as:
-1. The drop down menus have moved from the upper left to the upper right
-2. The "Top 5 values" for a field view is now an option to the right of the field, instead of a double-click
-3. There are a lot more values gathered for container metrics
+
+1. The drop down menus have moved from the upper left to the upper right.
+2. The "Top 5 values" for a field view is now an option to the right of the field, instead of a double-click.
+3. There are a lot more values gathered for container metrics (see below) so you may notice a higher message count in OpenSearch.
 
 ![Screenshot comparing Kibana to OpenSearch]({{site.baseurl}}/assets/images/content/opensearch-ui-differences.png)
 
@@ -113,8 +114,8 @@ The Cloud.gov team has implemented OpenSearch to deliver a number of benefits to
   * You no longer need to worry about choosing a globally unique name.
   * If you share the same saved object across multiple orgs, you will need to import it into each of your orgs.
 * Better handling of large log messages. Both Kibana/ELK and OpenSearch have a 32kb limit on message size. The older system dropped such messages from Kibana (although they were still retained in cold storage), the newer system keeps the first 32kb and discards the rest
-  * Truncated messages are tagged with `_messagetrimmed`. 
-  * Extremely large log messages (over 1Gb) are trimmed and tagged `_logtrimmed` -- such message are probably indicative of a coding error in your application.
+  * Truncated messages are tagged with `_messagetrimmed`.
+  * Extremely large log messages (over 1Mb) are trimmed and tagged `_logtrimmed` -- such message are probably indicative of a coding error in your application.
   * You can search for such messages with a filter of `@logs is one of "_messagetrimmed", "_logtrimmed"`, as shown here
   ![Screenshot from OpenSearch edit filter with settings as described above]({{site.baseurl}}/assets/images/content/opensearch-logtrimmed.png)
 * AWS Brokered Service Logs (Beta): If your Cloud.gov organization had already worked with Cloud.gov support to enable publishing of your RDS database logs to Cloudwatch, then you can search for those logs with the filter `@version: 1`. Most databases, as of December 2024, are not yet publishing their logs to CloudWatch and thus will not appear in OpenSearch.
