@@ -15,7 +15,7 @@ Different buildpacks use this cache for different things. [System buildpacks]({%
 
 The potential issue involves the / directory disk allocation. The apt buildpack uses /tmp like other buildpacks. The / directory is allocated approximately 9% of the disk allocation. For most buildpacks, this is sufficient as all the possible packages that they could be installing is known with the only variable being the application code. The apt buildpack however, can install a vast number of packages including large packages for example the AWS CLI. When this occurs this allotted 9% of disk space is not sufficient.
 
-## How to address the issue
+### How to address the issue
 
 If the number of packages that you are installing during staging is within the allotted 9% of the disk limit (2 GB default) you can attempt to resolve the issue by clearing the buildpack cache and attempting to push your application again. Please refer to the commands below to clear your buildpack cache.
 
