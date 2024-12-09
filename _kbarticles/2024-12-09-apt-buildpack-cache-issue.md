@@ -13,7 +13,7 @@ Different buildpacks use this cache for different things. [System buildpacks]({%
 
 ### The potential issue with the apt buildpack
 
-The potential issue involves the / directory disk allocation. The apt buildpack uses /tmp like other buildpacks. The / directory is allocated approximately 9% of the disk allocation. For most buildpacks, this is sufficient as all the possible packages that they could be installing is known with the only variable being the application code. The apt buildpack however, can install a vast number of packages including large packages for example the AWS CLI. When this occurs this allotted 9% of disk space is not sufficient.
+The potential issue involves the `/` directory disk allocation. The apt buildpack uses `/tmp` like other buildpacks. The `/` directory is allocated approximately 9% of the disk allocation. For most buildpacks, this is sufficient as all the possible packages that they could be installing is known with the only variable being the application code. The apt buildpack however, can install a vast number of large packages, suchas  the AWS CLI. Depending on how many packages are installed and their individual size, the allotted 9% of disk space may not be sufficient.
 
 ### How to address the issue
 
