@@ -17,7 +17,7 @@ The potential issue involves the / directory disk allocation. The apt buildpac
 
 ## How to address the issue
 
-If the number of packages that you are installing is within the allotted 9% of the staging disk limit (1 GB default) you can attempt to resolve the issue by clearing the buildpack cache and attempting to push your application again. Please refer to the commands below to clear your buildpack cache.
+If the number of packages that you are installing during staging is within the allotted 9% of the disk limit (2 GB default) you can attempt to resolve the issue by clearing the buildpack cache and attempting to push your application again. Please refer to the commands below to clear your buildpack cache.
 
 ```shell
 app_guid=$(cf app --guid <staging-app-name>)
