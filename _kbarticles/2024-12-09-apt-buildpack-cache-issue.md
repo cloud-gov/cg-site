@@ -5,7 +5,7 @@ date: December 9, 2024
 excerpt: Apt buildpack cache issue that can affect application deployment
 ---
 
-## What does the buildpack cache do?
+### What does the buildpack cache do?
 
 The buildpack cache (aka "app cache," or "build artifacts cache") is a per-application cache that is stored in the blob (binary large object) store and recovered when an existing application is restaged (regardless of application code or buildpack changes).
 
