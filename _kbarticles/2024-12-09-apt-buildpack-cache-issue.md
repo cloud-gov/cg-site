@@ -11,7 +11,7 @@ The buildpack cache (aka "app cache," or "build artifacts cache") is a per-appli
 
 Different buildpacks use this cache for different things. [System buildpacks]({% link _docs/deployment/frameworks.md %}#supported-languages-and-frameworks) are cached on the VM hosting the application container and then mounted as read-only volumes into each staging container. If your application references a custom buildpack or buildpack version via a URLs (to a git repo or a zip file), those buildpacks are downloaded every time application staging occurs.
 
-## The potential issue with the apt buildpack
+### The potential issue with the apt buildpack
 
 The potential issue involves the / directory disk allocation. The apt buildpack uses /tmp like other buildpacks. The / directory is allocated approximately 9% of the disk allocation. For most buildpacks, this is sufficient as all the possible packages that they could be installing is known with the only variable being the application code. The apt buildpack however, can install a vast number of packages including large packages for example the AWS CLI. When this occurs this allotted 9% of disk space is not sufficient.
 
