@@ -9,7 +9,7 @@ excerpt: Apt buildpack cache issue that can affect application deployment
 
 The buildpack cache (aka "app cache," or "build artifacts cache") is a per-application cache that is stored in the blob (binary large object) store and recovered when an existing application is restaged (regardless of application code or buildpack changes).
 
-Different buildpacks use this cache for different things. System buildpacks are cached on the cell hosting the application container and bind mounted read-only into each staging container. Buildpack URLs (to a git repo or a zip file) are downloaded every time application staging occurs.
+Different buildpacks use this cache for different things. [System buildpacks]({% link _docs/deployment/frameworks.md %}#supported-languages-and-frameworks) are cached on the VM hosting the application container and then mounted as read-only volumes into each staging container. If your application references a custom buildpack or buildpack version via a URLs (to a git repo or a zip file), those buildpacks are downloaded every time application staging occurs.
 
 ## The potential issue with the apt buildpack
 
