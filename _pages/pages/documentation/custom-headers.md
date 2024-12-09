@@ -58,7 +58,7 @@ Explicit matches must **exactly** match the path and filename.
 | `/foo` | `/foo/app.js` | ❌ |
 
 #### Wildcard (*) Matches
-The wildcard `"*"` matches everything **including** `"/"`. If the `"*"` is followed by a file extension (Ex. `".html"`), then that extension is match against the **last** extension of the file. The `"*"` must be the first character in the pattern segment, otherwise it will be treated as a normal character.
+The wildcard `"*"` matches everything **including** `"/"`. If the `"*"` is followed by a file extension (Ex. `".html"`), then that extension is matched against the **last** extension of the file. The `"*"` must be the first character in the pattern segment, otherwise it will be treated as a normal character.
 
 | Pattern | Path | Match |
 | ------- | ---- | :---: |
@@ -107,7 +107,7 @@ Images, Javascript, and CSS files are good candidates for long-term caching as t
 public, max-age=31536000, immutable
 ```
 
-Html files are typically NOT good candidates for long-term caching since the url depends on the actual filename and they are typically smaller files. Given your need for how quickly you want users to get your latest changes, you can either:
+HTML files are typically NOT good candidates for long-term caching since the url depends on the actual filename and they are typically smaller files. Given your need for how quickly you want users to get your latest changes, you can either:
 - Configure cache-control to never cache:
 ```
 public, max-age=0, must-revalidate
