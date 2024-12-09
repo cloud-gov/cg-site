@@ -2,7 +2,7 @@
 layout: post
 title: "Apt buildpack cache issue"
 date: December 9, 2024
-excerpt: Apt buildpack cache issue that can affect application deployment
+excerpt: Potential buildpack cache issue with the apt-buildpack that can cause application staging to fail
 ---
 
 ### What does the buildpack cache do?
