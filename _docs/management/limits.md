@@ -31,7 +31,7 @@ Space Developers can specify application limits in your [application manifest](h
 The application memory limit. This setting has a dual-purpose, as your application compute limit is derived from its memory limit. This relationship is explained in detail [here](https://docs.cloudfoundry.org/concepts/container-security.html#cpu).
 
 `disk_quota / -k`
-- **Default:** `1GB`
+- **Default:** `2GB`
 - **Minimum:** `Based on the app's source and dependencies disk size`
 - **Maximum:** `7GB`
 
@@ -53,17 +53,26 @@ The application cannot access more than the specified amount of memory.
 
 - The environment default of 512MB `memory:` is sufficient for most applications. Static sites and utility applications such as schedulers or loaders may require less. Use `cf app APPNAME` to check your application's current memory and compute utilization.
 
-		requested state: started
-		instances: 1/1
-		usage: 128M x 1 instances
-		urls:
-		last uploaded: Wed Jul 22 20:09:56 UTC 2015
+```shell
+		requested state:   started
+routes:            test-python-flask-triumphant-springhare-yq.app.cloud.gov
+last uploaded:     Mon 09 Dec 15:51:15 EST 2024
+stack:             cflinuxfs4
+buildpacks:        
+	name               version   detect output   buildpack name
+	python_buildpack   1.8.30    python          python
 
-		     state     since                    cpu    memory          disk
-		#0   running   2015-07-30 05:58:11 PM   0.0%   94.6M of 128M   80.4M of 128M
-
+type:           web
+sidecars:       
+instances:      1/1
+memory usage:   256M
+     state     since                  cpu    memory          disk           details
+#0   running   2024-12-09T20:51:30Z   0.0%   30.3M of 256M   217.2M of 2G  
+```
 
 - Any application which exceeds its memory limit will be automatically restarted. Use `cf events APPNAME` to look for 'out of memory' crashes.
 
+```shell
 		... description
 		... index: 0, reason: CRASHED, exit_description: out of memory, exit_status: 255
+```
