@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Apt buildpack cache issue"
+title: "Potential buildpack cache issue with apt-buildpack"
 date: December 9, 2024
 excerpt: Potential buildpack cache issue with the apt-buildpack that can cause application staging to fail
 ---
