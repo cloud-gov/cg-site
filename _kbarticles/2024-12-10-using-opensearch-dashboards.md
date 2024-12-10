@@ -68,4 +68,4 @@ Opensearch allows for [generating a report](https://opensearch.org/docs/latest/r
 ![Screenshot of Dashboards interface showing the selection of ]({{ site.baseurl }}/assets/images/content/opensearch-reporting.png)
 
 > Reports have a non-configurable 10,000 row limit. They have no explicit size limit (for example, MB),
-> but extremely large documents could cause report generation to fail with an out of memory error from the V8 JavaScript engine
+> but extremely large documents could cause report generation to fail
