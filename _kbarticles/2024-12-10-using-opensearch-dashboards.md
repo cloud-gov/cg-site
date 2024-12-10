@@ -31,8 +31,8 @@ Cloud Foundry has 3 fields that can be very helpful to filter down what app logs
 
 Other fields that may be useful for querying:
 
-`@message` - the app specific message attached to the log. This field supports full-text searching, so you can do a search of `@message: "foo"` to find all logs where `@message` contains `foo`. 
-`@raw` - the raw message received by OpenSearch before parsing into other fields. This field also supports full-text searching
+- `@message` - the app specific message attached to the log. This field supports full-text searching, so you can do a search of `@message: "foo"` to find all logs where `@message` contains `foo`. 
+- `@raw` - the raw message received by OpenSearch before parsing into other fields. This field also supports full-text searching
 
 ## How to visualize application traffic
 
