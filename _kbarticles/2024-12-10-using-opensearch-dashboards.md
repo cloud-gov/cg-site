@@ -18,8 +18,6 @@ Cloud Foundry assigns a type to each log message depending on its origin. Applic
 
 The log type is stored on logs in the `@source.type` field. So to query for application logs, you could use a filter of `@source.type: "APP"`.
 
-Cloud Foundry logs are often translated into field names in OpenSearch Dashboards using the log type as a prefix. For example, APP logs in Dashboards include fields like `app.name` for the application name.
-
 ## Querying Logs
 
 Cloud Foundry logs have a few useful fields which will be helpful for querying logs.
