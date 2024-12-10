@@ -1,4 +1,4 @@
-m ---
+---
 layout: post
 title: "Understanding Opensearch Dashboards, logging and how to visualize your application logs"
 date: December 10, 2024
