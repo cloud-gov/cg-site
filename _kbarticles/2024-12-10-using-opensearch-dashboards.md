@@ -26,9 +26,10 @@ Cloudfoundry has 3 fields that can be very helpful to filter down what app logs 
 @cf.space - The space in a organization.
 @cf.app - The app in a space.
 
-For further query
-@message - the app specific message attached to the log
-@raw - the entire log, useful when looking for cloudfoundry specific values, when looking for app use @message
+Other fields that may be useful for querying:
+
+`@message` - the app specific message attached to the log. This field supports full-text searching, so you can do a search of `@message: "foo"` to find all logs where `@message` contains `foo`. 
+`@raw` - the raw message received by OpenSearch before parsing into other fields. This field also supports full-text searching
 
 ## How to visualize application traffic
 
