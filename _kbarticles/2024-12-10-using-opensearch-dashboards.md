@@ -61,7 +61,7 @@ Listed below are the explanations of some field names for router (RTR) logs:
 - **rtr.x_forwarded_for**: The IP address the request came from
 - **rtr.timestamp**: The time of the request in UTC
 
-The full list of fields available for router logs can be found in [our OpenSearch field mapping configuration](https://github.com/cloud-gov/opensearch-boshrelease/blob/main/jobs/opensearch_templates/templates/component-index-mappings-app.json.erb#L46)
+The full list of fields available for router logs can be found in [our OpenSearch field mapping configuration](https://github.com/cloud-gov/opensearch-boshrelease/blob/2078ff06dec204c12bc64a45fe707f71e1c9e303/jobs/opensearch_templates/templates/component-index-mappings-app.json.erb#L46)
 
 ## Generate report of logs.
 
