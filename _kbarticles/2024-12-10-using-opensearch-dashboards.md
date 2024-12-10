@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Understanding Opensearch Dashboards, logging and how to visualize your application logs"
-date: July 31, 2024
+date: December 10, 2024
 excerpt: This article briefly explains what opensearch dashboards does, what types of logs are available in Dashboards, creating dashboards, and how to create log visualizations in Dashboards.
 ---
 
