@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Understanding Opensearch Dashboards, logging and how to visualize your application logs"
+title: "Understanding OpenSearch Dashboards, logging and how to visualize your application logs"
 date: December 10, 2024
 excerpt: This article briefly explains what opensearch dashboards does, what types of logs are available in Dashboards, creating dashboards, and how to create log visualizations in Dashboards.
 redirect_from:
@@ -18,12 +18,12 @@ Cloud Foundry assigns a type to each log message depending on its origin. Applic
 
 The log type is stored on logs in the `@source.type` field. So to query for application logs, you could use a filter of `@source.type: "APP"`.
 
-Cloudfoundry logs are often translated into field names in Opensearch/Dashboards using the log type as a prefix. For example, APP logs in Dashboards include fields like `app.name` for the application name.
+Cloud Foundry logs are often translated into field names in OpenSearch Dashboards using the log type as a prefix. For example, APP logs in Dashboards include fields like `app.name` for the application name.
 
 ## Querying Logs
 
-Cloudfoundry logs have a few useful fields which will be helpful for querying logs.
-Cloudfoundry has 3 fields that can be very helpful to filter down what app logs show up.
+Cloud Foundry logs have a few useful fields which will be helpful for querying logs.
+Cloud Foundry has 3 fields that can be very helpful to filter down what app logs show up.
 
 - `@cf.org` - The organization, this is applicable to multi-org users
 - `@cf.space` - The space in a organization.
@@ -63,13 +63,13 @@ Listed below are the explanations of some field names for router (RTR) logs:
 - **rtr.x_forwarded_for**: The IP address the request came from
 - **rtr.timestamp**: The time of the request in UTC
 
-The full list of fields available for router logs can be found in [our Opensearch field mapping configuration](https://github.com/cloud-gov/opensearch-boshrelease/blob/5100229e391237f4a41df023338a247c55276ee8/jobs/opensearch_templates/templates/component-index-mappings-app.json.erb#L44).
+The full list of fields available for router logs can be found in [our OpenSearch field mapping configuration](https://github.com/cloud-gov/opensearch-boshrelease/blob/main/jobs/opensearch_templates/templates/component-index-mappings-app.json.erb#L46)
 
 ## Generate report of logs.
 
-Opensearch allows for [generating a report](https://opensearch.org/docs/latest/reporting/report-dashboard-index/) from a saved search. This is done by choosing a search and clicking the **Reporting** menu option.
+OpenSearch allows for [generating a report](https://opensearch.org/docs/latest/reporting/report-dashboard-index/) from a saved search. This is done by choosing a search and clicking the **Reporting** menu option.
 
-![Screenshot of Dashboards interface showing the selection of ]({{ site.baseurl }}/assets/images/content/opensearch-reporting.png)
+![Screenshot of Dashboards interface showing dashboard selection]({{ site.baseurl }}/assets/images/content/opensearch-reporting.png)
 
-> Reports have a non-configurable 10,000 row limit. They have no explicit size limit (for example, MB),
-> but extremely large documents could cause report generation to fail
+**Reports have a non-configurable 10,000 row limit**. They have no explicit size limit (for example, MB),
+but extremely large documents could cause report generation to fail
