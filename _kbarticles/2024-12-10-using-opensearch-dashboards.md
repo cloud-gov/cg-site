@@ -36,7 +36,7 @@ Other fields that may be useful for querying:
 
 Router log data can be used to create a visualization of your application traffic following the steps below.
 
-After you have logged into Dashboard, click "Discover" in the left sidebar menu. Then, add filters(under search bar) and search terms to query for router logs as seen in the screenshot below. Please note that the filters shown here for a specific space and application are just an example. You might want to view logs for all requests to application in a given space, in which case you would not want a filter for `@cf.app`.
+After you have logged into Dashboards, click "Discover" in the left sidebar menu. Then, add filters(under search bar) and search terms to query for router logs as seen in the screenshot below. Please note that the filters shown here for a specific space and application are just an example. You might want to view logs for all requests to application in a given space, in which case you would not want a filter for `@cf.app`.
 
 ![Screenshot of Dashboard interface showing a query for router logs for a given CloudFoundry space and application]({{ site.baseurl }}/assets/images/content/dashboard-router.png)
 
