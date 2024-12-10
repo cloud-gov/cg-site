@@ -49,7 +49,7 @@ If you receive `Error dialing trafficcontroller server`:
 
 To view and search your logs on the web, including historic log data, visit [https://logs.fr.cloud.gov/](https://logs.fr.cloud.gov/).
 
-Logs are currently retained for 180 days, and you will only see data for applications deployed within the [orgs](http://docs.cloudfoundry.org/concepts/roles.html#orgs) and [spaces](http://docs.cloudfoundry.org/concepts/roles.html#spaces) where you have access.
+Logs are currently retained for 365 days for live search (three years offline), and you will only see data for applications deployed within the [orgs](http://docs.cloudfoundry.org/concepts/roles.html#orgs) and [spaces](http://docs.cloudfoundry.org/concepts/roles.html#spaces) where you have access.
 
 After logging in, you'll see the App Overview dashboard.
 
@@ -64,7 +64,10 @@ You can also view several dashboards that present different visualizations of yo
 
 !["Select dashboards"]({{site.baseurl}}/assets/images/content/select-dashboard.png)
 
-These visualizations are provided via Kibana, which has a [user guide](https://www.elastic.co/guide/en/kibana/current/index.html) that explains more about how to use it and customize your views.
+These visualizations are provided via OpenSearch Dashboards. You can learn more about
+OpenSearch in our [Cloud.gov Knowledge Base](https://search.usa.gov/search/docs?affiliate=cloud.gov&dc=9299&query=OpenSearch)
+and in the [OpenSearch Dashboards documentation](https://opensearch.org/docs/latest/).
+
 
 ### Structured logging
 
