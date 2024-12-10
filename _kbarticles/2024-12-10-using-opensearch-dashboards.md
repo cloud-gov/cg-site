@@ -10,7 +10,7 @@ redirect_from:
 
 ## What does Dashboards do?
 
-Dashboard is a user interface that lets you search and visualize your application logs. Dashboard has a [user guide](https://opensearch.org/docs/latest/dashboards/) that explains more about how to use it and to create custom visualizations.
+Dashboards is a user interface that lets you search and visualize your application logs. Dashboards has a [user guide](https://opensearch.org/docs/latest/dashboards/) that explains more about how to use it and to create custom visualizations.
 
 ## What are some types of logs?
 
