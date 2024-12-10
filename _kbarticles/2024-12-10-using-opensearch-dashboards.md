@@ -24,9 +24,10 @@ Cloudfoundry logs are often translated into field names in Opensearch/Dashboards
 
 Cloudfoundry logs have a few useful fields which will be helpful for querying logs.
 Cloudfoundry has 3 fields that can be very helpful to filter down what app logs show up.
-@cf.org - The organization, this is applicable to multi-org users
-@cf.space - The space in a organization.
-@cf.app - The app in a space.
+
+- `@cf.org` - The organization, this is applicable to multi-org users
+- `@cf.space` - The space in a organization.
+- `@cf.app` - The app in a space.
 
 Other fields that may be useful for querying:
 
