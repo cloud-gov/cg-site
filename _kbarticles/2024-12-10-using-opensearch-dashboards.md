@@ -14,7 +14,7 @@ Dashboard is a user interface that lets you search and visualize your applicatio
 
 ## What are some types of logs?
 
-Cloud Foundry assigns a type to each log message depending on its origin. Application logs are assigned the APP log type. HTTP requests being routed to an app will produce the RTR log type. The various types of logs are listed in the documentation [here](https://docs.cloudfoundry.org/devguide/deploy-apps/streaming-logs.html#format).
+Cloud Foundry assigns a type to each log message depending on its origin. Application logs are assigned the APP log type. HTTP requests being routed to an app will produce the RTR log type. The various types of logs [are listed in the CloudFoundry documentation](https://docs.cloudfoundry.org/devguide/deploy-apps/streaming-logs.html#format).
 
 The log type is stored on logs in the `@source.type` field. So to query for application logs, you could use a filter of `@source.type: "APP"`.
 
