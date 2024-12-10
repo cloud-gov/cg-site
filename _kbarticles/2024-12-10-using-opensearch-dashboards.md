@@ -3,6 +3,9 @@ layout: post
 title: "Understanding Opensearch Dashboards, logging and how to visualize your application logs"
 date: December 10, 2024
 excerpt: This article briefly explains what opensearch dashboards does, what types of logs are available in Dashboards, creating dashboards, and how to create log visualizations in Dashboards.
+redirect_from:
+  - knowledge-base/2022-12-08-common-kibana-searches-on-clouddotgov/
+
 ---
 
 ## What does Dashboard do?
