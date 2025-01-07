@@ -47,7 +47,7 @@ versions, if applicable:
   * Review the scripts and ensure you're using paths that start with `/v3/`
   * Test the scripts to ensure they perform identically
 
-In general, calls to the API using `/v2` will need to be refactored to use `/v3`. In almost all cases, the API has changed, so:
+In general, calls to the API using `/v2` will need to be refactored to use `/v3`. In almost all cases the API has changed, so:
 
 * review the [v3 upgrade guide](https://v3-apidocs.cloudfoundry.org/index.html#upgrade-guide)
 * review the [v3 API docs](https://v3-apidocs.cloudfoundry.org/)
