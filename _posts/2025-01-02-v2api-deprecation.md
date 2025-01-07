@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-01-07"
-title: "Deprecation CloudFoundry API v2"
+title: "End-of-life for CloudFoundry API v2"
 excerpt: "You may need to update versions of the CF CLI, terraform, and some other tools to support v3"
 ---
 
