@@ -75,4 +75,4 @@ The Cloud.gov team may accelerate this schedule if v2 usage has ceased, or if ma
 
 ## Updates
 
-Links to additional documentation will be listed below, as they're published:
+Updates to this page, or links to additional documentation will be listed below:
