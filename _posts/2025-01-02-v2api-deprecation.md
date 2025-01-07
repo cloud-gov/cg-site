@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2025-01-06"
+date: "2025-01-07"
 title: "Deprecation CloudFoundry API v2"
 excerpt: "You may need to update versions of the CF CLI, terraform, and some other tools to support v3"
 ---
@@ -8,20 +8,22 @@ excerpt: "You may need to update versions of the CF CLI, terraform, and some oth
 ## Cloud.gov end-of-life for v2 of Cloud Foundry API
 
 When Cloud.gov app developers interact with our the platform, they
-do so via the Cloud Foundry API at https://api.fr.cloud.gov. Currently
+do so via the Cloud Foundry API at <https://api.fr.cloud.gov>. Currently
 that API works for both version 2 (with `/v2` paths) and version 3
 (with `/v3` paths).
 
 The v2 API has been in deprecated status with the Cloud Foundry
-Foundation since 2021, and in 2025 the Cloud Foundry development
-teams will no longer be supporting v2. At Cloud.gov we will continue
-to support v2 for another four months, through May 6, 2025.
+Foundation since 2021, and in 2025 the [Cloud Foundry development
+teams will stop supporting v2](https://github.com/cloudfoundry/community/blob/main/toc/rfc/rfc-0032-cfapiv2-eol.md). At Cloud.gov we will continue
+to support v2 for through June 6, 2025, per our 
+[deprecation policy]({{site.baseurl}}/docs/technology/responsibilities/#deprecation-policy).
+
 
 ## What this means for our customers
 
 This only impacts developers on the Cloud.gov Platform, not Cloud.gov Pages.
-This should not impact any of the applications running on Cloud.gov, but it may
-potentially impact how you deploy and manage your applications.
+This should not impact any applications running on Cloud.gov, but it may
+ impact how you deploy and manage your applications.
 
 Your team should check that all of the following have been updated to v3-compatible
 versions, if applicable:
@@ -30,12 +32,13 @@ versions, if applicable:
   * Versions v7.7.1 and v8.7.1 are the minimum supported versions.
   * In early 2025, unsupported clients will trigger an alert like this: \
   `🚨 [WARNING] Outdated CF CLI version - please upgrade: https://github.com/cloudfoundry/cli/releases/latest 🚨`
-  * You **may** continue using unsupported clients until v2 is discontinued on May 6, 2025.
-* `cf-cli` plugins. Our Cloud.gov documentation references a number of useful plugins, their current v3 is the [Plugin Status](#plugin-status) table below.
-  * For "pending" plugins, periodically check the linked GitHub issues for status
+  * You **may** continue using unsupported clients until v2 is discontinued.
+  * If you need to reinstall/upgrade your client, follow our [documentation]({{site.baseurl}}/docs/getting-started/setup/#set-up-the-command-line)
+* `cf-cli` plugins. Our Cloud.gov documentation references a [number of useful plugins]({{site.baseurl}}docs/management/plugins/), their current [v3 Plugin Status](#plugin-status) is detailed in the table below.
+  * For "pending" plugins, periodically check the linked GitHub issues for status.
   * For plugins with no update pending, seek an alternative.
-* CF API client libraries such as [cf-java-client](https://github.com/cloudfoundry/cf-java-client), [go-cfclient](https://github.com/cloudfoundry/go-cfclient)
-], or [cf-python-client](https://github.com/cloudfoundry-community/cf-python-client/issues/220):
+
+* CF API client libraries such as [cf-java-client](https://github.com/cloudfoundry/cf-java-client), [go-cfclient](https://github.com/cloudfoundry/go-cfclient), or [cf-python-client](https://github.com/cloudfoundry-community/cf-python-client/issues/220):
   * Review your deployment and management scripts for such libraries
   * Ensure you've updated to a v3-compatible library
 * Terraform:
@@ -60,19 +63,16 @@ versions, if applicable:
   
 ## Deprecation timeline
 
-### Who is impacted
-### What should you do now?
-### What happens if your testing fails?
+* January 2025: Cloud.gov will start publishing statistics on usage of `v2` vs `v3` endpoints to track progress to decommissioning.
+  * v2 CF CLI clients will trigger an alert that they need updating.
+* February 2025: Cloud.gov will publish our v2 "brownout" schedule. Brownouts are when we intentionally disable the 
+v2 endpoint for a published period of time so developers can test their development and release procedures.
+  * We will schedule brownouts to accommodate customer releases, so please respond to any suggested brownout schedule.
+* March, April, May 2025: Cloud.gov will hold published v2 brownouts. These will increase in duration as we approach end-of-life.
+* June 7, 2025: Cloud.gov will permanently disable v2.
 
+The Cloud.gov team may accelerate this schedule if v2 usage has ceased, or if maintaining v2 poses risks to platform operation.
 
-### Timeline
+## Updates
 
-| When | What | Available Stacks | Default Stack |
-| ----------------|-------------|------------------|---------------|
-| **March 23** | Roll out all cflinuxfs4 buildpacks | cflinuxfs3, cflinuxfs4 | cflinuxfs3
-| **March 23 - April 27** | Developers test and update apps to use cflinuxfs4 | cflinuxfs3, cflinuxfs4 | cflinuxfs3
-| **April 27** | Support ends for cflinuxfs3.  All new apps pushed will use cflinuxfs4 by default, existing apps will need to be migrated.  | cflinuxfs3, cflinuxfs4 | **cflinuxfs4**
-| **April 27 - June 29** | Explicitly opt to use cflinuxfs3 if you need more time | cflinuxfs3, cflinuxfs4 | **cflinuxfs4**
-| **June 29**  | cflinuxfs3 buildpacks will be retired from the platform, apps needing cflinuxfs3 buildpacks will need to reference them via URL on the cf push |  cflinuxfs3, cflinuxfs4 | **cflinuxfs4**
-| **Sept 28** | Only cflinuxfs4 will be available, this is a breaking change for apps not updated to use cflinuxfs4 |  cflinuxfs4 | **cflinuxfs4**
-
+Links to additional documentation will be listed below, as they're published:
