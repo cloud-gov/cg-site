@@ -43,7 +43,7 @@ versions, if applicable:
   * Ensure you've updated to a v3-compatible library
 * Terraform:
   * Use the [v3 CloudFoundry Terraform provider](https://github.com/cloudfoundry/terraform-provider-cloudfoundry)
-  * The original [community-supported Terraform provider](https://registry.terraform.io/providers/cloudfoundry-community/cloudfoundry/latest) is not v2-compatible.
+  * The original [community-supported Terraform provider](https://registry.terraform.io/providers/cloudfoundry-community/cloudfoundry/latest) is not v3-compatible.
 * Scripts that directly use `cf curl`:
   * Review the scripts and ensure you're using paths that start with `/v3/`
   * The API has changed so [review the v3 API docs](https://v3-apidocs.cloudfoundry.org/)
