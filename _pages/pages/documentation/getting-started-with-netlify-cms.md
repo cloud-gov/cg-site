@@ -34,7 +34,6 @@ If your site is already up and running, please follow the instructions on [Decap
 
 For examples of existing configurations, see the Pages starter:
 - [Pages USWDS 11ty](https://github.com/cloud-gov/pages-uswds-11ty/blob/main/admin/config.yml)
-- [Pages USWDS Gatsby](https://github.com/cloud-gov/pages-uswds-gatsby/blob/main/static/admin/config.yml)
 
 ### Configuration Requirements
 To use Decap CMS, you must authenticate with Github, and in order for Pages to facilitate this, your Decap CMS configuration should include the following:
