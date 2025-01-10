@@ -25,7 +25,7 @@ If the number of packages that you are installing during staging is within the a
 
 ```shell
 app_guid=$(cf app --guid <staging-app-name>)
-cf curl /v3/apps/${app_guid}/actions/clear_buildpack_cache
+cf curl -X POST /v3/apps/${app_guid}/actions/clear_buildpack_cache
 ```
 
 You can additionally configure the apt buildpack cache to purge any cached content by setting `cleancache` to true which calls `apt-get clean` and `apt-get autoclean` and is useful to remove any cached content per the apt buildpack [documentation](https://github.com/cloudfoundry/apt-buildpack?tab=readme-ov-file#cloud-foundry-experimental-apt-buildpack).
