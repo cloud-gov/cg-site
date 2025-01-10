@@ -37,7 +37,6 @@ versions, if applicable:
 * `cf-cli` plugins. Our Cloud.gov documentation references a [number of useful plugins]({{site.baseurl}}docs/management/plugins/), their current [v3 Plugin Status](#plugin-status) is detailed in the table below.
   * For "pending" plugins, periodically check the linked GitHub issues for status.
   * For plugins with no update pending, seek an alternative.
-
 * CF API client libraries such as [cf-java-client](https://github.com/cloudfoundry/cf-java-client), [go-cfclient](https://github.com/cloudfoundry/go-cfclient), or [cf-python-client](https://github.com/cloudfoundry-community/cf-python-client/issues/220):
   * Review your deployment and management scripts for such libraries
   * Ensure you've updated to a v3-compatible library
@@ -46,7 +45,13 @@ versions, if applicable:
   * The original [community-supported Terraform provider](https://registry.terraform.io/providers/cloudfoundry-community/cloudfoundry/latest) is not v2-compatible.
 * Scripts that directly use `cf curl`:
   * Review the scripts and ensure you're using paths that start with `/v3/`
-  * The API has changed so [review the v3 API docs](https://v3-apidocs.cloudfoundry.org/)
+  * Test the scripts to ensure they perform identically
+
+In general, calls to the API using `/v2` will need to be refactored to use `/v3`. In almost all cases the API has changed, so:
+
+* review the [v3 upgrade guide](https://v3-apidocs.cloudfoundry.org/index.html#upgrade-guide)
+* review the [v3 API docs](https://v3-apidocs.cloudfoundry.org/)
+* compare with the [v2 API docs](https://v2-apidocs.cloudfoundry.org/)
 
 ### Plugin Status
 
@@ -76,3 +81,5 @@ The Cloud.gov team may accelerate this schedule if v2 usage has ceased, or if ma
 ## Updates
 
 Updates to this page, or links to additional documentation will be listed below:
+
+* 2025-01-07: Added update guidance and links to the v3 upgrade guide and the v2 docs.
