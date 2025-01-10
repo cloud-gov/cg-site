@@ -42,7 +42,7 @@ versions, if applicable:
   * Ensure you've updated to a v3-compatible library
 * Terraform:
   * Use the [v3 CloudFoundry Terraform provider](https://github.com/cloudfoundry/terraform-provider-cloudfoundry)
-  * The original [community-supported Terraform provider](https://registry.terraform.io/providers/cloudfoundry-community/cloudfoundry/latest) is not v2-compatible.
+  * The original [community-supported Terraform provider](https://registry.terraform.io/providers/cloudfoundry-community/cloudfoundry/latest) is not v3-compatible.
 * Scripts that directly use `cf curl`:
   * Review the scripts and ensure you're using paths that start with `/v3/`
   * Test the scripts to ensure they perform identically
@@ -82,4 +82,5 @@ The Cloud.gov team may accelerate this schedule if v2 usage has ceased, or if ma
 
 Updates to this page, or links to additional documentation will be listed below:
 
-* 2025-01-07: Added update guidance and links to the v3 upgrade guide and the v2 docs.
+* 2025-01-09: Added update guidance and links to the v3 upgrade guide and the v2 docs.
+
