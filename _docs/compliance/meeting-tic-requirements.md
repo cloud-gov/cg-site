@@ -11,7 +11,7 @@ Agencies hosting workloads on cloud.gov need to ensure compliance
 with the [DHS CISA Trusted Internet
 Connections](https://www.cisa.gov/tic-guidance)
 program.  In September 2019, OMB released [Memo
-M-19-26](https://www.whitehouse.gov/wp-content/uploads/2019/09/M-19-26.pdf),
+M-19-26](https://bidenwhitehouse.archives.gov/wp-content/uploads/2019/09/M-19-26.pdf),
 that specified new standards for TIC 3.0, and DHS CISA is currently
 developing new guidance for workloads hosted in PaaS cloud environments.
 

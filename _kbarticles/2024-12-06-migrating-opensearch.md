@@ -109,7 +109,7 @@ The screenshot below show some of the major changes to the user interfaces, such
 
 The Cloud.gov team has implemented OpenSearch to deliver a number of benefits to our customers. Among these are:
 
-* Twelve months of live access to system logs, in alignment with [M-21-31](https://www.whitehouse.gov/wp-content/uploads/2021/08/M-21-31-Improving-the-Federal-Governments-Investigative-and-Remediation-Capabilities-Related-to-Cybersecurity-Incidents.pdf).
+* Twelve months of live access to system logs, in alignment with [M-21-31](https://bidenwhitehouse.archives.gov/wp-content/uploads/2021/08/M-21-31-Improving-the-Federal-Governments-Investigative-and-Remediation-Capabilities-Related-to-Cybersecurity-Incidents.pdf).
 * Definitions of saved searches and visualizations are now isolated by OpenSearch tenants that correspond to Cloud.gov organizations.
   * You no longer need to worry about choosing a globally unique name.
   * If you share the same saved object across multiple orgs, you will need to import it into each of your orgs.
