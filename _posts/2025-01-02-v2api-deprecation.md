@@ -34,7 +34,7 @@ versions, if applicable:
   `🚨 [WARNING] Outdated CF CLI version - please upgrade: https://github.com/cloudfoundry/cli/releases/latest 🚨`
   * You **may** continue using unsupported clients until v2 is discontinued.
   * If you need to reinstall/upgrade your client, follow our [documentation]({{site.baseurl}}/docs/getting-started/setup/#set-up-the-command-line)
-* `cf-cli` plugins. Our Cloud.gov documentation references a [number of useful plugins]({{site.baseurl}}docs/management/plugins/), their current [v3 Plugin Status](#plugin-status) is detailed in the table below.
+* `cf-cli` plugins. Our Cloud.gov documentation references a [number of useful plugins]({{site.baseurl}}/docs/management/plugins/), their current [v3 Plugin Status](#plugin-status) is detailed in the table below.
   * For "pending" plugins, periodically check the linked GitHub issues for status.
   * For plugins with no update pending, seek an alternative.
 * CF API client libraries such as [cf-java-client](https://github.com/cloudfoundry/cf-java-client), [go-cfclient](https://github.com/cloudfoundry/go-cfclient), or [cf-python-client](https://github.com/cloudfoundry-community/cf-python-client/issues/220):
