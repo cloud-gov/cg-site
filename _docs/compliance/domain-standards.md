@@ -62,7 +62,7 @@ according to the [BREACH authors](https://breachattack.com), including the follo
 * Separating secrets from user input
 * Randomizing secrets per request
 * Masking secrets (effectively randomizing by XORing with a random secret per request)
-* Protecting vulnerable pages with CSRF
+* Protecting vulnerable pages with CSRF protections
 * Length hiding (by adding random number of bytes to the responses)
 
 Since any modern web application framework should include CSRF token masking to mitigate BREACH,
