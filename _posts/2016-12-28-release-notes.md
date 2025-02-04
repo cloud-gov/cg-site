@@ -18,4 +18,4 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
 ### Security
 The Cloud Foundry upgrade included updates for the base filesystem used for running your application, addressing several security vulnerabilities in that filesystem. You can [restage your application](https://cli.cloudfoundry.org/en-US/cf/restage.html) to ensure you [incorporate fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) and are running the most recent language version supported by your [buildpack](https://docs.cloudfoundry.org/buildpacks/).
 
-- [USN-3156-1: APT vulnerability](https://www.ubuntu.com/usn/USN-3156-1/). The associated CVE is CVE-2016-1252.
+- USN-3156-1: APT vulnerability. The associated CVE is CVE-2016-1252.

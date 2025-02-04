@@ -32,13 +32,13 @@ We upgraded the Cloud Foundry deployment to [v252](https://github.com/cloudfound
 
 As part of the Cloud Foundry upgrade, the base filesystem used for running your application has been updated to address several security vulnerabilities. You should [restage your application](http://cli.cloudfoundry.org/en-US/cf/restage.html) to [incorporate fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) and ensure you’re running the most recent language version supported by your [buildpack](https://docs.cloudfoundry.org/buildpacks/).
 
-- [USN-3142-2: ImageMagick Regression](https://www.ubuntu.com/usn/USN-3142-2/)
-- [USN-3181-1: OpenSSL vulnerabilities](https://www.ubuntu.com/usn/USN-3181-1/)
-- [USN-3183-1: GnuTLS vulnerabilities](https://www.ubuntu.com/usn/USN-3183-1/)
-- [USN-3185-1: libXpm vulnerability](https://www.ubuntu.com/usn/USN-3185-1/)
-- [USN-3193-1: Nettle vulnerability](https://www.ubuntu.com/usn/USN-3193-1/)
-- [USN-3205-1: tcpdump vulnerabilities](https://www.ubuntu.com/usn/USN-3205-1/)
-- [USN-3212-1: LibTIFF vulnerabilities](https://www.ubuntu.com/usn/USN-3212-1/)
+- USN-3142-2: ImageMagick Regression
+- USN-3181-1: OpenSSL vulnerabilities
+- USN-3183-1: GnuTLS vulnerabilities
+- USN-3185-1: libXpm vulnerability
+- USN-3193-1: Nettle vulnerability
+- USN-3205-1: tcpdump vulnerabilities
+- USN-3212-1: LibTIFF vulnerabilities
 
 ### See also
 

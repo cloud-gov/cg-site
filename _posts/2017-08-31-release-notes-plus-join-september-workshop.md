@@ -35,7 +35,7 @@ You should [restage your application]({{ site.baseurl }}/docs/apps/app-maintenan
 #### Additional upgrades
 
 * [RootFS cflinux2 v1.150.0](https://github.com/cloudfoundry/stacks/releases/tag/1.150.0)
-* Remediates all 8 CVEs contained in [USN-3398-1](https://usn.ubuntu.com/usn/USN-3398-1/)
+* Remediates all 8 CVEs contained in USN-3398-1
 * [Diego v1.25.1](https://github.com/cloudfoundry/diego-release/releases/tag/v1.25.1)
 * Stemcell 3445.2
 * Remediates USN-3392-2: Linux kernel (Xenial HWE) regression

@@ -83,4 +83,6 @@ The Cloud.gov team may accelerate this schedule if v2 usage has ceased, or if ma
 Updates to this page, or links to additional documentation will be listed below:
 
 * 2025-01-09: Added update guidance and links to the v3 upgrade guide and the v2 docs.
+* 2025-02-04: Added a [v2 EOL readiness checklist]({{site.baseurl}}{% link _posts/2025-02-04-v2-readiness.md %})
+
 
