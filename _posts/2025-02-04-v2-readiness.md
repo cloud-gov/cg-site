@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-02-04"
-title: "Developer guidance for API v2 EOL"
+title: "V2 EOL Readiness Checklist"
 excerpt: "Checklist for v2 end-of-life preparedness"
 ---
 
@@ -28,7 +28,10 @@ be impacted. The API change may impact how you:
 Going through this checklist will address most places where the v2 API may still be in use.
 
 - [ ] Ensure you and your developers are using a [version of the CF CLI](#update-your-version-of-cf-cli), the Cloud Foundry command line interface (CLI), later than v7.7.1 or v8.7.1.
-- [ ] Ensure your deployment code, such as your CD pipeline, is using a supported [version of the CF CLI](#update-your-version-of-cf-cli) later than v7.7.1 or v8.7.1.
+  - Check your version by running `cf version`.
+  - If you need to upgrade, follow the [V8 CLI Installation Guide](https://github.com/cloudfoundry/cli/wiki/V8-CLI-Installation-Guide).
+  - If approval processes will delay adopting a supported version, please notify [Support](mailto:support@cloud.gov)
+- [ ] Ensure your deployment code, such as your CD pipeline, is using a supported [version of the CF CLI](#update-your-version-of-cf-cli) later than v7.7.1 or v8.7.1 (see above).
 - [ ] Scan your application deployment code for the string '/v2'. If you find it, determine if it's a call to the v2 API, e.g. `cf curl /v2/....`.
   - [ ] As needed, update your code to use the `/v3/` equivalents, per the [v3 upgrade guide](https://v3-apidocs.cloudfoundry.org/index.html#upgrade-guide).
 - [ ] If you use Terraform, ensure you're using [v3 CloudFoundry Terraform provider](https://github.com/cloudfoundry/terraform-provider-cloudfoundry).
@@ -36,15 +39,6 @@ Going through this checklist will address most places where the v2 API may still
   - The CloudFoundry Terraform maintainers have a [migration guide](https://github.com/cloudfoundry/terraform-provider-cloudfoundry/blob/main/migration-guide/Readme.md) for adopting the v3-compatible provider.
 - [ ] If you use the [cf-python-client](https://github.com/cloudfoundry-community/cf-python-client/), update to [version v1.38.2 or higher](https://github.com/cloudfoundry-community/cf-python-client/releases).
 - [ ] If you use the [go-cfclient](https://github.com/cloudfoundry/go-cfclient), ensure you're using a [version 3.0.0.alpha release](https://github.com/cloudfoundry/go-cfclient/releases).
-
-
-## Update your version of CF CLI
-
-You need to be running CF CLI v7.7.1 and v8.7.1 or later both
-for development work and for your deployment system.
-
-1. Check your version by running `cf version` to check if it's supported.
-2. If you need to upgrade, follow the [V8 CLI Installation Guide](https://github.com/cloudfoundry/cli/wiki/V8-CLI-Installation-Guide).
 
 ## Next steps
 
