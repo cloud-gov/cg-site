@@ -25,7 +25,7 @@ We upgraded the Cloud Foundry deployment to [v268](https://github.com/cloudfound
 You should [restage your application](http://cli.cloudfoundry.org/en-US/cf/restage.html) to [incorporate fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) and ensure you’re running the most recent language version supported by your [buildpack](https://docs.cloudfoundry.org/buildpacks/).
 
 #### Additional upgrades
-* [RootFS cflinuxfs2 v1.141.0](https://github.com/cloudfoundry/cflinuxfs2/releases/tag/1.141.0) which remediates all 19 CVEs related to [USN-3363-1: ImageMagick vulnerabilities](https://usn.ubuntu.com/usn/USN-3363-1/)
+* [RootFS cflinuxfs2 v1.141.0](https://github.com/cloudfoundry/cflinuxfs2/releases/tag/1.141.0) which remediates all 19 CVEs related to USN-3363-1: ImageMagick vulnerabilities
 * [Diego v1.23.1](https://github.com/cloudfoundry/diego-release/releases/tag/v1.23.1)
 * Buildpack updates:
   * [PHP v4.3.38](https://github.com/cloudfoundry/php-buildpack/releases/tag/v4.3.38) removes PHP versions 5.6.19, 7.0.19, 7.1.5; adds PHP versions 5.6.21, 7.0.21, 7.1.7

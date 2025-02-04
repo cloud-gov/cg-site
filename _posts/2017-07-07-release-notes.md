@@ -29,10 +29,10 @@ You should [restage your application](http://cli.cloudfoundry.org/en-US/cf/resta
 
 #### Additional upgrades
 - [RootFS cflinuxfs2 1.133.0](https://github.com/cloudfoundry/cflinuxfs2/releases/tag/1.133.0), which address vulnerabilities described in these security notices:
-  - [USN-3309-1: Libtasn1 vulnerability](https://www.ubuntu.com/usn/USN-3309-1/)
-  - [USN-3304-1: Sudo vulnerability](https://www.ubuntu.com/usn/USN-3304-1/)
-  - [USN-3212-2: LibTIFF regression](https://www.ubuntu.com/usn/USN-3212-2/)
-  - [USN-3302-1: ImageMagick vulnerabilities](https://ubuntu.com/security/notices/USN-3302-1)
+  - USN-3309-1: Libtasn1 vulnerability
+  - USN-3304-1: Sudo vulnerability
+  - USN-3212-2: LibTIFF regression
+  - USN-3302-1: ImageMagick vulnerabilities
 - [Diego 1.19.0](https://github.com/cloudfoundry/diego-release/releases/tag/v1.19.0)
 - Stemcell 3312.29
 - Buildpack updates:

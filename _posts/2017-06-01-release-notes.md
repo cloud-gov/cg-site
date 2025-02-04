@@ -33,12 +33,12 @@ We upgraded the Cloud Foundry deployment to [v262](https://github.com/cloudfound
 - [Diego 1.16.1](https://github.com/cloudfoundry/diego-release/releases/tag/v1.16.1)
 - Stemcell 3312.26
 - [RootFS cflinuxfs2 1.123.0](https://github.com/cloudfoundry/cflinuxfs2/releases/tag/1.123.0), which address vulnerabilities described in these security notices:
-  - [USN-3271-1: Libxslt vulnerabilities](https://www.ubuntu.com/usn/USN-3271-1/)
-  - [USN-3274-1: ICU vulnerabilities](https://www.ubuntu.com/usn/USN-3274-1/)
-  - [USN-3276-1: shadow vulnerabilities](https://www.ubuntu.com/usn/USN-3276-1/)
-  - [USN-3276-2: shadow regression](https://www.ubuntu.com/usn/USN-3276-2/)
-  - [USN-3282-1: FreeType vulnerabilities](https://www.ubuntu.com/usn/USN-3282-1/)
-  - [USN-3283-1: rtmpdump vulnerabilities](https://www.ubuntu.com/usn/USN-3283-1/)
-  - [USN-3287-1: Git vulnerability](https://www.ubuntu.com/usn/USN-3287-1/)
-  - [USN-3294-1: Bash vulnerabilities](https://ubuntu.com/security/notices/USN-3294-1)
-  - [USN-3295-1: JasPer vulnerabilities](https://www.ubuntu.com/usn/USN-3295-1/)
+  - USN-3271-1: Libxslt vulnerabilities
+  - USN-3274-1: ICU vulnerabilities
+  - USN-3276-1: shadow vulnerabilities
+  - USN-3276-2: shadow regression
+  - USN-3282-1: FreeType vulnerabilities
+  - USN-3283-1: rtmpdump vulnerabilities
+  - USN-3287-1: Git vulnerability
+  - USN-3294-1: Bash vulnerabilities
+  - USN-3295-1: JasPer vulnerabilities

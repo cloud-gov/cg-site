@@ -253,11 +253,11 @@ Default binary versions:
 ### CFLinuxfs4 - v1.82.0 up from v1.79.0 
 
 Notably, this release addresses:
-* [USN-6694-1](https://ubuntu.com/security/notices/USN-6694-1) Expat vulnerabilities:
+* USN-6694-1 Expat vulnerabilities:
    * CVE-2024-28757:  libexpat through 2.6.1 allows an XML Entity Expansion attack when there is isolated use of external parsers (created via XML_ExternalEntityParserCreate).
    * CVE-2023-52425:  libexpat through 2.5.0 allows a denial of service (resource consumption) because many full reparsings are required in the case of a large token for which multiple buffer fills are needed.
 
-* [USN-6677-1](https://ubuntu.com/security/notices/USN-6677-1) libde265 vulnerabilities:
+* USN-6677-1 libde265 vulnerabilities:
 
    * CVE-2023-49468: Libde265 v1.0.14 was discovered to contain a global buffer overflow vulnerability in the read_coding_unit function at slice.cc.
    * CVE-2023-49465: Libde265 v1.0.14 was discovered to contain a heap-buffer-overflow vulnerability in the derive_spatial_luma_vector_prediction function at motion.cc.
