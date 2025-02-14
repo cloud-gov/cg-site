@@ -47,7 +47,7 @@ Pages automatically handles search engine visibility for preview URLs via the Pa
   header4="How to <u>allow</u> indexing/crawling"
   content=search_table_content %}
 
-If you want to disable crawling and indexing for specific pages of your production site, you can include the `noindex/nofollow` meta tag in the head of those pages, or include those folders in your robots.txt, if your site generates one.
+If you want to disable crawling and indexing for specific pages of your production site, you can include the `noindex/nofollow` meta tag in the head of those pages, or include those folders in your `robots.txt`, if your site generates one.
 
 **Conditionally set robots - Eleventy (11ty)** 
 
