@@ -1,0 +1,18 @@
+<table class="usa-table usa-table--borderless">
+  {% if include.caption %}
+  <caption>
+    {{ include.caption }}
+  </caption>
+  {% endif %}
+  <thead>
+    <tr>
+      <th scope="col">{{ include.header1 }}</th>
+      <th scope="col">{{ include.header2 }}</th>
+      <th scope="col">{{ include.header3 }}</th>
+      <th scope="col">{{ include.header4 }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ include.content }}
+  </tbody>
+  </table>
