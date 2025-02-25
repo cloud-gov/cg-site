@@ -67,7 +67,7 @@ according to the [BREACH authors](https://breachattack.com), including the follo
 
 Since any modern web application framework should include CSRF token masking to mitigate BREACH,
 disabling compression is not necessary, and would badly impact all end users of cloud.gov. We
-suggest that you mitigate BREACH at the application level, and if the application-level mitigations
+suggest that you mitigate BREACH at the application level, and, if the application-level mitigations
 are in place, denote the scanner finding as a false positive.
 
 
