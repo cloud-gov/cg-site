@@ -11,7 +11,7 @@ This post will help you troubleshoot issues when [connecting to your app using S
 
 Some things to check:
 
-* Check which version of the `cf` CLI tool you are using. The approaches listed below may vary based on whether you are using v6 or v7 od the CLI tool.
+* Check which version of the `cf` CLI tool you are using. The approaches listed below may vary based on whether you are using v6 or v7 of the CLI tool.
 * Make sure you have SSH access enabled. You can check to see if SSH is enabled by running `cf ssh-enabled APP_NAME`. Enable it by running `cf enable-ssh APP_NAME`.
 * If you recently enabled SSH access to your application using the approach above, ensure that you have also run `cf restart APP_NAME` so that the changes can take effect.
 * Make sure you are not in an environment that blocks outgoing traffic on port 2222 (the default port for `cf ssh` traffic). Some offices or corporate locations may block traffic on this port.
