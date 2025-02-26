@@ -11,7 +11,7 @@ This post will help you troubleshoot issues when [connecting to your app using S
 
 Some things to check:
 
-* Check which version of the `cf` CLI tool you are using. The approaches listed below may vary based on whether you are using v6 or v7 od the CLI tool.
+* Check which version of the `cf` CLI tool you are using. Currently v7 and v8 versions of the CLI tool are supported.
 * Make sure you have SSH access enabled. You can check to see if SSH is enabled by running `cf ssh-enabled APP_NAME`. Enable it by running `cf enable-ssh APP_NAME`.
 * If you recently enabled SSH access to your application using the approach above, ensure that you have also run `cf restart APP_NAME` so that the changes can take effect.
 * Make sure you are not in an environment that blocks outgoing traffic on port 2222 (the default port for `cf ssh` traffic). Some offices or corporate locations may block traffic on this port.
@@ -36,11 +36,12 @@ If you are still experiencing trouble connecting to your app using SSH, it may b
 
 If a modification or update was made to an app using a v3 command or process - even if that change was made by someone else (e.g., another member of a development team) - the app’s schema in the Cloud Controller might have changed to version 3, and a standard cf ssh may no longer work.
 
-#### Using v6 of the cf CLI
+#### Using supported versions of the cf CLI
 
-If this occurs and you are using v6 of the `cf` CLI, you can try using `cf v3-ssh {app-name}`. By default a cf v3-ssh will select the `web` process. You can also select a different process if needed with v3-ssh using the `--process` flag.
+You may want to upgrade your version of the cf CLI and ensure you are using either the v7 or v8 CF CLI. The v7 and v8 CF CLI automatically connects to the web process.
 
-You may also want to upgrade your version of the CLI tool. [v7 of this tool](https://github.com/cloudfoundry/cli/wiki/V7-CLI-Installation-Guide) automatically connects to the `web` process.
+[v7 of this tool](https://github.com/cloudfoundry/cli/wiki/V7-CLI-Installation-Guide) 
+[v8 of this tool](https://github.com/cloudfoundry/cli/wiki/V8-CLI-Installation-Guide)
 
 #### Using other utilities
 
