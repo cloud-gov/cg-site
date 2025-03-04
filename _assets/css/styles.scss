@@ -10,25 +10,25 @@
 
 // -------------------------------------
 // Import individual theme settings
-@import 'theme/uswds-theme-general';
-@import 'theme/uswds-theme-typography';
-@import 'theme/uswds-theme-spacing';
-@import 'theme/uswds-theme-color';
-@import 'theme/uswds-theme-utilities';
-@import 'theme/uswds-theme-components';
+@import "theme/uswds-theme-general";
+@import "theme/uswds-theme-typography";
+@import "theme/uswds-theme-spacing";
+@import "theme/uswds-theme-color";
+@import "theme/uswds-theme-utilities";
+@import "theme/uswds-theme-components";
 
 // Set correct paths for use with asset pipeline
-$theme-font-path: '../../node_modules/uswds/dist/fonts';
-$theme-image-path: '../../node_modules/uswds/dist/img';
+$theme-font-path: "../../node_modules/uswds/dist/fonts";
+$theme-image-path: "../../node_modules/uswds/dist/img";
 
 // -------------------------------------
 // Import individual USWDS packages...
-@import 'scss/packages/required';
-@import 'scss/packages/global';
+@import "scss/packages/required";
+@import "scss/packages/global";
 
-@import 'scss/packages/uswds-components';
-@import 'scss/packages/uswds-utilities';
-@import 'theme/uswds-theme-custom-styles';
+@import "scss/packages/uswds-components";
+@import "scss/packages/uswds-utilities";
+@import "theme/uswds-theme-custom-styles";
 
 $fa-font-path: "../../node_modules/@fortawesome/fontawesome-free/webfonts";
 
@@ -37,7 +37,7 @@ $fa-font-path: "../../node_modules/@fortawesome/fontawesome-free/webfonts";
 @import "~@fortawesome/fontawesome-free/scss/solid.scss";
 @import "~@fortawesome/fontawesome-free/scss/v4-shims.scss";
 
-@import 'pages/index';
+@import "pages/index";
 
 // default mode hide banner
 .usa-banner__content {
@@ -79,74 +79,76 @@ $fa-font-path: "../../node_modules/@fortawesome/fontawesome-free/webfonts";
 }
 
 .site-banner {
-  background-color: color('base-darkest');
+  background-color: color("base-darkest");
 
   .usa-banner__content {
-    color: color('white');
+    color: color("white");
   }
 
   .usa-banner__header-action {
-    color: color('base-light');
+    color: color("base-light");
     &::after {
-      mask: url('../images/content/chevron.svg') no-repeat center / 1.3128205128ex 0.8ex;
-      background-color: color('base-light');
+      mask: url("../images/content/chevron.svg") no-repeat center /
+        1.3128205128ex 0.8ex;
+      background-color: color("base-light");
     }
     &:hover {
-      color: color('white');
+      color: color("white");
       &::after {
-        background-color: color('white');
+        background-color: color("white");
       }
     }
   }
 
-  .usa-banner__button[aria-expanded='true']::before {
+  .usa-banner__button[aria-expanded="true"]::before {
     background: transparent !important;
   }
 
-  .usa-banner__button[aria-expanded='true']::after {
-    @include u-bg('white');
-    mask: url('../images/content/close-alt.svg') no-repeat center/1rem 1rem;
+  .usa-banner__button[aria-expanded="true"]::after {
+    @include u-bg("white");
+    mask: url("../images/content/close-alt.svg") no-repeat center/1rem 1rem;
   }
 
-  @include at-media('tablet') {
+  @include at-media("tablet") {
     .usa-banner__button,
-    .usa-banner__button[aria-expanded='true'] {
-      color: color('base-light');
+    .usa-banner__button[aria-expanded="true"] {
+      color: color("base-light");
       &::after {
-        mask: url('../images/content/chevron.svg') no-repeat center / 1.3128205128ex 0.8ex;
-        background-color: color('base-light');
+        mask: url("../images/content/chevron.svg") no-repeat center /
+          1.3128205128ex 0.8ex;
+        background-color: color("base-light");
       }
       &:hover {
-        color: color('white');
+        color: color("white");
         &::after {
-          background-color: color('white');
+          background-color: color("white");
         }
       }
     }
   }
 
   .usa-banner__header-text {
-    color: color('white');
+    color: color("white");
   }
 
   .usa-banner__header-action {
-    color: color('gray-30');
+    color: color("gray-30");
   }
 }
 
 .site-footer {
-  @include u-bg('accent-warm');
-  @include u-font('body', '3xs');
-  @include u-color('ink');
+  @include u-bg("accent-warm");
+  @include u-font("body", "3xs");
+  @include u-color("ink");
 
   a {
-    @include u-color('ink');
+    @include u-color("ink");
 
     &:visited {
-      @include u-color('ink');
+      @include u-color("ink");
     }
     &:hover {
-      @include u-color('primary-darker');
+      @include u-color("primary-darker");
     }
   }
 }
@@ -186,17 +188,17 @@ $fa-font-path: "../../node_modules/@fortawesome/fontawesome-free/webfonts";
 
 //Docs
 .usa-section.bg-accent-warm-light {
-  @include at-media('tablet') {
+  @include at-media("tablet") {
     @include u-padding-y(8);
   }
 }
 
 .usa-layout-docs-sidenav {
-  @include at-media('mobile') {
-    @include u-flex('fill');
-    @include u-order('last');
+  @include at-media("mobile") {
+    @include u-flex("fill");
+    @include u-order("last");
   }
-  @include at-media('desktop') {
+  @include at-media("desktop") {
     order: 0;
     flex: none;
   }
@@ -204,54 +206,25 @@ $fa-font-path: "../../node_modules/@fortawesome/fontawesome-free/webfonts";
 
 // Pricing Page
 .usa-content.bg-accent-warm-light {
-  @include at-media('tablet') {
+  @include at-media("tablet") {
     @include u-padding-top(4);
     @include u-padding-bottom(8);
   }
 }
 
 .products-pricing {
-  @include at-media('tablet') {
-    .intro {
-      h2 {
-        @include u-font-size('sans', 10);
-      }
-    }
-  }
-
   .usa-table tr {
     @include u-padding-y(3);
-    border-top: units(1px) solid color('base-lighter');
-    display: flex;
+    border-top: units(1px) solid color("base-lighter");
   }
 
-  .usa-table td {
+  .usa-table td,
+  .usa-table th {
     background-color: transparent;
     border: none;
     @include u-padding-left(0);
     @include u-padding-right($theme-table-column-gap / 2);
     @include u-padding-y(0.5);
-
-    h3 {
-      @include u-margin-y(0);
-    }
-
-    &.small-info {
-      @include u-font-size('sans', '2xs');
-      @include at-media('desktop') {
-        min-height: 83px;
-      }
-    }
-
-    &.intro-info {
-      @include at-media('desktop') {
-        min-height: 133px;
-      }
-    }
-
-    a.usa-button {
-      @include u-margin-bottom(2);
-    }
   }
 }
 
@@ -260,14 +233,8 @@ $fa-font-path: "../../node_modules/@fortawesome/fontawesome-free/webfonts";
     border-bottom: 1px dotted #444;
   }
 
-  .pricing-total {
-    @include u-text('semibold');
-    display: block;
-    @include u-margin-top(5);
-  }
-
   span {
-    @include u-float('right');
+    @include u-float("right");
   }
 }
 
@@ -275,39 +242,39 @@ $fa-font-path: "../../node_modules/@fortawesome/fontawesome-free/webfonts";
 ul.home-list {
   list-style: none;
   @include u-border-bottom(1px);
-  @include u-border-bottom('base-light');
+  @include u-border-bottom("base-light");
 
   li {
     @include u-border-top(1px);
-    @include u-border-top('base-light');
-    @include u-padding-y('105');
+    @include u-border-top("base-light");
+    @include u-padding-y("105");
 
     &:first-of-type {
-      border-top: 1px solid 'base-light';
+      border-top: 1px solid "base-light";
     }
   }
 }
 
 a.cg-arrow {
-  @include u-color('ink');
-  @include u-font-family('ui');
+  @include u-color("ink");
+  @include u-font-family("ui");
 
   display: block;
 
   &:before {
-    content: '\02192';
+    content: "\02192";
     display: inline-block;
-    @include u-padding-right('105');
-    @include u-text('secondary-vivid');
-    font-family: 'Times New Roman', Arial, sans-serif;
+    @include u-padding-right("105");
+    @include u-text("secondary-vivid");
+    font-family: "Times New Roman", Arial, sans-serif;
   }
 }
-@include at-media('tablet') {
+@include at-media("tablet") {
   .bar-top {
     @include u-padding-top(4);
     &:before {
-      @include u-bg('base-light');
-      content: '';
+      @include u-bg("base-light");
+      content: "";
       height: 2px;
       left: 16px;
       position: absolute;
@@ -321,7 +288,7 @@ a.cg-arrow {
   @include u-margin-top(4);
 
   h1 {
-    @include u-font-size('sans', 16);
+    @include u-font-size("sans", 16);
   }
   ul {
     padding: 0;
@@ -341,26 +308,26 @@ a.cg-arrow {
     }
   }
   p.usa-intro {
-    @include u-font-size('serif', 'lg');
+    @include u-font-size("serif", "lg");
   }
 }
 
 a {
-  @include u-color('primary-dark');
+  @include u-color("primary-dark");
 
   &:hover {
-    @include u-color('primary-darker');
+    @include u-color("primary-darker");
   }
 }
 
 .sign-up-intro {
-  background-color: 'primary-darkest';
+  background-color: "primary-darkest";
   background-repeat: no-repeat;
   background-position: right bottom;
   background-size: 1040px 148px;
 
-  @include at-media('desktop') {
-    background-image: url('../images/content/peaks.svg');
+  @include at-media("desktop") {
+    background-image: url("../images/content/peaks.svg");
   }
 }
 
@@ -386,19 +353,19 @@ a {
   @include u-margin(1);
   @include u-padding-y(1);
   @include u-border(1px);
-  @include u-border('base-light');
+  @include u-border("base-light");
 
   h5 {
     @include u-margin-y(1);
   }
 
   a {
-    @include u-color('ink');
+    @include u-color("ink");
   }
 
   img {
     @include u-square(9);
-    @include u-float('left');
+    @include u-float("left");
     @include u-padding-right(2);
   }
 }
@@ -406,23 +373,23 @@ a {
 // code blocks
 
 code {
-  @include u-bg('accent-warm-light');
+  @include u-bg("accent-warm-light");
   @include u-padding-x(1);
   @include u-padding-y(1);
-  @include u-font-size('mono', 'xs');
-  @include u-display('block');
-  border-radius: radius('sm');
+  @include u-font-size("mono", "xs");
+  @include u-display("block");
+  border-radius: radius("sm");
   word-wrap: break-word;
   overflow: auto;
-  line-height: line-height('mono', 1);
+  line-height: line-height("mono", 1);
 }
 
 code.language-plaintext {
-  @include u-display('inline');
+  @include u-display("inline");
 }
 
 .usa-section.want-more {
-  @include at-media('tablet') {
+  @include at-media("tablet") {
     @include u-padding-bottom(8);
   }
 }
@@ -438,8 +405,8 @@ code.language-plaintext {
 
 .cg-diagrams-stage {
   background: #f1f1f1 !important;
-  font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', 'Roboto',
-    'Arial', sans-serif !important;
+  font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto",
+    "Arial", sans-serif !important;
 }
 .cg-diagrams-stage .label {
   color: #ffffff !important;
@@ -455,15 +422,15 @@ code.language-plaintext {
 
 .cluster rect {
   fill: #f1f1f1 !important;
-  stroke: color('primary-vivid') !important;
+  stroke: color("primary-vivid") !important;
   stroke-width: 2px !important;
 }
 
 .cluster text {
   font-size: 1.7rem !important;
   font-weight: 700 !important;
-  font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', 'Roboto',
-    'Arial', sans-serif !important;
+  font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto",
+    "Arial", sans-serif !important;
   font-size: 17px !important;
 }
 
@@ -471,32 +438,33 @@ code.language-plaintext {
 .node circle,
 .node ellipse,
 .node polygon {
-  fill: color('primary') !important;
-  stroke: color('primary-dark') !important;
+  fill: color("primary") !important;
+  stroke: color("primary-dark") !important;
   stroke-width: 2px !important;
 }
 
-.node .label, .node .nodeLabel {
-  font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', 'Roboto',
-    'Arial', sans-serif !important;
+.node .label,
+.node .nodeLabel {
+  font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto",
+    "Arial", sans-serif !important;
   color: white !important;
 }
 
 .edgePath .path {
-  stroke: color('primary-dark') !important;
+  stroke: color("primary-dark") !important;
   stroke-width: 2px !important;
 }
 
 .edgePath marker path {
-  fill: color('primary-dark') !important;
+  fill: color("primary-dark") !important;
 }
 
 .edgeLabel {
   background-color: #ffffff !important;
   border: #ffffff 5px solid !important;
   color: #000000 !important;
-  font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', 'Roboto',
-    'Arial', sans-serif !important;
+  font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto",
+    "Arial", sans-serif !important;
   font-family: 17px !important;
 }
 .edgeLabel:empty {
@@ -504,46 +472,46 @@ code.language-plaintext {
 }
 
 rect {
-  fill: color('primary-vivid') !important;
-  stroke: color('primary-dark') !important;
+  fill: color("primary-vivid") !important;
+  stroke: color("primary-dark") !important;
   stroke-width: 2px !important;
 }
 rect.note {
   fill: #e1f3f8 !important;
-  stroke: color('primary')-light !important;
+  stroke: color("primary")-light !important;
   stroke-width: 2px !important;
 }
 rect.labelBox {
-  fill: color('primary-vivid') !important;
-  stroke: color('primary') !important;
+  fill: color("primary-vivid") !important;
+  stroke: color("primary") !important;
 }
 rect.actor {
-  fill: 'priamry-vivid' !important;
-  stroke: color('primary-dark') !important;
+  fill: "priamry-vivid" !important;
+  stroke: color("primary-dark") !important;
 }
 
 #crosshead path,
 #arrowhead path {
-  fill: color('primary-dark') !important;
+  fill: color("primary-dark") !important;
 }
 
-line[class^='messageLine'],
+line[class^="messageLine"],
 line.actor-line {
-  fill: color('primary-dark') !important;
-  stroke: color('primary-dark') !important;
+  fill: color("primary-dark") !important;
+  stroke: color("primary-dark") !important;
   stroke-width: 2px !important;
 }
 
 line.loopLine {
-  fill: color('primary-dark') !important;
-  stroke: color('primary') !important;
+  fill: color("primary-dark") !important;
+  stroke: color("primary") !important;
   stroke-width: 2px !important;
 }
 
 text.messageText {
-  font-family: 'Bitstream Vera Sans Mono', 'Consolas', 'Courier', monospace !important;
+  font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace !important;
   text-shadow: 2px 2px 0 #ffffff, 1px 1px 0 #5b616b !important;
-  fill: color('primary-vivid') !important;
+  fill: color("primary-vivid") !important;
   font-size: 1rem !important;
 }
 
@@ -557,7 +525,7 @@ text.noteText {
 }
 
 text.labelText {
-  font-family: 'Merriweather', 'Georgia', 'Cambria', 'Times New Roman', 'Times',
+  font-family: "Merriweather", "Georgia", "Cambria", "Times New Roman", "Times",
     serif !important;
   fill: #dce4ef !important;
   font-size: 1.25rem !important;
@@ -565,7 +533,7 @@ text.labelText {
 }
 
 text.loopText {
-  font-family: 'Merriweather', 'Georgia', 'Cambria', 'Times New Roman', 'Times',
+  font-family: "Merriweather", "Georgia", "Cambria", "Times New Roman", "Times",
     serif !important;
   font-size: 1rem !important;
   font-style: oblique !important;
@@ -591,20 +559,32 @@ blockquote .source {
 }
 
 // missing syntax highlighting styles -- ported from Rouge / old Jekyll build
-.highlight table td { padding: 5px; }
-.highlight table pre { margin: 0; }
-.highlight, .highlight .w, .highlight code {
+.highlight table td {
+  padding: 5px;
+}
+.highlight table pre {
+  margin: 0;
+}
+.highlight,
+.highlight .w,
+.highlight code {
   color: #f4f5fb;
   background-color: #04050e;
   -webkit-font-smoothing: antialiased;
   line-height: 1.6;
-  font-size: .75rem;
+  font-size: 0.75rem;
 }
 .highlight .err {
   color: #151515;
   background-color: #ac4142;
 }
-.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+.highlight .c,
+.highlight .ch,
+.highlight .cd,
+.highlight .cm,
+.highlight .cpf,
+.highlight .c1,
+.highlight .cs {
   color: #505050;
 }
 .highlight .cp {
@@ -613,10 +593,12 @@ blockquote .source {
 .highlight .nt {
   color: #f4bf75;
 }
-.highlight .o, .highlight .ow {
+.highlight .o,
+.highlight .ow {
   color: #b2b8dc;
 }
-.highlight .p, .highlight .pi {
+.highlight .p,
+.highlight .pi {
   color: #8794db;
 }
 .highlight .gi {
@@ -630,7 +612,11 @@ blockquote .source {
   background-color: #151515;
   font-weight: bold;
 }
-.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+.highlight .k,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr,
+.highlight .kv {
   color: #cd80be;
 }
 .highlight .kc {
@@ -642,7 +628,16 @@ blockquote .source {
 .highlight .kd {
   color: #6cd69e;
 }
-.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+.highlight .s,
+.highlight .sa,
+.highlight .sb,
+.highlight .sc,
+.highlight .dl,
+.highlight .sd,
+.highlight .s2,
+.highlight .sh,
+.highlight .sx,
+.highlight .s1 {
   color: #b7d675;
 }
 .highlight .sr {
@@ -678,7 +673,14 @@ blockquote .source {
 .highlight .nb {
   color: #b286fe;
 }
-.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+.highlight .m,
+.highlight .mb,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .il,
+.highlight .mo,
+.highlight .mx {
   color: #90a959;
 }
 .highlight .ss {
@@ -694,7 +696,7 @@ blockquote .source {
 }
 
 #table-of-contents ol {
-  font-size: .9rem;
+  font-size: 0.9rem;
   padding: 0;
   list-style-position: inside;
 }
