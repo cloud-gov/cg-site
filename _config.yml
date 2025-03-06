@@ -67,10 +67,6 @@ primary_navigation:
         url: /pricing/
       - name: Try a Free Sandbox
         url: /docs/pricing/free-limited-sandbox/
-      - name: Quota Costs Billing & Limits
-        url: /docs/pricing/quotas/
-      - name: Support Packages
-        url: /support-packages/
   - name: Documentation
     key: docs
     children:
@@ -295,6 +291,6 @@ toc:
   no_toc_section_class: no_toc_section
   list_id: toc
   list_class: section-nav
-  sublist_class: ''
+  sublist_class: ""
   item_class: toc-entry
   item_prefix: toc-

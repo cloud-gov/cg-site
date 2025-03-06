@@ -5,6 +5,7 @@ sidenav: false
 bg-color-class: bg-accent-warm-light
 redirect_from:
   - /docs/pricing/pricing-model/
+  - /support-packages/
 ---
 
 <div class="usa-content">
