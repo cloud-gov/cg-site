@@ -24,9 +24,8 @@ redirect_from:
         <p class="text-italic">
           Additional professional services are available for $250/hr.
         </p>
-</div>
-</div>
-
+    </div>
+  </div>
   </section>
   <section class="usa-section">
     <div class="grid-row products-pricing">
@@ -35,7 +34,6 @@ redirect_from:
           <tr>
             <th scope="col">Tier</th>
             <th scope="col" class="text-right">Credits</th>
-            <th scope="col" class="text-right">Monthly Price</th>
             <th scope="col" class="text-right">Annual Price</th>
           </tr>
         </thead>
@@ -44,79 +42,66 @@ redirect_from:
             <th scope="row">Sandbox</th>
             <td class="font-mono-md text-tabular text-right">8</td>
             <td class="font-mono-md text-tabular text-right">$0</td>
-            <td class="font-mono-md text-tabular text-right">$0</td>
           </tr>
           <tr>
-            <td>Femto</td>
+            <th scope="row">Femto</th>
             <td class="font-mono-md text-tabular text-right">50</td>
-            <td class="font-mono-md text-tabular text-right">$2,500</td>
             <td class="font-mono-md text-tabular text-right">$30,000</td>
           </tr>
           <tr>
-            <td>Pico</td>
+            <th scope="row">Pico</th>
             <td class="font-mono-md text-tabular text-right">100</td>
-            <td class="font-mono-md text-tabular text-right">$5,000</td>
             <td class="font-mono-md text-tabular text-right">$60,000</td>
           </tr>
           <tr>
-            <td>Nano</td>
+            <th scope="row">Nano</th>
             <td class="font-mono-md text-tabular text-right">150</td>
-            <td class="font-mono-md text-tabular text-right">$7,500</td>
             <td class="font-mono-md text-tabular text-right">$90,000</td>
           </tr>
           <tr>
-            <td>Micro</td>
+            <th scope="row">Micro</th>
             <td class="font-mono-md text-tabular text-right">250</td>
-            <td class="font-mono-md text-tabular text-right">$12,500</td>
             <td class="font-mono-md text-tabular text-right">$150,000</td>
           </tr>
           <tr>
-            <td>Milli</td>
+            <th scope="row">Milli</th>
             <td class="font-mono-md text-tabular text-right">350</td>
-            <td class="font-mono-md text-tabular text-right">$17,500</td>
             <td class="font-mono-md text-tabular text-right">$210,000</td>
           </tr>
           <tr>
-            <td>Centi</td>
+            <th scope="row">Centi</th>
             <td class="font-mono-md text-tabular text-right">500</td>
-            <td class="font-mono-md text-tabular text-right">$25,000</td>
             <td class="font-mono-md text-tabular text-right">$300,000</td>
           </tr>
           <tr>
-            <td>Deci</td>
+            <th scope="row">Deci</th>
             <td class="font-mono-md text-tabular text-right">650</td>
-            <td class="font-mono-md text-tabular text-right">$32,500</td>
             <td class="font-mono-md text-tabular text-right">$390,000</td>
           </tr>
           <tr>
-            <td>Deka</td>
+            <th scope="row">Deka</th>
             <td class="font-mono-md text-tabular text-right">800</td>
-            <td class="font-mono-md text-tabular text-right">$40,000</td>
-            <td class="font-mono-md text-tabular text-right">$480,000</td>
+            <td class="font-mono-md text-tabular text-right">$456,000</td>
           </tr>
           <tr>
-            <td>Hecto</td>
+            <th scope="row">Hecto</th>
             <td class="font-mono-md text-tabular text-right">1000</td>
-            <td class="font-mono-md text-tabular text-right">$50,000</td>
-            <td class="font-mono-md text-tabular text-right">$600,000</td>
+            <td class="font-mono-md text-tabular text-right">$540,000</td>
           </tr>
           <tr>
-            <td>Kilo</td>
+            <th scope="row">Kilo</th>
             <td class="font-mono-md text-tabular text-right">1250</td>
-            <td class="font-mono-md text-tabular text-right">$62,500</td>
-            <td class="font-mono-md text-tabular text-right">$750,000</td>
+            <td class="font-mono-md text-tabular text-right">$637,500</td>
           </tr>
           <tr>
-            <td>Mega</td>
+            <th scope="row">Mega</th>
             <td class="font-mono-md text-tabular text-right">1500</td>
-            <td class="font-mono-md text-tabular text-right">$75,000</td>
-            <td class="font-mono-md text-tabular text-right">$900,000</td>
+            <td class="font-mono-md text-tabular text-right">$720,000</td>
           </tr>
           <tr>
-            <td>Giga</td>
+            <th scope="row">Giga</th>
             <td class="font-mono-md text-tabular text-right">2000</td>
-            <td class="font-mono-md text-tabular text-right">$100,000</td>
-            <td class="font-mono-md text-tabular text-right">$1,200,000</td>
+            <td class="font-mono-md text-tabular text-right">$936,000</td>
           </tr>
         </tbody>
       </table>
