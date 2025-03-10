@@ -24,9 +24,8 @@ redirect_from:
         <p class="text-italic">
           Additional professional services are available for $250/hr.
         </p>
-</div>
-</div>
-
+    </div>
+  </div>
   </section>
   <section class="usa-section">
     <div class="grid-row products-pricing">
@@ -92,31 +91,31 @@ redirect_from:
             <td>Deka</td>
             <td class="font-mono-md text-tabular text-right">800</td>
             <td class="font-mono-md text-tabular text-right">$40,000</td>
-            <td class="font-mono-md text-tabular text-right">$480,000</td>
+            <td class="font-mono-md text-tabular text-right">$456,000</td>
           </tr>
           <tr>
             <td>Hecto</td>
             <td class="font-mono-md text-tabular text-right">1000</td>
             <td class="font-mono-md text-tabular text-right">$50,000</td>
-            <td class="font-mono-md text-tabular text-right">$600,000</td>
+            <td class="font-mono-md text-tabular text-right">$540,000</td>
           </tr>
           <tr>
             <td>Kilo</td>
             <td class="font-mono-md text-tabular text-right">1250</td>
             <td class="font-mono-md text-tabular text-right">$62,500</td>
-            <td class="font-mono-md text-tabular text-right">$750,000</td>
+            <td class="font-mono-md text-tabular text-right">$637,500</td>
           </tr>
           <tr>
             <td>Mega</td>
             <td class="font-mono-md text-tabular text-right">1500</td>
             <td class="font-mono-md text-tabular text-right">$75,000</td>
-            <td class="font-mono-md text-tabular text-right">$900,000</td>
+            <td class="font-mono-md text-tabular text-right">$720,000</td>
           </tr>
           <tr>
             <td>Giga</td>
             <td class="font-mono-md text-tabular text-right">2000</td>
             <td class="font-mono-md text-tabular text-right">$100,000</td>
-            <td class="font-mono-md text-tabular text-right">$1,200,000</td>
+            <td class="font-mono-md text-tabular text-right">$936,000</td>
           </tr>
         </tbody>
       </table>
