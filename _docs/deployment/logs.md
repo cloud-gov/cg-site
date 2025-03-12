@@ -25,7 +25,7 @@ cf logs APPNAME --recent
 
 ### Example log
 
-```
+```shell
   	2015-03-16T17:37:47.82-0400 [DEA/1]      OUT Starting app instance (index 0) with guid GUID
   	2015-03-16T17:37:50.85-0400 [DEA/1]      ERR Instance (index 0) failed to start accepting connections
   	2015-03-16T17:37:53.54-0400 [API/0]      OUT App instance exited with guid GUID0 payload: {"cc_partition"=>"default", "droplet"=>"GUID0", "version"=>"GUID1", "instance"=>"GUID2", "index"=>0, "reason"=>"CRASHED", "exit_status"=>127, "exit_description"=>"failed to accept connections within health check timeout", "crash_timestamp"=>1426541870}
@@ -61,21 +61,19 @@ The default time period is "Last 15 minutes". To change the time period of data 
 
 You can also view several dashboards that present different visualizations of your log data. You can select these by going to "Dashboard" at left and clicking "Open" in the top toolbar.
 
-
 !["Select dashboards"]({{site.baseurl}}/assets/images/content/select-dashboard.png)
 
 These visualizations are provided via OpenSearch Dashboards. You can learn more about
 OpenSearch in our [Cloud.gov Knowledge Base](https://search.usa.gov/search/docs?affiliate=cloud.gov&dc=9299&query=OpenSearch)
 and in the [OpenSearch Dashboards documentation](https://opensearch.org/docs/latest/).
 
-
 ### Structured logging
 
 If your application logs are output in JSON, they will be easily searchable in [logs.fr.cloud.gov](https://logs.fr.cloud.gov/). Some tools that make this easier:
 
-- Node: [bunyan](https://www.npmjs.com/package/bunyan)
-- Python: [python-json-logger](https://github.com/madzak/python-json-logger)
-- Ruby: [log_formatter](https://rubygems.org/gems/log_formatter/)
+* Node: [bunyan](https://www.npmjs.com/package/bunyan)
+* Python: [python-json-logger](https://github.com/madzak/python-json-logger)
+* Ruby: [log_formatter](https://rubygems.org/gems/log_formatter/)
 
 ## How to automatically copy your logs elsewhere
 
@@ -83,12 +81,16 @@ If you want to set up your own storage for your application logs, you can set up
 
 Create the user provided service and point it toward the endpoint where you want to send your logs:
 
-      cf create-user-provided-service my-log-drain \
-        -l syslog-tls://<your-log-drain-service-endpont>
+```shell
+cf create-user-provided-service my-log-drain \
+  -l syslog-tls://<your-log-drain-service-endpont>
+```
 
 Then, bind the service you created to the app that you want connect:
 
-      cf bind-service my-app my-log-drain
+```shell
+cf bind-service my-app my-log-drain
+```
 
 If your log storage system cannot receive logs via `syslog` or `https`, it may be possible to forward
 the logs to an application running on cloud.gov, which then sends the logs to your logging system.
@@ -101,6 +103,7 @@ which are then sent to the application, and so on. This loop can quickly overwhe
 dropped logs and unnecessary resource consumption.
 
 An example manifest for a log shipper application might look like:
+
 ```yml
 ---
 # manifest.yml
