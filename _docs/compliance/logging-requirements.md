@@ -11,8 +11,7 @@ This document outlines how our platform enables cloud.gov customers to comply wi
 
 ### Basic Logging Categories
 
-- Cloud.gov currently retains logs in "active" storage (using ELK) for 6 months (to facilitate frequent use and ease of access), and 18 months in cold storage (using s3).
-- Cloud.gov will meet requirements by updating "active" storage to 12 months.
+- Cloud.gov currently retains logs in "active" storage (using OpenSearch) for 12 months (to facilitate frequent use and ease of access), and 18 months in cold storage (using S3).
 
 ### Minimum Logging Data
 
