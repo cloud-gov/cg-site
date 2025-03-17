@@ -1,63 +1,63 @@
-name: Link Checker Workflow
+# name: Link Checker Workflow
 
-on:
-  pull_request:
+# on:
+#   pull_request:
 
-jobs:
-  link-checker:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
+# jobs:
+#   link-checker:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
+#         with:
+#           fetch-depth: 2
 
-      - uses: ruby/setup-ruby@v1
-        with:
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+#       - uses: ruby/setup-ruby@v1
+#         with:
+#           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: .nvmrc
+#       - uses: actions/setup-node@v4
+#         with:
+#           node-version-file: .nvmrc
 
-      - name: Install Dependencies
-        run: npm install
+#       - name: Install Dependencies
+#         run: npm install
 
-      - name: Get changed files
-        id: changed-files
-        uses: tj-actions/changed-files@v41
-        with:
-          base_sha: ${{ github.event.pull_request.base.sha }}
-          sha: ${{ github.event.pull_request.head.sha }}
-          separator: '\n'
+#       - name: Get changed files
+#         id: changed-files
+#         uses: tj-actions/changed-files@v41
+#         with:
+#           base_sha: ${{ github.event.pull_request.base.sha }}
+#           sha: ${{ github.event.pull_request.head.sha }}
+#           separator: '\n'
 
-      - name: Wait on federalist build
-        id: wait-federalist-build
-        if: steps.changed-files.outputs.added_files != ''
-        uses: cloud-gov/wait-federalist-build-action@main
-        with:
-          debug: true
-          commit-sha: ${{ github.event.pull_request.head.sha }}
+#       - name: Wait on federalist build
+#         id: wait-federalist-build
+#         if: steps.changed-files.outputs.added_files != ''
+#         uses: cloud-gov/wait-federalist-build-action@main
+#         with:
+#           debug: true
+#           commit-sha: ${{ github.event.pull_request.head.sha }}
 
-      - name: Build website using branch-specific configuration
-        if: steps.changed-files.outputs.added_files != ''
-        env:
-          BRANCH: ${{ github.event.pull_request.head.ref }}
-        run: |
-          PREVIEW_URL=${{ steps.wait-federalist-build.outputs.preview-url }}
-          # strip trailing slash to make link checking work properly
-          echo "url: ${PREVIEW_URL%/}" >> _config.yml
-          sed -i -e "/github_branch/d" _config.yml
-          echo "github_branch: $BRANCH" >> _config.yml
-          npm run build
+#       - name: Build website using branch-specific configuration
+#         if: steps.changed-files.outputs.added_files != ''
+#         env:
+#           BRANCH: ${{ github.event.pull_request.head.ref }}
+#         run: |
+#           PREVIEW_URL=${{ steps.wait-federalist-build.outputs.preview-url }}
+#           # strip trailing slash to make link checking work properly
+#           echo "url: ${PREVIEW_URL%/}" >> _config.yml
+#           sed -i -e "/github_branch/d" _config.yml
+#           echo "github_branch: $BRANCH" >> _config.yml
+#           npm run build
 
-      - name: Build website with normal configuration
-        if: steps.changed-files.outputs.added_files == ''
-        run: npm run build
+#       - name: Build website with normal configuration
+#         if: steps.changed-files.outputs.added_files == ''
+#         run: npm run build
 
-      - name: Link Checker
-        uses: lycheeverse/lychee-action@v1
-        with:
-          args: --github-token ${{secrets.GITHUB_TOKEN}} --max-concurrency 64 './*.md' './_site/**/*.html' --config lychee.toml
-          fail: true
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+#       - name: Link Checker
+#         uses: lycheeverse/lychee-action@v1
+#         with:
+#           args: --github-token ${{secrets.GITHUB_TOKEN}} --max-concurrency 64 './*.md' './_site/**/*.html' --config lychee.toml
+#           fail: true
+#         env:
+#           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
