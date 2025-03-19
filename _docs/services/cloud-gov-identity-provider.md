@@ -45,8 +45,9 @@ cf create-service-key \
     }'
 ```
 
-This will create a cloud.gov identity provider and make the credentials available to you via a service key.
-The `redirect_uri` array registers your app's redirect uris with your service provider.
+> **Please note that `APP_AUTH_REDIRECT_ROUTE` and `APP_LOGOUT_REDIRECT_ROUTE` must be full URLs (e.g. `https://<your-domain>/auth`) and not just paths on your app.**
+
+This will create a cloud.gov identity provider and make the credentials available to you via a service key. The `redirect_uri` array registers your app's redirect uris with your service provider.
 
 You can retrieve your credentials with the name of the instance and service key:
 
@@ -83,6 +84,8 @@ cf create-service-key \
       "allowpublic": true
     }'
 ```
+
+> **Please note that `APP_AUTH_REDIRECT_ROUTE` and `APP_LOGOUT_REDIRECT_ROUTE` must be full URLs (e.g. `https://<your-domain>/auth`) and not just paths on your app.**
 
 ### If you can't find your service keys
 
