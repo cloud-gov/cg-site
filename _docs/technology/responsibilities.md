@@ -23,11 +23,13 @@ Here's a chart to illustrate this in three example use cases:
 
 App #1 uses a [standard buildpack]({{ site.baseurl }}{% link _docs/getting-started/concepts.md %}#buildpacks). (A buildpack provides support for a programming language.) The customer is only responsible for the app code and its dependencies.
 
-App #2 uses a [custom buildpack or a Cloud Native Buildpack]({{ site.baseurl }}{% link _docs/deployment/custom-buildpacks.md %}), so the customer's responsibility expands from the app code to managing the custom buildpack and its dependencies. If you choose to use a custom buildpack, you are responsible for:
+App #2 uses a [custom buildpack]({{ site.baseurl }}{% link _docs/deployment/custom-buildpacks.md %}), so the customer's responsibility expands from the app code to managing the custom buildpack and its dependencies. If you choose to use a custom buildpack, you are responsible for:
 
 * Ensuring your application framework/runtime and all dependencies are supported versions with no known vulnerabilities.
 * Continually updating your runtime and dependencies as new vulnerabilities are discovered and fixed.
 * Maintaining a best practice baseline configuration for your application framework/runtime that meets all applicable security standards.
+
+Examples of custom buildpacks includes [Cloud Native Buildpacks](https://buildpacks.io) as they are not yet (in early 2025) available within the Cloud.gov authorization boundary.
 
 App #3 is a Docker setup, where the customer is fully responsible for their Docker container and custom image. [Learn about this feature.]({{ site.baseurl }}{% link _docs/deployment/docker.md %})
 
