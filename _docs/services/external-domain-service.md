@@ -2,7 +2,7 @@
 parent: services
 layout: docs
 sidenav: true
-title: External domain service
+title: External domain service (CDN & custom domains)
 name: "external-domain-service"
 description: "Custom domains and TLS certificates with automatic renewal"
 status: "Production Ready"
