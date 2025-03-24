@@ -29,6 +29,8 @@ App #2 uses a [custom buildpack]({{ site.baseurl }}{% link _docs/deployment/cust
 * Continually updating your runtime and dependencies as new vulnerabilities are discovered and fixed.
 * Maintaining a best practice baseline configuration for your application framework/runtime that meets all applicable security standards.
 
+Examples of custom buildpacks includes [Cloud Native Buildpacks](https://buildpacks.io) as they are not yet (in early 2025) available within the Cloud.gov authorization boundary.
+
 App #3 is a Docker setup, where the customer is fully responsible for their Docker container and custom image. [Learn about this feature.]({{ site.baseurl }}{% link _docs/deployment/docker.md %})
 
 Cloud.gov is always responsible for the following components at its platform level:
