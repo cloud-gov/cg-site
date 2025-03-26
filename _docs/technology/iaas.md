@@ -21,7 +21,7 @@ cloud.gov brokers instances of:
 - FedRAMP JAB-authorized services available in AWS GovCloud and
 - Services run directly inside cloud.gov (which benefit from our own FedRAMP JAB authorization)
 
-In principle, cloud.gov can broker any service provider for which there is an implementation of the [Open Service Broker API](https://www.openservicebrokerapi.org/). For more information, see our docs on [extending the marketplace]({{ site.baseurl }}{% link _docs/services/intro.md %}#extending-the-marketplace).
+In principle, cloud.gov can broker any service provider for which there is an implementation of the [Open Service Broker API](https://www.openservicebrokerapi.org/). For more information, see our docs on [extending the marketplace]({{ site.baseurl }}{% link _docs/services/_intro.md %}#extending-the-marketplace).
 
 ## Other IaaS vendors we can support
 

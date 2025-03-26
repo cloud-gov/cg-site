@@ -19,7 +19,7 @@ To create a service instance and binding for use with an application, you first 
 cf marketplace
 ```
 
-See [the services guide]({{ site.baseurl }}{% link _docs/services/intro.md %}) as well.
+See [the services guide]({{ site.baseurl }}{% link _docs/services/_intro.md %}) as well.
 
 ## Create a service instance
 
@@ -29,7 +29,7 @@ Target the org and space which will hold the app to which the service instance w
 cf target -o ORG -s SPACE
 ```
 
-Create a new service instance by specifying a service, plan, and a name of your choice for the service instance. Note that service instance names must be unique and can be renamed. For some services, you'll need to include additional parameters in your create-service command -- refer to [the services guide]({{ site.baseurl }}{% link _docs/services/intro.md %}) for details.
+Create a new service instance by specifying a service, plan, and a name of your choice for the service instance. Note that service instance names must be unique and can be renamed. For some services, you'll need to include additional parameters in your create-service command -- refer to [the services guide]({{ site.baseurl }}{% link _docs/services/_intro.md %}) for details.
 
 ```shell
 cf create-service SERVICE_NAME PLAN_NAME INSTANCE_NAME
