@@ -6,6 +6,8 @@ title: Legacy CDN service
 name: "cdn-route"
 description: "Custom domains, CDN caching, and TLS certificates with automatic renewal"
 status: "Production Ready"
+redirect_from:
+  - /docs/services/cdn-route
 ---
 
 ## Legacy: Use [external domain service]({{ site.baseurl }}{% link _docs/services/external-domain-service.md %}) for new instances

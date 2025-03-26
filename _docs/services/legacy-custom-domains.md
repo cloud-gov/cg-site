@@ -6,6 +6,8 @@ title: Legacy custom domain service
 name: "custom-domain"
 description: "Custom domains and TLS certificates with automatic renewal"
 status: "Production Ready"
+redirect_from:
+  - /docs/services/custom-domains
 ---
 
 ## Legacy: Use [external domain service]({{ site.baseurl }}{% link _docs/services/external-domain-service.md %}) for new instances
@@ -18,7 +20,7 @@ This service provides:
 1. [Custom domain]({{ site.baseurl }}{% link _docs/management/custom-domains.md %}) support, so that your application can have your domain instead of the default `*.app.cloud.gov` domain.
 1. HTTPS support via free TLS certificates with auto-renewal (using [Let's Encrypt](https://letsencrypt.org/)), so that user traffic is encrypted.
 
-If you need CDN caching for your applications, use the [CDN service]({{ site.baseurl }}{% link _docs/services/cdn-route.md %}) instead.
+If you need CDN caching for your applications, use the [CDN service]({{ site.baseurl }}{% link _docs/services/legacy-cdn-route.md %}) instead.
 
 ## Plans
 

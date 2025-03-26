@@ -78,7 +78,7 @@ cloud.gov does not currently support DNSSEC on `cloud.gov` domains. For example,
 
 If you do need DNSSEC for your custom domain, you are responsible for configuring DNSSEC in your DNS system. cloud.gov can't configure DNSSEC for you because cloud.gov does not have access to your DNS system.
 
-cloud.gov supports mapping your DNSSEC-enabled custom domain to your applications hosted on cloud.gov -- see [DNSSEC support for the CDN service]({{ site.baseurl }}{% link _docs/services/cdn-route.md %}#dnssec-support) and [DNSSEC support for the custom domain service]({{ site.baseurl }}{% link _docs/services/custom-domains.md %}#dnssec-support).
+cloud.gov supports mapping your DNSSEC-enabled custom domain to your applications hosted on cloud.gov -- see [DNSSEC support for the CDN service]({{ site.baseurl }}{% link _docs/services/legacy-cdn-route.md %}#dnssec-support) and [DNSSEC support for the custom domain service]({{ site.baseurl }}{% link _docs/services/legacy-custom-domains.md %}#dnssec-support).
 
 *Additional details are available the cloud.gov System Security Plan, including controls SC-20, SC-21, SC-22, and SC-23.*
 
