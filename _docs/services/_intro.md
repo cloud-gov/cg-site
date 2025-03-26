@@ -73,7 +73,7 @@ To list all the managed services and plans available to a given space, you run `
     <li><strong>Beta</strong>: The service is stable but still requires further development to ensure it can be deployed to production systems.</li>
     <li><strong>Alpha</strong>: The service is under development and some downtime or data loss can occur.</li>
     <li><strong>Deprecated</strong>: The service is deprecated and will be removed in a future release - please update.</li>
-    <li><strong>Legacy</strong>: The service is deprecated, and has been superseded by a preferred fully-supported service.<li>
+    <li><strong>Legacy</strong>: The service is deprecated, and has been superseded by a preferred fully-supported service.</li>
 </ul>
 
 ### Extending the marketplace
