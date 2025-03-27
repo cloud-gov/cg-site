@@ -10,27 +10,25 @@ monitoring the health of your application](https://docs.cloudfoundry.org/loggreg
 
 The most important metrics for monitoring your application's health are the memory and CPU metrics, which can help you identify:
 
-- If your application has enough memory provisioned per instance
-- If your application is experiencing CPU spikes and associated performance issues
-- If you need [to horizontally scale your application instances]({{ site.baseurl }}{% link _kbarticles/2023-08-07-advantages-of-multiple-application-instances.md %})
+- If your application has enough memory provisioned per instance.
+- If your application is experiencing CPU spikes and associated performance issues.
+- If you need [to horizontally scale your application instances.]({{ site.baseurl }}{% link _kbarticles/2023-08-07-advantages-of-multiple-application-instances.md %})
 
 ## A note about CPU metrics
 
-CPUs are virtualized and shared across application containers on a Diego cell virtual machine (VM).
+Your application runs in one or more application containers distributed across Diego cell virtual machines (VMs). CPUs are virtualized and shared with other application containers on the VM.
 
 [The CPU usage figure reported as part of the application metrics represents the CPU usage of an application instance as a percentage of a single CPU core][container metrics]. Since there are usually multiple CPU cores per VM, **it is possible for the CPU usage to exceed 100%**, which means your application is using the equivalent compute power of more than a single CPU core.
 
 A CPU usage figure above 100% is not necessarily problematic. The more important metric for identifying issues is CPU entitlement, which is [a formula Cloud Foundry uses to determine how much CPU your application **is allowed to use** from the host VM based on its memory capacity][container metrics].
 
-If the CPU entitlement figure exceeds 100% for any application instance, then the instance is effectively borrowing spare CPU resources from the host VM. Since applications are regularly redistributed across the available host VMs, the amount of spare CPU capacity available on the VM can change, so any instances of CPU entitlement above 100% should be treated as an indication of insufficient application resources and addressed appropriately.
-
-[Cloud Foundry provides a `cf` CLI plugin for determining if any of your application instances are exceeding their CPU entitlement](https://docs.cloudfoundry.org/loggregator/container-metrics.html#cpu-entitlement).
+If the CPU entitlement figure exceeds 100% for any application instance, then the instance is effectively borrowing spare CPU resources from the host VM. Since applications are regularly redistributed across the available host VMs, the amount of spare CPU capacity available on the VM can change, so any instances of CPU entitlement above 100% should be treated as an indication of insufficient application resources and addressed appropriately by adding more instances or allocating more memory.
 
 While the CPU usage figure itself does not independently reveal application issues, it is still worth monitoring as a relative value, since sudden spikes in the value can still indicate abnormal performance of your application.
 
 ## Retrieving current memory and CPU metrics
 
-To retrieve the current memory and CPU usage for your app, you can use the `cf app` command:
+To retrieve the current memory, CPU usage and CPU entitlement for your app, you can use the `cf app` command:
 
 ```shell
 cf app APP-NAME
@@ -42,8 +40,10 @@ The output from running that command will look something like:
 
 The `cpu` and `memory` metrics in the output can be interpreted as follows:
 
-- `cpu`: percentage of CPU used by the application, as explained above
-- `memory`: memory used out of the amount of memory allowed for each application instance
+- `cpu`: percentage of CPU used by the application, as explained above.
+- `memory`: memory used out of the amount of memory allowed for each application instance.
+- `cpu entitlement`: CPU time used by an app instance as a percentage of its CPU entitlement.
+
 
 ## How to view historical memory and CPU metrics in OpenSearch
 
@@ -51,7 +51,7 @@ While it is useful to view your application's CPU and memory usage at a given po
 more helpful is to see the trends in your application's health metrics over time and in particular whether
 they correlate to observed performance issues for your application.
 
-Logs containining these application metrics are already ingested into the [OpenSearch instance for customer logs][opensearch prod]. Furthermore, there are already built-in visualizations and dashboards for viewing these metrics for your applications.
+Logs containing these application metrics are already ingested into the [OpenSearch instance for customer logs][opensearch prod]. Furthermore, there are already built-in visualizations and dashboards for viewing these metrics for your applications.
 
 To view the dashboards for application metrics, follow these steps:
 
