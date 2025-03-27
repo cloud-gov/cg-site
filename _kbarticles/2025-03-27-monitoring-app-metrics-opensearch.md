@@ -10,9 +10,9 @@ monitoring the health of your application](https://docs.cloudfoundry.org/loggreg
 
 The most important metrics for monitoring your application's health are the memory and CPU metrics, which can help you identify:
 
-- If your application has enough memory provisioned per instance
-- If your application is experiencing CPU spikes and associated performance issues
-- If you need [to horizontally scale your application instances]({{ site.baseurl }}{% link _kbarticles/2023-08-07-advantages-of-multiple-application-instances.md %})
+- If your application has enough memory provisioned per instance.
+- If your application is experiencing CPU spikes and associated performance issues.
+- If you need [to horizontally scale your application instances.]({{ site.baseurl }}{% link _kbarticles/2023-08-07-advantages-of-multiple-application-instances.md %})
 
 ## A note about CPU metrics
 
