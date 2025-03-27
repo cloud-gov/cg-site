@@ -92,3 +92,11 @@ Or with a URL:
 If none of these strategies will help you deploy single-language applications, you can [explicitly specify a set of buildpacks to run in sequence](https://docs.cloudfoundry.org/buildpacks/use-multiple-buildpacks.html), one for each language.
 
 **Custom buildpacks:** If your application can't use a standard buildpack, you can use a [custom buildpack]({{ site.baseurl }}{% link _docs/deployment/custom-buildpacks.md %}). When you use a custom buildpack, you're responsible for keeping your buildpack up-to-date and patching vulnerabilities in it. See [this chart illustrating your responsibilities]({{ site.baseurl }}{% link _docs/technology/responsibilities.md %}) for more detail.
+
+**Cloud Native Buildpacks:** In early 2025, Cloud Foundry provided the option to deploy applications using [Cloud Native Buildpacks](https://buildpacks.io/), through the use of the `lifecycle` option in your manifest, or as a `cf push` option. You can see a basic example of this with the [NodeJS Hello World example](https://github.com/cloud-gov/cf-hello-worlds/tree/main/nodejs), where `manifest-cnb.yml` includes the following to specify the lifecycle and buildpack:
+
+```  
+  lifecycle: cnb
+  buildpacks:
+  - docker://gcr.io/paketo-buildpacks/nodejs
+```

@@ -23,16 +23,16 @@ Curious what’s new that you might find helpful as a cloud.gov user? Here are h
 ### Platform releases
 We upgraded the Cloud Foundry deployment to [v270](https://github.com/cloudfoundry/cf-release/releases/tag/v270), which remediates the following vulnerabilities:
 
-* [USN-3378-2: Linux kernel (Xenial HWE) vulnerabilities](https://usn.ubuntu.com/usn/usn-3378-2/)
-* [USN-3346-1: bind9 vulnerabilities](https://usn.ubuntu.com/usn/usn-3346-1/)
-* [USN-3347-1: Libgcrypt vulnerabilities](https://usn.ubuntu.com/usn/usn-3347-1/)
-* [USN-3349-1: NTP vulnerabilities](https://usn.ubuntu.com/usn/usn-3349-1/)
-* [USN-3353-1: Heimdal vulnerability](https://usn.ubuntu.com/usn/usn-3353-1/)
-* [USN-3356-1: Expat vulnerability](https://ubuntu.com/security/notices/USN-3356-1)
-* [USN-3363-1: ImageMagick vulnerabilities](https://usn.ubuntu.com/usn/usn-3363-1/)
-* [USN-3363-2: ImageMagick regression](https://usn.ubuntu.com/usn/usn-3363-2/)
-* [USN-3364-2: Linux kernel (Xenial HWE) vulnerabilities](https://usn.ubuntu.com/usn/usn-3364-2/)
-* [USN-3367-1: gdb vulnerabilities](https://usn.ubuntu.com/usn/usn-3367-1/)
+* USN-3378-2: Linux kernel (Xenial HWE) vulnerabilities
+* USN-3346-1: bind9 vulnerabilities
+* USN-3347-1: Libgcrypt vulnerabilities
+* USN-3349-1: NTP vulnerabilities
+* USN-3353-1: Heimdal vulnerability
+* USN-3356-1: Expat vulnerability
+* USN-3363-1: ImageMagick vulnerabilities
+* USN-3363-2: ImageMagick regression
+* USN-3364-2: Linux kernel (Xenial HWE) vulnerabilities
+* USN-3367-1: gdb vulnerabilities
 
 Check out our new page on [application maintenance]({{ site.baseurl }}/docs/apps/app-maintenance). It explains how to restage your application and what else you should do to keep your app up to date and secure. Restaging will [incorporate fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) included with this release and ensure you’re running the most recent language version supported by your [buildpack](https://docs.cloudfoundry.org/buildpacks/).
 

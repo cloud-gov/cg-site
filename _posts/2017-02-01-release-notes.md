@@ -22,7 +22,7 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
 ### Security
 We upgraded the Cloud Foundry deployment to [v251](https://github.com/cloudfoundry/cf-release/releases/tag/v251). The base filesystem used for running your application has been updated to address several security vulnerabilities. You should [restage your application](http://cli.cloudfoundry.org/en-US/cf/restage.html) to [incorporate fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) and ensure you’re running the most recent language version supported by your buildpack.
 
-- [USN-3172-1: Bind vulnerabilities](https://www.ubuntu.com/usn/USN-3172-1/). The associated CVEs are CVE-2016-9131,  CVE-2016-9147,  CVE-2016-9444.
+- USN-3172-1: Bind vulnerabilities. The associated CVEs are CVE-2016-9131,  CVE-2016-9147,  CVE-2016-9444.
 
 ### See also
 

@@ -37,14 +37,14 @@ We upgraded the Cloud Foundry deployment to [v258](https://github.com/cloudfound
 - [Staticfile buildpack 1.4.5](https://github.com/cloudfoundry/staticfile-buildpack/releases/tag/v1.4.5)
 - [Java buildpack 3.16](https://github.com/cloudfoundry/java-buildpack/releases/tag/v3.16)
 - [RootFS cflinuxfs2 1.119.0](https://github.com/cloudfoundry/cflinuxfs2/releases/tag/1.119.0), which address vulnerabilities described in these security notices:
-  - [USN-3271-1: Libxslt vulnerabilities](https://www.ubuntu.com/usn/USN-3271-1/)
-  - [USN-3274-1: ICU vulnerabilities](https://www.ubuntu.com/usn/USN-3274-1/)
-  - [USN-3276-1: shadow vulnerabilities](https://www.ubuntu.com/usn/USN-3276-1/)
-  - [USN-3282-1: FreeType vulnerabilities](https://www.ubuntu.com/usn/USN-3282-1/)
-  - [USN-3283-1: rtmpdump vulnerabilities](https://www.ubuntu.com/usn/USN-3283-1/)
+  - USN-3271-1: Libxslt vulnerabilities
+  - USN-3274-1: ICU vulnerabilities
+  - USN-3276-1: shadow vulnerabilities
+  - USN-3282-1: FreeType vulnerabilities
+  - USN-3283-1: rtmpdump vulnerabilities
 - [Diego 1.15.3](https://github.com/cloudfoundry/diego-release/releases/tag/v1.15.3)
 - Stemcell 3312.24, which address vulnerabilities described in this security notice:
-  - [USN-3265-2: Linux kernel (Xenial HWE) vulnerabilities](https://www.ubuntu.com/usn/usn-3265-2/)
+  - USN-3265-2: Linux kernel (Xenial HWE) vulnerabilities
 
 ### See also
 

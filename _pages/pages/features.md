@@ -66,7 +66,7 @@ title: cloud.gov Pages - Features
       <h4>We’ve streamlined our onboarding process.</h4>
       <ul>
         <li>Execute an Interagency Agreement in weeks.</li>
-        <li>Unlimited storage and bandwidth for your sites.</li>
+        <li>Unlimited previews and bandwidth for your sites.</li>
         <li>Five custom domains included, with more available.</li>
         <li>Pages’s content delivery network seamlessly keeps your site up and running even when traffic spikes.</li>
         <li>No hidden charges.</li>

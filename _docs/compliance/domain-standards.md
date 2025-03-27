@@ -74,7 +74,7 @@ requirement.
 
 cloud.gov does not currently support DNSSEC on `cloud.gov` domains. For example, an application at `*.app.cloud.gov` would not support DNSSEC.
 
-[OMB memo M-18-23](https://www.whitehouse.gov/wp-content/uploads/2018/08/M-18-23.pdf) rescinds M-08-23, the OMB memo that originally mandated DNSSEC for federal systems. You should consider carefully whether DNSSEC is still a requirement for your system.
+[OMB memo M-18-23](https://bidenwhitehouse.archives.gov/wp-content/uploads/2018/08/M-18-23.pdf) rescinds M-08-23, the OMB memo that originally mandated DNSSEC for federal systems. You should consider carefully whether DNSSEC is still a requirement for your system.
 
 If you do need DNSSEC for your custom domain, you are responsible for configuring DNSSEC in your DNS system. cloud.gov can't configure DNSSEC for you because cloud.gov does not have access to your DNS system.
 

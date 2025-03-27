@@ -12,13 +12,13 @@ This is helpful for doing things like compiling a site's assets, or employing a 
 
 ## The Pages NPM script
 
-Before running any other generator, the Pages build engine will check for a package.json file. If it finds one, it will [install npm dependencies](#installing-npm-dependencies). Additionally, if the package.json provides a script named `federalist` or `pages`, the build engine will run this script. This enables Pages users to add Javascript dependencies to their site, and run a script to prepare the site for the build engine. If **Node.js** is the configured **Site Engine**, no other steps are run.
+Before running any other generator, the Pages build engine will check for a `package-lock.json` file. If it finds one, it will [install npm dependencies](#installing-npm-dependencies). Additionally, if a `package.json` file provides a script named `federalist` or `pages`, the build engine will run this script. This enables Pages users to add Javascript dependencies to their site, and run a script to prepare the site for the build engine. If **Node.js** is the configured **Site Engine**, no other steps are run.
 
 ## Installing NPM dependencies
 
 Pages will install dependencies from NPM on your behalf, you **should not** include a call to `npm install` from your `federalist` or `pages` npm script or anywhere else. In particular, Pages runs `npm ci` which means:
-- Your project must have a package-lock.json file
-- The dependencies in package-lock.json must match those in package.json
+- Your project must have a `package-lock.json` file
+- The dependencies in `package-lock.json` must match those in `package.json`
 
 Note that this process is skipped if [build dependency caching]({{ site.baseurl }}/pages/documentation/cache-dependencies) is enabled.
 
@@ -26,9 +26,9 @@ See [npm-ci](https://docs.npmjs.com/cli/ci) and [npm-install](https://docs.npmjs
 
 ## Specifying a Node version
 
-Pages only supports active and maintenance LTS (Long Term Support) [Node releases](https://github.com/nodejs/release#release-schedule), the default version is currently v18.x (hydrogen).
+Pages only supports active and maintenance LTS (Long Term Support) [Node releases](https://github.com/nodejs/release#release-schedule), the default version is currently `v18.x` (hydrogen).
 
-You can specify a different version than the default by providing a file named `.nvmrc` at the root of your repository containing the desired version of Node. However, if an unsupported version is specified, the build will fail with a helpful error message. 
+You can specify a different version than the default by providing a file named `.nvmrc` at the root of your repository containing the desired version of Node. However, if an unsupported version is specified, the build will fail with a helpful error message.
 
 ### Examples
 If the current active and maintenance LTS release versions are 20 and 18:

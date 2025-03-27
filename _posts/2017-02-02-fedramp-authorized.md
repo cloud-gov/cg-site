@@ -7,7 +7,7 @@ redirect_from:
 ---
 
 ### Now it’s easier than ever to get started with cloud.gov.
-We’re delighted to announce that cloud.gov has received a FedRAMP Joint Authorization Board (JAB) Provisional Authority to Operate (P-ATO) at the Moderate impact level. This means that cloud.gov successfully completed a comprehensive security and compliance assessment performed by a board of the CIOs and their teams from the General Services Administration, the Department of Defense, and the Department of Homeland Security. cloud.gov is the [first completely open source service to receive FedRAMP authorization](https://www.gsa.gov/blog/2017/02/02/cloudgov-becomes-first-fully-open-source-fedramp-solution). Teams can now use cloud.gov with less upfront work, so they can use cloud.gov to deliver services even faster.
+We’re delighted to announce that cloud.gov has received a FedRAMP Joint Authorization Board (JAB) Provisional Authority to Operate (P-ATO) at the Moderate impact level. This means that cloud.gov successfully completed a comprehensive security and compliance assessment performed by a board of the CIOs and their teams from the General Services Administration, the Department of Defense, and the Department of Homeland Security. cloud.gov is the first completely open source service to receive FedRAMP authorization. Teams can now use cloud.gov with less upfront work, so they can use cloud.gov to deliver services even faster.
 
 [Read more about how this new authorization can help your team.](https://18f.gsa.gov/2017/02/02/cloud-gov-is-now-fedramp-authorized/)
 <!--more-->

@@ -1,2 +1,3 @@
-* @cloud-gov/platform-ops
-
+# Per https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners#codeowners-syntax
+# If you want to match two or more code owners with the same pattern, all the code owners must be on the same line. If the code owners are not on the same line, the pattern matches only the last mentioned code owner.
+* @cloud-gov/platform-ops @cloud-gov/pages-ops

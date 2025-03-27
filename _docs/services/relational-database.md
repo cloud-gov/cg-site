@@ -354,32 +354,36 @@ The contents of the `DATABASE_URL` environment variable contain the credentials 
 
 Please note: If you are binding a service instance to a new space, please review and adjust your space egress setting. By default, all newly made spaces have their space egress set to closed which means any requests to the open internet or our brokered services will be blocked. For an overview of space egress settings, see [Space Egress](https://cloud.gov/docs/management/space-egress/).
 
-## Backups
+## Backup and Recovery
 
-*Please note that these instructions will change in the future as we expand our service offerings and provide more options for customers.*
+Cloud.gov has provisioned AWS RDS databases so customers can restore to any point-in-time within their backup retention period (14 days minimum, up to 35 days). The point-in-time recovery may result in up to 5 minutes of data loss.
 
-RDS automatically retains daily backups for 14 days. These backups are AWS RDS storage volume snapshots, backing up the entire DB instance and not just individual databases. You can extend the length of retention up to 35 days by using the option detailed above. If you need to have a database restored using one of these backups, you can email [support@cloud.gov]({{ site.support_email }}).  For non-emergency situations, please provide at least 48 hours advance notice.
+RDS automatically retains daily backups for 14 days. These backups are AWS RDS storage volume snapshots, backing up the entire DB instance
+ and not just individual databases. You can extend the length of retention up to 35 days by using the `backup_retention_period` option detailed above. In addition, transaction logs from the AWS RDS instance are written to S3 every 5 minutes to enable point-in-time recovery.
+ 
+**If you need to have a database restored** using one of these backups, email [support@cloud.gov]({{ site.support_email }}) with:
 
-If you have an emergency situation, such as data loss or a compromised system, please email [support@cloud.gov]({{ site.support_email }}) immediately and inform us of the situation.
-
-If you deleted your database instance and want to recover it, the recovery must be done within 14 days of the instance being deleted.  We can perform a restoration using the automated backups that are retained for that 14 day window after a database is removed.
-
-When you do contact [support@cloud.gov]({{ site.support_email }}) with a database backup or restoration request, please include the following information:
-
-- Your organization name
-- The space you are working within
-- The name of the application(s) connected to the database service you need a restoration performed on
-- Phone numbers and contact information if it's an urgent situation
+- the Cloud.gov organization name
+- the space name
+- the database to restore
+- the name of the application(s) connected to the impacted database service 
+- the point-in-time to restore (e.g. 15:15 EST on 12/12/2022).
+- phone numbers and contact information if it's an urgent situation
+- for non-emergency situations, please provide at least 48 hours advance notice.
 
 **Please *do not* share any passwords or details of any exploit or compromise.**  We'll call you if necessary, and we'll never ask you for a password over the phone.
 
-We'll confirm this information and remind you that a restoration may result in a brief period of downtime with database connectivity.  Once we receive confirmation from you to proceed, we'll perform the restore, which results in a new DB instance being created in AWS RDS.  cloud.gov support will take care of renaming the new instance and configuring it with the same VPC and security group as the old instance in AWS so that it can still be found by your bound application(s) once the restoration is complete.
+The Cloud.gov support team will restore to the nearest point in time BEFORE the time you've specified.
+
+We'll confirm your information and remind you that a restoration may result in a brief period of downtime with database connectivity.  Once we receive confirmation from you to proceed, we'll perform the restore, which results in a new DB instance being created in AWS RDS.  Cloud.gov support will take care of renaming the new instance and configuring it with the same VPC and security group as the old instance in AWS so that it can still be found by your bound application(s) once the restoration is complete.
 
 When the restore process is completely finished, we'll notify you and ask you to confirm that your application(s) is still functioning properly and that the data is properly restored.  We'll also coordinate with you to determine when it would be appropriate to remove the old instance, particularly if it is needed for something such as a security audit or forensic analysis.
 
 When we remove the old database instance, we will not retain snapshots or backups of it unless we're explicitly asked to do so.  We'll remind you of this when coordinating a specific date and time to remove the old instance.
 
-You can also create manual backups using the [export process](#exporting-a-database-manually) described below. In general, you are responsible for making sure that your backup procedures are adequate for your needs; see CP-9 in the cloud.gov SSP.
+If you deleted your database instance and want to recover it, the recovery must be done within 14 days of the instance being deleted.  We can perform a restoration using the automated backups that are retained for that 14 day window after a database is removed.
+
+You can also create manual backups using the [export process](#exporting-a-database-manually) described below. In general, you are responsible for making sure that your backup procedures are adequate for your needs; see CP-9 in the Cloud.gov SSP.
 
 ## Tunneling to your database
 
