@@ -16,7 +16,7 @@ The most important metrics for monitoring your application's health are the memo
 
 ## A note about CPU metrics
 
-CPUs are virtualized and shared across application containers on a Diego cell virtual machine (VM).
+Your application runs in one or more application containers distributed across Diego cell virtual machines (VMs). CPUs are virtualized and shared with other application containers on the VM.
 
 [The CPU usage figure reported as part of the application metrics represents the CPU usage of an application instance as a percentage of a single CPU core][container metrics]. Since there are usually multiple CPU cores per VM, **it is possible for the CPU usage to exceed 100%**, which means your application is using the equivalent compute power of more than a single CPU core.
 
