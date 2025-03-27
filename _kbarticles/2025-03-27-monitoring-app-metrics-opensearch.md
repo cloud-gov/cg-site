@@ -24,13 +24,11 @@ A CPU usage figure above 100% is not necessarily problematic. The more important
 
 If the CPU entitlement figure exceeds 100% for any application instance, then the instance is effectively borrowing spare CPU resources from the host VM. Since applications are regularly redistributed across the available host VMs, the amount of spare CPU capacity available on the VM can change, so any instances of CPU entitlement above 100% should be treated as an indication of insufficient application resources and addressed appropriately by adding more instances or allocating more memory.
 
-[Cloud Foundry provides a `cf` CLI plugin for determining if any of your application instances are exceeding their CPU entitlement](https://docs.cloudfoundry.org/loggregator/container-metrics.html#cpu-entitlement).
-
 While the CPU usage figure itself does not independently reveal application issues, it is still worth monitoring as a relative value, since sudden spikes in the value can still indicate abnormal performance of your application.
 
 ## Retrieving current memory and CPU metrics
 
-To retrieve the current memory and CPU usage for your app, you can use the `cf app` command:
+To retrieve the current memory, CPU usage and CPU entitlement for your app, you can use the `cf app` command:
 
 ```shell
 cf app APP-NAME
@@ -42,8 +40,10 @@ The output from running that command will look something like:
 
 The `cpu` and `memory` metrics in the output can be interpreted as follows:
 
-- `cpu`: percentage of CPU used by the application, as explained above
-- `memory`: memory used out of the amount of memory allowed for each application instance
+- `cpu`: percentage of CPU used by the application, as explained above.
+- `memory`: memory used out of the amount of memory allowed for each application instance.
+- `cpu entitlement`: CPU time used by an app instance as a percentage of its CPU entitlement.
+
 
 ## How to view historical memory and CPU metrics in OpenSearch
 
