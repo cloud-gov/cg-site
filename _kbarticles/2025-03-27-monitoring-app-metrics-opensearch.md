@@ -51,7 +51,7 @@ While it is useful to view your application's CPU and memory usage at a given po
 more helpful is to see the trends in your application's health metrics over time and in particular whether
 they correlate to observed performance issues for your application.
 
-Logs containining these application metrics are already ingested into the [OpenSearch instance for customer logs][opensearch prod]. Furthermore, there are already built-in visualizations and dashboards for viewing these metrics for your applications.
+Logs containing these application metrics are already ingested into the [OpenSearch instance for customer logs][opensearch prod]. Furthermore, there are already built-in visualizations and dashboards for viewing these metrics for your applications.
 
 To view the dashboards for application metrics, follow these steps:
 
