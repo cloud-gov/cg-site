@@ -36,14 +36,13 @@ cf app APP-NAME
 
 The output from running that command will look something like:
 
-!["Screenshot of application summary printed in a terminal session by the cf app command"]({{site.baseurl}}/assets/images/content/cf-app-metrics.png)
+!["Screenshot of application summary printed in a terminal session by the cf app command"]({{site.baseurl}}/assets/images/content/cf-app-metrics2.png)
 
 The `cpu` and `memory` metrics in the output can be interpreted as follows:
 
 - `cpu`: percentage of CPU used by the application, as explained above.
 - `memory`: memory used out of the amount of memory allowed for each application instance.
 - `cpu entitlement`: CPU time used by an app instance as a percentage of its CPU entitlement.
-
 
 ## How to view historical memory and CPU metrics in OpenSearch
 
