@@ -128,6 +128,8 @@ redirect_from:
         <p>
           <a href="https://airtable.com/appbHJFEYs3H7fmA8/shrNrGC5KQnLgJqWc">Contact us</a> to learn more about available discounted enterprise pricing as well as pricing for brokered services.
         </p>
+        <p>You can use our <a href="{{ site.baseurl }}/assets/documents/Cloud.gov Cost Estimator.xlsx">Cloud.gov Cost Estimator.xlsx</a> spreadsheet to estimate your system costs.
+        </p>
       </div>
     </div>
   </section>
