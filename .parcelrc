@@ -1,6 +1,6 @@
 {
   "extends": "@parcel/config-default",
   "transformers": {
-    "*.{ico,pdf}": ["@parcel/transformer-raw"]
+    "*.{ico,pdf,xlsx}": ["@parcel/transformer-raw"]
   }
 }
