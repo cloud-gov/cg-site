@@ -13,7 +13,7 @@ You will be able to setup monitors for different conditions using fields, this w
 2. Query based on field specific filters (size of value, contents of value,etc)
 3. Write a query for a specific section of your logs in which you want to look for conditions to trigger on. (Alert on prod space only, This app only, etc)
 
-This will allow to see if your logs have a increase in 404 messages in a certain timeframe, track log contents for certain words
+This will allow to see if your logs have a increase in 404 messages in a certain timeframe, track log contents for certain words, etc..
 
 ## How access for OpenSearch notifications works
 
