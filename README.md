@@ -1,3 +1,5 @@
+**DEPRECATED - This repository is no longer in use and will not be maintained. See https://github.com/cloud-gov/site/**
+
 # cloud.gov
 
 This site uses the [cloud.gov Pages USWDS Jekyll template](https://github.com/cloud-gov/pages-uswds-jekyll). [cloud.gov Pages](https://cloud.gov/pages/) runs on cloud.gov and supports the development of this template. By leveraging this template cloud.gov get the benefits of a maintained template as well as a way to test out new functionality in the template.
